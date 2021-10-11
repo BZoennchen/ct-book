@@ -1,0 +1,1345 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.3. Repräsentationen &#8212; Computational Thinking</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.4. Manipulation" href="3-manipulation.html" />
+    <link rel="prev" title="1.2. Interpretation" href="2-interpretation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Thinking</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/course.html">
+   1. Kurskonzept
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/1-teaching.html">
+     1.1. Lehrkonzept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/2-learn-how-to-think.html">
+     1.2. Denken lernen?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/what-is-ct.html">
+   2. Was ist Computational Thinking
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/1-informatics-and-ct.html">
+     2.1. Von der Informatik zum Computational Thinking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/2-repetition-is-the-key.html">
+     2.2. Wiederholung als Grundlage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/history.html">
+   3. Geschichte der Computer und Algorithmen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/1-ancient.html">
+     3.1. Antike
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/2-middleages.html">
+     3.2. Mittelalter bis 19. Jahrundert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/3-today.html">
+     3.3. 19. Jahrundert bis heute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/4-future.html">
+     3.4. Ausblick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04/why-ct.html">
+   4. Warum Computational Thinking?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/1-intrinsic-value.html">
+     4.1. Intrinsischer Wert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/2-usefulness.html">
+     4.2. Langfristiger Nutzen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/3-self-determination.html">
+     4.3. Selbstbestimmt durch CT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/sorting.html">
+   5. Lasst uns Denken
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/1-sort-cards.html">
+     5.1. Karten sortieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/2-sort-cards-with-python.html">
+     5.2. Karten sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/3-sort-numbers.html">
+     5.3. Zahlen sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/4-sort-anything.html">
+     5.4. Allgemeines Sortieren in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Theorie
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="information-processing.html">
+   1. Der digitale Computer
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-basics.html">
+     1.1. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-interpretation.html">
+     1.2. Interpretation
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.3. Repräsentationen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-manipulation.html">
+     1.4. Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-information-flow.html">
+     1.5. Der Informationskreislauf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-hardware-equals-software.html">
+     1.6. Berechenbarkeit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07/information.html">
+   2. Was ist Information?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/1-natural-science.html">
+     2.1. Naturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/2-formal-science.html">
+     2.2. Strukturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/3-critic.html">
+     2.3. Kritik
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/4-humanics.html">
+     2.4. Geisteswissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/5-summary.html">
+     2.5. Zusammenfassung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08/languages.html">
+   3. Programmiersprachen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/1-abstraction.html">
+     3.1. Abstraktion des Computers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/2-success-criteria.html">
+     3.2. Erfolgsfaktoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/3-imperative-vs-functional.html">
+     3.3. Imperativ vs. funktional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/4-language-evolution.html">
+     3.4. Sprachevolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/5-python.html">
+     3.5. Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/6-diversity.html">
+     3.6. Diversität
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09/the-art-of-programming.html">
+   4. Die Kunst des Programmierens
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/1-algorithms.html">
+     4.1. Algorithmen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/2-programming.html">
+     4.2. Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/3-code.html">
+     4.3. Programmiercode
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10/programming-in-python.html">
+   1. Programmieren in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/1-jupyter-notebooks.html">
+     1.1. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/2-expressions.html">
+     1.2. Ausdrücke
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/3-variables.html">
+     1.3. Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/4-invoking-functions.html">
+     1.4. Funktionsaufrufe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/5-data-types.html">
+     1.5. Datentypen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  CT in Aktion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/robo-world.html">
+   1. Roboterwelt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/dive-bell.html">
+   2. Sprechen in der Taucherglocke
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/image-representation.html">
+   3. Binäres Zeichnen - Struktur ist Information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/memory.html">
+   4. Speicher - alles ist eine Liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/name-register.html">
+   5. Namensregister
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Trash
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12/hardware-abstraction.html">
+   Abstraktion der Hardware
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12/komplexity.html">
+   O-Notation
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/06/2-representation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#das-binarsystem">
+   1.3.1. Das Binärsystem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zahlen-im-binarsystem">
+   1.3.2. Zahlen im Binärsystem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#naturliche-zahlen">
+     1.3.2.1. Natürliche Zahlen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ganze-zahlen">
+     1.3.2.2. Ganze Zahlen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#addieren-und-subtrahieren">
+     1.3.2.3. Addieren (und Subtrahieren)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text">
+   1.3.3. Text
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bilder">
+   1.3.4. Bilder
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rastergrafiken">
+     1.3.4.1. Rastergrafiken
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vektorgrafiken">
+     1.3.4.2. Vektorgrafiken
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ton">
+   1.3.5. Ton
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="reprasentationen">
+<span id="sec-representation"></span><h1><span class="section-number">1.3. </span>Repräsentationen<a class="headerlink" href="#reprasentationen" title="Permalink to this headline">¶</a></h1>
+<p>Bevor wir genauer darauf eingehen wie der Informationskreislauf vollzogen wird, müssen wir uns ansehen wie Computer unterschiedliche Arten von Information (<a class="reference internal" href="#representation-text"><span class="std std-ref">Text</span></a>, <a class="reference internal" href="#representation-sound"><span class="std std-ref">Ton</span></a>, <a class="reference internal" href="#representation-pictures"><span class="std std-ref">Bild</span></a>, usw.) repräsentieren.</p>
+<div class="section" id="das-binarsystem">
+<span id="sec-binary-system"></span><h2><span class="section-number">1.3.1. </span>Das Binärsystem<a class="headerlink" href="#das-binarsystem" title="Permalink to this headline">¶</a></h2>
+<p>Computer arbeiten auf der Basis von zwei Zuständen (0,1).
+Man kann sagen sie sprechen die Binärsprache.
+Da die kleinste Informationseinheit, das <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a>, nur zwei Zustände annehmen kann, sind die Operationen äußerst simpel.
+Die Komplexität entsteht durch das Kombinieren und Hintereinanderschalten von Millionen dieser Operationen.</p>
+<p>Als <em>Computational Thinker*innen</em> kümmern wir uns kaum um die genaue Manipulation der <a class="reference internal" href="#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="#def-byte"><span class="std std-ref">Bytes</span></a>.
+Wir Abstrahieren diese Aufgabe durch <a class="reference internal" href="../08/languages.html#sec-programming-languages"><span class="std std-ref">Programmiersprachen</span></a>, die uns weitaus komfortablere Möglichkeiten bieten.
+Dennoch sind diese Informationseinheiten und deren <a class="reference internal" href="3-manipulation.html#sec-manipulation"><span class="std std-ref">Manipulation</span></a> von wesentlicher Bedeutung, um die Funktionsweise eines Computers zu verstehen.</p>
+<p>In einem Computer befinden sich mikroskopisch kleine Leitungen und Schaltkreise, welche alle Informationen eines Computers speichern, übertragen und verarbeiten.
+Anstatt 0 und 1 verwendet der Computer also eigentlich elektrische Signale bzw. Spannungen, gespeichert in Milliarden von Transistoren und übertragen durch sog. <a class="reference internal" href="4-information-flow.html#def-bus"><span class="std std-ref">Bus-Systeme</span></a> (Leitungen/Kabel).</p>
+<p>Wie aber lassen sich Informationen mit solchen elektrischen Signalen darstellen?
+Stellen wir uns eine Lampe vor, die zwei Zustände hat.
+Entweder die Lampe ist aus (0) oder sie ist an (1).</p>
+<div class="figure align-default" id="fig-lamps">
+<a class="reference internal image-reference" href="../../_images/lamps.png"><img alt="../../_images/lamps.png" src="../../_images/lamps.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Eine Lampe die entweder aus (links) oder an (rechts) geschaltet sein kann.</span><a class="headerlink" href="#fig-lamps" title="Permalink to this image">¶</a></p>
+</div>
+<p>Entweder es <strong>fließt Strom hindurch</strong>, was dem Zustand 1 entspricht, oder es <strong>fließt kein Strom hindurch</strong>, was den Zustand 0 darstellt.
+Natürlich könnte man mehr Zustände darstellen indem man misst wie viel Strom fließt oder wie viel Spannung angesetzt ist.
+Es hat sich aber herausgestellt, dass das einfache <strong>Strom an</strong> und <strong>Strom aus</strong> robuster, sicherer und effizienter ist.
+So lassen sich die zwei Zustände sehr einfach unterscheiden.
+Mit <strong>Strom an</strong>, <strong>Strom aus</strong> können wir zum Beispiel folgende Mengen repräsentieren:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Strom aus</p></th>
+<th class="head"><p>Strom an</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>falsch</p></td>
+<td><p>wahr</p></td>
+</tr>
+<tr class="row-even"><td><p>nein</p></td>
+<td><p>ja</p></td>
+</tr>
+<tr class="row-odd"><td><p>weiß</p></td>
+<td><p>schwarz</p></td>
+</tr>
+</tbody>
+</table>
+<p>Mit einer Lampe können jede zweielementige Menge repräsentieren.
+Der einzelne Zustand einer Lampe, also <strong>Strom aus</strong> oder <strong>Strom an</strong> nennen wir <em>Bit</em>, es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.</p>
+<div class="admonition-bit admonition" id="def-bit">
+<p class="admonition-title">Bit</p>
+<p>Der einzelne Zustand eines Kabels, also <strong>Strom aus</strong> oder <strong>Strom an</strong> nennen wir <em>Bit</em>, es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.</p>
+</div>
+<p>Benutzen wir mehrere (geordnete) Lampen so erhalten wir mehrere <em>Bits</em> und können so komplexere Informationen speichern.
+Mit zwei Lampen können wir bereits vier Zustände:</p>
+<div class="math notranslate nohighlight">
+\[(0,0), (0,1), (1,0) \text{ und } (1,1).\]</div>
+<p>darstellen. Mit drei Lampen sind es bereits acht:</p>
+<div class="math notranslate nohighlight">
+\[(0,0,0), (0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1).\]</div>
+<p>Mit jedem weiteren Lampe verdoppelt sich die Anzahl der Zustände.
+Und somit können wir mit <span class="math notranslate nohighlight">\(n\)</span> Kabeln eine Menge mit <span class="math notranslate nohighlight">\(2^n\)</span> Elementen repräsentieren.
+Dieser exponentieller Anstieg ist enorm wichtig.
+Ohne diese Eigenschaft würden die Speicher der Computer sehr schnell volllaufen.</p>
+<div class="figure align-default" id="fig-lamps-example">
+<a class="reference internal image-reference" href="../../_images/lamps-example.png"><img alt="../../_images/lamps-example.png" src="../../_images/lamps-example.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Zwei der <span class="math notranslate nohighlight">\(2^8 = 256\)</span> möglichen Zustände von acht Lampen.</span><a class="headerlink" href="#fig-lamps-example" title="Permalink to this image">¶</a></p>
+</div>
+<p>Weshalb verwenden wir aber kein Zahlensystem mit drei oder mehr Zuständen?
+Wie oben erwähnt ist es aus technischer Sicht, bisher deutlich einfacher und effizienter mit nur zwei Zuständen zu arbeiten.
+Zudem ist die Einsparung die wir durch mehr Zustände erzielen würden unwesentlich.</p>
+<p>Wir könnten auch mit nur einem Zustand, z.B. <strong>Strom aus</strong>, Informationen repräsentieren.
+Diese sog. <em>Unärsystem</em> verwenden wir Menschen, wenn wir mit den Händen zählen.
+Das System ist allerdings für größere Datenmengen ungeeignet, da wir für eine Menge mit <span class="math notranslate nohighlight">\(n\)</span> Elementen <span class="math notranslate nohighlight">\(n\)</span> <em>Bits</em> bräuchten, um diese zu repräsentieren.
+Wechseln wir zu einem System mit drei Zuständen, bräuchten wir im Vergleich zum <em>Binärsystem</em> noch weniger <em>Bits</em>, doch ist das was wir gewinnen unwesentlich.
+Der Grund ist das Verhalten des Logarithmus.
+Der folgende Plot illustriert wie viele <em>Bits</em> (y-Achse) für eine Menge mit <span class="math notranslate nohighlight">\(n\)</span> Elementen (x-Achse) im jeweiligen Zahlensystem notwendig sind.
+Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingegen der Unterschied zwischen <em>Binär</em> und, zum Beispiel, <span class="math notranslate nohighlight">\(\log_5(n)\)</span> gering ist.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;16&#39;</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Unär $n$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Binär $</span><span class="se">\\</span><span class="s1">log_2(n)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">log_3(n)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">log_4(n)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">log_5(n)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="fig-logs-plots">
+<a class="reference internal image-reference" href="../../_images/plot-logs.png"><img alt="../../_images/plot-logs.png" src="../../_images/plot-logs.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.3 </span><span class="caption-text">TODO: Löschen nachdem markdown zu ipython transformiert wurde!</span><a class="headerlink" href="#fig-logs-plots" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="zahlen-im-binarsystem">
+<span id="sec-binary-numbers"></span><h2><span class="section-number">1.3.2. </span>Zahlen im Binärsystem<a class="headerlink" href="#zahlen-im-binarsystem" title="Permalink to this headline">¶</a></h2>
+<p>Werfen wir einen genaueren Blick aufs <em>Binärsystem</em> oder auch <em>binäre Zahlensystem</em>.
+Um Zahlen mit <strong>Strom an</strong> und <strong>Strom aus</strong>, also den zwei Zuständen einer Lampe/Transistors/<em>Bit</em> zu repräsentieren verwenden Computer das <em>Binärsystem</em>.</p>
+<div class="hint admonition">
+<p class="admonition-title">Notation mit verschiedenen Zahlensystemen</p>
+<p>Um der Verwirrung vorzubeugen notieren wir eine Zahl <span class="math notranslate nohighlight">\(k\)</span>, geschrieben in der Dezimaldarstellung, auch durch <span class="math notranslate nohighlight">\(k_{10}\)</span>
+und eine Zahl <span class="math notranslate nohighlight">\(b\)</span> in der Binärdarstellung durch <span class="math notranslate nohighlight">\(b_2\)</span>.</p>
+</div>
+<div class="section" id="naturliche-zahlen">
+<h3><span class="section-number">1.3.2.1. </span>Natürliche Zahlen<a class="headerlink" href="#naturliche-zahlen" title="Permalink to this headline">¶</a></h3>
+<p>In dem für Sie intuitiven <em>Dezimalsystem</em> schreiben wir eine Zahl mit den Ziffern <span class="math notranslate nohighlight">\(0, 1, 2, 4, 5, 6, 7, 8, 9\)</span> und verwenden eine Basis von <span class="math notranslate nohighlight">\(10\)</span>.
+Zum Beispiel ist <span class="math notranslate nohighlight">\(1871\)</span> gleich</p>
+<div class="math notranslate nohighlight">
+\[1 \cdot 10^3 + 8 \cdot 10^2 + 7 \cdot 10^1 + 1 \cdot 10^0.\]</div>
+<p>Die Zahl, beschrieben als Folge von Ziffern <span class="math notranslate nohighlight">\(d_{n-1} \ldots d_0\)</span> mit <span class="math notranslate nohighlight">\(d_i \in \{0,1,2,3,4,5,6,7,8,9\}\)</span>, hat den Wert</p>
+<div class="math notranslate nohighlight" id="equation-eq-decimal-natural">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-eq-decimal-natural" title="Permalink to this equation">¶</a></span>\[d_{n-1} \ldots d_0 
+= d_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 10^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \ldots + d_{\class{hm-lightblue} 0} \cdot 10^{\class{hm-lightblue} 0} 
+= \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} d_{\class{hm-lightblue} i} \cdot 10^{\class{hm-lightblue} i}.\]</div>
+<p>Im <em>Binärsystem</em> verwenden wir hingegen lediglich die Ziffern <span class="math notranslate nohighlight">\(0, 1\)</span> und die Basis <span class="math notranslate nohighlight">\(2\)</span>.
+Eine Zahl als Folge von Ziffern <span class="math notranslate nohighlight">\(b_{n-1} \ldots b_0\)</span> mit <span class="math notranslate nohighlight">\(b_i \in \{0,1\}\)</span> hat den Wert</p>
+<div class="math notranslate nohighlight" id="equation-eq-binary-natural">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-eq-binary-natural" title="Permalink to this equation">¶</a></span>\[    b_{n-1} \ldots b_0 
+    = b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \ldots + b_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0}
+    = \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} b_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i}.\]</div>
+<p>Zum Beispiel hat <span class="math notranslate nohighlight">\(1101_2\)</span> den Wert</p>
+<div class="math notranslate nohighlight">
+\[1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 0 + 1 = 13.\]</div>
+<p><span class="math notranslate nohighlight">\(1001_2\)</span> (binär) und <span class="math notranslate nohighlight">\(13_{10}\)</span> (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung ist eine andere.
+Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welche Wert <span class="math notranslate nohighlight">\(1001_2\)</span> repräsentiert.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung</span>
+<span class="k">def</span> <span class="nf">to_decimal</span><span class="p">(</span><span class="n">binary_number</span><span class="p">):</span>
+    <span class="n">decimal_number</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">binary_number</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">binary_number</span><span class="p">:</span>
+        <span class="n">decimal_number</span> <span class="o">+=</span> <span class="n">bit</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">decimal_number</span>
+<span class="c1"># Zahl in Binärdarstellung 111 0100 1111 wird umgewandelt</span>
+<span class="n">to_decimal</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Ok, wir können also eine Binärzahl (= Zahl in Binärdarstellung) recht einfach in eine Dezimalzahl umwandeln.
+Wie aber wandeln wir eine Dezimalzahl in eine Binärzahl um?</p>
+<div class="hint admonition" id="def-euclid-division">
+<p class="admonition-title">Restwertdivision</p>
+<p>Für zwei ganze Zahlen <span class="math notranslate nohighlight">\(n, m \in \mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(m \neq 0\)</span> gibt es zwei eindeutige ganze Zahlen <span class="math notranslate nohighlight">\(a, r \in \mathbb{Z}\)</span>, sodass</p>
+<div class="math notranslate nohighlight">
+\[
+n = m \cdot a + r, \quad 0 \leq r &lt; |m|,
+\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(|\cdot|\)</span> der Betrag ist.
+Wir nennen <span class="math notranslate nohighlight">\(r\)</span> den Rest.
+Seien <span class="math notranslate nohighlight">\(n, m\)</span> gegeben so lassen sich <span class="math notranslate nohighlight">\(a\)</span> und <span class="math notranslate nohighlight">\(r\)</span> durch die Division ermitteln:</p>
+<div class="math notranslate nohighlight">
+\[a = \left \lfloor{ n / m}\right \rfloor, \quad r = n - a \cdot m,\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(\left \lfloor{\cdot }\right \rfloor\)</span> auf die nächst größte ganze Zahl abrundet.</p>
+</div>
+<p>Nehmen wir als Beispiel die Dezimalzahl <span class="math notranslate nohighlight">\(9\)</span>.
+Wir suchen eine Binärzahl <span class="math notranslate nohighlight">\(b_{n-1}\ldots b_0\)</span>, sodass</p>
+<div class="math notranslate nohighlight" id="equation-eq-nine-to-binary">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-eq-nine-to-binary" title="Permalink to this equation">¶</a></span>\[b_{n-1} \cdot 2^{n-1} + \ldots + b_0 \cdot 2^0 = 9\]</div>
+<p>ergibt.
+Was passiert wenn wir in Gleichung <a class="reference internal" href="#equation-eq-nine-to-binary">(1.4)</a> beide Seiten durch <span class="math notranslate nohighlight">\(2\)</span> dividieren?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \begin{split}
+    b_{n-1} \cdot 2^{n-1} + \ldots + b_0 \cdot 2^0 &amp;= 9 \iff \\
+    \left( b_{n-1} \cdot 2^{n-1} + \ldots + b_0 \cdot 2^0 \right) / 2 &amp;= 9 / 2 \iff \\
+    b_{n-1} \cdot 2^{n-2} + \ldots + b_1 \cdot 2^0 + b_0 / 2 &amp;= 4 + 1 / 2 \iff
+  \end{split}\end{split}\]</div>
+<p>Der Ausdruck</p>
+<div class="math notranslate nohighlight">
+\[b_{n-1} \cdot 2^{n-2} + \ldots + b_1 \cdot 2^0\]</div>
+<p>muss eine ganze Zahl ergeben.
+Zudem wissen wir, dass <span class="math notranslate nohighlight">\(b_0\)</span> entweder den Wert <span class="math notranslate nohighlight">\(0\)</span> oder <span class="math notranslate nohighlight">\(1\)</span> annimmt.
+Es folgt unweigerlich, dass</p>
+<div class="math notranslate nohighlight">
+\[b_0 / 2 = 1 / 2 \Rightarrow b_0 = 1\]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[b_{n-1} \cdot 2^{n-2} + \ldots + b_1 \cdot 2^0 = 4.\]</div>
+<p>Wir können erneut durch zwei dividieren und erhalten:</p>
+<div class="math notranslate nohighlight">
+\[b_{n-1} \cdot 2^{n-3} + \ldots + b_2 \cdot 2^0 + b_1 / 2 = 2\]</div>
+<p>Demnach muss <span class="math notranslate nohighlight">\(b_1 = 0\)</span> sein und</p>
+<div class="math notranslate nohighlight">
+\[b_{n-1} \cdot 2^{n-3} + \ldots + b_2 \cdot 2^0 = 2.\]</div>
+<p>Wir dividieren erneut durch zwei und erhalten:</p>
+<div class="math notranslate nohighlight">
+\[b_{n-1} \cdot 2^{n-4} + \ldots + b_3 \cdot 2^0 + b_2 / 2 = 1.\]</div>
+<p>Erneut muss demnach <span class="math notranslate nohighlight">\(b_2 = 0\)</span> sein.
+Schließlich dividieren wir ein letztes Mal mit 2 und erhalten:</p>
+<div class="math notranslate nohighlight">
+\[b_{n-1} \cdot 2^{n-5} + \ldots + b_3 / 2 = 1/2.\]</div>
+<p>Demnach muss <span class="math notranslate nohighlight">\(b_3 = 1\)</span> gelten.
+Alle höherwertigen Bits nehmen den Wert <span class="math notranslate nohighlight">\(0\)</span> an.</p>
+<p>Zusammenfassend ist demnach</p>
+<div class="math notranslate nohighlight">
+\[1 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 9_{10} = 1001_2\]</div>
+<p>Dieser Vorgang scheint komplizierter als er in Wirklichkeit ist.
+Wir müssen lediglich die sog. <a class="reference internal" href="#def-euclid-division"><span class="std std-ref">Restwertdivision</span></a> immer und immer wieder anwenden.
+Wir dividieren die gegebene Dezimalzahl mit 2.
+Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
+<p>Machen wir noch ein Beispiel und nehmen unsere obige Zahl <span class="math notranslate nohighlight">\(1871\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \begin{split}
+    1871 &amp;= 935 \cdot 2 + {\class{hm-lightblue} 1} \cdot 2^0 \\
+    935 &amp;= 467 \cdot 2 + {\class{hm-lightblue} 1} \cdot 2^0 \\ 
+    467 &amp;= 233 \cdot 2 + {\class{hm-lightblue} 1} \cdot 2^0 \\
+    233 &amp;= 116 \cdot 2 + {\class{hm-lightblue} 1} \cdot 2^0 \\
+    116 &amp;= 58 \cdot 2 + {\class{hm-lightblue} 0} \cdot 2^0\\
+    58 &amp;= 29 \cdot 2 + {\class{hm-lightblue} 0} \cdot 2^0\\
+    29 &amp;= 4 \cdot 2 + {\class{hm-lightblue} 1} \cdot 2^0\\
+    14 &amp;= 7 \cdot 2 + {\class{hm-lightblue} 0} \cdot 2^0\\
+    7 &amp;= 3 \cdot 2 + {\class{hm-lightblue} 1} \cdot 2^0 \\
+    3 &amp;= 1 \cdot 2 + {\class{hm-lightblue} 1} \cdot 2^0 \\
+    1 &amp;= 0 \cdot 2 + {\class{hm-lightblue} 1} \cdot 2^0
+  \end{split}\end{split}\]</div>
+<p>Wir erhalten somit</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \begin{split}
+    1871_{10} &amp;= {\class{hm-lightblue}1} {\class{hm-lightblue}1} {\class{hm-lightblue}1} {\class{hm-lightblue}0} {\class{hm-lightblue}1} {\class{hm-lightblue}0} {\class{hm-lightblue}0} {\class{hm-lightblue}1}{\class{hm-lightblue}1}{\class{hm-lightblue}1}{\class{hm-lightblue}1}_2 \\
+    &amp;= {\class{hm-lightblue} 1} \cdot 2^{10} + {\class{hm-lightblue} 1} \cdot 2^9 + {\class{hm-lightblue} 1} \cdot 2^8 + {\class{hm-lightblue} 0} \cdot 2^7 + {\class{hm-lightblue} 1} 
+ \cdot 2^6 + \\
+    &amp;\quad \, {\class{hm-lightblue} 0} \cdot 2^5 + {\class{hm-lightblue} 0} \cdot 2^4 + {\class{hm-lightblue} 1} \cdot 2^3 + {\class{hm-lightblue} 1} \cdot 2^2 + {\class{hm-lightblue} 1} \cdot 2^1 +{\class{hm-lightblue} 1} \cdot 2^0\\
+    &amp;= {\class{hm-lightblue} 1} \cdot 1024 + {\class{hm-lightblue} 1} \cdot 512 + {\class{hm-lightblue} 1} \cdot 256 + {\class{hm-lightblue} 0} \cdot 128 + {\class{hm-lightblue} 1} \cdot 64 + \\
+    &amp;\quad \, {\class{hm-lightblue} 0} \cdot 32 + {\class{hm-lightblue} 0} \cdot 16 +  {\class{hm-lightblue} 1} \cdot 8 + {\class{hm-lightblue} 1} \cdot 4 + 1 \cdot 2 + {\class{hm-lightblue} 1} \cdot 1\\
+    &amp;= 1024 + 512 + 256 + 64 + 8 + 4 + 2 + 1.
+  \end{split}\end{split}\]</div>
+<p>Der folgende <code class="docutils literal notranslate"><span class="pre">Python</span></code> code wandelt eine Dezimalzahl in eine Binärzahl (als Liste von <span class="math notranslate nohighlight">\(0, 1\)</span>, gelesen von links nach rechts) um.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung</span>
+<span class="k">def</span> <span class="nf">to_binary</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">binary_number</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">number</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span>
+        <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="n">binary_number</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">+</span> <span class="n">binary_number</span>
+    <span class="k">return</span> <span class="n">binary_number</span>
+<span class="c1"># Zahl in Decimaldarstellung wird umgewandelt</span>
+<span class="n">to_binary</span><span class="p">(</span><span class="mi">1871</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ganze-zahlen">
+<span id="sec-intergers"></span><h3><span class="section-number">1.3.2.2. </span>Ganze Zahlen<a class="headerlink" href="#ganze-zahlen" title="Permalink to this headline">¶</a></h3>
+<p>Uns steht kein Minus- oder Pluszeichen zur Verfügung.
+Alles was der Computer kennt sind Bits und Bytes.
+Wollen wir also anstatt der natürlichen Zahlen die ganzen Zahlen repräsentieren, müssen wir das Vorzeichen irgendwie codieren.</p>
+<p>Wollen wir ganze Zahlen repräsentieren so entscheidet das höchste <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a>, ob es sich bei der Zahl um eine negative oder positive Zahl handelt.
+Eine Möglichkeit wäre es dieses höchste <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> als <code class="docutils literal notranslate"><span class="pre">-</span></code> zu interpretieren, wenn es den Wert 1 hat und als <code class="docutils literal notranslate"><span class="pre">+</span></code> andernfalls.
+In diesem Fall könnten wir Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(1.3)</a> verwenden, mit dem Unterschied, dass wir das höchste bit ausschließen und stattdessen als Vorzeichen interpretieren.</p>
+<p>So wäre</p>
+<div class="math notranslate nohighlight">
+\[1011_2 = -011_2 = -3_{10}.\]</div>
+<p>Möchte man jedoch mit dieser Codierung rechnen, ergeben sich einige Schwierigkeiten.
+Zudem verlieren wir ein Bit für das Vorzeichen.</p>
+<p>Anstatt das Vorzeichen und den Betrag als getrennte Teile der Binärfolge zu codieren bietet das sogenannte <em>Zweierkomplement</em>, oder auch 2-Komplement, die bevorzugte Codierung für negative Zahlen.
+Das höchste Bit wird dabei nicht als Vorzeichen, sondern als negativen Anteil interpretiert.</p>
+<p>So ist</p>
+<div class="math notranslate nohighlight">
+\[1011_2 = -2^3 \cdot 1 + 2^2 \cdot 0 + 2^1 \cdot 1 + 2^0 \cdot 1 = -8 + 2 + 1 = -5\]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[111_2 = -2^2 \cdot 1 + 2^1 \cdot 1 + 2^0 \cdot 1 = -4 + 2 + 1 = -1.\]</div>
+<p>Aus Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(1.3)</a> wird</p>
+<div class="math notranslate nohighlight" id="equation-eq-binary-integer">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-eq-binary-integer" title="Permalink to this equation">¶</a></span>\[\begin{split}  \begin{split}
+    b_{n-1} \ldots b_0 &amp;= -b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}2} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}2} + \ldots + b_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0}\\
+    &amp;= -b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \sum\limits_{{\class{hm-lightblue} i}=0}^{n-2} b_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i}.
+  \end{split}\end{split}\]</div>
+<p>Wir können Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(1.3)</a> auch umschreiben, indem wir das <a class="reference internal" href="#def-complement"><span class="std std-ref">Komplement</span></a> eines jeden <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> verwenden, daher der Name <em>Zweierkomplement</em>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-binary-integer-complement">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-eq-binary-integer-complement" title="Permalink to this equation">¶</a></span>\[\begin{split}  \begin{split}
+    b_{n-1} \ldots b_0 &amp;= -\overline{b}_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} - \ldots - \overline{b}_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0} - 1\\
+    &amp;= -\left( \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} \overline{b}_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i} \right) - 1.
+  \end{split}\end{split}\]</div>
+<p>wobei</p>
+<div class="math notranslate nohighlight">
+\[\overline{b} = 1 \iff b = 0\]</div>
+<p>gilt.</p>
+<p>Dieses System macht es uns enorm einfach eine Zahl <span class="math notranslate nohighlight">\(k\)</span> in eine Zahl <span class="math notranslate nohighlight">\(-k\)</span> umzuwandeln.
+Sei <span class="math notranslate nohighlight">\(b_{n-1} \ldots b_0\)</span> eine solche Zahl in Binärdarstellung, so ist ihr <a class="reference internal" href="#def-complement"><span class="std std-ref">Komplement</span></a> plus <span class="math notranslate nohighlight">\(1\)</span>, also</p>
+<div class="math notranslate nohighlight">
+\[\overline{b_{n-1} \ldots b_0} + 1\]</div>
+<p>gleich <span class="math notranslate nohighlight">\(-k\)</span>.
+Dies gilt sowohl für positive wie auch negative Zahlen <span class="math notranslate nohighlight">\(k\)</span>!</p>
+<div class="exercise admonition" id="complement-of-complement-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 1.5 </span>(Komplement des Komplements (schwer))</p>
+<div class="section" id="exercise-content">
+<p>Können Sie begründen weshalb für eine Binärzahl <span class="math notranslate nohighlight">\(b_{n-1}\ldots b_0\)</span> folgendes gilt:</p>
+<div class="math notranslate nohighlight">
+\[\overline{\overline{b_{n-1}\ldots b_0} + 1} + 1 = b_{n-1}\ldots b_0.\]</div>
+<p>Bei der Rechnung ist die Anzahl der Bits fixiert und es entsteht möglicherweise ein Überlauf.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="complement-of-complement-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#complement-of-complement-exercise"><span>Exercise 1.5</span></a></p>
+<div class="section" id="solution-content">
+<p>Angenommen das niederste Bit <span class="math notranslate nohighlight">\(b_0\)</span> ist gleich <span class="math notranslate nohighlight">\(1\)</span>.
+Dann folgt <span class="math notranslate nohighlight">\(\overline{b_{n-1}\ldots b_0} + 1 = \overline{b_{n-1}\ldots b_1}1\)</span>, d.h., <span class="math notranslate nohighlight">\(b_0\)</span> bleibt <span class="math notranslate nohighlight">\(1\)</span> und der erst der Bits werden komplementiert.
+Wiederholen wir dies, werden diese Bits bis auf <span class="math notranslate nohighlight">\(b_0\)</span> erneut komplementiert und <span class="math notranslate nohighlight">\(b_0\)</span> bleibt <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Angenommen das niederste Bit <span class="math notranslate nohighlight">\(b_0\)</span> ist gleich <span class="math notranslate nohighlight">\(0\)</span>.
+Sei <span class="math notranslate nohighlight">\(b_k\)</span> das niedrigste erste Bit welches den Wert <span class="math notranslate nohighlight">\(1\)</span> annimmt.
+Dann folgt <span class="math notranslate nohighlight">\(\overline{b_{n-1}\ldots b_0} = \overline{b_{n-1}\ldots b_{k-1}}01\ldots 1\)</span>.
+In anderen Worten <span class="math notranslate nohighlight">\(b_k\)</span> wird zu <span class="math notranslate nohighlight">\(0\)</span> und alle niedrigeren Bits nehmen den Wert <span class="math notranslate nohighlight">\(1\)</span> an.
+Addieren wir nun <span class="math notranslate nohighlight">\(1\)</span> werden alle diese niediederen Bit <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(b_k\)</span> nimmt den Wert <span class="math notranslate nohighlight">\(1\)</span> an.
+Alle höheren Bits bleiben unberührt.</p>
+<div class="math notranslate nohighlight">
+\[\overline{b_{n-1}\ldots b_{k-1}}01\ldots 1 + 1 = \overline{b_{n-1}\ldots b_{k-1}}10\ldots 0\]</div>
+<p>Wiederholen wir diesen Vorgang ergibt sich</p>
+<div class="math notranslate nohighlight">
+\[\overline{\overline{b_{n-1}\ldots b_{k-1}}10\ldots 0} + 1 = b_{n-1}\ldots b_{k-1}01\ldots 1 + 1 = b_{n-1}\ldots b_{k-1}10\ldots 0 = b_{n-1}\ldots b_{0}.\]</div>
+</div>
+</div>
+<p>Das Bilden des Komplements ist für den Computer eine äußerst einfache und schnelle Operation, siehe Abschnitt <a class="reference internal" href="3-manipulation.html#sec-manipulation"><span class="std std-ref">Manipulation</span></a>.</p>
+<div class="admonition-komplement-einer-bitfolge admonition" id="def-complement">
+<p class="admonition-title">Komplement einer Bitfolge</p>
+<p>Das <em>Komplement</em> einer Bitfolge <span class="math notranslate nohighlight">\(b_{n-1} \ldots b_0\)</span>, geschrieben als</p>
+<div class="math notranslate nohighlight">
+\[\overline{b_{n-1} \ldots b_0},\]</div>
+<p>erhalten wir indem wir jedes Bit mit dem Wert <span class="math notranslate nohighlight">\(0\)</span> mit einem Bit mit dem Wert <span class="math notranslate nohighlight">\(1\)</span> und jedes Bit mit dem Wert <span class="math notranslate nohighlight">\(1\)</span> mit einem Bit mit dem Wert <span class="math notranslate nohighlight">\(0\)</span> ersetzten.</p>
+</div>
+<p>Wichtig ist festzuhalten, dass jede ganze Zahl als Binärzahl dargestellt werden kann!
+Und da wir jede <strong>ganze Zahl</strong> als Binärzahl, also als Folge von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> darstellen können, können wir all das, was wir durch Zahlen repräsentieren können, auch durch <strong>Strom an</strong> und <strong>Strom aus</strong> endlich vieler Lampen repräsentieren.</p>
+</div>
+<div class="section" id="addieren-und-subtrahieren">
+<h3><span class="section-number">1.3.2.3. </span>Addieren (und Subtrahieren)<a class="headerlink" href="#addieren-und-subtrahieren" title="Permalink to this headline">¶</a></h3>
+<p>Im folgenden Abschnitt repräsentieren alle Zahlen in Binärdarstellung <strong>ganze Zahlen</strong>.
+Um mit dem <em>Zweierkomplement</em> rechnen zu können müssen wir die Anzahl der Bits fixieren, das heißt, alle Zahlen der Rechnung werden durch gleich viele Bits repräsentiert.
+Verwenden wir <span class="math notranslate nohighlight">\(5\)</span> Bits so ist <span class="math notranslate nohighlight">\(00011_2 = 3_{10}\)</span> und <span class="math notranslate nohighlight">\(10011_2 = - 13\)</span>.
+Erzeugen wir einen Überlauf, d.h., bräuchten wir mehr Bits als vorhanden, so werden die höchsten Bits einfach weggelassen.</p>
+<p>Mit diesen Annahmen funktioniert die Addition genauso wie Sie es im Dezimalsystem gewohnt sind, wobei <span class="math notranslate nohighlight">\(1_2 + 1_2 = 0_2\)</span> mit dem <em>Übertrag</em> <span class="math notranslate nohighlight">\(1\)</span> ergibt.
+Addieren wir beispielsweise die zwei <span class="math notranslate nohighlight">\(5\)</span>-Bit Zahlen <span class="math notranslate nohighlight">\(00011_2 = 3_{10}\)</span> und <span class="math notranslate nohighlight">\(00111_2 = 7_{10}\)</span> ergibt dies:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \begin{split}
+	  00011_2&amp;\\
+	  +\ \ 00111_2&amp;\\ \hline \hline
+    \text{Übertrag:} \quad 01110_2&amp;\\ \hline \hline
+	  = 01010_2&amp;=10_{10}
+	\end{split}\end{split}\]</div>
+<p>Wir müssen jedoch Vorsichtig sein!
+Benötigt das Ergebnis mehr Bits als zu Verfügung stehen, kommt es zu einem <em>Überlauf</em>.</p>
+<p>Addieren wir beispielsweise die zwei <span class="math notranslate nohighlight">\(5\)</span>-Bit Zahlen <span class="math notranslate nohighlight">\(01011_2 = 11_{10}\)</span> und <span class="math notranslate nohighlight">\(00111_2 = 7_{10}\)</span> ergibt dies <span class="math notranslate nohighlight">\(010010_2 = 18_{10}\)</span>.
+Doch diese Zahl benötigt <span class="math notranslate nohighlight">\(6\)</span> Bits.
+Abgeschnitten ergibt sich deshalb <span class="math notranslate nohighlight">\(10010_2 = -14_{10}\)</span>.
+Dies ist ein <strong>unerwünschter Überlauf</strong>!</p>
+<p>Durch das <em>Zweierkomplement</em> können wir auch negative Zahlen wie gewohnt addieren.
+Addieren wir beispielsweise <span class="math notranslate nohighlight">\(01011_2 = 11_{10}\)</span> und <span class="math notranslate nohighlight">\(1111_2 = -1_{10}\)</span> ergibt dies:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \begin{split}
+	  01011_2&amp;\\
+	  +\ \ 11111_2&amp;\\ \hline \hline
+    \text{Übertrag:} \quad 11110_2&amp;\\ \hline \hline
+	  = 101010_2&amp;=18_{10}
+	\end{split}\end{split}\]</div>
+<p>Jedoch benötigt <span class="math notranslate nohighlight">\(101010_2\)</span> erneut zu viele Bits.
+Schneiden wir den Überlauf weg, so ergibt sich <span class="math notranslate nohighlight">\(01010_2 = 10_{10}\)</span>.
+Dies ist ein <strong>erwünschter Überlauf</strong>!</p>
+<div class="exercise admonition" id="useful-and-useless-overflow-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 1.6 </span>(Erwünschter und unerwünschter Überlauf.)</p>
+<div class="section" id="exercise-content">
+<p>In welchen Fällen kann es zu einem unerwünschten Überlauf bei der Addition zweier <span class="math notranslate nohighlight">\(n\)</span>-Bit Binärzahlen kommen?</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="useful-and-useless-overflow-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#useful-and-useless-overflow-exercise"><span>Exercise 1.6</span></a></p>
+<div class="section" id="solution-content">
+<p>Ein unerwünschter Überlauf kann nur dann eintreten wenn entweder beide Zahlen positive sind oder aber beide Zahlen negativ sind.</p>
+</div>
+</div>
+<p>Die Subtraktion <span class="math notranslate nohighlight">\(a - b\)</span> zweier ganzer Zahlen <span class="math notranslate nohighlight">\(a, b\)</span> lässt sich auf die Addition <span class="math notranslate nohighlight">\(a + (-b)\)</span> zurückführen.
+Subtrahieren wir beispielsweise die Zahl <span class="math notranslate nohighlight">\(00011_2 = 3_{10}\)</span> von <span class="math notranslate nohighlight">\(00111_2 = 7_{10}\)</span> können wir das auf die Addition der Zahlen <span class="math notranslate nohighlight">\(11101_2 = -3\)</span> und <span class="math notranslate nohighlight">\(00111_2 = 7_{10}\)</span> zurückführen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \begin{split}
+	  11101_2&amp;\\
+	  +\ \ 00111_2&amp;\\ \hline \hline
+    \text{Übertrag:} \quad 111110_2&amp;\\ \hline \hline
+	  = 100100_2&amp;
+	\end{split}\end{split}\]</div>
+<p>Der erwünschte Übertrag fällt weg und aus <span class="math notranslate nohighlight">\(100100_2\)</span> wird <span class="math notranslate nohighlight">\(00100_2 = 4_{10}\)</span>.</p>
+<div class="exercise admonition" id="binary-addition-substraction-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 1.7 </span>(Addition und Subtraktion von Binärzahlen)</p>
+<div class="section" id="exercise-content">
+<p>Berechnen Sie das Ergebnis 4-Bit-Ergebnis folgender 4-Bit-Zahlen:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(0101_2 + 1001_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0111_2 + 0001_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0011_2 + 0100_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1100_2 + 0111_2\)</span></p></li>
+</ol>
+</div>
+</div>
+<div class="solution dropdown admonition" id="binary-addition-substraction-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#binary-addition-substraction-exercise"><span>Exercise 1.7</span></a></p>
+<div class="section" id="solution-content">
+<p>Die Addition dieser Zahlen ergibt:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(0101_2 + 1001_2 = 1110_2 = -2_{10} = 5_{10} + (-7_{10})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0111_2 + 0001_2 = 1000_2 = -8_{10} = 7_{10} + 1_{10}\)</span> (unerwünschter Übertrag)</p></li>
+<li><p><span class="math notranslate nohighlight">\(0011_2 + 0100_2 = 0111_2 = 7_{10} = 3_{10} + 4_{10}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1100_2 + 0111_2 = 0011_2 = 3_{10} = -4_{10} + 7_{10}\)</span> (erwünschter Übertrag)</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="text">
+<span id="representation-text"></span><h2><span class="section-number">1.3.3. </span>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<p>Wollen wir die Buchstaben des Alphabets in Binärdarstellung schreiben, so müssen wir uns darauf einigen welche Binärzahl welchen Buchstaben repräsentiert.
+Zum Beispiel könnten wir folgende Zuordnung verwenden:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Buchstabe</p></th>
+<th class="head"><p>Dezimalzahl</p></th>
+<th class="head"><p>Binärzahl</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>0</p></td>
+<td><p>00000</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>1</p></td>
+<td><p>00001</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>2</p></td>
+<td><p>00010</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>3</p></td>
+<td><p>00011</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>4</p></td>
+<td><p>00100</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>Z</p></td>
+<td><p>25</p></td>
+<td><p>11001</p></td>
+</tr>
+</tbody>
+</table>
+<p>Da in diesem Fall unsere Menge <span class="math notranslate nohighlight">\(26\)</span> Elemente enthält brauchen wir <span class="math notranslate nohighlight">\(26\)</span> Zustände und damit mindestens <span class="math notranslate nohighlight">\(5\)</span> <em>Bits</em>, denn es gilt</p>
+<div class="math notranslate nohighlight">
+\[2^4 &lt; 26 \leq 2^5.\]</div>
+<div class="exercise admonition" id="repraesentation-alphabet-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 1.8 </span>(Repräsentation)</p>
+<div class="section" id="exercise-content">
+<p>Wie viele <em>Bits</em> benötigen Sie wenn Sie die Kleinbuchstaben auch repräsentieren möchten?</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="repraesentation-alphabet-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#repraesentation-alphabet-exercise"><span>Exercise 1.8</span></a></p>
+<div class="section" id="solution-content">
+<p>Mit Kleinbuchstaben haben wir <span class="math notranslate nohighlight">\(52\)</span> Elemente und brauche somit <span class="math notranslate nohighlight">\(6\)</span> <em>Bits</em> denn</p>
+<div class="math notranslate nohighlight">
+\[2^5 &lt; 52 \leq 2^6\]</div>
+</div>
+</div>
+<p>Ein Wort besteht dann aus mehreren Buchstaben.
+Zum Beispiel wäre <em>BAD</em> repräsentiert durch <span class="math notranslate nohighlight">\(00001 00000 00011\)</span>.
+Im Computer würden demnach <span class="math notranslate nohighlight">\(15\)</span> Kabel/Leitungen oder Transistoren die entweder den Zustand <strong>Strom aus</strong> oder <strong>Strom an</strong> haben das Wort repräsentieren.</p>
+<p>Sonderzeichen wie Leerzeichen oder weitere Zeichen müssten wir in unsere Codierung noch einfügen.
+Auch könnten wir einen vollkommen anderen Zeichensatz benutzten.
+Programme die auf diesem aufbauen müssen die Codierung lediglich kennen.
+Auch können wir längere Wörter oder ganze Sätze bilden, brauchen dafür natürlich Speicherplatz.
+In unserem Beispiel benötigt jeder Buchstabe 5 Bits.
+D.h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen wir die Bauteile für mindestens 1500 Bits was wiederum 187.5 Bytes bzw. 0.1875 KibiByte (KB oder KiB) sind.</p>
+</div>
+<div class="section" id="bilder">
+<span id="representation-pictures"></span><h2><span class="section-number">1.3.4. </span>Bilder<a class="headerlink" href="#bilder" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rastergrafiken">
+<span id="pixel-image"></span><h3><span class="section-number">1.3.4.1. </span>Rastergrafiken<a class="headerlink" href="#rastergrafiken" title="Permalink to this headline">¶</a></h3>
+<p>Bilder, Videos und Grafiken in, z.B. Computerspielen, bestehen aus winzig kleinen quadratischen Pixeln.
+Jeder Pixel hat eine bestimmte Farbe.
+Wir nennen diese Grafiken auch <em>Rastergrafiken</em>.
+Farben werden wiederum durch Zahlen repräsentiert.</p>
+<div class="figure align-default" id="fig-pixel-image">
+<a class="reference internal image-reference" href="../../_images/pixel-image.png"><img alt="../../_images/pixel-image.png" src="../../_images/pixel-image.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.4 </span><span class="caption-text">Transformation eines Bildes in <em>Bytes</em> bzw. <em>Bits</em>.</span><a class="headerlink" href="#fig-pixel-image" title="Permalink to this image">¶</a></p>
+</div>
+<p>Eine gängige Möglichkeit ist eine Farbe durch den Anteil von Rot, Grün und Blau (RGB) zu definieren.
+Somit wird ein Pixel durch drei Zahlen repräsentiert und es ist üblich <span class="math notranslate nohighlight">\(256\)</span> Rot-, Blau- und Grün- Intensitäten zu verwenden.
+Damit lassen sich <span class="math notranslate nohighlight">\(256^3\)</span> unterschiedliche Farben repräsentieren. Zum Beispiel repräsentiert</p>
+<div class="math notranslate nohighlight">
+\[(253, 10, 10)\]</div>
+<p>einen sehr rötlicher Farbton.
+Für die <span class="math notranslate nohighlight">\(256\)</span> Intensitäten brauchen wir je <span class="math notranslate nohighlight">\(8\)</span> <em>Bits</em>, d.h. ein <em>Byte</em>.</p>
+<div class="admonition-byte admonition" id="def-byte">
+<p class="admonition-title">Byte</p>
+<p><span class="math notranslate nohighlight">\(8\)</span> <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> ergeben ein <em>Byte</em>.</p>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Byte</p>
+<p>Oftmals ist ein <em>Byte</em> die kleinste Einheit auf die ein Computer zugreift.</p>
+<p><strong>Beispiel:</strong>
+Anstatt beispielsweise ein einzelnes <em>Bit</em> aus dem Speicher in die CPU zu laden, wird ein ganzes <em>Byte</em> gelesen.</p>
+</div>
+<p>Pro Pixel benötigen wir also <span class="math notranslate nohighlight">\(3\)</span> Byte.
+Heute bestehen Bilder oft aus Millionen von Pixeln und ein gewöhnliches Video zeigt ca. <span class="math notranslate nohighlight">\(30\)</span> Bilder pro Sekunde.
+Damit wird klar, dass eine enorme Datenmenge entsteht und es verwundert nicht, dass Videos oftmals mehrere Gigabyte groß sind.
+Ist die Auflösung hoch, folgt daraus wiederum ein großer Energieverbrauch den die Video-Streamingdienste verursachen.</p>
+</div>
+<div class="section" id="vektorgrafiken">
+<h3><span class="section-number">1.3.4.2. </span>Vektorgrafiken<a class="headerlink" href="#vektorgrafiken" title="Permalink to this headline">¶</a></h3>
+<p>Eine weitere sehr interessante Technik ist es ein Bild durch einfache geometrische Objekte zu <strong>beschreiben</strong>.
+Zum Beispiel könnten wir ein Bild durch folgende Zeichenanweisungen beschreiben:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Color</span><span class="p">(</span><span class="mi">253</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>            <span class="c1"># Wähle Pinsel mit Farbe (253,10,10)</span>
+<span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>      <span class="c1"># Zeichne Rechteck</span>
+<span class="n">Line</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">99</span><span class="p">)</span>             <span class="c1"># Zeichne Linie</span>
+</pre></div>
+</div>
+<p>Was so viel bedeutet wie Zeichne ein Rechteck von <span class="math notranslate nohighlight">\((0,0)\)</span> bis <span class="math notranslate nohighlight">\((100,100)\)</span> und eine Linie definiert durch <span class="math notranslate nohighlight">\((1,1)\)</span> und <span class="math notranslate nohighlight">\((99,99)\)</span> in einer rötlichen Farbe.</p>
+<p>Anstatt des ‘fertigen’ Bildes, speichern wir also eine Vorschrift, wie dieses Bild gezeichnet wird.
+Diese Vorschrift wird in Binärcode umgewandelt und ein Programm, was solch eine Vorschrift lesen kann, kümmert sich um die Umwandlung in eine <em>Rastergrafik</em>.</p>
+<p>Diese Bilder sind sog. <em>Vektorgrafiken</em>.
+Der Vorteil der <em>Vektorgrafik</em> ist, dass die Beschreibung eine analoge/verlustfreie Beschreibung ist und die Digitalisierung (Verpixelung/Rasterisierung) des Bildes dynamisch, jedesmal wenn das Bild angezeigt wird, vollzogen wird.
+Dadurch ist es möglich die Schärfe des Bildes zu erhalten, selbst wenn Sie hineinzoomen.
+Man nennt diese Eigenschaft <em>Auflösungsunabhängigkeit</em>.</p>
+<div class="exercise admonition" id="vec-vs-raster-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 1.9 </span>(Vektor- vs. Rastergrafik)</p>
+<div class="section" id="exercise-content">
+<p>Öffnen Sie ein PDF-Dokument oder eine SVG-Datei (ihr Browser kann diese in der Regel anzeigen) und zoomen Sie hinein.
+Öffnen Sie anschließend eine Rastergrafik, d.h. eine PNG-, JPEG-, GIF-, oder JPG-Datei und zoomen Sie hinein.
+Was beobachten Sie?</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="vec-vs-raster-exercise-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#vec-vs-raster-exercise"><span>Exercise 1.9</span></a></p>
+<div class="section" id="solution-content">
+<p>Die Schrift im PDF-Dokument bleibt scharf. Bei einer Rastergrafik sehen wir ab einem bestimmten Zeitpunkt die einzelnen Pixel immer deutlicher.</p>
+</div>
+</div>
+<p>Drucker können Vektorgrafiken oft besser darstellen, da sie ihre eigene optimale Auflösung verwenden können.
+Ein Nachteil der Technik ist, dass die Berechnung des Rasterbildes Rechenzeit und Speicher kostet und diese hängen nicht von der Größe des resultierenden Rasterbildes ab.</p>
+<p>Das interessante an der Technik ist, dass wir für die persistente Speicherung <strong>Daten</strong> (die resultierenden Pixel) <strong>reduzieren</strong> und durch <strong>Rechenleistung ersetzen</strong>!
+Dieses Prinzip wird in der Informatik häufig verwendet.
+Ein Beispiel ist die Komprimierung oder Verschlüsselung von Daten.</p>
+<p>Nehmen Sie ein sehr simples Beispiel der (verlustfreien) Komprimierung von Text:
+Nehmen wir an, wir hätten einen Text der aus der Folge von <code class="docutils literal notranslate"><span class="pre">ab</span></code> besteht also <code class="docutils literal notranslate"><span class="pre">ababababab...</span></code>.
+Sagen wir der Text ist <span class="math notranslate nohighlight">\(200\)</span> Zeichen lang und sagen wir jeder Buchstabe kostet uns <span class="math notranslate nohighlight">\(1\)</span> Byte Speicher.
+Dann können wir entweder alle <span class="math notranslate nohighlight">\(200\)</span> Zeichen speichern, was uns <span class="math notranslate nohighlight">\(200\)</span> Byte kostet, oder wir speichern einen Algorithmus der Form</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ab&#39;</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+<p>was uns 6 Byte kostet.
+Wir bräuchten dann ein Programm, was die Anweisung <code class="docutils literal notranslate"><span class="pre">'ab'*100</span></code> versteht und ausführt.
+Wir reduzieren also Speicherplatz auf Kosten von Rechenzeit.</p>
+</div>
+</div>
+<div class="section" id="ton">
+<span id="representation-sound"></span><h2><span class="section-number">1.3.5. </span>Ton<a class="headerlink" href="#ton" title="Permalink to this headline">¶</a></h2>
+<p>Ton entsteht durch Vibration der Luft.
+Unser Ohr erkennt die oszillierende Druckveränderung und es entsteht Ton.
+Die Oszillation lässt sich als periodische Funktion über die Zeit darstellen.
+Ton ist nichts anderes als eine Funktion <span class="math notranslate nohighlight">\(f(t)\)</span> der Amplitude (Lautstärke) über die Zeit <span class="math notranslate nohighlight">\(t\)</span>.
+Die Frequenz der Oszillation bestimmt die Tonhöhe.</p>
+<p>Wir können keine Funktion mit nur <strong>Strom aus</strong> und <strong>Strom an</strong> repräsentieren, da diese unendlich viele Werte annimmt.
+Wir können von der Funktion aber eine sogenannte Stichprobe (ein Sample) erstellen.
+Dazu werten wir die Funktion an endlich vielen Stellen <span class="math notranslate nohighlight">\(t = t_0, \ldots, t_n\)</span> aus und speichern die zugehörigen Werte <span class="math notranslate nohighlight">\(f(t_0), \ldots, f(t_n)\)</span> ab.
+Je mehr Punkte ein Sample für eine Sekunde Ton aufweist und je genauer wir die Amplitude an diesen Punkten treffen, desto genauer wird unsere eigentliche Funktion <span class="math notranslate nohighlight">\(f(t)\)</span> angenähert.</p>
+<div class="figure align-default" id="fig-sound-wave">
+<a class="reference internal image-reference" href="../../_images/sound-wave.png"><img alt="../../_images/sound-wave.png" src="../../_images/sound-wave.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.5 </span><span class="caption-text">Transformation des analogen Tons in ein digitales Sample.
+Links das analoge Signal und rechts das digitale Sample.
+Erst erhöhen wir die Bit-Tiefe (zweite Zeile), dann die Sample-Rate (dritte Zeile).</span><a class="headerlink" href="#fig-sound-wave" title="Permalink to this image">¶</a></p>
+</div>
+<p>Ton wird also als Folge von Zahlen repräsentiert.
+Diese Folge transformieren Lautsprecher in Vibration und damit in Ton.
+Gewöhnlich verwendet man eine sog. Sample-Rate (Stichproben-Rate) von 44.1 kHz, d.h. 44100 Stichproben pro Sekunde.
+Der Wert der Amplitude also <span class="math notranslate nohighlight">\(f(t_i)\)</span> wird heute normalerweise in 32 <em>Bits</em> also 4 <em>Byte</em> repräsentiert.</p>
+<div class="exercise admonition" id="sound-memory-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 1.10 </span>(Speicherplatz)</p>
+<div class="section" id="exercise-content">
+<p>Wie viel Speicherplatz braucht ein Song 3 Minuten Song mit einer Sample-Rate von 44.1 kHz und einer Bit-Tiefe von 32 Bits?</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="sound-memory-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#sound-memory-exercise"><span>Exercise 1.10</span></a></p>
+<div class="section" id="solution-content">
+<p>Bei <span class="math notranslate nohighlight">\(44100\)</span> Samplepunkte pro Sekunde wobei jeder Punkt 32 <em>Bits</em> kostet brauchen wir insgesamt</p>
+<div class="math notranslate nohighlight">
+\[44100 \cdot 60 \cdot 3 \cdot 32 = 32.752\]</div>
+<p>Megabyte also ca. <span class="math notranslate nohighlight">\(33\)</span> MB, was <span class="math notranslate nohighlight">\(33 \cdot 10^6 \cdot 8\)</span> <em>Bits</em> sind.</p>
+</div>
+</div>
+<p>Folgender <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code erzeugt und plottet Samples einer Sinuswelle mit der Frequenz von <span class="math notranslate nohighlight">\(1\)</span> Hz über den Zeitraum von einer Sekunde.
+Es wird eine Sample-Rate von <span class="math notranslate nohighlight">\(3, 4, 8, 16, 32\)</span> und <span class="math notranslate nohighlight">\(64\)</span> Hz verwendet.
+Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möchten Sie zu einem späteren Zeitpunkt analysieren was hier geschieht.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">sine_wave</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">freq</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sample_rate</span><span class="o">=</span><span class="mi">441000</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">sample_rate</span>   <span class="c1"># Sample-Punkte von Sekunde 0 bis sekunde Sekunden dt</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">steps</span><span class="p">)</span> <span class="c1"># in 1/sample_rate schritten</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>                  <span class="c1"># f(t) für alle Sample-Punkte</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="c1"># Sinus-Welle mit der Frequenz von 1 Hz und der Amplitude 1</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sine_wave</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1"># Verschiedene Samples, erzeugt durch verschiedene Sample-Rates</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;16&#39;</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">sample_rate</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">64</span><span class="p">]:</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Samples der Sinueswelle $</span><span class="se">\\</span><span class="s1">sin(2</span><span class="se">\\</span><span class="s1">pi </span><span class="se">\\</span><span class="s1">cdot t$) über eien Zeitraum von 1 Sekunde&#39;</span><span class="p">)</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sample_rate</span><span class="o">=</span><span class="n">sample_rate</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Sample-Rate: </span><span class="si">{</span><span class="n">sample_rate</span><span class="si">}</span><span class="s1"> Hz&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="fig-samples-plots">
+<a class="reference internal image-reference" href="../../_images/samples-plots.png"><img alt="../../_images/samples-plots.png" src="../../_images/samples-plots.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.6 </span><span class="caption-text">TODO: Löschen nachdem markdown zu ipython transformiert wurde!</span><a class="headerlink" href="#fig-samples-plots" title="Permalink to this image">¶</a></p>
+</div>
+<div class="exercise admonition" id="data-vs-algo-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 1.11 </span>(Daten vs. Algorithmen)</p>
+<div class="section" id="exercise-content">
+<p>Nehmen wir an Sie möchten den Ton einer einfachen <span class="math notranslate nohighlight">\(200\)</span> Herz Sinuswelle</p>
+<div class="math notranslate nohighlight">
+\[f(t) = \sin(200 \cdot 2\pi \cdot t),\]</div>
+<p>der sich über den Zeitraum von <span class="math notranslate nohighlight">\(10\)</span> Sekunden erstreckt, speichern.
+Wie könnten Sie diesen Ton durch extrem wenig Speicherplatz abspeichern?
+<strong>Tipp:</strong> Denken Sie an die <em>Vektorgrafik</em>.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="data-vs-algo-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#data-vs-algo-exercise"><span>Exercise 1.11</span></a></p>
+<div class="section" id="solution-content">
+<p>Anstatt zu sampeln speichern wir die Funktionsbeschreibung und den Zeitraum.
+Zum Beispiel könnten wir die Frequenz, also <span class="math notranslate nohighlight">\(200\)</span> Hz, und die <span class="math notranslate nohighlight">\(10\)</span> Sekunden abspeichern.
+Das kostet uns nur wenige <em>Bits</em>.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/06"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="2-interpretation.html" title="previous page"><span class="section-number">1.2. </span>Interpretation</a>
+    <a class='right-next' id="next-link" href="3-manipulation.html" title="next page"><span class="section-number">1.4. </span>Manipulation</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

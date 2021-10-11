@@ -1,0 +1,1440 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Binäres Zeichnen - Struktur ist Information &#8212; Computational Thinking</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Speicher - alles ist eine Liste" href="memory.html" />
+    <link rel="prev" title="2. Sprechen in der Taucherglocke" href="dive-bell.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Thinking</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/course.html">
+   1. Kurskonzept
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/1-teaching.html">
+     1.1. Lehrkonzept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/2-learn-how-to-think.html">
+     1.2. Denken lernen?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/what-is-ct.html">
+   2. Was ist Computational Thinking
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/1-informatics-and-ct.html">
+     2.1. Von der Informatik zum Computational Thinking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/2-repetition-is-the-key.html">
+     2.2. Wiederholung als Grundlage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/history.html">
+   3. Geschichte der Computer und Algorithmen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/1-ancient.html">
+     3.1. Antike
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/2-middleages.html">
+     3.2. Mittelalter bis 19. Jahrundert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/3-today.html">
+     3.3. 19. Jahrundert bis heute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/4-future.html">
+     3.4. Ausblick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04/why-ct.html">
+   4. Warum Computational Thinking?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/1-intrinsic-value.html">
+     4.1. Intrinsischer Wert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/2-usefulness.html">
+     4.2. Langfristiger Nutzen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/3-self-determination.html">
+     4.3. Selbstbestimmt durch CT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/sorting.html">
+   5. Lasst uns Denken
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/1-sort-cards.html">
+     5.1. Karten sortieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/2-sort-cards-with-python.html">
+     5.2. Karten sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/3-sort-numbers.html">
+     5.3. Zahlen sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/4-sort-anything.html">
+     5.4. Allgemeines Sortieren in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Theorie
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/information-processing.html">
+   1. Der digitale Computer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/1-basics.html">
+     1.1. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/2-interpretation.html">
+     1.2. Interpretation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/2-representation.html">
+     1.3. Repräsentationen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/3-manipulation.html">
+     1.4. Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/4-information-flow.html">
+     1.5. Der Informationskreislauf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/5-hardware-equals-software.html">
+     1.6. Berechenbarkeit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07/information.html">
+   2. Was ist Information?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/1-natural-science.html">
+     2.1. Naturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/2-formal-science.html">
+     2.2. Strukturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/3-critic.html">
+     2.3. Kritik
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/4-humanics.html">
+     2.4. Geisteswissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/5-summary.html">
+     2.5. Zusammenfassung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08/languages.html">
+   3. Programmiersprachen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/1-abstraction.html">
+     3.1. Abstraktion des Computers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/2-success-criteria.html">
+     3.2. Erfolgsfaktoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/3-imperative-vs-functional.html">
+     3.3. Imperativ vs. funktional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/4-language-evolution.html">
+     3.4. Sprachevolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/5-python.html">
+     3.5. Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/6-diversity.html">
+     3.6. Diversität
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09/the-art-of-programming.html">
+   4. Die Kunst des Programmierens
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/1-algorithms.html">
+     4.1. Algorithmen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/2-programming.html">
+     4.2. Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/3-code.html">
+     4.3. Programmiercode
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10/programming-in-python.html">
+   1. Programmieren in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/1-jupyter-notebooks.html">
+     1.1. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/2-expressions.html">
+     1.2. Ausdrücke
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/3-variables.html">
+     1.3. Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/4-invoking-functions.html">
+     1.4. Funktionsaufrufe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10/5-data-types.html">
+     1.5. Datentypen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  CT in Aktion
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="robo-world.html">
+   1. Roboterwelt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dive-bell.html">
+   2. Sprechen in der Taucherglocke
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Binäres Zeichnen - Struktur ist Information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="memory.html">
+   4. Speicher - alles ist eine Liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="name-register.html">
+   5. Namensregister
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Trash
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12/hardware-abstraction.html">
+   Abstraktion der Hardware
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../12/komplexity.html">
+   O-Notation
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/11/image-representation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#das-bildformat-informationsreprasentation">
+   3.1. Das Bildformat (Informationsrepräsentation)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-in-python">
+   3.2. Listen in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-in-python">
+   3.3. Funktionen in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bildgenerierung-informationserzeugung">
+   3.4. Bildgenerierung (Informationserzeugung)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeichnen-informationsmanipulation">
+   3.5. Zeichnen (Informationsmanipulation)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#daumenkino">
+   3.6. Daumenkino
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourier-zeichnungen-optional">
+   3.7. Fourier-Zeichnungen (optional)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="binares-zeichnen-struktur-ist-information">
+<h1><span class="section-number">3. </span>Binäres Zeichnen - Struktur ist Information<a class="headerlink" href="#binares-zeichnen-struktur-ist-information" title="Permalink to this headline">¶</a></h1>
+<div class="learngoals admonition">
+<p class="admonition-title">Lernziel</p>
+<p>In diesem Abschnitt nutzen wir zwei Zustände <strong>Strom aus</strong>, <strong>Strom an</strong> bzw. <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> um erst ein Schwarz-Weiß-Bild</p>
+<div class="figure align-default" id="fig-zero-and-one-to-bw-picture">
+<a class="reference internal image-reference" href="../../_images/zero-and-one-to-bw-picture.png"><img alt="../../_images/zero-and-one-to-bw-picture.png" src="../../_images/zero-and-one-to-bw-picture.png" style="width: 200px;" /></a>
+</div>
+<p>und schlussendlich ein Video bzw. eine Animation</p>
+<div class="figure align-default" id="fig-flower">
+<a class="reference internal image-reference" href="../../_images/flower.gif"><img alt="../../_images/flower.gif" src="../../_images/flower.gif" style="width: 200px;" /></a>
+</div>
+<p>zu repräsentieren.</p>
+<p>Diese Übung soll verdeutlichen, wie Informationen erst durch einen Interpreter eine bestimmte Bedeutung erlangen.
+Sie sollen selbst erfahren, wie durch Strukturen in einer Folge aus <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> Information entsteht.
+Sie werden diese Struktur selbst erarbeiten.</p>
+<p>In Sachen <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Programmierung lernen Sie mit mehrdimensionalen Listen und Tupeln umzugehen und wie sie Ihren Code durch Funktionen strukturieren können.</p>
+<p>Zudem werden Sie sehen, wie Sie durch <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionen in eine abstraktere Welt gelangen und in dieser denken können.
+Wir werden Probleme in viele Teilprobleme aufteilen (<strong>Dekomposition</strong>), Sie werden Ihre <strong>Mustererkennung</strong> benötigen und auch <strong>mathematisches Denken</strong> trainieren.</p>
+</div>
+<div class="section" id="das-bildformat-informationsreprasentation">
+<h2><span class="section-number">3.1. </span>Das Bildformat (Informationsrepräsentation)<a class="headerlink" href="#das-bildformat-informationsreprasentation" title="Permalink to this headline">¶</a></h2>
+<p>Wir beginnen mit einem Schwarz-Weiß-Rasterbild.
+Ein <a class="reference internal" href="../06/2-representation.html#pixel-image"><span class="std std-ref">Rasterbild</span></a> hat eine bestimmte Anzahl <span class="math notranslate nohighlight">\(m\)</span> an Pixel in <span class="math notranslate nohighlight">\(y\)</span>-Richtung (Zeilen) und eine bestimmte Anzahl <span class="math notranslate nohighlight">\(n\)</span> an Pixel in <span class="math notranslate nohighlight">\(x\)</span>-Richtung (Spalten).
+Das Bild kann als <span class="math notranslate nohighlight">\(m \times n\)</span>-Matrix aufgefasst werden.
+In unserem Fall des Schwarz-Weiß-Bilds ist jeder Pixel entweder schwarz <span class="math notranslate nohighlight">\(0\)</span> oder weiß <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<div class="exercise admonition" id="repraesentation-bw-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span>(Bits pro Pixel)</p>
+<div class="section" id="exercise-content">
+<p>Wie viele <em>Bits</em> benötigen Sie für jeden Pixel?</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="repraesentation-bw-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#repraesentation-bw-exercise"><span>Exercise 3.4</span></a></p>
+<div class="section" id="solution-content">
+<p>Jeder Pixel kann nur einen von zwei Zuständen annehmen, demnach brauchen wir pro Pixel <span class="math notranslate nohighlight">\(1\)</span> <em>Bit</em>.</p>
+</div>
+</div>
+<p>Jede Zeile des Bildes repräsentieren wir als Folge von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span>.
+Da wir unser Bild verändern möchten eignet sich in <code class="docutils literal notranslate"><span class="pre">Python</span></code> hierfür die Liste <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Ein Bild modellieren wir wiederum als eine Liste von Zeilen (Pixelstreifen) oder eben eine Liste von Listen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># 1. Zeile</span>
+           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># 2. Zeile</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># 3. Zeile</span>
+           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="c1"># 4. Zeile</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="listen-in-python">
+<h2><span class="section-number">3.2. </span>Listen in Python<a class="headerlink" href="#listen-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Mit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>greifen wir auf das Element in der <code class="docutils literal notranslate"><span class="pre">4</span></code>-ten Zeile und <code class="docutils literal notranslate"><span class="pre">6</span></code>-ten Spalte zu denn der Index einer Liste beginnt mit <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Bevor wir weiter fortfahren möchten wir ein wichtiges Merkmal der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste hervorheben.
+Sie könnten dazu geneigt sein folgender Code zu verwenden um ein Bild mit zwei identischen Zeilen zu erzeugen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">row</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Doch hierbei entsteht ein merkwürdiges Phänomen, welches die folgende Aufgabe zum Vorschein bringt.</p>
+<div class="exercise admonition" id="copy-list-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 3.5 </span>(Kopie einer Liste)</p>
+<div class="section" id="exercise-content">
+<p>Ändern Sie nun ein einzelnen Pixel und lassen Sie sich das Ergebnis anzeigen.
+Was stellen Sie fest?</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="rcopy-list-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#copy-list-exercise"><span>Exercise 3.5</span></a></p>
+<div class="section" id="solution-content">
+<p>Ändern wir einen Pixel einer Zeile, z.B. durch</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>so ändert wir sowohl <code class="docutils literal notranslate"><span class="pre">picture[0][0]</span></code> als auch <code class="docutils literal notranslate"><span class="pre">picture[1][0]</span></code>.</p>
+</div>
+</div>
+<p>Unser Bild enthält keine zwei identische Zeilen sondern zweimal die gleiche Zeile.
+Es wird nicht der Wert also <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">1]</span></code> kopiert sondern die Referenz / der Zeiger welche auf eine Liste zeigt.</p>
+<p>Um das gewünschte Ergebnis zu erzielen müssen wir die Liste und nicht ihre Referenz kopieren, hierzu bietet uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> die Listen-Methode <code class="docutils literal notranslate"><span class="pre">copy()</span></code> an:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
+</pre></div>
+</div>
+<p>Da eine Kopie der Liste (des Objekts) gemacht wird, können Sie sicher sein, dass Änderungen der Listenelemente nur jene eine Liste betreffen.
+Bedenken Sie jedoch, dass keine sog. <em>tiefe Kopie</em> gemacht wird.
+Zum Beispiel laufen Sie mit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
+<span class="n">picture2</span> <span class="o">=</span> <span class="n">picture</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">picture2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>in das gleiche Problem.</p>
+<p>Um Listen zu verketten können Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> den <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator verwenden.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Das Ergebnis ist eine neue eindimensionale Liste die alle Elemente der beiden Listen in genau jener Reihenfolge enthält.
+Allerdings unterscheidet <code class="docutils literal notranslate"><span class="pre">Python</span></code> zwischen <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">+=</span> <span class="pre">other_list</span></code> und <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">=</span> <span class="pre">mylist</span> <span class="pre">+</span> <span class="pre">other_list</span></code>!
+Ersteres, also <code class="docutils literal notranslate"><span class="pre">+=</span></code>, führt eine <a class="reference internal" href="#def-mutable"><span class="std std-ref">veränderbare</span></a> (engl. <em>mutable</em>) Addition durch, d.h. hier wird <code class="docutils literal notranslate"><span class="pre">mylist</span></code> verändert.
+Letzteres, also <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">+</span> <span class="pre">other_list</span></code>, führt eine <a class="reference internal" href="#def-mutable"><span class="std std-ref">unveränderbare</span></a> (engl. <em>immutable</em>) Addition durch, wodurch eine Kopie erzeugt wird. D.h. <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">=</span> <span class="pre">mylist</span> <span class="pre">+</span> <span class="pre">other_list</span></code> erzeugt eine völlig neue Liste und ordnet es <code class="docutils literal notranslate"><span class="pre">mylist</span></code> zu.</p>
+<div class="admonition-veranderlich-und-unveranderlichkeit admonition" id="def-mutable">
+<p class="admonition-title">Veränderlich und Un­ver­än­der­lich­keit</p>
+<p>Wir nennen ein Objekt, z.B. eine Variable, <em>veränderlich</em> (engl. <em>mutable</em>) wenn wir dessen Wert verändern können indem wir den Speicherbereich des Objekts verändern können.
+Ein Objekt ist dagegen <em>unveränderlich</em> (engl. <em>immutable</em>) wenn wir dessen Speicherbereich nicht verändern können.
+Ist ein Objekt <em>unveränderlich</em> so wird dessen Veränderung durch eine Kopie (einen neuen Speicherbereich) realisiert.
+Das Ursprungsobjekt bleibt <em>unverändert</em>.</p>
+<p>Ist eine Operation <em>unveränderlich</em> so verändert sie den Speicherbereich der Objekte, auf denen sie ausgeführt wird, nicht</p>
+</div>
+<p>Sie mögen nun denken, dass Ergebnis ist doch identisch?
+Sehen wir uns folgenden Code an:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">concat_immutable</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">):</span>
+    <span class="n">concat</span> <span class="o">=</span> <span class="n">list1</span> <span class="o">+</span> <span class="n">list2</span>
+    <span class="k">return</span> <span class="n">concat</span>
+
+<span class="k">def</span> <span class="nf">concat_mutable</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">):</span>
+    <span class="n">list1</span> <span class="o">+=</span> <span class="n">list2</span>
+    <span class="k">return</span> <span class="n">list1</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">concat_immutable</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">concat_mutable</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">concat_mutable</span></code> verändert <code class="docutils literal notranslate"><span class="pre">list1</span></code> und da es sich nicht um einen <a class="reference internal" href="../10/5-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> handelt, wird nur die Referenz kopiert und nicht die Liste <code class="docutils literal notranslate"><span class="pre">a</span></code> selbst.
+Somit wird <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code> ausgeführt und <code class="docutils literal notranslate"><span class="pre">a</span></code> wird verändert.
+Dies bezeichnen wir als sogenannten <em>Seiteneffekt</em> und in diesem Fall ist es ein unerwarteter <em>Seiteneffekt</em> den wir vermeiden sollten!
+Dennoch ist <code class="docutils literal notranslate"><span class="pre">+=</span></code> immer dann sehr sinnvoll wenn Sie eine Liste sukzessive füllen wollen.
+Denn jedesmal die gesamte Liste zu kopieren kann zu einer langen Laufzeit führen.</p>
+<div class="exercise admonition" id="mutable-vs-immutable-concat">
+<p class="admonition-title"><span class="caption-number">Exercise 3.6 </span>(Immutable vs. Mutable)</p>
+<div class="section" id="exercise-content">
+<p>Welcher der beiden Funktionen wird bei gleicher Eingabe schneller laufen und warum?
+Testen Sie beide Versionen für große <code class="docutils literal notranslate"><span class="pre">n</span></code> &gt; 0.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_range_mutable</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">number</span> <span class="o">+=</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">number</span>
+
+<span class="k">def</span> <span class="nf">my_range_immutable</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">number</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um über die Elemente einer Liste zu <em>iterieren</em>, verwendet man in <code class="docutils literal notranslate"><span class="pre">Python</span></code> das <a class="reference external" href="https://www.python-kurs.eu/python3_for-schleife.php">For-Schleife</a> und wie immer bestimmt die <a class="reference external" href="https://www.python-kurs.eu/python3_bloecke.php">Einrückung</a> die Strukturierung (<code class="docutils literal notranslate"><span class="pre">Python</span></code> verzichtet auf Klammern):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="iteration-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 3.7 </span>(Iteration)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie einen Code der jedes Pixel des Bildes einzeln durch <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgibt.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="funktionen-in-python">
+<span id="sec-python-function"></span><h2><span class="section-number">3.3. </span>Funktionen in Python<a class="headerlink" href="#funktionen-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Funktionen definieren wir mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> gefolgt vom Funktionsnamen und den <em>Argumenten</em> der Funktion sowie ihrer Logik.
+Anstatt <em>Argumente</em> sprechen wir auch von <em>Parametern</em>.
+Falls Sie mit Ihrer Funktion einen Wert, eine Liste, oder ein anderes Objekt zurückgeben möchten nutzen Sie das <code class="docutils literal notranslate"><span class="pre">return</span></code>-Schlüsselwort.
+Variablen der Funktion sind ihre Argumente und alle anderen Variablen die sie innerhalb der Funktion definieren.
+Zum Beispiel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">c</span>
+<span class="n">add</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Die Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">c</span></code> außerhalb der Funktion haben nichts mit den Variablen innerhalb oder Argumenten der Funktion zu tun.
+Sie bleiben unverändert.
+Durch den obigen Aufruf wird erhalt das Argument <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">15</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> die Referenz zu <code class="docutils literal notranslate"><span class="pre">x</span></code> außerhalb der Funktion.
+<code class="docutils literal notranslate"><span class="pre">c</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">25</span></code> und wird zurückgegeben.
+Falls <code class="docutils literal notranslate"><span class="pre">y</span></code> innerhalb der Funktion verändert wird, würde <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine neue Kopie anlegen, da es sich um einen <em>unveränderlichen</em> (<em>immutable</em>) Datentyp handelt.
+Alle <a class="reference internal" href="../10/5-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a> wie <code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">bool</span></code> aber auch <code class="docutils literal notranslate"><span class="pre">str</span></code>(Zeichenketten) und <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind unveränderlich.
+Listen jedoch nicht!</p>
+<p>Eine gute Übung ist es eine Liste zu <em>flatten</em>, d.h. aus einer mehrdimensionalen Liste, eine Liste der Dimension <span class="math notranslate nohighlight">\(1\)</span> zu machen.
+Hierbei soll die Reihenfolge der Elemente erhalten bleiben.</p>
+<div class="exercise admonition" id="flatten-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 3.8 </span>(Flatten)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">flatten(mylist)</span></code>, die die <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Liste <code class="docutils literal notranslate"><span class="pre">mylist</span></code> in eine <span class="math notranslate nohighlight">\(n-1\)</span>-dimensionale Liste transformiert.
+Zum Beispiel soll aus <code class="docutils literal notranslate"><span class="pre">[[[1,2],</span> <span class="pre">[3,3]],</span> <span class="pre">[[1,3],</span> <span class="pre">[4,5]]]</span></code>, also einer <span class="math notranslate nohighlight">\(3\)</span>-dimensionalen Liste, <code class="docutils literal notranslate"><span class="pre">[[1,2],</span> <span class="pre">[3,3],</span> <span class="pre">[1,3],</span> <span class="pre">[4,5]]</span></code>, also eine <span class="math notranslate nohighlight">\(2\)</span>-dimensionale Liste werden.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">sub_list</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sub_list</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">flatten</span><span class="p">([[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]])</span>
+</pre></div>
+</div>
+<p>In unserer Lösung bewirkt <code class="docutils literal notranslate"><span class="pre">result.append(element)</span></code> das gleich wie <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">+=</span> <span class="pre">[element]</span></code> jedoch ist die erste Version klarer zu lesen denn wir wollen das Element <code class="docutils literal notranslate"><span class="pre">element</span></code> anhängen (engl. append).</p>
+</div>
+<div class="section" id="bildgenerierung-informationserzeugung">
+<h2><span class="section-number">3.4. </span>Bildgenerierung (Informationserzeugung)<a class="headerlink" href="#bildgenerierung-informationserzeugung" title="Permalink to this headline">¶</a></h2>
+<div class="exercise admonition" id="repraesentation-pic-with-border">
+<p class="admonition-title"><span class="caption-number">Exercise 3.9 </span>(Bild generieren)</p>
+<div class="section" id="exercise-content">
+<p>Generieren Sie ein weißes <span class="math notranslate nohighlight">\(10 \times 10\)</span> Rasterbild mit einem ein Pixel breiten schwarzen Rand.
+Nutzen Sie die Programmierung um sich Zeit zu sparen!</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">center</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">top</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span> <span class="o">+</span> <span class="p">[</span><span class="n">center</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="n">top</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
+<span class="n">picture</span>
+</pre></div>
+</div>
+<p>Auch hier müssen Sie darauf achten die richtigen Kopien zu machen.
+Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim Schreiben sparen.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">List Comprehension (Python)</p>
+<p>Das <em>List Comprehension</em> ist eine kurze Syntax um aus einer bestehenden Sequenz/Liste eine neue Liste zu erzeugen.</p>
+<p><strong>Beispiel:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>oder</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>sind Kurformen von</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">newlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">newlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>und erzeugen aus der Sequenz <code class="docutils literal notranslate"><span class="pre">0,1,2,3,4,5,6,7,8,9</span></code> die Liste <code class="docutils literal notranslate"><span class="pre">[0,0,0,0,0,0,0,0,0,0]</span></code>.</p>
+</div>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-8">
+<p class="admonition-title"><span class="caption-number">Exercise 3.10 </span>(Bild manipulieren)</p>
+<div class="section" id="exercise-content">
+<p>Testen Sie ihr generiertes Bild.
+Ändern Sie den Pixel in der <span class="math notranslate nohighlight">\(5\)</span>-ten Zeile und und <span class="math notranslate nohighlight">\(5\)</span>-Spalte, sowie einen Pixeln in der ersten Spalte und einen in der ersten Zeile</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">picture</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">picture</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">picture</span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-9">
+<p class="admonition-title"><span class="caption-number">Exercise 3.11 </span>(Variables Bild generieren)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion die Ihnen ein weißes Bild mit schwarzem Rand generiert.
+Dabei soll die Breite <code class="docutils literal notranslate"><span class="pre">width</span></code> und Höhe <code class="docutils literal notranslate"><span class="pre">height</span></code> sowie die Randbreite <code class="docutils literal notranslate"><span class="pre">border_width</span></code> ein Argument der Funktion sein.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">picture</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="n">yborder</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">border_width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
+    <span class="n">xborder</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">border_width</span><span class="p">,</span><span class="n">width</span><span class="p">)</span>
+    <span class="n">top</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">yborder</span><span class="p">):</span>
+        <span class="n">picture</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">top</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+        
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">border_width</span><span class="p">):</span>
+        <span class="n">picture</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">xborder</span><span class="p">)]</span> <span class="o">+</span> 
+            <span class="p">[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">border_width</span><span class="p">)]</span> <span class="o">+</span> 
+            <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">xborder</span><span class="p">)])</span>
+    
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">border_width</span><span class="p">,</span><span class="n">height</span><span class="o">-</span><span class="n">yborder</span><span class="p">)):</span>
+        <span class="n">picture</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">top</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">picture</span>
+<span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-10">
+<p class="admonition-title"><span class="caption-number">Exercise 3.12 </span>(Variable Bildgenerierung testen)</p>
+<div class="section" id="exercise-content">
+<p>Testen Sie Ihre Funktion insbesondere für besondere Werte wie <code class="docutils literal notranslate"><span class="pre">border_width</span> <span class="pre">&gt;</span> <span class="pre">width</span></code>.</p>
+</div>
+</div>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-11">
+<p class="admonition-title"><span class="caption-number">Exercise 3.13 </span>(Variable Bildgenerierung testen)</p>
+<div class="section" id="exercise-content">
+<p>Folgende Funktion plottet Ihr Bild.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sehen Sie sich die dazugehörige <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html">Dokumentation</a> an und nutzen Sie die Funktion.</p>
+</div>
+</div>
+<p>Mit folgendem Code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>erzuegen wir</p>
+<div class="figure align-default" id="fig-border-picture">
+<a class="reference internal image-reference" href="../../_images/border-picture.png"><img alt="../../_images/border-picture.png" src="../../_images/border-picture.png" style="height: 150px;" /></a>
+</div>
+</div>
+<div class="section" id="zeichnen-informationsmanipulation">
+<h2><span class="section-number">3.5. </span>Zeichnen (Informationsmanipulation)<a class="headerlink" href="#zeichnen-informationsmanipulation" title="Permalink to this headline">¶</a></h2>
+<p>Wir haben bereits jetzt ein neues Bildformat geschaffen und ein kleines Programm, welches unser Format interpretieren und als Rasterbild anzeigt.
+Jetzt können wir uns austoben und weitere Bilder generieren.
+Wie wäre es zum Beispiel mit einem Kreis, Rechteck oder Dreieck?
+Diese Objekte direkt als Ansammlung von Pixeln zu beschreiben ist schwierig und unflexibel.
+Was uns das Leben deutlich leichter macht ist die Anwendung der <strong>Abstraktion</strong>.
+Wir starten mit den geometrischen mathematischen Objekten Kreis, Rechteck und Dreieck und überlegen uns eine Funktion die diese Objekte <strong>digitalisiert</strong>.</p>
+<div class="figure align-default" id="fig-point-to-pixel">
+<a class="reference internal image-reference" href="../../_images/point-to-pixel.png"><img alt="../../_images/point-to-pixel.png" src="../../_images/point-to-pixel.png" style="height: 350px;" /></a>
+</div>
+<p>Unsere geometrischen Objekte haben reelle Koordinaten z.B. können wir einen Kreis durch seinen Mittelpunkt <span class="math notranslate nohighlight">\(c = (x,y)\)</span> und Radius <span class="math notranslate nohighlight">\(r\)</span> eindeutig beschreiben.
+Um die Koordinaten in Pixelkoordinaten zu transformieren legen wir auf das Rasterbild ein reeles Koordinatensystem.
+Hat unser Bild <span class="math notranslate nohighlight">\(n \times n\)</span> Pixelbild und wir möchten den Raum <span class="math notranslate nohighlight">\(10 \times 10 \subset \mathbb{R}^2\)</span> durch das Bild abbilden, entspricht die erste Bildzeile dem Raum <span class="math notranslate nohighlight">\(10 \times 1\)</span>.
+Um keine Verzerrung zu erhalten sollten Pixel in <span class="math notranslate nohighlight">\(x\)</span> und in <span class="math notranslate nohighlight">\(y\)</span> Richtung gleich viel Anteil des Euklidischen Raumes überziehen.
+Die Auflösung <code class="docutils literal notranslate"><span class="pre">resolution</span></code> gibt an wie viel Raum ein Pixel repräsentiert.
+Bei einer <code class="docutils literal notranslate"><span class="pre">resolution</span> <span class="pre">=</span> <span class="pre">0.1</span></code> repräsentiert ein Pixel den Raum <span class="math notranslate nohighlight">\(0.1 \times 0.1\)</span>.
+Anders ausgedrückt, braucht es <span class="math notranslate nohighlight">\(10 \times 10\)</span> Pixel um den Raum <span class="math notranslate nohighlight">\(1 \times 1\)</span> im <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> zu repräsentieren.</p>
+<p>Kennen wir die <code class="docutils literal notranslate"><span class="pre">resolution</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(x\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">cols</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(y\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">rows</span></code> und gehen davon aus, dass der Raum <span class="math notranslate nohighlight">\(R\)</span> den wir Abbilden möchten in <span class="math notranslate nohighlight">\((0,0)\)</span> beginnt und nur positive Werte enthält also <span class="math notranslate nohighlight">\(R = [0;w] \times [0;h]\)</span>, dann können wir für einen gegebenen Punkt <span class="math notranslate nohighlight">\(p = (x,y) \in \mathbb{R}^2\)</span> den Pixel <span class="math notranslate nohighlight">\((i,j) \in \mathbb{N}^2\)</span> berechnen der <span class="math notranslate nohighlight">\(p\)</span> enthält.</p>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-12">
+<p class="admonition-title"><span class="caption-number">Exercise 3.14 </span>(Pixel berechnen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">to_pixel(p,</span> <span class="pre">resolution)</span></code> die Ihnen den Pixel <code class="docutils literal notranslate"><span class="pre">(i,j)</span></code> zurückgibt der den Punkt <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">(x,y)</span></code> enthält.
+Bedenken Sie, dass wir Pixel beginnend mit <span class="math notranslate nohighlight">\(0\)</span> zählen.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_pixel</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">resolution</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="o">/</span> <span class="n">resolution</span><span class="p">)</span>
+
+<span class="n">to_pixel</span><span class="p">((</span><span class="mf">0.7</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Soweit so gut!
+Widmen wir uns nun dem Problem ein Rechteck bzw. Dreieck zu zeichnen.
+Wir wenden die <strong>Mustererkennung</strong> an und bemerken, dass sowohl das Dreieck als auch Rechteck aus Segmenten besteht (drei für das Dreieck und 4 für das Rechteck).
+Deshalb können wir das Problem in das Zeichnen mehrere Segmente <strong>zerteilen</strong>.</p>
+<p>Ein Segment ist definiert durch zwei Punkte <span class="math notranslate nohighlight">\(p_1 = (x_1, y_1)\)</span> und <span class="math notranslate nohighlight">\(p_2 = (x_2, y_2)\)</span>.
+Wir könnten aus den Punkten die Geradengleichung <span class="math notranslate nohighlight">\(f(x) = mx + t\)</span> berechnen und diese ‘abfahren’.
+Hier würden wir jedoch auf unangenehme Sonderfälle stoßen.
+Zum Beispiel, lässt sich ein Segment was parallel zur <span class="math notranslate nohighlight">\(y\)</span>-Achse verläuft nicht durch eine Funktion beschreiben.</p>
+<div class="figure align-default" id="fig-midpoint">
+<a class="reference internal image-reference" href="../../_images/midpoint.png"><img alt="../../_images/midpoint.png" src="../../_images/midpoint.png" style="width: 300px;" /></a>
+</div>
+<p>Was sagt uns folgende Beobachtung:
+Ist <span class="math notranslate nohighlight">\(p_1, p_2\)</span> gegeben dann ist der Mittelpunkt <span class="math notranslate nohighlight">\(m_1 = ((x_1 + x_2)/2, (y_1 + y_2)/2)\)</span> Teil des Segments.
+Außerdem erhalten wir neue Segmente <span class="math notranslate nohighlight">\((p_1,m_1)\)</span> und <span class="math notranslate nohighlight">\((m_1,p_2)\)</span>.
+Wir können dies mit den beiden neuen Segmenten wiederholen und erhalten vier neue Segmente.
+Diesen Vorgang können wir solange fortsetzen, bis ein Segment komplett in einem Pixel enthalten ist und eine weitere Verfeinerung keine Wirkung mehr erzeugt.</p>
+<p>Wir können diesen Vorgang <strong>rekursiv</strong> realisieren.
+Das heißt die Funktion, welche den Mittelpunkt berechnet, wird innerhalb dieser Funktion erneut aufgerufen.
+Das kann endlos so weiter gehen und wir müssen uns eine <strong>Abbruchbedingung</strong> überlegen.</p>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-13">
+<p class="admonition-title"><span class="caption-number">Exercise 3.15 </span>(Mittelpunkt berechnen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">midpoint(p1,</span> <span class="pre">p2)</span></code> die Ihnen den Mittelpunkt <code class="docutils literal notranslate"><span class="pre">(mx,my)</span></code> des Segments <code class="docutils literal notranslate"><span class="pre">(p1=(x1,y1),</span> <span class="pre">p2=(x2,</span> <span class="pre">y2))</span></code> zurückgibt.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">midpoint</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="n">midpoint</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-14">
+<p class="admonition-title"><span class="caption-number">Exercise 3.16 </span>(Mittelpunkt berechnen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)</span></code> die Ihnen den Mittelpunkt die Länge des Segments <code class="docutils literal notranslate"><span class="pre">(p1=(x1,y1),</span> <span class="pre">p2=(x2,</span> <span class="pre">y2))</span></code> zurückgibt.</p>
+<p><strong>Tipp:</strong> Sie können die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> der <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Bibliothek verwenden, d.h.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">...</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">distance()</span></code> können wir als Abbruchbedingung der Rekursion verwenden.
+Ist <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)</span> <span class="pre">&lt;=</span> <span class="pre">resolution</span></code> macht es keinen großen Sinn mehr das Segment <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> weiter zu verkleinern.</p>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-15">
+<p class="admonition-title"><span class="caption-number">Exercise 3.17 </span>(Segmentpunkte erzeugen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">line(p1,</span> <span class="pre">p2,</span> <span class="pre">resolution)</span></code>, die Ihnen Punkte des Segments <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> erzeugt und als Liste zurückgibt.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">points</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">resolution</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">points</span>
+    <span class="n">m1</span> <span class="o">=</span> <span class="n">midpoint</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
+    <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+    <span class="n">split</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="n">resolution</span><span class="p">,</span><span class="n">points</span><span class="p">)</span>
+    <span class="n">split</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">resolution</span><span class="p">,</span><span class="n">points</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">points</span>
+
+<span class="k">def</span> <span class="nf">line</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">split</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">points</span>
+<span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">line</span></code> können nun Punkte eines Segments erzeugen und durch <code class="docutils literal notranslate"><span class="pre">to_pixel</span></code> können wir diese Punkte in Pixel umwandeln.
+Lassen Sie uns nun einmal ein Bild mit einer Geraden zeichen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">line</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="n">resolution</span><span class="p">)</span>
+<span class="n">pixels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">point</span><span class="p">:</span> <span class="n">to_pixel</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">resolution</span><span class="p">),</span> <span class="n">points</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">pixels</span><span class="p">:</span>
+    <span class="n">picture</span><span class="p">[</span><span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+    
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Das sieht schon recht gut aus.
+Da der Pixel <code class="docutils literal notranslate"><span class="pre">picture[0][0]</span></code> rechts oben ist, ist unser Koordinatensystem an der <span class="math notranslate nohighlight">\(x\)</span>-Achse gespiegelt und nach oben verschoben, was wir jedoch hier vernachlässigen.</p>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-16">
+<p class="admonition-title"><span class="caption-number">Exercise 3.18 </span>(Linie zeichnen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_line(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">resolution)</span></code>, die das Segment <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
+Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll dann kein Fehler kommen sondern der Teil der nicht hinein passt wird abgeschnitten).</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contains_pixel</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">pixel</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span> <span class="ow">and</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="n">points</span><span class="o">=</span> <span class="n">line</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">pixels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">point</span><span class="p">:</span> <span class="n">to_pixel</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">resolution</span><span class="p">),</span> <span class="n">points</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">pixels</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">contains_pixel</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">pixel</span><span class="p">):</span>
+            <span class="n">picture</span><span class="p">[</span><span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span> <span class="n">resolution</span><span class="p">)</span>
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Jetzt haben wir alle Teilprobleme gelöst und können das Dreieck bzw. Rechteck zeichnen.</p>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-17">
+<p class="admonition-title"><span class="caption-number">Exercise 3.19 </span>(Dreieck zeichnen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_triangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">resolution)</span></code> die das Dreieck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_triangle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    
+<span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_triangle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">resolution</span><span class="p">)</span>
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-18">
+<p class="admonition-title"><span class="caption-number">Exercise 3.20 </span>(Rechteck zeichnen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_rectangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">p4,</span> <span class="pre">resolution)</span></code> die das Rechteck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3,p4)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_rectangle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    
+<span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_rectangle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">resolution</span><span class="p">)</span>
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Wenn wir uns nun die beiden Funktionen <code class="docutils literal notranslate"><span class="pre">draw_triangle</span></code> und <code class="docutils literal notranslate"><span class="pre">draw_rectangle</span></code> genauer ansehen und unsere <strong>Mustererkennung</strong> aktivieren könnte uns etwas auffallen?
+Die Funktionen gleichen sich!
+Beide zeichnen eine Sequenz/Liste von zusammenhängenden Segmenten oder anders gesagt: beide zeichnen ein Polygon!</p>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-19">
+<p class="admonition-title"><span class="caption-number">Exercise 3.21 </span>(Polygon zeichnen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_polygon(picture,</span> <span class="pre">polygon,</span> <span class="pre">resolution)</span></code> die das Polygon <code class="docutils literal notranslate"><span class="pre">polygon</span> <span class="pre">=</span> <span class="pre">(p1,p2,p3,p4,p5,...)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
+<code class="docutils literal notranslate"><span class="pre">polygon</span></code> kann eine Liste oder Tupel sein.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_polygon</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">polygon</span><span class="p">)):</span>
+        <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">polygon</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">polygon</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">resolution</span><span class="p">)</span>
+    
+<span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_polygon</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="n">resolution</span><span class="p">)</span>
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dreieck und Reckteck hätten wir geschafft.
+Für den Kreis <span class="math notranslate nohighlight">\(K\)</span> müssen wir zurück in unsere <strong>abstrakte</strong> Welt der geometrischen Objekte, denn einen Kreis nicht mit lauter Segmenten darzustellen macht wenig Sinn.
+Die Punkte eines Kreises lassen sich durch eine <em>Kurve</em> beschreiben.
+Sie der Kreis durch seinen Mittelpunkt <span class="math notranslate nohighlight">\(m = (x_m, y_m)\)</span> und den radius <span class="math notranslate nohighlight">\(r\)</span> beschrieben dann sind</p>
+<div class="math notranslate nohighlight">
+\[K = \{(x_m + \cos(t) \cdot r, y_m + \sin(t) \cdot r) : t \in [0;2\pi]\}\]</div>
+<p>die Punkte des Kreises bzw. der Kreis selbst.
+Um den Kreis zu zeichnen unterteilen wir einfach das Intervall <span class="math notranslate nohighlight">\([0;2\pi]\)</span> in <span class="math notranslate nohighlight">\(n\)</span> Teile und erhalten so <span class="math notranslate nohighlight">\(n\)</span> Punkte.
+Wir könnten z.B. <span class="math notranslate nohighlight">\(n\)</span> so wählen dass <span class="math notranslate nohighlight">\(2\pi / n &lt;\)</span> <code class="docutils literal notranslate"><span class="pre">resolution</span></code> ist.</p>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-20">
+<p class="admonition-title"><span class="caption-number">Exercise 3.22 </span>(Kreis zeichnen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_circle(picture,</span> <span class="pre">circle,</span> <span class="pre">resolution)</span></code> die den Kreis <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">(m=(x,y),</span> <span class="pre">r)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
+Sie können erneut <code class="docutils literal notranslate"><span class="pre">numpy</span></code> verwenden, d.h. <code class="docutils literal notranslate"><span class="pre">np.sin()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.cos()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> und (optional) <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">draw_circle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">circle</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="n">circle</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="n">circle</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span> <span class="o">*</span> <span class="n">radius</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span> <span class="o">*</span> <span class="n">radius</span>
+        <span class="n">pixel</span> <span class="o">=</span> <span class="n">to_pixel</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">resolution</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">contains_pixel</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">pixel</span><span class="p">):</span>
+            <span class="n">picture</span><span class="p">[</span><span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+    
+<span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_circle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">),</span> <span class="n">resolution</span><span class="p">)</span>
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Im Falle des Kreises beschreibt</p>
+<div class="math notranslate nohighlight">
+\[k(t) = (x_m + \cos(t) \cdot r, y_m + \sin(t) \cdot r)\]</div>
+<p>die <em>Kurve</em> des Kreises.
+Wir können aber auch andere <em>Kurven</em> wir zum Beispiel die Funktion <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> durch die <em>Kurve</em> <span class="math notranslate nohighlight">\(k(t) = (t, f(t))\)</span> zeichnen.
+Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgemeinen nicht so einfach zu schätzen.</p>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-21">
+<p class="admonition-title"><span class="caption-number">Exercise 3.23 </span>((mathematische) Funktion zeichnen)</p>
+<div class="section" id="exercise-content">
+<p>Suchen Sie sich irgendeine geeignete Funktion aus und zeichnen Sie diese in einem geeigneten Intervall.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">draw_function</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+        <span class="n">pixel</span> <span class="o">=</span> <span class="n">to_pixel</span><span class="p">((</span><span class="n">dt</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">dt</span><span class="p">)),</span> <span class="n">resolution</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">contains_pixel</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">pixel</span><span class="p">):</span>
+            <span class="n">picture</span><span class="p">[</span><span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+            
+<span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_function</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="daumenkino">
+<h2><span class="section-number">3.6. </span>Daumenkino<a class="headerlink" href="#daumenkino" title="Permalink to this headline">¶</a></h2>
+<p>Die folgende Methode erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots) und falls Sie das Argument <code class="docutils literal notranslate"><span class="pre">save</span></code> auf <code class="docutils literal notranslate"><span class="pre">True</span></code> setzen wird ein GIF (eine Bildfolge/Daumenkino/Minivideo) erzeugt und in der Datei <code class="docutils literal notranslate"><span class="pre">'binary-drawing.gif'</span></code> abgespeichert.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span><span class="p">,</span> <span class="n">rc</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">pictures</span><span class="p">,</span> <span class="n">interval</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">save</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">80</span><span class="p">):</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span>
+    <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">vmax</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">pictures</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">animated</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="n">vmax</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="c1"># trick to enforce sideeffect</span>
+    <span class="k">def</span> <span class="nf">updatefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">i</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">pictures</span><span class="p">):</span>
+            <span class="n">i</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">im</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">pictures</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]])</span>
+        <span class="k">return</span> <span class="n">im</span><span class="p">,</span> 
+    <span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">updatefig</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_count</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pictures</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">save</span><span class="p">:</span>
+        <span class="n">ani</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;binary-drawing.gif&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="s2">&quot;imagemagick&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">ani</span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-22">
+<p class="admonition-title"><span class="caption-number">Exercise 3.24 </span>(Einfaches Daumenkino)</p>
+<div class="section" id="exercise-content">
+<p>Generieren Sie folgendes GIF/Daumenkino bzw. Animation:</p>
+<div class="figure align-default" id="fig-daumenkino">
+<a class="reference internal image-reference" href="../../_images/daumenkino.gif"><img alt="../../_images/daumenkino.gif" src="../../_images/daumenkino.gif" style="height: 150px;" /></a>
+</div>
+<p><strong>Tipp:</strong> Sie benötigen lediglich mehrere Aufrufe von <code class="docutils literal notranslate"><span class="pre">generate_border_picture()</span></code>.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">increase</span> <span class="o">=</span> <span class="p">[</span><span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">decrease</span> <span class="o">=</span> <span class="p">[</span><span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="p">(</span><span class="n">size</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="n">size</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">border_pictures</span> <span class="o">=</span> <span class="n">increase</span> <span class="o">+</span> <span class="n">decrease</span>
+<span class="n">ani</span> <span class="o">=</span> <span class="n">animate</span><span class="p">(</span><span class="n">border_pictures</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Fassen wir noch einmal kurz zusammen was wir bis jetzt geschafft haben:
+Wir haben uns ein Format für ein Schwarz-Weiß-Bild ausgedacht und umgesetzt.
+Durch ein wenig Hilfe externer Bibliotheken können wir unser Rasterbild anzeigen.
+Wir haben Algorithmen implementiert die uns Polygone (inkl. Dreiecke und Rechtecke), Kreise und sogar Funktionen zeichnen.
+Und jetzt haben wir sogar die Möglichkeit aus einer Folge von Bildern ein kleines Video zu generieren.
+Dieses Video wiederum ist nichts anderes als eine Liste von Listen von Listen von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span>.
+Wir haben nun die Möglichkeit eine unbegrenzte Menge an Animationen zu erzeugen, von bewegten geometrischen Objekten bis hin zum <a class="reference external" href="https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens">Game Of Life</a> - Ihre Kreativität ist das Limit.</p>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-23">
+<p class="admonition-title"><span class="caption-number">Exercise 3.25 </span>(Simulation eines Partikels)</p>
+<div class="section" id="exercise-content">
+<p>Generieren Sie eine Animation ein Partikel (einen Ball) der sich in einer Box bewegt, d.h. der Ball bewegt sich mit konstanter Geschwindigkeit und prallt von der Wand ab.</p>
+<div class="figure align-default" id="fig-daumenkino-ball">
+<a class="reference internal image-reference" href="../../_images/daumenkino_ball.gif"><img alt="../../_images/daumenkino_ball.gif" src="../../_images/daumenkino_ball.gif" style="height: 150px;" /></a>
+</div>
+<p><strong>Tipps:</strong> Schreiben Sie erst eine Methode die einen <em>Kreis</em> <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">(m</span> <span class="pre">=</span> <span class="pre">(x,y),</span> <span class="pre">r)</span></code> in einer Box fortbewegt und diese Bewegung als Liste von Kreisen zurückgibt.
+Anschließend können Sie mit <code class="docutils literal notranslate"><span class="pre">draw_circle()</span></code> diese Liste in eine Liste von Bildern umwandeln. Bedenken Sie, dass sie für jeden Kreis ein neues Bild durch <code class="docutils literal notranslate"><span class="pre">generate_border_picture()</span></code> generieren müssen.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_ball_box</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">circle</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="n">resolution</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="n">resolution</span><span class="p">)</span>
+    <span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ball</span> <span class="o">=</span> <span class="n">draw_circle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">circle</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">picture</span>
+
+<span class="k">def</span> <span class="nf">animate_ball</span><span class="p">(</span><span class="n">nframes</span><span class="p">):</span>
+    <span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="n">box_width</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">box_height</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">velocity</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.3</span><span class="p">]</span>
+    
+    <span class="n">animation</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nframes</span><span class="p">):</span>
+        <span class="c1"># collision detection</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">-</span> <span class="n">radius</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">&gt;=</span> <span class="n">box_width</span><span class="p">:</span>
+            <span class="n">velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">y</span> <span class="o">-</span> <span class="n">radius</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">&gt;=</span> <span class="n">box_height</span><span class="p">:</span>
+            <span class="n">velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">time</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">time</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">radius</span><span class="p">)</span>
+        <span class="n">animation</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">generate_ball_box</span><span class="p">(</span><span class="n">box_width</span><span class="p">,</span><span class="n">box_height</span><span class="p">,</span><span class="n">circle</span><span class="p">,</span><span class="n">resolution</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">animation</span>
+
+<span class="n">ani</span> <span class="o">=</span> <span class="n">animate</span><span class="p">(</span><span class="n">animate_ball</span><span class="p">(</span><span class="n">nframes</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-24">
+<p class="admonition-title"><span class="caption-number">Exercise 3.26 </span>(Eigenes Daumenkino)</p>
+<div class="section" id="exercise-content">
+<p>Erzeugen Sie Ihr eigenes Daumenkino. Vielleicht ein bewegtes Dreieck oder eine fortlaufende Sinuswelle oder etwas ganz anderes?</p>
+</div>
+</div>
+</div>
+<div class="section" id="fourier-zeichnungen-optional">
+<h2><span class="section-number">3.7. </span>Fourier-Zeichnungen (optional)<a class="headerlink" href="#fourier-zeichnungen-optional" title="Permalink to this headline">¶</a></h2>
+<p>Was nun folgt ist ein sich Austoben in der Welt die wir uns geschaffen haben.
+Wir möchten Ihnen eine ganz bestimmte Zeichenmethode nicht vorenthalten.
+Stellen Sie sich ein Blatt Papier vor.
+Auf diesem zeichnen Sie einen Kreis <span class="math notranslate nohighlight">\(K_0\)</span>.
+Anhand dieses Kreises zeichnen Sie einen weiteren Kreis <span class="math notranslate nohighlight">\(K_1\)</span> sodass der Mittelpunkt von <span class="math notranslate nohighlight">\(K_1\)</span> während Sie zeichnen auf <span class="math notranslate nohighlight">\(K_0\)</span> wandert.
+Nachdem Sie fertig sind, löschen <span class="math notranslate nohighlight">\(K_0\)</span>.
+Ihr Ergebnis hängt davon ab wie schnell sie auf <span class="math notranslate nohighlight">\(K_0\)</span> wandern und wie schnell Sie <span class="math notranslate nohighlight">\(K_1\)</span> zeichen, d.h. das Ergebnis hängt von den Frequenzen ab.
+Zeichnen Sie beide Kreise mit der gleichen Frequenz und starten beide Kreise bei <span class="math notranslate nohighlight">\(y = 0\)</span> so ist <span class="math notranslate nohighlight">\(K_1\)</span> ein Kreis wobei dessen Radius die Summe der Radii der beiden Kreise ist.</p>
+<p>Angenommen <span class="math notranslate nohighlight">\(K_0(t) = (x_0 + \cos(\omega_0 \cdot t) \cdot r_0, y_0 + \sin(\omega_0 \cdot t) \cdot r_0)\)</span> und <span class="math notranslate nohighlight">\(K_1(t) = (\cos(\omega_1 \cdot t) \cdot r_1, \sin(\omega_1 \cdot t) \cdot r_1)\)</span> dann gilt für ihre gezeichnete Kurve</p>
+<div class="math notranslate nohighlight">
+\[K(t) = K_0(t) + K_1(t)\]</div>
+<p>Wir können das weiter verallgemeinen und von <span class="math notranslate nohighlight">\(n\)</span> Kreisen ausgehen, dann gilt für ihre Zeichnung:</p>
+<div class="math notranslate nohighlight">
+\[K(t) = \sum_{i=0}^{n-1} K_i(t)\]</div>
+<div class="exercise admonition" id="chapters/11/image-representation-exercise-25">
+<p class="admonition-title"><span class="caption-number">Exercise 3.27 </span>(Fourier-Zeichnungen)</p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_circular(picture,</span> <span class="pre">center,</span> <span class="pre">frequencies,</span> <span class="pre">radii,</span> <span class="pre">resolution,</span> <span class="pre">start</span> <span class="pre">stop)</span></code>, die die oben beschriebene Zeichentechnik implementiert.
+Dabei soll <code class="docutils literal notranslate"><span class="pre">center</span></code> gleich <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, <code class="docutils literal notranslate"><span class="pre">frequencies</span></code> eine Liste die alle Frequenzen <span class="math notranslate nohighlight">\(\omega_0, \ldots \omega_{n-1}\)</span> und <code class="docutils literal notranslate"><span class="pre">radii</span></code> eine Liste die alle Radii <span class="math notranslate nohighlight">\(r_0, \ldots, r_{n-1}\)</span> enthält sein.
+<code class="docutils literal notranslate"><span class="pre">start</span></code> und <code class="docutils literal notranslate"><span class="pre">stop</span></code> sollen ihr (Zeichen-)Intervall definieren.</p>
+<p>Als Motivation hier ein Beispiel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_circular</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">resolution</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ergibt</p>
+<div class="figure align-default" id="fig-fourier-drawing">
+<a class="reference internal image-reference" href="../../_images/fourier-drawing.png"><img alt="../../_images/fourier-drawing.png" src="../../_images/fourier-drawing.png" style="height: 150px;" /></a>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_circular</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">frequencies</span><span class="p">,</span> <span class="n">radii</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">frequencies</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">stop</span><span class="o">-</span><span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="n">resolution</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">frequencies</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">radii</span><span class="p">))):</span>
+            <span class="n">radius</span> <span class="o">=</span> <span class="n">radii</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">frequency</span> <span class="o">=</span> <span class="n">frequencies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">frequency</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span> <span class="o">*</span> <span class="n">radius</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">frequency</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span> <span class="o">*</span> <span class="n">radius</span>
+        
+        <span class="n">pixel</span> <span class="o">=</span> <span class="n">to_pixel</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">resolution</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">contains_pixel</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">pixel</span><span class="p">):</span>
+            <span class="n">picture</span><span class="p">[</span><span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+            
+<span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">draw_circular</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span> <span class="n">resolution</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Es ergeben sich interessante Fragen.
+Zum Beispiel, mit welchen Argumenten erhalten Sie ein <strong>harmonisches</strong> (ein eher einfaches) Bild und warum?
+Wann erhalten Sie hingegen ein komplexeres Gebilde?
+Was hat das mit den <strong>harmonischen</strong> bzw. <strong>unharmonischen</strong> Schwingungen und einem <strong>harmonischen</strong> bzw. <strong>unharmonischen</strong> Ton zu tun?
+Können wir durch unsere Zeichenmethode Ton zeichnen?</p>
+<p>Falls Sie sich mehr mathematisches Wissen zu diesem Thema aneignen möchten, ist folgendes exzellentes Video von <strong>Grant Sanderson</strong> ein wunderbarer Einstieg:</p>
+<div style="display: block;margin-left: auto;margin-right: auto;width: 632px;">
+<iframe width="632" height="276" src="https://www.youtube.com/embed/r6sGWTCMz2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/11"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="dive-bell.html" title="previous page"><span class="section-number">2. </span>Sprechen in der Taucherglocke</a>
+    <a class='right-next' id="next-link" href="memory.html" title="next page"><span class="section-number">4. </span>Speicher - alles ist eine Liste</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

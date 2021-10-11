@@ -1,0 +1,37 @@
+title: Computational Thinking
+logo: figs/logo-HM.png
+author: Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger
+email: zoennchen.benedikt@hm.edu
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "de_computational-thinking.md", "Planung-Computational-Thinking-ALLGEMEIN.md", "README.md"]
+only_build_toc_files: true
+
+bibtex_bibfiles:
+  - references.bib
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: auto
+
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+sphinx:
+  extra_extensions:
+  - sphinx_exercise
+  - sphinx_inline_tabs
+  config:
+    myst_enable_extensions: ["dollarmath", "amsmath", "colon_fence"]
+    myst_heading_anchors : 3
+
+# Information about where the book exists on the web
+repository:
+  url                       : https://github.com/BZoennchen/ct-book  # Online location of your book
+  branch                    : master  # Which branch of the repository should be used when creating links (optional)
+
+launch_buttons:
+  binderhub_url: https://mybinder.org  # The URL for your BinderHub (e.g., https://mybinder.org)
+  jupyterhub_url: https://datahub.cs.hm.edu/  # The URL for your JupyterHub. (e.g., https://datahub.berkeley.edu)
