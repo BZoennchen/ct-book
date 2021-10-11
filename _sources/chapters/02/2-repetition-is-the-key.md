@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Wiederholung als Grundlage
 
 [Computational Thinking](sec-what-is-ct) beginnt normalerweise dort wo alle Denkprozesse beginnen: in den Köpfen der Menschen.
@@ -24,7 +36,8 @@ Die selben Anweisungen könnten wir auch einem Menschen mitgeben, jedoch können
 Solange sich eine Problemlösung (unsere Musikkomposition) durch Wiederholung ausdrücken lässt, kann sie durch endlich viel Programmcode (Noten) beschrieben und damit (theoretisch) gelöst (aufgeführt) werden.
 Die Komplexität des Programmcodes (die länge des Stücks) entkoppelt sich von der Komplexität der ausgeführten Berechnung (der Aufführung).
 Zum Beispiel beschreibt folgender ``Python``-code die Berechnung der Summe aller Quadratzahlen von ``1`` bis ``n+1``.
-```python
+
+```{code-cell} python3
 def sum_sqrt(n):
     sum_sqrt = 0
     for i in range(n):
