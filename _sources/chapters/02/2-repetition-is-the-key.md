@@ -1,11 +1,11 @@
 ---
 jupytext:
-  formats: md:myst
+  formats: md:myst,ipynb
   text_representation:
     extension: .md
     format_name: myst
-    format_version: '1.1'
-    jupytext_version: 1.1.0
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -13,7 +13,6 @@ kernelspec:
 ---
 
 # Wiederholung als Grundlage
-
 
 ```{code-cell} ipython3
 def sum_sqrt(n):
