@@ -37,7 +37,7 @@ Solange sich eine Problemlösung (unsere Musikkomposition) durch Wiederholung au
 Die Komplexität des Programmcodes (die länge des Stücks) entkoppelt sich von der Komplexität der ausgeführten Berechnung (der Aufführung).
 Zum Beispiel beschreibt folgender ``Python``-code die Berechnung der Summe aller Quadratzahlen von ``1`` bis ``n+1``.
 
-```{code-cell} python3
+```{code-cell} ipython3
 def sum_sqrt(n):
     sum_sqrt = 0
     for i in range(n):
