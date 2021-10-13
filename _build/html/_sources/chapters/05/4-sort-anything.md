@@ -97,6 +97,7 @@ addmul(2,5)
 Wir sparen uns damit ein paar Zeilen Code, da wir die definierte Funktion außerhalb des Aufrufs
 
 ```{code-cell} python3
+numbers = [-33, -22, 123, 1, 13, 533, -23, 124]
 stack_sort(numbers, lambda a, b: a < b)
 ```
 
