@@ -19,15 +19,15 @@ Die Multiplikation wird durch den Computer, genauer die [CPU](def-cpu) berechnet
 3 * 5
 ```
 
-Die [Syntax](def-syntax) einer Programmiersprache ist strickt.
-Sie wird oftmals durch eine sog. *Grammatik* definiert.
+Die [Syntax](def-syntax) einer Programmiersprache ist strikt.
+Sie wird durch eine sog. *Grammatik* definiert.
 Zum Beispiel ist folgender *Ausdruck* fehlerhaft, da er der nicht durch die *Grammatik* von ``Python`` definiert ist.
 
 ```python
 3 * * 5
 ```
 
-Der Computer weiß mit dieser folge an Symbolen nichts anzufangen.
+Der Computer weiß mit dieser Folge an Symbolen nichts anzufangen.
 Wir werden vom [Interpreter](def-interpreter) sachlich auf die mögliche Fehlerursache hingewiesen.
 Bereits kleiner Änderungen an der [Syntax](def-syntax) können zu einer neuen Bedeutung ([Semantik](def-semantik)) führen.
 In ``Python`` ist der *Ausdruck*
@@ -36,7 +36,8 @@ In ``Python`` ist der *Ausdruck*
 3 ** 5
 ```
 
-syntaktisch korrekt und steht für die Berechnung von $3^5 = 243$.
+syntaktisch korrekt.
+Seine [Semantik](def-semantik) ist $3^5$ was zu $243$ *ausgewertet* wird.
 Dies ist eine Besonderheit, denn in kaum einer anderen Sprache gibt es für die Potenz ein derart kurze Schreibweise.
 
 (sec-python-operator-arithmetic)=
