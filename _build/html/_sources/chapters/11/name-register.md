@@ -700,6 +700,9 @@ Schreiben Sie eine Funktion ``get_names(char, names_by_letter)``, die Ihnen für
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-output]
+---
 def get_names(char, names_by_letter):
     return names_by_letter[index_of(char)]
 
