@@ -24,7 +24,7 @@ Wir können also durch Komposition von bereits existierenden Bauteilen ein neues
 Doch genauso gut können wir durch Programmcode den Addierer mehrfach aufrufen und erhalten so das gleiche Endergebnis.
 
 ```{code-cell} python3
-:tags: [hide-code]
+:tags: [hide-input]
 # Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung
 def to_binary(number):
     binary_number = []
@@ -50,7 +50,7 @@ def ladd(a,b): # Wir nehmen an diese Funktion wird durch Bauteile/Hardware umges
     return to_binary(to_decimal(a) + to_decimal(b))
 
 def mul(a, b):  # Wir nehmen an diese Funktion durch Code/Software umgesetzt
-    result = a
+    result = 0
     for _ in range(to_decimal(b)): # Python versteht unser Binärsystem nicht
         result = ladd(result,a)
     return result

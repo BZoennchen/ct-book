@@ -613,7 +613,7 @@ Wir haben gesehen, wie dies durch ein <strong>Gatterzusammenschluss</strong> (si
 <p>Um zwei Zahlen <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> zu multiplizieren könnten wir aus mehreren Addierern einen Multiplizierer bauen.
 Wir können also durch Komposition von bereits existierenden Bauteilen ein neues Bauteil mit einer neuen Funktion konstruieren.
 Doch genauso gut können wir durch Programmcode den Addierer mehrfach aufrufen und erhalten so das gleiche Endergebnis.</p>
-<div class="cell tag_hide-code docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung</span>
 <span class="k">def</span> <span class="nf">to_binary</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
@@ -643,7 +643,7 @@ Doch genauso gut können wir durch Programmcode den Addierer mehrfach aufrufen u
     <span class="k">return</span> <span class="n">to_binary</span><span class="p">(</span><span class="n">to_decimal</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">to_decimal</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>  <span class="c1"># Wir nehmen an diese Funktion durch Code/Software umgesetzt</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">to_decimal</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span> <span class="c1"># Python versteht unser Binärsystem nicht</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">ladd</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
@@ -654,8 +654,36 @@ Doch genauso gut können wir durch Programmcode den Addierer mehrfach aufrufen u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 1] * [1, 0, 0, 1] = [1, 1, 1, 1, 0]
-3 * 9 = 30
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">947</span><span class="n">a0e3aa6c8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> * </span><span class="si">{</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">mul</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">to_decimal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1"> * </span><span class="si">{</span><span class="n">to_decimal</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">to_decimal</span><span class="p">(</span><span class="n">mul</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-2-947a0e3aa6c8&gt;</span> in <span class="ni">mul</span><span class="nt">(a, b)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">to_decimal</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span> <span class="c1"># Python versteht unser Binärsystem nicht</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">ladd</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+
+<span class="nn">&lt;ipython-input-2-947a0e3aa6c8&gt;</span> in <span class="ni">ladd</span><span class="nt">(a, b)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">ladd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span> <span class="c1"># Wir nehmen an diese Funktion wird durch Bauteile/Hardware umgesetzt</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">to_binary</span><span class="p">(</span><span class="n">to_decimal</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">to_decimal</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>  <span class="c1"># Wir nehmen an diese Funktion durch Code/Software umgesetzt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nn">&lt;ipython-input-1-8508a3f1242c&gt;</span> in <span class="ni">to_decimal</span><span class="nt">(binary_number)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">to_decimal</span><span class="p">(</span><span class="n">binary_number</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">decimal_number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">binary_number</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">binary_number</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="n">decimal_number</span> <span class="o">+=</span> <span class="n">bit</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">i</span>
+
+<span class="ne">TypeError</span>: object of type &#39;int&#39; has no len()
 </pre></div>
 </div>
 </div>
