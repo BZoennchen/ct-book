@@ -713,10 +713,13 @@ def random_turn(robo):
         robo.turn_left()
 
 def random_walk(robo):
+    required_steps = 0
     while not robo.is_at_goal():
         random_turn(robo)
         if not robo.is_wall_in_front():
             robo.move()
+            required_steps = required_steps + 1
+    return required_steps
 
 random_walk(robo)
 print(world.is_successful())

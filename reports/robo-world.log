@@ -17,38 +17,37 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-def experiment(nrows, ncols):
-    world = rw.new_world(nrows=nrows, ncols=ncols)
-    world.disable_animation()
-    robo = world.get_robo()
-    robo.disable_print()
-    return random_walk(robo)
+turn_east(robo)
+walk(robo)
+while not robo.is_wall_in_front():
+    move_object(robo)
+    walk(robo)
 
-def experiments(nrows, ncols, n):
-    mean = 0
-    for _ in range(n):
-        mean += experiment(nrows, ncols)
-    return mean / n
-
-mean = experiments(nrows=7, ncols=7, n=50)
-print(mean)
+print(world.is_successful())
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-27-2b1c14174a66>[0m in [0;36m<module>[0;34m[0m
-[1;32m     12[0m     [0;32mreturn[0m [0mmean[0m [0;34m/[0m [0mn[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     13[0m [0;34m[0m[0m
-[0;32m---> 14[0;31m [0mmean[0m [0;34m=[0m [0mexperiments[0m[0;34m([0m[0mnrows[0m[0;34m=[0m[0;36m7[0m[0;34m,[0m [0mncols[0m[0;34m=[0m[0;36m7[0m[0;34m,[0m [0mn[0m[0;34m=[0m[0;36m50[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     15[0m [0mprint[0m[0;34m([0m[0mmean[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mWallInFrontException[0m                      Traceback (most recent call last)
+[0;32m<ipython-input-23-3515775087fa>[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0mwalk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;32mwhile[0m [0;32mnot[0m [0mrobo[0m[0;34m.[0m[0mis_wall_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 4[0;31m     [0mmove_object[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m     [0mwalk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0;34m[0m[0m
 
-[0;32m<ipython-input-27-2b1c14174a66>[0m in [0;36mexperiments[0;34m(nrows, ncols, n)[0m
-[1;32m      9[0m     [0mmean[0m [0;34m=[0m [0;36m0[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     10[0m     [0;32mfor[0m [0m_[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mn[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 11[0;31m         [0mmean[0m [0;34m+=[0m [0mexperiment[0m[0;34m([0m[0mnrows[0m[0;34m,[0m [0mncols[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     12[0m     [0;32mreturn[0m [0mmean[0m [0;34m/[0m [0mn[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     13[0m [0;34m[0m[0m
+[0;32m<ipython-input-21-0ed15f7f8741>[0m in [0;36mmove_object[0;34m(robo)[0m
+[1;32m      2[0m     [0mrobo[0m[0;34m.[0m[0mtake[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m     [0mturn[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 4[0;31m     [0mrobo[0m[0;34m.[0m[0mput[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m     [0mturn[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mTypeError[0m: unsupported operand type(s) for +=: 'int' and 'NoneType'
-TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
+[0;32m~/Development/workspaces/python3env/lib/python3.9/site-packages/roboworld/agent.py[0m in [0;36mput[0;34m(self)[0m
+[1;32m     42[0m             [0;32mraise[0m [0mSpaceIsEmptyException[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     43[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mis_wall_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 44[0;31m             [0;32mraise[0m [0mWallInFrontException[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     45[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mis_object_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     46[0m             [0;32mraise[0m [0mObjectInFrontException[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mWallInFrontException[0m: There is a wall in front.
+WallInFrontException: There is a wall in front.
 
