@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Zahlen sortieren in Python
 
 Wunderbar, wir können nun Karten sortieren. 
@@ -24,17 +12,13 @@ Wie und wo müsste man den Code ändern um z.B. Zahlen zu sortieren?
 
 Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller()``.
 
-```{code-cell} python3
 def is_smaller(number1, number2):
     return number1 < number2
 
 stack_sort([-11, 12, -6, 45, 1, 54, -55, 88])
-```
 
-```{code-cell} python3
 import random
 n_numbers = 1000
 
 hand = [random.randint(0, n_numbers) for _ in range(n_numbers)]
 stack_sort(hand)
-```
