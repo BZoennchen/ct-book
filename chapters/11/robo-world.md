@@ -268,7 +268,7 @@ world.show()
 Sie können sich auch Korridore unterschiedlicher Länge konstruieren.
 Dazu rufen Sie 
 
-```{code-cell} python3
+```python
 world = rw.corridor(length)
 ```
 

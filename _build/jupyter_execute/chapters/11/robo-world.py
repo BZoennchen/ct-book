@@ -236,9 +236,11 @@ print(world.is_successful())
 world.show()
 
 Sie können sich auch Korridore unterschiedlicher Länge konstruieren.
-Dazu rufen Sie
+Dazu rufen Sie 
 
+```python
 world = rw.corridor(length)
+```
 
 mit einem Argument ``length`` auf, wobei ``length`` eine positive Zahl größer gleich 2 sein muss.
 Zum Beispiel:
