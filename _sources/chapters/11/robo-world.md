@@ -1835,8 +1835,8 @@ Ein echtes Labyrinth!
 Dazu dient folgender Aufruf:
 
 ```{code-cell} python3
-nrows = 15
-ncols = 15
+nrows = 10
+ncols = 10
 world = rw.complex_maze(nrows,ncols)
 world.show()
 ```
@@ -1851,7 +1851,7 @@ Außerdem deaktivieren wir die Ausgabe und die Möglichkeit zu animieren.
 import roboworld as rw
 import copy
 
-world1 = rw.complex_maze(15,15)
+world1 = rw.complex_maze(10, 10)
 world2 = copy.deepcopy(world1)
 robo1 = world1.get_robo()
 robo2 = world2.get_robo()
