@@ -8,7 +8,7 @@ So können wir uns Zwischenergebnisse merken und damit weiter rechnen.
 
 ```{figure} ../../figs/python/variable.png
 ---
-width: 600px
+width: 800px
 name: fig-variable
 ---
 Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wert steht im Arbeitspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.
