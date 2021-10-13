@@ -1176,14 +1176,6 @@ print(world.is_successful())
 
 rw.animate(world)
 
-```{figure} ../../figs/roboworld/robo-world-perfect-walk.gif
----
-width: 400px
-name: fig-robo-world-perfect-walk
----
-Ein perfekter Lauf zum Ziel für quadratische Gebiete.
-```
-
 ### Eine künstliche Intelligenz (optional)
 
 Bis hierher haben wir Algorithmen entwickelt um unseren Roboter sicher durch eine teilweise bekannte Welt zu bewegen.
@@ -1538,13 +1530,6 @@ assert world.is_successful()
 
 rw.animate(world)
 
-```{figure} ../../figs/roboworld/robo-world-maze.gif
----
-width: 400px
-name: fig-robo-world-maze
----
-```
-
 ```{exercise} Breitensuche
 :label: robo-breadth-walk-impl-exercise
 Wir könnten auch eine *Breitensuche* implementieren.
@@ -1674,7 +1659,7 @@ def depth_first_walk(robo, distance, unmark=False):
              # path up in the tree as long as necessary
             if code == 3:                
                 while len(path) > 0 and path[-1] == 3:
-                    parent = walk.pop()
+                    parent = path.pop()
                     inverse_move(robo, parent, unmark)
                     
                 # the goal is not reachable
@@ -1791,15 +1776,8 @@ path, level = depth_first_walk(robo1)
 inverse_walk(robo1, path)
 world1.enable_animation()
 walk(robo1, path)
-rw.animate(world1)
 
-```{figure} ../../figs/roboworld/robo-world-depth-first-walk.gif
----
-width: 400px
-name: fig-robo-world-depth-first-walk
----
-Dieser Lauf wurde durch die *Tiefensuche* berechnet.
-```
+rw.animate(world1)
 
 Der Roboter scheint recht verwirrt durch die Gegen zu laufen.
 Das gleiche führen wir nun mit der *Breitensuche* durch.
@@ -1808,15 +1786,8 @@ path = find_shortest_walk(robo2)
 inverse_walk(robo2, path)
 world2.enable_animation()
 walk(robo2, path)
-rw.animate(world2)
 
-```{figure} ../../figs/roboworld/robo-world-breadth-first-walk.gif
----
-width: 400px
-name: fig-robo-world-breadth-first-walk
----
-Dieser Lauf wurde durch die *Breitensuche* berechnet.
-```
+rw.animate(world2)
 
 In diesem Fall läuft der Roboter zielstrebig auf kürzestem Weg zum Ziel.
 Vergleichen Sie den Unterschied!
