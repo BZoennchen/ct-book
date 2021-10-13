@@ -23,7 +23,7 @@ Wie und wo müsste man den Code ändern um z.B. Zahlen zu sortieren?
 ```
 
 ```{code-cell} python3
-:tags: [toggle]
+:tags: [hide-input]
 # Kopie des Codes des vorherigen Abschnitts.
 
 def find_smallest_index(hand):
