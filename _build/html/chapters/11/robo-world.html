@@ -703,7 +703,7 @@ Mathematisch können wir das Gebiet wie folgt definieren:</p>
 \]</div>
 <div class="figure align-default" id="fig-robo-world-roboworld">
 <a class="reference internal image-reference" href="../../_images/roboworld.png"><img alt="../../_images/roboworld.png" src="../../_images/roboworld.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.20 </span><span class="caption-text">Das diskrete Gebiet aus Zellen mit 3 Zeilen und 7 Spalten.</span><a class="headerlink" href="#fig-robo-world-roboworld" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.22 </span><span class="caption-text">Das diskrete Gebiet aus Zellen mit 3 Zeilen und 7 Spalten.</span><a class="headerlink" href="#fig-robo-world-roboworld" title="Permalink to this image">¶</a></p>
 </div>
 <p>Einen Gitterpunkt nennen wir <strong>Zelle</strong>.
 Unser Roboter befindet sich in genau einer Zelle und kann von Zelle zu Zelle wandern, sofern die Zelle nicht durch ein anderes Objekt belegt ist.
@@ -761,10 +761,10 @@ Steht der Roboter an der Stelle <code class="docutils literal notranslate"><span
 <li><p><code class="docutils literal notranslate"><span class="pre">(i,j+1)</span></code> und</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">(i,j-1)</span></code></p></li>
 </ol>
-<p>erreichen. Diese Nachbarschaft heißt im übrigen <em>Von-Neumann-Nachbarschaft</em>, siehe <a class="reference internal" href="#fig-robo-world-von-neumann-nh"><span class="std std-numref">Abbildung 1.21</span></a>.</p>
+<p>erreichen. Diese Nachbarschaft heißt im übrigen <em>Von-Neumann-Nachbarschaft</em>, siehe <a class="reference internal" href="#fig-robo-world-von-neumann-nh"><span class="std std-numref">Abbildung 1.23</span></a>.</p>
 <div class="figure align-default" id="fig-robo-world-von-neumann-nh">
 <a class="reference internal image-reference" href="../../_images/von-neumann-nh.png"><img alt="../../_images/von-neumann-nh.png" src="../../_images/von-neumann-nh.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.21 </span><span class="caption-text">Die von Neumann Nachbarschaftsbeziehung.</span><a class="headerlink" href="#fig-robo-world-von-neumann-nh" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.23 </span><span class="caption-text">Die von Neumann Nachbarschaftsbeziehung.</span><a class="headerlink" href="#fig-robo-world-von-neumann-nh" title="Permalink to this image">¶</a></p>
 </div>
 <p>Der Roboter kann durch <code class="docutils literal notranslate"><span class="pre">is_wall_in_front()</span></code> festellen ob direkt vor ihm ein Hindernis (oder der Rand des Gebiets) ist und durch <code class="docutils literal notranslate"><span class="pre">is_mark_in_front()</span></code> abfragen ob die Zelle vor der der Roboter steht markiert ist.</p>
 <p>Durch <code class="docutils literal notranslate"><span class="pre">is_object_in_front()</span></code> können Sie den Roboter fragen ob sich direkt vor ihm ein (verrückbares) Objekt befindet.
@@ -1633,7 +1633,7 @@ n \cdot m + \left \lceil{m/2}\right \rceil + \left \lceil{n/2}\right \rceil
 <p>Das animierte Ergebnis sieht wie folgt aus</p>
 <div class="figure align-default" id="fig-robo-world-det-walk">
 <a class="reference internal image-reference" href="../../_images/robo-world-det-walk.gif"><img alt="../../_images/robo-world-det-walk.gif" src="../../_images/robo-world-det-walk.gif" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.22 </span><span class="caption-text">Ein deterministischer Lauf zum Ziel.</span><a class="headerlink" href="#fig-robo-world-det-walk" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.24 </span><span class="caption-text">Ein deterministischer Lauf zum Ziel.</span><a class="headerlink" href="#fig-robo-world-det-walk" title="Permalink to this image">¶</a></p>
 </div>
 <p>Erneut ergeben sich interessante Fragen:</p>
 <ol class="simple">
@@ -1692,7 +1692,7 @@ Deshalb laufen wir mit dem ersten Schritt immer erst nach Westen und dann nach S
 Die Anzahl der Schritte erhöt sich nach jeder zweiten Drehung um eins.</p>
 <div class="figure align-default" id="fig-robo-world-spiral-walk">
 <a class="reference internal image-reference" href="../../_images/spiral-walk.png"><img alt="../../_images/spiral-walk.png" src="../../_images/spiral-walk.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.23 </span><span class="caption-text">Spirallauf: die Anzahl der <code class="docutils literal notranslate"><span class="pre">move()</span></code> Aufrufe erhöt sich um eins nach jedem zweiten <code class="docutils literal notranslate"><span class="pre">turn_left()</span></code>.</span><a class="headerlink" href="#fig-robo-world-spiral-walk" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.25 </span><span class="caption-text">Spirallauf: die Anzahl der <code class="docutils literal notranslate"><span class="pre">move()</span></code> Aufrufe erhöt sich um eins nach jedem zweiten <code class="docutils literal notranslate"><span class="pre">turn_left()</span></code>.</span><a class="headerlink" href="#fig-robo-world-spiral-walk" title="Permalink to this image">¶</a></p>
 </div>
 <p>Wir müssen nun noch darauf achten, dass wir nicht übers Ziel hinauslaufen.
 Das ist auch schon alles.</p>
@@ -1726,7 +1726,7 @@ Das ist auch schon alles.</p>
 </div>
 <div class="figure align-default" id="fig-robo-world-perfect-walk">
 <a class="reference internal image-reference" href="../../_images/robo-world-perfect-walk.gif"><img alt="../../_images/robo-world-perfect-walk.gif" src="../../_images/robo-world-perfect-walk.gif" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.24 </span><span class="caption-text">Ein perfekter Lauf zum Ziel für quadratische Gebiete.</span><a class="headerlink" href="#fig-robo-world-perfect-walk" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.26 </span><span class="caption-text">Ein perfekter Lauf zum Ziel für quadratische Gebiete.</span><a class="headerlink" href="#fig-robo-world-perfect-walk" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="eine-kunstliche-intelligenz-optional">
@@ -1840,24 +1840,24 @@ Jeder Knoten hat genau 4 Kanten:</p>
 <li><p>eine für 3</p></li>
 </ul>
 <p>Jeder Lauf ist durch ein Blatt (Knoten ohne Kinder) definiert.
-Der Baum ist in <a class="reference internal" href="#fig-robo-world-tree"><span class="std std-numref">Abbildung 1.25</span></a> skizziert.</p>
+Der Baum ist in <a class="reference internal" href="#fig-robo-world-tree"><span class="std std-numref">Abbildung 1.27</span></a> skizziert.</p>
 <div class="figure align-default" id="fig-robo-world-tree">
 <a class="reference internal image-reference" href="../../_images/robo-world-tree.png"><img alt="../../_images/robo-world-tree.png" src="../../_images/robo-world-tree.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.25 </span><span class="caption-text">Ein Baum der alle möglichen Läufe der Länge zwei codiert.</span><a class="headerlink" href="#fig-robo-world-tree" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.27 </span><span class="caption-text">Ein Baum der alle möglichen Läufe der Länge zwei codiert.</span><a class="headerlink" href="#fig-robo-world-tree" title="Permalink to this image">¶</a></p>
 </div>
 <p><em>Tiefensuche</em> durchwandert einen Baum, sodass wann immer ein Kindknoten noch nicht besucht wurde, dieses besucht wird.
 In anderen Worten wir gehen erst tief in den Baum hinein und springen erst wieder nach oben, wenn alles darunter bereits besucht wurde.
 Zudem wandern wir meist von links nach rechts.</p>
 <div class="figure align-default" id="fig-robo-world-depth-first-search">
 <a class="reference internal image-reference" href="../../_images/robo-world-depth-first-search.png"><img alt="../../_images/robo-world-depth-first-search.png" src="../../_images/robo-world-depth-first-search.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.26 </span><span class="caption-text"><strong>Tiefensuche</strong> des Baums in <a class="reference internal" href="#fig-robo-world-tree"><span class="std std-numref">Abbildung 1.25</span></a>. Die orangen Zahlen geben die Reihenfolge vor.</span><a class="headerlink" href="#fig-robo-world-depth-first-search" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.28 </span><span class="caption-text"><strong>Tiefensuche</strong> des Baums in <a class="reference internal" href="#fig-robo-world-tree"><span class="std std-numref">Abbildung 1.27</span></a>. Die orangen Zahlen geben die Reihenfolge vor.</span><a class="headerlink" href="#fig-robo-world-depth-first-search" title="Permalink to this image">¶</a></p>
 </div>
 <p>Ein anderer Algorithmus, der einen Baum durchwandert, ist die sogenannte <em>Breitensuche</em> (engl. <em>breadth-first search</em>).
 Hierbei gehen wir erst in die nächst tiefere Ebene, wenn alle Knoten der aktuellen Ebene bereits besucht wurden.
 Vergleichen Sie folgende Abbildung.</p>
 <div class="figure align-default" id="fig-robo-world-breadth-first-search">
 <a class="reference internal image-reference" href="../../_images/robo-world-breadth-first-search.png"><img alt="../../_images/robo-world-breadth-first-search.png" src="../../_images/robo-world-breadth-first-search.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.27 </span><span class="caption-text"><strong>Breitensuche</strong> des Baums in <a class="reference internal" href="#fig-robo-world-tree"><span class="std std-numref">Abbildung 1.25</span></a>. Die orangen Zahlen geben die Reihenfolge vor.</span><a class="headerlink" href="#fig-robo-world-breadth-first-search" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.29 </span><span class="caption-text"><strong>Breitensuche</strong> des Baums in <a class="reference internal" href="#fig-robo-world-tree"><span class="std std-numref">Abbildung 1.27</span></a>. Die orangen Zahlen geben die Reihenfolge vor.</span><a class="headerlink" href="#fig-robo-world-breadth-first-search" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="inverse-operationen">
@@ -2282,7 +2282,7 @@ Außerdem deaktivieren wir die Ausgabe und die Möglichkeit zu animieren.</p>
 </div>
 <div class="figure align-default" id="fig-robo-world-complex-maze">
 <a class="reference internal image-reference" href="../../_images/robo-world-complex-maze.png"><img alt="../../_images/robo-world-complex-maze.png" src="../../_images/robo-world-complex-maze.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.28 </span><span class="caption-text">Dieses Labyrinth wurde bei unserem Aufruf generiert.</span><a class="headerlink" href="#fig-robo-world-complex-maze" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.30 </span><span class="caption-text">Dieses Labyrinth wurde bei unserem Aufruf generiert.</span><a class="headerlink" href="#fig-robo-world-complex-maze" title="Permalink to this image">¶</a></p>
 </div>
 <p>Dann generieren wir einen Lauf durch die <em>Tiefensuche</em>, laufen den Lauf wieder zurück, aktivieren die Animation, laufen den Lauf erneut ab und animieren den Lauf.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path</span><span class="p">,</span> <span class="n">level</span> <span class="o">=</span> <span class="n">depth_first_walk</span><span class="p">(</span><span class="n">robo1</span><span class="p">)</span>
@@ -2294,7 +2294,7 @@ Außerdem deaktivieren wir die Ausgabe und die Möglichkeit zu animieren.</p>
 </div>
 <div class="figure align-default" id="fig-robo-world-depth-first-walk">
 <a class="reference internal image-reference" href="../../_images/robo-world-depth-first-walk.gif"><img alt="../../_images/robo-world-depth-first-walk.gif" src="../../_images/robo-world-depth-first-walk.gif" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.29 </span><span class="caption-text">Dieser Lauf wurde durch die <em>Tiefensuche</em> berechnet.</span><a class="headerlink" href="#fig-robo-world-depth-first-walk" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.31 </span><span class="caption-text">Dieser Lauf wurde durch die <em>Tiefensuche</em> berechnet.</span><a class="headerlink" href="#fig-robo-world-depth-first-walk" title="Permalink to this image">¶</a></p>
 </div>
 <p>Der Roboter scheint recht verwirrt durch die Gegen zu laufen.
 Das gleiche führen wir nun mit der <em>Breitensuche</em> durch.</p>
@@ -2307,7 +2307,7 @@ Das gleiche führen wir nun mit der <em>Breitensuche</em> durch.</p>
 </div>
 <div class="figure align-default" id="fig-robo-world-breadth-first-walk">
 <a class="reference internal image-reference" href="../../_images/robo-world-breadth-first-walk.gif"><img alt="../../_images/robo-world-breadth-first-walk.gif" src="../../_images/robo-world-breadth-first-walk.gif" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.30 </span><span class="caption-text">Dieser Lauf wurde durch die <em>Breitensuche</em> berechnet.</span><a class="headerlink" href="#fig-robo-world-breadth-first-walk" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.32 </span><span class="caption-text">Dieser Lauf wurde durch die <em>Breitensuche</em> berechnet.</span><a class="headerlink" href="#fig-robo-world-breadth-first-walk" title="Permalink to this image">¶</a></p>
 </div>
 <p>In diesem Fall läuft der Roboter zielstrebig auf kürzestem Weg zum Ziel.
 Vergleichen Sie den Unterschied!</p>

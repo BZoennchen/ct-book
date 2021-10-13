@@ -31,6 +31,38 @@ Um das mathematisch auszurücken verwendet man oft $\leftarrow$, also
 $$x \leftarrow 13.$$
 
 Dies verdeutlicht, dass es sich um eine *Zuweisung* handelt.
+Mit
+
+```python
+x = None
+```
+
+weisen wir ``x`` den Wert ``None`` d.h. 'Nichts' zu. Doch ist dieses 'Nichts' nicht nichts ;). Versuchen wir eine *Variable* zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:
+
+```python
+v + 20
+```
+
+Hierbei kommt es zu dem Fehler ``name 'v' is not defined``, da die *Variable* ``v`` noch nicht *initialisiert* wurde.
+
+
+In ``Python`` reicht es wenn Sie der *Variablen* einen Wert zuweisen.
+Sie wird automatisch erzeugt, d.h., *initialisiert*.
+Besitzt Sie noch keinen Wert so existiert sie auch nicht bzw. ist noch nicht *initialisiert*.
+
+```{admonition} Initialisierung mit Notebooks
+:name: warning-evaluation-ordering
+:class: warning
+Nach Ausführung dieser Codezeilen funktioniert auch der obige Code.
+Dies hängt an der funktionsweise der Notebooks zusammen.
+Sobald ``z`` *initialisiert* wurde, existiert ``z`` für alle Zellen des Notebooks.
+```
+
+## Variablen und der Arbeitsspeicher
+
+Eine Variable können wir als Paar von **Wert** und **Arbeitsspeicheradresse** verstehen.
+Der **Wert** der Variablen steht im [Arbeitspeicher](def-main-memory)) an einer bestimmten **Arbeitsspeicheradresse**.
+Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Arbeitsspeicher erleichtern.
 
 ```{figure} ../../figs/python-tutorial/variable.png
 ---
@@ -40,28 +72,88 @@ name: fig-variable
 Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wert steht im Arbeitspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.
 ```
 
-In ``Python`` reicht es wenn Sie der *Variablen* einen Wert zuweisen.
-Sie wird automatisch erzeugt, d.h., *initialisiert*.
-Besitzt Sie noch keinen Wert so existiert sie auch nicht bzw. ist noch nicht *initialisiert*.
+``id``: Mit der *built-in*-Funktion ``id`` können Sie sich eine Identifikationsnummer einer Variablen ausgeben lassen. Für zwei *Variablen* ist diese genau dann gleich, wenn deren **Arbeitsspeicheradressen** gleich sind.
 
 ```python
-z + 20
+x = 25
+z = 25
+print(id(x))
+print(id(z))
 ```
 
-Hier kommt es zu einem Fehler da die *Variable* ``z`` noch nicht *initialisiert* wurde.
-Wir können dies beheben:
+Sie sehen dass die ``id`` der Variablen ``x`` und ``z`` identisch sind. Ebenso ist ihr Wert identisch.
+Diese Situation sieht demnach wie folgt aus:
+
+```{figure} ../../figs/python-tutorial/varivariable-equal-idable.png
+---
+width: 800px
+name: fig-variable-equal-id
+---
+Initialisierung und Zuweisung einer Variablen ``x`` und ``z``  mit dem Wert ``25``. Die Adresse beider Variablen ist identisch.
+```
+
+``Python``-erkennt, dass es ausreicht, wenn beide *Variablen* auf den gleichen Speicherbereich zeigen. Wir als Programmierer\*innen bekommen davon gar nichts mit. Verändern wir den Wert von ``z`` dann verändert sich auch deren ``id``:
 
 ```python
-z = 0
-z + 20
+x = 25
+z = 24
+print(id(x))
+print(id(z))
 ```
 
-```{admonition} Initialisierung mit Notebooks
-:name: hint-evaluation-ordering
+Die Situation könnte in etwa wie folgt aussehen:
+
+```{figure} ../../figs/python-tutorial/variable-unequal-id.png
+---
+width: 800px
+name: fig-variable-unequal-id
+---
+Initialisierung und Zuweisung einer Variablen ``x`` und ``z``  mit dem Wert ``25`` und ``24``. Die Adresse beider Variablen ist nicht identisch.
+```
+
+```{admonition} Gleichheit und Identität
+:name: warning-equality-and-identity
 :class: warning
-Nach Ausführung dieser Codezeilen funktioniert auch der obige Code.
-Dies hängt an der funktionsweise der Notebooks zusammen.
-Sobald ``z`` *initialisiert* wurde, existiert ``z`` für alle Zellen des Notebooks.
+Ist die ``id`` (*Identität*) zweier Variablen gleich, so ist auch deren Wert identisch.
+Jedoch kann der Wert der Variablen identisch sein und deren ``id`` (*Identität*) nicht.
+```
+
+Ein Beispiel für zwei Variablen mit gleichem **Wert** und unterschiedlicher **Identität** ist leicht konstruiert:
+
+```python
+x = 2131313
+z = 2131313
+print(id(x))
+print(id(z))
+```
+
+Hmm?? 
+Warum war die ``id`` beim Wert ``25`` identisch aber beim Wert ``2131313`` nicht?
+Hier kommen wir in tiefen Details von ``Python``, welche fürs erste nicht so wichtig sind.
+Zur Optimierung der Laufzeit legt ``Python`` alle kleinen ganze Zahlen bei Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
+Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten $k$ kleinen Zahlen). 
+``2131313`` zählt nicht dazu und somit wird der Wert jedesmal neu in den Speicher geschrieben.
+
+Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:
+
+```python
+x = 0
+z = 0
+while(id(x) == id(z)):
+    x = x + 1
+    z = z + 1
+x
+```
+
+Wie sieht es mit negativen Zahlen aus?:
+
+```python
+x = 0
+z = 0
+while(id(x) == id(z)):
+    x = x - 1
+    z = z - 1
+x
 ```
 
 ## Veränderung
@@ -69,8 +161,8 @@ Sobald ``z`` *initialisiert* wurde, existiert ``z`` für alle Zellen des Noteboo
 Wie der Name bereits betont, sind *Variablen* variabel und können somit verändert werden.
 Wir müssen jedoch zwischen zwei Veränderungen unterscheiden:
 
-1. der Veränderung der *Variablen* selbst
-2. der Veränderung des Speicherbereichs auf den Sie zeigt.
+1. der Veränderung ihrer Speicheradresse 
+2. der Veränderung des Speicherbereichs auf den sie durch ihre Speicheradresse zeigt.
 
 Den zweiten Punkt (2) sehen wir uns später noch an.
 
@@ -95,7 +187,6 @@ Veränderungen der einen *Variablen* haben keinen Effekt auf andere *Variablen*.
 ```python
 half
 ```
-
 
 ## Das Nichts
 
