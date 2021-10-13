@@ -250,7 +250,6 @@ word_frequency
 ```
 ````
 
-```python
 word_frequency = {'hallo': 100, 'hilfe': 50, 'nein': 300, 'ja': 210}
 word = 'danke'
 
@@ -260,7 +259,6 @@ else:
     word_frequency[word] = 1
 
 word_frequency
-```
 
 Kommen wir zurück zu Dominique und unserer Tabelle.
 Die Tabelle wird sich sehr schnell füllen und dies per Hand festzuhalten wird schwierig.

@@ -262,7 +262,7 @@ word_frequency
 ```
 ````
 
-```python
+```{code-cell} python3
 word_frequency = {'hallo': 100, 'hilfe': 50, 'nein': 300, 'ja': 210}
 word = 'danke'
 
