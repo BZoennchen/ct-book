@@ -461,6 +461,9 @@ Jede Zeile ``row`` beinhaltet für jede Spalte einen Eintrag.
 ``row[0]`` ist das Jahr ``year`` und ``row[0]`` der Name ``name``, den wir extrahieren möchten.
 
 ```{code-cell} python3
+---
+tags: [hide-output]
+---
 from csv import reader
 
 def read_babynames():
@@ -512,6 +515,7 @@ def count_all(names):
     for name in names:
         if name in countings:
             countings[name] = count(name, names)
+    return countings
 ```
 
 und
@@ -524,6 +528,7 @@ def count_all(names):
             countings[name] += 1
         else:
             countings[name] = 1
+    return countings
 ```
 
 ```{exercise} Zählen aller Einträge

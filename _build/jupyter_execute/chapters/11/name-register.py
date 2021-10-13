@@ -486,6 +486,7 @@ def count_all(names):
     for name in names:
         if name in countings:
             countings[name] = count(name, names)
+    return countings
 
 und
 
@@ -496,6 +497,7 @@ def count_all(names):
             countings[name] += 1
         else:
             countings[name] = 1
+    return countings
 
 ```{exercise} Zählen aller Einträge
 :label: count-all-duplicates-exercise
