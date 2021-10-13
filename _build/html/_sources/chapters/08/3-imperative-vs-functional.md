@@ -85,7 +85,7 @@ print(f(2))
 ``Python`` macht es uns schwer keine *Pure Functions* zu konstruieren.
 Zum Beispiel würde folgender Code zu einem Fehler führen:
 
-```{code-cell} python3
+```python
 y = 0
 def f(x):
     y = y + 1

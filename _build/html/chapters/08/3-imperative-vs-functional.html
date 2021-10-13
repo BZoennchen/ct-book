@@ -681,6 +681,15 @@ Die folgende Funktion ist eine <em>Pure Functions</em>.</p>
 <p class="admonition-title">Pure Function und Python</p>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> macht es uns schwer keine <em>Pure Functions</em> zu konstruieren.
 Zum Beispiel würde folgender Code zu einem Fehler führen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 <div class="exercise admonition" id="sideeffect-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.3 </span>(Seiteneffekte)</p>
