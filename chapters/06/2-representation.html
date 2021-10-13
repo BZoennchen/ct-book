@@ -517,7 +517,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/06/2-representation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/06/2-representation.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -538,6 +541,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/06/2-representation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -696,7 +719,9 @@ Wechseln wir zu einem System mit drei Zuständen, bräuchten wir im Vergleich zu
 Der Grund ist das Verhalten des Logarithmus.
 Der folgende Plot illustriert wie viele <em>Bits</em> (y-Achse) für eine Menge mit <span class="math notranslate nohighlight">\(n\)</span> Elementen (x-Achse) im jeweiligen Zahlensystem notwendig sind.
 Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingegen der Unterschied zwischen <em>Binär</em> und, zum Beispiel, <span class="math notranslate nohighlight">\(\log_5(n)\)</span> gering ist.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
@@ -711,6 +736,14 @@ Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingege
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">log_5(n)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1058fe730&gt;
+</pre></div>
+</div>
+<img alt="../../_images/2-representation_1_1.png" src="../../_images/2-representation_1_1.png" />
+</div>
 </div>
 <div class="figure align-default" id="fig-logs-plots">
 <a class="reference internal image-reference" href="../../_images/plot-logs.png"><img alt="../../_images/plot-logs.png" src="../../_images/plot-logs.png" style="width: 300px;" /></a>
@@ -748,7 +781,9 @@ Eine Zahl als Folge von Ziffern <span class="math notranslate nohighlight">\(b_{
 \[1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 0 + 1 = 13.\]</div>
 <p><span class="math notranslate nohighlight">\(1001_2\)</span> (binär) und <span class="math notranslate nohighlight">\(13_{10}\)</span> (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung ist eine andere.
 Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welche Wert <span class="math notranslate nohighlight">\(1001_2\)</span> repräsentiert.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung</span>
 <span class="k">def</span> <span class="nf">to_decimal</span><span class="p">(</span><span class="n">binary_number</span><span class="p">):</span>
     <span class="n">decimal_number</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">binary_number</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
@@ -759,6 +794,13 @@ Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um 
 <span class="c1"># Zahl in Binärdarstellung 111 0100 1111 wird umgewandelt</span>
 <span class="n">to_decimal</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1871
+</pre></div>
+</div>
+</div>
 </div>
 <p>Ok, wir können also eine Binärzahl (= Zahl in Binärdarstellung) recht einfach in eine Dezimalzahl umwandeln.
 Wie aber wandeln wir eine Dezimalzahl in eine Binärzahl um?</p>
@@ -848,7 +890,9 @@ Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
     &amp;= 1024 + 512 + 256 + 64 + 8 + 4 + 2 + 1.
   \end{split}\end{split}\]</div>
 <p>Der folgende <code class="docutils literal notranslate"><span class="pre">Python</span></code> code wandelt eine Dezimalzahl in eine Binärzahl (als Liste von <span class="math notranslate nohighlight">\(0, 1\)</span>, gelesen von links nach rechts) um.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung</span>
 <span class="k">def</span> <span class="nf">to_binary</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="n">binary_number</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">while</span> <span class="n">number</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
@@ -859,6 +903,13 @@ Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
 <span class="c1"># Zahl in Decimaldarstellung wird umgewandelt</span>
 <span class="n">to_binary</span><span class="p">(</span><span class="mi">1871</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="ganze-zahlen">
@@ -1213,7 +1264,9 @@ Der Wert der Amplitude also <span class="math notranslate nohighlight">\(f(t_i)\
 <p>Folgender <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code erzeugt und plottet Samples einer Sinuswelle mit der Frequenz von <span class="math notranslate nohighlight">\(1\)</span> Hz über den Zeitraum von einer Sekunde.
 Es wird eine Sample-Rate von <span class="math notranslate nohighlight">\(3, 4, 8, 16, 32\)</span> und <span class="math notranslate nohighlight">\(64\)</span> Hz verwendet.
 Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möchten Sie zu einem späteren Zeitpunkt analysieren was hier geschieht.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">sine_wave</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -1246,6 +1299,11 @@ Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möch
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2-representation_7_0.png" src="../../_images/2-representation_7_0.png" />
+</div>
 </div>
 <div class="figure align-default" id="fig-samples-plots">
 <a class="reference internal image-reference" href="../../_images/samples-plots.png"><img alt="../../_images/samples-plots.png" src="../../_images/samples-plots.png" style="width: 700px;" /></a>

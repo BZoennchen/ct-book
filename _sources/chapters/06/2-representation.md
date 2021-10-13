@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sec-representation)=
 # Repräsentationen
 
@@ -96,7 +108,7 @@ Der Grund ist das Verhalten des Logarithmus.
 Der folgende Plot illustriert wie viele *Bits* (y-Achse) für eine Menge mit $n$ Elementen (x-Achse) im jeweiligen Zahlensystem notwendig sind.
 Der Unterschied zwischen *Binär* und *Unär* ist enorm, wohingegen der Unterschied zwischen *Binär* und, zum Beispiel, $\log_5(n)$ gering ist.
 
-```python
+```{code-cell} python3
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -166,7 +178,7 @@ $$1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 0 + 1 = 13.$$
 $1001_2$ (binär) und $13_{10}$ (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung ist eine andere.
 Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welche Wert $1001_2$ repräsentiert.
 
-```python
+```{code-cell} python3
 # Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung
 def to_decimal(binary_number):
     decimal_number = 0
@@ -297,7 +309,7 @@ Wir erhalten somit
 
 Der folgende ``Python`` code wandelt eine Dezimalzahl in eine Binärzahl (als Liste von $0, 1$, gelesen von links nach rechts) um.
 
-```python
+```{code-cell} python3
 # Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung
 def to_binary(number):
     binary_number = []
@@ -717,7 +729,7 @@ Folgender ``Python``-Code erzeugt und plottet Samples einer Sinuswelle mit der F
 Es wird eine Sample-Rate von $3, 4, 8, 16, 32$ und $64$ Hz verwendet.
 Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möchten Sie zu einem späteren Zeitpunkt analysieren was hier geschieht.
 
-```python
+```{code-cell} python3
 import matplotlib.pyplot as plt
 import numpy as np
 
