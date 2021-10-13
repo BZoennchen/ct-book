@@ -666,24 +666,10 @@ Mit</p>
 </pre></div>
 </div>
 <p>weisen wir <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">None</span></code> d.h. ‘Nichts’ zu. Doch ist dieses ‘Nichts’ nicht nichts ;). Versuchen wir eine <em>Variable</em> zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="n">f5acf813e7b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
-
-<span class="ne">NameError</span>: name &#39;v&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<p>Hierbei kommt es zu dem Fehler <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">'v'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>, da die <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">v</span></code> noch nicht <em>initialisiert</em> wurde.</p>
+<p>Hierbei würde es zu einem Fehler <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">'v'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> kommen, da die <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">v</span></code> noch nicht <em>initialisiert</em> wurde.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> reicht es wenn Sie der <em>Variablen</em> einen Wert zuweisen.
 Sie wird automatisch erzeugt, d.h., <em>initialisiert</em>.
 Besitzt Sie noch keinen Wert so existiert sie auch nicht bzw. ist noch nicht <em>initialisiert</em>.</p>
@@ -723,6 +709,12 @@ Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Ar
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4462447664
+4462447664
+</pre></div>
+</div>
+</div>
 </div>
 <p>Sie sehen dass die <code class="docutils literal notranslate"><span class="pre">id</span></code> der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code> identisch sind. Ebenso ist ihr Wert identisch.
 Diese Situation sieht demnach wie folgt aus:</p>
@@ -737,6 +729,12 @@ Diese Situation sieht demnach wie folgt aus:</p>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">24</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4462447664
+4462447632
 </pre></div>
 </div>
 </div>
@@ -761,6 +759,12 @@ Jedoch kann der Wert der Variablen identisch sein und deren <code class="docutil
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4499807216
+4499807760
+</pre></div>
+</div>
+</div>
 </div>
 <p>Hmm??
 Warum war die <code class="docutils literal notranslate"><span class="pre">id</span></code> beim Wert <code class="docutils literal notranslate"><span class="pre">25</span></code> identisch aber beim Wert <code class="docutils literal notranslate"><span class="pre">2131313</span></code> nicht?
@@ -780,6 +784,11 @@ Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>257
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wie sieht es mit negativen Zahlen aus?:</p>
 <div class="cell docutils container">
@@ -790,6 +799,11 @@ Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-6
 </pre></div>
 </div>
 </div>
@@ -823,12 +837,28 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
+id of half = 4499807280
+value of x = 25
+id of x = 4462447664
+value of x = 24
+id of x = 4462447632
+</pre></div>
+</div>
+</div>
 </div>
 <p>Veränderungen der einen <em>Variablen</em> haben keinen Effekt auf die <strong>Adresse</strong> bzw. *Identität <code class="docutils literal notranslate"><span class="pre">id</span></code> anderer <em>Variablen</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of half = </span><span class="si">{</span><span class="n">half</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of half = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">half</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
+id of half = 4499807280
 </pre></div>
 </div>
 </div>
@@ -855,6 +885,16 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
+id of x = 4500353072
+value of y = 10
+id of y = 4462447184
+value of z = 2131313
+id of z = 4500353520
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -868,6 +908,16 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of z = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
+id of x = 4500353072
+value of y = 2131313
+id of y = 4500353072
+value of z = 2131313
+id of z = 4500353520
 </pre></div>
 </div>
 </div>
@@ -885,12 +935,22 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> weisen wir hierbei eine sog. <em>Liste</em> <code class="docutils literal notranslate"><span class="pre">list</span></code> zu, also eine geordnete Menge an Zahlen. In unserem Fall besteht die Liste und somit <code class="docutils literal notranslate"><span class="pre">x</span></code> aus den Werten <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4</span></code> und <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
 <p>Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir seinen Index. Zum Beispiel liefert uns der Index <code class="docutils literal notranslate"><span class="pre">1</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -902,6 +962,11 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4500262976
+</pre></div>
+</div>
+</div>
 </div>
 <p>Liefert uns eine <code class="docutils literal notranslate"><span class="pre">id</span></code>, allerdings lieft uns der Aufruf</p>
 <div class="cell docutils container">
@@ -910,11 +975,21 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4462446928
+</pre></div>
+</div>
+</div>
 </div>
 <p>ebenfalls eine (andere) <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4462446960
 </pre></div>
 </div>
 </div>
@@ -944,6 +1019,19 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = [1, 2, 3, 4, 5]
+id of x = 4500262976
+value of x[1] = 2
+id of x[1] = 4462446928
+
+value of x = [1, -10, 3, 4, 5]
+id of x = 4500262976
+value of x[1] = -10
+id of x[1] = 4500353296
+</pre></div>
+</div>
+</div>
 </div>
 <p>Die Adresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> ändert sich nicht!!! Es ändert sich nur die Adresse von <code class="docutils literal notranslate"><span class="pre">x[1]</span></code>!!! Mit anderen Worten durch die <em>Zuweisung</em> von <code class="docutils literal notranslate"><span class="pre">x[1]</span> <span class="pre">=</span> <span class="pre">-10</span></code> wird keine neue Liste im Speicher angelegt sondern nur ein neues Element!</p>
 <p>Warum? Listen können groß werden und würden wir bei jeder Änderung eines Listenelements die gesamte Liste im Speicher kopieren, wäre das zu teuer was die Laufzeit angeht.</p>
@@ -956,6 +1044,12 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 
 <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+[[-10, 2, 3], [-10, 2, 3], [1, 2, 3]]
 </pre></div>
 </div>
 </div>
@@ -984,6 +1078,11 @@ Dennoch besitzt die <em>Variable</em> einen Wert, eben den Wert <code class="doc
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
 </div>
