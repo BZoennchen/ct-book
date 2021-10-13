@@ -338,6 +338,10 @@ def plot_picture(picture):
 Sehen Sie sich die dazugehörige [Dokumentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html) an und nutzen Sie die Funktion.
 ````
 
+import matplotlib.pyplot as plt
+def plot_picture(picture):
+    plt.imshow(picture, cmap='gray', vmin=0, vmax=1)
+
 Mit folgendem Code
 
 picture = generate_border_picture(width=5, height=10, border_width=1)
