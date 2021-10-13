@@ -872,7 +872,9 @@ Was beobachten Sie?</p>
 </div>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word_frequency</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hallo&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;hilfe&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;nein&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;ja&#39;</span><span class="p">:</span> <span class="mi">210</span><span class="p">}</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_frequency</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hallo&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;hilfe&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;nein&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;ja&#39;</span><span class="p">:</span> <span class="mi">210</span><span class="p">}</span>
 <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;danke&#39;</span>
 
 <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_frequency</span><span class="p">:</span>
@@ -882,6 +884,13 @@ Was beobachten Sie?</p>
 
 <span class="n">word_frequency</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;hallo&#39;: 100, &#39;hilfe&#39;: 50, &#39;nein&#39;: 300, &#39;ja&#39;: 210, &#39;danke&#39;: 1}
+</pre></div>
+</div>
+</div>
 </div>
 <p>Kommen wir zurück zu Dominique und unserer Tabelle.
 Die Tabelle wird sich sehr schnell füllen und dies per Hand festzuhalten wird schwierig.
@@ -953,16 +962,7 @@ Können Sie hierfür eventuell die gleichen Algorithmen verwenden wie in <a clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">80</span><span class="n">cf2f6aad6a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="c1"># 1. baue Liste aus keys</span>
-<span class="ne">---&gt; </span><span class="mi">32</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">word_frequency</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="n">keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> 
-
-<span class="ne">NameError</span>: name &#39;word_frequency&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;nein&#39;, &#39;ja&#39;, &#39;hallo&#39;, &#39;hilfe&#39;, &#39;danke&#39;]
 </pre></div>
 </div>
 </div>
@@ -1102,6 +1102,11 @@ Sie können, wenn sie wollen, folgendes <a class="reference internal" href="#def
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.1526
+</pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">avg_effort</span></code> <span class="math notranslate nohighlight">\((11.1526)\)</span> ist der durchschnittliche Aufwand d.h. die durchschnittlich auszusprechenden Buchstaben je geschriebenem Buchstaben.
 Interpretieren wir die Häufigkeit als Wahrscheinlichkeit ist es der Erwartungswert der auszusprechenden Buchsteben je geschriebenem Buchstaben.
@@ -1122,6 +1127,11 @@ In dieser Variante beginnt der Sprecher mit dem häufigsten Buchstaben und folgt
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">chars</span><span class="p">)):</span>
     <span class="n">avg_effort</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">char_frequency</span><span class="p">[</span><span class="n">chars</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
 <span class="n">avg_effort</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.9836
 </pre></div>
 </div>
 </div>
@@ -1161,6 +1171,36 @@ Können Sie bestimmen welcher Buchstabe im Sinne unseres Maß am schlechtesten i
 
 <span class="n">chars_diff</span> <span class="o">=</span> <span class="n">stack_sort</span><span class="p">(</span><span class="n">chars_diff</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="n">chars_diff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;S&#39;, 16),
+ (&#39;B&#39;, -14),
+ (&#39;J&#39;, -13),
+ (&#39;R&#39;, 13),
+ (&#39;T&#39;, 13),
+ (&#39;F&#39;, -12),
+ (&#39;N&#39;, 12),
+ (&#39;U&#39;, 11),
+ (&#39;C&#39;, -9),
+ (&#39;Q&#39;, -9),
+ (&#39;K&#39;, -8),
+ (&#39;G&#39;, -6),
+ (&#39;W&#39;, 6),
+ (&#39;Z&#39;, 6),
+ (&#39;A&#39;, -5),
+ (&#39;I&#39;, 5),
+ (&#39;P&#39;, -5),
+ (&#39;D&#39;, -4),
+ (&#39;E&#39;, 4),
+ (&#39;H&#39;, -1),
+ (&#39;L&#39;, 1),
+ (&#39;M&#39;, -1),
+ (&#39;X&#39;, -1),
+ (&#39;Y&#39;, 1),
+ (&#39;O&#39;, 0),
+ (&#39;V&#39;, 0)]
 </pre></div>
 </div>
 </div>
@@ -1398,6 +1438,36 @@ Sie können Zeichenketten oder einzelne Zeichen lexikographisch mit <code class=
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: [1, 1, 1, 1, 1],
+ &#39;B&#39;: [1, 1, 1, 1, 0],
+ &#39;C&#39;: [1, 1, 1, 0, 1],
+ &#39;D&#39;: [1, 1, 1, 0, 0],
+ &#39;E&#39;: [1, 1, 0, 1, 1],
+ &#39;F&#39;: [1, 1, 0, 1, 0],
+ &#39;G&#39;: [1, 1, 0, 0],
+ &#39;H&#39;: [1, 0, 1, 1, 1],
+ &#39;I&#39;: [1, 0, 1, 1, 0],
+ &#39;J&#39;: [1, 0, 1, 0],
+ &#39;K&#39;: [1, 0, 0, 1, 1],
+ &#39;L&#39;: [1, 0, 0, 1, 0],
+ &#39;M&#39;: [1, 0, 0, 0],
+ &#39;N&#39;: [0, 1, 1, 1, 1],
+ &#39;O&#39;: [0, 1, 1, 1, 0],
+ &#39;P&#39;: [0, 1, 1, 0, 1],
+ &#39;Q&#39;: [0, 1, 1, 0, 0],
+ &#39;R&#39;: [0, 1, 0, 1, 1],
+ &#39;S&#39;: [0, 1, 0, 1, 0],
+ &#39;T&#39;: [0, 1, 0, 0],
+ &#39;U&#39;: [0, 0, 1, 1, 1],
+ &#39;V&#39;: [0, 0, 1, 1, 0],
+ &#39;W&#39;: [0, 0, 1, 0],
+ &#39;X&#39;: [0, 0, 0, 1, 1],
+ &#39;Y&#39;: [0, 0, 0, 1, 0],
+ &#39;Z&#39;: [0, 0, 0, 0]}
+</pre></div>
+</div>
+</div>
 </div>
 <p>Lassen Sie uns noch einmal rekapitulieren weshalb die <a class="reference internal" href="#def-binary-search"><span class="std std-ref">binäre Suche</span></a> anwendbar ist.
 Was wir vorraussetzen ist, dass wir gute Fragen stellen können und, anhand jeder Antwort, die Menge schnell verkleinern können.
@@ -1415,6 +1485,24 @@ Zum Beispiel können wir Zahlen codieren:</p>
     <span class="n">codebook</span><span class="p">[</span><span class="n">number</span><span class="p">]</span> <span class="o">=</span> <span class="n">code</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">numers</span><span class="p">)</span>
     
 <span class="n">codebook</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: [1, 1, 1, 1],
+ 2: [1, 1, 1, 0],
+ 3: [1, 1, 0, 1],
+ 4: [1, 1, 0, 0],
+ 5: [1, 0, 1, 1],
+ 6: [1, 0, 1, 0],
+ 7: [1, 0, 0],
+ 8: [0, 1, 1, 1],
+ 9: [0, 1, 1, 0],
+ 10: [0, 1, 0, 1],
+ 11: [0, 1, 0, 0],
+ 12: [0, 0, 1, 1],
+ 13: [0, 0, 1, 0],
+ 14: [0, 0, 0]}
 </pre></div>
 </div>
 </div>
@@ -1456,6 +1544,15 @@ Testen Sie Ihre Funktion mit einer Liste aus Zahlen und Buchstaben.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+False
+False
+</pre></div>
+</div>
+</div>
 </div>
 <p>Die <a class="reference internal" href="#def-binary-search"><span class="std std-ref">binäre Suche</span></a> nutzt die gegebene Struktur der Daten (Information) aus, wohingegen die <a class="reference internal" href="#def-linear-search"><span class="std std-ref">lineare Suche</span></a> keinerlei Struktur nutzt.
 Besteht keinerlei ausnutbare Struktur bleibt uns nichts anderes übrig als die <a class="reference internal" href="#def-linear-search"><span class="std std-ref">lineare Suche</span></a> zu verwenden.</p>
@@ -1480,6 +1577,15 @@ Diesmal wissen Sie nichts über die Struktur der Daten!</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">linear_search</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">linear_search</span><span class="p">(</span><span class="mi">7</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">linear_search</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+False
+False
 </pre></div>
 </div>
 </div>
