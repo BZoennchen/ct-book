@@ -451,6 +451,7 @@ def read_babynames():
     return names
 
 names = read_babynames()
+names
 
 ### Zählen von doppelten Einträgen
 
@@ -520,6 +521,7 @@ Interessanterweise haben wir durch unser Zählen auch gleich alle doppelten Eint
 Sammeln Sie nun alle Schlüssel ein und packen Sie diese in eine Liste.
 ```
 
+countings = count_all(names)
 unique_names = list(countings.keys())
 
 In [Karten sortieren](sort-cards-with-python) haben wir selbst einen Sortieralgorithmus entworfen.

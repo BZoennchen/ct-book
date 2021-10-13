@@ -473,6 +473,7 @@ def read_babynames():
     return names
 
 names = read_babynames()
+names
 ```
 
 ### Zählen von doppelten Einträgen
@@ -550,6 +551,7 @@ Sammeln Sie nun alle Schlüssel ein und packen Sie diese in eine Liste.
 ```
 
 ```{code-cell} python3
+countings = count_all(names)
 unique_names = list(countings.keys())
 ```
 
