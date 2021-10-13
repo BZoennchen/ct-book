@@ -141,9 +141,11 @@ Fassen wir die Methoden des Roboters zusammen:
 + ``take()`` nimmt ein Objekt auf, und
 + ``put()`` legt es ab.
 
-Sie rufen eine Methode ``method()`` durch
+Sie rufen eine Methode ``method()`` durch 
 
+```python
 robo.method()
+```
 
 auf.
 
@@ -454,7 +456,7 @@ In anderen Worten, damit Sie mental für andere Aufgaben gewadmet sind, denn das
 Eraten Sie was folgender Code bewirken soll. 
 Wo befindet sich der Roboter, wenn er ganz im Westen und nach Osten ausgerichtet startet?
 
-```{code-cell} python3
+```python
 for _ in range(5):
     walk_to_wall(robo)
     turn(robo) # turn zu deutsch 'umdrehen'
@@ -542,7 +544,7 @@ Diese Objekte werden zufällig in freien Zellen des Korridors verteilt.
 :label: robo-walk-east-with-objects-exercise
 Lassen Sie Ihren Roboter erneut einmal von Westen nach Osten durch die Welt
 
-```{code-cell} python3
+```python
 world = rw.corridor(length=25, random_headway=True, nobjects=4)
 ```
 
@@ -780,14 +782,14 @@ Um ein Gefühl für den *Erwartungswert* zu erlangen können wir nun den *Durchs
 
 Berechnen Sie für jeden Eintrag in ``x``
 
-```{code-cell} python3
+```python
 x = list(range(1,401,1))
 ```
 
 den *Durchschnitt* für ``ncols=5``, ``nrows=5``, sodass ``y`` alle Durchschnitte enthält.
 Lassen Sie sich die Daten durch
 
-```{code-cell} python3
+```python
 import matplotlib.pyplot as plt
 plt.plot(x, y, 'bo', markersize=2.5, alpha=0.5)
 ```
@@ -821,7 +823,7 @@ Wir beoachten außerdem, dass die Berechnung einige Zeit in Anspruch nimmt und s
 
 Sehen Sie sich die [Dokumentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html) der Funktion ``plt.plot()`` an und finden Sie heraus was die einzelnen Argumente des obigen Aufrufs
 
-```{code-cell} python3
+```python
 plt.plot(x, y, 'bo', markersize=2.5, alpha=0.5)
 ```
 
@@ -1488,7 +1490,7 @@ def inverse_walk(robo, path):
 :label: robo-repeat-walk-exercise
 Implementieren Sie eine Funktion ``walk(robo, path)`` welche den Lauf ``path`` ausführt, sodass fogender Code den Roboter erst zum Ziel führt, dann wieder zurücklaufen lässt und schlussendlich erneut zum Ziel führt:
 
-```{code-cell} python3
+```python
 path = depth_first_walk(robo)
 inverse_walk(robo, path)
 walk(robo, path)
@@ -1506,7 +1508,7 @@ def walk(robo, path):
 :label: robo-maze-walk-exercise
 Testen Sie ihre Funktionen an dem Labyrinth, was Sie sich durch
 
-```{code-cell} python3
+```python
 world = rw.maze()
 world.show()
 ```
