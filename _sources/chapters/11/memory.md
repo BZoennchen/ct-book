@@ -1598,7 +1598,7 @@ passiert im Hintergrund eine ganze Menge und unsere Funktion
 ```{code-cell} python3
 memory, inuse = initialize(1024)
 mylist = new_list([1,2,"Hello World",4,5], memory, inuse)
-mylist
+print(mem_to_string(mylist, memory, inuse))
 ```
 
 schildert einen Teil davon.
@@ -1623,8 +1623,8 @@ Im Endeffekt haben Sie einen kleinen Compiler geschrieben, der Ihnen den Befehl
 
 ```{code-cell} python3
 memory, inuse = initialize(1024)
-new_list([1,2,"Hello World",4,5], memory, inuse)
-new_list
+mylist = new_list([1,2,"Hello World",4,5], memory, inuse)
+print(mem_to_string(mylist, memory, inuse))
 ```
 
 in eine Folge von maschinennäheren Befehlen umwandelt.
