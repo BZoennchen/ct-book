@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Allgemeines Sortieren in Python
 
 Wie könnten wir unsere Implementierung ändern, sodass wir alle möglichen Listen von vergleichbaren Elementen sortieren können?
@@ -20,7 +8,6 @@ Wie könnten wir unsere Implementierung ändern, sodass wir alle möglichen List
 
 Wir können den Vergleichsoperator ``is_smaller()`` als Argument übergeben!
 
-```{code-cell} python3
 def find_smallest_index(hand, is_smaller):
     index = 0                                
     for i in range(len(hand)):               
@@ -54,23 +41,16 @@ def index_of(card):
     for index in range(len(cards)):
         if cards[index] == card:
             return index
-```
 
-```{code-cell} python3
 hand = ['Bube', '6', 'Ass', '7', '9', '6']
 stack_sort(hand, is_smaller)
-```
 
-```{code-cell} python3
 numbers = [-33, -22, 123, 1, 13, 533, -23, 124]
 stack_sort(numbers, lambda a, b: a < b)
-```
 
 Lassen Sie sich von dem Ausdruck
 
-```{code-cell} python3
 lambda a,b : a < b
-```
 
 nicht verwirren. 
 Dieser Ausdruck definiert eine Funktion der wir keinen Namen geben.
@@ -96,17 +76,13 @@ addmul(2,5)
 
 Wir sparen uns damit ein paar Zeilen Code, da wir die definierte Funktion außerhalb des Aufrufs
 
-```{code-cell} python3
 stack_sort(numbers, lambda a, b: a < b)
-```
 
 nicht benötigen.
 Der folgende Code wäre äquivalent:
 
-```{code-cell} python3
 numbers = [-33, -22, 123, 1, 13, 533, -23, 124]
 def is_smaller_numbers(a, b):
     return a < b
 
 stack_sort(numbers, is_smaller_numbers)
-```
