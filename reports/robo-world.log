@@ -1,15 +1,4 @@
 Traceback (most recent call last):
-  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 622, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/util.py", line 85, in ensure_async
-    result = await obj
-  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/jupyter_client/asynchronous/channels.py", line 48, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
   File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 1107, in execute
@@ -22,18 +11,43 @@ Traceback (most recent call last):
     return future.result()
   File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
     await self.async_execute_cell(
-  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 836, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 646, in _async_poll_for_reply
-    await self._async_handle_timeout(timeout, cell)
-  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 696, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-nmax = 400
-x = list(range(1,nmax+1,1))
-y = [experiments(5, 5, n) for n in x]
--------------------
+  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 852, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+turn_east(robo)
+walk(robo)
+while not robo.is_wall_in_front():
+    move_object(robo)
+    walk(robo)
+
+print(world.is_successful())
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mWallInFrontException[0m                      Traceback (most recent call last)
+[0;32m<ipython-input-23-3515775087fa>[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0mwalk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;32mwhile[0m [0;32mnot[0m [0mrobo[0m[0;34m.[0m[0mis_wall_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 4[0;31m     [0mmove_object[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m     [0mwalk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0;34m[0m[0m
+
+[0;32m<ipython-input-21-0ed15f7f8741>[0m in [0;36mmove_object[0;34m(robo)[0m
+[1;32m      2[0m     [0mrobo[0m[0;34m.[0m[0mtake[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m     [0mturn[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 4[0;31m     [0mrobo[0m[0;34m.[0m[0mput[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m     [0mturn[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/Development/workspaces/python3env/lib/python3.9/site-packages/roboworld/agent.py[0m in [0;36mput[0;34m(self)[0m
+[1;32m     42[0m             [0;32mraise[0m [0mSpaceIsEmptyException[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     43[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mis_wall_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 44[0;31m             [0;32mraise[0m [0mWallInFrontException[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     45[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mis_object_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     46[0m             [0;32mraise[0m [0mObjectInFrontException[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mWallInFrontException[0m: There is a wall in front.
+WallInFrontException: There is a wall in front.
 
