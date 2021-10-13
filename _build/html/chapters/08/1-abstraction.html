@@ -517,7 +517,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/08/1-abstraction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/08/1-abstraction.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -538,6 +541,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/08/1-abstraction.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -613,23 +636,46 @@ Doch selbst wenn das Abstraktionniveau weniger hoch ist, können wir uns als Pro
 Nehmen wir zum Beispiel einmal an, unsere Sprache könnte keine Zahlen multiplizieren.
 Das einzige was wir zur Verfügung haben ist die Addition <code class="docutils literal notranslate"><span class="pre">+</span></code> und die Möglichkeit Anweisungen <code class="docutils literal notranslate"><span class="pre">n</span></code>-mal zu wiederholen <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n)</span></code>.
 Mit diesen Mitteln können wir uns die Multiplikation selbst bauen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Wenn wir dann in unserem Code die Multiplikation ausführen wollen z.B.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mul</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mul</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wird stattdessen unsere Funktion <code class="docutils literal notranslate"><span class="pre">mul</span></code> mit den Argumenten <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">4,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">5</span></code> <em>aufgerufen</em>.
 Anders ausgedrückt der Code <code class="docutils literal notranslate"><span class="pre">mul(a,</span> <span class="pre">b)</span></code> wird ersetzt durch</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">b</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="n">result</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
 </div>
 <p>und zusätzlich wird aus <code class="docutils literal notranslate"><span class="pre">mul(4,</span> <span class="pre">5)</span></code> der Wert den die Funktion zurückgibt <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">result</span></code>.
 Wir sagen auch <code class="docutils literal notranslate"><span class="pre">mul(4,</span> <span class="pre">5)</span></code> wird zum Wert <code class="docutils literal notranslate"><span class="pre">20</span></code> evaluiert/ausgewertet.
@@ -637,15 +683,35 @@ Wir <strong>abstrahieren</strong> die Berechnung und gleichzeitig wird das <stro
 <p>Das gleiche passiert bei der (maschinennahen) Addition zweier Zahlen.
 Wann welcher Wert in welches Register geschrieben wird, ist durch eine Funktion bereits festgelegt.
 Diese wird aufgerufen wenn wir</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">9</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">9</span>
+<span class="n">x</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
+</pre></div>
+</div>
+</div>
 </div>
 <p>berechnen.
 Der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code wird in immer maschinennäheren Code umgewandelt bis wir am Ende wieder beim Addieren von Werten in Registern herauskommen.
 Somit kontrollieren wir den Computer nicht direkt, sondern befehligen ein Program welches unsere Anweisungen in maschinennahe Anweisungen umwandelt!
 Erstellen wir zum Beispiel eine Liste</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">numbers</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
 </div>
 <p>werden auf maschinennaher Ebene die Zahlen nebeneinander in den Hauptspeicher geschrieben.</p>
 <p>Programme geschrieben in verschiedenen Programmiersprachen steuern den Computer und abstrahieren damit die reale physikalische Welt der elektrischen Schaltungen und Transistoren.
