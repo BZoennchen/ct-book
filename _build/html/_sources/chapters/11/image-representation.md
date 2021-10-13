@@ -216,7 +216,7 @@ Um über die Elemente einer Liste zu *iterieren*, verwendet man in ``Python`` da
 
 ```{code-cell} python3
 for row in picture:
-    print(element)
+    print(row)
 ```
 
 ```{exercise} Iteration

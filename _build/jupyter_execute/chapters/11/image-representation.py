@@ -187,7 +187,7 @@ def my_range_immutable(n):
 Um über die Elemente einer Liste zu *iterieren*, verwendet man in ``Python`` das [For-Schleife](https://www.python-kurs.eu/python3_for-schleife.php) und wie immer bestimmt die [Einrückung](https://www.python-kurs.eu/python3_bloecke.php) die Strukturierung (``Python`` verzichtet auf Klammern):
 
 for row in picture:
-    print(element)
+    print(row)
 
 ```{exercise} Iteration
 :label: iteration-exercise

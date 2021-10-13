@@ -832,18 +832,13 @@ Testen Sie beide Versionen für große <code class="docutils literal notranslate
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">f78e22bf765b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;element&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 0, 1, 0, 1, 1]
+[0, 1, 0, 1, 0, 1, 1]
 </pre></div>
 </div>
 </div>
@@ -859,6 +854,24 @@ Testen Sie beide Versionen für große <code class="docutils literal notranslate
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1
+0
+1
+0
+1
+1
+0
+1
+0
+1
+0
+1
+1
 </pre></div>
 </div>
 </div>
@@ -879,6 +892,11 @@ Zum Beispiel:</p>
     <span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
     <span class="k">return</span> <span class="n">c</span>
 <span class="n">add</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
 </pre></div>
 </div>
 </div>
@@ -913,6 +931,11 @@ Zum Beispiel soll aus <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2], [3, 3], [1, 3], [4, 5]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>In unserer Lösung bewirkt <code class="docutils literal notranslate"><span class="pre">result.append(element)</span></code> das gleich wie <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">+=</span> <span class="pre">[element]</span></code> jedoch ist die erste Version klarer zu lesen denn wir wollen das Element <code class="docutils literal notranslate"><span class="pre">element</span></code> anhängen (engl. append).</p>
 </div>
@@ -931,6 +954,20 @@ Nutzen Sie die Programmierung um sich Zeit zu sparen!</p>
 <span class="n">center</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">top</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span> <span class="o">+</span> <span class="p">[</span><span class="n">center</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="n">top</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
 <span class="n">picture</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 </pre></div>
 </div>
 </div>
@@ -970,6 +1007,20 @@ Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -978,11 +1029,39 @@ Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">picture</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 </pre></div>
 </div>
 </div>
@@ -1018,6 +1097,20 @@ Dabei soll die Breite <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0],
+ [0, 0, 1, 0, 0],
+ [0, 0, 1, 0, 0],
+ [0, 0, 1, 0, 0],
+ [0, 0, 1, 0, 0],
+ [0, 0, 1, 0, 0],
+ [0, 0, 1, 0, 0],
+ [0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-10">
 <p class="admonition-title"><span class="caption-number">Exercise 2.10 </span>(Variable Bildgenerierung testen)</p>
@@ -1042,6 +1135,17 @@ Dabei soll die Breite <code class="docutils literal notranslate"><span class="pr
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">90231</span><span class="n">a71cd72</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plot_picture&#39; is not defined
 </pre></div>
 </div>
 </div>
