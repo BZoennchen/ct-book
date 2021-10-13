@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sec-variables)=
 # Variablen
 
@@ -10,7 +22,9 @@ So können wir uns Zwischenergebnisse merken und damit weiter rechnen.
 Durch das ``=`` Zeichen weisen wir einer *Variablen* auf der linken Seite den Wert des *Ausdrucks* auf der rechten Seite zu.
 Zum Beispiel, weist
 
+```{code-cell} python3
 x = 3 + 10
+```
 
 den ausgewerteten Wert ``3 + 10`` also ``13`` der Variablen ``x`` zu.
 Es ist äußerst wichtig, dass die den zwischen dem ``=`` und dem mathematischen $=$ unterscheiden.
@@ -19,7 +33,9 @@ $$x = 13$$
 
 bedeutet, dass $x$ gleich $13$ ist, wohingegen
 
+```{code-cell} python3
 x = 13
+```
 
 den Wert der Variablen ``x`` auf ``13`` setzt oder genaue die Variable auf einen Speicherbereich verweisen lässt, welcher den Wert ``13`` enthält.
 Um das mathematisch auszurücken verwendet man oft $\leftarrow$, also 
@@ -29,7 +45,7 @@ $$x \leftarrow 13.$$
 Dies verdeutlicht, dass es sich um eine *Zuweisung* handelt.
 Mit
 
-```python
+```{code-cell} python3
 x = None
 ```
 
@@ -62,7 +78,9 @@ Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Ar
 
 Mit
 
+```{code-cell} python3
 x = 25
+```
 
 Wird der **Wert** ``25`` in den Arbeitsspeicher an eine freie **Speicheradresse** geschrieben. Diese **Adresse** erhält die *Variable* ``x``. ``x`` *zeigt* auf den Speicherbereich in dem der **Wert** ``25`` steht!
 
@@ -78,10 +96,12 @@ Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wer
 
 ``id``: Mit der *built-in*-Funktion ``id`` können Sie sich eine Identifikationsnummer einer Variablen ausgeben lassen. Für zwei *Variablen* ist diese genau dann gleich, wenn deren **Arbeitsspeicheradressen** gleich sind.
 
+```{code-cell} python3
 x = 25
 z = 25
 print(id(x))
 print(id(z))
+```
 
 Sie sehen dass die ``id`` der Variablen ``x`` und ``z`` identisch sind. Ebenso ist ihr Wert identisch.
 Diese Situation sieht demnach wie folgt aus:
@@ -96,10 +116,12 @@ Initialisierung und Zuweisung einer Variablen ``x`` und ``z``  mit dem Wert ``25
 
 ``Python``-erkennt, dass es ausreicht, wenn beide *Variablen* auf den gleichen Speicherbereich zeigen. Wir als Programmierer\*innen bekommen davon gar nichts mit. Verändern wir den Wert von ``z`` dann verändert sich auch deren ``id``:
 
+```{code-cell} python3
 x = 25
 z = 24
 print(id(x))
 print(id(z))
+```
 
 Die Situation könnte in etwa wie folgt aussehen:
 
@@ -120,10 +142,12 @@ Jedoch kann der Wert der Variablen identisch sein und deren ``id`` (*Identität*
 
 Ein Beispiel für zwei Variablen mit gleichem **Wert** und unterschiedlicher **Identität** ist leicht konstruiert:
 
+```{code-cell} python3
 x = 2131313
 z = 2131313
 print(id(x))
 print(id(z))
+```
 
 Hmm?? 
 Warum war die ``id`` beim Wert ``25`` identisch aber beim Wert ``2131313`` nicht?
@@ -134,21 +158,25 @@ Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten
 
 Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:
 
+```{code-cell} python3
 x = 0
 z = 0
 while(id(x) == id(z)):
     x = x + 1
     z = z + 1
 x
+```
 
 Wie sieht es mit negativen Zahlen aus?:
 
+```{code-cell} python3
 x = 0
 z = 0
 while(id(x) == id(z)):
     x = x - 1
     z = z - 1
 x
+```
 
 ## Veränderung
 
@@ -163,6 +191,7 @@ Wir müssen jedoch zwischen zwei Veränderungen einer Variablen ``x`` unterschei
 Eine *Variable* kann immer nur einen **Wert** bzw. auf einen bestimmten Speicherbereich *zeigen*.
 Weisen wir einer *Variablen* erneut einen **Wert** zu, wird dieser **Wert** in den Speicher an eine freie **Adresse** geschrieben und die **Adresse** der Variablen auf jene neue **Adresse** gesetzt.
 
+```{code-cell} python3
 half = 1/2
 print(f'value of half = {half}')
 print(f'id of half = {id(half)}')
@@ -174,11 +203,14 @@ print(f'id of x = {id(x)}')
 x = 24
 print(f'value of x = {x}')
 print(f'id of x = {id(x)}')
+```
 
 Veränderungen der einen *Variablen* haben keinen Effekt auf die **Adresse** bzw. *Identität ``id`` anderer *Variablen*.
 
+```{code-cell} python3
 print(f'value of half = {half}')
 print(f'id of half = {id(half)}')
+```
 
 Verändern wir *Variablen* nicht so behalten ihre **Adresse** über das gesamte Notebook hinweg.
 
@@ -186,6 +218,7 @@ Verändern wir *Variablen* nicht so behalten ihre **Adresse** über das gesamte 
 
 Weisen wir einer Variblen ``x`` eine andere Variable ``y`` zu, so ändern wir die **Adresse** von ``x`` auf jene von ``y``. Das heißt, nach der *Zuweisung* zeigen beide Variablen auf den gleichen Speicherbereich und damit auf den gleichen **Wert**.
 
+```{code-cell} python3
 x = 2131313
 y = 10
 z = 2131313
@@ -198,7 +231,10 @@ print(f'id of y = {id(y)}')
 
 print(f'value of z = {z}')
 print(f'id of z = {id(z)}')
+```
 
+
+```{code-cell} python3
 y = x
 
 print(f'value of x = {x}')
@@ -209,6 +245,7 @@ print(f'id of y = {id(y)}')
 
 print(f'value of z = {z}')
 print(f'id of z = {id(z)}')
+```
 
 ### Seiteneffekte
 
@@ -218,26 +255,36 @@ Die Antwort ist etwas komplizierter und ist erst dann begreiflich wenn wir das T
 
 Eine Variable kann nicht nur einen einzelnen atomaren **Wert** wie eine Zahl enthalten, sondern auch einen **Wert** der sich aus anderen **Werten** zusammensetzt. Zum Beispiel:
 
+```{code-cell} python3
 x = [1,2,3,4,5]
 x
+```
 
 Der Variablen ``x`` weisen wir hierbei eine sog. *Liste* ``list`` zu, also eine geordnete Menge an Zahlen. In unserem Fall besteht die Liste und somit ``x`` aus den Werten ``1, 2, 3, 4`` und ``5``.
 
 Um auf einen bestimmten **Wert** der Liste zuzugreifen brauchen wir seinen Index. Zum Beispiel liefert uns der Index ``1`` den Wert ``2``:
 
+```{code-cell} python3
 x[1]
+```
 
 Wie sieht das nun im Speicher aus??? Welche Adresse hat ``x`` und wie sieht der Speicher an der Adresse von ``x`` aus? Der Aufruf
 
+```{code-cell} python3
 id(x)
+```
 
 Liefert uns eine ``id``, allerdings lieft uns der Aufruf
 
+```{code-cell} python3
 id(x[1])
+```
 
 ebenfalls eine (andere) ``id``.
 
+```{code-cell} python3
 id(x[2])
+```
 
 Eine Liste ``list`` mit $n$ Elementen besteht in ``Python`` aus $n$ Adressen. Jede dieser Adressen zeigt auf den Wert des Listenelements. Das heißt, eigentlich sieht unsere Liste ``x`` wie folgt aus:
 
@@ -249,6 +296,7 @@ Doch ``Python`` vereinfacht uns den Umgang mit Listen und verbirgt diese Tatsach
 
 Was aber passiert mit ``x`` wenn wir eines seiner Listenelemente verändern? Hier wird es spannend:
 
+```{code-cell} python3
 print(f'value of x = {x}')
 print(f'id of x = {id(x)}')
 
@@ -263,6 +311,7 @@ print(f'id of x = {id(x)}')
 
 print(f'value of x[1] = {x[1]}')
 print(f'id of x[1] = {id(x[1])}')
+```
 
 Die Adresse von ``x`` ändert sich nicht!!! Es ändert sich nur die Adresse von ``x[1]``!!! Mit anderen Worten durch die *Zuweisung* von ``x[1] = -10`` wird keine neue Liste im Speicher angelegt sondern nur ein neues Element!
 
@@ -270,12 +319,14 @@ Warum? Listen können groß werden und würden wir bei jeder Änderung eines Lis
 
 Dieses Verhalten hat jedoch Konsequenzen! Folgender Code führt zur Veränderung des Wertes der Variablen ``y`` von ``y = [[1, 2, 3], [1, 2, 3], [1,2,3]]`` nach ``y` = [[-10, 2, 3], [-10, 2, 3], [1,2,3]]`` obwohl wir nicht direkt mit ``y`` interagieren.
 
+```{code-cell} python3
 x = [1, 2, 3]
 y = [x, x, [1,2,3]]
 print(y)
 
 x[0] = -10
 print(y)
+```
 
 Solche Veränderungen eines Wertes einer Variablen durch die Veränderung eines Werts einer anderen Variablen, nennen wir *Seiteneffekt*.
 
@@ -286,15 +337,19 @@ Dies steht für 'kein' Wert bzw. das Nichts.
 Dennoch besitzt die *Variable* einen Wert, eben den Wert ``None`` 'kein' Wert.
 ``None`` repräsentiert somit das Nichts.
 
+```{code-cell} python3
 z = 0
 z + 20
 z = None
 z
+```
 
 Die Ausgabemechanik des Notebooks ignoriert ``None``, jedoch können wir die *Variable* in eine Zeichenkette umwandeln und dann ausgeben:
 
+```{code-cell} python3
 z = None
 print(z)
+```
 
 ``None`` wird uns wieder begegnen wenn wir uns ``Python``-Funktionen ansehen.
 Vorab sei gesagt, dass falls eine Funktionen keinen Rückgabewert besitzt sie dann ``None`` zurückliefert.

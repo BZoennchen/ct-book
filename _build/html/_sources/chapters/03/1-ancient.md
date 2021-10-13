@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Antike
 
 Die Geschichte der Computer und Algorithmen beginnt 2700 bis 2400 Jahre vor Christus.
@@ -38,7 +50,7 @@ Und da die Griechen von der Perfektion des Kreises überzeugt waren, folgerte Er
 Er war sogar in der Lage die Erdkrümmung relativ genau zu berechnen und dadurch auf den Umfang der Erde zu schließen.
 Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syren (800 km) ablief und berechnete.
 
-```python
+```{code-cell} python3
 def sieve_of_eratosthenes(N):
     N = 100
     prime_sieve = [True for i in range(N)]
@@ -78,11 +90,13 @@ Ein Fragment der Werke *Die Elemente*.
 Doch noch vor Eratosthenes, notierte Euklid von Alexandria (ca 450 v. Chr. - Mitte 350 v. Chr.) in seinem Werk *Die Elemente*, einen Algorithmus für die Berechnung des größten gemeinsamen Teilers ``gcd(a,b)`` zweier natürlicher Zahlen ``a, b``.
 Über zweitausend Jahre später finden wir jene Algorithmen in einer anderen Form wieder.
 
-```python
+```{code-cell} python3
 def gcd(a,b):
     while b:
         a, b = b, a % b
     return a
+
+gcd(36, 24)
 ```
 
 >[The Euclidean algorithm] is the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has survived to the present day. -- Donald Knuth, The Art of Computer Programming, Vol 2.

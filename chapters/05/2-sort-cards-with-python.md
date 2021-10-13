@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sort-cards-with-python)=
 # Karten sortieren in Python
 
@@ -48,22 +60,24 @@ Eine *Python Liste* repräsentiert ein endliches veränderbares *mathematisches 
 Elemente können an jeder Position aus der Liste entfernt, und eingefügt werden.
 Die Position eines Elements in der Liste nennen wir *Index*.
 Beinhaltet die Liste ``l``, ``n`` Elemente, so sind 
+
 ```python
 l[0], l[1], ..., l[n-1]
 ```
+
 ihre Elemente.
 ````
 
 Folgende Liste ist ein Beispiel für eine Hand mit 6 Karten.
 
-```python
+```{code-cell} python3
 hand = ['9', '6', '6', 'Bube', 'Ass', '7']
 hand
 ```
 
 Der Befehl
 
-```python
+```{code-cell} python3
 del hand[3]
 hand
 ```
@@ -71,7 +85,7 @@ hand
 löscht das vierte Element (das Element mit Index 3) aus der Liste.
 Um das Element wieder einzufügen können wir
 
-```python
+```{code-cell} python3
 hand.insert(3, 'Bube')
 hand
 ```
@@ -96,21 +110,21 @@ l[0], l[1], ..., l[n-1]
 ihre Elemente.
 ````
 
-```python
+```{code-cell} python3
 cards = ('6', '7', '8', '9', '10', 'Bube', 'Dame', 'König', 'Ass')
 ```
 
 Um die konkrete Implementierung von ``cards`` an einer zentralen Stelle ändern zu können, ist es sinnvoll eine Funktion zu schreiben, welche ``cards`` zurückgibt.
 Sie brauchen noch ein wenig Erfahrung um den Unterschied und die Vorzüge zu verstehen.
 
-```python
+```{code-cell} python3
 def get_cards():
     return cards
 ```
 
 Um die *Ordnung* einer Karte ``card`` zu bestimmen iterieren wir durch alle ``cards`` und sobald wir die entsprechende Karte gefunden haben, geben wir den *Index* zurück.
 
-```python
+```{code-cell} python3
 def index_of(card):
     for index in range(len(get_cards())):
         if cards[index] == card:
@@ -121,13 +135,13 @@ index_of('Bube')
 
 Um zwei Karten vergleichen zu können, vergleichen wir ihre Indices.
 
-```python
+```{code-cell} python3
 index_of('7') < index_of('König')
 ```
 
 Wir packen den Vergleich zweier Karten ``card1`` und ``card2`` in eine weitere Funktion.
 
-```python
+```{code-cell} python3
 def is_smaller(card1, card2):
     i = index_of(card1)    # finde Position von Karte 1
     j = index_of(card2)    # finde Position von Karte 2
@@ -147,7 +161,7 @@ Solange noch Karten auf der Hand H sind:
 
 In ``Python`` sieht das ganz wie folgt aus.
 
-```python
+```{code-cell} python3
 def stack_sort(hand):                               # Sei H unsere Hand mit Karten (Argument der Funktion)
     stack = [];                                     # Sei S ein leerer Stapel
     while len(hand) > 0:                            # Solange noch Karten auf der Hand H sind:
@@ -160,7 +174,7 @@ Wir haben unseren *Kontext* um diese Funktion erweitert.
 Leider ist die Funktion ``remove_smallest_card`` in unserem *Kontext* noch nicht definiert.
 Das holen wir nach.
 
-```python
+```{code-cell} python3
 def remove_smallest_card(hand):    # Sei H unsere Hand mit Karten (Argument der Funktion)
     i = find_smallest_index(hand)  # Finde Position der kleinsten Karte auf der Hand
     card = hand[i]                 # Merke dir Karte an der Position der kleinsten Karte auf der Hand
@@ -171,7 +185,7 @@ def remove_smallest_card(hand):    # Sei H unsere Hand mit Karten (Argument der 
 Wir haben das Problem ``remove_smallest_card`` in Unterprobleme aufgeteilt (*Dekomposition*).
 Die Funktion ``find_smallest_index`` soll uns den *Index* der kleinsten Karte auf der Hand zurückgeben.
 
-```python
+```{code-cell} python3
 def find_smallest_index(hand):
     index = 0                                # Merke dir Position 0
     for i in range(len(hand)):               # Gehe durch alle Positionen 0 bis (Anzahl der Karten auf der Hand) - 1
@@ -183,7 +197,7 @@ def find_smallest_index(hand):
 Jetzt ist alles in unserem *Kontext* definiert was notwendig ist und wir können den Sortieralgorithmus ``stack_sort`` ausführen.
 Lasst uns unsere Hand ``hand`` sortieren.
 
-```python
+```{code-cell} python3
 stack_sort(hand)
 ```
 
@@ -191,7 +205,7 @@ Was passiert wenn wir richtig viele Karten sortieren?
 Der folgende Code erzeugt eine durchgemischte Hand mit ``1000`` Karten.
 Wir erweitern dafür den *Kontext* um ein Paket ``random`` welches Funktionen für die Wahrscheinlichkeitsrechnung enthält.
 
-```python
+```{code-cell} python3
 import random
 hand = [random.choice(get_cards()) for _ in range(1000)]
 hand
@@ -199,6 +213,6 @@ hand
 
 Sie werden merken, dass die Ausführung des folgenden Codes einen kurzen Moment dauert.
 
-```python
+```{code-cell} python3
 stack_sort(hand)
 ```
