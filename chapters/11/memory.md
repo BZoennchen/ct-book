@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sec-memory)=
 # Speicher - alles ist eine Liste
 
@@ -502,8 +514,9 @@ Aber moment!
 In ``Python`` kann eine Liste unterschiedliche Datentypen enthalten.
 Niemand verbietet mir z.B. folgende Liste zu definieren:
 
-```python
+```{code-cell} python3
 mylist = [1, 2, 'A', 'B', 3, 3.4131]
+mylist
 ```
 
 Wie funktioniert das denn?
@@ -524,7 +537,7 @@ Die Funktion soll zwei Listen ``memory`` und ``inuse`` zurückgeben.
 
 ```
 
-```python
+```{code-cell} python3
 def initialize(n):
     memory = [0 for i in range(n)]
     inuse = [False for i in range(n)]
@@ -546,7 +559,7 @@ Schreiben Sie folgende Hilfsfunktionen:
 
 ```
 
-```python
+```{code-cell} python3
 def is_valid(addr, memory):
     return addr >= 0 and addr < len(memory)
 
@@ -585,7 +598,7 @@ Nachdem diese zusammenhängenden [Bytes](def-byte) gefunden wurden, setzten wir 
 
 ``mfree`` verändert nur die Markierungen und setzt diese auf **frei**.
 
-```python
+```{code-cell} python3
 ERROR_CODE = -1
 SUCCESS_CODE = -2
 
@@ -625,7 +638,7 @@ def mfree(addr, n_bytes, memory, inuse):
 
 Lassen Sie uns das doch einmal austesten:
 
-```python
+```{code-cell} python3
 memory, inuse = initialize(1024)
 print(malloc(8, memory, inuse))   # 0
 print(malloc(15, memory, inuse))  # 0 + 8 = 8
@@ -637,7 +650,7 @@ print(malloc(8, memory, inuse))   # allocate bytes 0,1,...,7 again => 0
 Bringen wir für die Allokierung und Deallokierung (Speicher freigeben) die Datentypen ins Spiel.
 Wäre es nicht äußerst praktikabel Code in der folgenden Art schreiben zu können:
 
-```
+```{code-cell} python3
 x = alloc(data_type = 0, value=50)   # x = 50
 y = alloc(data_type = 0, value=1000) # y = 1000
 z = add(x, y)                        # z = x + y
@@ -652,7 +665,7 @@ Schlussendlich geben wir die beiden Speicherbereiche bei ``x`` und ``y`` frei.
 Dieser Code sieht fast schon so aus wie unser üblicher ``Python``-Code.
 Das verwundert nicht denn hinter einer Zuweisung
 
-```python
+```{code-cell} python3
 x = 50
 ```
 
@@ -683,7 +696,7 @@ Daraufhin definieren Sie folgende Funktionen zur Speicherverwaltung:
 **Hinweis:** Lassen Sie Listen in diesem Schritt außer acht, um diese kümmern wir uns gleich. ``free`` enthält keine Informationen darüber wie viel Speicher freigegeben wird. Diese Information erhalten Sie durch die Datentypen, also durch ``calc_bytes``.
 ```
 
-```python
+```{code-cell} python3
 name_to_data_type = {'number': 0, 'char': 1, 'list': 2, 'addr': 3}
 
 def to_data_type(name):
@@ -738,7 +751,7 @@ def free(addr, memory, inuse):
 
 Lassen Sie uns das doch einmal austesten:
 
-```python
+```{code-cell} python3
 memory, inuse = initialize(1024)
 print(alloc(to_data_type('number'), 4, memory, inuse))   # 0
 print(alloc(to_data_type('number'), 130, memory, inuse)) # 0 + 3 = 3
@@ -754,7 +767,7 @@ print(alloc(to_data_type('number'), 6, memory, inuse))   # allocate bytes 0,1,2,
 Um zwei Zahlen im Speicher zu addieren fehlt uns nur noch eine Funktion die zwei Zahlen an zwei Speicheradressen liest und an eine neu reservierte Speicheradresse schreibt.
 Diese neue Adresse sollte die Funktion zurückgeben.
 
-```python
+```{code-cell} python3
 def read_number(addr, memory):
     return to_number(memory[addr+1], memory[addr+2])
 
@@ -770,7 +783,7 @@ def add(addr1, addr2, memory, inuse):
 
 Lassen Sie uns nun endlich die Addition über unseren Speicher durchführen:
 
-```python
+```{code-cell} python3
 memory, inuse = initialize(1024)                       # fresh memory
 x = alloc(to_data_type('number'), 50, memory, inuse)   # x = 50
 y = alloc(to_data_type('number'), 1000, memory, inuse) # y = 1000
@@ -808,7 +821,7 @@ Schreiben Sie eine weitere Funktion ``alloc_list(data_type, n, memory, inuse)`` 
 **Hinweis:** Sie müssen die natürliche 2-byte Zahl in eine herkömmliche Dezimalzahl umwandeln. Hierfür empfiehlt sich die Hilfsfunktion ``to_number(byte1, byte2)``.
 ```
 
-```python
+```{code-cell} python3
 def calc_list_bytes(addr, memory):
     m = to_number(memory[addr+1], memory[addr+2])
     n_bytes_element = calc_bytes(memory[addr+3]) - 1
@@ -843,7 +856,7 @@ def free(addr, memory, inuse):
 
 Falls wir eine Liste **allokieren** 
 
-```python
+```{code-cell} python3
 length = 10
 mylist = alloc_list(to_data_type('number'), length, memory, inuse)
 ```
@@ -860,7 +873,7 @@ Schreiben Sie folgende Funktionen zur Verwaltung einer Liste:
 + ``get_list_value(addr, index, memory, inuse)``: Gibt das Listenelement an der Stelle ``index`` der Liste zurück.
 ```
 
-```python
+```{code-cell} python3
 def list_len(addr, memory, inuse):
     return to_number(memory[addr+1], memory[addr+2])
 
@@ -893,7 +906,7 @@ def get_list_value(addr, index, memory, inuse):
 
 Lassen Sie uns eine Liste mit den Quadratzahlen von 1 bis einschließlich 10 erzeugen und zur Überprüfung wieder Ausgeben:
 
-```python
+```{code-cell} python3
 memory, inuse = initialize(1024)  
 length = 10
 mylist = alloc_list(to_data_type('number'), length, memory, inuse)
@@ -962,7 +975,7 @@ Deren Adressen sind jedoch in der Liste enthalten.
 Die Speicherverwaltung wird dadurch komplexer.
 
 
-```python
+```{code-cell} python3
 memory, inuse = initialize(1024)  
 length = 10
 mylist = alloc_list(to_data_type('addr'), length, memory, inuse)
@@ -990,7 +1003,7 @@ Wenn wir den gesamten Speicher wieder freigeben wollen, reicht es nicht nur den 
 Wir müssen auch den Speicher an den Adressen der Liste freigeben.
 Dabei müssen wir sicher sein, dass kein anderer noch verwendeter Zeiger auf das Element zeigt!
 
-```python
+```{code-cell} python3
 # 54 Bytes
 print(f"We allocated {len([e for e in inuse if e])} bytes")
 
@@ -1059,7 +1072,7 @@ Implementieren Sie eine Funktion ``mem_to_string(addr, memory, inuse)`` die eine
 
 ```
 
-```python
+```{code-cell} python3
 def char_to_str(addr, memory):
     return to_char(memory[addr+1])
 
@@ -1141,7 +1154,7 @@ und im zweiten Fall aus
 Durch ``mem_to_string`` haben wir eine Möglichkeit um zu testen ob unsere definierten Funktionen auch das gewünschte Ergebnis erzeugen und unser Speicher ``memory`` so manipuliert wird, wie wir uns das gedacht haben.
 Zum Beispiel können wir nun unsere *Variablen* durch ``mem_to_string`` Ausgeben:
 
-```python
+```{code-cell} python3
 memory, inuse = initialize(1024)
 x = alloc(to_data_type('number'), 4, memory, inuse)
 y = alloc(to_data_type('number'), 130, memory, inuse)
@@ -1165,7 +1178,7 @@ Wie Sie oben sehen, können wir durch ``alloc`` bereits sehr bequem mit primitiv
 Um eine Liste zu erstellen haben wir noch keine solche Hilfsfunktion implementiert.
 Wäre es nicht toll wenn wir durch folgenden Code eine neue Liste aus Zahlen oder Zeichen an die Adresse ``numbers`` bzw. ``chars`` schreiben könnten?
 
-```python
+```{code-cell} python3
 numbers = new_primitive_list([1,2,3,4,5], to_data_type('number'), memory, inuse)
 chars = new_primitive_list("Hello World", to_data_type('char'), memory, inuse)
 ```
@@ -1179,7 +1192,7 @@ Verwenden Sie hierfür ``alloc_list`` und ``set_list_value``.
 
 ```
 
-```python
+```{code-cell} python3
 def new_primitive_list(values, data_type, memory, inuse):
     length = len(values)
     mylist = alloc_list(data_type, length, memory, inuse)
@@ -1199,7 +1212,7 @@ Durch unsere Funktionen bauen wir an einer Welt, welche wir immer besser manipul
 Gehen wir noch einen Schritt weiter!
 Wäre es nicht wundervoll, wenn folgender Code funktionieren würde:
 
-```python
+```{code-cell} python3
 new_list([1, 2, 'A', [[1, 2], 3, 4], "Hello World"], memory, inuse)
 ```
 
@@ -1218,7 +1231,7 @@ Verwenden Sie ``alloc_list``, ``alloc`` und ``set_list_value``.
 Wir haben eine kleine Hilfsfunktion ``get_data_type(value)`` geschrieben, die uns den Datentyp anhand des Wertes ``value`` bestimmt.
 Wichtig dabei ist, dass eine Zeichenkette mit Länge gleich 1 eine ``char`` ist, wobei eine Zeichenkette mit Läger > 1 eine Liste (aus ``char``) ist!
 
-```python
+```{code-cell} python3
 def get_data_type(value):
     if type(value) == int:
         return to_data_type('number')
@@ -1301,7 +1314,7 @@ Doch wenn Sie sich erneut Schritt für Schritt voran kämpfen und den Berg in vi
 
 Wir haben Ihnen alle Funktionen als Klassenmethoden in die Klasse ``Memory`` gepackt.
 
-```python
+```{code-cell} python3
 class Memory():
     def __init__(self, size=1024):
         self.ERROR_CODE = -1
@@ -1540,7 +1553,7 @@ class Memory():
 
 Wenn Sie die Klasse in die Datai ``mem.py`` packen, sieht der Code zur Verwendung wie folgt aus:
 
-```python
+```{code-cell} python3
 import mem
 memory = mem.Memory(size=4048)
 
@@ -1572,14 +1585,16 @@ Was soll das alles?
 Mit dieser Übung wollten wir Ihnen zeigen, wie viel uns ``Python`` und andere Hochsprachen abnehmen und was eigentlich hinter den kurzen und überaus mächtigen Befehlen steckt.
 Schreiben Sie in ``Python`` zum Beispiel:
 
-```python
+```{code-cell} python3
 mylist = [1,2,"Hello World",4,5]
+mylist
 ```
 
 passiert im Hintergrund eine ganze Menge und unsere Funktion
 
-```python
+```{code-cell} python3
 mylist = new_list([1,2,"Hello World",4,5], memory, inuse)
+mylist
 ```
 
 schildert einen Teil davon.
@@ -1602,8 +1617,9 @@ Wenn Sie der Übung folgen konnten, haben Sie ihr Verständnis der Programmausf�
 Sie haben aus primitiven Mitteln (einem linearen Speicher aus Zahlen (0 bis 255)) komplexe Strukturen (mehrdimensionale Listen) und Manipulationen errichtet.
 Im Endeffekt haben Sie einen kleinen Compiler geschrieben, der Ihnen den Befehl 
 
-```python
+```{code-cell} python3
 new_list([1,2,"Hello World",4,5], memory, inuse)
+new_list
 ```
 
 in eine Folge von maschinennäheren Befehlen umwandelt.

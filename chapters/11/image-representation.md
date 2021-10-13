@@ -390,20 +390,11 @@ def plot_picture(picture):
     plt.imshow(picture, cmap='gray', vmin=0, vmax=1)
 ```
 
-Mit folgendem Code
+Mit folgendem Code können wir uns unser Bild anzeigen.
 
 ```{code-cell} python3
 picture = generate_border_picture(width=5, height=10, border_width=1)
 plot_picture(picture)
-```
-
-erzuegen wir
-
-```{figure} ../../figs/image-representation/border-picture.png
----
-height: 150px
-name: fig-border-picture.
----
 ```
 
 ## Zeichnen (Informationsmanipulation)
