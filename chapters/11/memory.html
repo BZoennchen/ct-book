@@ -2241,7 +2241,7 @@ Doch wenn Sie sich erneut Schritt für Schritt voran kämpfen und den Berg in vi
 
 <span class="nb">print</span><span class="p">(</span><span class="n">memory_object</span><span class="o">.</span><span class="n">mem_to_string</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
 
-<span class="n">numbers</span> <span class="o">=</span> <span class="n">memory_object</span><span class="o">.</span><span class="n">new_primitive_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">memory</span><span class="o">.</span><span class="n">to_data_type</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">))</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="n">memory_object</span><span class="o">.</span><span class="n">new_primitive_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">memory_object</span><span class="o">.</span><span class="n">to_data_type</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">memory_object</span><span class="o">.</span><span class="n">mem_to_string</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span>
 
 <span class="n">chars</span> <span class="o">=</span> <span class="n">memory_object</span><span class="o">.</span><span class="n">new_list</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
@@ -2257,18 +2257,10 @@ Doch wenn Sie sich erneut Schritt für Schritt voran kämpfen und den Berg in vi
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>134
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="mi">9</span><span class="n">de837546c26</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">memory_object</span><span class="o">.</span><span class="n">mem_to_string</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">memory_object</span><span class="o">.</span><span class="n">new_primitive_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">memory</span><span class="o">.</span><span class="n">to_data_type</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="n">memory_object</span><span class="o">.</span><span class="n">mem_to_string</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> 
-
-<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;to_data_type&#39;
+[1, 2, 3, 4, 5, 6]
+[H, e, l, l, o,  , W, o, r, l, d]
+[1, 2, [H, e, l, l, o,  , W, o, r, l, d], 4, 5]
+[1, 2, A, [[1, 2], 3, 4], [H, e, l, l, o,  , W, o, r, l, d]]
 </pre></div>
 </div>
 </div>
@@ -2289,6 +2281,11 @@ Schreiben Sie in <code class="docutils literal notranslate"><span class="pre">Py
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, &#39;Hello World&#39;, 4, 5]
+</pre></div>
+</div>
+</div>
 </div>
 <p>passiert im Hintergrund eine ganze Menge und unsere Funktion</p>
 <div class="cell docutils container">
@@ -2296,6 +2293,11 @@ Schreiben Sie in <code class="docutils literal notranslate"><span class="pre">Py
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span> <span class="o">=</span> <span class="n">initialize</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
 <span class="n">mylist</span> <span class="o">=</span> <span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
 <span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
@@ -2321,6 +2323,11 @@ Im Endeffekt haben Sie einen kleinen Compiler geschrieben, der Ihnen den Befehl<
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span> <span class="o">=</span> <span class="n">initialize</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
 <span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
 <span class="n">new_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.new_list(values, memory, inuse)&gt;
 </pre></div>
 </div>
 </div>

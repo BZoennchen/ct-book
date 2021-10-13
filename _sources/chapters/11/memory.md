@@ -1566,7 +1566,7 @@ z = memory_object.add(x, y)
 
 print(memory_object.mem_to_string(z))
 
-numbers = memory_object.new_primitive_list([1,2,3,4,5,6], memory.to_data_type('number'))
+numbers = memory_object.new_primitive_list([1,2,3,4,5,6], memory_object.to_data_type('number'))
 print(memory_object.mem_to_string(numbers))
 
 chars = memory_object.new_list("Hello World")
