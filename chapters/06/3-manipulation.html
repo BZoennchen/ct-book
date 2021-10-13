@@ -517,7 +517,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/06/3-manipulation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/06/3-manipulation.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -538,6 +541,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/06/3-manipulation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -610,20 +633,32 @@ Das Ausgabesignal hängt von den ein oder zwei Eingabesignalen des Gatters und d
 <p>Das wohl einfachste Gatter nimmt als Eingabe ein Signal und gibt die Negation davon aus.
 Aus <span class="math notranslate nohighlight">\(0\)</span> wird <span class="math notranslate nohighlight">\(1\)</span> und aus <span class="math notranslate nohighlight">\(1\)</span> wird <span class="math notranslate nohighlight">\(0\)</span>.
 Wir nennen es das <strong>Not</strong>-Gatter.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lnot</span><span class="p">(</span><span class="n">bit</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lnot</span><span class="p">(</span><span class="n">bit</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="ow">not</span> <span class="n">bit</span><span class="p">)</span>
     
-<span class="n">lnot</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">lnot</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lnot</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lnot</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="figure align-default" id="fig-not">
 <a class="reference internal image-reference" href="../../_images/gatter-not.png"><img alt="../../_images/gatter-not.png" src="../../_images/gatter-not.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Das <strong>Not</strong>-Gatter.</span><a class="headerlink" href="#fig-not" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.5 </span><span class="caption-text">Das <strong>Not</strong>-Gatter.</span><a class="headerlink" href="#fig-not" title="Permalink to this image">¶</a></p>
 </div>
 <p>Ein weiteres sehr einfaches Gatter ist das sogenannte <strong>AND</strong>-Gatter.
 Es kombiniert zwei Signale und gibt genau dann <span class="math notranslate nohighlight">\(1\)</span> aus wenn die beiden Eingabesignale gleich <span class="math notranslate nohighlight">\(1\)</span> sind.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">land</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">land</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">in1</span> <span class="ow">and</span> <span class="n">in2</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> 
@@ -632,13 +667,25 @@ Es kombiniert zwei Signale und gibt genau dann <span class="math notranslate noh
 <span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+0
+1
+</pre></div>
+</div>
+</div>
+</div>
 <div class="figure align-default" id="fig-and">
 <a class="reference internal image-reference" href="../../_images/gatter-and.png"><img alt="../../_images/gatter-and.png" src="../../_images/gatter-and.png" style="width: 340px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Das <strong>AND</strong>-Gatter.</span><a class="headerlink" href="#fig-and" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.6 </span><span class="caption-text">Das <strong>AND</strong>-Gatter.</span><a class="headerlink" href="#fig-and" title="Permalink to this image">¶</a></p>
 </div>
 <p>Zu guter Letzt fehlt noch das <strong>OR</strong>-Gatter.
 Es kombiniert zwei Signale und gibt <span class="math notranslate nohighlight">\(1\)</span> aus genau dann wenn eines oder beide der Eingabesignale gleich <span class="math notranslate nohighlight">\(1\)</span> sind.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lor</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lor</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">in1</span> <span class="ow">or</span> <span class="n">in2</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> 
@@ -647,9 +694,19 @@ Es kombiniert zwei Signale und gibt <span class="math notranslate nohighlight">\
 <span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+1
+1
+</pre></div>
+</div>
+</div>
+</div>
 <div class="figure align-default" id="fig-or">
 <a class="reference internal image-reference" href="../../_images/gatter-or.png"><img alt="../../_images/gatter-or.png" src="../../_images/gatter-or.png" style="width: 340px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Das <strong>OR</strong>-Gatter.</span><a class="headerlink" href="#fig-or" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Das <strong>OR</strong>-Gatter.</span><a class="headerlink" href="#fig-or" title="Permalink to this image">¶</a></p>
 </div>
 <div class="exercise admonition" id="or-gate-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.12 </span>(OR-Gatter)</p>
@@ -667,15 +724,6 @@ Schreiben Sie eine Python Funktion <code class="docutils literal notranslate"><s
 <div class="math notranslate nohighlight">
 \[x + y \geq 1\]</div>
 <p>gilt.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lor</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">in1</span> <span class="o">+</span> <span class="n">in2</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
 </div>
 </div>
 <p>Nun gut, diese Operationen scheinen lächerlich einfach zu sein, aber kombinieren wir mehrere Gatter können wir mehr und mehr komplexe Operationen durchführen.
@@ -690,7 +738,9 @@ Je kleiner die Chips desto kleiner ist die Distanz, welche die Signale wandern m
 <p>Betrachten Sie einmal <code class="docutils literal notranslate"><span class="pre">land</span></code> und <code class="docutils literal notranslate"><span class="pre">lor</span></code>.
 Welche mathematische Funktion realisieren diese einfachen Gatter?
 Nun ja, wenn wir die beiden Eingabesignale als Zahlen interpretieren dann ist <code class="docutils literal notranslate"><span class="pre">land</span></code> gleich dem Minimum <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">lor</span></code> gleich dem <code class="docutils literal notranslate"><span class="pre">max</span></code> der beiden Signale:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lor</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lor</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">land</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
@@ -706,6 +756,20 @@ Nun ja, wenn wir die beiden Eingabesignale als Zahlen interpretieren dann ist <c
 <span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+1
+1
+0
+0
+0
+1
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="bit-addierer">
 <h3><span class="section-number">1.4.2.1. </span>1-Bit-Addierer<a class="headerlink" href="#bit-addierer" title="Permalink to this headline">¶</a></h3>
@@ -740,7 +804,7 @@ Daraus ergeben sich folgende Boolsche Operationen:</p>
 <p>Als Gatter-Bauplan sieht das ganze wie folgt aus.</p>
 <div class="figure align-default" id="fig-adder">
 <a class="reference internal image-reference" href="../../_images/adder.png"><img alt="../../_images/adder.png" src="../../_images/adder.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Skizze eines 1-Bit-Addierers. Links der Zusammenschluss der Gatter und rechts das Symbol für unseren Addierer.</span><a class="headerlink" href="#fig-adder" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Skizze eines 1-Bit-Addierers. Links der Zusammenschluss der Gatter und rechts das Symbol für unseren Addierer.</span><a class="headerlink" href="#fig-adder" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="erweiterter-1-bit-addierer">
@@ -806,7 +870,9 @@ Aus</p>
 <p>und wir erhalten insgesamt:</p>
 <div class="math notranslate nohighlight">
 \[a_0 = (b_0 \land b_1 \land b_3) \lor (\neg a_1 \land (b_0 \lor b_1 \lor b_2)).\]</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ladd</span><span class="p">(</span><span class="n">in2</span><span class="p">,</span> <span class="n">in1</span><span class="p">,</span> <span class="n">in0</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ladd</span><span class="p">(</span><span class="n">in2</span><span class="p">,</span> <span class="n">in1</span><span class="p">,</span> <span class="n">in0</span><span class="p">):</span>
 
     <span class="c1"># b0 and b1</span>
     <span class="n">and01</span> <span class="o">=</span> <span class="n">land</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="n">in0</span><span class="p">)</span>
@@ -841,6 +907,20 @@ Aus</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0]
+[0, 1]
+[0, 1]
+[1, 0]
+[0, 1]
+[1, 0]
+[1, 0]
+[1, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="n-bit-addierer">
 <h3><span class="section-number">1.4.2.3. </span><span class="math notranslate nohighlight">\(n\)</span>-Bit-Addierer<a class="headerlink" href="#n-bit-addierer" title="Permalink to this headline">¶</a></h3>
 <p>Für einen <span class="math notranslate nohighlight">\(n\)</span>-Addierer brauchen wir <span class="math notranslate nohighlight">\(n\)</span> 1-Bit-Addierer die drei Signale aufnehmen.
@@ -848,10 +928,12 @@ Wie oben erwähnt addiert der <span class="math notranslate nohighlight">\(i\)</
 Für den ersten Addierer ist der Übertrag gleich <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <div class="figure align-default" id="fig-4-bit-adder">
 <a class="reference internal image-reference" href="../../_images/4-bit-adder.png"><img alt="../../_images/4-bit-adder.png" src="../../_images/4-bit-adder.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.11 </span><span class="caption-text">Skizze eines 4-Bit-Addierers. Berechnet wird <span class="math notranslate nohighlight">\(a + b = c\)</span>.</span><a class="headerlink" href="#fig-4-bit-adder" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Skizze eines 4-Bit-Addierers. Berechnet wird <span class="math notranslate nohighlight">\(a + b = c\)</span>.</span><a class="headerlink" href="#fig-4-bit-adder" title="Permalink to this image">¶</a></p>
 </div>
 <p>Hier sehen Sie den <code class="docutils literal notranslate"><span class="pre">Python</span></code> Code eines <span class="math notranslate nohighlight">\(4\)</span>-Bit-Addierers (wir lesen die Bits von rechts nach links, d.h. das Bit an der Stelle 0 in der liste ist das höchste Bit!):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ladd4</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ladd4</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="c1"># a[3] und b[3] sind die erste Eingabesignale (niedrigsten Bits)</span>
     <span class="n">u1</span><span class="p">,</span> <span class="n">c0</span> <span class="o">=</span> <span class="n">ladd</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">u2</span><span class="p">,</span> <span class="n">c1</span> <span class="o">=</span> <span class="n">ladd</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">u1</span><span class="p">)</span>
@@ -861,6 +943,13 @@ Für den ersten Addierer ist der Übertrag gleich <span class="math notranslate 
 
 <span class="n">ladd4</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 0, 0]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Hängt man nun Addierer aneinander so kann man einen Multiplizierer und andere Recheneinheiten wie Fließkommaddierer und mehr bauen.</p>
 <div class="exercise admonition" id="n-bit-adder-exercise">

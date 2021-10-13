@@ -698,7 +698,7 @@ Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Ar
 <p>Folgende Abbildung verdeutlicht die Situation:</p>
 <div class="figure align-default" id="fig-variable">
 <a class="reference internal image-reference" href="../../_images/variable.png"><img alt="../../_images/variable.png" src="../../_images/variable.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.19 </span><span class="caption-text">Initialisierung und Zuweisung einer Variable <code class="docutils literal notranslate"><span class="pre">x</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Der Wert steht im Arbeitspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.</span><a class="headerlink" href="#fig-variable" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.17 </span><span class="caption-text">Initialisierung und Zuweisung einer Variable <code class="docutils literal notranslate"><span class="pre">x</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Der Wert steht im Arbeitspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.</span><a class="headerlink" href="#fig-variable" title="Permalink to this image">¶</a></p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">id</span></code>: Mit der <em>built-in</em>-Funktion <code class="docutils literal notranslate"><span class="pre">id</span></code> können Sie sich eine Identifikationsnummer einer Variablen ausgeben lassen. Für zwei <em>Variablen</em> ist diese genau dann gleich, wenn deren <strong>Arbeitsspeicheradressen</strong> gleich sind.</p>
 <div class="cell docutils container">
@@ -711,8 +711,8 @@ Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Ar
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4324359216
-4324359216
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4488399920
+4488399920
 </pre></div>
 </div>
 </div>
@@ -721,7 +721,7 @@ Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Ar
 Diese Situation sieht demnach wie folgt aus:</p>
 <div class="figure align-default" id="fig-variable-equal-id">
 <a class="reference internal image-reference" href="../../_images/variable-equal-id.png"><img alt="../../_images/variable-equal-id.png" src="../../_images/variable-equal-id.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.20 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Die Adresse beider Variablen ist identisch.</span><a class="headerlink" href="#fig-variable-equal-id" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.18 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Die Adresse beider Variablen ist identisch.</span><a class="headerlink" href="#fig-variable-equal-id" title="Permalink to this image">¶</a></p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>-erkennt, dass es ausreicht, wenn beide <em>Variablen</em> auf den gleichen Speicherbereich zeigen. Wir als Programmierer*innen bekommen davon gar nichts mit. Verändern wir den Wert von <code class="docutils literal notranslate"><span class="pre">z</span></code> dann verändert sich auch deren <code class="docutils literal notranslate"><span class="pre">id</span></code>:</p>
 <div class="cell docutils container">
@@ -734,8 +734,8 @@ Diese Situation sieht demnach wie folgt aus:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4324359216
-4324359184
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4488399920
+4488399888
 </pre></div>
 </div>
 </div>
@@ -743,7 +743,7 @@ Diese Situation sieht demnach wie folgt aus:</p>
 <p>Die Situation könnte in etwa wie folgt aussehen:</p>
 <div class="figure align-default" id="fig-variable-unequal-id">
 <a class="reference internal image-reference" href="../../_images/variable-unequal-id.png"><img alt="../../_images/variable-unequal-id.png" src="../../_images/variable-unequal-id.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.21 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code> und <code class="docutils literal notranslate"><span class="pre">24</span></code>. Die Adresse beider Variablen ist nicht identisch.</span><a class="headerlink" href="#fig-variable-unequal-id" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.19 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code> und <code class="docutils literal notranslate"><span class="pre">24</span></code>. Die Adresse beider Variablen ist nicht identisch.</span><a class="headerlink" href="#fig-variable-unequal-id" title="Permalink to this image">¶</a></p>
 </div>
 <div class="warning admonition" id="warning-equality-and-identity">
 <p class="admonition-title">Gleichheit und Identität</p>
@@ -761,8 +761,8 @@ Jedoch kann der Wert der Variablen identisch sein und deren <code class="docutil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4361718864
-4361719376
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4525759792
+4525760080
 </pre></div>
 </div>
 </div>
@@ -840,11 +840,11 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 4361718768
+id of half = 4525759920
 value of x = 25
-id of x = 4324359216
+id of x = 4488399920
 value of x = 24
-id of x = 4324359184
+id of x = 4488399888
 </pre></div>
 </div>
 </div>
@@ -859,7 +859,7 @@ id of x = 4324359184
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 4361718768
+id of half = 4525759920
 </pre></div>
 </div>
 </div>
@@ -888,11 +888,11 @@ id of half = 4361718768
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 4362293360
+id of x = 4526272752
 value of y = 10
-id of y = 4324358736
+id of y = 4488399440
 value of z = 2131313
-id of z = 4362293776
+id of z = 4526273136
 </pre></div>
 </div>
 </div>
@@ -914,11 +914,11 @@ id of z = 4362293776
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 4362293360
+id of x = 4526272752
 value of y = 2131313
-id of y = 4362293360
+id of y = 4526272752
 value of z = 2131313
-id of z = 4362293776
+id of z = 4526273136
 </pre></div>
 </div>
 </div>
@@ -964,7 +964,7 @@ id of z = 4362293776
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4362247744
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4526039872
 </pre></div>
 </div>
 </div>
@@ -977,7 +977,7 @@ id of z = 4362293776
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4324358480
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4488399184
 </pre></div>
 </div>
 </div>
@@ -990,7 +990,7 @@ id of z = 4362293776
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4324358512
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4488399216
 </pre></div>
 </div>
 </div>
@@ -1022,16 +1022,14 @@ id of z = 4362293776
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = [1, 2, 3, 4, 5]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of x = 4362247744
+id of x = 4526039872
 value of x[1] = 2
-id of x[1] = 4324358480
+id of x[1] = 4488399184
 
 value of x = [1, -10, 3, 4, 5]
-id of x = 4362247744
+id of x = 4526039872
 value of x[1] = -10
-id of x[1] = 4362293616
+id of x[1] = 4526273392
 </pre></div>
 </div>
 </div>
@@ -1052,9 +1050,7 @@ id of x[1] = 4362293616
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-10, 2, 3], [-10, 2, 3], [1, 2, 3]]
+[[-10, 2, 3], [-10, 2, 3], [1, 2, 3]]
 </pre></div>
 </div>
 </div>
