@@ -17,16 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-numbers = new_primitive_list([1,2,3,4,5], to_data_type('number'), memory, inuse)
-chars = new_primitive_list("Hello World", to_data_type('char'), memory, inuse)
+new_list([1, 2, 'A', [[1, 2], 3, 4], "Hello World"], memory, inuse)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-19-8fb70bd2b602>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mnumbers[0m [0;34m=[0m [0mnew_primitive_list[0m[0;34m([0m[0;34m[[0m[0;36m1[0m[0;34m,[0m[0;36m2[0m[0;34m,[0m[0;36m3[0m[0;34m,[0m[0;36m4[0m[0;34m,[0m[0;36m5[0m[0;34m][0m[0;34m,[0m [0mto_data_type[0m[0;34m([0m[0;34m'number'[0m[0;34m)[0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mchars[0m [0;34m=[0m [0mnew_primitive_list[0m[0;34m([0m[0;34m"Hello World"[0m[0;34m,[0m [0mto_data_type[0m[0;34m([0m[0;34m'char'[0m[0;34m)[0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mNameError[0m: name 'new_primitive_list' is not defined
-NameError: name 'new_primitive_list' is not defined
+[0;32m<ipython-input-20-08a92fb4ad01>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mnew_list[0m[0;34m([0m[0;34m[[0m[0;36m1[0m[0;34m,[0m [0;36m2[0m[0;34m,[0m [0;34m'A'[0m[0;34m,[0m [0;34m[[0m[0;34m[[0m[0;36m1[0m[0;34m,[0m [0;36m2[0m[0;34m][0m[0;34m,[0m [0;36m3[0m[0;34m,[0m [0;36m4[0m[0;34m][0m[0;34m,[0m [0;34m"Hello World"[0m[0;34m][0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mNameError[0m: name 'new_list' is not defined
+NameError: name 'new_list' is not defined
 
