@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Jupyter Notebooks
 
 Wie Sie mittlerweile bemerkt haben, verwenden wir für unseren Kurs ``Python`` in Kombination mit den sogenannten *Jupyter Notebooks*.
@@ -41,9 +29,7 @@ Ohne vorerst genaue ins Detail zu gehen bedeutet dies, dass das Dokument ``Pytho
 Im Hintergrund rechnet der Computer, liefert das Ergebnis zurück und das Notebook zeigt es in einer gewissen Weise an.
 Führen wir zum Beispiel folgende Codezeile aus,
 
-```{code-cell} python3
 2**4
-```
 
 berechnet der Computer $2^4 = 16$ lieft das Ergebnis ans Notebook zurück und dieses gibt das Ergebnis in gewisser Weise aus.
 
@@ -98,9 +84,7 @@ Um aus einer Zelle eine *Code-Zelle* zu machen, müssen Sie gleich links neben d
 Wenn Sie versehentlich aus einer Code-Zelle eine Markdown-Zelle gemacht haben, wird der Code einfach als Text interpretiert.
 Anstatt
 
-```{code-cell} python3
 x = 5 * 2 + 6
-```
 
 sehen Sie
 
@@ -138,38 +122,27 @@ Diese Ausführungsreihenfolge ist jedoch nicht verpflichtend.
 Sie können manuell einzelne Zellen auswerten.
 Nehmen wir einmal folgende *Code-Zellen* (1,2,3,4):
 
-```{code-cell} python3
 y = -3      # Zelle 1
-```
 
-```{code-cell} python3
 x = z + y   # Zelle 2
-```
 
-```{code-cell} python3
 z = 5       # Zelle 3
-```
 
-```{code-cell} python3
 y = 20      # Zelle 4
-```
 
 Nehmen wir nun an, wir werten Zelle 1 dann 4 dann 3 und dann 2 aus.
 Was glauben Sie welchen Wert die Variable ``x`` enthält?
 Nun der effektiv können wir das gleiche Ergebnis erzeugen wenn wir den Inhalt entsprechend der Ausführungsreihenfolge in eine Zelle packen:
 
-```{code-cell} python3
 y = -3      # Zelle 1
 y = 20      # Zelle 4
 z = 5       # Zelle 3
 x = z + y   # Zelle 2
 x
-```
 
 Demnach ist ``x = 5 + 20`` und ``y = 25``.
 Führen wir daraufhin Zelle 1 dananch 2 aus erhalten wir für ``x``: ``x = 5 + (-3) = 2``
 
-```{code-cell} python3
 y = -3      # Zelle 1
 y = 20      # Zelle 4
 z = 5       # Zelle 3
@@ -177,7 +150,6 @@ x = z + y   # Zelle 2
 y = -3      # Zelle 1
 x = z + y   # Zelle 2
 x
-```
 
 ```{admonition} Auswertungsreihenfolge (Notebooks)
 :name: hint-evaluation-ordering
@@ -193,10 +165,8 @@ Zudem wird eine mehr oder weniger hilfreiche Fehlermeldung ausgegeben.
 
 Lassen wir es doch mal krachen.
 
-```{code-cell} python3
 # mit Variablen rechnen, die noch nicht definiert ist
 x = number + 4
-```
 
 Wir erhalten eine Fehlermeldung, welche darauf hindeutet, dass ``number`` noch nicht definiert ist.
 Haben Sie keine Angst vor solchen Fehlern.

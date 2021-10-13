@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Algorithmen
 Donald Knuth definiert in seiner Bibel der Programmierung (*The Art of Programming*) einen Algorithmus wie folgt:
 
@@ -52,13 +40,11 @@ Ein Beispiel aus der Programmiere wäre folgendes: Nehmen wir an ``min`` lieft u
 Wir kennen also das **Was**.
 **Wie** ``min`` und ``max`` dies realisieren bleibt im folgenden Algorithmus verborgen und selbstverständlich können wir ``min`` btw. ``max`` verwenden ohne das **Wie** zu kennen.
 
-```{code-cell} python3
 x = [1, 36, 8, 3, 41, -123, 0, 3]
 x_min = min(x)
 x_max = max(x)
 print(x_min)
 print(x_max)
-```
 
 Dies ist die Norm.
 Ihre Algorithmen werden unmissverständlich sein, was jedoch im Detail auf der ausführenden Einheit passiert, bleibt verborgen.
@@ -66,7 +52,6 @@ Je nachdem welche Programmiersprache und welche Bibliotheken/Pakete Sie verwende
 Zusätzlich können Sie sich selbst weiter von ihr entfernen.
 Zum Beispiel können wir eine Funktion schreiben, die uns das größte und kleinste Element einer Liste zurückliefert:
 
-```{code-cell} python3
 def min_and_max(l):
     l_min = min(x)
     l_max = max(x)
@@ -74,7 +59,6 @@ def min_and_max(l):
 
 x = [1, 36, 8, 3, 41, -123, 0, 3]
 print(min_and_max(x))
-```
 
 Obwohl wir das **Wie** von ``min`` und ``max`` womöglich nicht kennen, wissen wir dass ``min_and_max`` funktioniert, da wir das **Was** von ``min`` und ``max`` kennen.
 

@@ -517,7 +517,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/09/1-algorithms.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/09/1-algorithms.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -538,6 +541,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/09/1-algorithms.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -608,19 +631,31 @@ Bevor wir uns Gedanken über Hammer und Nagel machen, hauen wir den Hammer in di
 <p>Ein Beispiel aus der Programmiere wäre folgendes: Nehmen wir an <code class="docutils literal notranslate"><span class="pre">min</span></code> lieft uns die kleinste und <code class="docutils literal notranslate"><span class="pre">max</span></code> die größte Zahl aus einer Liste von Zahlen.
 Wir kennen also das <strong>Was</strong>.
 <strong>Wie</strong> <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code> dies realisieren bleibt im folgenden Algorithmus verborgen und selbstverständlich können wir <code class="docutils literal notranslate"><span class="pre">min</span></code> btw. <code class="docutils literal notranslate"><span class="pre">max</span></code> verwenden ohne das <strong>Wie</strong> zu kennen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="o">-</span><span class="mi">123</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="o">-</span><span class="mi">123</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">x_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">x_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x_min</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x_max</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-123
+41
+</pre></div>
+</div>
+</div>
+</div>
 <p>Dies ist die Norm.
 Ihre Algorithmen werden unmissverständlich sein, was jedoch im Detail auf der ausführenden Einheit passiert, bleibt verborgen.
 Je nachdem welche Programmiersprache und welche Bibliotheken/Pakete Sie verwenden, befinden Sie sich näher oder weiter weg von der ausführenden Einheit.
 Zusätzlich können Sie sich selbst weiter von ihr entfernen.
 Zum Beispiel können wir eine Funktion schreiben, die uns das größte und kleinste Element einer Liste zurückliefert:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">min_and_max</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">min_and_max</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="n">l_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">l_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">l_min</span><span class="p">,</span> <span class="n">l_max</span>
@@ -628,6 +663,13 @@ Zum Beispiel können wir eine Funktion schreiben, die uns das größte und klein
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="o">-</span><span class="mi">123</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">min_and_max</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-123, 41)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Obwohl wir das <strong>Wie</strong> von <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code> womöglich nicht kennen, wissen wir dass <code class="docutils literal notranslate"><span class="pre">min_and_max</span></code> funktioniert, da wir das <strong>Was</strong> von <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code> kennen.</p>
 <p>Je maschinennäher Sie programmieren, desto mehr <strong>Kontrolle</strong> aber auch <strong>Verantwortung</strong> haben Sie über die genaue Umsetzung (das <strong>Wie</strong>).

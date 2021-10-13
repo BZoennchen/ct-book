@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 (sec-python)=
 # Python
 
@@ -27,12 +15,10 @@ Sie installieren ``Python`` (auf vielen Systemen ist es vorinstalliert), öffnen
 Auch lässt sich in nur wenigen Zeilen ein kleines ``Python``-Skript schreiben und ausführen.
 Erstellen wir eine neue Datei ``sum-squares.py`` und fügen folgenden ``Python``-Code ein.
 
-```{code-cell} python3
 import sys
 n = int(sys.argv[1])
 squares = sum([(i+1)**2 for i in range(n)])
 print(squares)
-```
 
 Führen wir dann das Programm durch den Konsolenbefehl
 
@@ -83,10 +69,8 @@ Durch dieses Zusammenspiel bekommen wir beides: die **Leistung** durch ``C/C++``
 Als dynamisch getypte sehr flexible Sprache kann es schwer sein Garantien für den geschriebenen Code sicherzustellen.
 Software oder auch Entwickler\*innen, die Quellcode analysieren und auf Korrektheit prüfen, können es schwer haben.
 
-```{code-cell} python3
 def sum_squares(n):
     return sum([(i+1)**2 for i in range(n)])
-```
 
 Blicken wir nur auf die Argumente der Funktion ``sum_squares`` wissen wir nicht ob die Funktion eine Ganzzahl, eine Fließkommazahl oder eine Zeichenkette, oder irgendetwas anderes erwartet.
 Wir müssen deshalb mit Kommentaren kennzeichnen um was es sich handelt, um anderen Entwickler\*innen die Fehlersuche zu erleichtern.

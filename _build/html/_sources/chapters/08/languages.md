@@ -24,7 +24,8 @@ Wir sprechen bei der **Syntax** auch von einer Beziehung der Symbole zueinander.
 Die **Syntax** vom ``Python`` legt zum Beispiel fest, dass nach dem Wort ``def`` und einem Leerzeichen, ein Name folgen muss.
 
 ```python
-def function()
+def function():
+    ...
 ```
 
 Welche Bedeutung bzw. **Semantik** die **syntaktisch** korrekten Symbole besitzen, wird ebenfalls von der Programmiersprache festgelegt.

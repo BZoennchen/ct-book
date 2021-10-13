@@ -517,7 +517,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/08/5-python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/08/5-python.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -538,6 +541,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/08/5-python.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -565,11 +588,28 @@ Als <em>interpretierte</em> Sprache mit guter Toolunterstützung kann jeder in w
 Sie installieren <code class="docutils literal notranslate"><span class="pre">Python</span></code> (auf vielen Systemen ist es vorinstalliert), öffnen Ihre Konsole, tippen <code class="docutils literal notranslate"><span class="pre">python</span></code> und los gehts.</p>
 <p>Auch lässt sich in nur wenigen Zeilen ein kleines <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Skript schreiben und ausführen.
 Erstellen wir eine neue Datei <code class="docutils literal notranslate"><span class="pre">sum-squares.py</span></code> und fügen folgenden <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code ein.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">squares</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="n">ba31a13be49</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nn">      3 squares = sum([(i+1)**2 for i</span> in <span class="ni">range</span><span class="nt">(n)])</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;-f&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Führen wir dann das Programm durch den Konsolenbefehl</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="nb">sum</span><span class="o">-</span><span class="n">squares</span><span class="o">.</span><span class="n">py</span> <span class="mi">5</span>
@@ -609,9 +649,13 @@ Durch dieses Zusammenspiel bekommen wir beides: die <strong>Leistung</strong> du
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> hat aber auch seine Tücken.
 Als dynamisch getypte sehr flexible Sprache kann es schwer sein Garantien für den geschriebenen Code sicherzustellen.
 Software oder auch Entwickler*innen, die Quellcode analysieren und auf Korrektheit prüfen, können es schwer haben.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_squares</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_squares</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Blicken wir nur auf die Argumente der Funktion <code class="docutils literal notranslate"><span class="pre">sum_squares</span></code> wissen wir nicht ob die Funktion eine Ganzzahl, eine Fließkommazahl oder eine Zeichenkette, oder irgendetwas anderes erwartet.
 Wir müssen deshalb mit Kommentaren kennzeichnen um was es sich handelt, um anderen Entwickler*innen die Fehlersuche zu erleichtern.
