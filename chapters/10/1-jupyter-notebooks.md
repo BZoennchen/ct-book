@@ -41,6 +41,10 @@ Befindet sich der Mauszeiger innerhalb einer Zelle und wir drücken ``Strg``+``E
 Handelt es sich um eine *Code-Zelle* wird der Code von oben nach unten ausgeführt.
 Handelt es sich stattdessen um eine *Beschreibungs-Zelle* wird aus dieser ``HTML``-Text erzeugt, welcher durch ihren Browser angezeigt wird.
 
+Um eine Zelle unterhalb einer anderen Zelle einzufügen drücken Sie mit der Maus links neben die Zelle und drücken ``b`` (below).
+Um eine Zelle oberhalb einzufügen drücken Sie ``a`` (above).
+Um die ausgewählte Zelle zu löschen drücken Sie zweimal schnell hintereinander ``d`` (delete).
+
 Ok so ganz stimmt das nicht.
 Führen wir eine *Code-Zelle* aus so wird, nachdem deren Code ausgewertet wurde oder die Auswertung aufgrund eines Fehlers abbricht, das Ergebnis oder die Fehlermeldung auch in ``HTML``-Text umgewandelt.
 
@@ -123,59 +127,44 @@ Sie können manuell einzelne Zellen auswerten.
 Nehmen wir einmal folgende *Code-Zellen* (1,2,3,4):
 
 ```python
-y = -3
+y = -3      # Zelle 1
 ```
 
 ```python
-x = z + y
-print(x)
+x = z + y   # Zelle 2
 ```
 
 ```python
-z = 5
+z = 5       # Zelle 3
 ```
 
 ```python
-y = 20
+y = 20      # Zelle 4
 ```
 
-Nehmen wir nun an, wir werten Zelle 1 dann 3 dann 2 und dann 4 aus.
+Nehmen wir nun an, wir werten Zelle 1 dann 4 dann 3 und dann 2 aus.
 Was glauben Sie welchen Wert die Variable ``x`` enthält?
 Nun der effektiv können wir das gleiche Ergebnis erzeugen wenn wir den Inhalt entsprechend der Ausführungsreihenfolge in eine Zelle packen:
 
 ```python
-y = -3
-
-z = 5
-
-x = z + y
-print(x)
-
-y = 20
+y = -3      # Zelle 1
+y = 20      # Zelle 4
+z = 5       # Zelle 3
+x = z + y   # Zelle 2
+x
 ```
 
-Demnach ist ``x = 5 - 3`` und ``y = 20``.
-Führen wir nun die Zelle 2 erneut aus, erhalten wir insgesamt ``x = 5 + 20 = 25``:
+Demnach ist ``x = 5 + 20`` und ``y = 25``.
+Führen wir daraufhin Zelle 1 dananch 2 aus erhalten wir für ``x``: ``x = 5 + (-3) = 2``
 
 ```python
-x = z + y
-print(x)
-```
-
-Effektiv wurde folgender Code (im Gesamten) ausgeführt:
-
-```python
-y = -3
-
-z = 5
-
-x = z + y
-print(x)
-
-y = 20
-
-x = z + y
-print(x)
+y = -3      # Zelle 1
+y = 20      # Zelle 4
+z = 5       # Zelle 3
+x = z + y   # Zelle 2
+y = -3      # Zelle 1
+x = z + y   # Zelle 2
+x
 ```
 
 ```{admonition} Auswertungsreihenfolge (Notebooks)

@@ -635,6 +635,9 @@ Innerhalb einer Zelle befindet sich eine Art von Inhalt, d.h., entweder Code ode
 Befindet sich der Mauszeiger innerhalb einer Zelle und wir drücken <code class="docutils literal notranslate"><span class="pre">Strg</span></code>+<code class="docutils literal notranslate"><span class="pre">Enter</span></code> (Mac <code class="docutils literal notranslate"><span class="pre">CMD</span></code>+<code class="docutils literal notranslate"><span class="pre">Enter</span></code>), so wird diese Zelle ausgewertet (evaluiert).
 Handelt es sich um eine <em>Code-Zelle</em> wird der Code von oben nach unten ausgeführt.
 Handelt es sich stattdessen um eine <em>Beschreibungs-Zelle</em> wird aus dieser <code class="docutils literal notranslate"><span class="pre">HTML</span></code>-Text erzeugt, welcher durch ihren Browser angezeigt wird.</p>
+<p>Um eine Zelle unterhalb einer anderen Zelle einzufügen drücken Sie mit der Maus links neben die Zelle und drücken <code class="docutils literal notranslate"><span class="pre">b</span></code> (below).
+Um eine Zelle oberhalb einzufügen drücken Sie <code class="docutils literal notranslate"><span class="pre">a</span></code> (above).
+Um die ausgewählte Zelle zu löschen drücken Sie zweimal schnell hintereinander <code class="docutils literal notranslate"><span class="pre">d</span></code> (delete).</p>
 <p>Ok so ganz stimmt das nicht.
 Führen wir eine <em>Code-Zelle</em> aus so wird, nachdem deren Code ausgewertet wurde oder die Auswertung aufgrund eines Fehlers abbricht, das Ergebnis oder die Fehlermeldung auch in <code class="docutils literal notranslate"><span class="pre">HTML</span></code>-Text umgewandelt.</p>
 <p>Außerdem wird auch der unausgewertete Code oder die Beschreibung als <code class="docutils literal notranslate"><span class="pre">HTML</span></code>-Text übersetzt.
@@ -699,50 +702,37 @@ In anderen Worten, der Code wird so ausgewertet als hätten Sie alles in eine ei
 <p>Diese Ausführungsreihenfolge ist jedoch nicht verpflichtend.
 Sie können manuell einzelne Zellen auswerten.
 Nehmen wir einmal folgende <em>Code-Zellen</em> (1,2,3,4):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>      <span class="c1"># Zelle 1</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">y</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">y</span>   <span class="c1"># Zelle 2</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>       <span class="c1"># Zelle 3</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>      <span class="c1"># Zelle 4</span>
 </pre></div>
 </div>
-<p>Nehmen wir nun an, wir werten Zelle 1 dann 3 dann 2 und dann 4 aus.
+<p>Nehmen wir nun an, wir werten Zelle 1 dann 4 dann 3 und dann 2 aus.
 Was glauben Sie welchen Wert die Variable <code class="docutils literal notranslate"><span class="pre">x</span></code> enthält?
 Nun der effektiv können wir das gleiche Ergebnis erzeugen wenn wir den Inhalt entsprechend der Ausführungsreihenfolge in eine Zelle packen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
-
-<span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">y</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>      <span class="c1"># Zelle 1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>      <span class="c1"># Zelle 4</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>       <span class="c1"># Zelle 3</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">y</span>   <span class="c1"># Zelle 2</span>
+<span class="n">x</span>
 </pre></div>
 </div>
-<p>Demnach ist <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span> <span class="pre">-</span> <span class="pre">3</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">20</span></code>.
-Führen wir nun die Zelle 2 erneut aus, erhalten wir insgesamt <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">20</span> <span class="pre">=</span> <span class="pre">25</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">y</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Effektiv wurde folgender Code (im Gesamten) ausgeführt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
-
-<span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">y</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">y</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<p>Demnach ist <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">20</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">25</span></code>.
+Führen wir daraufhin Zelle 1 dananch 2 aus erhalten wir für <code class="docutils literal notranslate"><span class="pre">x</span></code>: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">(-3)</span> <span class="pre">=</span> <span class="pre">2</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>      <span class="c1"># Zelle 1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>      <span class="c1"># Zelle 4</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>       <span class="c1"># Zelle 3</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">y</span>   <span class="c1"># Zelle 2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>      <span class="c1"># Zelle 1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">y</span>   <span class="c1"># Zelle 2</span>
+<span class="n">x</span>
 </pre></div>
 </div>
 <div class="hint admonition" id="hint-evaluation-ordering">
