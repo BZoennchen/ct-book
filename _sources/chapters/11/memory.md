@@ -1215,7 +1215,7 @@ Durch unsere Funktionen bauen wir an einer Welt, welche wir immer besser manipul
 Gehen wir noch einen Schritt weiter!
 Wäre es nicht wundervoll, wenn folgender Code funktionieren würde:
 
-```{code-cell} python3
+```python
 new_list([1, 2, 'A', [[1, 2], 3, 4], "Hello World"], memory, inuse)
 ```
 

@@ -1883,22 +1883,8 @@ Verwenden Sie hierfür <code class="docutils literal notranslate"><span class="p
 <p>Durch unsere Funktionen bauen wir an einer Welt, welche wir immer besser manipulieren können.
 Gehen wir noch einen Schritt weiter!
 Wäre es nicht wundervoll, wenn folgender Code funktionieren würde:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">08</span><span class="n">a92fb4ad01</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;new_list&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="exercise admonition" id="memory-list-generation-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 2.20 </span>(Listen erzeugen)</p>
@@ -1954,6 +1940,13 @@ Wichtig dabei ist, dass eine Zeichenkette mit Länge gleich 1 eine <code class="
 
 <span class="c1"># [1, 2, A, [[1, 2], 3, 4], [H, e, l, l, o,  , W, o, r, l, d]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mem_to_string</span><span class="p">(</span><span class="n">mylist</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, [H, e, l, l, o,  , W, o, r, l, d], 4, 5]
+[H, e, l, l, o,  , W, o, r, l, d]
+[1, 2, A, [[1, 2], 3, 4], [H, e, l, l, o,  , W, o, r, l, d]]
 </pre></div>
 </div>
 </div>
@@ -2262,6 +2255,15 @@ Doch wenn Sie sich erneut Schritt für Schritt voran kämpfen und den Berg in vi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>134
+[1, 2, 3, 4, 5, 6]
+[H, e, l, l, o,  , W, o, r, l, d]
+[1, 2, [H, e, l, l, o,  , W, o, r, l, d], 4, 5]
+[1, 2, A, [[1, 2], 3, 4], [H, e, l, l, o,  , W, o, r, l, d]]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2279,12 +2281,63 @@ Schreiben Sie in <code class="docutils literal notranslate"><span class="pre">Py
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, &#39;Hello World&#39;, 4, 5]
+</pre></div>
+</div>
+</div>
 </div>
 <p>passiert im Hintergrund eine ganze Menge und unsere Funktion</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
 <span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">b9d9e138c6bc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mylist</span> <span class="o">=</span> <span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">mylist</span>
+
+<span class="nn">&lt;ipython-input-20-d41dc546c4ff&gt;</span> in <span class="ni">new_list</span><span class="nt">(values, memory, inuse)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span> <span class="nf">new_list</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">mylist</span> <span class="o">=</span> <span class="n">alloc_list</span><span class="p">(</span><span class="n">to_data_type</span><span class="p">(</span><span class="s1">&#39;addr&#39;</span><span class="p">),</span> <span class="n">length</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+
+<span class="nn">&lt;ipython-input-11-25df80b80543&gt;</span> in <span class="ni">alloc_list</span><span class="nt">(data_type, n, memory, inuse)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="c1"># 1. alloc memory</span>
+<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">addr</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">n_bytes</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="c1"># 2. initalize meta data (data type of the list and its elements and length of the list)</span>
+
+<span class="nn">&lt;ipython-input-4-0283bc89b06d&gt;</span> in <span class="ni">malloc</span><span class="nt">(n_bytes, memory, inuse)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>         <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="n">n_bytes</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>             <span class="k">if</span> <span class="n">unfree</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">n_bytes</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>                 <span class="k">return</span> <span class="n">addr</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>             <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">&lt;ipython-input-4-0283bc89b06d&gt;</span> in <span class="ni">unfree</span><span class="nt">(addr, n_bytes, memory, inuse)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">unfree</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">n_bytes</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_bytes</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>         <span class="k">if</span> <span class="n">is_valid</span><span class="p">(</span><span class="n">addr</span><span class="o">+</span><span class="n">i</span><span class="p">,</span> <span class="n">memory</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="n">inuse</span><span class="p">[</span><span class="n">addr</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">&lt;ipython-input-3-0970c571b9d3&gt;</span> in <span class="ni">is_valid</span><span class="nt">(addr, memory)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">memory</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">addr</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">addr</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">memory</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">is_free</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">is_valid</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">memory</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">inuse</span><span class="p">[</span><span class="n">addr</span><span class="p">]</span>
+
+<span class="ne">TypeError</span>: object of type &#39;Memory&#39; has no len()
 </pre></div>
 </div>
 </div>

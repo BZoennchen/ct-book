@@ -17,14 +17,51 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-new_list([1, 2, 'A', [[1, 2], 3, 4], "Hello World"], memory, inuse)
+mylist = new_list([1,2,"Hello World",4,5], memory, inuse)
+mylist
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-20-08a92fb4ad01>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mnew_list[0m[0;34m([0m[0;34m[[0m[0;36m1[0m[0;34m,[0m [0;36m2[0m[0;34m,[0m [0;34m'A'[0m[0;34m,[0m [0;34m[[0m[0;34m[[0m[0;36m1[0m[0;34m,[0m [0;36m2[0m[0;34m][0m[0;34m,[0m [0;36m3[0m[0;34m,[0m [0;36m4[0m[0;34m][0m[0;34m,[0m [0;34m"Hello World"[0m[0;34m][0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mNameError[0m: name 'new_list' is not defined
-NameError: name 'new_list' is not defined
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-24-b9d9e138c6bc>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mmylist[0m [0;34m=[0m [0mnew_list[0m[0;34m([0m[0;34m[[0m[0;36m1[0m[0;34m,[0m[0;36m2[0m[0;34m,[0m[0;34m"Hello World"[0m[0;34m,[0m[0;36m4[0m[0;34m,[0m[0;36m5[0m[0;34m][0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mmylist[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m<ipython-input-20-d41dc546c4ff>[0m in [0;36mnew_list[0;34m(values, memory, inuse)[0m
+[1;32m     10[0m [0;32mdef[0m [0mnew_list[0m[0;34m([0m[0mvalues[0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     11[0m     [0mlength[0m [0;34m=[0m [0mlen[0m[0;34m([0m[0mvalues[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 12[0;31m     [0mmylist[0m [0;34m=[0m [0malloc_list[0m[0;34m([0m[0mto_data_type[0m[0;34m([0m[0;34m'addr'[0m[0;34m)[0m[0;34m,[0m [0mlength[0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     13[0m [0;34m[0m[0m
+[1;32m     14[0m     [0;32mfor[0m [0mi[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mlength[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m<ipython-input-11-25df80b80543>[0m in [0;36malloc_list[0;34m(data_type, n, memory, inuse)[0m
+[1;32m     10[0m [0;34m[0m[0m
+[1;32m     11[0m     [0;31m# 1. alloc memory[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 12[0;31m     [0maddr[0m [0;34m=[0m [0mmalloc[0m[0;34m([0m[0mn_bytes[0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     13[0m [0;34m[0m[0m
+[1;32m     14[0m     [0;31m# 2. initalize meta data (data type of the list and its elements and length of the list)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m<ipython-input-4-0283bc89b06d>[0m in [0;36mmalloc[0;34m(n_bytes, memory, inuse)[0m
+[1;32m     20[0m             [0mcount[0m [0;34m=[0m [0;36m0[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     21[0m         [0;32mif[0m [0mcount[0m [0;34m==[0m [0mn_bytes[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 22[0;31m             [0;32mif[0m [0munfree[0m[0;34m([0m[0maddr[0m[0;34m,[0m [0mn_bytes[0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     23[0m                 [0;32mreturn[0m [0maddr[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     24[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m<ipython-input-4-0283bc89b06d>[0m in [0;36munfree[0;34m(addr, n_bytes, memory, inuse)[0m
+[1;32m      4[0m [0;32mdef[0m [0munfree[0m[0;34m([0m[0maddr[0m[0;34m,[0m [0mn_bytes[0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m     [0;32mfor[0m [0mi[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mn_bytes[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 6[0;31m         [0;32mif[0m [0mis_valid[0m[0;34m([0m[0maddr[0m[0;34m+[0m[0mi[0m[0;34m,[0m [0mmemory[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      7[0m             [0minuse[0m[0;34m[[0m[0maddr[0m[0;34m+[0m[0mi[0m[0;34m][0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      8[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m<ipython-input-3-0970c571b9d3>[0m in [0;36mis_valid[0;34m(addr, memory)[0m
+[1;32m      1[0m [0;32mdef[0m [0mis_valid[0m[0;34m([0m[0maddr[0m[0;34m,[0m [0mmemory[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m     [0;32mreturn[0m [0maddr[0m [0;34m>=[0m [0;36m0[0m [0;32mand[0m [0maddr[0m [0;34m<[0m [0mlen[0m[0;34m([0m[0mmemory[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0;32mdef[0m [0mis_free[0m[0;34m([0m[0maddr[0m[0;34m,[0m [0mmemory[0m[0;34m,[0m [0minuse[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m     [0;32mreturn[0m [0mis_valid[0m[0;34m([0m[0maddr[0m[0;34m,[0m [0mmemory[0m[0;34m)[0m [0;32mand[0m [0;32mnot[0m [0minuse[0m[0;34m[[0m[0maddr[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mTypeError[0m: object of type 'Memory' has no len()
+TypeError: object of type 'Memory' has no len()
 
