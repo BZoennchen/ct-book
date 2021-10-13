@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Diversität
 
 Die Diversität der Programmiersprachen ist wichtig.
@@ -8,7 +20,7 @@ Maschinennähe führt zu mehr Kontrolle aber wir zahlen mit einer detailliertere
 Limitierungen einer Sprache können hinderlich sein, sie können aber auch eine bewährte Praxis erzwingen und so Programmierer\*innen vor schlechtem Programmierstil schützen.
 Limitierungen können auch eine Quelle der Kreativität sein -- Not macht eben immernoch erfinderisch.
 
-```python
+```{code-cell} python3
 # Python
 something = 1
 something = 'hello'
