@@ -733,8 +733,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ea3e1eb-ef14-41c0-bdfd-f28bedeeb422">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-4ea3e1eb-ef14-41c0-bdfd-f28bedeeb422" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-80462df4-23dc-4c81-9d4c-87106f7bd85e">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-80462df4-23dc-4c81-9d4c-87106f7bd85e" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -981,7 +981,7 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Perez&#39;, &#39;phone_number&#39;: &#39;0143-9813155&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Mount&#39;, &#39;phone_number&#39;: &#39;0907-9638607&#39;}
 </pre></div>
 </div>
 </div>
@@ -4505,7 +4505,7 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3332
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3377
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60751108
@@ -5048,38 +5048,56 @@ Ist sie hingegen zu klein gibt es mehr und mehr <strong>Kollisionen</strong> und
 </div>
 </div>
 <p>Folgender Code zeigt die Verwendung der neuen Klasse</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simple_test</span><span class="p">():</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashtable</span>
+<span class="k">def</span> <span class="nf">simple_test</span><span class="p">():</span>
     <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">]</span>
     <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hans&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
 
-    <span class="n">hashtable</span> <span class="o">=</span> <span class="n">Hashtable</span><span class="p">()</span>
-    <span class="n">hashtable</span><span class="o">.</span><span class="n">insert_all</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+    <span class="n">mydict</span> <span class="o">=</span> <span class="n">hashtable</span><span class="o">.</span><span class="n">Hashtable</span><span class="p">()</span>
+    <span class="n">mydict</span><span class="o">.</span><span class="n">insert_all</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
-    <span class="n">hashtable</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;Peter&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mydict</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
+    <span class="n">mydict</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;Peter&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mydict</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mydict</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mydict</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mydict</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mydict</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">))</span>
 
 
 <span class="k">def</span> <span class="nf">insert_and_delete_test</span><span class="p">():</span>
     <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
     <span class="c1"># intentionally bad hash function!</span>
-    <span class="n">hashtable</span> <span class="o">=</span> <span class="n">Hashtable</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">mydict</span> <span class="o">=</span> <span class="n">hashtable</span><span class="o">.</span><span class="n">Hashtable</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">hashtable</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">mydict</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">i</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-        <span class="n">hashtable</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">mydict</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">([</span><span class="n">hashtable</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">==</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">([</span><span class="n">mydict</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">==</span>
           <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]))</span>
 
 <span class="n">simple_test</span><span class="p">()</span>
 <span class="n">insert_and_delete_test</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hans
+Peter
+False
+Thomas
+True
+Anna
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
