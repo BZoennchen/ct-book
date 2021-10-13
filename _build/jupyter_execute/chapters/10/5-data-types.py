@@ -435,10 +435,12 @@ Im Gegenteil dazu wird diese Prüfung für *dynamisch getypte Sprachen* erst zur
 
 Führen Sie folgenden Code aus:
 
+```python
 number = 5
 number = number + 5
 print(number)
 number = number + 'b'
+```
 
 Dieser führt zu einem bekannten Fehler: ``unsupported operand type(s) for +: 'int' and 'str'`` und dennoch wird die ganze Zahl ``number`` ausgegeben.
 In anderen Worten der Code läuft solange bis es kracht.

@@ -489,7 +489,7 @@ Im Gegenteil dazu wird diese Prüfung für *dynamisch getypte Sprachen* erst zur
 
 Führen Sie folgenden Code aus:
 
-```{code-cell} python3
+```python
 number = 5
 number = number + 5
 print(number)

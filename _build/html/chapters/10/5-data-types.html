@@ -1274,30 +1274,11 @@ In <code class="docutils literal notranslate"><span class="pre">Java</span></cod
 <p>Für <em>statisch getypten Sprache</em> wird der Datentyp von Werten und Variablen geprüft <strong>bevor</strong> der Programmcode ausgeführt wird.
 Im Gegenteil dazu wird diese Prüfung für <em>dynamisch getypte Sprachen</em> erst zur Laufzeit durchgeführt, also <strong>während</strong> der Code ausgeführt wird.</p>
 <p>Führen Sie folgenden Code aus:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="n">b47f296b25be</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Dieser führt zu einem bekannten Fehler: <code class="docutils literal notranslate"><span class="pre">unsupported</span> <span class="pre">operand</span> <span class="pre">type(s)</span> <span class="pre">for</span> <span class="pre">+:</span> <span class="pre">'int'</span> <span class="pre">and</span> <span class="pre">'str'</span></code> und dennoch wird die ganze Zahl <code class="docutils literal notranslate"><span class="pre">number</span></code> ausgegeben.
 In anderen Worten der Code läuft solange bis es kracht.</p>
