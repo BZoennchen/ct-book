@@ -17,45 +17,38 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import random
+def experiment(nrows, ncols):
+    world = rw.new_world(nrows=nrows, ncols=ncols)
+    world.disable_animation()
+    robo = world.get_robo()
+    robo.disable_print()
+    return random_walk(robo)
 
-def random_turn(robo):
-    turns = random.choice([0,1,2,3])
-    for _ in range(turns):
-        robo.turn()
+def experiments(nrows, ncols, n):
+    mean = 0
+    for _ in range(n):
+        mean += experiment(nrows, ncols)
+    return mean / n
 
-def random_walk(robo):
-    while not robo.is_at_goal():
-        random_turn(robo)
-        if not robo.is_wall_in_front():
-            robo.move()
-
-random_walk(robo)
-print(world.is_successful())
+mean = experiments(nrows=7, ncols=7, n=50)
+print(mean)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m<ipython-input-26-2a90ce334f53>[0m in [0;36m<module>[0;34m[0m
-[1;32m     12[0m             [0mrobo[0m[0;34m.[0m[0mmove[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-27-2b1c14174a66>[0m in [0;36m<module>[0;34m[0m
+[1;32m     12[0m     [0;32mreturn[0m [0mmean[0m [0;34m/[0m [0mn[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     13[0m [0;34m[0m[0m
-[0;32m---> 14[0;31m [0mrandom_walk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     15[0m [0mprint[0m[0;34m([0m[0mworld[0m[0;34m.[0m[0mis_successful[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 14[0;31m [0mmean[0m [0;34m=[0m [0mexperiments[0m[0;34m([0m[0mnrows[0m[0;34m=[0m[0;36m7[0m[0;34m,[0m [0mncols[0m[0;34m=[0m[0;36m7[0m[0;34m,[0m [0mn[0m[0;34m=[0m[0;36m50[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     15[0m [0mprint[0m[0;34m([0m[0mmean[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m<ipython-input-26-2a90ce334f53>[0m in [0;36mrandom_walk[0;34m(robo)[0m
-[1;32m      8[0m [0;32mdef[0m [0mrandom_walk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      9[0m     [0;32mwhile[0m [0;32mnot[0m [0mrobo[0m[0;34m.[0m[0mis_at_goal[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 10[0;31m         [0mrandom_turn[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     11[0m         [0;32mif[0m [0;32mnot[0m [0mrobo[0m[0;34m.[0m[0mis_wall_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     12[0m             [0mrobo[0m[0;34m.[0m[0mmove[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-27-2b1c14174a66>[0m in [0;36mexperiments[0;34m(nrows, ncols, n)[0m
+[1;32m      9[0m     [0mmean[0m [0;34m=[0m [0;36m0[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     10[0m     [0;32mfor[0m [0m_[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mn[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 11[0;31m         [0mmean[0m [0;34m+=[0m [0mexperiment[0m[0;34m([0m[0mnrows[0m[0;34m,[0m [0mncols[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     12[0m     [0;32mreturn[0m [0mmean[0m [0;34m/[0m [0mn[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     13[0m [0;34m[0m[0m
 
-[0;32m<ipython-input-26-2a90ce334f53>[0m in [0;36mrandom_turn[0;34m(robo)[0m
-[1;32m      4[0m     [0mturns[0m [0;34m=[0m [0mrandom[0m[0;34m.[0m[0mchoice[0m[0;34m([0m[0;34m[[0m[0;36m0[0m[0;34m,[0m[0;36m1[0m[0;34m,[0m[0;36m2[0m[0;34m,[0m[0;36m3[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m     [0;32mfor[0m [0m_[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mturns[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 6[0;31m         [0mrobo[0m[0;34m.[0m[0mturn[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      7[0m [0;34m[0m[0m
-[1;32m      8[0m [0;32mdef[0m [0mrandom_walk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mAttributeError[0m: 'Agent' object has no attribute 'turn'
-AttributeError: 'Agent' object has no attribute 'turn'
+[0;31mTypeError[0m: unsupported operand type(s) for +=: 'int' and 'NoneType'
+TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
 
