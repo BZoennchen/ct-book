@@ -17,16 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-for row in picture:
-    print(element)
+picture = generate_border_picture(width=5, height=10, border_width=1)
+plot_picture(picture)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-9-f78e22bf765b>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;32mfor[0m [0mrow[0m [0;32min[0m [0mpicture[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m     [0mprint[0m[0;34m([0m[0melement[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-18-90231a71cd72>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mpicture[0m [0;34m=[0m [0mgenerate_border_picture[0m[0;34m([0m[0mwidth[0m[0;34m=[0m[0;36m5[0m[0;34m,[0m [0mheight[0m[0;34m=[0m[0;36m10[0m[0;34m,[0m [0mborder_width[0m[0;34m=[0m[0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mplot_picture[0m[0;34m([0m[0mpicture[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'element' is not defined
-NameError: name 'element' is not defined
+[0;31mNameError[0m: name 'plot_picture' is not defined
+NameError: name 'plot_picture' is not defined
 
