@@ -50,7 +50,7 @@ def ladd(a,b): # Wir nehmen an diese Funktion wird durch Bauteile/Hardware umges
     return to_binary(to_decimal(a) + to_decimal(b))
 
 def mul(a, b):  # Wir nehmen an diese Funktion durch Code/Software umgesetzt
-    result = 0
+    result = [0 for i in range(len(a))]
     for _ in range(to_decimal(b)): # Python versteht unser Binärsystem nicht
         result = ladd(result,a)
     return result
