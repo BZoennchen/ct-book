@@ -667,8 +667,22 @@ Mit</p>
 </div>
 </div>
 <p>weisen wir <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">None</span></code> d.h. ‘Nichts’ zu. Doch ist dieses ‘Nichts’ nicht nichts ;). Versuchen wir eine <em>Variable</em> zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">4</span><span class="n">f5acf813e7b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
+
+<span class="ne">NameError</span>: name &#39;v&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>Hierbei würde es zu einem Fehler <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">'v'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> kommen, da die <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">v</span></code> noch nicht <em>initialisiert</em> wurde.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> reicht es wenn Sie der <em>Variablen</em> einen Wert zuweisen.
@@ -711,8 +725,8 @@ Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Ar
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4498431024
-4498431024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4412300336
+4412300336
 </pre></div>
 </div>
 </div>
@@ -734,8 +748,8 @@ Diese Situation sieht demnach wie folgt aus:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4498431024
-4498430992
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4412300336
+4412300304
 </pre></div>
 </div>
 </div>
@@ -761,8 +775,8 @@ Jedoch kann der Wert der Variablen identisch sein und deren <code class="docutil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4535790960
-4535791184
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4449660464
+4449660816
 </pre></div>
 </div>
 </div>
@@ -840,11 +854,11 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 4535790992
+id of half = 4449660688
 value of x = 25
-id of x = 4498431024
+id of x = 4412300336
 value of x = 24
-id of x = 4498430992
+id of x = 4412300304
 </pre></div>
 </div>
 </div>
@@ -859,7 +873,7 @@ id of x = 4498430992
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 4535790992
+id of half = 4449660688
 </pre></div>
 </div>
 </div>
@@ -888,11 +902,11 @@ id of half = 4535790992
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 4544708944
+id of x = 4459192816
 value of y = 10
-id of y = 4498430544
+id of y = 4412299856
 value of z = 2131313
-id of z = 4544709136
+id of z = 4459193072
 </pre></div>
 </div>
 </div>
@@ -914,11 +928,11 @@ id of z = 4544709136
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 4544708944
+id of x = 4459192816
 value of y = 2131313
-id of y = 4544708944
+id of y = 4459192816
 value of z = 2131313
-id of z = 4544709136
+id of z = 4459193072
 </pre></div>
 </div>
 </div>
@@ -964,7 +978,7 @@ id of z = 4544709136
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4535776960
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4449934400
 </pre></div>
 </div>
 </div>
@@ -977,7 +991,7 @@ id of z = 4544709136
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4498430288
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4412299600
 </pre></div>
 </div>
 </div>
@@ -990,7 +1004,7 @@ id of z = 4544709136
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4498430320
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4412299632
 </pre></div>
 </div>
 </div>
@@ -1022,14 +1036,14 @@ id of z = 4544709136
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = [1, 2, 3, 4, 5]
-id of x = 4535776960
+id of x = 4449934400
 value of x[1] = 2
-id of x[1] = 4498430288
+id of x[1] = 4412299600
 
 value of x = [1, -10, 3, 4, 5]
-id of x = 4535776960
+id of x = 4449934400
 value of x[1] = -10
-id of x[1] = 4544709520
+id of x[1] = 4459193200
 </pre></div>
 </div>
 </div>

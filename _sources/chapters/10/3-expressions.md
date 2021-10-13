@@ -35,7 +35,10 @@ Die [Syntax](def-syntax) einer Programmiersprache ist strikt.
 Sie wird durch eine sog. *Grammatik* definiert.
 Zum Beispiel ist folgender *Ausdruck* fehlerhaft, da er der nicht durch die *Grammatik* von ``Python`` definiert ist.
 
-```python
+```{code-cell} python3
+---
+tags: [raises-exception]
+---
 3 * * 5
 ```
 
