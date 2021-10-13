@@ -17,38 +17,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-path = find_shortest_walk(robo)
-print(f'Shortest walk: {path}')
-inverse_walk(robo, path)
-world.enable_animation()
+path, level = depth_first_walk(robo1)
+inverse_walk(robo1, path)
+world1.enable_animation()
+walk(robo1, path)
 
-walk(robo, path)
-rw.animate(world)
+rw.animate(world1)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m<ipython-input-50-d130f0d607a5>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mpath[0m [0;34m=[0m [0mfind_shortest_walk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mprint[0m[0;34m([0m[0;34mf'Shortest walk: {path}'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0minverse_walk[0m[0;34m([0m[0mrobo[0m[0;34m,[0m [0mpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0mworld[0m[0;34m.[0m[0menable_animation[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-53-3bbfe0b33eab>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mpath[0m[0;34m,[0m [0mlevel[0m [0;34m=[0m [0mdepth_first_walk[0m[0;34m([0m[0mrobo1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0minverse_walk[0m[0;34m([0m[0mrobo1[0m[0;34m,[0m [0mpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0mworld1[0m[0;34m.[0m[0menable_animation[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mwalk[0m[0;34m([0m[0mrobo1[0m[0;34m,[0m [0mpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      5[0m [0;34m[0m[0m
 
-[0;32m<ipython-input-48-7ed3a4d91e46>[0m in [0;36mfind_shortest_walk[0;34m(robo)[0m
-[1;32m      4[0m     [0mpath[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m     [0;32mwhile[0m [0mlen[0m[0;34m([0m[0mpath[0m[0;34m)[0m [0;34m==[0m [0;36m0[0m [0;32mand[0m [0mdistance[0m[0;34m-[0m[0;36m1[0m [0;34m==[0m [0mlevel[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 6[0;31m         [0mpath[0m[0;34m,[0m [0mlevel[0m [0;34m=[0m [0mdepth_first_walk[0m[0;34m([0m[0mrobo[0m[0;34m,[0m [0mdistance[0m[0;34m=[0m[0mdistance[0m[0;34m,[0m [0munmark[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      7[0m         [0mdistance[0m [0;34m+=[0m [0;36m1[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      8[0m     [0;32mreturn[0m [0mpath[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m<ipython-input-47-f80fc2e3ced2>[0m in [0;36mdepth_first_walk[0;34m(robo, distance, unmark)[0m
-[1;32m     14[0m             [0;32mif[0m [0mcode[0m [0;34m==[0m [0;36m3[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     15[0m                 [0;32mwhile[0m [0mlen[0m[0;34m([0m[0mpath[0m[0;34m)[0m [0;34m>[0m [0;36m0[0m [0;32mand[0m [0mpath[0m[0;34m[[0m[0;34m-[0m[0;36m1[0m[0;34m][0m [0;34m==[0m [0;36m3[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 16[0;31m                     [0mparent[0m [0;34m=[0m [0mwalk[0m[0;34m.[0m[0mpop[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     17[0m                     [0minverse_move[0m[0;34m([0m[0mrobo[0m[0;34m,[0m [0mparent[0m[0;34m,[0m [0munmark[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     18[0m [0;34m[0m[0m
-
-[0;31mAttributeError[0m: 'function' object has no attribute 'pop'
-AttributeError: 'function' object has no attribute 'pop'
+[0;31mTypeError[0m: depth_first_walk() missing 1 required positional argument: 'distance'
+TypeError: depth_first_walk() missing 1 required positional argument: 'distance'
 
