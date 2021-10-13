@@ -1558,25 +1558,25 @@ Wenn Sie die Klasse in die Datai ``mem.py`` packen, sieht der Code zur Verwendun
 
 ```{code-cell} python3
 import mem
-memory = mem.Memory(size=4048)
+memory_object = mem.Memory(size=4048)
 
-x = memory.alloc(to_data_type('number'), 4)
-y = memory.alloc(to_data_type('number'), 130)
-z = memory.add(x, y)
+x = memory_object.alloc(to_data_type('number'), 4)
+y = memory_object.alloc(to_data_type('number'), 130)
+z = memory_object.add(x, y)
 
-print(memory.mem_to_string(z))
+print(memory_object.mem_to_string(z))
 
-numbers = memory.new_primitive_list([1,2,3,4,5,6], memory.to_data_type('number'))
-print(memory.mem_to_string(numbers))
+numbers = memory_object.new_primitive_list([1,2,3,4,5,6], memory.to_data_type('number'))
+print(memory_object.mem_to_string(numbers))
 
-chars = memory.new_list("Hello World")
-print(memory.mem_to_string(chars))
+chars = memory_object.new_list("Hello World")
+print(memory_object.mem_to_string(chars))
 
-mixedlist = memory.new_list([1,2,"Hello World",4,5])
-print(memory.mem_to_string(mixedlist))
+mixedlist = memory_object.new_list([1,2,"Hello World",4,5])
+print(memory_object.mem_to_string(mixedlist))
 
-mylist = memory.new_list([1, 2, 'A', [[1, 2], 3, 4], "Hello World"])
-print(memory.mem_to_string(mylist))
+mylist = memory_object.new_list([1, 2, 'A', [[1, 2], 3, 4], "Hello World"])
+print(memory_object.mem_to_string(mylist))
 ```
 
 ## Was soll das alles?
@@ -1596,6 +1596,7 @@ mylist
 passiert im Hintergrund eine ganze Menge und unsere Funktion
 
 ```{code-cell} python3
+memory, inuse = initialize(1024)
 mylist = new_list([1,2,"Hello World",4,5], memory, inuse)
 mylist
 ```
@@ -1621,6 +1622,7 @@ Sie haben aus primitiven Mitteln (einem linearen Speicher aus Zahlen (0 bis 255)
 Im Endeffekt haben Sie einen kleinen Compiler geschrieben, der Ihnen den Befehl 
 
 ```{code-cell} python3
+memory, inuse = initialize(1024)
 new_list([1,2,"Hello World",4,5], memory, inuse)
 new_list
 ```
