@@ -733,8 +733,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-53dfb8b2-34a3-4df4-8df2-8db702c12e3c">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-53dfb8b2-34a3-4df4-8df2-8db702c12e3c" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-4ea3e1eb-ef14-41c0-bdfd-f28bedeeb422">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-4ea3e1eb-ef14-41c0-bdfd-f28bedeeb422" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -981,7 +981,7 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Quarterman&#39;, &#39;phone_number&#39;: &#39;0964-6016740&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Perez&#39;, &#39;phone_number&#39;: &#39;0143-9813155&#39;}
 </pre></div>
 </div>
 </div>
@@ -4436,6 +4436,20 @@ Nur wenn Sie billig ist, lohnt sich der Umweg über eine Hashfunktion.</p>
         <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
         <span class="k">return</span> <span class="kc">True</span>
 
+<span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span> <span class="ow">and</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+        <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">insert</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
 <span class="k">def</span> <span class="nf">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
     <span class="n">hashtable</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="p">)]</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
@@ -4491,7 +4505,7 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3415
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3332
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60751108
@@ -4704,24 +4718,17 @@ Wir könnten uns darauf einigen nur die ersten <span class="math notranslate noh
 </div>
 <div class="section" id="unser-dictionary">
 <h3><span class="section-number">3.3.5. </span>Unser Dictionary<a class="headerlink" href="#unser-dictionary" title="Permalink to this headline">¶</a></h3>
-<p>Bislang können wir in unsere Hashtable Namen einfügen, löschen und suchen:</p>
+<p>Bislang können wir in unsere Hashtable Namen einfügen, löschen und abfragen ob sich ein Element in unserer Hashmap befindet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
-<span class="n">search</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+<span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">34</span><span class="o">-</span><span class="n">d6ec2d9792c6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">search</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;search&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -4733,6 +4740,12 @@ Das besondere des <a class="reference internal" href="dive-bell.html#def-python-
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Dieter&#39;</span><span class="p">:</span> <span class="s1">&#39;1977-05-06&#39;</span><span class="p">,</span> <span class="s1">&#39;Bella&#39;</span><span class="p">:</span> <span class="s1">&#39;1999-10-11&#39;</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">[</span><span class="s1">&#39;Dieter&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">[</span><span class="s1">&#39;Bella&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1977-05-06
+1999-10-11
 </pre></div>
 </div>
 </div>
@@ -4864,6 +4877,16 @@ Passen Sie alle Funktionen entsprechend an. Sie müssen folgenden Funktionen anp
 <span class="nb">print</span><span class="p">(</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>         <span class="c1"># Thomas</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>    <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>         <span class="c1"># Anna</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hans
+Peter
+False
+Thomas
+True
+Anna
 </pre></div>
 </div>
 </div>
