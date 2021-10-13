@@ -153,7 +153,6 @@ $$
 
 Wir haben diese als ``Python`` Funktion implementiert.
 
-```python
 def ladd(in1, in0):
 
     # a1 = b0 and b1
@@ -166,7 +165,6 @@ def ladd(in1, in0):
     return [out1, out0]
 
 ladd(1,1)
-```
 
 Als Gatter-Bauplan sieht das ganze wie folgt aus.
 
