@@ -1190,6 +1190,50 @@ Bevor wir unsere eigene verbesserte Hashfunktion schreiben, nutzten wir doch ein
     aus und beobachten Sie wie lange die Funktion arbeitet.
 ````
 
+def index_of(name):
+    return ord('A')-ord(name[0])
+
+def search_index(name, hashtable, hash_func=hash):
+    key = name
+    index = hash_func(key) % len(hashtable)
+    for i in range(len(hashtable)):
+        j = (index+i) % len(hashtable)
+        if hashtable[j] == key:
+            return j
+        if hashtable[j] == None:
+            return j
+        
+    # there is no free place left
+    return len(hashtable)
+
+def contains(name, hashtable, hash_func=hash):
+    index = search_index(name, hashtable, hash_func)
+    return index < len(hashtable) and hashtable[index] == name
+
+def get_value(name, hashtable, hash_func=hash):
+    index = search_index(name, hashtable, hash_func)
+    if index < len(hashtable) and hashtable[index] == name:
+        return hashtable[index]
+    else:
+        None
+
+def insert(name, hashtable, hash_func=hash):
+    index = search_index(name, hashtable, hash_func)
+    while index >= len(hashtable):
+        hashtable.append(None)
+        
+    if hashtable[index] == name:
+        return False
+    else:
+        hashtable[index] = name
+        return True
+
+def new_hash_table(names, hash_func=hash):
+    hashtable = [None for i in range(2*len(names) + 8)]
+    for name in names:
+        insert(name, hashtable, hash_func)
+    return hashtable
+
 Die Berechnungszeit ist deutlich kürzer.
 Lassen Sie uns erneut testen ob alles mit rechten Dingen zugeht.
 

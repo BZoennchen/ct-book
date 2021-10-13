@@ -733,8 +733,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a2a4709-0c21-4146-854c-7b068db200d7">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-8a2a4709-0c21-4146-854c-7b068db200d7" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-53dfb8b2-34a3-4df4-8df2-8db702c12e3c">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-53dfb8b2-34a3-4df4-8df2-8db702c12e3c" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -981,7 +981,7 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Perez&#39;, &#39;phone_number&#39;: &#39;0251-6920566&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Quarterman&#39;, &#39;phone_number&#39;: &#39;0964-6016740&#39;}
 </pre></div>
 </div>
 </div>
@@ -4396,6 +4396,55 @@ Nur wenn Sie billig ist, lohnt sich der Umweg über eine Hashfunktion.</p>
 </ol>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">hash_func</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">j</span>
+        <span class="k">if</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">j</span>
+        
+    <span class="c1"># there is no free place left</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span> <span class="ow">and</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span>
+
+<span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span> <span class="ow">and</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">):</span>
+        <span class="n">hashtable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        
+    <span class="k">if</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+    <span class="n">hashtable</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="n">insert</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hashtable</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Die Berechnungszeit ist deutlich kürzer.
 Lassen Sie uns erneut testen ob alles mit rechten Dingen zugeht.</p>
 <div class="cell docutils container">
@@ -4408,15 +4457,7 @@ Lassen Sie uns erneut testen ob alles mit rechten Dingen zugeht.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="n">f54895130eeb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">all</span><span class="p">([</span><span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span> <span class="o">==</span> <span class="n">index</span> 
-<span class="nn">      3      for index, name</span> in <span class="ni">enumerate</span><span class="nt">(hashtable)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>      <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">])</span>
-
-<span class="ne">TypeError</span>: new_hash_table() got an unexpected keyword argument &#39;hash_func&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -4446,6 +4487,14 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="nb">hash</span><span class="p">),</span> <span class="nb">hash</span><span class="p">))</span>         <span class="c1"># 3610</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">index_of</span><span class="p">),</span> <span class="n">index_of</span><span class="p">))</span> <span class="c1"># 60751108</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3415
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60751108
 </pre></div>
 </div>
 </div>
@@ -4516,6 +4565,11 @@ Eine erste Idee wäre die Summe der codierten Zeichen:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20629463
+</pre></div>
+</div>
+</div>
 </div>
 <p>Immerhin erreichen wir damit nur noch 20 Millionen <strong>Kollisionen</strong>, was jedoch immernoch viel zu viel ist.
 Wie sieht es mit der Multiplikation aus?</p>
@@ -4528,6 +4582,11 @@ Wie sieht es mit der Multiplikation aus?</p>
     <span class="k">return</span> <span class="n">hash_value</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func_mul</span><span class="p">),</span> <span class="n">hash_func_mul</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22994371
 </pre></div>
 </div>
 </div>
@@ -4610,6 +4669,11 @@ Dieses mathematische Denken ist auch ein Teil des <a class="reference internal" 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3432
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wir haben es geschafft!!!
 Nur noch 3432 Kollisionen!
@@ -4630,6 +4694,11 @@ Wir könnten uns darauf einigen nur die ersten <span class="math notranslate noh
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3692
+</pre></div>
+</div>
+</div>
 </div>
 <p>Das Ergebnis ist mit 3692 Kollisionen immernoch sehr gut und die Auswertung benötigt nun eine konstante Anzahl von maximal 8 Schritten.</p>
 </div>
@@ -4641,6 +4710,18 @@ Wir könnten uns darauf einigen nur die ersten <span class="math notranslate noh
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 <span class="n">search</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">34</span><span class="o">-</span><span class="n">d6ec2d9792c6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">search</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;search&#39; is not defined
 </pre></div>
 </div>
 </div>
