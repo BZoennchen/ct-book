@@ -384,6 +384,12 @@ def plot_picture(picture):
 Sehen Sie sich die dazugehörige [Dokumentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html) an und nutzen Sie die Funktion.
 ````
 
+```{code-cell} python3
+import matplotlib.pyplot as plt
+def plot_picture(picture):
+    plt.imshow(picture, cmap='gray', vmin=0, vmax=1)
+```
+
 Mit folgendem Code
 
 ```{code-cell} python3
