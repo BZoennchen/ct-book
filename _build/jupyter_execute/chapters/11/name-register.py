@@ -1748,36 +1748,35 @@ class Hashtable():
 
 Folgender Code zeigt die Verwendung der neuen Klasse
 
-```python
+import hashtable
 def simple_test():
     keys = ['0', '1', '2']
     values = ['Berta', 'Hans', 'Thomas']
 
-    hashtable = Hashtable()
-    hashtable.insert_all(keys, values)
+    mydict = hashtable.Hashtable()
+    mydict.insert_all(keys, values)
 
-    print(hashtable.get_value('1'))
-    hashtable.set_value('1', 'Peter')
-    print(hashtable.get_value('1'))
-    print(hashtable.insert('2', 'Anna'))
-    print(hashtable.get_value('2'))
-    print(hashtable.insert('3', 'Anna'))
-    print(hashtable.get_value('3'))
+    print(mydict.get_value('1'))
+    mydict.set_value('1', 'Peter')
+    print(mydict.get_value('1'))
+    print(mydict.insert('2', 'Anna'))
+    print(mydict.get_value('2'))
+    print(mydict.insert('3', 'Anna'))
+    print(mydict.get_value('3'))
 
 
 def insert_and_delete_test():
     n = 1000
     # intentionally bad hash function!
-    hashtable = Hashtable(lambda i: int(i) % 100)
+    mydict = hashtable.Hashtable(lambda i: int(i) % 100)
     for i in range(n):
-        hashtable.insert(str(i), i)
+        mydict.insert(str(i), i)
 
     for i in range(0, n, 10):
-        hashtable.delete(str(i))
+        mydict.delete(str(i))
 
-    print(all([hashtable.get_value(str(i)) ==
+    print(all([mydict.get_value(str(i)) ==
           i for i in range(n) if i % 10 != 0]))
 
 simple_test()
 insert_and_delete_test()
-```
