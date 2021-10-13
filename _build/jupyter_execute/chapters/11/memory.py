@@ -529,6 +529,8 @@ def initialize(n):
     return memory, inuse
 
 memory, inuse = initialize(1024)
+print(f'meomry = {memory}')
+print(f'inuse = {inuse}')
 
 Um mit dem Speicher hantieren zu können brauchen wir einige Hilfsfunktionen.
 Lassen Sie uns in ganz kleinen Schritten nach vorne tasten.
@@ -628,11 +630,13 @@ print(malloc(8, memory, inuse))   # allocate bytes 0,1,...,7 again => 0
 Bringen wir für die Allokierung und Deallokierung (Speicher freigeben) die Datentypen ins Spiel.
 Wäre es nicht äußerst praktikabel Code in der folgenden Art schreiben zu können:
 
+```python
 x = alloc(data_type = 0, value=50)   # x = 50
 y = alloc(data_type = 0, value=1000) # y = 1000
 z = add(x, y)                        # z = x + y
 free(x)
 free(y)
+```
 
 Dieser Code allokiert zwei Speicherbereiche für jeweils eine natürliche Zahl und initialisiert diese mit 50 und 1000.
 Dann addieren wir die zwei Zahlen die im Speicher an der Adresse ``x`` und ``y`` stehen und schreiben das Ergebnis nach ``z``, wobei ``z`` automatisch reserviert wird.
