@@ -1073,19 +1073,19 @@ Lassen Sie uns die Funktionen testen:
 ```{code-cell} python3
 names = ['Berta', 'Hans', 'Thomas']
 hashtable = new_hash_table(names)
-print(f"{hashtable = }")
-print(f"{contains('Dieter', hashtable) = }")        # False
-print(f"{contains('Berta', hashtable) = }")         # True
-print(f"{search_index('Dieter', hashtable) = }")    # 11
-print(f"{search_index('Berta', hashtable) = }")     # 13
-print(f"{insert('Dieter', hashtable) = }")          # True
-print(f"{insert('Dieter', hashtable) = }")          # False
+print(f"hashtable = {hashtable}")
+print(f"contains('Dieter', hashtable) = {contains('Dieter', hashtable)}") # False
+print(f"contains('Berta', hashtable) = {contains('Berta', hashtable)}") # True
+print(f"search_index('Dieter', hashtable) = {search_index('Dieter', hashtable)}") # 11
+print(f"search_index('Berta', hashtable) = {search_index('Berta', hashtable)}") # 13
+print(f"insert('Dieter', hashtable) = {insert('Dieter', hashtable)}") # True
+print(f"insert('Dieter', hashtable) = {insert('Dieter', hashtable)}") # False
 
 # fill the list to test if everything works if it is full
 for name in unique_names_lex[0:20]:
     insert(name, hashtable)
     
-print(f"{hashtable = }")
+print(f"hashtable = {hashtable}")
 
 all([search_index(name, hashtable) == index for index, name in enumerate(hashtable)])
 ```
