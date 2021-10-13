@@ -38,6 +38,8 @@ Und da die Griechen von der Perfektion des Kreises überzeugt waren, folgerte Er
 Er war sogar in der Lage die Erdkrümmung relativ genau zu berechnen und dadurch auf den Umfang der Erde zu schließen.
 Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syren (800 km) ablief und berechnete.
 
+import numpy as np
+
 def sieve_of_eratosthenes(N):
     N = 100
     prime_sieve = [True for i in range(N)]
