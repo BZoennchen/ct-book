@@ -193,7 +193,7 @@ Zudem wird eine mehr oder weniger hilfreiche Fehlermeldung ausgegeben.
 
 Lassen wir es doch mal krachen.
 
-```{code-cell} python3
+```python
 # mit Variablen rechnen, die noch nicht definiert ist
 x = number + 4
 ```
