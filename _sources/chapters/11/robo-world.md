@@ -1,14 +1,25 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sec-robo-world)=
 # Roboterwelt
 
 Für diese Übung benötigen wir das Paket ``roboworld`` was Sie sich durch
 
 ```
-git clone git@github.com:BZoennchen/robo-world.git
-sudo python setup.py install
+pip install roboworld
 ```
 
-herunterladen und installieren müssen.
+herunterladen und installieren können.
 
 
 ```{admonition} Lernziel
@@ -67,14 +78,14 @@ Eine Zelle hat einen von folgenden endlichen Zuständen:
 
 Um die Welt und ihren Roboter anzuzeigen benötigen Sie das Paket ``roboworld``.
 
-```python
+```{code-cell} python3
 import roboworld as rw
 ```
 
 Es gibt verschiedene Methoden um verschiedene Welten zu erzeugen.
 Mit
 
-```
+```{code-cell} python3
 world = rw.new_world(nrows = 5, ncols = 9)
 ```
 
@@ -84,7 +95,7 @@ Der Roboter wird bei dieser Form der Erzeugung in die Mitte des Gebiets gesetzt 
 
 Um sich die erzeugte Welt anzeigen zu lassen rufen Sie
 
-```python
+```{code-cell} python3
 world.show()
 ```
 
@@ -100,7 +111,7 @@ Der Roboter kann sich durch ein Gebiet bewegen und Objekte aufnehmen, herumtrage
 Außerdem kann er Zellen markieren auf denen er sich befinden ``set_mark()`` oder Markierungen von besuchten Zellen entfernen ``unset_mark()``.
 Um ihm Befehle zu erteilen müssen Sie ihn zunächst von der Welt durch
 
-```python
+```{code-cell} python3
 robo = world.get_robo()
 ```
 
@@ -152,7 +163,7 @@ Fassen wir die Methoden des Roboters zusammen:
 
 Sie rufen eine Methode ``method()`` durch 
 
-```python
+```{code-cell} python3
 robo.method()
 ```
 
@@ -164,7 +175,7 @@ auf.
 Jede Welt besteht aus einer Aufgabe die Ihr Roboter lösen muss.
 Ob er erfolgreich war, können Sie mit
 
-```
+```{code-cell} python3
 world.is_successful()
 ```
 
@@ -179,7 +190,7 @@ Führen Sie folgenden Code aus und lassen Sie sich damit die Welt ersteinmal anz
 Ihr Roboter befindet sich in der Zelle ``(0,0)`` und ist nach Osten ausgerichtet.
 Das Ziel befindet sich ganz im Osten.
 
-```python
+```{code-cell} python3
 world = rw.corridor()
 robo = world.get_robo()
 world.show()
@@ -191,7 +202,7 @@ Laufen Sie mit Ihrem Roboter zum Ziel.
 Verwenden Sie dabei **keine** Schleifen.
 ```
 
-```python
+```{code-cell} python3
 robo.move()
 robo.move()
 robo.move()
@@ -222,7 +233,7 @@ Das führt zu einem Fehler (einer ``WallInFrontException``).
 Sie können sich die Wanderung ihres Roboters auch ansehen.
 Rufen Sie dazu
 
-```python
+```{code-cell} python3
 rw.animate(world)
 ```
 
@@ -243,7 +254,7 @@ Konstrukt.
 Sie können eine frische neue Welt erzeugen.
 ````
 
-```python
+```{code-cell} python3
 world = rw.corridor()
 robo = world.get_robo()
 
@@ -257,14 +268,14 @@ world.show()
 Sie können sich auch Korridore unterschiedlicher Länge konstruieren.
 Dazu rufen Sie 
 
-```python
+```{code-cell} python3
 world = rw.corridor(length)
 ```
 
 mit einem Argument ``length`` auf, wobei ``length`` eine positive Zahl größer gleich 2 sein muss.
 Zum Beispiel:
 
-```python
+```{code-cell} python3
 world = rw.corridor(20)
 world.show()
 ```
@@ -274,7 +285,7 @@ world.show()
 Durchwandern Sie nun einen Korridor dessen Länge Sie nicht kennen.
 ```
 
-```python
+```{code-cell} python3
 length = 25
 world = rw.corridor(length)
 robo = world.get_robo()
@@ -290,7 +301,7 @@ Bis jetzt bewegen wir unseren Roboter nur in eine Richtung.
 Was ist aber wenn wir nicht wissen wie der Roboter am Anfang ausgerichtet ist?
 Durch den Aufruf
 
-```python 
+```{code-cell} python3 
 length = 25
 world = rw.corridor(length, random_headway=True)
 ```
@@ -303,7 +314,7 @@ Durchwandern Sie nun einen Korridor dessen Länge Sie nicht kennen, wobei Sie au
 Testen Sie Ihren Code indem Sie ihn mehrfach ausführen.
 ```
 
-```python
+```{code-cell} python3
 length = 25
 world = rw.corridor(length, random_headway=True)
 robo = world.get_robo()
@@ -337,7 +348,7 @@ Dabei ist das Argument ``robo`` ihr Roboter.
 Verwenden Sie daraufhin Ihre soeben geschriebene Funktion um die Aufgabe {ref}`robo-corridor-success-2variable-loops-exercise` zu lösen.
 ```
 
-```python
+```{code-cell} python3
 def turn_east(robo):
     # be sure that robo is facing north
     while not robo.is_facing_north():
@@ -365,7 +376,7 @@ world.show()
 Extrahieren Sie nun den Code der den Roboter zur Wand laufen lässt in eine Funktion ``walk_to_wall(robo)``.
 ```
 
-```python
+```{code-cell} python3
 def walk_to_wall(robo):
     while not robo.is_wall_in_front():
         robo.move()
@@ -393,7 +404,7 @@ Zwei Gründe offenbaren sich hier:
 
 Selbst wenn die Zeilen
 
-```python
+```{code-cell} python3
 while not robo.is_wall_in_front():
     robo.move()
 ```
@@ -406,7 +417,7 @@ Unser Gehirn hat diese Aufgabe bereits gelöst, weshalb sollten wir also Denkres
 Da wir vergessen, müssen wir erneut feststellen was diese beiden Zeilen bewirken.
 Wir könnten die Zeilen auch mit Kommentaren versehen:
 
-```python
+```{code-cell} python3
 # move to wall in front
 while not robo.is_wall_in_front():
     robo.move()
@@ -492,7 +503,7 @@ In anderen Worten, damit Sie mental für andere Aufgaben gewadmet sind, denn das
 Eraten Sie was folgender Code bewirken soll. 
 Wo befindet sich der Roboter, wenn er ganz im Westen und nach Osten ausgerichtet startet?
 
-```python
+```{code-cell} python3
 for _ in range(5):
     walk_to_wall(robo)
     turn(robo) # turn zu deutsch 'umdrehen'
@@ -510,7 +521,7 @@ Das wiederholt er fünfmal, somit läuft er hin und her.
 Am Ende befindet er sich ganz im Osten am Ziel.
 ```
 
-```python
+```{code-cell} python3
 length = 25
 world = rw.corridor(length)
 robo = world.get_robo()
@@ -541,7 +552,7 @@ Sie müssen unter Umständen ``turn_east(robo)`` anpassen.
 
 ``turn_east(robo)`` verwendet bereits ``turn_north(robo)``, deshalb ergibt sich folgender Code:
 
-```python
+```{code-cell} python3
 def turn_north(robo):
     while not robo.is_facing_north():
         robo.turn_left()
@@ -571,7 +582,7 @@ Sie können mit ``is_object_in_front()`` prüfen ob vor dem Roboter ein Objekt l
 
 Mit 
 
-```python
+```{code-cell} python3
 length = 25
 nobjects = 4
 world = rw.corridor(length=length, nobjects=nobjects)
@@ -586,7 +597,7 @@ Diese Objekte werden zufällig in freien Zellen des Korridors verteilt.
 :label: robo-walk-east-with-objects-exercise
 Lassen Sie Ihren Roboter erneut einmal von Westen nach Osten durch die Welt
 
-```python
+```{code-cell} python3
 world = rw.corridor(length=25, random_headway=True, nobjects=4)
 ```
 
@@ -598,7 +609,7 @@ Implementieren Sie geeignete Funktionen um Ihren Code lesbar zu halten.
 Um ein Objekt aus dem Weg zu räumen definieren wir die Funktion ``move_object(robo)``.
 Diese lässt den Roboter das Objekt, welches sich vor ihm befindet, aufnehmen und hinter sich ablegen.
 
-```python
+```{code-cell} python3
 def move_object(robo):
     robo.take()
     turn(robo)
@@ -608,7 +619,7 @@ def move_object(robo):
 
 Eine weitere Funktion ``walk(robo)`` lässt den Roboter solange nichts im Weg ist (``nothing_in_front(robo)``) laufen.
 
-```python
+```{code-cell} python3
 def nothing_in_front(robo):
     return not robo.is_wall_in_front() and not robo.is_object_in_front()
 
@@ -619,7 +630,7 @@ def walk(robo):
 
 Schließlich können wir unseren Roboter loslaufen lassen:
 
-```python
+```{code-cell} python3
 turn_east(robo)
 walk(robo)
 while not robo.is_wall_in_front():
@@ -648,7 +659,7 @@ print(world.is_successful())
 
 Anstatt ein Objekt aufzunehmen und es direkt wieder abzulegen, können wir es auch aufnehmen und erst dann ablegen wenn es notwendig ist.
 
-```
+```{code-cell} python3
 def put_behind(robo):
     turn(robo)
     robo.put()
@@ -674,7 +685,7 @@ Die nächste Aufgabe besteht darin durch ein quadratisches Gebiet ohne Hindernis
 
 Betrachten wir ein quadratisches Gebiet mit ``nrow`` Zeilen und ``ncols`` Spalten (``nrow == ncols``) ohne Objekte oder Hindernisse, wobei sich der Roboter im Zentrum und sein Ziel an einen zufälligen Ort befinden:
 
-```python
+```{code-cell} python3
 nrows = 5
 ncols = 5
 world = rw.new_world(nrows=nrows, ncols=ncols)
@@ -693,7 +704,7 @@ Implementieren Sie eine Funktion ``random_walk(robo)``, welche den Roboter ``rob
 **Tipp:** Eventuell nutzt Ihnen die Funktion [choice()](https://docs.python.org/3/library/random.html#functions-for-sequences) des Pakets ``random``.
 ```
 
-```python
+```{code-cell} python3
 import random
 
 def random_turn(robo):
@@ -813,7 +824,7 @@ Dies spart Rechnerressourcen während der Berechnung.
 Implementieren Sie sodann eine Funktion ``experiments(nrows, ncols, n)`` welche ``n``-mal ``experiment(nrows, ncols)`` aufruft und den *Durchschnitt* berechnet.
 ```
 
-```python
+```{code-cell} python3
 def experiment(nrows, ncols):
     world = rw.new_world(nrows=nrows, ncols=ncols)
     world.disable_animation()
@@ -838,14 +849,14 @@ Um ein Gefühl für den *Erwartungswert* zu erlangen können wir nun den *Durchs
 
 Berechnen Sie für jeden Eintrag in ``x``
 
-```python
+```{code-cell} python3
 x = list(range(1,401,1))
 ```
 
 den *Durchschnitt* für ``ncols=5``, ``nrows=5``, sodass ``y`` alle Durchschnitte enthält.
 Lassen Sie sich die Daten durch
 
-```python
+```{code-cell} python3
 import matplotlib.pyplot as plt
 plt.plot(x, y, 'bo', markersize=2.5, alpha=0.5)
 ```
@@ -857,7 +868,7 @@ Was beobachten Sie?
 
 Erst generieren wir mit 
 
-```python
+```{code-cell} python3
 nmax = 400
 x = list(range(1,nmax+1,1))
 y = [experiments(5, 5, n) for n in x]
@@ -865,7 +876,7 @@ y = [experiments(5, 5, n) for n in x]
 
 die Daten und dann plotten wir sie
 
-```python
+```{code-cell} python3
 import matplotlib.pyplot as plt
 plt.plot(x, y, 'bo', markersize=2.5, alpha=0.5)
 plt.hlines([38, 38 + (56-38)/2, 56], xmin=0, xmax=nmax, colors='black')
@@ -873,7 +884,7 @@ plt.hlines([38, 38 + (56-38)/2, 56], xmin=0, xmax=nmax, colors='black')
 
 Mit 
 
-```python
+```{code-cell} python3
 plt.hlines([38, 38 + (56-38)/2, 56], xmin=0, xmax=nmax, colors='black')
 ```
 
@@ -885,7 +896,7 @@ Wir beoachten außerdem, dass die Berechnung einige Zeit in Anspruch nimmt und s
 
 Sehen Sie sich die [Dokumentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html) der Funktion ``plt.plot()`` an und finden Sie heraus was die einzelnen Argumente des obigen Aufrufs
 
-```python
+```{code-cell} python3
 plt.plot(x, y, 'bo', markersize=2.5, alpha=0.5)
 ```
 
@@ -911,7 +922,7 @@ Erzeugen Sie einen identischen Plot wobei dieser keine Marker dafür aber eine F
 
 ```
 
-```python
+```{code-cell} python3
 import matplotlib.pyplot as plt
 plt.plot(x, y, 'b-', markersize=2.5, alpha=0.5)
 plt.hlines([38, 38 + (56-38)/2, 56], xmin=0, xmax=nmax, colors='black')
@@ -956,7 +967,7 @@ also ca. 3.7 Millionen abschätzen!
 ``x`` enthält die Anzahl der Experimente und ``y`` die durchschnittliche Anzahl an Roboterschritten.
 Damit berechnet folgender Code die gesamte Anzahl an Schritten:
 
-```python
+```{code-cell} python3
 overall_steps = 0
 for i in range(len(x)):
     overall_steps += x[i] * y[i]
@@ -965,7 +976,7 @@ print(overall_steps)
 
 Ein etwas besser lesbarer Code entsteht wenn wir die ``Python`` Funktion ``zip`` verwenden:
 
-```python
+```{code-cell} python3
 overall_steps = 0
 for n, mean in zip(x,y):
     overall_steps += n * mean
@@ -985,7 +996,7 @@ Berechnen Sie experimentell eine gute Schätzung für die Wahrscheinlichkeit, da
 
 ```
 
-```python
+```{code-cell} python3
 def random_move(robo):
     random_turn(robo)
     robo.move()
@@ -1055,7 +1066,7 @@ Laufe jede Spalte ab:
 
 Wir verlagern das Laufen ganz nach Westen/Norden/Süden in Funktionen wie auch der Lauf nach Nordweste ``walk_north_west()``.
 
-```python
+```{code-cell} python3
 def walk_to_wall(robo, condition = lambda robo: True):
     while not robo.is_wall_in_front() and condition(robo):
         robo.move()
@@ -1100,7 +1111,7 @@ Definieren wir keine ``condition`` ist der Wahrheitswert immer ``True``.
 
 Lassen Sie uns diesen Code testen.
 
-```python
+```{code-cell} python3
 nrows = 11
 ncols = 11
 world = rw.new_world(nrows=nrows, ncols=ncols)
@@ -1213,7 +1224,7 @@ Spirallauf: die Anzahl der ``move()`` Aufrufe erhöt sich um eins nach jedem zwe
 Wir müssen nun noch darauf achten, dass wir nicht übers Ziel hinauslaufen.
 Das ist auch schon alles.
 
-```python
+```{code-cell} python3
 def deterministic_walk_quare(robo):
     steps = 0
     moves = 1
@@ -1444,7 +1455,7 @@ Da wir den Roboter beim Zurücklaufen bereits zweimal gedreht haben fehlt noch e
 **Annahme:** Ignorieren Sie zunächst, dass eine ``move()`` Operation möglicherweise wegen einem Hindernis nicht durchführbar ist.
 ```
 
-```python
+```{code-cell} python3
 def move_back(robo):
     turn(robo)
     robo.move()
@@ -1472,7 +1483,7 @@ Diese Funktion kann schieflaufen, sofern nach der Drehung ein Hindernis vor uns 
 Die Funktion soll zudem ``True`` zurückgeben, falls die Operationen durchführbar waren und sonst ``False`` zurückliefern.
 ```
 
-```python
+```{code-cell} python3
 def move(robo, code):
     for _ in range(code):
         robo.turn_left()
@@ -1503,7 +1514,7 @@ Hierfür stellen wir Ihnen die folgenden beiden Methoden zur Verfügung:
 Ändern Sie ``move(robo, code)`` so ab, dass Sie keine Zelle doppelt besuchen.
 ```
 
-```python
+```{code-cell} python3
 def move(robo, code):
     for _ in range(code):
         robo.turn_left()
@@ -1531,7 +1542,7 @@ Implementieren Sie nun die Tiefensuche ``depth_first_walk(robo)`` welche den Rob
 Falls es keinen Weg zum Ziel gibt, so sollte diese Funktion eine leere Liste zurückgeben.
 ```
 
-```python
+```{code-cell} python3
 def depth_first_walk(robo):
     path = []
     code = 0
@@ -1566,7 +1577,7 @@ def depth_first_walk(robo):
 Implementieren Sie eine Funktion ``inverse_walk(robo, path)`` welche den Roboter zurück an seine Ausgangsposition bringt.
 ```
 
-```python
+```{code-cell} python3
 def inverse_walk(robo, path):
     for i in range(len(path)-1, -1, -1):
         inverse_move(robo, path[i])
@@ -1576,7 +1587,7 @@ def inverse_walk(robo, path):
 :label: robo-repeat-walk-exercise
 Implementieren Sie eine Funktion ``walk(robo, path)`` welche den Lauf ``path`` ausführt, sodass fogender Code den Roboter erst zum Ziel führt, dann wieder zurücklaufen lässt und schlussendlich erneut zum Ziel führt:
 
-```python
+```{code-cell} python3
 path = depth_first_walk(robo)
 inverse_walk(robo, path)
 walk(robo, path)
@@ -1584,7 +1595,7 @@ walk(robo, path)
 
 ````
 
-```python
+```{code-cell} python3
 def walk(robo, path):
     for code in path:
         for _ in range(code):
@@ -1596,7 +1607,7 @@ def walk(robo, path):
 :label: robo-maze-walk-exercise
 Testen Sie ihre Funktionen an dem Labyrinth, was Sie sich durch
 
-```python
+```{code-cell} python3
 world = rw.maze()
 world.show()
 ```
@@ -1604,7 +1615,7 @@ world.show()
 erzeugen können.
 ````
 
-```python
+```{code-cell} python3
 world = rw.maze()
 robo = world.get_robo()
 robo.disable_print()
@@ -1665,7 +1676,7 @@ Wir führen die *Tiefensuche* nur bis zu einer bestimmten Ebene (Distanz ``dista
 Nehmen Sie an ``depth_first_walk(robo, distance=None, unmark=False)`` führt die *Tiefensuche* nur bis zu einer Distanz ``distance`` durch.
 Dann würde ein Algorithmus der folgenden Art die *Breitensuche* realisieren:
 
-```python
+```{code-cell} python3
 distance = 1
 while some_condition:
     path = depth_first_walk(robo, distance=distance, unmark=True)
@@ -1698,7 +1709,7 @@ Die Funktion sollte ein Paar zurückgeben (``return path, level``), wobei ``leve
 
 Wir passen zunächst ``move_back(robo)`` und ``inverse_move(robo, code)`` an:
 
-```python
+```{code-cell} python3
 def move_back(robo, unmark=False):
     turn(robo)
     if unmark:
@@ -1741,7 +1752,7 @@ level = max(level, len(path))
 
 an.
 
-```python
+```{code-cell} python3
 def depth_first_walk(robo, distance, unmark=False):
     path = []
     code = 0
@@ -1783,7 +1794,7 @@ Wir suchen solange bis:
 1. Der zurückgelieferte Lauf nicht leer ist oder
 2. Die tatsächlich gelaufene Distanz gleich wie die vorgegebene Beschränkung ist.
 
-```python
+```{code-cell} python3
 def find_shortest_walk(robo):
     distance = 1
     level = 0
@@ -1796,7 +1807,7 @@ def find_shortest_walk(robo):
 
 Lassen Sie uns das einmal austesten.
 
-```python
+```{code-cell} python3
 nrows = 10
 ncols = 10
 world = rw.new_world(nrows=nrows, ncols=ncols)
@@ -1813,7 +1824,7 @@ name: fig-robo-world-shortest-path-before
 ---
 ```
 
-```python
+```{code-cell} python3
 path = find_shortest_walk(robo)
 print(f'Shortest walk: {path}')
 inverse_walk(robo, path)
@@ -1841,7 +1852,7 @@ Sie können sich noch eine weitaus komplexere Welt mit Hindernissen erzeugen las
 Ein echtes Labyrinth!
 Dazu dient folgender Aufruf:
 
-```python
+```{code-cell} python3
 nrows = 15
 ncols = 15
 world = rw.complex_maze(nrows,ncols)
@@ -1854,7 +1865,7 @@ Sie können gerne mit nachfolgendem Code herumspielen.
 Zuerst erzeugen wir uns ein Labyrinth und kopieren dieses.
 Außerdem deaktivieren wir die Ausgabe und die Möglichkeit zu animieren.
 
-```python
+```{code-cell} python3
 import roboworld as rw
 import copy
 
@@ -1882,7 +1893,7 @@ Dieses Labyrinth wurde bei unserem Aufruf generiert.
 
 Dann generieren wir einen Lauf durch die *Tiefensuche*, laufen den Lauf wieder zurück, aktivieren die Animation, laufen den Lauf erneut ab und animieren den Lauf.
 
-```python
+```{code-cell} python3
 path, level = depth_first_walk(robo1)
 inverse_walk(robo1, path)
 world1.enable_animation()
@@ -1901,7 +1912,7 @@ Dieser Lauf wurde durch die *Tiefensuche* berechnet.
 Der Roboter scheint recht verwirrt durch die Gegen zu laufen.
 Das gleiche führen wir nun mit der *Breitensuche* durch.
 
-```python
+```{code-cell} python3
 path = find_shortest_walk(robo2)
 inverse_walk(robo2, path)
 world2.enable_animation()

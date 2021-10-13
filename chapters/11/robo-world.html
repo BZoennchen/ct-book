@@ -517,7 +517,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/11/robo-world.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/11/robo-world.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -538,6 +541,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/11/robo-world.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -666,11 +689,10 @@
   <div class="section" id="roboterwelt">
 <span id="sec-robo-world"></span><h1><span class="section-number">1. </span>Roboterwelt<a class="headerlink" href="#roboterwelt" title="Permalink to this headline">¶</a></h1>
 <p>Für diese Übung benötigen wir das Paket <code class="docutils literal notranslate"><span class="pre">roboworld</span></code> was Sie sich durch</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">BZoennchen</span><span class="o">/</span><span class="n">robo</span><span class="o">-</span><span class="n">world</span><span class="o">.</span><span class="n">git</span>
-<span class="n">sudo</span> <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">roboworld</span>
 </pre></div>
 </div>
-<p>herunterladen und installieren müssen.</p>
+<p>herunterladen und installieren können.</p>
 <div class="learngoals admonition">
 <p class="admonition-title">Lernziel</p>
 <p>Im <a class="reference internal" href="#sec-robo-world-part-1"><span class="std std-ref">ersten Teil</span></a> dieser Übung machen wir Sie mit den Kontrollstrukturen von imperativen Programmiersprachen vertraut.
@@ -716,20 +738,35 @@ Eine Zelle hat einen von folgenden endlichen Zuständen:</p>
 <li><p>Ziel (die Zelle repräsentiert das örtliche Ziel des Roboters)</p></li>
 </ol>
 <p>Um die Welt und ihren Roboter anzuzeigen benötigen Sie das Paket <code class="docutils literal notranslate"><span class="pre">roboworld</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">roboworld</span> <span class="k">as</span> <span class="nn">rw</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">roboworld</span> <span class="k">as</span> <span class="nn">rw</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Es gibt verschiedene Methoden um verschiedene Welten zu erzeugen.
 Mit</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">new_world</span><span class="p">(</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">9</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">new_world</span><span class="p">(</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">9</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>erzeugen Sie ein Gebiet mit 5 Zeilen und 9 Spalten.
 Die Zelle in der linken unteren Ecke hat stets die Koordinate <code class="docutils literal notranslate"><span class="pre">(0,0)</span></code> und die obere rechte Zelle die Koordinate <code class="docutils literal notranslate"><span class="pre">(ncols-1,</span> <span class="pre">nrows-1)</span></code>.
 Der Roboter wird bei dieser Form der Erzeugung in die Mitte des Gebiets gesetzt und das Ziel wird zufällig in eine Zelle gelegt.</p>
 <p>Um sich die erzeugte Welt anzeigen zu lassen rufen Sie</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/robo-world_5_0.png" src="../../_images/robo-world_5_0.png" />
+</div>
 </div>
 <p>auf.
 Jede Zelle hat eine bestimmte Farbe die ihren aktuellen Zustand beschreibt.</p>
@@ -741,8 +778,12 @@ In anderen Worten, der Zustand der Zellen bleibt unverändert außer Ihr Roboter
 <p>Der Roboter kann sich durch ein Gebiet bewegen und Objekte aufnehmen, herumtragen und wieder absetzten.
 Außerdem kann er Zellen markieren auf denen er sich befinden <code class="docutils literal notranslate"><span class="pre">set_mark()</span></code> oder Markierungen von besuchten Zellen entfernen <code class="docutils literal notranslate"><span class="pre">unset_mark()</span></code>.
 Um ihm Befehle zu erteilen müssen Sie ihn zunächst von der Welt durch</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>heranholen.
 Der Roboter hat eine Ausrichtung, d.h. seine Nase zeigt in eine von vier Himmelsrichtungen:</p>
@@ -784,8 +825,22 @@ Dabei kann der Roboter jedoch nur ein Objekt gleichzeitig tragen.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">put()</span></code> legt es ab.</p></li>
 </ul>
 <p>Sie rufen eine Methode <code class="docutils literal notranslate"><span class="pre">method()</span></code> durch</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">92</span><span class="n">faaea3db4b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">robo</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;Agent&#39; object has no attribute &#39;method&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>auf.</p>
 </div>
@@ -793,8 +848,12 @@ Dabei kann der Roboter jedoch nur ein Objekt gleichzeitig tragen.</p>
 <span id="sec-robo-world-part-1"></span><h2><span class="section-number">1.3. </span>Einfache Erkundungen<a class="headerlink" href="#einfache-erkundungen" title="Permalink to this headline">¶</a></h2>
 <p>Jede Welt besteht aus einer Aufgabe die Ihr Roboter lösen muss.
 Ob er erfolgreich war, können Sie mit</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">world</span><span class="o">.</span><span class="n">is_successful</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world</span><span class="o">.</span><span class="n">is_successful</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>abfragen.
 Diese Methode der Welt gibt genau dann <code class="docutils literal notranslate"><span class="pre">True</span></code> zurück wenn die Aufgabe erfolgreich abgeschlossen ist.</p>
@@ -804,10 +863,14 @@ Diese Methode der Welt gibt genau dann <code class="docutils literal notranslate
 <p>Führen Sie folgenden Code aus und lassen Sie sich damit die Welt ersteinmal anzeigen.
 Ihr Roboter befindet sich in der Zelle <code class="docutils literal notranslate"><span class="pre">(0,0)</span></code> und ist nach Osten ausgerichtet.
 Das Ziel befindet sich ganz im Osten.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">()</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="robo-corridor-success-no-loops-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.19 </span>(Mühsames Durchwandern des Korridors)</p>
@@ -816,7 +879,9 @@ Das Ziel befindet sich ganz im Osten.</p>
 Verwenden Sie dabei <strong>keine</strong> Schleifen.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
@@ -828,6 +893,8 @@ Verwenden Sie dabei <strong>keine</strong> Schleifen.</p>
 
 <span class="n">world</span><span class="o">.</span><span class="n">is_successful</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="robo-corridor-collision-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.20 </span>(Kollision)</p>
@@ -846,8 +913,12 @@ Das führt zu einem Fehler (einer <code class="docutils literal notranslate"><sp
 </div>
 <p>Sie können sich die Wanderung ihres Roboters auch ansehen.
 Rufen Sie dazu</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rw</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rw</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>auf.</p>
 <div class="warning admonition">
@@ -865,7 +936,9 @@ Rufen Sie dazu</p>
 Sie können eine frische neue Welt erzeugen.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">()</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
@@ -875,16 +948,26 @@ Sie können eine frische neue Welt erzeugen.</p>
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Sie können sich auch Korridore unterschiedlicher Länge konstruieren.
 Dazu rufen Sie</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>mit einem Argument <code class="docutils literal notranslate"><span class="pre">length</span></code> auf, wobei <code class="docutils literal notranslate"><span class="pre">length</span></code> eine positive Zahl größer gleich 2 sein muss.
 Zum Beispiel:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="robo-corridor-success-variable-loops-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.22 </span>(Durchwandern des variablen Korridors)</p>
@@ -892,7 +975,9 @@ Zum Beispiel:</p>
 <p>Durchwandern Sie nun einen Korridor dessen Länge Sie nicht kennen.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 
@@ -903,12 +988,18 @@ Zum Beispiel:</p>
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Bis jetzt bewegen wir unseren Roboter nur in eine Richtung.
 Was ist aber wenn wir nicht wissen wie der Roboter am Anfang ausgerichtet ist?
 Durch den Aufruf</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">random_headway</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>wird ihr Roboter zufällig ausgerichtet.</p>
 <div class="exercise admonition" id="robo-corridor-success-2variable-loops-exercise">
@@ -918,7 +1009,9 @@ Durch den Aufruf</p>
 Testen Sie Ihren Code indem Sie ihn mehrfach ausführen.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">random_headway</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 
@@ -936,6 +1029,8 @@ Testen Sie Ihren Code indem Sie ihn mehrfach ausführen.</p>
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Unser Roboter kann sich nur nach links drehen und wir können nur feststellen ob er gerade nach Norden ausgerichtet ist.
 Aus diesen beiden primitiven Operationen können wir jedoch komplexere Operationen durch <strong>Komposition</strong> erzeugen.
 Um den Roboter nach Osten auszurichten, drehen wir ihn solange nach links bis er nach norden ausgerichtet ist.
@@ -950,7 +1045,9 @@ Dabei ist das Argument <code class="docutils literal notranslate"><span class="p
 Verwenden Sie daraufhin Ihre soeben geschriebene Funktion um die Aufgabe <a class="reference internal" href="#robo-corridor-success-2variable-loops-exercise"><span class="std std-ref">Durchwandern des variablen Korridors mit variabler Ausrichtung</span></a> zu lösen.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">turn_east</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">turn_east</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="c1"># be sure that robo is facing north</span>
     <span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_facing_north</span><span class="p">():</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
@@ -972,13 +1069,17 @@ Verwenden Sie daraufhin Ihre soeben geschriebene Funktion um die Aufgabe <a clas
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="exercise admonition" id="robo-walk-to-wall-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.25 </span>(Zur Wand laufen)</p>
 <div class="section" id="exercise-content">
 <p>Extrahieren Sie nun den Code der den Roboter zur Wand laufen lässt in eine Funktion <code class="docutils literal notranslate"><span class="pre">walk_to_wall(robo)</span></code>.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walk_to_wall</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walk_to_wall</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">():</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 
@@ -994,6 +1095,8 @@ Verwenden Sie daraufhin Ihre soeben geschriebene Funktion um die Aufgabe <a clas
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="einschub-benennung">
 <h3><span class="section-number">1.3.2. </span>Einschub: Benennung<a class="headerlink" href="#einschub-benennung" title="Permalink to this headline">¶</a></h3>
 <p>Loht es sich wirklich diese zwei Codezeilen in eine eigene Funktion zu packen?
@@ -1005,9 +1108,13 @@ Zwei Gründe offenbaren sich hier:</p>
 <div class="section" id="lesbarkeit">
 <span id="sec-roboworld-readability"></span><h4><span class="section-number">1.3.2.1. </span>Lesbarkeit<a class="headerlink" href="#lesbarkeit" title="Permalink to this headline">¶</a></h4>
 <p>Selbst wenn die Zeilen</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">():</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">():</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>einfach zu verstehen sind, so müssen wir dennoch Zeit investieren um die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife und die zwei Methoden zu lesen und in Kombination zu verstehen.
 Befinden sich diese Codezeilen in einer langen Codesequenz wird es nicht leichter.</p>
@@ -1015,10 +1122,14 @@ Befinden sich diese Codezeilen in einer langen Codesequenz wird es nicht leichte
 Unser Gehirn hat diese Aufgabe bereits gelöst, weshalb sollten wir also Denkressourcen vergeuden, wenn wir nach einer gewissen Zeit wieder zu diesem Code zurückkehren?
 Da wir vergessen, müssen wir erneut feststellen was diese beiden Zeilen bewirken.
 Wir könnten die Zeilen auch mit Kommentaren versehen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># move to wall in front</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># move to wall in front</span>
 <span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">():</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Doch nichts dient der Dokumentation besser als wohlstrukturierter Code mit sprechenden und wohlüberlegten Variablen und Funktionsnamen.
 Diese Benennung ist eine Kunst für sich.
@@ -1083,11 +1194,6 @@ In anderen Worten, damit Sie mental für andere Aufgaben gewadmet sind, denn das
 <div class="section" id="exercise-content">
 <p>Eraten Sie was folgender Code bewirken soll.
 Wo befindet sich der Roboter, wenn er ganz im Westen und nach Osten ausgerichtet startet?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">walk_to_wall</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
-    <span class="n">turn</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span> <span class="c1"># turn zu deutsch &#39;umdrehen&#39;</span>
-</pre></div>
-</div>
 <p>Implementieren Sie <code class="docutils literal notranslate"><span class="pre">turn(robo)</span></code> und führen Sie den Code aus.
 Lassen Sie sich die Animation anzeigen.</p>
 </div>
@@ -1100,7 +1206,9 @@ Das wiederholt er fünfmal, somit läuft er hin und her.
 Am Ende befindet er sich ganz im Osten am Ziel.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 
@@ -1115,6 +1223,8 @@ Am Ende befindet er sich ganz im Osten am Ziel.</p>
 <span class="n">rw</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Erinnern Sie sich an die obige Aufgabe <a class="reference internal" href="#robo-turn_east-exercise"><span class="std std-ref">Nach Osten Ausrichten</span></a>.
 Dort haben wir eine Funktion <code class="docutils literal notranslate"><span class="pre">turn_east(robo)</span></code> implementiert.
 Weshalb erweitern wir unseren Werkzeugkasten nicht um <code class="docutils literal notranslate"><span class="pre">turn_north(robo)</span></code>, <code class="docutils literal notranslate"><span class="pre">turn_west(robo)</span></code> und <code class="docutils literal notranslate"><span class="pre">turn_south(robo)</span></code>.</p>
@@ -1128,7 +1238,9 @@ Sie müssen unter Umständen <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">turn_east(robo)</span></code> verwendet bereits <code class="docutils literal notranslate"><span class="pre">turn_north(robo)</span></code>, deshalb ergibt sich folgender Code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">turn_north</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">turn_north</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_facing_north</span><span class="p">():</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
 
@@ -1147,6 +1259,8 @@ Sie müssen unter Umständen <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="korridor-mit-objekten">
 <h3><span class="section-number">1.3.3. </span>Korridor mit Objekten<a class="headerlink" href="#korridor-mit-objekten" title="Permalink to this headline">¶</a></h3>
 <p>Die nächste Welt die unser Roboter durchlaufen soll ist ein Korridor der Objekte auf dem Weg zum Ziel enthalten kann.</p>
@@ -1156,12 +1270,16 @@ Zudem kann der Roboter nur ein Objekt gleichzeitig tragen.
 Falls er ein Objekt trägt, kann er es mit <code class="docutils literal notranslate"><span class="pre">put()</span></code> vor ihm ablegen.
 Sie können mit <code class="docutils literal notranslate"><span class="pre">is_object_in_front()</span></code> prüfen ob vor dem Roboter ein Objekt liegt.</p>
 <p>Mit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">nobjects</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="n">length</span><span class="p">,</span> <span class="n">nobjects</span><span class="o">=</span><span class="n">nobjects</span><span class="p">)</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>erstellen Sie eine Welt mit einem Korridor der Länge 25 welcher 4 Objekte enthält.
 Diese Objekte werden zufällig in freien Zellen des Korridors verteilt.</p>
@@ -1169,24 +1287,27 @@ Diese Objekte werden zufällig in freien Zellen des Korridors verteilt.</p>
 <p class="admonition-title"><span class="caption-number">Exercise 1.28 </span>(Der Lauf nach Osten mit verrückbaren Hindernissen)</p>
 <div class="section" id="exercise-content">
 <p>Lassen Sie Ihren Roboter erneut einmal von Westen nach Osten durch die Welt</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">corridor</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">random_headway</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nobjects</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>laufen.
 Implementieren Sie geeignete Funktionen um Ihren Code lesbar zu halten.</p>
 </div>
 </div>
 <p>Um ein Objekt aus dem Weg zu räumen definieren wir die Funktion <code class="docutils literal notranslate"><span class="pre">move_object(robo)</span></code>.
 Diese lässt den Roboter das Objekt, welches sich vor ihm befindet, aufnehmen und hinter sich ablegen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_object</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_object</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">take</span><span class="p">()</span>
     <span class="n">turn</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">put</span><span class="p">()</span>
     <span class="n">turn</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Eine weitere Funktion <code class="docutils literal notranslate"><span class="pre">walk(robo)</span></code> lässt den Roboter solange nichts im Weg ist (<code class="docutils literal notranslate"><span class="pre">nothing_in_front(robo)</span></code>) laufen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nothing_in_front</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nothing_in_front</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="k">return</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_object_in_front</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">walk</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
@@ -1194,8 +1315,12 @@ Diese lässt den Roboter das Objekt, welches sich vor ihm befindet, aufnehmen un
         <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Schließlich können wir unseren Roboter loslaufen lassen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turn_east</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turn_east</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
 <span class="n">walk</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
 <span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">():</span>
     <span class="n">move_object</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
@@ -1203,6 +1328,8 @@ Diese lässt den Roboter das Objekt, welches sich vor ihm befindet, aufnehmen un
 
 <span class="nb">print</span><span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">is_successful</span><span class="p">())</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="robo-walk-east-with-objects-impossible-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.29 </span>(Eine unmögliche Aufgabe)</p>
@@ -1225,7 +1352,9 @@ Diese lässt den Roboter das Objekt, welches sich vor ihm befindet, aufnehmen un
 </div>
 </div>
 <p>Anstatt ein Objekt aufzunehmen und es direkt wieder abzulegen, können wir es auch aufnehmen und erst dann ablegen wenn es notwendig ist.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">put_behind</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">put_behind</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="n">turn</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">put</span><span class="p">()</span>
     <span class="n">turn</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
@@ -1240,6 +1369,8 @@ Diese lässt den Roboter das Objekt, welches sich vor ihm befindet, aufnehmen un
 <span class="nb">print</span><span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">is_successful</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Dieser Code funktioniert auch wenn direkt am Anfang ein Objekt auf uns wartet.</p>
 </div>
 </div>
@@ -1249,12 +1380,16 @@ Diese lässt den Roboter das Objekt, welches sich vor ihm befindet, aufnehmen un
 <h3><span class="section-number">1.4.1. </span>Zufallslauf<a class="headerlink" href="#zufallslauf" title="Permalink to this headline">¶</a></h3>
 <p>Die nächste Aufgabe besteht darin durch ein quadratisches Gebiet ohne Hindernisse mithilfe des Zufalls zu navigieren.</p>
 <p>Betrachten wir ein quadratisches Gebiet mit <code class="docutils literal notranslate"><span class="pre">nrow</span></code> Zeilen und <code class="docutils literal notranslate"><span class="pre">ncols</span></code> Spalten (<code class="docutils literal notranslate"><span class="pre">nrow</span> <span class="pre">==</span> <span class="pre">ncols</span></code>) ohne Objekte oder Hindernisse, wobei sich der Roboter im Zentrum und sein Ziel an einen zufälligen Ort befinden:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">ncols</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">new_world</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">)</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Eine, nicht besonders schlaue Strategie um zum Ziel zu laufen ist es zufällig eine der vier Nachbarn der <em>Von-Neumann-Nachbarschaft</em> als nächste Zelle auszuwählen.
 Diese Art der Fortbewegung nennt man <em>Zufallslauf</em> (engl. <em>Random Walk</em>).</p>
@@ -1265,7 +1400,9 @@ Diese Art der Fortbewegung nennt man <em>Zufallslauf</em> (engl. <em>Random Walk
 <p><strong>Tipp:</strong> Eventuell nutzt Ihnen die Funktion <a class="reference external" href="https://docs.python.org/3/library/random.html#functions-for-sequences">choice()</a> des Pakets <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">def</span> <span class="nf">random_turn</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="n">turns</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
@@ -1281,6 +1418,8 @@ Diese Art der Fortbewegung nennt man <em>Zufallslauf</em> (engl. <em>Random Walk
 <span class="n">random_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">is_successful</span><span class="p">())</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Ziemlich cool oder?
 Wir haben zwar einen sehr ineffektiven Algorithmus aber irgendwann findet er das Ziel des Roboters.</p>
@@ -1370,7 +1509,9 @@ Dies spart Rechnerressourcen während der Berechnung.</p>
 <p>Implementieren Sie sodann eine Funktion <code class="docutils literal notranslate"><span class="pre">experiments(nrows,</span> <span class="pre">ncols,</span> <span class="pre">n)</span></code> welche <code class="docutils literal notranslate"><span class="pre">n</span></code>-mal <code class="docutils literal notranslate"><span class="pre">experiment(nrows,</span> <span class="pre">ncols)</span></code> aufruft und den <em>Durchschnitt</em> berechnet.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">experiment</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">experiment</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">):</span>
     <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">new_world</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">)</span>
     <span class="n">world</span><span class="o">.</span><span class="n">disable_animation</span><span class="p">()</span>
     <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
@@ -1387,39 +1528,46 @@ Dies spart Rechnerressourcen während der Berechnung.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Um ein Gefühl für den <em>Erwartungswert</em> zu erlangen können wir nun den <em>Durchschnitt</em> für unterschiedliche <code class="docutils literal notranslate"><span class="pre">n</span></code> bestimmen.</p>
 <div class="exercise admonition" id="robo-random-walk-mean-n-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.33 </span>(Entwicklung des Durchschnitts)</p>
 <div class="section" id="exercise-content">
 <p>Berechnen Sie für jeden Eintrag in <code class="docutils literal notranslate"><span class="pre">x</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">401</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
 <p>den <em>Durchschnitt</em> für <code class="docutils literal notranslate"><span class="pre">ncols=5</span></code>, <code class="docutils literal notranslate"><span class="pre">nrows=5</span></code>, sodass <code class="docutils literal notranslate"><span class="pre">y</span></code> alle Durchschnitte enthält.
 Lassen Sie sich die Daten durch</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>plotten.
 Was beobachten Sie?</p>
 </div>
 </div>
 <p>Erst generieren wir mit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nmax</span> <span class="o">=</span> <span class="mi">400</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nmax</span> <span class="o">=</span> <span class="mi">400</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nmax</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">experiments</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>die Daten und dann plotten wir sie</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">([</span><span class="mi">38</span><span class="p">,</span> <span class="mi">38</span> <span class="o">+</span> <span class="p">(</span><span class="mi">56</span><span class="o">-</span><span class="mi">38</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">56</span><span class="p">],</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">nmax</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Mit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">([</span><span class="mi">38</span><span class="p">,</span> <span class="mi">38</span> <span class="o">+</span> <span class="p">(</span><span class="mi">56</span><span class="o">-</span><span class="mi">38</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">56</span><span class="p">],</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">nmax</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">([</span><span class="mi">38</span><span class="p">,</span> <span class="mi">38</span> <span class="o">+</span> <span class="p">(</span><span class="mi">56</span><span class="o">-</span><span class="mi">38</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">56</span><span class="p">],</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">nmax</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>haben wir zwei horizontale Linien bei <span class="math notranslate nohighlight">\(y = 38\)</span>, <span class="math notranslate nohighlight">\(y = 38+(56-38)/2\)</span> und <span class="math notranslate nohighlight">\(y = 56\)</span> eingezeichnet um zu verdeutlichen, dass der <em>Erwartungswert</em> mit hoher Wahrscheinlichkeit in dem Interval <span class="math notranslate nohighlight">\([38;56]\)</span> liegt und der Mittelpunkt <span class="math notranslate nohighlight">\(38+(56-38)/2 = 47\)</span> ein erster Schätzwert ist.
 Wir beoachten außerdem, dass die Berechnung einige Zeit in Anspruch nimmt und sich der <em>Durchschnitt</em> für größer werdende <code class="docutils literal notranslate"><span class="pre">n</span></code> einem bestimmten Wert (dem <em>Erwartungswert</em>) zu nähern scheint.</p>
@@ -1427,9 +1575,6 @@ Wir beoachten außerdem, dass die Berechnung einige Zeit in Anspruch nimmt und s
 <p class="admonition-title"><span class="caption-number">Exercise 1.34 </span>(Plotten mit matplotlib)</p>
 <div class="section" id="exercise-content">
 <p>Sehen Sie sich die <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">Dokumentation</a> der Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> an und finden Sie heraus was die einzelnen Argumente des obigen Aufrufs</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>bewirken bzw. bedeuten.</p>
 </div>
 </div>
@@ -1450,10 +1595,14 @@ Wir beoachten außerdem, dass die Berechnung einige Zeit in Anspruch nimmt und s
 <p>Erzeugen Sie einen identischen Plot wobei dieser keine Marker dafür aber eine Funktionslinie enthalten soll.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">([</span><span class="mi">38</span><span class="p">,</span> <span class="mi">38</span> <span class="o">+</span> <span class="p">(</span><span class="mi">56</span><span class="o">-</span><span class="mi">38</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">56</span><span class="p">],</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">nmax</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Solche Berechnungen in Form von Experimenten/Simulationen werden oft durchgeführt, wenn keine analytische Lösung bekannt ist oder sie gar nicht erst existiert.
 Beim Suchen einer analytischen Lösung kann dies auch ein sehr hilfreiches Mittel sein.</p>
@@ -1487,18 +1636,26 @@ Nun es waren</p>
 <p>also ca. 3.7 Millionen abschätzen!</p>
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code> enthält die Anzahl der Experimente und <code class="docutils literal notranslate"><span class="pre">y</span></code> die durchschnittliche Anzahl an Roboterschritten.
 Damit berechnet folgender Code die gesamte Anzahl an Schritten:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">overall_steps</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">overall_steps</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
     <span class="n">overall_steps</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">overall_steps</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Ein etwas besser lesbarer Code entsteht wenn wir die <code class="docutils literal notranslate"><span class="pre">Python</span></code> Funktion <code class="docutils literal notranslate"><span class="pre">zip</span></code> verwenden:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">overall_steps</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">overall_steps</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">mean</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="n">overall_steps</span> <span class="o">+=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">mean</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">overall_steps</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Das Ergebnis von 3 666 350 Schritten ist etwas geringer als unsere Abschätzung.
 Wir haben uns um <code class="docutils literal notranslate"><span class="pre">abs(3_666_350</span> <span class="pre">-</span> <span class="pre">3_769_400)</span> <span class="pre">/</span> <span class="pre">3_666_350</span></code>, also circa 3 % verschätzt.</p>
@@ -1510,7 +1667,9 @@ Lassen Sie uns experimentell nachprüfen ob unsere Berechnungen stimmen!</p>
 <p>Berechnen Sie experimentell eine gute Schätzung für die Wahrscheinlichkeit, dass der Roboter in einem Schritt in einem Gebiet mit 5 Zeilen und 5 Spalten am Ziel angekommen ist.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_move</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_move</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="n">random_turn</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 
@@ -1530,6 +1689,8 @@ Lassen Sie uns experimentell nachprüfen ob unsere Berechnungen stimmen!</p>
         <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Schätzwert: </span><span class="si">{</span><span class="n">count</span><span class="o">/</span><span class="n">n</span><span class="si">}</span><span class="s1">, tatsächlicher Wert:</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">24</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Wir zählen die Anzahl der Läufe für die der Roboter mit nur einem zufälligen Schritt (<code class="docutils literal notranslate"><span class="pre">random_move(robo)</span></code>) am Ziel ist.
 Da die Wahrscheinlichkeit für dieses Ereignis sehr klein ist, benötigen wir viele Experimente.
@@ -1575,7 +1736,9 @@ Wir haben uns folgende Strategie überlegt:</p>
 </pre></div>
 </div>
 <p>Wir verlagern das Laufen ganz nach Westen/Norden/Süden in Funktionen wie auch der Lauf nach Nordweste <code class="docutils literal notranslate"><span class="pre">walk_north_west()</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walk_to_wall</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">robo</span><span class="p">:</span> <span class="kc">True</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walk_to_wall</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">condition</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">robo</span><span class="p">:</span> <span class="kc">True</span><span class="p">):</span>
     <span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">()</span> <span class="ow">and</span> <span class="n">condition</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 
@@ -1612,17 +1775,23 @@ Wir haben uns folgende Strategie überlegt:</p>
         <span class="n">down</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">down</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Zudem passen wir <code class="docutils literal notranslate"><span class="pre">walk_to_wall(robo,</span> <span class="pre">condition)</span></code> so an, dass der Lauf abgebrochen wird sobald die <code class="docutils literal notranslate"><span class="pre">condition</span></code> nicht länger erfüllt ist.
 In unserem Fall ist diese <code class="docutils literal notranslate"><span class="pre">condition</span></code> genau dann nicht mehr erfüllt, sobald der Roboter das Ziel erreicht hat.
 <code class="docutils literal notranslate"><span class="pre">condition</span></code> ist ein Funktion, welche als Argument den Roboter entgegen nimmt und einen Wahrheitswert zurückgibt.
 Definieren wir keine <code class="docutils literal notranslate"><span class="pre">condition</span></code> ist der Wahrheitswert immer <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>Lassen Sie uns diesen Code testen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">11</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">11</span>
 <span class="n">ncols</span> <span class="o">=</span> <span class="mi">11</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">new_world</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">)</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Für ein Gebiet mit <span class="math notranslate nohighlight">\(m\)</span> Zeilen und <span class="math notranslate nohighlight">\(n\)</span> Spalten benötigt unser Algorithmus mindestens einen und höchstens</p>
 <div class="math notranslate nohighlight">
@@ -1696,7 +1865,9 @@ Die Anzahl der Schritte erhöt sich nach jeder zweiten Drehung um eins.</p>
 </div>
 <p>Wir müssen nun noch darauf achten, dass wir nicht übers Ziel hinauslaufen.
 Das ist auch schon alles.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deterministic_walk_quare</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deterministic_walk_quare</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">moves</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">turn_west</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
@@ -1712,6 +1883,8 @@ Das ist auch schon alles.</p>
         <span class="n">moves</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">steps</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Lassen Sie es uns testen:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">10</span>
@@ -1894,7 +2067,9 @@ Da wir den Roboter beim Zurücklaufen bereits zweimal gedreht haben fehlt noch e
 <p><strong>Annahme:</strong> Ignorieren Sie zunächst, dass eine <code class="docutils literal notranslate"><span class="pre">move()</span></code> Operation möglicherweise wegen einem Hindernis nicht durchführbar ist.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_back</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_back</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="n">turn</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
     <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
     <span class="n">turn</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
@@ -1910,6 +2085,8 @@ Da wir den Roboter beim Zurücklaufen bereits zweimal gedreht haben fehlt noch e
         <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Sofern wir die inversen Operationen an der richtigen Stelle aufrufen, können diese nicht schiefgehen.
 Der Roboter kommt schließlich von der Zelle zu der wir zurücklaufen.
 Anders verhält es sich jedoch mit <code class="docutils literal notranslate"><span class="pre">move(robo,</span> <span class="pre">code)</span></code>!
@@ -1921,17 +2098,21 @@ Diese Funktion kann schieflaufen, sofern nach der Drehung ein Hindernis vor uns 
 Die Funktion soll zudem <code class="docutils literal notranslate"><span class="pre">True</span></code> zurückgeben, falls die Operationen durchführbar waren und sonst <code class="docutils literal notranslate"><span class="pre">False</span></code> zurückliefern.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">():</span>
-        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="mi">4</span><span class="o">-</span><span class="n">code</span><span class="p">)</span><span class="o">%</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="mi">4</span><span class="o">-</span><span class="n">code</span><span class="p">)</span><span class="o">%</span><span class="k">4</span>):
             <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
         <span class="k">return</span> <span class="kc">True</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="kreise-verhindern">
@@ -1952,11 +2133,13 @@ Hierfür stellen wir Ihnen die folgenden beiden Methoden zur Verfügung:</p>
 <p>Ändern Sie <code class="docutils literal notranslate"><span class="pre">move(robo,</span> <span class="pre">code)</span></code> so ab, dass Sie keine Zelle doppelt besuchen.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">()</span> <span class="ow">or</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_mark_in_front</span><span class="p">():</span>
-        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="mi">4</span><span class="o">-</span><span class="n">code</span><span class="p">)</span><span class="o">%</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="mi">4</span><span class="o">-</span><span class="n">code</span><span class="p">)</span><span class="o">%</span><span class="k">4</span>):
             <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1964,6 +2147,8 @@ Hierfür stellen wir Ihnen die folgenden beiden Methoden zur Verfügung:</p>
         <span class="n">robo</span><span class="o">.</span><span class="n">set_mark</span><span class="p">()</span>
         <span class="k">return</span> <span class="kc">True</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Sie haben nun im Grunde alles was Sie brauchen um die <em>Tiefensuche</em> zu implementieren.
 Das ist nicht ganz einfach!
@@ -1979,7 +2164,9 @@ Wann wissen Sie, dass es keinen Weg zum Ziel gibt?</p>
 Falls es keinen Weg zum Ziel gibt, so sollte diese Funktion eine leere Liste zurückgeben.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">depth_first_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">depth_first_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="n">path</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">code</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="c1"># try until robo is at goal</span>
@@ -2008,47 +2195,50 @@ Falls es keinen Weg zum Ziel gibt, so sollte diese Funktion eine leere Liste zur
     <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="exercise admonition" id="robo-inverse-walk-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.48 </span>(Inverselauf des Roboters)</p>
 <div class="section" id="exercise-content">
 <p>Implementieren Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">inverse_walk(robo,</span> <span class="pre">path)</span></code> welche den Roboter zurück an seine Ausgangsposition bringt.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inverse_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inverse_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">inverse_move</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="robo-repeat-walk-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.49 </span>(Lauf wiederholen)</p>
 <div class="section" id="exercise-content">
 <p>Implementieren Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">walk(robo,</span> <span class="pre">path)</span></code> welche den Lauf <code class="docutils literal notranslate"><span class="pre">path</span></code> ausführt, sodass fogender Code den Roboter erst zum Ziel führt, dann wieder zurücklaufen lässt und schlussendlich erneut zum Ziel führt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">depth_first_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
-<span class="n">inverse_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-<span class="n">walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-</pre></div>
 </div>
 </div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
             <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="exercise admonition" id="robo-maze-walk-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.50 </span>(Lauf im Labyrinth)</p>
 <div class="section" id="exercise-content">
 <p>Testen Sie ihre Funktionen an dem Labyrinth, was Sie sich durch</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">maze</span><span class="p">()</span>
-<span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
 <p>erzeugen können.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">maze</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">maze</span><span class="p">()</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
 <span class="n">robo</span><span class="o">.</span><span class="n">disable_print</span><span class="p">()</span>
 <span class="n">path</span> <span class="o">=</span> <span class="n">depth_first_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
@@ -2060,6 +2250,8 @@ Falls es keinen Weg zum Ziel gibt, so sollte diese Funktion eine leere Liste zur
 <span class="n">walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">world</span><span class="o">.</span><span class="n">is_successful</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="figure align-default" id="fig-robo-world-maze">
 <a class="reference internal image-reference" href="../../_images/robo-world-maze.gif"><img alt="../../_images/robo-world-maze.gif" src="../../_images/robo-world-maze.gif" style="width: 400px;" /></a>
@@ -2104,11 +2296,15 @@ Wie soll das gehen?
 Wir führen die <em>Tiefensuche</em> nur bis zu einer bestimmten Ebene (Distanz <code class="docutils literal notranslate"><span class="pre">distance</span></code>) durch.</p>
 <p>Nehmen Sie an <code class="docutils literal notranslate"><span class="pre">depth_first_walk(robo,</span> <span class="pre">distance=None,</span> <span class="pre">unmark=False)</span></code> führt die <em>Tiefensuche</em> nur bis zu einer Distanz <code class="docutils literal notranslate"><span class="pre">distance</span></code> durch.
 Dann würde ein Algorithmus der folgenden Art die <em>Breitensuche</em> realisieren:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">some_condition</span><span class="p">:</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">depth_first_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span> <span class="n">unmark</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">distance</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Führen wir die <em>Tiefensuche</em> jedoch mehrfach durch, müssen wir unsere Welt von den Markierungen befreien.
 Ansonsten würde der Roboter beim zweiten Aufruf von <code class="docutils literal notranslate"><span class="pre">depth_first_walk()</span></code> sich bereits nicht mehr bewegen, da er vor lauter markierten Zellen steht.
@@ -2134,7 +2330,9 @@ Die Funktion sollte ein Paar zurückgeben (<code class="docutils literal notrans
 </div>
 </div>
 <p>Wir passen zunächst <code class="docutils literal notranslate"><span class="pre">move_back(robo)</span></code> und <code class="docutils literal notranslate"><span class="pre">inverse_move(robo,</span> <span class="pre">code)</span></code> an:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_back</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">unmark</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_back</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">unmark</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">turn</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">unmark</span><span class="p">:</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">unset_mark</span><span class="p">()</span>
@@ -2148,6 +2346,8 @@ Die Funktion sollte ein Paar zurückgeben (<code class="docutils literal notrans
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">code</span><span class="p">):</span>
         <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>In der Funktion <code class="docutils literal notranslate"><span class="pre">depth_first_walk(robo)</span></code> fügen wir die beiden Argumente <code class="docutils literal notranslate"><span class="pre">distance</span></code> und <code class="docutils literal notranslate"><span class="pre">unmark</span></code> hinzu und belegen sie mit geeigneten Standardwerten.
 <code class="docutils literal notranslate"><span class="pre">unmark</span></code> müssen wir an <code class="docutils literal notranslate"><span class="pre">inverse_move</span></code> weiterleiten.
@@ -2168,7 +2368,9 @@ Deshalb muss <code class="docutils literal notranslate"><span class="pre">(dista
 </pre></div>
 </div>
 <p>an.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">depth_first_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">unmark</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">depth_first_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">unmark</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">path</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">code</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">level</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2198,6 +2400,8 @@ Deshalb muss <code class="docutils literal notranslate"><span class="pre">(dista
     <span class="k">return</span> <span class="n">path</span><span class="p">,</span> <span class="n">level</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="exercise admonition" id="robo-shortest-walk-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.54 </span>(Berechnung des kürzesten Laufs)</p>
 <div class="section" id="exercise-content">
@@ -2210,7 +2414,9 @@ Falls es keinen Lauf zum Ziel gibt, so sollte diese Funktion eine leere Liste zu
 <li><p>Der zurückgelieferte Lauf nicht leer ist oder</p></li>
 <li><p>Die tatsächlich gelaufene Distanz gleich wie die vorgegebene Beschränkung ist.</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_shortest_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_shortest_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
     <span class="n">distance</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">level</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">path</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2220,8 +2426,12 @@ Falls es keinen Lauf zum Ziel gibt, so sollte diese Funktion eine leere Liste zu
     <span class="k">return</span> <span class="n">path</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Lassen Sie uns das einmal austesten.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">ncols</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">new_world</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">)</span>
 <span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
@@ -2230,10 +2440,14 @@ Falls es keinen Lauf zum Ziel gibt, so sollte diese Funktion eine leere Liste zu
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="figure align-default" id="fig-robo-world-shortest-path-before">
 <a class="reference internal image-reference" href="../../_images/robo-world-shortest-path-before.png"><img alt="../../_images/robo-world-shortest-path-before.png" src="../../_images/robo-world-shortest-path-before.png" style="width: 400px;" /></a>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">find_shortest_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">find_shortest_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Shortest walk: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">inverse_walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 <span class="n">world</span><span class="o">.</span><span class="n">enable_animation</span><span class="p">()</span>
@@ -2241,6 +2455,8 @@ Falls es keinen Lauf zum Ziel gibt, so sollte diese Funktion eine leere Liste zu
 <span class="n">walk</span><span class="p">(</span><span class="n">robo</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 <span class="n">rw</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Da unser Algorithmus viele <em>Tiefensuchen</em> durchführt ist er nicht sonderlich effektiv.
 Die Ausführung kann einige Zeit in Anspruch nehmen.
@@ -2254,17 +2470,23 @@ Wir erkennen jedoch, dass der Algorithmus tatsächlich einen der kürzesten Wege
 <p>Sie können sich noch eine weitaus komplexere Welt mit Hindernissen erzeugen lassen.
 Ein echtes Labyrinth!
 Dazu dient folgender Aufruf:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">15</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">ncols</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">complex_maze</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span><span class="n">ncols</span><span class="p">)</span>
 <span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Es wird Zeit die beiden Läufe, die wir einmal durch die <em>Tiefensuche</em> und einmal durch die <em>Breitensuche</em> berechnen, zu vergleichen.
 Sie können gerne mit nachfolgendem Code herumspielen.</p>
 <p>Zuerst erzeugen wir uns ein Labyrinth und kopieren dieses.
 Außerdem deaktivieren wir die Ausgabe und die Möglichkeit zu animieren.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">roboworld</span> <span class="k">as</span> <span class="nn">rw</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">roboworld</span> <span class="k">as</span> <span class="nn">rw</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 
 <span class="n">world1</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">complex_maze</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
@@ -2280,17 +2502,23 @@ Außerdem deaktivieren wir die Ausgabe und die Möglichkeit zu animieren.</p>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">world1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="figure align-default" id="fig-robo-world-complex-maze">
 <a class="reference internal image-reference" href="../../_images/robo-world-complex-maze.png"><img alt="../../_images/robo-world-complex-maze.png" src="../../_images/robo-world-complex-maze.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.28 </span><span class="caption-text">Dieses Labyrinth wurde bei unserem Aufruf generiert.</span><a class="headerlink" href="#fig-robo-world-complex-maze" title="Permalink to this image">¶</a></p>
 </div>
 <p>Dann generieren wir einen Lauf durch die <em>Tiefensuche</em>, laufen den Lauf wieder zurück, aktivieren die Animation, laufen den Lauf erneut ab und animieren den Lauf.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path</span><span class="p">,</span> <span class="n">level</span> <span class="o">=</span> <span class="n">depth_first_walk</span><span class="p">(</span><span class="n">robo1</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span><span class="p">,</span> <span class="n">level</span> <span class="o">=</span> <span class="n">depth_first_walk</span><span class="p">(</span><span class="n">robo1</span><span class="p">)</span>
 <span class="n">inverse_walk</span><span class="p">(</span><span class="n">robo1</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 <span class="n">world1</span><span class="o">.</span><span class="n">enable_animation</span><span class="p">()</span>
 <span class="n">walk</span><span class="p">(</span><span class="n">robo1</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 <span class="n">rw</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">world1</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="figure align-default" id="fig-robo-world-depth-first-walk">
 <a class="reference internal image-reference" href="../../_images/robo-world-depth-first-walk.gif"><img alt="../../_images/robo-world-depth-first-walk.gif" src="../../_images/robo-world-depth-first-walk.gif" style="width: 400px;" /></a>
@@ -2298,12 +2526,16 @@ Außerdem deaktivieren wir die Ausgabe und die Möglichkeit zu animieren.</p>
 </div>
 <p>Der Roboter scheint recht verwirrt durch die Gegen zu laufen.
 Das gleiche führen wir nun mit der <em>Breitensuche</em> durch.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">find_shortest_walk</span><span class="p">(</span><span class="n">robo2</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">find_shortest_walk</span><span class="p">(</span><span class="n">robo2</span><span class="p">)</span>
 <span class="n">inverse_walk</span><span class="p">(</span><span class="n">robo2</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 <span class="n">world2</span><span class="o">.</span><span class="n">enable_animation</span><span class="p">()</span>
 <span class="n">walk</span><span class="p">(</span><span class="n">robo2</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 <span class="n">rw</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">world2</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="figure align-default" id="fig-robo-world-breadth-first-walk">
 <a class="reference internal image-reference" href="../../_images/robo-world-breadth-first-walk.gif"><img alt="../../_images/robo-world-breadth-first-walk.gif" src="../../_images/robo-world-breadth-first-walk.gif" style="width: 400px;" /></a>
