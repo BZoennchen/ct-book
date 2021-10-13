@@ -1051,15 +1051,15 @@ Implementieren Sie den beschriebenen Algorithmus zum löschen eines Schlüssels 
 
 ```
 
-def delete(name, hashtable, hash_func=hash):
-    index = search_index(name, hashtable, hash_func)
+def delete(name, hashtable):
+    index = search_index(name, hashtable)
     if index < len(hashtable) and hashtable[index] == name:
         hashtable[index] = None
         i = 1
         while(hashtable[index+i] != None):
             value = hashtable[index+i]
             hashtable[index+i] = None
-            insert(value, hashtable, hash_func)
+            insert(value, hashtable)
             i += 1
         return True
     else:
@@ -1068,9 +1068,9 @@ def delete(name, hashtable, hash_func=hash):
 Lassen Sie uns das Beispiel aus {numref}`Abbildung {number} <fig-closed-hashing-deletion>` testen:
 
 names = ['Anna', 'Alex', 'Clara', 'Alba', 'Fabian']
-hashtable = new_hash_table(names, index_of)
+hashtable = new_hash_table(names)
 print(hashtable)
-delete('Alex', hashtable, index_of)
+delete('Alex', hashtable)
 print(hashtable)
 
 Nun wird es zeit unsere Hashtabelle mit den Babynamen aus ``unique_names_lex`` zu befüllen.
