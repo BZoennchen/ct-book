@@ -820,7 +820,7 @@ Dabei soll ``center`` gleich $(x_0, y_0)$, ``frequencies`` eine Liste die alle F
 
 Als Motivation hier ein Beispiel:
 
-```{code-cell} python3
+```python
 resolution = 0.1
 picture = generate_border_picture(width=100, height=100, border_width=0)
 draw_circular(picture, (5,5), [4,15], [3,0.7], resolution, 0.0, 2*np.pi)
