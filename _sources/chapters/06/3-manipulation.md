@@ -173,7 +173,7 @@ $$
 
 Wir haben diese als ``Python`` Funktion implementiert.
 
-```python
+```{code-cell} python3
 def ladd(in1, in0):
 
     # a1 = b0 and b1
