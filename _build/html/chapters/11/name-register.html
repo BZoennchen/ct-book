@@ -733,8 +733,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e90da3b9-9d6e-4ae0-a0f4-5fdf686cc2e5">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-e90da3b9-9d6e-4ae0-a0f4-5fdf686cc2e5" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-80bf4854-8c70-4bf1-98b0-31b8d0756c3e">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-80bf4854-8c70-4bf1-98b0-31b8d0756c3e" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -951,22 +951,8 @@ Folgender Code generiert Ihnen durch den Aufruf der Funktion <code class="docuti
 Für die Generierung eines zufälligen Namens bedienen wir uns eines Paketes <code class="docutils literal notranslate"><span class="pre">names</span></code>.
 Und auch für die zufällige Telefonnummer setzten wir auf das <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Paket.
 Jeder Eintrag ist ein <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> der Form</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;phone_number&#39;</span><span class="p">:</span> <span class="n">telnr</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;phone_number&#39;</span><span class="p">:</span> <span class="n">telnr</span><span class="p">}</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">8757</span><span class="n">ad6fe5e5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;phone_number&#39;</span><span class="p">:</span> <span class="n">telnr</span><span class="p">}</span>
-
-<span class="ne">NameError</span>: name &#39;name&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="exercise admonition" id="binary-search-telbook-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.9 </span>(Binäre Suche)</p>
@@ -991,6 +977,11 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
     
 
 <span class="nb">print</span><span class="p">(</span><span class="n">binary_search</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">telbook</span><span class="p">,</span> <span class="n">cmp_strings</span><span class="p">,</span> <span class="n">g</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Murphy&#39;, &#39;phone_number&#39;: &#39;0764-7324026&#39;}
 </pre></div>
 </div>
 </div>
@@ -1108,6 +1099,11 @@ Zählen Sie die Vorkommen von <code class="docutils literal notranslate"><span c
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>238
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wir möchten nun die Anzahl aller Namen in <code class="docutils literal notranslate"><span class="pre">names</span></code> zählen.
 Diese Anzahl sagt uns wie oft ein Name von 1880 bis 2008 in den Top 1000 der beliebtesten Namen in den USA war.
@@ -1166,6 +1162,16 @@ Zum Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">countings</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">aadeaf12b88f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">unique_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">countings</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;countings&#39; is not defined
 </pre></div>
 </div>
 </div>
