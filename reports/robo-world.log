@@ -17,37 +17,34 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-turn_east(robo)
-walk(robo)
-while not robo.is_wall_in_front():
-    move_object(robo)
-    walk(robo)
+path = depth_first_walk(robo1, distance=None)
+inverse_walk(robo1, path)
+world1.enable_animation()
+walk(robo1, path)
 
-print(world.is_successful())
+rw.animate(world1)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mWallInFrontException[0m                      Traceback (most recent call last)
-[0;32m<ipython-input-23-3515775087fa>[0m in [0;36m<module>[0;34m[0m
-[1;32m      2[0m [0mwalk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0;32mwhile[0m [0;32mnot[0m [0mrobo[0m[0;34m.[0m[0mis_wall_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 4[0;31m     [0mmove_object[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      5[0m     [0mwalk[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m [0;34m[0m[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-53-8ad7aba8e90d>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mpath[0m [0;34m=[0m [0mdepth_first_walk[0m[0;34m([0m[0mrobo1[0m[0;34m,[0m [0mdistance[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0minverse_walk[0m[0;34m([0m[0mrobo1[0m[0;34m,[0m [0mpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mworld1[0m[0;34m.[0m[0menable_animation[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mwalk[0m[0;34m([0m[0mrobo1[0m[0;34m,[0m [0mpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;34m[0m[0m
 
-[0;32m<ipython-input-21-0ed15f7f8741>[0m in [0;36mmove_object[0;34m(robo)[0m
-[1;32m      2[0m     [0mrobo[0m[0;34m.[0m[0mtake[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m     [0mturn[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 4[0;31m     [0mrobo[0m[0;34m.[0m[0mput[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      5[0m     [0mturn[0m[0;34m([0m[0mrobo[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-43-98ee6c512fca>[0m in [0;36minverse_walk[0;34m(robo, path)[0m
+[1;32m      1[0m [0;32mdef[0m [0minverse_walk[0m[0;34m([0m[0mrobo[0m[0;34m,[0m [0mpath[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m     [0;32mfor[0m [0mi[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mlen[0m[0;34m([0m[0mpath[0m[0;34m)[0m[0;34m-[0m[0;36m1[0m[0;34m,[0m [0;34m-[0m[0;36m1[0m[0;34m,[0m [0;34m-[0m[0;36m1[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m         [0minverse_move[0m[0;34m([0m[0mrobo[0m[0;34m,[0m [0mpath[0m[0;34m[[0m[0mi[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m<ipython-input-46-c6d916b19b69>[0m in [0;36minverse_move[0;34m(robo, code, unmark)[0m
+[1;32m     10[0m [0;32mdef[0m [0minverse_move[0m[0;34m([0m[0mrobo[0m[0;34m,[0m [0mcode[0m[0;34m,[0m [0munmark[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     11[0m     [0mmove_back[0m[0;34m([0m[0mrobo[0m[0;34m,[0m [0munmark[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 12[0;31m     [0;32mfor[0m [0m_[0m [0;32min[0m [0mrange[0m[0;34m([0m[0;36m4[0m[0;34m-[0m[0mcode[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     13[0m         [0mrobo[0m[0;34m.[0m[0mturn_left[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/Development/workspaces/python3env/lib/python3.9/site-packages/roboworld/agent.py[0m in [0;36mput[0;34m(self)[0m
-[1;32m     42[0m             [0;32mraise[0m [0mSpaceIsEmptyException[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     43[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mis_wall_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 44[0;31m             [0;32mraise[0m [0mWallInFrontException[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     45[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mis_object_in_front[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     46[0m             [0;32mraise[0m [0mObjectInFrontException[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mWallInFrontException[0m: There is a wall in front.
-WallInFrontException: There is a wall in front.
+[0;31mTypeError[0m: unsupported operand type(s) for -: 'int' and 'list'
+TypeError: unsupported operand type(s) for -: 'int' and 'list'
 
