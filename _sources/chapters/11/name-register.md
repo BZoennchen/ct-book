@@ -344,7 +344,7 @@ Für die Generierung eines zufälligen Namens bedienen wir uns eines Paketes ``n
 Und auch für die zufällige Telefonnummer setzten wir auf das ``numpy`` Paket.
 Jeder Eintrag ist ein [Dictionary](def-python-dictionary) der Form
 
-```{code-cell} python3
+```python
 {'name': name, 'phone_number': telnr}
 ```
 
