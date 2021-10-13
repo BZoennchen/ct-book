@@ -125,14 +125,6 @@ plt.plot(n, log(5, n), label='$\\log_5(n)$')
 plt.legend()
 ```
 
-```{figure} ../../figs/plot-logs.png
----
-width: 300px
-name: fig-logs-plots
----
-TODO: Löschen nachdem markdown zu ipython transformiert wurde!
-```
-
 (sec-binary-numbers)=
 ## Zahlen im Binärsystem
 
@@ -762,14 +754,6 @@ for sample_rate in [3,4,8,16,32,64]:
         j = 0
         i += 1
 plt.show()
-```
-
-```{figure} ../../figs/samples-plots.png
----
-width: 700px
-name: fig-samples-plots
----
-TODO: Löschen nachdem markdown zu ipython transformiert wurde!
 ```
 
 ```{exercise} Daten vs. Algorithmen

@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 (sec-manipulation)=
 # Manipulation
 
@@ -34,13 +22,11 @@ Das wohl einfachste Gatter nimmt als Eingabe ein Signal und gibt die Negation da
 Aus $0$ wird $1$ und aus $1$ wird $0$.
 Wir nennen es das **Not**-Gatter.
 
-```{code-cell} python3
 def lnot(bit):
     return int(not bit)
     
 print(lnot(0))
 print(lnot(1))
-```
 
 ```{figure} ../../figs/gatter-not.png
 ---
@@ -53,7 +39,6 @@ Das **Not**-Gatter.
 Ein weiteres sehr einfaches Gatter ist das sogenannte **AND**-Gatter.
 Es kombiniert zwei Signale und gibt genau dann $1$ aus wenn die beiden Eingabesignale gleich $1$ sind.
 
-```{code-cell} python3
 def land(in1, in2):
     return in1 and in2
     
@@ -61,7 +46,6 @@ print(land(0,0))
 print(land(0,1))
 print(land(1,0))
 print(land(1,1))
-```
 
 ```{figure} ../../figs/gatter-and.png
 ---
@@ -74,7 +58,6 @@ Das **AND**-Gatter.
 Zu guter Letzt fehlt noch das **OR**-Gatter.
 Es kombiniert zwei Signale und gibt $1$ aus genau dann wenn eines oder beide der Eingabesignale gleich $1$ sind.
 
-```{code-cell} python3
 def lor(in1, in2):
     return in1 or in2
     
@@ -82,7 +65,6 @@ print(lor(0,0))
 print(lor(0,1))
 print(lor(1,0))
 print(lor(1,1))
-```
 
 ```{figure} ../../figs/gatter-or.png
 ---
@@ -136,7 +118,6 @@ Betrachten Sie einmal ``land`` und ``lor``.
 Welche mathematische Funktion realisieren diese einfachen Gatter?
 Nun ja, wenn wir die beiden Eingabesignale als Zahlen interpretieren dann ist ``land`` gleich dem Minimum ``min`` und ``lor`` gleich dem ``max`` der beiden Signale:
 
-```{code-cell} python3
 def lor(in1, in2):
     return max(in1, in2)
 
@@ -152,7 +133,6 @@ print(land(0,0))
 print(land(0,1))
 print(land(1,0))
 print(land(1,1))
-```
 
 ### 1-Bit-Addierer
 
@@ -274,7 +254,6 @@ und wir erhalten insgesamt:
 
 $$a_0 = (b_0 \land b_1 \land b_3) \lor (\neg a_1 \land (b_0 \lor b_1 \lor b_2)).$$
 
-```{code-cell} python3
 def ladd(in2, in1, in0):
 
     # b0 and b1
@@ -307,7 +286,6 @@ print(ladd(1,0,0))
 print(ladd(1,0,1))
 print(ladd(1,1,0))
 print(ladd(1,1,1))
-```
 
 ### $n$-Bit-Addierer
 
@@ -325,7 +303,6 @@ Skizze eines 4-Bit-Addierers. Berechnet wird $a + b = c$.
 
 Hier sehen Sie den ``Python`` Code eines $4$-Bit-Addierers (wir lesen die Bits von rechts nach links, d.h. das Bit an der Stelle 0 in der liste ist das höchste Bit!):
 
-```{code-cell} python3
 def ladd4(a, b):
     # a[3] und b[3] sind die erste Eingabesignale (niedrigsten Bits)
     u1, c0 = ladd(a[3], b[3], 0)
@@ -335,7 +312,6 @@ def ladd4(a, b):
     return [c4, c3, c2, c1, c0]
 
 ladd4([0,0,1,1], [1,0,0,1])
-```
 
 Hängt man nun Addierer aneinander so kann man einen Multiplizierer und andere Recheneinheiten wie Fließkommaddierer und mehr bauen.
 
