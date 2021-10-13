@@ -1858,25 +1858,14 @@ robo2 = world2.get_robo()
 
 robo1.disable_print()
 robo2.disable_print()
-world1.disable_animation()
-world2.disable_animation()
 
 fig = world1.show()
-```
-
-
-```{figure} ../../figs/roboworld/robo-world-complex-maze.png
----
-width: 400px
-name: fig-robo-world-complex-maze
----
-Dieses Labyrinth wurde bei unserem Aufruf generiert.
 ```
 
 Dann generieren wir einen Lauf durch die *Tiefensuche*, laufen den Lauf wieder zurück, aktivieren die Animation, laufen den Lauf erneut ab und animieren den Lauf.
 
 ```{code-cell} python3
-path = find_shortest_walk(robo)
+path = depth_first_walk(robo1, distance=None)
 inverse_walk(robo1, path)
 world1.enable_animation()
 walk(robo1, path)
