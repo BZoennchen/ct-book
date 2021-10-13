@@ -1228,6 +1228,20 @@ def insert(name, hashtable, hash_func=hash):
         hashtable[index] = name
         return True
 
+def delete(name, hashtable, hash_func=hash):
+    index = search_index(name, hashtable, hash_func)
+    if index < len(hashtable) and hashtable[index] == name:
+        hashtable[index] = None
+        i = 1
+        while(hashtable[index+i] != None):
+            value = hashtable[index+i]
+            hashtable[index+i] = None
+            insert(value, hashtable, hash_func)
+            i += 1
+        return True
+    else:
+        return False
+
 def new_hash_table(names, hash_func=hash):
     hashtable = [None for i in range(2*len(names) + 8)]
     for name in names:
@@ -1441,10 +1455,10 @@ Das Ergebnis ist mit 3692 Kollisionen immernoch sehr gut und die Auswertung ben�
 
 ### Unser Dictionary
 
-Bislang können wir in unsere Hashtable Namen einfügen, löschen und suchen:
+Bislang können wir in unsere Hashtable Namen einfügen, löschen und abfragen ob sich ein Element in unserer Hashmap befindet:
 
 insert('Dieter', hashtable, hash_func)
-search('Dieter', hashtable, hash_func)
+contains('Dieter', hashtable, hash_func)
 delete('Dieter', hashtable, hash_func)
 
 Die Funktionalität eines [Dictionary](def-python-dictionary) haben wir damit noch nicht erreicht.
