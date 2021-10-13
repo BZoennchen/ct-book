@@ -861,6 +861,7 @@ Falls wir eine Liste **allokieren**
 ```{code-cell} python3
 length = 10
 mylist = alloc_list(to_data_type('number'), length, memory, inuse)
+mylist
 ```
 
 ist diese unbefüllt und wir können mit ihr noch nichts anfangen.
@@ -1180,7 +1181,7 @@ Wie Sie oben sehen, können wir durch ``alloc`` bereits sehr bequem mit primitiv
 Um eine Liste zu erstellen haben wir noch keine solche Hilfsfunktion implementiert.
 Wäre es nicht toll wenn wir durch folgenden Code eine neue Liste aus Zahlen oder Zeichen an die Adresse ``numbers`` bzw. ``chars`` schreiben könnten?
 
-```{code-cell} python3
+```python
 numbers = new_primitive_list([1,2,3,4,5], to_data_type('number'), memory, inuse)
 chars = new_primitive_list("Hello World", to_data_type('char'), memory, inuse)
 ```
