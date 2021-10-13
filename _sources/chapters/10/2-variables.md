@@ -45,7 +45,7 @@ $$x \leftarrow 13.$$
 Dies verdeutlicht, dass es sich um eine *Zuweisung* handelt.
 Mit
 
-```python
+```{code-cell} python3
 x = None
 ```
 

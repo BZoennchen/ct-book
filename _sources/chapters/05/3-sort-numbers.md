@@ -12,14 +12,14 @@ Wie und wo müsste man den Code ändern um z.B. Zahlen zu sortieren?
 
 Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller()``.
 
-```python
+```{code-cell} python3
 def is_smaller(number1, number2):
     return number1 < number2
 
 stack_sort([-11, 12, -6, 45, 1, 54, -55, 88])
 ```
 
-```python
+```{code-cell} python3
 import random
 n_numbers = 1000
 

@@ -411,13 +411,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10/2-expressions.html">
-     1.2. Ausdrücke
+    <a class="reference internal" href="../10/2-variables.html">
+     1.2. Variablen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10/3-variables.html">
-     1.3. Variablen
+    <a class="reference internal" href="../10/3-expressions.html">
+     1.3. Ausdrücke
     </a>
    </li>
    <li class="toctree-l2">
@@ -515,7 +515,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/03/1-ancient.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/03/1-ancient.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -536,6 +539,29 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03/1-ancient.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.cs.hm.edu//hub/user-redirect/git-pull?repo=https://github.com/BZoennchen/ct-book&urlpath=tree/ct-book/chapters/03/1-ancient.md&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
 
         </div>
 
@@ -579,7 +605,9 @@ Erstaunlicherweise schloss er daraus auf die Krümmung der Erde.
 Und da die Griechen von der Perfektion des Kreises überzeugt waren, folgerte Eratosthenes, dass die Erde eine Kugel sei.
 Er war sogar in der Lage die Erdkrümmung relativ genau zu berechnen und dadurch auf den Umfang der Erde zu schließen.
 Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syren (800 km) ablief und berechnete.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sieve_of_eratosthenes</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sieve_of_eratosthenes</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     <span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
     <span class="n">prime_sieve</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
     <span class="n">prime_sieve</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
@@ -598,6 +626,27 @@ Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines 
 <span class="n">sieve_of_eratosthenes</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">351987172</span><span class="n">dea</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="k">return</span> <span class="n">primes</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">sieve_of_eratosthenes</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-1-351987172dea&gt;</span> in <span class="ni">sieve_of_eratosthenes</span><span class="nt">(N)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">prime_sieve</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">prime_sieve</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">))):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="k">if</span> <span class="n">prime_sieve</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <p>Wir finden also bereits zu dieser Zeit erste Beispiele für eine computergestützte Forschung.
 Für lästige und primitive Berechnungen begann man Computer zu beauftragen.
 Der Begriff <em>Computer</em> sollte lange Zeit auf eine Person anstatt eine Maschine hindeuten.
@@ -611,11 +660,17 @@ Es ist eine clevere Technik um Primzahlen zu berechnen.</p>
 </div>
 <p>Doch noch vor Eratosthenes, notierte Euklid von Alexandria (ca 450 v. Chr. - Mitte 350 v. Chr.) in seinem Werk <em>Die Elemente</em>, einen Algorithmus für die Berechnung des größten gemeinsamen Teilers <code class="docutils literal notranslate"><span class="pre">gcd(a,b)</span></code> zweier natürlicher Zahlen <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span></code>.
 Über zweitausend Jahre später finden wir jene Algorithmen in einer anderen Form wieder.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">a</span>
+
+<span class="n">gcd</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <blockquote>
 <div><p>[The Euclidean algorithm] is the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has survived to the present day. – Donald Knuth, The Art of Computer Programming, Vol 2.</p>
