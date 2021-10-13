@@ -110,7 +110,7 @@ $$x + y \geq 1$$
 
 gilt.
 
-```{code-cell} python3
+```python
 def lor(in1, in2):
     return int(in1 + in2 >= 1)
 
