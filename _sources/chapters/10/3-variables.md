@@ -5,15 +5,6 @@
 Mit diesem Namen können wir einen Wert im [Arbeitsspeicherspeicher](def-main-memory) des Computers identifizieren.
 So können wir uns Zwischenergebnisse merken und damit weiter rechnen.
 
-
-```{figure} ../../figs/python/variable.png
----
-width: 800px
-name: fig-variable
----
-Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wert steht im Arbeitspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.
-```
-
 ## Initialisierung und Zuweisung
 
 Durch das ``=`` Zeichen weisen wir einer *Variablen* auf der linken Seite den Wert des *Ausdrucks* auf der rechten Seite zu.
@@ -40,6 +31,15 @@ Um das mathematisch auszurücken verwendet man oft $\leftarrow$, also
 $$x \leftarrow 13.$$
 
 Dies verdeutlicht, dass es sich um eine *Zuweisung* handelt.
+
+```{figure} ../../figs/python-tutorial/variable.png
+---
+width: 800px
+name: fig-variable
+---
+Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wert steht im Arbeitspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.
+```
+
 In ``Python`` reicht es wenn Sie der *Variablen* einen Wert zuweisen.
 Sie wird automatisch erzeugt, d.h., *initialisiert*.
 Besitzt Sie noch keinen Wert so existiert sie auch nicht bzw. ist noch nicht *initialisiert*.
