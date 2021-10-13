@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Funktionsaufrufe
 
 Wie wir eigene Funktionen definieren werden wir uns noch genauer ansehen.
@@ -27,24 +15,16 @@ Diese Argumente werden von der Funktion verarbeitet.
 
 Zum Beispiel bietet ``Python`` die vordefinierte Funktion ``abs`` an, welche ein Argument erwartet, eine Zahl, erwartet.
 
-```{code-cell} python3
 abs(-23)
-```
 
 In diesem Fall realisiert diese ``Python``-Funktion eine *mathematische Funktion*, nämlich den Betrag $abs(x) = |x|$.
 Weitere Beispiele sind die ``Python``-Funktionen ``round`` und ``max``.
 
-```{code-cell} python3
 round(5 - 1.3)
-```
 
-```{code-cell} python3
 max(2, 3, 5 - 3, 3 * 3)
-```
 
-```{code-cell} python3
 max(2, -10)
-```
 
 ``round`` erwartet ebenfalls eine Zahl als Argument.
 Die Funktion berechnet aus dem Argument die am nächsten liegende ganze Zahl und liefert diese zurück.
@@ -67,10 +47,8 @@ Ist das Modul installiert, müssen wir es in unseren Code *importieren*.
 Wir machen es unserem Code bekannt, sodass wir es auch nutzten können.
 Dies geschieht mit dem *Schlüsselwort* ``import``.
 
-```{code-cell} python3
 import random
 random.random()
-```
 
 Mit ``import random`` machen wir das Modul ``random`` unter dem Namen ``random`` bekannt.
 In der zweiten Zeile des Codes rufen wir die Funktion ``random`` des Moduls ``random`` auf.
@@ -84,10 +62,8 @@ Wir können uns deshalb Informationen zu dem **Was** (und manchmal auch zu dem *
 Hierzu schreiben wir den Funktionsnamen ohne die runden Klammern und fügen ein ``?`` an.
 Oder Sie verwenden die Hilfefunktion ``help`` und übergeben die Funktion: ``help(random.random)``.
 
-```{code-cell} python3
 import random
 help(random.random)
-```
 
 Die Ausgabe lautet:
 
@@ -123,9 +99,7 @@ D.h. ein iterierbares Argument ist wohl so etwas wie eine Sequenz, Liste, Menge 
 Ein *Funktionsaufruf* ist ebenfalls ein *Ausdruck* und wie beim Rechnen werden Ausdrücke von innen nach außen *ausgewertet*.
 Blicken Sie auf folgenden Ausdruck:
 
-```{code-cell} python3
 round(max(abs(-abs(-3)), 3, 5 + 3) - 0.6)
-```
 
 Dieser Ausdruck besteht aus mehreren Ausdrücken.
 Die Auswertung des gesamten Ausdrucks erfolgt von innen nach außen.
@@ -141,20 +115,16 @@ Dieser Ausdruck ergibt ``7``.
 Wir können jeder [Variablen](sec-variables) auch einen Ausdruck zuweisen.
 Dieser wird ausgewertet und das Ergebnis wird der Variablen zugewiesen.
 
-```{code-cell} python3
 x = round(max(abs(-abs(-3)), 3, 5 + 3) - 0.6)
 x
-```
 
 Auch können wir Funktionsausdrücke mit anderen Ausdrucken wie etwa [arithmetische Operatoren](sec-python-operator-arithmetic) kombinieren.
-Durch die folgende Abfolge von Ausdrücken berechnen wir den prozentualen Anteil der Einwohner in Deutschland, die in München wohnen auf zwei Nachkommastellen gerundet: 
+Durch die folgende Abfolge von Ausdrücken berechnen wir den prozentualen Anteil der Einwohner in Deutschland, die in München wohnen auf zwei Nachkommastellen gerundet:
 
-```{code-cell} python3
 population_munich = 1_553_373
 population_germany = 83_121_363
 persentage = round(10000 * 1_553_373 / 83_121_363) / 100
 persentage
-```
 
 ## Das Kennenlernen
 

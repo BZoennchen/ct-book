@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 (sec-datatypes)=
 # Datentypen
 
@@ -64,14 +52,12 @@ Im folgenden definieren und initialisieren wir Variablen mit unterschiedlichen D
 + eine Liste ``list``, welche ganze Zahlen ``int`` enthält und
 + ein Tupel ``tuple``, welche Zeichenketten ``str`` enthält.
 
-```{code-cell} python3
 number = 111
 floating_number = 1.3
 characters = 'Hello'
 boolean = True
 mylist = [1,2,3,4]
 mytuple = ('A', 'B', 'C')
-```
 
 Beim Datentyp ``list`` und ``tuple`` fällt auf, dass diese Werte eines anderen Datentyps enthalten, hier ``int`` und ``str``.
 Solche Datentypen nennen wir auch *zusammengesetzt Datentypen* wohingegen wir Datentypen, welche wir nicht zerlegen können als [primitive Datentypen](def-primitive-datatypes) bezeichnen.
@@ -162,25 +148,17 @@ Eine Folge von Ziffern mit einem optional vorangestellten Minuszeichen werden al
 Befindet sich in der Folge ein Punkt ``.`` so wird der Wert als Fließkommazahl interpretiert.
 Sie können den Datentyp einer Variablen ``x`` oder eines Wertes mit ``type(x)`` abfragen:
 
-```{code-cell} python3
 type(-3123)
-```
 
-```{code-cell} python3
 type(1.313)
-```
 
-```{code-cell} python3
 name = 'Anna'
 type(name)
-```
 
-```{code-cell} python3
 mylist = [1, 2, 3, 4, 'A']
 print(f'List Type: {type(mylist)}')
 print(f'Element 0 Type: {type(mylist[0])}')
 print(f'Element 4 Type: {type(mylist[4])}')
-```
 
 ### Zusammengesetzte Datentypen
 
@@ -204,25 +182,17 @@ Als *Sammlung* bezeichnen wir alle Datentypen (Tupel, [Dictionary](def-python-di
 Mit **variabler Anzahl** ist gemeint, dass es Sammlung gibt, welche 5 Elemente enthalten und Sammlung gibt die 1000 Elementen enthalten.
 Es kann dennoch sein, dass eine Sammlung die 10 Elemente enthält nicht verändert werden kann, d.h. sie wird auf immer dieser 10 Elemente enthalten.
 
-```{code-cell} python3
 mylist = [1, 2, 'A', 3, 1.23, [1, 2, 3]]
 mylist
-```
 
-```{code-cell} python3
 mytuple = (mylist, 'D')
 mytuple
-```
 
-```{code-cell} python3
 mydict = {'firstname' : 'Paulina', 'lastname' : 'Schmidt', 'age' : 23 }
 mydict
-```
 
-```{code-cell} python3
 month = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
 month
-```
 
 Eine Zeichenkette ``str`` ist ebenfalls eine Kollektion, jedoch sind deren Elemente alle vom gleichen Typ -- dem Zeichen.
 
@@ -274,14 +244,12 @@ Dennoch ist ``str`` kein primitiver Datentyp.
 Wir können zum Beispiel eine Variable mit einer Zahl initialisieren und diese Zahl als Zeichen interpretieren.
 Dazu brauchen wir jedoch eine geeignete Interpretation:
 
-```{code-cell} python3
 number = 90
 characters = str(number)
 print(f'number {number}')
 print(f'characters {characters}')
 print('str 90')
 print(f'int {90}')
-```
 
 Was passiert hier?
 Es wird viermal die Zahl ``90`` als Zeichenkette ausgegeben.
@@ -309,9 +277,7 @@ Eine Dezimalzahl als Binärzahl zu interpretieren kann durchaus Sinn ergeben.
 Deshalb stellen die Bitoperationen eine Ausnahme dar.
 Der folgende Bitshift manipuliert einen Bereich des Speichers direkt.
 
-```{code-cell} python3
 5 << 1
-```
 
 Hier werden die Bits, welche die Zahl ``5`` repräsentieren um eins nach links verschieben, was einer Multiplikation mit ``2`` gleich kommt.
 Dabei wird die ``5`` für die Operation als Zahl in ihrer ursprünglichen Binärdarstellung interpretiert.
@@ -332,9 +298,7 @@ Wir können das Zeichen ``'a'`` mit der Funktion ``ord`` in eine Zahl umwandeln.
 Das Ergebnis hängt mit der von ``Python`` gewählten Interpretation (ASCII) zusammen.
 Daraufhin können wir den Bitshift durchführen und die Zahl mit ``chr`` wieder in ein Zeichen zurück transformieren.
 
-```{code-cell} python3
 chr(ord('a') << 1)
-```
 
 Wir erhalten ein neues Zeichen: Ein ``'Â'``, können wir das irgendwo gebrauchen?
 Das ist zu bezweifeln und selbst wenn, ist dieser Code besser lesbar, da wir explizit die Anweisung zur Umwandlung in eine Zahl angeben.
@@ -361,21 +325,17 @@ Nur so können Sie Informationen verarbeiten, indem die [Interpretation](sec-int
 Zum Beispiel erwartet die Addition ``+`` zwei Zahlen.
 Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl ``int`` oder um eine Fließkommazahl handeln.
 
-```{code-cell} python3
 3 + 9       # int + int
 3 + 8.6     # int + float
 -3.6 + 3.4  # float + float
 3.1 + 9     # float + int
-```
 
 Der Datentyp des Ergebnisses der Addition hängt von Datentypen der beiden Summanden ab.
 
-```{code-cell} python3
 print(type(3 + 9))      # int + int -> int
 print(type(3 + 8.6))    # int + float -> float
 print(type(-3.6 + 3.4)) # float + float -> float
 print(type(3.1 + 9))    # float + int -> float
-```
 
 Zudem wird nicht jeder Datentyp von Addition unterstützt:
 
@@ -386,9 +346,7 @@ Zudem wird nicht jeder Datentyp von Addition unterstützt:
 Der Fehler der durch diesen Code erzeugt wird besagt: ``unsupported operand type(s) for +: 'int' and 'str'``, d.h. diese Kombination aus Datentypen (``int`` und ``str``) wird nicht unterstützt.
 Was passiert wenn wir zwei Zeichenketten 'addieren'?
 
-```{code-cell} python3
 'a' + 'b' # str + str -> str!
-```
 
 Überraschenderweise führt dies nicht zu einem Fehler.
 Wir sprechen hierbei nicht mehr von einer Addition, stattdessen handelt es sich um die sog. Konkatenation (Verkettung) von Zeichenketten.
@@ -396,15 +354,11 @@ In anderen Worten entscheiden die Datentypen darüber, welche Operation der ``+`
 
 Betrachten wir ein weiteres Beispiel:
 
-```{code-cell} python3
 max([1,2,3,4,5])
-```
 
 und
 
-```{code-cell} python3
 max('a','b')
-```
 
 Wir rufen beide Male die *built-in Funktion* ``max`` auf.
 Einmal ist das Argument eine Liste ``list`` und einmal rufen wir ``max`` mit zwei Argumenten, zwei ganzen Zeichenketten ``str`` auf.
@@ -435,7 +389,6 @@ Es ist im allgemeinen unklar wie wir eine Zahl mit einem Buchstaben vergleichen 
 Wir können selbstverständlich einen solchen Vergleich selbst definieren.
 Wir greifen hier etwas vor:
 
-```{code-cell} python3
 def get_key(value):
     if type(value) == str:
         return ord(value[0])
@@ -443,7 +396,6 @@ def get_key(value):
         return value
 
 max(3, 'b', key=get_key)
-```
 
 Was passiert hier?
 Wir definieren eine eigene Funktion ``get_key``.
@@ -454,21 +406,16 @@ Andernfalls geben wir den Wert zurück (keine Transformation).
 Wir sagen der Funktion ``max`` Sie solle doch bitte vor jedem Vergleich die zu vergleichenden Werte durch unsere Funktion ``get_key`` transformieren.
 Was also passiert ist das ``max``
 
-```{code-cell} python3
 get_key(3) > get_key('b')
-```
 
 ausführt also
 
-```{code-cell} python3
 3 > ord('b')
-```
 
 und ``ord('b')`` ergibt ``98``.
 Der Rückgabewert ist eine Zeichenkette ``str``.
 Rufen wir allerdings folgenden Code auf
 
-```{code-cell} python3
 def get_key(value):
     if type(value) == str:
         return ord(value[0])
@@ -476,7 +423,6 @@ def get_key(value):
         return value
 
 max(100, 'b', key=get_key)
-```
 
 so ist der Rückgabewert eine ganze Zahl ``int``.
 Auch das ist in vielen anderen Sprachen anders.
@@ -489,12 +435,10 @@ Im Gegenteil dazu wird diese Prüfung für *dynamisch getypte Sprachen* erst zur
 
 Führen Sie folgenden Code aus:
 
-```{code-cell} python3
 number = 5
 number = number + 5
 print(number)
 number = number + 'b'
-```
 
 Dieser führt zu einem bekannten Fehler: ``unsupported operand type(s) for +: 'int' and 'str'`` und dennoch wird die ganze Zahl ``number`` ausgegeben.
 In anderen Worten der Code läuft solange bis es kracht.
@@ -532,15 +476,11 @@ Andernfalls wäre dies nicht möglich.
 Im Gegensatz dazu können wir in ``Python`` viel 'freier' mit Typen handtieren.
 Der Äquivalente Code wird einwandfrei ausgeführt:
 
-```{code-cell} python3
 number = 5
 number = 'b'
-```
 
-```{code-cell} python3
 number = 5
 number = 'b'
-```
 
 ### Was ist besser?
 
@@ -570,12 +510,10 @@ Wir werden dies im Kurs nicht verwenden wollen es Ihnen aber auch nicht vorentha
 Der angegebene Typ dient der reinen Dokumentation und hat keinerlei Auswirkungen auf die Laufzeit.
 Manche Entwicklungsumgebungen wie Visual Studio Code (SVCode) bieten auf Grundlage dieser [Typ hints](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html) Warnmeldungen bzw. Fehlermeldungen.
 
-Mit Type hints wird aus 
+Mit Type hints wird aus
 
-```{code-cell} python3
 number = 5
 number = 'b'
-```
 
 folgender Code
 
@@ -588,16 +526,12 @@ Dieser wird noch ausgeführt wie zuvor doch Ihre Entwicklungsumgebung wird Sie v
 Besonders für Funktionen ist dies hilfreich um die Dokumentation direkt in den Code zu integrieren.
 Zum Beispiel wird aus
 
-```{code-cell} python3
 def add(x, y):
     return x + y
-```
 
 folgender Code
 
-```{code-cell} python3
 def add(x: int, y: int) -> int:
     return x + y
-```
 
 Wir geben uns und dem- oder derjenigen, welche unseren Code benutzt zu verstehen, dass die Funktion zwei ganze Zahlen erwartet und eine ganze Zahl zurückliefert.

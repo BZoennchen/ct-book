@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 (sec-expressions)=
 # Ausdrücke
 
@@ -27,9 +15,7 @@ Der *Ausdruck* besteht aus dem Symbol ``*`` und zwei nummerischen *Ausdrücken*.
 Die Multiplikation wird durch den Computer, genauer die [CPU](def-cpu) berechnet.
 ``3 * 5`` ergibt ``15``.
 
-```{code-cell} python3
 3 * 5
-```
 
 Die [Syntax](def-syntax) einer Programmiersprache ist strikt.
 Sie wird durch eine sog. *Grammatik* definiert.
@@ -44,9 +30,7 @@ Wir werden vom [Interpreter](def-interpreter) sachlich auf die mögliche Fehleru
 Bereits kleiner Änderungen an der [Syntax](def-syntax) können zu einer neuen Bedeutung ([Semantik](def-semantik)) führen.
 In ``Python`` ist der *Ausdruck*
 
-```{code-cell} python3
 3 ** 5
-```
 
 syntaktisch korrekt.
 Seine [Semantik](def-semantik) ist $3^5$ was zu $243$ *ausgewertet* wird.
@@ -73,15 +57,11 @@ Die Bedeutung der Modulo-Operation sieht kompliziert aus doch bedeutet dies schl
 Die ganzzahlige Division rundet das Ergebnis der Division auf die nächst kleinere ganze Zahl (Integer).
 Beachten Sie
 
-```{code-cell} python3
 -2 // 3
-```
 
 ergibt ``-1`` und
 
-```{code-cell} python3
 2 // 3
-```
 
 ergibt ``0``.
 *Arithmetische Operationen* werden von der *arithmetischen Einheit* der [CPU](def-cpu) ausgewertet.
@@ -105,24 +85,16 @@ Objekte können über Vergleichsoperatoren miteinander verglichen werden. Das Er
 Erneut ist ``Python`` hier ein wenig speziell indem es die mathematische Schreibweise $0 < x < 5$ anstatt $0 < x \ \land \ x < 5$ zulässt.
 Dies erhöht die Lesbarkeit, da wir solche Verkettungen von Vergleichsoperatoren gewohnt sind.
 
-```{code-cell} python3
 5 < 7 < 10 # True
-```
 
-```{code-cell} python3
 5 < 7 and 7 < 10 # True
-```
 
-```{code-cell} python3
 5 < 7 < 5 # False
-```
 
 *Vergleichsoperatoren* können auch auf anderen Datentypen als numerische Werte (ganze Zahlen ``int``, Fließkommazahlen ``float``) definiert sein.
 So können wir in ``Python`` auch Zeichenketten ``str`` mit den Vergleichsoperatoren lexikographisch vergleichen:
 
-```{code-cell} python3
 'Anna' < 'Emma' # True
-```
 
 ## Logische Operatoren
 
@@ -130,12 +102,10 @@ Der obige *Ausdruck* besteht aus dem *Ausdruck* ``and``.
 Dieser erwartet auf der linken und rechte Seite jeweils einen Wahrheitswert (*boolschen Ausdruck*).
 [Vergleichsoperatoren](sec-python-operator-compare) liefern sind *boolsche Ausdrücke*.
 
-```{code-cell} python3
 x = True
 y = False
 
 x and y
-```
 
 ergibt genau dann ``True`` wenn die Auswertung von ``x`` und ``y`` jeweils ``True`` ergeben.
 Wir haben diese Operatoren bereits im Abschnitt [Manipulation](sec-manipulation) besprochen.
@@ -160,9 +130,7 @@ Dabei wird jedes Bit des einen Werts mit dem [Bit](def-bit) des anderen Werts ko
 Zum Beispiel ``5 & 4`` führt eine führ jedes Bit die ``and`` Operation aus.
 Das nennen wir Verundung.
 
-```{code-cell} python3
 5 & 4
-```
 
 entspricht eine Verundung der Binärzahlen $101_2$ mit $100_2$ durch und ergibt demnach $100_2$, was wiederum gleich $4_{10}$ ist.
 
@@ -182,4 +150,3 @@ Dies ergibt $01001_2 = 9_{10}$.
 Für ganze Zahlen entspricht die Bitverschiebung nach rechts um ein Bit der Multiplikation mit 2.
 Die Verschiebung nach rechts um ein Bit hingegen der [ganzzahligen Division](sec-python-operator-arithmetic) durch 2.
 Deshalb ist `8 << 3` gleich $8 \cdot 2 \cdot 2 \cdot 2 = 8 \cdot 2^3 = 64$ und ``8 >> 2`` $\left \lfloor{8 \cdot 2^{-2}}\right \rfloor = 2$.
-
