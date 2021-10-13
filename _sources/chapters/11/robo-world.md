@@ -1251,15 +1251,18 @@ def deterministic_walk_quare(robo):
 
 Lassen Sie es uns testen:
 
-```
+```{code-cell} python3
 nrows = 10
 ncols = 10
 world = rw.new_world(nrows=nrows, ncols=ncols)
 robo = world.get_robo()
+robo.disable_print()
 world.show()
 steps = deterministic_walk_quare(robo)
 assert nrows * ncols > steps
 print(world.is_successful())
+
+rw.animate(world)
 ```
 
 ```{figure} ../../figs/roboworld/robo-world-perfect-walk.gif
@@ -1634,6 +1637,8 @@ assert world.is_successful()
 inverse_walk(robo, path)
 walk(robo, path)
 assert world.is_successful()
+
+rw.animate(world)
 ```
 
 ```{figure} ../../figs/roboworld/robo-world-maze.gif
@@ -1683,7 +1688,7 @@ Wir führen die *Tiefensuche* nur bis zu einer bestimmten Ebene (Distanz ``dista
 Nehmen Sie an ``depth_first_walk(robo, distance=None, unmark=False)`` führt die *Tiefensuche* nur bis zu einer Distanz ``distance`` durch.
 Dann würde ein Algorithmus der folgenden Art die *Breitensuche* realisieren:
 
-```{code-cell} python3
+```
 distance = 1
 while some_condition:
     path = depth_first_walk(robo, distance=distance, unmark=True)
