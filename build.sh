@@ -1,5 +1,5 @@
 #!/bin/sh
-rm _build -r -f
+rm -R _build
 jupyter-book build .
 git add ./*
 git commit -m "update book content"
