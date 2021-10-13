@@ -47,9 +47,9 @@
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -561,6 +561,9 @@
                     alt="Interact on JupyterHub">JupyterHub</button></a>
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -714,8 +717,8 @@ Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Ar
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4383587376
-4383587376
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4340096048
+4340096048
 </pre></div>
 </div>
 </div>
@@ -737,8 +740,8 @@ Diese Situation sieht demnach wie folgt aus:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4383587376
-4383587344
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4340096048
+4340096016
 </pre></div>
 </div>
 </div>
@@ -764,8 +767,8 @@ Jedoch kann der Wert der Variablen identisch sein und deren <code class="docutil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4420946192
-4420947536
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4378287152
+4378287696
 </pre></div>
 </div>
 </div>
@@ -843,11 +846,11 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 4420946992
+id of half = 4378287728
 value of x = 25
-id of x = 4383587376
+id of x = 4340096048
 value of x = 24
-id of x = 4383587344
+id of x = 4340096016
 </pre></div>
 </div>
 </div>
@@ -862,7 +865,7 @@ id of x = 4383587344
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 4420946992
+id of half = 4378287728
 </pre></div>
 </div>
 </div>
@@ -891,11 +894,11 @@ id of half = 4420946992
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 4421452016
+id of x = 4387414320
 value of y = 10
-id of y = 4383586896
+id of y = 4340095568
 value of z = 2131313
-id of z = 4421452336
+id of z = 4387414576
 </pre></div>
 </div>
 </div>
@@ -917,11 +920,11 @@ id of z = 4421452336
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 4421452016
+id of x = 4387414320
 value of y = 2131313
-id of y = 4421452016
+id of y = 4387414320
 value of z = 2131313
-id of z = 4421452336
+id of z = 4387414576
 </pre></div>
 </div>
 </div>
@@ -967,7 +970,7 @@ id of z = 4421452336
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4421221440
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4387378112
 </pre></div>
 </div>
 </div>
@@ -980,7 +983,7 @@ id of z = 4421452336
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4383586640
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4340095312
 </pre></div>
 </div>
 </div>
@@ -993,7 +996,7 @@ id of z = 4421452336
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4383586672
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4340095344
 </pre></div>
 </div>
 </div>
@@ -1025,14 +1028,14 @@ id of z = 4421452336
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = [1, 2, 3, 4, 5]
-id of x = 4421221440
+id of x = 4387378112
 value of x[1] = 2
-id of x[1] = 4383586640
+id of x[1] = 4340095312
 
 value of x = [1, -10, 3, 4, 5]
-id of x = 4421221440
+id of x = 4387378112
 value of x[1] = -10
-id of x[1] = 4421452240
+id of x[1] = 4387414544
 </pre></div>
 </div>
 </div>
@@ -1108,7 +1111,7 @@ Beispiele für <em>Variablen</em> wären: <code class="docutils literal notransl
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "BZoennchen/ct-book",
             ref: "master",
         },
         codeMirrorConfig: {

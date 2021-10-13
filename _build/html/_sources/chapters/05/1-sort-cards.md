@@ -90,9 +90,11 @@ Wenn wir die Anweisung
 ```python
 Platziere Karte x an die vorderste Stelle
 ```
+
 geben, gehen wir davon aus, dass aus dem *Kontext* klar hervorgeht, was genau zu tun ist.
 Zum Beispiel, dass wir unsere rechte Hand bewegen, mit den Fingern die Karte greifen und an die Position $0$ setzen müssen.
 Die genaue *Realisierung* von 
+
 ```python
 Platziere Karte x an die vorderste Stelle
 ```
