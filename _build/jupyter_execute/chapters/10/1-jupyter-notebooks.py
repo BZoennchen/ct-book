@@ -122,13 +122,21 @@ Diese Ausführungsreihenfolge ist jedoch nicht verpflichtend.
 Sie können manuell einzelne Zellen auswerten.
 Nehmen wir einmal folgende *Code-Zellen* (1,2,3,4):
 
+```python
 y = -3      # Zelle 1
+```
 
+```python
 x = z + y   # Zelle 2
+```
 
+```python
 z = 5       # Zelle 3
+```
 
+```python
 y = 20      # Zelle 4
+```
 
 Nehmen wir nun an, wir werten Zelle 1 dann 4 dann 3 und dann 2 aus.
 Was glauben Sie welchen Wert die Variable ``x`` enthält?

@@ -15,10 +15,12 @@ Sie installieren ``Python`` (auf vielen Systemen ist es vorinstalliert), öffnen
 Auch lässt sich in nur wenigen Zeilen ein kleines ``Python``-Skript schreiben und ausführen.
 Erstellen wir eine neue Datei ``sum-squares.py`` und fügen folgenden ``Python``-Code ein.
 
+```python
 import sys
 n = int(sys.argv[1])
 squares = sum([(i+1)**2 for i in range(n)])
 print(squares)
+```
 
 Führen wir dann das Programm durch den Konsolenbefehl
 
@@ -78,10 +80,8 @@ Rufen wir die Methode mit einer Zeichenkette auf z.B. ``sum_square('a')`` wird u
 
 Eine recht neue Möglichkeit ist es den Typ direkt im Code anzugeben, es bleibt aber reine Dokumentation und hat keine Wirkung auf die Ausführung:
 
-```python
 def sum_squares(n: int) -> int:
     return sum([(i+1)**2 for i in range(n)])
-```
 
 In statisch getypten Sprachen wie ``Java``, ``C++`` oder ``Haskell`` (siehe oben), ist dies durch die Definition der Funktion festgelegt.
 Hier würde bereits vor dem Start des Programms ein Fehler entstehen, falls wir ``sum_square('a')`` ausführen.
