@@ -1747,7 +1747,7 @@ fig = world1.show()
 
 Dann generieren wir einen Lauf durch die *Tiefensuche*, laufen den Lauf wieder zurück, aktivieren die Animation, laufen den Lauf erneut ab und animieren den Lauf.
 
-path = depth_first_walk(robo1, distance=None)
+path, level = depth_first_walk(robo1, distance=None)
 inverse_walk(robo1, path)
 world1.enable_animation()
 walk(robo1, path)
