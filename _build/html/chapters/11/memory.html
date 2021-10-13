@@ -2292,12 +2292,12 @@ Schreiben Sie in <code class="docutils literal notranslate"><span class="pre">Py
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span> <span class="o">=</span> <span class="n">initialize</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
 <span class="n">mylist</span> <span class="o">=</span> <span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
-<span class="n">mylist</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mem_to_string</span><span class="p">(</span><span class="n">mylist</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, [H, e, l, l, o,  , W, o, r, l, d], 4, 5]
 </pre></div>
 </div>
 </div>
@@ -2321,13 +2321,13 @@ Im Endeffekt haben Sie einen kleinen Compiler geschrieben, der Ihnen den Befehl<
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span> <span class="o">=</span> <span class="n">initialize</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
-<span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
-<span class="n">new_list</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="n">new_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mem_to_string</span><span class="p">(</span><span class="n">mylist</span><span class="p">,</span> <span class="n">memory</span><span class="p">,</span> <span class="n">inuse</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.new_list(values, memory, inuse)&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, [H, e, l, l, o,  , W, o, r, l, d], 4, 5]
 </pre></div>
 </div>
 </div>

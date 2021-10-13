@@ -1538,7 +1538,7 @@ passiert im Hintergrund eine ganze Menge und unsere Funktion
 
 memory, inuse = initialize(1024)
 mylist = new_list([1,2,"Hello World",4,5], memory, inuse)
-mylist
+print(mem_to_string(mylist, memory, inuse))
 
 schildert einen Teil davon.
 Zunächst einmal gibt es so etwas wie Datentypen.
@@ -1561,8 +1561,8 @@ Sie haben aus primitiven Mitteln (einem linearen Speicher aus Zahlen (0 bis 255)
 Im Endeffekt haben Sie einen kleinen Compiler geschrieben, der Ihnen den Befehl
 
 memory, inuse = initialize(1024)
-new_list([1,2,"Hello World",4,5], memory, inuse)
-new_list
+mylist = new_list([1,2,"Hello World",4,5], memory, inuse)
+print(mem_to_string(mylist, memory, inuse))
 
 in eine Folge von maschinennäheren Befehlen umwandelt.
 Adressen bzw. **Zeiger** auf andere Speicherobjekte werden Ihnen in Ihrer Programmierlaufbahn immer wieder begegnen.
