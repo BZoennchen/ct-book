@@ -1814,13 +1814,6 @@ world.disable_animation()
 world.show()
 ```
 
-```{figure} ../../figs/roboworld/robo-world-shortest-path-before.png
----
-width: 400px
-name: fig-robo-world-shortest-path-before
----
-```
-
 ```{code-cell} python3
 path = find_shortest_walk(robo)
 print(f'Shortest walk: {path}')
@@ -1834,14 +1827,6 @@ rw.animate(world)
 Da unser Algorithmus viele *Tiefensuchen* durchführt ist er nicht sonderlich effektiv.
 Die Ausführung kann einige Zeit in Anspruch nehmen.
 Wir erkennen jedoch, dass der Algorithmus tatsächlich einen der kürzesten Wege findet.
-
-
-```{figure} ../../figs/roboworld/robo-world-shortest-walk.gif
----
-width: 400px
-name: fig-robo-world-shortest-walk
----
-```
 
 #### Lauf im Labyrinth
 
@@ -1891,7 +1876,7 @@ Dieses Labyrinth wurde bei unserem Aufruf generiert.
 Dann generieren wir einen Lauf durch die *Tiefensuche*, laufen den Lauf wieder zurück, aktivieren die Animation, laufen den Lauf erneut ab und animieren den Lauf.
 
 ```{code-cell} python3
-path, level = depth_first_walk(robo1)
+path = find_shortest_walk(robo)
 inverse_walk(robo1, path)
 world1.enable_animation()
 walk(robo1, path)
