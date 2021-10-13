@@ -782,6 +782,9 @@ unique_names_lex[marks[1]-1]
 Wir können nun sehr einfach durch alle Namen iterieren die mit einem ``C`` starten:
 
 ```{code-cell} python3
+---
+tags: [hide-output]
+---
 marks = generate_marks(unique_names_lex)
 
 mark_index = index_of('C')
@@ -792,6 +795,9 @@ for i in range(marks[mark_index], marks[mark_index+1]-1, 1):
 Oder wir können uns eine Teilliste kopieren die nur Namen beinhaltet die mit ``D`` starten:
 
 ```{code-cell} python3
+---
+tags: [hide-output]
+---
 mark_index = index_of('D')
 unique_names_lex[marks[mark_index]:marks[mark_index+1]]
 ```
@@ -1112,15 +1118,15 @@ Implementieren Sie den beschriebenen Algorithmus zum löschen eines Schlüssels 
 ```
 
 ```{code-cell} python3
-def delete(name, hashtable, hash_func=hash):
-    index = search_index(name, hashtable, hash_func)
+def delete(name, hashtable):
+    index = search_index(name, hashtable)
     if index < len(hashtable) and hashtable[index] == name:
         hashtable[index] = None
         i = 1
         while(hashtable[index+i] != None):
             value = hashtable[index+i]
             hashtable[index+i] = None
-            insert(value, hashtable, hash_func)
+            insert(value, hashtable)
             i += 1
         return True
     else:
@@ -1131,9 +1137,9 @@ Lassen Sie uns das Beispiel aus {numref}`Abbildung {number} <fig-closed-hashing-
 
 ```{code-cell} python3
 names = ['Anna', 'Alex', 'Clara', 'Alba', 'Fabian']
-hashtable = new_hash_table(names, index_of)
+hashtable = new_hash_table(names)
 print(hashtable)
-delete('Alex', hashtable, index_of)
+delete('Alex', hashtable)
 print(hashtable)
 ```
 

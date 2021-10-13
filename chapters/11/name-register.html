@@ -733,8 +733,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-73b97dab-488b-452a-b223-5e6ae443534b">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-73b97dab-488b-452a-b223-5e6ae443534b" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-8a2a4709-0c21-4146-854c-7b068db200d7">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-8a2a4709-0c21-4146-854c-7b068db200d7" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -981,7 +981,7 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Ray&#39;, &#39;phone_number&#39;: &#39;0551-7053890&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Perez&#39;, &#39;phone_number&#39;: &#39;0251-6920566&#39;}
 </pre></div>
 </div>
 </div>
@@ -2920,7 +2920,7 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <p>Wir können nun sehr einfach durch alle Namen iterieren die mit einem <code class="docutils literal notranslate"><span class="pre">C</span></code> starten:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marks</span> <span class="o">=</span> <span class="n">generate_marks</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
 
@@ -3453,7 +3453,7 @@ Cyril
 </div>
 </div>
 <p>Oder wir können uns eine Teilliste kopieren die nur Namen beinhaltet die mit <code class="docutils literal notranslate"><span class="pre">D</span></code> starten:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mark_index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 <span class="n">unique_names_lex</span><span class="p">[</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="p">]:</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
@@ -4259,15 +4259,15 @@ Beachten Sie, dass sich die Position von <code class="docutils literal notransla
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span> <span class="ow">and</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
         <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="k">while</span><span class="p">(</span><span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">):</span>
             <span class="n">value</span> <span class="o">=</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="n">i</span><span class="p">]</span>
             <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-            <span class="n">insert</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+            <span class="n">insert</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span>
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
@@ -4280,24 +4280,16 @@ Beachten Sie, dass sich die Position von <code class="docutils literal notransla
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="s1">&#39;Clara&#39;</span><span class="p">,</span> <span class="s1">&#39;Alba&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabian&#39;</span><span class="p">]</span>
-<span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">index_of</span><span class="p">)</span>
+<span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
-<span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">index_of</span><span class="p">)</span>
+<span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">af1c115741ed</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="s1">&#39;Clara&#39;</span><span class="p">,</span> <span class="s1">&#39;Alba&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabian&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">index_of</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">index_of</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: new_hash_table() takes 1 positional argument but 2 were given
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Anna&#39;, &#39;Alex&#39;, &#39;Alba&#39;, None, None, None, None, None, None, None, None, None, None, &#39;Fabian&#39;, None, None, &#39;Clara&#39;, None]
+[&#39;Anna&#39;, &#39;Alba&#39;, None, None, None, None, None, None, None, None, None, None, None, &#39;Fabian&#39;, None, None, &#39;Clara&#39;, None]
 </pre></div>
 </div>
 </div>
@@ -4412,6 +4404,19 @@ Lassen Sie uns erneut testen ob alles mit rechten Dingen zugeht.</p>
 <span class="nb">all</span><span class="p">([</span><span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span> <span class="o">==</span> <span class="n">index</span> 
      <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span> 
      <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="n">f54895130eeb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">all</span><span class="p">([</span><span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span> <span class="o">==</span> <span class="n">index</span> 
+<span class="nn">      3      for index, name</span> in <span class="ni">enumerate</span><span class="nt">(hashtable)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>      <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">])</span>
+
+<span class="ne">TypeError</span>: new_hash_table() got an unexpected keyword argument &#39;hash_func&#39;
 </pre></div>
 </div>
 </div>

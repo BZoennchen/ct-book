@@ -17,22 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-names = ['Anna', 'Alex', 'Clara', 'Alba', 'Fabian']
-hashtable = new_hash_table(names, index_of)
-print(hashtable)
-delete('Alex', hashtable, index_of)
-print(hashtable)
+hashtable = new_hash_table(unique_names_lex, hash_func=hash)
+all([search_index(name, hashtable, hash_func=hash) == index 
+     for index, name in enumerate(hashtable) 
+     if name != None])
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-24-af1c115741ed>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0mnames[0m [0;34m=[0m [0;34m[[0m[0;34m'Anna'[0m[0;34m,[0m [0;34m'Alex'[0m[0;34m,[0m [0;34m'Clara'[0m[0;34m,[0m [0;34m'Alba'[0m[0;34m,[0m [0;34m'Fabian'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0mhashtable[0m [0;34m=[0m [0mnew_hash_table[0m[0;34m([0m[0mnames[0m[0;34m,[0m [0mindex_of[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      3[0m [0mprint[0m[0;34m([0m[0mhashtable[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0mdelete[0m[0;34m([0m[0;34m'Alex'[0m[0;34m,[0m [0mhashtable[0m[0;34m,[0m [0mindex_of[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0mprint[0m[0;34m([0m[0mhashtable[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-26-f54895130eeb>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mhashtable[0m [0;34m=[0m [0mnew_hash_table[0m[0;34m([0m[0munique_names_lex[0m[0;34m,[0m [0mhash_func[0m[0;34m=[0m[0mhash[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m all([search_index(name, hashtable, hash_func=hash) == index 
+[1;32m      3[0m      [0;32mfor[0m [0mindex[0m[0;34m,[0m [0mname[0m [0;32min[0m [0menumerate[0m[0;34m([0m[0mhashtable[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m      if name != None])
 
-[0;31mTypeError[0m: new_hash_table() takes 1 positional argument but 2 were given
-TypeError: new_hash_table() takes 1 positional argument but 2 were given
+[0;31mTypeError[0m: new_hash_table() got an unexpected keyword argument 'hash_func'
+TypeError: new_hash_table() got an unexpected keyword argument 'hash_func'
 
