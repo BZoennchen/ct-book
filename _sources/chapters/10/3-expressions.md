@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sec-expressions)=
 # Ausdrücke
 
@@ -15,7 +27,7 @@ Der *Ausdruck* besteht aus dem Symbol ``*`` und zwei nummerischen *Ausdrücken*.
 Die Multiplikation wird durch den Computer, genauer die [CPU](def-cpu) berechnet.
 ``3 * 5`` ergibt ``15``.
 
-```python
+```{code-cell} python3
 3 * 5
 ```
 
@@ -32,7 +44,7 @@ Wir werden vom [Interpreter](def-interpreter) sachlich auf die mögliche Fehleru
 Bereits kleiner Änderungen an der [Syntax](def-syntax) können zu einer neuen Bedeutung ([Semantik](def-semantik)) führen.
 In ``Python`` ist der *Ausdruck*
 
-```python
+```{code-cell} python3
 3 ** 5
 ```
 
@@ -61,13 +73,13 @@ Die Bedeutung der Modulo-Operation sieht kompliziert aus doch bedeutet dies schl
 Die ganzzahlige Division rundet das Ergebnis der Division auf die nächst kleinere ganze Zahl (Integer).
 Beachten Sie
 
-```python
+```{code-cell} python3
 -2 // 3
 ```
 
 ergibt ``-1`` und
 
-```python
+```{code-cell} python3
 2 // 3
 ```
 
@@ -93,22 +105,22 @@ Objekte können über Vergleichsoperatoren miteinander verglichen werden. Das Er
 Erneut ist ``Python`` hier ein wenig speziell indem es die mathematische Schreibweise $0 < x < 5$ anstatt $0 < x \ \land \ x < 5$ zulässt.
 Dies erhöht die Lesbarkeit, da wir solche Verkettungen von Vergleichsoperatoren gewohnt sind.
 
-```python
+```{code-cell} python3
 5 < 7 < 10 # True
 ```
 
-```python
+```{code-cell} python3
 5 < 7 and 7 < 10 # True
 ```
 
-```python
+```{code-cell} python3
 5 < 7 < 5 # False
 ```
 
 *Vergleichsoperatoren* können auch auf anderen Datentypen als numerische Werte (ganze Zahlen ``int``, Fließkommazahlen ``float``) definiert sein.
 So können wir in ``Python`` auch Zeichenketten ``str`` mit den Vergleichsoperatoren lexikographisch vergleichen:
 
-```python
+```{code-cell} python3
 'Anna' < 'Emma' # True
 ```
 
@@ -118,7 +130,10 @@ Der obige *Ausdruck* besteht aus dem *Ausdruck* ``and``.
 Dieser erwartet auf der linken und rechte Seite jeweils einen Wahrheitswert (*boolschen Ausdruck*).
 [Vergleichsoperatoren](sec-python-operator-compare) liefern sind *boolsche Ausdrücke*.
 
-```python
+```{code-cell} python3
+x = True
+y = False
+
 x and y
 ```
 
@@ -145,7 +160,7 @@ Dabei wird jedes Bit des einen Werts mit dem [Bit](def-bit) des anderen Werts ko
 Zum Beispiel ``5 & 4`` führt eine führ jedes Bit die ``and`` Operation aus.
 Das nennen wir Verundung.
 
-```python
+```{code-cell} python3
 5 & 4
 ```
 

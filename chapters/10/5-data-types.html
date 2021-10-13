@@ -517,7 +517,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/10/5-data-types.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/10/5-data-types.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -538,6 +541,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/10/5-data-types.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -685,13 +708,17 @@ Im folgenden definieren und initialisieren wir Variablen mit unterschiedlichen D
 <li><p>eine Liste <code class="docutils literal notranslate"><span class="pre">list</span></code>, welche ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> enthält und</p></li>
 <li><p>ein Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, welche Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> enthält.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">111</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">111</span>
 <span class="n">floating_number</span> <span class="o">=</span> <span class="mf">1.3</span>
 <span class="n">characters</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
 <span class="n">boolean</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Beim Datentyp <code class="docutils literal notranslate"><span class="pre">list</span></code> und <code class="docutils literal notranslate"><span class="pre">tuple</span></code> fällt auf, dass diese Werte eines anderen Datentyps enthalten, hier <code class="docutils literal notranslate"><span class="pre">int</span></code> und <code class="docutils literal notranslate"><span class="pre">str</span></code>.
 Solche Datentypen nennen wir auch <em>zusammengesetzt Datentypen</em> wohingegen wir Datentypen, welche wir nicht zerlegen können als <a class="reference internal" href="#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> bezeichnen.
@@ -796,21 +823,59 @@ Die wichtigsten <em>built-in Datentypen</em> sind hervorgehobenen:</p>
 Eine Folge von Ziffern mit einem optional vorangestellten Minuszeichen werden als ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> interpretiert.
 Befindet sich in der Folge ein Punkt <code class="docutils literal notranslate"><span class="pre">.</span></code> so wird der Wert als Fließkommazahl interpretiert.
 Sie können den Datentyp einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> oder eines Wertes mit <code class="docutils literal notranslate"><span class="pre">type(x)</span></code> abfragen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mi">3123</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mi">3123</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">1.313</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Anna&#39;</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">1.313</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Anna&#39;</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;List Type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Element 0 Type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Element 4 Type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>List Type: &lt;class &#39;list&#39;&gt;
+Element 0 Type: &lt;class &#39;int&#39;&gt;
+Element 4 Type: &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="zusammengesetzte-datentypen">
@@ -830,21 +895,57 @@ Auch der Arbeitsspeicher ist in diesem Sinne eine sowohl physikalische wie auch 
 </div>
 <p>Mit <strong>variabler Anzahl</strong> ist gemeint, dass es Sammlung gibt, welche 5 Elemente enthalten und Sammlung gibt die 1000 Elementen enthalten.
 Es kann dennoch sein, dass eine Sammlung die 10 Elemente enthält nicht verändert werden kann, d.h. sie wird auf immer dieser 10 Elemente enthalten.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="n">mylist</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">mylist</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, &#39;A&#39;, 3, 1.23, [1, 2, 3]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mytuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">mylist</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">)</span>
 <span class="n">mytuple</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;firstname&#39;</span> <span class="p">:</span> <span class="s1">&#39;Paulina&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span> <span class="p">:</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span> <span class="p">:</span> <span class="mi">23</span> <span class="p">}</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([1, 2, &#39;A&#39;, 3, 1.23, [1, 2, 3]], &#39;D&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;firstname&#39;</span> <span class="p">:</span> <span class="s1">&#39;Paulina&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span> <span class="p">:</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span> <span class="p">:</span> <span class="mi">23</span> <span class="p">}</span>
 <span class="n">mydict</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">}</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;firstname&#39;: &#39;Paulina&#39;, &#39;lastname&#39;: &#39;Schmidt&#39;, &#39;age&#39;: 23}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">}</span>
 <span class="n">month</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+</pre></div>
+</div>
+</div>
 </div>
 <p>Eine Zeichenkette <code class="docutils literal notranslate"><span class="pre">str</span></code> ist ebenfalls eine Kollektion, jedoch sind deren Elemente alle vom gleichen Typ – dem Zeichen.</p>
 </div>
@@ -889,13 +990,25 @@ Dennoch ist <code class="docutils literal notranslate"><span class="pre">str</sp
 <h2><span class="section-number">1.5.4. </span>Interpretationswechsel<a class="headerlink" href="#interpretationswechsel" title="Permalink to this headline">¶</a></h2>
 <p>Wir können zum Beispiel eine Variable mit einer Zahl initialisieren und diese Zahl als Zeichen interpretieren.
 Dazu brauchen wir jedoch eine geeignete Interpretation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">90</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">90</span>
 <span class="n">characters</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;characters </span><span class="si">{</span><span class="n">characters</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;str 90&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;int </span><span class="si">{</span><span class="mi">90</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number 90
+characters 90
+str 90
+int 90
+</pre></div>
+</div>
+</div>
 </div>
 <p>Was passiert hier?
 Es wird viermal die Zahl <code class="docutils literal notranslate"><span class="pre">90</span></code> als Zeichenkette ausgegeben.
@@ -918,8 +1031,17 @@ Es macht keinen Sinn eine Bitfolge die erst als Text interpretiert wird auf einm
 <p>Eine Dezimalzahl als Binärzahl zu interpretieren kann durchaus Sinn ergeben.
 Deshalb stellen die Bitoperationen eine Ausnahme dar.
 Der folgende Bitshift manipuliert einen Bereich des Speichers direkt.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
 </div>
 <p>Hier werden die Bits, welche die Zahl <code class="docutils literal notranslate"><span class="pre">5</span></code> repräsentieren um eins nach links verschieben, was einer Multiplikation mit <code class="docutils literal notranslate"><span class="pre">2</span></code> gleich kommt.
 Dabei wird die <code class="docutils literal notranslate"><span class="pre">5</span></code> für die Operation als Zahl in ihrer ursprünglichen Binärdarstellung interpretiert.</p>
@@ -935,8 +1057,17 @@ Hier kann man Diskutieren was besser ist: Alles erlauben um maximale Freiheit zu
 <p>Wir können das Zeichen <code class="docutils literal notranslate"><span class="pre">'a'</span></code> mit der Funktion <code class="docutils literal notranslate"><span class="pre">ord</span></code> in eine Zahl umwandeln.
 Das Ergebnis hängt mit der von <code class="docutils literal notranslate"><span class="pre">Python</span></code> gewählten Interpretation (ASCII) zusammen.
 Daraufhin können wir den Bitshift durchführen und die Zahl mit <code class="docutils literal notranslate"><span class="pre">chr</span></code> wieder in ein Zeichen zurück transformieren.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Â&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wir erhalten ein neues Zeichen: Ein <code class="docutils literal notranslate"><span class="pre">'Â'</span></code>, können wir das irgendwo gebrauchen?
 Das ist zu bezweifeln und selbst wenn, ist dieser Code besser lesbar, da wir explizit die Anweisung zur Umwandlung in eine Zahl angeben.</p>
@@ -960,18 +1091,39 @@ Funktionen und Operationen verlassen sich auf dieses Versprechen.
 Nur so können Sie Informationen verarbeiten, indem die <a class="reference internal" href="../06/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> bekannt ist und auch eingehalten wird.
 Zum Beispiel erwartet die Addition <code class="docutils literal notranslate"><span class="pre">+</span></code> zwei Zahlen.
 Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> oder um eine Fließkommazahl handeln.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">9</span>       <span class="c1"># int + int</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">9</span>       <span class="c1"># int + int</span>
 <span class="mi">3</span> <span class="o">+</span> <span class="mf">8.6</span>     <span class="c1"># int + float</span>
 <span class="o">-</span><span class="mf">3.6</span> <span class="o">+</span> <span class="mf">3.4</span>  <span class="c1"># float + float</span>
 <span class="mf">3.1</span> <span class="o">+</span> <span class="mi">9</span>     <span class="c1"># float + int</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.1
+</pre></div>
+</div>
+</div>
+</div>
 <p>Der Datentyp des Ergebnisses der Addition hängt von Datentypen der beiden Summanden ab.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">9</span><span class="p">))</span>      <span class="c1"># int + int -&gt; int</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">9</span><span class="p">))</span>      <span class="c1"># int + int -&gt; int</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">8.6</span><span class="p">))</span>    <span class="c1"># int + float -&gt; float</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="o">-</span><span class="mf">3.6</span> <span class="o">+</span> <span class="mf">3.4</span><span class="p">))</span> <span class="c1"># float + float -&gt; float</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">3.1</span> <span class="o">+</span> <span class="mi">9</span><span class="p">))</span>    <span class="c1"># float + int -&gt; float</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Zudem wird nicht jeder Datentyp von Addition unterstützt:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39;a&#39;</span> <span class="c1"># int + str -&gt; Fehler!</span>
@@ -979,19 +1131,46 @@ Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl <code
 </div>
 <p>Der Fehler der durch diesen Code erzeugt wird besagt: <code class="docutils literal notranslate"><span class="pre">unsupported</span> <span class="pre">operand</span> <span class="pre">type(s)</span> <span class="pre">for</span> <span class="pre">+:</span> <span class="pre">'int'</span> <span class="pre">and</span> <span class="pre">'str'</span></code>, d.h. diese Kombination aus Datentypen (<code class="docutils literal notranslate"><span class="pre">int</span></code> und <code class="docutils literal notranslate"><span class="pre">str</span></code>) wird nicht unterstützt.
 Was passiert wenn wir zwei Zeichenketten ‘addieren’?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span> <span class="c1"># str + str -&gt; str!</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span> <span class="c1"># str + str -&gt; str!</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ab&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Überraschenderweise führt dies nicht zu einem Fehler.
 Wir sprechen hierbei nicht mehr von einer Addition, stattdessen handelt es sich um die sog. Konkatenation (Verkettung) von Zeichenketten.
 In anderen Worten entscheiden die Datentypen darüber, welche Operation der <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator definiert bzw. welche Operation ausgeführt wird!</p>
 <p>Betrachten wir ein weiteres Beispiel:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>und</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
+</div>
+</div>
+</div>
+<p>und</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;b&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wir rufen beide Male die <em>built-in Funktion</em> <code class="docutils literal notranslate"><span class="pre">max</span></code> auf.
 Einmal ist das Argument eine Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> und einmal rufen wir <code class="docutils literal notranslate"><span class="pre">max</span></code> mit zwei Argumenten, zwei ganzen Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> auf.
@@ -1015,7 +1194,9 @@ Wir erhalten den gleichen Fehler mit</p>
 <p>Es ist im allgemeinen unklar wie wir eine Zahl mit einem Buchstaben vergleichen sollen.
 Wir können selbstverständlich einen solchen Vergleich selbst definieren.
 Wir greifen hier etwas vor:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_key</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_key</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1024,6 +1205,13 @@ Wir greifen hier etwas vor:</p>
 <span class="nb">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">get_key</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;b&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <p>Was passiert hier?
 Wir definieren eine eigene Funktion <code class="docutils literal notranslate"><span class="pre">get_key</span></code>.
 Diese transformiert den Wert, welchen wir vergleichen wollen in einen anderen Wert.
@@ -1031,17 +1219,37 @@ Ist der Wert eine Zeichenkette, so transformieren wir diese in eine ganze Zahl (
 Andernfalls geben wir den Wert zurück (keine Transformation).</p>
 <p>Wir sagen der Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> Sie solle doch bitte vor jedem Vergleich die zu vergleichenden Werte durch unsere Funktion <code class="docutils literal notranslate"><span class="pre">get_key</span></code> transformieren.
 Was also passiert ist das <code class="docutils literal notranslate"><span class="pre">max</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">get_key</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">get_key</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_key</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">get_key</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>ausführt also</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
+</div>
+</div>
+</div>
+<p>ausführt also</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
 </div>
 <p>und <code class="docutils literal notranslate"><span class="pre">ord('b')</span></code> ergibt <code class="docutils literal notranslate"><span class="pre">98</span></code>.
 Der Rückgabewert ist eine Zeichenkette <code class="docutils literal notranslate"><span class="pre">str</span></code>.
 Rufen wir allerdings folgenden Code auf</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_key</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_key</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1049,6 +1257,13 @@ Rufen wir allerdings folgenden Code auf</p>
 
 <span class="nb">max</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">get_key</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+</pre></div>
+</div>
+</div>
 </div>
 <p>so ist der Rückgabewert eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code>.
 Auch das ist in vielen anderen Sprachen anders.
@@ -1059,11 +1274,30 @@ In <code class="docutils literal notranslate"><span class="pre">Java</span></cod
 <p>Für <em>statisch getypten Sprache</em> wird der Datentyp von Werten und Variablen geprüft <strong>bevor</strong> der Programmcode ausgeführt wird.
 Im Gegenteil dazu wird diese Prüfung für <em>dynamisch getypte Sprachen</em> erst zur Laufzeit durchgeführt, also <strong>während</strong> der Code ausgeführt wird.</p>
 <p>Führen Sie folgenden Code aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="n">b47f296b25be</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Dieser führt zu einem bekannten Fehler: <code class="docutils literal notranslate"><span class="pre">unsupported</span> <span class="pre">operand</span> <span class="pre">type(s)</span> <span class="pre">for</span> <span class="pre">+:</span> <span class="pre">'int'</span> <span class="pre">and</span> <span class="pre">'str'</span></code> und dennoch wird die ganze Zahl <code class="docutils literal notranslate"><span class="pre">number</span></code> ausgegeben.
 In anderen Worten der Code läuft solange bis es kracht.</p>
@@ -1092,13 +1326,21 @@ Auch folgender Code führt zu einem Fehler:</p>
 Andernfalls wäre dies nicht möglich.</p>
 <p>Im Gegensatz dazu können wir in <code class="docutils literal notranslate"><span class="pre">Python</span></code> viel ‘freier’ mit Typen handtieren.
 Der Äquivalente Code wird einwandfrei ausgeführt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">number</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">number</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="was-ist-besser">
 <h3><span class="section-number">1.5.6.1. </span>Was ist besser?<a class="headerlink" href="#was-ist-besser" title="Permalink to this headline">¶</a></h3>
@@ -1127,9 +1369,13 @@ Wir werden dies im Kurs nicht verwenden wollen es Ihnen aber auch nicht vorentha
 Der angegebene Typ dient der reinen Dokumentation und hat keinerlei Auswirkungen auf die Laufzeit.
 Manche Entwicklungsumgebungen wie Visual Studio Code (SVCode) bieten auf Grundlage dieser <a class="reference external" href="https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html">Typ hints</a> Warnmeldungen bzw. Fehlermeldungen.</p>
 <p>Mit Type hints wird aus</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">number</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>folgender Code</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1139,14 +1385,22 @@ Manche Entwicklungsumgebungen wie Visual Studio Code (SVCode) bieten auf Grundla
 <p>Dieser wird noch ausgeführt wie zuvor doch Ihre Entwicklungsumgebung wird Sie vermutlich warnen, dass hier der Typ gewechselt wird.
 Besonders für Funktionen ist dies hilfreich um die Dokumentation direkt in den Code zu integrieren.
 Zum Beispiel wird aus</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>folgender Code</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Wir geben uns und dem- oder derjenigen, welche unseren Code benutzt zu verstehen, dass die Funktion zwei ganze Zahlen erwartet und eine ganze Zahl zurückliefert.</p>
 </div>

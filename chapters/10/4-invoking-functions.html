@@ -517,7 +517,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/10/4-invoking-functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/10/4-invoking-functions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -538,6 +541,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/10/4-invoking-functions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -588,19 +611,55 @@ Funktionen erwarten eine bestimmte Anzahl an <em>Argumenten</em>, wobei es manch
 Argumente sind Werte, welche die Funktion erwartet und die wir übergeben müssen.
 Diese Argumente werden von der Funktion verarbeitet.</p>
 <p>Zum Beispiel bietet <code class="docutils literal notranslate"><span class="pre">Python</span></code> die vordefinierte Funktion <code class="docutils literal notranslate"><span class="pre">abs</span></code> an, welche ein Argument erwartet, eine Zahl, erwartet.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">23</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">23</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
+</pre></div>
+</div>
+</div>
 </div>
 <p>In diesem Fall realisiert diese <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion eine <em>mathematische Funktion</em>, nämlich den Betrag <span class="math notranslate nohighlight">\(abs(x) = |x|\)</span>.
 Weitere Beispiele sind die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionen <code class="docutils literal notranslate"><span class="pre">round</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="mf">1.3</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="mf">1.3</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">round</span></code> erwartet ebenfalls eine Zahl als Argument.
 Die Funktion berechnet aus dem Argument die am nächsten liegende ganze Zahl und liefert diese zurück.
@@ -620,9 +679,18 @@ Manche Module wie beispielsweise <code class="docutils literal notranslate"><spa
 Ist das Modul installiert, müssen wir es in unseren Code <em>importieren</em>.
 Wir machen es unserem Code bekannt, sodass wir es auch nutzten können.
 Dies geschieht mit dem <em>Schlüsselwort</em> <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9374007716383468
+</pre></div>
+</div>
+</div>
 </div>
 <p>Mit <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code> machen wir das Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> unter dem Namen <code class="docutils literal notranslate"><span class="pre">random</span></code> bekannt.
 In der zweiten Zeile des Codes rufen wir die Funktion <code class="docutils literal notranslate"><span class="pre">random</span></code> des Moduls <code class="docutils literal notranslate"><span class="pre">random</span></code> auf.
@@ -633,9 +701,21 @@ Wenn Sie die obige Zelle mehrfach ausführen werden Sie feststellen, dass sie un
 Wir können uns deshalb Informationen zu dem <strong>Was</strong> (und manchmal auch zu dem <strong>Wie</strong>) einer Funktion holen.
 Hierzu schreiben wir den Funktionsnamen ohne die runden Klammern und fügen ein <code class="docutils literal notranslate"><span class="pre">?</span></code> an.
 Oder Sie verwenden die Hilfefunktion <code class="docutils literal notranslate"><span class="pre">help</span></code> und übergeben die Funktion: <code class="docutils literal notranslate"><span class="pre">help(random.random)</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">help</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function random:
+
+random() method of random.Random instance
+    random() -&gt; x in the interval [0, 1).
+</pre></div>
+</div>
+</div>
 </div>
 <p>Die Ausgabe lautet:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">random</span><span class="p">:</span>
@@ -667,8 +747,17 @@ D.h. ein iterierbares Argument ist wohl so etwas wie eine Sequenz, Liste, Menge 
 <h2><span class="section-number">1.4.2. </span>Auswertungsreihenfolge<a class="headerlink" href="#auswertungsreihenfolge" title="Permalink to this headline">¶</a></h2>
 <p>Ein <em>Funktionsaufruf</em> ist ebenfalls ein <em>Ausdruck</em> und wie beim Rechnen werden Ausdrücke von innen nach außen <em>ausgewertet</em>.
 Blicken Sie auf folgenden Ausdruck:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.6</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.6</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
 </div>
 <p>Dieser Ausdruck besteht aus mehreren Ausdrücken.
 Die Auswertung des gesamten Ausdrucks erfolgt von innen nach außen.
@@ -682,17 +771,35 @@ Was bleibt ist <code class="docutils literal notranslate"><span class="pre">roun
 Dieser Ausdruck ergibt <code class="docutils literal notranslate"><span class="pre">7</span></code>.</p>
 <p>Wir können jeder <a class="reference internal" href="2-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> auch einen Ausdruck zuweisen.
 Dieser wird ausgewertet und das Ergebnis wird der Variablen zugewiesen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.6</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.6</span><span class="p">)</span>
 <span class="n">x</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
 <p>Auch können wir Funktionsausdrücke mit anderen Ausdrucken wie etwa <a class="reference internal" href="3-expressions.html#sec-python-operator-arithmetic"><span class="std std-ref">arithmetische Operatoren</span></a> kombinieren.
 Durch die folgende Abfolge von Ausdrücken berechnen wir den prozentualen Anteil der Einwohner in Deutschland, die in München wohnen auf zwei Nachkommastellen gerundet:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">population_munich</span> <span class="o">=</span> <span class="mi">1_553_373</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population_munich</span> <span class="o">=</span> <span class="mi">1_553_373</span>
 <span class="n">population_germany</span> <span class="o">=</span> <span class="mi">83_121_363</span>
 <span class="n">persentage</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">10000</span> <span class="o">*</span> <span class="mi">1_553_373</span> <span class="o">/</span> <span class="mi">83_121_363</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
 <span class="n">persentage</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.87
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="das-kennenlernen">

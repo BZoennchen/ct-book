@@ -517,7 +517,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/10/3-expressions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/10/3-expressions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -538,6 +541,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/10/3-expressions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -593,8 +616,17 @@ Durch eine Abfolge von <em>Ausdruck</em> werden Daten immer und immer weiter ver
 Der <em>Ausdruck</em> besteht aus dem Symbol <code class="docutils literal notranslate"><span class="pre">*</span></code> und zwei nummerischen <em>Ausdrücken</em>.
 Die Multiplikation wird durch den Computer, genauer die <a class="reference internal" href="../06/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> berechnet.
 <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">5</span></code> ergibt <code class="docutils literal notranslate"><span class="pre">15</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
 </div>
 <p>Die <a class="reference internal" href="../06/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> einer Programmiersprache ist strikt.
 Sie wird durch eine sog. <em>Grammatik</em> definiert.
@@ -606,8 +638,17 @@ Zum Beispiel ist folgender <em>Ausdruck</em> fehlerhaft, da er der nicht durch d
 Wir werden vom <a class="reference internal" href="../06/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> sachlich auf die mögliche Fehlerursache hingewiesen.
 Bereits kleiner Änderungen an der <a class="reference internal" href="../06/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> können zu einer neuen Bedeutung (<a class="reference internal" href="../06/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a>) führen.
 In <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist der <em>Ausdruck</em></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">**</span> <span class="mi">5</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">**</span> <span class="mi">5</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>243
+</pre></div>
+</div>
+</div>
 </div>
 <p>syntaktisch korrekt.
 Seine <a class="reference internal" href="../06/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> ist <span class="math notranslate nohighlight">\(3^5\)</span> was zu <span class="math notranslate nohighlight">\(243\)</span> <em>ausgewertet</em> wird.
@@ -666,12 +707,30 @@ Es gibt jedoch noch eine ganze Reihe von weiteren <em>arithmetische Operatoren</
 Die Bedeutung der Modulo-Operation sieht kompliziert aus doch bedeutet dies schlicht, dass der Rest <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">%</span> <span class="pre">4</span></code> der ganzzahlige Rest der <a class="reference internal" href="../06/2-representation.html#def-euclid-division"><span class="std std-ref">Restwertdivision</span></a> ist.
 Die ganzzahlige Division rundet das Ergebnis der Division auf die nächst kleinere ganze Zahl (Integer).
 Beachten Sie</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span> <span class="o">//</span> <span class="mi">3</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span> <span class="o">//</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<p>ergibt <code class="docutils literal notranslate"><span class="pre">-1</span></code> und</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">//</span> <span class="mi">3</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
 </pre></div>
+</div>
+</div>
+</div>
+<p>ergibt <code class="docutils literal notranslate"><span class="pre">-1</span></code> und</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">//</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
 </div>
 <p>ergibt <code class="docutils literal notranslate"><span class="pre">0</span></code>.
 <em>Arithmetische Operationen</em> werden von der <em>arithmetischen Einheit</em> der <a class="reference internal" href="../06/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> ausgewertet.
@@ -712,19 +771,55 @@ Mit ihnen können wir numerische Gleichungen lösen aber auch Indices manipulier
 </table>
 <p>Erneut ist <code class="docutils literal notranslate"><span class="pre">Python</span></code> hier ein wenig speziell indem es die mathematische Schreibweise <span class="math notranslate nohighlight">\(0 &lt; x &lt; 5\)</span> anstatt <span class="math notranslate nohighlight">\(0 &lt; x \ \land \ x &lt; 5\)</span> zulässt.
 Dies erhöht die Lesbarkeit, da wir solche Verkettungen von Vergleichsoperatoren gewohnt sind.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="c1"># True</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="c1"># True</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="ow">and</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="c1"># True</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="c1"># False</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="ow">and</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="c1"># True</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
 </div>
 <p><em>Vergleichsoperatoren</em> können auch auf anderen Datentypen als numerische Werte (ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>, Fließkommazahlen <code class="docutils literal notranslate"><span class="pre">float</span></code>) definiert sein.
 So können wir in <code class="docutils literal notranslate"><span class="pre">Python</span></code> auch Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> mit den Vergleichsoperatoren lexikographisch vergleichen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Anna&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;Emma&#39;</span> <span class="c1"># True</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Anna&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;Emma&#39;</span> <span class="c1"># True</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="logische-operatoren">
@@ -732,8 +827,20 @@ So können wir in <code class="docutils literal notranslate"><span class="pre">P
 <p>Der obige <em>Ausdruck</em> besteht aus dem <em>Ausdruck</em> <code class="docutils literal notranslate"><span class="pre">and</span></code>.
 Dieser erwartet auf der linken und rechte Seite jeweils einen Wahrheitswert (<em>boolschen Ausdruck</em>).
 <a class="reference internal" href="#sec-python-operator-compare"><span class="std std-ref">Vergleichsoperatoren</span></a> liefern sind <em>boolsche Ausdrücke</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="ow">and</span> <span class="n">y</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">y</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">x</span> <span class="ow">and</span> <span class="n">y</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
 </div>
 <p>ergibt genau dann <code class="docutils literal notranslate"><span class="pre">True</span></code> wenn die Auswertung von <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> jeweils <code class="docutils literal notranslate"><span class="pre">True</span></code> ergeben.
 Wir haben diese Operatoren bereits im Abschnitt <a class="reference internal" href="../06/3-manipulation.html#sec-manipulation"><span class="std std-ref">Manipulation</span></a> besprochen.
@@ -767,8 +874,17 @@ Dort haben wir beschrieben wie schlussendlich jeder Wert, egal ob Zahl, Zeichen,
 <p>Dabei wird jedes Bit des einen Werts mit dem <a class="reference internal" href="../06/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> des anderen Werts kombiniert.
 Zum Beispiel <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&amp;</span> <span class="pre">4</span></code> führt eine führ jedes Bit die <code class="docutils literal notranslate"><span class="pre">and</span></code> Operation aus.
 Das nennen wir Verundung.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&amp;</span> <span class="mi">4</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&amp;</span> <span class="mi">4</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
 </div>
 <p>entspricht eine Verundung der Binärzahlen <span class="math notranslate nohighlight">\(101_2\)</span> mit <span class="math notranslate nohighlight">\(100_2\)</span> durch und ergibt demnach <span class="math notranslate nohighlight">\(100_2\)</span>, was wiederum gleich <span class="math notranslate nohighlight">\(4_{10}\)</span> ist.</p>
 <table class="colwidths-auto table">

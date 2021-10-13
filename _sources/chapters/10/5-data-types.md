@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sec-datatypes)=
 # Datentypen
 
@@ -52,7 +64,7 @@ Im folgenden definieren und initialisieren wir Variablen mit unterschiedlichen D
 + eine Liste ``list``, welche ganze Zahlen ``int`` enthält und
 + ein Tupel ``tuple``, welche Zeichenketten ``str`` enthält.
 
-```python
+```{code-cell} python3
 number = 111
 floating_number = 1.3
 characters = 'Hello'
@@ -150,20 +162,20 @@ Eine Folge von Ziffern mit einem optional vorangestellten Minuszeichen werden al
 Befindet sich in der Folge ein Punkt ``.`` so wird der Wert als Fließkommazahl interpretiert.
 Sie können den Datentyp einer Variablen ``x`` oder eines Wertes mit ``type(x)`` abfragen:
 
-```python
+```{code-cell} python3
 type(-3123)
 ```
 
-```python
+```{code-cell} python3
 type(1.313)
 ```
 
-```python
+```{code-cell} python3
 name = 'Anna'
 type(name)
 ```
 
-```python
+```{code-cell} python3
 mylist = [1, 2, 3, 4, 'A']
 print(f'List Type: {type(mylist)}')
 print(f'Element 0 Type: {type(mylist[0])}')
@@ -192,22 +204,22 @@ Als *Sammlung* bezeichnen wir alle Datentypen (Tupel, [Dictionary](def-python-di
 Mit **variabler Anzahl** ist gemeint, dass es Sammlung gibt, welche 5 Elemente enthalten und Sammlung gibt die 1000 Elementen enthalten.
 Es kann dennoch sein, dass eine Sammlung die 10 Elemente enthält nicht verändert werden kann, d.h. sie wird auf immer dieser 10 Elemente enthalten.
 
-```python
+```{code-cell} python3
 mylist = [1, 2, 'A', 3, 1.23, [1, 2, 3]]
 mylist
 ```
 
-```python
+```{code-cell} python3
 mytuple = (mylist, 'D')
 mytuple
 ```
 
-```python
+```{code-cell} python3
 mydict = {'firstname' : 'Paulina', 'lastname' : 'Schmidt', 'age' : 23 }
 mydict
 ```
 
-```python
+```{code-cell} python3
 month = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
 month
 ```
@@ -262,7 +274,7 @@ Dennoch ist ``str`` kein primitiver Datentyp.
 Wir können zum Beispiel eine Variable mit einer Zahl initialisieren und diese Zahl als Zeichen interpretieren.
 Dazu brauchen wir jedoch eine geeignete Interpretation:
 
-```python
+```{code-cell} python3
 number = 90
 characters = str(number)
 print(f'number {number}')
@@ -297,7 +309,7 @@ Eine Dezimalzahl als Binärzahl zu interpretieren kann durchaus Sinn ergeben.
 Deshalb stellen die Bitoperationen eine Ausnahme dar.
 Der folgende Bitshift manipuliert einen Bereich des Speichers direkt.
 
-```python
+```{code-cell} python3
 5 << 1
 ```
 
@@ -320,7 +332,7 @@ Wir können das Zeichen ``'a'`` mit der Funktion ``ord`` in eine Zahl umwandeln.
 Das Ergebnis hängt mit der von ``Python`` gewählten Interpretation (ASCII) zusammen.
 Daraufhin können wir den Bitshift durchführen und die Zahl mit ``chr`` wieder in ein Zeichen zurück transformieren.
 
-```python
+```{code-cell} python3
 chr(ord('a') << 1)
 ```
 
@@ -349,7 +361,7 @@ Nur so können Sie Informationen verarbeiten, indem die [Interpretation](sec-int
 Zum Beispiel erwartet die Addition ``+`` zwei Zahlen.
 Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl ``int`` oder um eine Fließkommazahl handeln.
 
-```python
+```{code-cell} python3
 3 + 9       # int + int
 3 + 8.6     # int + float
 -3.6 + 3.4  # float + float
@@ -358,7 +370,7 @@ Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl ``int
 
 Der Datentyp des Ergebnisses der Addition hängt von Datentypen der beiden Summanden ab.
 
-```python
+```{code-cell} python3
 print(type(3 + 9))      # int + int -> int
 print(type(3 + 8.6))    # int + float -> float
 print(type(-3.6 + 3.4)) # float + float -> float
@@ -374,7 +386,7 @@ Zudem wird nicht jeder Datentyp von Addition unterstützt:
 Der Fehler der durch diesen Code erzeugt wird besagt: ``unsupported operand type(s) for +: 'int' and 'str'``, d.h. diese Kombination aus Datentypen (``int`` und ``str``) wird nicht unterstützt.
 Was passiert wenn wir zwei Zeichenketten 'addieren'?
 
-```python
+```{code-cell} python3
 'a' + 'b' # str + str -> str!
 ```
 
@@ -384,13 +396,13 @@ In anderen Worten entscheiden die Datentypen darüber, welche Operation der ``+`
 
 Betrachten wir ein weiteres Beispiel:
 
-```python
+```{code-cell} python3
 max([1,2,3,4,5])
 ```
 
 und
 
-```python
+```{code-cell} python3
 max('a','b')
 ```
 
@@ -423,7 +435,7 @@ Es ist im allgemeinen unklar wie wir eine Zahl mit einem Buchstaben vergleichen 
 Wir können selbstverständlich einen solchen Vergleich selbst definieren.
 Wir greifen hier etwas vor:
 
-```python
+```{code-cell} python3
 def get_key(value):
     if type(value) == str:
         return ord(value[0])
@@ -442,13 +454,13 @@ Andernfalls geben wir den Wert zurück (keine Transformation).
 Wir sagen der Funktion ``max`` Sie solle doch bitte vor jedem Vergleich die zu vergleichenden Werte durch unsere Funktion ``get_key`` transformieren.
 Was also passiert ist das ``max``
 
-```python
+```{code-cell} python3
 get_key(3) > get_key('b')
 ```
 
 ausführt also
 
-```python
+```{code-cell} python3
 3 > ord('b')
 ```
 
@@ -456,7 +468,7 @@ und ``ord('b')`` ergibt ``98``.
 Der Rückgabewert ist eine Zeichenkette ``str``.
 Rufen wir allerdings folgenden Code auf
 
-```python
+```{code-cell} python3
 def get_key(value):
     if type(value) == str:
         return ord(value[0])
@@ -477,7 +489,7 @@ Im Gegenteil dazu wird diese Prüfung für *dynamisch getypte Sprachen* erst zur
 
 Führen Sie folgenden Code aus:
 
-```python
+```{code-cell} python3
 number = 5
 number = number + 5
 print(number)
@@ -520,12 +532,12 @@ Andernfalls wäre dies nicht möglich.
 Im Gegensatz dazu können wir in ``Python`` viel 'freier' mit Typen handtieren.
 Der Äquivalente Code wird einwandfrei ausgeführt:
 
-```python
+```{code-cell} python3
 number = 5
 number = 'b'
 ```
 
-```python
+```{code-cell} python3
 number = 5
 number = 'b'
 ```
@@ -560,7 +572,7 @@ Manche Entwicklungsumgebungen wie Visual Studio Code (SVCode) bieten auf Grundla
 
 Mit Type hints wird aus 
 
-```python
+```{code-cell} python3
 number = 5
 number = 'b'
 ```
@@ -576,14 +588,14 @@ Dieser wird noch ausgeführt wie zuvor doch Ihre Entwicklungsumgebung wird Sie v
 Besonders für Funktionen ist dies hilfreich um die Dokumentation direkt in den Code zu integrieren.
 Zum Beispiel wird aus
 
-```python
+```{code-cell} python3
 def add(x, y):
     return x + y
 ```
 
 folgender Code
 
-```python
+```{code-cell} python3
 def add(x: int, y: int) -> int:
     return x + y
 ```
