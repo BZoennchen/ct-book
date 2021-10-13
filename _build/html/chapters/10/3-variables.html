@@ -563,6 +563,23 @@
   <a class="reference internal nav-link" href="#veranderung">
    1.3.3. Veränderung
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zuweisung-eines-neuen-werts">
+     1.3.3.1. Zuweisung eines neuen Werts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zuweisung-einer-neuen-adresse">
+     1.3.3.2. Zuweisung einer neuen Adresse
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seiteneffekte">
+     1.3.3.3. Seiteneffekte
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#das-nichts">
@@ -634,6 +651,12 @@ Sobald <code class="docutils literal notranslate"><span class="pre">z</span></co
 <p>Eine Variable können wir als Paar von <strong>Wert</strong> und <strong>Arbeitsspeicheradresse</strong> verstehen.
 Der <strong>Wert</strong> der Variablen steht im <a class="reference internal" href="../06/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitspeicher</span></a>) an einer bestimmten <strong>Arbeitsspeicheradresse</strong>.
 Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Arbeitsspeicher erleichtern.</p>
+<p>Mit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<p>Wird der <strong>Wert</strong> <code class="docutils literal notranslate"><span class="pre">25</span></code> in den Arbeitsspeicher an eine freie <strong>Speicheradresse</strong> geschrieben. Diese <strong>Adresse</strong> erhält die <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">x</span></code>. <code class="docutils literal notranslate"><span class="pre">x</span></code> <em>zeigt</em> auf den Speicherbereich in dem der <strong>Wert</strong> <code class="docutils literal notranslate"><span class="pre">25</span></code> steht!</p>
+<p>Folgende Abbildung verdeutlicht die Situation:</p>
 <div class="figure align-default" id="fig-variable">
 <a class="reference internal image-reference" href="../../_images/variable.png"><img alt="../../_images/variable.png" src="../../_images/variable.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.19 </span><span class="caption-text">Initialisierung und Zuweisung einer Variable <code class="docutils literal notranslate"><span class="pre">x</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Der Wert steht im Arbeitspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.</span><a class="headerlink" href="#fig-variable" title="Permalink to this image">¶</a></p>
@@ -702,28 +725,126 @@ Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten
 </div>
 <div class="section" id="veranderung">
 <h2><span class="section-number">1.3.3. </span>Veränderung<a class="headerlink" href="#veranderung" title="Permalink to this headline">¶</a></h2>
-<p>Wie der Name bereits betont, sind <em>Variablen</em> variabel und können somit verändert werden.
-Wir müssen jedoch zwischen zwei Veränderungen unterscheiden:</p>
+<p>Wie der Name bereits betont, sind <em>Variablen</em> <strong>variabel</strong> und können somit verändert werden.
+Wir müssen jedoch zwischen zwei Veränderungen einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> unterscheiden:</p>
 <ol class="simple">
-<li><p>der Veränderung ihrer Speicheradresse</p></li>
-<li><p>der Veränderung des Speicherbereichs auf den sie durch ihre Speicheradresse zeigt.</p></li>
+<li><p>der Veränderung ihrer Wertes <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>der Veränderung ihrer Speicheradresse <code class="docutils literal notranslate"><span class="pre">id(x)</span></code> (die auf den Wert zeigt)</p></li>
 </ol>
-<p>Den zweiten Punkt (2) sehen wir uns später noch an.</p>
-<p>Eine <em>Variable</em> kann immer nur einen Wert bzw. auf einen bestimmten Speicherbereich <em>zeigen</em>.
-Weisen wir einer <em>Variablen</em> erneut einen Wert zu, überschreiben wir den alten Wert.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quarter</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span>
-<span class="n">half</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">quarter</span>
-<span class="n">half</span>
+<div class="section" id="zuweisung-eines-neuen-werts">
+<h3><span class="section-number">1.3.3.1. </span>Zuweisung eines neuen Werts<a class="headerlink" href="#zuweisung-eines-neuen-werts" title="Permalink to this headline">¶</a></h3>
+<p>Eine <em>Variable</em> kann immer nur einen <strong>Wert</strong> bzw. auf einen bestimmten Speicherbereich <em>zeigen</em>.
+Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird dieser <strong>Wert</strong> in den Speicher an eine freie <strong>Adresse</strong> geschrieben und die <strong>Adresse</strong> der Variablen auf jene neue <strong>Adresse</strong> gesetzt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">half</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of half = </span><span class="si">{</span><span class="n">half</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of half = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">half</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><em>Variablen</em> behalten ihren Wert über das gesamte Notebook hinweg.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quarter</span> <span class="o">=</span> <span class="n">quarter</span> <span class="o">*</span> <span class="mi">2</span>
-<span class="n">quarter</span>
+<p>Veränderungen der einen <em>Variablen</em> haben keinen Effekt auf die <strong>Adresse</strong> bzw. *Identität <code class="docutils literal notranslate"><span class="pre">id</span></code> anderer <em>Variablen</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of half = </span><span class="si">{</span><span class="n">half</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of half = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">half</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Veränderungen der einen <em>Variablen</em> haben keinen Effekt auf andere <em>Variablen</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">half</span>
+<p>Verändern wir <em>Variablen</em> nicht so behalten ihre <strong>Adresse</strong> über das gesamte Notebook hinweg.</p>
+</div>
+<div class="section" id="zuweisung-einer-neuen-adresse">
+<h3><span class="section-number">1.3.3.2. </span>Zuweisung einer neuen Adresse<a class="headerlink" href="#zuweisung-einer-neuen-adresse" title="Permalink to this headline">¶</a></h3>
+<p>Weisen wir einer Variblen <code class="docutils literal notranslate"><span class="pre">x</span></code> eine andere Variable <code class="docutils literal notranslate"><span class="pre">y</span></code> zu, so ändern wir die <strong>Adresse</strong> von <code class="docutils literal notranslate"><span class="pre">x</span></code> auf jene von <code class="docutils literal notranslate"><span class="pre">y</span></code>. Das heißt, nach der <em>Zuweisung</em> zeigen beide Variablen auf den gleichen Speicherbereich und damit auf den gleichen <strong>Wert</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2131313</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">2131313</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of y = </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of y = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of z = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of y = </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of y = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of z = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="seiteneffekte">
+<h3><span class="section-number">1.3.3.3. </span>Seiteneffekte<a class="headerlink" href="#seiteneffekte" title="Permalink to this headline">¶</a></h3>
+<p>Wie bereits erwähnt: Verändern wir eine <em>Variable</em> so können wir dadurch nicht die <strong>Adresse</strong> / <em>Identität</em> <code class="docutils literal notranslate"><span class="pre">id</span></code> einer anderen Variablen ändern! Wie verhält es sich jedoch mit dem <strong>Wert</strong> einer <em>Variablen</em>?</p>
+<p>Die Antwort ist etwas komplizierter und ist erst dann begreiflich wenn wir das Thema Datentypen besprechen. Dennoch versuchen wir unser Glück:</p>
+<p>Eine Variable kann nicht nur einen einzelnen atomaren <strong>Wert</strong> wie eine Zahl enthalten, sondern auch einen <strong>Wert</strong> der sich aus anderen <strong>Werten</strong> zusammensetzt. Zum Beispiel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+<p>Der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> weisen wir hierbei eine sog. <em>Liste</em> <code class="docutils literal notranslate"><span class="pre">list</span></code> zu, also eine geordnete Menge an Zahlen. In unserem Fall besteht die Liste und somit <code class="docutils literal notranslate"><span class="pre">x</span></code> aus den Werten <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4</span></code> und <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<p>Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir seinen Index. Zum Beispiel liefert uns der Index <code class="docutils literal notranslate"><span class="pre">1</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Wie sieht das nun im Speicher aus??? Welche Adresse hat <code class="docutils literal notranslate"><span class="pre">x</span></code> und wie sieht der Speicher an der Adresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> aus? Der Aufruf</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Liefert uns eine <code class="docutils literal notranslate"><span class="pre">id</span></code>, allerdings lieft uns der Aufruf</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>ebenfalls eine (andere) <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Eine Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> mit <span class="math notranslate nohighlight">\(n\)</span> Elementen besteht in <code class="docutils literal notranslate"><span class="pre">Python</span></code> aus <span class="math notranslate nohighlight">\(n\)</span> Adressen. Jede dieser Adressen zeigt auf den Wert des Listenelements. Das heißt, eigentlich sieht unsere Liste <code class="docutils literal notranslate"><span class="pre">x</span></code> wie folgt aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">])]</span>
+</pre></div>
+</div>
+<p>Doch <code class="docutils literal notranslate"><span class="pre">Python</span></code> vereinfacht uns den Umgang mit Listen und verbirgt diese Tatsache geschickt.</p>
+<p>Was aber passiert mit <code class="docutils literal notranslate"><span class="pre">x</span></code> wenn wir eines seiner Listenelemente verändern? Hier wird es spannend:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x[1] = </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x[1] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x[1] = </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x[1] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Die Adresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> ändert sich nicht!!! Es ändert sich nur die Adresse von <code class="docutils literal notranslate"><span class="pre">x[1]</span></code>!!! Mit anderen Worten durch die <em>Zuweisung</em> von <code class="docutils literal notranslate"><span class="pre">x[1]</span> <span class="pre">=</span> <span class="pre">-10</span></code> wird keine neue Liste im Speicher angelegt sondern nur ein neues Element!</p>
+<p>Warum? Listen können groß werden und würden wir bei jeder Änderung eines Listenelements die gesamte Liste im Speicher kopieren, wäre das zu teuer was die Laufzeit angeht.</p>
+<p>Dieses Verhalten hat jedoch Konsequenzen! Folgender Code führt zur Veränderung des Wertes der Variablen <code class="docutils literal notranslate"><span class="pre">y</span></code> von <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> nach <code class="docutils literal notranslate"><span class="pre">y`</span> <span class="pre">=</span> <span class="pre">[[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> obwohl wir nicht direkt mit <code class="docutils literal notranslate"><span class="pre">y</span></code> interagieren.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Solche Veränderungen eines Wertes einer Variablen durch die Veränderung eines Werts einer anderen Variablen, nennen wir <em>Seiteneffekt</em>.</p>
 </div>
 </div>
 <div class="section" id="das-nichts">

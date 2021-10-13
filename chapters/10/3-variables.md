@@ -64,6 +64,16 @@ Eine Variable können wir als Paar von **Wert** und **Arbeitsspeicheradresse** v
 Der **Wert** der Variablen steht im [Arbeitspeicher](def-main-memory)) an einer bestimmten **Arbeitsspeicheradresse**.
 Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Arbeitsspeicher erleichtern.
 
+Mit
+
+```python
+x = 25
+```
+
+Wird der **Wert** ``25`` in den Arbeitsspeicher an eine freie **Speicheradresse** geschrieben. Diese **Adresse** erhält die *Variable* ``x``. ``x`` *zeigt* auf den Speicherbereich in dem der **Wert** ``25`` steht!
+
+Folgende Abbildung verdeutlicht die Situation:
+
 ```{figure} ../../figs/python-tutorial/variable.png
 ---
 width: 800px
@@ -158,35 +168,155 @@ x
 
 ## Veränderung
 
-Wie der Name bereits betont, sind *Variablen* variabel und können somit verändert werden.
-Wir müssen jedoch zwischen zwei Veränderungen unterscheiden:
+Wie der Name bereits betont, sind *Variablen* **variabel** und können somit verändert werden.
+Wir müssen jedoch zwischen zwei Veränderungen einer Variablen ``x`` unterscheiden:
 
-1. der Veränderung ihrer Speicheradresse 
-2. der Veränderung des Speicherbereichs auf den sie durch ihre Speicheradresse zeigt.
+1. der Veränderung ihrer Wertes ``x``
+2. der Veränderung ihrer Speicheradresse ``id(x)`` (die auf den Wert zeigt)
 
-Den zweiten Punkt (2) sehen wir uns später noch an.
+### Zuweisung eines neuen Werts
 
-Eine *Variable* kann immer nur einen Wert bzw. auf einen bestimmten Speicherbereich *zeigen*.
-Weisen wir einer *Variablen* erneut einen Wert zu, überschreiben wir den alten Wert.
-
-```python
-quarter = 1/4
-half = 2 * quarter
-half
-```
-
-*Variablen* behalten ihren Wert über das gesamte Notebook hinweg.
+Eine *Variable* kann immer nur einen **Wert** bzw. auf einen bestimmten Speicherbereich *zeigen*.
+Weisen wir einer *Variablen* erneut einen **Wert** zu, wird dieser **Wert** in den Speicher an eine freie **Adresse** geschrieben und die **Adresse** der Variablen auf jene neue **Adresse** gesetzt.
 
 ```python
-quarter = quarter * 2
-quarter
+half = 1/2
+print(f'value of half = {half}')
+print(f'id of half = {id(half)}')
+
+x = 25
+print(f'value of x = {x}')
+print(f'id of x = {id(x)}')
+
+x = 24
+print(f'value of x = {x}')
+print(f'id of x = {id(x)}')
 ```
 
-Veränderungen der einen *Variablen* haben keinen Effekt auf andere *Variablen*.
+Veränderungen der einen *Variablen* haben keinen Effekt auf die **Adresse** bzw. *Identität ``id`` anderer *Variablen*.
 
 ```python
-half
+print(f'value of half = {half}')
+print(f'id of half = {id(half)}')
 ```
+
+Verändern wir *Variablen* nicht so behalten ihre **Adresse** über das gesamte Notebook hinweg.
+
+### Zuweisung einer neuen Adresse
+
+Weisen wir einer Variblen ``x`` eine andere Variable ``y`` zu, so ändern wir die **Adresse** von ``x`` auf jene von ``y``. Das heißt, nach der *Zuweisung* zeigen beide Variablen auf den gleichen Speicherbereich und damit auf den gleichen **Wert**.
+
+```python
+x = 2131313
+y = 10
+z = 2131313
+
+print(f'value of x = {x}')
+print(f'id of x = {id(x)}')
+
+print(f'value of y = {y}')
+print(f'id of y = {id(y)}')
+
+print(f'value of z = {z}')
+print(f'id of z = {id(z)}')
+```
+
+
+```python
+y = x
+
+print(f'value of x = {x}')
+print(f'id of x = {id(x)}')
+
+print(f'value of y = {y}')
+print(f'id of y = {id(y)}')
+
+print(f'value of z = {z}')
+print(f'id of z = {id(z)}')
+```
+
+### Seiteneffekte
+
+Wie bereits erwähnt: Verändern wir eine *Variable* so können wir dadurch nicht die **Adresse** / *Identität* ``id`` einer anderen Variablen ändern! Wie verhält es sich jedoch mit dem **Wert** einer *Variablen*?
+
+Die Antwort ist etwas komplizierter und ist erst dann begreiflich wenn wir das Thema Datentypen besprechen. Dennoch versuchen wir unser Glück:
+
+Eine Variable kann nicht nur einen einzelnen atomaren **Wert** wie eine Zahl enthalten, sondern auch einen **Wert** der sich aus anderen **Werten** zusammensetzt. Zum Beispiel:
+
+```python
+x = [1,2,3,4,5]
+x
+```
+
+Der Variablen ``x`` weisen wir hierbei eine sog. *Liste* ``list`` zu, also eine geordnete Menge an Zahlen. In unserem Fall besteht die Liste und somit ``x`` aus den Werten ``1, 2, 3, 4`` und ``5``.
+
+Um auf einen bestimmten **Wert** der Liste zuzugreifen brauchen wir seinen Index. Zum Beispiel liefert uns der Index ``1`` den Wert ``2``:
+
+```python
+x[1]
+```
+
+Wie sieht das nun im Speicher aus??? Welche Adresse hat ``x`` und wie sieht der Speicher an der Adresse von ``x`` aus? Der Aufruf
+
+```python
+id(x)
+```
+
+Liefert uns eine ``id``, allerdings lieft uns der Aufruf
+
+```python
+id(x[1])
+```
+
+ebenfalls eine (andere) ``id``.
+
+```python
+id(x[2])
+```
+
+Eine Liste ``list`` mit $n$ Elementen besteht in ``Python`` aus $n$ Adressen. Jede dieser Adressen zeigt auf den Wert des Listenelements. Das heißt, eigentlich sieht unsere Liste ``x`` wie folgt aus:
+
+```python
+[id(x[0]), id(x[1]), id(x[2]), id(x[3]), id(x[4])]
+```
+
+Doch ``Python`` vereinfacht uns den Umgang mit Listen und verbirgt diese Tatsache geschickt.
+
+Was aber passiert mit ``x`` wenn wir eines seiner Listenelemente verändern? Hier wird es spannend:
+
+```python
+print(f'value of x = {x}')
+print(f'id of x = {id(x)}')
+
+print(f'value of x[1] = {x[1]}')
+print(f'id of x[1] = {id(x[1])}')
+
+print()
+
+x[1] = -10
+print(f'value of x = {x}')
+print(f'id of x = {id(x)}')
+
+print(f'value of x[1] = {x[1]}')
+print(f'id of x[1] = {id(x[1])}')
+```
+
+Die Adresse von ``x`` ändert sich nicht!!! Es ändert sich nur die Adresse von ``x[1]``!!! Mit anderen Worten durch die *Zuweisung* von ``x[1] = -10`` wird keine neue Liste im Speicher angelegt sondern nur ein neues Element!
+
+Warum? Listen können groß werden und würden wir bei jeder Änderung eines Listenelements die gesamte Liste im Speicher kopieren, wäre das zu teuer was die Laufzeit angeht.
+
+Dieses Verhalten hat jedoch Konsequenzen! Folgender Code führt zur Veränderung des Wertes der Variablen ``y`` von ``y = [[1, 2, 3], [1, 2, 3], [1,2,3]]`` nach ``y` = [[-10, 2, 3], [-10, 2, 3], [1,2,3]]`` obwohl wir nicht direkt mit ``y`` interagieren.
+
+```python
+x = [1, 2, 3]
+y = [x, x, [1,2,3]]
+print(y)
+
+x[0] = -10
+print(y)
+```
+
+Solche Veränderungen eines Wertes einer Variablen durch die Veränderung eines Werts einer anderen Variablen, nennen wir *Seiteneffekt*.
 
 ## Das Nichts
 
