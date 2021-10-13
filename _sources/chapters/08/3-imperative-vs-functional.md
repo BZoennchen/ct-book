@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Imperativ vs. funktional
 
 Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte *Seiteneffekte* nicht erlauben und anstatt Variablen (abänderbar) nur mit Konstanten (unabänderlich) zulassen.
@@ -9,7 +21,7 @@ Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte *Sei
 In imperativen Programmiersprachen (``Python``, ``Java``, ``C#``, ``C++``, ``C``, ``JavaScript``, ...) sind *Seiteneffekte* manchmal erwünscht und auch notwendig.
 Folgender Code zeigt einen Seiteneffekt in ``Python``.
 
-```python
+```{code-cell} python3
 y = []
 def sideeffect(x):
     x += [1,2,3]
@@ -22,7 +34,7 @@ print(y)
 Dies ist in der funktionalen Programmiersprache ``Haskell`` nicht möglich!
 Wir können den obigen *Seiteneffekt* in ``Python`` wie folgt auflösen.
 
-```python
+```{code-cell} python3
 y = []
 def no_sideeffect(x):
     x = x + [1,2,3]
@@ -46,7 +58,7 @@ Eine Funktion nennen wir *Pure Function* wenn
 *Pure Functions* verhalten sich deshalb wie mathematische Funktionen.
 Die folgende Funktion ist eine *Pure Functions*.
 
-```python
+```{code-cell} python3
 def f(x):
     return x + 1
 
@@ -55,7 +67,7 @@ print(f(2))
 
 Folgende Funktion ist keine *Pure Function*.
 
-```python
+```{code-cell} python3
 y = 2
 def f(x):
     if y == 2:
@@ -73,7 +85,7 @@ print(f(2))
 ``Python`` macht es uns schwer keine *Pure Functions* zu konstruieren.
 Zum Beispiel würde folgender Code zu einem Fehler führen:
 
-```python
+```{code-cell} python3
 y = 0
 def f(x):
     y = y + 1
@@ -111,7 +123,7 @@ Beide Lager lernen voneinander.
 So existieren in ``Python`` und allen anderen sehr nützlichen Sprachen wie ``Java``, ``C#``, ``C++`` Konstrukte, die von funktionalen Sprachen inspiriert sind.
 Zum Beispiel erzeugt
 
-```python
+```{code-cell} python3
 def square(x):
     return x * x
 

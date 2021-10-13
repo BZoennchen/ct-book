@@ -515,7 +515,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/08/3-imperative-vs-functional.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/08/3-imperative-vs-functional.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -536,6 +539,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/08/3-imperative-vs-functional.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -559,7 +582,9 @@
 </div>
 <p>In imperativen Programmiersprachen (<code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C#</span></code>, <code class="docutils literal notranslate"><span class="pre">C++</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code>, …) sind <em>Seiteneffekte</em> manchmal erwünscht und auch notwendig.
 Folgender Code zeigt einen Seiteneffekt in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">def</span> <span class="nf">sideeffect</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">x</span>
@@ -569,9 +594,20 @@ Folgender Code zeigt einen Seiteneffekt in <code class="docutils literal notrans
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+[1, 2, 3]
+[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
 <p>Dies ist in der funktionalen Programmiersprache <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> nicht möglich!
 Wir können den obigen <em>Seiteneffekt</em> in <code class="docutils literal notranslate"><span class="pre">Python</span></code> wie folgt auflösen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">def</span> <span class="nf">no_sideeffect</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">x</span>
@@ -580,6 +616,15 @@ Wir können den obigen <em>Seiteneffekt</em> in <code class="docutils literal no
 <span class="nb">print</span><span class="p">(</span><span class="n">no_sideeffect</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+[1, 2, 3]
+[]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Funktionale Sprachen umgehen <em>Seiteneffekte</em> indem sie keine Datenstrukturen ändern sondern stattdessen neu erzeugen.
 Fügt man ein neues Element in eine Liste an, entsteht eine komplett neue Liste.
@@ -594,14 +639,25 @@ Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch 
 </div>
 <p><em>Pure Functions</em> verhalten sich deshalb wie mathematische Funktionen.
 Die folgende Funktion ist eine <em>Pure Functions</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
 <p>Folgende Funktion ist keine <em>Pure Function</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -613,19 +669,18 @@ Die folgende Funktion ist eine <em>Pure Functions</em>.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+2
+</pre></div>
+</div>
+</div>
+</div>
 <div class="hint admonition">
 <p class="admonition-title">Pure Function und Python</p>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> macht es uns schwer keine <em>Pure Functions</em> zu konstruieren.
 Zum Beispiel würde folgender Code zu einem Fehler führen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
 </div>
 <div class="exercise admonition" id="sideeffect-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.3 </span>(Seiteneffekte)</p>
@@ -651,11 +706,20 @@ Von extrem sicher aber unbrauchbar wandern funktionale Sprachen Schritt für Sch
 Beide Lager lernen voneinander.
 So existieren in <code class="docutils literal notranslate"><span class="pre">Python</span></code> und allen anderen sehr nützlichen Sprachen wie <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C#</span></code>, <code class="docutils literal notranslate"><span class="pre">C++</span></code> Konstrukte, die von funktionalen Sprachen inspiriert sind.
 Zum Beispiel erzeugt</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 
 <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9]
+</pre></div>
+</div>
+</div>
 </div>
 <p>eine neue Liste mit den quadrierten Zahlen der Ursprungsliste.
 Das besondere dabei ist, dass wir die Funktion <code class="docutils literal notranslate"><span class="pre">square</span></code> einer anderen Funktion <code class="docutils literal notranslate"><span class="pre">map</span></code> übergeben.

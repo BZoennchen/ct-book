@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Abstraktion des Computers
 
 Im Kapitel [Der digitale Computer](sec-information-processing) haben wir uns angesehen wie 
@@ -71,7 +83,7 @@ Nehmen wir zum Beispiel einmal an, unsere Sprache könnte keine Zahlen multipliz
 Das einzige was wir zur Verfügung haben ist die Addition ``+`` und die Möglichkeit Anweisungen ``n``-mal zu wiederholen ``for i in range(n)``.
 Mit diesen Mitteln können wir uns die Multiplikation selbst bauen:
 
-```python
+```{code-cell} python3
 def mul(a, b):
     result = 0
     for _ in range(a):
@@ -81,17 +93,18 @@ def mul(a, b):
 
 Wenn wir dann in unserem Code die Multiplikation ausführen wollen z.B.
 
-```python
+```{code-cell} python3
 mul(4,5)
 ```
 
 Wird stattdessen unsere Funktion ``mul`` mit den Argumenten ``a = 4, b = 5`` *aufgerufen*.
 Anders ausgedrückt der Code ``mul(a, b)`` wird ersetzt durch 
 
-```python
+```{code-cell} python3
 result = 0
-for _ in range(a):
-    result = result + b
+for _ in range(4):
+    result = result + 5
+result
 ```
 
 und zusätzlich wird aus ``mul(4, 5)`` der Wert den die Funktion zurückgibt ``return result``.
@@ -102,8 +115,9 @@ Das gleiche passiert bei der (maschinennahen) Addition zweier Zahlen.
 Wann welcher Wert in welches Register geschrieben wird, ist durch eine Funktion bereits festgelegt.
 Diese wird aufgerufen wenn wir
 
-```python
+```{code-cell} python3
 x = 4 + 9
+x
 ```
 
 berechnen.
@@ -111,8 +125,9 @@ Der ``Python``-Code wird in immer maschinennäheren Code umgewandelt bis wir am 
 Somit kontrollieren wir den Computer nicht direkt, sondern befehligen ein Program welches unsere Anweisungen in maschinennahe Anweisungen umwandelt!
 Erstellen wir zum Beispiel eine Liste
 
-```python
+```{code-cell} python3
 numbers = [1, 2, 3, 4, 5]
+numbers
 ```
 
 werden auf maschinennaher Ebene die Zahlen nebeneinander in den Hauptspeicher geschrieben.
