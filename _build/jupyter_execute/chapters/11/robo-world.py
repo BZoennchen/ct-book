@@ -648,7 +648,7 @@ import random
 def random_turn(robo):
     turns = random.choice([0,1,2,3])
     for _ in range(turns):
-        robo.turn()
+        robo.turn_left()
 
 def random_walk(robo):
     while not robo.is_at_goal():
