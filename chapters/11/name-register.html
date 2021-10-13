@@ -733,8 +733,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8118cedc-bf51-4f9d-98fb-3b850a17d377">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-8118cedc-bf51-4f9d-98fb-3b850a17d377" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-73b97dab-488b-452a-b223-5e6ae443534b">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-73b97dab-488b-452a-b223-5e6ae443534b" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -981,7 +981,7 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Mullins&#39;, &#39;phone_number&#39;: &#39;0649-1673460&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Ray&#39;, &#39;phone_number&#39;: &#39;0551-7053890&#39;}
 </pre></div>
 </div>
 </div>
@@ -1058,7 +1058,7 @@ Durch <code class="docutils literal notranslate"><span class="pre">next(babyname
 Die <code class="docutils literal notranslate"><span class="pre">for</span></code> schleife iteriert über alle Zeilen.
 Jede Zeile <code class="docutils literal notranslate"><span class="pre">row</span></code> beinhaltet für jede Spalte einen Eintrag.
 <code class="docutils literal notranslate"><span class="pre">row[0]</span></code> ist das Jahr <code class="docutils literal notranslate"><span class="pre">year</span></code> und <code class="docutils literal notranslate"><span class="pre">row[0]</span></code> der Name <code class="docutils literal notranslate"><span class="pre">name</span></code>, den wir extrahieren möchten.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
 
@@ -2126,6 +2126,7 @@ Zum Beispiel:</p>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">countings</span><span class="p">:</span>
             <span class="n">countings</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">countings</span>
 </pre></div>
 </div>
 </div>
@@ -2140,6 +2141,7 @@ Zum Beispiel:</p>
             <span class="n">countings</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">countings</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">countings</span>
 </pre></div>
 </div>
 </div>
@@ -2172,17 +2174,6 @@ Zum Beispiel:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">ac0344633995</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">countings</span> <span class="o">=</span> <span class="n">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">unique_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">countings</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;keys&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>In <a class="reference internal" href="../05/2-sort-cards-with-python.html#sort-cards-with-python"><span class="std std-ref">Karten sortieren</span></a> haben wir selbst einen Sortieralgorithmus entworfen.
 Selbstverständlich hat <code class="docutils literal notranslate"><span class="pre">Python</span></code> bereits einen solchen Algorithmus im Angebot.
@@ -2198,6 +2189,17 @@ Diesen haben wir oben beim Generieren des zufälligen Telefonbuchs verwendet.</p
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">sorted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function sorted in module builtins:
+
+sorted(iterable, /, *, key=None, reverse=False)
+    Return a new list containing all items from the iterable in ascending order.
+    
+    A custom key function can be supplied to customize the sort order, and the
+    reverse flag can be set to request the result in descending order.
 </pre></div>
 </div>
 </div>
@@ -2323,6 +2325,528 @@ Zum Beispiel wäre es praktisch auf ein bestimmtes <strong>Fach</strong> nicht �
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Caddie&#39;,
+ &#39;Cade&#39;,
+ &#39;Caden&#39;,
+ &#39;Cadence&#39;,
+ &#39;Cael&#39;,
+ &#39;Caesar&#39;,
+ &#39;Caiden&#39;,
+ &#39;Cailyn&#39;,
+ &#39;Cain&#39;,
+ &#39;Caitlin&#39;,
+ &#39;Caitlyn&#39;,
+ &#39;Caitlynn&#39;,
+ &#39;Cal&#39;,
+ &#39;Caldonia&#39;,
+ &#39;Cale&#39;,
+ &#39;Caleb&#39;,
+ &#39;Caleigh&#39;,
+ &#39;Calhoun&#39;,
+ &#39;Cali&#39;,
+ &#39;Calista&#39;,
+ &#39;Calla&#39;,
+ &#39;Callie&#39;,
+ &#39;Callum&#39;,
+ &#39;Calvin&#39;,
+ &#39;Cam&#39;,
+ &#39;Camden&#39;,
+ &#39;Cameron&#39;,
+ &#39;Cami&#39;,
+ &#39;Camila&#39;,
+ &#39;Camilla&#39;,
+ &#39;Camille&#39;,
+ &#39;Camisha&#39;,
+ &#39;Cammie&#39;,
+ &#39;Campbell&#39;,
+ &#39;Camren&#39;,
+ &#39;Camron&#39;,
+ &#39;Camryn&#39;,
+ &#39;Candace&#39;,
+ &#39;Candi&#39;,
+ &#39;Candice&#39;,
+ &#39;Candida&#39;,
+ &#39;Candido&#39;,
+ &#39;Candis&#39;,
+ &#39;Candy&#39;,
+ &#39;Candyce&#39;,
+ &#39;Cannie&#39;,
+ &#39;Cannon&#39;,
+ &#39;Canyon&#39;,
+ &#39;Cap&#39;,
+ &#39;Capitola&#39;,
+ &#39;Cappie&#39;,
+ &#39;Caprice&#39;,
+ &#39;Captain&#39;,
+ &#39;Cara&#39;,
+ &#39;Caren&#39;,
+ &#39;Carey&#39;,
+ &#39;Cari&#39;,
+ &#39;Carie&#39;,
+ &#39;Carin&#39;,
+ &#39;Carina&#39;,
+ &#39;Carisa&#39;,
+ &#39;Carissa&#39;,
+ &#39;Carl&#39;,
+ &#39;Carla&#39;,
+ &#39;Carlee&#39;,
+ &#39;Carleen&#39;,
+ &#39;Carleigh&#39;,
+ &#39;Carlene&#39;,
+ &#39;Carleton&#39;,
+ &#39;Carley&#39;,
+ &#39;Carli&#39;,
+ &#39;Carlie&#39;,
+ &#39;Carlisle&#39;,
+ &#39;Carlo&#39;,
+ &#39;Carlos&#39;,
+ &#39;Carlota&#39;,
+ &#39;Carlotta&#39;,
+ &#39;Carlton&#39;,
+ &#39;Carly&#39;,
+ &#39;Carlyle&#39;,
+ &#39;Carlyn&#39;,
+ &#39;Carma&#39;,
+ &#39;Carmel&#39;,
+ &#39;Carmela&#39;,
+ &#39;Carmelita&#39;,
+ &#39;Carmella&#39;,
+ &#39;Carmelo&#39;,
+ &#39;Carmen&#39;,
+ &#39;Carmine&#39;,
+ &#39;Carnell&#39;,
+ &#39;Caro&#39;,
+ &#39;Carol&#39;,
+ &#39;Carolann&#39;,
+ &#39;Carole&#39;,
+ &#39;Carolee&#39;,
+ &#39;Carolina&#39;,
+ &#39;Caroline&#39;,
+ &#39;Carolyn&#39;,
+ &#39;Carolyne&#39;,
+ &#39;Carolynn&#39;,
+ &#39;Caron&#39;,
+ &#39;Carra&#39;,
+ &#39;Carri&#39;,
+ &#39;Carrie&#39;,
+ &#39;Carrol&#39;,
+ &#39;Carroll&#39;,
+ &#39;Carry&#39;,
+ &#39;Carsen&#39;,
+ &#39;Carson&#39;,
+ &#39;Carter&#39;,
+ &#39;Cary&#39;,
+ &#39;Caryl&#39;,
+ &#39;Caryn&#39;,
+ &#39;Cas&#39;,
+ &#39;Casandra&#39;,
+ &#39;Case&#39;,
+ &#39;Casey&#39;,
+ &#39;Cash&#39;,
+ &#39;Casie&#39;,
+ &#39;Casimer&#39;,
+ &#39;Casimir&#39;,
+ &#39;Casimiro&#39;,
+ &#39;Cason&#39;,
+ &#39;Casper&#39;,
+ &#39;Cass&#39;,
+ &#39;Cassandra&#39;,
+ &#39;Cassidy&#39;,
+ &#39;Cassie&#39;,
+ &#39;Cassius&#39;,
+ &#39;Cassondra&#39;,
+ &#39;Caswell&#39;,
+ &#39;Catalina&#39;,
+ &#39;Catharine&#39;,
+ &#39;Catherine&#39;,
+ &#39;Cathern&#39;,
+ &#39;Cathey&#39;,
+ &#39;Cathi&#39;,
+ &#39;Cathie&#39;,
+ &#39;Cathleen&#39;,
+ &#39;Cathrine&#39;,
+ &#39;Cathryn&#39;,
+ &#39;Cathy&#39;,
+ &#39;Catina&#39;,
+ &#39;Cato&#39;,
+ &#39;Catrina&#39;,
+ &#39;Cayden&#39;,
+ &#39;Cayla&#39;,
+ &#39;Caylee&#39;,
+ &#39;Ceasar&#39;,
+ &#39;Cecelia&#39;,
+ &#39;Cecil&#39;,
+ &#39;Cecile&#39;,
+ &#39;Cecilia&#39;,
+ &#39;Cecily&#39;,
+ &#39;Cedric&#39;,
+ &#39;Cedrick&#39;,
+ &#39;Ceil&#39;,
+ &#39;Celena&#39;,
+ &#39;Celesta&#39;,
+ &#39;Celeste&#39;,
+ &#39;Celestia&#39;,
+ &#39;Celestine&#39;,
+ &#39;Celestino&#39;,
+ &#39;Celia&#39;,
+ &#39;Celie&#39;,
+ &#39;Celina&#39;,
+ &#39;Celine&#39;,
+ &#39;Cena&#39;,
+ &#39;Ceola&#39;,
+ &#39;Cephus&#39;,
+ &#39;Cesar&#39;,
+ &#39;Ceylon&#39;,
+ &#39;Chace&#39;,
+ &#39;Chad&#39;,
+ &#39;Chadd&#39;,
+ &#39;Chadrick&#39;,
+ &#39;Chadwick&#39;,
+ &#39;Chaim&#39;,
+ &#39;Chaka&#39;,
+ &#39;Chalmer&#39;,
+ &#39;Chalmers&#39;,
+ &#39;Champ&#39;,
+ &#39;Chana&#39;,
+ &#39;Chance&#39;,
+ &#39;Chancey&#39;,
+ &#39;Chancy&#39;,
+ &#39;Chanda&#39;,
+ &#39;Chandler&#39;,
+ &#39;Chandra&#39;,
+ &#39;Chanel&#39;,
+ &#39;Chanelle&#39;,
+ &#39;Chaney&#39;,
+ &#39;Chanie&#39;,
+ &#39;Channie&#39;,
+ &#39;Channing&#39;,
+ &#39;Chantal&#39;,
+ &#39;Chante&#39;,
+ &#39;Chantel&#39;,
+ &#39;Chantelle&#39;,
+ &#39;Charissa&#39;,
+ &#39;Charisse&#39;,
+ &#39;Charity&#39;,
+ &#39;Charla&#39;,
+ &#39;Charle&#39;,
+ &#39;Charlee&#39;,
+ &#39;Charleen&#39;,
+ &#39;Charlene&#39;,
+ &#39;Charles&#39;,
+ &#39;Charley&#39;,
+ &#39;Charlie&#39;,
+ &#39;Charline&#39;,
+ &#39;Charlize&#39;,
+ &#39;Charlotta&#39;,
+ &#39;Charlotte&#39;,
+ &#39;Charlottie&#39;,
+ &#39;Charls&#39;,
+ &#39;Charlsie&#39;,
+ &#39;Charlton&#39;,
+ &#39;Charly&#39;,
+ &#39;Charmaine&#39;,
+ &#39;Charolette&#39;,
+ &#39;Chas&#39;,
+ &#39;Chase&#39;,
+ &#39;Chasity&#39;,
+ &#39;Chastity&#39;,
+ &#39;Chauncey&#39;,
+ &#39;Chauncy&#39;,
+ &#39;Chaya&#39;,
+ &#39;Chaz&#39;,
+ &#39;Che&#39;,
+ &#39;Chelsea&#39;,
+ &#39;Chelsey&#39;,
+ &#39;Chelsi&#39;,
+ &#39;Chelsie&#39;,
+ &#39;Chelsy&#39;,
+ &#39;Cher&#39;,
+ &#39;Cherelle&#39;,
+ &#39;Cheri&#39;,
+ &#39;Cherie&#39;,
+ &#39;Cherilyn&#39;,
+ &#39;Cherise&#39;,
+ &#39;Cherish&#39;,
+ &#39;Cherrelle&#39;,
+ &#39;Cherri&#39;,
+ &#39;Cherrie&#39;,
+ &#39;Cherry&#39;,
+ &#39;Cherryl&#39;,
+ &#39;Cheryl&#39;,
+ &#39;Cheryle&#39;,
+ &#39;Cheryll&#39;,
+ &#39;Chesley&#39;,
+ &#39;Chessie&#39;,
+ &#39;Chester&#39;,
+ &#39;Chestina&#39;,
+ &#39;Chet&#39;,
+ &#39;Cheyanne&#39;,
+ &#39;Cheyenne&#39;,
+ &#39;Chimere&#39;,
+ &#39;Chin&#39;,
+ &#39;China&#39;,
+ &#39;Chip&#39;,
+ &#39;Chiquita&#39;,
+ &#39;Chloe&#39;,
+ &#39;Chloie&#39;,
+ &#39;Chris&#39;,
+ &#39;Chrissie&#39;,
+ &#39;Chrissy&#39;,
+ &#39;Christ&#39;,
+ &#39;Christa&#39;,
+ &#39;Christal&#39;,
+ &#39;Christeen&#39;,
+ &#39;Christel&#39;,
+ &#39;Christen&#39;,
+ &#39;Christena&#39;,
+ &#39;Christene&#39;,
+ &#39;Christi&#39;,
+ &#39;Christian&#39;,
+ &#39;Christiana&#39;,
+ &#39;Christie&#39;,
+ &#39;Christin&#39;,
+ &#39;Christina&#39;,
+ &#39;Christine&#39;,
+ &#39;Christion&#39;,
+ &#39;Christop&#39;,
+ &#39;Christoper&#39;,
+ &#39;Christopher&#39;,
+ &#39;Christy&#39;,
+ &#39;Chrystal&#39;,
+ &#39;Chuck&#39;,
+ &#39;Chyna&#39;,
+ &#39;Chynna&#39;,
+ &#39;Ciara&#39;,
+ &#39;Ciarra&#39;,
+ &#39;Cicely&#39;,
+ &#39;Cicero&#39;,
+ &#39;Cielo&#39;,
+ &#39;Ciera&#39;,
+ &#39;Cierra&#39;,
+ &#39;Ciji&#39;,
+ &#39;Cilla&#39;,
+ &#39;Cinda&#39;,
+ &#39;Cindi&#39;,
+ &#39;Cindy&#39;,
+ &#39;Cinnamon&#39;,
+ &#39;Cinthia&#39;,
+ &#39;Citlali&#39;,
+ &#39;Citlalli&#39;,
+ &#39;Clabe&#39;,
+ &#39;Claiborne&#39;,
+ &#39;Clair&#39;,
+ &#39;Claire&#39;,
+ &#39;Clara&#39;,
+ &#39;Clarabelle&#39;,
+ &#39;Clarance&#39;,
+ &#39;Clare&#39;,
+ &#39;Clarence&#39;,
+ &#39;Claribel&#39;,
+ &#39;Clarice&#39;,
+ &#39;Clarinda&#39;,
+ &#39;Clarine&#39;,
+ &#39;Clarisa&#39;,
+ &#39;Clarissa&#39;,
+ &#39;Clark&#39;,
+ &#39;Clarke&#39;,
+ &#39;Clarnce&#39;,
+ &#39;Classie&#39;,
+ &#39;Claud&#39;,
+ &#39;Claude&#39;,
+ &#39;Claudette&#39;,
+ &#39;Claudia&#39;,
+ &#39;Claudie&#39;,
+ &#39;Claudine&#39;,
+ &#39;Claudio&#39;,
+ &#39;Claudius&#39;,
+ &#39;Claus&#39;,
+ &#39;Clay&#39;,
+ &#39;Clayton&#39;,
+ &#39;Clearence&#39;,
+ &#39;Cleave&#39;,
+ &#39;Cleda&#39;,
+ &#39;Clell&#39;,
+ &#39;Clella&#39;,
+ &#39;Clem&#39;,
+ &#39;Clemence&#39;,
+ &#39;Clemens&#39;,
+ &#39;Clement&#39;,
+ &#39;Clemente&#39;,
+ &#39;Clementina&#39;,
+ &#39;Clementine&#39;,
+ &#39;Clemie&#39;,
+ &#39;Clemma&#39;,
+ &#39;Clemmie&#39;,
+ &#39;Clemon&#39;,
+ &#39;Cleo&#39;,
+ &#39;Cleola&#39;,
+ &#39;Cleon&#39;,
+ &#39;Cleone&#39;,
+ &#39;Cleora&#39;,
+ &#39;Cleta&#39;,
+ &#39;Cletus&#39;,
+ &#39;Cleva&#39;,
+ &#39;Cleve&#39;,
+ &#39;Cleveland&#39;,
+ &#39;Clevie&#39;,
+ &#39;Clide&#39;,
+ &#39;Cliff&#39;,
+ &#39;Cliffie&#39;,
+ &#39;Clifford&#39;,
+ &#39;Clifton&#39;,
+ &#39;Clint&#39;,
+ &#39;Clinton&#39;,
+ &#39;Clive&#39;,
+ &#39;Cloe&#39;,
+ &#39;Clora&#39;,
+ &#39;Clotilda&#39;,
+ &#39;Clotilde&#39;,
+ &#39;Clovis&#39;,
+ &#39;Cloyd&#39;,
+ &#39;Clyda&#39;,
+ &#39;Clyde&#39;,
+ &#39;Clydie&#39;,
+ &#39;Clytie&#39;,
+ &#39;Coby&#39;,
+ &#39;Codey&#39;,
+ &#39;Codi&#39;,
+ &#39;Codie&#39;,
+ &#39;Cody&#39;,
+ &#39;Coen&#39;,
+ &#39;Cohen&#39;,
+ &#39;Colbert&#39;,
+ &#39;Colby&#39;,
+ &#39;Cole&#39;,
+ &#39;Coleen&#39;,
+ &#39;Coleman&#39;,
+ &#39;Coleton&#39;,
+ &#39;Coletta&#39;,
+ &#39;Colette&#39;,
+ &#39;Coley&#39;,
+ &#39;Colie&#39;,
+ &#39;Colin&#39;,
+ &#39;Colleen&#39;,
+ &#39;Collette&#39;,
+ &#39;Collie&#39;,
+ &#39;Collier&#39;,
+ &#39;Collin&#39;,
+ &#39;Collins&#39;,
+ &#39;Collis&#39;,
+ &#39;Colon&#39;,
+ &#39;Colonel&#39;,
+ &#39;Colt&#39;,
+ &#39;Colten&#39;,
+ &#39;Colter&#39;,
+ &#39;Colton&#39;,
+ &#39;Columbia&#39;,
+ &#39;Columbus&#39;,
+ &#39;Colvin&#39;,
+ &#39;Commodore&#39;,
+ &#39;Con&#39;,
+ &#39;Conard&#39;,
+ &#39;Concepcion&#39;,
+ &#39;Concetta&#39;,
+ &#39;Concha&#39;,
+ &#39;Conley&#39;,
+ &#39;Conner&#39;,
+ &#39;Connie&#39;,
+ &#39;Connor&#39;,
+ &#39;Conor&#39;,
+ &#39;Conrad&#39;,
+ &#39;Constance&#39;,
+ &#39;Constantine&#39;,
+ &#39;Consuela&#39;,
+ &#39;Consuelo&#39;,
+ &#39;Contina&#39;,
+ &#39;Conway&#39;,
+ &#39;Coolidge&#39;,
+ &#39;Cooper&#39;,
+ &#39;Cora&#39;,
+ &#39;Coraima&#39;,
+ &#39;Coral&#39;,
+ &#39;Coralie&#39;,
+ &#39;Corbett&#39;,
+ &#39;Corbin&#39;,
+ &#39;Corda&#39;,
+ &#39;Cordaro&#39;,
+ &#39;Cordelia&#39;,
+ &#39;Cordell&#39;,
+ &#39;Cordella&#39;,
+ &#39;Cordero&#39;,
+ &#39;Cordia&#39;,
+ &#39;Cordie&#39;,
+ &#39;Corean&#39;,
+ &#39;Corene&#39;,
+ &#39;Coretta&#39;,
+ &#39;Corey&#39;,
+ &#39;Cori&#39;,
+ &#39;Corie&#39;,
+ &#39;Corina&#39;,
+ &#39;Corine&#39;,
+ &#39;Corinna&#39;,
+ &#39;Corinne&#39;,
+ &#39;Corliss&#39;,
+ &#39;Cornel&#39;,
+ &#39;Cornelia&#39;,
+ &#39;Cornelious&#39;,
+ &#39;Cornelius&#39;,
+ &#39;Cornell&#39;,
+ &#39;Cornie&#39;,
+ &#39;Corrie&#39;,
+ &#39;Corrina&#39;,
+ &#39;Corrine&#39;,
+ &#39;Corry&#39;,
+ &#39;Cortez&#39;,
+ &#39;Cortney&#39;,
+ &#39;Corwin&#39;,
+ &#39;Cory&#39;,
+ &#39;Cosmo&#39;,
+ &#39;Coty&#39;,
+ &#39;Council&#39;,
+ &#39;Courtland&#39;,
+ &#39;Courtney&#39;,
+ &#39;Coy&#39;,
+ &#39;Craig&#39;,
+ &#39;Crawford&#39;,
+ &#39;Creed&#39;,
+ &#39;Creola&#39;,
+ &#39;Cressie&#39;,
+ &#39;Crete&#39;,
+ &#39;Cris&#39;,
+ &#39;Crissie&#39;,
+ &#39;Crissy&#39;,
+ &#39;Crista&#39;,
+ &#39;Cristal&#39;,
+ &#39;Cristen&#39;,
+ &#39;Cristi&#39;,
+ &#39;Cristian&#39;,
+ &#39;Cristin&#39;,
+ &#39;Cristina&#39;,
+ &#39;Cristine&#39;,
+ &#39;Cristobal&#39;,
+ &#39;Cristofer&#39;,
+ &#39;Cristopher&#39;,
+ &#39;Cristy&#39;,
+ &#39;Crockett&#39;,
+ &#39;Cruz&#39;,
+ &#39;Crysta&#39;,
+ &#39;Crystal&#39;,
+ &#39;Cuba&#39;,
+ &#39;Cullen&#39;,
+ &#39;Curley&#39;,
+ &#39;Curt&#39;,
+ &#39;Curtis&#39;,
+ &#39;Curtiss&#39;,
+ &#39;Cydney&#39;,
+ &#39;Cyndi&#39;,
+ &#39;Cyntha&#39;,
+ &#39;Cynthia&#39;,
+ &#39;Cyril&#39;,
+ &#39;Cyrus&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="ordnung-durch-markierungen">
@@ -2389,6 +2913,11 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Azzie&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wir können nun sehr einfach durch alle Namen iterieren die mit einem <code class="docutils literal notranslate"><span class="pre">C</span></code> starten:</p>
 <div class="cell docutils container">
@@ -2401,12 +2930,1009 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Caddie
+Cade
+Caden
+Cadence
+Cael
+Caesar
+Caiden
+Cailyn
+Cain
+Caitlin
+Caitlyn
+Caitlynn
+Cal
+Caldonia
+Cale
+Caleb
+Caleigh
+Calhoun
+Cali
+Calista
+Calla
+Callie
+Callum
+Calvin
+Cam
+Camden
+Cameron
+Cami
+Camila
+Camilla
+Camille
+Camisha
+Cammie
+Campbell
+Camren
+Camron
+Camryn
+Candace
+Candi
+Candice
+Candida
+Candido
+Candis
+Candy
+Candyce
+Cannie
+Cannon
+Canyon
+Cap
+Capitola
+Cappie
+Caprice
+Captain
+Cara
+Caren
+Carey
+Cari
+Carie
+Carin
+Carina
+Carisa
+Carissa
+Carl
+Carla
+Carlee
+Carleen
+Carleigh
+Carlene
+Carleton
+Carley
+Carli
+Carlie
+Carlisle
+Carlo
+Carlos
+Carlota
+Carlotta
+Carlton
+Carly
+Carlyle
+Carlyn
+Carma
+Carmel
+Carmela
+Carmelita
+Carmella
+Carmelo
+Carmen
+Carmine
+Carnell
+Caro
+Carol
+Carolann
+Carole
+Carolee
+Carolina
+Caroline
+Carolyn
+Carolyne
+Carolynn
+Caron
+Carra
+Carri
+Carrie
+Carrol
+Carroll
+Carry
+Carsen
+Carson
+Carter
+Cary
+Caryl
+Caryn
+Cas
+Casandra
+Case
+Casey
+Cash
+Casie
+Casimer
+Casimir
+Casimiro
+Cason
+Casper
+Cass
+Cassandra
+Cassidy
+Cassie
+Cassius
+Cassondra
+Caswell
+Catalina
+Catharine
+Catherine
+Cathern
+Cathey
+Cathi
+Cathie
+Cathleen
+Cathrine
+Cathryn
+Cathy
+Catina
+Cato
+Catrina
+Cayden
+Cayla
+Caylee
+Ceasar
+Cecelia
+Cecil
+Cecile
+Cecilia
+Cecily
+Cedric
+Cedrick
+Ceil
+Celena
+Celesta
+Celeste
+Celestia
+Celestine
+Celestino
+Celia
+Celie
+Celina
+Celine
+Cena
+Ceola
+Cephus
+Cesar
+Ceylon
+Chace
+Chad
+Chadd
+Chadrick
+Chadwick
+Chaim
+Chaka
+Chalmer
+Chalmers
+Champ
+Chana
+Chance
+Chancey
+Chancy
+Chanda
+Chandler
+Chandra
+Chanel
+Chanelle
+Chaney
+Chanie
+Channie
+Channing
+Chantal
+Chante
+Chantel
+Chantelle
+Charissa
+Charisse
+Charity
+Charla
+Charle
+Charlee
+Charleen
+Charlene
+Charles
+Charley
+Charlie
+Charline
+Charlize
+Charlotta
+Charlotte
+Charlottie
+Charls
+Charlsie
+Charlton
+Charly
+Charmaine
+Charolette
+Chas
+Chase
+Chasity
+Chastity
+Chauncey
+Chauncy
+Chaya
+Chaz
+Che
+Chelsea
+Chelsey
+Chelsi
+Chelsie
+Chelsy
+Cher
+Cherelle
+Cheri
+Cherie
+Cherilyn
+Cherise
+Cherish
+Cherrelle
+Cherri
+Cherrie
+Cherry
+Cherryl
+Cheryl
+Cheryle
+Cheryll
+Chesley
+Chessie
+Chester
+Chestina
+Chet
+Cheyanne
+Cheyenne
+Chimere
+Chin
+China
+Chip
+Chiquita
+Chloe
+Chloie
+Chris
+Chrissie
+Chrissy
+Christ
+Christa
+Christal
+Christeen
+Christel
+Christen
+Christena
+Christene
+Christi
+Christian
+Christiana
+Christie
+Christin
+Christina
+Christine
+Christion
+Christop
+Christoper
+Christopher
+Christy
+Chrystal
+Chuck
+Chyna
+Chynna
+Ciara
+Ciarra
+Cicely
+Cicero
+Cielo
+Ciera
+Cierra
+Ciji
+Cilla
+Cinda
+Cindi
+Cindy
+Cinnamon
+Cinthia
+Citlali
+Citlalli
+Clabe
+Claiborne
+Clair
+Claire
+Clara
+Clarabelle
+Clarance
+Clare
+Clarence
+Claribel
+Clarice
+Clarinda
+Clarine
+Clarisa
+Clarissa
+Clark
+Clarke
+Clarnce
+Classie
+Claud
+Claude
+Claudette
+Claudia
+Claudie
+Claudine
+Claudio
+Claudius
+Claus
+Clay
+Clayton
+Clearence
+Cleave
+Cleda
+Clell
+Clella
+Clem
+Clemence
+Clemens
+Clement
+Clemente
+Clementina
+Clementine
+Clemie
+Clemma
+Clemmie
+Clemon
+Cleo
+Cleola
+Cleon
+Cleone
+Cleora
+Cleta
+Cletus
+Cleva
+Cleve
+Cleveland
+Clevie
+Clide
+Cliff
+Cliffie
+Clifford
+Clifton
+Clint
+Clinton
+Clive
+Cloe
+Clora
+Clotilda
+Clotilde
+Clovis
+Cloyd
+Clyda
+Clyde
+Clydie
+Clytie
+Coby
+Codey
+Codi
+Codie
+Cody
+Coen
+Cohen
+Colbert
+Colby
+Cole
+Coleen
+Coleman
+Coleton
+Coletta
+Colette
+Coley
+Colie
+Colin
+Colleen
+Collette
+Collie
+Collier
+Collin
+Collins
+Collis
+Colon
+Colonel
+Colt
+Colten
+Colter
+Colton
+Columbia
+Columbus
+Colvin
+Commodore
+Con
+Conard
+Concepcion
+Concetta
+Concha
+Conley
+Conner
+Connie
+Connor
+Conor
+Conrad
+Constance
+Constantine
+Consuela
+Consuelo
+Contina
+Conway
+Coolidge
+Cooper
+Cora
+Coraima
+Coral
+Coralie
+Corbett
+Corbin
+Corda
+Cordaro
+Cordelia
+Cordell
+Cordella
+Cordero
+Cordia
+Cordie
+Corean
+Corene
+Coretta
+Corey
+Cori
+Corie
+Corina
+Corine
+Corinna
+Corinne
+Corliss
+Cornel
+Cornelia
+Cornelious
+Cornelius
+Cornell
+Cornie
+Corrie
+Corrina
+Corrine
+Corry
+Cortez
+Cortney
+Corwin
+Cory
+Cosmo
+Coty
+Council
+Courtland
+Courtney
+Coy
+Craig
+Crawford
+Creed
+Creola
+Cressie
+Crete
+Cris
+Crissie
+Crissy
+Crista
+Cristal
+Cristen
+Cristi
+Cristian
+Cristin
+Cristina
+Cristine
+Cristobal
+Cristofer
+Cristopher
+Cristy
+Crockett
+Cruz
+Crysta
+Crystal
+Cuba
+Cullen
+Curley
+Curt
+Curtis
+Curtiss
+Cydney
+Cyndi
+Cyntha
+Cynthia
+Cyril
+</pre></div>
+</div>
+</div>
 </div>
 <p>Oder wir können uns eine Teilliste kopieren die nur Namen beinhaltet die mit <code class="docutils literal notranslate"><span class="pre">D</span></code> starten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mark_index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 <span class="n">unique_names_lex</span><span class="p">[</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="p">]:</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Dabney&#39;,
+ &#39;Dafne&#39;,
+ &#39;Dagmar&#39;,
+ &#39;Dagny&#39;,
+ &#39;Dahlia&#39;,
+ &#39;Daija&#39;,
+ &#39;Daijah&#39;,
+ &#39;Daisey&#39;,
+ &#39;Daisha&#39;,
+ &#39;Daisie&#39;,
+ &#39;Daisy&#39;,
+ &#39;Daisye&#39;,
+ &#39;Daja&#39;,
+ &#39;Dakoda&#39;,
+ &#39;Dakota&#39;,
+ &#39;Dakotah&#39;,
+ &#39;Dale&#39;,
+ &#39;Dalia&#39;,
+ &#39;Dallas&#39;,
+ &#39;Dallin&#39;,
+ &#39;Dalton&#39;,
+ &#39;Dalvin&#39;,
+ &#39;Damarcus&#39;,
+ &#39;Damari&#39;,
+ &#39;Damarion&#39;,
+ &#39;Damaris&#39;,
+ &#39;Dameon&#39;,
+ &#39;Damian&#39;,
+ &#39;Damien&#39;,
+ &#39;Damion&#39;,
+ &#39;Damon&#39;,
+ &#39;Damond&#39;,
+ &#39;Dan&#39;,
+ &#39;Dana&#39;,
+ &#39;Danae&#39;,
+ &#39;Dandre&#39;,
+ &#39;Dane&#39;,
+ &#39;Daneen&#39;,
+ &#39;Danelle&#39;,
+ &#39;Danette&#39;,
+ &#39;Dangelo&#39;,
+ &#39;Dani&#39;,
+ &#39;Dania&#39;,
+ &#39;Danial&#39;,
+ &#39;Danica&#39;,
+ &#39;Daniel&#39;,
+ &#39;Daniela&#39;,
+ &#39;Daniele&#39;,
+ &#39;Daniella&#39;,
+ &#39;Danielle&#39;,
+ &#39;Danika&#39;,
+ &#39;Danita&#39;,
+ &#39;Dann&#39;,
+ &#39;Danna&#39;,
+ &#39;Dannie&#39;,
+ &#39;Danniel&#39;,
+ &#39;Dannielle&#39;,
+ &#39;Danny&#39;,
+ &#39;Dante&#39;,
+ &#39;Danyel&#39;,
+ &#39;Danyell&#39;,
+ &#39;Danyelle&#39;,
+ &#39;Daphne&#39;,
+ &#39;Daquan&#39;,
+ &#39;Dara&#39;,
+ &#39;Darby&#39;,
+ &#39;Darci&#39;,
+ &#39;Darcie&#39;,
+ &#39;Darcy&#39;,
+ &#39;Darell&#39;,
+ &#39;Daren&#39;,
+ &#39;Daria&#39;,
+ &#39;Darian&#39;,
+ &#39;Dariana&#39;,
+ &#39;Darien&#39;,
+ &#39;Darin&#39;,
+ &#39;Dario&#39;,
+ &#39;Darion&#39;,
+ &#39;Darius&#39;,
+ &#39;Darl&#39;,
+ &#39;Darla&#39;,
+ &#39;Darleen&#39;,
+ &#39;Darlene&#39;,
+ &#39;Darline&#39;,
+ &#39;Darlyne&#39;,
+ &#39;Darnell&#39;,
+ &#39;Darold&#39;,
+ &#39;Daron&#39;,
+ &#39;Darrel&#39;,
+ &#39;Darrell&#39;,
+ &#39;Darren&#39;,
+ &#39;Darrian&#39;,
+ &#39;Darrick&#39;,
+ &#39;Darrien&#39;,
+ &#39;Darrin&#39;,
+ &#39;Darrion&#39;,
+ &#39;Darrius&#39;,
+ &#39;Darron&#39;,
+ &#39;Darry&#39;,
+ &#39;Darryl&#39;,
+ &#39;Darryle&#39;,
+ &#39;Darryll&#39;,
+ &#39;Darryn&#39;,
+ &#39;Darvin&#39;,
+ &#39;Darwin&#39;,
+ &#39;Darwyn&#39;,
+ &#39;Daryl&#39;,
+ &#39;Daryle&#39;,
+ &#39;Daryn&#39;,
+ &#39;Dashawn&#39;,
+ &#39;Dasia&#39;,
+ &#39;Daulton&#39;,
+ &#39;Daunte&#39;,
+ &#39;Davante&#39;,
+ &#39;Dave&#39;,
+ &#39;Davey&#39;,
+ &#39;Davian&#39;,
+ &#39;David&#39;,
+ &#39;Davie&#39;,
+ &#39;Davin&#39;,
+ &#39;Davina&#39;,
+ &#39;Davion&#39;,
+ &#39;Davis&#39;,
+ &#39;Davon&#39;,
+ &#39;Davonta&#39;,
+ &#39;Davonte&#39;,
+ &#39;Davy&#39;,
+ &#39;Dawn&#39;,
+ &#39;Dawna&#39;,
+ &#39;Dawne&#39;,
+ &#39;Dawson&#39;,
+ &#39;Dax&#39;,
+ &#39;Daxton&#39;,
+ &#39;Dayami&#39;,
+ &#39;Dayana&#39;,
+ &#39;Dayanara&#39;,
+ &#39;Dayle&#39;,
+ &#39;Dayna&#39;,
+ &#39;Dayne&#39;,
+ &#39;Dayse&#39;,
+ &#39;Dayton&#39;,
+ &#39;Deacon&#39;,
+ &#39;Dean&#39;,
+ &#39;Deana&#39;,
+ &#39;Deandra&#39;,
+ &#39;Deandre&#39;,
+ &#39;Deane&#39;,
+ &#39;Deangelo&#39;,
+ &#39;Deann&#39;,
+ &#39;Deanna&#39;,
+ &#39;Deanne&#39;,
+ &#39;Deante&#39;,
+ &#39;Deasia&#39;,
+ &#39;Deb&#39;,
+ &#39;Debbi&#39;,
+ &#39;Debbie&#39;,
+ &#39;Debbra&#39;,
+ &#39;Debby&#39;,
+ &#39;Debera&#39;,
+ &#39;Debi&#39;,
+ &#39;Debora&#39;,
+ &#39;Deborah&#39;,
+ &#39;Deborrah&#39;,
+ &#39;Debra&#39;,
+ &#39;Debrah&#39;,
+ &#39;Debroah&#39;,
+ &#39;Declan&#39;,
+ &#39;Dedra&#39;,
+ &#39;Dedric&#39;,
+ &#39;Dedrick&#39;,
+ &#39;Dee&#39;,
+ &#39;Deeann&#39;,
+ &#39;Deedee&#39;,
+ &#39;Deegan&#39;,
+ &#39;Deena&#39;,
+ &#39;Deetta&#39;,
+ &#39;Deforest&#39;,
+ &#39;Deidra&#39;,
+ &#39;Deidre&#39;,
+ &#39;Deion&#39;,
+ &#39;Deirdre&#39;,
+ &#39;Deja&#39;,
+ &#39;Dejah&#39;,
+ &#39;Dejon&#39;,
+ &#39;Dejuan&#39;,
+ &#39;Del&#39;,
+ &#39;Delaney&#39;,
+ &#39;Delano&#39;,
+ &#39;Delbert&#39;,
+ &#39;Delcie&#39;,
+ &#39;Delfina&#39;,
+ &#39;Delia&#39;,
+ &#39;Deliah&#39;,
+ &#39;Delila&#39;,
+ &#39;Delilah&#39;,
+ &#39;Delina&#39;,
+ &#39;Delinda&#39;,
+ &#39;Delisa&#39;,
+ &#39;Dell&#39;,
+ &#39;Della&#39;,
+ &#39;Dellar&#39;,
+ &#39;Delle&#39;,
+ &#39;Dellia&#39;,
+ &#39;Dellie&#39;,
+ &#39;Delma&#39;,
+ &#39;Delmar&#39;,
+ &#39;Delmas&#39;,
+ &#39;Delmer&#39;,
+ &#39;Delmus&#39;,
+ &#39;Delois&#39;,
+ &#39;Delora&#39;,
+ &#39;Delores&#39;,
+ &#39;Deloris&#39;,
+ &#39;Delos&#39;,
+ &#39;Delpha&#39;,
+ &#39;Delphia&#39;,
+ &#39;Delphin&#39;,
+ &#39;Delphine&#39;,
+ &#39;Delsie&#39;,
+ &#39;Delta&#39;,
+ &#39;Delton&#39;,
+ &#39;Delvin&#39;,
+ &#39;Delwin&#39;,
+ &#39;Dema&#39;,
+ &#39;Demarco&#39;,
+ &#39;Demarcus&#39;,
+ &#39;Demario&#39;,
+ &#39;Demarion&#39;,
+ &#39;Demetra&#39;,
+ &#39;Demetri&#39;,
+ &#39;Demetria&#39;,
+ &#39;Demetric&#39;,
+ &#39;Demetrios&#39;,
+ &#39;Demetrius&#39;,
+ &#39;Demi&#39;,
+ &#39;Demian&#39;,
+ &#39;Demond&#39;,
+ &#39;Demonte&#39;,
+ &#39;Dempsey&#39;,
+ &#39;Dena&#39;,
+ &#39;Deneen&#39;,
+ &#39;Denese&#39;,
+ &#39;Denice&#39;,
+ &#39;Denine&#39;,
+ &#39;Denis&#39;,
+ &#39;Denise&#39;,
+ &#39;Denisha&#39;,
+ &#39;Denisse&#39;,
+ &#39;Denita&#39;,
+ &#39;Dennie&#39;,
+ &#39;Dennis&#39;,
+ &#39;Denny&#39;,
+ &#39;Denton&#39;,
+ &#39;Denver&#39;,
+ &#39;Denzel&#39;,
+ &#39;Denzell&#39;,
+ &#39;Denzil&#39;,
+ &#39;Deon&#39;,
+ &#39;Deondre&#39;,
+ &#39;Deonta&#39;,
+ &#39;Deontae&#39;,
+ &#39;Deonte&#39;,
+ &#39;Dequan&#39;,
+ &#39;Derald&#39;,
+ &#39;Dereck&#39;,
+ &#39;Derek&#39;,
+ &#39;Dereon&#39;,
+ &#39;Deric&#39;,
+ &#39;Derick&#39;,
+ &#39;Derik&#39;,
+ &#39;Derl&#39;,
+ &#39;Deron&#39;,
+ &#39;Derrek&#39;,
+ &#39;Derrell&#39;,
+ &#39;Derrick&#39;,
+ &#39;Derwin&#39;,
+ &#39;Deryl&#39;,
+ &#39;Desean&#39;,
+ &#39;Deshaun&#39;,
+ &#39;Deshawn&#39;,
+ &#39;Desi&#39;,
+ &#39;Desirae&#39;,
+ &#39;Desiree&#39;,
+ &#39;Desmond&#39;,
+ &#39;Dessa&#39;,
+ &#39;Dessie&#39;,
+ &#39;Destany&#39;,
+ &#39;Destin&#39;,
+ &#39;Destinee&#39;,
+ &#39;Destiney&#39;,
+ &#39;Destini&#39;,
+ &#39;Destiny&#39;,
+ &#39;Destry&#39;,
+ &#39;Devan&#39;,
+ &#39;Devante&#39;,
+ &#39;Devaughn&#39;,
+ &#39;Deven&#39;,
+ &#39;Devin&#39;,
+ &#39;Devon&#39;,
+ &#39;Devonta&#39;,
+ &#39;Devontae&#39;,
+ &#39;Devonte&#39;,
+ &#39;Devyn&#39;,
+ &#39;Deward&#39;,
+ &#39;Dewayne&#39;,
+ &#39;Dewey&#39;,
+ &#39;Dewitt&#39;,
+ &#39;Dexter&#39;,
+ &#39;Deyanira&#39;,
+ &#39;Dezzie&#39;,
+ &#39;Diallo&#39;,
+ &#39;Diamond&#39;,
+ &#39;Dian&#39;,
+ &#39;Diana&#39;,
+ &#39;Diandra&#39;,
+ &#39;Diane&#39;,
+ &#39;Diann&#39;,
+ &#39;Dianna&#39;,
+ &#39;Dianne&#39;,
+ &#39;Dicie&#39;,
+ &#39;Dick&#39;,
+ &#39;Dickie&#39;,
+ &#39;Dicy&#39;,
+ &#39;Diego&#39;,
+ &#39;Dijon&#39;,
+ &#39;Dillan&#39;,
+ &#39;Dillard&#39;,
+ &#39;Dillie&#39;,
+ &#39;Dillion&#39;,
+ &#39;Dillon&#39;,
+ &#39;Dimitri&#39;,
+ &#39;Dimitrios&#39;,
+ &#39;Dimple&#39;,
+ &#39;Dina&#39;,
+ &#39;Dinah&#39;,
+ &#39;Dink&#39;,
+ &#39;Dino&#39;,
+ &#39;Dion&#39;,
+ &#39;Dione&#39;,
+ &#39;Dionicio&#39;,
+ &#39;Dionne&#39;,
+ &#39;Dionte&#39;,
+ &#39;Dirk&#39;,
+ &#39;Dixie&#39;,
+ &#39;Dixon&#39;,
+ &#39;Diya&#39;,
+ &#39;Djuana&#39;,
+ &#39;Djuna&#39;,
+ &#39;Doc&#39;,
+ &#39;Docia&#39;,
+ &#39;Dock&#39;,
+ &#39;Doctor&#39;,
+ &#39;Dola&#39;,
+ &#39;Doll&#39;,
+ &#39;Dollie&#39;,
+ &#39;Dolly&#39;,
+ &#39;Dollye&#39;,
+ &#39;Dolores&#39;,
+ &#39;Doloris&#39;,
+ &#39;Dolph&#39;,
+ &#39;Dolphus&#39;,
+ &#39;Domenic&#39;,
+ &#39;Domenica&#39;,
+ &#39;Domenick&#39;,
+ &#39;Domenico&#39;,
+ &#39;Dominga&#39;,
+ &#39;Domingo&#39;,
+ &#39;Dominic&#39;,
+ &#39;Dominick&#39;,
+ &#39;Dominik&#39;,
+ &#39;Dominique&#39;,
+ &#39;Dominque&#39;,
+ &#39;Domonique&#39;,
+ &#39;Don&#39;,
+ &#39;Dona&#39;,
+ &#39;Donaciano&#39;,
+ &#39;Donal&#39;,
+ &#39;Donald&#39;,
+ &#39;Donat&#39;,
+ &#39;Donato&#39;,
+ &#39;Donavan&#39;,
+ &#39;Donavon&#39;,
+ &#39;Dondre&#39;,
+ &#39;Donell&#39;,
+ &#39;Donia&#39;,
+ &#39;Donie&#39;,
+ &#39;Donita&#39;,
+ &#39;Donn&#39;,
+ &#39;Donna&#39;,
+ &#39;Donnell&#39;,
+ &#39;Donnie&#39;,
+ &#39;Donny&#39;,
+ &#39;Donovan&#39;,
+ &#39;Donta&#39;,
+ &#39;Dontae&#39;,
+ &#39;Donte&#39;,
+ &#39;Dora&#39;,
+ &#39;Dorathea&#39;,
+ &#39;Dorathy&#39;,
+ &#39;Dorcas&#39;,
+ &#39;Doreen&#39;,
+ &#39;Dorene&#39;,
+ &#39;Doretha&#39;,
+ &#39;Doretta&#39;,
+ &#39;Dori&#39;,
+ &#39;Dorian&#39;,
+ &#39;Dorinda&#39;,
+ &#39;Dorine&#39;,
+ &#39;Doris&#39;,
+ &#39;Dorla&#39;,
+ &#39;Dorman&#39;,
+ &#39;Dorotha&#39;,
+ &#39;Dorothea&#39;,
+ &#39;Dorothy&#39;,
+ &#39;Dorr&#39;,
+ &#39;Dorris&#39;,
+ &#39;Dorsey&#39;,
+ &#39;Dortha&#39;,
+ &#39;Dorthea&#39;,
+ &#39;Dorthey&#39;,
+ &#39;Dorthy&#39;,
+ &#39;Dosha&#39;,
+ &#39;Doshia&#39;,
+ &#39;Doshie&#39;,
+ &#39;Dosia&#39;,
+ &#39;Doss&#39;,
+ &#39;Dossie&#39;,
+ &#39;Dot&#39;,
+ &#39;Dottie&#39;,
+ &#39;Dotty&#39;,
+ &#39;Doug&#39;,
+ &#39;Douglas&#39;,
+ &#39;Douglass&#39;,
+ &#39;Dove&#39;,
+ &#39;Dovie&#39;,
+ &#39;Dow&#39;,
+ &#39;Doyle&#39;,
+ &#39;Dozier&#39;,
+ &#39;Drake&#39;,
+ &#39;Draven&#39;,
+ &#39;Drema&#39;,
+ &#39;Drew&#39;,
+ &#39;Drucilla&#39;,
+ &#39;Drury&#39;,
+ &#39;Drusilla&#39;,
+ &#39;Duane&#39;,
+ &#39;Duard&#39;,
+ &#39;Dudley&#39;,
+ &#39;Duff&#39;,
+ &#39;Duke&#39;,
+ &#39;Dulce&#39;,
+ &#39;Dulcie&#39;,
+ &#39;Duncan&#39;,
+ &#39;Durell&#39;,
+ &#39;Durrell&#39;,
+ &#39;Durward&#39;,
+ &#39;Durwood&#39;,
+ &#39;Dustan&#39;,
+ &#39;Dustin&#39;,
+ &#39;Dusty&#39;,
+ &#39;Duwayne&#39;,
+ &#39;Dwain&#39;,
+ &#39;Dwaine&#39;,
+ &#39;Dwan&#39;,
+ &#39;Dwane&#39;,
+ &#39;Dwayne&#39;,
+ &#39;Dwight&#39;,
+ &#39;Dwyane&#39;,
+ &#39;Dyan&#39;,
+ &#39;Dylan&#39;,
+ &#39;Dyllan&#39;,
+ &#39;Dylon&#39;]
 </pre></div>
 </div>
 </div>
@@ -2488,6 +4014,15 @@ Eventuell macht es Sinn eine weitere Hilfsfunktion <code class="docutils literal
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">))</span>
 <span class="n">remove_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">marks</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+6782
+6783
+6782
 </pre></div>
 </div>
 </div>
@@ -2684,6 +4219,21 @@ Dann durchlaufen wir die Liste zyklisch bis wir einen freien Platz finden oder a
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hashtable = [None, None, None, None, None, None, None, &#39;Hans&#39;, None, &#39;Thomas&#39;, None, None, None, &#39;Berta&#39;]
+contains(&#39;Dieter&#39;, hashtable) = False
+contains(&#39;Berta&#39;, hashtable) = True
+search_index(&#39;Dieter&#39;, hashtable) = 11
+search_index(&#39;Berta&#39;, hashtable) = 13
+insert(&#39;Dieter&#39;, hashtable) = True
+insert(&#39;Dieter&#39;, hashtable) = False
+hashtable = [&#39;Aaden&#39;, &#39;Aaliyah&#39;, &#39;Aarav&#39;, &#39;Aaron&#39;, &#39;Ab&#39;, &#39;Abagail&#39;, &#39;Abb&#39;, &#39;Hans&#39;, &#39;Abbey&#39;, &#39;Thomas&#39;, &#39;Abbie&#39;, &#39;Dieter&#39;, &#39;Abbigail&#39;, &#39;Berta&#39;, &#39;Abbott&#39;, &#39;Abby&#39;, &#39;Abdiel&#39;, &#39;Abdul&#39;, &#39;Abdullah&#39;, &#39;Abe&#39;, &#39;Abel&#39;, &#39;Abelardo&#39;, &#39;Abie&#39;, &#39;Abigail&#39;]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>Die letzte Zeile des Codes erzeugt eine Liste aus boolschen Werten und wertet diese durch <code class="docutils literal notranslate"><span class="pre">all</span></code> aus.
 <code class="docutils literal notranslate"><span class="pre">all</span></code> ergibt genau dann <code class="docutils literal notranslate"><span class="pre">True</span></code> wenn jeder Wert in der Liste <code class="docutils literal notranslate"><span class="pre">True</span></code> ist.
@@ -2734,6 +4284,20 @@ Beachten Sie, dass sich die Position von <code class="docutils literal notransla
 <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
 <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">index_of</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">af1c115741ed</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="s1">&#39;Clara&#39;</span><span class="p">,</span> <span class="s1">&#39;Alba&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabian&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">index_of</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">index_of</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: new_hash_table() takes 1 positional argument but 2 were given
 </pre></div>
 </div>
 </div>

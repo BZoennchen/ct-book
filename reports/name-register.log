@@ -17,16 +17,22 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-countings = count_all(names)
-unique_names = list(countings.keys())
+names = ['Anna', 'Alex', 'Clara', 'Alba', 'Fabian']
+hashtable = new_hash_table(names, index_of)
+print(hashtable)
+delete('Alex', hashtable, index_of)
+print(hashtable)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m<ipython-input-9-ac0344633995>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0mcountings[0m [0;34m=[0m [0mcount_all[0m[0;34m([0m[0mnames[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0munique_names[0m [0;34m=[0m [0mlist[0m[0;34m([0m[0mcountings[0m[0;34m.[0m[0mkeys[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mAttributeError[0m: 'NoneType' object has no attribute 'keys'
-AttributeError: 'NoneType' object has no attribute 'keys'
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-24-af1c115741ed>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mnames[0m [0;34m=[0m [0;34m[[0m[0;34m'Anna'[0m[0;34m,[0m [0;34m'Alex'[0m[0;34m,[0m [0;34m'Clara'[0m[0;34m,[0m [0;34m'Alba'[0m[0;34m,[0m [0;34m'Fabian'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mhashtable[0m [0;34m=[0m [0mnew_hash_table[0m[0;34m([0m[0mnames[0m[0;34m,[0m [0mindex_of[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mprint[0m[0;34m([0m[0mhashtable[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mdelete[0m[0;34m([0m[0;34m'Alex'[0m[0;34m,[0m [0mhashtable[0m[0;34m,[0m [0mindex_of[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mprint[0m[0;34m([0m[0mhashtable[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mTypeError[0m: new_hash_table() takes 1 positional argument but 2 were given
+TypeError: new_hash_table() takes 1 positional argument but 2 were given
 
