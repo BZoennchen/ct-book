@@ -34,10 +34,9 @@ Die Datentypen mit denen Sie wohl am meisten zu tun haben werden sind Zahlen und
 
 Computer sind gebaut um numerische Berechnungen auszuführen.
 
-
-
 ### Zeichenketten
 
+TODO
 
 ## Arten von Datentypen
 
@@ -339,9 +338,7 @@ print(type(3.1 + 9))    # float + int -> float
 
 Zudem wird nicht jeder Datentyp von Addition unterstützt:
 
-```python
 3 + 'a' # int + str -> Fehler!
-```
 
 Der Fehler der durch diesen Code erzeugt wird besagt: ``unsupported operand type(s) for +: 'int' and 'str'``, d.h. diese Kombination aus Datentypen (``int`` und ``str``) wird nicht unterstützt.
 Was passiert wenn wir zwei Zeichenketten 'addieren'?
@@ -367,9 +364,7 @@ Der Datentyp der Rückgabewerte ist einmal eine ganze Zahl ``int`` und einmal ei
 
 Wird folgender Code funktionieren?
 
-```python
 max(3,'b')
-```
 
 Wir können das an dieser Stelle nicht wissen.
 Es kommt darauf an **wie** die Funktion ``max`` implementiert wurde und **was** sie genau macht.
@@ -381,9 +376,7 @@ Wer hat denn was von größer ``>`` gesagt?
 Nun, scheinbar verwendet die Funktion ``max`` den Größer-[Vergleichsoperator](sec-python-operator-compare) und dieser kann mit der Kombination ``str`` und ``int`` nicht umgehen.
 Wir erhalten den gleichen Fehler mit
 
-```python
 3 > 'b'
-```
 
 Es ist im allgemeinen unklar wie wir eine Zahl mit einem Buchstaben vergleichen sollen.
 Wir können selbstverständlich einen solchen Vergleich selbst definieren.
@@ -435,12 +428,10 @@ Im Gegenteil dazu wird diese Prüfung für *dynamisch getypte Sprachen* erst zur
 
 Führen Sie folgenden Code aus:
 
-```python
 number = 5
 number = number + 5
 print(number)
 number = number + 'b'
-```
 
 Dieser führt zu einem bekannten Fehler: ``unsupported operand type(s) for +: 'int' and 'str'`` und dennoch wird die ganze Zahl ``number`` ausgegeben.
 In anderen Worten der Code läuft solange bis es kracht.

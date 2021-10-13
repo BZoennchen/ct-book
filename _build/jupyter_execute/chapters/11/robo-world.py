@@ -659,8 +659,10 @@ def random_walk(robo):
             required_steps = required_steps + 1
     return required_steps
 
+robo.disable_print()
 random_walk(robo)
 print(world.is_successful())
+rw.animate(world)
 
 Ziemlich cool oder?
 Wir haben zwar einen sehr ineffektiven Algorithmus aber irgendwann findet er das Ziel des Roboters.

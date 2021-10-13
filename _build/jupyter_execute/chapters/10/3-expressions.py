@@ -21,9 +21,7 @@ Die [Syntax](def-syntax) einer Programmiersprache ist strikt.
 Sie wird durch eine sog. *Grammatik* definiert.
 Zum Beispiel ist folgender *Ausdruck* fehlerhaft, da er der nicht durch die *Grammatik* von ``Python`` definiert ist.
 
-```python
 3 * * 5
-```
 
 Der Computer weiß mit dieser Folge an Symbolen nichts anzufangen.
 Wir werden vom [Interpreter](def-interpreter) sachlich auf die mögliche Fehlerursache hingewiesen.

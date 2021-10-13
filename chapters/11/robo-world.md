@@ -8,6 +8,8 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+execute:
+  timeout: 100
 ---
 
 (sec-robo-world)=
@@ -721,8 +723,10 @@ def random_walk(robo):
             required_steps = required_steps + 1
     return required_steps
 
+robo.disable_print()
 random_walk(robo)
 print(world.is_successful())
+rw.animate(world)
 ```
 
 Ziemlich cool oder?

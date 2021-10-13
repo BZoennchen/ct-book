@@ -46,10 +46,9 @@ Die Datentypen mit denen Sie wohl am meisten zu tun haben werden sind Zahlen und
 
 Computer sind gebaut um numerische Berechnungen auszuführen.
 
-
-
 ### Zeichenketten
 
+TODO
 
 ## Arten von Datentypen
 
@@ -379,7 +378,10 @@ print(type(3.1 + 9))    # float + int -> float
 
 Zudem wird nicht jeder Datentyp von Addition unterstützt:
 
-```python
+```{code-cell} python3
+---
+tags: [raises-exception]
+---
 3 + 'a' # int + str -> Fehler!
 ```
 
@@ -413,7 +415,10 @@ Der Datentyp der Rückgabewerte ist einmal eine ganze Zahl ``int`` und einmal ei
 
 Wird folgender Code funktionieren?
 
-```python
+```{code-cell} python3
+---
+tags: [raises-exception]
+---
 max(3,'b')
 ```
 
@@ -427,7 +432,10 @@ Wer hat denn was von größer ``>`` gesagt?
 Nun, scheinbar verwendet die Funktion ``max`` den Größer-[Vergleichsoperator](sec-python-operator-compare) und dieser kann mit der Kombination ``str`` und ``int`` nicht umgehen.
 Wir erhalten den gleichen Fehler mit
 
-```python
+```{code-cell} python3
+---
+tags: [raises-exception]
+---
 3 > 'b'
 ```
 
@@ -489,7 +497,10 @@ Im Gegenteil dazu wird diese Prüfung für *dynamisch getypte Sprachen* erst zur
 
 Führen Sie folgenden Code aus:
 
-```python
+```{code-cell} python3
+---
+tags: [raises-exception]
+---
 number = 5
 number = number + 5
 print(number)

@@ -33,9 +33,7 @@ x = None
 
 weisen wir ``x`` den Wert ``None`` d.h. 'Nichts' zu. Doch ist dieses 'Nichts' nicht nichts ;). Versuchen wir eine *Variable* zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:
 
-```python
 v + 20
-```
 
 Hierbei würde es zu einem Fehler ``name 'v' is not defined`` kommen, da die *Variable* ``v`` noch nicht *initialisiert* wurde.
 

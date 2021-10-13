@@ -693,6 +693,7 @@ Die Datentypen mit denen Sie wohl am meisten zu tun haben werden sind Zahlen und
 </div>
 <div class="section" id="zeichenketten">
 <h3><span class="section-number">1.5.1.2. </span>Zeichenketten<a class="headerlink" href="#zeichenketten" title="Permalink to this headline">¶</a></h3>
+<p>TODO</p>
 </div>
 </div>
 <div class="section" id="arten-von-datentypen">
@@ -1126,8 +1127,22 @@ Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl <code
 </div>
 </div>
 <p>Zudem wird nicht jeder Datentyp von Addition unterstützt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39;a&#39;</span> <span class="c1"># int + str -&gt; Fehler!</span>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39;a&#39;</span> <span class="c1"># int + str -&gt; Fehler!</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">20</span><span class="n">f79e7a2649</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39;a&#39;</span> <span class="c1"># int + str -&gt; Fehler!</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Der Fehler der durch diesen Code erzeugt wird besagt: <code class="docutils literal notranslate"><span class="pre">unsupported</span> <span class="pre">operand</span> <span class="pre">type(s)</span> <span class="pre">for</span> <span class="pre">+:</span> <span class="pre">'int'</span> <span class="pre">and</span> <span class="pre">'str'</span></code>, d.h. diese Kombination aus Datentypen (<code class="docutils literal notranslate"><span class="pre">int</span></code> und <code class="docutils literal notranslate"><span class="pre">str</span></code>) wird nicht unterstützt.
 Was passiert wenn wir zwei Zeichenketten ‘addieren’?</p>
@@ -1177,8 +1192,22 @@ Einmal ist das Argument eine Liste <code class="docutils literal notranslate"><s
 Das Ergebnis ist einmal das größte Element der Liste und einmal das lexikographisch größere Element der beiden Argumente.
 Der Datentyp der Rückgabewerte ist einmal eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> und einmal eine Zeichenkette <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 <p>Wird folgender Code funktionieren?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="n">ce3c1a936c84</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wir können das an dieser Stelle nicht wissen.
 Es kommt darauf an <strong>wie</strong> die Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> implementiert wurde und <strong>was</strong> sie genau macht.
@@ -1188,8 +1217,22 @@ Was soll das nun bedeuten?
 Wer hat denn was von größer <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> gesagt?
 Nun, scheinbar verwendet die Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> den Größer-<a class="reference internal" href="3-expressions.html#sec-python-operator-compare"><span class="std std-ref">Vergleichsoperator</span></a> und dieser kann mit der Kombination <code class="docutils literal notranslate"><span class="pre">str</span></code> und <code class="docutils literal notranslate"><span class="pre">int</span></code> nicht umgehen.
 Wir erhalten den gleichen Fehler mit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;</span> <span class="s1">&#39;b&#39;</span>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;</span> <span class="s1">&#39;b&#39;</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="n">c502c5c8c73d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="s1">&#39;b&#39;</span>
+
+<span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Es ist im allgemeinen unklar wie wir eine Zahl mit einem Buchstaben vergleichen sollen.
 Wir können selbstverständlich einen solchen Vergleich selbst definieren.
@@ -1274,11 +1317,30 @@ In <code class="docutils literal notranslate"><span class="pre">Java</span></cod
 <p>Für <em>statisch getypten Sprache</em> wird der Datentyp von Werten und Variablen geprüft <strong>bevor</strong> der Programmcode ausgeführt wird.
 Im Gegenteil dazu wird diese Prüfung für <em>dynamisch getypte Sprachen</em> erst zur Laufzeit durchgeführt, also <strong>während</strong> der Code ausgeführt wird.</p>
 <p>Führen Sie folgenden Code aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
 <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="n">b47f296b25be</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Dieser führt zu einem bekannten Fehler: <code class="docutils literal notranslate"><span class="pre">unsupported</span> <span class="pre">operand</span> <span class="pre">type(s)</span> <span class="pre">for</span> <span class="pre">+:</span> <span class="pre">'int'</span> <span class="pre">and</span> <span class="pre">'str'</span></code> und dennoch wird die ganze Zahl <code class="docutils literal notranslate"><span class="pre">number</span></code> ausgegeben.
 In anderen Worten der Code läuft solange bis es kracht.</p>
