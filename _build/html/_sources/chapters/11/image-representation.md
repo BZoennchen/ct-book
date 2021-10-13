@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Binäres Zeichnen - Struktur ist Information
 
 ````{admonition} Lernziel
@@ -54,13 +66,13 @@ Jeder Pixel kann nur einen von zwei Zuständen annehmen, demnach brauchen wir pr
 Jede Zeile des Bildes repräsentieren wir als Folge von $0$ und $1$.
 Da wir unser Bild verändern möchten eignet sich in ``Python`` hierfür die Liste ``list``.
 
-```python
+```{code-cell} python3
 row = [0, 1, 0, 1, 0, 1, 1]
 ```
 
 Ein Bild modellieren wir wiederum als eine Liste von Zeilen (Pixelstreifen) oder eben eine Liste von Listen.
 
-```python
+```{code-cell} python3
 picture = [[0, 1, 0, 1, 0, 1, 1], # 1. Zeile
            [1, 1, 0, 1, 0, 1, 1], # 2. Zeile
            [0, 0, 1, 1, 1, 1, 1], # 3. Zeile
@@ -70,7 +82,7 @@ picture = [[0, 1, 0, 1, 0, 1, 1], # 1. Zeile
 ## Listen in Python
 Mit
 
-```python
+```{code-cell} python3
 picture[3][5]
 ```
 
@@ -79,7 +91,7 @@ greifen wir auf das Element in der ``4``-ten Zeile und ``6``-ten Spalte zu denn 
 Bevor wir weiter fortfahren möchten wir ein wichtiges Merkmal der ``Python``-Liste hervorheben.
 Sie könnten dazu geneigt sein folgender Code zu verwenden um ein Bild mit zwei identischen Zeilen zu erzeugen.
 
-```python
+```{code-cell} python3
 row = [0, 1, 0, 1, 0, 1, 1]
 picture = [row, row]
 ```

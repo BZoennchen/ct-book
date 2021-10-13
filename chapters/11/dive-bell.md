@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sec-dive-bell)=
 # Sprechen in der Taucherglocke
 
@@ -288,7 +300,7 @@ Schreiben Sie eine Programmcode der Ihnen die ``n`` häufigsten Wörter in sorti
 **Tipp:** Bauen Sie eine Liste die alle Schlüssel enthält und sortieren Sie diese anhand des [Dictionarys](def-python-dictionary). Sie können den Code aus [Karten sortieren in Python](sort-cards-with-python) verwenden.
 ```
 
-```python
+```{code-cell} python3
 ########### Diesen Code haben wir einfach kopiert ###########
 def find_smallest_index(hand, is_smaller):
     index = 0                                
@@ -457,7 +469,7 @@ char_frequency = {'E': 0.1740, 'N': 0.0978, 'I': 0.0755,
 **Tipp (für die Schreibfaulen):** In Python können Sie Zeichenketten alphabetisch-lexikographisch vergleichen z.B. ``A`` < ``B`` ergibt ``True``.
 ````
 
-```python
+```{code-cell} python3
 char_frequency = {'E': 0.1740, 'N': 0.0978, 'I': 0.0755, 
                   'S': 0.0758, 'R': 0.0700, 'A': 0.0651, 
                   'T': 0.0615, 'D': 0.0508, 'H': 0.0476,
@@ -486,7 +498,7 @@ Schreiben Sie ein kleines Programm was Ihnen den durchschnittlichen Aufwand für
 In dieser Variante beginnt der Sprecher mit dem häufigsten Buchstaben und folgt diesem Schema in absteigender Reihenfolge.
 ```
 
-```python
+```{code-cell} python3
 chars = list(char_frequency.keys()) # kürzer als Schleife
 chars = stack_sort(chars, lambda a, b: char_frequency[a] > char_frequency[b])
 
@@ -513,7 +525,7 @@ alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
 ```
 ````
 
-```python
+```{code-cell} python3
 chars_freq = list(char_frequency.keys())
 chars_freq = stack_sort(chars_freq, lambda a, b: char_frequency[a] > char_frequency[b])
 
@@ -767,7 +779,7 @@ Ihr Codewort können Sie als Zeichenkette oder als Liste von $0$, $1$ modelliere
 Sie können Zeichenketten oder einzelne Zeichen lexikographisch mit ``<, <=, >`` und ``>=`` vergleichen.
 ````
 
-```python
+```{code-cell} python3
 alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
             'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
             'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -804,7 +816,7 @@ Im Fall der Buchstabencodierung, verwenden wir eine [totale Ordnung](def-order) 
 Wenn Sie sich unsere Lösung ansehen werden Sie vielleicht festellen, dass wir jede endliche Menge mit einer [totale Ordnung](def-order) codieren können, sofern der ``<=``-Operator definiert ist.
 Zum Beispiel können wir Zahlen codieren:
 
-```python
+```{code-cell} python3
 numers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 codebook = {}
 for number in numers:
@@ -825,7 +837,7 @@ Gehen Sie davon aus, dass ``mylist`` geordnet ist und auf der Liste eine *totale
 Testen Sie Ihre Funktion mit einer Liste aus Zahlen und Buchstaben.
 ```
 
-```python
+```{code-cell} python3
 def binary_search(element, mylist):
     left = 0
     right = len(mylist)-1
@@ -857,7 +869,7 @@ Ansonsten soll die Funktion ``False``zurückgeben.
 Diesmal wissen Sie nichts über die Struktur der Daten!
 ```
 
-```python
+```{code-cell} python3
 def linear_search(element, mylist):
     for e in mylist:
         if e == element:

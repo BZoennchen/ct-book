@@ -1743,7 +1743,10 @@ robo2 = world2.get_robo()
 robo1.disable_print()
 robo2.disable_print()
 
-fig = world1.show()
+world1.disable_animation()
+world2.disable_animation()
+
+world1.show()
 
 Dann generieren wir einen Lauf durch die *Tiefensuche*, laufen den Lauf wieder zurück, aktivieren die Animation, laufen den Lauf erneut ab und animieren den Lauf.
 
