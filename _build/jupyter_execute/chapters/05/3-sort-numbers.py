@@ -10,6 +10,8 @@ Wie und wo müsste man den Code ändern um z.B. Zahlen zu sortieren?
 Ändern oder erweitern Sie Ihren Programmiercode um Zahlen anstatt Karten zu sortieren.
 ```
 
+# Kopie des Codes des vorherigen Abschnitts.
+
 def find_smallest_index(hand):
     index = 0
     for i in range(len(hand)):
@@ -23,6 +25,11 @@ def remove_smallest_card(hand):
     del hand[i]
     return card
 
+def stack_sort(hand):
+    stack = [];
+    while len(hand) > 0:
+        stack.append(remove_smallest_card(hand))
+    return stack   
 
 Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller()``.
 
