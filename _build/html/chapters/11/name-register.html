@@ -507,7 +507,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/11/name-register.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/11/name-register.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -528,6 +531,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/11/name-register.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -710,8 +733,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b824ad06-252c-4f16-bfc3-82e9ddc8ce88">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-b824ad06-252c-4f16-bfc3-82e9ddc8ce88" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-e90da3b9-9d6e-4ae0-a0f4-5fdf686cc2e5">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-e90da3b9-9d6e-4ae0-a0f4-5fdf686cc2e5" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -846,7 +869,9 @@ Es wird dabei stets auf die nächst liegende Ganzzahl <strong>abgerundet</strong
 </pre></div>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">mylist</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">mylist</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">b</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
     <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
@@ -861,6 +886,8 @@ Es wird dabei stets auf die nächst liegende Ganzzahl <strong>abgerundet</strong
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>In unserer Lösung ist <code class="docutils literal notranslate"><span class="pre">g</span></code> als <em>Defaultwert</em> die Identität.
 Das heißt, wenn die Anwender*innen kein <code class="docutils literal notranslate"><span class="pre">g</span></code> spezifizieren, gehen wir davon aus, dass</p>
 <div class="math notranslate nohighlight">
@@ -872,7 +899,9 @@ Das heißt, wenn die Anwender*innen kein <code class="docutils literal notransla
 <p>Definieren Sie einen passenden <strong>Komparator</strong> <code class="docutils literal notranslate"><span class="pre">cmp_numbers(number1,</span> <span class="pre">number2)</span></code> für eine Liste von ganzen Zahlen, d.h. <span class="math notranslate nohighlight">\(E = \mathbb{Z}\)</span> und testen Sie diesen und <code class="docutils literal notranslate"><span class="pre">binary_search</span></code>.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cmp_numbers</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cmp_numbers</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">number1</span> <span class="o">&lt;</span> <span class="n">number2</span><span class="p">:</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
     <span class="k">elif</span> <span class="n">number1</span> <span class="o">&gt;</span> <span class="n">number2</span><span class="p">:</span>
@@ -884,9 +913,20 @@ Das heißt, wenn die Anwender*innen kein <code class="docutils literal notransla
 <span class="nb">print</span><span class="p">(</span><span class="n">binary_search</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">cmp_numbers</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+None
+None
+</pre></div>
+</div>
+</div>
+</div>
 <p>Lassen Sie uns noch das Telefonbuchbeispiel testen.
 Folgender Code generiert Ihnen durch den Aufruf der Funktion <code class="docutils literal notranslate"><span class="pre">random_phone_book(n)</span></code> ein zufälliges Telefonbuch mit <code class="docutils literal notranslate"><span class="pre">100</span></code> Einträgen (unser Telefonbuch hat keine Seiten sondern nur Einträge).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">names</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">names</span>
 <span class="kn">import</span> <span class="nn">functools</span> <span class="k">as</span> <span class="nn">func</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -905,12 +945,28 @@ Folgender Code generiert Ihnen durch den Aufruf der Funktion <code class="docuti
 <span class="n">telbook</span> <span class="o">=</span> <span class="n">random_phone_book</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Sie müssen den Code nicht verstehen.
 Für die Generierung eines zufälligen Namens bedienen wir uns eines Paketes <code class="docutils literal notranslate"><span class="pre">names</span></code>.
 Und auch für die zufällige Telefonnummer setzten wir auf das <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Paket.
 Jeder Eintrag ist ein <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> der Form</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;phone_number&#39;</span><span class="p">:</span> <span class="n">telnr</span><span class="p">}</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;phone_number&#39;</span><span class="p">:</span> <span class="n">telnr</span><span class="p">}</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">8757</span><span class="n">ad6fe5e5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;phone_number&#39;</span><span class="p">:</span> <span class="n">telnr</span><span class="p">}</span>
+
+<span class="ne">NameError</span>: name &#39;name&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="binary-search-telbook-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.9 </span>(Binäre Suche)</p>
@@ -920,7 +976,9 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 <p><strong>Tipp:</strong> Finden Sie heraus wie <code class="docutils literal notranslate"><span class="pre">Python</span></code> Zeichenketten vergleicht.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">66</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">66</span>
 <span class="n">key</span> <span class="o">=</span> <span class="n">telbook</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">entry</span> <span class="p">:</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 
@@ -934,6 +992,8 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 
 <span class="nb">print</span><span class="p">(</span><span class="n">binary_search</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">telbook</span><span class="p">,</span> <span class="n">cmp_strings</span><span class="p">,</span> <span class="n">g</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="admonition-zeichenkettenvergleich-python admonition">
 <p class="admonition-title">Zeichenkettenvergleich (Python)</p>
@@ -1007,7 +1067,9 @@ Durch <code class="docutils literal notranslate"><span class="pre">next(babyname
 Die <code class="docutils literal notranslate"><span class="pre">for</span></code> schleife iteriert über alle Zeilen.
 Jede Zeile <code class="docutils literal notranslate"><span class="pre">row</span></code> beinhaltet für jede Spalte einen Eintrag.
 <code class="docutils literal notranslate"><span class="pre">row[0]</span></code> ist das Jahr <code class="docutils literal notranslate"><span class="pre">year</span></code> und <code class="docutils literal notranslate"><span class="pre">row[0]</span></code> der Name <code class="docutils literal notranslate"><span class="pre">name</span></code>, den wir extrahieren möchten.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
 
 <span class="k">def</span> <span class="nf">read_babynames</span><span class="p">():</span>
     <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1022,6 +1084,8 @@ Jede Zeile <code class="docutils literal notranslate"><span class="pre">row</spa
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="zahlen-von-doppelten-eintragen">
 <h3><span class="section-number">3.2.2. </span>Zählen von doppelten Einträgen<a class="headerlink" href="#zahlen-von-doppelten-eintragen" title="Permalink to this headline">¶</a></h3>
 <div class="exercise admonition" id="count-duplicates-exercise">
@@ -1031,7 +1095,9 @@ Jede Zeile <code class="docutils literal notranslate"><span class="pre">row</spa
 Zählen Sie die Vorkommen von <code class="docutils literal notranslate"><span class="pre">John</span></code>.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">names</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">names</span><span class="p">):</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">entry</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
@@ -1041,6 +1107,8 @@ Zählen Sie die Vorkommen von <code class="docutils literal notranslate"><span c
 <span class="n">count</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Wir möchten nun die Anzahl aller Namen in <code class="docutils literal notranslate"><span class="pre">names</span></code> zählen.
 Diese Anzahl sagt uns wie oft ein Name von 1880 bis 2008 in den Top 1000 der beliebtesten Namen in den USA war.
 Dazu legen wir ein <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> an wobei der Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> des <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionarys</span></a> ein Name ist und dessen Wert <code class="docutils literal notranslate"><span class="pre">value</span></code> wie oft dieser Name vorkommt.
@@ -1049,15 +1117,21 @@ Zum Beispiel:</p>
 </pre></div>
 </div>
 <p>Wir haben die folgenden beiden Funktionen entwickelt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
     <span class="n">countings</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">countings</span><span class="p">:</span>
             <span class="n">countings</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>und</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
     <span class="n">countings</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">countings</span><span class="p">:</span>
@@ -1065,6 +1139,8 @@ Zum Beispiel:</p>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">countings</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="count-all-duplicates-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.12 </span>(Zählen aller Einträge)</p>
@@ -1087,18 +1163,30 @@ Zum Beispiel:</p>
 <p>Sammeln Sie nun alle Schlüssel ein und packen Sie diese in eine Liste.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unique_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">countings</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">countings</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>In <a class="reference internal" href="../05/2-sort-cards-with-python.html#sort-cards-with-python"><span class="std std-ref">Karten sortieren</span></a> haben wir selbst einen Sortieralgorithmus entworfen.
 Selbstverständlich hat <code class="docutils literal notranslate"><span class="pre">Python</span></code> bereits einen solchen Algorithmus im Angebot.
 Diesen haben wir oben beim Generieren des zufälligen Telefonbuchs verwendet.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>sorted?
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sorted<span class="o">?</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>bzw.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">sorted</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">sorted</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Liefert Ihnen Hinweise darüber was die Funktion macht und wie sie zu benutzten ist.</p>
 <div class="exercise admonition" id="unique-entries-sort-exercise">
@@ -1112,9 +1200,13 @@ Diesen haben wir oben beim Generieren des zufälligen Telefonbuchs verwendet.</p
 <p>zu sortieren</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unique_names_lex</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_names</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_names_lex</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_names</span><span class="p">)</span>
 <span class="n">unique_names_count</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_names</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">entry</span> <span class="p">:</span> <span class="n">countings</span><span class="p">[</span><span class="n">entry</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="ordnung-durch-facher">
@@ -1154,9 +1246,13 @@ Jeder Listeneintrag <strong>repräsentiert</strong> ein <strong>Fach</strong> wa
 </div>
 <p>Da wir eine Liste zur Modellierung verwenden müssen wir anhand des Listenindex das gewünschte Fach identifizieren können.
 In unserem Beispiel brauchen wir eine Funktion <code class="docutils literal notranslate"><span class="pre">index_of</span></code> die uns für einen Buchstaben den korrekten Index gibt.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Wir machen aus <code class="docutils literal notranslate"><span class="pre">unique_names_lex</span></code> eine zweidimensionale Liste <code class="docutils literal notranslate"><span class="pre">names_by_letter</span></code>, sodass</p>
 <ul class="simple">
@@ -1175,7 +1271,9 @@ In unserem Beispiel brauchen wir eine Funktion <code class="docutils literal not
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">to_lex_buckets(unique_names_lex)</span></code> welche Ihnen die <a class="reference internal" href="../10/5-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> aus <a class="reference internal" href="#fig-babynames-buckets"><span class="std std-numref">Abbildung 3.15</span></a> erzeugt.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_lex_buckets</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_lex_buckets</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">):</span>
     <span class="n">names_by_letter</span> <span class="o">=</span> <span class="p">[[]]</span>
     <span class="n">letter</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
 
@@ -1189,6 +1287,8 @@ In unserem Beispiel brauchen wir eine Funktion <code class="docutils literal not
 <span class="n">names_by_letter</span> <span class="o">=</span> <span class="n">to_lex_buckets</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Beachten Sie, dass wir statt einer <code class="docutils literal notranslate"><span class="pre">if</span></code>-Kondition, eine <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife verwenden.
 Warum?
 Nun es könnte sein, dass es einen Buchstaben gibt, für den gar kein Name in der Liste ist.</p>
@@ -1200,11 +1300,15 @@ Zum Beispiel wäre es praktisch auf ein bestimmtes <strong>Fach</strong> nicht �
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">get_names(char,</span> <span class="pre">names_by_letter)</span></code>, die Ihnen für einen Buchstaben <code class="docutils literal notranslate"><span class="pre">char</span></code> die Liste mit allen Babynamen, welche mit <code class="docutils literal notranslate"><span class="pre">char</span></code> beginnen (der soeben erzeugen Datenstruktur <code class="docutils literal notranslate"><span class="pre">names_by_letter</span></code>) zurückliefert.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_names</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">names_by_letter</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_names</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">names_by_letter</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">names_by_letter</span><span class="p">[</span><span class="n">index_of</span><span class="p">(</span><span class="n">char</span><span class="p">)]</span>
 
 <span class="n">get_names</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">names_by_letter</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="ordnung-durch-markierungen">
@@ -1253,7 +1357,9 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">generate_marks(names_by_letter)</span></code> die Ihnen Markierungen <code class="docutils literal notranslate"><span class="pre">marks</span></code> aus <a class="reference internal" href="#fig-babynames-marks"><span class="std std-numref">Abbildung 3.16</span></a> erzeugt.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_marks</span><span class="p">(</span><span class="n">names_by_letter</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_marks</span><span class="p">(</span><span class="n">names_by_letter</span><span class="p">):</span>
     <span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">letter</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
     <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1268,18 +1374,28 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 <span class="n">unique_names_lex</span><span class="p">[</span><span class="n">marks</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Wir können nun sehr einfach durch alle Namen iterieren die mit einem <code class="docutils literal notranslate"><span class="pre">C</span></code> starten:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">marks</span> <span class="o">=</span> <span class="n">generate_marks</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marks</span> <span class="o">=</span> <span class="n">generate_marks</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
 
 <span class="n">mark_index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="p">],</span> <span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Oder wir können uns eine Teilliste kopieren die nur Namen beinhaltet die mit <code class="docutils literal notranslate"><span class="pre">D</span></code> starten:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mark_index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mark_index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 <span class="n">unique_names_lex</span><span class="p">[</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="p">]:</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Wir hatten festgehalten, dass sich ein Telefonbuch mit <strong>Markierungen</strong> nicht verändert.
 Welches Problem tritt auf wenn wir Elemente in die Liste der sortierten Babynamen einfügen?</p>
@@ -1297,7 +1413,9 @@ Eventuell macht es Sinn eine weitere Hilfsfunktion <code class="docutils literal
 <p><strong>Tipp:</strong> Verwenden Sie die Methoden der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste <a class="reference external" href="https://www.w3schools.com/python/ref_list_append.asp">append</a>, <a class="reference external" href="https://www.w3schools.com/python/ref_list_insert.asp">insert</a> und <a class="reference external" href="https://www.w3schools.com/python/ref_list_pop.asp">pop</a>.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">name</span> <span class="o">&lt;</span> <span class="n">unique_names_lex</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
         <span class="k">return</span> <span class="mi">0</span>
     
@@ -1357,6 +1475,8 @@ Eventuell macht es Sinn eine weitere Hilfsfunktion <code class="docutils literal
 <span class="n">remove_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">marks</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Jedesmal wenn wir die Liste mit sortierten Babynamen ändern, müssen wir auch <code class="docutils literal notranslate"><span class="pre">marks</span></code> anpassen.
 Je nachdem wie viele <strong>Markierungen</strong> wir haben, kann dies viel Zeit kosten.</p>
@@ -1440,7 +1560,9 @@ Außerdem gehen wir zunächst davon aus, dass die Menge der Schlüssel erneut un
 Gehen Sie davon aus, dass ein Platz in der Liste frei ist wenn dieser gleich <code class="docutils literal notranslate"><span class="pre">None</span></code> ist.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">):</span>
     <span class="n">key</span> <span class="o">=</span> <span class="n">name</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)):</span>
@@ -1453,6 +1575,8 @@ Gehen Sie davon aus, dass ein Platz in der Liste frei ist wenn dieser gleich <co
     <span class="c1"># there is no free place left</span>
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Wir starten die Suche bei Index <code class="docutils literal notranslate"><span class="pre">index_of(key)</span> <span class="pre">%</span> <span class="pre">len(hashtable)</span></code> um sicher zu gehen, dass der Index nicht außerhalb der Liste liegt.
 Dann durchlaufen wir die Liste zyklisch bis wir einen freien Platz finden oder aber festellen, dass die Liste voll ist.</p>
@@ -1474,7 +1598,9 @@ Dann durchlaufen wir die Liste zyklisch bis wir einen freien Platz finden oder a
 </div>
 </div>
 <p>Falls <code class="docutils literal notranslate"><span class="pre">hashtable</span></code> voll ist fügen wir den einzufügenden Namen hinten an.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">):</span>
@@ -1519,8 +1645,12 @@ Dann durchlaufen wir die Liste zyklisch bis wir einen freien Platz finden oder a
     <span class="k">return</span> <span class="n">hashtable</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Lassen Sie uns die Funktionen testen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hans&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hans&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
 <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hashtable</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>        <span class="c1"># False</span>
@@ -1538,6 +1668,8 @@ Dann durchlaufen wir die Liste zyklisch bis wir einen freien Platz finden oder a
 
 <span class="nb">all</span><span class="p">([</span><span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span> <span class="o">==</span> <span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)])</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Die letzte Zeile des Codes erzeugt eine Liste aus boolschen Werten und wertet diese durch <code class="docutils literal notranslate"><span class="pre">all</span></code> aus.
 <code class="docutils literal notranslate"><span class="pre">all</span></code> ergibt genau dann <code class="docutils literal notranslate"><span class="pre">True</span></code> wenn jeder Wert in der Liste <code class="docutils literal notranslate"><span class="pre">True</span></code> ist.
@@ -1561,7 +1693,9 @@ Beachten Sie, dass sich die Position von <code class="docutils literal notransla
 <p>Implementieren Sie den beschriebenen Algorithmus zum löschen eines Schlüssels in der Hashtabelle, d.h. implementieren Sie die Funktion <code class="docutils literal notranslate"><span class="pre">delete(name,</span> <span class="pre">hashtable)</span></code>.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span> <span class="ow">and</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
         <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1576,13 +1710,19 @@ Beachten Sie, dass sich die Position von <code class="docutils literal notransla
         <span class="k">return</span> <span class="kc">False</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Lassen Sie uns das Beispiel aus <a class="reference internal" href="#fig-closed-hashing-deletion"><span class="std std-numref">Abbildung 3.19</span></a> testen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="s1">&#39;Clara&#39;</span><span class="p">,</span> <span class="s1">&#39;Alba&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabian&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="s1">&#39;Clara&#39;</span><span class="p">,</span> <span class="s1">&#39;Alba&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabian&#39;</span><span class="p">]</span>
 <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">index_of</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
 <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">index_of</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Nun wird es zeit unsere Hashtabelle mit den Babynamen aus <code class="docutils literal notranslate"><span class="pre">unique_names_lex</span></code> zu befüllen.</p>
 <div class="exercise admonition" id="name-register-open-hashing-fill-exercise">
@@ -1594,8 +1734,12 @@ Was fällt Ihnen auf?
 Finden Sie eine Erklärung.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="solution dropdown admonition" id="name-register-open-hashing-fill-solution">
 <p class="admonition-title">Solution to <a class="reference external" href="#name-register-open-hashing-fill-exercise"><span>Exercise 3.24</span></a></p>
@@ -1684,11 +1828,15 @@ Nur wenn Sie billig ist, lohnt sich der Umweg über eine Hashfunktion.</p>
 </div>
 <p>Die Berechnungszeit ist deutlich kürzer.
 Lassen Sie uns erneut testen ob alles mit rechten Dingen zugeht.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span>
 <span class="nb">all</span><span class="p">([</span><span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span> <span class="o">==</span> <span class="n">index</span> 
      <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span> 
      <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="name-register-hashing-countcollisions-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.26 </span>(Kollisionen zählen)</p>
@@ -1698,7 +1846,9 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 <p>Vergleiche Sie die Hashfunktionen <code class="docutils literal notranslate"><span class="pre">index_of</span></code> und <code class="docutils literal notranslate"><span class="pre">hash</span></code>.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collisions</span><span class="p">(</span><span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collisions</span><span class="p">(</span><span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
     <span class="n">collisions</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hashtable</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
@@ -1707,9 +1857,15 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
     <span class="k">return</span> <span class="n">collisions</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="nb">hash</span><span class="p">),</span> <span class="nb">hash</span><span class="p">))</span>         <span class="c1"># 3610</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="nb">hash</span><span class="p">),</span> <span class="nb">hash</span><span class="p">))</span>         <span class="c1"># 3610</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">index_of</span><span class="p">),</span> <span class="n">index_of</span><span class="p">))</span> <span class="c1"># 60751108</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>3610 <strong>Kollisionen</strong> für das Einfügen von 6782 ist ein sehr guter Schnitt.
 Das ist weniger als eine Kollision pro Element!
@@ -1765,7 +1921,9 @@ Wir suchen nach einer Funktion, welche verschiedene Zeichenketten in verschieden
 Verwenden wir nur ein Zeichen für die Berechnung ist klar, dass wir nicht mehr als 25 verschiedene Zahlen erwarten können.</p>
 <p>Lassen Sie uns deshalb mehrere Zeichen für die Berechnung des Hashwerts verwenden.
 Eine erste Idee wäre die Summe der codierten Zeichen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func_sum</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func_sum</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">hash_value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
         <span class="n">hash_value</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
@@ -1774,9 +1932,13 @@ Eine erste Idee wäre die Summe der codierten Zeichen:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func_sum</span><span class="p">),</span> <span class="n">hash_func_sum</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Immerhin erreichen wir damit nur noch 20 Millionen <strong>Kollisionen</strong>, was jedoch immernoch viel zu viel ist.
 Wie sieht es mit der Multiplikation aus?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func_mul</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func_mul</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">hash_value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
         <span class="n">hash_value</span> <span class="o">*=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
@@ -1784,6 +1946,8 @@ Wie sieht es mit der Multiplikation aus?</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func_mul</span><span class="p">),</span> <span class="n">hash_func_mul</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Etwas schlechter fällt hierfür das Ergebnis aus.</p>
 <div class="exercise admonition" id="hash-add-mul-hashmap-exercise">
@@ -1849,7 +2013,9 @@ Dieses mathematische Denken ist auch ein Teil des <a class="reference internal" 
 </ol>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">hash_value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">prime</span> <span class="o">=</span> <span class="mi">83</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
@@ -1860,12 +2026,16 @@ Dieses mathematische Denken ist auch ein Teil des <a class="reference internal" 
 <span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">),</span> <span class="n">hash_func</span><span class="p">))</span> <span class="c1"># 3432</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Wir haben es geschafft!!!
 Nur noch 3432 Kollisionen!
 Damit sind wir für unseren Fall besser als die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion <code class="docutils literal notranslate"><span class="pre">hash</span></code>.
 Die Berechnungszeit hängt noch von der Anzahl der Zeichen eines Namen <code class="docutils literal notranslate"><span class="pre">name</span></code> ab.
 Wir könnten uns darauf einigen nur die ersten <span class="math notranslate nohighlight">\(m\)</span> Zeichen zu berücksichtige.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">hash_value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">prime</span> <span class="o">=</span> <span class="mi">83</span>
     <span class="n">m</span> <span class="o">=</span> <span class="mi">8</span>
@@ -1876,22 +2046,32 @@ Wir könnten uns darauf einigen nur die ersten <span class="math notranslate noh
 <span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">),</span> <span class="n">hash_func</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Das Ergebnis ist mit 3692 Kollisionen immernoch sehr gut und die Auswertung benötigt nun eine konstante Anzahl von maximal 8 Schritten.</p>
 </div>
 <div class="section" id="unser-dictionary">
 <h3><span class="section-number">3.3.5. </span>Unser Dictionary<a class="headerlink" href="#unser-dictionary" title="Permalink to this headline">¶</a></h3>
 <p>Bislang können wir in unsere Hashtable Namen einfügen, löschen und suchen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 <span class="n">search</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Die Funktionalität eines <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> haben wir damit noch nicht erreicht.
 Das besondere des <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> ist, dass es einen Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> und einen Wert <code class="docutils literal notranslate"><span class="pre">value</span></code> gibt und dass wir den Wert mit dem Schlüssel identifizieren können:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Dieter&#39;</span><span class="p">:</span> <span class="s1">&#39;1977-05-06&#39;</span><span class="p">,</span> <span class="s1">&#39;Bella&#39;</span><span class="p">:</span> <span class="s1">&#39;1999-10-11&#39;</span><span class="p">}</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Dieter&#39;</span><span class="p">:</span> <span class="s1">&#39;1977-05-06&#39;</span><span class="p">,</span> <span class="s1">&#39;Bella&#39;</span><span class="p">:</span> <span class="s1">&#39;1999-10-11&#39;</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">[</span><span class="s1">&#39;Dieter&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">[</span><span class="s1">&#39;Bella&#39;</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Das ist genau dann sehr nützlich, wenn wir den Schlüssel einfach berechnen und auch hashen können den Wert jedoch nicht.
 In unserer Hashtable sind Namen die Schlüssel, was bisher fehlt ist der Wert.
@@ -1914,7 +2094,9 @@ Passen Sie alle Funktionen entsprechend an. Sie müssen folgenden Funktionen anp
 <p>Führen Sie zusätzlich eine Funktion <code class="docutils literal notranslate"><span class="pre">set_value</span></code>, welche den Wert eines Schlüssels ändert, sofern dieser existiert.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
     <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">hashtable</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">hash_func</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)):</span>
@@ -2003,8 +2185,12 @@ Passen Sie alle Funktionen entsprechend an. Sie müssen folgenden Funktionen anp
     <span class="k">return</span> <span class="n">collisions</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Tests:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">]</span>
 <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hans&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
 <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>         <span class="c1"># Hans</span>
@@ -2015,6 +2201,8 @@ Passen Sie alle Funktionen entsprechend an. Sie müssen folgenden Funktionen anp
 <span class="nb">print</span><span class="p">(</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>    <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>         <span class="c1"># Anna</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Unsere Funktionen und das Paar <code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> bilden unser eigenes <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a>.</p>
 </div>
@@ -2043,7 +2231,9 @@ Alle Elemente werden neu eingefügt.</p>
 Ist sie hingegen zu klein gibt es mehr und mehr <strong>Kollisionen</strong> und die Laufzeit der Funktionen der Hashtable erhöht sich!</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hashtable</span><span class="p">():</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hashtable</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hashf</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">hashf</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">hash_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hashf</span>
@@ -2167,6 +2357,8 @@ Ist sie hingegen zu klein gibt es mehr und mehr <strong>Kollisionen</strong> und
             <span class="n">hash_value</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">hash_value</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Folgender Code zeigt die Verwendung der neuen Klasse</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simple_test</span><span class="p">():</span>
