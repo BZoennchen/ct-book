@@ -56,6 +56,7 @@ stack_sort([-11, 12, -6, 45, 1, 54, -55, 88])
 ```
 
 ```{code-cell} python3
+:tags: [hide-output]
 import random
 n_numbers = 1000
 
