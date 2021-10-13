@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sec-name-register)=
 # Namensregister
 
@@ -262,7 +274,7 @@ print(type(4//2))
 
 ````
 
-```python
+```{code-cell} python3
 def binary_search(key, mylist, f, g = lambda x : x):
     a = 0
     b = len(mylist)-1
@@ -290,7 +302,7 @@ gilt.
 Definieren Sie einen passenden **Komparator** ``cmp_numbers(number1, number2)`` für eine Liste von ganzen Zahlen, d.h. $E = \mathbb{Z}$ und testen Sie diesen und ``binary_search``.
 ```
 
-```python
+```{code-cell} python3
 def cmp_numbers(number1, number2):
     if number1 < number2:
         return -1
@@ -307,7 +319,7 @@ print(binary_search(-7, [1,2,3,4,5], cmp_numbers))
 Lassen Sie uns noch das Telefonbuchbeispiel testen.
 Folgender Code generiert Ihnen durch den Aufruf der Funktion ``random_phone_book(n)`` ein zufälliges Telefonbuch mit ``100`` Einträgen (unser Telefonbuch hat keine Seiten sondern nur Einträge).
 
-```python
+```{code-cell} python3
 import names
 import functools as func
 import numpy as np
@@ -332,7 +344,7 @@ Für die Generierung eines zufälligen Namens bedienen wir uns eines Paketes ``n
 Und auch für die zufällige Telefonnummer setzten wir auf das ``numpy`` Paket.
 Jeder Eintrag ist ein [Dictionary](def-python-dictionary) der Form
 
-```python
+```{code-cell} python3
 {'name': name, 'phone_number': telnr}
 ```
 
@@ -345,7 +357,7 @@ Sie müssen ein geeignetes ``f`` und ``g`` definieren.
 **Tipp:** Finden Sie heraus wie ``Python`` Zeichenketten vergleicht.
 ```
 
-```python
+```{code-cell} python3
 index = 66
 key = telbook[index]['name']
 g = lambda entry : entry['name']
@@ -448,7 +460,7 @@ Die ``for`` schleife iteriert über alle Zeilen.
 Jede Zeile ``row`` beinhaltet für jede Spalte einen Eintrag.
 ``row[0]`` ist das Jahr ``year`` und ``row[0]`` der Name ``name``, den wir extrahieren möchten.
 
-```python
+```{code-cell} python3
 from csv import reader
 
 def read_babynames():
@@ -471,7 +483,7 @@ Schreiben Sie eine Funktion ``count(name, names)``, welche die Anzahl der Eintr�
 Zählen Sie die Vorkommen von ``John``.
 ```
 
-```python
+```{code-cell} python3
 def count(name, names):
     count = 0
     for entry in names:
@@ -493,7 +505,7 @@ countings = {'John': 234, 'Anna': 201, ...}
 
 Wir haben die folgenden beiden Funktionen entwickelt:
 
-```python
+```{code-cell} python3
 def count_all(names):
     countings = {}
     for name in names:
@@ -503,7 +515,7 @@ def count_all(names):
 
 und
 
-```python
+```{code-cell} python3
 def count_all(names):
     countings = {}
     for name in names:
@@ -537,7 +549,7 @@ Interessanterweise haben wir durch unser Zählen auch gleich alle doppelten Eint
 Sammeln Sie nun alle Schlüssel ein und packen Sie diese in eine Liste.
 ```
 
-```python
+```{code-cell} python3
 unique_names = list(countings.keys())
 ```
 
@@ -545,13 +557,13 @@ In [Karten sortieren](sort-cards-with-python) haben wir selbst einen Sortieralgo
 Selbstverständlich hat ``Python`` bereits einen solchen Algorithmus im Angebot.
 Diesen haben wir oben beim Generieren des zufälligen Telefonbuchs verwendet.
 
-```python
+```{code-cell} python3
 sorted?
 ```
 
 bzw.
 
-```python
+```{code-cell} python3
 help(sorted)
 ```
 
@@ -570,7 +582,7 @@ zu sortieren
 
 ```
 
-```python
+```{code-cell} python3
 unique_names_lex = sorted(unique_names)
 unique_names_count = sorted(unique_names, key = lambda entry : countings[entry], reverse=True)
 ```
@@ -623,7 +635,7 @@ Fächer als Liste von Listen
 Da wir eine Liste zur Modellierung verwenden müssen wir anhand des Listenindex das gewünschte Fach identifizieren können.
 In unserem Beispiel brauchen wir eine Funktion ``index_of`` die uns für einen Buchstaben den korrekten Index gibt.
 
-```python
+```{code-cell} python3
 def index_of(name):
     return ord(name[0]) - ord('A')
 ```
@@ -651,7 +663,7 @@ Schreiben Sie eine Funktion ``to_lex_buckets(unique_names_lex)`` welche Ihnen di
 
 ```
 
-```python
+```{code-cell} python3
 def to_lex_buckets(unique_names_lex):
     names_by_letter = [[]]
     letter = 'A'
@@ -680,7 +692,7 @@ Schreiben Sie eine Funktion ``get_names(char, names_by_letter)``, die Ihnen für
 
 ```
 
-```python
+```{code-cell} python3
 def get_names(char, names_by_letter):
     return names_by_letter[index_of(char)]
 
@@ -744,7 +756,7 @@ Schreiben Sie eine Funktion ``generate_marks(names_by_letter)`` die Ihnen Markie
 
 ```
 
-```python
+```{code-cell} python3
 def generate_marks(names_by_letter):
     marks = [0]
     letter = 'A'
@@ -762,7 +774,7 @@ unique_names_lex[marks[1]-1]
 
 Wir können nun sehr einfach durch alle Namen iterieren die mit einem ``C`` starten:
 
-```python
+```{code-cell} python3
 marks = generate_marks(unique_names_lex)
 
 mark_index = index_of('C')
@@ -772,7 +784,7 @@ for i in range(marks[mark_index], marks[mark_index+1]-1, 1):
 
 Oder wir können uns eine Teilliste kopieren die nur Namen beinhaltet die mit ``D`` starten:
 
-```python
+```{code-cell} python3
 mark_index = index_of('D')
 unique_names_lex[marks[mark_index]:marks[mark_index+1]]
 ```
@@ -794,7 +806,7 @@ Eventuell macht es Sinn eine weitere Hilfsfunktion ``index_of_element(name, uniq
 **Tipp:** Verwenden Sie die Methoden der ``Python``-Liste [append](https://www.w3schools.com/python/ref_list_append.asp), [insert](https://www.w3schools.com/python/ref_list_insert.asp) und [pop](https://www.w3schools.com/python/ref_list_pop.asp).
 ```
 
-```python
+```{code-cell} python3
 def index_of_element(name, unique_names_lex, marks):
     if name < unique_names_lex[0]:
         return 0
@@ -955,7 +967,7 @@ Schreiben Sie eine Funktion ``search_index(name, hashtable)``, welche Ihnen den 
 Gehen Sie davon aus, dass ein Platz in der Liste frei ist wenn dieser gleich ``None`` ist.
 ```
 
-```python
+```{code-cell} python3
 def search_index(name, hashtable):
     key = name
     index = index_of(key) % len(hashtable)
@@ -994,7 +1006,7 @@ names = ['Berta', 'Hans', 'Thomas']
 
 Falls ``hashtable`` voll ist fügen wir den einzufügenden Namen hinten an.
 
-```python
+```{code-cell} python3
 def index_of(name):
     return ord('A')-ord(name[0])
 
@@ -1042,7 +1054,7 @@ def new_hash_table(names):
 
 Lassen Sie uns die Funktionen testen:
 
-```python
+```{code-cell} python3
 names = ['Berta', 'Hans', 'Thomas']
 hashtable = new_hash_table(names)
 print(f"{hashtable = }")
@@ -1092,7 +1104,7 @@ Implementieren Sie den beschriebenen Algorithmus zum löschen eines Schlüssels 
 
 ```
 
-```python
+```{code-cell} python3
 def delete(name, hashtable, hash_func=hash):
     index = search_index(name, hashtable, hash_func)
     if index < len(hashtable) and hashtable[index] == name:
@@ -1110,7 +1122,7 @@ def delete(name, hashtable, hash_func=hash):
 
 Lassen Sie uns das Beispiel aus {numref}`Abbildung {number} <fig-closed-hashing-deletion>` testen:
 
-```python
+```{code-cell} python3
 names = ['Anna', 'Alex', 'Clara', 'Alba', 'Fabian']
 hashtable = new_hash_table(names, index_of)
 print(hashtable)
@@ -1130,7 +1142,7 @@ Finden Sie eine Erklärung.
 
 ```
 
-```python
+```{code-cell} python3
 hashtable = new_hash_table(unique_names_lex)
 ```
 
@@ -1240,7 +1252,7 @@ Bevor wir unsere eigene verbesserte Hashfunktion schreiben, nutzten wir doch ein
 Die Berechnungszeit ist deutlich kürzer.
 Lassen Sie uns erneut testen ob alles mit rechten Dingen zugeht.
 
-```python
+```{code-cell} python3
 hashtable = new_hash_table(unique_names_lex, hash_func=hash)
 all([search_index(name, hashtable, hash_func=hash) == index 
      for index, name in enumerate(hashtable) 
@@ -1256,7 +1268,7 @@ In anderen Worten ``collisions(hashtable, hash_func)`` berechnet die Anzahl die 
 Vergleiche Sie die Hashfunktionen ``index_of`` und ``hash``.
 ```
 
-```python
+```{code-cell} python3
 def collisions(hashtable, hash_func=hash):
     collisions = 0
     for index, key in enumerate(hashtable):
@@ -1266,7 +1278,7 @@ def collisions(hashtable, hash_func=hash):
     return collisions
 ```
 
-```python
+```{code-cell} python3
 print(collisions(new_hash_table(unique_names_lex, hash), hash))         # 3610
 print(collisions(new_hash_table(unique_names_lex, index_of), index_of)) # 60751108
 ```
@@ -1329,7 +1341,7 @@ Verwenden wir nur ein Zeichen für die Berechnung ist klar, dass wir nicht mehr 
 Lassen Sie uns deshalb mehrere Zeichen für die Berechnung des Hashwerts verwenden.
 Eine erste Idee wäre die Summe der codierten Zeichen:
 
-```python
+```{code-cell} python3
 def hash_func_sum(name):
     hash_value = 0
     for char in name:
@@ -1342,7 +1354,7 @@ print(collisions(new_hash_table(unique_names_lex, hash_func_sum), hash_func_sum)
 Immerhin erreichen wir damit nur noch 20 Millionen **Kollisionen**, was jedoch immernoch viel zu viel ist.
 Wie sieht es mit der Multiplikation aus?
 
-```python
+```{code-cell} python3
 def hash_func_mul(name):
     hash_value = 0
     for char in name:
@@ -1424,7 +1436,7 @@ Dieses mathematische Denken ist auch ein Teil des [Computational Thinkings](sec-
 2. Testen Sie Ihre neue Hashfunktion durch ``collisions``.
 ```
 
-```python
+```{code-cell} python3
 def hash_func(name):
     hash_value = 0
     prime = 83
@@ -1442,7 +1454,7 @@ Damit sind wir für unseren Fall besser als die ``Python``-Funktion ``hash``.
 Die Berechnungszeit hängt noch von der Anzahl der Zeichen eines Namen ``name`` ab.
 Wir könnten uns darauf einigen nur die ersten $m$ Zeichen zu berücksichtige.
 
-```python
+```{code-cell} python3
 def hash_func(name):
     hash_value = 0
     prime = 83
@@ -1460,7 +1472,7 @@ Das Ergebnis ist mit 3692 Kollisionen immernoch sehr gut und die Auswertung ben�
 
 Bislang können wir in unsere Hashtable Namen einfügen, löschen und suchen:
 
-```python
+```{code-cell} python3
 insert('Dieter', hashtable, hash_func)
 search('Dieter', hashtable, hash_func)
 delete('Dieter', hashtable, hash_func)
@@ -1469,7 +1481,7 @@ delete('Dieter', hashtable, hash_func)
 Die Funktionalität eines [Dictionary](def-python-dictionary) haben wir damit noch nicht erreicht.
 Das besondere des [Dictionary](def-python-dictionary) ist, dass es einen Schlüssel ``key`` und einen Wert ``value`` gibt und dass wir den Wert mit dem Schlüssel identifizieren können:
 
-```python
+```{code-cell} python3
 dictionary = {'Dieter': '1977-05-06', 'Bella': '1999-10-11'}
 print(dictionary['Dieter'])
 print(dictionary['Bella'])
@@ -1497,7 +1509,7 @@ Führen Sie zusätzlich eine Funktion ``set_value``, welche den Wert eines Schl�
 
 ```
 
-```python
+```{code-cell} python3
 def search_index(key, hashtable, hash_func=hash):
     keys, values = hashtable
     index = hash_func(key) % len(keys)
@@ -1589,7 +1601,7 @@ def collisions(hashtable, hash_func=hash):
 
 Tests:
 
-```python
+```{code-cell} python3
 keys = ['0', '1', '2']
 values = ['Berta', 'Hans', 'Thomas']
 hashtable = new_hash_table(keys, values, hash_func)
@@ -1633,7 +1645,7 @@ Ist sie hingegen zu klein gibt es mehr und mehr **Kollisionen** und die Laufzeit
 
 ```
 
-```python
+```{code-cell} python3
 class Hashtable():
     def __init__(self, hashf=None):
         if hashf == None:

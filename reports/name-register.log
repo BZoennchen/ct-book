@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 1107, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 852, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/bzoennchen/Development/workspaces/python3env/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+{'name': name, 'phone_number': telnr}
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-4-8757ad6fe5e5>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;34m{[0m[0;34m'name'[0m[0;34m:[0m [0mname[0m[0;34m,[0m [0;34m'phone_number'[0m[0;34m:[0m [0mtelnr[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mNameError[0m: name 'name' is not defined
+NameError: name 'name' is not defined
+
