@@ -288,7 +288,6 @@ Schreiben Sie eine Programmcode der Ihnen die ``n`` häufigsten Wörter in sorti
 **Tipp:** Bauen Sie eine Liste die alle Schlüssel enthält und sortieren Sie diese anhand des [Dictionarys](def-python-dictionary). Sie können den Code aus [Karten sortieren in Python](sort-cards-with-python) verwenden.
 ```
 
-```python
 ########### Diesen Code haben wir einfach kopiert ###########
 def find_smallest_index(hand, is_smaller):
     index = 0                                
@@ -328,7 +327,6 @@ keys = stack_sort(keys, lambda a, b: word_frequency[a] > word_frequency[b])
 
 # 3. gebe die n häufigsten keys/Wörter aus
 keys[0:n]
-```
 
 Im obigen Code verwenden wir eine sog. [anonyme Funktion](def-anonym-function), welche in ``Python`` mit dem ``lambda``-[Konstrukt](python-anonym-function) realisiert werden können.
 
@@ -457,7 +455,6 @@ char_frequency = {'E': 0.1740, 'N': 0.0978, 'I': 0.0755,
 **Tipp (für die Schreibfaulen):** In Python können Sie Zeichenketten alphabetisch-lexikographisch vergleichen z.B. ``A`` < ``B`` ergibt ``True``.
 ````
 
-```python
 char_frequency = {'E': 0.1740, 'N': 0.0978, 'I': 0.0755, 
                   'S': 0.0758, 'R': 0.0700, 'A': 0.0651, 
                   'T': 0.0615, 'D': 0.0508, 'H': 0.0476,
@@ -474,7 +471,6 @@ avg_effort = 0.0
 for i in range(len(chars)):
     avg_effort += (i+1) * char_frequency[chars[i]]
 avg_effort
-```
 
 ``avg_effort`` $(11.1526)$ ist der durchschnittliche Aufwand d.h. die durchschnittlich auszusprechenden Buchstaben je geschriebenem Buchstaben.
 Interpretieren wir die Häufigkeit als Wahrscheinlichkeit ist es der Erwartungswert der auszusprechenden Buchsteben je geschriebenem Buchstaben.
@@ -486,7 +482,6 @@ Schreiben Sie ein kleines Programm was Ihnen den durchschnittlichen Aufwand für
 In dieser Variante beginnt der Sprecher mit dem häufigsten Buchstaben und folgt diesem Schema in absteigender Reihenfolge.
 ```
 
-```python
 chars = list(char_frequency.keys()) # kürzer als Schleife
 chars = stack_sort(chars, lambda a, b: char_frequency[a] > char_frequency[b])
 
@@ -494,7 +489,6 @@ avg_effort = 0.0
 for i in range(len(chars)):
     avg_effort += (i+1) * char_frequency[chars[i]]
 avg_effort
-```
 
 Diesmal liegt der durchschnittliche Aufwand ``avg_effort`` bei $6.9836$, d.h. die verbesserte Variante ist **unter unserem Maß** fast doppelt so schnell.
 Glücklicherweise sind die Buchstaben, die wir selten verwenden tendenziell auch hinten im Alphabet angesiedelt.
@@ -513,7 +507,6 @@ alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
 ```
 ````
 
-```python
 chars_freq = list(char_frequency.keys())
 chars_freq = stack_sort(chars_freq, lambda a, b: char_frequency[a] > char_frequency[b])
 
@@ -532,7 +525,6 @@ for i in range(len(alphabet)):
 
 chars_diff = stack_sort(chars_diff, lambda a, b: abs(a[1]) > abs(b[1]))
 chars_diff
-```
 
 In der obigen Lösung vergleichen wir die beiden Positionen ``i`` und ``j`` des Alphabets ``alphabet`` und der Häufigkeit ``char_freq`` indem wir die Distanz ``i-j`` berechnen.
 Wir speichern diese Distanzen in der Liste ``chars_diff`` und sortieren diese anhand des Betrags ``abs`` der Distanz.
@@ -767,7 +759,6 @@ Ihr Codewort können Sie als Zeichenkette oder als Liste von $0$, $1$ modelliere
 Sie können Zeichenketten oder einzelne Zeichen lexikographisch mit ``<, <=, >`` und ``>=`` vergleichen.
 ````
 
-```python
 alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
             'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
             'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -792,7 +783,6 @@ for letter in alphabet:
     codebook[letter] = code(letter, alphabet)
     
 codebook
-```
 
 Lassen Sie uns noch einmal rekapitulieren weshalb die [binäre Suche](def-binary-search) anwendbar ist.
 Was wir vorraussetzen ist, dass wir gute Fragen stellen können und, anhand jeder Antwort, die Menge schnell verkleinern können.
@@ -804,14 +794,12 @@ Im Fall der Buchstabencodierung, verwenden wir eine [totale Ordnung](def-order) 
 Wenn Sie sich unsere Lösung ansehen werden Sie vielleicht festellen, dass wir jede endliche Menge mit einer [totale Ordnung](def-order) codieren können, sofern der ``<=``-Operator definiert ist.
 Zum Beispiel können wir Zahlen codieren:
 
-```python
 numers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 codebook = {}
 for number in numers:
     codebook[number] = code(number, numers)
     
 codebook
-```
 
 ## Suchalgorithmen
 
@@ -825,7 +813,6 @@ Gehen Sie davon aus, dass ``mylist`` geordnet ist und auf der Liste eine *totale
 Testen Sie Ihre Funktion mit einer Liste aus Zahlen und Buchstaben.
 ```
 
-```python
 def binary_search(element, mylist):
     left = 0
     right = len(mylist)-1
@@ -845,7 +832,6 @@ print(binary_search('t',alphabet))
 print(binary_search(1,[1,2,3,4,5]))
 print(binary_search(7,[1,2,3,4,5]))
 print(binary_search(-7,[1,2,3,4,5]))
-```
 
 Die [binäre Suche](def-binary-search) nutzt die gegebene Struktur der Daten (Information) aus, wohingegen die [lineare Suche](def-linear-search) keinerlei Struktur nutzt.
 Besteht keinerlei ausnutbare Struktur bleibt uns nichts anderes übrig als die [lineare Suche](def-linear-search) zu verwenden.
@@ -857,7 +843,6 @@ Ansonsten soll die Funktion ``False``zurückgeben.
 Diesmal wissen Sie nichts über die Struktur der Daten!
 ```
 
-```python
 def linear_search(element, mylist):
     for e in mylist:
         if e == element:
@@ -869,7 +854,6 @@ print(linear_search('t',alphabet))
 print(linear_search(1,[1,2,3,4,5]))
 print(linear_search(7,[1,2,3,4,5]))
 print(linear_search(-7,[1,2,3,4,5]))
-```
 
 ```{exercise} Aufwandsvergleich
 :label: blinking-lin-searching-complexity-exercise

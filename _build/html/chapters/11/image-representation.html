@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Binäres Zeichnen - Struktur ist Information &#8212; Computational Thinking</title>
+    <title>2. Binäres Zeichnen - Struktur ist Information &#8212; Computational Thinking</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,8 +56,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Speicher - alles ist eine Liste" href="memory.html" />
-    <link rel="prev" title="2. Sprechen in der Taucherglocke" href="dive-bell.html" />
+    <link rel="next" title="3. Speicher - alles ist eine Liste" href="memory.html" />
+    <link rel="prev" title="1. Sprechen in der Taucherglocke" href="dive-bell.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -442,28 +442,23 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="robo-world.html">
-   1. Roboterwelt
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="dive-bell.html">
-   2. Sprechen in der Taucherglocke
+   1. Sprechen in der Taucherglocke
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. Binäres Zeichnen - Struktur ist Information
+   2. Binäres Zeichnen - Struktur ist Information
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="memory.html">
-   4. Speicher - alles ist eine Liste
+   3. Speicher - alles ist eine Liste
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="name-register.html">
-   5. Namensregister
+   4. Namensregister
   </a>
  </li>
 </ul>
@@ -517,7 +512,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/11/image-representation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/11/image-representation.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -539,6 +537,26 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/11/image-representation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -551,37 +569,37 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#das-bildformat-informationsreprasentation">
-   3.1. Das Bildformat (Informationsrepräsentation)
+   2.1. Das Bildformat (Informationsrepräsentation)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#listen-in-python">
-   3.2. Listen in Python
+   2.2. Listen in Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funktionen-in-python">
-   3.3. Funktionen in Python
+   2.3. Funktionen in Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bildgenerierung-informationserzeugung">
-   3.4. Bildgenerierung (Informationserzeugung)
+   2.4. Bildgenerierung (Informationserzeugung)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zeichnen-informationsmanipulation">
-   3.5. Zeichnen (Informationsmanipulation)
+   2.5. Zeichnen (Informationsmanipulation)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#daumenkino">
-   3.6. Daumenkino
+   2.6. Daumenkino
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fourier-zeichnungen-optional">
-   3.7. Fourier-Zeichnungen (optional)
+   2.7. Fourier-Zeichnungen (optional)
   </a>
  </li>
 </ul>
@@ -596,7 +614,7 @@
               <div>
                 
   <div class="section" id="binares-zeichnen-struktur-ist-information">
-<h1><span class="section-number">3. </span>Binäres Zeichnen - Struktur ist Information<a class="headerlink" href="#binares-zeichnen-struktur-ist-information" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Binäres Zeichnen - Struktur ist Information<a class="headerlink" href="#binares-zeichnen-struktur-ist-information" title="Permalink to this headline">¶</a></h1>
 <div class="learngoals admonition">
 <p class="admonition-title">Lernziel</p>
 <p>In diesem Abschnitt nutzen wir zwei Zustände <strong>Strom aus</strong>, <strong>Strom an</strong> bzw. <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> um erst ein Schwarz-Weiß-Bild</p>
@@ -616,59 +634,80 @@ Sie werden diese Struktur selbst erarbeiten.</p>
 Wir werden Probleme in viele Teilprobleme aufteilen (<strong>Dekomposition</strong>), Sie werden Ihre <strong>Mustererkennung</strong> benötigen und auch <strong>mathematisches Denken</strong> trainieren.</p>
 </div>
 <div class="section" id="das-bildformat-informationsreprasentation">
-<h2><span class="section-number">3.1. </span>Das Bildformat (Informationsrepräsentation)<a class="headerlink" href="#das-bildformat-informationsreprasentation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Das Bildformat (Informationsrepräsentation)<a class="headerlink" href="#das-bildformat-informationsreprasentation" title="Permalink to this headline">¶</a></h2>
 <p>Wir beginnen mit einem Schwarz-Weiß-Rasterbild.
 Ein <a class="reference internal" href="../06/2-representation.html#pixel-image"><span class="std std-ref">Rasterbild</span></a> hat eine bestimmte Anzahl <span class="math notranslate nohighlight">\(m\)</span> an Pixel in <span class="math notranslate nohighlight">\(y\)</span>-Richtung (Zeilen) und eine bestimmte Anzahl <span class="math notranslate nohighlight">\(n\)</span> an Pixel in <span class="math notranslate nohighlight">\(x\)</span>-Richtung (Spalten).
 Das Bild kann als <span class="math notranslate nohighlight">\(m \times n\)</span>-Matrix aufgefasst werden.
 In unserem Fall des Schwarz-Weiß-Bilds ist jeder Pixel entweder schwarz <span class="math notranslate nohighlight">\(0\)</span> oder weiß <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <div class="exercise admonition" id="repraesentation-bw-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span>(Bits pro Pixel)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span>(Bits pro Pixel)</p>
 <div class="section" id="exercise-content">
 <p>Wie viele <em>Bits</em> benötigen Sie für jeden Pixel?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="repraesentation-bw-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#repraesentation-bw-exercise"><span>Exercise 3.4</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#repraesentation-bw-exercise"><span>Exercise 2.2</span></a></p>
 <div class="section" id="solution-content">
 <p>Jeder Pixel kann nur einen von zwei Zuständen annehmen, demnach brauchen wir pro Pixel <span class="math notranslate nohighlight">\(1\)</span> <em>Bit</em>.</p>
 </div>
 </div>
 <p>Jede Zeile des Bildes repräsentieren wir als Folge von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span>.
 Da wir unser Bild verändern möchten eignet sich in <code class="docutils literal notranslate"><span class="pre">Python</span></code> hierfür die Liste <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Ein Bild modellieren wir wiederum als eine Liste von Zeilen (Pixelstreifen) oder eben eine Liste von Listen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># 1. Zeile</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># 1. Zeile</span>
            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># 2. Zeile</span>
            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># 3. Zeile</span>
            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="c1"># 4. Zeile</span>
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="listen-in-python">
-<h2><span class="section-number">3.2. </span>Listen in Python<a class="headerlink" href="#listen-in-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Listen in Python<a class="headerlink" href="#listen-in-python" title="Permalink to this headline">¶</a></h2>
 <p>Mit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
 </div>
 <p>greifen wir auf das Element in der <code class="docutils literal notranslate"><span class="pre">4</span></code>-ten Zeile und <code class="docutils literal notranslate"><span class="pre">6</span></code>-ten Spalte zu denn der Index einer Liste beginnt mit <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p>Bevor wir weiter fortfahren möchten wir ein wichtiges Merkmal der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste hervorheben.
 Sie könnten dazu geneigt sein folgender Code zu verwenden um ein Bild mit zwei identischen Zeilen zu erzeugen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">row</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Doch hierbei entsteht ein merkwürdiges Phänomen, welches die folgende Aufgabe zum Vorschein bringt.</p>
 <div class="exercise admonition" id="copy-list-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 3.5 </span>(Kopie einer Liste)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span>(Kopie einer Liste)</p>
 <div class="section" id="exercise-content">
 <p>Ändern Sie nun ein einzelnen Pixel und lassen Sie sich das Ergebnis anzeigen.
 Was stellen Sie fest?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="rcopy-list-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#copy-list-exercise"><span>Exercise 3.5</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#copy-list-exercise"><span>Exercise 2.3</span></a></p>
 <div class="section" id="solution-content">
 <p>Ändern wir einen Pixel einer Zeile, z.B. durch</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -680,23 +719,40 @@ Was stellen Sie fest?</p>
 <p>Unser Bild enthält keine zwei identische Zeilen sondern zweimal die gleiche Zeile.
 Es wird nicht der Wert also <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">1]</span></code> kopiert sondern die Referenz / der Zeiger welche auf eine Liste zeigt.</p>
 <p>Um das gewünschte Ergebnis zu erzielen müssen wir die Liste und nicht ihre Referenz kopieren, hierzu bietet uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> die Listen-Methode <code class="docutils literal notranslate"><span class="pre">copy()</span></code> an:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Da eine Kopie der Liste (des Objekts) gemacht wird, können Sie sicher sein, dass Änderungen der Listenelemente nur jene eine Liste betreffen.
 Bedenken Sie jedoch, dass keine sog. <em>tiefe Kopie</em> gemacht wird.
 Zum Beispiel laufen Sie mit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
 <span class="n">picture2</span> <span class="o">=</span> <span class="n">picture</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">picture2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>in das gleiche Problem.</p>
 <p>Um Listen zu verketten können Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> den <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator verwenden.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6, 7, 8]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Das Ergebnis ist eine neue eindimensionale Liste die alle Elemente der beiden Listen in genau jener Reihenfolge enthält.
 Allerdings unterscheidet <code class="docutils literal notranslate"><span class="pre">Python</span></code> zwischen <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">+=</span> <span class="pre">other_list</span></code> und <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">=</span> <span class="pre">mylist</span> <span class="pre">+</span> <span class="pre">other_list</span></code>!
@@ -712,7 +768,9 @@ Das Ursprungsobjekt bleibt <em>unverändert</em>.</p>
 </div>
 <p>Sie mögen nun denken, dass Ergebnis ist doch identisch?
 Sehen wir uns folgenden Code an:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">concat_immutable</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">concat_immutable</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">):</span>
     <span class="n">concat</span> <span class="o">=</span> <span class="n">list1</span> <span class="o">+</span> <span class="n">list2</span>
     <span class="k">return</span> <span class="n">concat</span>
 
@@ -733,13 +791,25 @@ Sehen wir uns folgenden Code an:</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = [1, 2, 3, 4]
+b = [5, 6, 7, 8]
+c = [1, 2, 3, 4, 5, 6, 7, 8]
+a = [1, 2, 3, 4, 5, 6, 7, 8]
+b = [5, 6, 7, 8]
+c = [1, 2, 3, 4, 5, 6, 7, 8]
+</pre></div>
+</div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">concat_mutable</span></code> verändert <code class="docutils literal notranslate"><span class="pre">list1</span></code> und da es sich nicht um einen <a class="reference internal" href="../10/5-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> handelt, wird nur die Referenz kopiert und nicht die Liste <code class="docutils literal notranslate"><span class="pre">a</span></code> selbst.
 Somit wird <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code> ausgeführt und <code class="docutils literal notranslate"><span class="pre">a</span></code> wird verändert.
 Dies bezeichnen wir als sogenannten <em>Seiteneffekt</em> und in diesem Fall ist es ein unerwarteter <em>Seiteneffekt</em> den wir vermeiden sollten!
 Dennoch ist <code class="docutils literal notranslate"><span class="pre">+=</span></code> immer dann sehr sinnvoll wenn Sie eine Liste sukzessive füllen wollen.
 Denn jedesmal die gesamte Liste zu kopieren kann zu einer langen Laufzeit führen.</p>
 <div class="exercise admonition" id="mutable-vs-immutable-concat">
-<p class="admonition-title"><span class="caption-number">Exercise 3.6 </span>(Immutable vs. Mutable)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span>(Immutable vs. Mutable)</p>
 <div class="section" id="exercise-content">
 <p>Welcher der beiden Funktionen wird bei gleicher Eingabe schneller laufen und warum?
 Testen Sie beide Versionen für große <code class="docutils literal notranslate"><span class="pre">n</span></code> &gt; 0.</p>
@@ -759,36 +829,59 @@ Testen Sie beide Versionen für große <code class="docutils literal notranslate
 </div>
 </div>
 <p>Um über die Elemente einer Liste zu <em>iterieren</em>, verwendet man in <code class="docutils literal notranslate"><span class="pre">Python</span></code> das <a class="reference external" href="https://www.python-kurs.eu/python3_for-schleife.php">For-Schleife</a> und wie immer bestimmt die <a class="reference external" href="https://www.python-kurs.eu/python3_bloecke.php">Einrückung</a> die Strukturierung (<code class="docutils literal notranslate"><span class="pre">Python</span></code> verzichtet auf Klammern):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">f78e22bf765b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;element&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <div class="exercise admonition" id="iteration-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 3.7 </span>(Iteration)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span>(Iteration)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie einen Code der jedes Pixel des Bildes einzeln durch <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgibt.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="funktionen-in-python">
-<span id="sec-python-function"></span><h2><span class="section-number">3.3. </span>Funktionen in Python<a class="headerlink" href="#funktionen-in-python" title="Permalink to this headline">¶</a></h2>
+<span id="sec-python-function"></span><h2><span class="section-number">2.3. </span>Funktionen in Python<a class="headerlink" href="#funktionen-in-python" title="Permalink to this headline">¶</a></h2>
 <p>Funktionen definieren wir mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> gefolgt vom Funktionsnamen und den <em>Argumenten</em> der Funktion sowie ihrer Logik.
 Anstatt <em>Argumente</em> sprechen wir auch von <em>Parametern</em>.
 Falls Sie mit Ihrer Funktion einen Wert, eine Liste, oder ein anderes Objekt zurückgeben möchten nutzen Sie das <code class="docutils literal notranslate"><span class="pre">return</span></code>-Schlüsselwort.
 Variablen der Funktion sind ihre Argumente und alle anderen Variablen die sie innerhalb der Funktion definieren.
 Zum Beispiel:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
     <span class="k">return</span> <span class="n">c</span>
 <span class="n">add</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Die Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">c</span></code> außerhalb der Funktion haben nichts mit den Variablen innerhalb oder Argumenten der Funktion zu tun.
 Sie bleiben unverändert.
@@ -800,13 +893,15 @@ Listen jedoch nicht!</p>
 <p>Eine gute Übung ist es eine Liste zu <em>flatten</em>, d.h. aus einer mehrdimensionalen Liste, eine Liste der Dimension <span class="math notranslate nohighlight">\(1\)</span> zu machen.
 Hierbei soll die Reihenfolge der Elemente erhalten bleiben.</p>
 <div class="exercise admonition" id="flatten-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 3.8 </span>(Flatten)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.6 </span>(Flatten)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">flatten(mylist)</span></code>, die die <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Liste <code class="docutils literal notranslate"><span class="pre">mylist</span></code> in eine <span class="math notranslate nohighlight">\(n-1\)</span>-dimensionale Liste transformiert.
 Zum Beispiel soll aus <code class="docutils literal notranslate"><span class="pre">[[[1,2],</span> <span class="pre">[3,3]],</span> <span class="pre">[[1,3],</span> <span class="pre">[4,5]]]</span></code>, also einer <span class="math notranslate nohighlight">\(3\)</span>-dimensionalen Liste, <code class="docutils literal notranslate"><span class="pre">[[1,2],</span> <span class="pre">[3,3],</span> <span class="pre">[1,3],</span> <span class="pre">[4,5]]</span></code>, also eine <span class="math notranslate nohighlight">\(2\)</span>-dimensionale Liste werden.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">sub_list</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sub_list</span><span class="p">:</span>
@@ -817,22 +912,28 @@ Zum Beispiel soll aus <code class="docutils literal notranslate"><span class="pr
 <span class="n">flatten</span><span class="p">([[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]])</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>In unserer Lösung bewirkt <code class="docutils literal notranslate"><span class="pre">result.append(element)</span></code> das gleich wie <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">+=</span> <span class="pre">[element]</span></code> jedoch ist die erste Version klarer zu lesen denn wir wollen das Element <code class="docutils literal notranslate"><span class="pre">element</span></code> anhängen (engl. append).</p>
 </div>
 <div class="section" id="bildgenerierung-informationserzeugung">
-<h2><span class="section-number">3.4. </span>Bildgenerierung (Informationserzeugung)<a class="headerlink" href="#bildgenerierung-informationserzeugung" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>Bildgenerierung (Informationserzeugung)<a class="headerlink" href="#bildgenerierung-informationserzeugung" title="Permalink to this headline">¶</a></h2>
 <div class="exercise admonition" id="repraesentation-pic-with-border">
-<p class="admonition-title"><span class="caption-number">Exercise 3.9 </span>(Bild generieren)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.7 </span>(Bild generieren)</p>
 <div class="section" id="exercise-content">
 <p>Generieren Sie ein weißes <span class="math notranslate nohighlight">\(10 \times 10\)</span> Rasterbild mit einem ein Pixel breiten schwarzen Rand.
 Nutzen Sie die Programmierung um sich Zeit zu sparen!</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 <span class="n">center</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">top</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span> <span class="o">+</span> <span class="p">[</span><span class="n">center</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="n">top</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
 <span class="n">picture</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Auch hier müssen Sie darauf achten die richtigen Kopien zu machen.
 Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim Schreiben sparen.</p>
@@ -856,32 +957,46 @@ Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim
 <p>und erzeugen aus der Sequenz <code class="docutils literal notranslate"><span class="pre">0,1,2,3,4,5,6,7,8,9</span></code> die Liste <code class="docutils literal notranslate"><span class="pre">[0,0,0,0,0,0,0,0,0,0]</span></code>.</p>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-8">
-<p class="admonition-title"><span class="caption-number">Exercise 3.10 </span>(Bild manipulieren)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.8 </span>(Bild manipulieren)</p>
 <div class="section" id="exercise-content">
 <p>Testen Sie ihr generiertes Bild.
 Ändern Sie den Pixel in der <span class="math notranslate nohighlight">\(5\)</span>-ten Zeile und und <span class="math notranslate nohighlight">\(5\)</span>-Spalte, sowie einen Pixeln in der ersten Spalte und einen in der ersten Zeile</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">picture</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">picture</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">picture</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-9">
-<p class="admonition-title"><span class="caption-number">Exercise 3.11 </span>(Variables Bild generieren)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.9 </span>(Variables Bild generieren)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion die Ihnen ein weißes Bild mit schwarzem Rand generiert.
 Dabei soll die Breite <code class="docutils literal notranslate"><span class="pre">width</span></code> und Höhe <code class="docutils literal notranslate"><span class="pre">height</span></code> sowie die Randbreite <code class="docutils literal notranslate"><span class="pre">border_width</span></code> ein Argument der Funktion sein.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">picture</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="n">yborder</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">border_width</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
@@ -902,14 +1017,16 @@ Dabei soll die Breite <code class="docutils literal notranslate"><span class="pr
 <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-10">
-<p class="admonition-title"><span class="caption-number">Exercise 3.12 </span>(Variable Bildgenerierung testen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.10 </span>(Variable Bildgenerierung testen)</p>
 <div class="section" id="exercise-content">
 <p>Testen Sie Ihre Funktion insbesondere für besondere Werte wie <code class="docutils literal notranslate"><span class="pre">border_width</span> <span class="pre">&gt;</span> <span class="pre">width</span></code>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-11">
-<p class="admonition-title"><span class="caption-number">Exercise 3.13 </span>(Variable Bildgenerierung testen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.11 </span>(Variable Bildgenerierung testen)</p>
 <div class="section" id="exercise-content">
 <p>Folgende Funktion plottet Ihr Bild.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -921,9 +1038,13 @@ Dabei soll die Breite <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <p>Mit folgendem Code</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>erzuegen wir</p>
 <div class="figure align-default" id="fig-border-picture">
@@ -931,7 +1052,7 @@ Dabei soll die Breite <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <div class="section" id="zeichnen-informationsmanipulation">
-<h2><span class="section-number">3.5. </span>Zeichnen (Informationsmanipulation)<a class="headerlink" href="#zeichnen-informationsmanipulation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5. </span>Zeichnen (Informationsmanipulation)<a class="headerlink" href="#zeichnen-informationsmanipulation" title="Permalink to this headline">¶</a></h2>
 <p>Wir haben bereits jetzt ein neues Bildformat geschaffen und ein kleines Programm, welches unser Format interpretieren und als Rasterbild anzeigt.
 Jetzt können wir uns austoben und weitere Bilder generieren.
 Wie wäre es zum Beispiel mit einem Kreis, Rechteck oder Dreieck?
@@ -950,18 +1071,22 @@ Bei einer <code class="docutils literal notranslate"><span class="pre">resolutio
 Anders ausgedrückt, braucht es <span class="math notranslate nohighlight">\(10 \times 10\)</span> Pixel um den Raum <span class="math notranslate nohighlight">\(1 \times 1\)</span> im <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> zu repräsentieren.</p>
 <p>Kennen wir die <code class="docutils literal notranslate"><span class="pre">resolution</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(x\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">cols</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(y\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">rows</span></code> und gehen davon aus, dass der Raum <span class="math notranslate nohighlight">\(R\)</span> den wir Abbilden möchten in <span class="math notranslate nohighlight">\((0,0)\)</span> beginnt und nur positive Werte enthält also <span class="math notranslate nohighlight">\(R = [0;w] \times [0;h]\)</span>, dann können wir für einen gegebenen Punkt <span class="math notranslate nohighlight">\(p = (x,y) \in \mathbb{R}^2\)</span> den Pixel <span class="math notranslate nohighlight">\((i,j) \in \mathbb{N}^2\)</span> berechnen der <span class="math notranslate nohighlight">\(p\)</span> enthält.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-12">
-<p class="admonition-title"><span class="caption-number">Exercise 3.14 </span>(Pixel berechnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.12 </span>(Pixel berechnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">to_pixel(p,</span> <span class="pre">resolution)</span></code> die Ihnen den Pixel <code class="docutils literal notranslate"><span class="pre">(i,j)</span></code> zurückgibt der den Punkt <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">(x,y)</span></code> enthält.
 Bedenken Sie, dass wir Pixel beginnend mit <span class="math notranslate nohighlight">\(0\)</span> zählen.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_pixel</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_pixel</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span>
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">resolution</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="o">/</span> <span class="n">resolution</span><span class="p">)</span>
 
 <span class="n">to_pixel</span><span class="p">((</span><span class="mf">0.7</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Soweit so gut!
 Widmen wir uns nun dem Problem ein Rechteck bzw. Dreieck zu zeichnen.
@@ -983,19 +1108,23 @@ Diesen Vorgang können wir solange fortsetzen, bis ein Segment komplett in einem
 Das heißt die Funktion, welche den Mittelpunkt berechnet, wird innerhalb dieser Funktion erneut aufgerufen.
 Das kann endlos so weiter gehen und wir müssen uns eine <strong>Abbruchbedingung</strong> überlegen.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-13">
-<p class="admonition-title"><span class="caption-number">Exercise 3.15 </span>(Mittelpunkt berechnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.13 </span>(Mittelpunkt berechnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">midpoint(p1,</span> <span class="pre">p2)</span></code> die Ihnen den Mittelpunkt <code class="docutils literal notranslate"><span class="pre">(mx,my)</span></code> des Segments <code class="docutils literal notranslate"><span class="pre">(p1=(x1,y1),</span> <span class="pre">p2=(x2,</span> <span class="pre">y2))</span></code> zurückgibt.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">midpoint</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">midpoint</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span>
 
 <span class="n">midpoint</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-14">
-<p class="admonition-title"><span class="caption-number">Exercise 3.16 </span>(Mittelpunkt berechnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.14 </span>(Mittelpunkt berechnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)</span></code> die Ihnen den Mittelpunkt die Länge des Segments <code class="docutils literal notranslate"><span class="pre">(p1=(x1,y1),</span> <span class="pre">p2=(x2,</span> <span class="pre">y2))</span></code> zurückgibt.</p>
 <p><strong>Tipp:</strong> Sie können die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> der <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Bibliothek verwenden, d.h.</p>
@@ -1010,12 +1139,14 @@ Das kann endlos so weiter gehen und wir müssen uns eine <strong>Abbruchbedingun
 <p><code class="docutils literal notranslate"><span class="pre">distance()</span></code> können wir als Abbruchbedingung der Rekursion verwenden.
 Ist <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)</span> <span class="pre">&lt;=</span> <span class="pre">resolution</span></code> macht es keinen großen Sinn mehr das Segment <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> weiter zu verkleinern.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-15">
-<p class="admonition-title"><span class="caption-number">Exercise 3.17 </span>(Segmentpunkte erzeugen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.15 </span>(Segmentpunkte erzeugen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">line(p1,</span> <span class="pre">p2,</span> <span class="pre">resolution)</span></code>, die Ihnen Punkte des Segments <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> erzeugt und als Liste zurückgibt.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
@@ -1035,9 +1166,13 @@ Ist <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)
 <span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Mit <code class="docutils literal notranslate"><span class="pre">line</span></code> können nun Punkte eines Segments erzeugen und durch <code class="docutils literal notranslate"><span class="pre">to_pixel</span></code> können wir diese Punkte in Pixel umwandeln.
 Lassen Sie uns nun einmal ein Bild mit einer Geraden zeichen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">points</span> <span class="o">=</span> <span class="n">line</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="n">resolution</span><span class="p">)</span>
 <span class="n">pixels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">point</span><span class="p">:</span> <span class="n">to_pixel</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">resolution</span><span class="p">),</span> <span class="n">points</span><span class="p">))</span>
@@ -1047,16 +1182,20 @@ Lassen Sie uns nun einmal ein Bild mit einer Geraden zeichen:</p>
 <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Das sieht schon recht gut aus.
 Da der Pixel <code class="docutils literal notranslate"><span class="pre">picture[0][0]</span></code> rechts oben ist, ist unser Koordinatensystem an der <span class="math notranslate nohighlight">\(x\)</span>-Achse gespiegelt und nach oben verschoben, was wir jedoch hier vernachlässigen.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-16">
-<p class="admonition-title"><span class="caption-number">Exercise 3.18 </span>(Linie zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.16 </span>(Linie zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_line(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">resolution)</span></code>, die das Segment <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
 Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll dann kein Fehler kommen sondern der Teil der nicht hinein passt wird abgeschnitten).</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contains_pixel</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">pixel</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contains_pixel</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">pixel</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span> <span class="ow">and</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
@@ -1072,14 +1211,18 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Jetzt haben wir alle Teilprobleme gelöst und können das Dreieck bzw. Rechteck zeichnen.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-17">
-<p class="admonition-title"><span class="caption-number">Exercise 3.19 </span>(Dreieck zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.17 </span>(Dreieck zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_triangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">resolution)</span></code> die das Dreieck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_triangle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_triangle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
     <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
     <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
     <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
@@ -1090,13 +1233,17 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-18">
-<p class="admonition-title"><span class="caption-number">Exercise 3.20 </span>(Rechteck zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.18 </span>(Rechteck zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_rectangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">p4,</span> <span class="pre">resolution)</span></code> die das Rechteck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3,p4)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_rectangle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_rectangle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
     <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
     <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
     <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
@@ -1108,17 +1255,21 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Wenn wir uns nun die beiden Funktionen <code class="docutils literal notranslate"><span class="pre">draw_triangle</span></code> und <code class="docutils literal notranslate"><span class="pre">draw_rectangle</span></code> genauer ansehen und unsere <strong>Mustererkennung</strong> aktivieren könnte uns etwas auffallen?
 Die Funktionen gleichen sich!
 Beide zeichnen eine Sequenz/Liste von zusammenhängenden Segmenten oder anders gesagt: beide zeichnen ein Polygon!</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-19">
-<p class="admonition-title"><span class="caption-number">Exercise 3.21 </span>(Polygon zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.19 </span>(Polygon zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_polygon(picture,</span> <span class="pre">polygon,</span> <span class="pre">resolution)</span></code> die das Polygon <code class="docutils literal notranslate"><span class="pre">polygon</span> <span class="pre">=</span> <span class="pre">(p1,p2,p3,p4,p5,...)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
 <code class="docutils literal notranslate"><span class="pre">polygon</span></code> kann eine Liste oder Tupel sein.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_polygon</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_polygon</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">polygon</span><span class="p">)):</span>
         <span class="n">draw_line</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">polygon</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">polygon</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">resolution</span><span class="p">)</span>
     
@@ -1127,6 +1278,8 @@ Beide zeichnen eine Sequenz/Liste von zusammenhängenden Segmenten oder anders g
 <span class="n">draw_polygon</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="n">resolution</span><span class="p">)</span>
 <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Dreieck und Reckteck hätten wir geschafft.
 Für den Kreis <span class="math notranslate nohighlight">\(K\)</span> müssen wir zurück in unsere <strong>abstrakte</strong> Welt der geometrischen Objekte, denn einen Kreis nicht mit lauter Segmenten darzustellen macht wenig Sinn.
@@ -1138,13 +1291,15 @@ Sie der Kreis durch seinen Mittelpunkt <span class="math notranslate nohighlight
 Um den Kreis zu zeichnen unterteilen wir einfach das Intervall <span class="math notranslate nohighlight">\([0;2\pi]\)</span> in <span class="math notranslate nohighlight">\(n\)</span> Teile und erhalten so <span class="math notranslate nohighlight">\(n\)</span> Punkte.
 Wir könnten z.B. <span class="math notranslate nohighlight">\(n\)</span> so wählen dass <span class="math notranslate nohighlight">\(2\pi / n &lt;\)</span> <code class="docutils literal notranslate"><span class="pre">resolution</span></code> ist.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-20">
-<p class="admonition-title"><span class="caption-number">Exercise 3.22 </span>(Kreis zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.20 </span>(Kreis zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_circle(picture,</span> <span class="pre">circle,</span> <span class="pre">resolution)</span></code> die den Kreis <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">(m=(x,y),</span> <span class="pre">r)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
 Sie können erneut <code class="docutils literal notranslate"><span class="pre">numpy</span></code> verwenden, d.h. <code class="docutils literal notranslate"><span class="pre">np.sin()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.cos()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> und (optional) <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="k">def</span> <span class="nf">draw_circle</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">circle</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
     <span class="n">center</span> <span class="o">=</span> <span class="n">circle</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">radius</span> <span class="o">=</span> <span class="n">circle</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -1163,6 +1318,8 @@ Sie können erneut <code class="docutils literal notranslate"><span class="pre">
 <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Im Falle des Kreises beschreibt</p>
 <div class="math notranslate nohighlight">
 \[k(t) = (x_m + \cos(t) \cdot r, y_m + \sin(t) \cdot r)\]</div>
@@ -1170,12 +1327,14 @@ Sie können erneut <code class="docutils literal notranslate"><span class="pre">
 Wir können aber auch andere <em>Kurven</em> wir zum Beispiel die Funktion <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> durch die <em>Kurve</em> <span class="math notranslate nohighlight">\(k(t) = (t, f(t))\)</span> zeichnen.
 Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgemeinen nicht so einfach zu schätzen.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-21">
-<p class="admonition-title"><span class="caption-number">Exercise 3.23 </span>((mathematische) Funktion zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.21 </span>((mathematische) Funktion zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Suchen Sie sich irgendeine geeignete Funktion aus und zeichnen Sie diese in einem geeigneten Intervall.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="k">def</span> <span class="nf">draw_function</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="n">resolution</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
@@ -1191,10 +1350,14 @@ Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgem
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="daumenkino">
-<h2><span class="section-number">3.6. </span>Daumenkino<a class="headerlink" href="#daumenkino" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6. </span>Daumenkino<a class="headerlink" href="#daumenkino" title="Permalink to this headline">¶</a></h2>
 <p>Die folgende Methode erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots) und falls Sie das Argument <code class="docutils literal notranslate"><span class="pre">save</span></code> auf <code class="docutils literal notranslate"><span class="pre">True</span></code> setzen wird ein GIF (eine Bildfolge/Daumenkino/Minivideo) erzeugt und in der Datei <code class="docutils literal notranslate"><span class="pre">'binary-drawing.gif'</span></code> abgespeichert.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span><span class="p">,</span> <span class="n">rc</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
@@ -1221,8 +1384,10 @@ Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgem
     <span class="k">return</span> <span class="n">ani</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-22">
-<p class="admonition-title"><span class="caption-number">Exercise 3.24 </span>(Einfaches Daumenkino)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.22 </span>(Einfaches Daumenkino)</p>
 <div class="section" id="exercise-content">
 <p>Generieren Sie folgendes GIF/Daumenkino bzw. Animation:</p>
 <div class="figure align-default" id="fig-daumenkino">
@@ -1231,13 +1396,17 @@ Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgem
 <p><strong>Tipp:</strong> Sie benötigen lediglich mehrere Aufrufe von <code class="docutils literal notranslate"><span class="pre">generate_border_picture()</span></code>.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">increase</span> <span class="o">=</span> <span class="p">[</span><span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="o">//</span><span class="mi">2</span><span class="p">)]</span>
 <span class="n">decrease</span> <span class="o">=</span> <span class="p">[</span><span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="p">(</span><span class="n">size</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="n">size</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
 <span class="n">border_pictures</span> <span class="o">=</span> <span class="n">increase</span> <span class="o">+</span> <span class="n">decrease</span>
 <span class="n">ani</span> <span class="o">=</span> <span class="n">animate</span><span class="p">(</span><span class="n">border_pictures</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Fassen wir noch einmal kurz zusammen was wir bis jetzt geschafft haben:
 Wir haben uns ein Format für ein Schwarz-Weiß-Bild ausgedacht und umgesetzt.
@@ -1247,7 +1416,7 @@ Und jetzt haben wir sogar die Möglichkeit aus einer Folge von Bildern ein klein
 Dieses Video wiederum ist nichts anderes als eine Liste von Listen von Listen von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span>.
 Wir haben nun die Möglichkeit eine unbegrenzte Menge an Animationen zu erzeugen, von bewegten geometrischen Objekten bis hin zum <a class="reference external" href="https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens">Game Of Life</a> - Ihre Kreativität ist das Limit.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-23">
-<p class="admonition-title"><span class="caption-number">Exercise 3.25 </span>(Simulation eines Partikels)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.23 </span>(Simulation eines Partikels)</p>
 <div class="section" id="exercise-content">
 <p>Generieren Sie eine Animation ein Partikel (einen Ball) der sich in einer Box bewegt, d.h. der Ball bewegt sich mit konstanter Geschwindigkeit und prallt von der Wand ab.</p>
 <div class="figure align-default" id="fig-daumenkino-ball">
@@ -1257,7 +1426,9 @@ Wir haben nun die Möglichkeit eine unbegrenzte Menge an Animationen zu erzeugen
 Anschließend können Sie mit <code class="docutils literal notranslate"><span class="pre">draw_circle()</span></code> diese Liste in eine Liste von Bildern umwandeln. Bedenken Sie, dass sie für jeden Kreis ein neues Bild durch <code class="docutils literal notranslate"><span class="pre">generate_border_picture()</span></code> generieren müssen.</p>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_ball_box</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">circle</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_ball_box</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">circle</span><span class="p">,</span> <span class="n">resolution</span><span class="p">):</span>
     <span class="n">w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="n">resolution</span><span class="p">)</span>
     <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="n">resolution</span><span class="p">)</span>
     <span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1292,15 +1463,17 @@ Anschließend können Sie mit <code class="docutils literal notranslate"><span c
 <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-24">
-<p class="admonition-title"><span class="caption-number">Exercise 3.26 </span>(Eigenes Daumenkino)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.24 </span>(Eigenes Daumenkino)</p>
 <div class="section" id="exercise-content">
 <p>Erzeugen Sie Ihr eigenes Daumenkino. Vielleicht ein bewegtes Dreieck oder eine fortlaufende Sinuswelle oder etwas ganz anderes?</p>
 </div>
 </div>
 </div>
 <div class="section" id="fourier-zeichnungen-optional">
-<h2><span class="section-number">3.7. </span>Fourier-Zeichnungen (optional)<a class="headerlink" href="#fourier-zeichnungen-optional" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7. </span>Fourier-Zeichnungen (optional)<a class="headerlink" href="#fourier-zeichnungen-optional" title="Permalink to this headline">¶</a></h2>
 <p>Was nun folgt ist ein sich Austoben in der Welt die wir uns geschaffen haben.
 Wir möchten Ihnen eine ganz bestimmte Zeichenmethode nicht vorenthalten.
 Stellen Sie sich ein Blatt Papier vor.
@@ -1316,25 +1489,21 @@ Zeichnen Sie beide Kreise mit der gleichen Frequenz und starten beide Kreise bei
 <div class="math notranslate nohighlight">
 \[K(t) = \sum_{i=0}^{n-1} K_i(t)\]</div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-25">
-<p class="admonition-title"><span class="caption-number">Exercise 3.27 </span>(Fourier-Zeichnungen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.25 </span>(Fourier-Zeichnungen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_circular(picture,</span> <span class="pre">center,</span> <span class="pre">frequencies,</span> <span class="pre">radii,</span> <span class="pre">resolution,</span> <span class="pre">start</span> <span class="pre">stop)</span></code>, die die oben beschriebene Zeichentechnik implementiert.
 Dabei soll <code class="docutils literal notranslate"><span class="pre">center</span></code> gleich <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, <code class="docutils literal notranslate"><span class="pre">frequencies</span></code> eine Liste die alle Frequenzen <span class="math notranslate nohighlight">\(\omega_0, \ldots \omega_{n-1}\)</span> und <code class="docutils literal notranslate"><span class="pre">radii</span></code> eine Liste die alle Radii <span class="math notranslate nohighlight">\(r_0, \ldots, r_{n-1}\)</span> enthält sein.
 <code class="docutils literal notranslate"><span class="pre">start</span></code> und <code class="docutils literal notranslate"><span class="pre">stop</span></code> sollen ihr (Zeichen-)Intervall definieren.</p>
 <p>Als Motivation hier ein Beispiel:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">picture</span> <span class="o">=</span> <span class="n">generate_border_picture</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">draw_circular</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">resolution</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>ergibt</p>
 <div class="figure align-default" id="fig-fourier-drawing">
 <a class="reference internal image-reference" href="../../_images/fourier-drawing.png"><img alt="../../_images/fourier-drawing.png" src="../../_images/fourier-drawing.png" style="height: 150px;" /></a>
 </div>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_circular</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">frequencies</span><span class="p">,</span> <span class="n">radii</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_circular</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">frequencies</span><span class="p">,</span> <span class="n">radii</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">frequencies</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">stop</span><span class="o">-</span><span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="n">resolution</span><span class="p">)</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
@@ -1356,6 +1525,8 @@ Dabei soll <code class="docutils literal notranslate"><span class="pre">center</
 <span class="n">draw_circular</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span> <span class="n">resolution</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 <span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Es ergeben sich interessante Fragen.
 Zum Beispiel, mit welchen Argumenten erhalten Sie ein <strong>harmonisches</strong> (ein eher einfaches) Bild und warum?
@@ -1393,8 +1564,8 @@ Können wir durch unsere Zeichenmethode Ton zeichnen?</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="dive-bell.html" title="previous page"><span class="section-number">2. </span>Sprechen in der Taucherglocke</a>
-    <a class='right-next' id="next-link" href="memory.html" title="next page"><span class="section-number">4. </span>Speicher - alles ist eine Liste</a>
+    <a class='left-prev' id="prev-link" href="dive-bell.html" title="previous page"><span class="section-number">1. </span>Sprechen in der Taucherglocke</a>
+    <a class='right-next' id="next-link" href="memory.html" title="next page"><span class="section-number">3. </span>Speicher - alles ist eine Liste</a>
 
         </div>
         

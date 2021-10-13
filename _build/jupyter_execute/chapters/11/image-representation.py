@@ -1,15 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Binäres Zeichnen - Struktur ist Information
 
 ````{admonition} Lernziel
@@ -66,35 +54,27 @@ Jeder Pixel kann nur einen von zwei Zuständen annehmen, demnach brauchen wir pr
 Jede Zeile des Bildes repräsentieren wir als Folge von $0$ und $1$.
 Da wir unser Bild verändern möchten eignet sich in ``Python`` hierfür die Liste ``list``.
 
-```{code-cell} python3
 row = [0, 1, 0, 1, 0, 1, 1]
-```
 
 Ein Bild modellieren wir wiederum als eine Liste von Zeilen (Pixelstreifen) oder eben eine Liste von Listen.
 
-```{code-cell} python3
 picture = [[0, 1, 0, 1, 0, 1, 1], # 1. Zeile
            [1, 1, 0, 1, 0, 1, 1], # 2. Zeile
            [0, 0, 1, 1, 1, 1, 1], # 3. Zeile
            [1, 0, 0, 1, 0, 1, 1]] # 4. Zeile
-```
 
 ## Listen in Python
 Mit
 
-```{code-cell} python3
 picture[3][5]
-```
 
 greifen wir auf das Element in der ``4``-ten Zeile und ``6``-ten Spalte zu denn der Index einer Liste beginnt mit ``0``.
 
 Bevor wir weiter fortfahren möchten wir ein wichtiges Merkmal der ``Python``-Liste hervorheben.
 Sie könnten dazu geneigt sein folgender Code zu verwenden um ein Bild mit zwei identischen Zeilen zu erzeugen.
 
-```{code-cell} python3
 row = [0, 1, 0, 1, 0, 1, 1]
 picture = [row, row]
-```
 
 Doch hierbei entsteht ein merkwürdiges Phänomen, welches die folgende Aufgabe zum Vorschein bringt.
 
@@ -121,29 +101,23 @@ Es wird nicht der Wert also ``[0, 1, 0, 1, 0, 1, 1]`` kopiert sondern die Refere
 
 Um das gewünschte Ergebnis zu erzielen müssen wir die Liste und nicht ihre Referenz kopieren, hierzu bietet uns ``Python`` die Listen-Methode ``copy()`` an:
 
-```{code-cell} python3
 row = [0, 1, 0, 1, 0, 1, 1]
 picture = [row.copy(), row.copy()]
-```
 
 Da eine Kopie der Liste (des Objekts) gemacht wird, können Sie sicher sein, dass Änderungen der Listenelemente nur jene eine Liste betreffen.
 Bedenken Sie jedoch, dass keine sog. *tiefe Kopie* gemacht wird.
-Zum Beispiel laufen Sie mit 
+Zum Beispiel laufen Sie mit
 
-```{code-cell} python3
 row = [0, 1, 0, 1, 0, 1, 1]
 picture = [row.copy(), row.copy()]
 picture2 = picture.copy()
 picture2[0][0] = 1
-```
 
 in das gleiche Problem.
 
 Um Listen zu verketten können Sie in ``Python`` den ``+``-Operator verwenden.
 
-```{code-cell} python3
 [1,2,3,4] + [5,6,7,8]
-```
 
 Das Ergebnis ist eine neue eindimensionale Liste die alle Elemente der beiden Listen in genau jener Reihenfolge enthält.
 Allerdings unterscheidet ``Python`` zwischen ``mylist += other_list`` und ``mylist = mylist + other_list``!
@@ -164,7 +138,6 @@ Ist eine Operation *unveränderlich* so verändert sie den Speicherbereich der O
 Sie mögen nun denken, dass Ergebnis ist doch identisch?
 Sehen wir uns folgenden Code an:
 
-```{code-cell} python3
 def concat_immutable(list1,list2):
     concat = list1 + list2
     return concat
@@ -184,7 +157,6 @@ c = concat_mutable(a,b)
 print(f'a = {a}')
 print(f'b = {b}')
 print(f'c = {c}')
-```
 
 ``concat_mutable`` verändert ``list1`` und da es sich nicht um einen [primitiven Datentyp](def-primitive-datatypes) handelt, wird nur die Referenz kopiert und nicht die Liste ``a`` selbst.
 Somit wird ``a += b`` ausgeführt und ``a`` wird verändert.
@@ -214,21 +186,17 @@ def my_range_immutable(n):
 
 Um über die Elemente einer Liste zu *iterieren*, verwendet man in ``Python`` das [For-Schleife](https://www.python-kurs.eu/python3_for-schleife.php) und wie immer bestimmt die [Einrückung](https://www.python-kurs.eu/python3_bloecke.php) die Strukturierung (``Python`` verzichtet auf Klammern):
 
-```{code-cell} python3
 for row in picture:
     print(element)
-```
 
 ```{exercise} Iteration
 :label: iteration-exercise
 Schreiben Sie einen Code der jedes Pixel des Bildes einzeln durch ``print()`` ausgibt.
 ```
 
-```{code-cell} python3
 for row in picture:
     for pixel in row:
         print(pixel)
-```
 
 (sec-python-function)=
 ## Funktionen in Python
@@ -239,14 +207,12 @@ Falls Sie mit Ihrer Funktion einen Wert, eine Liste, oder ein anderes Objekt zur
 Variablen der Funktion sind ihre Argumente und alle anderen Variablen die sie innerhalb der Funktion definieren.
 Zum Beispiel:
 
-```{code-cell} python3
 x = 10
 c = 100
 def add(x, y):
     c = x + y
     return c
 add(15, x)
-```
 
 Die Variablen ``x`` und ``c`` außerhalb der Funktion haben nichts mit den Variablen innerhalb oder Argumenten der Funktion zu tun.
 Sie bleiben unverändert.
@@ -266,7 +232,6 @@ Schreiben Sie eine Funktion ``flatten(mylist)``, die die $n$-dimensionalen Liste
 Zum Beispiel soll aus ``[[[1,2], [3,3]], [[1,3], [4,5]]]``, also einer $3$-dimensionalen Liste, ``[[1,2], [3,3], [1,3], [4,5]]``, also eine $2$-dimensionale Liste werden.
 ```
 
-```{code-cell} python3
 def flatten(mylist):
     result = []
     for sub_list in mylist:
@@ -276,7 +241,6 @@ def flatten(mylist):
     return result
 
 flatten([[[1,2], [3,3]], [[1,3], [4,5]]])
-```
 
 In unserer Lösung bewirkt ``result.append(element)`` das gleich wie ``result += [element]`` jedoch ist die erste Version klarer zu lesen denn wir wollen das Element ``element`` anhängen (engl. append).
 
@@ -288,12 +252,10 @@ Generieren Sie ein weißes $10 \times 10$ Rasterbild mit einem ein Pixel breiten
 Nutzen Sie die Programmierung um sich Zeit zu sparen!
 ```
 
-```{code-cell} python3
 top = [0 for i in range(10)]
 center = [0] + [1 for i in range(8)] + [0]
 picture = [top.copy()] + [center.copy() for i in range(8)] + [top.copy()]
 picture
-```
 
 Auch hier müssen Sie darauf achten die richtigen Kopien zu machen.
 Um sich Code zu sparen kann das sog. *List Comprehension* Ihnen Zeit beim Schreiben sparen.
@@ -328,27 +290,20 @@ Testen Sie ihr generiertes Bild.
 Ändern Sie den Pixel in der $5$-ten Zeile und und $5$-Spalte, sowie einen Pixeln in der ersten Spalte und einen in der ersten Zeile
 ```
 
-```{code-cell} python3
 picture[4][4] = 1
 picture
-```
 
-```{code-cell} python3
 picture[4][0] = 1
 picture
-```
 
-```{code-cell} python3
 picture[0][4] = 1
 picture
-```
 
 ```{exercise} Variables Bild generieren
 Schreiben Sie eine Funktion die Ihnen ein weißes Bild mit schwarzem Rand generiert.
 Dabei soll die Breite ``width`` und Höhe ``height`` sowie die Randbreite ``border_width`` ein Argument der Funktion sein.
 ```
 
-```{code-cell} python3
 def generate_border_picture(width=10, height=10, border_width=1):
     picture = []
     
@@ -368,7 +323,6 @@ def generate_border_picture(width=10, height=10, border_width=1):
         picture.append(top.copy())
     return picture
 generate_border_picture(width=5, height=10, border_width=2)
-```
 
 ```{exercise} Variable Bildgenerierung testen
 Testen Sie Ihre Funktion insbesondere für besondere Werte wie ``border_width > width``.
@@ -386,10 +340,8 @@ Sehen Sie sich die dazugehörige [Dokumentation](https://matplotlib.org/stable/a
 
 Mit folgendem Code
 
-```{code-cell} python3
 picture = generate_border_picture(width=5, height=10, border_width=1)
 plot_picture(picture)
-```
 
 erzuegen wir
 
@@ -431,13 +383,11 @@ Schreiben Sie eine Funktion ``to_pixel(p, resolution)`` die Ihnen den Pixel ``(i
 Bedenken Sie, dass wir Pixel beginnend mit $0$ zählen.
 ```
 
-```{code-cell} python3
 def to_pixel(p, resolution):
     x, y = p
     return int(x / resolution), int(y/ resolution)
 
 to_pixel((0.7, 0), 0.5)
-```
 
 Soweit so gut!
 Widmen wir uns nun dem Problem ein Rechteck bzw. Dreieck zu zeichnen.
@@ -470,12 +420,10 @@ Das kann endlos so weiter gehen und wir müssen uns eine **Abbruchbedingung** ü
 Schreiben Sie eine Funktion ``midpoint(p1, p2)`` die Ihnen den Mittelpunkt ``(mx,my)`` des Segments ``(p1=(x1,y1), p2=(x2, y2))`` zurückgibt.
 ```
 
-```{code-cell} python3
 def midpoint(p1, p2):
     return (p1[0]+p2[0])/2, (p1[1]+p2[1])/2
 
 midpoint((0,0),(3,3))
-```
 
 ````{exercise} Mittelpunkt berechnen
 Schreiben Sie eine Funktion ``distance(p1,p2)`` die Ihnen den Mittelpunkt die Länge des Segments ``(p1=(x1,y1), p2=(x2, y2))`` zurückgibt.
@@ -498,7 +446,6 @@ Ist ``distance(p1,p2) <= resolution`` macht es keinen großen Sinn mehr das Segm
 Schreiben Sie eine Funktion ``line(p1, p2, resolution)``, die Ihnen Punkte des Segments ``(p1,p2)`` erzeugt und als Liste zurückgibt.
 ```
 
-```{code-cell} python3
 import numpy as np
 def distance(p1, p2):
     return np.sqrt((p1[0]-p2[0])**2 + (p1[1]-p2[1])**2)
@@ -517,12 +464,10 @@ def line(p1, p2, resolution):
     split(p1, p2, resolution, points)
     return points
 line((0,0),(3,0),0.1)
-```
 
 Mit ``line`` können nun Punkte eines Segments erzeugen und durch ``to_pixel`` können wir diese Punkte in Pixel umwandeln.
 Lassen Sie uns nun einmal ein Bild mit einer Geraden zeichen:
 
-```{code-cell} python3
 resolution = 0.1
 picture = generate_border_picture(width=100, height=100, border_width=0)
 points = line((1,1), (9,9), resolution)
@@ -531,7 +476,6 @@ for pixel in pixels:
     picture[pixel[1]][pixel[0]] = 0
     
 plot_picture(picture)
-```
 
 Das sieht schon recht gut aus.
 Da der Pixel ``picture[0][0]`` rechts oben ist, ist unser Koordinatensystem an der $x$-Achse gespiegelt und nach oben verschoben, was wir jedoch hier vernachlässigen.
@@ -541,7 +485,6 @@ Schreiben Sie eine Funktion ``draw_line(picture, p1, p2, resolution)``, die das 
 Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll dann kein Fehler kommen sondern der Teil der nicht hinein passt wird abgeschnitten).
 ```
 
-```{code-cell} python3
 def contains_pixel(picture, pixel):
     return pixel[0] >= 0 and pixel[0] < len(picture) and pixel[1] >= 0 and pixel[1] < len(picture[0])
 
@@ -556,7 +499,6 @@ resolution = 0.1
 picture = generate_border_picture(width=100, height=100, border_width=0)
 draw_line(picture, (-1,-1), (11,11), resolution)
 plot_picture(picture)
-```
 
 Jetzt haben wir alle Teilprobleme gelöst und können das Dreieck bzw. Rechteck zeichnen.
 
@@ -564,7 +506,6 @@ Jetzt haben wir alle Teilprobleme gelöst und können das Dreieck bzw. Rechteck 
 Schreiben Sie eine Funktion ``draw_triangle(picture, p1, p2, p3, resolution)`` die das Dreieck ``(p1,p2,p3)`` in das Bild ``picture`` hineinzeichnet.
 ```
 
-```{code-cell} python3
 def draw_triangle(picture, p1, p2, p3, resolution):
     draw_line(picture, p1, p2, resolution)
     draw_line(picture, p2, p3, resolution)
@@ -574,13 +515,11 @@ resolution = 0.1
 picture = generate_border_picture(width=100, height=100, border_width=0)
 draw_triangle(picture, (1,1), (5,9), (9,1), resolution)
 plot_picture(picture)
-```
 
 ```{exercise} Rechteck zeichnen
 Schreiben Sie eine Funktion ``draw_rectangle(picture, p1, p2, p3, p4, resolution)`` die das Rechteck ``(p1,p2,p3,p4)`` in das Bild ``picture`` hineinzeichnet.
 ```
 
-```{code-cell} python3
 def draw_rectangle(picture, p1, p2, p3, p4, resolution):
     draw_line(picture, p1, p2, resolution)
     draw_line(picture, p2, p3, resolution)
@@ -591,7 +530,6 @@ resolution = 0.1
 picture = generate_border_picture(width=100, height=100, border_width=0)
 draw_rectangle(picture, (1,1), (1,9), (9,9), (9,1), resolution)
 plot_picture(picture)
-```
 
 Wenn wir uns nun die beiden Funktionen ``draw_triangle`` und ``draw_rectangle`` genauer ansehen und unsere **Mustererkennung** aktivieren könnte uns etwas auffallen?
 Die Funktionen gleichen sich!
@@ -602,7 +540,6 @@ Schreiben Sie eine Funktion ``draw_polygon(picture, polygon, resolution)`` die d
 ``polygon`` kann eine Liste oder Tupel sein.
 ```
 
-```{code-cell} python3
 def draw_polygon(picture, polygon, resolution):
     for i in range(len(polygon)):
         draw_line(picture, polygon[i-1], polygon[i], resolution)
@@ -611,7 +548,6 @@ resolution = 0.1
 picture = generate_border_picture(width=100, height=100, border_width=0)
 draw_polygon(picture, ((1,1), (1,9), (9,9), (9,1)), resolution)
 plot_picture(picture)
-```
 
 Dreieck und Reckteck hätten wir geschafft.
 Für den Kreis $K$ müssen wir zurück in unsere **abstrakte** Welt der geometrischen Objekte, denn einen Kreis nicht mit lauter Segmenten darzustellen macht wenig Sinn.
@@ -629,7 +565,6 @@ Schreiben Sie eine Funktion ``draw_circle(picture, circle, resolution)`` die den
 Sie können erneut ``numpy`` verwenden, d.h. ``np.sin()``, ``np.cos()``, ``np.pi`` und (optional) ``np.linspace()``.
 ```
 
-```{code-cell} python3
 import numpy as np
 def draw_circle(picture, circle, resolution):
     center = circle[0]
@@ -647,7 +582,6 @@ resolution = 0.1
 picture = generate_border_picture(width=100, height=100, border_width=0)
 draw_circle(picture, ((5,5), 3), resolution)
 plot_picture(picture)
-```
 
 Im Falle des Kreises beschreibt 
 
@@ -662,7 +596,6 @@ Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgem
 Suchen Sie sich irgendeine geeignete Funktion aus und zeichnen Sie diese in einem geeigneten Intervall.
 ```
 
-```{code-cell} python3
 import numpy as np
 def draw_function(picture, f, start, stop, resolution):
     n = int(3 * (stop - start) / resolution)
@@ -676,13 +609,11 @@ resolution = 0.1
 picture = generate_border_picture(width=100, height=100, border_width=0)
 draw_function(picture, lambda t: (t-5)**2, 1, 9, resolution)
 plot_picture(picture)
-```
 
 ## Daumenkino
 
 Die folgende Methode erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots) und falls Sie das Argument ``save`` auf ``True`` setzen wird ein GIF (eine Bildfolge/Daumenkino/Minivideo) erzeugt und in der Datei ``'binary-drawing.gif'`` abgespeichert.
 
-```{code-cell} python3
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib import animation, rc
@@ -708,7 +639,6 @@ def animate(pictures, interval = 100, save = False, title = '', dpi = 80):
         ani.save('binary-drawing.gif', dpi=dpi, writer="imagemagick")
     plt.close()
     return ani
-```
 
 ````{exercise} Einfaches Daumenkino
 Generieren Sie folgendes GIF/Daumenkino bzw. Animation:
@@ -723,14 +653,12 @@ name: fig-daumenkino
 **Tipp:** Sie benötigen lediglich mehrere Aufrufe von ``generate_border_picture()``.
 ````
 
-```{code-cell} python3
 size = 20
 increase = [generate_border_picture(width=size, height=size, border_width=i) for i in range(size//2)]
 decrease = [generate_border_picture(width=size, height=size, border_width=(size//2)-i) for i in range((size//2)-1)]
 border_pictures = increase + decrease
 ani = animate(border_pictures, save=True)
 HTML(ani.to_jshtml())
-```
 
 Fassen wir noch einmal kurz zusammen was wir bis jetzt geschafft haben:
 Wir haben uns ein Format für ein Schwarz-Weiß-Bild ausgedacht und umgesetzt.
@@ -754,7 +682,6 @@ name: fig-daumenkino-ball
 Anschließend können Sie mit ``draw_circle()`` diese Liste in eine Liste von Bildern umwandeln. Bedenken Sie, dass sie für jeden Kreis ein neues Bild durch ``generate_border_picture()`` generieren müssen. 
 ````
 
-```{code-cell} python3
 def generate_ball_box(width, height, circle, resolution):
     w = int(width/resolution)
     h = int(height/resolution)
@@ -788,7 +715,6 @@ def animate_ball(nframes):
 
 ani = animate(animate_ball(nframes=100), save=True)
 HTML(ani.to_jshtml())
-```
 
 ```{exercise} Eigenes Daumenkino
 Erzeugen Sie Ihr eigenes Daumenkino. Vielleicht ein bewegtes Dreieck oder eine fortlaufende Sinuswelle oder etwas ganz anderes?
@@ -838,7 +764,6 @@ name: fig-fourier-drawing
 
 ````
 
-```{code-cell} python3
 def draw_circular(picture, center, frequencies, radii, resolution, start=0.0, stop=2*np.pi):
     n = int(2*max(frequencies)*(stop-start) / resolution)
     t = np.linspace(start=start, stop=stop, num=n)
@@ -860,8 +785,6 @@ resolution = 0.1
 picture = generate_border_picture(width=100, height=100, border_width=0)
 draw_circular(picture, (5,5), [1,5,4], [2,1,0.5], resolution, 0.0, 2*np.pi)
 plot_picture(picture)
-```
-
 
 Es ergeben sich interessante Fragen.
 Zum Beispiel, mit welchen Argumenten erhalten Sie ein **harmonisches** (ein eher einfaches) Bild und warum?
