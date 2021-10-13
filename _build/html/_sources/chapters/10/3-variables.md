@@ -84,7 +84,7 @@ print(id(z))
 Sie sehen dass die ``id`` der Variablen ``x`` und ``z`` identisch sind. Ebenso ist ihr Wert identisch.
 Diese Situation sieht demnach wie folgt aus:
 
-```{figure} ../../figs/python-tutorial/varivariable-equal-idable.png
+```{figure} ../../figs/python-tutorial/variable-equal-idable.png
 ---
 width: 800px
 name: fig-variable-equal-id
