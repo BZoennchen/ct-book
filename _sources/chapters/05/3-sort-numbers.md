@@ -22,6 +22,22 @@ Wie und wo müsste man den Code ändern um z.B. Zahlen zu sortieren?
 Ändern oder erweitern Sie Ihren Programmiercode um Zahlen anstatt Karten zu sortieren.
 ```
 
+```{code-cell} python3
+def find_smallest_index(hand):
+    index = 0
+    for i in range(len(hand)):
+        if is_smaller(hand[i], hand[index]):
+            index = i
+    return index
+
+def remove_smallest_card(hand):    
+    i = find_smallest_index(hand)
+    card = hand[i]
+    del hand[i]
+    return card
+
+```
+
 Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller()``.
 
 ```{code-cell} python3

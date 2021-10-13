@@ -607,7 +607,9 @@ Er war sogar in der Lage die Erdkrümmung relativ genau zu berechnen und dadurch
 Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syren (800 km) ablief und berechnete.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sieve_of_eratosthenes</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">sieve_of_eratosthenes</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     <span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
     <span class="n">prime_sieve</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
     <span class="n">prime_sieve</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
@@ -628,21 +630,31 @@ Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">351987172</span><span class="n">dea</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="k">return</span> <span class="n">primes</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> 
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">sieve_of_eratosthenes</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="nn">&lt;ipython-input-1-351987172dea&gt;</span> in <span class="ni">sieve_of_eratosthenes</span><span class="nt">(N)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">prime_sieve</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">prime_sieve</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">))):</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="k">if</span> <span class="n">prime_sieve</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2,
+ 3,
+ 5,
+ 7,
+ 11,
+ 13,
+ 17,
+ 19,
+ 23,
+ 29,
+ 31,
+ 37,
+ 41,
+ 43,
+ 47,
+ 53,
+ 59,
+ 61,
+ 67,
+ 71,
+ 73,
+ 79,
+ 83,
+ 89,
+ 97]
 </pre></div>
 </div>
 </div>
@@ -668,6 +680,11 @@ Es ist eine clevere Technik um Primzahlen zu berechnen.</p>
     <span class="k">return</span> <span class="n">a</span>
 
 <span class="n">gcd</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
