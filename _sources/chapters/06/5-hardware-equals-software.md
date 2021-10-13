@@ -23,7 +23,29 @@ Um zwei Zahlen ``a``, ``b`` zu multiplizieren könnten wir aus mehreren Addierer
 Wir können also durch Komposition von bereits existierenden Bauteilen ein neues Bauteil mit einer neuen Funktion konstruieren.
 Doch genauso gut können wir durch Programmcode den Addierer mehrfach aufrufen und erhalten so das gleiche Endergebnis.
 
-```python
+```{code-cell} python3
+:tags: [hide-code]
+# Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung
+def to_binary(number):
+    binary_number = []
+    while number != 0:
+        r = number % 2
+        number = number // 2
+        binary_number = [r] + binary_number
+    return binary_number
+
+# Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung
+def to_decimal(binary_number):
+    decimal_number = 0
+    i = len(binary_number)-1
+    for bit in binary_number:
+        decimal_number += bit * 2**i
+        i += -1
+    return decimal_number
+# Zahl in Binärdarstellung 111 0100 1111 wird umgewandelt
+```
+
+```{code-cell} python3
 def ladd(a,b): # Wir nehmen an diese Funktion wird durch Bauteile/Hardware umgesetzt
     return to_binary(to_decimal(a) + to_decimal(b))
 
