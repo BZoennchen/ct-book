@@ -17,14 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-x = z + y   # Zelle 2
+# mit Variablen rechnen, die noch nicht definiert ist
+x = number + 4
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-4-a40630256e17>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mx[0m [0;34m=[0m [0mz[0m [0;34m+[0m [0my[0m   [0;31m# Zelle 2[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-5-fd3e62cb6a87>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# mit Variablen rechnen, die noch nicht definiert ist[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mx[0m [0;34m=[0m [0mnumber[0m [0;34m+[0m [0;36m4[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'z' is not defined
-NameError: name 'z' is not defined
+[0;31mNameError[0m: name 'number' is not defined
+NameError: name 'number' is not defined
 

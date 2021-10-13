@@ -27,7 +27,7 @@ Sie installieren ``Python`` (auf vielen Systemen ist es vorinstalliert), öffnen
 Auch lässt sich in nur wenigen Zeilen ein kleines ``Python``-Skript schreiben und ausführen.
 Erstellen wir eine neue Datei ``sum-squares.py`` und fügen folgenden ``Python``-Code ein.
 
-```{code-cell} python3
+```python
 import sys
 n = int(sys.argv[1])
 squares = sum([(i+1)**2 for i in range(n)])
@@ -94,7 +94,7 @@ Rufen wir die Methode mit einer Zeichenkette auf z.B. ``sum_square('a')`` wird u
 
 Eine recht neue Möglichkeit ist es den Typ direkt im Code anzugeben, es bleibt aber reine Dokumentation und hat keine Wirkung auf die Ausführung:
 
-```python
+```{code-cell} python3
 def sum_squares(n: int) -> int:
     return sum([(i+1)**2 for i in range(n)])
 ```

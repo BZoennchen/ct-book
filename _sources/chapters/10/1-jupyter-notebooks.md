@@ -138,19 +138,19 @@ Diese Ausführungsreihenfolge ist jedoch nicht verpflichtend.
 Sie können manuell einzelne Zellen auswerten.
 Nehmen wir einmal folgende *Code-Zellen* (1,2,3,4):
 
-```{code-cell} python3
+```python
 y = -3      # Zelle 1
 ```
 
-```{code-cell} python3
+```python
 x = z + y   # Zelle 2
 ```
 
-```{code-cell} python3
+```python
 z = 5       # Zelle 3
 ```
 
-```{code-cell} python3
+```python
 y = 20      # Zelle 4
 ```
 

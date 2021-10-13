@@ -588,28 +588,11 @@ Als <em>interpretierte</em> Sprache mit guter Toolunterstützung kann jeder in w
 Sie installieren <code class="docutils literal notranslate"><span class="pre">Python</span></code> (auf vielen Systemen ist es vorinstalliert), öffnen Ihre Konsole, tippen <code class="docutils literal notranslate"><span class="pre">python</span></code> und los gehts.</p>
 <p>Auch lässt sich in nur wenigen Zeilen ein kleines <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Skript schreiben und ausführen.
 Erstellen wir eine neue Datei <code class="docutils literal notranslate"><span class="pre">sum-squares.py</span></code> und fügen folgenden <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code ein.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">squares</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="n">ba31a13be49</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sys</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nn">      3 squares = sum([(i+1)**2 for i</span> in <span class="ni">range</span><span class="nt">(n)])</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;-f&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Führen wir dann das Programm durch den Konsolenbefehl</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="nb">sum</span><span class="o">-</span><span class="n">squares</span><span class="o">.</span><span class="n">py</span> <span class="mi">5</span>
@@ -661,9 +644,13 @@ Software oder auch Entwickler*innen, die Quellcode analysieren und auf Korrekthe
 Wir müssen deshalb mit Kommentaren kennzeichnen um was es sich handelt, um anderen Entwickler*innen die Fehlersuche zu erleichtern.
 Rufen wir die Methode mit einer Zeichenkette auf z.B. <code class="docutils literal notranslate"><span class="pre">sum_square('a')</span></code> wird uns niemand daran hindern und wir bemerken unseren Fehler erst, wenn das Programm abstürzt.</p>
 <p>Eine recht neue Möglichkeit ist es den Typ direkt im Code anzugeben, es bleibt aber reine Dokumentation und hat keine Wirkung auf die Ausführung:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_squares</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_squares</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>In statisch getypten Sprachen wie <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C++</span></code> oder <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> (siehe oben), ist dies durch die Definition der Funktion festgelegt.
 Hier würde bereits vor dem Start des Programms ein Fehler entstehen, falls wir <code class="docutils literal notranslate"><span class="pre">sum_square('a')</span></code> ausführen.
