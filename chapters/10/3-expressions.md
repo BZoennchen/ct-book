@@ -184,5 +184,5 @@ Dies ergibt $01001_2 = 9_{10}$.
 
 Für ganze Zahlen entspricht die Bitverschiebung nach rechts um ein Bit der Multiplikation mit 2.
 Die Verschiebung nach rechts um ein Bit hingegen der [ganzzahligen Division](sec-python-operator-arithmetic) durch 2.
-Deshalb ist `8 << 3` gleich $8 \cdot 2 \cdot 2 \cdot 2 = 8 \cdot 2^3 = 64$ und ``8 >> 2`` $\left \lfloor{8 \cdot 2^{-2}}\right \rfloor = 2$.
+Deshalb ist `8 << 3` gleich $8 \cdot 2 \cdot 2 \cdot 2 = 8 \cdot 2^3 = 64$ und ``8 >> 2`` gleich $\left \lfloor{8 \cdot 2^{-2}}\right \rfloor = 2$.
 
