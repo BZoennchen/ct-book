@@ -1,2 +1,0 @@
-# Das Python Ökosystem
-
