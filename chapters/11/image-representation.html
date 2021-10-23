@@ -398,34 +398,95 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../10/programming-in-python.html">
+  <a class="reference internal" href="../10-1/introduction.html">
    1. Programmieren in Python
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10/1-jupyter-notebooks.html">
-   2. Jupyter Notebooks
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-2/python-environment.html">
+   2. Das Python Ökosystem
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/1-installation.html">
+     2.1. Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/2-run.html">
+     2.2. Python ausführen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/3-notebooks.html">
+     2.3. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/4-modules.html">
+     2.4. Module
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10/2-variables.html">
-   3. Variablen
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-3/intro.html">
+   3. Variablen, Ausdrücke und Datentypen
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-3/1-variables.html">
+     3.1. Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-3/2-expressions.html">
+     3.2. Ausdrücke
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-3/3-invoking-functions.html">
+     3.3. Funktionsaufrufe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-3/4-data-types.html">
+     3.4. Datentypen (Einführung)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-3/5-data-types-deep-dive.html">
+     3.5. Datentypen (Fortsetzung)
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10/3-expressions.html">
-   4. Ausdrücke
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-4/intro.html">
+   4. Funktionen
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10/4-invoking-functions.html">
-   5. Funktionsaufrufe
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10/5-data-types.html">
-   6. Datentypen
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/1-functions-basics.html">
+     4.1. Funktionen - Grundlagen
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -638,13 +699,13 @@ Ein <a class="reference internal" href="../06/2-representation.html#pixel-image"
 Das Bild kann als <span class="math notranslate nohighlight">\(m \times n\)</span>-Matrix aufgefasst werden.
 In unserem Fall des Schwarz-Weiß-Bilds ist jeder Pixel entweder schwarz <span class="math notranslate nohighlight">\(0\)</span> oder weiß <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <div class="exercise admonition" id="repraesentation-bw-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span>(Bits pro Pixel)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.7 </span>(Bits pro Pixel)</p>
 <div class="section" id="exercise-content">
 <p>Wie viele <em>Bits</em> benötigen Sie für jeden Pixel?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="repraesentation-bw-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#repraesentation-bw-exercise"><span>Exercise 3.4</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#repraesentation-bw-exercise"><span>Exercise 3.7</span></a></p>
 <div class="section" id="solution-content">
 <p>Jeder Pixel kann nur einen von zwei Zuständen annehmen, demnach brauchen wir pro Pixel <span class="math notranslate nohighlight">\(1\)</span> <em>Bit</em>.</p>
 </div>
@@ -698,14 +759,14 @@ Sie könnten dazu geneigt sein folgender Code zu verwenden um ein Bild mit zwei 
 </div>
 <p>Doch hierbei entsteht ein merkwürdiges Phänomen, welches die folgende Aufgabe zum Vorschein bringt.</p>
 <div class="exercise admonition" id="copy-list-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 3.5 </span>(Kopie einer Liste)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.8 </span>(Kopie einer Liste)</p>
 <div class="section" id="exercise-content">
 <p>Ändern Sie nun ein einzelnen Pixel und lassen Sie sich das Ergebnis anzeigen.
 Was stellen Sie fest?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="rcopy-list-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#copy-list-exercise"><span>Exercise 3.5</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#copy-list-exercise"><span>Exercise 3.8</span></a></p>
 <div class="section" id="solution-content">
 <p>Ändern wir einen Pixel einer Zeile, z.B. durch</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -801,13 +862,13 @@ c = [1, 2, 3, 4, 5, 6, 7, 8]
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">concat_mutable</span></code> verändert <code class="docutils literal notranslate"><span class="pre">list1</span></code> und da es sich nicht um einen <a class="reference internal" href="../10/5-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> handelt, wird nur die Referenz kopiert und nicht die Liste <code class="docutils literal notranslate"><span class="pre">a</span></code> selbst.
+<p><code class="docutils literal notranslate"><span class="pre">concat_mutable</span></code> verändert <code class="docutils literal notranslate"><span class="pre">list1</span></code> und da es sich nicht um einen <a class="reference internal" href="../10-3/5-data-types-deep-dive.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> handelt, wird nur die Referenz kopiert und nicht die Liste <code class="docutils literal notranslate"><span class="pre">a</span></code> selbst.
 Somit wird <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code> ausgeführt und <code class="docutils literal notranslate"><span class="pre">a</span></code> wird verändert.
 Dies bezeichnen wir als sogenannten <em>Seiteneffekt</em> und in diesem Fall ist es ein unerwarteter <em>Seiteneffekt</em> den wir vermeiden sollten!
 Dennoch ist <code class="docutils literal notranslate"><span class="pre">+=</span></code> immer dann sehr sinnvoll wenn Sie eine Liste sukzessive füllen wollen.
 Denn jedesmal die gesamte Liste zu kopieren kann zu einer langen Laufzeit führen.</p>
 <div class="exercise admonition" id="mutable-vs-immutable-concat">
-<p class="admonition-title"><span class="caption-number">Exercise 3.6 </span>(Immutable vs. Mutable)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.9 </span>(Immutable vs. Mutable)</p>
 <div class="section" id="exercise-content">
 <p>Welcher der beiden Funktionen wird bei gleicher Eingabe schneller laufen und warum?
 Testen Sie beide Versionen für große <code class="docutils literal notranslate"><span class="pre">n</span></code> &gt; 0.</p>
@@ -842,7 +903,7 @@ Testen Sie beide Versionen für große <code class="docutils literal notranslate
 </div>
 </div>
 <div class="exercise admonition" id="iteration-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 3.7 </span>(Iteration)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.10 </span>(Iteration)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie einen Code der jedes Pixel des Bildes einzeln durch <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgibt.</p>
 </div>
@@ -904,12 +965,12 @@ Sie bleiben unverändert.
 Durch den obigen Aufruf wird erhalt das Argument <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">15</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> die Referenz zu <code class="docutils literal notranslate"><span class="pre">x</span></code> außerhalb der Funktion.
 <code class="docutils literal notranslate"><span class="pre">c</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">25</span></code> und wird zurückgegeben.
 Falls <code class="docutils literal notranslate"><span class="pre">y</span></code> innerhalb der Funktion verändert wird, würde <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine neue Kopie anlegen, da es sich um einen <em>unveränderlichen</em> (<em>immutable</em>) Datentyp handelt.
-Alle <a class="reference internal" href="../10/5-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a> wie <code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">bool</span></code> aber auch <code class="docutils literal notranslate"><span class="pre">str</span></code>(Zeichenketten) und <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind unveränderlich.
+Alle <a class="reference internal" href="../10-3/5-data-types-deep-dive.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a> wie <code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">bool</span></code> aber auch <code class="docutils literal notranslate"><span class="pre">str</span></code>(Zeichenketten) und <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind unveränderlich.
 Listen jedoch nicht!</p>
 <p>Eine gute Übung ist es eine Liste zu <em>flatten</em>, d.h. aus einer mehrdimensionalen Liste, eine Liste der Dimension <span class="math notranslate nohighlight">\(1\)</span> zu machen.
 Hierbei soll die Reihenfolge der Elemente erhalten bleiben.</p>
 <div class="exercise admonition" id="flatten-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 3.8 </span>(Flatten)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.11 </span>(Flatten)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">flatten(mylist)</span></code>, die die <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Liste <code class="docutils literal notranslate"><span class="pre">mylist</span></code> in eine <span class="math notranslate nohighlight">\(n-1\)</span>-dimensionale Liste transformiert.
 Zum Beispiel soll aus <code class="docutils literal notranslate"><span class="pre">[[[1,2],</span> <span class="pre">[3,3]],</span> <span class="pre">[[1,3],</span> <span class="pre">[4,5]]]</span></code>, also einer <span class="math notranslate nohighlight">\(3\)</span>-dimensionalen Liste, <code class="docutils literal notranslate"><span class="pre">[[1,2],</span> <span class="pre">[3,3],</span> <span class="pre">[1,3],</span> <span class="pre">[4,5]]</span></code>, also eine <span class="math notranslate nohighlight">\(2\)</span>-dimensionale Liste werden.</p>
@@ -940,7 +1001,7 @@ Zum Beispiel soll aus <code class="docutils literal notranslate"><span class="pr
 <div class="section" id="bildgenerierung-informationserzeugung">
 <h2><span class="section-number">3.4. </span>Bildgenerierung (Informationserzeugung)<a class="headerlink" href="#bildgenerierung-informationserzeugung" title="Permalink to this headline">¶</a></h2>
 <div class="exercise admonition" id="repraesentation-pic-with-border">
-<p class="admonition-title"><span class="caption-number">Exercise 3.9 </span>(Bild generieren)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.12 </span>(Bild generieren)</p>
 <div class="section" id="exercise-content">
 <p>Generieren Sie ein weißes <span class="math notranslate nohighlight">\(10 \times 10\)</span> Rasterbild mit einem ein Pixel breiten schwarzen Rand.
 Nutzen Sie die Programmierung um sich Zeit zu sparen!</p>
@@ -992,7 +1053,7 @@ Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim
 <p>und erzeugen aus der Sequenz <code class="docutils literal notranslate"><span class="pre">0,1,2,3,4,5,6,7,8,9</span></code> die Liste <code class="docutils literal notranslate"><span class="pre">[0,0,0,0,0,0,0,0,0,0]</span></code>.</p>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-8">
-<p class="admonition-title"><span class="caption-number">Exercise 3.10 </span>(Bild manipulieren)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.13 </span>(Bild manipulieren)</p>
 <div class="section" id="exercise-content">
 <p>Testen Sie ihr generiertes Bild.
 Ändern Sie den Pixel in der <span class="math notranslate nohighlight">\(5\)</span>-ten Zeile und und <span class="math notranslate nohighlight">\(5\)</span>-Spalte, sowie einen Pixeln in der ersten Spalte und einen in der ersten Zeile</p>
@@ -1065,7 +1126,7 @@ Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim
 </div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-9">
-<p class="admonition-title"><span class="caption-number">Exercise 3.11 </span>(Variables Bild generieren)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.14 </span>(Variables Bild generieren)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion die Ihnen ein weißes Bild mit schwarzem Rand generiert.
 Dabei soll die Breite <code class="docutils literal notranslate"><span class="pre">width</span></code> und Höhe <code class="docutils literal notranslate"><span class="pre">height</span></code> sowie die Randbreite <code class="docutils literal notranslate"><span class="pre">border_width</span></code> ein Argument der Funktion sein.</p>
@@ -1111,13 +1172,13 @@ Dabei soll die Breite <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-10">
-<p class="admonition-title"><span class="caption-number">Exercise 3.12 </span>(Variable Bildgenerierung testen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.15 </span>(Variable Bildgenerierung testen)</p>
 <div class="section" id="exercise-content">
 <p>Testen Sie Ihre Funktion insbesondere für besondere Werte wie <code class="docutils literal notranslate"><span class="pre">border_width</span> <span class="pre">&gt;</span> <span class="pre">width</span></code>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-11">
-<p class="admonition-title"><span class="caption-number">Exercise 3.13 </span>(Variable Bildgenerierung testen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.16 </span>(Variable Bildgenerierung testen)</p>
 <div class="section" id="exercise-content">
 <p>Folgende Funktion plottet Ihr Bild.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1170,7 +1231,7 @@ Bei einer <code class="docutils literal notranslate"><span class="pre">resolutio
 Anders ausgedrückt, braucht es <span class="math notranslate nohighlight">\(10 \times 10\)</span> Pixel um den Raum <span class="math notranslate nohighlight">\(1 \times 1\)</span> im <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> zu repräsentieren.</p>
 <p>Kennen wir die <code class="docutils literal notranslate"><span class="pre">resolution</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(x\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">cols</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(y\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">rows</span></code> und gehen davon aus, dass der Raum <span class="math notranslate nohighlight">\(R\)</span> den wir Abbilden möchten in <span class="math notranslate nohighlight">\((0,0)\)</span> beginnt und nur positive Werte enthält also <span class="math notranslate nohighlight">\(R = [0;w] \times [0;h]\)</span>, dann können wir für einen gegebenen Punkt <span class="math notranslate nohighlight">\(p = (x,y) \in \mathbb{R}^2\)</span> den Pixel <span class="math notranslate nohighlight">\((i,j) \in \mathbb{N}^2\)</span> berechnen der <span class="math notranslate nohighlight">\(p\)</span> enthält.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-12">
-<p class="admonition-title"><span class="caption-number">Exercise 3.14 </span>(Pixel berechnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.17 </span>(Pixel berechnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">to_pixel(p,</span> <span class="pre">resolution)</span></code> die Ihnen den Pixel <code class="docutils literal notranslate"><span class="pre">(i,j)</span></code> zurückgibt der den Punkt <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">(x,y)</span></code> enthält.
 Bedenken Sie, dass wir Pixel beginnend mit <span class="math notranslate nohighlight">\(0\)</span> zählen.</p>
@@ -1212,7 +1273,7 @@ Diesen Vorgang können wir solange fortsetzen, bis ein Segment komplett in einem
 Das heißt die Funktion, welche den Mittelpunkt berechnet, wird innerhalb dieser Funktion erneut aufgerufen.
 Das kann endlos so weiter gehen und wir müssen uns eine <strong>Abbruchbedingung</strong> überlegen.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-13">
-<p class="admonition-title"><span class="caption-number">Exercise 3.15 </span>(Mittelpunkt berechnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.18 </span>(Mittelpunkt berechnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">midpoint(p1,</span> <span class="pre">p2)</span></code> die Ihnen den Mittelpunkt <code class="docutils literal notranslate"><span class="pre">(mx,my)</span></code> des Segments <code class="docutils literal notranslate"><span class="pre">(p1=(x1,y1),</span> <span class="pre">p2=(x2,</span> <span class="pre">y2))</span></code> zurückgibt.</p>
 </div>
@@ -1233,7 +1294,7 @@ Das kann endlos so weiter gehen und wir müssen uns eine <strong>Abbruchbedingun
 </div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-14">
-<p class="admonition-title"><span class="caption-number">Exercise 3.16 </span>(Mittelpunkt berechnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.19 </span>(Mittelpunkt berechnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)</span></code> die Ihnen den Mittelpunkt die Länge des Segments <code class="docutils literal notranslate"><span class="pre">(p1=(x1,y1),</span> <span class="pre">p2=(x2,</span> <span class="pre">y2))</span></code> zurückgibt.</p>
 <p><strong>Tipp:</strong> Sie können die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> der <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Bibliothek verwenden, d.h.</p>
@@ -1248,7 +1309,7 @@ Das kann endlos so weiter gehen und wir müssen uns eine <strong>Abbruchbedingun
 <p><code class="docutils literal notranslate"><span class="pre">distance()</span></code> können wir als Abbruchbedingung der Rekursion verwenden.
 Ist <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)</span> <span class="pre">&lt;=</span> <span class="pre">resolution</span></code> macht es keinen großen Sinn mehr das Segment <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> weiter zu verkleinern.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-15">
-<p class="admonition-title"><span class="caption-number">Exercise 3.17 </span>(Segmentpunkte erzeugen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.20 </span>(Segmentpunkte erzeugen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">line(p1,</span> <span class="pre">p2,</span> <span class="pre">resolution)</span></code>, die Ihnen Punkte des Segments <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> erzeugt und als Liste zurückgibt.</p>
 </div>
@@ -1334,7 +1395,7 @@ Lassen Sie uns nun einmal ein Bild mit einer Geraden zeichen:</p>
 <p>Das sieht schon recht gut aus.
 Da der Pixel <code class="docutils literal notranslate"><span class="pre">picture[0][0]</span></code> rechts oben ist, ist unser Koordinatensystem an der <span class="math notranslate nohighlight">\(x\)</span>-Achse gespiegelt und nach oben verschoben, was wir jedoch hier vernachlässigen.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-16">
-<p class="admonition-title"><span class="caption-number">Exercise 3.18 </span>(Linie zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.21 </span>(Linie zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_line(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">resolution)</span></code>, die das Segment <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
 Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll dann kein Fehler kommen sondern der Teil der nicht hinein passt wird abgeschnitten).</p>
@@ -1365,7 +1426,7 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 </div>
 <p>Jetzt haben wir alle Teilprobleme gelöst und können das Dreieck bzw. Rechteck zeichnen.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-17">
-<p class="admonition-title"><span class="caption-number">Exercise 3.19 </span>(Dreieck zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.22 </span>(Dreieck zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_triangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">resolution)</span></code> die das Dreieck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.</p>
 </div>
@@ -1389,7 +1450,7 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 </div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-18">
-<p class="admonition-title"><span class="caption-number">Exercise 3.20 </span>(Rechteck zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.23 </span>(Rechteck zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_rectangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">p4,</span> <span class="pre">resolution)</span></code> die das Rechteck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3,p4)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.</p>
 </div>
@@ -1417,7 +1478,7 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 Die Funktionen gleichen sich!
 Beide zeichnen eine Sequenz/Liste von zusammenhängenden Segmenten oder anders gesagt: beide zeichnen ein Polygon!</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-19">
-<p class="admonition-title"><span class="caption-number">Exercise 3.21 </span>(Polygon zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.24 </span>(Polygon zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_polygon(picture,</span> <span class="pre">polygon,</span> <span class="pre">resolution)</span></code> die das Polygon <code class="docutils literal notranslate"><span class="pre">polygon</span> <span class="pre">=</span> <span class="pre">(p1,p2,p3,p4,p5,...)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
 <code class="docutils literal notranslate"><span class="pre">polygon</span></code> kann eine Liste oder Tupel sein.</p>
@@ -1450,7 +1511,7 @@ Sie der Kreis durch seinen Mittelpunkt <span class="math notranslate nohighlight
 Um den Kreis zu zeichnen unterteilen wir einfach das Intervall <span class="math notranslate nohighlight">\([0;2\pi]\)</span> in <span class="math notranslate nohighlight">\(n\)</span> Teile und erhalten so <span class="math notranslate nohighlight">\(n\)</span> Punkte.
 Wir könnten z.B. <span class="math notranslate nohighlight">\(n\)</span> so wählen dass <span class="math notranslate nohighlight">\(2\pi / n &lt;\)</span> <code class="docutils literal notranslate"><span class="pre">resolution</span></code> ist.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-20">
-<p class="admonition-title"><span class="caption-number">Exercise 3.22 </span>(Kreis zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.25 </span>(Kreis zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_circle(picture,</span> <span class="pre">circle,</span> <span class="pre">resolution)</span></code> die den Kreis <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">(m=(x,y),</span> <span class="pre">r)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
 Sie können erneut <code class="docutils literal notranslate"><span class="pre">numpy</span></code> verwenden, d.h. <code class="docutils literal notranslate"><span class="pre">np.sin()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.cos()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> und (optional) <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>.</p>
@@ -1489,7 +1550,7 @@ Sie können erneut <code class="docutils literal notranslate"><span class="pre">
 Wir können aber auch andere <em>Kurven</em> wir zum Beispiel die Funktion <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> durch die <em>Kurve</em> <span class="math notranslate nohighlight">\(k(t) = (t, f(t))\)</span> zeichnen.
 Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgemeinen nicht so einfach zu schätzen.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-21">
-<p class="admonition-title"><span class="caption-number">Exercise 3.23 </span>((mathematische) Funktion zeichnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.26 </span>((mathematische) Funktion zeichnen)</p>
 <div class="section" id="exercise-content">
 <p>Suchen Sie sich irgendeine geeignete Funktion aus und zeichnen Sie diese in einem geeigneten Intervall.</p>
 </div>
@@ -1552,7 +1613,7 @@ Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgem
 </div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-22">
-<p class="admonition-title"><span class="caption-number">Exercise 3.24 </span>(Einfaches Daumenkino)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.27 </span>(Einfaches Daumenkino)</p>
 <div class="section" id="exercise-content">
 <p>Generieren Sie folgendes GIF/Daumenkino bzw. Animation:</p>
 <div class="figure align-default" id="fig-daumenkino">
@@ -1761,42 +1822,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img9fada3534d2847f79f0c939215bf477e">
+  <img id="_anim_img9abbeca323f34ac4886d5308b0b8f2a9">
   <div class="anim-controls">
-    <input id="_anim_slider9fada3534d2847f79f0c939215bf477e" type="range" class="anim-slider"
+    <input id="_anim_slider9abbeca323f34ac4886d5308b0b8f2a9" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim9fada3534d2847f79f0c939215bf477e.set_frame(parseInt(this.value));"></input>
+           oninput="anim9abbeca323f34ac4886d5308b0b8f2a9.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="anim9fada3534d2847f79f0c939215bf477e.slower()">
+      <button title="Decrease speed" onclick="anim9abbeca323f34ac4886d5308b0b8f2a9.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="anim9fada3534d2847f79f0c939215bf477e.first_frame()">
+      <button title="First frame" onclick="anim9abbeca323f34ac4886d5308b0b8f2a9.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="anim9fada3534d2847f79f0c939215bf477e.previous_frame()">
+      <button title="Previous frame" onclick="anim9abbeca323f34ac4886d5308b0b8f2a9.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="anim9fada3534d2847f79f0c939215bf477e.reverse_animation()">
+      <button title="Play backwards" onclick="anim9abbeca323f34ac4886d5308b0b8f2a9.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="anim9fada3534d2847f79f0c939215bf477e.pause_animation()">
+      <button title="Pause" onclick="anim9abbeca323f34ac4886d5308b0b8f2a9.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="anim9fada3534d2847f79f0c939215bf477e.play_animation()">
+      <button title="Play" onclick="anim9abbeca323f34ac4886d5308b0b8f2a9.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="anim9fada3534d2847f79f0c939215bf477e.next_frame()">
+      <button title="Next frame" onclick="anim9abbeca323f34ac4886d5308b0b8f2a9.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="anim9fada3534d2847f79f0c939215bf477e.last_frame()">
+      <button title="Last frame" onclick="anim9abbeca323f34ac4886d5308b0b8f2a9.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="anim9fada3534d2847f79f0c939215bf477e.faster()">
+      <button title="Increase speed" onclick="anim9abbeca323f34ac4886d5308b0b8f2a9.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_select9fada3534d2847f79f0c939215bf477e"
+    <form title="Repetition mode" action="#n" name="_anim_loop_select9abbeca323f34ac4886d5308b0b8f2a9"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_9fada3534d2847f79f0c939215bf477e"
+      <input type="radio" name="state" value="once" id="_anim_radio1_9abbeca323f34ac4886d5308b0b8f2a9"
              >
-      <label for="_anim_radio1_9fada3534d2847f79f0c939215bf477e">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_9fada3534d2847f79f0c939215bf477e"
+      <label for="_anim_radio1_9abbeca323f34ac4886d5308b0b8f2a9">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_9abbeca323f34ac4886d5308b0b8f2a9"
              checked>
-      <label for="_anim_radio2_9fada3534d2847f79f0c939215bf477e">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_9fada3534d2847f79f0c939215bf477e"
+      <label for="_anim_radio2_9abbeca323f34ac4886d5308b0b8f2a9">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_9abbeca323f34ac4886d5308b0b8f2a9"
              >
-      <label for="_anim_radio3_9fada3534d2847f79f0c939215bf477e">Reflect</label>
+      <label for="_anim_radio3_9abbeca323f34ac4886d5308b0b8f2a9">Reflect</label>
     </form>
   </div>
 </div>
@@ -1806,9 +1867,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img9fada3534d2847f79f0c939215bf477e";
-    var slider_id = "_anim_slider9fada3534d2847f79f0c939215bf477e";
-    var loop_select_id = "_anim_loop_select9fada3534d2847f79f0c939215bf477e";
+    var img_id = "_anim_img9abbeca323f34ac4886d5308b0b8f2a9";
+    var slider_id = "_anim_slider9abbeca323f34ac4886d5308b0b8f2a9";
+    var loop_select_id = "_anim_loop_select9abbeca323f34ac4886d5308b0b8f2a9";
     var frames = new Array(19);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbAAAAEgCAYAAADVKCZpAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -3204,7 +3265,7 @@ SS0ZMElSSwZMktTS/wOc77bhSMsv0gAAAABJRU5ErkJggg==\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim9fada3534d2847f79f0c939215bf477e = new Animation(frames, img_id, slider_id, 100.0,
+        anim9abbeca323f34ac4886d5308b0b8f2a9 = new Animation(frames, img_id, slider_id, 100.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -3219,7 +3280,7 @@ Und jetzt haben wir sogar die Möglichkeit aus einer Folge von Bildern ein klein
 Dieses Video wiederum ist nichts anderes als eine Liste von Listen von Listen von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span>.
 Wir haben nun die Möglichkeit eine unbegrenzte Menge an Animationen zu erzeugen, von bewegten geometrischen Objekten bis hin zum <a class="reference external" href="https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens">Game Of Life</a> - Ihre Kreativität ist das Limit.</p>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-23">
-<p class="admonition-title"><span class="caption-number">Exercise 3.25 </span>(Simulation eines Partikels)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.28 </span>(Simulation eines Partikels)</p>
 <div class="section" id="exercise-content">
 <p>Generieren Sie eine Animation ein Partikel (einen Ball) der sich in einer Box bewegt, d.h. der Ball bewegt sich mit konstanter Geschwindigkeit und prallt von der Wand ab.</p>
 <div class="figure align-default" id="fig-daumenkino-ball">
@@ -3456,42 +3517,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imgb963bcb839d74f8c89862ee067d68853">
+  <img id="_anim_img33577e4623154c9a9385cd3f2e14b945">
   <div class="anim-controls">
-    <input id="_anim_sliderb963bcb839d74f8c89862ee067d68853" type="range" class="anim-slider"
+    <input id="_anim_slider33577e4623154c9a9385cd3f2e14b945" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="animb963bcb839d74f8c89862ee067d68853.set_frame(parseInt(this.value));"></input>
+           oninput="anim33577e4623154c9a9385cd3f2e14b945.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="animb963bcb839d74f8c89862ee067d68853.slower()">
+      <button title="Decrease speed" onclick="anim33577e4623154c9a9385cd3f2e14b945.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="animb963bcb839d74f8c89862ee067d68853.first_frame()">
+      <button title="First frame" onclick="anim33577e4623154c9a9385cd3f2e14b945.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="animb963bcb839d74f8c89862ee067d68853.previous_frame()">
+      <button title="Previous frame" onclick="anim33577e4623154c9a9385cd3f2e14b945.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="animb963bcb839d74f8c89862ee067d68853.reverse_animation()">
+      <button title="Play backwards" onclick="anim33577e4623154c9a9385cd3f2e14b945.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="animb963bcb839d74f8c89862ee067d68853.pause_animation()">
+      <button title="Pause" onclick="anim33577e4623154c9a9385cd3f2e14b945.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="animb963bcb839d74f8c89862ee067d68853.play_animation()">
+      <button title="Play" onclick="anim33577e4623154c9a9385cd3f2e14b945.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="animb963bcb839d74f8c89862ee067d68853.next_frame()">
+      <button title="Next frame" onclick="anim33577e4623154c9a9385cd3f2e14b945.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="animb963bcb839d74f8c89862ee067d68853.last_frame()">
+      <button title="Last frame" onclick="anim33577e4623154c9a9385cd3f2e14b945.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="animb963bcb839d74f8c89862ee067d68853.faster()">
+      <button title="Increase speed" onclick="anim33577e4623154c9a9385cd3f2e14b945.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_selectb963bcb839d74f8c89862ee067d68853"
+    <form title="Repetition mode" action="#n" name="_anim_loop_select33577e4623154c9a9385cd3f2e14b945"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_b963bcb839d74f8c89862ee067d68853"
+      <input type="radio" name="state" value="once" id="_anim_radio1_33577e4623154c9a9385cd3f2e14b945"
              >
-      <label for="_anim_radio1_b963bcb839d74f8c89862ee067d68853">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_b963bcb839d74f8c89862ee067d68853"
+      <label for="_anim_radio1_33577e4623154c9a9385cd3f2e14b945">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_33577e4623154c9a9385cd3f2e14b945"
              checked>
-      <label for="_anim_radio2_b963bcb839d74f8c89862ee067d68853">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_b963bcb839d74f8c89862ee067d68853"
+      <label for="_anim_radio2_33577e4623154c9a9385cd3f2e14b945">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_33577e4623154c9a9385cd3f2e14b945"
              >
-      <label for="_anim_radio3_b963bcb839d74f8c89862ee067d68853">Reflect</label>
+      <label for="_anim_radio3_33577e4623154c9a9385cd3f2e14b945">Reflect</label>
     </form>
   </div>
 </div>
@@ -3501,9 +3562,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imgb963bcb839d74f8c89862ee067d68853";
-    var slider_id = "_anim_sliderb963bcb839d74f8c89862ee067d68853";
-    var loop_select_id = "_anim_loop_selectb963bcb839d74f8c89862ee067d68853";
+    var img_id = "_anim_img33577e4623154c9a9385cd3f2e14b945";
+    var slider_id = "_anim_slider33577e4623154c9a9385cd3f2e14b945";
+    var loop_select_id = "_anim_loop_select33577e4623154c9a9385cd3f2e14b945";
     var frames = new Array(100);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbAAAAEgCAYAAADVKCZpAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -12735,7 +12796,7 @@ sg4AAAAASUVORK5CYII=\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        animb963bcb839d74f8c89862ee067d68853 = new Animation(frames, img_id, slider_id, 100.0,
+        anim33577e4623154c9a9385cd3f2e14b945 = new Animation(frames, img_id, slider_id, 100.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -12743,7 +12804,7 @@ sg4AAAAASUVORK5CYII=\
 </div></div>
 </div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-24">
-<p class="admonition-title"><span class="caption-number">Exercise 3.26 </span>(Eigenes Daumenkino)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.29 </span>(Eigenes Daumenkino)</p>
 <div class="section" id="exercise-content">
 <p>Erzeugen Sie Ihr eigenes Daumenkino. Vielleicht ein bewegtes Dreieck oder eine fortlaufende Sinuswelle oder etwas ganz anderes?</p>
 </div>
@@ -12766,7 +12827,7 @@ Zeichnen Sie beide Kreise mit der gleichen Frequenz und starten beide Kreise bei
 <div class="math notranslate nohighlight">
 \[K(t) = \sum_{i=0}^{n-1} K_i(t)\]</div>
 <div class="exercise admonition" id="chapters/11/image-representation-exercise-25">
-<p class="admonition-title"><span class="caption-number">Exercise 3.27 </span>(Fourier-Zeichnungen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.30 </span>(Fourier-Zeichnungen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_circular(picture,</span> <span class="pre">center,</span> <span class="pre">frequencies,</span> <span class="pre">radii,</span> <span class="pre">resolution,</span> <span class="pre">start</span> <span class="pre">stop)</span></code>, die die oben beschriebene Zeichentechnik implementiert.
 Dabei soll <code class="docutils literal notranslate"><span class="pre">center</span></code> gleich <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, <code class="docutils literal notranslate"><span class="pre">frequencies</span></code> eine Liste die alle Frequenzen <span class="math notranslate nohighlight">\(\omega_0, \ldots \omega_{n-1}\)</span> und <code class="docutils literal notranslate"><span class="pre">radii</span></code> eine Liste die alle Radii <span class="math notranslate nohighlight">\(r_0, \ldots, r_{n-1}\)</span> enthält sein.

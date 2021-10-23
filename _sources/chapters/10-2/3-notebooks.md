@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-jupyter-notebooks)=
 # Jupyter Notebooks
 
 Wie Sie mittlerweile bemerkt haben, verwenden wir für unseren Kurs ``Python`` in Kombination mit den sogenannten *Jupyter Notebooks*.
@@ -32,6 +33,31 @@ Die Technologie entstand demnach aus der Not heraus.
 Sie war dazu gedacht den wissenschaftlichen Austausch und Zusammenarbeit, kurzum den Wissenstransfer zu verbessern.
 Das erdachte und verwirklichte Konzept war recht einfach: Code (Computermodell) und Theorie (die Modellbeschreibung) sollten sich vereint in einem **lesbaren** und **ausführbaren** Dokument befinden.
 Der Code sollte die Modellbeschreibung und die Modellbeschreibung den Code erklären.
+
+## Starten
+
+Zunächst muss das ``jupyter`` Modul auf Ihrem System installiert und auffindbar sein.
+Ist dem der Fall können Sie mit
+
+```sh
+jupyter notebook [path/to/notebook/file]
+```
+
+ein bestimmtes Notebook starten und mit 
+
+```sh
+jupyter notebook
+```
+
+```{figure} ../../figs/python-tutorial/environment/jupyter-start.png
+---
+width: 800px
+name: fig-jupyter-start-2
+---
+```
+
+die Jupyter-Umgebung im aktuellen Verzeichnis ausführen.
+Im Browser können Sie dann zu Ihrem Notebook in einem Unterverzeichnis navigieren oder ein neues Notebook erstellen.
 
 ## Zellen
 

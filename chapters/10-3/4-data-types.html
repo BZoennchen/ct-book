@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Programmieren in Python &#8212; Computational Thinking</title>
+    <title>3.4. Datentypen (Einführung) &#8212; Computational Thinking</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Jupyter Notebooks" href="1-jupyter-notebooks.html" />
-    <link rel="prev" title="4.3. Programmiercode" href="../09/3-code.html" />
+    <link rel="next" title="3.5. Datentypen (Fortsetzung)" href="5-data-types-deep-dive.html" />
+    <link rel="prev" title="3.3. Funktionsaufrufe" href="3-invoking-functions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -395,35 +395,96 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10-1/introduction.html">
    1. Programmieren in Python
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1-jupyter-notebooks.html">
-   2. Jupyter Notebooks
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-2/python-environment.html">
+   2. Das Python Ökosystem
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/1-installation.html">
+     2.1. Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/2-run.html">
+     2.2. Python ausführen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/3-notebooks.html">
+     2.3. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/4-modules.html">
+     2.4. Module
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2-variables.html">
-   3. Variablen
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   3. Variablen, Ausdrücke und Datentypen
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-variables.html">
+     3.1. Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-expressions.html">
+     3.2. Ausdrücke
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-invoking-functions.html">
+     3.3. Funktionsaufrufe
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.4. Datentypen (Einführung)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-data-types-deep-dive.html">
+     3.5. Datentypen (Fortsetzung)
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3-expressions.html">
-   4. Ausdrücke
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-4/intro.html">
+   4. Funktionen
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4-invoking-functions.html">
-   5. Funktionsaufrufe
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5-data-types.html">
-   6. Datentypen
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/1-functions-basics.html">
+     4.1. Funktionen - Grundlagen
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -508,9 +569,12 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/10-3/4-data-types.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/10/programming-in-python.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/10-3/4-data-types.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -530,11 +594,79 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/10-3/4-data-types.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ganze-zahlen-int">
+   3.4.1. Ganze Zahlen - int
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wahrheitswerte-bool">
+   3.4.2. Wahrheitswerte - bool
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flieszkommazahlen-float">
+   3.4.3. Fließkommazahlen - float
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeichenketten-str">
+   3.4.4. Zeichenketten - str
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-list">
+   3.4.5. Listen - list
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tupel-tuple">
+   3.4.6. Tupel - tuple
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mengen-set">
+   3.4.7. Mengen - set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#worterbucher-dict">
+   3.4.8. Wörterbücher - dict
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -543,18 +675,55 @@
         
               <div>
                 
-  <div class="section" id="programmieren-in-python">
-<h1><span class="section-number">1. </span>Programmieren in Python<a class="headerlink" href="#programmieren-in-python" title="Permalink to this headline">¶</a></h1>
-<p>Wie ein Maler oder Bildhauer seine Ideen und Gedanken auf Papier bzw. in Stein meißelt, so gießen wir unsere Gedanken resultierend aus dem <a class="reference internal" href="../02/what-is-ct.html#sec-what-is-ct"><span class="std std-ref">Computational Thinking</span></a> in Programmcode.
-Eine ganz klare Trennung zwischen dem Denken und dem Programmieren gibt es natürlich nicht.
-Vielmehr schärft das Programmieren unsere Gedanken.
-Häufig fallen uns Fehler, unberücksichtigte Fälle oder Schwachstellen erst auf, wenn wir mit dem Programmieren beginnen.</p>
-<p>Was für den Mathematiker der Beweis ist, dass ist für uns die Ausführung unseres Codes.
-Ob dieser in allen Fällen, d.h., für jede möglich Eingabe auch das erwünschte Ergebnis liefert können wir oft nicht so einfach zeigen.
-Doch falls unser Denken mit der Implementierung übereinstimmt und wir auf dem Weg auf keine Lücken in unserer Logik gestoßen sind, so ist die Wahrscheinlichkeit groß, dass wir es mit einer korrekten Lösung zu tun haben.
-Durch die Realisierung unser Gedanken, durch das Programmieren stellen wir unter anderem fest, ob unsere Gedanken rigoros, logisch einwandfrei und scharf genug waren oder ob wir uns selbst in die Irre geführt haben.</p>
-<div class="learngoals admonition">
-<p class="admonition-title">Lernziel</p>
+  <div class="section" id="datentypen-einfuhrung">
+<span id="sec-datatypes-intro"></span><h1><span class="section-number">3.4. </span>Datentypen (Einführung)<a class="headerlink" href="#datentypen-einfuhrung" title="Permalink to this headline">¶</a></h1>
+<p>Wie in Abschnitt <a class="reference internal" href="../06/2-representation.html#sec-representation"><span class="std std-ref">Repräsentation</span></a> beschrieben, befinden sich im Speicher des (digitalen) Computers ausschließlich <a class="reference internal" href="../06/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>.
+Sie können sich den Speicher als eine lange lange Liste von Bits vorstellen.
+Diese können nur einen von zwei Zuständen (0 und 1) annehmen.
+Dennoch verarbeiten Computer Zahlen, Text, Bilder und mehr.
+Die Magie dahinter geschieht durch die Wahl und Implementierung einer <a class="reference internal" href="../06/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a>.
+Unterschiedliche Interpretationen ermöglichen es, Bits und <a class="reference internal" href="../06/2-representation.html#def-byte"><span class="std std-ref">Byte</span></a> als Zahlen, Text, Bilder usw. zu verarbeiten.
+Dabei werden schlussendlich diese komplexeren <strong>Datentypen</strong> durch Bits und Byte <a class="reference internal" href="../06/2-representation.html#sec-representation"><span class="std std-ref">repräsentiert</span></a>.</p>
+<p>So könnten wir ein Bild im <code class="docutils literal notranslate"><span class="pre">PNG</span></code> oder <code class="docutils literal notranslate"><span class="pre">JPEG</span></code>-Format als <em>Werte-Datentyp</em>-Paar ansehen.
+Der <em>Wert</em> ist durch die Bits die das Bild als solches ausmachen definiert.
+Der <em>Datentyp</em> <code class="docutils literal notranslate"><span class="pre">PNG</span></code> oder <code class="docutils literal notranslate"><span class="pre">JPEG</span></code> gibt an wie diese Bits von der Computerhardware wie auch Software interpretiert werden müssen um das Bild auch als Bild verarbeiten zu können.</p>
+<p>Wir sprechen bei diesen Dateiendungen jedoch nicht von <strong>Datentypen</strong> sondern von <em>Dateiformaten</em>.
+Von <strong>Datentypen</strong> sprechen wir hingegen, wenn es um eine <a class="reference internal" href="../06/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> im Zuge der Programmierung geht.</p>
+<div class="admonition-datentypen admonition" id="def-datatypes">
+<p class="admonition-title">Datentypen</p>
+<p>Ein <em>Datentyp</em> oder auch kurz <em>Typ</em> ist ein Attribut eines Werts, welches der Computerhardware und dem Compiler oder Interpreter angibt wie der Wert zu verwenden bzw. zu interpretieren ist.</p>
+</div>
+<p>Um das Konzept um die Datentypen zu durchdringen empfehlen wir zu einem späteren Zeitpunkt die Übung <a class="reference internal" href="../11/memory.html#sec-memory"><span class="std std-ref">Speicher - alles ist eine Liste</span></a>.</p>
+<div class="section" id="ganze-zahlen-int">
+<h2><span class="section-number">3.4.1. </span>Ganze Zahlen - int<a class="headerlink" href="#ganze-zahlen-int" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="wahrheitswerte-bool">
+<h2><span class="section-number">3.4.2. </span>Wahrheitswerte - bool<a class="headerlink" href="#wahrheitswerte-bool" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="flieszkommazahlen-float">
+<h2><span class="section-number">3.4.3. </span>Fließkommazahlen - float<a class="headerlink" href="#flieszkommazahlen-float" title="Permalink to this headline">¶</a></h2>
+<p>Computer sind gebaut um numerische Berechnungen auszuführen.</p>
+</div>
+<div class="section" id="zeichenketten-str">
+<h2><span class="section-number">3.4.4. </span>Zeichenketten - str<a class="headerlink" href="#zeichenketten-str" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="listen-list">
+<h2><span class="section-number">3.4.5. </span>Listen - list<a class="headerlink" href="#listen-list" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="tupel-tuple">
+<h2><span class="section-number">3.4.6. </span>Tupel - tuple<a class="headerlink" href="#tupel-tuple" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="mengen-set">
+<h2><span class="section-number">3.4.7. </span>Mengen - set<a class="headerlink" href="#mengen-set" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="worterbucher-dict">
+<h2><span class="section-number">3.4.8. </span>Wörterbücher - dict<a class="headerlink" href="#worterbucher-dict" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
 </div>
 </div>
@@ -572,7 +741,7 @@ Durch die Realisierung unser Gedanken, durch das Programmieren stellen wir unter
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/10"
+            path: "./chapters/10-3"
         },
         predefinedOutput: true
     }
@@ -584,8 +753,8 @@ Durch die Realisierung unser Gedanken, durch das Programmieren stellen wir unter
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../09/3-code.html" title="previous page"><span class="section-number">4.3. </span>Programmiercode</a>
-    <a class='right-next' id="next-link" href="1-jupyter-notebooks.html" title="next page"><span class="section-number">2. </span>Jupyter Notebooks</a>
+    <a class='left-prev' id="prev-link" href="3-invoking-functions.html" title="previous page"><span class="section-number">3.3. </span>Funktionsaufrufe</a>
+    <a class='right-next' id="next-link" href="5-data-types-deep-dive.html" title="next page"><span class="section-number">3.5. </span>Datentypen (Fortsetzung)</a>
 
         </div>
         

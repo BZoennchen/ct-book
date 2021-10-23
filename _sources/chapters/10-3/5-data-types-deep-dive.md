@@ -10,45 +10,8 @@ kernelspec:
   name: python3
 ---
 
-(sec-datatypes)=
-# Datentypen
-
-Wie in Abschnitt [Repräsentation](sec-representation) beschrieben, befinden sich im Speicher des (digitalen) Computers ausschließlich [Bits](def-bit).
-Sie können sich den Speicher als eine lange lange Liste von Bits vorstellen.
-Diese können nur einen von zwei Zuständen (0 und 1) annehmen.
-Dennoch verarbeiten Computer Zahlen, Text, Bilder und mehr.
-Die Magie dahinter geschieht durch die Wahl und Implementierung einer [Interpretation](sec-interpretation).
-Unterschiedliche Interpretationen ermöglichen es, Bits und [Byte](def-byte) als Zahlen, Text, Bilder usw. zu verarbeiten.
-Dabei werden schlussendlich diese komplexeren **Datentypen** durch Bits und Byte [repräsentiert](sec-representation).
-
-So könnten wir ein Bild im ``PNG`` oder ``JPEG``-Format als *Werte-Datentyp*-Paar ansehen.
-Der *Wert* ist durch die Bits die das Bild als solches ausmachen definiert.
-Der *Datentyp* ``PNG`` oder ``JPEG`` gibt an wie diese Bits von der Computerhardware wie auch Software interpretiert werden müssen um das Bild auch als Bild verarbeiten zu können.
-
-Wir sprechen bei diesen Dateiendungen jedoch nicht von **Datentypen** sondern von *Dateiformaten*.
-Von **Datentypen** sprechen wir hingegen, wenn es um eine [Interpretation](sec-interpretation) im Zuge der Programmierung geht.
-
-```{admonition} Datentypen
-:name: def-datatypes
-
-Ein *Datentyp* oder auch kurz *Typ* ist ein Attribut eines Werts, welches der Computerhardware und dem Compiler oder Interpreter angibt wie der Wert zu verwenden bzw. zu interpretieren ist.
-
-```
-
-Um das Konzept um die Datentypen zu durchdringen empfehlen wir zu einem späteren Zeitpunkt die Übung [Speicher - alles ist eine Liste](sec-memory).
-
-## Zahlen und Zeichen
-
-Bevor wir genauer untersuchen warum und welche Datentypen es gibt, wie wir diese unterscheiden können und was es mit der Typisierung auf sich hat, beginnen wir mit der Praxis.
-Die Datentypen mit denen Sie wohl am meisten zu tun haben werden sind Zahlen und Zeichen.
-
-### Zahlen
-
-Computer sind gebaut um numerische Berechnungen auszuführen.
-
-### Zeichenketten
-
-TODO
+(sec-datatypes-sequel)=
+# Datentypen (Fortsetzung)
 
 ## Arten von Datentypen
 
@@ -225,10 +188,9 @@ month
 
 Eine Zeichenkette ``str`` ist ebenfalls eine Kollektion, jedoch sind deren Elemente alle vom gleichen Typ -- dem Zeichen.
 
-### Eigens definierte Datentypen
+## Eigens definierte Datentypen
 
 Dazu später mehr.
-
 
 ## Primitive Datentypen in Python?
 

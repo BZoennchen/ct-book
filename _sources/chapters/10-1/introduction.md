@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Programmieren in Python
 
 Wie ein Maler oder Bildhauer seine Ideen und Gedanken auf Papier bzw. in Stein meißelt, so gießen wir unsere Gedanken resultierend aus dem [Computational Thinking](sec-what-is-ct) in Programmcode.
@@ -10,8 +22,6 @@ Ob dieser in allen Fällen, d.h., für jede möglich Eingabe auch das erwünscht
 Doch falls unser Denken mit der Implementierung übereinstimmt und wir auf dem Weg auf keine Lücken in unserer Logik gestoßen sind, so ist die Wahrscheinlichkeit groß, dass wir es mit einer korrekten Lösung zu tun haben.
 Durch die Realisierung unser Gedanken, durch das Programmieren stellen wir unter anderem fest, ob unsere Gedanken rigoros, logisch einwandfrei und scharf genug waren oder ob wir uns selbst in die Irre geführt haben.
 
-```{admonition} Lernziel
-:class: learngoals
-
-TODO
+```{code-cell} python3
+import this
 ```
