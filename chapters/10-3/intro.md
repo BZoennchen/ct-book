@@ -1,4 +1,4 @@
-# Variablen, Ausdrücke und Datentypen
+# Variablen, Ausdrücke und Funktionsaufrufe
 
 ```{admonition} Lernziel
 :class: learngoals

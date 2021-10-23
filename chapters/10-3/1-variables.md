@@ -89,7 +89,7 @@ Wird der **Wert** ``25`` in den Arbeitsspeicher an eine freie **Speicheradresse*
 
 Folgende Abbildung verdeutlicht die Situation:
 
-```{figure} ../../figs/python-tutorial/variable.png
+```{figure} ../../figs/python-tutorial/variables/variable.png
 ---
 width: 800px
 name: fig-variable
@@ -109,7 +109,7 @@ print(id(z))
 Sie sehen dass die ``id`` der Variablen ``x`` und ``z`` identisch sind. Ebenso ist ihr Wert identisch.
 Diese Situation sieht demnach wie folgt aus:
 
-```{figure} ../../figs/python-tutorial/variable-equal-id.png
+```{figure} ../../figs/python-tutorial/variables/variable-equal-id.png
 ---
 width: 800px
 name: fig-variable-equal-id
@@ -128,7 +128,7 @@ print(id(z))
 
 Die Situation könnte in etwa wie folgt aussehen:
 
-```{figure} ../../figs/python-tutorial/variable-unequal-id.png
+```{figure} ../../figs/python-tutorial/variables/variable-unequal-id.png
 ---
 width: 800px
 name: fig-variable-unequal-id

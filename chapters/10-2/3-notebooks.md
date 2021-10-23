@@ -152,7 +152,7 @@ Hierfür bietet die Jupyter-Umgebung auch einen Knopf: ``Cell``->``Run All`` wer
 Dabei wird die i-te Zelle erst ausgewertet, wenn die i-1-te Zelle erfolgreich ausgewertet werden konnte.
 In anderen Worten, der Code wird so ausgewertet als hätten Sie alles in eine einzige Zelle in der gleichen Reihenfolge hineingeschrieben!
 
-```{figure} ../../figs/python-tutorial/jn-all-cell-evaluation.png
+```{figure} ../../figs/python-tutorial/environment/jn-all-cell-evaluation.png
 ---
 height: 300px
 name: fig-jn-all-cell-evaluation
@@ -248,7 +248,7 @@ while True:
 Sie sehen an dem kleinen Sternchen ``*``, dass die Zelle ausgewertet wird.
 Erst wenn dieses verschwindet ist die Auswertung abgeschlossen.
 
-```{figure} ../../figs/python-tutorial/endless-loop-kernel.png
+```{figure} ../../figs/python-tutorial/environment/endless-loop-kernel.png
 ---
 width: 350px
 name: fig-endless-loop-kernel
@@ -261,7 +261,7 @@ Stellen Sie sich den *Kernel* vorerst als einen Vermittler zwischen Notebook und
 Beachten Sie, dass eine Unterbrechung des Kernels nicht bedeutet, dass alles so ist wie als hätten wir die Zelle gar nicht ausgeführt.
 Die Zelle wurde solange ausgeführt, bis wir den Vorgang unterbrochen haben.
 
-```{figure} ../../figs/python-tutorial/interrupt-kernel.png
+```{figure} ../../figs/python-tutorial/environment/interrupt-kernel.png
 ---
 height: 300px
 name: fig-interrupt-kernel
