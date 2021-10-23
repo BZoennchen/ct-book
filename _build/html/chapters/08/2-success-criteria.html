@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.2. Erfolgsfaktoren &#8212; Computational Thinking</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.3. Imperativ vs. funktional" href="3-imperative-vs-functional.html" />
+    <link rel="prev" title="3.1. Abstraktion des Computers" href="1-abstraction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Thinking</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01/course.html">
+   1. Kurskonzept
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/1-teaching.html">
+     1.1. Lehrkonzept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01/2-learn-how-to-think.html">
+     1.2. Denken lernen?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/what-is-ct.html">
+   2. Was ist Computational Thinking
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/1-informatics-and-ct.html">
+     2.1. Von der Informatik zum Computational Thinking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/2-repetition-is-the-key.html">
+     2.2. Wiederholung als Grundlage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/history.html">
+   3. Geschichte der Computer und Algorithmen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/1-ancient.html">
+     3.1. Antike
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/2-middleages.html">
+     3.2. Mittelalter bis 19. Jahrundert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/3-today.html">
+     3.3. 19. Jahrundert bis heute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/4-future.html">
+     3.4. Ausblick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04/why-ct.html">
+   4. Warum Computational Thinking?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/1-intrinsic-value.html">
+     4.1. Intrinsischer Wert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/2-usefulness.html">
+     4.2. Langfristiger Nutzen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/3-self-determination.html">
+     4.3. Selbstbestimmt durch CT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/sorting.html">
+   5. Lasst uns Denken
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/1-sort-cards.html">
+     5.1. Karten sortieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/2-sort-cards-with-python.html">
+     5.2. Karten sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/3-sort-numbers.html">
+     5.3. Zahlen sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/4-sort-anything.html">
+     5.4. Allgemeines Sortieren in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Theorie
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/information-processing.html">
+   1. Der digitale Computer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/1-basics.html">
+     1.1. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/2-interpretation.html">
+     1.2. Interpretation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/2-representation.html">
+     1.3. Repräsentationen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/3-manipulation.html">
+     1.4. Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/4-information-flow.html">
+     1.5. Der Informationskreislauf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/5-hardware-equals-software.html">
+     1.6. Berechenbarkeit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07/information.html">
+   2. Was ist Information?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/1-natural-science.html">
+     2.1. Naturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/2-formal-science.html">
+     2.2. Strukturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/3-critic.html">
+     2.3. Kritik
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/4-humanics.html">
+     2.4. Geisteswissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/5-summary.html">
+     2.5. Zusammenfassung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="languages.html">
+   3. Programmiersprachen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-abstraction.html">
+     3.1. Abstraktion des Computers
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.2. Erfolgsfaktoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-imperative-vs-functional.html">
+     3.3. Imperativ vs. funktional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-language-evolution.html">
+     3.4. Sprachevolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-python.html">
+     3.5. Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-diversity.html">
+     3.6. Diversität
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09/the-art-of-programming.html">
+   4. Die Kunst des Programmierens
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/1-algorithms.html">
+     4.1. Algorithmen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/2-programming.html">
+     4.2. Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09/3-code.html">
+     4.3. Programmiercode
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10-1/introduction.html">
+   1. Programmieren in Python
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-2/python-environment.html">
+   2. Das Python Ökosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/1-installation.html">
+     2.1. Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/2-run.html">
+     2.2. Python ausführen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/3-notebooks.html">
+     2.3. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-2/4-modules.html">
+     2.4. Module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-3/intro.html">
+   3. Variablen, Ausdrücke und Funktionsaufrufe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-3/1-variables.html">
+     3.1. Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-3/2-expressions.html">
+     3.2. Ausdrücke
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-3/3-invoking-functions.html">
+     3.3. Funktionsaufrufe
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-4/intro.html">
+   4. Datentypen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/1-data-types.html">
+     4.3. Pythons wichtigste built-in Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/2-kind-of-data-types.html">
+     4.4. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/3-primitive-data-types.html">
+     4.5. Primitive Datentypen in Python?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/4-change-of-interpretation.html">
+     4.6. Interpretationswechsel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/5-why-data-types.html">
+     4.7. Existenzberechtigung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/6-type-systems.html">
+     4.8. Dynamische und statische Typisierung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-5/intro.html">
+   5. Funktionen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-5/1-functions-basics.html">
+     5.1. Funktionen - Grundlagen
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  CT in Aktion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/robo-world.html">
+   1. Roboterwelt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/dive-bell.html">
+   2. Sprechen in der Taucherglocke
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/image-representation.html">
+   3. Binäres Zeichnen - Struktur ist Information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/memory.html">
+   4. Speicher - alles ist eine Liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../11/name-register.html">
+   5. Namensregister
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/08/2-success-criteria.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="erfolgsfaktoren">
+<h1><span class="section-number">3.2. </span>Erfolgsfaktoren<a class="headerlink" href="#erfolgsfaktoren" title="Permalink to this headline">¶</a></h1>
+<p>In den Entwurf von Programmiersprachen ist viel Denkkraft hineingeflossen.
+Wie Sie im Beispiel des Kartensortierens gesehen haben, ist es nicht einfach eine saubere gut leserliche und unmissverständliche Sprache zu entwickeln.
+Zum Glück können wir von den Vorarbeiten anderer Denker*innen profitieren und müssen uns über die Entwicklung einer Programmiersprache keine Gedanken machen.
+Wir möchten Ihnen dennoch einen Einblick geben, weshalb neue Programmiersprachen entwickelt werden und welche Art von Programmiersprachen es gibt.</p>
+<div class="figure align-default" id="fig-language-popularity">
+<a class="reference internal image-reference" href="../../_images/programming-language-popularity.png"><img alt="../../_images/programming-language-popularity.png" src="../../_images/programming-language-popularity.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.12 </span><span class="caption-text">Popularität der Programmiersprachen nach dem <a class="reference external" href="https://pypl.github.io/PYPL.html">PYPL Index</a> (logarithmische Skala) – <code class="docutils literal notranslate"><span class="pre">Python</span></code> gefolgt von <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code>, <code class="docutils literal notranslate"><span class="pre">C#</span></code> und <code class="docutils literal notranslate"><span class="pre">C++</span></code>.</span><a class="headerlink" href="#fig-language-popularity" title="Permalink to this image">¶</a></p>
+</div>
+<p>Zunächst ist festzuhalten, dass es nicht die eine beste Programmiersprache gibt.
+Unterschiedliche Sprachen eigenen sich für unterschiedliche Aufgaben, Anwendungsbereiche und folgen subjektiven Vorlieben.</p>
+<p>Die wesentlichen Teile die wir bei einer Sprache beurteilen können sind:</p>
+<ol class="simple">
+<li><p>ihre <strong>Syntax</strong></p></li>
+<li><p>ihr <strong>Ökosystem</strong> (vorhandene Bibliotheken, Tutorials, Dokumentationen, Lehrvideos, eine starke offene und diverse Gemeinschaft)</p></li>
+<li><p>ihre <strong>Anwendungsbereiche</strong></p></li>
+<li><p>ihre <strong>Performance</strong> (Laufzeit des Programmcodes)</p></li>
+</ol>
+<p>Diese vier Säulen stehen in Beziehung.
+Eine angenehme gut leserliche Syntax führt zu einer regen Benutzung und damit zu einem starken Ökosystem, was den Anwendungsbereich erweitert.
+Ein vielschichtiger Anwendungsbereich stärkt die Diversität des Ökosystems und kann zu neuen syntaktischen Erweiterungen der Sprache führen.
+Entwickelt sich die Sprache weiter und wird vielfach verwendet, wird sie oftmals auch hinsichtlich ihrer Performance optimiert.
+Diese Rückkoppelung kann deshalb dazu führen, dass eine neue Sprache schnell an Fahrt aufnimmt.</p>
+<p>Performance und Lesbarkeit bzw. Entwicklungszeit stehen aber auch im Konflikt.
+Um feinste Optimierungen durchzuführen muss die Sprache über Mittel verfügen, die die Entwicklungszeit erhöht und die Lesbarkeit des Codes erschwert.
+Hohe Lesbarkeit und eine hohe Performance sind gleichzeitig schwer zu erreichen.
+<code class="docutils literal notranslate"><span class="pre">Python</span></code> hat hier einen Weg gefunden (siehe <a class="reference internal" href="5-python.html#sec-python"><span class="std std-ref">Python</span></a>).</p>
+<p>Neue Programmiersprachen haben es natürlich erst einmal schwer, denn etablierte Sprachen werden in vielen Systemen bereits eingesetzt.
+Niemand schreibt diese Systeme erneut, es sei denn es lohnt sich wirklich.
+Zudem gibt es für etablierte Sprachen eine über die Jahre entwickelte Ansammlung an Bibliotheken, Tools, Tutorials und Dokumentationen - sie besitzten bereits ein gutes <strong>Ökosystem</strong>.</p>
+<p>Es gibt Sprachen, wie zum Beispiel <code class="docutils literal notranslate"><span class="pre">CUDA</span></code>, die einen sehr engen Anwendungsbereich haben: die Programmierung von Nvidea Grafikkarten.
+Für den Erfolg der Sprache kann das von Vorteil sein, sofern es schwer ist in dem Anwendungsbereich Fuß zu fassen oder dieser keine breite Anwender*innen- oder Entwickler*innenbasis besitzt.
+Da GPUs fundamental anders funktionieren als CPUs, bedurfte es neuer Sprachen um die Programmierung dieser Geräte zu vereinfachen.
+Im Fall von Nvidea schützt der Hardwarehersteller sein geistiges Eigentum und macht es für andere Entwickler schwierig neue Sprache für Nvidea GPUs zu entwickeln.
+Der offene Standard <code class="docutils literal notranslate"><span class="pre">OpenCL</span></code> wird nicht mehr von Nvidea weiterentwickelt und so können <code class="docutils literal notranslate"><span class="pre">OpenCL</span></code> Programmierer*innen wichtige Features der Grafikkarten nicht nutzen.
+Solche Monopole können eine Sprache auch vorran bringen, sind aber heute unserer Ansicht nach nicht mehr Zeitgemäß, da sie die Innovation tendenziell verlangsamen.</p>
+<p>Folgender <code class="docutils literal notranslate"><span class="pre">OpenCL</span></code>-Code addiert zwei große Vektoren (zwei große Listen).
+Die Operation wird auf tausenden kleinen Prozessoren parallel ausgeführt.
+<code class="docutils literal notranslate"><span class="pre">id</span></code> ist die eindeutige Nummer des jeweiligen Prozessors.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">__kernel</span> <span class="kt">void</span> <span class="n">vecAdd</span><span class="p">(</span><span class="n">__global</span> <span class="kt">double</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">__global</span> <span class="kt">double</span> <span class="o">*</span><span class="n">b</span><span class="p">,</span> <span class="n">__global</span> <span class="kt">double</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>                                                                             
+    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">get_global_id</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>                                
+    <span class="k">if</span> <span class="p">(</span><span class="n">id</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>                                      
+        <span class="n">c</span><span class="p">[</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">id</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">id</span><span class="p">];</span>      
+    <span class="p">}</span>                           
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Viele Sprachen werden einmalig in Forschungsprojekten für ganz spezielle Zwecke von ihrem Erfinder benutzt und versinken dann wieder in der Versenkung.
+Von diesen haben und werden wir nie etwas mitbekommen.
+Sehr wenige davon treffen jedoch ins Schwarze.</p>
+<p>Ob sich eine Programmiersprache etabliert hängt meist davon ab ob sie verwendet wird.
+Diese Tatsache ist in der heutigen global vernetzten Welt noch ausschlaggebender als in der Vergangenheit.
+Erfolgreiche Sprachen treffen den Nerv der Zeit, haben oft einflussreiche Unterstützer, oder bringen wichtige neue Konzepte in die Gemeinschaft.</p>
+<p>Für den langfristige Erfolg einer Sprache müssen wir noch genauer hinsehen.
+Ist eine Sprache zu schnell zu erfolgreich, kann das ihren langfristigen Erfolg bedrohen.
+Sie wächst zu schnell.
+Überhastet werden Neuerungen eingebracht, die sich später als Fehler herausstellen.
+Befinden sich erst einmal bestimmte Konzepte in einer Sprache, kann man diese nur sehr schwer wieder herausbringen, da bereits viele Software-Systeme auf die Konzepte angewiesen sind.
+So wird die Vorhersage ob sich eine Sprache durchsetzen wird zu einer eher chaotischen Wettervorhersage.
+Es gibt viele unsicherer Variablen inklusive der zukünftigen technischen Entwicklung.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Haskell</span></code> ist eine Sprache die sehr gemächlich an Erfolg gewonnen hat.
+Sie war nie die Nummer eins und ist noch immer eher eine Nischensprache, doch ist sie auch nicht verschwunden.
+Das war jedoch nur möglich, da sie von einer kleinen Gruppe am Leben gehalten wurde.</p>
+<p>Eine weitere wichtige Ursache für den Erfolg einer Sprache ist deren Leserlichkeit aber auch deren allgemeiner Zugang.
+Wird die Sprache oder Bibliotheken kommerzialisiert?
+Gibt es eine starke Open-Source oder Free-Source Gemeinschaft?
+Wird die Sprache von großen Unternehmen unterstützt?
+Gibt es freie Programmierwerkzeuge?</p>
+<p>Im Bereich des High Performance Computation (HPC) spielt die Geschwindigkeit des Programmiercodes der Sprache eine zentrale Rolle.
+Dieses Feld ist immernoch stark von <code class="docutils literal notranslate"><span class="pre">C</span></code> und <code class="docutils literal notranslate"><span class="pre">C++</span></code> geprägt, da auch HPC-Bibliotheken wie OpenM und MPI auf diesen Sprachen basieren.
+Leserlichkeit ist in diesem Bereich weniger wichtig als optimaler Code.
+Hier wird jede Methode bis aufs kleinste Detail optimiert.
+Das geht soweit, dass man sich darüber Gedanken macht in welcher Reihenfolge man bestimmte Rechnung wie</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="n">u</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>durchführt.</p>
+<p>Möchte ich hingegen eine kürzere Entwicklungszeit und weniger Fehlerquellen in meinem Code, mache ich womöglich bei der Geschwindigkeit kleinere Abstriche und wähle stattdessen leichter zu erlernende Sprache wie <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">Java</span></code> oder <code class="docutils literal notranslate"><span class="pre">C#</span></code>.</p>
+<p>Für die Anwendung der linearen Algebra ist es sinnvoll der Programmiererin oder dem Programmierer die Möglichkeit zu geben, Matrizen zu multiplizieren.
+Im folgenden sehen Sie wie dies in <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> syntaktisch möglich ist.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">2</span><span class="w"> </span><span class="s">4</span><span class="w"> </span><span class="s">7]</span><span class="p">;</span><span class="w"></span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="s">9</span><span class="w"> </span><span class="s">21</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">8]</span><span class="p">;</span><span class="w"></span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Um Webseiten clientseitig zu steuern (d.h. der Code wird lokal auf Ihrem Rechner ausgeführt) bieten Internetbrowser eine eigene Programmiersprache namens <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> an.
+Diese Sprache hat sich auch im Bereich Design ausgebreitet.
+Sie hat sich so weit verbreitet, dass sie heute auch für andere Zwecke wie die clientseitige Webprogrammierung genutzt wird.
+Ein Beispiel ist das Projekt <a class="reference external" href="https://en.wikipedia.org/wiki/Node.js">Node.js</a>.</p>
+<p>Unterschiedliche Sprachen folgen unterschiedlichen Philosophien.
+In <code class="docutils literal notranslate"><span class="pre">Python</span></code> gibt es oft nur den einen richtigen Weg um etwas auszudrücken.
+In Sprachen wie <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> gibt es hingegen viele ausdrucksweisen (syntaktische Unterschiede) für die gleiche Semantik.
+Im Falle von <code class="docutils literal notranslate"><span class="pre">Python</span></code> hat es den Vorteil, dass fremder Code leichter zu lesen ist.
+Sind hingegen mehrere Programmierstile valide, dann treffen möglicherweise zwei verschiedene Stile aufeinander was wiederum die Zusammenarbeit behindert.
+Andererseits kann mehr Freiheit in der Ausdrucksweise auch zu innovativem Code führen, der sich dann als <em>Best-Practice</em> herausstellt und zum neuen Standard wird.</p>
+<p>Es gibt Sprachen die kompakt sind dafür aber impliziert Dinge annehmen und Sprachen die viel Text erfordern, dafür aber wenig implizieren.
+Kompakte Sprachen integrieren oft etablierte Praktiken bzw. immer wiederkehrende Codestrukturen (<strong>Muster</strong>).
+Für den Einstieg sind kompakte Sprachen oder kompakter Code oft ein Hindernis.
+Doch je erfahrener man mit der Sprache wird, desto lästiger wird das immer gleiche Getippe.
+Nach meiner Erfahrung nimmt die Kompaktheit mit der Lebensdauer einer Sprache zu.</p>
+<div class="exercise admonition" id="compact-code-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 3.2 </span>(Kompaktheit)</p>
+<div class="section" id="exercise-content">
+<p>Welchen der beiden Codeteile würden Sie als kompakt bezeichnen?
+Welcher ist Ihrer Meinung nach lesbarer?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(Das Resultat ist identisch)</p>
+</div>
+</div>
+<p>Hat jede Sprache Vor- und Nachteile?
+Zu bestimmten Zeiten sicherlich.
+Doch kann es auch passieren, dass eine Sprache ganz von der Bildfläche verschwindet, da sie gegenüber neuen Sprachen keine Vorteile mehr mit sich bringt.
+Irgendwann kann die Zeit kommen die Logik eines alten Programmiercodes, der immernoch erweitert wird, in einer neuen Sprache umzusetzen.
+Kaum noch jemand schreibt heute <code class="docutils literal notranslate"><span class="pre">Perl</span></code>-Skripte oder beginnt ein neues Projekt mit <code class="docutils literal notranslate"><span class="pre">Fortran</span></code>.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/08"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="1-abstraction.html" title="previous page"><span class="section-number">3.1. </span>Abstraktion des Computers</a>
+    <a class='right-next' id="next-link" href="3-imperative-vs-functional.html" title="next page"><span class="section-number">3.3. </span>Imperativ vs. funktional</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
