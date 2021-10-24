@@ -83,6 +83,7 @@ Eine Zeichenkette ist eine Liste aus Zeichen.
 Wir können den Datentyp Zeichenkette also in den Datentyp Zeichen zerlegen.
 ```
 
+(sec-built-in-data-types)=
 ## Built-in Datentypen
 
 *Built-in* Datentypen sind jene Datentypen, welche die Programmiersprache (ohne weitere Bibliotheken) mitliefert.

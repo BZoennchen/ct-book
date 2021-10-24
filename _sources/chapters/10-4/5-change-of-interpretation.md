@@ -10,8 +10,10 @@ kernelspec:
   name: python3
 ---
 
+(sec-change-of-data-types)=
 # Interpretationswechsel
 
+Was passiert wenn wir eine Zahl in eine Zeichenkette umwandeln?
 Wir können zum Beispiel eine Variable mit einer Zahl initialisieren und diese Zahl als Zeichen interpretieren.
 Dazu brauchen wir jedoch eine geeignete Interpretation:
 
@@ -30,12 +32,17 @@ Erst weisen wir die Zahl ``90`` der Variablen ``number`` zu.
 In der zweiten Zeile weisen wir die Zeichenkette ``'90'`` der Variablen ``characters`` zu.
 ``str`` ist eine Funktion welche aus ihrem Argument eine Zeichenkette generiert.
 
-Würden wir uns die Bits der Speicherbereiche der Variablen ``number`` und ``characters`` anzeigen, so wären diese Bits nicht identisch.
-Die Bits welche die Zahl 90 ergeben, d.h. $90_{10} = 01011010_2$ ergeben in der von ``Python`` gewählten Interpretation (ASCII) nicht die Zeichenkette ``'90'``.
+Würden wir uns die Bits der Speicherbereiche der Variablen ``number`` und ``characters`` anzeigen, so wären diese Bits **nicht** identisch.
+Die Bits welche die Zahl 90 ergeben, d.h. $90_{10} = 01011010_2$ ergeben in der von ``Python`` gewählten Interpretation (ASCII) **nicht** die Zeichenkette ``'90'``.
 Auch die Datentypen der beiden Variablen sind unterschiedlich.
 ``characters`` ist eine sogenannte Zeichenkette (String ``str``) und ``number`` eine ganze Zahl (Integer ``int``).
 
-In diesem Beispiel wechseln wir also beides: Die Interpretation als auch den Wert (die Bits und Byte)!
+```{code-cell} python3
+print(f' tpye of number {type(number)}')
+print(f' tpye of characters {type(characters)}')
+```
+
+In diesem Beispiel wechseln wir nicht nur die Interpretation von 'interpretiere Bits als Zahl' auf 'interpretiere Bits als Zeichenkette' sondern auch den **Wert** -- die Bits werden ebenfalls verändert.
 Mit ``str(90)`` sagen wir ``Python``: Bitte mach uns aus der Zahl 90 die Zeichenkette ``'90'``.
 Es wird außerdem klar, dass wir eine Zahl in ihrer Gestalt als ``int`` gar nicht ausgeben können!
 Stattdessen wird diese immer erst in eine Zeichenkette umgewandelt.
@@ -43,22 +50,22 @@ Die Funktion ``print`` sorgt dafür, dass sowohl der Inhalt von ``number`` als a
 
 Mit Ausnahme der [Bitoperationen](sec-bit-operations) bieten Hochsprachen wie ``Python``, ``Java``, ``JavaScript`` bewusst kaum die Möglichkeit direkt mit den Bits im Speicher zu interagieren.
 Wir ändern Zahlen, Text und anderes und die Hochsprachen kümmern sich darum, dass die Werte im Speicher dementsprechend angepasst werden.
-Diese Abstraktion schützt Programmierer*innen vor Fehlern und erhöht die Lesbarkeit des Quellcodes.
-Es macht keinen Sinn eine Bitfolge die erst als Text interpretiert wird auf einmal als Zahl zu interpretieren.
+Diese Abstraktion schützt Programmierer\*innen vor Fehlern und erhöht die Lesbarkeit des Quellcodes.
+Es macht keinen Sinn eine Bitfolge die erst als Text interpretiert wird, auf einmal als Zahl zu interpretieren.
 
 Eine Dezimalzahl als Binärzahl zu interpretieren kann durchaus Sinn ergeben.
 Deshalb stellen die Bitoperationen eine Ausnahme dar.
-Der folgende Bitshift manipuliert einen Bereich des Speichers direkt.
+Die folgende Bitverschiebung manipuliert einen Bereich des Speichers direkt.
 
 ```{code-cell} python3
 5 << 1
 ```
 
-Hier werden die Bits, welche die Zahl ``5`` repräsentieren um eins nach links verschieben, was einer Multiplikation mit ``2`` gleich kommt.
+Hier werden die Bits, welche die Zahl ``5`` repräsentieren um eins nach links verschoben, was einer Multiplikation mit ``2`` gleichkommt.
 Dabei wird die ``5`` für die Operation als Zahl in ihrer ursprünglichen Binärdarstellung interpretiert.
 
 Dies funktioniert jedoch nicht mit einem Zeichen.
-``Python`` verbietet den Bitshift für Zeichen obwohl das Zeichen auch als Bitfolge im Speicher liegt.
+``Python`` verbietet die Bitverschiebung für Zeichen obwohl das Zeichen ja auch als Bitfolge im Speicher liegt.
 Folgender Code führt zu einem Fehler, da er kaum einen Sinn oder Nutzten hat:
 
 ```python
@@ -67,7 +74,7 @@ Folgender Code führt zu einem Fehler, da er kaum einen Sinn oder Nutzten hat:
 
 In anderen Sprachen wie ``C/C++`` würde dies funktionieren und zu unsauberen, unleserlichen und verwirrenden Code führen.
 Auch in diesen Sprachen ist es gute Praxis, dies nicht zu tun, obwohl es theoretisch möglich ist.
-Hier kann man Diskutieren was besser ist: Alles erlauben um maximale Freiheit zu gewährleisten oder Programmierer*innen einschränken, um sie zu schützen.
+Hier kann man Diskutieren was besser ist: Alles erlauben um maximale Freiheit zu gewährleisten oder Programmierer\*innen einschränken, um sie zu schützen.
 
 Wir können das Zeichen ``'a'`` mit der Funktion ``ord`` in eine Zahl umwandeln.
 Das Ergebnis hängt mit der von ``Python`` gewählten Interpretation (ASCII) zusammen.

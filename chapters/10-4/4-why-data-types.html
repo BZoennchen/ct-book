@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.7. Existenzberechtigung &#8212; Computational Thinking</title>
+    <title>4.4. Existenzberechtigung &#8212; Computational Thinking</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.8. Dynamische und statische Typisierung" href="6-type-systems.html" />
-    <link rel="prev" title="4.6. Interpretationswechsel" href="4-change-of-interpretation.html" />
+    <link rel="next" title="4.5. Interpretationswechsel" href="5-change-of-interpretation.html" />
+    <link rel="prev" title="4.3. Dynamische und statische Typisierung" href="3-type-systems.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -471,32 +471,37 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="1-data-types.html">
-     4.3. Pythons wichtigste built-in Datentypen
+     4.1. Pythons Datentypen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-kind-of-data-types.html">
-     4.4. Arten von Datentypen
+    <a class="reference internal" href="2-typing-in-python.html">
+     4.2. Pythons Typisierung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-primitive-data-types.html">
-     4.5. Primitive Datentypen in Python?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="4-change-of-interpretation.html">
-     4.6. Interpretationswechsel
+    <a class="reference internal" href="3-type-systems.html">
+     4.3. Dynamische und statische Typisierung
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.7. Existenzberechtigung
+     4.4. Existenzberechtigung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-type-systems.html">
-     4.8. Dynamische und statische Typisierung
+    <a class="reference internal" href="5-change-of-interpretation.html">
+     4.5. Interpretationswechsel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-kind-of-data-types.html">
+     4.6. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7-primitive-data-types.html">
+     4.7. Primitive Datentypen in Python?
     </a>
    </li>
   </ul>
@@ -602,11 +607,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../../_sources/chapters/10-4/5-why-data-types.ipynb"><button type="button"
+            href="../../_sources/chapters/10-4/4-why-data-types.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/10-4/5-why-data-types.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/10-4/4-why-data-types.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -631,7 +636,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/10-4/5-why-data-types.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/10-4/4-why-data-types.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -660,16 +665,17 @@
               <div>
                 
   <div class="section" id="existenzberechtigung">
-<h1><span class="section-number">4.7. </span>Existenzberechtigung<a class="headerlink" href="#existenzberechtigung" title="Permalink to this headline">¶</a></h1>
+<span id="sec-why-data-types"></span><h1><span class="section-number">4.4. </span>Existenzberechtigung<a class="headerlink" href="#existenzberechtigung" title="Permalink to this headline">¶</a></h1>
 <p>Kommen wir noch einmal zurück zu unserer Analogie mit den <em>Dateiformaten</em>.
 Weshalb enden PDF-Dokumente mit <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> und Bilder mit z.B. <code class="docutils literal notranslate"><span class="pre">.png</span></code>?
 Ändern wir die Dateiendung oder lassen Sie Weg, so ändert sich der Inhalt der Datei nicht.
-Allerdings kann Ihr Programm zum Lesen von PDFs nur PDFs lesen und die Dateiendung ist eine Art Versprechen, dass es sich bei dieser Datei auch wirklich um eine PDF handelt.
-Zudem leitet Ihr Betriebssystem das öffnen der Datei an ein Programm weiter, welches diese Verarbeiten kann.
+Allerdings kann Ihr Programm zum Lesen von PDFs, ausschließlich PDFs lesen.
+Die Dateiendung ist ein Versprechen, dass es sich bei dieser Datei auch wirklich um eine PDF handelt.
+Zudem leitet Ihr Betriebssystem das öffnen der Datei an ein Programm weiter, welches das entsprechende Dateiformat verarbeiten kann.
 Da das Betriebssystem nicht alle Dateiformate kennen kann (jeden Tag entstehen neue Formate) achtet es auf die Dateiendung.
 Wir als Benutzer können dem Betriebssystem mitteilen, welche Datei mit welchem Programm geöffnet werden soll.</p>
 <p>Datentypen existieren aus dem gleichen Grund.
-Sie sind ein verpflichtendes Versprechen, wie der Speicherbereich (die Bits und Byte) der den Wert ergibt aussieht.
+Sie sind ein verpflichtendes Versprechen, wie der Speicherbereich (die Bits und Byte) der den Wert ergibt aussieht und wie er interpretiert wird.
 Funktionen und Operationen verlassen sich auf dieses Versprechen.
 Nur so können Sie Informationen verarbeiten, indem die <a class="reference internal" href="../06/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> bekannt ist und auch eingehalten wird.
 Zum Beispiel erwartet die Addition <code class="docutils literal notranslate"><span class="pre">+</span></code> zwei Zahlen.
@@ -689,7 +695,7 @@ Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl <code
 </div>
 </div>
 </div>
-<p>Der Datentyp des Ergebnisses der Addition hängt von Datentypen der beiden Summanden ab.</p>
+<p>Der Datentyp des Ergebnisses der Addition hängt von den Datentypen der beiden Summanden ab.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">9</span><span class="p">))</span>      <span class="c1"># int + int -&gt; int</span>
@@ -708,7 +714,7 @@ Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl <code
 </div>
 </div>
 </div>
-<p>Zudem wird nicht jeder Datentyp von Addition unterstützt:</p>
+<p>Zudem wird nicht jeder Datentyp von der Addition unterstützt:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39;a&#39;</span> <span class="c1"># int + str -&gt; Fehler!</span>
@@ -742,7 +748,7 @@ Was passiert wenn wir zwei Zeichenketten ‘addieren’?</p>
 </div>
 <p>Überraschenderweise führt dies nicht zu einem Fehler.
 Wir sprechen hierbei nicht mehr von einer Addition, stattdessen handelt es sich um die sog. Konkatenation (Verkettung) von Zeichenketten.
-In anderen Worten entscheiden die Datentypen darüber, welche Operation der <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator definiert bzw. welche Operation ausgeführt wird!</p>
+In anderen Worten: Es entscheiden die Datentypen darüber, welche Operation der <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator definiert bzw. welche Operation ausgeführt wird!</p>
 <p>Betrachten wir ein weiteres Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -772,7 +778,7 @@ In anderen Worten entscheiden die Datentypen darüber, welche Operation der <cod
 <p>Wir rufen beide Male die <em>built-in Funktion</em> <code class="docutils literal notranslate"><span class="pre">max</span></code> auf.
 Einmal ist das Argument eine Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> und einmal rufen wir <code class="docutils literal notranslate"><span class="pre">max</span></code> mit zwei Argumenten, zwei ganzen Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> auf.
 Das Ergebnis ist einmal das größte Element der Liste und einmal das lexikographisch größere Element der beiden Argumente.
-Der Datentyp der Rückgabewerte ist einmal eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> und einmal eine Zeichenkette <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+Der Datentyp des Rückgabewerte ist einmal eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> und einmal eine Zeichenkette <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 <p>Wird folgender Code funktionieren?</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -794,7 +800,7 @@ Der Datentyp der Rückgabewerte ist einmal eine ganze Zahl <code class="docutils
 <p>Wir können das an dieser Stelle nicht wissen.
 Es kommt darauf an <strong>wie</strong> die Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> implementiert wurde und <strong>was</strong> sie genau macht.
 Macht aus Ihrer Sicht ein solcher Aufruf Sinn?</p>
-<p>Führen wir den Code aus kommt es zu einem weiteren Fehler: <code class="docutils literal notranslate"><span class="pre">'&gt;'</span> <span class="pre">not</span> <span class="pre">supported</span> <span class="pre">between</span> <span class="pre">instances</span> <span class="pre">of</span> <span class="pre">'str'</span> <span class="pre">and</span> <span class="pre">'int'</span></code>.
+<p>Führen wir den Code aus, so kommt es zu einem weiteren Fehler: <code class="docutils literal notranslate"><span class="pre">'&gt;'</span> <span class="pre">not</span> <span class="pre">supported</span> <span class="pre">between</span> <span class="pre">instances</span> <span class="pre">of</span> <span class="pre">'str'</span> <span class="pre">and</span> <span class="pre">'int'</span></code>.
 Was soll das nun bedeuten?
 Wer hat denn was von größer <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> gesagt?
 Nun, scheinbar verwendet die Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> den Größer-<a class="reference internal" href="../10-3/2-expressions.html#sec-python-operator-compare"><span class="std std-ref">Vergleichsoperator</span></a> und dieser kann mit der Kombination <code class="docutils literal notranslate"><span class="pre">str</span></code> und <code class="docutils literal notranslate"><span class="pre">int</span></code> nicht umgehen.
@@ -816,7 +822,7 @@ Wir erhalten den gleichen Fehler mit</p>
 </div>
 </div>
 </div>
-<p>Es ist im allgemeinen unklar wie wir eine Zahl mit einem Buchstaben vergleichen sollen.
+<p>Es ist im Allgemeinen unklar wie wir eine Zahl mit einem Buchstaben vergleichen sollen.
 Wir können selbstverständlich einen solchen Vergleich selbst definieren.
 Wir greifen hier etwas vor:</p>
 <div class="cell docutils container">
@@ -839,7 +845,7 @@ Wir greifen hier etwas vor:</p>
 </div>
 <p>Was passiert hier?
 Wir definieren eine eigene Funktion <code class="docutils literal notranslate"><span class="pre">get_key</span></code>.
-Diese transformiert den Wert, welchen wir vergleichen wollen in einen anderen Wert.
+Diese transformiert den Wert, welchen wir vergleichen wollen, in einen anderen Wert.
 Ist der Wert eine Zeichenkette, so transformieren wir diese in eine ganze Zahl (ihren ASCII-Code).
 Andernfalls geben wir den Wert zurück (keine Transformation).</p>
 <p>Wir sagen der Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> Sie solle doch bitte vor jedem Vergleich die zu vergleichenden Werte durch unsere Funktion <code class="docutils literal notranslate"><span class="pre">get_key</span></code> transformieren.
@@ -856,7 +862,7 @@ Was also passiert ist das <code class="docutils literal notranslate"><span class
 </div>
 </div>
 </div>
-<p>ausführt also</p>
+<p>ausführt, also</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
@@ -920,8 +926,8 @@ In <code class="docutils literal notranslate"><span class="pre">Java</span></cod
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="4-change-of-interpretation.html" title="previous page"><span class="section-number">4.6. </span>Interpretationswechsel</a>
-    <a class='right-next' id="next-link" href="6-type-systems.html" title="next page"><span class="section-number">4.8. </span>Dynamische und statische Typisierung</a>
+    <a class='left-prev' id="prev-link" href="3-type-systems.html" title="previous page"><span class="section-number">4.3. </span>Dynamische und statische Typisierung</a>
+    <a class='right-next' id="next-link" href="5-change-of-interpretation.html" title="next page"><span class="section-number">4.5. </span>Interpretationswechsel</a>
 
         </div>
         

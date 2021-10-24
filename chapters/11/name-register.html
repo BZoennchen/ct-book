@@ -473,32 +473,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../10-4/1-data-types.html">
-     4.3. Pythons wichtigste built-in Datentypen
+     4.1. Pythons Datentypen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/2-kind-of-data-types.html">
-     4.4. Arten von Datentypen
+    <a class="reference internal" href="../10-4/2-typing-in-python.html">
+     4.2. Pythons Typisierung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/3-primitive-data-types.html">
-     4.5. Primitive Datentypen in Python?
+    <a class="reference internal" href="../10-4/3-type-systems.html">
+     4.3. Dynamische und statische Typisierung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/4-change-of-interpretation.html">
-     4.6. Interpretationswechsel
+    <a class="reference internal" href="../10-4/4-why-data-types.html">
+     4.4. Existenzberechtigung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/5-why-data-types.html">
-     4.7. Existenzberechtigung
+    <a class="reference internal" href="../10-4/5-change-of-interpretation.html">
+     4.5. Interpretationswechsel
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/6-type-systems.html">
-     4.8. Dynamische und statische Typisierung
+    <a class="reference internal" href="../10-4/6-kind-of-data-types.html">
+     4.6. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/7-primitive-data-types.html">
+     4.7. Primitive Datentypen in Python?
     </a>
    </li>
   </ul>
@@ -829,8 +834,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ca4ee44-e4de-4103-b1dd-212017621196">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-2ca4ee44-e4de-4103-b1dd-212017621196" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-59bc00bf-34af-41df-ac0c-e137198df712">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-59bc00bf-34af-41df-ac0c-e137198df712" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -1077,7 +1082,7 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Pitts&#39;, &#39;phone_number&#39;: &#39;0057-0489198&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Outlaw&#39;, &#39;phone_number&#39;: &#39;0274-0111532&#39;}
 </pre></div>
 </div>
 </div>
@@ -2350,7 +2355,7 @@ Wir passen uns auch im Alltag den algorithmischen Strukturen an, die uns durch d
 Besonders bei den simpleren Datenstrukturen wird klar, dass es nicht die Informatiker*innen waren, die diese Strukturen erfunden haben.
 Sie haben diese lediglich aus der Natur <strong>abstrahiert</strong>, in ein imaginäres Objekt umgewandelt und schließlich wieder als reales Objekt auf den Computer gebracht.</p>
 <p>In der <strong>abstrakten Welt</strong> modellieren wir mehrere <strong>Fächer</strong> meist durch eine einfache Liste.
-Jeder Listeneintrag <strong>repräsentiert</strong> ein <strong>Fach</strong> was wiederum eine Liste aber auch ein anderer <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung (Collection)</span></a> sein kann, siehe untere
+Jeder Listeneintrag <strong>repräsentiert</strong> ein <strong>Fach</strong> was wiederum eine Liste aber auch ein anderer <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung (Collection)</span></a> sein kann, siehe untere
 <a class="reference internal" href="#fig-buckets"><span class="std std-numref">Abbildung 5.3</span></a>.</p>
 <div class="figure align-default" id="fig-buckets">
 <a class="reference internal image-reference" href="../../_images/bucket.png"><img alt="../../_images/bucket.png" src="../../_images/bucket.png" style="width: 600px;" /></a>
@@ -2380,7 +2385,7 @@ In unserem Beispiel brauchen wir eine Funktion <code class="docutils literal not
 <div class="exercise admonition" id="babynames-buckets-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.16 </span>(Babynamen in Fächern)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">to_lex_buckets(unique_names_lex)</span></code> welche Ihnen die <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> aus <a class="reference internal" href="#fig-babynames-buckets"><span class="std std-numref">Abbildung 5.4</span></a> erzeugt.</p>
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">to_lex_buckets(unique_names_lex)</span></code> welche Ihnen die <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> aus <a class="reference internal" href="#fig-babynames-buckets"><span class="std std-numref">Abbildung 5.4</span></a> erzeugt.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -4185,9 +4190,9 @@ In <a class="reference internal" href="#fig-closed-hashing"><span class="std std
 <a class="reference internal image-reference" href="../../_images/closed-hashing.png"><img alt="../../_images/closed-hashing.png" src="../../_images/closed-hashing.png" style="width: 430px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.7 </span><span class="caption-text">Geschlossenes Hashing</span><a class="headerlink" href="#fig-closed-hashing" title="Permalink to this image">¶</a></p>
 </div>
-<p>Egal welche Technik verwendet wird, eine solche <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> enthält keine doppelten Schlüssel.
-Wir nennen eine solche <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> auch <strong>Hashtable</strong>.
-Ziel ist es in <strong>konstant vielen Schritten</strong> auf ein beliebiges Element einer solchen <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a></p>
+<p>Egal welche Technik verwendet wird, eine solche <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> enthält keine doppelten Schlüssel.
+Wir nennen eine solche <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> auch <strong>Hashtable</strong>.
+Ziel ist es in <strong>konstant vielen Schritten</strong> auf ein beliebiges Element einer solchen <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a></p>
 <ul class="simple">
 <li><p>zuzugreifen <code class="docutils literal notranslate"><span class="pre">search</span></code>,</p></li>
 <li><p>ein Element einzufügen <code class="docutils literal notranslate"><span class="pre">insert</span></code>,</p></li>
@@ -4601,7 +4606,7 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3525
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3305
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60751108

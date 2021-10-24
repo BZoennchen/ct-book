@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.6. Interpretationswechsel &#8212; Computational Thinking</title>
+    <title>4.7. Primitive Datentypen in Python? &#8212; Computational Thinking</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,12 +52,10 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.7. Existenzberechtigung" href="5-why-data-types.html" />
-    <link rel="prev" title="4.5. Primitive Datentypen in Python?" href="3-primitive-data-types.html" />
+    <link rel="next" title="5. Funktionen" href="../10-5/intro.html" />
+    <link rel="prev" title="4.6. Arten von Datentypen" href="6-kind-of-data-types.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -473,32 +471,37 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="1-data-types.html">
-     4.3. Pythons wichtigste built-in Datentypen
+     4.1. Pythons Datentypen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-kind-of-data-types.html">
-     4.4. Arten von Datentypen
+    <a class="reference internal" href="2-typing-in-python.html">
+     4.2. Pythons Typisierung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-primitive-data-types.html">
-     4.5. Primitive Datentypen in Python?
+    <a class="reference internal" href="3-type-systems.html">
+     4.3. Dynamische und statische Typisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-why-data-types.html">
+     4.4. Existenzberechtigung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-change-of-interpretation.html">
+     4.5. Interpretationswechsel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-kind-of-data-types.html">
+     4.6. Arten von Datentypen
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.6. Interpretationswechsel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="5-why-data-types.html">
-     4.7. Existenzberechtigung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="6-type-systems.html">
-     4.8. Dynamische und statische Typisierung
+     4.7. Primitive Datentypen in Python?
     </a>
    </li>
   </ul>
@@ -603,12 +606,9 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../_sources/chapters/10-4/4-change-of-interpretation.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/10-4/4-change-of-interpretation.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/10-4/7-primitive-data-types.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -628,26 +628,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/10-4/4-change-of-interpretation.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -661,95 +641,37 @@
         
               <div>
                 
-  <div class="section" id="interpretationswechsel">
-<h1><span class="section-number">4.6. </span>Interpretationswechsel<a class="headerlink" href="#interpretationswechsel" title="Permalink to this headline">¶</a></h1>
-<p>Wir können zum Beispiel eine Variable mit einer Zahl initialisieren und diese Zahl als Zeichen interpretieren.
-Dazu brauchen wir jedoch eine geeignete Interpretation:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">90</span>
-<span class="n">characters</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;characters </span><span class="si">{</span><span class="n">characters</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;str 90&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;int </span><span class="si">{</span><span class="mi">90</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
+  <div class="section" id="primitive-datentypen-in-python">
+<span id="sec-primitive-data-types-in-python"></span><h1><span class="section-number">4.7. </span>Primitive Datentypen in Python?<a class="headerlink" href="#primitive-datentypen-in-python" title="Permalink to this headline">¶</a></h1>
+<p>Jetzt kommen wir zu einer Besonderheit in <code class="docutils literal notranslate"><span class="pre">Python</span></code>, welche Sie als Anfänger erst einmal ignorieren können.
+Dennoch möchten wir Sie Ihnen nicht vorenthalten und auch kein Halbwissen vermitteln!</p>
+<p>Sie vermuten wohl zurecht, dass <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> <a class="reference internal" href="6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> sind und Sie lägen bei vielen anderen Programmiersprachen richtig, doch in <code class="docutils literal notranslate"><span class="pre">Python</span></code> gibt es gar keine primitiven Datentypen.
+Das ist für Anfänger verwirrend!
+Wie kann es keine primitive Datentypen geben?
+Irgendwann muss sich doch ein Datentyp nicht mehr weiter zerlegen lassen?
+Und weshalb ist eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> kein <em>primitiver Datentyp</em>?</p>
+<div class="warning admonition" id="alert-datatypes-python">
+<p class="admonition-title">Datentypen in Python</p>
+<p>Es gibt in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine primitiven Datentypen!</p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number 90
-characters 90
-str 90
-int 90
-</pre></div>
-</div>
-</div>
-</div>
-<p>Was passiert hier?
-Es wird viermal die Zahl <code class="docutils literal notranslate"><span class="pre">90</span></code> als Zeichenkette ausgegeben.
-Erst weisen wir die Zahl <code class="docutils literal notranslate"><span class="pre">90</span></code> der Variablen <code class="docutils literal notranslate"><span class="pre">number</span></code> zu.
-In der zweiten Zeile weisen wir die Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code> der Variablen <code class="docutils literal notranslate"><span class="pre">characters</span></code> zu.
-<code class="docutils literal notranslate"><span class="pre">str</span></code> ist eine Funktion welche aus ihrem Argument eine Zeichenkette generiert.</p>
-<p>Würden wir uns die Bits der Speicherbereiche der Variablen <code class="docutils literal notranslate"><span class="pre">number</span></code> und <code class="docutils literal notranslate"><span class="pre">characters</span></code> anzeigen, so wären diese Bits nicht identisch.
-Die Bits welche die Zahl 90 ergeben, d.h. <span class="math notranslate nohighlight">\(90_{10} = 01011010_2\)</span> ergeben in der von <code class="docutils literal notranslate"><span class="pre">Python</span></code> gewählten Interpretation (ASCII) nicht die Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code>.
-Auch die Datentypen der beiden Variablen sind unterschiedlich.
-<code class="docutils literal notranslate"><span class="pre">characters</span></code> ist eine sogenannte Zeichenkette (String <code class="docutils literal notranslate"><span class="pre">str</span></code>) und <code class="docutils literal notranslate"><span class="pre">number</span></code> eine ganze Zahl (Integer <code class="docutils literal notranslate"><span class="pre">int</span></code>).</p>
-<p>In diesem Beispiel wechseln wir also beides: Die Interpretation als auch den Wert (die Bits und Byte)!
-Mit <code class="docutils literal notranslate"><span class="pre">str(90)</span></code> sagen wir <code class="docutils literal notranslate"><span class="pre">Python</span></code>: Bitte mach uns aus der Zahl 90 die Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code>.
-Es wird außerdem klar, dass wir eine Zahl in ihrer Gestalt als <code class="docutils literal notranslate"><span class="pre">int</span></code> gar nicht ausgeben können!
-Stattdessen wird diese immer erst in eine Zeichenkette umgewandelt.
-Die Funktion <code class="docutils literal notranslate"><span class="pre">print</span></code> sorgt dafür, dass sowohl der Inhalt von <code class="docutils literal notranslate"><span class="pre">number</span></code> als auch <code class="docutils literal notranslate"><span class="pre">90</span></code> in die Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code> umgewandelt werden.</p>
-<p>Mit Ausnahme der <a class="reference internal" href="../10-3/2-expressions.html#sec-bit-operations"><span class="std std-ref">Bitoperationen</span></a> bieten Hochsprachen wie <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> bewusst kaum die Möglichkeit direkt mit den Bits im Speicher zu interagieren.
-Wir ändern Zahlen, Text und anderes und die Hochsprachen kümmern sich darum, dass die Werte im Speicher dementsprechend angepasst werden.
-Diese Abstraktion schützt Programmierer*innen vor Fehlern und erhöht die Lesbarkeit des Quellcodes.
-Es macht keinen Sinn eine Bitfolge die erst als Text interpretiert wird auf einmal als Zahl zu interpretieren.</p>
-<p>Eine Dezimalzahl als Binärzahl zu interpretieren kann durchaus Sinn ergeben.
-Deshalb stellen die Bitoperationen eine Ausnahme dar.
-Der folgende Bitshift manipuliert einen Bereich des Speichers direkt.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-<p>Hier werden die Bits, welche die Zahl <code class="docutils literal notranslate"><span class="pre">5</span></code> repräsentieren um eins nach links verschieben, was einer Multiplikation mit <code class="docutils literal notranslate"><span class="pre">2</span></code> gleich kommt.
-Dabei wird die <code class="docutils literal notranslate"><span class="pre">5</span></code> für die Operation als Zahl in ihrer ursprünglichen Binärdarstellung interpretiert.</p>
-<p>Dies funktioniert jedoch nicht mit einem Zeichen.
-<code class="docutils literal notranslate"><span class="pre">Python</span></code> verbietet den Bitshift für Zeichen obwohl das Zeichen auch als Bitfolge im Speicher liegt.
-Folgender Code führt zu einem Fehler, da er kaum einen Sinn oder Nutzten hat:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>In anderen Sprachen wie <code class="docutils literal notranslate"><span class="pre">C/C++</span></code> würde dies funktionieren und zu unsauberen, unleserlichen und verwirrenden Code führen.
-Auch in diesen Sprachen ist es gute Praxis, dies nicht zu tun, obwohl es theoretisch möglich ist.
-Hier kann man Diskutieren was besser ist: Alles erlauben um maximale Freiheit zu gewährleisten oder Programmierer*innen einschränken, um sie zu schützen.</p>
-<p>Wir können das Zeichen <code class="docutils literal notranslate"><span class="pre">'a'</span></code> mit der Funktion <code class="docutils literal notranslate"><span class="pre">ord</span></code> in eine Zahl umwandeln.
-Das Ergebnis hängt mit der von <code class="docutils literal notranslate"><span class="pre">Python</span></code> gewählten Interpretation (ASCII) zusammen.
-Daraufhin können wir den Bitshift durchführen und die Zahl mit <code class="docutils literal notranslate"><span class="pre">chr</span></code> wieder in ein Zeichen zurück transformieren.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Â&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>Wir erhalten ein neues Zeichen: Ein <code class="docutils literal notranslate"><span class="pre">'Â'</span></code>, können wir das irgendwo gebrauchen?
-Das ist zu bezweifeln und selbst wenn, ist dieser Code besser lesbar, da wir explizit die Anweisung zur Umwandlung in eine Zahl angeben.</p>
-<p>Ändern wir in einer Hochsprache die Interpretation, so ändert sich meist auch der Wert im Speicher, da es meistens anders keinen Sinn macht und wir genau das erreichen wollen.
-Hochsprachen lösen uns von den Bits und Byte, stattdessen betrachten wir Zahlen in der Dezimalschreibweise.
-Vergessen wir einmal die Bits im Speicher und achten nur auf die Zahl <code class="docutils literal notranslate"><span class="pre">90</span></code> im obigen Beispiel, so können wir sagen dass sich der Wert <code class="docutils literal notranslate"><span class="pre">90</span></code> nicht ändern.
-Was sich ändert ist die Interpretation: Einmal die <code class="docutils literal notranslate"><span class="pre">90</span></code> als Zahl und einmal als Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> kapselt die primitiven Datentypen für uns Programmierer*innen.
+Zu unserem eigenen Schutz können wir auf diese nicht direkt zugreifen und mit ihnen nicht direkt arbeiten.
+Hinter dem Datentyp <code class="docutils literal notranslate"><span class="pre">int</span></code> verbirgt sich ein zusammengesetzter Datentyp, der es uns leichter macht mit ganzen Zahlen umzugehen.
+Implementiert ist dieser Datentyp in der Programmiersprache <code class="docutils literal notranslate"><span class="pre">C++</span></code> und <code class="docutils literal notranslate"><span class="pre">Python</span></code> ruft am Ende des Tages <code class="docutils literal notranslate"><span class="pre">C++</span></code>-Code auf.
+Die Implementierung von <code class="docutils literal notranslate"><span class="pre">int</span></code> findet sich in den folgenden Dateien (<strong>bitte lassen Sie sich davon nicht abschrecken, Sie müssen diesen Code nicht verstehen!</strong>)</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/python/cpython/blob/main/Objects/longobject.c">longobject.c</a></p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/blob/main/Include/longintrepr.h">longintrepr.h</a></p></li>
+<li><p><a class="reference external" href="https://github.com/python/cpython/blob/main/Include/longobject.h">longobject.h</a></p></li>
+</ul>
+<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> benötigt eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> nicht immer den gleichen Speicherbereich!
+Deshalb ist es, anders als in vielen anderen Sprachen, in <code class="docutils literal notranslate"><span class="pre">Python</span></code> möglich mit sehr großen ganzen Zahlen zu rechnen.
+Wäre <code class="docutils literal notranslate"><span class="pre">int</span></code> ein primitiver Datentyp, wie etwa in <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>, so würde ein <code class="docutils literal notranslate"><span class="pre">int</span></code> Wert immer gleich viel Speicherplatz belegen.
+Ob im Speicher eine <code class="docutils literal notranslate"><span class="pre">5</span></code> oder eine <code class="docutils literal notranslate"><span class="pre">1000</span></code> steht ist für den Speicherplatz den diese Werte verbrauchen egal.</p>
+<p>Wie alle Datentypen in <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist auch <code class="docutils literal notranslate"><span class="pre">str</span></code> ein zusammengesetzter Datentyp.
+Anders als in vielen anderen Sprachen gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keinen Datentyp für ein einzelnes Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code>.
+Ein einzelnes Zeichen ist in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Zeichenkette der Länge 1.
+Dennoch ist <code class="docutils literal notranslate"><span class="pre">str</span></code> kein primitiver Datentyp.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -777,8 +699,8 @@ Was sich ändert ist die Interpretation: Einmal die <code class="docutils litera
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="3-primitive-data-types.html" title="previous page"><span class="section-number">4.5. </span>Primitive Datentypen in Python?</a>
-    <a class='right-next' id="next-link" href="5-why-data-types.html" title="next page"><span class="section-number">4.7. </span>Existenzberechtigung</a>
+    <a class='left-prev' id="prev-link" href="6-kind-of-data-types.html" title="previous page"><span class="section-number">4.6. </span>Arten von Datentypen</a>
+    <a class='right-next' id="next-link" href="../10-5/intro.html" title="next page"><span class="section-number">5. </span>Funktionen</a>
 
         </div>
         

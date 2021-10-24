@@ -1,3 +1,4 @@
+(sec-primitive-data-types-in-python)=
 # Primitive Datentypen in Python?
 
 Jetzt kommen wir zu einer Besonderheit in ``Python``, welche Sie als Anfänger erst einmal ignorieren können.

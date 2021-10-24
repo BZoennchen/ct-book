@@ -116,7 +116,7 @@ number = 'b'
 
 folgender Code
 
-```python
+```{code-cell} python3
 number : int = 5
 number : str = 'b'
 ```
