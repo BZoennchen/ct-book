@@ -159,9 +159,13 @@ Sie möchten ebenfalls einen riesigen Zahlenbereich kompakt notieren können und
 Fließkommazahlen sind aus dieser Notation entstanden.
 In dieser Notation wird aus $10000000.0 = 1.0 \cdot 10^7$ und aus $0.0000000001 = 1.0 \cdot 10^{-10}$.
 
+Ohne zu sehr ins Detail zu gehen, eine Fließkommazahl ``float`` besteht aus Bits für das Vorzeichen, die Mantisse und den Exponent.
+Für $1.0 \cdot 10^7$ wäre das Vorzeichen gleich +, die Mantisse gleich 1, der Exponent gleich 7.
+Da der Computer jedoch im Binärsystem rechnet, ist verwendet er als Basis die 2 anstatt die 10.
+
 Soweit so gut.
 Was passiert aber wenn jede Ziffer von 0 verschieden ist und sich endlos fortsetzt z.B. $\pi = 3.14159265359 \ldots$ oder auch $1/3 = 0.33333333333 \ldots$?
-In diesem Fall 
+In diesem Fall wird die Zahl abgeschnitten sobald keine Bits mehr zur Verfügung stehen.
 
 ## Wahrheitswerte - bool
 

@@ -768,14 +768,14 @@ Für <em>atomare Datentypen</em> gilt noch mehr.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 12313
-id of x = 4397493232
+id of x = 4576590832
 value of z = 12313
-id of z = 4397493232
+id of z = 4576590832
 change value of x
 value of x = 11341
-id of x = 4397494000
+id of x = 4576591600
 value of z = 12313
-id of z = 4397493232
+id of z = 4576590832
 </pre></div>
 </div>
 </div>
@@ -813,14 +813,14 @@ Wir wählen als Datenstruktur eine Liste <code class="docutils literal notransla
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
-id of numbers = 4397965952
+id of numbers = 4577062400
 value of numbers[2] = 3
-id of numbers[2] = 4360128880
+id of numbers[2] = 4539226480
 change value of numbers[2]
 value of numbers = [1, 2, -20, 4, 5]
-id of numbers = 4397965952
+id of numbers = 4577062400
 value of numbers[2] = -20
-id of numbers[2] = 4397493360
+id of numbers[2] = 4576590960
 </pre></div>
 </div>
 </div>
@@ -974,9 +974,12 @@ Zum Beispiel können wir problemlos die Zahl <span class="math notranslate nohig
 Sie möchten ebenfalls einen riesigen Zahlenbereich kompakt notieren können und haben deshalb die wissenschaftliche Notation eingeführt.
 Fließkommazahlen sind aus dieser Notation entstanden.
 In dieser Notation wird aus <span class="math notranslate nohighlight">\(10000000.0 = 1.0 \cdot 10^7\)</span> und aus <span class="math notranslate nohighlight">\(0.0000000001 = 1.0 \cdot 10^{-10}\)</span>.</p>
+<p>Ohne zu sehr ins Detail zu gehen, eine Fließkommazahl <code class="docutils literal notranslate"><span class="pre">float</span></code> besteht aus Bits für das Vorzeichen, die Mantisse und den Exponent.
+Für <span class="math notranslate nohighlight">\(1.0 \cdot 10^7\)</span> wäre das Vorzeichen gleich +, die Mantisse gleich 1, der Exponent gleich 7.
+Da der Computer jedoch im Binärsystem rechnet, ist verwendet er als Basis die 2 anstatt die 10.</p>
 <p>Soweit so gut.
 Was passiert aber wenn jede Ziffer von 0 verschieden ist und sich endlos fortsetzt z.B. <span class="math notranslate nohighlight">\(\pi = 3.14159265359 \ldots\)</span> oder auch <span class="math notranslate nohighlight">\(1/3 = 0.33333333333 \ldots\)</span>?
-In diesem Fall</p>
+In diesem Fall wird die Zahl abgeschnitten sobald keine Bits mehr zur Verfügung stehen.</p>
 </div>
 <div class="section" id="wahrheitswerte-bool">
 <h2><span class="section-number">4.1.5. </span>Wahrheitswerte - bool<a class="headerlink" href="#wahrheitswerte-bool" title="Permalink to this headline">¶</a></h2>
