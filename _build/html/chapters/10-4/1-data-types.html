@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.3. Pythons wichtigste built-in Datentypen &#8212; Computational Thinking</title>
+    <title>4.1. Pythons Datentypen &#8212; Computational Thinking</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,9 +52,11 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.4. Arten von Datentypen" href="2-kind-of-data-types.html" />
+    <link rel="next" title="4.2. Pythons Typisierung" href="2-typing-in-python.html" />
     <link rel="prev" title="4. Datentypen" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -471,32 +473,37 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.3. Pythons wichtigste built-in Datentypen
+     4.1. Pythons Datentypen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-kind-of-data-types.html">
-     4.4. Arten von Datentypen
+    <a class="reference internal" href="2-typing-in-python.html">
+     4.2. Pythons Typisierung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-primitive-data-types.html">
-     4.5. Primitive Datentypen in Python?
+    <a class="reference internal" href="3-type-systems.html">
+     4.3. Dynamische und statische Typisierung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-change-of-interpretation.html">
-     4.6. Interpretationswechsel
+    <a class="reference internal" href="4-why-data-types.html">
+     4.4. Existenzberechtigung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="5-why-data-types.html">
-     4.7. Existenzberechtigung
+    <a class="reference internal" href="5-change-of-interpretation.html">
+     4.5. Interpretationswechsel
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-type-systems.html">
-     4.8. Dynamische und statische Typisierung
+    <a class="reference internal" href="6-kind-of-data-types.html">
+     4.6. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7-primitive-data-types.html">
+     4.7. Primitive Datentypen in Python?
     </a>
    </li>
   </ul>
@@ -657,43 +664,53 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ganze-zahlen-int">
-   4.3.1. Ganze Zahlen - int
+  <a class="reference internal nav-link" href="#atomare-datentypen">
+   4.1.1. Atomare Datentypen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wahrheitswerte-bool">
-   4.3.2. Wahrheitswerte - bool
+  <a class="reference internal nav-link" href="#zusammengesetzte-datentypen">
+   4.1.2. Zusammengesetzte Datentypen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ganze-zahlen-int">
+   4.1.3. Ganze Zahlen - int
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flieszkommazahlen-float">
-   4.3.3. Fließkommazahlen - float
+   4.1.4. Fließkommazahlen - float
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wahrheitswerte-bool">
+   4.1.5. Wahrheitswerte - bool
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zeichenketten-str">
-   4.3.4. Zeichenketten - str
+   4.1.6. Zeichenketten - str
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#listen-list">
-   4.3.5. Listen - list
+   4.1.7. Listen - list
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tupel-tuple">
-   4.3.6. Tupel - tuple
+   4.1.8. Tupel - tuple
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mengen-set">
-   4.3.7. Mengen - set
+   4.1.9. Mengen - set
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#worterbucher-dict">
-   4.3.8. Wörterbücher - dict
+   4.1.10. Wörterbücher - dict
   </a>
  </li>
 </ul>
@@ -707,38 +724,282 @@
         
               <div>
                 
-  <div class="section" id="pythons-wichtigste-built-in-datentypen">
-<h1><span class="section-number">4.3. </span>Pythons wichtigste built-in Datentypen<a class="headerlink" href="#pythons-wichtigste-built-in-datentypen" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="ganze-zahlen-int">
-<h2><span class="section-number">4.3.1. </span>Ganze Zahlen - int<a class="headerlink" href="#ganze-zahlen-int" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+  <div class="section" id="pythons-datentypen">
+<span id="sec-working-with-data-types"></span><h1><span class="section-number">4.1. </span>Pythons Datentypen<a class="headerlink" href="#pythons-datentypen" title="Permalink to this headline">¶</a></h1>
+<p>Beginnen wir mit der Praxis und sehen uns an welche Datentypen uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet und was wir mit diesen anfangen können.
+Die von <code class="docutils literal notranslate"><span class="pre">Python</span></code> vorab definierten Datentypen nennt man <em>built-in Datentypen</em>.
+Wir werden in diesem Abschnitt nicht alle <em>built-in Datentypen</em> besprechen, sondern jene mit denen Sie die meiste Zeit zu tun haben.
+Eine vollständige Liste der Datentypen finden Sie in Abschnitt <a class="reference internal" href="6-kind-of-data-types.html#sec-built-in-data-types"><span class="std std-ref">Built-in Datentypen</span></a>.</p>
+<p>Wir können die <em>built-in Datentypen</em> in weitere zwei Kategorien zerteilen:</p>
+<ol class="simple">
+<li><p><em>Atomare Datentypen</em>, also Datentypen die sich auf einen einzelnen Wert beziehen und</p></li>
+<li><p><em>Zusammengesetzt Datentypen</em></p></li>
+</ol>
+<p>Haben Sie bereits Programmiererfahrung werden Sie <em>atomare Datentypen</em> als <em>primitive Datentypen</em> wahrnehmen, doch streng genommen gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine primitiven Datentypen.
+Dennoch verhalten sich <em>atomare Datentypen</em> wie <em>primitive Datentypen</em>.</p>
+<p><em>Atomare Datentypen</em> sind: Ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>, Wahrheitswerte <code class="docutils literal notranslate"><span class="pre">bool</span></code> und Fließkommazahlen.
+<em>Zusammengesetzte Datentypen</em> sind: Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code>, Listen <code class="docutils literal notranslate"><span class="pre">list</span></code>, Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> und Wörterbücher <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
+<div class="section" id="atomare-datentypen">
+<h2><span class="section-number">4.1.1. </span>Atomare Datentypen<a class="headerlink" href="#atomare-datentypen" title="Permalink to this headline">¶</a></h2>
+<p>Eine wesentlich Eigenschaft von <em>atomare Datentypen</em> ist, dass der <strong>Wert</strong> einer Variable <em>atomare Datentyps</em> unverändert im Speicher ist.
+Wird der <strong>Wert</strong> von keiner Variablen mehr adressiert, wird er zwar gelöscht um den Speicher wieder freizugeben, doch kann er nicht verändert werden solange eine Variable den Wert noch adressiert.
+Wir haben dieses Phänomen bereits im Abschnitt <a class="reference internal" href="../10-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> beobachtet.
+Wir hatten festgehalten, dass Veränderungen der einen Variablen haben keinen Effekt auf die <strong>Adresse</strong> bzw. *Identität id anderer Variablen.
+Für <em>atomare Datentypen</em> gilt noch mehr.
+Ändern wir den <strong>Wert</strong> einer Variable vom Typ <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> oder <code class="docutils literal notranslate"><span class="pre">float</span></code>, so kann diese Änderung nicht den <strong>Wert</strong> einer anderen Variablen verändern:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">12313</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of z = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;change value of x&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">11341</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of z = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="wahrheitswerte-bool">
-<h2><span class="section-number">4.3.2. </span>Wahrheitswerte - bool<a class="headerlink" href="#wahrheitswerte-bool" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 12313
+id of x = 4397493232
+value of z = 12313
+id of z = 4397493232
+change value of x
+value of x = 11341
+id of x = 4397494000
+value of z = 12313
+id of z = 4397493232
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Atomare Datentypen</em> bestehen nur aus einem <em>atomaren</em> Wert, den wir nicht weiter zerteilen können.</p>
+</div>
+<div class="section" id="zusammengesetzte-datentypen">
+<h2><span class="section-number">4.1.2. </span>Zusammengesetzte Datentypen<a class="headerlink" href="#zusammengesetzte-datentypen" title="Permalink to this headline">¶</a></h2>
+<p>Zusammengesetzte Datentypen oder auch Datenstrukturen bestehen hingegen aus mehreren Werten.
+Sie strukturieren diese Werte.</p>
+<p>Anders als bei <em>atomaren Datentypen</em> lassen sich diese strukturierten Werte ändern.
+Nehmen wir einmal an eine Datenstruktur enthält ausschließlich ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>.
+Verändern wir nun eine dieser Zahlen wird der <strong>Wert</strong> im Speicher der diese Zahl repräsentiert nicht verändert – es ist ja ein <em>atomarer Datentyp</em>!
+<strong>Aber</strong> es wird ein neuer Wert in den Speicher geschrieben und die Datenstruktur wird so manipuliert, dass Sie nun auf diesen neuen Wert zeigt.</p>
+<p>Lassen Sie uns das noch einmal an einem Beispiel testen.
+Wir wählen als Datenstruktur eine Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> aus Zahlen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers = </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers[2] = </span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers[2] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;change value of numbers[2]&#39;</span><span class="p">)</span>
+
+<span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers = </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers[2] = </span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers[2] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
+id of numbers = 4397965952
+value of numbers[2] = 3
+id of numbers[2] = 4360128880
+change value of numbers[2]
+value of numbers = [1, 2, -20, 4, 5]
+id of numbers = 4397965952
+value of numbers[2] = -20
+id of numbers[2] = 4397493360
+</pre></div>
+</div>
+</div>
+</div>
+<p>Im obigen Code erstellen wir eine Liste, welche die Zahlen 1 bis 5 enthält.
+Dann verändern wir das zweite Element der Liste (eine Liste startet mit dem 0-ten Element).
+Die <strong>Adresse</strong> der <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">numbers</span></code> ändert sich bei diesem Vorgang nicht!
+Allerdings ändert sich die Adresse des Elements <code class="docutils literal notranslate"><span class="pre">numbers[2]</span></code> und der <strong>Wert</strong> von <code class="docutils literal notranslate"><span class="pre">numbers</span></code>.</p>
+<p>Datenstrukturen sind Behälter die andere Daten aufnehmen können, ähnlich wie ein Schließfächer, Ordner oder Rucksäcke.
+Nehmen wir als Analogie Schließfächer aus der echten Welt.
+Stellen wir uns vor, der Platz in einem Schließfach wäre ein Teil des Speicherplatzes, welches unsere Liste benötigt.
+Alle Schließfächer als ganzes benötigen so viel Speicher wie unsere Liste.
+Was befindet sich nun in unseren Schließfächern?
+Es sind <strong>nicht</strong> die Objekte/Werte selbst sondern die <strong>Adresse</strong> der Objekte/Werte.
+Quasi ein Zettel auf dem der Hinweis steht, wo wir das Objekt was zu jenem Schließfach gehört finden.
+Oder eine Schnur die von dem Schließfach auf das Objekt verweist.</p>
+<div class="figure align-default" id="fig-data-type-list">
+<a class="reference internal image-reference" href="../../_images/list.png"><img alt="../../_images/list.png" src="../../_images/list.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Die Liste aus unsrem obigen Beispiel bevor wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list" title="Permalink to this image">¶</a></p>
+</div>
+<p>Ändern wir den Wert eines Listenelements, ändern wir diesen Hinweis!</p>
+<div class="figure align-default" id="fig-data-type-list-2">
+<a class="reference internal image-reference" href="../../_images/list-2.png"><img alt="../../_images/list-2.png" src="../../_images/list-2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Die Liste aus unsrem obigen Beispiel nachdem wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Um dieses Konzept besser zu verstehen und herauszufinden wie sich <em>atomare</em> wich auch <em>zusammengesetzt Datentypen</em> verhalten hilft oft nur eins: Ausprobieren!</p>
+</div>
+<div class="section" id="ganze-zahlen-int">
+<h2><span class="section-number">4.1.3. </span>Ganze Zahlen - int<a class="headerlink" href="#ganze-zahlen-int" title="Permalink to this headline">¶</a></h2>
+<p>Ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> ist ein <em>atomarer Datentyp</em> und verhält sich so wie wir es erwarten.</p>
+<p>Falls Sie bereits Programmierkenntnisse so gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Besonderheit: ganze Zahlen können nicht überlaufen.
+Anders als Fließkommazahlen benötigen ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Variable Anzahl an Bits.
+Anders ausgedrückt: Nicht jede Zahl benötigt die gleiche Anzahl an Bits im Speicher!
+Solange Ihr Speicher nicht komplett belegt ist, können Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> somit mit sehr großen ganzen Zahlen rechnen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">large_number</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">large_number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da wir bei mathematischen Operationen wie <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code> und <code class="docutils literal notranslate"><span class="pre">**</span></code> ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> und Fließkommazahlen <code class="docutils literal notranslate"><span class="pre">float</span></code> vermischen können, müssen wir darauf achten welcher Datentyp am Ende herauskommt.
+Sobald eine Fließkommazahl teil der Berechnung ist, ist das Ergebnis vom Typ <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mf">1.0</span>     <span class="c1"># int * float -&gt; float   </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+3.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">large_number</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">large_number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+1e+100
+</pre></div>
+</div>
+</div>
+</div>
+<p>Auch bei der ganzzahligen Division <code class="docutils literal notranslate"><span class="pre">//</span></code> erhalten wir als Datentyp eine Fließkommazahl:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">//</span> <span class="mi">2</span>     <span class="c1"># float // int -&gt; float   </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">//</span> <span class="mf">2.0</span>     <span class="c1"># int // float -&gt; float   </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span>     <span class="c1"># int // int -&gt; int   </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+1
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="flieszkommazahlen-float">
-<h2><span class="section-number">4.3.3. </span>Fließkommazahlen - float<a class="headerlink" href="#flieszkommazahlen-float" title="Permalink to this headline">¶</a></h2>
-<p>Computer sind gebaut um numerische Berechnungen auszuführen.</p>
+<h2><span class="section-number">4.1.4. </span>Fließkommazahlen - float<a class="headerlink" href="#flieszkommazahlen-float" title="Permalink to this headline">¶</a></h2>
+<p>Im Gegensatz zu ganzen Zahlen benötigen Fließkommazahlen immer die gleiche Anzahl an Bits.
+Wie ist es unter diesen Bedingungen möglich Zahlen darzustellen deren absoluter Wert sehr verschieden ist.
+Zum Beispiel können wir problemlos die Zahl <span class="math notranslate nohighlight">\(0.0000000001\)</span> und die Zahl <span class="math notranslate nohighlight">\(10000000.0\)</span> als Fließkommazahl definieren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_float</span> <span class="o">=</span> <span class="mf">0.0000000001</span>
+<span class="n">large_float</span> <span class="o">=</span> <span class="mf">10000000.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">small_float</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">large_float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1e-10
+10000000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Physiker kennen dieses Problem.
+Sie möchten ebenfalls einen riesigen Zahlenbereich kompakt notieren können und haben deshalb die wissenschaftliche Notation eingeführt.
+Fließkommazahlen sind aus dieser Notation entstanden.
+In dieser Notation wird aus <span class="math notranslate nohighlight">\(10000000.0 = 1.0 \cdot 10^7\)</span> und aus <span class="math notranslate nohighlight">\(0.0000000001 = 1.0 \cdot 10^{-10}\)</span>.</p>
+<p>Soweit so gut.
+Was passiert aber wenn jede Ziffer von 0 verschieden ist und sich endlos fortsetzt z.B. <span class="math notranslate nohighlight">\(\pi = 3.14159265359 \ldots\)</span> oder auch <span class="math notranslate nohighlight">\(1/3 = 0.33333333333 \ldots\)</span>?
+In diesem Fall</p>
+</div>
+<div class="section" id="wahrheitswerte-bool">
+<h2><span class="section-number">4.1.5. </span>Wahrheitswerte - bool<a class="headerlink" href="#wahrheitswerte-bool" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
 </div>
 <div class="section" id="zeichenketten-str">
-<h2><span class="section-number">4.3.4. </span>Zeichenketten - str<a class="headerlink" href="#zeichenketten-str" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.6. </span>Zeichenketten - str<a class="headerlink" href="#zeichenketten-str" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
 </div>
 <div class="section" id="listen-list">
-<h2><span class="section-number">4.3.5. </span>Listen - list<a class="headerlink" href="#listen-list" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.7. </span>Listen - list<a class="headerlink" href="#listen-list" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
 </div>
 <div class="section" id="tupel-tuple">
-<h2><span class="section-number">4.3.6. </span>Tupel - tuple<a class="headerlink" href="#tupel-tuple" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.8. </span>Tupel - tuple<a class="headerlink" href="#tupel-tuple" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
 </div>
 <div class="section" id="mengen-set">
-<h2><span class="section-number">4.3.7. </span>Mengen - set<a class="headerlink" href="#mengen-set" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.9. </span>Mengen - set<a class="headerlink" href="#mengen-set" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
 </div>
 <div class="section" id="worterbucher-dict">
-<h2><span class="section-number">4.3.8. </span>Wörterbücher - dict<a class="headerlink" href="#worterbucher-dict" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.10. </span>Wörterbücher - dict<a class="headerlink" href="#worterbucher-dict" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
 </div>
 </div>
@@ -769,7 +1030,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">4. </span>Datentypen</a>
-    <a class='right-next' id="next-link" href="2-kind-of-data-types.html" title="next page"><span class="section-number">4.4. </span>Arten von Datentypen</a>
+    <a class='right-next' id="next-link" href="2-typing-in-python.html" title="next page"><span class="section-number">4.2. </span>Pythons Typisierung</a>
 
         </div>
         

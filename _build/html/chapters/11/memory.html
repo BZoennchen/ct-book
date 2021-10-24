@@ -473,32 +473,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../10-4/1-data-types.html">
-     4.3. Pythons wichtigste built-in Datentypen
+     4.1. Pythons Datentypen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/2-kind-of-data-types.html">
-     4.4. Arten von Datentypen
+    <a class="reference internal" href="../10-4/2-typing-in-python.html">
+     4.2. Pythons Typisierung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/3-primitive-data-types.html">
-     4.5. Primitive Datentypen in Python?
+    <a class="reference internal" href="../10-4/3-type-systems.html">
+     4.3. Dynamische und statische Typisierung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/4-change-of-interpretation.html">
-     4.6. Interpretationswechsel
+    <a class="reference internal" href="../10-4/4-why-data-types.html">
+     4.4. Existenzberechtigung
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/5-why-data-types.html">
-     4.7. Existenzberechtigung
+    <a class="reference internal" href="../10-4/5-change-of-interpretation.html">
+     4.5. Interpretationswechsel
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-4/6-type-systems.html">
-     4.8. Dynamische und statische Typisierung
+    <a class="reference internal" href="../10-4/6-kind-of-data-types.html">
+     4.6. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-4/7-primitive-data-types.html">
+     4.7. Primitive Datentypen in Python?
     </a>
    </li>
   </ul>
@@ -803,7 +808,7 @@ Zudem kann die <a class="reference internal" href="../06/4-information-flow.html
 Aufgrund der Befehle, welche aus dem <a class="reference internal" href="../06/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> geladen werden, verändert die Kontrolleinheit den Befehlszeiger entsprechend, d.h. die Kontrolleinheit führt das im Speicher stehende Programm aus.</p>
 <div class="figure align-default" id="fig-program-run-memory">
 <a class="reference internal image-reference" href="../../_images/program-run.png"><img alt="../../_images/program-run.png" src="../../_images/program-run.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Bereiche des <a class="reference internal" href="../06/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a> (links) werden über eine Speicheradresse in <a class="reference internal" href="../06/4-information-flow.html#def-register"><span class="std std-ref">Register</span></a> der <a class="reference internal" href="../06/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> (Kontrolleinheit und arithmetische/logische Einheit) geladen.</span><a class="headerlink" href="#fig-program-run-memory" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Bereiche des <a class="reference internal" href="../06/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a> (links) werden über eine Speicheradresse in <a class="reference internal" href="../06/4-information-flow.html#def-register"><span class="std std-ref">Register</span></a> der <a class="reference internal" href="../06/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> (Kontrolleinheit und arithmetische/logische Einheit) geladen.</span><a class="headerlink" href="#fig-program-run-memory" title="Permalink to this image">¶</a></p>
 </div>
 <p>Warum darf die Liste nur Zahlen enthalten?
 Der gesamte Computer arbeitet mit Zahlen in der <a class="reference internal" href="../06/2-representation.html#sec-binary-numbers"><span class="std std-ref">Binärdarstellung</span></a>.
@@ -895,7 +900,7 @@ Jedoch soll auch für unsere Liste gelten, dass</p>
 </ol>
 <div class="figure align-default" id="fig-list-as-memory">
 <a class="reference internal image-reference" href="../../_images/list-as-memory.png"><img alt="../../_images/list-as-memory.png" src="../../_images/list-as-memory.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste von natürlichen Zahlen als Modell für den <a class="reference internal" href="../06/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a>.</span><a class="headerlink" href="#fig-list-as-memory" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste von natürlichen Zahlen als Modell für den <a class="reference internal" href="../06/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a>.</span><a class="headerlink" href="#fig-list-as-memory" title="Permalink to this image">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-decimal-numbers-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 4.3 </span>(Kapazität des Speicherbereichs)</p>
@@ -970,14 +975,14 @@ Brauchen wir dann nicht eine weitere Information die uns sagt, dass es sich um d
 Wenn ja kommen wir aus dem Schlamassel nicht mehr heraus.</p>
 <div class="figure align-default" id="fig-data-type-key-pair">
 <a class="reference internal image-reference" href="../../_images/data-type-key-pair1.png"><img alt="../../_images/data-type-key-pair1.png" src="../../_images/data-type-key-pair1.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">(Datentyp, Wert)-Paar.</span><a class="headerlink" href="#fig-data-type-key-pair" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text">(Datentyp, Wert)-Paar.</span><a class="headerlink" href="#fig-data-type-key-pair" title="Permalink to this image">¶</a></p>
 </div>
 <p>Die Datentypinformation ist eine <strong>explizite</strong> Information, d.h. die Information wird niedergeschrieben.
 Um zu entscheiden, ob ein Speicherbereich den Datentyp beschreibt, verwenden wir hingegen <strong>implizites</strong> Wissen/Information.
 Wir einigen uns einfach darauf, dass ein Paar (Datentyp, Wert) mit dem Datentyp beginnt und dieser genau durch das erste <a class="reference internal" href="../06/2-representation.html#def-byte"><span class="std std-ref">Byte</span></a> beschrieben wird.
 Wenn wir wissen, dass ein solches Paar an der Adresse / Index <code class="docutils literal notranslate"><span class="pre">i</span></code> beginnt, können wir den Datentyp aus dem Speicherbereich <code class="docutils literal notranslate"><span class="pre">memory[i]</span></code> herauslesen.
 Zu wissen, wo ein solches Paar beginnt, ist eine notwendige Vorraussetzung.</p>
-<p>Wir beschränken uns auf die folgenden Datentypen, wovon die Werte der <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a> einen festen Speicherbedarf benötigen.</p>
+<p>Wir beschränken uns auf die folgenden Datentypen, wovon die Werte der <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a> einen festen Speicherbedarf benötigen.</p>
 <ol class="simple">
 <li><p>die <a class="reference internal" href="#sec-memory-natural-numbers"><span class="std std-ref">natürlichen Zahlen</span></a>, 16-Bit</p></li>
 <li><p><a class="reference internal" href="#sec-memory-char"><span class="std std-ref">Zeichen</span></a>, 8-Bit</p></li>
@@ -985,8 +990,8 @@ Zu wissen, wo ein solches Paar beginnt, ist eine notwendige Vorraussetzung.</p>
 <li><p><a class="reference internal" href="#sec-memory-list"><span class="std std-ref">Listen</span></a>, variabler Speicherbedarf</p></li>
 <li><p>(<a class="reference internal" href="#sec-memory-string"><span class="std std-ref">Zeichenketten</span></a>, variabler Speicherbedarf)</p></li>
 </ol>
-<p>Eine Zeichenketten oder Listen sind von keinem <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a>, denn sie haben eine variable Länge und können weiter zerlegt werden.
-Die Festlegung des Speicherbedarfs für <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentyp</span></a> bedeutet auch, dass wir für kleine Zahlen z.B. die 0 mehr Speicher verbrauchen als eigentlich notwendig.
+<p>Eine Zeichenketten oder Listen sind von keinem <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a>, denn sie haben eine variable Länge und können weiter zerlegt werden.
+Die Festlegung des Speicherbedarfs für <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentyp</span></a> bedeutet auch, dass wir für kleine Zahlen z.B. die 0 mehr Speicher verbrauchen als eigentlich notwendig.
 Weshalb diese Lösung dennoch besser ist als einen variable Speicherbedarf zu verwalten wird gleich ersichtlich.</p>
 <p>Fassen wir noch einmal die implizieten und explizieten Informationen zusammen.</p>
 <ul class="simple">
@@ -1088,7 +1093,7 @@ Demnach gilt:</p>
 <p class="admonition-title">Überlauf in Python</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> habe nur Fließkommazahlen <code class="docutils literal notranslate"><span class="pre">float</span></code> ein hartes Limit.
 Ganze Zahlen (Integer) <code class="docutils literal notranslate"><span class="pre">int</span></code> sind als sogenannte <strong>long integer objects</strong> implementiert, welche keine harte Grenze haben und damit zu keinem <em>Überlauf</em> führen.
-Ganze Zahlen sind in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a>.</p>
+Ganze Zahlen sind in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a>.</p>
 </div>
 </div>
 <div class="section" id="speicheradressen">
@@ -1141,10 +1146,10 @@ Es folgt die Länge der Liste als natürlichen Zahl ohne Datentypinformation.
 Das sind weitere 16 <a class="reference internal" href="../06/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> für den Wert.
 Dann folgt der Datentyp der Listenelemente, was nochmals 8 <a class="reference internal" href="../06/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> sind.
 Nach dieser Prämisse folgen die eigentlichen Elemente ohne Datentypinformation.</p>
-<p><a class="reference internal" href="#fig-datatypes-in-memory"><span class="std std-numref">Abbildung 4.6</span></a> fasst alle besprochenen Datentypen zusammen.</p>
+<p><a class="reference internal" href="#fig-datatypes-in-memory"><span class="std std-numref">Abbildung 4.8</span></a> fasst alle besprochenen Datentypen zusammen.</p>
 <div class="figure align-default" id="fig-datatypes-in-memory">
 <a class="reference internal image-reference" href="../../_images/datatypes-in-memory.png"><img alt="../../_images/datatypes-in-memory.png" src="../../_images/datatypes-in-memory.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Elemente wie sie im Speicher liegen je Datentyp. Die Liste ist eine Liste aus natürlichen Zahlen.</span><a class="headerlink" href="#fig-datatypes-in-memory" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.8 </span><span class="caption-text">Elemente wie sie im Speicher liegen je Datentyp. Die Liste ist eine Liste aus natürlichen Zahlen.</span><a class="headerlink" href="#fig-datatypes-in-memory" title="Permalink to this image">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-list-adressing-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 4.9 </span>(Listen-Adressierung)</p>
@@ -1165,7 +1170,7 @@ Wie lautet dann der Index für <code class="docutils literal notranslate"><span 
 </ol>
 </div>
 </div>
-<p>Die schnelle und einfache Indexberechnung ist der Grund weshalb jedes Element eines <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentyps</span></a> gleich viel Speicher verbraucht und wir keinen variablen Speicherverbrauch für diese Datentypen haben.
+<p>Die schnelle und einfache Indexberechnung ist der Grund weshalb jedes Element eines <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentyps</span></a> gleich viel Speicher verbraucht und wir keinen variablen Speicherverbrauch für diese Datentypen haben.
 Dies ist ein ganz wesentliches Prinzip aller modernen Computer!
 Es vereinfacht bzw. beschleunigt die Adressierung.</p>
 <div class="exercise admonition" id="memory-list-variable-memory-exercise">
@@ -1524,13 +1529,13 @@ Diese neue Adresse sollte die Funktion zurückgeben.</p>
 <h3><span class="section-number">4.3.4. </span>Speicherverwaltung für Listen<a class="headerlink" href="#speicherverwaltung-fur-listen" title="Permalink to this headline">¶</a></h3>
 <p>Was fehlt ist <code class="docutils literal notranslate"><span class="pre">alloc</span></code> und <code class="docutils literal notranslate"><span class="pre">free</span></code> für eine Liste.
 Was wir benötigen ist die Berechnung des Speicherbedarfs einer Liste.
-Betrachten Sie <a class="reference internal" href="#fig-list-in-memory"><span class="std std-numref">Abbildung 4.7</span></a>.
+Betrachten Sie <a class="reference internal" href="#fig-list-in-memory"><span class="std std-numref">Abbildung 4.9</span></a>.
 Wir berechnen den Speicherbedarf einer Liste durch <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">(calc_byte(memory[addr+3])-1)</span></code> wobei <code class="docutils literal notranslate"><span class="pre">n</span></code> die Anzahl der Listenelemente ist.
 Weshalb subtrahieren wir die eins?
 Da Listenelemente keine Datentypinformation benötigen!</p>
 <div class="figure align-default" id="fig-list-in-memory">
 <a class="reference internal image-reference" href="../../_images/list-in-memory.png"><img alt="../../_images/list-in-memory.png" src="../../_images/list-in-memory.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text">Liste wie sie im Speicher liegt. Um den Speicherbedarf zu berechnen benötigen wir die <strong>Länge der Liste</strong>, und den <strong>Datentyp der Listenelemente</strong>.</span><a class="headerlink" href="#fig-list-in-memory" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9 </span><span class="caption-text">Liste wie sie im Speicher liegt. Um den Speicherbedarf zu berechnen benötigen wir die <strong>Länge der Liste</strong>, und den <strong>Datentyp der Listenelemente</strong>.</span><a class="headerlink" href="#fig-list-in-memory" title="Permalink to this image">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-alloc-list-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 4.15 </span>(Speicher für Listen allokieren)</p>
@@ -1684,8 +1689,8 @@ Our list in mememory: [2, 0, 10, 0, 0, 1, 0, 4, 0, 9, 0, 16, 0, 25, 0, 36, 0, 49
 <div class="section" id="mehrdimensionale-listen">
 <h3><span class="section-number">4.3.5. </span>Mehrdimensionale Listen<a class="headerlink" href="#mehrdimensionale-listen" title="Permalink to this headline">¶</a></h3>
 <p>Wenn Sie <code class="docutils literal notranslate"><span class="pre">alloc_list</span></code> betrachten werden Sie festellen, dass eine Liste aus Elementen vom Datentyp <code class="docutils literal notranslate"><span class="pre">to_data_type('list')</span></code> nicht zulässig ist.
-Unsere Liste darf derzeit nur <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> (natürliche Zahlen, Zeichen und Adressen) beinhalten.</p>
-<p>Mehrdimensionale Listen aus Elementen eines <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyps</span></a> lassen sich recht einfach erstellen, wenn wir anstatt eine Länge der Liste, für jede Dimension eine Länge anfügen.
+Unsere Liste darf derzeit nur <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> (natürliche Zahlen, Zeichen und Adressen) beinhalten.</p>
+<p>Mehrdimensionale Listen aus Elementen eines <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyps</span></a> lassen sich recht einfach erstellen, wenn wir anstatt eine Länge der Liste, für jede Dimension eine Länge anfügen.
 Eine solche Liste würde anstatt einer Länge eine Liste aus Längen beinhalten.
 Zudem würden wir die Elemente immernoch linear nebeneinander anordnen.</p>
 <p>Nehmen wir zum Beispiel an, wir möchten eine zweidimensionale Liste, wobei die erste Dimension die Länge <span class="math notranslate nohighlight">\(n\)</span> und die zweite die Länge <span class="math notranslate nohighlight">\(m\)</span> hätte.
@@ -1712,7 +1717,7 @@ Haben Sie eine Idee wie wir das erreichen können?</p>
 <p class="admonition-title">Solution to <a class="reference external" href="#memory-list-pointer-exercise"><span>Exercise 4.17</span></a></p>
 <div class="section" id="solution-content">
 <p>Wir können Adressen (Zeiger) als Listenelemente verwenden.
-Diese Adressen können auf unterschiedliche <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> aber auch andere Listen zeigen!</p>
+Diese Adressen können auf unterschiedliche <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> aber auch andere Listen zeigen!</p>
 </div>
 </div>
 <p>Folgender Code erzeugt die gleiche Ausgabe wie zuvor, doch liegen die Quadratzahlen irgendwo verteilt im Speicher <code class="docutils literal notranslate"><span class="pre">memory</span></code>.
@@ -1799,7 +1804,7 @@ We allocated 0 bytes
 </div>
 <div class="section" id="ein-einfacher-parser">
 <h3><span class="section-number">4.3.6. </span>Ein einfacher Parser<a class="headerlink" href="#ein-einfacher-parser" title="Permalink to this headline">¶</a></h3>
-<p>Um die Manipulationen im Speicher besser nachzuvollziehen zu können wäre es großartig eine Funktion <code class="docutils literal notranslate"><span class="pre">mem_to_string(addr,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code> zu haben, welche einen <a class="reference internal" href="../10-4/2-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> oder eine <a class="reference internal" href="#sec-memory-list"><span class="std std-ref">Liste</span></a> in einer gut leserlichen Formatierung als Zeichenkette zurückgibt.</p>
+<p>Um die Manipulationen im Speicher besser nachzuvollziehen zu können wäre es großartig eine Funktion <code class="docutils literal notranslate"><span class="pre">mem_to_string(addr,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code> zu haben, welche einen <a class="reference internal" href="../10-4/6-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> oder eine <a class="reference internal" href="#sec-memory-list"><span class="std std-ref">Liste</span></a> in einer gut leserlichen Formatierung als Zeichenkette zurückgibt.</p>
 <p>An einer Adresse <code class="docutils literal notranslate"><span class="pre">ADDR</span></code> kann sich eine andere <code class="docutils literal notranslate"><span class="pre">ADDR</span></code>, eine Zahl <code class="docutils literal notranslate"><span class="pre">number</span></code>, ein Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code> oder eine Liste <code class="docutils literal notranslate"><span class="pre">LIST</span></code> befinden.
 Eine Liste <code class="docutils literal notranslate"><span class="pre">LIST</span></code> kann wiederum natürliche Zahlen <code class="docutils literal notranslate"><span class="pre">number</span></code>, Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code> oder Adressen <code class="docutils literal notranslate"><span class="pre">ADDR</span></code> enthalten.
 Diese Struktur ist eine von uns definierte <strong>Syntax</strong>!
@@ -1889,7 +1894,7 @@ Wenn der Datentyp an der Adresse <code class="docutils literal notranslate"><spa
 Glücklicherweise können wir unsere zuvor definierten Hilfsfunktionen <code class="docutils literal notranslate"><span class="pre">list_len</span></code> und <code class="docutils literal notranslate"><span class="pre">get_list_value</span></code> nutzen.
 Die Zeichenkette lassen wir mit einem <code class="docutils literal notranslate"><span class="pre">&quot;[&quot;</span></code> beginnen um den Anfang der Liste zu markieren.
 Durch <code class="docutils literal notranslate"><span class="pre">list_len</span></code> holen wir die Längeninformation der Liste aus dem Speicher.
-Anhand unserer Listendefinition in <a class="reference internal" href="#fig-list-in-memory"><span class="std std-numref">Abbildung 4.7</span></a>, wissen wir dass an <code class="docutils literal notranslate"><span class="pre">memory[mylist+3]</span></code> der Datentyp der Listenelemente der Liste steht.
+Anhand unserer Listendefinition in <a class="reference internal" href="#fig-list-in-memory"><span class="std std-numref">Abbildung 4.9</span></a>, wissen wir dass an <code class="docutils literal notranslate"><span class="pre">memory[mylist+3]</span></code> der Datentyp der Listenelemente der Liste steht.
 Was folgt ist eine Iteration über die Listenelmente.
 <code class="docutils literal notranslate"><span class="pre">get_list_value</span></code> liefert uns je ein Listenelement.
 Erneut ist der Fall für die Zahlen und Zeichenketten klar.

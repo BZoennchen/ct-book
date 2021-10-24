@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Datentypen
 
 Wie in Abschnitt [Repräsentation](sec-representation) beschrieben, befinden sich im Speicher des (digitalen) Computers ausschließlich [Bits](def-bit).
@@ -7,80 +19,66 @@ Dennoch verarbeiten Computer Zahlen, Text, Bilder und mehr.
 
 Die 'Magie' dahinter geschieht durch die Wahl und Implementierung einer [Interpretation](sec-interpretation).
 Unterschiedliche Interpretationen ermöglichen es, Bits und [Byte](def-byte) als Zahlen, Text, Bilder usw. zu verarbeiten.
-Im Abschnitt [Variablen](sec-variables) haben wir von einer Variable als paar von **Wert** und **Speicheradresse** gesprochen.
-Die *Variable* kennt die Speicheradresse an der der Wert steht.
 
-## Pythons Typisierung
+Im Abschnitt [Variablen](sec-variables) haben wir von einer *Variable* als Tupel von **Wert** und **Speicheradresse** gesprochen.
+Die *Variable* 'kennt' die Speicheradresse an der der Wert im Speicher steht.
+Soweit so gut, woher aber weiß der Interpreter ob es sich bei der Folge von Bits um eine Zahl oder um etwas anderes handelt?
 
-Für statisch getypte Sprachen (siehe Abschnitt [Dynamische und statische Typisierung](sec-type-systems)) wie beispielsweise ``C/C++`` und ``Java`` ist dies ausreichend.
-Die Typinformation, also welche Variable welchen Datentyp annimmt, wird beim Starten eines Programms vergessen bzw. nicht mehr benötigt.
-Falls wir als Programmierer\*innen zum Beispiel versuchen eine Zeichenkette mit einer Zahl zu addieren, so weißt uns der Compiler auf diesen Fehler hin und der Programmcode kann gar nicht erst gestartet werden.
-Unser Fehler fällt auf bevor unser Code ausgeführt wird.
+Weisen wir der Variablen ``char`` den Wert ``'a'`` zu 
 
-Anders verhält es sich jedoch bei dynamisch getypten Sprachen wie etwa ``Python`` und ``JavaScript``.
-Für diese Sprachen kann sich, während das Programm läuft, der Typ einer Variable ändern.
-Anders ausgedrückt kann sich zur Laufzeit ändern wie der Interpreter jene Variable zu interpretieren hat (siehe Abschnitt [Interpretation](sec-interpretation)).
-Deshalb werden die Typen auf ihre Korrektheit zur Laufzeit getestet.
-Demnach muss die Typinformation, d.h. der Datentyp einer Variable, auch im Arbeitsspeicher liegen.
-Unser Fehler fällt erst auf, wenn unser Code ausgeführt wird.
+```{code-cell} python3
+char = 'a'
+char
+```
 
-Für dynamisch getypte Sprachen, erweitern wir unsere Sichtweise um die Datentypinformation.
-Eine *Variable* kann demnach als Tripel, bestehend aus
+so wird im Speicher irgendwo der **Wert** als binärer ASCII-Code stehen:
 
-+ **Wert**
-+ **Datentyp**
-+ **Adresse**,
+$$01100001_2$$
 
-verstanden werden.
-Die **Speicheradresse** der Variable zeigt in den Arbeitsspeicher an eine bestimmte Stelle.
-Dort steht jedoch nicht nur der **Wert** sondern auch der **Datentyp**, d.h. die *Information* wie dieser **Wert** zu interpretieren ist.
+Würde man diese Bitfolge als ganze Zahl interpretieren wäre dies gleich
 
-```{figure} ../../figs/python-tutorial/datatypes/data-type-key-pair.png
+$$2^0 + 2^5 + 2^6 = 97_{10}$$
+
+Warum gibt uns der Interpreter aber ``'a'`` und nicht ``97`` aus?
+Und weshalb kommt es bei folgender Addition
+
+```{code-cell} python3
 ---
-width: 800px
-name: fig-data-type-key-pair-2
+tags: [raises-exception]
 ---
-Variablen für dynamische Typisierung: Eine *Variable* dargestellt als Tripel aus (Adresse, Datentyp, Wert). 
-Datentyp und Wert stehen im Speicher. Die Variable 'kennt' ihre Adresse.
-In diesem Beispiel benötigt die Datentypinformation 3 Bit und der Wert 8 Bit.
+x = 3
+char = 'a'
+x + char
 ```
 
-Woher wissen wir und der Rechner, an welcher Stelle im Speicher die Datentypinformation endet?
-Eine Möglichkeit ist es eine feste Anzahl an Bits für Datentypen festzulegen.
-In {numref}`Abbildung {number} <fig-data-type-key-pair-2>` wären dies 3 [Bits](def-bit).
+zu einem Fehler?
+Die kurze Antwort lautet: Wegen der Datentypen der Variablen ``x`` bzw. ``char``.
 
-Dynamische Typisierung wie sie in ``Python`` besteht ähnelt dem Konzept der Dateiformaten.
-So könnten wir ein Bild im ``PNG`` oder ``JPEG``-Format als *(Wert, Dateiformat)* Tupel ansehen.
-Der *Wert* ist durch die Bits, die das Bild als solches ausmachen definiert.
-Der *Dateiformat* ``PNG`` oder ``JPEG`` gibt an, wie diese Bits von der Computerhardware wie auch Software interpretiert werden müssen, um das Bild auch als Bild verarbeiten zu können.
-
-```{admonition} Datentypen
-:name: def-datatypes
-
-Ein *Datentyp* oder auch kurz *Typ* ist ein Attribut eines Werts, welches dem Compiler oder Interpreter angibt, wie der Wert zu verwenden bzw. zu interpretieren ist.
-
+```{code-cell} python3
+print(f'type of x: {type(x)}')
+print(f'type of char: {type(char)}')
 ```
 
-Blicken wir auf folgenden Code und fragen uns was der Interpreter daraus macht.
+Der Datentyp der Variablen ``char`` ist ``str`` (Zeichenkette).
+Diese Information bekommt der Interpreter und interpretiert deshalb die Bitfolge im Speicher als Zeichenkette.
+Und die ``+``-Operation ist für Kombination von Datentypen ``int`` und ``str`` nicht definiert.
+Das ist allerdings eine unbefriedigende Antwort, denn wir wissen noch nicht wie Datentypen realisiert werden.
+Wie ist der Zusammenhang zwischen den Programmiersprachen, welche alle auf Datentypen basieren, und den [Übersetzern](def-compiler) oder [Interpretern](def-interpreter) und der Computerhardware?
 
-```python
-x = 3       # <x, int>
-y = 5       # <y, int>
-z = x + y   # int + int -> int
+In diesem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
+Dies beinhaltet Theorie und Praxis.
+Um in ``Python`` mit den Datentypen umgehen zu können reicht es die ersten beiden Abschnitte durchzugehen.
+Möchten Sie jedoch ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich womöglich der Blick in die anderen Abschnitte.
 
-x = 1.3     # <x, float>
-y = 3.5     # <y, float>
-z = x + y   # float + float -> float
-```
+Wir versuchen folgende Fragen zu beantworten:
 
-Für die erste Addition von ``x`` und ``y`` holt sich der Interpreter die Datentypinformation.
-Er weiß demnach, dass ``x + y`` bedeutet, dass eine Addition von zwei ganzen Zahlen auszuführen ist.
-Er wandelt den Code so um, dass die CPU angewiesen wird, zwei ganze Zahlen zu addieren.
-Es wird dabei eine bestimmte Einheit der CPU aktiviert.
-Für den zweiten Addition führt der Interpreter die gleiche Übersetzung durch, jedoch für zwei Fließkommazahlen.
-Eine **andere** Einheit der CPU wird aktiviert!
+1. Grundlagen
+   1. Was kann ich in **Python** mit einer Variable eines bestimmten Typs anfangen? [4.1 Pythons Datentypen](sec-working-with-data-types)
+   2. Welche Typisierung verwendet **Python**? [4.2 Pythons Typisierung](sec-typing-in-python)
 
-## Übungsaufgabe
-
-Um das Konzept um die Datentypen für dynamisch getypte Sprachen zu durchdringen empfehlen wir zu einem späteren Zeitpunkt die Übung [Speicher - alles ist eine Liste](sec-memory).
-Diese Übung ist sehr umfangreich und benötigt ein gutes Verständnis von Variablen, Funktionen, Listen und Rekursion.
+2. Fortsetzung
+   1. Was ist der Unterschied zwischen statischer und dynamischer Typisierung? [4.3 Dynamische und statische Typisierung](sec-type-systems)
+   2. Weshalb gibt es überhaupt Datentypen? [4.4 Existenzberechtigung](sec-why-data-types)
+   3. Was passiert bei einer Änderung des Datentyps einer Variablen? [4.5 Interpretationswechsel](sec-change-of-data-types)
+   4. Welche Datentypen gibt es? [4.6 Arten von Datentypen](sec-kind-of-data-types)
+   5. Warum gibt es in Python keine primitiven Datentypen? [4.7 Primitive Datentypen in Python?](sec-primitive-data-types-in-python))
