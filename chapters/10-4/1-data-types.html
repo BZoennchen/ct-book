@@ -689,18 +689,40 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zeichenketten-str">
-   4.1.6. Zeichenketten - str
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#listen-list">
-   4.1.7. Listen - list
+   4.1.6. Listen - list
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#erstellung">
+     4.1.6.1. Erstellung
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexierung">
+     4.1.6.2. Indexierung
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#veranderung">
+     4.1.6.3. Veränderung
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wie-funktioniert-eine-liste">
+     4.1.6.4. Wie funktioniert eine Liste?
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tupel-tuple">
-   4.1.8. Tupel - tuple
+   4.1.7. Tupel - tuple
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeichenketten-str">
+   4.1.8. Zeichenketten - str
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -729,22 +751,41 @@
 <p>Beginnen wir mit der Praxis und sehen uns an welche Datentypen uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet und was wir mit diesen anfangen können.
 Die von <code class="docutils literal notranslate"><span class="pre">Python</span></code> vorab definierten Datentypen nennt man <em>built-in Datentypen</em>.
 Wir werden in diesem Abschnitt nicht alle <em>built-in Datentypen</em> besprechen, sondern jene mit denen Sie die meiste Zeit zu tun haben.
-Eine vollständige Liste der Datentypen finden Sie in Abschnitt <a class="reference internal" href="6-kind-of-data-types.html#sec-built-in-data-types"><span class="std std-ref">Built-in Datentypen</span></a>.</p>
+Eine vollständige Liste der Datentypen finden Sie im Abschnitt <a class="reference internal" href="6-kind-of-data-types.html#sec-built-in-data-types"><span class="std std-ref">Built-in Datentypen</span></a>.</p>
 <p>Wir können die <em>built-in Datentypen</em> in weitere zwei Kategorien zerteilen:</p>
 <ol class="simple">
 <li><p><em>Atomare Datentypen</em>, also Datentypen die sich auf einen einzelnen Wert beziehen und</p></li>
 <li><p><em>Zusammengesetzt Datentypen</em></p></li>
 </ol>
-<p>Haben Sie bereits Programmiererfahrung werden Sie <em>atomare Datentypen</em> als <em>primitive Datentypen</em> wahrnehmen, doch streng genommen gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine primitiven Datentypen.
-Dennoch verhalten sich <em>atomare Datentypen</em> wie <em>primitive Datentypen</em>.</p>
+<p>Haben Sie bereits Programmiererfahrung, so werden Sie <em>atomare Datentypen</em> als <em>primitive Datentypen</em> wahrnehmen, doch streng genommen gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine primitiven Datentypen.
+Dennoch verhalten sich <em>atomare Datentypen</em> ähnlich wie <em>primitive Datentypen</em>.</p>
 <p><em>Atomare Datentypen</em> sind: Ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>, Wahrheitswerte <code class="docutils literal notranslate"><span class="pre">bool</span></code> und Fließkommazahlen.
 <em>Zusammengesetzte Datentypen</em> sind: Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code>, Listen <code class="docutils literal notranslate"><span class="pre">list</span></code>, Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> und Wörterbücher <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
+<p>Den Datentyp einer Variable oder eines Wertes erfragen Sie mit der <em>built-in</em> Funktion <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">3.1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="atomare-datentypen">
 <h2><span class="section-number">4.1.1. </span>Atomare Datentypen<a class="headerlink" href="#atomare-datentypen" title="Permalink to this headline">¶</a></h2>
-<p>Eine wesentlich Eigenschaft von <em>atomare Datentypen</em> ist, dass der <strong>Wert</strong> einer Variable <em>atomare Datentyps</em> unverändert im Speicher ist.
-Wird der <strong>Wert</strong> von keiner Variablen mehr adressiert, wird er zwar gelöscht um den Speicher wieder freizugeben, doch kann er nicht verändert werden solange eine Variable den Wert noch adressiert.
-Wir haben dieses Phänomen bereits im Abschnitt <a class="reference internal" href="../10-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> beobachtet.
-Wir hatten festgehalten, dass Veränderungen der einen Variablen haben keinen Effekt auf die <strong>Adresse</strong> bzw. *Identität id anderer Variablen.
+<p>Eine wesentlich Eigenschaft von <em>atomaren Datentypen</em> ist, dass der <strong>Wert</strong> einer Variable eines <em>atomaren Datentyps</em> <strong>unverändert</strong> im Speicher liegt.
+Wird der <strong>Wert</strong> von keiner Variablen mehr adressiert, wird er zwar gelöscht, um den Speicher wieder freizugeben, doch kann er nicht verändert werden solange eine Variable den Wert noch adressiert.</p>
+<p>Wir haben dieses Phänomen bereits im Abschnitt <a class="reference internal" href="../10-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> beobachtet.
+Wir hatten festgehalten, dass Veränderungen der einen Variablen keinen Effekt auf die <strong>Adresse</strong> bzw. <em>Identität</em> <code class="docutils literal notranslate"><span class="pre">id</span></code> anderer Variablen haben.
 Für <em>atomare Datentypen</em> gilt noch mehr.
 Ändern wir den <strong>Wert</strong> einer Variable vom Typ <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> oder <code class="docutils literal notranslate"><span class="pre">float</span></code>, so kann diese Änderung nicht den <strong>Wert</strong> einer anderen Variablen verändern:</p>
 <div class="cell docutils container">
@@ -768,91 +809,36 @@ Für <em>atomare Datentypen</em> gilt noch mehr.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 12313
-id of x = 4576590832
+id of x = 4528151504
 value of z = 12313
-id of z = 4576590832
+id of z = 4528151504
 change value of x
 value of x = 11341
-id of x = 4576591600
+id of x = 4528151728
 value of z = 12313
-id of z = 4576590832
+id of z = 4528151504
 </pre></div>
 </div>
 </div>
 </div>
-<p><em>Atomare Datentypen</em> bestehen nur aus einem <em>atomaren</em> Wert, den wir nicht weiter zerteilen können.</p>
+<p><em>Atomare Datentypen</em> bestehen nur aus einem <em>atomaren</em> <strong>Wert</strong>, den wir nicht weiter zerteilen können.</p>
 </div>
 <div class="section" id="zusammengesetzte-datentypen">
 <h2><span class="section-number">4.1.2. </span>Zusammengesetzte Datentypen<a class="headerlink" href="#zusammengesetzte-datentypen" title="Permalink to this headline">¶</a></h2>
-<p>Zusammengesetzte Datentypen oder auch Datenstrukturen bestehen hingegen aus mehreren Werten.
+<p><em>Zusammengesetzte Datentypen</em> oder auch <em>Datenstrukturen</em> bestehen hingegen aus mehreren Werten.
 Sie strukturieren diese Werte.</p>
-<p>Anders als bei <em>atomaren Datentypen</em> lassen sich diese strukturierten Werte ändern.
-Nehmen wir einmal an eine Datenstruktur enthält ausschließlich ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>.
-Verändern wir nun eine dieser Zahlen wird der <strong>Wert</strong> im Speicher der diese Zahl repräsentiert nicht verändert – es ist ja ein <em>atomarer Datentyp</em>!
+<p>Anders als bei <em>atomaren Datentypen</em> lässt sich der Wert einer Datenstruktur verändern.
+Damit ist gemeint, dass es sich verändern lässt, was die Datenstruktur enthält.</p>
+<p>Nehmen wir einmal an, eine Datenstruktur enthält ausschließlich ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>.
+Verändern wir nun eine dieser Zahlen, so wird der <strong>Wert</strong> im Speicher, der diese Zahl repräsentiert, nicht verändert – es ist ja ein <em>atomarer Datentyp</em>!
 <strong>Aber</strong> es wird ein neuer Wert in den Speicher geschrieben und die Datenstruktur wird so manipuliert, dass Sie nun auf diesen neuen Wert zeigt.</p>
-<p>Lassen Sie uns das noch einmal an einem Beispiel testen.
-Wir wählen als Datenstruktur eine Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> aus Zahlen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers = </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers[2] = </span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers[2] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;change value of numbers[2]&#39;</span><span class="p">)</span>
-
-<span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers = </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers[2] = </span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers[2] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
-id of numbers = 4577062400
-value of numbers[2] = 3
-id of numbers[2] = 4539226480
-change value of numbers[2]
-value of numbers = [1, 2, -20, 4, 5]
-id of numbers = 4577062400
-value of numbers[2] = -20
-id of numbers[2] = 4576590960
-</pre></div>
-</div>
-</div>
-</div>
-<p>Im obigen Code erstellen wir eine Liste, welche die Zahlen 1 bis 5 enthält.
-Dann verändern wir das zweite Element der Liste (eine Liste startet mit dem 0-ten Element).
-Die <strong>Adresse</strong> der <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">numbers</span></code> ändert sich bei diesem Vorgang nicht!
-Allerdings ändert sich die Adresse des Elements <code class="docutils literal notranslate"><span class="pre">numbers[2]</span></code> und der <strong>Wert</strong> von <code class="docutils literal notranslate"><span class="pre">numbers</span></code>.</p>
-<p>Datenstrukturen sind Behälter die andere Daten aufnehmen können, ähnlich wie ein Schließfächer, Ordner oder Rucksäcke.
-Nehmen wir als Analogie Schließfächer aus der echten Welt.
-Stellen wir uns vor, der Platz in einem Schließfach wäre ein Teil des Speicherplatzes, welches unsere Liste benötigt.
-Alle Schließfächer als ganzes benötigen so viel Speicher wie unsere Liste.
-Was befindet sich nun in unseren Schließfächern?
-Es sind <strong>nicht</strong> die Objekte/Werte selbst sondern die <strong>Adresse</strong> der Objekte/Werte.
-Quasi ein Zettel auf dem der Hinweis steht, wo wir das Objekt was zu jenem Schließfach gehört finden.
-Oder eine Schnur die von dem Schließfach auf das Objekt verweist.</p>
-<div class="figure align-default" id="fig-data-type-list">
-<a class="reference internal image-reference" href="../../_images/list.png"><img alt="../../_images/list.png" src="../../_images/list.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Die Liste aus unsrem obigen Beispiel bevor wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list" title="Permalink to this image">¶</a></p>
-</div>
-<p>Ändern wir den Wert eines Listenelements, ändern wir diesen Hinweis!</p>
-<div class="figure align-default" id="fig-data-type-list-2">
-<a class="reference internal image-reference" href="../../_images/list-2.png"><img alt="../../_images/list-2.png" src="../../_images/list-2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Die Liste aus unsrem obigen Beispiel nachdem wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-2" title="Permalink to this image">¶</a></p>
-</div>
-<p>Um dieses Konzept besser zu verstehen und herauszufinden wie sich <em>atomare</em> wich auch <em>zusammengesetzt Datentypen</em> verhalten hilft oft nur eins: Ausprobieren!</p>
+<p>Im Abschnitt <a class="reference internal" href="#sec-list-and-memory"><span class="std std-ref">Wie funktioniert eine Liste</span></a> sehen wir uns an was genau im Speicher vor sich geht, wenn wir mit Listen arbeiten.</p>
 </div>
 <div class="section" id="ganze-zahlen-int">
 <h2><span class="section-number">4.1.3. </span>Ganze Zahlen - int<a class="headerlink" href="#ganze-zahlen-int" title="Permalink to this headline">¶</a></h2>
 <p>Ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> ist ein <em>atomarer Datentyp</em> und verhält sich so wie wir es erwarten.</p>
-<p>Falls Sie bereits Programmierkenntnisse so gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Besonderheit: ganze Zahlen können nicht überlaufen.
-Anders als Fließkommazahlen benötigen ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Variable Anzahl an Bits.
+<p>Falls Sie bereits Programmierkenntnisse besitzen, so gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Besonderheit: Ganze Zahlen können nicht überlaufen.
+Anders als Fließkommazahlen benötigen ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine variable Anzahl an Bits.
 Anders ausgedrückt: Nicht jede Zahl benötigt die gleiche Anzahl an Bits im Speicher!
 Solange Ihr Speicher nicht komplett belegt ist, können Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> somit mit sehr großen ganzen Zahlen rechnen.</p>
 <div class="cell docutils container">
@@ -902,7 +888,7 @@ Sobald eine Fließkommazahl teil der Berechnung ist, ist das Ergebnis vom Typ <c
 </div>
 </div>
 </div>
-<p>Auch bei der ganzzahligen Division <code class="docutils literal notranslate"><span class="pre">//</span></code> erhalten wir als Datentyp eine Fließkommazahl:</p>
+<p>Auch bei der ganzzahligen Division <code class="docutils literal notranslate"><span class="pre">//</span></code> erhalten wir als Datentyp eine Fließkommazahl sofern eine Fließkommazahl bei der Operation teilnimmt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">//</span> <span class="mi">2</span>     <span class="c1"># float // int -&gt; float   </span>
@@ -951,8 +937,9 @@ Sobald eine Fließkommazahl teil der Berechnung ist, ist das Ergebnis vom Typ <c
 </div>
 <div class="section" id="flieszkommazahlen-float">
 <h2><span class="section-number">4.1.4. </span>Fließkommazahlen - float<a class="headerlink" href="#flieszkommazahlen-float" title="Permalink to this headline">¶</a></h2>
+<p>Zunächst ist zu sagen, dass Sie für Fließkommazahlen nicht das Komma <code class="docutils literal notranslate"><span class="pre">,</span></code> sondern den (englischsprachigen) Punkt <code class="docutils literal notranslate"><span class="pre">.</span></code> verwenden.</p>
 <p>Im Gegensatz zu ganzen Zahlen benötigen Fließkommazahlen immer die gleiche Anzahl an Bits.
-Wie ist es unter diesen Bedingungen möglich Zahlen darzustellen deren absoluter Wert sehr verschieden ist.
+Da stellt sich die Frage: Wie ist es unter diesen Bedingungen möglich Zahlen darzustellen deren absoluter Wert sehr verschieden ist?
 Zum Beispiel können wir problemlos die Zahl <span class="math notranslate nohighlight">\(0.0000000001\)</span> und die Zahl <span class="math notranslate nohighlight">\(10000000.0\)</span> als Fließkommazahl definieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -970,32 +957,831 @@ Zum Beispiel können wir problemlos die Zahl <span class="math notranslate nohig
 </div>
 </div>
 </div>
-<p>Physiker kennen dieses Problem.
-Sie möchten ebenfalls einen riesigen Zahlenbereich kompakt notieren können und haben deshalb die wissenschaftliche Notation eingeführt.
+<p><code class="docutils literal notranslate"><span class="pre">1e-10</span></code> bedeutet <span class="math notranslate nohighlight">\(1 \cdot 10^{-10}\)</span>.
+Diese Darstellung liefert uns bereits die Antwort.
+Physiker*innen kennen das Problem der Zahlen aus sehr unterschiedlichen Skalen.
+Die Lichtgeschwindigkeit in km/h ist eine sehr große Zahl, wohingegen die Ladung eines Elektrons in Coulomb eine sehr kleine Zahl ist.
+Physiker*innen möchten ebenfalls in einem riesigen Zahlenbereich rechnen und dabei Zahlen kompakt notieren können.
+Deshalb haben sie die wissenschaftliche Notation eingeführt.
 Fließkommazahlen sind aus dieser Notation entstanden.
-In dieser Notation wird aus <span class="math notranslate nohighlight">\(10000000.0 = 1.0 \cdot 10^7\)</span> und aus <span class="math notranslate nohighlight">\(0.0000000001 = 1.0 \cdot 10^{-10}\)</span>.</p>
-<p>Ohne zu sehr ins Detail zu gehen, eine Fließkommazahl <code class="docutils literal notranslate"><span class="pre">float</span></code> besteht aus Bits für das Vorzeichen, die Mantisse und den Exponent.
-Für <span class="math notranslate nohighlight">\(1.0 \cdot 10^7\)</span> wäre das Vorzeichen gleich +, die Mantisse gleich 1, der Exponent gleich 7.
-Da der Computer jedoch im Binärsystem rechnet, ist verwendet er als Basis die 2 anstatt die 10.</p>
+In dieser Notation schreiben wir <span class="math notranslate nohighlight">\(10000000.0\)</span> als <span class="math notranslate nohighlight">\(0.1 \cdot 10^8\)</span> und aus <span class="math notranslate nohighlight">\(0.0000000001\)</span> wird <span class="math notranslate nohighlight">\(0.1 \cdot 10^{-9}\)</span>.</p>
+<p>Ohne zu sehr ins Detail zu gehen, besteht eine Fließkommazahl <code class="docutils literal notranslate"><span class="pre">float</span></code> aus Bits für die einzelnen Teile dieser Schreibweise:</p>
+<ul class="simple">
+<li><p>das <em>Vorzeichen</em>,</p></li>
+<li><p>die <em>Mantisse</em> und</p></li>
+<li><p>den Exponenten.</p></li>
+</ul>
+<p>Für <span class="math notranslate nohighlight">\(0.1 \cdot 10^8\)</span> wäre das <em>Vorzeichen</em> gleich +, die <em>Mantisse</em> gleich 0.1 und der <em>Exponent</em> gleich 7.
+Da der Computer jedoch im Binärsystem rechnet, verwendet er als Basis die 2 anstatt die 10.</p>
+<p>Nehmen wir die Zahl</p>
+<div class="math notranslate nohighlight">
+\[0.875_{10} = 8 \cdot 10^{-1} + 7 \cdot 10^{-2} + 5 \cdot 10^{-3}.\]</div>
+<p>Binär können wir die Zahl wie folgt ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[0.111_2 = 1 \cdot 2^{-1} + 1 \cdot 2^{-2} + 1 \cdot 3^{-3}.\]</div>
 <p>Soweit so gut.
 Was passiert aber wenn jede Ziffer von 0 verschieden ist und sich endlos fortsetzt z.B. <span class="math notranslate nohighlight">\(\pi = 3.14159265359 \ldots\)</span> oder auch <span class="math notranslate nohighlight">\(1/3 = 0.33333333333 \ldots\)</span>?
-In diesem Fall wird die Zahl abgeschnitten sobald keine Bits mehr zur Verfügung stehen.</p>
+In diesem Fall wird die Zahl abgeschnitten sobald keine Bits mehr zur Verfügung stehen.
+Demnach ist eine Fließkommazahl immer nur eine gute <strong>Annäherung</strong> des echten Werts!!!</p>
+<p>Weshalb folgende Rechnung nicht 0.3 ergibt erklärt sich durch diese <strong>Annäherung</strong> in Kombination mit der Binärdarstellung!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+<p>Denn</p>
+<div class="math notranslate nohighlight">
+\[0.1_{10} = 0.0001100110011 \ldots_2.\]</div>
+<p>Dieses Verhalten kann nicht nur zu kleinen Ungenauigkeiten, sondern zu großen Fehlern führen.
+Folgender Code subtrahiert 20 mal <span class="math notranslate nohighlight">\(1.0 \cdot 10^{-14}\)</span> von <span class="math notranslate nohighlight">\(1.0 \cdot 10^10\)</span>.
+Doch verändern diese Subtraktionen <code class="docutils literal notranslate"><span class="pre">x</span></code> nicht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1e10</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-14</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;epsilon = </span><span class="si">{</span><span class="n">epsilon</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> before subtraction&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">epsilon</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> after subtraction&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epsilon = 1e-14
+x = 10000000000.0 before subtraction
+x = 10000000000.0 after subtraction
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das zeigt, dass der (akkumulierte) Fehler theoretisch unendlich groß werden kann.
+Besonders kritisch ist die Subtraktion und Addition.
+Die Multiplikation und Division ist für Fließkommazahlen sehr viel ungefährlicher.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1e10</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-14</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;epsilon = </span><span class="si">{</span><span class="n">epsilon</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> before multiplication&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">epsilon</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> after multiplication&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epsilon = 1e-14
+x = 10000000000.0 before multiplication
+x = 0.0001 after multiplication
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obiger Code liefert das korrekte Ergebnis von:</p>
+<div class="math notranslate nohighlight">
+\[(1.0 \cdot 10^{10}) \cdot (1.0 \cdot 10^{-14}) = 1.0 \cdot 10^{10-14} = 1.0 \cdot 10^{-4} = 0.0001.\]</div>
 </div>
 <div class="section" id="wahrheitswerte-bool">
 <h2><span class="section-number">4.1.5. </span>Wahrheitswerte - bool<a class="headerlink" href="#wahrheitswerte-bool" title="Permalink to this headline">¶</a></h2>
+<p>Ein Wahrheitswert <code class="docutils literal notranslate"><span class="pre">bool</span></code> kann, genau wie ein <a class="reference internal" href="../06/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> einen von zwei Wahrheitswerten <code class="docutils literal notranslate"><span class="pre">True</span></code> (1) oder <code class="docutils literal notranslate"><span class="pre">False</span></code> (0) annehmen.
+<code class="docutils literal notranslate"><span class="pre">True</span></code> bedeutet wahr und <code class="docutils literal notranslate"><span class="pre">False</span></code> falsch.
+Sehr selten verwenden wir explizit <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> vielmehr wird ein logischer Ausdruck, nach <em>Auswertung</em> entweder <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">is_lesser_than_10</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_lesser_than_10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>In diesem Beispiel verwenden wir einen <a class="reference internal" href="../10-3/2-expressions.html#sec-python-operator-compare"><span class="std std-ref">Vergleichsoperator</span></a>, der den Ausdruck <span class="math notranslate nohighlight">\(x &lt; 10\)</span> zu <code class="docutils literal notranslate"><span class="pre">True</span></code> auswertet, da <span class="math notranslate nohighlight">\(x = 9 &lt; 10\)</span> gilt.
+<em>Boolsche</em> bzw. <em>logische Ausdrücke</em> lassen sich durch <a class="reference internal" href="../10-3/2-expressions.html#sec-logic-expressions"><span class="std std-ref">logische Operatoren</span></a> verknüpfen.</p>
+<p><em>Boolsche Ausdrücke</em> und damit Wahrheitswerte <code class="docutils literal notranslate"><span class="pre">bool</span></code> benötigen wir für die Steuerung unseres Programmablaufs.
+<em>Kontrollstrukturen</em> führen, je nach Auswertung eines <em>boolschen Ausdrucks</em>, unterschiedliche Code-Teile aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>      <span class="c1"># is True if and only if x &lt; 10</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> not is less than 10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 is less than 10
+1 is less than 10
+2 is less than 10
+3 is less than 10
+4 is less than 10
+5 is less than 10
+6 is less than 10
+7 is less than 10
+8 is less than 10
+9 is less than 10
+10 not is less than 10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="listen-list">
+<h2><span class="section-number">4.1.6. </span>Listen - list<a class="headerlink" href="#listen-list" title="Permalink to this headline">¶</a></h2>
+<p>Listen sind eine der wichtigsten <em>Datentypen</em> und zugleich einfachsten <em>Datenstrukturen</em> in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.
+Sobald Sie irgendetwas sinnvolles programmieren möchten, kommen Sie um die Liste kaum herum.
+Das Grundkonzept einer Liste ist einfach und doch so fundamental wichtig!</p>
+<p>Listen sind eng mit der Wiederholung und somit mit Schleifen verbunden.
+Auch wir können Schleifen an dieser Stelle nicht vermeiden, auch wenn wir sie noch nicht im Detail besprochen haben.</p>
+<p>Nehmen wir einmal an wir bekämen den Auftrag ein Programm zu schreiben, dass <code class="docutils literal notranslate"><span class="pre">n</span></code> ganze Zahlen aufaddiert, wobei wir weder <code class="docutils literal notranslate"><span class="pre">n</span></code> noch die Zahlen kennen.
+Zugegeben, das Programm ist nicht gerade interessant aber aller Anfang ist klein.
+Eine variable Anzahl an Zahlen lässt sich hervorragend durch eine <em>Liste</em> modellieren.
+Wir gehen also davon aus, dass wir eine Liste <code class="docutils literal notranslate"><span class="pre">numbers</span></code> bekommen und daraus die Summe berechnen müssen.
+Folgender Code löst die Aufgabe.
+<code class="docutils literal notranslate"><span class="pre">numbers</span></code> ist eine Liste, welche zwei Zahlen (1 und 2) enthält.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+  <span class="n">result</span> <span class="o">+=</span> <span class="n">x</span>
+
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Code funktioniert auch noch wenn <code class="docutils literal notranslate"><span class="pre">numbers</span></code> mehr, weniger oder andere Zahlen enthält!
+Probieren Sie es aus.</p>
+<p>Wie alle Datenstrukturen in <code class="docutils literal notranslate"><span class="pre">Python</span></code> können Listen Werte mit unterschiedlichen Datentypen enthalten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]</span>
+<span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 1.0, 2.0, 3.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Listen können selbstverständlich andere Listen enthalten:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], 2, 3, [1, 2, 3]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="erstellung">
+<h3><span class="section-number">4.1.6.1. </span>Erstellung<a class="headerlink" href="#erstellung" title="Permalink to this headline">¶</a></h3>
+<p>Es gibt unterschiedliche Möglichkeiten eine Liste zu erzeugen.
+Wir können z.B. mit einer leeren Liste starten und diese füllen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>oder kürzer</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+  <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oder wir starten mit einer vollen Liste.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Für Fälle in denen wir eine Liste aus einer anderen Sequenz generieren gibt es eine sehr kompakte Schreibweise.
+<code class="docutils literal notranslate"><span class="pre">range(10)</span></code> ist eine sog. lazy Sequenz, dahinter steckt eine Funktion, die immer wieder aufgerufen wird und die Zahl die sie zurückgibt immer um eins erhöht.
+Wir können diese Sequenz in eine Liste packen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>oder noch kürzer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexierung">
+<h3><span class="section-number">4.1.6.2. </span>Indexierung<a class="headerlink" href="#indexierung" title="Permalink to this headline">¶</a></h3>
+<p>Wir können auf die Elemente einer Liste mit einem Index zugreifen.
+Dieser Index beginnt bei 0 und endet bei der Länge der Liste - 1, d.h. <code class="docutils literal notranslate"><span class="pre">len(mylist)</span> <span class="pre">-</span> <span class="pre">1</span></code>.
+<code class="docutils literal notranslate"><span class="pre">len(mylist)</span></code> gibt eine natürliche Zahl (0 inklusive) zurück, welche die Länge der Liste <code class="docutils literal notranslate"><span class="pre">mylist</span></code> angibt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>In anderen Worten: Die Elemente einer Liste sind in aufsteigender Reihenfolge angeordnet.
+Jedes Element hat seinen Platz bzw. Index und kein Platz ist leer!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> können wir statt <code class="docutils literal notranslate"><span class="pre">mylist[len(mylist)-1]</span></code>  auch <code class="docutils literal notranslate"><span class="pre">mylist[-1]</span></code> schreiben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+3.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet eine angenehme und mächtige Syntax um einen Teil der Liste in eine neue Liste zu kopieren.
+Mit <code class="docutils literal notranslate"><span class="pre">mylist[start:ende:i]</span></code> nehmen wir jedes <code class="docutils literal notranslate"><span class="pre">i</span></code>-te Element beginnend von <code class="docutils literal notranslate"><span class="pre">start</span></code> bis <code class="docutils literal notranslate"><span class="pre">ende</span></code>.
+Dabei ist <code class="docutils literal notranslate"><span class="pre">i</span></code> optional und ist gleich <code class="docutils literal notranslate"><span class="pre">1</span></code>, wenn es nicht angegeben wird.
+Bei diesem Operationen bleibt <code class="docutils literal notranslate"><span class="pre">mylist</span></code> unverändert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, &#39;a&#39;, &#39;c&#39;, 2.0]
+[2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 1.0, 2.0]
+[2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 1.0, 2.0]
+[1, 2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 1.0, 2.0, 3.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Auch eine negative Indexierung ist erlaubt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">8</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.0, 1.0, &#39;b&#39;, 3]
+[1.0, &#39;b&#39;, 3]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="veranderung">
+<h3><span class="section-number">4.1.6.3. </span>Veränderung<a class="headerlink" href="#veranderung" title="Permalink to this headline">¶</a></h3>
+<p>Anders als Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind Listen veränderbar, d.h. wir können Elemente löschen und hinzufügen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;chars: </span><span class="si">{</span><span class="n">chars</span><span class="si">}</span><span class="s1"> before append.&#39;</span><span class="p">)</span>
+<span class="n">chars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;chars: </span><span class="si">{</span><span class="n">chars</span><span class="si">}</span><span class="s1"> before remove.&#39;</span><span class="p">)</span>
+<span class="n">chars</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;chars: </span><span class="si">{</span><span class="n">chars</span><span class="si">}</span><span class="s1"> after remove.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chars: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;] before append.
+chars: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;] before remove.
+chars: [&#39;a&#39;, &#39;c&#39;, &#39;d&#39;] after remove.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dabei fügt <code class="docutils literal notranslate"><span class="pre">append</span></code> das neue Element hinten an.
+Um ein Listenelement anhand seines Indexes zu löschen können wir <code class="docutils literal notranslate"><span class="pre">del</span></code> (delete) verwenden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;chars: </span><span class="si">{</span><span class="n">chars</span><span class="si">}</span><span class="s1"> before del.&#39;</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">chars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;chars: </span><span class="si">{</span><span class="n">chars</span><span class="si">}</span><span class="s1"> after del.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chars: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;] before del.
+chars: [&#39;a&#39;, &#39;c&#39;] after del.
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">del</span></code> funktioniert ebenfalls mit dem Indexieren, d.h. wir können viele Elemente mit einem Befehl löschen.
+Im folgenden löschen wir jedes 2-te Element wodurch nur ungerade Zahlen übrig bleiben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;numbers: </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1"> before del.&#39;</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">numbers</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;numbers: </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1"> after del.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] before del.
+numbers: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] after del.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sobald ein Element gelöscht wird, verkleinert sich auch die Liste.
+Es entstehen keine Lücken.</p>
+<p>Wir können auch ein Element an einer bestimmten Stelle einfügen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;chars: </span><span class="si">{</span><span class="n">chars</span><span class="si">}</span><span class="s1"> before insert.&#39;</span><span class="p">)</span>
+<span class="n">chars</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;chars: </span><span class="si">{</span><span class="n">chars</span><span class="si">}</span><span class="s1"> after insert.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chars: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;] before insert.
+chars: [&#39;a&#39;, &#39;d&#39;, &#39;b&#39;, &#39;c&#39;] after insert.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dies fügt das Element <code class="docutils literal notranslate"><span class="pre">'d'</span></code> an vor das Element mit dem Index 1 ein.
+Anders ausgedrückt, das eingefügte Element hat nach der Operation den Index, welchen wir bei <code class="docutils literal notranslate"><span class="pre">insert</span></code> angeben.</p>
+</div>
+<div class="section" id="wie-funktioniert-eine-liste">
+<span id="sec-list-and-memory"></span><h3><span class="section-number">4.1.6.4. </span>Wie funktioniert eine Liste?<a class="headerlink" href="#wie-funktioniert-eine-liste" title="Permalink to this headline">¶</a></h3>
+<p>Wie funktioniert eine Liste im tieferen Sinne?
+Also wie ist sie im Speicher abgelegt, was passiert wenn wir sie verändern und wie greifen wir auf sie und ihre Elemente über <strong>Adressen</strong> zu?</p>
+<p>Um zu verstehen wie und warum Listen funktionieren müssen wir wichtige Tatsache festhalten, die wir bereits im Abschnitt <a class="reference internal" href="../10-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> unbemerkt verwendet haben:
+Kennen wir eine <strong>Adresse</strong> eines <strong>Wertes</strong>, kurz gesagt die <em>Variable</em> welche auf den Wert zeigt, so ist der Zugriff auf diesen Wert extrem schnell!
+Solange wir die <strong>Adressen</strong> kennen, ist er Zugriff in den <strong>Arbeitsspeicher</strong> generell extrem schnell.
+Es gibt kleine ‘Strafen’ wenn <strong>Adressen</strong> weit auseinander liegen.</p>
+<p>Mit dieser Information, lassen Sie uns anhand eines Beispiel testen, wie sich die <strong>Adressen</strong> und <strong>Werte</strong> einer <code class="docutils literal notranslate"><span class="pre">list</span></code> (aus Zahlen) verhalten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers = </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers[2] = </span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers[2] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;change value of numbers[2]&#39;</span><span class="p">)</span>
+
+<span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers = </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of numbers[2] = </span><span class="si">{</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of numbers[2] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
+id of numbers = 4528623872
+value of numbers[2] = 3
+id of numbers[2] = 4490783088
+change value of numbers[2]
+value of numbers = [1, 2, -20, 4, 5]
+id of numbers = 4528623872
+value of numbers[2] = -20
+id of numbers[2] = 4528550672
+</pre></div>
+</div>
+</div>
+</div>
+<p>Im obigen Code erstellen wir eine Liste, welche die Zahlen 1 bis 5 enthält.
+Dann verändern wir das zweite Element der Liste (eine Liste startet mit dem 0-ten Element).
+Die <strong>Adresse</strong> der <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">numbers</span></code> ändert sich bei diesem Vorgang nicht!
+Allerdings ändert sich die Adresse des Elements <code class="docutils literal notranslate"><span class="pre">numbers[2]</span></code> und der <strong>Wert</strong> von <code class="docutils literal notranslate"><span class="pre">numbers</span></code>.</p>
+<div class="figure align-default" id="fig-data-type-list">
+<a class="reference internal image-reference" href="../../_images/list.png"><img alt="../../_images/list.png" src="../../_images/list.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Die Liste aus unsrem obigen Beispiel <strong>bevor</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list" title="Permalink to this image">¶</a></p>
+</div>
+<p>Ändern wir den Wert eines Listenelements, ändern wir diesen Hinweis!</p>
+<div class="figure align-default" id="fig-data-type-list-2">
+<a class="reference internal image-reference" href="../../_images/list-2.png"><img alt="../../_images/list-2.png" src="../../_images/list-2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Die Liste aus unsrem obigen Beispiel <strong>nachdem</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Alle <em>Datenstrukturen</em> sind <em>Behälter</em>, die andere Daten aufnehmen können, ähnlich wie Schließfächer, Ordner oder Rucksäcke.
+Nehmen wir als Analogie Schließfächer aus der echten Welt.
+Stellen wir uns vor, der Platz in einem Schließfach wäre ein Teil des Speicherplatzes, welcher von unserer Liste benötigt wird.
+Was befindet sich nun in unseren Schließfächern?
+In <code class="docutils literal notranslate"><span class="pre">Python</span></code> sind es <strong>nicht</strong> die Objekte/Werte selbst sondern die <strong>Adresse</strong> der Objekte/Werte.
+Es befindet sich quasi ein Zettel auf dem der Hinweis steht, wo wir das Objekt, was zu jenem Schließfach gehört, finden.
+Oder aber wir stellen uns eine Schnur vor, die von dem Schließfach auf das Objekt verweist.</p>
+<p>Das besondere einer Liste, bzw. die Charakteristik welches Sie auszeichnet ist, dass die <strong>Adressen</strong> Ihrer Elemente im Speicher ohne Lücke nebeneinander liegen.
+Da <strong>Adressen</strong> immer die gleiche feste Anzahl an Bits benötigen, kann man für eine gegebene Adresse einer Liste und den Index eines Elements, die Speicheradresse der Speicheradresse, die auf das Element zeigt berechnen.</p>
+<p>Angenommen die Adresse der Liste <code class="docutils literal notranslate"><span class="pre">mylist</span></code> ist <span class="math notranslate nohighlight">\(Start\)</span> und jede Adresse benötigt 4 Byte und wir können 1 Byte adressieren, dann befindet sich die Adresse <span class="math notranslate nohighlight">\(adr_i\)</span> des <span class="math notranslate nohighlight">\(i\)</span>-ten Elements an der Speicheradresse:</p>
+<div class="math notranslate nohighlight">
+\[Start + i \cdot 4.\]</div>
+<p>Diese Rechnung kann der Rechner sehr schnell durchführen und deshalb können wir auf Elemente einer Liste deren Index wir kennen extrem schnell zugreifen.</p>
+<p>Um dieses Konzept besser zu verstehen und herauszufinden wie sich <em>atomare</em> wie auch <em>zusammengesetzt Datentypen</em> verhalten, hilft oft nur eins: Ausprobieren!</p>
+</div>
+</div>
+<div class="section" id="tupel-tuple">
+<h2><span class="section-number">4.1.7. </span>Tupel - tuple<a class="headerlink" href="#tupel-tuple" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
 </div>
 <div class="section" id="zeichenketten-str">
-<h2><span class="section-number">4.1.6. </span>Zeichenketten - str<a class="headerlink" href="#zeichenketten-str" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<h2><span class="section-number">4.1.8. </span>Zeichenketten - str<a class="headerlink" href="#zeichenketten-str" title="Permalink to this headline">¶</a></h2>
+<p>Eine Zeichenkette ist eine <em>Sequenz</em> von Zeichen.
+Wie ein Tupel ist eine Zeichenkette <strong>unveränderlich</strong> (engl. immutable).
+<code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet uns viele nützliche Funktionen um auf Zeichenketten zu operieren.
+Zeichenketten können durch einfache <code class="docutils literal notranslate"><span class="pre">'text'</span></code> oder doppelte <code class="docutils literal notranslate"><span class="pre">&quot;text&quot;</span></code> Anführungszeichen umschlossen sein.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
+</pre></div>
 </div>
-<div class="section" id="listen-list">
-<h2><span class="section-number">4.1.7. </span>Listen - list<a class="headerlink" href="#listen-list" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
 </div>
-<div class="section" id="tupel-tuple">
-<h2><span class="section-number">4.1.8. </span>Tupel - tuple<a class="headerlink" href="#tupel-tuple" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+</div>
+<p>Was wir bereits exzessive genutzt haben ist die Ausgabe von Zeichenketten durch die <em>built-in</em> Funktion <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um Variablen oder Werte anderer Datentypen mit <code class="docutils literal notranslate"><span class="pre">print</span></code> auszugeben mussen wir diese immer mit der <em>built-in Funktion</em> <code class="docutils literal notranslate"><span class="pre">str</span></code> in eine Zeichenkette umwandeln.
+Da dies so häufig gemacht werden musst, haben die Entwickler*innen von <code class="docutils literal notranslate"><span class="pre">Python</span></code> sich etwas einfallen lassen.
+Stellen wir vor unsere Zeichenkette ein <code class="docutils literal notranslate"><span class="pre">f</span></code> so handelt es sich um eine formatierte Zeichenkette.
+Die hilft uns Variablen oder Werte direkt in diese formatierte Zeichenkette einzufügen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x + y = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; + &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">))</span> <span class="c1"># ugly</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x + y = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>                            <span class="c1"># beautiful</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x + y = 5 + 10 = 15
+x + y = 5 + 10 = 15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das vereinfacht das Schreiben und Lesen solcher Ausgaben ungemein.
+Sie können formatierte Zeichenketten auch ohne <code class="docutils literal notranslate"><span class="pre">print</span></code> verwenden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">formatted_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;x + y = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">formatted_str</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;x + y = 5 + 10 = 15&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zwei Zeichenketten lassen sich mit dem <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator verketten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+<span class="n">suffix</span> <span class="o">=</span> <span class="s1">&#39; Welt!&#39;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="n">suffix</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">suffix</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+ Welt!
+Hello Welt!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bestimmte Zeichen kontrollieren die Darstellung des Textes, z.B. ob eine Leerzeile ein Leerzeichen oder ein Tab eingefügt werden soll.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">space</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span>
+<span class="n">space_line</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="n">space</span> <span class="o">+</span> <span class="s1">&#39;World&#39;</span> <span class="o">+</span> <span class="n">space_line</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die <em>leere Zeichenkette</em> verändert bei der Verkettung eine andere Zeichenkette nicht.
+Es ist das neutrale Element der Zeichenverkettung.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The correct answer is 42!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The correct&#39;</span> <span class="o">+</span> <span class="n">empty_str</span> <span class="o">+</span> <span class="n">empty_str</span> <span class="o">+</span> <span class="n">empty_str</span> <span class="o">+</span> <span class="s1">&#39; answer is 42!&#39;</span><span class="p">)</span>
+
+<span class="s1">&#39;Hello&#39;</span> <span class="o">==</span> <span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="n">empty_str</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The correct answer is 42!
+The correct answer is 42!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zeichenketten lassen sich wie Listen und Tupel indexieren und mit der <em>built-in Funktion</em> <code class="docutils literal notranslate"><span class="pre">len</span></code>, kann man die Länge einer Zeichenkette erfragen.
+Folgender Code gibt jedes einzelne Zeichen einer Zeichenkette aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
+e
+l
+l
+o
+ 
+W
+o
+r
+l
+d
+!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Das lässt sich jedoch auch einfacher schreiben:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
+e
+l
+l
+o
+ 
+W
+o
+r
+l
+d
+!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Auch bei Zeichenketten können wir negative Indices verwenden.
+<code class="docutils literal notranslate"><span class="pre">text[-1]</span></code> gibt uns das letzte und <code class="docutils literal notranslate"><span class="pre">text[-2]</span></code> das vorletzte Zeichen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Zeichensalat&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t
+a
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lassen Sie uns eine Zeichenkette umdrehen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Zeichensalat&#39;</span>
+<span class="n">reverse_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)):</span>
+  <span class="n">reverse_text</span> <span class="o">+=</span> <span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reverse_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zeichensalat
+talasnehcieZ
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wie bei Listen und Tupeln können wir auch einen Teil einer Zeichenkette ausschneiden (indexieren).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Zeichensalat&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)])</span>   <span class="c1"># take it all</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>          <span class="c1"># negative indexing</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>          <span class="c1"># skip first and last</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>         <span class="c1"># negative indexing</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>            <span class="c1"># skip the first 2 and take the rest</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ze
+Zeichensalat
+Zeichensa
+eichensala
+la
+ichensalat
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dabei ist <code class="docutils literal notranslate"><span class="pre">text[2:]</span></code> eine Kurzschreibweise für <code class="docutils literal notranslate"><span class="pre">text[2:len(text)]</span></code> und <code class="docutils literal notranslate"><span class="pre">text[:2]</span></code> für <code class="docutils literal notranslate"><span class="pre">text[0:2]</span></code>.</p>
+<p>Hin und wieder kann es vorkommen, dass Sie Zeichen schreiben möchten, welche bereits in <code class="docutils literal notranslate"><span class="pre">Python</span></code> mit einer Bedeutung belegt sind.
+Wie schreiben wir beispielsweise <code class="docutils literal notranslate"><span class="pre">Anna</span> <span class="pre">sagte:</span> <span class="pre">'Wie</span> <span class="pre">geht</span> <span class="pre">es</span> <span class="pre">dir'</span></code>?
+Dafür müssen wir das <code class="docutils literal notranslate"><span class="pre">'</span></code>-Zeichen mit einem <code class="docutils literal notranslate"><span class="pre">\</span></code> maskieren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Anna sagte: </span><span class="se">\&#39;</span><span class="s1">Wie geht es dir</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anna sagte: &#39;Wie geht es dir&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Auf Zeichenketten können wir viele nützliche Funktionen aufrufen.
+Zu beachten ist, dass Zeichenketten unveränderlich sind, d.h. die Funktionen liefern eine neue Zeichenkette zurück, die ursprüngliche bleibt unverändert.
+Mit <code class="docutils literal notranslate"><span class="pre">text.upper()</span></code> können wir beispielsweise alle Zeichen einer Zeichenkette in Großbuchstaben transformieren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Zeichensalat&#39;</span>
+<span class="n">text_upper</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text_upper</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zeichensalat
+ZEICHENSALAT
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wir die Vorkommnisse eines Zeichen in einer Zeichenkette zählen oder ganze Zeichenfolgen ersetzten:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Zeichensalat&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;salat&#39;</span><span class="p">,</span> <span class="s1">&#39;spinat&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+Zeichenspinat
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es würde zu weit gehen alle Funktionen zu besprechen – das wäre auch ziemlich langweilig.
+Schauen Sie sich einfach die <a class="reference external" href="https://docs.python.org/3/library/string.html">Dokumentation</a> an, wenn Sie nach einer Funktion suchen oder verwenden Sie die eingebaute Hilfe <code class="docutils literal notranslate"><span class="pre">help(str)</span></code>.</p>
 </div>
 <div class="section" id="mengen-set">
 <h2><span class="section-number">4.1.9. </span>Mengen - set<a class="headerlink" href="#mengen-set" title="Permalink to this headline">¶</a></h2>
