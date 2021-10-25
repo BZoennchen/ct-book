@@ -94,6 +94,7 @@ So können wir in ``Python`` auch Zeichenketten ``str`` mit den Vergleichsoperat
 
 'Anna' < 'Emma' # True
 
+(sec-logic-expressions)=
 ## Logische Operatoren
 
 Der obige *Ausdruck* besteht aus dem *Ausdruck* ``and``.
