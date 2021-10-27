@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Datentypen &#8212; Computational Thinking</title>
+    <title>4. Datentypen (Grundlagen) &#8212; Computational Thinking</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -463,7 +463,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   4. Datentypen
+   4. Datentypen (Grundlagen)
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -477,40 +477,55 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-typing-in-python.html">
-     4.2. Pythons Typisierung
+    <a class="reference internal" href="2-int.html">
+     4.2. Ganze Zahlen - int
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-type-systems.html">
-     4.3. Dynamische und statische Typisierung
+    <a class="reference internal" href="3-float.html">
+     4.3. Fließkommazahlen - float
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-why-data-types.html">
-     4.4. Existenzberechtigung
+    <a class="reference internal" href="4-bool.html">
+     4.4. Wahrheitswerte - bool
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="5-change-of-interpretation.html">
-     4.5. Interpretationswechsel
+    <a class="reference internal" href="5-list.html">
+     4.5. Listen - list
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-kind-of-data-types.html">
-     4.6. Arten von Datentypen
+    <a class="reference internal" href="6-tuple.html">
+     4.6. Tupel - tuple
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="7-primitive-data-types.html">
-     4.7. Primitive Datentypen in Python?
+    <a class="reference internal" href="7-string.html">
+     4.7. Zeichenketten - str
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-set.html">
+     4.8. Mengen - set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9-dict.html">
+     4.9. Wörterbücher - dict
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-typing-in-python.html">
+     4.10. Pythons Typisierung
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../10-5/intro.html">
-   5. Funktionen
+   5. Datentypen (Fortsetzung)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -519,8 +534,45 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-5/1-functions-basics.html">
-     5.1. Funktionen - Grundlagen
+    <a class="reference internal" href="../10-5/1-type-systems.html">
+     5.1. Dynamische und statische Typisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-5/2-why-data-types.html">
+     5.2. Existenzberechtigung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-5/3-change-of-interpretation.html">
+     5.3. Interpretationswechsel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-5/4-kind-of-data-types.html">
+     5.4. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-5/5-primitive-data-types.html">
+     5.5. Primitive Datentypen in Python?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10-6/intro.html">
+   6. Funktionen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-6/1-functions-basics.html">
+     6.1. Funktionen - Grundlagen
     </a>
    </li>
   </ul>
@@ -666,8 +718,8 @@
         
               <div>
                 
-  <div class="section" id="datentypen">
-<h1><span class="section-number">4. </span>Datentypen<a class="headerlink" href="#datentypen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="datentypen-grundlagen">
+<h1><span class="section-number">4. </span>Datentypen (Grundlagen)<a class="headerlink" href="#datentypen-grundlagen" title="Permalink to this headline">¶</a></h1>
 <p>Wie in Abschnitt <a class="reference internal" href="../06/2-representation.html#sec-representation"><span class="std std-ref">Repräsentation</span></a> beschrieben, befinden sich im Speicher des (digitalen) Computers ausschließlich <a class="reference internal" href="../06/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>.
 Sie können sich den Speicher als eine lange lange Liste von Bits vorstellen.
 Diese können nur einen von zwei Zuständen (0 und 1) annehmen.
@@ -741,25 +793,26 @@ Diese Information bekommt der Interpreter und interpretiert deshalb die Bitfolge
 Und die <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operation ist für Kombination von Datentypen <code class="docutils literal notranslate"><span class="pre">int</span></code> und <code class="docutils literal notranslate"><span class="pre">str</span></code> nicht definiert.
 Das ist allerdings eine unbefriedigende Antwort, denn wir wissen noch nicht wie Datentypen realisiert werden.
 Wie ist der Zusammenhang zwischen den Programmiersprachen, welche alle auf Datentypen basieren, und den <a class="reference internal" href="../06/2-interpretation.html#def-compiler"><span class="std std-ref">Übersetzern</span></a> oder <a class="reference internal" href="../06/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpretern</span></a> und der Computerhardware?</p>
-<p>In diesem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
+<p>In diesem Kapitel und nächstem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
 Dies beinhaltet Theorie und Praxis.
-Um in <code class="docutils literal notranslate"><span class="pre">Python</span></code> mit den Datentypen umgehen zu können reicht es die ersten beiden Abschnitte durchzugehen.
-Möchten Sie jedoch ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich womöglich der Blick in die anderen Abschnitte.</p>
+Um in <code class="docutils literal notranslate"><span class="pre">Python</span></code> mit den Datentypen praktisch umgehen zu können reicht Ihnen dieses Kapitel.
+Im nächsten Kapitel <a class="reference internal" href="../10-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a> werden wir hingegen genauer untersuchen weshalb es Datentypen gibt und welchen Einfluss diese im Detail haben.
+Möchten Sie jedoch ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich der Blick in das nächste Kapitel <a class="reference internal" href="../10-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a>.</p>
 <p>Wir versuchen folgende Fragen zu beantworten:</p>
 <ol class="simple">
 <li><p>Grundlagen</p>
 <ol class="simple">
-<li><p>Was kann ich in <strong>Python</strong> mit einer Variable eines bestimmten Typs anfangen? <a class="reference internal" href="1-data-types.html#sec-working-with-data-types"><span class="std std-ref">4.1 Pythons Datentypen</span></a></p></li>
-<li><p>Welche Typisierung verwendet <strong>Python</strong>? <a class="reference internal" href="2-typing-in-python.html#sec-typing-in-python"><span class="std std-ref">4.2 Pythons Typisierung</span></a></p></li>
+<li><p>Was kann ich in <strong>Python</strong> mit einer Variable eines bestimmten Typs anfangen? Abschnitt 4.1 bis 4.9.</p></li>
+<li><p>Welche Typisierung verwendet <strong>Python</strong>? Abschnitt <a class="reference internal" href="10-typing-in-python.html#sec-typing-in-python"><span class="std std-ref">4.2 Pythons Typisierung</span></a>.</p></li>
 </ol>
 </li>
 <li><p>Fortsetzung</p>
 <ol class="simple">
-<li><p>Was ist der Unterschied zwischen statischer und dynamischer Typisierung? <a class="reference internal" href="3-type-systems.html#sec-type-systems"><span class="std std-ref">4.3 Dynamische und statische Typisierung</span></a></p></li>
-<li><p>Weshalb gibt es überhaupt Datentypen? <a class="reference internal" href="4-why-data-types.html#sec-why-data-types"><span class="std std-ref">4.4 Existenzberechtigung</span></a></p></li>
-<li><p>Was passiert bei einer Änderung des Datentyps einer Variablen? <a class="reference internal" href="5-change-of-interpretation.html#sec-change-of-data-types"><span class="std std-ref">4.5 Interpretationswechsel</span></a></p></li>
-<li><p>Welche Datentypen gibt es? <a class="reference internal" href="6-kind-of-data-types.html#sec-kind-of-data-types"><span class="std std-ref">4.6 Arten von Datentypen</span></a></p></li>
-<li><p>Warum gibt es in Python keine primitiven Datentypen? <a class="reference internal" href="7-primitive-data-types.html#sec-primitive-data-types-in-python"><span class="std std-ref">4.7 Primitive Datentypen in Python?</span></a>)</p></li>
+<li><p>Was ist der Unterschied zwischen statischer und dynamischer Typisierung? Abschnitt <a class="reference internal" href="../10-5/1-type-systems.html#sec-type-systems"><span class="std std-ref">5.1 Dynamische und statische Typisierung</span></a>.</p></li>
+<li><p>Weshalb gibt es überhaupt Datentypen? Abschnitt <a class="reference internal" href="../10-5/2-why-data-types.html#sec-why-data-types"><span class="std std-ref">5.2 Existenzberechtigung</span></a>.</p></li>
+<li><p>Was passiert bei einer Änderung des Datentyps einer Variablen? Abschnitt <a class="reference internal" href="../10-5/3-change-of-interpretation.html#sec-change-of-data-types"><span class="std std-ref">5.3 Interpretationswechsel</span></a>.</p></li>
+<li><p>Welche Datentypen gibt es? Abschnitt <a class="reference internal" href="../10-5/4-kind-of-data-types.html#sec-kind-of-data-types"><span class="std std-ref">5.4 Arten von Datentypen</span></a>.</p></li>
+<li><p>Warum gibt es in Python keine primitiven Datentypen? Abschnitt <a class="reference internal" href="../10-5/5-primitive-data-types.html#sec-primitive-data-types-in-python"><span class="std std-ref">5.5 Primitive Datentypen in Python?</span></a>).</p></li>
 </ol>
 </li>
 </ol>

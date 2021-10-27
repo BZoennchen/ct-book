@@ -1,4 +1,4 @@
-# Datentypen
+# Datentypen (Grundlagen)
 
 Wie in Abschnitt [Repräsentation](sec-representation) beschrieben, befinden sich im Speicher des (digitalen) Computers ausschließlich [Bits](def-bit).
 Sie können sich den Speicher als eine lange lange Liste von Bits vorstellen.
@@ -44,20 +44,21 @@ Und die ``+``-Operation ist für Kombination von Datentypen ``int`` und ``str`` 
 Das ist allerdings eine unbefriedigende Antwort, denn wir wissen noch nicht wie Datentypen realisiert werden.
 Wie ist der Zusammenhang zwischen den Programmiersprachen, welche alle auf Datentypen basieren, und den [Übersetzern](def-compiler) oder [Interpretern](def-interpreter) und der Computerhardware?
 
-In diesem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
+In diesem Kapitel und nächstem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
 Dies beinhaltet Theorie und Praxis.
-Um in ``Python`` mit den Datentypen umgehen zu können reicht es die ersten beiden Abschnitte durchzugehen.
-Möchten Sie jedoch ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich womöglich der Blick in die anderen Abschnitte.
+Um in ``Python`` mit den Datentypen praktisch umgehen zu können reicht Ihnen dieses Kapitel.
+Im nächsten Kapitel [Datentypen (Fortsetzung)](sec-data-types-advanced) werden wir hingegen genauer untersuchen weshalb es Datentypen gibt und welchen Einfluss diese im Detail haben.
+Möchten Sie jedoch ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich der Blick in das nächste Kapitel [Datentypen (Fortsetzung)](sec-data-types-advanced).
 
 Wir versuchen folgende Fragen zu beantworten:
 
 1. Grundlagen
-   1. Was kann ich in **Python** mit einer Variable eines bestimmten Typs anfangen? [4.1 Pythons Datentypen](sec-working-with-data-types)
-   2. Welche Typisierung verwendet **Python**? [4.2 Pythons Typisierung](sec-typing-in-python)
+   1. Was kann ich in **Python** mit einer Variable eines bestimmten Typs anfangen? Abschnitt 4.1 bis 4.9.
+   2. Welche Typisierung verwendet **Python**? Abschnitt [4.2 Pythons Typisierung](sec-typing-in-python).
 
 2. Fortsetzung
-   1. Was ist der Unterschied zwischen statischer und dynamischer Typisierung? [4.3 Dynamische und statische Typisierung](sec-type-systems)
-   2. Weshalb gibt es überhaupt Datentypen? [4.4 Existenzberechtigung](sec-why-data-types)
-   3. Was passiert bei einer Änderung des Datentyps einer Variablen? [4.5 Interpretationswechsel](sec-change-of-data-types)
-   4. Welche Datentypen gibt es? [4.6 Arten von Datentypen](sec-kind-of-data-types)
-   5. Warum gibt es in Python keine primitiven Datentypen? [4.7 Primitive Datentypen in Python?](sec-primitive-data-types-in-python))
+   1. Was ist der Unterschied zwischen statischer und dynamischer Typisierung? Abschnitt [5.1 Dynamische und statische Typisierung](sec-type-systems).
+   2. Weshalb gibt es überhaupt Datentypen? Abschnitt [5.2 Existenzberechtigung](sec-why-data-types).
+   3. Was passiert bei einer Änderung des Datentyps einer Variablen? Abschnitt [5.3 Interpretationswechsel](sec-change-of-data-types).
+   4. Welche Datentypen gibt es? Abschnitt [5.4 Arten von Datentypen](sec-kind-of-data-types).
+   5. Warum gibt es in Python keine primitiven Datentypen? Abschnitt [5.5 Primitive Datentypen in Python?](sec-primitive-data-types-in-python)).
