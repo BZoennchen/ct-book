@@ -909,9 +909,86 @@ Das ist insbesondere praktisch wenn Sie eine Funktion schreiben möchten, die me
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>red = 133, green = 11, blue = 253
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>red = 173, green = 133, blue = 60
 </pre></div>
 </div>
+</div>
+</div>
+<p>Im Falle der Listen hat der <code class="docutils literal notranslate"><span class="pre">+=</span></code>-Operator die Liste verändert.
+Was glauben Sie macht der <code class="docutils literal notranslate"><span class="pre">+=</span></code>-Operator für Tupel?
+Ist er definiert?
+Testen wir es aus:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">numbers</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4, 5, 6, 7, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kein Fehler!
+Wird nun doch also doch <code class="docutils literal notranslate"><span class="pre">numbers</span></code>?
+Ja und nein.
+Der Speicherbereich des ursprünglichen Tupels bleibt unverändert, stattdessen wird eine Kopie angelegt.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">numbers_copy</span> <span class="o">=</span> <span class="n">numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id before += </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">numbers</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id after += </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id after += of the original </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers_copy</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;numbers: </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;numbers_copy: </span><span class="si">{</span><span class="n">numbers_copy</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id before += 4372750480
+id after += 4372368624
+id after += of the original 4372750480
+numbers: (1, 2, 3, 4, 5, 6, 7, 8)
+numbers_copy: (1, 2, 3, 4, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="tuple-vs-lists-appending-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span>(Tupel vs Listen (Effizienz))</p>
+<div class="section" id="exercise-content">
+<p>Welche der folgenden Code-Teile benötigt nach Ihrer meinung mehr Computerressourcen und warum?</p>
+<p>Listenerzeugung durch Anhängen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">numbers</span> <span class="o">+=</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+<p>Tupelerzeugung durch Anhängen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">numbers</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span><span class="p">,)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution dropdown admonition" id="tuple-vs-lists-appending-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#tuple-vs-lists-appending-exercise"><span>Exercise 4.1</span></a></p>
+<div class="section" id="solution-content">
+<p>Die Tupelerzeugung durch Anhängen ist deutlich langsamer und speicherintensiver, denn bei jeder Konkatenation <code class="docutils literal notranslate"><span class="pre">+=</span></code> wird <code class="docutils literal notranslate"><span class="pre">numbers</span></code> im Speicher kopiert.
+Der Code erzeugt damit 100 unterschiedliche Tupel!
+Im Fall der Liste wird einfach nur ein Element hinten dran gehängt.</p>
 </div>
 </div>
 </div>

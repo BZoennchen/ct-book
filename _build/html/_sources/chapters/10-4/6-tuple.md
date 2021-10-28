@@ -109,3 +109,73 @@ def random_rgb_color():
 r, g, b = random_rgb_color()
 print(f'red = {r}, green = {g}, blue = {b}')
 ```
+
+Im Falle der Listen hat der ``+=``-Operator die Liste verändert.
+Was glauben Sie macht der ``+=``-Operator für Tupel?
+Ist er definiert?
+Testen wir es aus:
+
+```{code-cell} python3
+---
+tags: [raises-exception]
+---
+numbers = (1, 2, 3, 4, 5)
+numbers += (6,7,8)
+numbers
+```
+
+Kein Fehler!
+Wird nun doch also doch ``numbers``?
+Ja und nein.
+Der Speicherbereich des ursprünglichen Tupels bleibt unverändert, stattdessen wird eine Kopie angelegt.
+
+```{code-cell} python3
+---
+tags: [raises-exception]
+---
+numbers = (1, 2, 3, 4, 5)
+numbers_copy = numbers
+print(f'id before += {id(numbers)}')
+numbers += (6,7,8)
+print(f'id after += {id(numbers)}')
+print(f'id after += of the original {id(numbers_copy)}')
+print(f'numbers: {numbers}')
+print(f'numbers_copy: {numbers_copy}')
+```
+
+````{exercise} Tupel vs Listen (Effizienz)
+:label: tuple-vs-lists-appending-exercise
+Welche der folgenden Code-Teile benötigt nach Ihrer meinung mehr Computerressourcen und warum?
+
+Listenerzeugung durch Anhängen:
+
+```python
+numbers = []
+i = 0
+while i < 100:
+    numbers += [i]
+    i += 1
+numbers
+```
+
+Tupelerzeugung durch Anhängen:
+
+```python
+numbers = tuple()
+i = 0
+while i < 100:
+    numbers += (i,)
+    i += 1
+numbers
+```
+````
+
+```{solution} tuple-vs-lists-appending-exercise
+:label: tuple-vs-lists-appending-solution
+:class: dropdown
+
+Die Tupelerzeugung durch Anhängen ist deutlich langsamer und speicherintensiver, denn bei jeder Konkatenation ``+=`` wird ``numbers`` im Speicher kopiert.
+Der Code erzeugt damit 100 unterschiedliche Tupel!
+Im Fall der Liste wird einfach nur ein Element hinten dran gehängt.
+
+```

@@ -116,7 +116,7 @@ Diese ist viel flexibler und kann allerart von Daten enthalten.
 In ``Python`` können wir bequem mit unterschiedlichen Datentypen umgehen.
 Datentypen aller Programmiersprachen unterteilen wir in zwei Typen, den **primitiven** und den **nicht-primitiven** (zusammengesetzten) **Datentypen**.
 In ``Python`` gibt es jedoch keine **primitive Datentypen**.
-Wie in Abschnitt [Datentypen](sec-datatypes) besprochen, ist jeder Datentyp in ``Python`` ein zusammengesetzter Datentyp!
+Wie in Abschnitt [Datentypen](sec-data-types-advanced) besprochen, ist jeder Datentyp in ``Python`` ein zusammengesetzter Datentyp!
 In den meisten anderen Programmiersprachen sind, die folgenden Datentypen, primitive Datentypen:
 
 + ganzen Zahlen ``int``
