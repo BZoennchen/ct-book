@@ -517,8 +517,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="10-typing-in-python.html">
-     4.10. Pythons Typisierung
+    <a class="reference internal" href="10-range.html">
+     4.10. Bereich - range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-typing-in-python.html">
+     4.11. Pythons Typisierung
     </a>
    </li>
   </ul>
@@ -720,9 +725,9 @@
                 
   <div class="section" id="flieszkommazahlen-float">
 <h1><span class="section-number">4.3. </span>Fließkommazahlen - float<a class="headerlink" href="#flieszkommazahlen-float" title="Permalink to this headline">¶</a></h1>
-<p>Zunächst ist zu sagen, dass Sie für Fließkommazahlen nicht das Komma <code class="docutils literal notranslate"><span class="pre">,</span></code> sondern den (englischsprachigen) Punkt <code class="docutils literal notranslate"><span class="pre">.</span></code> verwenden.</p>
+<p>Zunächst ist zu sagen, dass Sie für Fließkommazahlen (engl. <a class="reference external" href="https://docs.python.org/3/library/functions.html#float">Floating Point Number</a>) nicht das Komma <code class="docutils literal notranslate"><span class="pre">,</span></code> sondern den englischsprachigen Punkt <code class="docutils literal notranslate"><span class="pre">.</span></code> verwenden.</p>
 <p>Im Gegensatz zu ganzen Zahlen benötigen Fließkommazahlen immer die gleiche Anzahl an Bits.
-Da stellt sich die Frage: Wie ist es unter diesen Bedingungen möglich Zahlen darzustellen deren absoluter Wert sehr verschieden ist?
+Da stellt sich die Frage: Wie ist es unter diesen Bedingungen möglich Zahlen darzustellen, deren absoluter Wert sehr verschieden ist?
 Zum Beispiel können wir problemlos die Zahl <span class="math notranslate nohighlight">\(0.0000000001\)</span> und die Zahl <span class="math notranslate nohighlight">\(10000000.0\)</span> als Fließkommazahl definieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -740,9 +745,8 @@ Zum Beispiel können wir problemlos die Zahl <span class="math notranslate nohig
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">1e-10</span></code> bedeutet <span class="math notranslate nohighlight">\(1 \cdot 10^{-10}\)</span>.
-Diese Darstellung liefert uns bereits die Antwort.
-Physiker*innen kennen das Problem der Zahlen aus sehr unterschiedlichen Skalen.
+<p><code class="docutils literal notranslate"><span class="pre">1e-10</span></code> bedeutet hierbei <span class="math notranslate nohighlight">\(1 \cdot 10^{-10}\)</span> und diese Darstellung liefert uns bereits Hinweise auf die Antwort.</p>
+<p>Physiker*innen kennen das Problem der Zahlen aus sehr unterschiedlichen Skalen.
 Die Lichtgeschwindigkeit in km/h ist eine sehr große Zahl, wohingegen die Ladung eines Elektrons in Coulomb eine sehr kleine Zahl ist.
 Physiker*innen möchten ebenfalls in einem riesigen Zahlenbereich rechnen und dabei Zahlen kompakt notieren können.
 Deshalb haben sie die wissenschaftliche Notation eingeführt.
@@ -754,19 +758,19 @@ In dieser Notation schreiben wir <span class="math notranslate nohighlight">\(10
 <li><p>die <em>Mantisse</em> und</p></li>
 <li><p>den Exponenten.</p></li>
 </ul>
-<p>Für <span class="math notranslate nohighlight">\(0.1 \cdot 10^8\)</span> wäre das <em>Vorzeichen</em> gleich +, die <em>Mantisse</em> gleich 0.1 und der <em>Exponent</em> gleich 7.
-Da der Computer jedoch im Binärsystem rechnet, verwendet er als Basis die 2 anstatt die 10.</p>
-<p>Nehmen wir die Zahl</p>
+<p>Für <span class="math notranslate nohighlight">\(0.1 \cdot 10^8\)</span> wäre das <em>Vorzeichen</em> gleich +, die <em>Mantisse</em> gleich 0.1 und der <em>Exponent</em> gleich 8.</p>
+<p>Da der Computer jedoch im Binärsystem rechnet, verwendet er als Basis die 2 anstatt die 10.
+Nehmen wir die Zahl</p>
 <div class="math notranslate nohighlight">
 \[0.875_{10} = 8 \cdot 10^{-1} + 7 \cdot 10^{-2} + 5 \cdot 10^{-3}.\]</div>
 <p>Binär können wir die Zahl wie folgt ausdrücken:</p>
 <div class="math notranslate nohighlight">
-\[0.111_2 = 1 \cdot 2^{-1} + 1 \cdot 2^{-2} + 1 \cdot 3^{-3}.\]</div>
+\[0.111_2 = 1 \cdot 2^{-1} + 1 \cdot 2^{-2} + 1 \cdot 2^{-3}.\]</div>
 <p>Soweit so gut.
 Was passiert aber wenn jede Ziffer von 0 verschieden ist und sich endlos fortsetzt z.B. <span class="math notranslate nohighlight">\(\pi = 3.14159265359 \ldots\)</span> oder auch <span class="math notranslate nohighlight">\(1/3 = 0.33333333333 \ldots\)</span>?
 In diesem Fall wird die Zahl abgeschnitten sobald keine Bits mehr zur Verfügung stehen.
 Demnach ist eine Fließkommazahl immer nur eine gute <strong>Annäherung</strong> des echten Werts!!!</p>
-<p>Weshalb folgende Rechnung nicht 0.3 ergibt erklärt sich durch diese <strong>Annäherung</strong> in Kombination mit der Binärdarstellung!</p>
+<p>Weshalb folgende Rechnung nicht 0.3 ergibt, erklärt sich durch diese <strong>Annäherung</strong> in Kombination mit der Binärdarstellung!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span>
@@ -783,7 +787,7 @@ Demnach ist eine Fließkommazahl immer nur eine gute <strong>Annäherung</strong
 <div class="math notranslate nohighlight">
 \[0.1_{10} = 0.0001100110011 \ldots_2.\]</div>
 <p>Dieses Verhalten kann nicht nur zu kleinen Ungenauigkeiten, sondern zu großen Fehlern führen.
-Folgender Code subtrahiert 20 mal <span class="math notranslate nohighlight">\(1.0 \cdot 10^{-14}\)</span> von <span class="math notranslate nohighlight">\(1.0 \cdot 10^10\)</span>.
+Folgender Code subtrahiert 20 mal <span class="math notranslate nohighlight">\(1.0 \cdot 10^{-14}\)</span> von <span class="math notranslate nohighlight">\(1.0 \cdot 10^{10}\)</span>.
 Doch verändern diese Subtraktionen <code class="docutils literal notranslate"><span class="pre">x</span></code> nicht.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -809,7 +813,7 @@ x = 10000000000.0 after subtraction
 </div>
 </div>
 <p>Das zeigt, dass der (akkumulierte) Fehler theoretisch unendlich groß werden kann.
-Besonders kritisch ist die Subtraktion und Addition.
+Besonders kritisch ist die Subtraktion und Addition von Zahlen die in sehr unterschiedliche Skalen fallen.
 Die Multiplikation und Division ist für Fließkommazahlen sehr viel ungefährlicher.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

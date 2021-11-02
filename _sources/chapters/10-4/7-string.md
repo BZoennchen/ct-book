@@ -12,7 +12,7 @@ kernelspec:
 
 # Zeichenketten - str
 
-Eine Zeichenkette ist eine *Sequenz* von Zeichen.
+Eine Zeichenkette (engl. [String](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)) ``str`` ist eine *Sequenz* von Zeichen.
 Wie ein Tupel ist eine Zeichenkette **unveränderlich** (engl. **immutable**). 
 ``Python`` bietet uns viele nützliche Funktionen um auf Zeichenketten zu operieren.
 Zeichenketten können durch einfache ``'text'`` oder doppelte ``"text"`` Anführungszeichen umschlossen sein.

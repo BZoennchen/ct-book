@@ -515,8 +515,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="10-typing-in-python.html">
-     4.10. Pythons Typisierung
+    <a class="reference internal" href="10-range.html">
+     4.10. Bereich - range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-typing-in-python.html">
+     4.11. Pythons Typisierung
     </a>
    </li>
   </ul>
@@ -738,7 +743,7 @@
 <span id="sec-working-with-data-types"></span><h1><span class="section-number">4.1. </span>Pythons Datentypen<a class="headerlink" href="#pythons-datentypen" title="Permalink to this headline">¶</a></h1>
 <p>Beginnen wir mit der Praxis und sehen uns an welche Datentypen uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet und was wir mit diesen anfangen können.
 Die von <code class="docutils literal notranslate"><span class="pre">Python</span></code> vorab definierten Datentypen nennt man <em>built-in Datentypen</em>.
-Wir werden in diesem Abschnitt nicht alle <em>built-in Datentypen</em> besprechen, sondern jene mit denen Sie die meiste Zeit zu tun haben.
+Wir werden in diesem Kapitel nicht alle <em>built-in Datentypen</em> besprechen, sondern jene mit denen Sie die meiste Zeit zu tun haben.
 Eine vollständige Liste der Datentypen finden Sie im Abschnitt <a class="reference internal" href="../10-5/4-kind-of-data-types.html#sec-built-in-data-types"><span class="std std-ref">Built-in Datentypen</span></a>.</p>
 <p>Wir können die <em>built-in Datentypen</em> in weitere zwei Kategorien zerteilen:</p>
 <ol class="simple">
@@ -747,7 +752,7 @@ Eine vollständige Liste der Datentypen finden Sie im Abschnitt <a class="refere
 </ol>
 <p>Haben Sie bereits Programmiererfahrung, so werden Sie <em>atomare Datentypen</em> als <em>primitive Datentypen</em> wahrnehmen, doch streng genommen gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine primitiven Datentypen.
 Dennoch verhalten sich <em>atomare Datentypen</em> ähnlich wie <em>primitive Datentypen</em>.</p>
-<p><em>Atomare Datentypen</em> sind: Ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>, Wahrheitswerte <code class="docutils literal notranslate"><span class="pre">bool</span></code> und Fließkommazahlen.
+<p><em>Atomare Datentypen</em> sind: Ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>, Wahrheitswerte <code class="docutils literal notranslate"><span class="pre">bool</span></code> und Fließkommazahlen <code class="docutils literal notranslate"><span class="pre">float</span></code>.
 <em>Zusammengesetzte Datentypen</em> sind: Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code>, Listen <code class="docutils literal notranslate"><span class="pre">list</span></code>, Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> und Wörterbücher <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
 <p>Den Datentyp einer Variable oder eines Wertes erfragen Sie mit der <em>built-in</em> Funktion <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p>
 <div class="cell docutils container">
@@ -774,8 +779,7 @@ Dennoch verhalten sich <em>atomare Datentypen</em> ähnlich wie <em>primitive Da
 Wird der <strong>Wert</strong> von keiner Variablen mehr adressiert, wird er zwar gelöscht, um den Speicher wieder freizugeben, doch kann er nicht verändert werden solange eine Variable den Wert noch adressiert.</p>
 <p>Wir haben dieses Phänomen bereits im Abschnitt <a class="reference internal" href="../10-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> beobachtet.
 Wir hatten festgehalten, dass Veränderungen der einen Variablen keinen Effekt auf die <strong>Adresse</strong> bzw. <em>Identität</em> <code class="docutils literal notranslate"><span class="pre">id</span></code> anderer Variablen haben.
-Für <em>atomare Datentypen</em> gilt noch mehr.
-Ändern wir den <strong>Wert</strong> einer Variable vom Typ <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> oder <code class="docutils literal notranslate"><span class="pre">float</span></code>, so kann diese Änderung nicht den <strong>Wert</strong> einer anderen Variablen verändern:</p>
+Für <em>atomare Datentypen</em> gilt noch mehr: Ändern wir den <strong>Wert</strong> einer Variable vom Typ <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> oder <code class="docutils literal notranslate"><span class="pre">float</span></code>, so kann diese Änderung nicht den <strong>Wert</strong> einer anderen Variablen verändern:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">12313</span>
@@ -797,14 +801,14 @@ Für <em>atomare Datentypen</em> gilt noch mehr.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 12313
-id of x = 4586531600
+id of x = 4387039472
 value of z = 12313
-id of z = 4586531600
+id of z = 4387039472
 change value of x
 value of x = 11341
-id of x = 4586532048
+id of x = 4387040432
 value of z = 12313
-id of z = 4586531600
+id of z = 4387039472
 </pre></div>
 </div>
 </div>
@@ -815,12 +819,13 @@ id of z = 4586531600
 <h2><span class="section-number">4.1.2. </span>Zusammengesetzte Datentypen<a class="headerlink" href="#zusammengesetzte-datentypen" title="Permalink to this headline">¶</a></h2>
 <p><em>Zusammengesetzte Datentypen</em> oder auch <em>Datenstrukturen</em> bestehen hingegen aus mehreren Werten.
 Sie strukturieren diese Werte.</p>
-<p>Anders als bei <em>atomaren Datentypen</em> lässt sich der Wert einer Datenstruktur verändern.
-Damit ist gemeint, dass es sich verändern lässt, was die Datenstruktur enthält.</p>
+<p>Anders als bei <em>atomaren Datentypen</em> lässt sich der <strong>Wert</strong> einer Datenstruktur verändern.
+Was die Datenstruktur enthält kann verändert werden.</p>
 <p>Nehmen wir einmal an, eine Datenstruktur enthält ausschließlich ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>.
 Verändern wir nun eine dieser Zahlen, so wird der <strong>Wert</strong> im Speicher, der diese Zahl repräsentiert, nicht verändert – es ist ja ein <em>atomarer Datentyp</em>!
-<strong>Aber</strong> es wird ein neuer Wert in den Speicher geschrieben und die Datenstruktur wird so manipuliert, dass Sie nun auf diesen neuen Wert zeigt.</p>
-<p>Im Abschnitt <a class="reference internal" href="5-list.html#sec-list-and-memory"><span class="std std-ref">Wie funktioniert eine Liste</span></a> sehen wir uns an was genau im Speicher vor sich geht, wenn wir mit Listen arbeiten.</p>
+<strong>Aber</strong> es wird ein neuer Wert in den Speicher geschrieben und die Datenstruktur wird so manipuliert, dass einer ihrer Einträge nun auf diesen neuen Wert zeigt.</p>
+<p>Im Abschnitt <a class="reference internal" href="5-list.html#sec-list-and-memory"><span class="std std-ref">Listen und der Speicher</span></a> sehen wir uns an was genau im Speicher vor sich geht, wenn wir mit Listen arbeiten.
+Dies kann auf andere <em>Datenstrukturen</em> übertragen werden.</p>
 </div>
 </div>
 
