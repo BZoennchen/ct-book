@@ -12,7 +12,7 @@ kernelspec:
 
 # Tupel - tuple
 
-Listen und Tupel (wie auch Zeichenketten, und ``range``) sind allesamt Sequenzen und haben dadurch sehr ähnliche Eigenschaften.
+Listen und [Tupel](https://docs.python.org/3/library/stdtypes.html#tuple) (wie auch Zeichenketten, und ``range``) sind allesamt [Sequenzen](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) und haben dadurch sehr ähnliche Eigenschaften.
 Einzig bei der Erstellung verwenden wir statt der eckigen die runden Klammern:
 
 ```{code-cell} python3

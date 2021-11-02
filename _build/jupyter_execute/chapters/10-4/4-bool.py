@@ -1,8 +1,9 @@
 # Wahrheitswerte - bool
 
-Ein Wahrheitswert ``bool`` kann, genau wie ein [Bit](def-bit) einen von zwei Wahrheitswerten ``True`` (1) oder ``False`` (0) annehmen.
+Ein Wahrheitswert ([Boolean](https://docs.python.org/3/library/stdtypes.html#truth-value-testing)) ``bool`` kann, genau wie ein [Bit](def-bit), einen von zwei Wahrheitswerten ``True`` (1) oder ``False`` (0) annehmen.
 ``True`` bedeutet wahr und ``False`` falsch.
-Sehr selten verwenden wir explizit ``True`` oder ``False`` vielmehr wird ein logischer Ausdruck, nach *Auswertung* entweder ``True`` oder ``False`` ist.
+``True`` oder ``False`` verwenden wir sehr selten explizit.
+Viel häufiger wird ein logischer Ausdruck, nach *Auswertung* entweder ``True`` oder ``False`` ist.
 
 x = 9
 is_lesser_than_10 = x < 10

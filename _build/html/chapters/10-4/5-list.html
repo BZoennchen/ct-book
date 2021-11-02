@@ -517,8 +517,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="10-typing-in-python.html">
-     4.10. Pythons Typisierung
+    <a class="reference internal" href="10-range.html">
+     4.10. Bereich - range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-typing-in-python.html">
+     4.11. Pythons Typisierung
     </a>
    </li>
   </ul>
@@ -757,13 +762,13 @@
               <div>
                 
   <div class="section" id="listen-list">
-<h1><span class="section-number">4.5. </span>Listen - list<a class="headerlink" href="#listen-list" title="Permalink to this headline">¶</a></h1>
-<p>Listen sind eine der wichtigsten <em>Datentypen</em> und zugleich einfachsten <em>Datenstrukturen</em> in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.
+<span id="sec-list"></span><h1><span class="section-number">4.5. </span>Listen - list<a class="headerlink" href="#listen-list" title="Permalink to this headline">¶</a></h1>
+<p>Listen (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">List</a>) <code class="docutils literal notranslate"><span class="pre">list</span></code> sind eine der wichtigsten <em>Datentypen</em> und zugleich einfachsten <em>Datenstrukturen</em> in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.
 Sobald Sie irgendetwas sinnvolles programmieren möchten, kommen Sie um die Liste kaum herum.
 Das Grundkonzept einer Liste ist einfach und doch so fundamental wichtig!</p>
 <p>Listen sind eng mit der Wiederholung und somit mit Schleifen verbunden.
 Auch wir können Schleifen an dieser Stelle nicht vermeiden, auch wenn wir sie noch nicht im Detail besprochen haben.</p>
-<p>Nehmen wir einmal an wir bekämen den Auftrag ein Programm zu schreiben, dass <code class="docutils literal notranslate"><span class="pre">n</span></code> ganze Zahlen aufaddiert, wobei wir weder <code class="docutils literal notranslate"><span class="pre">n</span></code> noch die Zahlen kennen.
+<p>Nehmen wir einmal an wir bekämen den Auftrag ein Programm zu schreiben, welches <code class="docutils literal notranslate"><span class="pre">n</span></code> ganze Zahlen aufaddiert, wobei wir weder <code class="docutils literal notranslate"><span class="pre">n</span></code> noch die Zahlen kennen.
 Zugegeben, das Programm ist nicht gerade interessant aber aller Anfang ist klein.
 Eine variable Anzahl an Zahlen lässt sich hervorragend durch eine <em>Liste</em> modellieren.
 Wir gehen also davon aus, dass wir eine Liste <code class="docutils literal notranslate"><span class="pre">numbers</span></code> bekommen und daraus die Summe berechnen müssen.
@@ -789,7 +794,7 @@ Folgender Code löst die Aufgabe.
 </div>
 <p>Der Code funktioniert auch noch wenn <code class="docutils literal notranslate"><span class="pre">numbers</span></code> mehr, weniger oder andere Zahlen enthält!
 Probieren Sie es aus.</p>
-<p>Wie alle Datenstrukturen in <code class="docutils literal notranslate"><span class="pre">Python</span></code> können Listen Werte mit unterschiedlichen Datentypen enthalten.</p>
+<p>Wie alle Datenstrukturen in <code class="docutils literal notranslate"><span class="pre">Python</span></code>, können Listen Werte mit unterschiedlichen Datentypen enthalten.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]</span>
@@ -803,7 +808,7 @@ Probieren Sie es aus.</p>
 </div>
 </div>
 </div>
-<p>Listen können selbstverständlich andere Listen enthalten:</p>
+<p>Listen können selbstverständlich andere Listen (bzw. Datenstrukturen) enthalten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
@@ -830,6 +835,12 @@ Wir können z.B. mit einer leeren Liste starten und diese füllen:</p>
 <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5]
 </pre></div>
 </div>
 </div>
@@ -865,9 +876,8 @@ Wir können z.B. mit einer leeren Liste starten und diese füllen:</p>
 </div>
 </div>
 </div>
-<p>Für Fälle in denen wir eine Liste aus einer anderen Sequenz generieren gibt es eine sehr kompakte Schreibweise.
-<code class="docutils literal notranslate"><span class="pre">range(10)</span></code> ist eine sog. lazy Sequenz, dahinter steckt eine Funktion, die immer wieder aufgerufen wird und die Zahl die sie zurückgibt immer um eins erhöht.
-Wir können diese Sequenz in eine Liste packen:</p>
+<p>Die <em>built-in</em> Funktion <code class="docutils literal notranslate"><span class="pre">range()</span></code> erzeugt einen sog. Zahlenbereich (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesseq-range">Range</a>), welchen wir im Abschnitt <a class="reference internal" href="10-range.html#sec-range"><span class="std std-ref">Bereich - range</span></a> erörtern.
+Wir können diesen Bereich, der auch eine Sequenz ist, in eine Liste packen bzw. in eine Liste umwandeln:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
@@ -897,7 +907,7 @@ Wir können diese Sequenz in eine Liste packen:</p>
 </div>
 </div>
 <div class="section" id="indexierung">
-<h2><span class="section-number">4.5.2. </span>Indexierung<a class="headerlink" href="#indexierung" title="Permalink to this headline">¶</a></h2>
+<span id="sec-list-index"></span><h2><span class="section-number">4.5.2. </span>Indexierung<a class="headerlink" href="#indexierung" title="Permalink to this headline">¶</a></h2>
 <p>Wir können auf die Elemente einer Liste mit einem Index zugreifen.
 Dieser Index beginnt bei 0 und endet bei der Länge der Liste - 1, d.h. <code class="docutils literal notranslate"><span class="pre">len(mylist)</span> <span class="pre">-</span> <span class="pre">1</span></code>.
 <code class="docutils literal notranslate"><span class="pre">len(mylist)</span></code> gibt eine natürliche Zahl (0 inklusive) zurück, welche die Länge der Liste <code class="docutils literal notranslate"><span class="pre">mylist</span></code> angibt.</p>
@@ -1095,14 +1105,14 @@ Es gibt kleine ‘Strafen’ wenn <strong>Adressen</strong> weit auseinander lie
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
-id of numbers = 4501616640
+id of numbers = 4588730880
 value of numbers[2] = 3
-id of numbers[2] = 4463782256
+id of numbers[2] = 4550891888
 change value of numbers[2]
 value of numbers = [1, 2, -20, 4, 5]
-id of numbers = 4501616640
+id of numbers = 4588730880
 value of numbers[2] = -20
-id of numbers[2] = 4501668816
+id of numbers[2] = 4588770288
 </pre></div>
 </div>
 </div>
@@ -1134,6 +1144,8 @@ Da <strong>Adressen</strong> immer die gleiche feste Anzahl an Bits benötigen, 
 \[Start + i \cdot 4.\]</div>
 <p>Diese Rechnung kann der Rechner sehr schnell durchführen und deshalb können wir auf Elemente einer Liste deren Index wir kennen extrem schnell zugreifen.</p>
 <p>Um dieses Konzept besser zu verstehen und herauszufinden wie sich <em>atomare</em> wie auch <em>zusammengesetzt Datentypen</em> verhalten, hilft oft nur eins: Ausprobieren!</p>
+<p>Im Kapitel <a class="reference internal" href="../11/memory.html#sec-memory"><span class="std std-ref">Speicher - alles ist eine Liste</span></a> erstellen wir unser eigenes Speichermanagementsystem durch <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Listen.
+Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers und wie es gelingt Listen voller <strong>Adressen</strong> zu verwalten.</p>
 </div>
 <div class="section" id="der-unterschied-zwischen-und">
 <h2><span class="section-number">4.5.5. </span>Der Unterschied zwischen + und +=<a class="headerlink" href="#der-unterschied-zwischen-und" title="Permalink to this headline">¶</a></h2>
@@ -1152,8 +1164,8 @@ Da <strong>Adressen</strong> immer die gleiche feste Anzahl an Bits benötigen, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4501612352
- id after concat: 4501613568
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4588662528
+ id after concat: 4588728192
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1174,8 +1186,8 @@ Da <strong>Adressen</strong> immer die gleiche feste Anzahl an Bits benötigen, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4501551040
- id after concat: 4501551040
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4588529600
+ id after concat: 4588529600
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1253,13 +1265,13 @@ Zeigen diese <strong>Adressen</strong> auf Werte <em>atomare Datentypen</em>, so
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers
-4463782192
-4463782224
-4463782256
+4550891824
+4550891856
+4550891888
 ids of numbers_shallow_copy
-4463782192
-4463782224
-4463782256
+4550891824
+4550891856
+4550891888
 </pre></div>
 </div>
 </div>
@@ -1293,8 +1305,8 @@ Nunja, die <strong>Adressen</strong></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4501612352
-4501612352
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4588662528
+4588662528
 </pre></div>
 </div>
 </div>
@@ -1331,13 +1343,13 @@ Um dies zu erreichen reicht es nicht nur die <em>Datenstruktur</em> zu kopieren,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers
-4463782192
-4463782224
-4501616192
+4550891824
+4550891856
+4588730432
 ids of numbers_deep_copy
-4463782192
-4463782224
-4501617152
+4550891824
+4550891856
+4588731328
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, [3, 4, 5]]

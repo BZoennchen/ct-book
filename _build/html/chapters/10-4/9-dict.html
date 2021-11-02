@@ -52,9 +52,11 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.10. Pythons Typisierung" href="10-typing-in-python.html" />
+    <link rel="next" title="4.10. Bereich - range" href="10-range.html" />
     <link rel="prev" title="4.8. Mengen - set" href="8-set.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -515,8 +517,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="10-typing-in-python.html">
-     4.10. Pythons Typisierung
+    <a class="reference internal" href="10-range.html">
+     4.10. Bereich - range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-typing-in-python.html">
+     4.11. Pythons Typisierung
     </a>
    </li>
   </ul>
@@ -708,6 +715,39 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erstellung">
+   4.9.1. Erstellung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexierung">
+   4.9.2. Indexierung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#veranderung">
+   4.9.3. Veränderung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ansichten">
+   4.9.4. Ansichten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#worterbucher-und-der-speicher">
+   4.9.5. Wörterbücher und der Speicher
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -718,7 +758,289 @@
                 
   <div class="section" id="worterbucher-dict">
 <h1><span class="section-number">4.9. </span>Wörterbücher - dict<a class="headerlink" href="#worterbucher-dict" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+<p>Die letzte <em>built-in</em> Datenstruktur, welche wir besprechen, sind die sogenannten Wörterbücher (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict">Dictionary</a>) <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
+In anderen Programmiersprachen, wie z.B. <code class="docutils literal notranslate"><span class="pre">Java</span></code> spricht man stattdessen auch von <em>Hashtables</em> oder <em>Hashmaps</em>.
+Sie sind neben den <a class="reference internal" href="5-list.html#sec-list"><span class="std std-ref">Listen</span></a> <code class="docutils literal notranslate"><span class="pre">list</span></code> die zweitwichtigste Datenstruktur in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.
+Zwar ist ihr Anwendungsgebiet ein anderes doch sind sie ähnlich wie <a class="reference internal" href="8-set.html#sec-set"><span class="std std-ref">Mengen</span></a> <code class="docutils literal notranslate"><span class="pre">set</span></code> realisiert.</p>
+<p>Wörterbücher sind <strong>veränderlich</strong> (engl. mutable).
+Wir können sie uns als zweispaltige Tabelle vorstellen.
+Eine Spalte beinhaltet die <strong>eindeutigen</strong> sog. <strong>Schlüssel</strong> <code class="docutils literal notranslate"><span class="pre">key</span></code>s und die andere Spalte enthält die sog. <strong>Werte</strong>  <code class="docutils literal notranslate"><span class="pre">value</span></code>s.
+Jede Zeile ist ein Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code> aus <code class="docutils literal notranslate"><span class="pre">key</span></code> und <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
+<p>Da die Schlüssel eindeutig sind, kann die Spalte aus <code class="docutils literal notranslate"><span class="pre">key</span></code>s als Menge <code class="docutils literal notranslate"><span class="pre">set</span></code> an <strong>Schlüsseln</strong> angesehen werden.
+Die <strong>Werte</strong> müssen hingegen nicht eindeutig sein.
+Sind Sie wie ich ein Freund der Mathematik, so realisiert ein Wörterbücher <code class="docutils literal notranslate"><span class="pre">dict</span></code> eine Funktion:</p>
+<div class="math notranslate nohighlight">
+\[f : K \rightarrow V,\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(K\)</span> die endliche Menge der Schlüssel ist.
+Es kann durchaus zwei <strong>Schlüssel</strong> geben, welche den gleichen <strong>Wert</strong> <code class="docutils literal notranslate"><span class="pre">value</span></code> haben, doch müssen die Schlüssel eindeutig sein!</p>
+<p>Wie bei den Mengen, gilt für die <strong>Schlüssel</strong>, dass diese aus <strong>unveränderlichen</strong> Datentypen bestehen müssen.
+Das hat die gleichen Gründe wie in Abschnitt <a class="reference internal" href="8-set.html#sec-set"><span class="std std-ref">Mengen</span></a> angesprochen.
+Deshalb eigenen sich zum Beispiel Zahlen, Zeichenketten oder Tupel, die <strong>unveränderliche</strong> Datentypen enthalten, als Schlüssel.</p>
+<p>Wie bei Mengen können wir extrem schnell testen ob es einen bestimmten Eintrag im Wörterbücher für einen bestimmten Schlüssel gibt.
+Das folgt aus der Eigenschaft der <a class="reference internal" href="8-set.html#sec-set"><span class="std std-ref">Mengen</span></a>.
+Doch anders als bei Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code>, identifizieren wir damit nicht nur den Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> der Menge <span class="math notranslate nohighlight">\(K\)</span>, sondern auch dessen Wert <code class="docutils literal notranslate"><span class="pre">value</span></code> aus <span class="math notranslate nohighlight">\(V\)</span>.
+Wir nutzten die schnelle Adressierung bzw. den schnellen Zugriff um auf <strong>veränderliche</strong> Werte zugreifen zu können.</p>
+<div class="section" id="erstellung">
+<h2><span class="section-number">4.9.1. </span>Erstellung<a class="headerlink" href="#erstellung" title="Permalink to this headline">¶</a></h2>
+<p>Ein Wörterbuch <code class="docutils literal notranslate"><span class="pre">dict</span></code> erzeugen Sie ebenfalls durch den Einsatz der geschweiften Klammern, doch besteht jeder Eintrag aus einem Tupel <code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">value)</span></code> geschrieben als: <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code>.
+Zum Beispiel könnten wir ein Wörterbuch <code class="docutils literal notranslate"><span class="pre">students</span></code> erstellen für welches die eindeutige Matrikelnummer die Schlüssel <span class="math notranslate nohighlight">\(K\)</span> und die Nachnamen die Werte <span class="math notranslate nohighlight">\(V\)</span> sind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">{</span><span class="mi">123451</span><span class="p">:</span> <span class="s1">&#39;Huber&#39;</span><span class="p">,</span> <span class="mi">123451</span><span class="p">:</span> <span class="s1">&#39;Langer&#39;</span><span class="p">,</span> <span class="mi">213131</span><span class="p">:</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">,</span> <span class="mi">4131129</span><span class="p">:</span> <span class="s1">&#39;Langer&#39;</span><span class="p">}</span>
+<span class="n">students</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{123451: &#39;Langer&#39;, 213131: &#39;Schmidt&#39;, 4131129: &#39;Langer&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wir können ein Wörterbuch durch die Funktion <code class="docutils literal notranslate"><span class="pre">dict()</span></code> aus einer Liste von Tupeln konstruieren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Huber&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">213131</span><span class="p">,</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4131129</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">)])</span>
+<span class="n">students</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{123451: &#39;Langer&#39;, 213131: &#39;Schmidt&#39;, 4131129: &#39;Langer&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sofern Ihre Schlüssel Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> sind erlaubt uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> auch die Argumentschreibweise zu verwenden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rectangle</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="s1">&#39;rectangle&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rectangle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;shape&#39;: &#39;rectangle&#39;, &#39;x&#39;: 0.0, &#39;y&#39;: 1.0, &#39;width&#39;: 10, &#39;height&#39;: 20}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexierung">
+<h2><span class="section-number">4.9.2. </span>Indexierung<a class="headerlink" href="#indexierung" title="Permalink to this headline">¶</a></h2>
+<p>Im Unterschied zu Mengen können wir auf die <strong>Werte</strong> <code class="docutils literal notranslate"><span class="pre">value</span></code> eines Wörterbuchs durch den passenden <strong>Schlüssel</strong> <code class="docutils literal notranslate"><span class="pre">key</span></code> zugreifen.
+Auch hierzu verwenden wir die eckigen Klammern.
+<code class="docutils literal notranslate"><span class="pre">dictionary[key]</span></code> ergibt den <code class="docutils literal notranslate"><span class="pre">value</span></code> für den Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> des Wörterbuchs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">{</span><span class="mi">123451</span><span class="p">:</span> <span class="s1">&#39;Huber&#39;</span><span class="p">,</span> <span class="mi">123451</span><span class="p">:</span> <span class="s1">&#39;Langer&#39;</span><span class="p">,</span> <span class="mi">213131</span><span class="p">:</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">,</span> <span class="mi">4131129</span><span class="p">:</span> <span class="s1">&#39;Langer&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; key = </span><span class="si">{</span><span class="mi">123451</span><span class="si">}</span><span class="s1">, value = </span><span class="si">{</span><span class="n">students</span><span class="p">[</span><span class="mi">123451</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; key = </span><span class="si">{</span><span class="mi">4131129</span><span class="si">}</span><span class="s1">, value = </span><span class="si">{</span><span class="n">students</span><span class="p">[</span><span class="mi">4131129</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; key = </span><span class="si">{</span><span class="mi">213131</span><span class="si">}</span><span class="s1">, value = </span><span class="si">{</span><span class="n">students</span><span class="p">[</span><span class="mi">213131</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> key = 123451, value = Langer
+ key = 4131129, value = Langer
+ key = 213131, value = Schmidt
+</pre></div>
+</div>
+</div>
+</div>
+<p>Gibt es den Schlüssel nicht im Wörterbuch, so erhalten wir einen Fehler beim Zugriff.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; key = </span><span class="si">{</span><span class="mi">00000</span><span class="si">}</span><span class="s1">, value = </span><span class="si">{</span><span class="n">students</span><span class="p">[</span><span class="mi">00000</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">91</span><span class="n">f3d6609e62</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; key = </span><span class="si">{</span><span class="mi">00000</span><span class="si">}</span><span class="s1">, value = </span><span class="si">{</span><span class="n">students</span><span class="p">[</span><span class="mi">00000</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: 0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="veranderung">
+<h2><span class="section-number">4.9.3. </span>Veränderung<a class="headerlink" href="#veranderung" title="Permalink to this headline">¶</a></h2>
+<p>Folgender Ausdruck hat eine von zwei möglichen Bedeutungen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Huber&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">213131</span><span class="p">,</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4131129</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">)])</span>
+<span class="n">students</span><span class="p">[</span><span class="mi">123133</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Fischer&#39;</span>
+<span class="n">students</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{123451: &#39;Langer&#39;, 213131: &#39;Schmidt&#39;, 4131129: &#39;Langer&#39;, 123133: &#39;Fischer&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>In unserem Fall, fügen wir in das Wörterbuch <code class="docutils literal notranslate"><span class="pre">students</span></code> ein neues Tupel <code class="docutils literal notranslate"><span class="pre">(123133,</span> <span class="pre">'Fischer')</span></code> ein.
+Existiert der Schlüssen, hier <code class="docutils literal notranslate"><span class="pre">123133</span></code>, so verändern wir den damit identifizierten Eintrag:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">[</span><span class="mi">123133</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Alberto&#39;</span>
+<span class="n">students</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{123451: &#39;Langer&#39;, 213131: &#39;Schmidt&#39;, 4131129: &#39;Langer&#39;, 123133: &#39;Alberto&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>In den meisten Fällen möchte man genau das, einen Eintrag verändern oder neu einfügen wenn er noch nicht existiert.
+Möchten Sie jedoch einen Eintrag nur verändern und nicht einfügen falls er nicht existiert, so müssen Sie zuvor testen ob er existiert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no insertion but a change</span>
+<span class="k">if</span> <span class="mi">123133</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+  <span class="n">students</span><span class="p">[</span><span class="mi">123133</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Hamilton&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+
+<span class="c1"># no insertion and no change</span>
+<span class="k">if</span> <span class="o">-</span><span class="mi">131331</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+  <span class="n">students</span><span class="p">[</span><span class="o">-</span><span class="mi">131331</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Hamilton&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{123451: &#39;Langer&#39;, 213131: &#39;Schmidt&#39;, 4131129: &#39;Langer&#39;, 123133: &#39;Hamilton&#39;}
+{123451: &#39;Langer&#39;, 213131: &#39;Schmidt&#39;, 4131129: &#39;Langer&#39;, 123133: &#39;Hamilton&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wir testen in diesem Code ob der Schlüssel sich im Wörterbuch befindet.
+Um zu testen ob ein Tupel <code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">value)</span></code> sich im Wörterbuch befindet müssen Sie</p>
+<ol class="simple">
+<li><p>testen ob sich <code class="docutils literal notranslate"><span class="pre">key</span></code> im Wörterbuch befindet und</p></li>
+<li><p>ob <code class="docutils literal notranslate"><span class="pre">dictionary[key]</span> <span class="pre">==</span> <span class="pre">value</span></code> gilt.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no insertion but a change</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">123133</span> <span class="ow">in</span> <span class="n">students</span> <span class="ow">and</span> <span class="n">students</span><span class="p">[</span><span class="mi">123133</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Hamilton&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">123133</span> <span class="ow">in</span> <span class="n">students</span> <span class="ow">and</span> <span class="n">students</span><span class="p">[</span><span class="mi">123133</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">111111</span> <span class="ow">in</span> <span class="n">students</span> <span class="ow">and</span> <span class="n">students</span><span class="p">[</span><span class="o">-</span><span class="mi">111111</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um ein Tupel aus dem Wörterbuch zu löschen verwenden wir erneut die <em>built-in</em>-Operation <code class="docutils literal notranslate"><span class="pre">del</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no insertion but a change</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">123133</span> <span class="ow">in</span> <span class="n">students</span> <span class="ow">and</span> <span class="n">students</span><span class="p">[</span><span class="mi">123133</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Hamilton&#39;</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">students</span><span class="p">[</span><span class="mi">123133</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">123133</span> <span class="ow">in</span> <span class="n">students</span> <span class="ow">and</span> <span class="n">students</span><span class="p">[</span><span class="mi">123133</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Hamilton&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ansichten">
+<h2><span class="section-number">4.9.4. </span>Ansichten<a class="headerlink" href="#ansichten" title="Permalink to this headline">¶</a></h2>
+<p>Wir könne uns auch alle Schlüssel und Werte eines Wörterbuchs holen.
+Durch <code class="docutils literal notranslate"><span class="pre">dictionary.keys()</span></code> erhalten wir die Schlüssel, durch <code class="docutils literal notranslate"><span class="pre">dictionary.values()</span></code> die Werte, und durch <code class="docutils literal notranslate"><span class="pre">dictionary.items()</span></code> beide Spalten (als Liste von Tupeln):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Huber&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">213131</span><span class="p">,</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4131129</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;dictionary: </span><span class="si">{</span><span class="n">students</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;key: </span><span class="si">{</span><span class="n">students</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;values: </span><span class="si">{</span><span class="n">students</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;items: </span><span class="si">{</span><span class="n">students</span><span class="o">.</span><span class="n">items</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dictionary: {123451: &#39;Langer&#39;, 213131: &#39;Schmidt&#39;, 4131129: &#39;Langer&#39;}
+
+key: dict_keys([123451, 213131, 4131129])
+values: dict_values([&#39;Langer&#39;, &#39;Schmidt&#39;, &#39;Langer&#39;])
+items: dict_items([(123451, &#39;Langer&#39;), (213131, &#39;Schmidt&#39;), (4131129, &#39;Langer&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es scheint so als wären dies alles Listen <code class="docutils literal notranslate"><span class="pre">list</span></code>, doch das ist nicht korrekt.
+Zwar werden Sie wie Listen ausgegeben, doch sind sie <strong>unveränderlich</strong>.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Huber&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">213131</span><span class="p">,</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4131129</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">)])</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="n">students</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Test&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">fc150e7bf5ce</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">values</span> <span class="o">=</span> <span class="n">students</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Test&#39;</span>
+
+<span class="ne">TypeError</span>: &#39;dict_values&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sie werden als sog. Ansichten (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict-views">View Objects</a>) bezeichnet.
+Das bedeutet kurz gesagt: Änderungen am Wörterbuch werden in diesen Datenstrukturen übernommen, doch können wir <em>Ansichten</em> nicht direkt ändern.
+<code class="docutils literal notranslate"><span class="pre">students.values()</span></code> gibt uns eine <em>Ansicht</em> auf die Werte des Wörterbuchs <code class="docutils literal notranslate"><span class="pre">students</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Huber&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">123451</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">213131</span><span class="p">,</span> <span class="s1">&#39;Schmidt&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4131129</span><span class="p">,</span> <span class="s1">&#39;Langer&#39;</span><span class="p">)])</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="n">students</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="n">students</span><span class="p">[</span><span class="mi">123451</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Müller&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;Langer&#39;, &#39;Schmidt&#39;, &#39;Langer&#39;])
+dict_values([&#39;Müller&#39;, &#39;Schmidt&#39;, &#39;Langer&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>In diesem Beispiel ist die letzte Zeile interessant.
+Obwohl wir <code class="docutils literal notranslate"><span class="pre">values</span></code> nicht verändern, wird es durch unsere Änderungen am Wörterbuch <code class="docutils literal notranslate"><span class="pre">students</span></code> verändert.
+Dies ist ein sog. <em>erwünschter Seiteneffekt</em>.</p>
+</div>
+<div class="section" id="worterbucher-und-der-speicher">
+<h2><span class="section-number">4.9.5. </span>Wörterbücher und der Speicher<a class="headerlink" href="#worterbucher-und-der-speicher" title="Permalink to this headline">¶</a></h2>
+<p>Wie Wörterbücher im Speicher realisiert werden erläutern wir ansatzweise im Abschnitt <a class="reference internal" href="8-set.html#sec-set"><span class="std std-ref">Mengen</span></a> und tiefgreifender im Kapitel <a class="reference internal" href="../11/name-register.html#sec-name-register"><span class="std std-ref">Namensregister</span></a> im Abschnitt <a class="reference internal" href="../11/name-register.html#sec-hashing"><span class="std std-ref">Hashing und das Dictionary</span></a>.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -747,7 +1069,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="8-set.html" title="previous page"><span class="section-number">4.8. </span>Mengen - set</a>
-    <a class='right-next' id="next-link" href="10-typing-in-python.html" title="next page"><span class="section-number">4.10. </span>Pythons Typisierung</a>
+    <a class='right-next' id="next-link" href="10-range.html" title="next page"><span class="section-number">4.10. </span>Bereich - range</a>
 
         </div>
         

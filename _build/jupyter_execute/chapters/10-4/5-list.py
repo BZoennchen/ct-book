@@ -1,13 +1,14 @@
+(sec-list)=
 # Listen - list
 
-Listen sind eine der wichtigsten *Datentypen* und zugleich einfachsten *Datenstrukturen* in ``Python``.
+Listen (engl. [List](https://docs.python.org/3/library/stdtypes.html#list)) ``list`` sind eine der wichtigsten *Datentypen* und zugleich einfachsten *Datenstrukturen* in ``Python``.
 Sobald Sie irgendetwas sinnvolles programmieren möchten, kommen Sie um die Liste kaum herum.
 Das Grundkonzept einer Liste ist einfach und doch so fundamental wichtig!
 
 Listen sind eng mit der Wiederholung und somit mit Schleifen verbunden.
 Auch wir können Schleifen an dieser Stelle nicht vermeiden, auch wenn wir sie noch nicht im Detail besprochen haben.
 
-Nehmen wir einmal an wir bekämen den Auftrag ein Programm zu schreiben, dass ``n`` ganze Zahlen aufaddiert, wobei wir weder ``n`` noch die Zahlen kennen.
+Nehmen wir einmal an wir bekämen den Auftrag ein Programm zu schreiben, welches ``n`` ganze Zahlen aufaddiert, wobei wir weder ``n`` noch die Zahlen kennen.
 Zugegeben, das Programm ist nicht gerade interessant aber aller Anfang ist klein.
 Eine variable Anzahl an Zahlen lässt sich hervorragend durch eine *Liste* modellieren.
 Wir gehen also davon aus, dass wir eine Liste ``numbers`` bekommen und daraus die Summe berechnen müssen.
@@ -25,12 +26,12 @@ result
 Der Code funktioniert auch noch wenn ``numbers`` mehr, weniger oder andere Zahlen enthält!
 Probieren Sie es aus.
 
-Wie alle Datenstrukturen in ``Python`` können Listen Werte mit unterschiedlichen Datentypen enthalten.
+Wie alle Datenstrukturen in ``Python``, können Listen Werte mit unterschiedlichen Datentypen enthalten.
 
 mylist = [1,2,3,'a','b','c',1.0,2.0,3.0]
 mylist
 
-Listen können selbstverständlich andere Listen enthalten:
+Listen können selbstverständlich andere Listen (bzw. Datenstrukturen) enthalten:
 
 mylist = [['a','b','c'], 2, 3, [1, 2, 3]]
 mylist
@@ -47,6 +48,7 @@ numbers.append(2)
 numbers.append(3)
 numbers.append(4)
 numbers.append(5)
+numbers
 
 oder kürzer
 
@@ -61,9 +63,8 @@ Oder wir starten mit einer vollen Liste.
 numbers = [0, 1, 2, 3, 4, 5]
 numbers
 
-Für Fälle in denen wir eine Liste aus einer anderen Sequenz generieren gibt es eine sehr kompakte Schreibweise.
-``range(10)`` ist eine sog. lazy Sequenz, dahinter steckt eine Funktion, die immer wieder aufgerufen wird und die Zahl die sie zurückgibt immer um eins erhöht.
-Wir können diese Sequenz in eine Liste packen:
+Die *built-in* Funktion ``range()`` erzeugt einen sog. Zahlenbereich (engl. [Range](https://docs.python.org/3/library/stdtypes.html#typesseq-range)), welchen wir im Abschnitt [Bereich - range](sec-range) erörtern.
+Wir können diesen Bereich, der auch eine Sequenz ist, in eine Liste packen bzw. in eine Liste umwandeln:
 
 numbers = [i for i in range(10)]
 numbers
@@ -73,6 +74,7 @@ oder noch kürzer:
 numbers = list(range(10))
 numbers
 
+(sec-list-index)=
 ## Indexierung
 
 Wir können auf die Elemente einer Liste mit einem Index zugreifen.
@@ -219,6 +221,9 @@ $$Start + i \cdot 4.$$
 Diese Rechnung kann der Rechner sehr schnell durchführen und deshalb können wir auf Elemente einer Liste deren Index wir kennen extrem schnell zugreifen.
 
 Um dieses Konzept besser zu verstehen und herauszufinden wie sich *atomare* wie auch *zusammengesetzt Datentypen* verhalten, hilft oft nur eins: Ausprobieren!
+
+Im Kapitel [Speicher - alles ist eine Liste](sec-memory) erstellen wir unser eigenes Speichermanagementsystem durch ``Python``-Listen.
+Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers und wie es gelingt Listen voller **Adressen** zu verwalten.
 
 ## Der Unterschied zwischen + und +=
 

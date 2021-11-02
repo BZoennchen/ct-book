@@ -1,8 +1,8 @@
 # Ganze Zahlen - int
 
-Ganze Zahlen ``int`` ist ein *atomarer Datentyp* und verhält sich so wie wir es erwarten.
+Ganze Zahlen (engl. [Integer](https://docs.python.org/3/library/functions.html#int)) ``int`` ist ein *atomarer Datentyp* und verhält sich so wie wir es erwarten.
 
-Falls Sie bereits Programmierkenntnisse besitzen, so gibt es in ``Python`` eine Besonderheit: Ganze Zahlen können nicht überlaufen.
+Falls Sie bereits Programmierkenntnisse besitzen, so gibt es in ``Python`` jedoch eine Besonderheit: Ganze Zahlen können nicht überlaufen.
 Anders als Fließkommazahlen benötigen ganze Zahlen ``int`` in ``Python`` eine variable Anzahl an Bits.
 Anders ausgedrückt: Nicht jede Zahl benötigt die gleiche Anzahl an Bits im Speicher!
 Solange Ihr Speicher nicht komplett belegt ist, können Sie in ``Python`` somit mit sehr großen ganzen Zahlen rechnen.

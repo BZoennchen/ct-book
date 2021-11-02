@@ -15,7 +15,7 @@ kernelspec:
 
 Beginnen wir mit der Praxis und sehen uns an welche Datentypen uns ``Python`` bietet und was wir mit diesen anfangen können.
 Die von ``Python`` vorab definierten Datentypen nennt man *built-in Datentypen*.
-Wir werden in diesem Abschnitt nicht alle *built-in Datentypen* besprechen, sondern jene mit denen Sie die meiste Zeit zu tun haben.
+Wir werden in diesem Kapitel nicht alle *built-in Datentypen* besprechen, sondern jene mit denen Sie die meiste Zeit zu tun haben.
 Eine vollständige Liste der Datentypen finden Sie im Abschnitt [Built-in Datentypen](sec-built-in-data-types).
 
 Wir können die *built-in Datentypen* in weitere zwei Kategorien zerteilen:
@@ -26,7 +26,7 @@ Wir können die *built-in Datentypen* in weitere zwei Kategorien zerteilen:
 Haben Sie bereits Programmiererfahrung, so werden Sie *atomare Datentypen* als *primitive Datentypen* wahrnehmen, doch streng genommen gibt es in ``Python`` keine primitiven Datentypen.
 Dennoch verhalten sich *atomare Datentypen* ähnlich wie *primitive Datentypen*.
 
-*Atomare Datentypen* sind: Ganze Zahlen ``int``, Wahrheitswerte ``bool`` und Fließkommazahlen.
+*Atomare Datentypen* sind: Ganze Zahlen ``int``, Wahrheitswerte ``bool`` und Fließkommazahlen ``float``.
 *Zusammengesetzte Datentypen* sind: Zeichenketten ``str``, Listen ``list``, Tupel ``tuple``, Mengen ``set`` und Wörterbücher ``dict``.
 
 Den Datentyp einer Variable oder eines Wertes erfragen Sie mit der *built-in* Funktion ``type``.
@@ -46,8 +46,7 @@ Wird der **Wert** von keiner Variablen mehr adressiert, wird er zwar gelöscht, 
 
 Wir haben dieses Phänomen bereits im Abschnitt [Variablen](sec-variables) beobachtet.
 Wir hatten festgehalten, dass Veränderungen der einen Variablen keinen Effekt auf die **Adresse** bzw. *Identität* ``id`` anderer Variablen haben.
-Für *atomare Datentypen* gilt noch mehr.
-Ändern wir den **Wert** einer Variable vom Typ ``int``, ``bool`` oder ``float``, so kann diese Änderung nicht den **Wert** einer anderen Variablen verändern: 
+Für *atomare Datentypen* gilt noch mehr: Ändern wir den **Wert** einer Variable vom Typ ``int``, ``bool`` oder ``float``, so kann diese Änderung nicht den **Wert** einer anderen Variablen verändern: 
 
 ```{code-cell} python3
 x = 12313
@@ -73,13 +72,14 @@ print(f'id of z = {id(z)}')
 *Zusammengesetzte Datentypen* oder auch *Datenstrukturen* bestehen hingegen aus mehreren Werten.
 Sie strukturieren diese Werte.
 
-Anders als bei *atomaren Datentypen* lässt sich der Wert einer Datenstruktur verändern.
-Damit ist gemeint, dass es sich verändern lässt, was die Datenstruktur enthält.
+Anders als bei *atomaren Datentypen* lässt sich der **Wert** einer Datenstruktur verändern.
+Was die Datenstruktur enthält kann verändert werden.
 
 Nehmen wir einmal an, eine Datenstruktur enthält ausschließlich ganze Zahlen ``int``.
 Verändern wir nun eine dieser Zahlen, so wird der **Wert** im Speicher, der diese Zahl repräsentiert, nicht verändert -- es ist ja ein *atomarer Datentyp*!
-**Aber** es wird ein neuer Wert in den Speicher geschrieben und die Datenstruktur wird so manipuliert, dass Sie nun auf diesen neuen Wert zeigt.
+**Aber** es wird ein neuer Wert in den Speicher geschrieben und die Datenstruktur wird so manipuliert, dass einer ihrer Einträge nun auf diesen neuen Wert zeigt.
 
-Im Abschnitt [Wie funktioniert eine Liste](sec-list-and-memory) sehen wir uns an was genau im Speicher vor sich geht, wenn wir mit Listen arbeiten.
+Im Abschnitt [Listen und der Speicher](sec-list-and-memory) sehen wir uns an was genau im Speicher vor sich geht, wenn wir mit Listen arbeiten.
+Dies kann auf andere *Datenstrukturen* übertragen werden.
 
 

@@ -1,6 +1,7 @@
+(sec-set)=
 # Mengen - set
 
-``Python``-Mengen ``set`` ist eine ungeordnete Zusammenfassung (engl. collection) von Elementen, wobei jedes Element in der Menge einzigartig ist.
+``Python``-Mengen (engl. [Set](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)) ``set`` ist eine ungeordnete Zusammenfassung (engl. collection) von Elementen, wobei jedes Element in der Menge einzigartig ist.
 Damit repräsentieren ``Python``-Mengen ``set`` *endliche* Mengen im mathematischen Sinne.
 Endlich deshalb, weil die Elemente von ``Python``-Mengen explizit im Speicher liegen und wir nur endlich viel Arbeitsspeicher zur Verfügung haben.
 
