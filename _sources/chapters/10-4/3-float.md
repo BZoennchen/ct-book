@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-float)=
 # Fließkommazahlen - float
 
 Zunächst ist zu sagen, dass Sie für Fließkommazahlen (engl. [Floating Point Number](https://docs.python.org/3/library/functions.html#float)) nicht das Komma ``,`` sondern den englischsprachigen Punkt ``.`` verwenden.
