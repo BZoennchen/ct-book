@@ -28,7 +28,12 @@ print(type(3.1))
 ## Atomare Datentypen 
 
 Eine wesentlich Eigenschaft von *atomaren Datentypen* ist, dass der **Wert** einer Variable eines *atomaren Datentyps* **unverändert** im Speicher liegt.
-Wird der **Wert** von keiner Variablen mehr adressiert, wird er zwar gelöscht, um den Speicher wieder freizugeben, doch kann er nicht verändert werden solange eine Variable den Wert noch adressiert.
+Wird der **Wert** von keiner Variablen mehr adressiert, wird er (von [Garbage Collector](def-garbage-collector)) zwar gelöscht, um den Speicher wieder freizugeben, doch kann er nicht verändert werden solange eine Variable den Wert noch adressiert.
+
+```{admonition} Unveränderliche atomare Datentypen
+:class: important
+Atomare Datentypen sind *unveränderlich*.
+```
 
 Wir haben dieses Phänomen bereits im Abschnitt [Variablen](sec-variables) beobachtet.
 Wir hatten festgehalten, dass Veränderungen der einen Variablen keinen Effekt auf die **Adresse** bzw. *Identität* ``id`` anderer Variablen haben.
@@ -49,7 +54,10 @@ print(f'id of x = {id(x)}')
 print(f'value of z = {z}')
 print(f'id of z = {id(z)}')
 
-*Atomare Datentypen* bestehen nur aus einem *atomaren* **Wert**, den wir nicht weiter zerteilen können.
+```{admonition} Atomare Datentypen
+:class: important
+Atomare Datentypen bestehen aus einem *atomaren* Wert, den wir nicht weiter zerteilen können.
+```
 
 ## Zusammengesetzte Datentypen
 
@@ -57,7 +65,7 @@ print(f'id of z = {id(z)}')
 Sie strukturieren diese Werte.
 
 Anders als bei *atomaren Datentypen* lässt sich der **Wert** einer Datenstruktur verändern.
-Was die Datenstruktur enthält kann verändert werden.
+Was die Datenstruktur enthält kann in der Regel verändert werden.
 
 Nehmen wir einmal an, eine Datenstruktur enthält ausschließlich ganze Zahlen ``int``.
 Verändern wir nun eine dieser Zahlen, so wird der **Wert** im Speicher, der diese Zahl repräsentiert, nicht verändert -- es ist ja ein *atomarer Datentyp*!
@@ -65,3 +73,9 @@ Verändern wir nun eine dieser Zahlen, so wird der **Wert** im Speicher, der die
 
 Im Abschnitt [Listen und der Speicher](sec-list-and-memory) sehen wir uns an was genau im Speicher vor sich geht, wenn wir mit Listen arbeiten.
 Dies kann auf andere *Datenstrukturen* übertragen werden.
+
+```{admonition} Datenstrukturen
+:class: important
+Datenstrukturen strukturieren andere Werte. 
+Diese Werte können wiederum Datenstrukturen oder atomare Datentypen sein.
+```

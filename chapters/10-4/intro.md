@@ -33,11 +33,11 @@ char
 
 so wird im Speicher irgendwo der **Wert** als binärer ASCII-Code stehen:
 
-$$01100001_2$$
+$$01100001_2.$$
 
 Würde man diese Bitfolge als ganze Zahl interpretieren wäre dies gleich
 
-$$2^0 + 2^5 + 2^6 = 97_{10}$$
+$$2^0 + 2^5 + 2^6 = 97_{10}.$$
 
 Warum gibt uns der Interpreter aber ``'a'`` und nicht ``97`` aus?
 Und weshalb kommt es bei folgender Addition
@@ -65,10 +65,10 @@ Und die ``+``-Operation ist für Kombination von Datentypen ``int`` und ``str`` 
 Das ist allerdings eine unbefriedigende Antwort, denn wir wissen noch nicht wie Datentypen realisiert werden.
 Wie ist der Zusammenhang zwischen den Programmiersprachen, welche alle auf Datentypen basieren, und den [Übersetzern](def-compiler) oder [Interpretern](def-interpreter) und der Computerhardware?
 
-In diesem Kapitel und nächstem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
+In diesem und nächstem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
 Dies beinhaltet Theorie und Praxis.
 Um in ``Python`` mit den Datentypen praktisch umgehen zu können reicht Ihnen dieses Kapitel.
-Im nächsten Kapitel [Datentypen (Fortsetzung)](sec-data-types-advanced) werden wir hingegen genauer untersuchen weshalb es Datentypen gibt und welchen Einfluss diese im Detail haben.
+Im nächsten Kapitel [Datentypen (Fortsetzung)](sec-data-types-advanced) werden wir hingegen genauer untersuchen, weshalb es Datentypen gibt und welchen Einfluss diese im Detail haben.
 Möchten Sie jedoch ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich der Blick in das nächste Kapitel [Datentypen (Fortsetzung)](sec-data-types-advanced).
 
 Wir versuchen folgende Fragen zu beantworten:

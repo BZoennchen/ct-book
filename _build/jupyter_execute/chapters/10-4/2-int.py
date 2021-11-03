@@ -11,8 +11,13 @@ large_number = 10**100
 print(type(large_number))
 print(large_number)
 
+```{admonition} Python's und der Überlauf
+:class: important
+In ``Python`` gibt es keinen *Überlauf* für ganze Zahlen ``int``.
+```
+
 Da wir bei mathematischen Operationen wie ``+``, ``-``, ``*``, ``/``, ``//`` und ``**`` ganze Zahlen ``int`` und Fließkommazahlen ``float`` vermischen können, müssen wir darauf achten welcher Datentyp am Ende herauskommt.
-Sobald eine Fließkommazahl teil der Berechnung ist, ist das Ergebnis vom Typ ``float``.
+Sobald eine Fließkommazahl ein Teil der Berechnung ist, ist das Ergebnis vom Typ ``float``.
 
 x = 3 * 1.0     # int * float -> float   
 print(type(x))

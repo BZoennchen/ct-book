@@ -10,12 +10,15 @@ kernelspec:
   name: python3
 ---
 
+(sec-string)=
 # Zeichenketten - str
 
-Eine Zeichenkette (engl. [String](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)) ``str`` ist eine *Sequenz* von Zeichen.
-Wie ein Tupel ist eine Zeichenkette **unveränderlich** (engl. **immutable**). 
+Eine Zeichenkette (engl. [String](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)) ``str`` ist eine [Sequenzen](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) von Zeichen.
+Wie ein [Tupel](sec-tuple), ist auch eine Zeichenkette **unveränderlich** (engl. immutable).
+So kann eine Zeichenkette als ein besonderes Tupel, welches nur Zeichen enthält, gedeutet werden.
+
 ``Python`` bietet uns viele nützliche Funktionen um auf Zeichenketten zu operieren.
-Zeichenketten können durch einfache ``'text'`` oder doppelte ``"text"`` Anführungszeichen umschlossen sein.
+Zeichenketten können durch einfache oder doppelte Anführungszeichen umschlossen sein.
 
 ```{code-cell} python3
 text = 'Hello World!'
@@ -29,10 +32,11 @@ text = 'Hello World!'
 print(text)
 ```
 
-Um Variablen oder Werte anderer Datentypen mit ``print`` auszugeben mussen wir diese immer mit der *built-in Funktion* ``str`` in eine Zeichenkette umwandeln.
-Da dies so häufig gemacht werden musst, haben die Entwickler\*innen von ``Python`` sich etwas einfallen lassen.
-Stellen wir vor unsere Zeichenkette ein ``f`` so handelt es sich um eine formatierte Zeichenkette.
-Die hilft uns Variablen oder Werte direkt in diese formatierte Zeichenkette einzufügen:
+Um Variablen oder Werte anderer Datentypen mit ``print`` auszugeben, mussten wir diese immer mit der *built-in Funktion* ``str`` in eine Zeichenkette umwandeln.
+Da dies so häufig gemacht werden muss, haben die Entwickler\*innen von ``Python`` sich etwas einfallen lassen.
+Stellen wir vor unsere Zeichenkette ein ``f`` so handelt es sich um eine sog. *formatierte Zeichenkette*.
+Die hilft uns Variablen oder Werte direkt in diese formatierte Zeichenkette einzufügen.
+Vergleichen Sie folgenden Code:
 
 ```{code-cell} python3
 x = 5
@@ -83,7 +87,7 @@ print('The correct' + empty_str + empty_str + empty_str + ' answer is 42!')
 'Hello' == 'Hello' + empty_str
 ```
 
-Zeichenketten lassen sich wie Listen und Tupel indexieren und mit der *built-in Funktion* ``len``, kann man die Länge einer Zeichenkette erfragen.
+Zeichenketten lassen sich wie Listen und Tupel [indexieren](sec-list-index) und mit der *built-in Funktion* ``len``, kann man die Länge einer Zeichenkette erfragen.
 Folgender Code gibt jedes einzelne Zeichen einer Zeichenkette aus.
 
 ```{code-cell} python3
@@ -126,7 +130,7 @@ print(text)
 print(reverse_text)
 ```
 
-Wie bei Listen und Tupeln können wir auch einen Teil einer Zeichenkette ausschneiden (indexieren).
+Wie bei Listen und Tupeln können wir auch einen Teil einer Zeichenkette ausschneiden ([indexieren](sec-list-index)).
 
 ```{code-cell} python3
 text = 'Zeichensalat'
@@ -142,7 +146,7 @@ Dabei ist ``text[2:]`` eine Kurzschreibweise für ``text[2:len(text)]`` und ``te
 
 Hin und wieder kann es vorkommen, dass Sie Zeichen schreiben möchten, welche bereits in ``Python`` mit einer Bedeutung belegt sind.
 Wie schreiben wir beispielsweise ``Anna sagte: 'Wie geht es dir'``?
-Dafür müssen wir das ``'``-Zeichen mit einem ``\`` maskieren:
+Dafür müssen wir das ``'``-Zeichen mit einem ``\`` *maskieren*:
 
 ```{code-cell} python3
 print('Anna sagte: \'Wie geht es dir\'')
@@ -159,7 +163,7 @@ print(text)
 print(text_upper)
 ```
 
-Wir die Vorkommnisse eines Zeichen in einer Zeichenkette zählen oder ganze Zeichenfolgen ersetzten:
+Wir können die Vorkommnisse eines Zeichen in einer Zeichenkette zählen oder ganze Zeichenfolgen ersetzten:
 
 ```{code-cell} python3
 text = 'Zeichensalat'

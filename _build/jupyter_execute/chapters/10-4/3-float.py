@@ -11,7 +11,7 @@ large_float = 10000000.0
 print(small_float)
 print(large_float)
 
-``1e-10`` bedeutet hierbei $1 \cdot 10^{-10}$ und diese Darstellung liefert uns bereits Hinweise auf die Antwort.
+``1e-10`` bedeutet hierbei $1.0 \cdot 10^{-10}$ und diese Darstellung liefert uns bereits Hinweise auf die Antwort.
 
 Physiker\*innen kennen das Problem der Zahlen aus sehr unterschiedlichen Skalen.
 Die Lichtgeschwindigkeit in km/h ist eine sehr große Zahl, wohingegen die Ladung eines Elektrons in Coulomb eine sehr kleine Zahl ist.
@@ -46,9 +46,14 @@ Weshalb folgende Rechnung nicht 0.3 ergibt, erklärt sich durch diese **Annäher
 
 0.2 + 0.1
 
-Denn 
+Denn es gilt:
 
 $$0.1_{10} = 0.0001100110011 \ldots_2.$$
+
+```{admonition} Ungenauigkeit der Fließkommazahlen
+:class: important
+Fließkommazahlen ``float`` sind eine gute *Annäherung* des echten Werts.
+```
 
 Dieses Verhalten kann nicht nur zu kleinen Ungenauigkeiten, sondern zu großen Fehlern führen.
 Folgender Code subtrahiert 20 mal $1.0 \cdot 10^{-14}$ von $1.0 \cdot 10^{10}$.
@@ -80,3 +85,9 @@ print(f'x = {x} after multiplication')
 Obiger Code liefert das korrekte Ergebnis von: 
 
 $$(1.0 \cdot 10^{10}) \cdot (1.0 \cdot 10^{-14}) = 1.0 \cdot 10^{10-14} = 1.0 \cdot 10^{-4} = 0.0001.$$
+
+```{admonition} Ungenauigkeit der Fließkommazahlen
+:class: warning
+Prüfen Sie Fließkommazahlen niemals auf Gleichheit ``==``.
+Verwenden Sie stattdessen immer einen kleinen Bereich in dem die Zahl liegen sollte.
+```

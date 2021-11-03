@@ -518,7 +518,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-range.html">
-     4.10. Bereich - range
+     4.10. Zahlenbereich - range
     </a>
    </li>
    <li class="toctree-l2">
@@ -726,9 +726,9 @@
   <div class="section" id="wahrheitswerte-bool">
 <h1><span class="section-number">4.4. </span>Wahrheitswerte - bool<a class="headerlink" href="#wahrheitswerte-bool" title="Permalink to this headline">¶</a></h1>
 <p>Ein Wahrheitswert (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#truth-value-testing">Boolean</a>) <code class="docutils literal notranslate"><span class="pre">bool</span></code> kann, genau wie ein <a class="reference internal" href="../06/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a>, einen von zwei Wahrheitswerten <code class="docutils literal notranslate"><span class="pre">True</span></code> (1) oder <code class="docutils literal notranslate"><span class="pre">False</span></code> (0) annehmen.
-<code class="docutils literal notranslate"><span class="pre">True</span></code> bedeutet wahr und <code class="docutils literal notranslate"><span class="pre">False</span></code> falsch.
-<code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> verwenden wir sehr selten explizit.
-Viel häufiger wird ein logischer Ausdruck, nach <em>Auswertung</em> entweder <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> ist.</p>
+<code class="docutils literal notranslate"><span class="pre">True</span></code> bedeutet wahr und <code class="docutils literal notranslate"><span class="pre">False</span></code> falsch.</p>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> verwenden wir sehr selten explizit.
+Viel häufiger wird ein logischer Ausdruck, nach <em>Auswertung</em> entweder <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">9</span>
@@ -746,7 +746,16 @@ Viel häufiger wird ein logischer Ausdruck, nach <em>Auswertung</em> entweder <c
 <p>In diesem Beispiel verwenden wir einen <a class="reference internal" href="../10-3/2-expressions.html#sec-python-operator-compare"><span class="std std-ref">Vergleichsoperator</span></a>, der den Ausdruck <span class="math notranslate nohighlight">\(x &lt; 10\)</span> zu <code class="docutils literal notranslate"><span class="pre">True</span></code> auswertet, da <span class="math notranslate nohighlight">\(x = 9 &lt; 10\)</span> gilt.
 <em>Boolsche</em> bzw. <em>logische Ausdrücke</em> lassen sich durch <a class="reference internal" href="../10-3/2-expressions.html#sec-logic-expressions"><span class="std std-ref">logische Operatoren</span></a> verknüpfen.</p>
 <p><em>Boolsche Ausdrücke</em> und damit Wahrheitswerte <code class="docutils literal notranslate"><span class="pre">bool</span></code> benötigen wir für die Steuerung unseres Programmablaufs.
-<em>Kontrollstrukturen</em> führen, je nach Auswertung eines <em>boolschen Ausdrucks</em>, unterschiedliche Code-Teile aus.</p>
+<span class="xref myst">Kontrollstrukturen</span> führen, je nach Auswertung eines <em>boolschen Ausdrucks</em>, unterschiedliche Code-Teile aus.</p>
+<p>Folgender Code führt 10 Mal die Codezeile</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>und einmal die Codezeile</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> not is less than 10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
@@ -754,6 +763,50 @@ Viel häufiger wird ein logischer Ausdruck, nach <em>Auswertung</em> entweder <c
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> not is less than 10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 is less than 10
+1 is less than 10
+2 is less than 10
+3 is less than 10
+4 is less than 10
+5 is less than 10
+6 is less than 10
+7 is less than 10
+8 is less than 10
+9 is less than 10
+10 not is less than 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Würden wir die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife und die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingung <em>ausbreiten</em>, sähe der Code wie folgt aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> is less than 10&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> not is less than 10&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

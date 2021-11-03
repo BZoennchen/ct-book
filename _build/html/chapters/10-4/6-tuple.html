@@ -516,7 +516,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-range.html">
-     4.10. Bereich - range
+     4.10. Zahlenbereich - range
     </a>
    </li>
    <li class="toctree-l2">
@@ -722,8 +722,8 @@
               <div>
                 
   <div class="section" id="tupel-tuple">
-<h1><span class="section-number">4.6. </span>Tupel - tuple<a class="headerlink" href="#tupel-tuple" title="Permalink to this headline">¶</a></h1>
-<p>Listen und <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple">Tupel</a> (wie auch Zeichenketten, und <code class="docutils literal notranslate"><span class="pre">range</span></code>) sind allesamt <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">Sequenzen</a> und haben dadurch sehr ähnliche Eigenschaften.
+<span id="sec-tuple"></span><h1><span class="section-number">4.6. </span>Tupel - tuple<a class="headerlink" href="#tupel-tuple" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="5-list.html#sec-list"><span class="std std-ref">Listen</span></a> und <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple">Tupel</a> <code class="docutils literal notranslate"><span class="pre">tuple</span></code> (wie auch <a class="reference internal" href="7-string.html#sec-string"><span class="std std-ref">Zeichenketten</span></a>, und <a class="reference internal" href="10-range.html#sec-range"><span class="std std-ref">Zahlenbereiche</span></a>) sind allesamt <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">Sequenzen</a> und haben dadurch sehr ähnliche Eigenschaften.
 Einzig bei der Erstellung verwenden wir statt der eckigen die runden Klammern:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -738,7 +738,7 @@ Einzig bei der Erstellung verwenden wir statt der eckigen die runden Klammern:</
 </div>
 </div>
 </div>
-<p>Die Indexierung ist identisch.</p>
+<p>Die Indexierung ist identisch zur <a class="reference internal" href="5-list.html#sec-list-index"><span class="std std-ref">Indexierung von Listen</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -752,8 +752,12 @@ Einzig bei der Erstellung verwenden wir statt der eckigen die runden Klammern:</
 </div>
 </div>
 </div>
-<p>Der große Unterschied lieft in der Veränderbarkeit, denn Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind <strong>unveränderlich</strong> (engl. <strong>immutable</strong>)!
-Aber Vorsicht ist geboten, denn das bedeutet nicht, dass wir ein Tupel überhaupt nicht verändern können.
+<p>Der große Unterschied lieft in der Veränderbarkeit, denn Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind <strong>unveränderlich</strong> (engl. <strong>immutable</strong>)!</p>
+<div class="important admonition">
+<p class="admonition-title">Unveränderlichkeit</p>
+<p>Im Gegensatz zu Listen sind Tupel <em>unveränderliche</em> Datenstrukturen.</p>
+</div>
+<p>Aber Vorsicht ist geboten, denn das bedeutet nicht, dass wir ein Tupel überhaupt nicht verändern können.
 Was wir jedoch nicht verändern können sind die <strong>Adressen</strong> bzw. <code class="docutils literal notranslate"><span class="pre">id</span></code>s seiner Elemente!</p>
 <p>Folgender Code führt zu einem Fehler:</p>
 <div class="cell tag_raises-exception docutils container">
@@ -790,9 +794,8 @@ Was wir jedoch nicht verändern können sind die <strong>Adressen</strong> bzw. 
 </div>
 </div>
 </div>
-<p>Tupel werden oft verwendet wenn wir eine Ansammlung von heterogenen Datentypen zusammenfassen wollen und wir explizit ausdrücken bzw. sicher gehen wollen, dass dieses Tupel nicht verändert wird.
-Zum Beispiel ein Tupel was das Alphabet repräsentiert.
-Dieses wird sich und soll sich auch nicht verändern.</p>
+<p>Tupel werden oft verwendet wenn wir eine Ansammlung von heterogenen Datentypen zusammenfassen wollen, und wir explizit ausdrücken bzw. sicher gehen wollen, dass dieses Tupel nicht verändert wird.</p>
+<p>Um beispielsweise das sich nicht ändernde Alphabet zu modellieren, eignet sich ein Tupel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span>
@@ -897,7 +900,7 @@ packing = (1, 2, 3)
 </div>
 </div>
 <p>Ziemlich cool, wie wir finden.
-Das ist insbesondere praktisch wenn Sie eine Funktion schreiben möchten, die mehr als ein Rückgabewert hat:</p>
+Packing bzw. unpacking ist insbesondere praktisch, wenn Sie eine Funktion schreiben möchten, die mehr als ein Rückgabewert hat:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
@@ -905,7 +908,6 @@ Das ist insbesondere praktisch wenn Sie eine Funktion schreiben möchten, die me
     <span class="n">r</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
     <span class="n">g</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-
     <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span>
 
 <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">random_rgb_color</span><span class="p">()</span>
@@ -914,7 +916,7 @@ Das ist insbesondere praktisch wenn Sie eine Funktion schreiben möchten, die me
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>red = 124, green = 122, blue = 72
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>red = 172, green = 80, blue = 143
 </pre></div>
 </div>
 </div>
@@ -955,9 +957,9 @@ Der Speicherbereich des ursprünglichen Tupels bleibt unverändert, stattdessen 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id before += 4571844832
-id after += 4563090672
-id after += of the original 4571844832
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id before += 4464308112
+id after += 4464155888
+id after += of the original 4464308112
 numbers: (1, 2, 3, 4, 5, 6, 7, 8)
 numbers_copy: (1, 2, 3, 4, 5)
 </pre></div>

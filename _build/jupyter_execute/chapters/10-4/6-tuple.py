@@ -1,17 +1,24 @@
+(sec-tuple)=
 # Tupel - tuple
 
-Listen und [Tupel](https://docs.python.org/3/library/stdtypes.html#tuple) (wie auch Zeichenketten, und ``range``) sind allesamt [Sequenzen](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) und haben dadurch sehr ähnliche Eigenschaften.
+[Listen](sec-list) und [Tupel](https://docs.python.org/3/library/stdtypes.html#tuple) ``tuple`` (wie auch [Zeichenketten](sec-string), und [Zahlenbereiche](sec-range)) sind allesamt [Sequenzen](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) und haben dadurch sehr ähnliche Eigenschaften.
 Einzig bei der Erstellung verwenden wir statt der eckigen die runden Klammern:
 
 numbers = (1, 2, 3, 4, 5)
 numbers
 
-Die Indexierung ist identisch.
+Die Indexierung ist identisch zur [Indexierung von Listen](sec-list-index).
 
 numbers = (1, 2, 3, 4, 5)
 print(numbers[2:4])
 
 Der große Unterschied lieft in der Veränderbarkeit, denn Tupel ``tuple`` sind **unveränderlich** (engl. **immutable**)!
+
+```{admonition} Unveränderlichkeit
+:class: important
+Im Gegensatz zu Listen sind Tupel *unveränderliche* Datenstrukturen.
+```
+
 Aber Vorsicht ist geboten, denn das bedeutet nicht, dass wir ein Tupel überhaupt nicht verändern können.
 Was wir jedoch nicht verändern können sind die **Adressen** bzw. ``id``s seiner Elemente!
 
@@ -26,9 +33,9 @@ numbers = (1, 2, [3, 4, 5])
 numbers[2][0] = 'a'
 numbers
 
-Tupel werden oft verwendet wenn wir eine Ansammlung von heterogenen Datentypen zusammenfassen wollen und wir explizit ausdrücken bzw. sicher gehen wollen, dass dieses Tupel nicht verändert wird. 
-Zum Beispiel ein Tupel was das Alphabet repräsentiert.
-Dieses wird sich und soll sich auch nicht verändern.
+Tupel werden oft verwendet wenn wir eine Ansammlung von heterogenen Datentypen zusammenfassen wollen, und wir explizit ausdrücken bzw. sicher gehen wollen, dass dieses Tupel nicht verändert wird.
+
+Um beispielsweise das sich nicht ändernde Alphabet zu modellieren, eignet sich ein Tupel:
 
 alphabet = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
 alphabet
@@ -61,14 +68,13 @@ packing = x, y, z # packing
 print(f'packing = {packing}')
 
 Ziemlich cool, wie wir finden.
-Das ist insbesondere praktisch wenn Sie eine Funktion schreiben möchten, die mehr als ein Rückgabewert hat:
+Packing bzw. unpacking ist insbesondere praktisch, wenn Sie eine Funktion schreiben möchten, die mehr als ein Rückgabewert hat:
 
 import random as rnd
 def random_rgb_color():
     r = rnd.randint(0, 255)
     g = rnd.randint(0, 255)
     b = rnd.randint(0, 255)
-
     return r, g, b
 
 r, g, b = random_rgb_color()

@@ -110,7 +110,7 @@ Initialisierung und Zuweisung einer Variablen ``x`` und ``z``  mit dem Wert ``25
 ```{admonition} Gleichheit und Identität
 :name: warning-equality-and-identity
 :class: warning
-Ist die ``id`` (*Identität*) zweier Variablen gleich, so ist auch deren Wert identisch.
+Ist die ``id`` (*Identität*) bzw. die **Adresse** zweier Variablen gleich, so ist auch deren Wert identisch.
 Jedoch kann der Wert der Variablen identisch sein und deren ``id`` (*Identität*) nicht.
 ```
 

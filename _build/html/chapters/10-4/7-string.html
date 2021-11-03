@@ -516,7 +516,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-range.html">
-     4.10. Bereich - range
+     4.10. Zahlenbereich - range
     </a>
    </li>
    <li class="toctree-l2">
@@ -722,11 +722,12 @@
               <div>
                 
   <div class="section" id="zeichenketten-str">
-<h1><span class="section-number">4.7. </span>Zeichenketten - str<a class="headerlink" href="#zeichenketten-str" title="Permalink to this headline">¶</a></h1>
-<p>Eine Zeichenkette (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">String</a>) <code class="docutils literal notranslate"><span class="pre">str</span></code> ist eine <em>Sequenz</em> von Zeichen.
-Wie ein Tupel ist eine Zeichenkette <strong>unveränderlich</strong> (engl. <strong>immutable</strong>).
-<code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet uns viele nützliche Funktionen um auf Zeichenketten zu operieren.
-Zeichenketten können durch einfache <code class="docutils literal notranslate"><span class="pre">'text'</span></code> oder doppelte <code class="docutils literal notranslate"><span class="pre">&quot;text&quot;</span></code> Anführungszeichen umschlossen sein.</p>
+<span id="sec-string"></span><h1><span class="section-number">4.7. </span>Zeichenketten - str<a class="headerlink" href="#zeichenketten-str" title="Permalink to this headline">¶</a></h1>
+<p>Eine Zeichenkette (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">String</a>) <code class="docutils literal notranslate"><span class="pre">str</span></code> ist eine <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">Sequenzen</a> von Zeichen.
+Wie ein <a class="reference internal" href="6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a>, ist auch eine Zeichenkette <strong>unveränderlich</strong> (engl. immutable).
+So kann eine Zeichenkette als ein besonderes Tupel, welches nur Zeichen enthält, gedeutet werden.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet uns viele nützliche Funktionen um auf Zeichenketten zu operieren.
+Zeichenketten können durch einfache oder doppelte Anführungszeichen umschlossen sein.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
@@ -749,10 +750,11 @@ Zeichenketten können durch einfache <code class="docutils literal notranslate">
 </div>
 </div>
 </div>
-<p>Um Variablen oder Werte anderer Datentypen mit <code class="docutils literal notranslate"><span class="pre">print</span></code> auszugeben mussen wir diese immer mit der <em>built-in Funktion</em> <code class="docutils literal notranslate"><span class="pre">str</span></code> in eine Zeichenkette umwandeln.
-Da dies so häufig gemacht werden musst, haben die Entwickler*innen von <code class="docutils literal notranslate"><span class="pre">Python</span></code> sich etwas einfallen lassen.
-Stellen wir vor unsere Zeichenkette ein <code class="docutils literal notranslate"><span class="pre">f</span></code> so handelt es sich um eine formatierte Zeichenkette.
-Die hilft uns Variablen oder Werte direkt in diese formatierte Zeichenkette einzufügen:</p>
+<p>Um Variablen oder Werte anderer Datentypen mit <code class="docutils literal notranslate"><span class="pre">print</span></code> auszugeben, mussten wir diese immer mit der <em>built-in Funktion</em> <code class="docutils literal notranslate"><span class="pre">str</span></code> in eine Zeichenkette umwandeln.
+Da dies so häufig gemacht werden muss, haben die Entwickler*innen von <code class="docutils literal notranslate"><span class="pre">Python</span></code> sich etwas einfallen lassen.
+Stellen wir vor unsere Zeichenkette ein <code class="docutils literal notranslate"><span class="pre">f</span></code> so handelt es sich um eine sog. <em>formatierte Zeichenkette</em>.
+Die hilft uns Variablen oder Werte direkt in diese formatierte Zeichenkette einzufügen.
+Vergleichen Sie folgenden Code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
@@ -846,7 +848,7 @@ The correct answer is 42!
 </div>
 </div>
 </div>
-<p>Zeichenketten lassen sich wie Listen und Tupel indexieren und mit der <em>built-in Funktion</em> <code class="docutils literal notranslate"><span class="pre">len</span></code>, kann man die Länge einer Zeichenkette erfragen.
+<p>Zeichenketten lassen sich wie Listen und Tupel <a class="reference internal" href="5-list.html#sec-list-index"><span class="std std-ref">indexieren</span></a> und mit der <em>built-in Funktion</em> <code class="docutils literal notranslate"><span class="pre">len</span></code>, kann man die Länge einer Zeichenkette erfragen.
 Folgender Code gibt jedes einzelne Zeichen einer Zeichenkette aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -940,7 +942,7 @@ talasnehcieZ
 </div>
 </div>
 </div>
-<p>Wie bei Listen und Tupeln können wir auch einen Teil einer Zeichenkette ausschneiden (indexieren).</p>
+<p>Wie bei Listen und Tupeln können wir auch einen Teil einer Zeichenkette ausschneiden (<a class="reference internal" href="5-list.html#sec-list-index"><span class="std std-ref">indexieren</span></a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Zeichensalat&#39;</span>
@@ -967,7 +969,7 @@ ichensalat
 <p>Dabei ist <code class="docutils literal notranslate"><span class="pre">text[2:]</span></code> eine Kurzschreibweise für <code class="docutils literal notranslate"><span class="pre">text[2:len(text)]</span></code> und <code class="docutils literal notranslate"><span class="pre">text[:2]</span></code> für <code class="docutils literal notranslate"><span class="pre">text[0:2]</span></code>.</p>
 <p>Hin und wieder kann es vorkommen, dass Sie Zeichen schreiben möchten, welche bereits in <code class="docutils literal notranslate"><span class="pre">Python</span></code> mit einer Bedeutung belegt sind.
 Wie schreiben wir beispielsweise <code class="docutils literal notranslate"><span class="pre">Anna</span> <span class="pre">sagte:</span> <span class="pre">'Wie</span> <span class="pre">geht</span> <span class="pre">es</span> <span class="pre">dir'</span></code>?
-Dafür müssen wir das <code class="docutils literal notranslate"><span class="pre">'</span></code>-Zeichen mit einem <code class="docutils literal notranslate"><span class="pre">\</span></code> maskieren:</p>
+Dafür müssen wir das <code class="docutils literal notranslate"><span class="pre">'</span></code>-Zeichen mit einem <code class="docutils literal notranslate"><span class="pre">\</span></code> <em>maskieren</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Anna sagte: </span><span class="se">\&#39;</span><span class="s1">Wie geht es dir</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -999,7 +1001,7 @@ ZEICHENSALAT
 </div>
 </div>
 </div>
-<p>Wir die Vorkommnisse eines Zeichen in einer Zeichenkette zählen oder ganze Zeichenfolgen ersetzten:</p>
+<p>Wir können die Vorkommnisse eines Zeichen in einer Zeichenkette zählen oder ganze Zeichenfolgen ersetzten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Zeichensalat&#39;</span>

@@ -1,5 +1,5 @@
 (sec-range)=
-# Bereich - range
+# Zahlenbereich - range
 
 Ein *Zahlenbereich* oder kurz *Bereich* (engl. [Range](https://docs.python.org/3/library/stdtypes.html#typesseq-range)) ``range`` ist eine **unveränderliche** *faule* (engl. *lazy*) Sequenz von **ganzen Zahlen**.
 In ``Python`` verwenden wir diese *Bereiche*, wenn wir einen bestimmten Programmcode eine bekannte und feste Anzahl an Durchläufen mithilfe der ``for``-Schleife durchlaufen wollen.

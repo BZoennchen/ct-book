@@ -978,9 +978,9 @@ free(mylist, memory, inuse)
 # 0 Bytes
 print(f"We allocated {len([e for e in inuse if e])} bytes")
 
-All das übernimmt in ``Python`` der sogenannte [Garbage Collector](garbage-collector).
+All das übernimmt in ``Python`` der sogenannte [Garbage Collector](def-garbage-collector).
 
-(garbage-collector)=
+(def-garbage-collector)=
 ```{admonition} Garbage Collector (Python)
 
 TODO
