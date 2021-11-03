@@ -65,8 +65,8 @@ z = x + y   # float + float -> float
 Für die erste Addition von ``x`` und ``y`` holt sich der Interpreter die Datentypinformation.
 Er weiß demnach, dass ``x + y`` bedeutet, dass eine Addition von zwei ganzen Zahlen auszuführen ist.
 Er wandelt den Code so um, dass die CPU angewiesen wird, zwei ganze Zahlen zu addieren.
-Es wird dabei der Addierer von ganzen Zahlen der CPU aktiviert.
-Für den zweiten Addition führt der Interpreter die gleiche Übersetzung durch, jedoch für zwei Fließkommazahlen.
+Der Addierer der CPU wird aktiv und addiert die beiden Zahlen.
+Für die zweiten Addition führt der Interpreter die gleiche Übersetzung durch, jedoch für zwei Fließkommazahlen.
 Eine **andere** Einheit, die Fließkomma-Einheit, der CPU wird aktiviert!
 
 ## Übungsaufgabe

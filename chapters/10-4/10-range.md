@@ -13,14 +13,15 @@ kernelspec:
 (sec-range)=
 # Zahlenbereich - range
 
-Ein *Zahlenbereich* oder kurz *Bereich* (engl. [Range](https://docs.python.org/3/library/stdtypes.html#typesseq-range)) ``range`` ist eine **unveränderliche** *faule* (engl. *lazy*) Sequenz von **ganzen Zahlen**.
+Ein *Zahlenbereich* oder kurz *Bereich* (engl. [Range](https://docs.python.org/3/library/stdtypes.html#typesseq-range)) ``range`` ist eine **unveränderliche** *faule* (engl. *lazy*) [Sequenzen](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) von **ganzen Zahlen**.
+
 In ``Python`` verwenden wir diese *Bereiche*, wenn wir einen bestimmten Programmcode eine bekannte und feste Anzahl an Durchläufen mithilfe der ``for``-Schleife durchlaufen wollen.
 *Faul* (engl. *lazy*) bedeutet, dass Werte erst dann erzeugt werden, wenn Sie gebraucht werden.
-Die Eigenschaft der *Faulheit* wurde mit **Python 3** eingeführt.
-
 Der Aufruf ``range(10)`` erzeugt einen *Zahlenbereich*, welcher die Zahlen $0, 1, \ldots 9$ enthält.
 Doch anders als eine Liste, liegen die ganzen Zahlen noch nicht im Speicher.
 Sie werden bei Zugriff auf den jeweiligen *Zahlenbereich* **berechnet**.
+
+Die Eigenschaft der *Faulheit* wurde mit **Python 3** eingeführt.
 
 ## Erstellung
 

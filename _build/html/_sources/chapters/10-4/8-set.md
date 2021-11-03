@@ -23,7 +23,12 @@ Anders als mathematische Tupel (durch die ``Python``-Tupel und den Listen motivi
 
 Von hier an meinen wir mit Mengen die ``Python``-Mengen ``set`` und sprechen ansonsten von mathematischen Mengen.
 
+## Motivation
+
 Mengen benutzten wir immer dann, wenn wir die Eigenschaft der Eindeutigkeit und Unordnung nutzten wollen.
+Dabei bezieht sich diese Eindeutigkeit auf die [Gleichheit](warning-equality-and-identity) und nicht auf die Identität.
+D.h. eine ``Python``-Menge enthält keine zwei Elemente ``x``, ``y`` für die ``x == y`` zu ``True`` ausgewertet wird.
+
 Es ist an dieser Stelle anzumerken, dass der Test 
 
 $$e \in M$$
@@ -32,11 +37,11 @@ für eine Menge deutlich weniger Rechenzeit benötigt als für eine Liste.
 Dies hängt natürlich von der Größe der Liste ``list`` ab, überraschenderweise jedoch nicht von der Größe der Menge ``set``.
 Befinden sich $n$ Elemente der Liste bzw. Menge so benötigen wir im schlechtesten Fall ca. $n$ Berechnungsschritte um festzustellen ob sich eine Element in der Liste befindet.
 Verwenden wir hingegen eine Menge, so benötigen wir nicht mehr als eine bestimmte konstante Anzahl an Schritten.
-In anderen Worten, der Test ist unabhängig von der Anzahl der Elemente die sich in der Menge befinden!
+In anderen Worten, die Laufzeit des Test ist (nahezu) unabhängig von der Anzahl der Elemente die sich in der Menge befinden!
 
 ## Erstellung
 
-Eine Menge erzeugen Sie ähnlich wie eine Liste.
+Eine Menge erzeugen Sie ähnlich wie eine Liste, allerdings verwenden wir die geschweiften Klammern:
 
 ```{code-cell} python3
 numbers = {0, 1, 2, 3, 4, 5, 0}
@@ -60,7 +65,7 @@ emptyset = set()
 emptyset
 ```
 
-erzeugen!
+erzeugen! ``{}`` erzeugt hingegen ein leeres [Wörterbuch](sec-dict).
 
 ## Indexierung?
 
@@ -138,9 +143,9 @@ print(a ^ b)
 print(a.symmetric_difference(b))
 ```
 
-$$(A \cup B) \setminus (A \cap B)$$
+$$(A \cup B) \setminus (A \cap B),$$
 
-Element in $A$ oder $B$ aber nicht in beiden, also $A$ und $B$ (entweder oder).
+d.h., Elemente in entweder $A$ oder $B$ jedoch keine Elemente die in $A$ und $B$ vorkommen (exklusives Oder).
 
 ## Veränderung
 
@@ -177,7 +182,7 @@ Was passiert allerdings wenn wir ``list2`` so verändern, dass sich ``list1 == l
 list2[0] = 1
 ```
 
-Nach dieser Codezeile befänden sich zwei identische Elemente in der Menge, was natürlich nicht sein darf.
+Nach dieser Codezeile befänden sich zwei gleiche Elemente in der Menge, was natürlich nicht sein darf.
 Die Menge müsste deshalb von dieser Änderung etwas mitbekommen und daraufhin sich selbst anpassen.
 Das würde die Implementierung einer Menge immens verkomplizieren und würde zu großen Problemen führen.
 Deshalb bekommt die Menge von dieser Änderung nichts mit und somit hätten wir den Salat.
@@ -199,9 +204,9 @@ numbers.remove(10) # remove non-existing element causes error
 print(numbers)
 ```
 
-Es gibt auch den Datentyp / Datenstrukturen ``frozenset``.
+Es gibt auch den Datentyp / die Datenstruktur ``frozenset``.
 Diese ist im Gegensatz zu ``set`` **unveränderlich**.
-Diese benötigen Sie wenn Ihre Menge weitere Mengen enthalten soll.
+Diese benötigen Sie, wenn Ihre Menge weitere Mengen enthalten soll.
 
 Wir können Mengen auch durch die Mengenoperationen verändern.
 Wie der ``+``-Operator auf Listen und Tupel, legen die oben beschriebenen Operatoren Kopien im Speicher an.
@@ -267,14 +272,17 @@ contains
 ```
 
 Genau dieses Durchsuchen versuchen Mengen zu verhindern.
+
 Ok, machen wir es uns ein wenig einfacher.
-Nehmen wir einmal an Sie möchten eine Menge von Zahlen haben und diese Menge auch verändern.
+Nehmen wir einmal an Sie möchten eine veränderliche Menge von ganzen Zahlen *modellieren*.
 Sie wissen jedoch, dass die Zahlen $k$ alle zwischen 100 und 130 liegen, genauer gesagt $100 \leq k < 130$.
-Wir könnten wir unter diesen Voraussetzungen eine Menge als Liste implementieren?
+Wie könnten wir unter diesen Voraussetzungen eine Menge als Liste implementieren?
 
 Wir wählen eine Liste die immer hundert Elemente enthält, sodass wir für eine gegebene Zahl $k$ den zugehörigen Listenindex
 
 $$i \leftarrow (k-100)$$
+
+sehr einfach berechnen können.
 
 Aber hatten wir nicht gesagt, dass eine Liste keine Lücken enthält?
 Wir können künstliche Lücken einfügen.
@@ -286,7 +294,7 @@ emptyset = [None for i in range(30)]
 emptyset
 ```
 
-Um eine Element ``k`` hinzuzufügen müssen wir
+Um ein Element ``k`` hinzuzufügen müssen wir
 
 1. seinen Index berechnen
 2. und es hinzufügen.
@@ -319,8 +327,8 @@ Sowohl das Hinzufügen als auch das Testen sind immens schnelle Operationen.
 Wir müssen nur eine arithmetische Berechnung durchführen und sind bereits am Ziel.
 
 Auf diesem Prinzip basieren Mengen ``set`` bzw. ``frozenset`` (und auch Wörterbücher ``dict``) in ``Python`` und anderen Programmiersprachen.
-Der Index wird abhängig von Element selbst berechnet.
-Eine Menge verwendet mehr Speicher als Ihre Elemente benötigen -- anders als Listen enthält enthält sie Lücken.
+Der Index wird abhängig vom Element selbst berechnet.
+Eine Menge verwendet bzw. verbraucht mehr Speicher als Ihre Elemente benötigen -- anders als Listen enthält sie 'Lücken'.
 Dadurch sind die Elemente im Speicher breit verteilt.
 
 Für ganze Zahlen in einem bestimmten Bereich ist das noch einfach, da die Funktion für die Berechnung des Index simpel ist.

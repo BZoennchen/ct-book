@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-int)=
 # Ganze Zahlen - int
 
 Ganze Zahlen (engl. [Integer](https://docs.python.org/3/library/functions.html#int)) ``int`` ist ein *atomarer Datentyp* und verhält sich so wie wir es erwarten.

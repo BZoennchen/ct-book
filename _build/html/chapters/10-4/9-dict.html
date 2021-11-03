@@ -726,8 +726,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indexierung">
-   4.9.2. Indexierung
+  <a class="reference internal nav-link" href="#zugriff">
+   4.9.2. Zugriff
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -757,7 +757,7 @@
               <div>
                 
   <div class="section" id="worterbucher-dict">
-<h1><span class="section-number">4.9. </span>Wörterbücher - dict<a class="headerlink" href="#worterbucher-dict" title="Permalink to this headline">¶</a></h1>
+<span id="sec-dict"></span><h1><span class="section-number">4.9. </span>Wörterbücher - dict<a class="headerlink" href="#worterbucher-dict" title="Permalink to this headline">¶</a></h1>
 <p>Die letzte <em>built-in</em> Datenstruktur, welche wir besprechen, sind die sogenannten Wörterbücher (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict">Dictionary</a>) <code class="docutils literal notranslate"><span class="pre">dict</span></code>.
 In anderen Programmiersprachen, wie z.B. <code class="docutils literal notranslate"><span class="pre">Java</span></code> spricht man stattdessen auch von <em>Hashtables</em> oder <em>Hashmaps</em>.
 Sie sind neben den <a class="reference internal" href="5-list.html#sec-list"><span class="std std-ref">Listen</span></a> <code class="docutils literal notranslate"><span class="pre">list</span></code> die zweitwichtigste Datenstruktur in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.
@@ -766,17 +766,17 @@ Zwar ist ihr Anwendungsgebiet ein anderes doch sind sie ähnlich wie <a class="r
 Wir können sie uns als zweispaltige Tabelle vorstellen.
 Eine Spalte beinhaltet die <strong>eindeutigen</strong> sog. <strong>Schlüssel</strong> <code class="docutils literal notranslate"><span class="pre">key</span></code>s und die andere Spalte enthält die sog. <strong>Werte</strong>  <code class="docutils literal notranslate"><span class="pre">value</span></code>s.
 Jede Zeile ist ein Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code> aus <code class="docutils literal notranslate"><span class="pre">key</span></code> und <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
-<p>Da die Schlüssel eindeutig sind, kann die Spalte aus <code class="docutils literal notranslate"><span class="pre">key</span></code>s als Menge <code class="docutils literal notranslate"><span class="pre">set</span></code> an <strong>Schlüsseln</strong> angesehen werden.
+<p>Da die Schlüssel im Sinne der <a class="reference internal" href="../10-3/1-variables.html#warning-equality-and-identity"><span class="std std-ref">Gleichheit</span></a> eindeutig sind, kann die Spalte aus <code class="docutils literal notranslate"><span class="pre">key</span></code>s als Menge <code class="docutils literal notranslate"><span class="pre">set</span></code> an <strong>Schlüsseln</strong> angesehen werden.
 Die <strong>Werte</strong> müssen hingegen nicht eindeutig sein.
 Sind Sie wie ich ein Freund der Mathematik, so realisiert ein Wörterbücher <code class="docutils literal notranslate"><span class="pre">dict</span></code> eine Funktion:</p>
 <div class="math notranslate nohighlight">
 \[f : K \rightarrow V,\]</div>
 <p>wobei <span class="math notranslate nohighlight">\(K\)</span> die endliche Menge der Schlüssel ist.
-Es kann durchaus zwei <strong>Schlüssel</strong> geben, welche den gleichen <strong>Wert</strong> <code class="docutils literal notranslate"><span class="pre">value</span></code> haben, doch müssen die Schlüssel eindeutig sein!</p>
+Es kann durchaus zwei <strong>Schlüssel</strong> geben, die auf den gleichen <strong>Wert</strong> <code class="docutils literal notranslate"><span class="pre">value</span></code> verweisen, doch müssen die Schlüssel eindeutig sein!</p>
 <p>Wie bei den Mengen, gilt für die <strong>Schlüssel</strong>, dass diese aus <strong>unveränderlichen</strong> Datentypen bestehen müssen.
 Das hat die gleichen Gründe wie in Abschnitt <a class="reference internal" href="8-set.html#sec-set"><span class="std std-ref">Mengen</span></a> angesprochen.
-Deshalb eigenen sich zum Beispiel Zahlen, Zeichenketten oder Tupel, die <strong>unveränderliche</strong> Datentypen enthalten, als Schlüssel.</p>
-<p>Wie bei Mengen können wir extrem schnell testen ob es einen bestimmten Eintrag im Wörterbücher für einen bestimmten Schlüssel gibt.
+Deshalb eigenen sich zum Beispiel <a class="reference internal" href="2-int.html#sec-int"><span class="std std-ref">Zahlen</span></a>, <a class="reference internal" href="7-string.html#sec-string"><span class="std std-ref">Zeichenketten</span></a>, <a class="reference internal" href="3-float.html#sec-float"><span class="std std-ref">Fließkommazahlen</span></a> oder <a class="reference internal" href="6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a> – die <strong>unveränderliche</strong> Datentypen enthalten – als Schlüssel.</p>
+<p>Identisch zu Mengen, können wir extrem schnell testen ob es einen bestimmten Eintrag im Wörterbücher für einen bestimmten Schlüssel gibt.
 Das folgt aus der Eigenschaft der <a class="reference internal" href="8-set.html#sec-set"><span class="std std-ref">Mengen</span></a>.
 Doch anders als bei Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code>, identifizieren wir damit nicht nur den Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> der Menge <span class="math notranslate nohighlight">\(K\)</span>, sondern auch dessen Wert <code class="docutils literal notranslate"><span class="pre">value</span></code> aus <span class="math notranslate nohighlight">\(V\)</span>.
 Wir nutzten die schnelle Adressierung bzw. den schnellen Zugriff um auf <strong>veränderliche</strong> Werte zugreifen zu können.</p>
@@ -811,7 +811,7 @@ Zum Beispiel könnten wir ein Wörterbuch <code class="docutils literal notransl
 </div>
 </div>
 </div>
-<p>Sofern Ihre Schlüssel Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> sind erlaubt uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> auch die Argumentschreibweise zu verwenden:</p>
+<p>Sofern Ihre Schlüssel Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> sind, erlaubt uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> auch die <em>Argumentschreibweise</em> zu verwenden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rectangle</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="s1">&#39;rectangle&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -826,8 +826,8 @@ Zum Beispiel könnten wir ein Wörterbuch <code class="docutils literal notransl
 </div>
 </div>
 </div>
-<div class="section" id="indexierung">
-<h2><span class="section-number">4.9.2. </span>Indexierung<a class="headerlink" href="#indexierung" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zugriff">
+<h2><span class="section-number">4.9.2. </span>Zugriff<a class="headerlink" href="#zugriff" title="Permalink to this headline">¶</a></h2>
 <p>Im Unterschied zu Mengen können wir auf die <strong>Werte</strong> <code class="docutils literal notranslate"><span class="pre">value</span></code> eines Wörterbuchs durch den passenden <strong>Schlüssel</strong> <code class="docutils literal notranslate"><span class="pre">key</span></code> zugreifen.
 Auch hierzu verwenden wir die eckigen Klammern.
 <code class="docutils literal notranslate"><span class="pre">dictionary[key]</span></code> ergibt den <code class="docutils literal notranslate"><span class="pre">value</span></code> für den Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> des Wörterbuchs.</p>
