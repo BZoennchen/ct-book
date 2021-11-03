@@ -516,7 +516,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-range.html">
-     4.10. Bereich - range
+     4.10. Zahlenbereich - range
     </a>
    </li>
    <li class="toctree-l2">
@@ -776,7 +776,11 @@ Dennoch verhalten sich <em>atomare Datentypen</em> ähnlich wie <em>primitive Da
 <div class="section" id="atomare-datentypen">
 <h2><span class="section-number">4.1.1. </span>Atomare Datentypen<a class="headerlink" href="#atomare-datentypen" title="Permalink to this headline">¶</a></h2>
 <p>Eine wesentlich Eigenschaft von <em>atomaren Datentypen</em> ist, dass der <strong>Wert</strong> einer Variable eines <em>atomaren Datentyps</em> <strong>unverändert</strong> im Speicher liegt.
-Wird der <strong>Wert</strong> von keiner Variablen mehr adressiert, wird er zwar gelöscht, um den Speicher wieder freizugeben, doch kann er nicht verändert werden solange eine Variable den Wert noch adressiert.</p>
+Wird der <strong>Wert</strong> von keiner Variablen mehr adressiert, wird er (von <a class="reference internal" href="../11/memory.html#def-garbage-collector"><span class="std std-ref">Garbage Collector</span></a>) zwar gelöscht, um den Speicher wieder freizugeben, doch kann er nicht verändert werden solange eine Variable den Wert noch adressiert.</p>
+<div class="important admonition">
+<p class="admonition-title">Unveränderliche atomare Datentypen</p>
+<p>Atomare Datentypen sind <em>unveränderlich</em>.</p>
+</div>
 <p>Wir haben dieses Phänomen bereits im Abschnitt <a class="reference internal" href="../10-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> beobachtet.
 Wir hatten festgehalten, dass Veränderungen der einen Variablen keinen Effekt auf die <strong>Adresse</strong> bzw. <em>Identität</em> <code class="docutils literal notranslate"><span class="pre">id</span></code> anderer Variablen haben.
 Für <em>atomare Datentypen</em> gilt noch mehr: Ändern wir den <strong>Wert</strong> einer Variable vom Typ <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> oder <code class="docutils literal notranslate"><span class="pre">float</span></code>, so kann diese Änderung nicht den <strong>Wert</strong> einer anderen Variablen verändern:</p>
@@ -801,31 +805,39 @@ Für <em>atomare Datentypen</em> gilt noch mehr: Ändern wir den <strong>Wert</s
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 12313
-id of x = 4387039472
+id of x = 4380838768
 value of z = 12313
-id of z = 4387039472
+id of z = 4380838768
 change value of x
 value of x = 11341
-id of x = 4387040432
+id of x = 4380839088
 value of z = 12313
-id of z = 4387039472
+id of z = 4380838768
 </pre></div>
 </div>
 </div>
 </div>
-<p><em>Atomare Datentypen</em> bestehen nur aus einem <em>atomaren</em> <strong>Wert</strong>, den wir nicht weiter zerteilen können.</p>
+<div class="important admonition">
+<p class="admonition-title">Atomare Datentypen</p>
+<p>Atomare Datentypen bestehen aus einem <em>atomaren</em> Wert, den wir nicht weiter zerteilen können.</p>
+</div>
 </div>
 <div class="section" id="zusammengesetzte-datentypen">
 <h2><span class="section-number">4.1.2. </span>Zusammengesetzte Datentypen<a class="headerlink" href="#zusammengesetzte-datentypen" title="Permalink to this headline">¶</a></h2>
 <p><em>Zusammengesetzte Datentypen</em> oder auch <em>Datenstrukturen</em> bestehen hingegen aus mehreren Werten.
 Sie strukturieren diese Werte.</p>
 <p>Anders als bei <em>atomaren Datentypen</em> lässt sich der <strong>Wert</strong> einer Datenstruktur verändern.
-Was die Datenstruktur enthält kann verändert werden.</p>
+Was die Datenstruktur enthält kann in der Regel verändert werden.</p>
 <p>Nehmen wir einmal an, eine Datenstruktur enthält ausschließlich ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>.
 Verändern wir nun eine dieser Zahlen, so wird der <strong>Wert</strong> im Speicher, der diese Zahl repräsentiert, nicht verändert – es ist ja ein <em>atomarer Datentyp</em>!
 <strong>Aber</strong> es wird ein neuer Wert in den Speicher geschrieben und die Datenstruktur wird so manipuliert, dass einer ihrer Einträge nun auf diesen neuen Wert zeigt.</p>
 <p>Im Abschnitt <a class="reference internal" href="5-list.html#sec-list-and-memory"><span class="std std-ref">Listen und der Speicher</span></a> sehen wir uns an was genau im Speicher vor sich geht, wenn wir mit Listen arbeiten.
 Dies kann auf andere <em>Datenstrukturen</em> übertragen werden.</p>
+<div class="important admonition">
+<p class="admonition-title">Datenstrukturen</p>
+<p>Datenstrukturen strukturieren andere Werte.
+Diese Werte können wiederum Datenstrukturen oder atomare Datentypen sein.</p>
+</div>
 </div>
 </div>
 

@@ -518,7 +518,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-range.html">
-     4.10. Bereich - range
+     4.10. Zahlenbereich - range
     </a>
    </li>
    <li class="toctree-l2">
@@ -745,7 +745,7 @@ Zum Beispiel können wir problemlos die Zahl <span class="math notranslate nohig
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">1e-10</span></code> bedeutet hierbei <span class="math notranslate nohighlight">\(1 \cdot 10^{-10}\)</span> und diese Darstellung liefert uns bereits Hinweise auf die Antwort.</p>
+<p><code class="docutils literal notranslate"><span class="pre">1e-10</span></code> bedeutet hierbei <span class="math notranslate nohighlight">\(1.0 \cdot 10^{-10}\)</span> und diese Darstellung liefert uns bereits Hinweise auf die Antwort.</p>
 <p>Physiker*innen kennen das Problem der Zahlen aus sehr unterschiedlichen Skalen.
 Die Lichtgeschwindigkeit in km/h ist eine sehr große Zahl, wohingegen die Ladung eines Elektrons in Coulomb eine sehr kleine Zahl ist.
 Physiker*innen möchten ebenfalls in einem riesigen Zahlenbereich rechnen und dabei Zahlen kompakt notieren können.
@@ -783,9 +783,13 @@ Demnach ist eine Fließkommazahl immer nur eine gute <strong>Annäherung</strong
 </div>
 </div>
 </div>
-<p>Denn</p>
+<p>Denn es gilt:</p>
 <div class="math notranslate nohighlight">
 \[0.1_{10} = 0.0001100110011 \ldots_2.\]</div>
+<div class="important admonition">
+<p class="admonition-title">Ungenauigkeit der Fließkommazahlen</p>
+<p>Fließkommazahlen <code class="docutils literal notranslate"><span class="pre">float</span></code> sind eine gute <em>Annäherung</em> des echten Werts.</p>
+</div>
 <p>Dieses Verhalten kann nicht nur zu kleinen Ungenauigkeiten, sondern zu großen Fehlern führen.
 Folgender Code subtrahiert 20 mal <span class="math notranslate nohighlight">\(1.0 \cdot 10^{-14}\)</span> von <span class="math notranslate nohighlight">\(1.0 \cdot 10^{10}\)</span>.
 Doch verändern diese Subtraktionen <code class="docutils literal notranslate"><span class="pre">x</span></code> nicht.</p>
@@ -838,6 +842,11 @@ x = 0.0001 after multiplication
 <p>Obiger Code liefert das korrekte Ergebnis von:</p>
 <div class="math notranslate nohighlight">
 \[(1.0 \cdot 10^{10}) \cdot (1.0 \cdot 10^{-14}) = 1.0 \cdot 10^{10-14} = 1.0 \cdot 10^{-4} = 0.0001.\]</div>
+<div class="warning admonition">
+<p class="admonition-title">Ungenauigkeit der Fließkommazahlen</p>
+<p>Prüfen Sie Fließkommazahlen niemals auf Gleichheit <code class="docutils literal notranslate"><span class="pre">==</span></code>.
+Verwenden Sie stattdessen immer einen kleinen Bereich in dem die Zahl liegen sollte.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
