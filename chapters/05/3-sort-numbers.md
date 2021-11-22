@@ -55,8 +55,12 @@ def is_smaller(number1, number2):
 stack_sort([-11, 12, -6, 45, 1, 54, -55, 88])
 ```
 
+
+
 ```{code-cell} python3
-:tags: [hide-output]
+---
+tags: [output_scroll]
+---
 import random
 n_numbers = 1000
 

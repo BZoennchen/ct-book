@@ -55,7 +55,6 @@ print(f'value of z = {z}')
 print(f'id of z = {id(z)}')
 
 ```{admonition} Atomare Datentypen
-:class: important
 Atomare Datentypen bestehen aus einem *atomaren* Wert, den wir nicht weiter zerteilen können.
 ```
 
@@ -75,7 +74,6 @@ Im Abschnitt [Listen und der Speicher](sec-list-and-memory) sehen wir uns an was
 Dies kann auf andere *Datenstrukturen* übertragen werden.
 
 ```{admonition} Datenstrukturen
-:class: important
 Datenstrukturen strukturieren andere Werte. 
 Diese Werte können wiederum Datenstrukturen oder atomare Datentypen sein.
 ```

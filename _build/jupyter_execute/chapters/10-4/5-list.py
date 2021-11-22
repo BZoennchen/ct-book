@@ -432,7 +432,6 @@ Für Datenstrukturen gibt es nicht nur die eine *flache Kopie*.
 Stattdessen kommt es ganz darauf an, wie tief wir Kopien anlegen.
 
 ```{admonition} Tiefe Kopie einer Datenstruktur
-:class: important
 Wir sprechen nur dann von einer *tiefen Kopie* (engl. deep copy) ``y`` von einer *Datenstruktur* ``x``, wenn jede **Adresse** die ``y`` und deren *Kinder* enthalten zu den **Adressen** die ``x`` und dessen *Kinder* enthalten, verschieden sind.
 ```
 
@@ -440,7 +439,6 @@ Eine Datenstruktur ``z``, die sich in einer anderen Datenstruktur ``x`` befindet
 Alle *Kinder* von ``z`` sind wiederum auch *Kinder* von ``x`` und so weiter und so fort.
 
 ```{admonition} Flache Kopie einer Datenstruktur
-:class: important
 Wir sprechen nur dann von einer *flachen Kopie* (engl. shallow copy) ``y`` von einer *Datenstruktur* ``x``, wenn ``y`` keine *tiefe Kopie* ist.
 ```
 

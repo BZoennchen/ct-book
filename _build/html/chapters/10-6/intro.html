@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.1. Funktionen - Grundlagen" href="1-functions-basics.html" />
+    <link rel="next" title="6.1. Reinheit" href="1-purity.html" />
     <link rel="prev" title="5.5. Primitive Datentypen in Python?" href="../10-5/5-primitive-data-types.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -574,8 +574,33 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="1-functions-basics.html">
-     6.1. Funktionen - Grundlagen
+    <a class="reference internal" href="1-purity.html">
+     6.1. Reinheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-definition.html">
+     6.2. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-namespaces.html">
+     6.3. Namensräume und Sichtbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-lambdas.html">
+     6.4. Anonyme Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-nested-functions.html">
+     6.5. Umschlossene Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-first-class-functions.html">
+     6.6. First-Class-Funktion
     </a>
    </li>
   </ul>
@@ -663,7 +688,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/10-6/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/10-6/intro.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -685,6 +713,26 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/10-6/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -700,6 +748,175 @@
                 
   <div class="section" id="funktionen">
 <h1><span class="section-number">6. </span>Funktionen<a class="headerlink" href="#funktionen" title="Permalink to this headline">¶</a></h1>
+<p>Der Schlüssel zur Berechnung von Lösungen bzw. der Verarbeitung von Information ist die Wiederholung.
+Wo uns Schleifen erlauben eine bestimmte Folge von Arbeitsschritte <em>lokal</em> mehrfach auszuführen, erlauben es uns Funktionen eine Folge von Arbeitsschritte <em>global</em> auszuführen.
+In beiden Fällen ändern wir den Verlauf der Codeausführung, sodass dieser nicht mehr der Befehlsfolge (gelesen von oben nach unten) entspricht.</p>
+<p>Funktionen bündeln eine Folge von Arbeitsschritten / Befehlen.
+Es können Argumente definiert werden die als Input für die Funktionen dienen.
+Wir sind im Stande dieses Bündel irgendwo in unserem Code auszuführen (ohne es noch einmal niederzuschreiben).
+Wird die Funktion im Code aufgerufen, springen wir, bzw. die CPU durch ihren <a class="reference internal" href="../06/4-information-flow.html#def-program-counter"><span class="std std-ref">Befehlszähler</span></a>, an die Stelle der Funktion, das Bündel an Anweisungen wird ausgeführt und schlussendlich springen wir wieder an jene Stelle zurück, von der wir hergekommen sind.</p>
+<p>Durch wiederholtes und verschachteltes Aufrufen einer Funktion erzeugen wir eine Art von Wiederholung.
+Zum Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">successor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">successor</span><span class="p">(</span><span class="n">successor</span><span class="p">(</span><span class="n">successor</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Und sich ruft eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. <span class="xref myst">Rekursion</span> oder rekursiven Funktion.
+Zum Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">0</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">fib</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>233
+</pre></div>
+</div>
+</div>
+</div>
+<p>Viele sog. <em>built-in</em> (eingebaute) <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionen haben wir bereits verwendet.
+Sie werden uns mit der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Standard Bibliothek mitgeliefert.
+Zum Beispiel ist <code class="docutils literal notranslate"><span class="pre">type()</span></code> oder auch <code class="docutils literal notranslate"><span class="pre">len()</span></code> eine solche Funktion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>builtin_function_or_method
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">roboworld</span></code> ist beispielsweise ein Modul, d.h. eine Ansammlung von Funktionalität, welches wir nutzten können.
+Deutlich bekannter ist das Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, welches für numerische Berechnungen verwendet wird.
+Um eine Funktion eines Moduls aufzurufen stellen wir den Modulnamen, z.B. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> und einen Punkt <code class="docutils literal notranslate"><span class="pre">.</span></code> vorne an. Zuvor müssen wir das Modul geladen haben:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.01010101, 0.02020202, 0.03030303, 0.04040404,
+       0.05050505, 0.06060606, 0.07070707, 0.08080808, 0.09090909,
+       0.1010101 , 0.11111111, 0.12121212, 0.13131313, 0.14141414,
+       0.15151515, 0.16161616, 0.17171717, 0.18181818, 0.19191919,
+       0.2020202 , 0.21212121, 0.22222222, 0.23232323, 0.24242424,
+       0.25252525, 0.26262626, 0.27272727, 0.28282828, 0.29292929,
+       0.3030303 , 0.31313131, 0.32323232, 0.33333333, 0.34343434,
+       0.35353535, 0.36363636, 0.37373737, 0.38383838, 0.39393939,
+       0.4040404 , 0.41414141, 0.42424242, 0.43434343, 0.44444444,
+       0.45454545, 0.46464646, 0.47474747, 0.48484848, 0.49494949,
+       0.50505051, 0.51515152, 0.52525253, 0.53535354, 0.54545455,
+       0.55555556, 0.56565657, 0.57575758, 0.58585859, 0.5959596 ,
+       0.60606061, 0.61616162, 0.62626263, 0.63636364, 0.64646465,
+       0.65656566, 0.66666667, 0.67676768, 0.68686869, 0.6969697 ,
+       0.70707071, 0.71717172, 0.72727273, 0.73737374, 0.74747475,
+       0.75757576, 0.76767677, 0.77777778, 0.78787879, 0.7979798 ,
+       0.80808081, 0.81818182, 0.82828283, 0.83838384, 0.84848485,
+       0.85858586, 0.86868687, 0.87878788, 0.88888889, 0.8989899 ,
+       0.90909091, 0.91919192, 0.92929293, 0.93939394, 0.94949495,
+       0.95959596, 0.96969697, 0.97979798, 0.98989899, 1.        ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>function
+</pre></div>
+</div>
+</div>
+</div>
+<p>Funktionen sind ein Mittel um Codewiederholungen zu verhindern und auch ein Mittel um Code zu strukturieren und bestimmte Funktionalität zu kapseln.
+Stellen Sie sich vor wir müssten jedes Mal wenn wir etwas ausgeben wollen den Code der Funktion <code class="docutils literal notranslate"><span class="pre">print()</span></code> niederschreiben.
+Schnell würden unsere Programme lange und auch langweilig und unübersichtlich werden.</p>
+<p>Gute Funktionen zu schreiben kann sehr befriedigend für uns Computational Thinker*innen sein.
+Wir lösen damit oft ein Teilproblem und kommen der gesamten Lösung näher.
+Mit ein wenig Erfahrung können wir sogar Probleme lösen indem wir davon ausgehen, ein Teilproblem hätten wir bereits gelöst – auch wenn dies nicht der Fall ist.</p>
+<p>Wie ist das gemeint?
+Nun, wir wollen zum Beispiel eine Funktion schreiben, welche uns die ersten <code class="docutils literal notranslate"><span class="pre">n</span></code> Primzahlen berechnet und in eine Liste packt.
+Wir gehen einfach davon aus es gäbe eine Funktion <code class="docutils literal notranslate"><span class="pre">is_prime(k)</span></code> die prüft ob <code class="docutils literal notranslate"><span class="pre">k</span></code> eine Primzahl ist oder nicht.
+Unter dieser Annahme schreiben wir unsere Funktion <code class="docutils literal notranslate"><span class="pre">prime_list(n)</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">prime_list</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">primelist</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">primelist</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+      <span class="n">primelist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">primelist</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nachdem wir uns um die Generierung der Liste gekümmert haben, widmen wir uns der Funktion <code class="docutils literal notranslate"><span class="pre">is_prime(k)</span></code>.
+Oder andere Entwickler*innen, die sich besser mit dem Problem auskennen, lösen es.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+  <span class="c1"># a really stupid prime check</span>
+  <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">False</span>
+  <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">True</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">k</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+  <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">prime_list</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">primelist</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">primelist</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+      <span class="n">primelist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">primelist</span>
+
+<span class="n">prime_list</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
+</pre></div>
+</div>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -730,7 +947,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../10-5/5-primitive-data-types.html" title="previous page"><span class="section-number">5.5. </span>Primitive Datentypen in Python?</a>
-    <a class='right-next' id="next-link" href="1-functions-basics.html" title="next page"><span class="section-number">6.1. </span>Funktionen - Grundlagen</a>
+    <a class='right-next' id="next-link" href="1-purity.html" title="next page"><span class="section-number">6.1. </span>Reinheit</a>
 
         </div>
         

@@ -35,6 +35,8 @@ Fügt man ein neues Element in eine Liste an, entsteht eine komplett neue Liste.
 Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch Konstanten und sog. *Pure Functions* (= mathematische Funktionen).
 
 ```{admonition} Pure Function
+:name: def-pure-function
+
 Eine Funktion nennen wir *Pure Function* wenn
 1. Der Rückgabewert der Funktion für die gleiche Funktionsargumente stets identisch ist.
 2. Wenn die Funktion keine *Seiteneffekte* hat.

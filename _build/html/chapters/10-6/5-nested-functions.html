@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6.1. Funktionen - Grundlagen &#8212; Computational Thinking</title>
+    <title>6.5. Umschlossene Funktionen &#8212; Computational Thinking</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. Roboterwelt" href="../11/robo-world.html" />
-    <link rel="prev" title="6. Funktionen" href="intro.html" />
+    <link rel="next" title="6.6. First-Class-Funktion" href="6-first-class-functions.html" />
+    <link rel="prev" title="6.4. Anonyme Funktionen" href="4-lambdas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -573,9 +573,34 @@
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-purity.html">
+     6.1. Reinheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-definition.html">
+     6.2. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-namespaces.html">
+     6.3. Namensräume und Sichtbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-lambdas.html">
+     6.4. Anonyme Funktionen
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6.1. Funktionen - Grundlagen
+     6.5. Umschlossene Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-first-class-functions.html">
+     6.6. First-Class-Funktion
     </a>
    </li>
   </ul>
@@ -663,9 +688,12 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/10-6/5-nested-functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/10-6/1-functions-basics.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/10-6/5-nested-functions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -685,6 +713,26 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/10-6/5-nested-functions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -698,8 +746,53 @@
         
               <div>
                 
-  <div class="section" id="funktionen-grundlagen">
-<h1><span class="section-number">6.1. </span>Funktionen - Grundlagen<a class="headerlink" href="#funktionen-grundlagen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="umschlossene-funktionen">
+<h1><span class="section-number">6.5. </span>Umschlossene Funktionen<a class="headerlink" href="#umschlossene-funktionen" title="Permalink to this headline">¶</a></h1>
+<p>Eine <em>umschlossene Funktion</em> ist eine Funktion, welche innerhalb einer anderen Funktion definiert wurde.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">square</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">+</span> <span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sie werden vermutlich nur selten in die Verlegenheit kommen eine <em>umschlossene Funktion</em> zu verwenden.
+Dennoch, in manchen Fällen kann dies sinnvoll sein um zum Beispiel doppelten Code zu reduzieren.</p>
+<p>Spezieller wird es, wenn wir diese <em>umschlossene Funktion</em> zurückgeben und nach der Abarbeitung der <em>umschließenden Funktion</em> weiter verwenden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">z</span>
+    <span class="k">return</span> <span class="n">h</span>
+
+<span class="n">func</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zu beachten ist, dass dabei der sog. <a class="reference internal" href="3-namespaces.html#sec-local-namespace"><span class="std std-ref">umschließende Namensraum</span></a> ins Spiel kommt.
+Dieser bleibt auch dann am Leben, wenn die <em>umschließenden Funktion</em> abgearbeitet wurde.
+Im obigen Fall existiert das <code class="docutils literal notranslate"><span class="pre">z</span></code> aus der Funktion <code class="docutils literal notranslate"><span class="pre">f()</span></code> beim Aufruf <code class="docutils literal notranslate"><span class="pre">func(3)</span></code> noch und hat den Wert <code class="docutils literal notranslate"><span class="pre">5</span></code>.
+Der Aufruf <code class="docutils literal notranslate"><span class="pre">func(3)</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">h(3)</span></code> und dies wird zu <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">5</span></code> ausgewertet.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -727,8 +820,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">6. </span>Funktionen</a>
-    <a class='right-next' id="next-link" href="../11/robo-world.html" title="next page"><span class="section-number">1. </span>Roboterwelt</a>
+    <a class='left-prev' id="prev-link" href="4-lambdas.html" title="previous page"><span class="section-number">6.4. </span>Anonyme Funktionen</a>
+    <a class='right-next' id="next-link" href="6-first-class-functions.html" title="next page"><span class="section-number">6.6. </span>First-Class-Funktion</a>
 
         </div>
         

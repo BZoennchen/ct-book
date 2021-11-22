@@ -206,7 +206,9 @@ Der folgende Code erzeugt eine durchgemischte Hand mit ``1000`` Karten.
 Wir erweitern dafür den *Kontext* um ein Paket ``random`` welches Funktionen für die Wahrscheinlichkeitsrechnung enthält.
 
 ```{code-cell} python3
-:tags: [hide-output]
+---
+tags: [output_scroll]
+---
 import random
 hand = [random.choice(get_cards()) for _ in range(1000)]
 hand
@@ -215,6 +217,8 @@ hand
 Sie werden merken, dass die Ausführung des folgenden Codes einen kurzen Moment dauert.
 
 ```{code-cell} python3
-:tags: [hide-output]
+---
+tags: [output_scroll]
+---
 stack_sort(hand)
 ```

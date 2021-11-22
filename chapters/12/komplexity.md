@@ -61,3 +61,28 @@ for i in numbers:
 ```
 
 Aus diesem Grund nennt man den Bereich **faul** (engl. *lazy*).
+
+
+
+
+
+## Namesraum Wörterbücher
+
+``Python`` implementiert den **lokalen** und **globalen** Namensraum als Wörterbuch, welches wir uns zu jederzeit auch ausgeben lassen können.
+
+```{code-cell} python3
+---
+tags: [output_scroll]
+---
+globals()
+```
+
+Fügen wir eine neuen Namen hinzu:
+
+```{code-cell} python3
+---
+tags: [output_scroll]
+---
+new_name = 'hello!'
+globals()
+```
