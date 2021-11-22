@@ -1,2 +1,0 @@
-# Funktionen - Grundlagen
-

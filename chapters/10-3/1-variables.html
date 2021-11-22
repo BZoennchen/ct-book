@@ -576,8 +576,33 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../10-6/1-functions-basics.html">
-     6.1. Funktionen - Grundlagen
+    <a class="reference internal" href="../10-6/1-purity.html">
+     6.1. Reinheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-6/2-definition.html">
+     6.2. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-6/3-namespaces.html">
+     6.3. Namensräume und Sichtbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-6/4-lambdas.html">
+     6.4. Anonyme Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-6/5-nested-functions.html">
+     6.5. Umschlossene Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10-6/6-first-class-functions.html">
+     6.6. First-Class-Funktion
     </a>
    </li>
   </ul>
@@ -873,8 +898,8 @@ Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Ar
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4495457328
-4495457328
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4305554480
+4305554480
 </pre></div>
 </div>
 </div>
@@ -896,8 +921,8 @@ Diese Situation sieht demnach wie folgt aus:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4495457328
-4495457296
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4305554480
+4305554448
 </pre></div>
 </div>
 </div>
@@ -923,8 +948,8 @@ Jedoch kann der Wert der Variablen identisch sein und deren <code class="docutil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4537405072
-4537405360
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4345835312
+4345835472
 </pre></div>
 </div>
 </div>
@@ -1002,11 +1027,11 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 4537405136
+id of half = 4345835056
 value of x = 25
-id of x = 4495457328
+id of x = 4305554480
 value of x = 24
-id of x = 4495457296
+id of x = 4305554448
 </pre></div>
 </div>
 </div>
@@ -1021,7 +1046,7 @@ id of x = 4495457296
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 4537405136
+id of half = 4345835056
 </pre></div>
 </div>
 </div>
@@ -1050,11 +1075,11 @@ id of half = 4537405136
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 4547027184
+id of x = 4347142800
 value of y = 10
-id of y = 4495456848
+id of y = 4305554000
 value of z = 2131313
-id of z = 4547027632
+id of z = 4347143024
 </pre></div>
 </div>
 </div>
@@ -1076,11 +1101,11 @@ id of z = 4547027632
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 4547027184
+id of x = 4347142800
 value of y = 2131313
-id of y = 4547027184
+id of y = 4347142800
 value of z = 2131313
-id of z = 4547027632
+id of z = 4347143024
 </pre></div>
 </div>
 </div>
@@ -1126,7 +1151,7 @@ id of z = 4547027632
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4537907712
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4346590016
 </pre></div>
 </div>
 </div>
@@ -1139,7 +1164,7 @@ id of z = 4547027632
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4495456592
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4305553744
 </pre></div>
 </div>
 </div>
@@ -1152,7 +1177,7 @@ id of z = 4547027632
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4495456624
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4305553776
 </pre></div>
 </div>
 </div>
@@ -1184,14 +1209,14 @@ id of z = 4547027632
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = [1, 2, 3, 4, 5]
-id of x = 4537907712
+id of x = 4346590016
 value of x[1] = 2
-id of x[1] = 4495456592
+id of x[1] = 4305553744
 
 value of x = [1, -10, 3, 4, 5]
-id of x = 4537907712
+id of x = 4346590016
 value of x[1] = -10
-id of x[1] = 4547027920
+id of x[1] = 4347143120
 </pre></div>
 </div>
 </div>
