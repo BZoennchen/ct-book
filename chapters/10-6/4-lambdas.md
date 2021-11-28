@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-anonymous-function)=
 # Anonyme Funktionen
 
 *Anonyme Funktionen* sind **namenlose** Funktionen.

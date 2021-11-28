@@ -12,7 +12,7 @@ large_number = 10**100
 print(type(large_number))
 print(large_number)
 
-```{admonition} Python's und der Überlauf
+```{admonition} Python und der Überlauf
 :class: important
 In ``Python`` gibt es keinen *Überlauf* für ganze Zahlen ``int``.
 ```

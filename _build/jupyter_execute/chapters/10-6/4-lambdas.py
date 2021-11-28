@@ -1,3 +1,4 @@
+(sec-anonymous-function)=
 # Anonyme Funktionen
 
 *Anonyme Funktionen* sind **namenlose** Funktionen.
