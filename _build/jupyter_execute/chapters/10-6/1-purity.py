@@ -1,3 +1,4 @@
+(sec-purity)=
 # Reinheit
 
 Bevor wir nochmals die Implementierung und Nutzung einer ``Python``-Funktion besprechen, möchten wir Ihnen den Unterschied zwischen einer mathematischen Funktion und einer ``Python``-Funktion verdeutlichen -- Funktion ist eben nicht gleich Funktion!

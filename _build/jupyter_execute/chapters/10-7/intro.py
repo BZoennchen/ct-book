@@ -1,3 +1,4 @@
+(sec-control-statements)=
 # Kontrollstrukturen
 
 Kontrollstrukturen beeinflussen die Reihenfolge der abzuarbeitenden Befehle. 

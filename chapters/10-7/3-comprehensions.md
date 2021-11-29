@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-comprehension)=
 # Comprehensions
 
 Comprehensions ist eine Art von ``Python``-[Syntax](def-syntax), die es uns durch eine sehr kompakte Schreibweise erlaubt aus einer Datenstruktur eine andere Datenstruktur zu erstellen.

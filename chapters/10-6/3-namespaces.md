@@ -23,7 +23,7 @@ Der Scope wird aus den gerade bestehenden Namensräumen bestimmt.
 ## Namensräume
 
 Ein *Namensraum* ist eine Sammlung von derzeit definierten symbolischen Namen mit der jeweiligen Information welches Objekt (im Speicher) der jeweilige Name referenziert.
-Wir können uns einen Namensraum als ein [Wörterbuch](sec-dictionary) vorstellen, wobei die Schlüssel die Namen sind und die Werte die jeweiligen Objekte.
+Wir können uns einen Namensraum als ein [Wörterbuch](sec-dict) vorstellen, wobei die Schlüssel die Namen sind und die Werte die jeweiligen Objekte.
 Jedes Schlüssel-Wert-Paar bildet einen Namen auf sein entsprechendes Objekt ab.
 
 In ``Python`` gibt es vier *Namensräume* (engl. namespaces):

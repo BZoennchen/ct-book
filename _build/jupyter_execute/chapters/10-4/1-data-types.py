@@ -58,6 +58,7 @@ print(f'id of z = {id(z)}')
 Atomare Datentypen bestehen aus einem *atomaren* Wert, den wir nicht weiter zerteilen können.
 ```
 
+(sec-datastructures)=
 ## Zusammengesetzte Datentypen
 
 *Zusammengesetzte Datentypen* oder auch *Datenstrukturen* bestehen hingegen aus mehreren Werten.
@@ -73,7 +74,8 @@ Verändern wir nun eine dieser Zahlen, so wird der **Wert** im Speicher, der die
 Im Abschnitt [Listen und der Speicher](sec-list-and-memory) sehen wir uns an was genau im Speicher vor sich geht, wenn wir mit Listen arbeiten.
 Dies kann auf andere *Datenstrukturen* übertragen werden.
 
-```{admonition} Datenstrukturen
+```{admonition} Datenstrukturen (bzw. zusammengesetzte Datentypen)
+:name: def-datastructure
 Datenstrukturen strukturieren andere Werte. 
 Diese Werte können wiederum Datenstrukturen oder atomare Datentypen sein.
 ```
