@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-control-statements)=
 # Kontrollstrukturen
 
 Kontrollstrukturen beeinflussen die Reihenfolge der abzuarbeitenden Befehle. 

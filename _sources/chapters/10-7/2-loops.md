@@ -357,5 +357,3 @@ def gcd(m, n):
     return m
 gcd(36, 24)
 ```
-
-
