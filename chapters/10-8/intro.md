@@ -10,11 +10,11 @@ kernelspec:
   name: python3
 ---
 
-# Object-orientierte Programmierung
+# Objektorientierte Programmierung
 
-Um zu verstehen was die *objekt-orientierte Programmierung* ist, ist es äußerst hilfreich sich klar zu machen, was die *objekt-orientierte Programmierung* nicht ist, beziehungsweise woraus die *objekt-orientierte Programmierung* entstanden ist.
+Um zu verstehen was die *objektorientierte Programmierung* ist, ist es äußerst hilfreich sich klar zu machen, was die *objekt-orientierte Programmierung* nicht ist, beziehungsweise woraus die *objektorientierte Programmierung* entstanden ist.
 
-Die *object-orientierte Programmierung* ist ein Programmierparadigma, welches sich in den letzten 15 Jahren in vielen Bereichen der Softwareentwicklung durchgesetzt hat.
+Die *objectorientierte Programmierung* ist ein Programmierparadigma, welches sich in den letzten 15 Jahren in vielen Bereichen der Softwareentwicklung durchgesetzt hat.
 Bis hierhin haben wir uns auf die *prozedurale Programmierung* beschränkt.
 Auch vor der Einführung der *objekt-orientierte Programmierung* war die *prozedurale Programmierung*, die dominierende Art und Weise zu programmieren.
 
@@ -59,7 +59,7 @@ Die *prozedurale Programmierung* ist ein *Programmierparadigma*, welches auf *Fu
 Sie gilt als Erweiterung des *imperativen Paradigmas*.
 ```
 
-Im Gegensatz dazu bündeln wir in der *object-orientierte Programmierung* Daten und deren Operanden.
+Im Gegensatz dazu bündeln wir in der *objektorientierte Programmierung* Daten und deren Operanden.
 Das heißt, Funktionen welche wir auf die Daten anwenden wollen und die Daten selbst werden in ein sog. *Objekt* gepackt.
 *Objekte* sind Daten angereichert mit Funktionen, welche wir als *Methoden des Objekts* bezeichnen.
 Objekte sind zugleich Werte bzw. Instanzen von einem bestimmten *benutzerdefinierten zusammengesetzten Datentyp*, den wir als *Klasse* bezeichnen.
@@ -108,7 +108,7 @@ Wir *überschreiben* die Standarddefinition von ``__str__()`` um eine schönere 
 Die ``__init__()`` Methode initialisiert das Objekt mit seinen Daten.
 Diese Methode wird aufgerufen sobald wir das Objekt durch ``Rectangle(x=10, y=10, width=100, height=20)`` erzeugt haben.
 
-```{admonition} Objekt-orientierte Programmierung (OOP)
-Die *objekt-orientierte Programmierung* ist ein Programmierparadigma, welches auf *Objekten* aufgebaut ist.
+```{admonition} Objektorientierte Programmierung (OOP)
+Die *objektorientierte Programmierung* ist ein Programmierparadigma, welches auf *Objekten* aufgebaut ist.
 Diese *Objekte* beinhalten und kapseln *Daten* und deren dazugehörige *Methoden*.
 ```
