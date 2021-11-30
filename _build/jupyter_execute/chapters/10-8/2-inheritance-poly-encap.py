@@ -148,8 +148,9 @@ class Lecturer(Person):
 
 Doch wenn wir die Initialisierung einer Person ``Person.__init__()`` ändern und sich diese Änderung auch auf alle Kinder auswirken soll, so müssten wir ``Lecturer.__init__()`` entsprechend anpassen.
 
-```{admonition} Vererbte Objektattribute
-:class: hint
+```{admonition} Vererbung aber wann?
+:class: warning
+Gehen Sie besser sparsam mit der Vererbung um. 
 Ruft die ``__init__``-Methode nicht ihre Eltern-``__init__`` auf, so ist die Vererbung an dieser Stelle wahrscheinlich nicht die richtige Wahl der Modellierung.
 ```
 

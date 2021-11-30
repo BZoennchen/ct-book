@@ -13,11 +13,11 @@ kernelspec:
 # Funktionen
 
 Der Schlüssel zur Berechnung von Lösungen bzw. der Verarbeitung von Information ist die Wiederholung.
-Wo uns Schleifen erlauben eine bestimmte Folge von Arbeitsschritte *lokal* mehrfach auszuführen, erlauben es uns Funktionen eine Folge von Arbeitsschritte *global* auszuführen.
+Wo uns [Schleifen](sec-loops) erlauben eine bestimmte Folge von Arbeitsschritte *lokal* mehrfach auszuführen, erlauben es uns Funktionen eine Folge von Arbeitsschritte *global* auszuführen.
 In beiden Fällen ändern wir den Verlauf der Codeausführung, sodass dieser nicht mehr der Befehlsfolge (gelesen von oben nach unten) entspricht.
 
-Funktionen bündeln eine Folge von Arbeitsschritten / Befehlen.
-Es können Argumente definiert werden die als Input für die Funktionen dienen.
+Funktionen bündeln eine Folge von Arbeitsschritten / Befehle.
+Es können Argumente definiert werden, die als Input der Funktionen dienen.
 Wir sind im Stande dieses Bündel irgendwo in unserem Code auszuführen (ohne es noch einmal niederzuschreiben).
 Wird die Funktion im Code aufgerufen, springen wir, bzw. die CPU durch ihren [Befehlszähler](def-program-counter), an die Stelle der Funktion, das Bündel an Anweisungen wird ausgeführt und schlussendlich springen wir wieder an jene Stelle zurück, von der wir hergekommen sind.
 
@@ -31,7 +31,7 @@ def successor(n):
 successor(successor(successor(1)))
 ```
 
-Und sich ruft eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. [Rekursion](sec-recursion) oder rekursiven Funktion.
+Ruft sich eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. [Rekursion](sec-recursion) oder rekursiven Funktion.
 Zum Beispiel:
 
 ```{code-cell} python3
@@ -72,7 +72,7 @@ Schnell würden unsere Programme lange und auch langweilig und unübersichtlich 
 
 Gute Funktionen zu schreiben kann sehr befriedigend für uns Computational Thinker\*innen sein.
 Wir lösen damit oft ein Teilproblem und kommen der gesamten Lösung näher.
-Mit ein wenig Erfahrung können wir sogar Probleme lösen indem wir davon ausgehen, ein Teilproblem hätten wir bereits gelöst -- auch wenn dies nicht der Fall ist.
+Mit ein wenig Erfahrung können wir sogar Probleme lösen indem wir davon ausgehen, ein Teilproblem hätten wir bereits gelöst -- auch wenn dies noch nicht der Fall ist.
 
 Wie ist das gemeint?
 Nun, wir wollen zum Beispiel eine Funktion schreiben, welche uns die ersten ``n`` Primzahlen berechnet und in eine Liste packt.
