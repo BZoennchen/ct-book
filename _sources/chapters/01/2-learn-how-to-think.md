@@ -1,6 +1,6 @@
 # Denken lernen?
 
->I thin everybody should learn how to program a computer, because it teaches you how to think. So I view computer science as a liberal art. It should be something everybode learns. -- Steve Jobs
+>I think everybody should learn how to program a computer, because it teaches you how to think. So I view computer science as a liberal art. It should be something everybode learns. -- Steve Jobs
 
 Es mag für Sie ein wenig vermessen klingen, dass Sie in diesem Kurs das "richtige" Denken lernen sollen.
 Sollten Sie das nicht bereits beherrschen?
