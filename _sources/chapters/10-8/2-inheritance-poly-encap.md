@@ -13,7 +13,7 @@ kernelspec:
 (sec-inheritance)=
 # Vererbung, Kapselung und Polymorphie
 
-*Objekt-orientierte Programmierung OOP* ist ein mächtiges Modellierungswerkzeug bei der wir Daten und Methoden in eine zusammenhängende Struktur bringen.
+*Objektorientierte Programmierung OOP* ist ein mächtiges Modellierungswerkzeug bei der wir Daten und Methoden in eine zusammenhängende Struktur bringen.
 Es deckt sich mit der 'natürlichen' denkweise von uns Menschen.
 Wir denken gerne in Objekten wie Bäume, Häuser, Personen, Rechtecken, und so weiter und so fort.
 Deshalb kann die OOP dabei helfen die Komplexität einer Software besser zu begreifen.
@@ -382,5 +382,5 @@ Das heißt um ein *Objekt* das wir iterieren können.
 Es ist der Schleife egal ob es eine Liste, ein Bereich, ein Tupel oder sonst etwas iterierbares ist.
 Es muss lediglich die Schnittstelle ``Iterable`` erfüllen.
 
-Es sei angemerkt, dass *Polymorphie* ein Konzept ist, was über die objekt-orientierte Programmierung hinausreicht.
+Es sei angemerkt, dass *Polymorphie* ein Konzept ist, was über die objektorientierte Programmierung hinausreicht.
 Auch in der prozeduralen wie auch funktionalen Programmierung nutzten wir die *Polymorphie*.
