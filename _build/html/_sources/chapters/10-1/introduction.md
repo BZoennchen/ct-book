@@ -25,3 +25,5 @@ Durch die Realisierung unser Gedanken, durch das Programmieren stellen wir unter
 ```{code-cell} python3
 import this
 ```
+
+Für die Namenskonventionen, d.h. die Schreibweise von Funktionen, Variablen, Klassen und mehr empfehlen wir den [PEP 8 Style Guide für Python Code](https://pep8.org/).

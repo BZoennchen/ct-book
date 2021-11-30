@@ -11,3 +11,5 @@ Doch falls unser Denken mit der Implementierung übereinstimmt und wir auf dem W
 Durch die Realisierung unser Gedanken, durch das Programmieren stellen wir unter anderem fest, ob unsere Gedanken rigoros, logisch einwandfrei und scharf genug waren oder ob wir uns selbst in die Irre geführt haben.
 
 import this
+
+Für die Namenskonventionen, d.h. die Schreibweise von Funktionen, Variablen, Klassen und mehr empfehlen wir den [PEP 8 Style Guide für Python Code](https://pep8.org/).
