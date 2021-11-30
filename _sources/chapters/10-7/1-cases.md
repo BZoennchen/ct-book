@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-cases)=
 # Fallunterscheidungen
 
 Für eine Fallunterscheidung können wir für jeden Fall $i$ einen bestimmten Codeblock $B_i$ definieren.
