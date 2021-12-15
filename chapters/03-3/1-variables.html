@@ -1,0 +1,1300 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.1. Variablen &#8212; Computational Thinking</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.2. Ausdrücke" href="2-expressions.html" />
+    <link rel="prev" title="3. Variablen, Ausdrücke und Funktionsaufrufe" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Thinking</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-1/course.html">
+   1. Kurskonzept
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/1-teaching.html">
+     1.1. Lehrkonzept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/2-learn-how-to-think.html">
+     1.2. Denken lernen?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-2/what-is-ct.html">
+   2. Was ist Computational Thinking
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-2/1-informatics-and-ct.html">
+     2.1. Von der Informatik zum Computational Thinking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-2/2-repetition-is-the-key.html">
+     2.2. Wiederholung als Grundlage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-3/history.html">
+   3. Geschichte der Computer und Algorithmen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/1-ancient.html">
+     3.1. Antike
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/2-middleages.html">
+     3.2. Mittelalter bis 19. Jahrundert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/3-today.html">
+     3.3. 19. Jahrundert bis heute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/4-future.html">
+     3.4. Ausblick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-4/why-ct.html">
+   4. Warum Computational Thinking?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/1-intrinsic-value.html">
+     4.1. Intrinsischer Wert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/2-usefulness.html">
+     4.2. Langfristiger Nutzen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/3-self-determination.html">
+     4.3. Selbstbestimmt durch CT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-5/sorting.html">
+   5. Lasst uns Denken
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/1-sort-cards.html">
+     5.1. Karten sortieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/2-sort-cards-with-python.html">
+     5.2. Karten sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/3-sort-numbers.html">
+     5.3. Zahlen sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/4-sort-anything.html">
+     5.4. Allgemeines Sortieren in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Theorie
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-1/information-processing.html">
+   1. Der digitale Computer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/1-basics.html">
+     1.1. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/2-interpretation.html">
+     1.2. Interpretation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/2-representation.html">
+     1.3. Repräsentationen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/3-manipulation.html">
+     1.4. Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/4-information-flow.html">
+     1.5. Der Informationskreislauf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/5-hardware-equals-software.html">
+     1.6. Berechenbarkeit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-2/information.html">
+   2. Was ist Information?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/1-natural-science.html">
+     2.1. Naturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/2-formal-science.html">
+     2.2. Strukturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/3-critic.html">
+     2.3. Kritik
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/4-humanics.html">
+     2.4. Geisteswissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/5-summary.html">
+     2.5. Zusammenfassung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-3/languages.html">
+   3. Programmiersprachen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/1-abstraction.html">
+     3.1. Abstraktion des Computers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/2-success-criteria.html">
+     3.2. Erfolgsfaktoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/3-imperative-vs-functional.html">
+     3.3. Imperativ vs. funktional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/4-language-evolution.html">
+     3.4. Sprachevolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/5-python.html">
+     3.5. Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/6-diversity.html">
+     3.6. Diversität
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-4/the-art-of-programming.html">
+   4. Die Kunst des Programmierens
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/1-algorithms.html">
+     4.1. Algorithmen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/2-programming.html">
+     4.2. Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/3-code.html">
+     4.3. Programmiercode
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-1/introduction.html">
+   1. Programmieren in Python
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-2/python-environment.html">
+   2. Das Python Ökosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/1-installation.html">
+     2.1. Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/2-run.html">
+     2.2. Python ausführen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/3-notebooks.html">
+     2.3. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/4-modules.html">
+     2.4. Module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   3. Variablen, Ausdrücke und Funktionsaufrufe
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1. Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-expressions.html">
+     3.2. Ausdrücke
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-invoking-functions.html">
+     3.3. Funktionsaufrufe
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-4/intro.html">
+   4. Datentypen (Grundlagen)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/1-data-types.html">
+     4.1. Pythons Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/2-int.html">
+     4.2. Ganze Zahlen - int
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/3-float.html">
+     4.3. Fließkommazahlen - float
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/4-bool.html">
+     4.4. Wahrheitswerte - bool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/5-list.html">
+     4.5. Listen - list
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/6-tuple.html">
+     4.6. Tupel - tuple
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/7-string.html">
+     4.7. Zeichenketten - str
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/8-set.html">
+     4.8. Mengen - set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/9-dict.html">
+     4.9. Wörterbücher - dict
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/10-range.html">
+     4.10. Zahlenbereich - range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/11-typing-in-python.html">
+     4.11. Pythons Typisierung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-5/intro.html">
+   5. Datentypen (Fortsetzung)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-6/intro.html">
+   6. Funktionen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-7/intro.html">
+   7. Kontrollstrukturen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  CT in Aktion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/robo-world.html">
+   1. Roboterwelt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/dive-bell.html">
+   2. Sprechen in der Taucherglocke
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/image-representation.html">
+   3. Binäres Zeichnen - Struktur ist Information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/memory.html">
+   4. Speicher - alles ist eine Liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/name-register.html">
+   5. Namensregister
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/03-3/1-variables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/03-3/1-variables.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-3/1-variables.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialisierung-und-zuweisung">
+   3.1.1. Initialisierung und Zuweisung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variablen-und-der-arbeitsspeicher">
+   3.1.2. Variablen und der Arbeitsspeicher
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#veranderung">
+   3.1.3. Veränderung
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zuweisung-eines-neuen-werts">
+     3.1.3.1. Zuweisung eines neuen Werts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zuweisung-einer-neuen-adresse">
+     3.1.3.2. Zuweisung einer neuen Adresse
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seiteneffekte">
+     3.1.3.3. Seiteneffekte
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#das-nichts">
+   3.1.4. Das Nichts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#namenskonvention">
+   3.1.5. Namenskonvention
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="variablen">
+<span id="sec-variables"></span><h1><span class="section-number">3.1. </span>Variablen<a class="headerlink" href="#variablen" title="Permalink to this headline">¶</a></h1>
+<p><em>Variablen</em> können wir uns intuitiv zunächst als Namen oder Bezeichnung eines Wertes vorstellen.
+Mit diesem Namen können wir einen Wert im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicherspeicher</span></a> des Computers identifizieren.
+So können wir uns Zwischenergebnisse merken und damit weiter rechnen.</p>
+<div class="section" id="initialisierung-und-zuweisung">
+<h2><span class="section-number">3.1.1. </span>Initialisierung und Zuweisung<a class="headerlink" href="#initialisierung-und-zuweisung" title="Permalink to this headline">¶</a></h2>
+<p>Durch das <code class="docutils literal notranslate"><span class="pre">=</span></code> Zeichen weisen wir einer <em>Variablen</em> auf der linken Seite den Wert des <em>Ausdrucks</em> auf der rechten Seite zu.
+Zum Beispiel, weist</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>den ausgewerteten Wert <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">10</span></code> also <code class="docutils literal notranslate"><span class="pre">13</span></code> der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> zu.
+Es ist äußerst wichtig, dass die den zwischen dem <code class="docutils literal notranslate"><span class="pre">=</span></code> und dem mathematischen <span class="math notranslate nohighlight">\(=\)</span> unterscheiden.</p>
+<div class="math notranslate nohighlight">
+\[x = 13\]</div>
+<p>bedeutet, dass <span class="math notranslate nohighlight">\(x\)</span> gleich <span class="math notranslate nohighlight">\(13\)</span> ist, wohingegen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>den Wert der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> auf <code class="docutils literal notranslate"><span class="pre">13</span></code> setzt oder genaue die Variable auf einen Speicherbereich verweisen lässt, welcher den Wert <code class="docutils literal notranslate"><span class="pre">13</span></code> enthält.
+Um das mathematisch auszurücken verwendet man oft <span class="math notranslate nohighlight">\(\leftarrow\)</span>, also</p>
+<div class="math notranslate nohighlight">
+\[x \leftarrow 13.\]</div>
+<p>Dies verdeutlicht, dass es sich um eine <em>Zuweisung</em> handelt.
+Mit</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>weisen wir <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">None</span></code> d.h. ‘Nichts’ zu. Doch ist dieses ‘Nichts’ nicht nichts ;). Versuchen wir eine <em>Variable</em> zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">4</span><span class="n">f5acf813e7b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
+
+<span class="ne">NameError</span>: name &#39;v&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hierbei würde es zu einem Fehler <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">'v'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> kommen, da die <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">v</span></code> noch nicht <em>initialisiert</em> wurde.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> reicht es wenn Sie der <em>Variablen</em> einen Wert zuweisen.
+Sie wird automatisch erzeugt, d.h., <em>initialisiert</em>.
+Besitzt Sie noch keinen Wert so existiert sie auch nicht bzw. ist noch nicht <em>initialisiert</em>.</p>
+<div class="warning admonition" id="warning-evaluation-ordering">
+<p class="admonition-title">Initialisierung mit Notebooks</p>
+<p>Nach Ausführung dieser Codezeilen funktioniert auch der obige Code.
+Dies hängt an der funktionsweise der Notebooks zusammen.
+Sobald <code class="docutils literal notranslate"><span class="pre">z</span></code> <em>initialisiert</em> wurde, existiert <code class="docutils literal notranslate"><span class="pre">z</span></code> für alle Zellen des Notebooks.</p>
+</div>
+</div>
+<div class="section" id="variablen-und-der-arbeitsspeicher">
+<h2><span class="section-number">3.1.2. </span>Variablen und der Arbeitsspeicher<a class="headerlink" href="#variablen-und-der-arbeitsspeicher" title="Permalink to this headline">¶</a></h2>
+<p>Eine Variable können wir als Paar von <strong>Wert</strong> und <strong>Arbeitsspeicheradresse</strong> verstehen.
+Der <strong>Wert</strong> der Variablen steht im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitspeicher</span></a>) an einer bestimmten <strong>Arbeitsspeicheradresse</strong>.
+Variablen abstrahieren diesen Zusammenhang, sodass Sie uns die Arbeit mit dem Arbeitsspeicher erleichtern.</p>
+<p>Mit</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wird der <strong>Wert</strong> <code class="docutils literal notranslate"><span class="pre">25</span></code> in den Arbeitsspeicher an eine freie <strong>Speicheradresse</strong> geschrieben. Diese <strong>Adresse</strong> erhält die <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">x</span></code>. <code class="docutils literal notranslate"><span class="pre">x</span></code> <em>zeigt</em> auf den Speicherbereich in dem der <strong>Wert</strong> <code class="docutils literal notranslate"><span class="pre">25</span></code> steht!</p>
+<p>Folgende Abbildung verdeutlicht die Situation:</p>
+<div class="figure align-default" id="fig-variable">
+<a class="reference internal image-reference" href="../../_images/variable.png"><img alt="../../_images/variable.png" src="../../_images/variable.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.13 </span><span class="caption-text">Initialisierung und Zuweisung einer Variable <code class="docutils literal notranslate"><span class="pre">x</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Der Wert steht im Arbeitspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.</span><a class="headerlink" href="#fig-variable" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">id</span></code>: Mit der <em>built-in</em>-Funktion <code class="docutils literal notranslate"><span class="pre">id</span></code> können Sie sich eine Identifikationsnummer einer Variablen ausgeben lassen. Für zwei <em>Variablen</em> ist diese genau dann gleich, wenn deren <strong>Arbeitsspeicheradressen</strong> gleich sind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4476136496
+4476136496
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sie sehen dass die <code class="docutils literal notranslate"><span class="pre">id</span></code> der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code> identisch sind. Ebenso ist ihr Wert identisch.
+Diese Situation sieht demnach wie folgt aus:</p>
+<div class="figure align-default" id="fig-variable-equal-id">
+<a class="reference internal image-reference" href="../../_images/variable-equal-id.png"><img alt="../../_images/variable-equal-id.png" src="../../_images/variable-equal-id.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.14 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Die Adresse beider Variablen ist identisch.</span><a class="headerlink" href="#fig-variable-equal-id" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code>-erkennt, dass es ausreicht, wenn beide <em>Variablen</em> auf den gleichen Speicherbereich zeigen. Wir als Programmierer*innen bekommen davon gar nichts mit. Verändern wir den Wert von <code class="docutils literal notranslate"><span class="pre">z</span></code> dann verändert sich auch deren <code class="docutils literal notranslate"><span class="pre">id</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4476136496
+4476136464
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Situation könnte in etwa wie folgt aussehen:</p>
+<div class="figure align-default" id="fig-variable-unequal-id">
+<a class="reference internal image-reference" href="../../_images/variable-unequal-id.png"><img alt="../../_images/variable-unequal-id.png" src="../../_images/variable-unequal-id.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.15 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code> und <code class="docutils literal notranslate"><span class="pre">24</span></code>. Die Adresse beider Variablen ist nicht identisch.</span><a class="headerlink" href="#fig-variable-unequal-id" title="Permalink to this image">¶</a></p>
+</div>
+<div class="warning admonition" id="warning-equality-and-identity">
+<p class="admonition-title">Gleichheit und Identität</p>
+<p>Ist die <code class="docutils literal notranslate"><span class="pre">id</span></code> (<em>Identität</em>) bzw. die <strong>Adresse</strong> zweier Variablen gleich, so ist auch deren Wert identisch.
+Jedoch kann der Wert der Variablen identisch sein und deren <code class="docutils literal notranslate"><span class="pre">id</span></code> (<em>Identität</em>) nicht.</p>
+</div>
+<p>Ein Beispiel für zwei Variablen mit gleichem <strong>Wert</strong> und unterschiedlicher <strong>Identität</strong> ist leicht konstruiert:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2131313</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">2131313</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4516412688
+4516412720
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hmm??
+Warum war die <code class="docutils literal notranslate"><span class="pre">id</span></code> beim Wert <code class="docutils literal notranslate"><span class="pre">25</span></code> identisch aber beim Wert <code class="docutils literal notranslate"><span class="pre">2131313</span></code> nicht?
+Hier kommen wir in tiefen Details von <code class="docutils literal notranslate"><span class="pre">Python</span></code>, welche fürs erste nicht so wichtig sind.
+Zur Optimierung der Laufzeit legt <code class="docutils literal notranslate"><span class="pre">Python</span></code> alle kleinen ganze Zahlen bei Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
+Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten <span class="math notranslate nohighlight">\(k\)</span> kleinen Zahlen).
+<code class="docutils literal notranslate"><span class="pre">2131313</span></code> zählt nicht dazu und somit wird der Wert jedesmal neu in den Speicher geschrieben.</p>
+<p>Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>257
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wie sieht es mit negativen Zahlen aus?:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="veranderung">
+<h2><span class="section-number">3.1.3. </span>Veränderung<a class="headerlink" href="#veranderung" title="Permalink to this headline">¶</a></h2>
+<p>Wie der Name bereits betont, sind <em>Variablen</em> <strong>variabel</strong> und können somit verändert werden.
+Wir müssen jedoch zwischen zwei Veränderungen einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> unterscheiden:</p>
+<ol class="simple">
+<li><p>der Veränderung ihrer Wertes <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>der Veränderung ihrer Speicheradresse <code class="docutils literal notranslate"><span class="pre">id(x)</span></code> (die auf den Wert zeigt)</p></li>
+</ol>
+<div class="section" id="zuweisung-eines-neuen-werts">
+<h3><span class="section-number">3.1.3.1. </span>Zuweisung eines neuen Werts<a class="headerlink" href="#zuweisung-eines-neuen-werts" title="Permalink to this headline">¶</a></h3>
+<p>Eine <em>Variable</em> kann immer nur einen <strong>Wert</strong> bzw. auf einen bestimmten Speicherbereich <em>zeigen</em>.
+Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird dieser <strong>Wert</strong> in den Speicher an eine freie <strong>Adresse</strong> geschrieben und die <strong>Adresse</strong> der Variablen auf jene neue <strong>Adresse</strong> gesetzt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">half</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of half = </span><span class="si">{</span><span class="n">half</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of half = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">half</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
+id of half = 4516412944
+value of x = 25
+id of x = 4476136496
+value of x = 24
+id of x = 4476136464
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veränderungen der einen <em>Variablen</em> haben keinen Effekt auf die <strong>Adresse</strong> bzw. *Identität <code class="docutils literal notranslate"><span class="pre">id</span></code> anderer <em>Variablen</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of half = </span><span class="si">{</span><span class="n">half</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of half = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">half</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
+id of half = 4516412944
+</pre></div>
+</div>
+</div>
+</div>
+<p>Verändern wir <em>Variablen</em> nicht so behalten ihre <strong>Adresse</strong> über das gesamte Notebook hinweg.</p>
+</div>
+<div class="section" id="zuweisung-einer-neuen-adresse">
+<h3><span class="section-number">3.1.3.2. </span>Zuweisung einer neuen Adresse<a class="headerlink" href="#zuweisung-einer-neuen-adresse" title="Permalink to this headline">¶</a></h3>
+<p>Weisen wir einer Variblen <code class="docutils literal notranslate"><span class="pre">x</span></code> eine andere Variable <code class="docutils literal notranslate"><span class="pre">y</span></code> zu, so ändern wir die <strong>Adresse</strong> von <code class="docutils literal notranslate"><span class="pre">x</span></code> auf jene von <code class="docutils literal notranslate"><span class="pre">y</span></code>. Das heißt, nach der <em>Zuweisung</em> zeigen beide Variablen auf den gleichen Speicherbereich und damit auf den gleichen <strong>Wert</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2131313</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">2131313</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of y = </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of y = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of z = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
+id of x = 4526281168
+value of y = 10
+id of y = 4476136016
+value of z = 2131313
+id of z = 4526281584
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of y = </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of y = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of z = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
+id of x = 4526281168
+value of y = 2131313
+id of y = 4526281168
+value of z = 2131313
+id of z = 4526281584
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="seiteneffekte">
+<h3><span class="section-number">3.1.3.3. </span>Seiteneffekte<a class="headerlink" href="#seiteneffekte" title="Permalink to this headline">¶</a></h3>
+<p>Wie bereits erwähnt: Verändern wir eine <em>Variable</em> so können wir dadurch nicht die <strong>Adresse</strong> / <em>Identität</em> <code class="docutils literal notranslate"><span class="pre">id</span></code> einer anderen Variablen ändern! Wie verhält es sich jedoch mit dem <strong>Wert</strong> einer <em>Variablen</em>?</p>
+<p>Die Antwort ist etwas komplizierter und ist erst dann begreiflich wenn wir das Thema Datentypen besprechen. Dennoch versuchen wir unser Glück:</p>
+<p>Eine Variable kann nicht nur einen einzelnen atomaren <strong>Wert</strong> wie eine Zahl enthalten, sondern auch einen <strong>Wert</strong> der sich aus anderen <strong>Werten</strong> zusammensetzt. Zum Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> weisen wir hierbei eine sog. <em>Liste</em> <code class="docutils literal notranslate"><span class="pre">list</span></code> zu, also eine geordnete Menge an Zahlen. In unserem Fall besteht die Liste und somit <code class="docutils literal notranslate"><span class="pre">x</span></code> aus den Werten <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4</span></code> und <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<p>Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir seinen Index. Zum Beispiel liefert uns der Index <code class="docutils literal notranslate"><span class="pre">1</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wie sieht das nun im Speicher aus??? Welche Adresse hat <code class="docutils literal notranslate"><span class="pre">x</span></code> und wie sieht der Speicher an der Adresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> aus? Der Aufruf</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4525768576
+</pre></div>
+</div>
+</div>
+</div>
+<p>Liefert uns eine <code class="docutils literal notranslate"><span class="pre">id</span></code>, allerdings lieft uns der Aufruf</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4476135760
+</pre></div>
+</div>
+</div>
+</div>
+<p>ebenfalls eine (andere) <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4476135792
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eine Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> mit <span class="math notranslate nohighlight">\(n\)</span> Elementen besteht in <code class="docutils literal notranslate"><span class="pre">Python</span></code> aus <span class="math notranslate nohighlight">\(n\)</span> Adressen. Jede dieser Adressen zeigt auf den Wert des Listenelements. Das heißt, eigentlich sieht unsere Liste <code class="docutils literal notranslate"><span class="pre">x</span></code> wie folgt aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">])]</span>
+</pre></div>
+</div>
+<p>Doch <code class="docutils literal notranslate"><span class="pre">Python</span></code> vereinfacht uns den Umgang mit Listen und verbirgt diese Tatsache geschickt.</p>
+<p>Was aber passiert mit <code class="docutils literal notranslate"><span class="pre">x</span></code> wenn wir eines seiner Listenelemente verändern? Hier wird es spannend:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x[1] = </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x[1] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x[1] = </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x[1] = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = [1, 2, 3, 4, 5]
+id of x = 4525768576
+value of x[1] = 2
+id of x[1] = 4476135760
+
+value of x = [1, -10, 3, 4, 5]
+id of x = 4525768576
+value of x[1] = -10
+id of x[1] = 4526282000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Adresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> ändert sich nicht!!! Es ändert sich nur die Adresse von <code class="docutils literal notranslate"><span class="pre">x[1]</span></code>!!! Mit anderen Worten durch die <em>Zuweisung</em> von <code class="docutils literal notranslate"><span class="pre">x[1]</span> <span class="pre">=</span> <span class="pre">-10</span></code> wird keine neue Liste im Speicher angelegt sondern nur ein neues Element!</p>
+<p>Warum? Listen können groß werden und würden wir bei jeder Änderung eines Listenelements die gesamte Liste im Speicher kopieren, wäre das zu teuer was die Laufzeit angeht.</p>
+<p>Dieses Verhalten hat jedoch Konsequenzen! Folgender Code führt zur Veränderung des Wertes der Variablen <code class="docutils literal notranslate"><span class="pre">y</span></code> von <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> nach <code class="docutils literal notranslate"><span class="pre">y`</span> <span class="pre">=</span> <span class="pre">[[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> obwohl wir nicht direkt mit <code class="docutils literal notranslate"><span class="pre">y</span></code> interagieren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+[[-10, 2, 3], [-10, 2, 3], [1, 2, 3]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Solche Veränderungen eines Wertes einer Variablen durch die Veränderung eines Werts einer anderen Variablen, nennen wir <em>Seiteneffekt</em>.</p>
+</div>
+</div>
+<div class="section" id="das-nichts">
+<h2><span class="section-number">3.1.4. </span>Das Nichts<a class="headerlink" href="#das-nichts" title="Permalink to this headline">¶</a></h2>
+<p>Um einer <em>Variable</em> ‘keinen’ Wert zuzuweisen gibt es das Signalwort <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+Dies steht für ‘kein’ Wert bzw. das Nichts.
+Dennoch besitzt die <em>Variable</em> einen Wert, eben den Wert <code class="docutils literal notranslate"><span class="pre">None</span></code> ‘kein’ Wert.
+<code class="docutils literal notranslate"><span class="pre">None</span></code> repräsentiert somit das Nichts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">z</span> <span class="o">+</span> <span class="mi">20</span>
+<span class="n">z</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">z</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Ausgabemechanik des Notebooks ignoriert <code class="docutils literal notranslate"><span class="pre">None</span></code>, jedoch können wir die <em>Variable</em> in eine Zeichenkette umwandeln und dann ausgeben:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> wird uns wieder begegnen wenn wir uns <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionen ansehen.
+Vorab sei gesagt, dass falls eine Funktionen keinen Rückgabewert besitzt sie dann <code class="docutils literal notranslate"><span class="pre">None</span></code> zurückliefert.</p>
+</div>
+<div class="section" id="namenskonvention">
+<h2><span class="section-number">3.1.5. </span>Namenskonvention<a class="headerlink" href="#namenskonvention" title="Permalink to this headline">¶</a></h2>
+<p>Namen müssen mit einem Klein- oder Großbuchstaben beginnen und können aus Zahlen und Buchstaben bestehen.
+Aus Gründen der Lesbarkeit folgen wir der Konvention von <code class="docutils literal notranslate"><span class="pre">Python</span></code> und schreiben <em>Variablen</em> komplett in Kleinbuchstaben, Zahlen und dem <code class="docutils literal notranslate"><span class="pre">_</span></code>.
+Außerdem verwenden wir die englische Sprache, alle Signalwörter von <code class="docutils literal notranslate"><span class="pre">Python</span></code> in englisch formuliert werden müssen.
+Mit dem <code class="docutils literal notranslate"><span class="pre">_</span></code> trennen wir zusammengesetzte Namen.
+Beispiele für <em>Variablen</em> wären: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">x1</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>, <code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">x_direction</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature</span></code>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/03-3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><span class="section-number">3. </span>Variablen, Ausdrücke und Funktionsaufrufe</a>
+    <a class='right-next' id="next-link" href="2-expressions.html" title="next page"><span class="section-number">3.2. </span>Ausdrücke</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
