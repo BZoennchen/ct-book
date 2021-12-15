@@ -388,6 +388,11 @@
      4.3. Programmiercode
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/4-repetition-and-recursion.html">
+     4.4. Wiederholung und Rekursion
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -537,7 +542,32 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/1-type-systems.html">
+     5.1. Dynamische und statische Typisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/2-why-data-types.html">
+     5.2. Existenzberechtigung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/3-change-of-interpretation.html">
+     5.3. Interpretationswechsel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/4-kind-of-data-types.html">
+     5.4. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/5-primitive-data-types.html">
+     5.5. Primitive Datentypen in Python?
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -549,7 +579,37 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/1-purity.html">
+     6.1. Reinheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/2-definition.html">
+     6.2. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/3-namespaces.html">
+     6.3. Namensräume und Sichtbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/4-lambdas.html">
+     6.4. Anonyme Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/5-nested-functions.html">
+     6.5. Umschlossene Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/6-first-class-functions.html">
+     6.6. First-Class-Funktion
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -561,7 +621,44 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-7/1-cases.html">
+     7.1. Fallunterscheidungen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-7/2-loops.html">
+     7.2. Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-7/3-comprehensions.html">
+     7.3. Comprehensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-8/intro.html">
+   8. Objektorientierte Programmierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-8/1-class-and-objects.html">
+     8.1. Klassen und Objekte
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">
+     8.2. Vererbung, Kapselung und Polymorphie
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -938,7 +1035,7 @@ c = [1, 2, 3, 4, 5, 6, 7, 8]
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">concat_mutable</span></code> verändert <code class="docutils literal notranslate"><span class="pre">list1</span></code> und da es sich nicht um einen <span class="xref myst">primitiven Datentyp</span> handelt, wird nur die Referenz kopiert und nicht die Liste <code class="docutils literal notranslate"><span class="pre">a</span></code> selbst.
+<p><code class="docutils literal notranslate"><span class="pre">concat_mutable</span></code> verändert <code class="docutils literal notranslate"><span class="pre">list1</span></code> und da es sich nicht um einen <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> handelt, wird nur die Referenz kopiert und nicht die Liste <code class="docutils literal notranslate"><span class="pre">a</span></code> selbst.
 Somit wird <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code> ausgeführt und <code class="docutils literal notranslate"><span class="pre">a</span></code> wird verändert.
 Dies bezeichnen wir als sogenannten <em>Seiteneffekt</em> und in diesem Fall ist es ein unerwarteter <em>Seiteneffekt</em> den wir vermeiden sollten!
 Dennoch ist <code class="docutils literal notranslate"><span class="pre">+=</span></code> immer dann sehr sinnvoll wenn Sie eine Liste sukzessive füllen wollen.
@@ -1041,7 +1138,7 @@ Sie bleiben unverändert.
 Durch den obigen Aufruf wird erhalt das Argument <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">15</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> die Referenz zu <code class="docutils literal notranslate"><span class="pre">x</span></code> außerhalb der Funktion.
 <code class="docutils literal notranslate"><span class="pre">c</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">25</span></code> und wird zurückgegeben.
 Falls <code class="docutils literal notranslate"><span class="pre">y</span></code> innerhalb der Funktion verändert wird, würde <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine neue Kopie anlegen, da es sich um einen <em>unveränderlichen</em> (<em>immutable</em>) Datentyp handelt.
-Alle <span class="xref myst">primitiven Datentypen</span> wie <code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">bool</span></code> aber auch <code class="docutils literal notranslate"><span class="pre">str</span></code>(Zeichenketten) und <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind unveränderlich.
+Alle <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a> wie <code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">bool</span></code> aber auch <code class="docutils literal notranslate"><span class="pre">str</span></code>(Zeichenketten) und <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind unveränderlich.
 Listen jedoch nicht!</p>
 <p>Eine gute Übung ist es eine Liste zu <em>flatten</em>, d.h. aus einer mehrdimensionalen Liste, eine Liste der Dimension <span class="math notranslate nohighlight">\(1\)</span> zu machen.
 Hierbei soll die Reihenfolge der Elemente erhalten bleiben.</p>
@@ -1898,42 +1995,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imge0010edbb5924d898787641cafdfe498">
+  <img id="_anim_imgf5c1cbafb2f1422d85588cb188681cb8">
   <div class="anim-controls">
-    <input id="_anim_slidere0010edbb5924d898787641cafdfe498" type="range" class="anim-slider"
+    <input id="_anim_sliderf5c1cbafb2f1422d85588cb188681cb8" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anime0010edbb5924d898787641cafdfe498.set_frame(parseInt(this.value));"></input>
+           oninput="animf5c1cbafb2f1422d85588cb188681cb8.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="anime0010edbb5924d898787641cafdfe498.slower()">
+      <button title="Decrease speed" onclick="animf5c1cbafb2f1422d85588cb188681cb8.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="anime0010edbb5924d898787641cafdfe498.first_frame()">
+      <button title="First frame" onclick="animf5c1cbafb2f1422d85588cb188681cb8.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="anime0010edbb5924d898787641cafdfe498.previous_frame()">
+      <button title="Previous frame" onclick="animf5c1cbafb2f1422d85588cb188681cb8.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="anime0010edbb5924d898787641cafdfe498.reverse_animation()">
+      <button title="Play backwards" onclick="animf5c1cbafb2f1422d85588cb188681cb8.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="anime0010edbb5924d898787641cafdfe498.pause_animation()">
+      <button title="Pause" onclick="animf5c1cbafb2f1422d85588cb188681cb8.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="anime0010edbb5924d898787641cafdfe498.play_animation()">
+      <button title="Play" onclick="animf5c1cbafb2f1422d85588cb188681cb8.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="anime0010edbb5924d898787641cafdfe498.next_frame()">
+      <button title="Next frame" onclick="animf5c1cbafb2f1422d85588cb188681cb8.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="anime0010edbb5924d898787641cafdfe498.last_frame()">
+      <button title="Last frame" onclick="animf5c1cbafb2f1422d85588cb188681cb8.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="anime0010edbb5924d898787641cafdfe498.faster()">
+      <button title="Increase speed" onclick="animf5c1cbafb2f1422d85588cb188681cb8.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_selecte0010edbb5924d898787641cafdfe498"
+    <form title="Repetition mode" action="#n" name="_anim_loop_selectf5c1cbafb2f1422d85588cb188681cb8"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_e0010edbb5924d898787641cafdfe498"
+      <input type="radio" name="state" value="once" id="_anim_radio1_f5c1cbafb2f1422d85588cb188681cb8"
              >
-      <label for="_anim_radio1_e0010edbb5924d898787641cafdfe498">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_e0010edbb5924d898787641cafdfe498"
+      <label for="_anim_radio1_f5c1cbafb2f1422d85588cb188681cb8">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_f5c1cbafb2f1422d85588cb188681cb8"
              checked>
-      <label for="_anim_radio2_e0010edbb5924d898787641cafdfe498">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_e0010edbb5924d898787641cafdfe498"
+      <label for="_anim_radio2_f5c1cbafb2f1422d85588cb188681cb8">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_f5c1cbafb2f1422d85588cb188681cb8"
              >
-      <label for="_anim_radio3_e0010edbb5924d898787641cafdfe498">Reflect</label>
+      <label for="_anim_radio3_f5c1cbafb2f1422d85588cb188681cb8">Reflect</label>
     </form>
   </div>
 </div>
@@ -1943,9 +2040,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imge0010edbb5924d898787641cafdfe498";
-    var slider_id = "_anim_slidere0010edbb5924d898787641cafdfe498";
-    var loop_select_id = "_anim_loop_selecte0010edbb5924d898787641cafdfe498";
+    var img_id = "_anim_imgf5c1cbafb2f1422d85588cb188681cb8";
+    var slider_id = "_anim_sliderf5c1cbafb2f1422d85588cb188681cb8";
+    var loop_select_id = "_anim_loop_selectf5c1cbafb2f1422d85588cb188681cb8";
     var frames = new Array(19);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbAAAAEgCAYAAADVKCZpAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -3341,7 +3438,7 @@ SS0ZMElSSwZMktTS/wOc77bhSMsv0gAAAABJRU5ErkJggg==\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anime0010edbb5924d898787641cafdfe498 = new Animation(frames, img_id, slider_id, 100.0,
+        animf5c1cbafb2f1422d85588cb188681cb8 = new Animation(frames, img_id, slider_id, 100.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -3593,42 +3690,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imgc0a74b50ea194d38b39a24efbaa52c54">
+  <img id="_anim_imgce3da5188abd45da85c31c74c7c1d1d2">
   <div class="anim-controls">
-    <input id="_anim_sliderc0a74b50ea194d38b39a24efbaa52c54" type="range" class="anim-slider"
+    <input id="_anim_sliderce3da5188abd45da85c31c74c7c1d1d2" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="animc0a74b50ea194d38b39a24efbaa52c54.set_frame(parseInt(this.value));"></input>
+           oninput="animce3da5188abd45da85c31c74c7c1d1d2.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="animc0a74b50ea194d38b39a24efbaa52c54.slower()">
+      <button title="Decrease speed" onclick="animce3da5188abd45da85c31c74c7c1d1d2.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="animc0a74b50ea194d38b39a24efbaa52c54.first_frame()">
+      <button title="First frame" onclick="animce3da5188abd45da85c31c74c7c1d1d2.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="animc0a74b50ea194d38b39a24efbaa52c54.previous_frame()">
+      <button title="Previous frame" onclick="animce3da5188abd45da85c31c74c7c1d1d2.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="animc0a74b50ea194d38b39a24efbaa52c54.reverse_animation()">
+      <button title="Play backwards" onclick="animce3da5188abd45da85c31c74c7c1d1d2.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="animc0a74b50ea194d38b39a24efbaa52c54.pause_animation()">
+      <button title="Pause" onclick="animce3da5188abd45da85c31c74c7c1d1d2.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="animc0a74b50ea194d38b39a24efbaa52c54.play_animation()">
+      <button title="Play" onclick="animce3da5188abd45da85c31c74c7c1d1d2.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="animc0a74b50ea194d38b39a24efbaa52c54.next_frame()">
+      <button title="Next frame" onclick="animce3da5188abd45da85c31c74c7c1d1d2.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="animc0a74b50ea194d38b39a24efbaa52c54.last_frame()">
+      <button title="Last frame" onclick="animce3da5188abd45da85c31c74c7c1d1d2.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="animc0a74b50ea194d38b39a24efbaa52c54.faster()">
+      <button title="Increase speed" onclick="animce3da5188abd45da85c31c74c7c1d1d2.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_selectc0a74b50ea194d38b39a24efbaa52c54"
+    <form title="Repetition mode" action="#n" name="_anim_loop_selectce3da5188abd45da85c31c74c7c1d1d2"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_c0a74b50ea194d38b39a24efbaa52c54"
+      <input type="radio" name="state" value="once" id="_anim_radio1_ce3da5188abd45da85c31c74c7c1d1d2"
              >
-      <label for="_anim_radio1_c0a74b50ea194d38b39a24efbaa52c54">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_c0a74b50ea194d38b39a24efbaa52c54"
+      <label for="_anim_radio1_ce3da5188abd45da85c31c74c7c1d1d2">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_ce3da5188abd45da85c31c74c7c1d1d2"
              checked>
-      <label for="_anim_radio2_c0a74b50ea194d38b39a24efbaa52c54">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_c0a74b50ea194d38b39a24efbaa52c54"
+      <label for="_anim_radio2_ce3da5188abd45da85c31c74c7c1d1d2">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_ce3da5188abd45da85c31c74c7c1d1d2"
              >
-      <label for="_anim_radio3_c0a74b50ea194d38b39a24efbaa52c54">Reflect</label>
+      <label for="_anim_radio3_ce3da5188abd45da85c31c74c7c1d1d2">Reflect</label>
     </form>
   </div>
 </div>
@@ -3638,9 +3735,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imgc0a74b50ea194d38b39a24efbaa52c54";
-    var slider_id = "_anim_sliderc0a74b50ea194d38b39a24efbaa52c54";
-    var loop_select_id = "_anim_loop_selectc0a74b50ea194d38b39a24efbaa52c54";
+    var img_id = "_anim_imgce3da5188abd45da85c31c74c7c1d1d2";
+    var slider_id = "_anim_sliderce3da5188abd45da85c31c74c7c1d1d2";
+    var loop_select_id = "_anim_loop_selectce3da5188abd45da85c31c74c7c1d1d2";
     var frames = new Array(100);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbAAAAEgCAYAAADVKCZpAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -12872,7 +12969,7 @@ sg4AAAAASUVORK5CYII=\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        animc0a74b50ea194d38b39a24efbaa52c54 = new Animation(frames, img_id, slider_id, 100.0,
+        animce3da5188abd45da85c31c74c7c1d1d2 = new Animation(frames, img_id, slider_id, 100.0,
                                  loop_select_id);
     }, 0);
   })()
