@@ -1,0 +1,1037 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.6. Tupel - tuple &#8212; Computational Thinking</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.7. Zeichenketten - str" href="7-string.html" />
+    <link rel="prev" title="4.5. Listen - list" href="5-list.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Thinking</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-1/course.html">
+   1. Kurskonzept
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/1-teaching.html">
+     1.1. Lehrkonzept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/2-learn-how-to-think.html">
+     1.2. Denken lernen?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-2/what-is-ct.html">
+   2. Was ist Computational Thinking
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-2/1-informatics-and-ct.html">
+     2.1. Von der Informatik zum Computational Thinking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-2/2-repetition-is-the-key.html">
+     2.2. Wiederholung als Grundlage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-3/history.html">
+   3. Geschichte der Computer und Algorithmen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/1-ancient.html">
+     3.1. Antike
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/2-middleages.html">
+     3.2. Mittelalter bis 19. Jahrundert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/3-today.html">
+     3.3. 19. Jahrundert bis heute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/4-future.html">
+     3.4. Ausblick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-4/why-ct.html">
+   4. Warum Computational Thinking?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/1-intrinsic-value.html">
+     4.1. Intrinsischer Wert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/2-usefulness.html">
+     4.2. Langfristiger Nutzen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/3-self-determination.html">
+     4.3. Selbstbestimmt durch CT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-5/sorting.html">
+   5. Lasst uns Denken
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/1-sort-cards.html">
+     5.1. Karten sortieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/2-sort-cards-with-python.html">
+     5.2. Karten sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/3-sort-numbers.html">
+     5.3. Zahlen sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/4-sort-anything.html">
+     5.4. Allgemeines Sortieren in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Theorie
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-1/information-processing.html">
+   1. Der digitale Computer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/1-basics.html">
+     1.1. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/2-interpretation.html">
+     1.2. Interpretation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/2-representation.html">
+     1.3. Repräsentationen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/3-manipulation.html">
+     1.4. Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/4-information-flow.html">
+     1.5. Der Informationskreislauf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/5-hardware-equals-software.html">
+     1.6. Berechenbarkeit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-2/information.html">
+   2. Was ist Information?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/1-natural-science.html">
+     2.1. Naturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/2-formal-science.html">
+     2.2. Strukturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/3-critic.html">
+     2.3. Kritik
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/4-humanics.html">
+     2.4. Geisteswissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/5-summary.html">
+     2.5. Zusammenfassung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-3/languages.html">
+   3. Programmiersprachen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/1-abstraction.html">
+     3.1. Abstraktion des Computers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/2-success-criteria.html">
+     3.2. Erfolgsfaktoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/3-imperative-vs-functional.html">
+     3.3. Imperativ vs. funktional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/4-language-evolution.html">
+     3.4. Sprachevolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/5-python.html">
+     3.5. Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/6-diversity.html">
+     3.6. Diversität
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-4/the-art-of-programming.html">
+   4. Die Kunst des Programmierens
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/1-algorithms.html">
+     4.1. Algorithmen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/2-programming.html">
+     4.2. Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/3-code.html">
+     4.3. Programmiercode
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-1/introduction.html">
+   1. Programmieren in Python
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-2/python-environment.html">
+   2. Das Python Ökosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/1-installation.html">
+     2.1. Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/2-run.html">
+     2.2. Python ausführen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/3-notebooks.html">
+     2.3. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/4-modules.html">
+     2.4. Module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-3/intro.html">
+   3. Variablen, Ausdrücke und Funktionsaufrufe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-3/1-variables.html">
+     3.1. Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-3/2-expressions.html">
+     3.2. Ausdrücke
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-3/3-invoking-functions.html">
+     3.3. Funktionsaufrufe
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   4. Datentypen (Grundlagen)
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-data-types.html">
+     4.1. Pythons Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-int.html">
+     4.2. Ganze Zahlen - int
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-float.html">
+     4.3. Fließkommazahlen - float
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-bool.html">
+     4.4. Wahrheitswerte - bool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-list.html">
+     4.5. Listen - list
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.6. Tupel - tuple
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7-string.html">
+     4.7. Zeichenketten - str
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-set.html">
+     4.8. Mengen - set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9-dict.html">
+     4.9. Wörterbücher - dict
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10-range.html">
+     4.10. Zahlenbereich - range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-typing-in-python.html">
+     4.11. Pythons Typisierung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-5/intro.html">
+   5. Datentypen (Fortsetzung)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-6/intro.html">
+   6. Funktionen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-7/intro.html">
+   7. Kontrollstrukturen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  CT in Aktion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/robo-world.html">
+   1. Roboterwelt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/dive-bell.html">
+   2. Sprechen in der Taucherglocke
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/image-representation.html">
+   3. Binäres Zeichnen - Struktur ist Information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/memory.html">
+   4. Speicher - alles ist eine Liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/name-register.html">
+   5. Namensregister
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/03-4/6-tuple.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/03-4/6-tuple.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-4/6-tuple.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="tupel-tuple">
+<span id="sec-tuple"></span><h1><span class="section-number">4.6. </span>Tupel - tuple<a class="headerlink" href="#tupel-tuple" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="5-list.html#sec-list"><span class="std std-ref">Listen</span></a> und <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple">Tupel</a> <code class="docutils literal notranslate"><span class="pre">tuple</span></code> (wie auch <a class="reference internal" href="7-string.html#sec-string"><span class="std std-ref">Zeichenketten</span></a>, und <a class="reference internal" href="10-range.html#sec-range"><span class="std std-ref">Zahlenbereiche</span></a>) sind allesamt <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">Sequenzen</a> und haben dadurch sehr ähnliche Eigenschaften.
+Einzig bei der Erstellung verwenden wir statt der eckigen die runden Klammern:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Indexierung ist identisch zur <a class="reference internal" href="5-list.html#sec-list-index"><span class="std std-ref">Indexierung von Listen</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der große Unterschied lieft in der Veränderbarkeit, denn Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind <strong>unveränderlich</strong> (engl. <strong>immutable</strong>)!</p>
+<div class="important admonition">
+<p class="admonition-title">Unveränderlichkeit</p>
+<p>Im Gegensatz zu Listen sind Tupel <em>unveränderliche</em> Datenstrukturen.</p>
+</div>
+<p>Aber Vorsicht ist geboten, denn das bedeutet nicht, dass wir ein Tupel überhaupt nicht verändern können.
+Was wir jedoch nicht verändern können sind die <strong>Adressen</strong> bzw. <code class="docutils literal notranslate"><span class="pre">id</span></code>s seiner Elemente!</p>
+<p>Folgender Code führt zu einem Fehler:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">d023483acbdb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>Doch können wir eine <em>Datenstruktur</em> die Element eines Tupels ist durchaus verändern:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, [&#39;a&#39;, 4, 5])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tupel werden oft verwendet wenn wir eine Ansammlung von heterogenen Datentypen zusammenfassen wollen, und wir explizit ausdrücken bzw. sicher gehen wollen, dass dieses Tupel nicht verändert wird.</p>
+<p>Um beispielsweise das sich nicht ändernde Alphabet zu modellieren, eignet sich ein Tupel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+<span class="n">alphabet</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;A&#39;,
+ &#39;B&#39;,
+ &#39;C&#39;,
+ &#39;D&#39;,
+ &#39;E&#39;,
+ &#39;F&#39;,
+ &#39;G&#39;,
+ &#39;H&#39;,
+ &#39;I&#39;,
+ &#39;J&#39;,
+ &#39;K&#39;,
+ &#39;L&#39;,
+ &#39;M&#39;,
+ &#39;N&#39;,
+ &#39;O&#39;,
+ &#39;P&#39;,
+ &#39;Q&#39;,
+ &#39;R&#39;,
+ &#39;S&#39;,
+ &#39;T&#39;,
+ &#39;U&#39;,
+ &#39;V&#39;,
+ &#39;W&#39;,
+ &#39;X&#39;,
+ &#39;Y&#39;,
+ &#39;Z&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet eine etwas hässliche Abkürzung für die Erstellung eines Tupels mit nur einem Element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">singleton</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="n">singleton</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>entspricht</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">singleton</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="n">singleton</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Achtung</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">number</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>funktioniert nicht!</p>
+<p>Python bietet auch das Konzept des <em>tuple-packing</em> und <em>tuple-unpacking</em>, was enorm praktisch ist:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">triple</span>  <span class="c1"># unpacking</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y = </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">packing</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="c1"># packing</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;packing = </span><span class="si">{</span><span class="n">packing</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 1
+y = 2
+z = 3
+packing = (1, 2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ziemlich cool, wie wir finden.
+Packing bzw. unpacking ist insbesondere praktisch, wenn Sie eine Funktion schreiben möchten, die mehr als ein Rückgabewert hat:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
+<span class="k">def</span> <span class="nf">random_rgb_color</span><span class="p">():</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span>
+
+<span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">random_rgb_color</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;red = </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s1">, green = </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s1">, blue = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>red = 62, green = 109, blue = 63
+</pre></div>
+</div>
+</div>
+</div>
+<p>Im Falle der Listen hat der <code class="docutils literal notranslate"><span class="pre">+=</span></code>-Operator die Liste verändert.
+Was glauben Sie macht der <code class="docutils literal notranslate"><span class="pre">+=</span></code>-Operator für Tupel?
+Ist er definiert?
+Testen wir es aus:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">numbers</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4, 5, 6, 7, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kein Fehler!
+Wird nun doch also doch <code class="docutils literal notranslate"><span class="pre">numbers</span></code>?
+Ja und nein.
+Der Speicherbereich des ursprünglichen Tupels bleibt unverändert, stattdessen wird eine Kopie angelegt.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">numbers_copy</span> <span class="o">=</span> <span class="n">numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id before += </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">numbers</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id after += </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id after += of the original </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">numbers_copy</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;numbers: </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;numbers_copy: </span><span class="si">{</span><span class="n">numbers_copy</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id before += 4354564160
+id after += 4353955088
+id after += of the original 4354564160
+numbers: (1, 2, 3, 4, 5, 6, 7, 8)
+numbers_copy: (1, 2, 3, 4, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="tuple-vs-lists-appending-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span>(Tupel vs Listen (Effizienz))</p>
+<div class="section" id="exercise-content">
+<p>Welche der folgenden Code-Teile benötigt nach Ihrer meinung mehr Computerressourcen und warum?</p>
+<p>Listenerzeugung durch Anhängen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">numbers</span> <span class="o">+=</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+<p>Tupelerzeugung durch Anhängen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">numbers</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span><span class="p">,)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution dropdown admonition" id="tuple-vs-lists-appending-solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#tuple-vs-lists-appending-exercise"><span>Exercise 4.1</span></a></p>
+<div class="section" id="solution-content">
+<p>Die Tupelerzeugung durch Anhängen ist deutlich langsamer und speicherintensiver, denn bei jeder Konkatenation <code class="docutils literal notranslate"><span class="pre">+=</span></code> wird <code class="docutils literal notranslate"><span class="pre">numbers</span></code> im Speicher kopiert.
+Der Code erzeugt damit 100 unterschiedliche Tupel!
+Im Fall der Liste wird einfach nur ein Element hinten dran gehängt.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/03-4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="5-list.html" title="previous page"><span class="section-number">4.5. </span>Listen - list</a>
+    <a class='right-next' id="next-link" href="7-string.html" title="next page"><span class="section-number">4.7. </span>Zeichenketten - str</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

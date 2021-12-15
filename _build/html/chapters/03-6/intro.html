@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Funktionen &#8212; Computational Thinking</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7. Kontrollstrukturen" href="../03-7/intro.html" />
+    <link rel="prev" title="5. Datentypen (Fortsetzung)" href="../03-5/intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Thinking</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-1/course.html">
+   1. Kurskonzept
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/1-teaching.html">
+     1.1. Lehrkonzept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/2-learn-how-to-think.html">
+     1.2. Denken lernen?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-2/what-is-ct.html">
+   2. Was ist Computational Thinking
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-2/1-informatics-and-ct.html">
+     2.1. Von der Informatik zum Computational Thinking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-2/2-repetition-is-the-key.html">
+     2.2. Wiederholung als Grundlage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-3/history.html">
+   3. Geschichte der Computer und Algorithmen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/1-ancient.html">
+     3.1. Antike
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/2-middleages.html">
+     3.2. Mittelalter bis 19. Jahrundert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/3-today.html">
+     3.3. 19. Jahrundert bis heute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/4-future.html">
+     3.4. Ausblick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-4/why-ct.html">
+   4. Warum Computational Thinking?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/1-intrinsic-value.html">
+     4.1. Intrinsischer Wert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/2-usefulness.html">
+     4.2. Langfristiger Nutzen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/3-self-determination.html">
+     4.3. Selbstbestimmt durch CT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-5/sorting.html">
+   5. Lasst uns Denken
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/1-sort-cards.html">
+     5.1. Karten sortieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/2-sort-cards-with-python.html">
+     5.2. Karten sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/3-sort-numbers.html">
+     5.3. Zahlen sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/4-sort-anything.html">
+     5.4. Allgemeines Sortieren in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Theorie
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-1/information-processing.html">
+   1. Der digitale Computer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/1-basics.html">
+     1.1. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/2-interpretation.html">
+     1.2. Interpretation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/2-representation.html">
+     1.3. Repräsentationen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/3-manipulation.html">
+     1.4. Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/4-information-flow.html">
+     1.5. Der Informationskreislauf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/5-hardware-equals-software.html">
+     1.6. Berechenbarkeit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-2/information.html">
+   2. Was ist Information?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/1-natural-science.html">
+     2.1. Naturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/2-formal-science.html">
+     2.2. Strukturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/3-critic.html">
+     2.3. Kritik
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/4-humanics.html">
+     2.4. Geisteswissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/5-summary.html">
+     2.5. Zusammenfassung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-3/languages.html">
+   3. Programmiersprachen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/1-abstraction.html">
+     3.1. Abstraktion des Computers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/2-success-criteria.html">
+     3.2. Erfolgsfaktoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/3-imperative-vs-functional.html">
+     3.3. Imperativ vs. funktional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/4-language-evolution.html">
+     3.4. Sprachevolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/5-python.html">
+     3.5. Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/6-diversity.html">
+     3.6. Diversität
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-4/the-art-of-programming.html">
+   4. Die Kunst des Programmierens
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/1-algorithms.html">
+     4.1. Algorithmen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/2-programming.html">
+     4.2. Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/3-code.html">
+     4.3. Programmiercode
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-1/introduction.html">
+   1. Programmieren in Python
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-2/python-environment.html">
+   2. Das Python Ökosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/1-installation.html">
+     2.1. Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/2-run.html">
+     2.2. Python ausführen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/3-notebooks.html">
+     2.3. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/4-modules.html">
+     2.4. Module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-3/intro.html">
+   3. Variablen, Ausdrücke und Funktionsaufrufe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-3/1-variables.html">
+     3.1. Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-3/2-expressions.html">
+     3.2. Ausdrücke
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-3/3-invoking-functions.html">
+     3.3. Funktionsaufrufe
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-4/intro.html">
+   4. Datentypen (Grundlagen)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/1-data-types.html">
+     4.1. Pythons Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/2-int.html">
+     4.2. Ganze Zahlen - int
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/3-float.html">
+     4.3. Fließkommazahlen - float
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/4-bool.html">
+     4.4. Wahrheitswerte - bool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/5-list.html">
+     4.5. Listen - list
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/6-tuple.html">
+     4.6. Tupel - tuple
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/7-string.html">
+     4.7. Zeichenketten - str
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/8-set.html">
+     4.8. Mengen - set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/9-dict.html">
+     4.9. Wörterbücher - dict
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/10-range.html">
+     4.10. Zahlenbereich - range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/11-typing-in-python.html">
+     4.11. Pythons Typisierung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-5/intro.html">
+   5. Datentypen (Fortsetzung)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   6. Funktionen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-7/intro.html">
+   7. Kontrollstrukturen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  CT in Aktion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/robo-world.html">
+   1. Roboterwelt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/dive-bell.html">
+   2. Sprechen in der Taucherglocke
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/image-representation.html">
+   3. Binäres Zeichnen - Struktur ist Information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/memory.html">
+   4. Speicher - alles ist eine Liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/name-register.html">
+   5. Namensregister
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/03-6/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/03-6/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-6/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="funktionen">
+<h1><span class="section-number">6. </span>Funktionen<a class="headerlink" href="#funktionen" title="Permalink to this headline">¶</a></h1>
+<p>Der Schlüssel zur Berechnung von Lösungen bzw. der Verarbeitung von Information ist die Wiederholung.
+Wo uns <span class="xref myst">Schleifen</span> erlauben eine bestimmte Folge von Arbeitsschritte <em>lokal</em> mehrfach auszuführen, erlauben es uns Funktionen eine Folge von Arbeitsschritte <em>global</em> auszuführen.
+In beiden Fällen ändern wir den Verlauf der Codeausführung, sodass dieser nicht mehr der Befehlsfolge (gelesen von oben nach unten) entspricht.</p>
+<p>Funktionen bündeln eine Folge von Arbeitsschritten / Befehle.
+Es können Argumente definiert werden, die als Input der Funktionen dienen.
+Wir sind im Stande dieses Bündel irgendwo in unserem Code auszuführen (ohne es noch einmal niederzuschreiben).
+Wird die Funktion im Code aufgerufen, springen wir, bzw. die CPU durch ihren <a class="reference internal" href="../02-1/4-information-flow.html#def-program-counter"><span class="std std-ref">Befehlszähler</span></a>, an die Stelle der Funktion, das Bündel an Anweisungen wird ausgeführt und schlussendlich springen wir wieder an jene Stelle zurück, von der wir hergekommen sind.</p>
+<p>Durch wiederholtes und verschachteltes Aufrufen einer Funktion erzeugen wir eine Art von Wiederholung.
+Zum Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">successor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">successor</span><span class="p">(</span><span class="n">successor</span><span class="p">(</span><span class="n">successor</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ruft sich eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. <span class="xref myst">Rekursion</span> oder rekursiven Funktion.
+Zum Beispiel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">0</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">fib</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>233
+</pre></div>
+</div>
+</div>
+</div>
+<p>Viele sog. <em>built-in</em> (eingebaute) <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionen haben wir bereits verwendet.
+Sie werden uns mit der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Standard Bibliothek mitgeliefert.
+Zum Beispiel ist <code class="docutils literal notranslate"><span class="pre">type()</span></code> oder auch <code class="docutils literal notranslate"><span class="pre">len()</span></code> eine solche Funktion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>builtin_function_or_method
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">roboworld</span></code> ist beispielsweise ein Modul, d.h. eine Ansammlung von Funktionalität, welches wir nutzten können.
+Deutlich bekannter ist das Modul <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, welches für numerische Berechnungen verwendet wird.
+Um eine Funktion eines Moduls aufzurufen stellen wir den Modulnamen, z.B. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> und einen Punkt <code class="docutils literal notranslate"><span class="pre">.</span></code> vorne an. Zuvor müssen wir das Modul geladen haben:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.01010101, 0.02020202, 0.03030303, 0.04040404,
+       0.05050505, 0.06060606, 0.07070707, 0.08080808, 0.09090909,
+       0.1010101 , 0.11111111, 0.12121212, 0.13131313, 0.14141414,
+       0.15151515, 0.16161616, 0.17171717, 0.18181818, 0.19191919,
+       0.2020202 , 0.21212121, 0.22222222, 0.23232323, 0.24242424,
+       0.25252525, 0.26262626, 0.27272727, 0.28282828, 0.29292929,
+       0.3030303 , 0.31313131, 0.32323232, 0.33333333, 0.34343434,
+       0.35353535, 0.36363636, 0.37373737, 0.38383838, 0.39393939,
+       0.4040404 , 0.41414141, 0.42424242, 0.43434343, 0.44444444,
+       0.45454545, 0.46464646, 0.47474747, 0.48484848, 0.49494949,
+       0.50505051, 0.51515152, 0.52525253, 0.53535354, 0.54545455,
+       0.55555556, 0.56565657, 0.57575758, 0.58585859, 0.5959596 ,
+       0.60606061, 0.61616162, 0.62626263, 0.63636364, 0.64646465,
+       0.65656566, 0.66666667, 0.67676768, 0.68686869, 0.6969697 ,
+       0.70707071, 0.71717172, 0.72727273, 0.73737374, 0.74747475,
+       0.75757576, 0.76767677, 0.77777778, 0.78787879, 0.7979798 ,
+       0.80808081, 0.81818182, 0.82828283, 0.83838384, 0.84848485,
+       0.85858586, 0.86868687, 0.87878788, 0.88888889, 0.8989899 ,
+       0.90909091, 0.91919192, 0.92929293, 0.93939394, 0.94949495,
+       0.95959596, 0.96969697, 0.97979798, 0.98989899, 1.        ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>function
+</pre></div>
+</div>
+</div>
+</div>
+<p>Funktionen sind ein Mittel um Codewiederholungen zu verhindern und auch ein Mittel um Code zu strukturieren und bestimmte Funktionalität zu kapseln.
+Stellen Sie sich vor wir müssten jedes Mal wenn wir etwas ausgeben wollen den Code der Funktion <code class="docutils literal notranslate"><span class="pre">print()</span></code> niederschreiben.
+Schnell würden unsere Programme lange und auch langweilig und unübersichtlich werden.</p>
+<p>Gute Funktionen zu schreiben kann sehr befriedigend für uns Computational Thinker*innen sein.
+Wir lösen damit oft ein Teilproblem und kommen der gesamten Lösung näher.
+Mit ein wenig Erfahrung können wir sogar Probleme lösen indem wir davon ausgehen, ein Teilproblem hätten wir bereits gelöst – auch wenn dies noch nicht der Fall ist.</p>
+<p>Wie ist das gemeint?
+Nun, wir wollen zum Beispiel eine Funktion schreiben, welche uns die ersten <code class="docutils literal notranslate"><span class="pre">n</span></code> Primzahlen berechnet und in eine Liste packt.
+Wir gehen einfach davon aus es gäbe eine Funktion <code class="docutils literal notranslate"><span class="pre">is_prime(k)</span></code> die prüft ob <code class="docutils literal notranslate"><span class="pre">k</span></code> eine Primzahl ist oder nicht.
+Unter dieser Annahme schreiben wir unsere Funktion <code class="docutils literal notranslate"><span class="pre">prime_list(n)</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">prime_list</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">primelist</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">primelist</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+      <span class="n">primelist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">primelist</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nachdem wir uns um die Generierung der Liste gekümmert haben, widmen wir uns der Funktion <code class="docutils literal notranslate"><span class="pre">is_prime(k)</span></code>.
+Oder andere Entwickler*innen, die sich besser mit dem Problem auskennen, lösen es.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+  <span class="c1"># a really stupid prime check</span>
+  <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">False</span>
+  <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">True</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">k</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+  <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">prime_list</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">primelist</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">primelist</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+      <span class="n">primelist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">primelist</span>
+
+<span class="n">prime_list</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/03-6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../03-5/intro.html" title="previous page"><span class="section-number">5. </span>Datentypen (Fortsetzung)</a>
+    <a class='right-next' id="next-link" href="../03-7/intro.html" title="next page"><span class="section-number">7. </span>Kontrollstrukturen</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
