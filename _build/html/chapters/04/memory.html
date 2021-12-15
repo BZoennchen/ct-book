@@ -388,6 +388,11 @@
      4.3. Programmiercode
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/4-repetition-and-recursion.html">
+     4.4. Wiederholung und Rekursion
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -537,7 +542,32 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/1-type-systems.html">
+     5.1. Dynamische und statische Typisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/2-why-data-types.html">
+     5.2. Existenzberechtigung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/3-change-of-interpretation.html">
+     5.3. Interpretationswechsel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/4-kind-of-data-types.html">
+     5.4. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/5-primitive-data-types.html">
+     5.5. Primitive Datentypen in Python?
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -549,7 +579,37 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/1-purity.html">
+     6.1. Reinheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/2-definition.html">
+     6.2. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/3-namespaces.html">
+     6.3. Namensräume und Sichtbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/4-lambdas.html">
+     6.4. Anonyme Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/5-nested-functions.html">
+     6.5. Umschlossene Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/6-first-class-functions.html">
+     6.6. First-Class-Funktion
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -561,7 +621,44 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-7/1-cases.html">
+     7.1. Fallunterscheidungen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-7/2-loops.html">
+     7.2. Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-7/3-comprehensions.html">
+     7.3. Comprehensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-8/intro.html">
+   8. Objektorientierte Programmierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-8/1-class-and-objects.html">
+     8.1. Klassen und Objekte
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">
+     8.2. Vererbung, Kapselung und Polymorphie
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1021,7 +1118,7 @@ Um zu entscheiden, ob ein Speicherbereich den Datentyp beschreibt, verwenden wir
 Wir einigen uns einfach darauf, dass ein Paar (Datentyp, Wert) mit dem Datentyp beginnt und dieser genau durch das erste <a class="reference internal" href="../02-1/2-representation.html#def-byte"><span class="std std-ref">Byte</span></a> beschrieben wird.
 Wenn wir wissen, dass ein solches Paar an der Adresse / Index <code class="docutils literal notranslate"><span class="pre">i</span></code> beginnt, können wir den Datentyp aus dem Speicherbereich <code class="docutils literal notranslate"><span class="pre">memory[i]</span></code> herauslesen.
 Zu wissen, wo ein solches Paar beginnt, ist eine notwendige Vorraussetzung.</p>
-<p>Wir beschränken uns auf die folgenden Datentypen, wovon die Werte der <span class="xref myst">primitiven Datentypen</span> einen festen Speicherbedarf benötigen.</p>
+<p>Wir beschränken uns auf die folgenden Datentypen, wovon die Werte der <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a> einen festen Speicherbedarf benötigen.</p>
 <ol class="simple">
 <li><p>die <a class="reference internal" href="#sec-memory-natural-numbers"><span class="std std-ref">natürlichen Zahlen</span></a>, 16-Bit</p></li>
 <li><p><a class="reference internal" href="#sec-memory-char"><span class="std std-ref">Zeichen</span></a>, 8-Bit</p></li>
@@ -1029,8 +1126,8 @@ Zu wissen, wo ein solches Paar beginnt, ist eine notwendige Vorraussetzung.</p>
 <li><p><a class="reference internal" href="#sec-memory-list"><span class="std std-ref">Listen</span></a>, variabler Speicherbedarf</p></li>
 <li><p>(<a class="reference internal" href="#sec-memory-string"><span class="std std-ref">Zeichenketten</span></a>, variabler Speicherbedarf)</p></li>
 </ol>
-<p>Eine Zeichenketten oder Listen sind von keinem <span class="xref myst">primitiven Datentyp</span>, denn sie haben eine variable Länge und können weiter zerlegt werden.
-Die Festlegung des Speicherbedarfs für <span class="xref myst">primitive Datentyp</span> bedeutet auch, dass wir für kleine Zahlen z.B. die 0 mehr Speicher verbrauchen als eigentlich notwendig.
+<p>Eine Zeichenketten oder Listen sind von keinem <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a>, denn sie haben eine variable Länge und können weiter zerlegt werden.
+Die Festlegung des Speicherbedarfs für <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentyp</span></a> bedeutet auch, dass wir für kleine Zahlen z.B. die 0 mehr Speicher verbrauchen als eigentlich notwendig.
 Weshalb diese Lösung dennoch besser ist als einen variable Speicherbedarf zu verwalten wird gleich ersichtlich.</p>
 <p>Fassen wir noch einmal die implizieten und explizieten Informationen zusammen.</p>
 <ul class="simple">
@@ -1132,7 +1229,7 @@ Demnach gilt:</p>
 <p class="admonition-title">Überlauf in Python</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> habe nur Fließkommazahlen <code class="docutils literal notranslate"><span class="pre">float</span></code> ein hartes Limit.
 Ganze Zahlen (Integer) <code class="docutils literal notranslate"><span class="pre">int</span></code> sind als sogenannte <strong>long integer objects</strong> implementiert, welche keine harte Grenze haben und damit zu keinem <em>Überlauf</em> führen.
-Ganze Zahlen sind in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine <span class="xref myst">primitiven Datentypen</span>.</p>
+Ganze Zahlen sind in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a>.</p>
 </div>
 </div>
 <div class="section" id="speicheradressen">
@@ -1209,7 +1306,7 @@ Wie lautet dann der Index für <code class="docutils literal notranslate"><span 
 </ol>
 </div>
 </div>
-<p>Die schnelle und einfache Indexberechnung ist der Grund weshalb jedes Element eines <span class="xref myst">primitive Datentyps</span> gleich viel Speicher verbraucht und wir keinen variablen Speicherverbrauch für diese Datentypen haben.
+<p>Die schnelle und einfache Indexberechnung ist der Grund weshalb jedes Element eines <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentyps</span></a> gleich viel Speicher verbraucht und wir keinen variablen Speicherverbrauch für diese Datentypen haben.
 Dies ist ein ganz wesentliches Prinzip aller modernen Computer!
 Es vereinfacht bzw. beschleunigt die Adressierung.</p>
 <div class="exercise admonition" id="memory-list-variable-memory-exercise">
@@ -1728,8 +1825,8 @@ Our list in mememory: [2, 0, 10, 0, 0, 1, 0, 4, 0, 9, 0, 16, 0, 25, 0, 36, 0, 49
 <div class="section" id="mehrdimensionale-listen">
 <h3><span class="section-number">4.3.5. </span>Mehrdimensionale Listen<a class="headerlink" href="#mehrdimensionale-listen" title="Permalink to this headline">¶</a></h3>
 <p>Wenn Sie <code class="docutils literal notranslate"><span class="pre">alloc_list</span></code> betrachten werden Sie festellen, dass eine Liste aus Elementen vom Datentyp <code class="docutils literal notranslate"><span class="pre">to_data_type('list')</span></code> nicht zulässig ist.
-Unsere Liste darf derzeit nur <span class="xref myst">primitive Datentypen</span> (natürliche Zahlen, Zeichen und Adressen) beinhalten.</p>
-<p>Mehrdimensionale Listen aus Elementen eines <span class="xref myst">primitiven Datentyps</span> lassen sich recht einfach erstellen, wenn wir anstatt eine Länge der Liste, für jede Dimension eine Länge anfügen.
+Unsere Liste darf derzeit nur <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> (natürliche Zahlen, Zeichen und Adressen) beinhalten.</p>
+<p>Mehrdimensionale Listen aus Elementen eines <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyps</span></a> lassen sich recht einfach erstellen, wenn wir anstatt eine Länge der Liste, für jede Dimension eine Länge anfügen.
 Eine solche Liste würde anstatt einer Länge eine Liste aus Längen beinhalten.
 Zudem würden wir die Elemente immernoch linear nebeneinander anordnen.</p>
 <p>Nehmen wir zum Beispiel an, wir möchten eine zweidimensionale Liste, wobei die erste Dimension die Länge <span class="math notranslate nohighlight">\(n\)</span> und die zweite die Länge <span class="math notranslate nohighlight">\(m\)</span> hätte.
@@ -1756,7 +1853,7 @@ Haben Sie eine Idee wie wir das erreichen können?</p>
 <p class="admonition-title">Solution to <a class="reference external" href="#memory-list-pointer-exercise"><span>Exercise 4.17</span></a></p>
 <div class="section" id="solution-content">
 <p>Wir können Adressen (Zeiger) als Listenelemente verwenden.
-Diese Adressen können auf unterschiedliche <span class="xref myst">primitive Datentypen</span> aber auch andere Listen zeigen!</p>
+Diese Adressen können auf unterschiedliche <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> aber auch andere Listen zeigen!</p>
 </div>
 </div>
 <p>Folgender Code erzeugt die gleiche Ausgabe wie zuvor, doch liegen die Quadratzahlen irgendwo verteilt im Speicher <code class="docutils literal notranslate"><span class="pre">memory</span></code>.
@@ -1843,7 +1940,7 @@ We allocated 0 bytes
 </div>
 <div class="section" id="ein-einfacher-parser">
 <h3><span class="section-number">4.3.6. </span>Ein einfacher Parser<a class="headerlink" href="#ein-einfacher-parser" title="Permalink to this headline">¶</a></h3>
-<p>Um die Manipulationen im Speicher besser nachzuvollziehen zu können wäre es großartig eine Funktion <code class="docutils literal notranslate"><span class="pre">mem_to_string(addr,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code> zu haben, welche einen <span class="xref myst">primitiven Datentyp</span> oder eine <a class="reference internal" href="#sec-memory-list"><span class="std std-ref">Liste</span></a> in einer gut leserlichen Formatierung als Zeichenkette zurückgibt.</p>
+<p>Um die Manipulationen im Speicher besser nachzuvollziehen zu können wäre es großartig eine Funktion <code class="docutils literal notranslate"><span class="pre">mem_to_string(addr,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code> zu haben, welche einen <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> oder eine <a class="reference internal" href="#sec-memory-list"><span class="std std-ref">Liste</span></a> in einer gut leserlichen Formatierung als Zeichenkette zurückgibt.</p>
 <p>An einer Adresse <code class="docutils literal notranslate"><span class="pre">ADDR</span></code> kann sich eine andere <code class="docutils literal notranslate"><span class="pre">ADDR</span></code>, eine Zahl <code class="docutils literal notranslate"><span class="pre">number</span></code>, ein Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code> oder eine Liste <code class="docutils literal notranslate"><span class="pre">LIST</span></code> befinden.
 Eine Liste <code class="docutils literal notranslate"><span class="pre">LIST</span></code> kann wiederum natürliche Zahlen <code class="docutils literal notranslate"><span class="pre">number</span></code>, Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code> oder Adressen <code class="docutils literal notranslate"><span class="pre">ADDR</span></code> enthalten.
 Diese Struktur ist eine von uns definierte <strong>Syntax</strong>!

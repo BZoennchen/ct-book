@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-## Wiederholung und Rekursion
+# Wiederholung und Rekursion
 
 Auf der konzeptionellen Ebene erscheinen Wiederholung und Rekursion grundverschieden.
 Es sind unterschiedliche Denkweisen.
@@ -21,7 +21,7 @@ Wir können rekursiv oder aber in Wiederholungen denken.
 Sofern bei der Wiederholung, die Anzahl der Durchläufe nicht zur Laufzeit vor der Ausführung der Wiederholung bekannt sein muss können wir überraschenderweise jede Rekursion in eine Wiederholung und jede Wiederholung in eine Rekursion umwandeln!
 ```
 
-### Wiederholung
+## Wiederholung
 
 Das fundamentale Prinzip der *Wiederholung* ist zentraler Bestandteil des Computational Thinkings.
 Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
@@ -76,11 +76,38 @@ Damit brauchen wir maximal so viele Durchläufe (1. Wiederholung) wie es Element
 Jeder Durchlauf benötigt ebenfalls maximal so viel Schritte wie es Elemente sind.
 Damit hat der Algorithmus im schlechtesten Fall eine quadratische Laufzeit.
 
-### Rekursion
+## Rekursion
 
 Rekursion scheint dieses unverständliche Konzept, welches Mathematiker\*innen lieben und vor dem Programmierer\*innen anfänglich davonlaufen.
 Derweil würden wir behaupten, dass die *rekursive denkweise* uns Menschen näher ist als das Denken in Wiederholungen.
 Rekursive Lösungen sind oft eleganter, kürzer, verständlicher aber leider auch langsamer als iterative Lösungen.
+
+Nehmen wir die Berechnung der Fakultät, einmal iterativ
+
+$$\text{fac}_\text{it}(n) = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 = \prod\limits_{i=1}^n i$$
+
+```{code-cell} python3
+def fac_it(n):
+    result = 1
+    for i in range(1,n+1):
+        result *= i
+    return result
+
+fac_it(5)
+```
+
+und einmal rekursiv
+
+$$\text{fac}_\text{rec}(n) = \begin{cases} 1 & \text{ falls } n = 0\\ (n-1) \cdot \text{fac}_\text{rec}(n-1)\end{cases}$$
+
+```{code-cell} python3
+def fac_rec(n):
+    if n <= 1:
+        return 1
+    return n * fac_rec(n-1)
+
+fac_rec(5)
+```
 
 ```{admonition} Rekursion
 :name: def-recursion

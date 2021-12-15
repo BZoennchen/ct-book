@@ -1,0 +1,2556 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.2. Schleifen &#8212; Computational Thinking</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.3. Comprehensions" href="3-comprehensions.html" />
+    <link rel="prev" title="7.1. Fallunterscheidungen" href="1-cases.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Thinking</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-1/course.html">
+   1. Kurskonzept
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/1-teaching.html">
+     1.1. Lehrkonzept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/2-learn-how-to-think.html">
+     1.2. Denken lernen?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-2/what-is-ct.html">
+   2. Was ist Computational Thinking
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-2/1-informatics-and-ct.html">
+     2.1. Von der Informatik zum Computational Thinking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-2/2-repetition-is-the-key.html">
+     2.2. Wiederholung als Grundlage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-3/history.html">
+   3. Geschichte der Computer und Algorithmen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/1-ancient.html">
+     3.1. Antike
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/2-middleages.html">
+     3.2. Mittelalter bis 19. Jahrundert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/3-today.html">
+     3.3. 19. Jahrundert bis heute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-3/4-future.html">
+     3.4. Ausblick
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-4/why-ct.html">
+   4. Warum Computational Thinking?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/1-intrinsic-value.html">
+     4.1. Intrinsischer Wert
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/2-usefulness.html">
+     4.2. Langfristiger Nutzen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-4/3-self-determination.html">
+     4.3. Selbstbestimmt durch CT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-5/sorting.html">
+   5. Lasst uns Denken
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/1-sort-cards.html">
+     5.1. Karten sortieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/2-sort-cards-with-python.html">
+     5.2. Karten sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/3-sort-numbers.html">
+     5.3. Zahlen sortieren in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-5/4-sort-anything.html">
+     5.4. Allgemeines Sortieren in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Theorie
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-1/information-processing.html">
+   1. Der digitale Computer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/1-basics.html">
+     1.1. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/2-interpretation.html">
+     1.2. Interpretation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/2-representation.html">
+     1.3. Repräsentationen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/3-manipulation.html">
+     1.4. Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/4-information-flow.html">
+     1.5. Der Informationskreislauf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/5-hardware-equals-software.html">
+     1.6. Berechenbarkeit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-2/information.html">
+   2. Was ist Information?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/1-natural-science.html">
+     2.1. Naturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/2-formal-science.html">
+     2.2. Strukturwissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/3-critic.html">
+     2.3. Kritik
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/4-humanics.html">
+     2.4. Geisteswissenschaften
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-2/5-summary.html">
+     2.5. Zusammenfassung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-3/languages.html">
+   3. Programmiersprachen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/1-abstraction.html">
+     3.1. Abstraktion des Computers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/2-success-criteria.html">
+     3.2. Erfolgsfaktoren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/3-imperative-vs-functional.html">
+     3.3. Imperativ vs. funktional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/4-language-evolution.html">
+     3.4. Sprachevolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/5-python.html">
+     3.5. Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/6-diversity.html">
+     3.6. Diversität
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-4/the-art-of-programming.html">
+   4. Die Kunst des Programmierens
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/1-algorithms.html">
+     4.1. Algorithmen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/2-programming.html">
+     4.2. Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/3-code.html">
+     4.3. Programmiercode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/4-repetition-and-recursion.html">
+     4.4. Wiederholung und Rekursion
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-1/introduction.html">
+   1. Programmieren in Python
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-2/python-environment.html">
+   2. Das Python Ökosystem
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/1-installation.html">
+     2.1. Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/2-run.html">
+     2.2. Python ausführen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/3-notebooks.html">
+     2.3. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-2/4-modules.html">
+     2.4. Module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-3/intro.html">
+   3. Variablen, Ausdrücke und Funktionsaufrufe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-3/1-variables.html">
+     3.1. Variablen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-3/2-expressions.html">
+     3.2. Ausdrücke
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-3/3-invoking-functions.html">
+     3.3. Funktionsaufrufe
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-4/intro.html">
+   4. Datentypen (Grundlagen)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/1-data-types.html">
+     4.1. Pythons Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/2-int.html">
+     4.2. Ganze Zahlen - int
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/3-float.html">
+     4.3. Fließkommazahlen - float
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/4-bool.html">
+     4.4. Wahrheitswerte - bool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/5-list.html">
+     4.5. Listen - list
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/6-tuple.html">
+     4.6. Tupel - tuple
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/7-string.html">
+     4.7. Zeichenketten - str
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/8-set.html">
+     4.8. Mengen - set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/9-dict.html">
+     4.9. Wörterbücher - dict
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/10-range.html">
+     4.10. Zahlenbereich - range
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-4/11-typing-in-python.html">
+     4.11. Pythons Typisierung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-5/intro.html">
+   5. Datentypen (Fortsetzung)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/1-type-systems.html">
+     5.1. Dynamische und statische Typisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/2-why-data-types.html">
+     5.2. Existenzberechtigung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/3-change-of-interpretation.html">
+     5.3. Interpretationswechsel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/4-kind-of-data-types.html">
+     5.4. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/5-primitive-data-types.html">
+     5.5. Primitive Datentypen in Python?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-6/intro.html">
+   6. Funktionen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/1-purity.html">
+     6.1. Reinheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/2-definition.html">
+     6.2. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/3-namespaces.html">
+     6.3. Namensräume und Sichtbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/4-lambdas.html">
+     6.4. Anonyme Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/5-nested-functions.html">
+     6.5. Umschlossene Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/6-first-class-functions.html">
+     6.6. First-Class-Funktion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   7. Kontrollstrukturen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-cases.html">
+     7.1. Fallunterscheidungen
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     7.2. Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-comprehensions.html">
+     7.3. Comprehensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-8/intro.html">
+   8. Objektorientierte Programmierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-8/1-class-and-objects.html">
+     8.1. Klassen und Objekte
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">
+     8.2. Vererbung, Kapselung und Polymorphie
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  CT in Aktion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/robo-world.html">
+   1. Roboterwelt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/dive-bell.html">
+   2. Sprechen in der Taucherglocke
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/image-representation.html">
+   3. Binäres Zeichnen - Struktur ist Information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/memory.html">
+   4. Speicher - alles ist eine Liste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04/name-register.html">
+   5. Namensregister
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../misc/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/03-7/2-loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/03-7/2-loops.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-7/2-loops.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation">
+   7.2.1. Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-for-schleife">
+   7.2.2. Die
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   -Schleife
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#die-klassische-for-schleife-fall-1">
+     7.2.2.1. Die klassische
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     -Schleife (Fall 1)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#die-foreach-schleife-fall-2">
+     7.2.2.2. Die Foreach-Schleife (Fall 2)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#die-while-schleife">
+     7.2.2.3. Die
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     -Schleife
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beispiel-ggt">
+   7.2.3. Beispiel (ggT)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="schleifen">
+<span id="sec-loops"></span><h1><span class="section-number">7.2. </span>Schleifen<a class="headerlink" href="#schleifen" title="Permalink to this headline">¶</a></h1>
+<p>Viele Aufgaben, die wir über unser Leben hinweg verrichten sind langweilig, da wir immer und immer wieder die gleichen Basisschritte wiederholen müssen.</p>
+<p>Nehmen Sie nur das Nachschlagen einer Telefonnummer im Telefonbuch (falls Sie so etwas überhaupt noch kennen). Wir gehen dabei Seite für Seite durch und suchen nach einem bestimmten Namen - langweilig …</p>
+<p>Auch ganz alltägliche Dinge wie der Abwasch, Zähneputzen, Kochen, ja nahezu jede Aktion beinhaltet die eine oder andere Art der Wiederholung.</p>
+<p>Wie sich gezeigt hat, können wir interessanterweise durch diese langweiligen Wiederholungen ganz erstaunliche Dinge vollbringen. <strong>Wiederholung ist die Grundlage aller Berechnung.</strong></p>
+<div class="section" id="motivation">
+<h2><span class="section-number">7.2.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>Lassen Sie uns einmal auf unseren Roboter blicken.
+Dieser bewegt sich auf einem Gitter.
+Jeder Gitterpunkt ist entweder begehbar oder durch ein Hindernis belegt.
+Der Roboter kann nur nach Vorne laufen und sich nach links um 90 Grad drehen.
+Eine genauere Beschreibung des Roboters und seiner Welt finden Sie in der Übung <a class="reference internal" href="../04/robo-world.html#sec-robo-world"><span class="std std-ref">Roboterwelt</span></a>.</p>
+<p>Die Folgende Welt enthält unseren Roboter (türkis), das Ziel (gelb), begehbare Zellen (lila) und unbegehbare Hindernisse (blau).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">roboworld</span> <span class="k">as</span> <span class="nn">rw</span>
+
+<span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">complex_maze</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2-loops_1_0.png" src="../../_images/2-loops_1_0.png" />
+</div>
+</div>
+<p>Wir sollen nun einen Algorithmus entwerfen, welcher den Roboter zum Ziel führt (sofern dies möglich ist).
+Diese Aufgabe scheint überwältigend schwierig.
+Wir verwenden das <code class="docutils literal notranslate"><span class="pre">random</span></code>-Modul um einen <em>fairen Münzwurf</em> zu simulieren.
+Zudem verwenden wir lediglich folgende Methoden des Roboters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">turn_left()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_wall_in_front()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_at_goal()</span></code></p></li>
+</ul>
+<p>In wie vielen Zeilen Code können wir dieses Problem lösen?
+Durch das Potenzial der <strong>Wiederholung</strong> brauchen wir ca. 10 Zeilen Code!</p>
+<p>Zuerst definieren wir eine Funktion <code class="docutils literal notranslate"><span class="pre">random_move(robo)</span></code> welche den Roboter um einen zufälligen Nachbargitterpunkt bewegt (falls dies möglich ist).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
+
+<span class="k">def</span> <span class="nf">random_move</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+    <span class="n">turns</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">turns</span><span class="p">):</span>
+        <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">():</span>
+        <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dann nutzten wir die Wiederholung und bewegen den Roboter immer weiter auf zufällige Nachbargitterpunkte bis er am Ziel angekommen ist:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">disable_print</span><span class="p">()</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_at_goal</span><span class="p">():</span>
+    <span class="n">random_move</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lassen Sie uns die sog. <em>Zufallsfahrt</em> des Roboters ansehen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rw</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MovieWriter imagemagick unavailable; using Pillow instead.
+</pre></div>
+</div>
+<div class="output text_html">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script language="javascript">
+  function isInternetExplorer() {
+    ua = navigator.userAgent;
+    /* MSIE used to detect old browsers and Trident used to newer ones*/
+    return ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+  }
+
+  /* Define the Animation class */
+  function Animation(frames, img_id, slider_id, interval, loop_select_id){
+    this.img_id = img_id;
+    this.slider_id = slider_id;
+    this.loop_select_id = loop_select_id;
+    this.interval = interval;
+    this.current_frame = 0;
+    this.direction = 0;
+    this.timer = null;
+    this.frames = new Array(frames.length);
+
+    for (var i=0; i<frames.length; i++)
+    {
+     this.frames[i] = new Image();
+     this.frames[i].src = frames[i];
+    }
+    var slider = document.getElementById(this.slider_id);
+    slider.max = this.frames.length - 1;
+    if (isInternetExplorer()) {
+        // switch from oninput to onchange because IE <= 11 does not conform
+        // with W3C specification. It ignores oninput and onchange behaves
+        // like oninput. In contrast, Mircosoft Edge behaves correctly.
+        slider.setAttribute('onchange', slider.getAttribute('oninput'));
+        slider.setAttribute('oninput', null);
+    }
+    this.set_frame(this.current_frame);
+  }
+
+  Animation.prototype.get_loop_state = function(){
+    var button_group = document[this.loop_select_id].state;
+    for (var i = 0; i < button_group.length; i++) {
+        var button = button_group[i];
+        if (button.checked) {
+            return button.value;
+        }
+    }
+    return undefined;
+  }
+
+  Animation.prototype.set_frame = function(frame){
+    this.current_frame = frame;
+    document.getElementById(this.img_id).src =
+            this.frames[this.current_frame].src;
+    document.getElementById(this.slider_id).value = this.current_frame;
+  }
+
+  Animation.prototype.next_frame = function()
+  {
+    this.set_frame(Math.min(this.frames.length - 1, this.current_frame + 1));
+  }
+
+  Animation.prototype.previous_frame = function()
+  {
+    this.set_frame(Math.max(0, this.current_frame - 1));
+  }
+
+  Animation.prototype.first_frame = function()
+  {
+    this.set_frame(0);
+  }
+
+  Animation.prototype.last_frame = function()
+  {
+    this.set_frame(this.frames.length - 1);
+  }
+
+  Animation.prototype.slower = function()
+  {
+    this.interval /= 0.7;
+    if(this.direction > 0){this.play_animation();}
+    else if(this.direction < 0){this.reverse_animation();}
+  }
+
+  Animation.prototype.faster = function()
+  {
+    this.interval *= 0.7;
+    if(this.direction > 0){this.play_animation();}
+    else if(this.direction < 0){this.reverse_animation();}
+  }
+
+  Animation.prototype.anim_step_forward = function()
+  {
+    this.current_frame += 1;
+    if(this.current_frame < this.frames.length){
+      this.set_frame(this.current_frame);
+    }else{
+      var loop_state = this.get_loop_state();
+      if(loop_state == "loop"){
+        this.first_frame();
+      }else if(loop_state == "reflect"){
+        this.last_frame();
+        this.reverse_animation();
+      }else{
+        this.pause_animation();
+        this.last_frame();
+      }
+    }
+  }
+
+  Animation.prototype.anim_step_reverse = function()
+  {
+    this.current_frame -= 1;
+    if(this.current_frame >= 0){
+      this.set_frame(this.current_frame);
+    }else{
+      var loop_state = this.get_loop_state();
+      if(loop_state == "loop"){
+        this.last_frame();
+      }else if(loop_state == "reflect"){
+        this.first_frame();
+        this.play_animation();
+      }else{
+        this.pause_animation();
+        this.first_frame();
+      }
+    }
+  }
+
+  Animation.prototype.pause_animation = function()
+  {
+    this.direction = 0;
+    if (this.timer){
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+  }
+
+  Animation.prototype.play_animation = function()
+  {
+    this.pause_animation();
+    this.direction = 1;
+    var t = this;
+    if (!this.timer) this.timer = setInterval(function() {
+        t.anim_step_forward();
+    }, this.interval);
+  }
+
+  Animation.prototype.reverse_animation = function()
+  {
+    this.pause_animation();
+    this.direction = -1;
+    var t = this;
+    if (!this.timer) this.timer = setInterval(function() {
+        t.anim_step_reverse();
+    }, this.interval);
+  }
+</script>
+
+<style>
+.animation {
+    display: inline-block;
+    text-align: center;
+}
+input[type=range].anim-slider {
+    width: 374px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.anim-buttons {
+    margin: 8px 0px;
+}
+.anim-buttons button {
+    padding: 0;
+    width: 36px;
+}
+.anim-state label {
+    margin-right: 8px;
+}
+.anim-state input {
+    margin: 0;
+    vertical-align: middle;
+}
+</style>
+
+<div class="animation">
+  <img id="_anim_imgf3354443424c452ba9722a0007a071ec">
+  <div class="anim-controls">
+    <input id="_anim_sliderf3354443424c452ba9722a0007a071ec" type="range" class="anim-slider"
+           name="points" min="0" max="1" step="1" value="0"
+           oninput="animf3354443424c452ba9722a0007a071ec.set_frame(parseInt(this.value));"></input>
+    <div class="anim-buttons">
+      <button title="Decrease speed" onclick="animf3354443424c452ba9722a0007a071ec.slower()">
+          <i class="fa fa-minus"></i></button>
+      <button title="First frame" onclick="animf3354443424c452ba9722a0007a071ec.first_frame()">
+        <i class="fa fa-fast-backward"></i></button>
+      <button title="Previous frame" onclick="animf3354443424c452ba9722a0007a071ec.previous_frame()">
+          <i class="fa fa-step-backward"></i></button>
+      <button title="Play backwards" onclick="animf3354443424c452ba9722a0007a071ec.reverse_animation()">
+          <i class="fa fa-play fa-flip-horizontal"></i></button>
+      <button title="Pause" onclick="animf3354443424c452ba9722a0007a071ec.pause_animation()">
+          <i class="fa fa-pause"></i></button>
+      <button title="Play" onclick="animf3354443424c452ba9722a0007a071ec.play_animation()">
+          <i class="fa fa-play"></i></button>
+      <button title="Next frame" onclick="animf3354443424c452ba9722a0007a071ec.next_frame()">
+          <i class="fa fa-step-forward"></i></button>
+      <button title="Last frame" onclick="animf3354443424c452ba9722a0007a071ec.last_frame()">
+          <i class="fa fa-fast-forward"></i></button>
+      <button title="Increase speed" onclick="animf3354443424c452ba9722a0007a071ec.faster()">
+          <i class="fa fa-plus"></i></button>
+    </div>
+    <form title="Repetition mode" action="#n" name="_anim_loop_selectf3354443424c452ba9722a0007a071ec"
+          class="anim-state">
+      <input type="radio" name="state" value="once" id="_anim_radio1_f3354443424c452ba9722a0007a071ec"
+             >
+      <label for="_anim_radio1_f3354443424c452ba9722a0007a071ec">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_f3354443424c452ba9722a0007a071ec"
+             checked>
+      <label for="_anim_radio2_f3354443424c452ba9722a0007a071ec">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_f3354443424c452ba9722a0007a071ec"
+             >
+      <label for="_anim_radio3_f3354443424c452ba9722a0007a071ec">Reflect</label>
+    </form>
+  </div>
+</div>
+
+
+<script language="javascript">
+  /* Instantiate the Animation class. */
+  /* The IDs given should match those used in the template above. */
+  (function() {
+    var img_id = "_anim_imgf3354443424c452ba9722a0007a071ec";
+    var slider_id = "_anim_sliderf3354443424c452ba9722a0007a071ec";
+    var loop_select_id = "_anim_loop_selectf3354443424c452ba9722a0007a071ec";
+    var frames = new Array(36);
+
+  frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEbklEQVR4nO3XMUptRwDG8TnXiM+bA8+DgdzOPURcgJhUSSMhYCXCww3I7VIF\
+UoulYmNnKYGEQBqXElyBFqLPwpysYKrLx5yE328FHzPDH6abzWbjx62tMlVdKWUcx9Yzqrqus28F\
+/4V9s266+/4Zp31+X3zc2io7P/3cekfVcm9Rbk7vWs+oOrk+tG8FU9+3/P2H8t03v7aeUXX7xy+T\
+Pr9Z6wHA/5fAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADFd3/fj5cVV6x1V82GzvDy+tp5RNd+el+e399YzqvqNtWnvW5+53xVM/fy6\
+YRjG3aeD1juqTq4Py83pXesZVce3R+X8/qH1jKqz/Z1J71vuLdzvCqZ+fr5IQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADFd3/fj\
+5cVV6x1V8+15eX57bz2jqt9Ys28F/fqsvDy+tp5RNfn3N/Hz64ZhGHefDlrvqDq+PSrn9w+tZ1Sd\
+7e/Yt4Ll3qLcnN61nlE19fc39fPzRQJiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEB\
+YgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI6fq+Hy8vrlrvqPryq3n5PPvcekbVxvuH8vz2\
+3npGVb8+Ky+Pr61nVM2HTftWMPV93TAM4+7TQesdVZ9++7H8+fVfrWdUffv39+X8/qH1jKrl3qLc\
+nN61nlF1cn1o3wqmvs8XCYgRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogR\
+GCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCCm6/t+vLy4ar2jaj5slpfH19YzquxbzXx7Xp7f3lvPqOo3\
+1qa9b3026fvthmEYd58OWu+oOrk+LDend61nVNm3muPbo3J+/9B6RtXZ/s6k9y33FpO+X18kIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggJh/AWxUzT9eId9dAAAAAElFTkSuQmCC\
+"
+  frames[1] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEZ0lEQVR4nO3XMUo1VxzG4TPXiHgZvs/hNrdzDxEXIJIujUXASmzcgNwuVSCk\
+FIsUio1VJJXNly7gCrKEFK5AC9EIMZMVnOrycibheVbw8j/DD6abzWbj552dMlVdKWUcx9Yzqrqu\
+s28N/4V9s266+/4Zp32/rz7v7JTd775vvaNqtb8st2f3rWdUnd4c2beGqe9bffm2fPP1j61nVN39\
+9sOk7zdrPQD4/xIYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIKbr+368urxuvaNqPmyX16e31jOq5ot5eXn/aD2jqt/amPa+zZn3XcPU\
+79cNwzDuPR+23lF1enNUbs/uW8+oOrk7LhcPj61nVJ0f7E5632p/6X3XMPX7+UUCYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiOn6\
+vh+vLq9b76iaL+bl5f2j9YyqfmvDvjX0m7Py+vTWekbV5L+/id+vG4Zh3Hs+bL2j6uTuuFw8PLae\
+UXV+sGvfGlb7y3J7dt96RtXUv7+p388vEhAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMEBM1/f9+MuvP7feUfX3X5/K69Nb6xlV88W8\
+vLx/tJ5R1W/Opn2/Ydu+NUx9X7dYDOOXPz613lH15+8/lduz+9Yzqk7ujsvFw2PrGVWr/eWk73d6\
+c2TfGqa+zy8SECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQEzX9/14dXndekfVfNgur09vrWdU2bee+WJeXt4/Ws+o6rc2pr1vczbp\
+9+2GYRj3ng9b76g6vTkqt2f3rWdU2beek7vjcvHw2HpG1fnB7qT3rfaXk35fv0hAjMAAMQIDxAgM\
+ECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECM\
+wAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMf8C\
+GjrQP3ASnD0AAAAASUVORK5CYII=\
+"
+  frames[2] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEX0lEQVR4nO3XMUo1VxzG4TPXz4g3A58TGzshS4i4AJF0aSwCVmJjkVZulyqQ\
+WiwVi9iZziap3UN2IKTXQhQJfpMVnGp4OZPwPCt4+R/4wekWi8X4eWurzFVXShnHsfWMqq7r7Jvg\
+v7Bv0c1335dx3vf79Hlrq+z++HPrHVWr/Z1ye3bfekbV6c2RfRPMfd/qjx/K99/92npG1d2fv8z6\
+fovWA4D/L4EBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYrq+78ery+vWO6qWw2Z5fXprPaNqub0sL+8frWdU9Rtr8963vvC+E8z9ft0w\
+DOPe82HrHVWnN0fl9uy+9Yyqk7vjcvHw2HpG1fnB7qz3rfZ3vO8Ec7+fLxIQIzBAjMAAMQIDxAgM\
+ECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECM\
+wAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBATNf3/Xj7\
++1XrHVWLf74uL+8frWdU9Rtr9k3Qry/K69Nb6xlVy+2l+03w6auN9fL3t7+13lH1zV8/lYuHx9Yz\
+qs4Pdu2bYLW/U27P7lvPqDq5O3a/CXyRgBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWK6vu/Hq8vr1juqlsNmeX16az2jarm9LC/v\
+H61nVPXri3nfb+7va98k3TAM497zYesdVac3R+X27L71jKqTu+Ny8fDYekbVan9n1veb+/vaN40v\
+EhAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMEBM1/f9eHV53XpH1XLYLK9Pb61nVNk3zXJ7WV7eP1rPqOo31ua9b30x6/fthmEY954P\
+W++oOr05Krdn961nVNk3zcndcbl4eGw9o+r8YHfW+1b7O7N+X18kIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggJh/AYaCzVEudVxq\
+AAAAAElFTkSuQmCC\
+"
+  frames[3] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEZUlEQVR4nO3XMUotZxzG4W+OEfEw5DqcFHbuIeICRNKlsQhYiY0bkNOlunBr\
+sUih2NgdAgGb3NpNZAOWqbQQjYWZrOCrDi/f5PI8K3j5f8MPppvNZuOnnZ0yVV0pZRzH1jOquq6z\
+bw3/h32zbrr7/h2nfb/vPu3slL1ffm29o2p5sFvuzu9bz6g6uz22bw1T37f88+fy049fWs+oWn39\
+POn7zVoPAL5dAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPEdH3fj9dXN613VM2H7fL69NZ6RtV8MS8v7x+tZ1T1WxvT3rc5875rmPr9\
+umEYxv3no9Y7qs5uj8vd+X3rGVWnq5Ny+fDYekbVxeHepPctD3a97xqmfj+/SECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxXd/3\
+4/XVTesdVfPFvLy8f7SeUdVvbdi3hn5zVl6f3lrPqJr89zfx+3XDMIz7z0etd1Sdrk7K5cNj6xlV\
+F4d79q1hebBb7s7vW8+omvr3N/X7+UUCYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiOn6vh//+P231juqXv/5vrw+vbWeUTVfzMvL\
++0frGVX95mza9xu27VvD1Pd1PyyG8e+/Fq13VK2+fi535/etZ1Sdrk7K5cNj6xlVy4PdSd/v7PbY\
+vjVMfZ9fJCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYICYru/78frqpvWOqvmwXV6f3lrPqLJvPfPFvLy8f7SeUdVvbUx73+Zs0u/b\
+DcMw7j8ftd5RdXZ7XO7O71vPqLJvPaerk3L58Nh6RtXF4d6k9y0Pdif9vn6RgBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEB\
+YgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWL+A0Ye\
+0D/YzuVQAAAAAElFTkSuQmCC\
+"
+  frames[4] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEZklEQVR4nO3XMUotZxzG4W+OEfEw5DqcFHbuIeICRNKlsQhYiY0bkNOlunBr\
+sUih2NgdAgGb3NpNZAOWqbQQjYWZrOCrDi/f5PI8K3j5f8MPppvNZuOnnZ0yVV0pZRzH1jOquq6z\
+bw3/h32zbrr7/h2nfb/vPu3slL1ffm29o2p5sFvuzu9bz6g6uz22bw1T37f88+fy049fWs+oWn39\
+POn7zVoPAL5dAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPEdH3fj9dXN613VM2H7fL69NZ6RtV8MS8v7x+tZ1T1WxvT3rc5875rmPr9\
+umEYxv3no9Y7qs5uj8vd+X3rGVWnq5Ny+fDYekbVxeHepPctD3a97xqmfj+/SECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxXd/3\
+4/XVTesdVfPFvLy8f7SeUdVvbdi3hn5zVl6f3lrPqJr89zfx+3XDMIz7z0etd1Sdrk7K5cNj6xlV\
+F4d79q1hebBb7s7vW8+omvr3N/X7+UUCYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiOn6vh+vr25a76iaD9vl9emt9Yyq+WJeXt4/\
+Ws+o6jdn077f1N/XvrV0wzCM+89HrXdUnd0el7vz+9Yzqk5XJ+Xy4bH1jKrlwe6k7zf197VvPX6R\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWK6vu/HP37/rfWOqtd/vi+vT2+tZ1TNh2371jBfzMvL+0frGVX91sa0923OJv2+3Q+L\
+Yfz7r0XrHVWrr5/L3fl96xlVZ7fH9q3hdHVSLh8eW8+oujjcm/S+5cHupN/XLxIQIzBAjMAAMQID\
+xAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAzH+v\
+TNA/1f4S4wAAAABJRU5ErkJggg==\
+"
+  frames[5] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEY0lEQVR4nO3XsUotVxiG4TXbY8Rh4DiYwk7IJUS8AJF0aSwCViIBb0B2lyqQ\
+WiwVi+zOdDZJbZf7ENJ7ClEszJwrWNXmY03C81zBx7+GF6ZbLBbT552dMlddKWWaptYzqrqus28N\
+/4V9i26++/6d5n2/T593dsr+T7+03lG1PNwrq4uH1jOqzu9O7FvD3Pct//yx/PD9b61nVN3/9eus\
+77doPQD4/xIYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIKYbhmG6ub5tvaOqH7fL6/Nb6xlV/W5fXt4/Ws+oGrY25r1vc+F91zD3+3Xj\
+OE4HX45b76g6vzspq4uH1jOqzu5Py9XjU+sZVZdH+7Petzzc875rmPv9/CIBMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxHTDMEw3\
+17etd1T1u315ef9oPaNq2Nqwbw3D5qK8Pr+1nlE1++9v5vfrxnGcDr4ct95RdXZ/Wq4en1rPqLo8\
+2rdvDcvDvbK6eGg9o2ru39/c7+cXCYgRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCCmG4ZhWv1x03pH1eK9L6/Pb61nVPW7fXl5/2g9\
+o2rYXMz7fuO2fWuY+75P32xtln+++731jqpv//65rC4eWs+oOrs/LVePT61nVC0P92Z9v/O7E/vW\
+MPd9fpGAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYrphGKab69vWO6r6cbu8Pr+1nlFl33r63b68vH+0nlE1bG3Me9/mYtbv243j\
+OB18OW69o+r87qSsLh5az6iybz1n96fl6vGp9Yyqy6P9We9bHu7N+n39IgExAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPEfAU0/s1R\
+aLezDAAAAABJRU5ErkJggg==\
+"
+  frames[6] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEX0lEQVR4nO3XMUo1VxzG4TPXz4g3A58TGzshS4i4AJF0aSwCVmJjkVZulyqQ\
+WiwVi9iZziap3UN2IKTXQhQJfpMVnGp4OZPwPCt4+R/4wekWi8X4eWurzFVXShnHsfWMqq7r7Jvg\
+v7Bv0c1335dx3vf79Hlrq+z++HPrHVWr/Z1ye3bfekbV6c2RfRPMfd/qjx/K99/92npG1d2fv8z6\
+fovWA4D/L4EBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYrq+78ery+vWO6qWw2Z5fXprPaNqub0sL+8frWdU9Rtr8963vvC+E8z9ft0w\
+DOPe82HrHVWnN0fl9uy+9Yyqk7vjcvHw2HpG1fnB7qz3rfZ3vO8Ec7+fLxIQIzBAjMAAMQIDxAgM\
+ECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECM\
+wAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBATNf3/Xj7\
++1XrHVWLf74uL+8frWdU9Rtr9k3Qry/K69Nb6xlVy+2l+03w6auN9fL3t7+13lH1zV8/lYuHx9Yz\
+qs4Pdu2bYLW/U27P7lvPqDq5O3a/CXyRgBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWK6vu/Hq8vr1juqlsNmeX16az2jarm9LC/v\
+H61nVPXri3nfb+7va98k3TAM497zYesdVac3R+X27L71jKqTu+Ny8fDYekbVan9n1veb+/vaN40v\
+EhAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMEBM1/f9eHV53XpH1XLYLK9Pb61nVNk3zXJ7WV7eP1rPqOo31ua9b30x6/fthmEY954P\
+W++oOr05Krdn961nVNk3zcndcbl4eGw9o+r8YHfW+1b7O7N+X18kIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggJh/AYaCzVEudVxq\
+AAAAAElFTkSuQmCC\
+"
+  frames[7] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEZUlEQVR4nO3XMUotZxzG4W+OEfEw5DqcFHbuIeICRNKlsQhYiY0bkNOlunBr\
+sUih2NgdAgGb3NpNZAOWqbQQjYWZrOCrDi/f5PI8K3j5f8MPppvNZuOnnZ0yVV0pZRzH1jOquq6z\
+bw3/h32zbrr7/h2nfb/vPu3slL1ffm29o2p5sFvuzu9bz6g6uz22bw1T37f88+fy049fWs+oWn39\
+POn7zVoPAL5dAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPEdH3fj9dXN613VM2H7fL69NZ6RtV8MS8v7x+tZ1T1WxvT3rc5875rmPr9\
+umEYxv3no9Y7qs5uj8vd+X3rGVWnq5Ny+fDYekbVxeHepPctD3a97xqmfj+/SECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxXd/3\
+4/XVTesdVfPFvLy8f7SeUdVvbdi3hn5zVl6f3lrPqJr89zfx+3XDMIz7z0etd1Sdrk7K5cNj6xlV\
+F4d79q1hebBb7s7vW8+omvr3N/X7+UUCYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiOn6vh//+P231juqXv/5vrw+vbWeUTVfzMvL\
++0frGVX95mza9xu27VvD1Pd1PyyG8e+/Fq13VK2+fi535/etZ1Sdrk7K5cNj6xlVy4PdSd/v7PbY\
+vjVMfZ9fJCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYICYru/78frqpvWOqvmwXV6f3lrPqLJvPfPFvLy8f7SeUdVvbUx73+Zs0u/b\
+DcMw7j8ftd5RdXZ7XO7O71vPqLJvPaerk3L58Nh6RtXF4d6k9y0Pdif9vn6RgBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEB\
+YgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWL+A0Ye\
+0D/YzuVQAAAAAElFTkSuQmCC\
+"
+  frames[8] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEbklEQVR4nO3XMUptRwDG8TnXiM+bA8+DgdzOPURcgJhUSSMhYCXCww3I7VIF\
+UoulYmNnKYGEQBqXElyBFqLPwpysYKrLx5yE328FHzPDH6abzWbjx62tMlVdKWUcx9Yzqrqus28F\
+/4V9s266+/4Zp31+X3zc2io7P/3cekfVcm9Rbk7vWs+oOrk+tG8FU9+3/P2H8t03v7aeUXX7xy+T\
+Pr9Z6wHA/5fAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADFd3/fj5cVV6x1V82GzvDy+tp5RNd+el+e399YzqvqNtWnvW5+53xVM/fy6\
+YRjG3aeD1juqTq4Py83pXesZVce3R+X8/qH1jKqz/Z1J71vuLdzvCqZ+fr5IQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADFd3/fj\
+5cVV6x1V8+15eX57bz2jqt9Ys28F/fqsvDy+tp5RNfn3N/Hz64ZhGHefDlrvqDq+PSrn9w+tZ1Sd\
+7e/Yt4Ll3qLcnN61nlE19fc39fPzRQJiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEB\
+YgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI6fq+Hy8vrlrvqPryq3n5PPvcekbVxvuH8vz2\
+3npGVb8+Ky+Pr61nVM2HTftWMPV93TAM4+7TQesdVZ9++7H8+fVfrWdUffv39+X8/qH1jKrl3qLc\
+nN61nlF1cn1o3wqmvs8XCYgRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogR\
+GCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCCm6/t+vLy4ar2jaj5slpfH19YzquxbzXx7Xp7f3lvPqOo3\
+1qa9b3026fvthmEYd58OWu+oOrk+LDend61nVNm3muPbo3J+/9B6RtXZ/s6k9y33FpO+X18kIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggJh/AWxUzT9eId9dAAAAAElFTkSuQmCC\
+"
+  frames[9] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEdElEQVR4nO3XMUolWRiG4VPXEcdLMW3hBGbuocUFiHTWicGAkZjcDcjNJmro\
+WAwVE7MbmnTHrsUVKIPoGDg1KzjR5ePUDM+zgo//FC9UN5vNxk87O2WqulLKOI6tZ1R1XWffGv4L\
++2bddPf9M077fr982tkp+3/82XpH1fJwr9wt7lvPqDq/PbFvDVPft/zxtXz5/L31jKrVz2+Tvt+s\
+9QDg/0tggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEB\
+YgQGiBEYIEZggJiu7/vx+uqm9Y6q+bBdXp/eWs+omu/Oy8v7R+sZVf3WxrT3bc687xqmfr9uGIbx\
+4Pm49Y6q89uTcre4bz2j6mx1Wi4fHlvPqLo42p/0vuXhnvddw9Tv5xcJiBEYIEZggBiBAWIEBogR\
+GCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIKbr+368vrpp\
+vaNqvjsvL+8frWdU9Vsb9q2h35yV16e31jOqJv/9Tfx+3TAM48HzcesdVWer03L58Nh6RtXF0b59\
+a1ge7pW7xX3rGVVT//6mfj+/SECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxXd/34/XVTesdVfNhu7w+vbWeUTXfnZeX94/WM6r6\
+zdm07zf197VvLd0wDOPB83HrHVXntyflbnHfekbV2eq0XD48tp5RtTzcm/T9pv6+9q3HLxIQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBATNf3/Xh9ddN6R1X/+3b5dfOv1jOqXv/+rbw+vbWeUTUftqe9b3deXt4/Ws+o6rc2pr1vczbp\
+9+2GYRgPno9b76ha/vhavnz+3npG1ernt3K3uG89o+r89mTS+85Wp+Xy4bH1jKqLo/1J71se7k36\
+ff0iATECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAx\
+AgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgM\
+ECMwQIzAADECA8T8C4plzT+a/eoLAAAAAElFTkSuQmCC\
+"
+  frames[10] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEb0lEQVR4nO3XMUptRwDG8TnXJ+J9B54nvsJOyBIiLkAkXYpYBKzE5kJeK7dL\
+FUgtlopF7CwtktTuITsQ0mshigRzsoKpLh9zEn6/FXzMDH+YbjabjZ+2tspUdaWUcRxbz6jqus6+\
+FfwX9s266e77Z5z2+X34tLVVdn/4qfWOquX+TrlZ3LWeUXV6fWTfCqa+b/n7d+Xbb35pPaPq9o+f\
+J31+s9YDgP8vgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiur7vx8uLq9Y7qubDZnl5fG09o2q+PS/Pb++tZ1T1G2vT3rc+c78rmPr5\
+dcMwjHtPh613VJ1eH5WbxV3rGVUnt8fl/P6h9Yyqs4PdSe9b7u+43xVM/fx8kYAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiur7v\
+x8uLq9Y7qubb8/L89t56RlW/sWbfCvr1WXl5fG09o2ry72/i59cNwzDuPR223lF1cntczu8fWs+o\
+OjvYtW8Fy/2dcrO4az2jaurvb+rn54sExAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMENP1fT9eXly13lH18fNmef/w0npG1ezvj+X5\
+7b31jKp+fVZeHl9bz6iaD5v2rWDq+7phGMa9p8PWO6p+/O378tfXv7aeUfXVn1/K+f1D6xlVy/2d\
+crO4az2j6vT6yL4VTH2fLxIQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBATNf3/Xh5cdV6R9V82Cwvj6+tZ1TZt5r59rw8v723nlHV\
+b6xNe9/6bNL32w3DMO49HbbeUXV6fVRuFnetZ1TZt5qT2+Nyfv/QekbV2cHupPct93cmfb++SECM\
+wAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQID\
+xAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAx/wKC7M0/7jB95wAAAABJRU5ErkJggg==\
+"
+  frames[11] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEZ0lEQVR4nO3XMUo1VxzG4TPXiHgZvs/hNrdzDxEXIJIujUXASmzcgNwuVSCk\
+FIsUio1VJJXNly7gCrKEFK5AC9EIMZMVnOrycibheVbw8j/DD6abzWbj552dMlVdKWUcx9Yzqrqu\
+s28N/4V9s266+/4Zp32/rz7v7JTd775vvaNqtb8st2f3rWdUnd4c2beGqe9bffm2fPP1j61nVN39\
+9sOk7zdrPQD4/xIYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIKbr+368urxuvaNqPmyX16e31jOq5ot5eXn/aD2jqt/amPa+zZn3XcPU\
+79cNwzDuPR+23lF1enNUbs/uW8+oOrk7LhcPj61nVJ0f7E5632p/6X3XMPX7+UUCYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiOn6\
+vh+vLq9b76iaL+bl5f2j9YyqfmvDvjX0m7Py+vTWekbV5L+/id+vG4Zh3Hs+bL2j6uTuuFw8PLae\
+UXV+sGvfGlb7y3J7dt96RtXUv7+p388vEhAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMEBM1/f9+MuvP7feUfX3X5/K69Nb6xlV88W8\
+vLx/tJ5R1W/Opn2/Ydu+NUx9X7dYDOOXPz613lH15+8/lduz+9Yzqk7ujsvFw2PrGVWr/eWk73d6\
+c2TfGqa+zy8SECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQEzX9/14dXndekfVfNgur09vrWdU2bee+WJeXt4/Ws+o6rc2pr1vczbp\
+9+2GYRj3ng9b76g6vTkqt2f3rWdU2beek7vjcvHw2HpG1fnB7qT3rfaXk35fv0hAjMAAMQIDxAgM\
+ECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECM\
+wAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMf8C\
+GjrQP3ASnD0AAAAASUVORK5CYII=\
+"
+  frames[12] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEX0lEQVR4nO3XMUo1VxzG4TPXz4g3A58TGzshS4i4AJF0aSwCVmJjkVZulyqQ\
+WiwVi9iZziap3UN2IKTXQhQJfpMVnGp4OZPwPCt4+R/4wekWi8X4eWurzFVXShnHsfWMqq7r7Jvg\
+v7Bv0c1335dx3vf79Hlrq+z++HPrHVWr/Z1ye3bfekbV6c2RfRPMfd/qjx/K99/92npG1d2fv8z6\
+fovWA4D/L4EBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYrq+78ery+vWO6qWw2Z5fXprPaNqub0sL+8frWdU9Rtr8963vvC+E8z9ft0w\
+DOPe82HrHVWnN0fl9uy+9Yyqk7vjcvHw2HpG1fnB7qz3rfZ3vO8Ec7+fLxIQIzBAjMAAMQIDxAgM\
+ECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECM\
+wAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBATNf3/Xj7\
++1XrHVWLf74uL+8frWdU9Rtr9k3Qry/K69Nb6xlVy+2l+03w6auN9fL3t7+13lH1zV8/lYuHx9Yz\
+qs4Pdu2bYLW/U27P7lvPqDq5O3a/CXyRgBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWK6vu/Hq8vr1juqlsNmeX16az2jarm9LC/v\
+H61nVPXri3nfb+7va98k3TAM497zYesdVac3R+X27L71jKqTu+Ny8fDYekbVan9n1veb+/vaN40v\
+EhAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMEBM1/f9eHV53XpH1XLYLK9Pb61nVNk3zXJ7WV7eP1rPqOo31ua9b30x6/fthmEY954P\
+W++oOr05Krdn961nVNk3zcndcbl4eGw9o+r8YHfW+1b7O7N+X18kIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggJh/AYaCzVEudVxq\
+AAAAAElFTkSuQmCC\
+"
+  frames[13] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEX0lEQVR4nO3XsUotVxiG4TXbY+QMA8fBFHZCLiHiBYikS2MRsBIJeAOyu1SB\
+1GKpWGR3prNJarvch5BeC1EszJwrWNXmY03C81zBx7+GF6ZbLBbTl+3tMlddKWWaptYzqrqus28N\
+/4V9i26++/6d5n2/T1+2t8veT7+03lG1PNgtq/P71jOqzm6P7VvD3Pct//yx/PD9b61nVN399eus\
+77doPQD4/xIYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIKYbhmFa/XHdekfV4r0vr09vrWdU9Tt9eXn/aD2jatjamPe+zYX3XcPc7/fp\
+m63N8s93v7feUfXt3z+X1fl96xlVp3cn5fLhsfWMqovDvVnvWx7set81zP1+fpGAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYrph\
+GKbrq5vWO6r6nb68vH+0nlE1bG3Yt4Zhc1Fen95az6ia/fc38/t14zhO+89HrXdUnd6dlMuHx9Yz\
+qi4O9+xbw/Jgt6zO71vPqJr79zf3+/lFAmIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBojphmGYrq9uWu+o6sfP5fXprfWMqn6nLy/v\
+H61nVA2bi3nfb+7va99aunEcp/3no9Y7qs5uj8vq/L71jKrTu5Ny+fDYekbV8mB31veb+/vatx6/\
+SECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAx3TAM0/XVTesdVf34ubw+vbWeUWXfevqdvry8f7SeUTVsbcx73+Zi1u/bjeM47T8f\
+td5RdXZ7XFbn961nVNm3ntO7k3L58Nh6RtXF4d6s9y0Pdmf9vn6RgBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWK+AtgGzVGZMP6E\
+AAAAAElFTkSuQmCC\
+"
+  frames[14] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEYElEQVR4nO3XMUoFVxiG4TPXiHgZ0MEUdu4h4gJE0qWxCFiJjRuQ26UKpEgl\
+FikUG5sggYBNUkv2kA1YptJCFANmsoJTDR9nEp5nBR//gRdOt1gsxq3t7TJXXSllHMfWM6q6rrNv\
+gv/CvkU3333/jPO+3xdb29tl79vvWu+oWh3slrvzh9Yzqs5uj+2bYO77Vr99U77+6ofWM6ruf/9+\
+1vdbtB4A/H8JDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAx\
+AgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgM\
+ECMwQIzAADECA8QIDBDT9X0/Xl/dtN5RtRw2y9vze+sZVcudZXn9+Gw9o6rfWJv3vvWF951g7vfr\
+hmEY91+OWu+oOrs9LnfnD61nVJ3en5TLx6fWM6ouDvdmvW91sOt9J5j7/XyRgBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEB\
+YgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWK6vu/H\
+X3/5qfWOqre/t8rrx2frGVX9xpp9E/Tri/L2/N56RtVyZ+l+E3Rf7gzjX3/utN5R9fMfP5bLx6fW\
+M6ouDvfsm2B1sFvuzh9az6g6vT9xvwl8kYAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiur7vx+urm9Y7qpbDZnl7fm89o2q5syyv\
+H5+tZ1T164t532/u72vfJN0wDOP+y1HrHVVnt8fl7vyh9Yyq0/uTcvn41HpG1epgd9b3m/v72jeN\
+LxIQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMw\
+QIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAx\
+AgPECAwQIzBATNf3/Xh9ddN6R9Vy2Cxvz++tZ1TZN81yZ1lePz5bz6jqN9bmvW99Mev37YZhGPdf\
+jlrvqDq7PS535w+tZ1TZN83p/Um5fHxqPaPq4nBv1vtWB7uzfl9fJCBGYIAYgQFiBAaIERggRmCA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYICYfwHc4dA/L9Sd\
+NwAAAABJRU5ErkJggg==\
+"
+  frames[15] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEX0lEQVR4nO3XsUotVxiG4TXbY+QMA8fBFHZCLiHiBYikS2MRsBIJeAOyu1SB\
+1GKpWGR3prNJarvch5BeC1EszJwrWNXmY03C81zBx7+GF6ZbLBbTl+3tMlddKWWaptYzqrqus28N\
+/4V9i26++/6d5n2/T1+2t8veT7+03lG1PNgtq/P71jOqzm6P7VvD3Pct//yx/PD9b61nVN399eus\
+77doPQD4/xIYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIKYbhmFa/XHdekfV4r0vr09vrWdU9Tt9eXn/aD2jatjamPe+zYX3XcPc7/fp\
+m63N8s93v7feUfXt3z+X1fl96xlVp3cn5fLhsfWMqovDvVnvWx7set81zP1+fpGAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYrph\
+GKbrq5vWO6r6nb68vH+0nlE1bG3Yt4Zhc1Fen95az6ia/fc38/t14zhO+89HrXdUnd6dlMuHx9Yz\
+qi4O9+xbw/Jgt6zO71vPqJr79zf3+/lFAmIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBojphmGYrq9uWu+o6sfP5fXprfWMqn6nLy/v\
+H61nVA2bi3nfb+7va99aunEcp/3no9Y7qs5uj8vq/L71jKrTu5Ny+fDYekbV8mB31veb+/vatx6/\
+SECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAx3TAM0/XVTesdVf34ubw+vbWeUWXfevqdvry8f7SeUTVsbcx73+Zi1u/bjeM47T8f\
+td5RdXZ7XFbn961nVNm3ntO7k3L58Nh6RtXF4d6s9y0Pdmf9vn6RgBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWK+AtgGzVGZMP6E\
+AAAAAElFTkSuQmCC\
+"
+  frames[16] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEbklEQVR4nO3XMUo1VxzG4TPXiPkmA5+Dgdi5h4gLEJMqaSQErEQIbkBulyqQ\
+WiwVGztLCSQE0riU4Aq0EP0szGQFp7q8nEl4nhW8/M/wg+kWi8X0cXOzzFVXSpmmqfWMqq7r7FvB\
+f2Hfopvvvn+med/vs4+bm2Xnx59b76ha7m2Xm9O71jOqTq4P7VvB3Pctf/++fPv1r61nVN3+8cus\
+77doPQD4/xIYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIKYbhmG6vLhqvaPqiy/78mnxqfWMqo33z8vz23vrGVXDxtq8960vysvja+sZ\
+Vf1W734r6MZxnHafDlrvqPrptx/Kn1/91XpG1Td/f1fO7x9az6g629+Z9b7l3na5Ob1rPaPq+PbI\
+/VbgFwmIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggphuGYbq8uGq9o6rf6svz23vrGVXDxpp9KxjWF+Xl8bX1jKrZf38zv183juO0\
++3TQekfV8e1ROb9/aD2j6mx/x74VLPe2y83pXesZVXP//uZ+P79IQIzAADECA8QIDBAjMECMwAAx\
+AgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgM\
+ECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADHdMAzT5cVV6x1V\
+/fihvDy+tp5R1W/15fntvfWMqmF9Me/7zf197VtJN47jtPt00HpH1cn1Ybk5vWs9o+r49qic3z+0\
+nlG13Nue9f3m/r72rcYvEhAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMEBMNwzDdHlx1XpHVT9+KC+Pr61nVNm3mn6rL89v761nVA0b\
+a/Pet76Y9ft24zhOu08HrXdUnVwflpvTu9YzquxbzfHtUTm/f2g9o+psf2fW+5Z727N+X79IQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMw\
+QIzAADH/AmxUzT8lfL00AAAAAElFTkSuQmCC\
+"
+  frames[17] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEZElEQVR4nO3XMUotZxzG4W+OEbmH4V6H05zOPVxxASLp0lgErMTGDcjpUgXC\
+LcUihWJjFUllc9MFXEGWkMIVaCEaIWaygq86vHyT8DwrePl/ww+mm81m46ft7TJVXSllHMfWM6q6\
+rrNvDf+FfbNuuvv+Gad9v28+bW+Xne9/aL2jarW3LDend61nVJ1cH9q3hqnvW339rnz7+afWM6pu\
+f/tx0vebtR4A/H8JDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECM\
+wAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQID\
+xAgMECMwQIzAADECA8QIDBDT9X0//vLrz613VP3918fy8vjaekbVfDEvz2/vrWdU9Vsb0963OfO+\
+a5j6/brFYhi//vGx9Y6qP3//Um5O71rPqDq+PSrn9w+tZ1Sd7e9Met9qb+l91zD1+/lFAmIEBogR\
+GCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+Bojp+r4fLy+uWu+omi/m5fntvfWMqn5rw7419Juz8vL42npG1eS/v4nfrxuGYdx9Omi9o+r49qic\
+3z+0nlF1tr9j3xpWe8tyc3rXekbV1L+/qd/PLxIQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBATNf3/Xh5cdV6R9V8+FBeHl9bz6ia\
+L+bl+e299YyqfnM27ftN/X3tW0s3DMO4+3TQekfVyfVhuTm9az2j6vj2qJzfP7SeUbXaW076flN/\
+X/vW4xcJiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIKbr+368vLhqvaNqPnwoL4+vrWdU2bee+WJent/eW8+o6rc2pr1vczbp9+2G\
+YRh3nw5a76g6uT4sN6d3rWdU2bee49ujcn7/0HpG1dn+zqT3rfaWk35fv0hAjMAAMQIDxAgMECMw\
+QIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAx\
+AgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMf8CR8/Q\
+P/tjhrcAAAAASUVORK5CYII=\
+"
+  frames[18] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEbklEQVR4nO3XMUo1VxzG4TPXiPkmA5+Dgdi5h4gLEJMqaSQErEQIbkBulyqQ\
+WiwVGztLCSQE0riU4Aq0EP0szGQFp7q8nEl4nhW8/M/wg+kWi8X0cXOzzFVXSpmmqfWMqq7r7FvB\
+f2Hfopvvvn+med/vs4+bm2Xnx59b76ha7m2Xm9O71jOqTq4P7VvB3Pctf/++fPv1r61nVN3+8cus\
+77doPQD4/xIYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIKYbhmG6vLhqvaPqiy/78mnxqfWMqo33z8vz23vrGVXDxtq8960vysvja+sZ\
+Vf1W734r6MZxnHafDlrvqPrptx/Kn1/91XpG1Td/f1fO7x9az6g629+Z9b7l3na5Ob1rPaPq+PbI\
+/VbgFwmIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggphuGYbq8uGq9o6rf6svz23vrGVXDxpp9KxjWF+Xl8bX1jKrZf38zv183juO0\
++3TQekfV8e1ROb9/aD2j6mx/x74VLPe2y83pXesZVXP//uZ+P79IQIzAADECA8QIDBAjMECMwAAx\
+AgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgM\
+ECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADHdMAzT5cVV6x1V\
+/fihvDy+tp5R1W/15fntvfWMqmF9Me/7zf197VtJN47jtPt00HpH1cn1Ybk5vWs9o+r49qic3z+0\
+nlG13Nue9f3m/r72rcYvEhAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMEBMNwzDdHlx1XpHVT9+KC+Pr61nVNm3mn6rL89v761nVA0b\
+a/Pet76Y9ft24zhOu08HrXdUnVwflpvTu9YzquxbzfHtUTm/f2g9o+psf2fW+5Z727N+X79IQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMw\
+QIzAADH/AmxUzT8lfL00AAAAAElFTkSuQmCC\
+"
+  frames[19] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEaUlEQVR4nO3XMUp1RwCG4TnXiHg48HswEDshS4i4AJF0SWERsBIJ3A3I7ZIm\
+kFosFYvYWdoktV32IaTXQhQLc7KCqS4fcwjPs4KPmeGF6RaLxfRlZ6fMVVdKKd3Uekbd1JVpmu++\
+rrNvHV3XlcWM39+/M39/X33Z2Sn7P/3SekfVrz9+U/759o/WM6q+/vvncrd8aD2j6vz2xL41rP78\
+oXz/3e+tZ1Td//XbrM9v0XoA8P8lMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMEBMNwzDdH1103pHVT9ul7fn99Yzqvrdvrx+fLaeUTVs\
+bcx73+bC/a5h7ufXjeM4Hbwct95RdX57Uu6WD61nVJ3dn5bLx6fWM6oujvZnvW91uOd+1zD38/NF\
+AmIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBojphmGYrq9uWu+o6nf78vrx2XpG1bC1Yd8ahs1FeXt+bz2javbvb+bn143jOB28HLfe\
+UXV2f1ouH59az6i6ONq3bw2rw71yt3xoPaNq7u9v7ufniwTECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ0w3DMF1f3bTeUdWP2+Xt\
++b31jKp+ty+vH5+tZ1QNm4t5n9/c79e+tXTjOE4HL8etd1Sd356Uu+VD6xlVZ/en5fLxqfWMqtXh\
+3qzPb+73a996fJGAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYrphGKbrq5vWO6r6cbu8Pb+3nlFl33r63b68fny2nlE1bG3Me9/m\
+Ytb3243jOB28HLfeUXV+e1Lulg+tZ1TZt56z+9Ny+fjUekbVxdH+rPetDvdmfb++SECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMw\
+QIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAx\
+/wEbh8w/FEHoXAAAAABJRU5ErkJggg==\
+"
+  frames[20] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEcElEQVR4nO3XMUo1VxzG4TPXyIeXgc/BInbuIeICxCRVGgkBKxGCGxC7VIHU\
+YqnY2FlKICGQxkVkBa5AC1EszHxF6lNdXs4hPM8KXv5n+MEMi8Vi/ry5WXo1lFLmeW49o2oYhv9G\
+9mru/36971sM/e77d+77fl993twsOz/90npH1fnedrk9vW89o+rn338sf339d+sZVd//823X9zu5\
+Oex63/kfP5Tvvvmt9Yyquz9/7fp+i9YDgP8vgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFihnEc56vL69Y7qpbTRnl9ems9o2q5tSwv\
+7x+tZ1SNn9b63re+8L4r6P1+wzRN8+7zQesdVSc3h+X29L71jKrju6Ny8fDYekbV2f5O1/vO97a9\
+7wp6v59fJCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYICYYRzH+eryuvWOquXWsry8f7SeUTV+WrNvBeP6orw+vbWeUdX999f5/YZp\
+mubd54PWO6qO747KxcNj6xlVZ/s79q3gfG+73J7et55R1fv31/v9/CIBMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAzjOM5Xl9et\
+d1Qtp43y+vTWekbVcmtZXt4/Ws+oGtcXfd+v9/e1byXDNE3z7vNB6x1VJzeH5fb0vvWMquO7o3Lx\
+8Nh6RtX53nbX9+v9fe1bjV8kIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggJhhHMf56vK69Y6q5bRRXp/eWs+osm81y61leXn/aD2j\
+avy01ve+9UXX7ztM0zTvPh+03lF1cnNYbk/vW8+osm81x3dH5eLhsfWMqrP9na73ne9td/2+fpGA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYr4A87LLP+IecCkAAAAASUVORK5CYII=\
+"
+  frames[21] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEcklEQVR4nO3XMUo1VxzG4TPXyIeXgc/BInbuIeICxCRVGgkBKxGCGxC7VIHU\
+YqnY2FlKICGQxkVkBa5AC1EszHwrOGkuL+cQnmcFL/8z/GCGxWIxf97cLL0aSinzPLeeUTUMQ/f7\
+ytB6xX+Y+3/fxdDvvn/nvr+/rz5vbpadn35pvaPqfG+73J7et55RdXJz2PW+n3//sfz19d+tZ1R9\
+/8+3Xd/v/I8fynff/NZ6RtXdn792fb9F6wHA/5fAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADHDOI7z1eV16x1Vy2mjvD69tZ5Rtdxa\
+lpf3j9YzqsZPa33vW1943xX0fr9hmqZ59/mg9Y6qk5vDcnt633pG1fHdUbl4eGw9o+psf6frfed7\
+2953Bb3fzy8SECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQMwwjuN8dXndekfVcmtZXt4/Ws+oGj+t2beCcX1RXp/eWs+o6v776/x+\
+wzRN8+7zQesdVcd3R+Xi4bH1jKqz/R37VnC+t11uT+9bz6jq/fvr/X5+kYAYgQFiBAaIERggRmCA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFihnEc56vL\
+69Y7qpbTRnl9ems9o2q5tSwv7x+tZ1SN64u+79f7+9q3kmGapnn3+aD1jqqTm8Nye3rfekbV8d1R\
+uXh4bD2j6nxvu+v79f6+9q3GLxIQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMw\
+QIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAzDCO43x1ed16R9Vy2iivT2+tZ1TZt5rl1rK8vH+0\
+nlE1flrre9/6ouv3HaZpmnefD1rvqDq5OSy3p/etZ1TZt5rju6Ny8fDYekbV2f5O1/vO97a7fl+/\
+SECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAxXwAz0Ms/T9dV2QAAAABJRU5ErkJggg==\
+"
+  frames[22] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEcElEQVR4nO3XMUo1VxzG4TPXiHgZ+BwkYOcC0kVcgEi6r7EIWImNbQqxSxEC\
+IaVYKjZ2ljZfuoArSeEKtBDFwkxWcKrLyzmE51nBy/8MP5hhsVjMX7a2Sq+GUso8z61nVA3DUIah\
+333zPHR/v973LTp+3387f9/vvmxtld2ff229o+pif6fcnT20nlH1y7ev5fsffms9o+qfv//s+n6n\
+t0dd77v49rX89OMfrWdU3f/1e9f3W7QeAPx/CQwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQM4zjOF9f3bTeUbWcNsvb83vrGVXL7WV5\
+/fhsPaNq3Fjre9/6wvuuoPf7DdM0zXsvh613VJ3eHpW7s4fWM6pO7o/L5eNT6xlV5we7Xe+72N/x\
+vivo/X5+kYAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFihnEc5+urm9Y7qpbby/L68dl6RtW4sWbfCsb1RXl7fm89o6r776/z+w3T\
+NM17L4etd1Sd3B+Xy8en1jOqzg927VvBxf5OuTt7aD2jqvfvr/f7+UUCYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBnGcZyvr25a\
+76haTpvl7fm99Yyq5fayvH58tp5RNa4v+r5f7+9r30qGaZrmvZfD1juqTm+Pyt3ZQ+sZVSf3x+Xy\
+8an1jKqL/Z2u79f7+9q3Gr9IQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMw\
+QIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAx\
+AgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADHDOI7z9dVN6x1Vy2mzvD2/t55RZd9qltvL8vrx2XpG\
+1bix1ve+9UXX7ztM0zTvvRy23lF1entU7s4eWs+osm81J/fH5fLxqfWMqvOD3a73XezvdP2+fpGA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYv4DTBHNP0OZs0EAAAAASUVORK5CYII=\
+"
+  frames[23] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEa0lEQVR4nO3XMUp1RwCG4TnXiHg48HuQgJ0LSBdxASLpQsAiYCU2dwNilyIk\
+hJRiqdjcztIm6QKuJIUr0EIUC3P+FUx1+ZhDeJ4VfMwML0y3WCymLzs7Za66UkrXTa1nVE1TV6Zp\
+vvu6zr51dF1XFjN+f//N/P1982Vnp+z//EvrHVW//7Rbvv3u19Yzqv7958+yWj60nlF1fndi3xou\
+//qx/PD9H61nVN3//dusz2/RegDw/yUwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQID\
+xAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQEw3DMN0c33bekdVP26Xt+f31jOq+t2+vH58tp5R\
+NWxtzHvf5sL9rmHu59eN4zgdvBy33lF1fndSVsuH1jOqzu5Py9XjU+sZVRdH+7Ped3m4537XMPfz\
+80UCYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiOmGYZhurm9b76jqd/vy+vHZekbVsLVh3xqGzUV5e35vPaNq9u9v5ufXjeM4Hbwc\
+t95RdXZ/Wq4en1rPqLo42rdvDZeHe2W1fGg9o2ru72/u5+eLBMQIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBDTDcMw3Vzftt5R1Y/b\
+5e35vfWMqn63L68fn61nVA2bi3mf39zv1761dOM4Tgcvx613VJ3fnZTV8qH1jKqz+9Ny9fjUekbV\
+5eHerM9v7vdr33p8kYAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiumEYppvr29Y7qvpxu7w9v7eeUWXfevrdvrx+fLaeUTVsbcx7\
+3+Zi1vfbjeM4Hbwct95RdX53UlbLh9Yzquxbz9n9abl6fGo9o+riaH/W+y4P92Z9v75IQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADFfAUwRzT91I+nfAAAAAElFTkSuQmCC\
+"
+  frames[24] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEcElEQVR4nO3XMUo1VxzG4TPXyIeXgc/BInbuIeICxCRVGgkBKxGCGxC7VIHU\
+YqnY2FlKICGQxkVkBa5AC1EszHxF6lNdXs4hPM8KXv5n+MEMi8Vi/ry5WXo1lFLmeW49o2oYhv9G\
+9mru/36971sM/e77d+77fl993twsOz/90npH1fnedrk9vW89o+rn338sf339d+sZVd//823X9zu5\
+Oex63/kfP5Tvvvmt9Yyquz9/7fp+i9YDgP8vgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFihnEc56vL69Y7qpbTRnl9ems9o2q5tSwv\
+7x+tZ1SNn9b63re+8L4r6P1+wzRN8+7zQesdVSc3h+X29L71jKrju6Ny8fDYekbV2f5O1/vO97a9\
+7wp6v59fJCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYICYYRzH+eryuvWOquXWsry8f7SeUTV+WrNvBeP6orw+vbWeUdX999f5/YZp\
+mubd54PWO6qO747KxcNj6xlVZ/s79q3gfG+73J7et55R1fv31/v9/CIBMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAzjOM5Xl9et\
+d1Qtp43y+vTWekbVcmtZXt4/Ws+oGtcXfd+v9/e1byXDNE3z7vNB6x1VJzeH5fb0vvWMquO7o3Lx\
+8Nh6RtX53nbX9+v9fe1bjV8kIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggJhhHMf56vK69Y6q5bRRXp/eWs+osm81y61leXn/aD2j\
+avy01ve+9UXX7ztM0zTvPh+03lF1cnNYbk/vW8+osm81x3dH5eLhsfWMqrP9na73ne9td/2+fpGA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYr4A87LLP+IecCkAAAAASUVORK5CYII=\
+"
+  frames[25] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEcklEQVR4nO3XMUo1VxzG4TPXyIeXgc/BInbuIeICxCRVGgkBKxGCGxC7VIHU\
+YqnY2FlKICGQxkVkBa5AC1EszHwrOGkuL+cQnmcFL/8z/GCGxWIxf97cLL0aSinzPLeeUTUMQ/f7\
+ytB6xX+Y+3/fxdDvvn/nvr+/rz5vbpadn35pvaPqfG+73J7et55RdXJz2PW+n3//sfz19d+tZ1R9\
+/8+3Xd/v/I8fynff/NZ6RtXdn792fb9F6wHA/5fAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADHDOI7z1eV16x1Vy2mjvD69tZ5Rtdxa\
+lpf3j9YzqsZPa33vW1943xX0fr9hmqZ59/mg9Y6qk5vDcnt633pG1fHdUbl4eGw9o+psf6frfed7\
+2953Bb3fzy8SECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQMwwjuN8dXndekfVcmtZXt4/Ws+oGj+t2beCcX1RXp/eWs+o6v776/x+\
+wzRN8+7zQesdVcd3R+Xi4bH1jKqz/R37VnC+t11uT+9bz6jq/fvr/X5+kYAYgQFiBAaIERggRmCA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFihnEc56vL\
+69Y7qpbTRnl9ems9o2q5tSwv7x+tZ1SN64u+79f7+9q3kmGapnn3+aD1jqqTm8Nye3rfekbV8d1R\
+uXh4bD2j6nxvu+v79f6+9q3GLxIQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMw\
+QIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAzDCO43x1ed16R9Vy2iivT2+tZ1TZt5rl1rK8vH+0\
+nlE1flrre9/6ouv3HaZpmnefD1rvqDq5OSy3p/etZ1TZt5rju6Ny8fDYekbV2f5O1/vO97a7fl+/\
+SECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAxXwAz0Ms/T9dV2QAAAABJRU5ErkJggg==\
+"
+  frames[26] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEcElEQVR4nO3XMUo1VxzG4TPXiHgZ+BwkYOcC0kVcgEi6r7EIWImNbQqxSxEC\
+IaVYKjZ2ljZfuoArSeEKtBDFwkxWcKrLyzmE51nBy/8MP5hhsVjMX7a2Sq+GUso8z61nVA3DUIah\
+333zPHR/v973LTp+3387f9/vvmxtld2ff229o+pif6fcnT20nlH1y7ev5fsffms9o+qfv//s+n6n\
+t0dd77v49rX89OMfrWdU3f/1e9f3W7QeAPx/CQwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQM4zjOF9f3bTeUbWcNsvb83vrGVXL7WV5\
+/fhsPaNq3Fjre9/6wvuuoPf7DdM0zXsvh613VJ3eHpW7s4fWM6pO7o/L5eNT6xlV5we7Xe+72N/x\
+vivo/X5+kYAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFihnEc5+urm9Y7qpbby/L68dl6RtW4sWbfCsb1RXl7fm89o6r776/z+w3T\
+NM17L4etd1Sd3B+Xy8en1jOqzg927VvBxf5OuTt7aD2jqvfvr/f7+UUCYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBnGcZyvr25a\
+76haTpvl7fm99Yyq5fayvH58tp5RNa4v+r5f7+9r30qGaZrmvZfD1juqTm+Pyt3ZQ+sZVSf3x+Xy\
+8an1jKqL/Z2u79f7+9q3Gr9IQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMw\
+QIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAx\
+AgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADHDOI7z9dVN6x1Vy2mzvD2/t55RZd9qltvL8vrx2XpG\
+1bix1ve+9UXX7ztM0zTvvRy23lF1entU7s4eWs+osm81J/fH5fLxqfWMqvOD3a73XezvdP2+fpGA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYv4DTBHNP0OZs0EAAAAASUVORK5CYII=\
+"
+  frames[27] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEa0lEQVR4nO3XMUp1RwCG4TnXiHg48HuQgJ0LSBdxASLpQsAiYCU2dwNilyIk\
+hJRiqdjcztIm6QKuJIUr0EIUC3P+FUx1+ZhDeJ4VfMwML0y3WCymLzs7Za66UkrXTa1nVE1TV6Zp\
+vvu6zr51dF1XFjN+f//N/P1982Vnp+z//EvrHVW//7Rbvv3u19Yzqv7958+yWj60nlF1fndi3xou\
+//qx/PD9H61nVN3//dusz2/RegDw/yUwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQID\
+xAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQEw3DMN0c33bekdVP26Xt+f31jOq+t2+vH58tp5R\
+NWxtzHvf5sL9rmHu59eN4zgdvBy33lF1fndSVsuH1jOqzu5Py9XjU+sZVRdH+7Ped3m4537XMPfz\
+80UCYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiOmGYZhurm9b76jqd/vy+vHZekbVsLVh3xqGzUV5e35vPaNq9u9v5ufXjeM4Hbwc\
+t95RdXZ/Wq4en1rPqLo42rdvDZeHe2W1fGg9o2ru72/u5+eLBMQIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBDTDcMw3Vzftt5R1Y/b\
+5e35vfWMqn63L68fn61nVA2bi3mf39zv1761dOM4Tgcvx613VJ3fnZTV8qH1jKqz+9Ny9fjUekbV\
+5eHerM9v7vdr33p8kYAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiumEYppvr29Y7qvpxu7w9v7eeUWXfevrdvrx+fLaeUTVsbcx7\
+3+Zi1vfbjeM4Hbwct95RdX53UlbLh9Yzquxbz9n9abl6fGo9o+riaH/W+y4P92Z9v75IQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADFfAUwRzT91I+nfAAAAAElFTkSuQmCC\
+"
+  frames[28] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEcElEQVR4nO3XMUo1VxzG4TPXyIeXgc/BInbuIeICxCRVGgkBKxGCGxC7VIHU\
+YqnY2FlKICGQxkVkBa5AC1EszHxF6lNdXs4hPM8KXv5n+MEMi8Vi/ry5WXo1lFLmeW49o2oYhv9G\
+9mru/36971sM/e77d+77fl993twsOz/90npH1fnedrk9vW89o+rn338sf339d+sZVd//823X9zu5\
+Oex63/kfP5Tvvvmt9Yyquz9/7fp+i9YDgP8vgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFihnEc56vL69Y7qpbTRnl9ems9o2q5tSwv\
+7x+tZ1SNn9b63re+8L4r6P1+wzRN8+7zQesdVSc3h+X29L71jKrju6Ny8fDYekbV2f5O1/vO97a9\
+7wp6v59fJCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYICYYRzH+eryuvWOquXWsry8f7SeUTV+WrNvBeP6orw+vbWeUdX999f5/YZp\
+mubd54PWO6qO747KxcNj6xlVZ/s79q3gfG+73J7et55R1fv31/v9/CIBMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAzjOM5Xl9et\
+d1Qtp43y+vTWekbVcmtZXt4/Ws+oGtcXfd+v9/e1byXDNE3z7vNB6x1VJzeH5fb0vvWMquO7o3Lx\
+8Nh6RtX53nbX9+v9fe1bjV8kIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggJhhHMf56vK69Y6q5bRRXp/eWs+osm81y61leXn/aD2j\
+avy01ve+9UXX7ztM0zTvPh+03lF1cnNYbk/vW8+osm81x3dH5eLhsfWMqrP9na73ne9td/2+fpGA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYr4A87LLP+IecCkAAAAASUVORK5CYII=\
+"
+  frames[29] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEcklEQVR4nO3XMUo1VxzG4TPXyIeXgc/BInbuIeICxCRVGgkBKxGCGxC7VIHU\
+YqnY2FlKICGQxkVkBa5AC1EszHwrOGkuL+cQnmcFL/8z/GCGxWIxf97cLL0aSinzPLeeUTUMQ/f7\
+ytB6xX+Y+3/fxdDvvn/nvr+/rz5vbpadn35pvaPqfG+73J7et55RdXJz2PW+n3//sfz19d+tZ1R9\
+/8+3Xd/v/I8fynff/NZ6RtXdn792fb9F6wHA/5fAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADHDOI7z1eV16x1Vy2mjvD69tZ5Rtdxa\
+lpf3j9YzqsZPa33vW1943xX0fr9hmqZ59/mg9Y6qk5vDcnt633pG1fHdUbl4eGw9o+psf6frfed7\
+2953Bb3fzy8SECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQMwwjuN8dXndekfVcmtZXt4/Ws+oGj+t2beCcX1RXp/eWs+o6v776/x+\
+wzRN8+7zQesdVcd3R+Xi4bH1jKqz/R37VnC+t11uT+9bz6jq/fvr/X5+kYAYgQFiBAaIERggRmCA\
+GIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFihnEc56vL\
+69Y7qpbTRnl9ems9o2q5tSwv7x+tZ1SN64u+79f7+9q3kmGapnn3+aD1jqqTm8Nye3rfekbV8d1R\
+uXh4bD2j6nxvu+v79f6+9q3GLxIQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMw\
+QIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAzDCO43x1ed16R9Vy2iivT2+tZ1TZt5rl1rK8vH+0\
+nlE1flrre9/6ouv3HaZpmnefD1rvqDq5OSy3p/etZ1TZt5rju6Ny8fDYekbV2f5O1/vO97a7fl+/\
+SECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAxXwAz0Ms/T9dV2QAAAABJRU5ErkJggg==\
+"
+  frames[30] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEaUlEQVR4nO3XMUo1VxzG4TPXiDgMfA4WsXMPkVsHkSxAQkBSiBDcgNilCqQW\
+S8XmdpaSIgTSuBb7gBaiWJhJ8dWnurycITzPCl7Of/jBdIvFYvqys1PmqiulTNPUekZV13X2raHr\
+uq9HnquplEU33/f7d5r3fb/5srNT9n/6tfWOqsvlXlmdP7SeUXV2d2zfGn7548fy17d/t55R9fM/\
+35cfvvu99Yyq+z9/m/V9F60HAP9fAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECM\
+wAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQID\
+xAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPEdMMwTDfXt613VPXjdnl7fm89o6rf7cvrx2frGVXD\
+1sa8920u3HcNc3+/bhzH6eDlqPWOqrO747I6f2g9o+r0/qRcPT61nlF1cbg/632Xyz33XcPc388v\
+EhAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMEBMNwzDdHN923pHVb/bl9ePz9YzqoatDfvWMGwuytvze+sZVbP//mb+ft04jtPBy1Hr\
+HVWn9yfl6vGp9Yyqi8N9+9Zwudwrq/OH1jOq5v79zf39/CIBMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxHTDMEw317etd1T143Z5\
+e35vPaOq3+3L68dn6xlVw+Zi3u839/vat5ZuHMfp4OWo9Y6qs7vjsjp/aD2j6vT+pFw9PrWeUXW5\
+3Jv1+839vvatxy8SECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQEw3DMN0c33bekdVP26Xt+f31jOq7FtPv9uX14/P1jOqhq2Nee/b\
+XMz6vt04jtPBy1HrHVVnd8dldf7QekaVfes5vT8pV49PrWdUXRzuz3rf5XJv1vf1iwTECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQ\
+8x9z38s/JS0w/QAAAABJRU5ErkJggg==\
+"
+  frames[31] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEWklEQVR4nO3XMUo1VwCG4TPXiDgM/A4WsXMR4gLEkF5CwEqEcDcgt8sexFKx\
+sbO8pPrhb1xEVuAKtBDFQiYrOGkuH2cSnmcFH+fMvHC6xWIxfdvbK3PVlVKmaWo9o6rrOvs28F/Y\
+V7rWK/7FNO//46dve3vl8Pc/W++oWh0flIfluvWMqsv7M/s2MPd9f/z1W/n+84/WM6p+/fuXWZ/f\
+ovUA4P9LYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYICYbhiG6fbmrvWOqn7cLe8vH61nVPX7fXn7/Go9o2rY2Zr3vu2F+93A3M+vG8dx\
+Ono9bb2j6vL+rDws161nVF08npfrp+fWM6quTg5nvW91fOB+NzD38/NEAmIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBojphmGYbm/u\
+Wu+o6vf78vb51XpG1bCzZd8Ghu1FeX/5aD2javbf38zPrxvHcTp6PW29o+ri8bxcPz23nlF1dXJo\
+3wZWxwflYbluPaNq7t/f3M/PEwmIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggphuGYbq9uWu9o6ofd8v7y0frGVX9fl/ePr9az6ga\
+thfzPr+53699G+nGcZyOXk9b76i6vD8rD8t16xlVF4/n5frpufWMqtXxwazPb+73a99mPJGAGIEB\
+YgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogR\
+GCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCA\
+GIEBYrphGKbbm7vWO6r6cbe8v3y0nlFl32b6/b68fX61nlE17GzNe9/2Ytb3243jOB29nrbeUXV5\
+f1YeluvWM6rs28zF43m5fnpuPaPq6uRw1vtWxwezvl9PJCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYICYfwBAvMs/nqVD8gAAAABJ\
+RU5ErkJggg==\
+"
+  frames[32] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEZklEQVR4nO3XMUotZxzG4W+OEfEw5DqcFHbuIeICRNKlsQhYiY0bkNOlunBr\
+sUih2NgdAgGb3NpNZAOWqbQQjYWZrOCrDi/f5PI8K3j5f8MPppvNZuOnnZ0yVV0pZRzH1jOquq6z\
+bw3/h32zbrr7/h2nfb/vPu3slL1ffm29o2p5sFvuzu9bz6g6uz22bw1T37f88+fy049fWs+oWn39\
+POn7zVoPAL5dAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPEdH3fj9dXN613VM2H7fL69NZ6RtV8MS8v7x+tZ1T1WxvT3rc5875rmPr9\
+umEYxv3no9Y7qs5uj8vd+X3rGVWnq5Ny+fDYekbVxeHepPctD3a97xqmfj+/SECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxXd/3\
+4/XVTesdVfPFvLy8f7SeUdVvbdi3hn5zVl6f3lrPqJr89zfx+3XDMIz7z0etd1Sdrk7K5cNj6xlV\
+F4d79q1hebBb7s7vW8+omvr3N/X7+UUCYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiOn6vh+vr25a76iaD9vl9emt9Yyq+WJeXt4/\
+Ws+o6jdn077f1N/XvrV0wzCM+89HrXdUnd0el7vz+9Yzqk5XJ+Xy4bH1jKrlwe6k7zf197VvPX6R\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEY\
+IEZggBiBAWK6vu/HP37/rfWOqtd/vi+vT2+tZ1TNh2371jBfzMvL+0frGVX91sa0923OJv2+3Q+L\
+Yfz7r0XrHVWrr5/L3fl96xlVZ7fH9q3hdHVSLh8eW8+oujjcm/S+5cHupN/XLxIQIzBAjMAAMQID\
+xAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAj\
+MECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAzH+v\
+TNA/1f4S4wAAAABJRU5ErkJggg==\
+"
+  frames[33] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEY0lEQVR4nO3XsUotVxiG4TXbY8Rh4DiYwk7IJUS8AJF0aSwCViIBb0B2lyqQ\
+WiwVi+zOdDZJbZf7ENJ7ClEszJwrWNXmY03C81zBx7+GF6ZbLBbT552dMlddKWWaptYzqrqus28N\
+/4V9i26++/6d5n2/T593dsr+T7+03lG1PNwrq4uH1jOqzu9O7FvD3Pct//yx/PD9b61nVN3/9eus\
+77doPQD4/xIYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIE\
+BogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIKYbhmG6ub5tvaOqH7fL6/Nb6xlV/W5fXt4/Ws+oGrY25r1vc+F91zD3+3Xj\
+OE4HX45b76g6vzspq4uH1jOqzu5Py9XjU+sZVZdH+7Petzzc875rmPv9/CIBMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPE\
+CAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxHTDMEw3\
+17etd1T1u315ef9oPaNq2Nqwbw3D5qK8Pr+1nlE1++9v5vfrxnGcDr4ct95RdXZ/Wq4en1rPqLo8\
+2rdvDcvDvbK6eGg9o2ru39/c7+cXCYgRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCCmG4ZhWv1x03pH1eK9L6/Pb61nVPW7fXl5/2g9\
+o2rYXMz7fuO2fWuY+75P32xtln+++731jqpv//65rC4eWs+oOrs/LVePT61nVC0P92Z9v/O7E/vW\
+MPd9fpGAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYrphGKab69vWO6r6cbu8Pr+1nlFl33r63b68vH+0nlE1bG3Me9/mYtbv243j\
+OB18OW69o+r87qSsLh5az6iybz1n96fl6vGp9Yyqy6P9We9bHu7N+n39IgExAgPECAwQIzBAjMAA\
+MQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QI\
+DBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPEfAU0/s1R\
+aLezDAAAAABJRU5ErkJggg==\
+"
+  frames[34] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEX0lEQVR4nO3XMUo1VxzG4TPXz4g3A58TGzshS4i4AJF0aSwCVmJjkVZulyqQ\
+WiwVi9iZziap3UN2IKTXQhQJfpMVnGp4OZPwPCt4+R/4wekWi8X4eWurzFVXShnHsfWMqq7r7Jvg\
+v7Bv0c1335dx3vf79Hlrq+z++HPrHVWr/Z1ye3bfekbV6c2RfRPMfd/qjx/K99/92npG1d2fv8z6\
+fovWA4D/L4EBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFi\
+BAaIERggRmCAGIEBYrq+78ery+vWO6qWw2Z5fXprPaNqub0sL+8frWdU9Rtr8963vvC+E8z9ft0w\
+DOPe82HrHVWnN0fl9uy+9Yyqk7vjcvHw2HpG1fnB7qz3rfZ3vO8Ec7+fLxIQIzBAjMAAMQIDxAgM\
+ECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECM\
+wAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBATNf3/Xj7\
++1XrHVWLf74uL+8frWdU9Rtr9k3Qry/K69Nb6xlVy+2l+03w6auN9fL3t7+13lH1zV8/lYuHx9Yz\
+qs4Pdu2bYLW/U27P7lvPqDq5O3a/CXyRgBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWK6vu/Hq8vr1juqlsNmeX16az2jarm9LC/v\
+H61nVPXri3nfb+7va98k3TAM497zYesdVac3R+X27L71jKqTu+Ny8fDYekbVan9n1veb+/vaN40v\
+EhAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMEBM1/f9eHV53XpH1XLYLK9Pb61nVNk3zXJ7WV7eP1rPqOo31ua9b30x6/fthmEY954P\
+W++oOr05Krdn961nVNk3zcndcbl4eGw9o+r8YHfW+1b7O7N+X18kIEZggBiBAWIEBogRGCBGYIAY\
+gQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQG\
+iBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggJh/AYaCzVEudVxq\
+AAAAAElFTkSuQmCC\
+"
+  frames[35] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAYAAAAzx/4XAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAxO\
+AAAMTgF/d4wjAAAEZUlEQVR4nO3XMUotZxzG4W+OEfEw5DqcFHbuIeICRNKlsQhYiY0bkNOlunBr\
+sUih2NgdAgGb3NpNZAOWqbQQjYWZrOCrDi/f5PI8K3j5f8MPppvNZuOnnZ0yVV0pZRzH1jOquq6z\
+bw3/h32zbrr7/h2nfb/vPu3slL1ffm29o2p5sFvuzu9bz6g6uz22bw1T37f88+fy049fWs+oWn39\
+POn7zVoPAL5dAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBA\
+jMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADEC\
+A8QIDBAjMECMwAAxAgPEdH3fj9dXN613VM2H7fL69NZ6RtV8MS8v7x+tZ1T1WxvT3rc5875rmPr9\
+umEYxv3no9Y7qs5uj8vd+X3rGVWnq5Ny+fDYekbVxeHepPctD3a97xqmfj+/SECMwAAxAgPECAwQ\
+IzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzA\
+ADECA8QIDBAjMECMwAAxAgPECAwQIzBAjMAAMQIDxAgMECMwQIzAADECA8QIDBAjMECMwAAxXd/3\
+4/XVTesdVfPFvLy8f7SeUdVvbdi3hn5zVl6f3lrPqJr89zfx+3XDMIz7z0etd1Sdrk7K5cNj6xlV\
+F4d79q1hebBb7s7vW8+omvr3N/X7+UUCYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERgg\
+RmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiB\
+AWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiOn6vh//+P231juqXv/5vrw+vbWeUTVfzMvL\
++0frGVX95mza9xu27VvD1Pd1PyyG8e+/Fq13VK2+fi535/etZ1Sdrk7K5cNj6xlVy4PdSd/v7PbY\
+vjVMfZ9fJCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaI\
+ERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZg\
+gBiBAWIEBogRGCBGYICYru/78frqpvWOqvmwXV6f3lrPqLJvPfPFvLy8f7SeUdVvbUx73+Zs0u/b\
+DcMw7j8ftd5RdXZ7XO7O71vPqLJvPaerk3L58Nh6RtXF4d6k9y0Pdif9vn6RgBiBAWIEBogRGCBG\
+YIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEB\
+YgQGiBEYIEZggBiBAWIEBogRGCBGYIAYgQFiBAaIERggRmCAGIEBYgQGiBEYIEZggBiBAWL+A0Ye\
+0D/YzuVQAAAAAElFTkSuQmCC\
+"
+
+
+    /* set a timeout to make sure all the above elements are created before
+       the object is initialized. */
+    setTimeout(function() {
+        animf3354443424c452ba9722a0007a071ec = new Animation(frames, img_id, slider_id, 149.0,
+                                 loop_select_id);
+    }, 0);
+  })()
+</script>
+</div></div>
+</div>
+<p>Ist dieser Algorithmus besonders klever?
+Nein!
+Der Algorithmus ist sehr einfach und benötigt unter Umständen sehr viel Rechenzeit.
+Dennoch zeigt dieses Beispiel, dass die Wiederholung von einfachen Befehlen zu komplexen Lösungen führen können!</p>
+<div class="hint admonition">
+<p class="admonition-title">Wiederholung und Codekomplexität</p>
+<p><em>Wiederholung</em> trennt den Aufwand zum Lösen einer Aufgabe von der Komplexität des Codes.
+Eine Berechnung kann enorm aufwendig sein und dennoch benötigen wir wenig Denkarbeit (wenig Code) um einen Algorithmus für die Lösung zu entwerfen!</p>
+</div>
+</div>
+<div class="section" id="die-for-schleife">
+<h2><span class="section-number">7.2.2. </span>Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife<a class="headerlink" href="#die-for-schleife" title="Permalink to this headline">¶</a></h2>
+<p>Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife verwenden wir immer dann, wenn wir (zur Laufzeit) wissen wie viele Wiederholungen wir <strong>maximal</strong> benötigen.
+Dabei wollen wir entweder</p>
+<ol class="simple">
+<li><p>für eine bestimmte Anzahl <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>, oder</p></li>
+<li><p>für jedes Element einer <em>Datenstruktur</em> (Liste, Tupel, usw.)</p></li>
+</ol>
+<p>einen Befehlsblock ausführen.</p>
+<p>Im zweiten Fall spricht man auch von der sog. <em>Foreach-Schleife</em>.
+Durch den Zahlenbereich <code class="docutils literal notranslate"><span class="pre">range()</span></code> reduziert <code class="docutils literal notranslate"><span class="pre">Python</span></code> den ersten Fall auf den zweiten.</p>
+<div class="section" id="die-klassische-for-schleife-fall-1">
+<h3><span class="section-number">7.2.2.1. </span>Die klassische <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife (Fall 1)<a class="headerlink" href="#die-klassische-for-schleife-fall-1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="o">...</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Codeblock</span>
+</pre></div>
+</div>
+<p>Der Name der <em>Zählervariable</em> (hier <code class="docutils literal notranslate"><span class="pre">i</span></code>) kann frei gewählt werden, allerdings verwendet man für Fall 1 gewöhnlich: <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code> oder <code class="docutils literal notranslate"><span class="pre">k</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+</pre></div>
+</div>
+</div>
+</div>
+<p>Will man andeutet, dass die <em>Zählervariable</em> nicht benötigt wird, so verwendet man den <code class="docutils literal notranslate"><span class="pre">_</span></code> als ihren Namen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;42 ist die Antwort!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="die-foreach-schleife-fall-2">
+<h3><span class="section-number">7.2.2.2. </span>Die Foreach-Schleife (Fall 2)<a class="headerlink" href="#die-foreach-schleife-fall-2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sequenz</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># some Sequenz of Elements</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sequenz</span><span class="p">:</span>
+    <span class="c1"># Codeblock</span>
+</pre></div>
+</div>
+<p>Der Name mit dem wir die Elemente der Sequenz ansprechen (hier <code class="docutils literal notranslate"><span class="pre">element</span></code>) kann frei gewählt werden und sollte beschreiben über welche Elemente wir <em>iterieren</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sarah&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">,</span> <span class="s1">&#39;Babar&#39;</span><span class="p">,</span> <span class="s1">&#39;Simon&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sarah
+Sebastian
+Babar
+Simon
+Martin
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> ist, genau wie eine Liste und ein Tupel, auch eine <em>Sequenz</em>.
+Eine <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife läuft über die Einträge einer <em>Sequenz</em> oder anderer <em>iterierbarer</em> Strukturen.</p>
+<p>Es kann durchaus sein, dass wir die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife auch dann verwenden, wenn nicht genau klar ist wie viele Wiederholungen wir benötigen, sondern nur klar ist, wie viele Wiederholungen wir <strong>maximal</strong> benötigen.</p>
+<p>Nehmen wir den Test ob eine Zahl <span class="math notranslate nohighlight">\(n\)</span> eine Primzahl ist.
+Ein einfacher Algorithmus für den Test, testet für jede Zahl <span class="math notranslate nohighlight">\(2 \leq m &lt; n\)</span> ob <span class="math notranslate nohighlight">\(m\)</span> die Zahl <span class="math notranslate nohighlight">\(n\)</span> teilt.
+Wenn dies der Fall ist, ist <span class="math notranslate nohighlight">\(n\)</span> keine Primzahl und wir können die Wiederholung stoppen.
+Wir wissen demnach, dass wir maximal <span class="math notranslate nohighlight">\(n-m-3\)</span> Wiederholungen benötigen.
+Es könnten jedoch auch weniger sein:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">prime</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">prime</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">break</span>
+    <span class="k">return</span> <span class="n">prime</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">83</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife frühzeitig zu beenden verwenden wir <code class="docutils literal notranslate"><span class="pre">break</span></code>.
+Mit <code class="docutils literal notranslate"><span class="pre">break</span></code> springen wir aus der <strong>innersten</strong> Schleife heraus.
+Wir könnten stattdessen auch <code class="docutils literal notranslate"><span class="pre">return</span></code> verwenden, um aus der Funktion herauszuspringen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">83</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eine weitere Steuermöglichkeit bietet <code class="docutils literal notranslate"><span class="pre">continue</span></code>.
+Mit <code class="docutils literal notranslate"><span class="pre">continue</span></code> springen wir nicht aus der Schleife heraus sondern springen zurück zum Schleifenkopf.
+Der Code nach <code class="docutils literal notranslate"><span class="pre">continue</span></code> wird übersprungen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+            
+        <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">double_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 4, 8, 12, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Allerdings braucht man <code class="docutils literal notranslate"><span class="pre">continue</span></code> so gut wie nie und wenn es verwendet wird handelt es sich oftmals um schlecht leserlichen Code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>    
+            <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">double_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 4, 8, 12, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kontrollmechanismen der for-Schleife</p>
+<p>Gehen Sie sparsam mit <code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code> um, oftmals brauchen Sie es nicht!</p>
+</div>
+</div>
+<div class="section" id="die-while-schleife">
+<h3><span class="section-number">7.2.2.3. </span>Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife<a class="headerlink" href="#die-while-schleife" title="Permalink to this headline">¶</a></h3>
+<p>Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife verwenden wir immer dann, wenn wir (zur Laufzeit) <strong>nicht</strong> wissen wie viele Wiederholungen wir maximal benötigen.
+Die Wiederholung endet sobald eine bestimmte Bedingung, d.h. ein <em>logischer Ausdruck</em> <code class="docutils literal notranslate"><span class="pre">P</span></code> zu <code class="docutils literal notranslate"><span class="pre">False</span></code> ausgewertet wird.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">P</span><span class="p">:</span>
+    <span class="c1"># Codeblock1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Codeblock2</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Codeblock2</span></code> wird einmal ausgeführt sobald <code class="docutils literal notranslate"><span class="pre">P</span></code> zu <code class="docutils literal notranslate"><span class="pre">False</span></code> ausgewertet wird und die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife verlassen wird, d.h. als letzter Schritt.</p>
+<div class="warning admonition">
+<p class="admonition-title">Endlosschleifen</p>
+<p>Wird <code class="docutils literal notranslate"><span class="pre">P</span></code> niemals <code class="docutils literal notranslate"><span class="pre">False</span></code> endet die Wiederholung niemals und wir haben eine sog. <em>Endlosschleife</em>!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;end of the while-loop&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+end of the while-loop
+</pre></div>
+</div>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Mächtigkeit der While-Schleife</p>
+<p>Jede <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife lässt sich in eine <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife transformieren!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sarah&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">,</span> <span class="s1">&#39;Babar&#39;</span><span class="p">,</span> <span class="s1">&#39;Simon&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sarah
+Sebastian
+Babar
+Simon
+Martin
+
+Sarah
+Sebastian
+Babar
+Simon
+Martin
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleifen sind mächtiger aber auch gefährlicher bzw. oftmals schwerer zu lesen und zu verstehen als <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen.</p>
+<div class="hint admonition">
+<p class="admonition-title">Verwendungskriterium</p>
+<p>Verwenden Sie die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife nur wenn die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife ungeeignet ist.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code> funktionieren für die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife genauso wie für die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife.</p>
+<div class="hint admonition">
+<p class="admonition-title">Verwendungskriterium While-Schleife</p>
+<p>Gehen Sie sparsam mit <code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code> um, oftmals brauchen Sie es nicht!</p>
+</div>
+<p>Folgender Code zeigt eine unnötige Verwendung von <code class="docutils literal notranslate"><span class="pre">continue</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad code!!!</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Stattdessen können wir die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingung anpassen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># better!</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oder aber einfach die Zählervariable um zwei statt um eins erhöhen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># even better!</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>      
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Am einfachsten zu lesen bleibt jedoch die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># even better!</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Verhindern von Endlosschleifen</p>
+<p>Prüfen Sie immer ob Ihre Bedingung <code class="docutils literal notranslate"><span class="pre">P</span></code> durch den Schleifenrumpf garantiert irgendwann <code class="docutils literal notranslate"><span class="pre">False</span></code> ergibt!</p>
+</div>
+</div>
+</div>
+<div class="section" id="beispiel-ggt">
+<h2><span class="section-number">7.2.3. </span>Beispiel (ggT)<a class="headerlink" href="#beispiel-ggt" title="Permalink to this headline">¶</a></h2>
+<p>Lassen Sie uns Euklid’s Algorithmus <code class="docutils literal notranslate"><span class="pre">gcd(m,n)</span></code> zum finden des Größter gemeinsamer Teiler (ggT) zweier ganzer Zahlen von <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(n\)</span> implementieren.</p>
+<p>Euklid’s Algorithmus geht wie folgt vor:</p>
+<ol class="simple">
+<li><p>Berechne den Restwert der Division <span class="math notranslate nohighlight">\(m / n\)</span> (Modulodivision). Sei dieser gleich <span class="math notranslate nohighlight">\(r\)</span>.</p></li>
+<li><p>Setze <span class="math notranslate nohighlight">\(m \leftarrow n\)</span>, <span class="math notranslate nohighlight">\(n \leftarrow r\)</span> und gehe zurück zu Schritt 1.</p></li>
+<li><p>Falls <span class="math notranslate nohighlight">\(r = 0\)</span> (und somit <span class="math notranslate nohighlight">\(n = 0\)</span>), so ist der Algorithmus beendet. Das Ergebnis (ggT) ist <span class="math notranslate nohighlight">\(m\)</span>. Ansonsten fahre fort.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">m</span> <span class="o">%</span> <span class="n">n</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">m</span>
+<span class="n">gcd</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+<p>Durch das packing bzw. unpacking (siehe <a class="reference internal" href="../03-4/6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a>) können wir den Code noch verkürzen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">%</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">m</span>
+<span class="n">gcd</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/03-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="1-cases.html" title="previous page"><span class="section-number">7.1. </span>Fallunterscheidungen</a>
+    <a class='right-next' id="next-link" href="3-comprehensions.html" title="next page"><span class="section-number">7.3. </span>Comprehensions</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

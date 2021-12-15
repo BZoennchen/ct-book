@@ -388,6 +388,11 @@
      4.3. Programmiercode
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/4-repetition-and-recursion.html">
+     4.4. Wiederholung und Rekursion
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -537,7 +542,32 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/1-type-systems.html">
+     5.1. Dynamische und statische Typisierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/2-why-data-types.html">
+     5.2. Existenzberechtigung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/3-change-of-interpretation.html">
+     5.3. Interpretationswechsel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/4-kind-of-data-types.html">
+     5.4. Arten von Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-5/5-primitive-data-types.html">
+     5.5. Primitive Datentypen in Python?
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -549,7 +579,37 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/1-purity.html">
+     6.1. Reinheit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/2-definition.html">
+     6.2. Grundlagen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/3-namespaces.html">
+     6.3. Namensräume und Sichtbarkeit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/4-lambdas.html">
+     6.4. Anonyme Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/5-nested-functions.html">
+     6.5. Umschlossene Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/6-first-class-functions.html">
+     6.6. First-Class-Funktion
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -561,7 +621,44 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-7/1-cases.html">
+     7.1. Fallunterscheidungen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-7/2-loops.html">
+     7.2. Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-7/3-comprehensions.html">
+     7.3. Comprehensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-8/intro.html">
+   8. Objektorientierte Programmierung
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-8/1-class-and-objects.html">
+     8.1. Klassen und Objekte
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">
+     8.2. Vererbung, Kapselung und Polymorphie
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1128,14 +1225,14 @@ Es gibt kleine ‘Strafen’, wenn <strong>Adressen</strong> weit auseinander li
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
-id of numbers = 4387720704
+id of numbers = 4573686272
 value of numbers[2] = 3
-id of numbers[2] = 4346669424
+id of numbers[2] = 4532640112
 change value of numbers[2]
 value of numbers = [1, 2, -20, 4, 5]
-id of numbers = 4387720704
+id of numbers = 4573686272
 value of numbers[2] = -20
-id of numbers[2] = 4387787664
+id of numbers[2] = 4573746320
 </pre></div>
 </div>
 </div>
@@ -1185,14 +1282,14 @@ Oder aber wir stellen uns eine Schnur vor, die von dem Schließfach auf das Obje
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of mylist = [1, [&#39;a&#39;, &#39;b&#39;], 5]
-id of mylist = 4387658944
+id of mylist = 4573686976
 value of mylist[1] = [&#39;a&#39;, &#39;b&#39;]
-id of mylist[1] = 4387720896
+id of mylist[1] = 4573685760
 change value mylist[1][0]
 value of mylist = [1, [&#39;c&#39;, &#39;b&#39;], 5]
-id of mylist = 4387658944
+id of mylist = 4573686976
 value of mylist[1] = [&#39;c&#39;, &#39;b&#39;]
-id of numbers[1] = 4387720896
+id of numbers[1] = 4573685760
 </pre></div>
 </div>
 </div>
@@ -1261,8 +1358,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4387635968
- id after concat: 4387619200
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4573677824
+ id after concat: 4573679488
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1283,8 +1380,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4387720256
- id after concat: 4387720256
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4573673088
+ id after concat: 4573673088
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1417,9 +1514,7 @@ Um Speicherplatz zu sparen, sind deshalb <em>flache Kopien</em> für <em>atomare
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x and y are identical? answer: True
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x and y are equals? answer: True
+x and y are equals? answer: True
 change y
 x and y are identical? answer: True
 x and y are equals? answer: True
@@ -1499,15 +1594,13 @@ In diesem Fall macht es keinen Unterschied ob die <em>atomaren Datentypen</em> K
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4346669360
-4346669392
-4346669424
+4532640048
+4532640080
+4532640112
 ids of numbers_shallow_copy
-4346669360
-4346669392
-4346669424
+4532640048
+4532640080
+4532640112
 </pre></div>
 </div>
 </div>
@@ -1541,8 +1634,8 @@ Nunja, die <strong>Adressen</strong></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4387621184
-4387621184
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4573172224
+4573172224
 </pre></div>
 </div>
 </div>
@@ -1581,14 +1674,14 @@ Anders ausgedrückt: Sie müssen alle <em>Kinder</em> der Datenstruktur kopieren
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers:
-4346669360
-4346669392
-4387636160
+4532640048
+4532640080
+4573633152
 
 ids of numbers_deep_copy:
-4346669360
-4346669392
-4387720896
+4532640048
+4532640080
+4573685760
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]]
@@ -1612,14 +1705,14 @@ Wie sieht es mit den Adressen der Elemente des Kindes aus?:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of mylist[2]
-4348274928
-4347713648
-4347421808
+4534245552
+4533680304
+4533392560
 
 ids of mylist_deep_copy[2]
-4348274928
-4347713648
-4347421808
+4534245552
+4533680304
+4533392560
 </pre></div>
 </div>
 </div>
