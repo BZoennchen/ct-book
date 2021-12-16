@@ -17,7 +17,7 @@ def successor(n):
 
 successor(successor(successor(1)))
 
-Ruft sich eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. [Rekursion](sec-recursion) oder rekursiven Funktion.
+Ruft sich eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. [Rekursion](sec-recursive-functions) oder rekursiven Funktion.
 Zum Beispiel:
 
 def fib(n):

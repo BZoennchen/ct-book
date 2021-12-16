@@ -606,8 +606,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03-6/x-recursion.html">
+     6.6. Rekursive Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../03-6/6-first-class-functions.html">
-     6.6. First-Class-Funktion
+     6.7. First-Class-Funktion
     </a>
    </li>
   </ul>
@@ -1225,14 +1230,14 @@ Es gibt kleine ‘Strafen’, wenn <strong>Adressen</strong> weit auseinander li
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
-id of numbers = 4573686272
+id of numbers = 4461000704
 value of numbers[2] = 3
-id of numbers[2] = 4532640112
+id of numbers[2] = 4419955056
 change value of numbers[2]
 value of numbers = [1, 2, -20, 4, 5]
-id of numbers = 4573686272
+id of numbers = 4461000704
 value of numbers[2] = -20
-id of numbers[2] = 4573746320
+id of numbers[2] = 4461044784
 </pre></div>
 </div>
 </div>
@@ -1243,15 +1248,15 @@ Die <strong>Adresse</strong> der <em>Variable</em> <code class="docutils literal
 Allerdings ändert sich die Adresse des Elements <code class="docutils literal notranslate"><span class="pre">numbers[2]</span></code> und der <strong>Wert</strong> von <code class="docutils literal notranslate"><span class="pre">numbers</span></code>.</p>
 <div class="figure align-default" id="fig-data-type-list">
 <a class="reference internal image-reference" href="../../_images/list.png"><img alt="../../_images/list.png" src="../../_images/list.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>bevor</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>bevor</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list" title="Permalink to this image">¶</a></p>
 </div>
 <p>Ändern wir den <strong>Wert</strong> eines Listenelements, so verändern wir die <strong>Adresse</strong> am Index dieses Elements.
 In unserem Beispiel ändern wir den Wert am Index 2 von 5 auf -20.
 Dadurch verändert sich die Adresse von <span class="math notranslate nohighlight">\(adr_2^*\)</span> auf <span class="math notranslate nohighlight">\(adr_2'\)</span>.
-Vergleichen Sie die <a class="reference internal" href="#fig-data-type-list"><span class="std std-numref">Abbildung 4.2</span></a> und <a class="reference internal" href="#fig-data-type-list-2"><span class="std std-numref">4.3</span></a>.</p>
+Vergleichen Sie die <a class="reference internal" href="#fig-data-type-list"><span class="std std-numref">Abbildung 4.4</span></a> und <a class="reference internal" href="#fig-data-type-list-2"><span class="std std-numref">4.5</span></a>.</p>
 <div class="figure align-default" id="fig-data-type-list-2">
 <a class="reference internal image-reference" href="../../_images/list-2.png"><img alt="../../_images/list-2.png" src="../../_images/list-2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>nachdem</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>nachdem</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Alle <em>Datenstrukturen</em> sind <em>Behälter</em>, die andere Daten aufnehmen können, ähnlich wie Schließfächer, Ordner oder Rucksäcke.
 Nehmen wir als Analogie die Schließfächer aus der echten Welt.
@@ -1282,14 +1287,14 @@ Oder aber wir stellen uns eine Schnur vor, die von dem Schließfach auf das Obje
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of mylist = [1, [&#39;a&#39;, &#39;b&#39;], 5]
-id of mylist = 4573686976
+id of mylist = 4461001472
 value of mylist[1] = [&#39;a&#39;, &#39;b&#39;]
-id of mylist[1] = 4573685760
+id of mylist[1] = 4461000192
 change value mylist[1][0]
 value of mylist = [1, [&#39;c&#39;, &#39;b&#39;], 5]
-id of mylist = 4573686976
+id of mylist = 4461001472
 value of mylist[1] = [&#39;c&#39;, &#39;b&#39;]
-id of numbers[1] = 4573685760
+id of numbers[1] = 4461000192
 </pre></div>
 </div>
 </div>
@@ -1299,13 +1304,13 @@ Der Effekt ist ein anderer als zuvor, denn die Adresse <span class="math notrans
 Stattdessen verändern wir die Adresse <span class="math notranslate nohighlight">\(adr_{1,0}^*\)</span> der Datenstruktur, welche unsere Liste enthält.</p>
 <div class="figure align-default" id="fig-data-type-list-in-list">
 <a class="reference internal image-reference" href="../../_images/list-in-list.png"><img alt="../../_images/list-in-list.png" src="../../_images/list-in-list.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>bevor</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">'a'</span></code> auf <code class="docutils literal notranslate"><span class="pre">'c'</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-in-list" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>bevor</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">'a'</span></code> auf <code class="docutils literal notranslate"><span class="pre">'c'</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-in-list" title="Permalink to this image">¶</a></p>
 </div>
 <p>Die <strong>Adressen</strong> welche <code class="docutils literal notranslate"><span class="pre">mylist</span></code> enthält bleiben <strong>unverändert</strong> und trotzdem ändern wir den Inhalt von <code class="docutils literal notranslate"><span class="pre">mylist</span></code>.
-Vergleichen Sie die <a class="reference internal" href="#fig-data-type-list-in-list"><span class="std std-numref">Abbildung 4.4</span></a> und <a class="reference internal" href="#fig-data-type-list-in-list-2"><span class="std std-numref">4.5</span></a>.</p>
+Vergleichen Sie die <a class="reference internal" href="#fig-data-type-list-in-list"><span class="std std-numref">Abbildung 4.6</span></a> und <a class="reference internal" href="#fig-data-type-list-in-list-2"><span class="std std-numref">4.7</span></a>.</p>
 <div class="figure align-default" id="fig-data-type-list-in-list-2">
 <a class="reference internal image-reference" href="../../_images/list-in-list-2.png"><img alt="../../_images/list-in-list-2.png" src="../../_images/list-in-list-2.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>nachdem</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">'a'</span></code> auf <code class="docutils literal notranslate"><span class="pre">'c'</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-in-list-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>nachdem</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">'a'</span></code> auf <code class="docutils literal notranslate"><span class="pre">'c'</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-in-list-2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Selbst wenn wir Anstatt einer Liste einen <strong>unveränderlichen</strong> <a class="reference internal" href="6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a> verwenden würden, könnten wir diese Veränderung durchführen.</p>
 <div class="warning admonition">
@@ -1331,7 +1336,7 @@ Das klingt verwirrend, ist im Grunde aber ganz simpel.</p>
 <p>Angenommen die Adresse der Liste <code class="docutils literal notranslate"><span class="pre">mylist</span></code> ist <span class="math notranslate nohighlight">\(adr\)</span> und jede Adresse benötigt 4 Byte und wir können 1 Byte adressieren, dann befindet sich die Adresse <span class="math notranslate nohighlight">\(adr_i^*\)</span> des <span class="math notranslate nohighlight">\(i\)</span>-ten Elements an der Speicheradresse:</p>
 <div class="math notranslate nohighlight">
 \[adr_i = adr + i \cdot 4.\]</div>
-<p>Vergleichen Sie die <a class="reference internal" href="#fig-data-type-list-in-list"><span class="std std-numref">Abbildung 4.4</span></a> und <a class="reference internal" href="#fig-data-type-list-in-list-2"><span class="std std-numref">4.5</span></a>.
+<p>Vergleichen Sie die <a class="reference internal" href="#fig-data-type-list-in-list"><span class="std std-numref">Abbildung 4.6</span></a> und <a class="reference internal" href="#fig-data-type-list-in-list-2"><span class="std std-numref">4.7</span></a>.
 Diese Rechnung kann der Rechner sehr schnell durchführen und deshalb können wir auf Elemente einer Liste deren Index <span class="math notranslate nohighlight">\(i\)</span> wir kennen extrem schnell zugreifen.</p>
 </div>
 <div class="section" id="ubung">
@@ -1358,8 +1363,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4573677824
- id after concat: 4573679488
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4460992256
+ id after concat: 4460994176
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1380,8 +1385,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4573673088
- id after concat: 4573673088
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4460990848
+ id after concat: 4460990848
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1573,7 +1578,7 @@ Alle <em>Kinder</em> von <code class="docutils literal notranslate"><span class=
 <p>Wir sprechen nur dann von einer <em>flachen Kopie</em> (engl. shallow copy) <code class="docutils literal notranslate"><span class="pre">y</span></code> von einer <em>Datenstruktur</em> <code class="docutils literal notranslate"><span class="pre">x</span></code>, wenn <code class="docutils literal notranslate"><span class="pre">y</span></code> keine <em>tiefe Kopie</em> ist.</p>
 </div>
 <p>Kopieren wir eine Liste durch Indexierung oder durch die Funktion <code class="docutils literal notranslate"><span class="pre">mylist.copy()</span></code> so wird noch immer eine <em>flache</em> (engl. shallow) Kopie angelegt.
-Es werden lediglich die <strong>Adressen</strong>, welche sich in der Liste befinden kopiert, siehe <a class="reference internal" href="#fig-data-type-list"><span class="std std-numref">Abbildung 4.2</span></a> oder <a class="reference internal" href="#fig-data-type-list-in-list"><span class="std std-numref">4.4</span></a>.
+Es werden lediglich die <strong>Adressen</strong>, welche sich in der Liste befinden kopiert, siehe <a class="reference internal" href="#fig-data-type-list"><span class="std std-numref">Abbildung 4.4</span></a> oder <a class="reference internal" href="#fig-data-type-list-in-list"><span class="std std-numref">4.6</span></a>.
 Genau wie bei Variablen <em>atomarer Datentypen</em> ist dies in jedem Fall ausreichend sofern diese <strong>Adressen</strong> auf Werte <em>atomare Datentypen</em> zeigen.
 In diesem Fall macht es keinen Unterschied ob die <em>atomaren Datentypen</em> Kopien sind oder nicht.</p>
 <p>Folgender Code zeigt, dass die <strong>Adressen</strong> der Elemente der Kopie identisch sind:</p>
@@ -1594,13 +1599,13 @@ In diesem Fall macht es keinen Unterschied ob die <em>atomaren Datentypen</em> K
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers
-4532640048
-4532640080
-4532640112
+4419954992
+4419955024
+4419955056
 ids of numbers_shallow_copy
-4532640048
-4532640080
-4532640112
+4419954992
+4419955024
+4419955056
 </pre></div>
 </div>
 </div>
@@ -1634,8 +1639,8 @@ Nunja, die <strong>Adressen</strong></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4573172224
-4573172224
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4460928384
+4460928384
 </pre></div>
 </div>
 </div>
@@ -1674,14 +1679,14 @@ Anders ausgedrückt: Sie müssen alle <em>Kinder</em> der Datenstruktur kopieren
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers:
-4532640048
-4532640080
-4573633152
+4419954992
+4419955024
+4460998784
 
 ids of numbers_deep_copy:
-4532640048
-4532640080
-4573685760
+4419954992
+4419955024
+4461000192
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]]
@@ -1705,14 +1710,14 @@ Wie sieht es mit den Adressen der Elemente des Kindes aus?:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of mylist[2]
-4534245552
-4533680304
-4533392560
+4421560624
+4420995248
+4420707504
 
 ids of mylist_deep_copy[2]
-4534245552
-4533680304
-4533392560
+4421560624
+4420995248
+4420707504
 </pre></div>
 </div>
 </div>
