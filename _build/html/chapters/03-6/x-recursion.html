@@ -889,7 +889,7 @@ Da die Funktionen rekursiv aufgerufen werden, füllt sich der Stack bis wir uns 
 <p class="caption"><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Befüllung des <em>Stacks</em> durch den Aufruf der <em>rekursiven Funktion</em> <code class="docutils literal notranslate"><span class="pre">fac(4)</span></code>.</span><a class="headerlink" href="#fig-stack-fill" title="Permalink to this image">¶</a></p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">fac(1)</span></code> gelangt in den <em>Basisfall</em> und beendet die Rekursionskette.
-Es ließt sein <code class="docutils literal notranslate"><span class="pre">n</span></code> aus seinem Namensraum (in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Abbildung</span> <span class="pre">{number}</span></code> ist das der <code class="docutils literal notranslate"><span class="pre">namespace4</span></code>), prüft <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> und liefert <code class="docutils literal notranslate"><span class="pre">1</span></code> zurück.
+Es ließt sein <code class="docutils literal notranslate"><span class="pre">n</span></code> aus seinem Namensraum (in <a class="reference internal" href="#fig-stack-fill"><span class="std std-numref">Abbildung 6.1</span></a> ist das der <code class="docutils literal notranslate"><span class="pre">namespace4</span></code>), prüft <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> und liefert <code class="docutils literal notranslate"><span class="pre">1</span></code> zurück.
 Durch diesen Rücksprung, wird der Namensraum gelöscht und der nächste Namensraum auf dem <em>Stack</em> definiert den Namensraum des aktuellen Funktionsaufrufs.
 In diesem hat <code class="docutils literal notranslate"><span class="pre">n</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">2</span></code> und wir befinden uns bereits an der Stelle <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">fac(1)</span></code> und da <code class="docutils literal notranslate"><span class="pre">fac(1)</span></code> soeben den Wert <code class="docutils literal notranslate"><span class="pre">1</span></code> zurückgeliefert hat, wird dieser Ausdruck zu <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">1</span></code> und somit zu <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">1</span></code>.</p>
 <p>Sukzessive leert sich der Stack.</p>
@@ -995,7 +995,7 @@ Läuft dieser voll, schlägt die Vorhersage fehl und die Ausführungszeit verlä
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>394 µs ± 101 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>312 µs ± 33.5 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1007,7 +1007,7 @@ Läuft dieser voll, schlägt die Vorhersage fehl und die Ausführungszeit verlä
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.46 ms ± 930 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.89 ms ± 14.5 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>

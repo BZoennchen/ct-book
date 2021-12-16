@@ -61,7 +61,7 @@ Befüllung des *Stacks* durch den Aufruf der *rekursiven Funktion* ``fac(4)``.
 ```
 
 ``fac(1)`` gelangt in den *Basisfall* und beendet die Rekursionskette.
-Es ließt sein ``n`` aus seinem Namensraum (in {numref}`Abbildung {number} <fig-stack_fil>` ist das der ``namespace4``), prüft ``n <= 1`` und liefert ``1`` zurück.
+Es ließt sein ``n`` aus seinem Namensraum (in {numref}`Abbildung {number} <fig-stack_fill>` ist das der ``namespace4``), prüft ``n <= 1`` und liefert ``1`` zurück.
 Durch diesen Rücksprung, wird der Namensraum gelöscht und der nächste Namensraum auf dem *Stack* definiert den Namensraum des aktuellen Funktionsaufrufs.
 In diesem hat ``n`` den Wert ``2`` und wir befinden uns bereits an der Stelle ``return n * fac(1)`` und da ``fac(1)`` soeben den Wert ``1`` zurückgeliefert hat, wird dieser Ausdruck zu ``return n * 1`` und somit zu ``return 2 * 1``.
 
