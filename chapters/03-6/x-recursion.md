@@ -13,7 +13,7 @@ kernelspec:
 (sec-recursive-functions)=
 # Rekursive Funktionen
 
-Bevor Sie fortfahren sollten Sie sich den Abschnitt [Wiederholung und Rekursion](sec-repetition-and-recursion) durchgelesen haben.
+Bevor Sie fortfahren sollten Sie sich den Abschnitt [Wiederholung](sec-repetition-and-recursion) durchgelesen haben.
 
 Wir werden in diesem Abschnitt nicht über Rekursion an sich sprechen, sondern wie *rekursive Funktionen* in den allermeisten Programmiersprachen realisiert werden.
 Wie realisiert der Computer rekursion? 

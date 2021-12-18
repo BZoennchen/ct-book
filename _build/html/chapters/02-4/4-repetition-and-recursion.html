@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.4. Wiederholung und Rekursion &#8212; Computational Thinking</title>
+    <title>4.4. Wiederholung &#8212; Computational Thinking</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -390,7 +390,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.4. Wiederholung und Rekursion
+     4.4. Wiederholung
     </a>
    </li>
   </ul>
@@ -805,8 +805,8 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wiederholung">
-   4.4.1. Wiederholung
+  <a class="reference internal nav-link" href="#iteration">
+   4.4.1. Iteration
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -830,18 +830,8 @@
         
               <div>
                 
-  <div class="section" id="wiederholung-und-rekursion">
-<span id="sec-repetition-and-recursion"></span><h1><span class="section-number">4.4. </span>Wiederholung und Rekursion<a class="headerlink" href="#wiederholung-und-rekursion" title="Permalink to this headline">¶</a></h1>
-<p>Auf der konzeptionellen Ebene erscheinen Wiederholung und Rekursion grundverschieden.
-Es sind unterschiedliche Denkweisen.
-Wir können rekursiv oder aber in Wiederholungen denken.</p>
-<div class="important admonition">
-<p class="admonition-title">Wiederholung und Rekursion</p>
-<p>Sofern bei der Wiederholung, die Anzahl der Durchläufe nicht zur Laufzeit vor der Ausführung der Wiederholung bekannt sein muss können wir überraschenderweise jede Rekursion in eine Wiederholung und jede Wiederholung in eine Rekursion umwandeln!</p>
-</div>
-<p>Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen.</p>
-<div class="section" id="wiederholung">
-<h2><span class="section-number">4.4.1. </span>Wiederholung<a class="headerlink" href="#wiederholung" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="wiederholung">
+<span id="sec-repetition-and-recursion"></span><h1><span class="section-number">4.4. </span>Wiederholung<a class="headerlink" href="#wiederholung" title="Permalink to this headline">¶</a></h1>
 <p>Das fundamentale Prinzip der <em>Wiederholung</em> ist zentraler Bestandteil des Computational Thinkings.
 Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
 Sortieralgorithmen, die Berechnung eine Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen <em>iterativ</em> verarbeiten.</p>
@@ -858,12 +848,27 @@ Wir können das mit der Sprache vergleichen.
 Nur weil wir laute von uns geben können, heißt das nicht, dass wir uns in jeder Sprache verständigen können.
 Ein weiteres Beispiel wären die Naturwissenschaften.
 Nur weil wir die kleinsten Teilchen im Universum verstehen, bedeutet dass nicht, dass wir damit das entstehen von Leben oder anderen emergenten Übergängen erklären können.</p>
-<p>Wenn Sie jedoch Erfahrung im entwickeln von Algorithmen gesammelt haben und Algorithmen analysiert und verwendet haben, dann werden Sie beginnen in Wiederholungen zu denken.
-Sie werden beginnen in Wiederholungen von Wiederholungen von Wiederholungen zu denken.</p>
+<p>Wir kennen zwei Arten von Wiederholungen:</p>
+<ol class="simple">
+<li><p>Die Iteration und</p></li>
+<li><p>die Rekursion.</p></li>
+</ol>
+<p>Auf der konzeptionellen Ebene erscheinen Iteration und Rekursion grundverschieden.
+Es sind unterschiedliche Denkweisen.
+Wir können rekursiv oder iterativ denken.</p>
+<div class="important admonition">
+<p class="admonition-title">Iteration und Rekursion</p>
+<p>Sofern bei der Iteration, die Anzahl der Durchläufe nicht zur Laufzeit vor der Ausführung der Iteration bekannt sein muss, können wir überraschenderweise jede Rekursion in eine Iteration und jede Iteration in eine Rekursion umwandeln!</p>
+</div>
+<p>Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen.</p>
+<div class="section" id="iteration">
+<h2><span class="section-number">4.4.1. </span>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h2>
+<p>Wenn Sie Erfahrung im entwickeln von iterativen Algorithmen gesammelt haben und iterative Algorithmen analysiert und verwendet haben, dann werden Sie beginnen in Iterationen zu denken.
+Sie werden beginnen in Iterationen von Iterationen von Iterationen zu denken.</p>
 <p>Nehmen wir zum Beispiel den <a class="reference external" href="https://en.wikipedia.org/wiki/Bubble_sort">Bubblesort Algorithmus</a>.
 Wir möchten eine Liste von Zahlen sortieren.
-Wir gehen durch die Liste (1. <em>Wiederholung</em>) und wann immer zwei nebeneinander liegende Zahlen falsch sortiert sind, vertauschen wir diese.
-Wir wiederholen dies (2. <em>Wiederholung</em>) solange bis keine Zahl mehr falsch sortiert ist.</p>
+Wir gehen durch die Liste (1. <em>Iterationen</em>) und wann immer zwei nebeneinander liegende Zahlen falsch sortiert sind, vertauschen wir diese.
+Wir wiederholen dies (2. <em>Iterationen</em>) solange bis keine Zahl mehr falsch sortiert ist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
@@ -886,7 +891,7 @@ Wir wiederholen dies (2. <em>Wiederholung</em>) solange bis keine Zahl mehr fals
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before sorting: [4, 7, 9, 3, 1, 6, 8, 2, 5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before sorting: [8, 3, 2, 7, 6, 4, 5, 9, 1]
 after sorting: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre></div>
 </div>
@@ -894,14 +899,14 @@ after sorting: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 </div>
 <p>Die beiden Schleifen liefern uns auch einen Hinweis auf die Laufzeit des simplen Sortieralgorithmus.
 Nach jedem ausführen der inneren Schleife befindet sich ein neues Element an seiner korrekten Position.
-Damit brauchen wir maximal so viele Durchläufe (1. Wiederholung) wie es Elemente sind.
+Damit brauchen wir maximal so viele Durchläufe (1. Iterationen) wie es Elemente sind.
 Jeder Durchlauf benötigt ebenfalls maximal so viel Schritte wie es Elemente sind.
 Damit hat der Algorithmus im schlechtesten Fall eine quadratische Laufzeit.</p>
 </div>
 <div class="section" id="rekursion">
 <h2><span class="section-number">4.4.2. </span>Rekursion<a class="headerlink" href="#rekursion" title="Permalink to this headline">¶</a></h2>
 <p>Rekursion scheint dieses unverständliche Konzept, welches Mathematiker*innen lieben und vor dem Programmierer*innen anfänglich davonlaufen.
-Derweil würden wir behaupten, dass die <em>rekursive denkweise</em> uns Menschen näher ist als das Denken in Wiederholungen.
+Derweil würden wir behaupten, dass die <em>rekursive denkweise</em> uns Menschen näher ist als das Denken in Iterationen.
 Rekursive Lösungen sind oft eleganter, kürzer, verständlicher aber leider auch langsamer als iterative Lösungen.</p>
 <p>Nehmen wir die Berechnung der Fakultät, einmal iterativ</p>
 <div class="math notranslate nohighlight">

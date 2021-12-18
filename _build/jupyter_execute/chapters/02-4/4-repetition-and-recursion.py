@@ -1,18 +1,5 @@
 (sec-repetition-and-recursion)=
-# Wiederholung und Rekursion
-
-Auf der konzeptionellen Ebene erscheinen Wiederholung und Rekursion grundverschieden.
-Es sind unterschiedliche Denkweisen.
-Wir können rekursiv oder aber in Wiederholungen denken.
-
-```{admonition} Wiederholung und Rekursion
-:class: important
-Sofern bei der Wiederholung, die Anzahl der Durchläufe nicht zur Laufzeit vor der Ausführung der Wiederholung bekannt sein muss können wir überraschenderweise jede Rekursion in eine Wiederholung und jede Wiederholung in eine Rekursion umwandeln!
-```
-
-Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen.
-
-## Wiederholung
+# Wiederholung
 
 Das fundamentale Prinzip der *Wiederholung* ist zentraler Bestandteil des Computational Thinkings.
 Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
@@ -34,13 +21,31 @@ Nur weil wir laute von uns geben können, heißt das nicht, dass wir uns in jede
 Ein weiteres Beispiel wären die Naturwissenschaften.
 Nur weil wir die kleinsten Teilchen im Universum verstehen, bedeutet dass nicht, dass wir damit das entstehen von Leben oder anderen emergenten Übergängen erklären können.
 
-Wenn Sie jedoch Erfahrung im entwickeln von Algorithmen gesammelt haben und Algorithmen analysiert und verwendet haben, dann werden Sie beginnen in Wiederholungen zu denken.
-Sie werden beginnen in Wiederholungen von Wiederholungen von Wiederholungen zu denken.
+Wir kennen zwei Arten von Wiederholungen:
+
+1. Die Iteration und 
+2. die Rekursion.
+
+Auf der konzeptionellen Ebene erscheinen Iteration und Rekursion grundverschieden.
+Es sind unterschiedliche Denkweisen.
+Wir können rekursiv oder iterativ denken.
+
+```{admonition} Iteration und Rekursion
+:class: important
+Sofern bei der Iteration, die Anzahl der Durchläufe nicht zur Laufzeit vor der Ausführung der Iteration bekannt sein muss, können wir überraschenderweise jede Rekursion in eine Iteration und jede Iteration in eine Rekursion umwandeln!
+```
+
+Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen.
+
+## Iteration
+
+Wenn Sie Erfahrung im entwickeln von iterativen Algorithmen gesammelt haben und iterative Algorithmen analysiert und verwendet haben, dann werden Sie beginnen in Iterationen zu denken.
+Sie werden beginnen in Iterationen von Iterationen von Iterationen zu denken.
 
 Nehmen wir zum Beispiel den [Bubblesort Algorithmus](https://en.wikipedia.org/wiki/Bubble_sort).
 Wir möchten eine Liste von Zahlen sortieren.
-Wir gehen durch die Liste (1. *Wiederholung*) und wann immer zwei nebeneinander liegende Zahlen falsch sortiert sind, vertauschen wir diese.
-Wir wiederholen dies (2. *Wiederholung*) solange bis keine Zahl mehr falsch sortiert ist.
+Wir gehen durch die Liste (1. *Iterationen*) und wann immer zwei nebeneinander liegende Zahlen falsch sortiert sind, vertauschen wir diese.
+Wir wiederholen dies (2. *Iterationen*) solange bis keine Zahl mehr falsch sortiert ist.
 
 import random as rnd
 
@@ -61,14 +66,14 @@ print(f'after sorting: {numbers}')
 
 Die beiden Schleifen liefern uns auch einen Hinweis auf die Laufzeit des simplen Sortieralgorithmus.
 Nach jedem ausführen der inneren Schleife befindet sich ein neues Element an seiner korrekten Position.
-Damit brauchen wir maximal so viele Durchläufe (1. Wiederholung) wie es Elemente sind.
+Damit brauchen wir maximal so viele Durchläufe (1. Iterationen) wie es Elemente sind.
 Jeder Durchlauf benötigt ebenfalls maximal so viel Schritte wie es Elemente sind.
 Damit hat der Algorithmus im schlechtesten Fall eine quadratische Laufzeit.
 
 ## Rekursion
 
 Rekursion scheint dieses unverständliche Konzept, welches Mathematiker\*innen lieben und vor dem Programmierer\*innen anfänglich davonlaufen.
-Derweil würden wir behaupten, dass die *rekursive denkweise* uns Menschen näher ist als das Denken in Wiederholungen.
+Derweil würden wir behaupten, dass die *rekursive denkweise* uns Menschen näher ist als das Denken in Iterationen.
 Rekursive Lösungen sind oft eleganter, kürzer, verständlicher aber leider auch langsamer als iterative Lösungen.
 
 Nehmen wir die Berechnung der Fakultät, einmal iterativ
