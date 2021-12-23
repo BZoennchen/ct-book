@@ -12,11 +12,11 @@ kernelspec:
 
 # Wiederholung als Grundlage
 
-[Computational Thinking](sec-what-is-ct) beginnt normalerweise dort wo alle Denkprozesse beginnen: in den Köpfen der Menschen.
+[Computational Thinking](sec-what-is-ct) beginnt normalerweise dort wo alle Denkprozesse beginnen: In den Köpfen der Menschen.
 Der Computer ist sekundäres Werkzeug um das Resultat des Denkprozesses niederzuschreiben und schlussendlich auszuführen.
 Wir können eine Musikkomposition als jene Niederschrift und dessen Aufführung als Ausführung interpretieren.
 Schließlich ist eine Musikkomposition nichts anderes als ein [Algorithmus](def-algorithm), beschrieben durch eine endliche Folge von Noten.
-Wie bei einer Niederschrift eines [Algorithmus](def-algorithm) in Form von Quellcode können wir zwischen
+Wie bei einer Niederschrift eines Algorithmus in Form von Quellcode können wir zwischen
 
 1. der Komplexität der Aufführung/Ausführung (wie viele Noten werden gespielt bzw. wie lange dauert das Stück) und 
 2. der Komplexität der Beschreibung (wie viele Seiten an Noten beschreiben das Stück) unterscheiden.
@@ -48,4 +48,4 @@ sum_sqrt(10)
 ```
 
 Die Anzahl der auszuführenden Anweisungen steigt linear mit ``n``, doch der Programmiercode bleibt unverändert.
-Hierin liegt die ganze Magie: **Wiederholung**!
+Hierin liegt die ganze 'Magie': **Wiederholung**!

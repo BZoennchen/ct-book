@@ -17,7 +17,7 @@ Wir gehen nicht davon aus, dass Sie bereits jetzt alles verstehen was wir im Fol
 Ziel ist es aufzuzeigen, dass sich der Programmiercode kaum von unserer obigen Beschreibung unterscheidet und wir durch Programmiersprachen einen präzisen und vorgefertigten *Kontext* bekommen.
 Wir müssen diesen lediglich kennenlernen!
 Was sich also ändert ist der *Kontext*.
-Dieser ist in unserem Fall durch die Programmiersprache ``Python`` (ihrer *Syntax* und *Semantik*) und importierter Pakte vorgegeben.
+Dieser ist in unserem Fall durch die Programmiersprache ``Python`` (ihrer [Syntax](def-syntax) und [Semantik](def-semantik)) und importierter Pakte vorgegeben.
 
 
 ```{exercise} Karten sortieren in Python
@@ -25,7 +25,12 @@ Dieser ist in unserem Fall durch die Programmiersprache ``Python`` (ihrer *Synta
 Implementieren Sie Ihren Algorithmus in ``Python``.
 ```
 
+Im folgenden präsentieren wir eine Lösung.
+Beachten Sie, dass es uns dabei nicht um die Laufzeit unseres Programms geht.
+Die Lösung ist weder optimal noch besonders elegant.
+
 ## Modellierung der Karten und Hand
+
 Da unser *Kontekt* natürlich keine physikalische Hand definiert, müssen wir diese anderweitig definieren bzw. *modellieren*.
 Hierbei kommt die Abstraktion ins Spiel.
 
@@ -56,7 +61,7 @@ Dabei spielt, im Gegensatz zu Mengen, die Reihenfolge der Objekte eine Rolle.
 
 ````{admonition} Liste (Python)
 
-Eine *Python Liste* repräsentiert ein endliches veränderbares *mathematisches Tupel*.
+Eine [Python Liste](sec-list) repräsentiert ein endliches *veränderbares mathematisches Tupel*.
 Elemente können an jeder Position aus der Liste entfernt, und eingefügt werden.
 Die Position eines Elements in der Liste nennen wir *Index*.
 Beinhaltet die Liste ``l``, ``n`` Elemente, so sind 
@@ -97,11 +102,11 @@ verwenden.
 Auch hier gibt es viele verschiedene Möglichkeiten.
 Eine Lösung besteht darin den *Index* eines Tupels als *Ordnung* zu verwenden.
 Das Tupel muss lediglich alle möglichen Kartentypen geordnet enthalten.
-Wir verwenden diesmal keine ``list`` sondern ein unveränderbares Python ``tuple``.
+Wir verwenden diesmal keine ``list`` sondern ein unveränderbares ``Python``-``tuple``.
 
 ````{admonition} Tupel (Python)
 
-Ein *Python-Tupel* repräsentiert ein endliches unveränderbares *mathematisches Tupel*.
+Ein [Python-Tupel](sec-tuple) repräsentiert ein endliches *unveränderbares mathematisches Tupel*.
 Die Position eines Elements im Tupel nennen wir *Index*.
 Beinhaltet das Tupel ``l``, ``n`` Elemente, so sind 
 ```python
@@ -114,7 +119,7 @@ ihre Elemente.
 cards = ('6', '7', '8', '9', '10', 'Bube', 'Dame', 'König', 'Ass')
 ```
 
-Um die konkrete Implementierung von ``cards`` an einer zentralen Stelle ändern zu können, ist es sinnvoll eine Funktion zu schreiben, welche ``cards`` zurückgibt.
+Um die konkrete Implementierung von ``cards`` an einer zentralen Stelle ändern zu können, ist es sinnvoll eine [Funktion](sec-functions) zu schreiben, welche ``cards`` zurückgibt.
 Sie brauchen noch ein wenig Erfahrung um den Unterschied und die Vorzüge zu verstehen.
 
 ```{code-cell} python3
@@ -122,7 +127,7 @@ def get_cards():
     return cards
 ```
 
-Um die *Ordnung* einer Karte ``card`` zu bestimmen iterieren wir durch alle ``cards`` und sobald wir die entsprechende Karte gefunden haben, geben wir den *Index* zurück.
+Um die [Ordnung](exercise-sort-cards) einer Karte ``card`` zu bestimmen, iterieren wir durch alle ``cards`` und sobald wir die entsprechende Karte gefunden haben, geben wir den *Index* zurück.
 
 ```{code-cell} python3
 def index_of(card):
@@ -139,7 +144,7 @@ Um zwei Karten vergleichen zu können, vergleichen wir ihre Indices.
 index_of('7') < index_of('König')
 ```
 
-Wir packen den Vergleich zweier Karten ``card1`` und ``card2`` in eine weitere Funktion.
+Wir packen den Vergleich zweier Karten ``card1`` und ``card2`` in eine weitere [Funktion](sec-functions).
 
 ```{code-cell} python3
 def is_smaller(card1, card2):
@@ -153,8 +158,8 @@ def is_smaller(card1, card2):
 Blicken wir zurück auf unseren Sortieralgorithmus.
 
 ```
-Sei H unsere Hand mit Karten
-Sei S ein leerer Stapel
+H <- unsere Hand mit Karten
+S <- ein leerer Stapel
 Solange noch Karten auf der Hand H sind:
     Lege kleinste Karte auf der Hand H auf Stapel S 
 ```

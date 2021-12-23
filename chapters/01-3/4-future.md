@@ -1,3 +1,3 @@
 # Ausblick
 
-TODO
+TODO: Quanten Computing, maschinelles Lernen, KI, Neuromorphic Computing, 

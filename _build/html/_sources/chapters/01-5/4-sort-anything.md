@@ -74,25 +74,8 @@ lambda a,b : a < b
 
 nicht verwirren. 
 Dieser Ausdruck definiert eine Funktion der wir keinen Namen geben.
+Diese nennen wir [anonyme Funktionen](sec-anonymous-function).
 Um solch eine Funktion nutzen zu können müssen wir sie entweder direkt als Argument weiterreichen oder sie in eine Variable speichern.
-
-````{admonition} Anonyme Funktionen
-:name: def-anonym-function
-Eine Funktion die keinen eigenen Namen hat, nennen wir *annonyme Funktion*.
-````
-
-````{admonition} Anonyme Funktionen in Python
-:name: python-anonym-function
-:class: hint
-
-In Python definiert man diese durch das Schlüsselwort ``lambda`` gefolgt von den Funktionsargumenten und der Funktionsdefinition separiert durch den ``:``.
-Anonyme Funktionen sind eine reine Erweiterung der *Syntax*.
-
-**Beispiel:** 
-```python 
-addmul = lambda a, b : a + a * b
-addmul(2,5)
-````
 
 Wir sparen uns damit ein paar Zeilen Code, da wir die definierte Funktion außerhalb des Aufrufs
 

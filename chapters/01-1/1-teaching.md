@@ -2,7 +2,7 @@
 
 Zwar werden Sie in diesem Kurs mit dem Programmieren vertraut gemacht, doch steht es am Ende des Prozesses.
 Der Kurs unterscheidet sich grundlegend von einem Programmierkurs.
-Unsere Aufgabe als Lehrende ist es, Sie zum [Computational Thinking](sec-what-is-ct) hinzuführen. 
+Unsere Aufgabe als Lehrende ist es Sie zum [Computational Thinking](sec-what-is-ct) hinzuführen. 
 Die Programmierung ist hierfür das Werkzeug um Ihre Gedanken in einer unmissverständlichen Form
 
 1. festzuhalten,
@@ -15,7 +15,7 @@ Möchten Sie nach diesem Kurs Ihren Horizont erweitern und weitere abstraktere D
 
 Lernen geschieht weder an der Tafel oder am Rechner noch durch einen Lehrer.
 Lernen geschieht in Ihrem Kopf.
-Egal welche Lernunterlagen und Utensilien Sie auch verwenden um etwas zu erlernen, d.h. es nicht nur zu wissen sondern wirklich zu begreifen, müssen Sie aktiv werden.
+Egal welche Lernunterlagen und Utensilien Sie auch verwenden, um etwas zu erlernen, d.h. es nicht nur zu wissen sondern wirklich zu begreifen, müssen Sie aktiv werden.
 Es gibt keine Abkürzung, die Ihnen diesen Teil abnimmt.
 Gute Unterlagen und Werkzeuge können diesen Prozess beschleunigen, gleichzeitig können Sie Ihnen jedoch auch wichtige Lernerfahrungen vorenthalten.
 
@@ -27,7 +27,7 @@ Je mehr Fehler Sie machen, desto mehr werden Sie in diesem Kurs auch mitnehmen.
 
 Das andere Extrem wäre es sich ohne jedwede Hinweise auf die Reise zu begeben.
 In diesem Fall würden Sie entweder sehr sehr lange unterwegs sein oder aber niemals ankommen.
-Diese beiden extreme versuchen wir zu balancieren.
+Diese beiden Extreme versuchen wir zu balancieren.
 In jedem Fall müssen Sie den Weg selbstständig gehen.
 Wir werden Ihnen mit Rat zur Seite stehen.
 

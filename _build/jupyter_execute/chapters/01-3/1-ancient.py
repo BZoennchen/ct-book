@@ -2,10 +2,11 @@
 
 Die Geschichte der Computer und Algorithmen beginnt 2700 bis 2400 Jahre vor Christus.
 Zu dieser Zeit konstruierten vermutlich die Sumerer das älteste bekannte Rechenhilfsmittel, den Abakus.
-Er unterstützte sie bei der Addition, Subtraktion, Multikation und Division ganzer Zahlen.
+Er unterstützte sie bei der Addition, Subtraktion, Multiplikation und Division ganzer Zahlen.
 Ziel war es Rechenfehler bei einfachen Berechnungen zu verhindern.
-Über zweitausend Jahre später erschufen die antiken Griechen eine Art mechanisch analogen Computer -- eine ganz erstaunliche Leistung, die für die kommenden tausend Jahre einzigartig bleiben sollte.
-Dieser antike Computer war dazu gedacht, bestimmte Positionen der Himmelskörper zu bestimmen.
+
+Über zweitausend Jahre später erschufen die antiken Griechen eine Art mechanisch-analogen Computer -- eine ganz erstaunliche Leistung, die für die kommenden tausend Jahre einzigartig bleiben sollte.
+Dieser antike Computer war dazu gedacht, bestimmte Positionen der Himmelskörper zu bestimmen -- schon immer waren wir Menschen von der Frage nach unserem Platz und unserer Bedeutung im Universum angetrieben.
 
 ```{figure} ../../figs/greeks.png
 ---
@@ -87,7 +88,7 @@ gcd(36, 24)
 
 >[The Euclidean algorithm] is the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has survived to the present day. -- Donald Knuth, The Art of Computer Programming, Vol 2.
 
-Zwischen der Logik und der theoretischen Informatik gibt es einen sehr starken Zusammenhang.
+Zwischen der Logik und der Theoretischen Informatik gibt es einen sehr starken Zusammenhang.
 Berechnungen eines Rechners basieren auf logischen Operationen und das theoretische Prinzip des universellen digitalen Computers, wie auch wichtige Grenzen dessen was berechenbar ist, entstand aus den Arbeiten vieler Logiker.
 Den Anfang machten auch hier die Griechen.
 Ihnen haben wir ein System des logischen Schließens, die sog. Syllogismen des Aristoteles, zu verdanken.

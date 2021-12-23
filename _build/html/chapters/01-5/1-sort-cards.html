@@ -124,7 +124,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01-2/what-is-ct.html">
-   2. Was ist Computational Thinking
+   2. Was ist Computational Thinking?
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -134,7 +134,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-2/1-informatics-and-ct.html">
-     2.1. Von der Informatik zum Computational Thinking
+     2.1. Informatik und CT
     </a>
    </li>
    <li class="toctree-l2">
@@ -848,14 +848,14 @@ Wie gehen Sie vor?</p>
 <li><p>Was geht Ihnen durch den Kopf?</p></li>
 </ul>
 </li>
-<li><p>Notieren Sie den Prozess, so dass ein kleines Kind Ihren Algorithmus nachvollziehen und ausführen kann.</p></li>
-<li><p>Lassen Sie den Prozess anhand ihrer Notizen von einer anderen Person (z.B. Kommilitone) durchführen</p></li>
+<li><p>Notieren Sie den Prozess, sodass ein kleines Kind Ihren Algorithmus nachvollziehen und ausführen kann.</p></li>
+<li><p>Lassen Sie den Prozess anhand ihrer Notizen von einer anderen Person durchführen.</p></li>
 <li><p>Beantworten Sie sich selbst folgende Fragen:</p>
 <ul class="simple">
 <li><p>Führt Ihr Algorithmus zum erwünschten Ergebnis?</p></li>
-<li><p>Wie oft müssen Sie die Karten bewegen (Best/Worst-Case)?</p></li>
+<li><p>Wie oft müssen Sie die Karten bewegen (im schlechtesten und besten Fall)?</p></li>
 <li><p>Welche Hilfsmittel benötigen Sie (zum Beispiel einen Ablageplatz, Hände, Augen)?</p></li>
-<li><p>Welches Wissen setzen Sie vorraus um dem Algorithmus folgen zu können?</p></li>
+<li><p>Welches Wissen setzen Sie voraus um dem Algorithmus folgen zu können?</p></li>
 </ul>
 </li>
 </ol>
@@ -870,16 +870,19 @@ Schon sehr früh können wir Objekte ihrer Größe, Länge oder ihres Gewichts n
 Wir gehen davon aus, dass jede Karte einen bestimmten Wert hat und wir die Karten anhand dieser <em>Ordnungsrelation</em> sortieren können.</p>
 <div class="section" id="ordnung">
 <h3><span class="section-number">5.1.1.1. </span>Ordnung<a class="headerlink" href="#ordnung" title="Permalink to this headline">¶</a></h3>
+<p>Das mathematische Denken ist eng mit dem Computational Thinking verknüpft.
+In der Mathematik sind alle Objekte und Operationen präzise und unmissverständlich formuliert.
+Zugleich verzichtet man auf überflüssige Informationen und versucht Definitionen so allgemein oder abstrakt wie möglich zu halten.
+Für die Entwicklung eines <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a> zum Sortieren von Karten brauchen wir eine präzise Definition einer <em>Ordnungsrelation</em> um Karten vergleichen zu können.</p>
 <div class="admonition-totale-ordnungsrelation admonition" id="def-order">
-<p class="admonition-title">(totale) Ordnungsrelation</p>
-<p>Eine <em>Ordnungsrelation</em> jene Beziehung die sie verwenden, wenn sie Elemente aus einer Menge Ordnen.</p>
-<p>Formal ist eine <em>Ordnungsrelation</em> <span class="math notranslate nohighlight">\(R \subset K \times K\)</span> auf einer Menge <span class="math notranslate nohighlight">\(K\)</span> (z.B. Menge der Karten) eine Relation mit ganz bestimmten Eigenschaften (Reflexivität, Antisymmetrie und Transitivität).
+<p class="admonition-title">(Totale) Ordnungsrelation</p>
+<p>Eine <em>Ordnungsrelation</em> <span class="math notranslate nohighlight">\(R \subset K \times K\)</span> auf einer Menge <span class="math notranslate nohighlight">\(K\)</span> (z.B. Menge der Karten) ist eine Relation mit ganz bestimmten Eigenschaften (Reflexivität, Antisymmetrie und Transitivität).
 Befindet sich ein Element <span class="math notranslate nohighlight">\(a \in K\)</span> in Relation mit einem anderen Element <span class="math notranslate nohighlight">\(b \in K\)</span> schreibt man häufig anstatt <span class="math notranslate nohighlight">\((a,b) \in R\)</span></p>
 <div class="math notranslate nohighlight">
 \[a \leq_R b\]</div>
-<p>und geht aus dem Kontext hervor welche Relation gemeint ist schreibt man häufig</p>
+<p>und geht aus dem Kontext hervor welche Relation gemeint ist, schreibt man häufig</p>
 <div class="math notranslate nohighlight">
-\[a \leq b\]</div>
+\[a \leq b.\]</div>
 <p>Die Eigenschaften, die eine <em>Ordnungsrelation</em> erfüllen muss sind:</p>
 <ol class="simple">
 <li><p>Reflexivität: <span class="math notranslate nohighlight">\(\forall a \in K : a \leq_R a\)</span></p></li>
@@ -888,9 +891,9 @@ Befindet sich ein Element <span class="math notranslate nohighlight">\(a \in K\)
 </ol>
 <p>Eine <em>Ordnungsrelation</em> ist <em>total</em> wenn für alle <span class="math notranslate nohighlight">\(a,b \in K\)</span> <span class="math notranslate nohighlight">\(a \leq_R b\)</span> oder <span class="math notranslate nohighlight">\(b \leq_R a\)</span> gilt.</p>
 </div>
-<p>Ist unsere Menge <span class="math notranslate nohighlight">\(K\)</span> die Menge der Karten, wobei wir zwei Karten mit der gleichen Augenzahl aber unterschiedlicher Farbe als gleich ansehen, dann können wir eine <em>(totale) Ordnungsrelation</em> auf den Karten definieren. Ist zum Beispiel <span class="math notranslate nohighlight">\(K = \{6,7,8,9,10,Bube,Dame,Koenig,Ass\}\)</span>, so wäre</p>
+<p>Ist unsere Menge <span class="math notranslate nohighlight">\(K\)</span> die Menge der Karten, wobei wir zwei Karten mit der gleichen Augenzahl aber unterschiedlicher Farbe als gleich ansehen, dann können wir eine <em>(totale) Ordnungsrelation</em> auf den Karten definieren. Ist zum Beispiel <span class="math notranslate nohighlight">\(K = \{6,7,8,9,10,\text{Bube},\text{Dame},\text{König},\text{Ass}\}\)</span>, so wäre</p>
 <div class="math notranslate nohighlight">
-\[R = \{(6,6),(6,7),(6,8),\ldots,(6,A), (7,7), (7,8), \ldots, (Koenig,Ass), (Ass,Ass)\}\]</div>
+\[R = \{(6,6),(6,7),(6,8),\ldots,(6,A), (7,7), (7,8), \ldots, (\text{König},\text{Ass}), (\text{Ass},\text{Ass})\}\]</div>
 <p>eine <em>(totale) Ordnungsrelation</em>.</p>
 </div>
 <div class="section" id="reihenfolge">
@@ -913,8 +916,8 @@ Jedoch kommt eine solche <em>Reihenfolgen</em> nicht in unseren Erfahrungen vor 
 <p>Stets befinden wir uns in einem <em>Kontext</em>.
 Dieser <em>Kontext</em> enthält Wörter denen er eine ganz bestimmte Bedeutung bzw. Abfolge von Wörtern zuweist.
 Fragen wir ein kleines Kind ob es zur Schule geht, meinen wir damit nicht ob es gerade jetzt auf dem Weg zur Schule ist, sondern ob es bereits eingeschult ist.
-In diesem Fall entsteht ein Missverständnis, falls wir und das Kind nicht den gleichen <em>Kontext</em> benutzten.
-Im <em>Kontext</em> des Kartensortierens gehen wir davon aus, dass der- oder diejenige, die die Karten sortiert, weiß, was eine <em>Ordnung</em>, eine <em>Reihenfolge</em> und ein <em>Vergleich</em> ist.
+In diesem Fall entsteht ein Missverständnis, falls wir und das Kind nicht den gleichen <em>Kontext</em> benutzten.</p>
+<p>Im <em>Kontext</em> des Kartensortierens gehen wir davon aus, dass der- oder diejenige, die die Karten sortiert, weiß, was eine <em>Ordnung</em>, eine <em>Reihenfolge</em> und ein <em>Vergleich</em> ist.
 Wenn wir die Anweisung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Platziere</span> <span class="n">Karte</span> <span class="n">x</span> <span class="n">an</span> <span class="n">die</span> <span class="n">vorderste</span> <span class="n">Stelle</span>
 </pre></div>
@@ -926,7 +929,7 @@ Die genaue <em>Realisierung</em> von</p>
 </pre></div>
 </div>
 <p>nehmen wir als gegeben an.</p>
-<p>Ist in diesem Kontext klar was <strong>Sortiere Kareten</strong> bedeuetet (nämlich genau das was wir möchten).
+<p>Ist in diesem Kontext klar was <strong>Sortiere Karten</strong> bedeuetet (nämlich genau das was wir möchten).
 Wäre folgende Lösung bereits aussreichend:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Sortiere</span> <span class="n">Karten</span>
 </pre></div>
@@ -934,7 +937,7 @@ Wäre folgende Lösung bereits aussreichend:</p>
 </div>
 <div class="section" id="bewusstes-denken">
 <h2><span class="section-number">5.1.3. </span>Bewusstes Denken<a class="headerlink" href="#bewusstes-denken" title="Permalink to this headline">¶</a></h2>
-<p>Selbst wenn Sie schon oft Karten sortiert haben, ist anzunehmen, dass Sie eher heuristisch vorgehen und keinen präzise und unmissverständlichen Anweisungen (= Algorithmus) folgen.
+<p>Selbst wenn Sie schon oft Karten sortiert haben, ist anzunehmen, dass Sie eher heuristisch vorgegangen sind und keinen präzise und unmissverständlichen Anweisungen, d.h. einem <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a>, gefolgt sind.
 Das liegt in der Natur von uns Menschen.
 Wir sind darauf trainiert schnelle einigermaßen gute Einschätzungen zu vollziehen.
 Wenn wir beispielsweise einen Ball fangen möchten, dann starten wir keine komplizierten Berechnungen und lösen ein System von Differentialgleichungen, sondern folgen der sog. Blickheuristik.</p>
@@ -943,20 +946,20 @@ Wenn wir beispielsweise einen Ball fangen möchten, dann starten wir keine kompl
 <p>Ein Fänger, der die Blickheuristik verwendet, beobachtet den Anfangswinkel des Balls und rennt so darauf zu, dass dieser Winkel konstant bleibt.</p>
 </div>
 <p>Derartige Heuristiken stoßen jedoch an ihre Grenzen, wenn die Komplexität des Problems steigt.
-Sie können eine handvoll Karten oder ein kleines Sudoku noch mit Hilfe von Heuristiken lösen, möchten Sie aber tausende Karten sortieren, werden heuristische Strategien entweder sehr Zeitaufwendig oder führen nicht zum optimalen Ergebnis.
+Sie können eine handvoll Karten oder ein kleines Sudoku noch mit Hilfe von Heuristiken lösen, möchten Sie aber tausende Karten sortieren, werden heuristische Strategien entweder sehr Zeitaufwendig, oder führen nicht zum optimalen Ergebnis.
 Und selbst wenn Sie das Problem heuristisch lösen, um Ihre Lösungsstrategie jemandem mitzuteilen, müssen Sie sich ihrer Heuristik bewusst werden!</p>
 <div class="hint admonition">
 <p class="admonition-title">Heuristische Algorithmen</p>
 <p>Heuristische Algorithmen folgen einfachen Daumenregeln die oft zu guten aber nicht zwangsläufig den besten Resultaten führen.</p>
-<p><strong>Beispiel:</strong> Nehmen wir an Sie möchten aus einer Menge von Städten jede Stadt nur einmal auf einer Rundreise besuchen und gleichzeitig zurückgelegten Weg minimieren.
-Eine mögliche Heuristik wäre es immer die nächst naheliegendste noch nicht besuchte Stadt zu wählen.
+<p><strong>Beispiel:</strong> Nehmen wir an Sie möchten aus einer Menge von Städten jede Stadt nur einmal auf einer Rundreise besuchen und gleichzeitig den zurückgelegten Weg minimieren.
+Eine mögliche Heuristik wäre es, immer die gerade naheliegendste noch nicht besuchte Stadt zu wählen.
 In den meisten praktischen Fällen führt das zu einem guten Ergebnis, doch das beste Ergebnis erzielt man damit oft nicht.</p>
 </div>
 <p>Unsere (menschlichen) Heuristiken bedienen sich unseres Unterbewusstseins und rufen ab was wir verinnerlicht haben.
 Davon bekommen wir praktisch nichts mit.
 Eine Herausforderung des <em>Computational Thinking</em> ist es, sich das Unbewusste bewusst zu machen.
 Ein Problem muss im Detail verstanden werden.
-Begriffe müssen eindeutig, bezogen auf Ihren verwendeten Kontext, definiert sein.</p>
+Begriffe müssen, bezogen auf Ihren verwendeten Kontext, eindeutig definiert sein.</p>
 </div>
 <div class="section" id="kontrollstrukturen-und-variablen">
 <h2><span class="section-number">5.1.4. </span>Kontrollstrukturen und Variablen<a class="headerlink" href="#kontrollstrukturen-und-variablen" title="Permalink to this headline">¶</a></h2>
@@ -970,29 +973,25 @@ Dann könnte möglicherweise folgender Algorithmus unseren Ansprüchen genügen:
 </div>
 <p>Wir nehmen an, dass die obigen Anweisungen von links nach rechts und oben nach unten durchlaufen werden.
 Weshalb?
-Weil wir in Vergangenheit Texte in dieser Art gelesen und interpretiert haben.
+Weil wir in der Vergangenheit Texte in dieser Art gelesen und interpretiert haben.
 Und wir gehen davon aus, dass der aktuelle <em>Kontext</em> dies ebenfalls so vorgesehen hat.</p>
 <p>Weniger offensichtlich ist die Bedeutung der drei Punkte.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
 </pre></div>
 </div>
-<p>Auch hier sagt uns unser Bauchgefühl was das damit gemeint ist, nämlich dass</p>
+<p>Auch hier sagt uns unser Bauchgefühl was damit gemeint ist, nämlich dass</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">auf</span> <span class="n">einen</span> <span class="n">Stapel</span><span class="o">.</span> 
 </pre></div>
 </div>
 <p>solange wiederholt wird bis keine Karten mehr auf der Hand sind.
-Die drei Punkte sind eine sog. <em>Kontrollstruktur</em> die uns der <em>Kontext</em> zur Verfügung stellt.</p>
-<div class="admonition-kontrollstruktur admonition">
-<p class="admonition-title">Kontrollstruktur</p>
-<p>TODO</p>
-</div>
+Die drei Punkte sind eine sog. <a class="reference internal" href="../03-7/intro.html#sec-control-statements"><span class="std std-ref">Kontrollstruktur</span></a> die uns der <em>Kontext</em> zur Verfügung stellt.</p>
 <p>Was passiert aber wenn sich auf unserer Hand keine oder nur eine Karte befindet?
 Nehmen wir die Beschreibung mit den drei Punkten wörtlich, dann wissen wir nach dem ersten</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">auf</span> <span class="n">einen</span> <span class="n">Stapel</span><span class="o">.</span> 
 </pre></div>
 </div>
 <p>nicht mehr was zu tun ist, bzw. die nächste Anweisung ist nicht mehr ausführbar.
-Außerdem enthalten die drei Punkte keinerlei Information darüber wie festegestellt wird wann der Prozess abgeschlossen ist.
+Außerdem enthalten die drei Punkte keinerlei Information darüber wie festgestellt wird, wann der Prozess abgeschlossen ist.
 Wie wäre es mit folgender präziseren Variante:</p>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1015,11 +1014,7 @@ Was noch zu Verwirrung führen kann ist der unspezifizierte Stapel, d.h.,</p>
 <p>Welcher Stapel ist damit gemeint?
 Auf einen bestimmten oder jede Karte auf einen anderen?
 Was wir in unserem <em>Kontext</em> benötigen sind eindeutige Namen mit denen wir Objekte Identifizieren/Adressieren können.
-In der Programmierung heißen diese Namen <em>Variablen</em>.</p>
-<div class="admonition-variable admonition">
-<p class="admonition-title">Variable</p>
-<p>TODO</p>
-</div>
+In der Programmierung heißen diese Namen <a class="reference internal" href="../03-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a>.</p>
 <p>Die neue Version</p>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1066,14 +1061,15 @@ Zum Beispiel:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sei</span> <span class="n">s</span> <span class="n">erste</span> <span class="n">Karte</span> <span class="p">(</span><span class="n">von</span> <span class="n">links</span><span class="p">)</span>
 <span class="n">Sei</span> <span class="n">k</span> <span class="n">erste</span> <span class="n">Karte</span> <span class="p">(</span><span class="n">von</span> <span class="n">links</span><span class="p">)</span>
 
-<span class="n">Solange</span> <span class="n">sich</span> <span class="n">eine</span> <span class="n">Karte</span> <span class="n">rechts</span> <span class="n">von</span> <span class="n">k</span> <span class="n">befindet</span><span class="p">:</span>
-    <span class="n">Sei</span> <span class="n">k</span> <span class="n">die</span> <span class="n">Karte</span> <span class="n">rechts</span> <span class="n">von</span> <span class="n">k</span>
+<span class="n">Solange</span> <span class="n">sich</span> <span class="n">eine</span> <span class="n">Karte</span> <span class="n">rechts</span> <span class="n">von</span> <span class="n">s</span> <span class="n">befindet</span><span class="p">:</span>
+    <span class="n">Sei</span> <span class="n">k</span> <span class="n">gleich</span> <span class="n">die</span> <span class="n">Karte</span> <span class="n">rechts</span> <span class="n">von</span> <span class="n">k</span>
     <span class="n">Falls</span> <span class="n">k</span> <span class="n">kleiner</span> <span class="n">als</span> <span class="n">s</span><span class="p">:</span>
         <span class="n">Sei</span> <span class="n">s</span> <span class="n">gleich</span> <span class="n">k</span>
 <span class="n">Lege</span> <span class="n">s</span> <span class="n">auf</span> <span class="n">S</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>Sie werden vielleicht bemerkt haben, dass</p>
+<p>Wir holen uns also die kleinste Karte auf der Hand indem wir die Hand von links nach rechts durchsuchen.
+Sie werden vielleicht bemerkt haben, dass</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sei</span> <span class="n">s</span> <span class="n">gleich</span> <span class="n">k</span>
 </pre></div>
 </div>
@@ -1087,14 +1083,14 @@ Zum Beispiel:</p>
 </pre></div>
 </div>
 <p>missverständlich sein kann.
-Mit <code class="docutils literal notranslate"><span class="pre">Sei</span> <span class="pre">x</span> <span class="pre">y</span></code> meinen wir in unserem <em>Kontext</em>, dass der Name (die Variable) <code class="docutils literal notranslate"><span class="pre">x</span></code> der das Objekt <code class="docutils literal notranslate"><span class="pre">o1</span></code> (hier eine Karte) identifitiert, nach der Anweisung, das Objekt <code class="docutils literal notranslate"><span class="pre">o2</span></code> identifiziert, welches derzeit durch den Namen <code class="docutils literal notranslate"><span class="pre">y</span></code> identifiziert wird.</p>
+Mit <code class="docutils literal notranslate"><span class="pre">Sei</span> <span class="pre">x</span> <span class="pre">gleich</span> <span class="pre">y</span></code> meinen wir in unserem <em>Kontext</em>, dass der Name (die Variable) <code class="docutils literal notranslate"><span class="pre">x</span></code> der das Objekt <code class="docutils literal notranslate"><span class="pre">o1</span></code> (hier eine Karte) identifiziert, nach der Anweisung, das Objekt <code class="docutils literal notranslate"><span class="pre">o2</span></code> identifiziert, welches derzeit durch den Namen <code class="docutils literal notranslate"><span class="pre">y</span></code> identifiziert wird.</p>
 <div class="figure align-default" id="fig-find-min">
 <a class="reference internal image-reference" href="../../_images/find_min.png"><img alt="../../_images/find_min.png" src="../../_images/find_min.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Skizze des Algorithmus zum Finden der kleinsten Karte auf der Hand.</span><a class="headerlink" href="#fig-find-min" title="Permalink to this image">¶</a></p>
 </div>
-<p>Wer unseren <em>Kontext</em> nur erahnt könnte es zu einem Vergleich, also sind die Karten (Objekte) mit den Namen <code class="docutils literal notranslate"><span class="pre">s</span></code> und <code class="docutils literal notranslate"><span class="pre">k</span></code> gleich.
-Mit einer anderen <em>Syntax</em>, können wir solchen Missverständnissen vorbeugen.
-Ändern wir nur die <em>Syntax</em> ändert sich die Bedeutung der Ausdrücke (<em>Semantik</em>) nicht.
+<p>Wer unseren <em>Kontext</em> nur erahnt könnte es mit einem Vergleich, also sind die Karten (Objekte) mit den Namen <code class="docutils literal notranslate"><span class="pre">s</span></code> und <code class="docutils literal notranslate"><span class="pre">k</span></code> gleich, verwechseln.
+Mit einer anderen <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a>, können wir solchen Missverständnissen vorbeugen.
+Ändern wir nur die <em>Syntax</em> ändert sich die Bedeutung der Ausdrücke (<a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a>) nicht.
 Ein Beispiel wäre</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="n">erste</span> <span class="n">Karte</span> <span class="p">(</span><span class="n">von</span> <span class="n">links</span><span class="p">)</span>
 <span class="n">k</span> <span class="o">&lt;-</span> <span class="n">erste</span> <span class="n">Karte</span> <span class="p">(</span><span class="n">von</span> <span class="n">links</span><span class="p">)</span>
@@ -1106,13 +1102,12 @@ Ein Beispiel wäre</p>
 <span class="n">Lege</span> <span class="n">s</span> <span class="n">auf</span> <span class="n">S</span><span class="o">.</span>
 </pre></div>
 </div>
-<div class="admonition-syntax admonition">
-<p class="admonition-title">Syntax</p>
-<p>TODO</p>
-</div>
+<div class="attention admonition">
+<p class="admonition-title">Zuweisung und Vergleich</p>
 <p>In den allermeisten Programmiersprachen wird eine solche Umbenennung (<em>Zuweisung</em>) anstatt durch <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> durch das <code class="docutils literal notranslate"><span class="pre">=</span></code> realisiert.
 Für den Vergleich verwendet man üblicherweise <code class="docutils literal notranslate"><span class="pre">==</span></code>.
 Das kann anfänglich verwirrend sein, da das <code class="docutils literal notranslate"><span class="pre">=</span></code> nicht dem mathematischen <span class="math notranslate nohighlight">\(=\)</span> entspricht.</p>
+</div>
 </div>
 </div>
 

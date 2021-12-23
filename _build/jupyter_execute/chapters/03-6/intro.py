@@ -1,3 +1,4 @@
+(sec-functions)=
 # Funktionen
 
 Der Schlüssel zur Berechnung von Lösungen bzw. der Verarbeitung von Information ist die Wiederholung.

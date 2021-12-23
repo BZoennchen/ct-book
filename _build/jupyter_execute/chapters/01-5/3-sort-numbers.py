@@ -2,7 +2,7 @@
 
 Wunderbar, wir können nun Karten sortieren. 
 Aber können wir vielleicht noch viel mehr?
-Sehen Sie sich den Code genau an.
+Sehen Sie sich den Code aus dem letzten Abschnitt genau an.
 An welcher Stelle geht es wirklich um Karten?
 Wie und wo müsste man den Code ändern um z.B. Zahlen zu sortieren?
 
