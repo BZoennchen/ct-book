@@ -13,5 +13,5 @@ Seit einiger Zeit sehen wir die Wiederentdeckung von Berechnungen auf Rechenzent
 Zum Beispiel werden bestimmte GPUs für das maschinelle Lernen entwickelt.
 Sie bestehen aus Bauteilen die extra für die Matrixmultiplikation kleiner Matrizen optimiert sind.
 
-Zusammenfassend lässt sich sagen, die Digitalisierung scheint sich weiter und weiter fortzusetzen und zugleich bleiben die Mechanismen denen sie sich unterwirft die gleichen.
-Damit ist und bleibt [Computational Thinking](sec-what-is-ct) eine nützliche Fähigkeit um in der (digitalen) Welt zurecht zu kommen und diese mitzugestalten.
+Zusammenfassend lässt sich sagen, die Digitalisierung scheint sich weiter und weiter fortzusetzen und zugleich bleiben die Mechanismen, denen sie sich unterwirft, die gleichen.
+Damit ist und bleibt [Computational Thinking](sec-what-is-ct) eine nützliche Fähigkeit um in der (digitalen) Welt zurechtzukommen und diese mitzugestalten.
