@@ -44,14 +44,17 @@ Eratosthenes und die Erdkrümmung.
 ```
 
 Eratosthenes (276 v. Chr. - 194 v. Chr.) war einer der herausragenden Denker dieser Zeit und zugleich Leiter der Bibliothek in Alexandria.
-Eines Tages machte er eine herausragende Entdeckung:
-Er beobachtet, dass zur gleichen Zeit zwei Obelisken in verschiedenen Orten unterschiedlich lange Schatten auf die Erde warfen.
+Eines Tages, so erzählt man sich, machte er eine herausragende Entdeckung:
+Er beobachtet, dass zur gleichen Zeit zwei Obelisken an verschiedenen Orten unterschiedlich lange Schatten auf die Erde werfen.
 Erstaunlicherweise schloss er daraus auf die Krümmung der Erde.
 Und da die Griechen von der Perfektion des Kreises überzeugt waren, folgerte Eratosthenes, dass die Erde eine Kugel sei.
 Er war sogar in der Lage die Erdkrümmung relativ genau zu berechnen und dadurch auf den Umfang der Erde zu schließen.
 Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syren (800 km) ablief und berechnete.
 
 ```{code-cell} python3
+---
+tags: [output_scroll]
+---
 import numpy as np
 
 def sieve_of_eratosthenes(N):
@@ -78,8 +81,8 @@ Für lästige und primitive Berechnungen begann man Computer zu beauftragen.
 Der Begriff *Computer* sollte lange Zeit auf eine Person anstatt eine Maschine hindeuten.
 So wurden bis Ende des zweiten Weltkrieg menschliche Computer, oft Frauen, mit Berechnungen beauftragt.
 
-Auch begann man zu dieser Zeit die ersten Algorithmen zu entwickeln.
-Nach Eratosthenes ist einer der ersten Algorithmen benannt, der *Sieb des Eratosthenes*.
+Zur Zeit der antiken Griechen begann man die ersten uns überlieferten Algorithmen zu entwickeln.
+Nach Eratosthenes ist einer der ersten Algorithmen überhaupt benannt, der [Sieb des Eratosthenes](https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes).
 Es ist eine clevere Technik um Primzahlen zu berechnen.
 
 ```{figure} ../../figs/the-elements.jpg
@@ -90,7 +93,7 @@ name: fig-euklid-elements
 Ein Fragment der Werke *Die Elemente*.
 ```
 
-Doch noch vor Eratosthenes, notierte Euklid von Alexandria (ca 450 v. Chr. - Mitte 350 v. Chr.) in seinem Werk *Die Elemente*, einen Algorithmus für die Berechnung des größten gemeinsamen Teilers ``gcd(a,b)`` zweier natürlicher Zahlen ``a, b``.
+Doch noch vor Eratosthenes, notierte Euklid von Alexandria (ca 450 v. Chr. - Mitte 350 v. Chr.) in seinem Werk *Die Elemente*, einen Algorithmus für die Berechnung des größten gemeinsamen Teilers ``gcd(a,b)`` zweier natürlicher Zahlen ``a``, ``b``.
 Über zweitausend Jahre später finden wir jene Algorithmen in einer anderen Form wieder.
 
 ```{code-cell} python3
@@ -104,13 +107,13 @@ gcd(36, 24)
 
 >[The Euclidean algorithm] is the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has survived to the present day. -- Donald Knuth, The Art of Computer Programming, Vol 2.
 
-Zwischen der Logik und der Theoretischen Informatik gibt es einen sehr starken Zusammenhang.
+Zwischen der Logik und der theoretischen Informatik gibt es einen sehr starken Zusammenhang.
 Berechnungen eines Rechners basieren auf logischen Operationen und das theoretische Prinzip des universellen digitalen Computers, wie auch wichtige Grenzen dessen was berechenbar ist, entstand aus den Arbeiten vieler Logiker.
 Den Anfang machten auch hier die Griechen.
-Ihnen haben wir ein System des logischen Schließens, die sog. Syllogismen des Aristoteles, zu verdanken.
+Ihnen haben wir ein System des logischen Schließens, die sog. *Syllogismen des Aristoteles*, zu verdanken.
 Neben den Syllogismen beschäftigte sich Aristoteles bereits mit dem *Satz vom Widerspruch* und dem *Satz vom ausgeschlossenen Dritten* sowie der Beweistechnik des *indirekten Beweises* -- allesamt fundamentale mathematische Techniken und Fragestellungen.
-Zur Zeit des römischen Reichs formulierten die Stoiker das erste aussagelogische Kalkül und auch im Mittelalter sollten sich kleinere Fortschritte im Bereich der Logik ergeben.
-Jedoch sollte erst im 19. Jahrhundert durch Mathematiker wie George Boole, Gottlob Frege und Bertrand Russell weitreichende Fortschritte möglich gemacht werden.
+Zur Zeit des römischen Reichs formulierten dann die Stoiker das erste aussagelogische Kalkül und auch im Mittelalter sollten sich kleinere Fortschritte im Bereich der Logik ergeben.
+Jedoch sollten erst im 19. Jahrhundert, durch Mathematiker wie George Boole, Gottlob Frege und Bertrand Russell, weitreichende Fortschritte möglich werden.
 
 ```{figure} ../../figs/logicians.png
 ---
@@ -121,10 +124,11 @@ Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russe
 ```
 
 In China wurde zwischen 200 vor und 100 nach Christus das Mathematikbuch *Jiu Zhang Suanshu* (*Neun Bücher arithmetischer Technik*) verfasst.
-In ihm findet sich einer der noch heute bekanntesten Algorithmen zum Lösen linearer Gleichungssystem: das sog. *Gaußsche Eliminationsverfahren*.
+In ihm findet sich einer der noch heute bekanntesten Algorithmen zum Lösen linearer Gleichungssystem: Das sog. *Gaußsche Eliminationsverfahren*.
 Es wurde in Europa 1759 vom italienischen Mathematiker Lagrange publiziert und wohl unabhängig davon vom deutschen Mathematiker Gauß im Jahr 1811 entwickelt.
 Schon die Babylonier wussten wie sich Gleichungen mit zwei Unbekannten lösen lassen, jedoch waren ihre zu lösenden Probleme durch konkrete oft geometrische Fragestellungen motiviert.
-Das Besondere am *Gaußsche Eliminationsverfahren* ist seine Abstraktion, die zu einer allgemeinen Lösungstheorie für lineare Gleichungssysteme führte.
+Diese Limitierung auf die Geometrie war für die Anfänger sicherlich förderlich doch schlussendlich für weitere Fortschritte auch hinderlich.
+Das Besondere am *Gaußsche Eliminationsverfahren* ist seine Abstraktion, die zu einer allgemeinen Lösungstheorie für *lineare Gleichungssysteme* führte.
 
 Wie bereits erwähnt, dauerte es tausend Jahre bis an den Fortschritt der antiken Griechen wieder angeknüpft wurde.
 Wir wissen natürlich nicht welches, möglicherweise entscheidendes Wissen durch die Zerstörung und Plünderung der Bibliothek von Alexandria verloren gegangen ist.

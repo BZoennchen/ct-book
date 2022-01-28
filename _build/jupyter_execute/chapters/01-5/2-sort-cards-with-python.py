@@ -5,7 +5,7 @@ Wir gehen nicht davon aus, dass Sie bereits jetzt alles verstehen was wir im Fol
 Ziel ist es aufzuzeigen, dass sich der Programmiercode kaum von unserer obigen Beschreibung unterscheidet und wir durch Programmiersprachen einen präzisen und vorgefertigten *Kontext* bekommen.
 Wir müssen diesen lediglich kennenlernen!
 Was sich also ändert ist der *Kontext*.
-Dieser ist in unserem Fall durch die Programmiersprache ``Python`` (ihrer [Syntax](def-syntax) und [Semantik](def-semantik)) und importierter Pakte vorgegeben.
+Dieser ist in unserem Fall durch die Programmiersprache ``Python`` (ihrer [Syntax](def-syntax) und [Semantik](def-semantik)) und der verwendeten ``Python``-Module vorgegeben.
 
 
 ```{exercise} Karten sortieren in Python
@@ -15,11 +15,11 @@ Implementieren Sie Ihren Algorithmus in ``Python``.
 
 Im folgenden präsentieren wir eine Lösung.
 Beachten Sie, dass es uns dabei nicht um die Laufzeit unseres Programms geht.
-Die Lösung ist weder optimal noch besonders elegant.
+Die Lösung ist weder effizient noch besonders elegant.
 
 ## Modellierung der Karten und Hand
 
-Da unser *Kontekt* natürlich keine physikalische Hand definiert, müssen wir diese anderweitig definieren bzw. *modellieren*.
+Da unser *Kontext* natürlich keine physikalische Hand definiert, müssen wir diese anderweitig *modellieren*.
 Hierbei kommt die Abstraktion ins Spiel.
 
 ```{admonition} Modellierung der Hand
@@ -35,27 +35,20 @@ Die ausschlaggebenden Eigenschaften der Karten auf der Hand sind:
 
 Wir modellieren jede Karte als Zeichenkette.
 Zum Beispiel steht ``'Bube'`` für einen der Buben des Kartendecks.
-Je nachdem welches Kartendeck Sie verwenden, können Sie die Namen anpassen.
+Je nachdem welches Kartendeck Sie verwenden, können Sie die Namen entsprechend anpassen.
 Wir lassen alle unnötigen Informationen, wie zum Beispiel die Kartenfarbe, weg (*Abstraktion*).
 
 Eine Hand modellieren wir als Liste von Karten (Liste von Zeichenketten).
-
-````{admonition} Mathematisches Tupel
-
-Ein *mathematisches Tupel* besteht aus endlich vielen, nicht notwendigerweise voneinander verschiedenen Objekte. 
-Dabei spielt, im Gegensatz zu Mengen, die Reihenfolge der Objekte eine Rolle.
-````
-
 
 ````{admonition} Liste (Python)
 
 Eine [Python Liste](sec-list) repräsentiert ein endliches *veränderbares mathematisches Tupel*.
 Elemente können an jeder Position aus der Liste entfernt, und eingefügt werden.
 Die Position eines Elements in der Liste nennen wir *Index*.
-Beinhaltet die Liste ``l``, ``n`` Elemente, so sind 
+Beinhaltet die Liste ``lst``, ``n`` Elemente, so sind 
 
 ```python
-l[0], l[1], ..., l[n-1]
+lst[0], lst[1], ..., lst[n-1]
 ```
 
 ihre Elemente.
@@ -90,16 +83,16 @@ Wir verwenden diesmal keine ``list`` sondern ein unveränderbares ``Python``-``t
 
 Ein [Python-Tupel](sec-tuple) repräsentiert ein endliches *unveränderbares mathematisches Tupel*.
 Die Position eines Elements im Tupel nennen wir *Index*.
-Beinhaltet das Tupel ``l``, ``n`` Elemente, so sind 
+Beinhaltet das Tupel ``tpl``, ``n`` Elemente, so sind 
 ```python
-l[0], l[1], ..., l[n-1]
+tpl[0], tpl[1], ..., tpl[n-1]
 ```
 ihre Elemente.
 ````
 
 cards = ('6', '7', '8', '9', '10', 'Bube', 'Dame', 'König', 'Ass')
 
-Um die konkrete Implementierung von ``cards`` an einer zentralen Stelle ändern zu können, ist es sinnvoll eine [Funktion](sec-functions) zu schreiben, welche ``cards`` zurückgibt.
+Um die konkrete Implementierung von ``cards`` an einer zentralen Stelle ändern zu können, ist es sinnvoll eine ``Python``-[Funktion](sec-functions) zu schreiben, welche ``cards`` zurückgibt.
 Sie brauchen noch ein wenig Erfahrung um den Unterschied und die Vorzüge zu verstehen.
 
 def get_cards():
@@ -118,7 +111,7 @@ Um zwei Karten vergleichen zu können, vergleichen wir ihre Indices.
 
 index_of('7') < index_of('König')
 
-Wir packen den Vergleich zweier Karten ``card1`` und ``card2`` in eine weitere [Funktion](sec-functions).
+Wir packen den Vergleich zweier Karten ``card1`` und ``card2`` in eine weitere ``Python``-[Funktion](sec-functions).
 
 def is_smaller(card1, card2):
     i = index_of(card1)    # finde Position von Karte 1
@@ -166,7 +159,7 @@ def find_smallest_index(hand):
     return index                             # Gib gemerkte Position zurück  
 
 Jetzt ist alles in unserem *Kontext* definiert was notwendig ist und wir können den Sortieralgorithmus ``stack_sort`` ausführen.
-Lasst uns unsere Hand ``hand`` sortieren.
+Lassen Sie uns die Hand ``hand`` sortieren:
 
 stack_sort(hand)
 

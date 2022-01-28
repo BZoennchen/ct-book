@@ -7,9 +7,9 @@ Schließlich ist eine Musikkomposition nichts anderes als ein [Algorithmus](def-
 Wie bei einer Niederschrift eines Algorithmus in Form von Quellcode können wir zwischen
 
 1. der Komplexität der Aufführung/Ausführung (wie viele Noten werden gespielt bzw. wie lange dauert das Stück) und 
-2. der Komplexität der Beschreibung (wie viele Seiten an Noten beschreiben das Stück) unterscheiden.
+2. der Komplexität der Beschreibung (wie viele Seiten an Noten beschreiben das Stück)
 
-Denken Sie nur an die verschiedenen Kinderlieder, die Sie in einer Endlosschleife singen können und dennoch auf wenigen Seiten Papier beschrieben vorfinden.
+unterscheiden. Denken Sie nur an die verschiedenen Kinderlieder, die Sie in einer Endlosschleife singen können und dennoch auf wenigen Seiten Papier beschrieben vorfinden.
 
 Was sich mit der Erfindung und fortwährenden Verbesserungen der Computer geändert hat, ist die benötigte Zeit, die einzelne (arithmetische und kombinatorische) Operationen benötigen.
 Primzahlen lassen sich ab einer gewissen Größe nicht mehr händisch berechnen, da der Prozess die Lebenszeit eines Menschen überschreitet.
@@ -23,7 +23,7 @@ Die selben Anweisungen könnten wir auch einem Menschen mitgeben, jedoch können
 
 Solange sich eine Problemlösung (unsere Musikkomposition) durch Wiederholung ausdrücken lässt, kann sie durch endlich viel Programmcode (Noten) beschrieben und damit (theoretisch) gelöst (aufgeführt) werden.
 Die Komplexität des Programmcodes (die länge des Stücks) entkoppelt sich von der Komplexität der ausgeführten Berechnung (der Aufführung).
-Zum Beispiel beschreibt folgender ``Python``-code die Berechnung der Summe aller Quadratzahlen von ``1`` bis ``n+1``.
+Zum Beispiel beschreibt folgender ``Python``-Code die Berechnung der Summe aller Quadratzahlen von ``1`` bis ``n+1``.
 
 def sum_sqrt(n):
     sum_sqrt = 0
@@ -34,4 +34,4 @@ def sum_sqrt(n):
 sum_sqrt(10)
 
 Die Anzahl der auszuführenden Anweisungen steigt linear mit ``n``, doch der Programmiercode bleibt unverändert.
-Hierin liegt die ganze 'Magie': **Wiederholung**!
+Hierin liegt die ganze "Magie": **Wiederholung**!

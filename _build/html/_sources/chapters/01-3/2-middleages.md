@@ -9,7 +9,7 @@ Es ist zu vermuten, dass Theon von Alexandria (ca. 330-400 n. Chr.) zusammen mit
 
 Der iranische Forscher Al-Biruni entwickelte ca. tausend Jahre nach Christus den ersten mechanischen Mond- und Sonnenkalender.
 Seine Konstruktion bestand aus Kabeln und Zahnrädern. 
-Zu dieser Zeit wurden auch sogenannte Planimeter verwendet um beliebige Flächeninhalte in Landkarten oder anderen Zeichnungen anzunähern.
+Zu dieser Zeit wurden auch das sogenannte Planimeter verwendet um beliebige Flächeninhalte in Landkarten oder anderen Zeichnungen anzunähern.
 Die zu berechnende Fläche wird dabei in viele kleine Parallelogramme und Dreiecke zerteilt und so angenähert.
 
 ```{figure} ../../figs/amsler-polarplanimeter.jpeg

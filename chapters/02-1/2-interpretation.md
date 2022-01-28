@@ -2,9 +2,9 @@
 # Interpretation
 
 In diesem Abschnitt unternehmen wir einen Versuch die Begriffe **Interpretation**, **Repräsentation**, **Bedeutung**, **Semantik** und **Syntax** zu erklären.
-Dadurch möchten wir ein theoretisches Fundament vorrausschicken.
-Danach folgen im Abschnitt [Repräsentation](sec-representation) verschiedene und wichtige Beispiele, die verdeutlichen wie der Computer Information interpretiert bzw. repräsentiert.
-Es mag für viele Leser sinnvoll sein mit den Beispielen zu starten um danach die theoretische Diskussion besser nachvollziehen zu können.
+Dadurch möchten wir ein theoretisches Fundament vorausschicken.
+Danach folgen im Abschnitt [Repräsentation](sec-representation) verschiedene wichtige Beispiele, die verdeutlichen wie der Computer Information interpretiert und repräsentiert.
+Es mag für viele Leser sinnvoll sein mit den Beispielen zu starten, um danach die theoretische Diskussion besser nachvollziehen zu können.
 
 ## Der Mensch
 
@@ -12,12 +12,12 @@ Wenn Sie mit einem Bleistift einen Apfel auf ein Blatt Papier zeichnen, was stel
 Physikalisch betrachtet befindet sich auf dem Blatt eine Menge von kleinen Graphitpartikeln.
 Diese sind in einer gewissen Weise angeordnet.
 
-Blicken wir auf das Blatt, erkennen wir jedoch einen Apfel, obwohl sich keinerlei physikalischen Bestandteile eines Apfels auf dem Blatt befinden.
+Blicken wir auf das Blatt, erkennen wir jedoch einen Apfel, obwohl sich keinerlei physikalische Bestandteile eines Apfels auf dem Blatt befinden.
 Die Zeichnung symbolisiert ([Semantik](def-semantik)) einen Apfel und dessen Qualität (Obst, süß, rund, wächst auf Bäumen) in unserer Vorstellung (kognitiven Welt) und referenziert einen realen Gegenstand oder Sachverhalt aus der Realwelt, in diesem Fall einen konkreten echten Apfel.
 
 Schreiben Sie die Zeichen ``2 + 2 = 4`` auf ein Blatt, so symbolisieren ([Semantik](def-semantik)) diese eine Gleichung.
 Gleichzeitig referenziert diese Zeichenfolge einen (bzw. viele) Sachverhalt(e) aus der Realwelt.
-Zum Beispiel, referenziert die Zeichenfolge auf den Sachverhalt, dass wenn man zwei Äpfel hat und weitere zwei erhält, dies dann vier Äpfel sind.
+Zum Beispiel, referenziert die Zeichenfolge den Sachverhalt, dass wenn man zwei Äpfel hat und weitere zwei erhält, dies dann vier Äpfel sind.
 
 In beiden Fällen gehen wir von einer bestimmten **Interpretation** aus mit der wir einer **Repräsentation** (die Zeichnung und die Zeichen) eine gewisse **Bedeutung** ([Semantik](def-semantik)) zuordnen.
 Würden wir keinen Apfel aus der echten Welt kennen oder hätten keinerlei Zahlenverständnis, wäre unsere Interpretation eine andere.
@@ -49,6 +49,7 @@ Die Zeichenkette ``23.10.2022`` symbolisiert einen bestimmten Tag und dessen Qua
 Zudem referenziert die Zeichenfolge einen realen Gegenstand, den echten ``23. Oktober 2022``.
 ``23. Oktober 2022`` ist wiederum ein Repräsentant!
 Wir können den echten Tag nicht niederschreiben, wir können ihn lediglich referenzieren.
+
 Das Stopsymbol symbolisiert das Stehenbleiben und dessen Qualität (Abbremsen, Autofahren, Straße, Straßenverkehr, ...).
 Es referenziert einen Sachverhalt der Realwelt, das Stehenbleiben eines konkreten Fahrzeugs.
 Zusätzlich hat es auf uns eine bestimmte Wirkung, nämlich dass wir, wenn wir es sehen, stehenbleiben.
@@ -76,7 +77,7 @@ Ein Beispiel ist die Codierung von Zahlen durch zwei Bits.
 
 + Bedeutung $B = \left\{ 0, 1, 2, 3 \right\}$
 + Repräsentation $R = \left\{ 00, 01, 10, 11 \right\}$
-+ Interpretation $I = \left\{ (00, 0), (01, 1), (10_2, 2), (11, 3) \right\}$.
++ Interpretation $I = \left\{ (00, 0), (01, 1), (10, 2), (11, 3) \right\}$.
 
 Wir werden noch detailliert auf das binäre Zahlensystem eingehen. 
 Lassen Sie uns noch ein weiteres Beispiel auflisten.
@@ -86,7 +87,7 @@ Lassen Sie uns noch ein weiteres Beispiel auflisten.
 + Interpretation $I = \left\{ (00,\text{'Apfel'}), (01, \text{'Orange'}), (10, \text{'Banane'}), (11, \text{'Traube'}) \right\}$.
 
 Mit dieser Interpretation repräsentiert die Bitfolge $00$ die Zeichenkette $I(00) = \text{'Apfel'}$.
-Durch die **Interpretation** $I$ erlangt der Repräsentant seine **Bedeutung** ([Semantik](def-semantik)) $B$.
+Durch die **Interpretation** $I$ erlangt der **Repräsentant** $r \in R$ seine **Bedeutung** ([Semantik](def-semantik)) $I(r) \in B$.
 
 ```{admonition} Semantik (Informatik)
 :name: def-semantik
@@ -106,6 +107,7 @@ Die Art und Weise wie ein Repräsentant niedergeschrieben ist nennen wir *Synta
 Die Computerhardware (alle Bauteile) kann schlussendlich nur [Bits](def-bit) und [Bytes](def-byte) verarbeiten.
 Jede Hardwarekomponente verwendet eine bestimmte Interpretation, welche auf der Repräsentation der [Binärzahlen](sec-binary-system) basiert.
 Diese Interpretation wurde den Komponenten von uns Menschen 'beigebracht'.
+
 Ein Monitor interpretiert die Bitfolgen als Pixelintensitäten (wie stark und in welcher Farbe leuchtet jeweils der Pixel), ein Addierer interpretiert Bitfolgen als Zahlen, ein Mikrofon interpretiert Bitfolgen als Amplitudenwerte.
 
 ```{admonition} Interpreter
@@ -113,15 +115,16 @@ Ein Monitor interpretiert die Bitfolgen als Pixelintensitäten (wie stark und in
 TODO
 ```
 
-Software basiert auf dem gleichen Verständnis, denn Hardware ist Software realisiert durch Bauteile, siehe Abschnitt [Berechenbarkeit](sec-computability).
+Software basiert auf dem gleichen Verständnis, denn Hardware ist Software realisiert durch Bauteile (siehe Abschnitt [Berechenbarkeit](sec-computability)).
 Öffnen Sie ein Bild in einem Texteditor, so sehen Sie die Interpretation des Bildes ihres Texteditors.
 Öffnen Sie die gleiche Datei in einem Bildverarbeitungsprogramm, sehen sie eine andere Interpretation der Bits und Bytes.
-Schreiben Sie einen Buchstaben $a$ durch ein Textverarbeitungsprogramm, so ist dieser ein Element von $B$.
-Ihr Textverarbeitungsprogramm erhält den Befehl 'schreibe den Buchstaben $a$' und berechnet die Bitfolge $b = I^{-1}(t)$ durch dessen Interpretation $I$ bzw. deren Umkehrfunktion $I^{-1}$.
-$b$ kann dann auf dem Computer gespeichert werden.
-Öffnen Sie die Datei so berechnet das Textverarbeitungsprogramm $I(b) = a$.
+
+Schreiben Sie einen Buchstaben $\text{'a'}$ durch Tastendruck über ein Textverarbeitungsprogramm, so ist das $\text{'a'}$ ein Element von $B$.
+Ihr Textverarbeitungsprogramm berechnet die Bitfolge $b = I^{-1}(\text{'a'})$ durch die ihm bekannte Interpretation $I$ bzw. deren Umkehrfunktion $I^{-1}$.
+Die Binärfolge $b$ kann dann auf dem Computer gespeichert werden.
+Öffnen Sie die Datei so berechnet das Textverarbeitungsprogramm $I(b) = \text{'a'}$.
 Damit Sie den Buchstaben angezeigt bekommen, erhält der Monitor eine Bitfolge, welche dieser als Pixelintensität interpretiert.
-Am Ende der Kette sitzten wir vor dem Rechner und interpretieren diese Pixelintensitäten als den eben getippten Buchstaben.
+Am Ende der Kette sitzen wir vor dem Rechner und interpretieren diese Pixelintensitäten als den eben getippten Buchstaben.
 
 ## Interpreter und Compiler
 
@@ -129,12 +132,12 @@ Programmcode ist Text den der Computer als Anweisungen interpretiert.
 Wie aber soll das funktionieren, wenn die Hardware doch nur [Bits](def-bit) und [Bytes](def-byte) verarbeiten kann?
 Wie im obigen Beispiel des Textverarbeitungsprogramms hindert uns niemand Text zu schreiben, welcher dann in Binärcode durch eine Interpretation umgewandelt wird.
 Diese spezielle Interpretation $I$ macht aus dem Text einen Binärcode der ausführbar ist, d.h., den die Computerhardware versteht.
-Programme die eine solche Interpretation berechnen bezeichnen wir sehr passend als [Interpreter](def-interpreter) oder [Kompilierer / Übersetzer](def-compiler) (engl. Compiler).
-[Interpreter](def-interpreter) werten $I$ aus, während der Programmcode ausgeführt wird.
-Dahingegen werten [Compiler](def-compiler) $I$ für den gesamten Code aus, bevor dieser ausgeführt wird.
+Programme die eine solche Interpretation realisieren bezeichnen wir sehr passend als [Interpreter](def-interpreter) oder [Kompilierer / Übersetzer](def-compiler) (engl. Compiler).
+Interpreter werten $I$ aus, während der Programmcode ausgeführt wird.
+Dahingegen werten Compiler $I$ für den gesamten Code aus, bevor dieser ausgeführt wird.
 
 Ok, das ist noch nicht die ganze Wahrheit.
-In der Praxis ist es nicht ein einzelner [Compiler](def-compiler) oder [Interpreter](def-interpreter) sondern eine hintereinander geschaltete Kette und damit auch eine Kette an Interpretationen $I_0, \ldots, I_n$.
+In der Praxis ist es nicht ein einzelner Compiler oder Interpreter sondern eine hintereinandergeschaltete Kette und damit auch eine Kette an Interpretationen $I_0, \ldots, I_n$.
 Wir als Programmierer möchten zum Beispiel zwei Zahlen addieren und schreiben folgenden ``Python``-Code:
 
 ```python
@@ -143,7 +146,7 @@ x = 4 + 9
 
 ``Python`` interpretiert dies als das Speichern der Addition der Zahlen ``4`` und ``9`` in der Variable ``x``.
 Das verstehen die Hardwarekomponenten des Computer jedoch nicht.
-Eine Kette aus [Kompilierern](def-compiler) interpretiert / übersetzt diesen Code, sodass er in Assemblercode transformiert wird.
+Eine Kette aus Compilern interpretiert / übersetzt diesen Code, sodass er in Assemblercode transformiert wird.
 Dieser könnte in etwa folgende Gestalt annehmen:
 
 ```
@@ -156,8 +159,8 @@ STORE $2 # 16
 ```
 
 Diese Befehle sprechen direkt bestimmte Hardwarekomponenten an und werden im letzten Schritt in reinen Binärcode übersetzt.
-Jeder [Kompilierer](def-compiler) erhält als Eingabe einen Programmcode, geschrieben in einer bestimmten Vorschrift ([Syntax](def-syntax)), und wandelt diesen anhand seiner Interpretation in einen anderen Programmcode, in einer andere Vorschrift ([Syntax](def-syntax)), um.
-So wird es möglich, dass sich Entwickler\*innen nicht mehr in einer Welt der [Bits](def-bit) und [Bytes](def-byte) befinden sondern in einer Welt aus Dezimalzahlen, Zeichenketten, Listen, Webservices, Webseiten, Apps und so weiter.
+Jeder Kompilierer erhält als Eingabe einen Programmcode, geschrieben in einer bestimmten Vorschrift ([Syntax](def-syntax)), und wandelt diesen anhand seiner Interpretation in einen anderen Programmcode, einer anderen Vorschrift (Syntax), um.
+So wird es möglich, dass sich Entwickler\*innen nicht mehr in einer Welt der Bits und Bytes befinden sondern in einer Welt aus Dezimalzahlen, Zeichenketten, Listen, Webservices, Webseiten, Apps und so weiter.
 
 ```{admonition} Kompilierer
 :name: def-compiler
@@ -166,7 +169,7 @@ TODO
 
 Übertragen wir dies auf das Beispiel mit dem gezeichneten Apfel, so interpretiert der Bleistift den Druck und den Winkel als Anzahl und Positionierung von Graphitteilchen.
 Wir als Zeichner\*innen verlassen die Welt der Graphitteilchen und begeben uns stattdessen in die Welt der Zeichentechniken.
-Dieser Kontextwechsel wird durch den Übersetzer / Interpreter / Compiler, den Bleistift, ermöglicht!
+Dieser Kontextwechsel wird durch den Übersetzer / Interpreter / Compiler -- den Bleistift -- ermöglicht!
 
 ```{exercise} Übersetzer und Interpreter
 :label: interpreter-compiler-examples-exercise

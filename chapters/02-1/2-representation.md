@@ -18,7 +18,7 @@ Bevor wir genauer darauf eingehen wie der Informationskreislauf vollzogen wird, 
 (sec-binary-system)=
 ## Das Binärsystem
 
-Computer arbeiten auf der Basis von zwei Zuständen (0,1).
+Computer arbeiten auf der Basis von zwei Zuständen (0 und 1).
 Man kann sagen sie sprechen die Binärsprache.
 Da die kleinste Informationseinheit, das [Bit](def-bit), nur zwei Zustände annehmen kann, sind die Operationen äußerst simpel.
 Die Komplexität entsteht durch das Kombinieren und Hintereinanderschalten von Millionen dieser Operationen.
@@ -43,9 +43,11 @@ Eine Lampe die entweder aus (links) oder an (rechts) geschaltet sein kann.
 ```
 
 Entweder es **fließt Strom hindurch**, was dem Zustand 1 entspricht, oder es **fließt kein Strom hindurch**, was den Zustand 0 darstellt.
+
 Natürlich könnte man mehr Zustände darstellen indem man misst wie viel Strom fließt oder wie viel Spannung angesetzt ist.
 Es hat sich aber herausgestellt, dass das einfache **Strom an** und **Strom aus** robuster, sicherer und effizienter ist.
 So lassen sich die zwei Zustände sehr einfach unterscheiden.
+
 Mit **Strom an**, **Strom aus** können wir zum Beispiel folgende Mengen repräsentieren:
 
 
@@ -66,7 +68,7 @@ Mit **Strom an**, **Strom aus** können wir zum Beispiel folgende Mengen repräs
   - schwarz
 ``````
 
-Mit einer Lampe können jede zweielementige Menge repräsentieren.
+Mit einer Lampe können wir jede zweielementige Menge repräsentieren.
 Der einzelne Zustand einer Lampe, also **Strom aus** oder **Strom an** nennen wir *Bit*, es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.
 
 ```{admonition} Bit
@@ -83,7 +85,7 @@ darstellen. Mit drei Lampen sind es bereits acht:
 
 $$(0,0,0), (0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1).$$
 
-Mit jedem weiteren Lampe verdoppelt sich die Anzahl der Zustände.
+Mit jeder weiteren Lampe verdoppelt sich die Anzahl der repräsentierbaren Zustände.
 Und somit können wir mit $n$ Kabeln eine Menge mit $2^n$ Elementen repräsentieren.
 Dieser exponentieller Anstieg ist enorm wichtig.
 Ohne diese Eigenschaft würden die Speicher der Computer sehr schnell volllaufen.
@@ -97,14 +99,15 @@ Zwei der $2^8 = 256$ möglichen Zustände von acht Lampen.
 ```
 
 Weshalb verwenden wir aber kein Zahlensystem mit drei oder mehr Zuständen?
-Wie oben erwähnt ist es aus technischer Sicht, bisher deutlich einfacher und effizienter mit nur zwei Zuständen zu arbeiten.
-Zudem ist die Einsparung die wir durch mehr Zustände erzielen würden unwesentlich.
+Wie oben erwähnt ist es aus technischer Sicht bisher deutlich einfacher und effizienter mit nur zwei Zuständen zu arbeiten.
+Zudem ist die Einsparung, die wir durch mehr Zustände erzielen würden, unwesentlich.
 
 Wir könnten auch mit nur einem Zustand, z.B. **Strom aus**, Informationen repräsentieren.
 Diese sog. *Unärsystem* verwenden wir Menschen, wenn wir mit den Händen zählen.
 Das System ist allerdings für größere Datenmengen ungeeignet, da wir für eine Menge mit $n$ Elementen $n$ *Bits* bräuchten, um diese zu repräsentieren.
 Wechseln wir zu einem System mit drei Zuständen, bräuchten wir im Vergleich zum *Binärsystem* noch weniger *Bits*, doch ist das was wir gewinnen unwesentlich.
 Der Grund ist das Verhalten des Logarithmus.
+
 Der folgende Plot illustriert wie viele *Bits* (y-Achse) für eine Menge mit $n$ Elementen (x-Achse) im jeweiligen Zahlensystem notwendig sind.
 Der Unterschied zwischen *Binär* und *Unär* ist enorm, wohingegen der Unterschied zwischen *Binär* und, zum Beispiel, $\log_5(n)$ gering ist.
 
@@ -123,13 +126,14 @@ plt.plot(n, log(3, n), label='$\\log_3(n)$')
 plt.plot(n, log(4, n), label='$\\log_4(n)$')
 plt.plot(n, log(5, n), label='$\\log_5(n)$')
 plt.legend()
+plt.show()
 ```
 
 (sec-binary-numbers)=
 ## Zahlen im Binärsystem
 
 Werfen wir einen genaueren Blick aufs *Binärsystem* oder auch *binäre Zahlensystem*.
-Um Zahlen mit **Strom an** und **Strom aus**, also den zwei Zuständen einer Lampe/Transistors/*Bit* zu repräsentieren verwenden Computer das *Binärsystem*.
+Um Zahlen mit **Strom an** und **Strom aus**, also den zwei Zuständen einer Lampe/Transistors/*Bit* zu repräsentieren, verwenden Computer das *Binärsystem*.
 
 ```{admonition} Notation mit verschiedenen Zahlensystemen
 :class: hint
@@ -168,7 +172,7 @@ Zum Beispiel hat $1101_2$ den Wert
 $$1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 0 + 1 = 13.$$
 
 $1001_2$ (binär) und $13_{10}$ (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung ist eine andere.
-Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welche Wert $1001_2$ repräsentiert.
+Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welchen Wert $1001_2$ repräsentiert.
 
 ```{code-cell} python3
 # Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung
@@ -188,7 +192,6 @@ Wie aber wandeln wir eine Dezimalzahl in eine Binärzahl um?
 
 ```{admonition} Restwertdivision
 :name: def-euclid-division
-:class: hint
 
 Für zwei ganze Zahlen $n, m \in \mathbb{Z}$, $m \neq 0$ gibt es zwei eindeutige ganze Zahlen $a, r \in \mathbb{Z}$, sodass
 
@@ -322,7 +325,7 @@ Wollen wir also anstatt der natürlichen Zahlen die ganzen Zahlen repräsentiere
 
 Wollen wir ganze Zahlen repräsentieren so entscheidet das höchste [Bit](def-bit), ob es sich bei der Zahl um eine negative oder positive Zahl handelt.
 Eine Möglichkeit wäre es dieses höchste [Bit](def-bit) als ``-`` zu interpretieren, wenn es den Wert 1 hat und als ``+`` andernfalls.
-In diesem Fall könnten wir Gleichung {eq}`eq:binary:natural` verwenden, mit dem Unterschied, dass wir das höchste bit ausschließen und stattdessen als Vorzeichen interpretieren.
+In diesem Fall könnten wir Gleichung {eq}`eq:binary:natural` verwenden, mit dem Unterschied, dass wir das höchste Bit ausschließen und stattdessen als Vorzeichen interpretieren.
 
 So wäre
 
@@ -333,8 +336,19 @@ So wäre
 Möchte man jedoch mit dieser Codierung rechnen, ergeben sich einige Schwierigkeiten.
 Zudem verlieren wir ein Bit für das Vorzeichen.
 
+````{admonition} Komplement einer Bitfolge
+:name: def-complement
+Das *Komplement* einer Bitfolge $b_{n-1} \ldots b_0$, geschrieben als
+
+```{math}
+\overline{b_{n-1} \ldots b_0},
+```
+
+erhalten wir indem wir jedes Bit mit dem Wert $0$ mit einem Bit mit dem Wert $1$ und jedes Bit mit dem Wert $1$ mit einem Bit mit dem Wert $0$ ersetzten.
+````
+
 Anstatt das Vorzeichen und den Betrag als getrennte Teile der Binärfolge zu codieren bietet das sogenannte *Zweierkomplement*, oder auch 2-Komplement, die bevorzugte Codierung für negative Zahlen.
-Das höchste Bit wird dabei nicht als Vorzeichen, sondern als negativen Anteil interpretiert.
+Das höchste Bit wird dabei nicht als Vorzeichen, sondern als negativer Anteil interpretiert.
 
 So ist
 
@@ -384,7 +398,7 @@ Sei $b_{n-1} \ldots b_0$ eine solche Zahl in Binärdarstellung, so ist ihr [Komp
 ```
 
 gleich $-k$.
-Dies gilt sowohl für positive wie auch negative Zahlen $k$!
+Dies gilt sowohl für positive wie auch negative Zahlen $k$.
 
 ````{exercise} Komplement des Komplements (schwer)
 :label: complement-of-complement-exercise
@@ -402,16 +416,14 @@ Bei der Rechnung ist die Anzahl der Bits fixiert und es entsteht möglicherweise
 :label: complement-of-complement-solution
 :class: dropdown
 
-Angenommen das niederste Bit $b_0$ ist gleich $1$.
-Dann folgt $\overline{b_{n-1}\ldots b_0} + 1 = \overline{b_{n-1}\ldots b_1}1$, d.h., $b_0$ bleibt $1$ und der erst der Bits werden komplementiert.
-Wiederholen wir dies, werden diese Bits bis auf $b_0$ erneut komplementiert und $b_0$ bleibt $1$.
-
-Angenommen das niederste Bit $b_0$ ist gleich $0$.
 Sei $b_k$ das niedrigste erste Bit welches den Wert $1$ annimmt.
-Dann folgt $\overline{b_{n-1}\ldots b_0} = \overline{b_{n-1}\ldots b_{k-1}}01\ldots 1$.
+Dann folgt 
+
+$$\overline{b_{n-1}\ldots b_0} = \overline{b_{n-1}\ldots b_{k-1}}01\ldots 1.$$
+
 In anderen Worten $b_k$ wird zu $0$ und alle niedrigeren Bits nehmen den Wert $1$ an.
 Addieren wir nun $1$ werden alle diese niediederen Bit $0$ und $b_k$ nimmt den Wert $1$ an.
-Alle höheren Bits bleiben unberührt.
+Alle höheren Bits bleiben unberührt:
 
 $$\overline{b_{n-1}\ldots b_{k-1}}01\ldots 1 + 1 = \overline{b_{n-1}\ldots b_{k-1}}10\ldots 0$$
 
@@ -422,17 +434,6 @@ $$\overline{\overline{b_{n-1}\ldots b_{k-1}}10\ldots 0} + 1 = b_{n-1}\ldots b_{k
 ```
 
 Das Bilden des Komplements ist für den Computer eine äußerst einfache und schnelle Operation, siehe Abschnitt [Manipulation](sec-manipulation).
-
-````{admonition} Komplement einer Bitfolge
-:name: def-complement
-Das *Komplement* einer Bitfolge $b_{n-1} \ldots b_0$, geschrieben als
-
-```{math}
-\overline{b_{n-1} \ldots b_0},
-```
-
-erhalten wir indem wir jedes Bit mit dem Wert $0$ mit einem Bit mit dem Wert $1$ und jedes Bit mit dem Wert $1$ mit einem Bit mit dem Wert $0$ ersetzten.
-````
 
 Wichtig ist festzuhalten, dass jede ganze Zahl als Binärzahl dargestellt werden kann!
 Und da wir jede **ganze Zahl** als Binärzahl, also als Folge von $0$ und $1$ darstellen können, können wir all das, was wir durch Zahlen repräsentieren können, auch durch **Strom an** und **Strom aus** endlich vieler Lampen repräsentieren.
@@ -569,9 +570,10 @@ Im Computer würden demnach $15$ Kabel/Leitungen oder Transistoren die entweder 
 Sonderzeichen wie Leerzeichen oder weitere Zeichen müssten wir in unsere Codierung noch einfügen.
 Auch könnten wir einen vollkommen anderen Zeichensatz benutzten.
 Programme die auf diesem aufbauen müssen die Codierung lediglich kennen.
+
 Auch können wir längere Wörter oder ganze Sätze bilden, brauchen dafür natürlich Speicherplatz.
 In unserem Beispiel benötigt jeder Buchstabe 5 Bits.
-D.h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen wir die Bauteile für mindestens 1500 Bits was wiederum 187.5 Bytes bzw. 0.1875 KibiByte (KB oder KiB) sind.
+D.h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen wir die Bauteile für mindestens 1500 Bits was wiederum 187.5 Bytes bzw. 0.1875 [kiloByte](https://en.wikipedia.org/wiki/Kilobyte) (kB) ($10^3$ Byte) und ca. 0.1831 [kibiByte](https://en.wikipedia.org/wiki/Kilobyte) (KB/KiB) ($2^{10}$ Byte) sind.
 
 (representation-pictures)=
 ## Bilder
@@ -592,13 +594,13 @@ name: fig-pixel-image
 Transformation eines Bildes in *Bytes* bzw. *Bits*.
 ```
 
-Eine gängige Möglichkeit ist eine Farbe durch den Anteil von Rot, Grün und Blau (RGB) zu definieren.
+Eine gängige Möglichkeit ist es eine Farbe durch den Anteil von Rot, Grün und Blau (RGB) zu definieren.
 Somit wird ein Pixel durch drei Zahlen repräsentiert und es ist üblich $256$ Rot-, Blau- und Grün- Intensitäten zu verwenden.
 Damit lassen sich $256^3$ unterschiedliche Farben repräsentieren. Zum Beispiel repräsentiert
 
 $$(253, 10, 10)$$
 
-einen sehr rötlicher Farbton.
+einen sehr rötlichen Farbton.
 Für die $256$ Intensitäten brauchen wir je $8$ *Bits*, d.h. ein *Byte*.
 
 ```{admonition} Byte
@@ -611,7 +613,7 @@ $8$ [Bit](def-bit) ergeben ein *Byte*.
 Oftmals ist ein *Byte* die kleinste Einheit auf die ein Computer zugreift.
 
 **Beispiel:**
-Anstatt beispielsweise ein einzelnes *Bit* aus dem Speicher in die CPU zu laden, wird ein ganzes *Byte* gelesen.
+Anstatt beispielsweise ein einzelnes *Bit* aus dem Speicher in die CPU zu laden, wird ein ganzes oder gar mehrere *Bytes* gelesen.
 ```
 
 Pro Pixel benötigen wir also $3$ Byte.
@@ -632,8 +634,8 @@ Line(1,1,99,99)             # Zeichne Linie
 
 Was so viel bedeutet wie Zeichne ein Rechteck von $(0,0)$ bis $(100,100)$ und eine Linie definiert durch $(1,1)$ und $(99,99)$ in einer rötlichen Farbe.
 
-Anstatt des 'fertigen' Bildes, speichern wir also eine Vorschrift, wie dieses Bild gezeichnet wird.
-Diese Vorschrift wird in Binärcode umgewandelt und ein Programm, was solch eine Vorschrift lesen kann, kümmert sich um die Umwandlung in eine *Rastergrafik*.
+Anstatt des 'fertigen' Bildes, speichern wir eine Vorschrift bzw. einen [Algorithmus](def-algorithm), der angibt wie dieses Bild gezeichnet wird.
+Diese Vorschrift wird in Binärcode umgewandelt und ein Programm, was solch eine Vorschrift lesen bzw. einen solchen Algorithmus ausführen kann, kümmert sich um die Umwandlung in eine *Rastergrafik*.
 
 Diese Bilder sind sog. *Vektorgrafiken*.
 Der Vorteil der *Vektorgrafik* ist, dass die Beschreibung eine analoge/verlustfreie Beschreibung ist und die Digitalisierung (Verpixelung/Rasterisierung) des Bildes dynamisch, jedesmal wenn das Bild angezeigt wird, vollzogen wird.
@@ -670,8 +672,8 @@ Dann können wir entweder alle $200$ Zeichen speichern, was uns $200$ Byte koste
 ```
 
 was uns 6 Byte kostet.
-Wir bräuchten dann ein Programm, was die Anweisung ``'ab'*100`` versteht und ausführt.
-Wir reduzieren also Speicherplatz auf Kosten von Rechenzeit.
+Wir bräuchten dann ein Programm (einen Übersetzer), was die Anweisung ``'ab'*100`` versteht und ausführt.
+Wir verringern somit den verbrauchten Speicherplatz auf Kosten der Rechenzeit.
 
 (representation-sound)=
 ## Ton
@@ -683,24 +685,24 @@ Ton ist nichts anderes als eine Funktion $f(t)$ der Amplitude (Lautstärke) übe
 Die Frequenz der Oszillation bestimmt die Tonhöhe.
 
 Wir können keine Funktion mit nur **Strom aus** und **Strom an** repräsentieren, da diese unendlich viele Werte annimmt.
-Wir können von der Funktion aber eine sogenannte Stichprobe (ein Sample) erstellen.
+Wir können von der Funktion aber eine sogenannte *Stichprobe (engl. Sample)* erstellen.
 Dazu werten wir die Funktion an endlich vielen Stellen $t = t_0, \ldots, t_n$ aus und speichern die zugehörigen Werte $f(t_0), \ldots, f(t_n)$ ab.
-Je mehr Punkte ein Sample für eine Sekunde Ton aufweist und je genauer wir die Amplitude an diesen Punkten treffen, desto genauer wird unsere eigentliche Funktion $f(t)$ angenähert.
+Je mehr *Samples* wir pro Sekunde machen und je genauer wir die Amplitude an den Samplepunkten treffen, desto genauer wird unsere eigentliche Funktion $f(t)$ angenähert.
 
 ```{figure} ../../figs/sound-wave.png
 ---
 width: 700px
 name: fig-sound-wave
 ---
-Transformation des analogen Tons in ein digitales Sample.
-Links das analoge Signal und rechts das digitale Sample.
+Transformation des analogen Tons in digitale Samples.
+Links das analoge Signal und rechts die Samples.
 Erst erhöhen wir die Bit-Tiefe (zweite Zeile), dann die Sample-Rate (dritte Zeile).
 ```
 
 Ton wird also als Folge von Zahlen repräsentiert.
 Diese Folge transformieren Lautsprecher in Vibration und damit in Ton.
-Gewöhnlich verwendet man eine sog. Sample-Rate (Stichproben-Rate) von 44.1 kHz, d.h. 44100 Stichproben pro Sekunde.
-Der Wert der Amplitude also $f(t_i)$ wird heute normalerweise in 32 *Bits* also 4 *Byte* repräsentiert.
+Gewöhnlich verwendet man eine sog. *Sample-Rate (Stichproben-Rate)* von 44.1 kHz, d.h. 44100 Stichproben pro Sekunde.
+Der Wert der Amplitude $f(t_i)$ wird heute normalerweise durch 32 *Bits* also 4 *Byte* repräsentiert.
 
 ```{exercise} Speicherplatz
 :label: sound-memory-exercise

@@ -1,13 +1,16 @@
 (sec-manipulation)=
 # Manipulation
 
-Eingabegeräte transformieren die Information, wie etwa einen Tastendruck oder die Aufnahmen einer Videokamera, in elektrische Signale, d.h. **Strom aus** und **Strom an** um.
-Diese Signale gelangen über mikroskopisch kleine Leitungen in sogenannte Schaltkreise, welche sie weiterverarbeiten.
-Wie geht das von statten?
+Eingabegeräte transformieren Information, wie etwa einen Tastendruck oder die Aufnahmen einer Videokamera, in elektrische Signale.
+Wir können dies auch immer aus der Perspektive einer Interpretation $I$ betrachten.
+Die Tastatur interpretiert unseren Tastendruck und gibt ihre Bedeutung an die anderen Bauteile des Computers weiter.
+Die elektrischen Signale (**Strom aus** und **Strom an**) gelangen über mikroskopisch kleine Leitungen in sogenannte Schaltkreise, welche sie weiterverarbeiten.
 
-*Logikgatter* oder kurz *Gatter* sind Anordnungen von elektrischen Schaltungen, welche Boolsche Operationen durchführen.
+*Logikgatter* oder kurz *Gatter* sind konzeptionelle Anordnungen von elektrischen Schaltungen, welche boolsche Operationen durchführen.
 
 ```{admonition} Gatter und Bauteile
+:class: hint
+
 Gatter beschreiben die Funktionsweise.
 Elektrische Schaltkreise und Transistoren sind eine mögliche Realisierung.
 Gatter sind **konzeptionelle Bauteile** wohingegen elektrische Schaltkreise, Transistoren, Leitungen und Flip-Flops (später mehr dazu) **physikalische Bauteile** sind.
@@ -18,9 +21,8 @@ Das Ausgabesignal hängt von den ein oder zwei Eingabesignalen des Gatters und d
 
 ## Basis Gatter
 
-Das wohl einfachste Gatter nimmt als Eingabe ein Signal und gibt die Negation davon aus.
+Das einfachste **Not**-Gatter nimmt als Eingabe ein Signal und gibt dessen *Negation* davon aus.
 Aus $0$ wird $1$ und aus $1$ wird $0$.
-Wir nennen es das **Not**-Gatter.
 
 def lnot(bit):
     return int(not bit)
@@ -33,7 +35,7 @@ print(lnot(1))
 width: 300px
 name: fig-not
 ---
-Das **Not**-Gatter.
+Das Symbol für das **Not**-Gatter (links) und seine Ein- und Ausgabewerte (rechts).
 ```
 
 Ein weiteres sehr einfaches Gatter ist das sogenannte **AND**-Gatter.
@@ -52,7 +54,7 @@ print(land(1,1))
 width: 340px
 name: fig-and
 ---
-Das **AND**-Gatter.
+Das Symbol für das **AND**-Gatter (links) und seine Ein- und Ausgabewerte (rechts).
 ```
 
 Zu guter Letzt fehlt noch das **OR**-Gatter.
@@ -71,7 +73,7 @@ print(lor(1,1))
 width: 340px
 name: fig-or
 ---
-Das **OR**-Gatter.
+Das Symbol für das **OR**-Gatter (links) und seine Ein- und Ausgabewerte (rechts).
 ```
 
 ```{exercise} OR-Gatter
@@ -104,13 +106,37 @@ print(lor(1,1))
 
 ````
 
+Jedes Gatter können wir auch als [Interpretation](sec-interpretation) $I$ beschreiben.
+Zum Beispiel wäre die Interpretation des **AND**-Gatters durch folgende Mengen gegeben:
+
++ Bedeutung $B_{\text{AND}} = \left\{0, 1\right\}$
++ Repräsentation $R_{\text{AND}} = \left\{ 00, 01, 10, 11 \right\}$
++ Interpretation $I_{\text{AND}} = \left\{ (00, 0), (01, 0), (10, 0), (11, 1) \right\}$.
+
 Nun gut, diese Operationen scheinen lächerlich einfach zu sein, aber kombinieren wir mehrere Gatter können wir mehr und mehr komplexe Operationen durchführen.
 Im Endeffekt basieren alle Berechnungen des Computers auf diesen sehr primitiven Gattern/Operationen.
-Die Logikgatter implementieren die sog. *Boolsche Algebra* (siehe [Geschichte der Computer und Algorithmen](history-today)).
+Die Logikgatter implementieren die sog. *boolsche Algebra*.
 
 Obwohl sehr viele kleine Operationen notwendig sind, lassen sich diese Operationen sehr schnell durchführen.
 Signale breiten sich mit annähernd Lichtgeschwindigkeit aus und so sind gigantische Mengen an primitiven Operationen in sehr kurzer Zeit durchführbar.
 Je kleiner die Chips desto kleiner ist die Distanz, welche die Signale wandern müssen und desto schneller ist der Computer.
+
+## Komplement
+
+In Abschnitt [Ganze Zahlen](sec-intergers) haben wir besprochen wie diese durch das zweier Komplement repräsentiert werden.
+Um aus eine Binärzahl $k = b_{n-1}\ldots b_0$ ihr Negativ zu bilden, also $-k$, bilden wir das Komplement und addieren eins:
+
+$$-k = \overline{b_{n-1}\ldots b_0} + 1$$
+
+Wie würden wir das Komplement $\overline{b_{n-1}\ldots b_0}$ mit Gattern realisieren?
+Jedes Signal $b_i$ muss durch ein Not-Gatter negiert werden.
+Somit könnten wir die Signale der Binärzahl durch $n$ Not-Gatter hindurch schicken und würden ihr Komplement erhalten:
+
+def complement(b3, b2, b1, b0):
+    return lnot(b3), lnot(b2), lnot(b1), lnot(b0)
+
+print(complement(0,0,0,0)) 
+print(complement(1,0,1,1)) 
 
 ## Addierer
 
@@ -134,15 +160,31 @@ print(land(0,1))
 print(land(1,0))
 print(land(1,1))
 
+Diese Operation ist sehr simpel.
+Dennoch berechnen wir mit nur einem Gatter bereits etwas.
+
+Im folgenden wollen wir Ihnen durch den Bau eines $n$-Bit Addierers zeigen, wie wir von einfachen Berechnungen zu komplexeren Berechnungen kommen.
+
 ### 1-Bit-Addierer
 
 Bauen wir aus den gegebenen Gattern einen Addierer der zwei Zahlen $b_1, b_0 \in \{0,1\}$ addiert.
-Der Addierer bekommt also zwei Eingabesignale gibt aber auch zwei Signale aus, denn $1 + 1$ (binär) ist gleich $10$ (binär).
+Der Addierer erhält zwei Eingabesignale $b_0,b_1$ und gibt zwei Signale $a_0, a_1$ aus.
 Sei $a_1a_0$ das Ergebnis der Addition.
+Lassen Sie uns alle Möglichkeiten notieren:
+
+\begin{equation*}
+\begin{split}
+    b_1 + b_0 &= a_1a_0\\ \hline
+    0_2 + 0_2 &= 00_2 \\
+    0_2 + 1_2 &= 01_2 \\
+    1_2 + 0_2 &= 01_2 \\
+    1_2 + 1_2 &= 10_2
+\end{split}
+\end{equation*}
 
 Wir erhalten $a_1 = 1$, d.h. einen *Übertrag* von $1$ genau dann wenn $b_0$ und $b_1$ gleich $1$ sind.
 Hingegen ist $a_0$ genau dann $1$ wenn entweder $b_0$ oder $b_1$ nicht aber beide gleich $1$ sind. 
-Daraus ergeben sich folgende Boolsche Operationen:
+Daraus ergeben sich folgende boolsche Operationen:
 
 $$
 \begin{split}
@@ -173,7 +215,7 @@ Als Gatter-Bauplan sieht das ganze wie folgt aus.
 width: 600px
 name: fig-adder
 ---
-Skizze eines 1-Bit-Addierers. Links der Zusammenschluss der Gatter und rechts das Symbol für unseren Addierer.
+Skizze eines 1-Bit-Addierers. Der Zusammenschluss der Gatter (links) und das Symbol für unseren Addierer (rechts).
 ```
 ### Erweiterter 1-Bit-Addierer
 
@@ -210,21 +252,29 @@ Lassen Sie uns also einen 1-Bit-Addierer der drei Zahlen addieren kann konstruie
 Dieser dient dann der Konstruktion des $n$-Bit-Addierers.
 Wir benötigen einen 1-Bit-Addierer mit drei Eingabesignale und weiterhin zwei Ausgabesignalen, jedoch interpretieren wir diesmal $a_1$ als Übertrag für den nächsten Addierer!
 
-```{admonition} Lernziel
-:class: learngoals
+Lassen Sie uns erneut alle Möglichkeiten notieren:
 
-Sie müssen folgende Beschreibung der notwendigen *Boolschen Operationen* und auch darauf folgenden ``Python``-Code nicht im Detail verstehen.
-Es geht uns darum, dass Sie ein Gefühl dafür bekommen wie durch die **Komposition** primitiver Operationen (in Form von Gattern) mächtigere Bauteile entstehen.
+\begin{equation*}
+\begin{split}
+    b_2 + b_1 + b_0 &= a_1a_0\\ \hline
+    0_2 + 0_2 + 0_2 &= 00_2 \\
+    0_2 + 0_2 + 1_2 &= 01_2 \\
+    0_2 + 1_2 + 0_2 &= 01_2 \\
+    0_2 + 1_2 + 1_2 &= 10_2 \\
+    1_2 + 0_2 + 0_2 &= 01_2 \\
+    1_2 + 0_2 + 1_2 &= 10_2 \\
+    1_2 + 1_2 + 0_2 &= 10_2 \\
+    1_2 + 1_2 + 1_2 &= 11_2
+\end{split}
+\end{equation*}
 
-```
-
-Lassen Sie uns $a_0$ betrachten.
+Betrachten Sie nun $a_0$.
 Fragen wir uns: wann wird $a_0$ gleich $1$?
-Wenn genau eines der drei Eingabesignale $1$ sind, dann ist $a_0$ auch $1$, d.h. wenn
+$a_0$ wird genau dann $1$, wenn genau eines der drei Eingabesignale $1$ ist, d.h., wenn
 
 $$(b_0 \land \neg b_1 \land \neg b_2) \lor (b_1 \land \neg b_2 \land \neg b_0) \lor (b_2 \land \neg b_0 \land \neg b_1).$$
 
-Wenn jedoch alle drei Eingabesignale gleich $1$ sind dann ist $a_0$ ebenfalls $1$, d.h. wenn
+**oder** alle drei Eingabesignale gleich $1$ sind, d.h., wenn
 
 $$(b_0 \land b_1 \land b_3).$$
 
@@ -287,7 +337,7 @@ print(ladd(1,1,1))
 
 ### $n$-Bit-Addierer
 
-Für einen $n$-Addierer brauchen wir $n$ 1-Bit-Addierer die drei Signale aufnehmen.
+Für einen $n$-Bit-Addierer brauchen wir $n$ 1-Bit-Addierer, welche alle (bis auf den ersten) drei Signale aufnehmen.
 Wie oben erwähnt addiert der $i$-te 1-Bit-Addierer das $i$-te Bit der beiden Eingabezahlen und den Übertrag des $(i-1)$-ten 1-Bit-Addierers.
 Für den ersten Addierer ist der Übertrag gleich $0$.
 
@@ -315,7 +365,7 @@ Hängt man nun Addierer aneinander so kann man einen Multiplizierer und andere R
 
 ```{exercise} $n$-Bit-Addierer
 :label: n-bit-adder-exercise
-Definieren Sie eine ``Python``-Funktion ``laddn(a, b)`` die unter Verwendung von ``ladd(in1, in2, in3)`` Bits variabler länge addiert.
+Definieren Sie eine ``Python``-Funktion ``laddn(a, b)``, die unter Verwendung von ``ladd(in1, in2, in3)`` Bits variabler länge addiert.
 Gehen Sie davon aus, dass die Listen ``a`` und ``b`` die gleiche Länge haben.
 
 **Hinweis:** Studieren Sie den obigen Code, d.h. ``ladd4``. Was wiederholt sich immer wieder und lässt sich somit automatisieren?
@@ -342,7 +392,7 @@ laddn([1,1,1,1], [1,0,0,1])
 
 ```{admonition} Modellierung der Gatter und Addierer
 :class: hint
-Unser ``Python`` Code modelliert den Addierer als **Gatterzusammenschluss**.
+Unser ``Python`` Code modelliert den Addierer als Gatterzusammenschluss.
 Natürlich können wir in ``Python`` deutlich einfacher zwei Zahlen addieren.
 ```
 

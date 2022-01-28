@@ -48,12 +48,12 @@ So ist, zum Beispiel, die Währung der Streaming-Dienste, sozialer Medien und In
 Wenn Algorithmen diese Aufmerksamkeit um jeden Preis erhaschen wollen, erfüllen sie zwar ihren angedachten Zweck, jedoch mit möglicherweise äußerst fragwürdigen Mitteln.
 Diese Mittel haben womöglicher die Erbauer\*innen der Algorithmen gar nicht vorgesehen.
 Solche Fehler können zu (sozialen) Katastrophen führen.
-Anstatt einer unerwarteten Zerstörung der Ozonschicht durch Fluorchlorkohlenwasserstoffe (FCKW), haben wir es in der (digitalen) Zukunft vielleicht mit unerwarteter Zerstörung sozialer Konstrukte zu tun.
+Anstatt einer unerwarteten Zerstörung der Ozonschicht durch Fluorchlorkohlenwasserstoffe (FCKW), haben wir es in der (digitalen) Zukunft vielleicht mit einer unerwarteter Zerstörung sozialer Konstrukte zu tun.
 
 Zusammenfassend lässt sich sagen: Wir können es nicht alleine den Entwickler\*innen aus dem Silicon Valley überlassen, wie wir unsere digitale Zukunft gestalten.
 Algorithmen sind weder gut noch schlecht, derartige Begriffe sind ihnen völlig fremd.
 Sie können Wundervolles wie Schreckliches zu Tage bringen.
 Was genau entscheiden am Ende wir, sofern wir uns in die Diskussion einbringen können.
 Jeder Mensch sollte wissen welche Ziele die Systeme verfolgen mit denen er interagiert.
-Er sollte wissen welche gewaltigen sozialen Kräfte diese Algorithmen freisetzen können und wie sie individuelles wie auch gemeinschaftliches Verhalten beeinflussen.
+Er oder Sie sollte wissen welche gewaltigen sozialen Kräfte diese Algorithmen freisetzen können und wie sie individuelles wie auch gemeinschaftliches Verhalten beeinflussen.
 Als selbstbestimmte\*r freie\*r Bürger\*in ist [Computational Thinking](sec-what-is-ct) ein Handwerkszeug um mit Informationssystemen als Nutzer\*in und nicht als Benutzte\*r zu interagieren.

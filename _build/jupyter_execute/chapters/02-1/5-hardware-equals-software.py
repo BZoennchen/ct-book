@@ -1,11 +1,14 @@
 (sec-computability)=
 # Berechenbarkeit
 
-## Hardware = Software?
+In diesem Abschnitt tauchen wir in die theoretische Informatik ein und widmen uns der Frage was wir überhaupt berechnen können (**Berechenbarkeit**).
+In diesem Zusammenhang folgt unweigerlich die Frage: Welche Mittel benötigen wir um eines der berechenbaren Probleme zu berechnen (**Turing-Vollständigkeit**)?
+Und was benötigen wir um jedes dieser Probleme berechnen zu können (**universelle Turingmaschine**)?
 
+Beginnen wir mit einer kurzen Untersuchung von Hard- und Software, d.h., Bauteile des Computers und Programmcode.
 Stellen Sie sich vor Sie haben einen Addierer ``ladd`` als Bauteil, also als *Hardware* realisiert.
 Wir stellen uns also vor, dass der Befehl ``ladd(a,b)`` die beiden Binärzahlen ``a`` und ``b`` durch ein Bauteil addiert.
-Wir haben gesehen, wie dies durch ein **Gatterzusammenschluss** (siehe [Manipulation](sec-manipulation)) möglich ist.
+Wir haben gesehen, wie dies durch ein *Gatterzusammenschluss* (siehe [Manipulation](sec-manipulation)) möglich ist.
 
 Um zwei Zahlen ``a``, ``b`` zu multiplizieren könnten wir aus mehreren Addierern einen Multiplizierer bauen.
 Wir können also durch Komposition von bereits existierenden Bauteilen ein neues Bauteil mit einer neuen Funktion konstruieren.
@@ -42,48 +45,113 @@ def mul(a, b):  # Wir nehmen an diese Funktion durch Code/Software umgesetzt
 print(f'{[0,0,1,1]} * {[1,0,0,1]} = {mul([0,0,1,1], [1,0,0,1])}')
 print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0,1,1], [1,0,0,1]))}')
 
-Was ist also der Unterschied zwischen Hardware (den Gattern) und Software (unserem Code)?
-Wir müssen zwei Dinge festhalten:
+Halten wir also fest: Wir können einen Multiplizierer als Bauteil konstruieren, z.B. indem wir mehrere Addierer hintereinander schalten, oder wir schreiben Programmcode der die Multiplikation durch das mehrfache Aufrufen von dem Addierer realisiert.
+Wo liegt hierbei der Unterschied?
 
-1. Ein Computer ohne Hardware nicht funktioniert.
-2. Logik in Hardware gegossen bringt uns Berechnungsgeschwindigkeit.
+Interessiert uns nur das Ergebnis, so ist es egal welche der beiden Methoden wir verwenden.
+Im Endeffekt sparen wir uns bei der zweiten Berechnung ein Bauteil.
+In der Praxis spielt es allerdings eine entscheidende Rolle wie lange die Berechnung dauert.
+Ein Multiplizierer der als Bauteil vorliegt, wird seine Arbeit deutlich schneller verrichten, als die Summe der Aufrufe des Addierers.
+Werden bestimmte Berechnungen sehr häufig benötigt, so ist es sinnvoll darüber nachzudenken ob man für diese nicht extra angefertigte Bauteile anbietet.
 
-Wir werden auf beide Punkte nun eingehen.
+Die Grafikkarte (GPU) ist ein solches Beispiel.
+Theoretisch kann die [CPU](def-cpu) all das berechnen, was die Grafikkarte berechnen kann.
+Allerdings ist die Grafikkarte darauf optimiert eine bestimmte Operation auf eine Vielzahl an Daten parallel anzuwenden (Single Instruction Multiple Data).
+Auch verwenden viele Grafikkarten eine weniger genaue Darstellung der Fließkommazahlen, da bei der Generierung von Bildern oder Animationen kleine Fehler nicht auffallen.
+Moderne Grafikkarten werden wegen ihres hohen Datendurchsatzes heute für das *maschinelle Lernen* eingesetzt.
+Sie haben dazu Bauteile mit denen sich die Matrixmultiplikation kleiner Matrizen sehr effizient berechnen lässt.
 
-## Die Turingmaschine
+Software steuert die Hardware an.
+Es besteht hier also eine Art Umweg.
+Löst ein Bauteil das Problem so ist es mit sehr großer Wahrscheinlichkeit schneller als jede Softwarelösung.
 
-Auch ein menschlicher Computer benötigt seine mentalen Kräfte sowie Stift und Papier um Berechnungen durchzuführen.
-Wir können nun eine der zentralen Fragen der Informatik stellen. 
-Salopp fragen wir: 'Wie viel' Hardware braucht es denn. 
+Auf algorithmischer Ebene ähneln sich Hardware und Software sehr.
+Sie gleichen sich mit dem feinen Unterschied, dass Software eine bestimmte Hardware benötigt um überhaupt lauffähig zu sein.
 
-Das lässt offen was wir mit der Ansammlung an Hardware überhaupt berechnen wollen.
-Wir fragen also eigentlich zwei Fragen:
+## Turingmaschinen
 
-1. Was kann man überhaupt berechnen?
-2. Wie viel Hardware braucht es um alles zu berechnen was man berechnen kann?
+Wir haben gesehen, dass der Unterschied zwischen Hard- uns Software geringer ist als wir vielleicht angenommen hatten.
+Klar ist aber auch, dass ein Computer ohne Hardware nicht funktionieren wird.
+Wir können nun die zentralen Fragen der Informatik stellen. 
+Salopp fragen wir: 
 
-Beide Fragen wollte Alan Turing mit seinem Berechnungsmodell, d.h. mit seiner *Turingmaschine* beantworten.
+>'Wie viel' Hardware braucht es denn?
+
+Oder genauer gefragt:
+
+>Welche Eigenschaften muss meine Maschine haben, damit ich all das berechnen kann was berechenbar ist?
+
+Und
+
+>Was können wir überhaupt berechnen?
+
+Beide Fragen wollte Alan Turing mit seinem Berechnungsmodell, d.h., mit seiner *Turingmaschine* beantworten.
+
+```{figure} ../../figs/digital-computer/computability/tm.png
+---
+height: 200px
+name: fig-tm
+---
+Skizze eine Turingmaschine die sich gerade in Zustand $q_4$ befindet.
+```
+
+Die [Turingmaschine (TM)](https://de.wikipedia.org/wiki/Turingmaschine) besteht aus gerade einmal so viel Hardware, dass sie all das berechnen kann, was allgemein als berechenbar gilt.
 
 ```{admonition} Turingmaschine (informell)
 :name: info-turingmaschine
 
-Die *Turingmaschine* besitzt als Speicher ein (1-dimensionales) **unendliches Band**.
-Sie hat auch einen **Lese-/Schreibkopf** der in einer Zeiteinheit ein an der aktuellen Position des Kopfes lesen oder schreiben kann.
-Die Kopf kann zudem in einer Zeiteinheit eine Position nach links oder rechts fahren.
-Sie kann nur $0,1$ oder $\#$ schreiben bzw. lesen.
-Dabei steht $\#$ für einen unbeschriebenen Platz also das Leerzeichen.
+Eine *Turingmaschine* $T$ besteht aus:
 
-Die Maschine befindet sich in einem von **endlich vielen Zuständen**.
-Zusätzlich hat die Maschine eine **endliche Tabelle an Vorschriften**, diese sagen ihr welche Aktion (Lesen, Schreiben, eins nach rechts fahren, eins nach links fahren) für welchen Zustand und welches aktuelle Zeichen sie durchführen soll.
+1. Einem **unendlich langen Band** (unendlichen Speicher) aus Zellen
+2. Einem **Schreib-/Lesekopf**
+3. Einer **endlichen Übergangstabelle** $\delta$
+4. Einer **endlichen Zustandsmenge** $Q$
+5. Eine **endliche Endzustandsmenge** $F \subseteq Q$
 
-Die *Turingmaschine* fährt auf dem Band hin und her und schreibt währenddessen $0$, $1$ oder $\#$.
-Die (endliche) Eingabe der Maschine befindet sich zu Beginn auf dem Band.
+Der Schreib-/Lesekopf ließt oder schreibt $0$, $1$ oder $\#$ in jeder Zeiteinheit an seine aktuelle Zelle auf dem Band.
+Dabei steht $\#$ für eine unbeschriebene Zelle, also das Leerzeichen.
+Der Kopf kann zudem in einer Zeiteinheit eine Zelle nach links oder rechts fahren oder stehenbleiben.
 
+Die Maschine befindet sich in einem von endlich vielen Zuständen.
+
+Gegeben der Zustand $q$ und das beim Schreib-/Lesekopf stehende Zeichen $a \in \{0, 1, \#\}$, gibt die Übergangstabelle an:
+
+1. Den Zustand $p$ den die Maschine einnimmt
+2. Das Zeichen was sie aufs Band schreibt
+3. Ob sich der Schreib-/Lesekopf nach links $\text{L}$, rechts $\text{R}$, oder gar nicht $\text{N}$ bewegt.
+
+Die Turingmaschine befindet sich zu Beginn in einem Startzustand $q_0$ und die Eingabe befindet sich zu beginn auf dem Band.
+Läuft die Turingmaschine irgendwann in einen Endzustand $q_e \in E$, so ist das was auf dem Band steht das berechnete Ergebnis.
+Die Turingmaschine $T$ berechnet $T(w)$ für eine Eingabe(wort) $w$.
 ```
 
-Die *Turingmaschine* definiert nun eine gewisse Problemklasse, die sie lösen bzw. berechnen kann.
-Nach der unbeweisbaren *Turing-Church-These* handelt es sich bei diesen Problemen um all diejenigen die im allgemeinen **berechenbar** sind.
-Das heißt eine *Turingmaschine* alles berechnen was wir vermutlich allgemein berechnet können.
+Übertragen auf Software, bilden die endliche Übergangstabelle $\delta$ und die Zustandsmengen $Q$, $F$ ein Programm.
+Diese Tabelle fassen wir auch als Funktion 
+
+$$\delta : Q \times \{0, 1, \# \} \rightarrow Q \times \{0, 1, \#\} \times \{\text{L}, \text{R}, \text{N}\}$$
+
+auf, wobei der Definitionsbereich und der Wertebereich endliche Mengen sind.
+Befindet sich die Maschine in Zustand $q$ und steht auf der aktuellen Zelle (dort wo der Schreib-/Lesekopf steht) eine 1, so liefert 
+
+$$\delta(q, 1)$$
+
+das was die Maschine zu tun hat, z.B., $(p, 1, \text{N})$, also gehe in Zustand $p$, schreibe eine 1 und bewege deinen Kopf nicht.
+
+Je nachdem was wir berechnen wollen, müssen wir entsprechendes Programm formulieren, d.h. eine Zustandsmenge $Q$ und eine Übergangstabelle $\delta$.
+Da die Turingmaschine nur sehr simple Operationen erlaubt, ist es nicht einfach ein Programm für sie zu schreiben.
+Schon das Addieren von zwei Zahlen ist eine Herausforderung.
+Folgende Zustandsmengen $Q = \{q_0, q_e\}, F = \{q_e\}$ und $\delta$:
+
+| $\{0, 1, \# \}$ | $Q$   | $\{0, 1, \# \}$ | $\{\text{L}, \text{R}, \text{N}\}$ |   $Q$ |
+| --------------- | :---- | --------------: | ---------------------------------: | ----: |
+| 1               | $q_0$ |               0 |                         $\text{R}$ | $q_0$ |
+| 0               | $q_0$ |               1 |                         $\text{R}$ | $q_0$ |
+| $\#$            | $q_0$ |            $\#$ |                         $\text{R}$ | $q_e$ |
+
+berechnet das Komplement einer Binärzahl.
+Dabei gehen wir davon aus, dass der Schreib-/Lesekopf auf das erste Zeichen der Eingabe zeigt (links).
+Die Maschine bewegt ihren Kopf einmal von links nach rechts und schreibt eine 0 wenn sie eine 1 ließt und eine 1 wenn sie eine 0 ließt.
+Sobald sie ein Leerzeichen $\#$ ließt bleibt geht sie in den Endzustand $q_e$. 
 
 ```{admonition} Berechenbar
 :name: def-computable
@@ -92,12 +160,21 @@ Ein Problem ist *berechenbar*, wenn es für die Lösung ein Algorithmus formulie
 
 ```
 
+Der Schreib-/Lesekopf können wir als CPU und das Band als Speicher interpretieren.
+Die Endlichkeit von $Q$, $F$ und $\delta$ garantiert, dass unser Algorithmus durch endlich viel Text niedergeschrieben werden kann.
+Die Turingmaschine geht davon aus, dass ihr unendlich viel Speicher zur Verfügung steht.
+Das stellt aber kein Problem dar, denn sofern die Maschine stehen bleibt (unser Algorithmus terminiert) kann sie nur endlich viel Zellen auf dem Band abgefahren haben.
+
 ```{admonition} Turing-Berechenbarkeit
 :name: def-turing-computable
 
 Ein Problem ist *Turing-berechenbar*, wenn es für die Lösung eine Turingmaschine existiert.
 
 ```
+
+Die Probleme die wir mit der *Turingmaschine* berechnen können, bilden eine gewisse Problemklasse.
+Nach der unbeweisbaren *Turing-Church-These* handelt es sich bei diesen Problemen um all diejenigen die im [allgemeinen berechenbar](def-computable) sind.
+Das heißt eine *Turingmaschine* kann alles berechnen was wir vermutlich allgemein berechnet können.
 
 ```{admonition} Turing-Church-These (unbeweisbar)
 :name: def-church-these
@@ -108,20 +185,20 @@ Ein Problem ist genau dann *berechenbar*, wenn es auch *Turing-berechenbar* ist.
 
 Nehmen wir an die *Turing-Church-These* trifft zu, so wissen wir was **berechenbar** ist und wie viel Hardware es braucht!
 Wir brauchen soviel Hardware, dass unser Computer all das kann was eine *Turingmaschine* kann.
-Alan Turing definierte den Begriff der *Turing-Vollständigkeit*.
-Eine Rechenmaschine die *Turing-vollständig* ist, kann all das berechnen was eine *Turingmaschine* berechnen kann.
-Nach der unbeweisbaren *Turing-Church-These* kann eine *Turingmaschine* alles berechnen was wir allgemein berechnet können.
 
-```{admonition} Turing-vollständig
+Alan Turing definierte den Begriff der *Turing-Vollständigkeit*.
+Eine Rechenmaschine die *Turing-vollständig* ist, kann all das berechnen was eine Turingmaschine berechnen kann.
+
+```{admonition} Turing-Vollständigkeit
 :name: def-turing-complete
 
-Eine Rechenmaschine (oder Programmiersprache) ist *Turing-vollständig* genau dann wenn sie all das berechnen kann was eine *Turingmaschine* berechnen kann.
+Eine Rechenmaschine (oder Programmiersprache) ist *Turing-vollständig* genau dann wenn sie all das berechnen kann was eine Turingmaschine berechnen kann.
 
 ```
 
-Wenn Sie also verstehen möchten, 'wie viel Hardware' ein Computer braucht, lohnt sich ein Blick hin zur *Turingmaschine*.
+Wenn Sie also verstehen möchten, 'wie viel Hardware' ein Computer braucht, lohnt sich ein Blick hin zur Turingmaschine.
 Uns ist klar, dass es sich dabei um ein sehr theoretisches Konstrukt handelt.
-Wir ersparen Ihnen die formale Definition und möchten Sie dennoch bestärken ein intuitives Verständnis über die *Turingmaschine* während Ihres Studiums aufzubauen.
+Wir ersparen Ihnen die formale Definition und möchten Sie dennoch bestärken ein intuitives Verständnis über die Turingmaschine während Ihres Studiums aufzubauen.
 
 Die Turingmaschine kommt mit erstaunlich wenig Hardware aus.
 Ein pfiffiger Bastler kann diese Maschine als Heimwerkerprojekt in seinem Keller bauen.
@@ -138,39 +215,46 @@ Eine konkrete Konstruktion einer Turingmaschine.
 
 ## Die universelle Turingmaschine
 
-Die *Turingmaschine* löst alle uns bekannten lösbaren Probleme.
+Bis heute können wir jedes berechenbare Problem durch eine bestimmte Turingmaschine berechnen.
 Natürlich müssen wir eine *Turingmaschine* für das jeweilige Problem konstruieren.
-Wir benötigen die richtigen Zustände, das richtige Alphabet und die richtige Übergangsfunktion.
-All diese mathematischen Objekte sind endlich!
-Wir können demnach eine Beschreibung einer jeden *Turingmaschine* mit Stift und Papier aufschreiben.
-Noch besser!
-Wir können diese Beschreibung digitalisieren und als Folge von $0$ und $1$ auf das Band einer *Turingmaschine* schreiben.
-Da es für jedes (Turing-)berechenbares Problem eine *Turingmaschine* gibt, so gibt es auch eine *Turingmaschine*, welche die *Turingmaschine* die auf dem Band steht simuliert!
-Diese Turingmaschine nennen wir **universelle Turingmaschine**.
+Ein Computer löst aber nicht nur ein bestimmtes Problem, sondern ist im Stande **jedes** Problem, was durch eine Turingmaschine gelöst werden kann zu berechnen.
 
+Ein Computer ist das Pendant zu einer ganz bestimmten Turingmaschine, der *universellen Turingmaschine (UTM)*.
+Die universelle Turingmaschine $U$ (Computer) erhält als Eingabe eine Beschreibung einer andere Turingmaschine $\alpha_T$ (Programm) und die Eingabe(wort) $w$ der Turingmaschine $T$.
+Sie simuliert $T$ unter der Eingabe $w$
+
+$$U(\alpha_T, w) = T(w)$$
+
+Das heißt die universelle Turingmaschine $U$ berechnet das was die Turingmaschine $T$ berechnen würde, indem Sie diese simuliert.
+
+Da eine Turingmaschine $T$ durch $\delta$, $Q$ und $F$ vollständig beschrieben ist und all diese Mengen endlich sind, ist sichergestellt dass auch $\alpha_T$ endlich ist.
+Der Repräsentant von $\alpha_T$ muss ein Binärcode sein, sodass wir ihn auf das Band von $U$ schreiben können.
+Wie $U$ genau aussieht werden wir uns nicht ansehen.
+Sie können sich denken, dass die Übergangstabelle von $U$ sehr groß ist.
 
 ```{admonition} Universelle Turingmaschine (informell)
 :name: info-universal-turing-machine
 
-Eine *universelle Turingmaschine* ist eine *Turingmaschine*, die eine beliebige *Turingmaschine* auf beliebiger Eingabe simuliert.
+Eine *universelle Turingmaschine* $U$ ist eine Turingmaschine, die eine beliebige Turingmaschine $T$ auf beliebiger Eingabe $w$ simuliert.
 
 ```
 
-Das heißt die *universelle Turingmaschine* berechnet das was die *Turingmaschine* berechnen würde, indem Sie diese simuliert.
-
 (sec-essenz-of-computers-and-languages)=
-## Essenz der Computer und Programmiersprachen
+## Zusammenfassung
 
 Weshalb reiten wir so auf diesen theoretischen Konzepten herum?
-Was kümmern mich imaginäre *Turingmaschinen*?
-Computer und Programmiersprachen sind beidesamt Werkzeuge um *Computational Thinking* zu realisieren.
-Was aber können wir überhaupt mit diesen Werkzeugen realisieren?
-Die Antwort folgt aus der eben besprochenen *Turingmaschine*, denn jeder Ihnen bekannte Computer und jede Programmiersprache welche Sie erlernen werden ist **Turing-vollständig**!
+Was kümmern uns imaginäre Turingmaschinen?
+Diese Maschinen können zwar all das berechnen was ein Computer berechnet, funktionieren aber doch ganz anders.
+Insbesondere sind sie extrem langsam.
 
-Jeder Computer kann genau das berechnen, was eine *Turingmaschine* berechnen kann.
+Computer und Programmiersprachen sind Werkzeuge um unsere Konzepte welche durch [Computational Thinking](sec-what-is-ct) entstehen zu realisieren.
+Was aber können wir überhaupt mit diesen Werkzeugen realisieren?
+Die Antwort folgt aus der eben besprochenen Turingmaschine, denn jeder Ihnen bekannte Computer und jede Programmiersprache welche Sie erlernen werden ist [Turing-vollständig](def-turing-complete)!
+
+Jeder Computer kann genau das berechnen, was eine Turingmaschine berechnen kann.
 Selbstverständlich arbeiten Computer mit vollkommen anderen Bauteilen, was sie viel effizienter macht.
-Im wesentlichen sind sie dennoch nichts anderes als effiziente *Turingmaschinen*.
-John von Neumann's Prinzip des [speicherprogrammierten Computers](sec-von-neumann) basiert auf Alan Turings *Turingmaschine*
+Im wesentlichen sind sie dennoch nichts anderes als effiziente Turingmaschinen.
+John von Neumann's Prinzip des [speicherprogrammierten Computers](sec-von-neumann) basiert auf Alan Turing's Turingmaschine.
 
 Für alle gängigen Programmiersprachen gilt, dass Sie mit ihnen Algorithmen formulieren können, die eine Lösung berechnen, welche auch von einer *Turingmaschine* berechnet werden kann!
 
@@ -185,49 +269,39 @@ Können Sie mit der Sprache ``A`` ein Programm ``a`` schreiben, welches Programm
 :class: dropdown
 Ja das ist möglich!
 
-1. **Kompilieren**: da beide Sprachen Turing-vollständig sind können ein Programm schreiben was den Programmcode ``b`` in einen Programmcode der Sprache ``A`` überführt, sodass der Code in ``A`` das gleiche berechnet wie ``b``. Diesen Vorgang nennen wir *kompilieren*.
+1. **Kompilieren**: Da beide Sprachen Turing-vollständig sind, können Sie ein Programm in der Sprache ``B`` schreiben was den Programmcode ``b`` in einen Programmcode ``a`` der Sprache ``A`` überführt, sodass ``a`` das gleiche berechnet wie ``b``. Diesen Vorgang nennen wir *kompilieren*.
 
-2. **Interpretieren**: wir können auch ein Programm in ``A`` schreiben, welches die Befehle von ``b`` simuliert, d.h. den Code in ``b`` Schritt für Schritt ausführt.
+2. **Interpretieren**: Wir können auch fortwährend ein Programm ``a`` in ``A`` immer wieder schreiben, welches die nächsten $n$ Befehle von ``b`` simuliert, d.h. den Code in ``b`` Schritt für Schritt ausführt.
 
 ```
 
-Man muss sich vor Augen halten, dass Alan Turing bereits 1936 die grundlagen für alle modernen Computer und Programmiersprachen dieser Welt gelegt hat.
+Man muss sich vor Augen halten, dass Alan Turing bereits 1936 die Grundlagen für alle modernen Computer und Programmiersprachen dieser Welt gelegt hat.
 
 Gehen wir nun zurück zur Frage nach dem Unterschied zwischen Hard-/ und Software.
-Der wesentlichen Unterschied zwischen dem Computer (Hardware) und einem Programm (Software) ist die Art und Weise wie die *Turing-Vollständigkeit* realisiert wird -- durch elektrische Bauteile oder einer Programmiersprache.
+Der wesentlichen Unterschied zwischen dem Computer (Hardware) und einem Programm (Software) ist die Art und Weise wie die [Turing-Vollständigkeit](def-turing-complete) realisiert wird -- durch elektrische Bauteile oder einer Programmiersprache.
 
-Programme wie auch Computer sind *Turingmaschinen* und da der Computer Programme also andere *Turingmaschinen* simuliert ist er eine *universelle Turingmaschine*.
+Programme als auch Computer sind Turingmaschinen und da der Computer Programme, also andere Turingmaschinen, simuliert ist er eine [universelle Turingmaschine](info-universal-turing-machine).
 
 ```{admonition} Computer sind universelle Turingmaschinen
-:name: computer-uinversal-turing
+:name: computer-universal-turing
 :class: attention
 
 Ein handelsüblicher Computer ist eine universelle Turingmaschine.
 
 ```
 
-Programme sind ebenfalls *Turingmaschinen* welche von Computern simuliert werden.
-Es gibt auch Programme sogenannte *Interpreter*, welche beliebige Programme die in einer anderen Sprache sind simulieren können.
-Diese *Interpreter* sind universelle Turingmaschinen.
-
-Sobald ein Computer *Turing-vollständig* ist, sind alle weiteren Bauteile ein Bonus.
-Und da auch die *Turingmaschine* ein theoretisches Konstrukt ist (Software), ist jede Hardware eine Realisierung von Software durch (elektrische) Bauteile.
-
-In der Theorie ist die *universelle Turingmaschine* ebenso 'schnell' wie ein moderner Computer.
+Sobald ein Computer Turing-vollständig ist, sind alle weiteren Bauteile ein Bonus.
+In der Theorie ist die universelle Turingmaschine ebenso 'schnell' wie ein moderner Computer.
 In der Praxis wäre sie allerdings unfassbar langsam.
 In der Theorie ist sogar jeder Prozessor 'gleich schnell'.
 In der Praxis ist das natürlich nicht der Fall.
-Wir werden später noch darauf eingehen was *schnell*, *schneller* und *langsamer* und *gleich schnell* in der Theorie bedeutet.
+Die Turingmaschine hilft uns dabei die Begriffe *schnell*, *schneller* und *langsamer* und *gleich schnell* formal zu definieren.
+Wir werden in Abschnitt [Komplexitätstheorie](sec-complexity) sehen, dass diese Komplexitätsklassen uns etwas über die Schwierigkeit eines Problems verraten, doch in der Praxis mit Vorsicht zu genießen sind.
 
 Zusätzliche oder effizientere Hardware dient im wesentlichen der Beschleunigung bestimmter Berechnungen.
-Zum Beispiel kann die CPU all das Berechnen was eine Grafikkarte (GPU) berechnen kann.
-In der Theorie ist sie sogar *genauso schnell*.
-Dennoch hat jeder gängige Heim-Computer eine Grafikkarte, warum?
-Nun die CPU ist dazu gebaut um viele unterschiedliche Berechnungen extrem schnell nacheinander abzuarbeiten.
-Um aber Bilder und Grafiken zu berechnen braucht man viele tausende unabhängige Fließkommazahlenberechnungen (z.B. Matrix-Vektor-Multiplikationen).
-Unabhängig bedeutet, dass die Ergebnisse der einzelnen Berechnungen nicht voneinander abhängen und so lassen sich sehr viele Berechnungen gleichzeitig (parallel) ausführen.
-Auch akzeptiert man bei Bildern und Grafiken größere Ungenauigkeiten - kleine Fehler ändern Bilder und Grafiken so minimal, dass es dem Auge nicht auffällt.
-Deshalb besteht eine GPU aus vielen tausend primitiven Prozessoren die besonders für weniger genaue Fließkommaberechnungen geeignet sind.
+Ein Beispiel, was wir oben bereits besprochen haben ist die Grafikkarte (GPU).
+In der Theorie ist sie sogar *genauso schnell* wie eine CPU.
+Dennoch hat jeder gängige Heim-Computer eine Grafikkarte, da diese für Berechnungen im 3D-Grafikbereich optimiert ist.
 
 Wichtig ist festzuhalten, dass sich Hardware und Software auf konzeptioneller Ebene gleichen.
-Hardware ist die Manifestation von Software und Software ist die Manifestation des *Computational Thinings* und so entspringt auch *Hardware* aus dem *Computational Thinking*!
+Hardware ist die Manifestation von Software und Software ist die Manifestation des Computational Thinkings und so entspringt auch Hardware aus dem Computational Thinking!

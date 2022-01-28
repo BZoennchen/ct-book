@@ -326,7 +326,7 @@ keys = stack_sort(keys, lambda a, b: word_frequency[a] > word_frequency[b])
 # 3. gebe die n häufigsten keys/Wörter aus
 keys[0:n]
 
-Im obigen Code verwenden wir eine sog. [anonyme Funktion](def-anonym-function), welche in ``Python`` mit dem ``lambda``-[Konstrukt](python-anonym-function) realisiert werden können.
+Im obigen Code verwenden wir eine sog. [anonyme Funktion](sec-anonymous-function), welche in ``Python`` mit dem ``lambda``-[Konstrukt](sec-anonymous-function) realisiert werden können.
 
 ## Wie gut ist mein Algorithmus?
 

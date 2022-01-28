@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -52,6 +53,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4. Warum Computational Thinking?" href="../01-4/why-ct.html" />
@@ -784,7 +787,44 @@
                 
   <div class="section" id="ausblick">
 <h1><span class="section-number">3.4. </span>Ausblick<a class="headerlink" href="#ausblick" title="Permalink to this headline">¶</a></h1>
-<p>TODO: Quanten Computing, maschinelles Lernen, KI, Neuromorphic Computing,</p>
+<p>Das <a class="reference internal" href="../01-2/what-is-ct.html#sec-what-is-ct"><span class="std std-ref">Computational Thinking</span></a> hat sich über die Jahrhunderte weiterentwickelt, doch blieben die wesentlichen Grundkonzepte: Dekomposition, Abstraktion, Mustererkennung und Algorithmen erhalten.
+Das wird sich auch in absehbarer Zukunft nicht verändern.</p>
+<p>Was sich verändert, sind technische Entwicklungen und neue Algorithmen – d.h. Hard- und Software.
+Auf der Softwareseite sind insbesondere Algorithmen aus dem Bereich des <em>maschinellen Lernens</em> zu nennen.
+Hier feierten wir große Erfolge aber es wird auch deutlich, dass wir mit den immensen Rechenanforderungen und dem damit verbundenen und stetig steigenden Energieverbrauch in der nahen Zukunft in Probleme geraten.
+Ob das <em>maschinelle Lernen</em> uns bei der Energiewende wie auch bei der Eindämmung des Klimawandels behilflich sein kann oder sich als hinderlich erweisen wird, ist eine noch offene Forschungsfrage.</p>
+<p>Ein Bereich welcher sich unter anderem dem Energieproblem widmet, ist der des <em>Neuromorphic Computings</em>.
+Anstatt mühsam <em>neuronale Netze</em> auf einer <a class="reference internal" href="../02-1/4-information-flow.html#sec-von-neumann"><span class="std std-ref">von Neumann Architektur</span></a> zu simulieren ist es Ziel, neuronale Netze direkt in Hardware zu gießen.
+Das menschliche Gehirn ist zu ganz erstaunlichen Berechnungen fähig und verbraucht dabei gerade einmal 20 Watt.
+Computer basierend auf der von Neumann Architektur funktionieren jedoch wesentlich anders.
+Unter anderem benötigen sie durch die strikte Trennung zwischen Speicher und Recheneinheit sehr viel mehr Energie, um Daten zur Recheneinheit und wieder zurück zu befördern.
+Auch sind sie nicht im Stande persistent (ohne Stromzufuhr) ihren schnellen Speicher und die arbeitsweise ihrer Recheneinheiten zu verändern, d.h. zu lernen.
+Ein in Hardware gegossenes neuronalen Netz klingt deshalb nach einer vielversprechenden Idee.</p>
+<p>Ein weiteres Schlagwort, was insbesondere durch die Medienlandschaft kreist, ist das sog. <em>Quantum Computing</em>.
+Die Entwicklung um die Quantencomputer begann bereits 1980.
+Anstatt der klassischen Bits, basieren Quantencomputer auf sog. <em>Qubits</em>.
+Diese Qubits befinden sich, anders als klassische Bits nicht in einem von zwei Zuständen (0 oder 1), sondern in mehreren Zuständen zugleich.
+Misst man den Zustand des Qubits, zerfällt es mit einer bestimmten Wahrscheinlichkeit in den einen oder anderen Zustand.
+Diese Wahrscheinlichkeiten können durch Logikgatter manipuliert werden.
+Zusätzlich können Qubits verschränkt werden.
+Sehr vereinfacht ausgedrückt bedeutet dies, dass deren Werte beim Messen alle bestimmt werden und voneinander abhängen.
+Deshalb kann man <span class="math notranslate nohighlight">\(2^{10}\)</span> Zustände <strong>gleichzeitig</strong> mit nur <span class="math notranslate nohighlight">\(10\)</span> Qubits speichern.
+Die Entwicklung von Quantenalgorithmen gestaltet sich allerdings als schwierig, da man die Wahrscheinlichkeiten der verschränkten Qubits verändern muss.
+Auch braucht man häufig mehrere Durchläufe, da das richtige Ergebnis nur zu einer hohen Wahrscheinlichkeit ausgegeben wird.</p>
+<p>Im Oktober 2019, behaupteten Google AI Quantum und die NASA, dass sie ein Problem auf einem Quantencomputer gelöst hätten, und zwar <span class="math notranslate nohighlight">\(3 \cdot 10^{6}\)</span> schneller als auf jedem verfügbaren klassischen existierenden Supercomputer auf dieser Welt.
+Das Resultat ist Gegenstand laufender Diskussionen.
+Weitere Spieler in der Quantencomputerwelt zogen seither nach.
+Derzeit sind die zu lösenden Probleme noch speziell auf Quantencomputer angepasst, z.B., die Simulation von Quanteneffekten oder die Generierung von Zufallszahlen.</p>
+<p>Die Hoffnung ist groß, dass uns Quantencomputer in ein neues Zeitalter befördern, doch fehlt heute noch jedwede Bestätigung, dass Quantencomputer in der Breite anwendung finden.
+Der US-amerikanische Physiker Richard Feynman begann mit der Idee der Quantencomputer, da Simulationen von Quanteneffekten auf klassischen Computern schnell zu einem zu hohen Rechenaufwand führten.
+Vielleicht liegt hierin die beste Anwendungen der Technologie – die Simulation des Kleinen.
+Es gibt zwar schon funktionierende Quantencomputer, allerdings braucht es für interessante Anwendungen noch deutlich mehr Qubits und hier liegt wohl die Herausforderung begraben.
+So kritisiert der russische Physiker Mikhail Dyakonov, dass die Komplexität der Kontrolle der Qubits mit ihrer Anzahl ins unermessliche steige:</p>
+<blockquote>
+<div><p>So the number of continuous parameters describing the state of such a useful quantum computer at any given moment must be… about <span class="math notranslate nohighlight">\(10^{300}\)</span>… Could we ever learn to control the more than <span class="math notranslate nohighlight">\(10^{300}\)</span> continuously variable parameters defining the quantum state of such a system? My answer is simple. No, never. –  Mikhail Dyakonov</p>
+</div></blockquote>
+<p>Ob Quantencomputer auf spezielle aber interessante Probleme angewendet werden können oder ob sie
+darüber hinaus auch für generelle Zwecke ihre Anwendung finden, bleibt abzuwarten.</p>
 </div>
 
     <script type="text/x-thebe-config">
