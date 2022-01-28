@@ -18,6 +18,8 @@ Wir würden vermutlich an unserem Verstand zweifeln, sollte so etwas passieren.
 Warum dies nicht geschieht und weshalb sich Ihre Hände erwärmen, liegt an der Entropie bzw. an der Entropieänderung.
 
 ```{admonition} Irreversible Prozesse
+class: info
+
 Findet in einem abgeschlossenen System ein *irreversibler Prozess* statt (einer der sich nicht umkehren lässt), so nimmt die *Entropie* dieses Systems immer zu. Sie nimmt niemals ab!
 ```
 
