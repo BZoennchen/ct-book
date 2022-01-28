@@ -51,7 +51,7 @@ Die Anzahl dieser Möglichkeiten ist die *Entropie*.
 
 Lassen wir einmal die Physik kurz außer acht und denken mathematisch an einen Zufallsprozess (z.B. einen Münzwurf).
 Wir haben eine Menge an Zuständen, die das System annehmen kann.
-Im Fall unsere Tee Tasse wäre dies beispielsweise eine noch mehr abgekühlte Hand oder eine wärmere Hand.
+Im Fall unsere Teetasse wäre dies beispielsweise eine noch mehr abgekühlte Hand oder eine wärmere Hand.
 Jeder (Makro-)Zustand hat eine bestimmte Anzahl an unterschiedlichen Teilchenanordnungen (Mikrozuständen).
 Je mehr Anordnungen es für einen Zustand gibt, desto wahrscheinlicher ist er!
 Und da das Ei welches Ihnen entgegenspringt derart unwahrscheinlich ist, tritt dieser Zustand niemals ein.
