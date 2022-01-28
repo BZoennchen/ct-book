@@ -8,9 +8,9 @@ Es ist äußerst wichtig zu verstehen, dass es Shannon um die *Informationsüber
 Sie ist für sein Modell von zentraler Bedeutung.
 So schreibt er in {cite}`shannon:1948`:
 
-> Frequently the messages have meaning; that is they refer to or are correleted according to some system with certain physical or conceptual entities. These **smenatic aspects of communication are irrelevant** to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design. -- Claude E. Shannon
+> Frequently the messages have meaning; that is they refer to or are correleted according to some system with certain physical or conceptual entities. These **semantic aspects of communication are irrelevant** to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design. -- Claude E. Shannon
 
-Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung (Semantik) gehört doch war diese für die *Informationsübertragung* über ein Medium für ihn irrelevant.
+Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung (Semantik) gehört doch befand er diese für die *Informationsübertragung* über ein Medium als irrelevant.
 Die Übertragung besteht dabei aus mehreren Teilen:
 
 1. Eine (Informations)-**Quelle** versendet eine **Nachricht**.

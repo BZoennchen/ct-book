@@ -53,8 +53,8 @@ Lassen wir einmal die Physik kurz außer acht und denken mathematisch an einen Z
 Wir haben eine Menge an Zuständen, die das System annehmen kann.
 Im Fall unsere Teetasse wäre dies beispielsweise eine noch mehr abgekühlte Hand oder eine wärmere Hand.
 Jeder (Makro-)Zustand hat eine bestimmte Anzahl an unterschiedlichen Teilchenanordnungen (Mikrozuständen).
-Je mehr Anordnungen es für einen Zustand gibt, desto wahrscheinlicher ist er!
-Und da das Ei welches Ihnen entgegenspringt derart unwahrscheinlich ist, tritt dieser Zustand niemals ein.
+Besitzt jeder Mikrozustand die gleiche Wahrscheinlichkeit, so steigt die Wahrscheinlichkeit eines Makrozustands mit der Anzahl seiner möglichen Mikrozustände.
+Und da das Ei, welches Ihnen entgegen springt, derart wenige Mikrozustände hat, tritt dieser Zustand niemals ein.
 
 ```{admonition} Entropie (Physik)
 Die Entropie beschreibt die Anzahl der Teilchenanordnungen (Mikrozustände), die zu einem gegebenen (Makro)-Zustand des Systems führen.
@@ -62,8 +62,8 @@ Die Entropie beschreibt die Anzahl der Teilchenanordnungen (Mikrozustände), die
 
 Nun gut, wir wissen was Entropie ist.
 Wie aber definieren Physiker die *Information*?
-Ist die Entropie groß, so bedarf es viel *Information* um auf die korrekte Teilchenanordnung zu schließen.
-Deshalb ist der Mangel an *Information* groß.
+Ist die Entropie groß, so bedarf es viel Information um auf die korrekte (mikroskopische) Teilchenanordnung zu schließen.
+Deshalb ist der Mangel an Information groß.
 
 ```{admonition} Information (Physik)
 Die *Information* ist jenes etwas, durch was ein Beobachter auf die exakte Teilchenanordnungen eines Systems schließen kann.
