@@ -1231,14 +1231,14 @@ Es gibt kleine ‘Strafen’, wenn <strong>Adressen</strong> weit auseinander li
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
-id of numbers = 4348017600
+id of numbers = 4374465856
 value of numbers[2] = 3
-id of numbers[2] = 4306970992
+id of numbers[2] = 4333418864
 change value of numbers[2]
 value of numbers = [1, 2, -20, 4, 5]
-id of numbers = 4348017600
+id of numbers = 4374465856
 value of numbers[2] = -20
-id of numbers[2] = 4348068912
+id of numbers[2] = 4374512688
 </pre></div>
 </div>
 </div>
@@ -1288,14 +1288,14 @@ Oder aber wir stellen uns eine Schnur vor, die von dem Schließfach auf das Obje
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of mylist = [1, [&#39;a&#39;, &#39;b&#39;], 5]
-id of mylist = 4348018240
+id of mylist = 4374466752
 value of mylist[1] = [&#39;a&#39;, &#39;b&#39;]
-id of mylist[1] = 4348017088
+id of mylist[1] = 4374464768
 change value mylist[1][0]
 value of mylist = [1, [&#39;c&#39;, &#39;b&#39;], 5]
-id of mylist = 4348018240
+id of mylist = 4374466752
 value of mylist[1] = [&#39;c&#39;, &#39;b&#39;]
-id of numbers[1] = 4348017088
+id of numbers[1] = 4374464768
 </pre></div>
 </div>
 </div>
@@ -1364,8 +1364,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4347505152
- id after concat: 4348014976
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4374451328
+ id after concat: 4373706880
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1386,8 +1386,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4347461952
- id after concat: 4347461952
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4374375936
+ id after concat: 4374375936
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1600,13 +1600,13 @@ In diesem Fall macht es keinen Unterschied ob die <em>atomaren Datentypen</em> K
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers
-4306970928
-4306970960
-4306970992
+4333418800
+4333418832
+4333418864
 ids of numbers_shallow_copy
-4306970928
-4306970960
-4306970992
+4333418800
+4333418832
+4333418864
 </pre></div>
 </div>
 </div>
@@ -1640,8 +1640,8 @@ Nunja, die <strong>Adressen</strong></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4347173952
-4347173952
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4374388544
+4374388544
 </pre></div>
 </div>
 </div>
@@ -1680,14 +1680,14 @@ Anders ausgedrückt: Sie müssen alle <em>Kinder</em> der Datenstruktur kopieren
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers:
-4306970928
-4306970960
-4348017984
+4333418800
+4333418832
+4374465344
 
 ids of numbers_deep_copy:
-4306970928
-4306970960
-4348017088
+4333418800
+4333418832
+4374464768
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]]
@@ -1711,14 +1711,16 @@ Wie sieht es mit den Adressen der Elemente des Kindes aus?:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of mylist[2]
-4308576496
-4308015216
-4307723440
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4335024432
+4334459056
+4334171312
 
 ids of mylist_deep_copy[2]
-4308576496
-4308015216
-4307723440
+4335024432
+4334459056
+4334171312
 </pre></div>
 </div>
 </div>
@@ -1745,7 +1747,9 @@ Die Funktion <code class="docutils literal notranslate"><span class="pre">copy()
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shallow copy: [1, 2, [3, [&#39;b&#39;, 5]]]
-deep copy: [1, 2, [3, [4, 5]]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>deep copy: [1, 2, [3, [4, 5]]]
 </pre></div>
 </div>
 </div>

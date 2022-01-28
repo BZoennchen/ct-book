@@ -1413,22 +1413,8 @@ Nutzen wir die Fallunterscheidung um all diese Sonderfälle abzudecken:</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>solution for x^2 -4x + 1 = 0: (8.0, -4.0)
 solution for x^2 + x = 0: (0.0, -1.0)
 solution for x^2 = 0: (0.0,)
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">5</span><span class="n">c27236af7f6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;solution for x^2 + x = 0: </span><span class="si">{</span><span class="n">solve_quadratic</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;solution for x^2 = 0: </span><span class="si">{</span><span class="n">solve_quadratic</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;solution for -4x + 1 = 0: </span><span class="si">{</span><span class="n">solve_quadratic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;solution for 1 = 0: </span><span class="si">{</span><span class="n">solve_quadratic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nn">&lt;ipython-input-12-b7d31f4169b0&gt;</span> in <span class="ni">solve_quadratic</span><span class="nt">(a, b, c)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="c1"># default case =&gt; 2 solutions</span>
-<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">disc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">disc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
-
-<span class="ne">ZeroDivisionError</span>: division by zero
+solution for -4x + 1 = 0: (0.25,)
+solution for 1 = 0: ()
 </pre></div>
 </div>
 </div>
@@ -1436,6 +1422,23 @@ solution for x^2 = 0: (0.0,)
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;solution for 0 = 0: </span><span class="si">{</span><span class="n">solve_quadratic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mf">055e6</span><span class="n">f16b212</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;solution for 0 = 0: </span><span class="si">{</span><span class="n">solve_quadratic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-15-e1da46de2022&gt;</span> in <span class="ni">solve_quadratic</span><span class="nt">(a, b, c)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>             <span class="c1"># c == 0 =&gt; infinitely many solutions</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>             <span class="k">if</span> <span class="n">is_zero</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">16</span>                 <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Invalid arguments a == b == c == 0! This quadratic equation has infinitely many solutions.&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>                 <span class="k">return</span> <span class="p">()</span>
+
+<span class="ne">AttributeError</span>: Invalid arguments a == b == c == 0! This quadratic equation has infinitely many solutions.
 </pre></div>
 </div>
 </div>
