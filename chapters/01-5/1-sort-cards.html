@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -782,41 +783,41 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mathematisches-denken">
-   5.1.1. Mathematisches Denken
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ordnung">
-     5.1.1.1. Ordnung
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reihenfolge">
-     5.1.1.2. Reihenfolge
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kontext-und-missverstandnisse">
-   5.1.2. Kontext und Missverständnisse
+   5.1.1. Kontext und Missverständnisse
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bewusstes-denken">
-   5.1.3. Bewusstes Denken
+   5.1.2. Bewusstes Denken
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kontrollstrukturen-und-variablen">
-   5.1.4. Kontrollstrukturen und Variablen
+   5.1.3. Kontrollstrukturen und Variablen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dekomposition">
-   5.1.5. Dekomposition
+   5.1.4. Dekomposition
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mathematisches-denken">
+   5.1.5. Mathematisches Denken
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ordnung">
+     5.1.5.1. Ordnung
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reihenfolge">
+     5.1.5.2. Reihenfolge
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -861,82 +862,67 @@ Wie gehen Sie vor?</p>
 </ol>
 </div>
 </div>
-<div class="section" id="mathematisches-denken">
-<h2><span class="section-number">5.1.1. </span>Mathematisches Denken<a class="headerlink" href="#mathematisches-denken" title="Permalink to this headline">¶</a></h2>
-<p>Jeder weiß doch wie man <strong>Karten sortiert</strong>, oder?
-Selbst jemand der noch nie Karten sortiert hat, weiß zumindest wie sich vergleichbare Dinge ordnen lassen.
-In der Schule sind wir größer oder kleiner als andere Schüler gewesen.
-Schon sehr früh können wir Objekte ihrer Größe, Länge oder ihres Gewichts nach ordnen.
-Wir gehen davon aus, dass jede Karte einen bestimmten Wert hat und wir die Karten anhand dieser <em>Ordnungsrelation</em> sortieren können.</p>
-<div class="section" id="ordnung">
-<h3><span class="section-number">5.1.1.1. </span>Ordnung<a class="headerlink" href="#ordnung" title="Permalink to this headline">¶</a></h3>
-<p>Das mathematische Denken ist eng mit dem Computational Thinking verknüpft.
-In der Mathematik sind alle Objekte und Operationen präzise und unmissverständlich formuliert.
-Zugleich verzichtet man auf überflüssige Informationen und versucht Definitionen so allgemein oder abstrakt wie möglich zu halten.
-Für die Entwicklung eines <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a> zum Sortieren von Karten brauchen wir eine präzise Definition einer <em>Ordnungsrelation</em> um Karten vergleichen zu können.</p>
-<div class="admonition-totale-ordnungsrelation admonition" id="def-order">
-<p class="admonition-title">(Totale) Ordnungsrelation</p>
-<p>Eine <em>Ordnungsrelation</em> <span class="math notranslate nohighlight">\(R \subset K \times K\)</span> auf einer Menge <span class="math notranslate nohighlight">\(K\)</span> (z.B. Menge der Karten) ist eine Relation mit ganz bestimmten Eigenschaften (Reflexivität, Antisymmetrie und Transitivität).
-Befindet sich ein Element <span class="math notranslate nohighlight">\(a \in K\)</span> in Relation mit einem anderen Element <span class="math notranslate nohighlight">\(b \in K\)</span> schreibt man häufig anstatt <span class="math notranslate nohighlight">\((a,b) \in R\)</span></p>
-<div class="math notranslate nohighlight">
-\[a \leq_R b\]</div>
-<p>und geht aus dem Kontext hervor welche Relation gemeint ist, schreibt man häufig</p>
-<div class="math notranslate nohighlight">
-\[a \leq b.\]</div>
-<p>Die Eigenschaften, die eine <em>Ordnungsrelation</em> erfüllen muss sind:</p>
-<ol class="simple">
-<li><p>Reflexivität: <span class="math notranslate nohighlight">\(\forall a \in K : a \leq_R a\)</span></p></li>
-<li><p>Antisymmetrie: <span class="math notranslate nohighlight">\(\forall a, b \in K : a \leq_R b \land b \leq_R a \Rightarrow a = b\)</span></p></li>
-<li><p>Transitivität: <span class="math notranslate nohighlight">\(\forall a, b, c \in K : a \leq_R b \in R \land b \leq_R c \Rightarrow a \leq_R c\)</span></p></li>
-</ol>
-<p>Eine <em>Ordnungsrelation</em> ist <em>total</em> wenn für alle <span class="math notranslate nohighlight">\(a,b \in K\)</span> <span class="math notranslate nohighlight">\(a \leq_R b\)</span> oder <span class="math notranslate nohighlight">\(b \leq_R a\)</span> gilt.</p>
-</div>
-<p>Ist unsere Menge <span class="math notranslate nohighlight">\(K\)</span> die Menge der Karten, wobei wir zwei Karten mit der gleichen Augenzahl aber unterschiedlicher Farbe als gleich ansehen, dann können wir eine <em>(totale) Ordnungsrelation</em> auf den Karten definieren. Ist zum Beispiel <span class="math notranslate nohighlight">\(K = \{6,7,8,9,10,\text{Bube},\text{Dame},\text{König},\text{Ass}\}\)</span>, so wäre</p>
-<div class="math notranslate nohighlight">
-\[R = \{(6,6),(6,7),(6,8),\ldots,(6,A), (7,7), (7,8), \ldots, (\text{König},\text{Ass}), (\text{Ass},\text{Ass})\}\]</div>
-<p>eine <em>(totale) Ordnungsrelation</em>.</p>
-</div>
-<div class="section" id="reihenfolge">
-<h3><span class="section-number">5.1.1.2. </span>Reihenfolge<a class="headerlink" href="#reihenfolge" title="Permalink to this headline">¶</a></h3>
-<p>Wir nehmen intuitiv an, dass es genau eine bestimmte <em>Reihenfolge</em> der Karten auf der Hand gibt.
-Karten die auf unserer Hand nebeneinander liegen, liegen auch in unserer <em>Reihenfolge</em> nebeneinander.
-Nummerieren wir die Karten von links nach rechts, und starten mit der null so ist:</p>
-<div class="math notranslate nohighlight">
-\[0, 1, 2, 3, 4, 5, 6, \ldots,\]</div>
-<p>unsere Reihenfolge.
-Allerdings sind auch ganz andere <em>Reihenfolgen</em> wie z.B.</p>
-<div class="math notranslate nohighlight">
-\[0, 2, 4, 6, ..., 1, 3, 5, 7, ... \]</div>
-<p>möglich.
-Jedoch kommt eine solche <em>Reihenfolgen</em> nicht in unseren Erfahrungen vor und deshalb schließen wir sie von vornherein aus.</p>
-</div>
-</div>
 <div class="section" id="kontext-und-missverstandnisse">
-<h2><span class="section-number">5.1.2. </span>Kontext und Missverständnisse<a class="headerlink" href="#kontext-und-missverstandnisse" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.1. </span>Kontext und Missverständnisse<a class="headerlink" href="#kontext-und-missverstandnisse" title="Permalink to this headline">¶</a></h2>
 <p>Stets befinden wir uns in einem <em>Kontext</em>.
-Dieser <em>Kontext</em> enthält Wörter denen er eine ganz bestimmte Bedeutung bzw. Abfolge von Wörtern zuweist.
+Dieser Kontext enthält Wörter denen er eine ganz bestimmte Bedeutung bzw. Abfolge von Wörtern zuweist.
 Fragen wir ein kleines Kind ob es zur Schule geht, meinen wir damit nicht ob es gerade jetzt auf dem Weg zur Schule ist, sondern ob es bereits eingeschult ist.
-In diesem Fall entsteht ein Missverständnis, falls wir und das Kind nicht den gleichen <em>Kontext</em> benutzten.</p>
-<p>Im <em>Kontext</em> des Kartensortierens gehen wir davon aus, dass der- oder diejenige, die die Karten sortiert, weiß, was eine <em>Ordnung</em>, eine <em>Reihenfolge</em> und ein <em>Vergleich</em> ist.
+In diesem Fall entsteht ein Missverständnis, falls wir und das Kind nicht den gleichen Kontext benutzten.</p>
+<p>Im Kontext des Kartensortierens gehen wir davon aus, dass der- oder diejenige, die die Karten sortiert, weiß, was eine <em>Ordnung</em>, eine <em>Reihenfolge</em> und ein <em>Vergleich</em> ist.
 Wenn wir die Anweisung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Platziere</span> <span class="n">Karte</span> <span class="n">x</span> <span class="n">an</span> <span class="n">die</span> <span class="n">vorderste</span> <span class="n">Stelle</span>
 </pre></div>
 </div>
-<p>geben, gehen wir davon aus, dass aus dem <em>Kontext</em> klar hervorgeht, was genau zu tun ist.
-Zum Beispiel, dass wir unsere rechte Hand bewegen, mit den Fingern die Karte greifen und an die Position <span class="math notranslate nohighlight">\(0\)</span> setzen müssen.
+<p>geben, gehen wir davon aus, dass aus dem Kontext klar hervorgeht, was genau zu tun ist.
+Zum Beispiel, dass wir unsere rechte Hand bewegen, mit den Fingern die Karte greifen und an die Position 0 setzen müssen.
 Die genaue <em>Realisierung</em> von</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Platziere</span> <span class="n">Karte</span> <span class="n">x</span> <span class="n">an</span> <span class="n">die</span> <span class="n">vorderste</span> <span class="n">Stelle</span>
 </pre></div>
 </div>
 <p>nehmen wir als gegeben an.</p>
-<p>Ist in diesem Kontext klar was <strong>Sortiere Karten</strong> bedeuetet (nämlich genau das was wir möchten).
-Wäre folgende Lösung bereits aussreichend:</p>
+<p>Geht aus dem Kontext hervor was genau <strong>Sortiere Karten</strong> bedeutet.
+Wäre folgende Lösung bereits ausreichend:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Sortiere</span> <span class="n">Karten</span>
 </pre></div>
 </div>
+<p>Geht dies nicht hervor, müssen wir mit den Mitteln die uns zur Verfügung stehen, d.h., mit dem bestehenden Kontext ausdrücken, <strong>wie</strong> das Kartensortieren realisiert wird.
+Der Unterschied zwischen dem <strong>Wie</strong> und dem <strong>Was</strong> ist wichtig zu begreifen.
+Der Kontext beschreibt viele verschiedene <strong>Was</strong>.
+Mit diesen beschreiben wir <strong>wie</strong> wir ein anderes <strong>Was</strong> realisieren.
+Wir erweitern den Kontext um jenes <strong>Was</strong>, in unserem Fall das Kartensortieren.</p>
+<p>Jede Beschreibung befindet sich auf einem mehr oder weniger abstraktem Level.
+Zum Beispiel können wir schreiben:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span><span class="p">,</span> <span class="n">welche</span> <span class="n">sich</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">befindet</span><span class="p">,</span> <span class="n">auf</span> <span class="n">einen</span> <span class="n">Stapel</span>
+<span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span><span class="p">,</span> <span class="n">welche</span> <span class="n">sich</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">befindet</span><span class="p">,</span> <span class="n">auf</span> <span class="n">einen</span> <span class="n">Stapel</span>
+</pre></div>
+</div>
+<p>Das <strong>Was</strong> der beiden Zeilen ist: Die zwei kleinsten Karten werden von der Hand auf den Stapel gelegt.
+Das <strong>Wie</strong> beschreiben die beiden Zeilen: Wir nehmen die kleinste Karte auf der Hand und legen sie ab, dann wiederholen wir dies.
+Das <strong>Wie</strong> des einzelnen Schritts, also</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span><span class="p">,</span> <span class="n">welche</span> <span class="n">sich</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">befindet</span><span class="p">,</span> <span class="n">auf</span> <span class="n">einen</span> <span class="n">Stapel</span>
+</pre></div>
+</div>
+<p>ist unklar.</p>
+<p>Eine gewisse Unklarheit bezüglich des <strong>Wie</strong> wird immer bestehen bleiben.
+Das ist auch nichts ungewöhnliches.
+Selbst wenn wir mit einem Stift auf ein Blatt Papier schreiben ist uns nicht vollkommen klar was auf der Atomebene bei diesem Vorgang vor sich geht.
+Die Frage lautet daher welche Mittel wir zur Verfügung haben und in welchem Kontext wir uns befinden.
+Können wir davon ausgehen, dass aus dem Kontext das <strong>Was</strong> klar hervorgeht?
+Ist also klar, wie wir die kleinste Karte auf der Hand überhaupt finden?
+In unserem Fall würden wir dies mit einem nein beantworten.</p>
+<p>Wie sieht es zum Beispiel mit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Lege</span> <span class="n">dritte</span> <span class="n">Karte</span> <span class="n">von</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">auf</span> <span class="n">den</span> <span class="n">Stapel</span>
+</pre></div>
+</div>
+<p>Hier würden wir sagen, dass diese Beschreibung für den Kontext genau genug ist.
+Wir können davon ausgehen, dass die ausführende Einheit (der oder diejenige) weiß <strong>Wie</strong> dieses <strong>Was</strong> durchzuführen ist.</p>
+<p>Wir müssen also festlegen was die ausführende Einheit kann und was nicht – was sie versteht und was nicht.
+Genauso verhält es sich mit dem digitalen Computer und den Programmiersprachen.
+Zusammen geben sie uns einen Kontext in dem bestimmte <strong>Was</strong> kein <strong>Wie</strong> benötigen.
+Während des Programmierens erweitern wir unseren Kontext und können die von uns entwickelten <strong>Was</strong> benutzten.</p>
 </div>
 <div class="section" id="bewusstes-denken">
-<h2><span class="section-number">5.1.3. </span>Bewusstes Denken<a class="headerlink" href="#bewusstes-denken" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.2. </span>Bewusstes Denken<a class="headerlink" href="#bewusstes-denken" title="Permalink to this headline">¶</a></h2>
 <p>Selbst wenn Sie schon oft Karten sortiert haben, ist anzunehmen, dass Sie eher heuristisch vorgegangen sind und keinen präzise und unmissverständlichen Anweisungen, d.h. einem <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a>, gefolgt sind.
 Das liegt in der Natur von uns Menschen.
 Wir sind darauf trainiert schnelle einigermaßen gute Einschätzungen zu vollziehen.
@@ -962,7 +948,7 @@ Ein Problem muss im Detail verstanden werden.
 Begriffe müssen, bezogen auf Ihren verwendeten Kontext, eindeutig definiert sein.</p>
 </div>
 <div class="section" id="kontrollstrukturen-und-variablen">
-<h2><span class="section-number">5.1.4. </span>Kontrollstrukturen und Variablen<a class="headerlink" href="#kontrollstrukturen-und-variablen" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.3. </span>Kontrollstrukturen und Variablen<a class="headerlink" href="#kontrollstrukturen-und-variablen" title="Permalink to this headline">¶</a></h2>
 <p>Gehen wir davon aus, dass <strong>Karten sortieren</strong> in Ihrem Kontext nicht definiert ist.
 Dann könnte möglicherweise folgender Algorithmus unseren Ansprüchen genügen:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">auf</span> <span class="n">einen</span> <span class="n">Stapel</span><span class="o">.</span> 
@@ -1049,7 +1035,7 @@ Visuell sieht es nicht nach einer Wiederholung aus.
 Zudem ist der Teil, der wiederholt wird, nicht hervorgehoben.</p>
 </div>
 <div class="section" id="dekomposition">
-<h2><span class="section-number">5.1.5. </span>Dekomposition<a class="headerlink" href="#dekomposition" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.4. </span>Dekomposition<a class="headerlink" href="#dekomposition" title="Permalink to this headline">¶</a></h2>
 <p>Soweit so gut.
 Wovon wir bis jetzt ausgegangen sind ist, dass</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">auf</span> <span class="n">S</span><span class="o">.</span> 
@@ -1090,7 +1076,7 @@ Mit <code class="docutils literal notranslate"><span class="pre">Sei</span> <spa
 </div>
 <p>Wer unseren <em>Kontext</em> nur erahnt könnte es mit einem Vergleich, also sind die Karten (Objekte) mit den Namen <code class="docutils literal notranslate"><span class="pre">s</span></code> und <code class="docutils literal notranslate"><span class="pre">k</span></code> gleich, verwechseln.
 Mit einer anderen <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a>, können wir solchen Missverständnissen vorbeugen.
-Ändern wir nur die <em>Syntax</em> ändert sich die Bedeutung der Ausdrücke (<a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a>) nicht.
+Ändern wir nur die Syntax ändert sich die Bedeutung der Ausdrücke (<a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a>) nicht.
 Ein Beispiel wäre</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">&lt;-</span> <span class="n">erste</span> <span class="n">Karte</span> <span class="p">(</span><span class="n">von</span> <span class="n">links</span><span class="p">)</span>
 <span class="n">k</span> <span class="o">&lt;-</span> <span class="n">erste</span> <span class="n">Karte</span> <span class="p">(</span><span class="n">von</span> <span class="n">links</span><span class="p">)</span>
@@ -1107,6 +1093,71 @@ Ein Beispiel wäre</p>
 <p>In den allermeisten Programmiersprachen wird eine solche Umbenennung (<em>Zuweisung</em>) anstatt durch <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> durch das <code class="docutils literal notranslate"><span class="pre">=</span></code> realisiert.
 Für den Vergleich verwendet man üblicherweise <code class="docutils literal notranslate"><span class="pre">==</span></code>.
 Das kann anfänglich verwirrend sein, da das <code class="docutils literal notranslate"><span class="pre">=</span></code> nicht dem mathematischen <span class="math notranslate nohighlight">\(=\)</span> entspricht.</p>
+</div>
+</div>
+<div class="section" id="mathematisches-denken">
+<h2><span class="section-number">5.1.5. </span>Mathematisches Denken<a class="headerlink" href="#mathematisches-denken" title="Permalink to this headline">¶</a></h2>
+<p>Das mathematische Denken ist eng mit dem Computational Thinking verknüpft.
+In der Mathematik sind alle Objekte und Operationen präzise und unmissverständlich formuliert.
+Zugleich verzichtet man auf überflüssige Informationen und versucht Definitionen so allgemein, d.h. abstrakt wie möglich zu halten.</p>
+<p>Bei jeder Priorisierung oder Sortierung müssen wir Objekte vergleichen können.
+Das Sortieren von Karten können wir intuitiv ohne großartig darüber nachzudenken.
+Wir haben bereits ein Verständnis durch unsere Lebenserfahrung erlangt.
+Selbst jemand der noch nie Karten sortiert hat, weiß zumindest wie sich vergleichbare Dinge ordnen lassen.
+In der Schule sind wir größer oder kleiner als andere Schüler gewesen.
+Schon sehr früh können wir Objekte ihrer Größe, Länge oder ihres Gewichts nach ordnen.</p>
+<p>Für eine genaue und unmissverständliche Beschreibung können wir von der Mathematik Gebrauch machen.
+Sie ist eine internationale äußerst kompakte Sprache mit der wir die Natur beschreiben können.
+Zudem ist die Mathematik bereits entwickelt, wir können uns also vieler Konzepte bedienen, die allgemein bekannt sind.
+Somit drücken wir uns für all jene verständlich aus, die das nötige mathematische Verständnis mitbringen.</p>
+<p>Lassen Sie uns zwei wesentliche Dinge mathematisch betrachten, welche wir beim Sortieren der Karten intuitiv verwenden:</p>
+<ol class="simple">
+<li><p>Die sog. <a class="reference internal" href="#def-order"><span class="std std-ref">Ordnungsrelation</span></a> und</p></li>
+<li><p>Objekte in einer Reihenfolge angeordnet.</p></li>
+</ol>
+<div class="section" id="ordnung">
+<h3><span class="section-number">5.1.5.1. </span>Ordnung<a class="headerlink" href="#ordnung" title="Permalink to this headline">¶</a></h3>
+<p>Für die Entwicklung eines <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a> zum Sortieren von Karten brauchen wir eine präzise Definition einer <em>Ordnungsrelation</em> um Karten vergleichen zu können.</p>
+<div class="admonition-totale-ordnungsrelation admonition" id="def-order">
+<p class="admonition-title">(Totale) Ordnungsrelation</p>
+<p>Eine <em>Ordnungsrelation</em> <span class="math notranslate nohighlight">\(R \subset K \times K\)</span> auf einer Menge <span class="math notranslate nohighlight">\(K\)</span> (z.B. Menge der Karten) ist eine Relation mit ganz bestimmten Eigenschaften (Reflexivität, Antisymmetrie und Transitivität).
+Befindet sich ein Element <span class="math notranslate nohighlight">\(a \in K\)</span> in Relation mit einem anderen Element <span class="math notranslate nohighlight">\(b \in K\)</span> schreibt man häufig anstatt <span class="math notranslate nohighlight">\((a,b) \in R\)</span></p>
+<div class="math notranslate nohighlight">
+\[a \leq_R b\]</div>
+<p>und geht aus dem Kontext hervor welche Relation gemeint ist, schreibt man häufig</p>
+<div class="math notranslate nohighlight">
+\[a \leq b.\]</div>
+<p>Die Eigenschaften, die eine <em>Ordnungsrelation</em> erfüllen muss sind:</p>
+<ol class="simple">
+<li><p>Reflexivität: <span class="math notranslate nohighlight">\(\forall a \in K : a \leq_R a\)</span></p></li>
+<li><p>Antisymmetrie: <span class="math notranslate nohighlight">\(\forall a, b \in K : a \leq_R b \land b \leq_R a \Rightarrow a = b\)</span></p></li>
+<li><p>Transitivität: <span class="math notranslate nohighlight">\(\forall a, b, c \in K : a \leq_R b \in R \land b \leq_R c \Rightarrow a \leq_R c\)</span></p></li>
+</ol>
+<p>Eine <em>Ordnungsrelation</em> ist <em>total</em> wenn für alle <span class="math notranslate nohighlight">\(a,b \in K\)</span> <span class="math notranslate nohighlight">\(a \leq_R b\)</span> oder <span class="math notranslate nohighlight">\(b \leq_R a\)</span> gilt.</p>
+</div>
+<p>Ist unsere Menge <span class="math notranslate nohighlight">\(K\)</span> die Menge der Karten, wobei wir zwei Karten mit der gleichen Augenzahl aber unterschiedlicher Farbe als gleich ansehen, dann können wir eine <em>(totale) Ordnungsrelation</em> auf den Karten definieren. Ist zum Beispiel <span class="math notranslate nohighlight">\(K = \{6,7,8,9,10,\text{Bube},\text{Dame},\text{König},\text{Ass}\}\)</span>, so wäre</p>
+<div class="math notranslate nohighlight">
+\[R = \{(6,6),(6,7),(6,8),\ldots,(6,A), (7,7), (7,8), \ldots, (\text{König},\text{Ass}), (\text{Ass},\text{Ass})\}\]</div>
+<p>eine <em>(totale) Ordnungsrelation</em>.</p>
+</div>
+<div class="section" id="reihenfolge">
+<h3><span class="section-number">5.1.5.2. </span>Reihenfolge<a class="headerlink" href="#reihenfolge" title="Permalink to this headline">¶</a></h3>
+<p>Die Karten auf der Hand betrachten wir von links nach rechts.
+Wir nehmen demnach an, dass es genau eine bestimmte <em>Reihenfolge</em> der Karten auf der Hand gibt.
+Karten die auf unserer Hand nebeneinander liegen, liegen auch in unserer <em>Reihenfolge</em> nebeneinander.</p>
+<div class="admonition-mathematisches-tupel admonition">
+<p class="admonition-title">Mathematisches Tupel</p>
+<p>Ein <em>mathematisches Tupel</em> besteht aus endlich vielen, nicht notwendigerweise voneinander verschiedenen Objekte.
+Dabei spielt, im Gegensatz zu Mengen, die Reihenfolge der Objekte eine Rolle.</p>
+</div>
+<p>Die Hand mit <span class="math notranslate nohighlight">\(n\)</span> Karten lässt sich als sog. <span class="math notranslate nohighlight">\(n\)</span>-<em>Tupel</em> mathematisch ausdrücken.
+Zum Beispiel,</p>
+<div class="math notranslate nohighlight">
+\[H = (6, 7, \text{Bube}, 8, \text{Bube})\]</div>
+<p>Wäre ein <span class="math notranslate nohighlight">\(5\)</span>-Tupel, welches eine Hand <em>modelliert</em>, welche die Karten 6, 7, Bube, 8, Bube von links nach rechts beinhaltet.</p>
+<p>Anders als mathematische Mengen sind Tupel geordnet und endlich.
+Zugleich können mehrere gleiche Elemente enthalten.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> gibt es zwei Datenstrukturen (<a class="reference internal" href="../03-4/5-list.html#sec-list"><span class="std std-ref">Liste</span></a>, <a class="reference internal" href="../03-4/6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a>), welche ein mathematisches endliches Tupel modellieren.</p>
 </div>
 </div>
 </div>

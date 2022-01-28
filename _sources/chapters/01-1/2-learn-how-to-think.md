@@ -25,7 +25,7 @@ Nehmen wir uns einen Augenblick Zeit und aktivieren unser System 2, das *langsam
 Dies ergibt $b = 0.05$ Euro, also 5 Cent.
 Das falsche Ergebnis entstammt dem *schnellen* und das richtige dem *langsamen Denken*!
 
-Wenn Sie etwas intuitiv, quasi aus dem Bauch heraus und mühelos, abschätzten oder unbewusst einfach tun, dann ist das *schnelle Denken* aktiv.
+Wenn Sie etwas intuitiv, quasi aus dem Bauch heraus und mühelos abschätzten oder unbewusst einfach tun, dann ist das *schnelle Denken* aktiv.
 Nehmen wir das Autofahren.
 Wenn Sie geübt darin sind, werden Sie ohne darüber nachzudenken "einfach fahren".
 Oder wenn Sie einen Ball fangen wollen, dann werden Sie keine komplizierte Berechnung durchführen sondern eine fast schon automatische Abschätzung vornehmen.

@@ -19,7 +19,7 @@ Auch gibt es heute viele Anstrengungen das Computational Thinking, wie das Lesen
 Es scheint heute so wesentlich, dass es zur Vorbereitung auf die große weite und digitale Welt unabdingbar ist. 
 Was aber ist Computational Thinking?
 
-**Computational Thinking in seiner grundlegenden Form** ist eine Aktivität, ein Denkprozess, der durch praktische Anwendung feingeschliffen wird.
+*Computational Thinking in seiner grundlegenden Form* ist eine Aktivität, ein Denkprozess, der durch praktische Anwendung feingeschliffen wird.
 Es ist die Summe der mentalen Fähigkeiten mit denen wir
 1. [Algorithmen](def-algorithm) bzw. Berechnungen entwerfen, welche uns die Arbeit abnehmen, und 
 2. die Welt als ein Zusammenspiel von Prozessen der Informationsverarbeitung erklären und interpretieren können.
@@ -30,7 +30,7 @@ Die Basis des Computational Thinkings besteht aus vier Techniken, die alle mitei
 3. **Abstraktion identifizieren** und **nutzen**
 4. **Algorithmen entwerfen**
 
-**Computational Thinking für Fortgeschrittene** verlangt jedoch nach viel Erfahrung und einem gewissen Wissensstand im jeweiligen Anwendungsgebiet.
+*Computational Thinking für Fortgeschrittene* verlangt jedoch nach viel Erfahrung und einem gewissen Wissensstand im jeweiligen Anwendungsgebiet.
 Um wohlklingende Musik algorithmisch zu komponieren oder die Aerodynamik eines Flugzeugs durch Simulationen zu untersuchen, braucht es mehr als Mustererkennung, Dekomposition, Abstraktion und Algorithmen.
 Für ein gelungenes Musikstück braucht es Musikverständnis und für derartige Simulationen physikalischer Phänomene ist Wissen aus dem Bereich der Strömungsmechanik unerlässlich.
 
@@ -57,23 +57,23 @@ Für diese Fragen ist ein kühler Kopf -- ist Computational Thinking -- eine not
 Computational Thinking (nach {cite}`wing:2006`) bedeutet **konzepieren**, nicht programmieren.
 Es ist eine **fundamentale Fähigkeit** um in der technologisierten Gesellschaft zurecht zu kommen und keine routinierte Fähigkeit.
 Computational Thinking ist eine **Denkweise des Menschen** nicht der Maschinen.
-Es bedeutet nicht wie ein Computer zu denken, sondern wie ein *Informatiker* oder eine *Informatikerin*.
+Es bedeutet nicht wie ein Computer, sondern wie ein *Informatiker* oder eine *Informatikerin* zu denken.
 
 Computer sind an sich primitive Maschinen, die wir nutzen um auf kreative Weise spannende Probleme zu lösen.
 Dabei schöpft die *Informatik* ihre formale Basis aus der Mathematik -- sie ist eine *Formal*- bzw. *Strukturwissenschaft*, jedoch keine *Naturwissenschaft*!
 Da *Informatiker\*innen* Systeme erschaffen, die mit der Welt interagieren ist die *Informatik* zudem eine *Ingenieurwissenschaft*.
-Damit **ergänzt und kombiniert** Computational Thinking **formales, mathematisches und schaffendes Denken**. 
+Damit ergänzt und kombiniert Computational Thinking formales, mathematisches und schaffendes Denken. 
 
-Computational Thinking **erzeugt Ideen** und keine Güter.
+Computational Thinking erzeugt Ideen und keine Güter.
 Es es ist nicht nur das Programm oder die Software/Hardware die als Resultat übrig bleibt.
-Computational Thinking erzeugt Konzepte des Berechnens, welche wir in einen Ideenkatalog aufnehmen können um künftige Probleme zu lösen oder die Welt anders interpretieren können.
+Computational Thinking erzeugt Konzepte des Berechnens, welche wir in einen Ideenkatalog aufnehmen können um künftige Probleme zu lösen oder die Welt anders interpretieren zu können.
 Computational Thinking ist für uns alle erlernbar und findet fast überall statt.
 Das Bild der *Informatiker\*innen* als reine Programmierer\*innen ist antiquiert.
 *Computational Thinker\*innen* werden überall gebraucht.
 Die Fähigkeit des Computational Thinkings steckt in jedem von uns und ist heute vielleicht tatsächlich so wichtig wie das Lesen und Schreiben.
 
 Auch in der Forschung sind wir bei weitem davon entfernt alle wichtigen Fragen der *Informatik* beantwortet zu haben.
-Nicht zuletzt ist eines der wichtigsten Probleme das **P-NP-Problem** noch immer ungelöst.
+Nicht zuletzt ist eines der wichtigsten Probleme das *P-NP-Problem* noch immer ungelöst.
 
 Was also ist *Computational Thinking* in einem kurzen knackigen Satz?
 

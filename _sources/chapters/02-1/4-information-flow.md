@@ -1,12 +1,18 @@
 # Der Informationskreislauf
 
-Sie kennen nun die vier grundlegenden Aufgaben eines Computers und wissen wie aus den zwei Zuständen **Strom aus** und **Strom an** Informationen der unterschiedlichsten Art repräsentiert werden können.
-Zudem haben wir uns angesehen, wie aus primitiven Boolschen Operationen, welche über Gatter/Schaltungen realisiert werden, komplexe Berechnungen werden.
-Bereits hier wird deutlich, dass **Abstraktion** und **Komposition** eine zentrale Rolle in der *Informatik* spielen.
-Das konkrete Bild ist auf der **abstrakten Ebene** nichts anderes als eine Folge von $0$ und $1$.
-Durch die **Komposition** und **Hintereinanderschaltung** einfacher Gatter, entstehen aus primitiven Operationen komplexe Berechnungen.
+Sie kennen nun die vier grundlegenden Aufgaben eines Computers und wissen wie er aus den zwei Zuständen **Strom aus** und **Strom an** Informationen der unterschiedlichsten Art repräsentieren kann.
+Zudem haben wir uns angesehen, wie aus primitiven boolschen Operationen, welche über Gatter/Schaltungen realisiert werden, komplexe Berechnungen entstehen.
 
-Wie wird aber aus Gattern, elektrischen Leitungen und dem Speicher ein vollwertiger *Computer* der alle vier grundlegenden Aspekte der **Informationsverarbeitung**
+Bereits an dieser Stelle wird deutlich, dass Abstraktion und Komposition eine zentrale Rolle in der Informatik spielen.
+Das konkrete Rasterbild ist auf der abstrakten Ebene nichts anderes als eine Folge von $0$ und $1$.
+Durch die Komposition und Hintereinanderschaltung/Wiederholung einfacher Gatter, entstehen aus primitiven Operationen komplexe Berechnungen.
+
+Ein einfacher $n$-Bit-Addierer gleicht einem Taschenrechner, doch ist ein Taschenrechner noch kein vollwertiger Computer.
+Manche Taschenrechner lassen sich zwar Programmieren, doch sind sie nicht im Stande all das zu berechnen, was wir als berechenbar wahrnehmen.
+Anders als ein Taschenrechner, ist ein Computer *Turing-vollständig*.
+Weshalb ist er das?
+Wie wird aus Gattern, elektrischen Leitungen und dem Speicher ein vollwertiger (digitaler) Computer der alle vier grundlegenden Aspekte der *Informationsverarbeitung*
+
 1. Informationen **einlesen**
 2. Informationen **speichern**
 3. Informationen **verarbeiten**
@@ -15,7 +21,7 @@ Wie wird aber aus Gattern, elektrischen Leitungen und dem Speicher ein vollwerti
 realisiert?
 
 (sec-von-neumann)=
-## Die von Neumann Architektur
+## Die Von-Neumann-Architektur
 
 Bevor wir diese Frage klären brauchen wir ein konzeptionelles Verständnis der wesentlichen Bauteile und deren grundsätzlichen Interaktion.
 Zusammengenommen bilden sie den *digitalen Computer*.
@@ -30,10 +36,10 @@ Wie der Bauplan eines Hauses, in dem festgelegt ist wie Küche und Bad miteinand
 height: 300px
 name: von-neumann-architecture-2
 ---
-Die von Neumann Architektur auch bekannt als Princeton Architektur.
+Die Von-Neumann-Architektur auch bekannt als Princeton Architektur.
 ```
 
-Die *von Neumann Architektur* ist wohl die bekannteste und zugleich meist verwendete Hardware-Architektur bzw. *Rechnerarchitektur* die den Aufbau der Computer beschreibt.
+Die *Von-Neumann-Architektur* ist wohl die bekannteste und zugleich meist verwendete Hardware-Architektur bzw. *Rechnerarchitektur* die den Aufbau der Computer beschreibt.
 Jeder Rechner den Sie je benutzt haben basiert höchstwahrscheinlich auf dieser Architektur.
 
 ```{admonition} Arbeitsspreicher
@@ -41,34 +47,36 @@ Jeder Rechner den Sie je benutzt haben basiert höchstwahrscheinlich auf dieser 
 Der *Arbeitsspeicher* oder *Hauptspeicher* oder *RAM (Random Acess Memory)* eines Computers ist jener Speicher der die gerade auszuführenden **Programme** oder **Programmteile** und die dabei benötigten **Daten** enthält.
 ```
 
-Die erste wichtige Komponente ist der sogenannten **Hauptspeicher** auch **Arbeitspeicher** genannt.
-Im Bild oben haben wir diesen **Hauptspeicher** und **Festplattenspeicher** mit Speicher zusammengefasst.
+Die erste wichtige Komponente ist der sogenannten *Hauptspeicher*, auch *Arbeitsspeicher* genannt.
+Im Bild oben haben wir *Hauptspeicher* und *Festplattenspeicher* mit Speicher zusammengefasst.
 Was der unterschied dieser beiden Speicherkomponenten ist besprechen wir weiter unten.
-Im **Speicher** befinden sich die Anweisungen der Informationsmanipulation, d.h. das **auszuführende Programm** als auch alle zu verarbeitenden **Daten**, welche vom Programm verarbeitet werden.
+Im *Speicher* befinden sich die Anweisungen der Informationsmanipulation, d.h. das **auszuführende Programm** als auch alle zu verarbeitenden **Daten**, welche vom Programm verarbeitet werden.
 
 ```{admonition} Bus
 :name: def-bus
-Elektrische Leitungen, über welche die [Bits](def-bit) und [Bytes](def-byte) von verschienden Einheiten übermittelt werden nenen wir den *Bus*.
+Elektrische Leitungen, über welche die [Bits](def-bit) und [Bytes](def-byte) von verschiedenen Einheiten übermittelt werden nennen wir den *Bus*.
 ```
 
-Wir sprechen häufig von unterschiedlichen **Bus-Teilen**, zum Beispiel ist die Grafikkarte über den sogenannten PCI-Express Bus mit dem Rest des Computers verbunden.
-Der **interne Bus** auch **Speicher-Bus** oder **System-Bus** genannt, verbindet alle internen Komponenten eines Computers mit der **Hauptplatine** (Motherboard/Mainboard).
-Es gibt aber auch **Bus-Systeme** die unterschiedliche Computer oder andere Geräte (z.B. externen Speicher) miteinander verbinden.
+Wir sprechen häufig von unterschiedlichen *Bus-Teilen*, zum Beispiel ist die Grafikkarte über den sogenannten PCI-Express Bus mit dem Rest des Computers verbunden.
+Der *interne Bus* auch *Speicher-Bus* oder *System-Bus* genannt, verbindet alle internen Komponenten eines Computers mit der *Hauptplatine* (Motherboard/Mainboard).
+Es gibt aber auch *Bus-Systeme* die unterschiedliche Computer oder andere Geräte (z.B. externen Speicher) miteinander verbinden.
 
-Die **Hauptplatine** ist jenes Bauteil auf dem die CPU-nahen Komponenten (CPU, Hauptspeicher, Grafikkarte, interne Bus-Systeme) montiert werden.
+Die *Hauptplatine* ist jenes Bauteil auf dem die CPU-nahen Komponenten (CPU, Hauptspeicher, Grafikkarte, interne Bus-Systeme) montiert werden.
 
-Die **Kontrolleinheit** besteht aus einer Komposition von Gattern, einem **Instruktionsregister** sowie einem [Befehlszeiger](def-program-counter).
+Die *Kontrolleinheit* besteht aus einer Komposition von Gattern, einem *Instruktionsregister* sowie einem [Befehlszeiger](def-program-counter).
 Sie fungiert als Programminterpreter oder 'Mastermind' und delegiert Aufgaben an die jeweils dafür geeigneten Recheneinheiten weiter.
-Sie ließt die Programmanweisungen aus dem **Hauptspeicher** und realisiert diese indem sie die **arithmetische/logische Einheit** mit Instruktionen und den notwendigen, aus dem **Hauptspeicher** geladenen Daten versorgt.
-Fließkommaoperationen delegiert die **Kontrolleinheit** häufig an eine spezielle (hier nicht eingezeichnete) **Fließkommarecheneinheit**.
-Der **Befehlszeiger** beinhaltet eine Hauptspeicheradresse, die auf den aktuelle auszuführenden Befehl im **Hauptspeicher** zeigt. 
-Dieser Befehl, z.B. $\text{ADD}$, wird aus dem **Hauptspeicher** ins **Instruktionsregister** geladen.
-Die Zahlen die addiert werden sollen werden ebenfalls von der **Kontrolleinheit** aus dem **Hauptspeicher** in Register der **arithmetische/logische Einheit** geladen.
-Dann wird die **arithmetische/logische Einheit** aktiviert.
-Diese berechnet das Ergebnis und schreibt es in ein weiteres **Register**.
-Die **Kontrolleinheit** schreibt das Ergebnis an die vom Programm definierte Stelle (Adresse) im **Hauptspeicher**.
+Sie ließt die Programmanweisungen aus dem Hauptspeicher und realisiert diese indem sie die *arithmetische/logische Einheit* mit Instruktionen und den notwendigen, aus dem Hauptspeicher geladenen Daten versorgt.
+Fließkommaoperationen delegiert die Kontrolleinheit häufig an eine spezielle (hier nicht eingezeichnete) *Fließkommarecheneinheit*.
+Der *Befehlszeiger* beinhaltet eine Hauptspeicheradresse, die auf den aktuelle auszuführenden Befehl im Hauptspeicher zeigt. 
+Der Befehl $\text{ADD}$ steht zum Beispiel für die Addition von zwei ganzen Zahlen.
+Er wird allerdings im Hauptspeicher als Binärfolge abgespeichert!
+Ein solcher Befehl wird aus dem Hauptspeicher ins Instruktionsregister geladen.
+Die Zahlen, die addiert werden sollen, werden ebenfalls von der Kontrolleinheit aus dem Hauptspeicher in Register der arithmetische/logische Einheit geladen.
+Dann wird die arithmetische/logische Einheit aktiviert.
+Diese berechnet das Ergebnis und schreibt es in ein weiteres [Register](def-register).
+Die Kontrolleinheit schreibt das Ergebnis an die vom Programm definierte Stelle (Adresse) im Hauptspeicher.
 
-Die Recheneinheiten (**arithmetische/logische Einheit** und **Fließkommarecheneinheit**) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit **Registern** (das was kleine Informationseinheiten enthält) verbunden mit anderen Einheiten über den **Bus** (das was Daten von einer Einheit zur anderen transportiert).
+Die Recheneinheiten (arithmetische/logische Einheit und Fließkommarecheneinheit) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit Registern (das was kleine Informationseinheiten enthält) die mit anderen Einheiten über den [Bus](def-bus) (das was Daten von einer Einheit zur anderen transportiert) verbunden sind.
 
 ```{admonition} Central Processing Unit (CPU)
 :name: def-cpu
@@ -76,31 +84,32 @@ Die Recheneinheiten (**arithmetische/logische Einheit** und **Fließkommarechene
 Der *Hauptprozessor* oder *Central Processing Unit (CPU)* besteht aus Leitungen (Bus), Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkommarecheneinheit.
 ```
 
-**Register** sind die kleinsten aber auch schnellsten *flüchtigen* (engl. volatile) Speichereinheiten.
+*Register* sind die kleinsten aber auch schnellsten *flüchtigen* (engl. volatile) Speichereinheiten.
 Sie sind dafür gedacht die Variablen einer Operation zu halten.
-Addieren wir zum Beispiel zwei Zahlen $x$ und $y$ so werden die Werte aus zwei **Registern** gelesen, die Gatter verrichten ihre Arbeit und legen das Ergebnis in einem neuen Register ab.
+Addieren wir zum Beispiel zwei Zahlen $x$ und $y$ so werden die Werte aus zwei Registern gelesen, die Gatter verrichten ihre Arbeit und legen das Ergebnis in einem neuen Register ab.
 Der Programmcode hierfür könnte wie folgt aussehen:
 
 $$\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3$$
 
 Was soviel heißt wie: Addiere Zahl in Register 1 mit Zahl in Register 2 und speicher das Ergebnis in Register 3.
-**Register** wie auch der **Hauptspeicher** werden aus den gleichen elektrischen Grundbauteilen wie Gatter konstruiert.
+Register wie auch der Hauptspeicher werden aus den gleichen elektrischen Grundbauteilen wie Gatter konstruiert.
 Sogenannte *Flip-Flops* können, anders als reine Logikgatter, elektrische Einheiten stabil halten und freigeben.
 Konzeptionell sind sie eine Kombination aus rückgekoppelten Logikgatter.
-Sie benötigen dafür allerdings eine Stromversorgung weshalb **Register** wie auch der **Hauptspeicher** *flüchtig* sind - sie verlieren alle Daten sobald die Stromverbindung unterbrochen wird.
+Für die Speicherung von Bits benötigen sie allerdings eine Stromversorgung.
+Deshalb sind Register wie auch der Hauptspeicher *flüchtig* - sie verlieren alle Daten sobald die Stromverbindung unterbrochen wird.
 
 ```{admonition} Register
 :name: def-register
 *Register*, sind extrem schnelle kleine flüchtige Speichereinheiten, welche die CPU für viele Operationen verwendet.
 ```
 
-Deshalb werden **Programme** und viele **Daten** als Binärcode oder in anderen Formaten auf einem *persistenten* (*nicht flüchtigen* / engl. *non-volatile*) Speicher wie einer Festplatte *persistent* gespeichert.
-Sie werden vor ihrer Ausführung in den **Hauptspeicher** geladen.
+Deshalb werden Programme und viele Daten als Binärcode oder in anderen Formaten auf einem *persistenten* (*nicht flüchtigen* / engl. *non-volatile*) Speicher wie einer Festplatte *persistent* gespeichert.
+Sie werden vor ihrer Ausführung in den Hauptspeicher geladen.
 Wie und von wem?
 Das sehen wir gleich.
-Die *Flüchtigkeit* der Speicher verleiht ihnen Geschwindigkeit, d.h. es ist möglich in sehr kurzer Zeit Daten in einen *flüchtigen* Speicher zu lesen und zu schreiben.
+Die *Flüchtigkeit* der Speicher verleiht ihnen Geschwindigkeit, d.h. es ist möglich in sehr kurzer Zeit Daten von einen *flüchtigen* Speicher zu lesen und in ihn zu schreiben.
 Der Geschwindigkeitsunterschied ist enorm.
-Anstatt in die nächst gelegene Stadt zu reisen (**Hauptspeicher**), fliegen wir zum Mond (**Festplattenspeicher**).
+Anstatt in die nächst gelegene Stadt zu reisen (Hauptspeicher), fliegen wir zum Mond (Festplattenspeicher).
 
 ```{figure} ../../figs/memory-cache-register.png
 ---
@@ -113,41 +122,42 @@ Zusammenhang zwischen Größe und Geschwindigkeit der verschiedenen *flüchtigen
 ```{admonition} Cache
 :name: def-cache
 
-TODO
-
+Ein *Cache* dient als (kleiner) Puffer.
+Er enthält einen (kleinen) Teil der Daten die zeitlich gesehen gerade verwendet werden.
+Er dient dazu wiederholte Zugriffe auf ein langsames Hintergrundmedium (wie den Hauptspeicher) zu vermeiden.
 ```
 
-Zwischen **Hauptspeicher** und **Register** liegen weitere sehr schneller Speicher, die wir als **Cache** bezeichnen.
+Zwischen Hauptspeicher und Register liegen weitere sehr schneller Speicher, die wir als *Cache* bezeichnen.
 Für unser Verständnis der Funktionsweise können wir sie ignorieren.
-**Caches** sind deutlich kleiner als der Hauptspeicher.
+Caches sind deutlich kleiner als der Hauptspeicher.
 Sie beinhalten die Daten die zuletzt von der CPU verwendet wurden.
-Fordert die CPU diese Daten erneut an, so ist der Zugriff über den **Cache** noch einmal viel schneller als über den Hauptspeicher.
-Dieses Konzept wird verallgemeinert und so gibt es mehrere **Caches** die hintereinandergeschaltet sind.
-Auch der **Cache** ist natürlich *flüchtig*.
+Fordert die CPU diese Daten erneut an, so ist der Zugriff über den Cache noch einmal viel schneller als über den Hauptspeicher.
+Dieses Konzept wird verallgemeinert und so gibt es mehrere Caches die hintereinandergeschaltet sind.
+Auch der Cache ist natürlich *flüchtig*.
 
-```{admonition} Von Neumann vs. Harward Architektur
+```{admonition} Von-Neumann vs. Harward-Architektur
 :class: hint
 :name: neumann-vs-harward
 
 Eine weitere beachtenswerte Architektur ist die sog. *Harward-Architektur*.
-Im Unterschied zur *von Neumann Architektur* hat sie zwei unterschiedliche und separierte Speicher, einen für den Programmcode und einen für die zu verarbeitenden Daten.
-Das verkompliziert die Architektur und erfordert mehr Bauteile, jedoch kann die CPU **gleichzeitig** Programmcode laden als auch in den *Hauptspeicher* schreiben oder aus ihm lesen.
+Im Unterschied zur *Von-Neumann-Architektur* hat sie zwei unterschiedliche und separierte Speicher, einen für den Programmcode und einen für die zu verarbeitenden Daten.
+Das verkompliziert die Architektur und erfordert mehr Bauteile, jedoch kann die CPU **gleichzeitig** Programmcode laden als auch in den [Hauptspeicher](def-main-memory) schreiben oder aus ihm lesen.
 
 ```
 
 Wie spielen die verschiedenen Einheiten der Architektur nun zusammen?
 Folgende Beschreibung liefert eine vereinfachte konzeptionelle Antwort:
 
-**Eingabegeräte** wandeln die eingelesenen Informationen ins Binärsystem.
-Die **CPU (Central Processing Unit)** manipuliert Informationen, wobei sie durch den **Speicher**, d.h. einen Zustand, unterstützt wird.
-Am Ende des Informationskreislaufs wandeln **Ausgabegeräte** die verarbeiteten Informationen in Bild, Ton und andere Formate um.
-Die **Ausgabe** des Computers muss nicht zum Konsum für uns Menschen gedacht sein.
-Sie kann auch als **Eingabe** für andere Computer oder Maschinen dienen.
+*Eingabegeräte* wandeln die eingelesenen Informationen ins Binärsystem um.
+Die [CPU (Central Processing Unit)](def-cpu) manipuliert Informationen, wobei sie durch den *Speicher*, d.h. einen Zustand, unterstützt wird.
+Am Ende des Informationskreislaufs wandeln *Ausgabegeräte* die verarbeiteten Informationen in Bild, Ton und andere Formate um.
+Die *Ausgabe* des Computers muss nicht zum Konsum für uns Menschen gedacht sein.
+Sie kann auch als *Eingabe* für andere Computer oder Maschinen dienen.
 
-Damit die Bits und Byte nicht durcheinander gelesen, manipuliert und geschrieben werden ist die CPU **getaktet**.
+Damit die [Bits](def-bit) und [Byte](def-byte) nicht durcheinander gelesen, manipuliert und geschrieben werden ist die CPU *getaktet*.
 Es gibt eine (global) tickende Uhr, die vorgibt wann die Komponenten aktiv werden können.
-Bei jedem Tick oder anders gesagt, in jedem **CPU-Zyklus**, können die jeweiligen Komponenten aktiv werden.
-Eine CPU die mit 3 Gigherz (GHz) getaktet ist, führt 3 Milliarden Zyklen in der Sekunde durch.
+Bei jedem Tick oder anders gesagt, in jedem *CPU-Zyklus*, können die jeweiligen Komponenten aktiv werden.
+Eine CPU die mit 3 Gigaherz (GHz) getaktet ist, führt 3 Milliarden Zyklen in der Sekunde durch.
 Nicht jede Berechnung oder jeder Speichertransfer benötigt die gleiche Anzahl an Zyklen.
 Zum Beispiel ist benötigt die Division zweier Zahlen deutlich mehr Zyklen als die Addition.
 
@@ -165,11 +175,11 @@ Nun bevor wir dazu kommen, müssen wir überlegen was hierzu nötig ist:
 Wie aber startet der Computer?
 Wie führt er nicht nur einzelne Operationen sondern ein ganzes Programm aus?
 Und wie ist es möglich, dass scheinbar gleichzeitig viele verschiedene Programme auf einem Computer laufen?
-Antworten finden wir wenn wir uns das 'Masterprogramm' eines Computers ansehen: das *Betriebssystem*.
+Antworten finden wir wenn wir uns das 'Masterprogramm' eines Computers ansehen: Das *Betriebssystem*.
 
 ```{admonition} Betriebssystem
 :name: def-operating-system
-Das *Betriebssystem* eines Computers ist ein spezielles Hauptprogramm, welches alle anderen Programme und die Rechnerressourcen verwaltet.
+Das *Betriebssystem* eines Computers ist ein spezielles Hauptprogramm, welches alle anderen Programme und die Rechnerressourcen des Computers verwaltet.
 ```
 
 Das *Betriebssystem* (z.B. Ubuntu, Windows 10, Mac OS) bestimmt wann welches Programm welche Hardware nutzen darf und auf welchen Speicherbereich das jeweilige Programm und der jeweilige Benutzer zugreifen darf.
@@ -188,10 +198,11 @@ Das Betriebssystem wird beim Start des Computers geladen.
 Diesen Vorgang nennen wir *Bootenvorgang* oder kurz das *Booten*.
 ```
 
-Der Schlüssel hierzu ist ein kleineres Programm was auf sog. *Festwertspeicher (ROM)* liegt, welches von der Hardware selbst geladen wird.
+Der Schlüssel hierzu ist ein kleineres Programm was auf dem sog. *Festwertspeicher (ROM)* liegt.
+Dieses Programm wird von der Hardware selbst geladen wird.
 Die Logik um das erste Programm vom *Festwertspeicher* zu laden ist also in den Bauteilen selbst fest verdrahtet (Software in Hardware gegossen).
-Der *Festwertspeicher* kann nur gelesen werden und ist nicht flüchtig.
-Das heißt, das Programm auf dem *Festwertspeicher* bleibt auch nach dem Ausschalten des Computers vorhanden.
+Der Festwertspeicher kann nur gelesen werden und ist nicht flüchtig.
+Das heißt, das Programm auf dem Festwertspeicher bleibt auch nach dem Ausschalten des Computers vorhanden.
 Der Computer zieht sich quasi wie Münchhausen an den Haaren selbst aus dem Sumpf.
 
 (sec-run-program)=
@@ -199,14 +210,14 @@ Der Computer zieht sich quasi wie Münchhausen an den Haaren selbst aus dem Sump
 
 Starten Sie ein Programm, sagen Sie eigentlich dem Betriebssystem Sie möchten dieses oder jenes Programm ausführen.
 Das *Betriebssystem* sorgt dafür, dass es in den Hauptspeicher geladen wird und teilt ihm entsprechende Ressourcen zu.
-Erinnern Sie sich an die *Von Neumann Architektur*!
-Laut dieser liegen die **Daten** als auch die **Programme** im gleichen (flüchtigen) *Hauptspeicher* bzw. *Arbeitsspeicher* (siehe {ref}`von Neumann Architektur <von-neumann-architecture-2>`).
+Erinnern Sie sich an die *Von-Neumann-Architektur*!
+Laut dieser liegen die **Daten** als auch die **Programme** im gleichen (flüchtigen) *Hauptspeicher* bzw. *Arbeitsspeicher* (siehe {ref}`Von-Neumann-Architektur <von-neumann-architecture-2>`).
 Das Programm ist nichts anderes als eine zusammenhängende Folge von $0$ und $1$, welche Befehle repräsentieren.
 Zum Beispiel bedeutet 
 
 $$\text{ADD} \ \$5 \ \$6 \ \$7,$$
 
-dass die Zahl welche in Register $\$5$ steht mit Zahl welche in Register $\$6$ steht addiert wird und das Ergebnis in den Register $\$7$ geschrieben wird.
+dass die Zahl welche in Register $\$5$ steht mit der Zahl die in Register $\$6$ steht addiert wird und das Ergebnis in den Register $\$7$ geschrieben wird.
 Andere Befehle wie etwa
 
 $$\text{LOAD} \ \#15 \ \$5 $$
@@ -220,7 +231,7 @@ laden ($\text{LOAD}$) Daten aus dem Hauptspeicher an der Adresse (Stelle) $\#15$
 Da Informationen mit einer unvorstellbaren Geschwindigkeit durch den Computer rasen, spielt die Distanz der Bauteile zueinander eine große Rolle.
 Register sind nicht nur deutlich schneller als der *Hauptspeicher* sie befinden sich auch viel näher an den Recheneinheiten.
 
-Wenn ein benötigter Wert noch im Register liegt (eventuell von einer zuvor ausgeführten Berechnung) wird dieser nicht erneut vom *Hauptspeicher* geladen.
+Wenn ein benötigter Wert noch im Register liegt (eventuell von einer zuvor ausgeführten Berechnung) wird dieser nicht erneut vom [Hauptspeicher](def-main-memory) geladen.
 Stattdessen benutzt die CPU den Wert im Register und gewinnt dadurch an Berechnungsgeschwindigkeit.
 Sie spart sich einige Zyklen die nötig wären um die Daten aus dem Speicher in den Register zu laden.
 

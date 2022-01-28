@@ -23,80 +23,22 @@ Nehmen Sie sich ein paar gemischter Karten auf die Hand und sortieren Sie diese.
     + Welches Wissen setzen Sie voraus um dem Algorithmus folgen zu können?
 ```
 
-## Mathematisches Denken
-
-Jeder weiß doch wie man **Karten sortiert**, oder?
-Selbst jemand der noch nie Karten sortiert hat, weiß zumindest wie sich vergleichbare Dinge ordnen lassen.
-In der Schule sind wir größer oder kleiner als andere Schüler gewesen.
-Schon sehr früh können wir Objekte ihrer Größe, Länge oder ihres Gewichts nach ordnen.
-Wir gehen davon aus, dass jede Karte einen bestimmten Wert hat und wir die Karten anhand dieser *Ordnungsrelation* sortieren können.
-
-### Ordnung
-
-Das mathematische Denken ist eng mit dem Computational Thinking verknüpft.
-In der Mathematik sind alle Objekte und Operationen präzise und unmissverständlich formuliert.
-Zugleich verzichtet man auf überflüssige Informationen und versucht Definitionen so allgemein oder abstrakt wie möglich zu halten.
-Für die Entwicklung eines [Algorithmus](def-algorithm) zum Sortieren von Karten brauchen wir eine präzise Definition einer *Ordnungsrelation* um Karten vergleichen zu können.
-
-```{admonition} (Totale) Ordnungsrelation
-:name: def-order
-
-Eine *Ordnungsrelation* $R \subset K \times K$ auf einer Menge $K$ (z.B. Menge der Karten) ist eine Relation mit ganz bestimmten Eigenschaften (Reflexivität, Antisymmetrie und Transitivität).
-Befindet sich ein Element $a \in K$ in Relation mit einem anderen Element $b \in K$ schreibt man häufig anstatt $(a,b) \in R$ 
-
-$$a \leq_R b$$
-
-und geht aus dem Kontext hervor welche Relation gemeint ist, schreibt man häufig
-
-$$a \leq b.$$
-
-Die Eigenschaften, die eine *Ordnungsrelation* erfüllen muss sind:
-
-1. Reflexivität: $\forall a \in K : a \leq_R a$
-2. Antisymmetrie: $\forall a, b \in K : a \leq_R b \land b \leq_R a \Rightarrow a = b$
-3. Transitivität: $\forall a, b, c \in K : a \leq_R b \in R \land b \leq_R c \Rightarrow a \leq_R c$
-
-Eine *Ordnungsrelation* ist *total* wenn für alle $a,b \in K$ $a \leq_R b$ oder $b \leq_R a$ gilt.
-
-```
-Ist unsere Menge $K$ die Menge der Karten, wobei wir zwei Karten mit der gleichen Augenzahl aber unterschiedlicher Farbe als gleich ansehen, dann können wir eine *(totale) Ordnungsrelation* auf den Karten definieren. Ist zum Beispiel $K = \{6,7,8,9,10,\text{Bube},\text{Dame},\text{König},\text{Ass}\}$, so wäre
-
-$$R = \{(6,6),(6,7),(6,8),\ldots,(6,A), (7,7), (7,8), \ldots, (\text{König},\text{Ass}), (\text{Ass},\text{Ass})\}$$
-
-eine *(totale) Ordnungsrelation*.
-
-### Reihenfolge
-
-Wir nehmen intuitiv an, dass es genau eine bestimmte *Reihenfolge* der Karten auf der Hand gibt.
-Karten die auf unserer Hand nebeneinander liegen, liegen auch in unserer *Reihenfolge* nebeneinander.
-Nummerieren wir die Karten von links nach rechts, und starten mit der null so ist: 
-
-$$0, 1, 2, 3, 4, 5, 6, \ldots,$$ 
-
-unsere Reihenfolge.
-Allerdings sind auch ganz andere *Reihenfolgen* wie z.B. 
-
-$$0, 2, 4, 6, ..., 1, 3, 5, 7, ... $$
-
-möglich. 
-Jedoch kommt eine solche *Reihenfolgen* nicht in unseren Erfahrungen vor und deshalb schließen wir sie von vornherein aus.
-
 ## Kontext und Missverständnisse
 
 Stets befinden wir uns in einem *Kontext*.
-Dieser *Kontext* enthält Wörter denen er eine ganz bestimmte Bedeutung bzw. Abfolge von Wörtern zuweist.
+Dieser Kontext enthält Wörter denen er eine ganz bestimmte Bedeutung bzw. Abfolge von Wörtern zuweist.
 Fragen wir ein kleines Kind ob es zur Schule geht, meinen wir damit nicht ob es gerade jetzt auf dem Weg zur Schule ist, sondern ob es bereits eingeschult ist.
-In diesem Fall entsteht ein Missverständnis, falls wir und das Kind nicht den gleichen *Kontext* benutzten. 
+In diesem Fall entsteht ein Missverständnis, falls wir und das Kind nicht den gleichen Kontext benutzten. 
 
-Im *Kontext* des Kartensortierens gehen wir davon aus, dass der- oder diejenige, die die Karten sortiert, weiß, was eine *Ordnung*, eine *Reihenfolge* und ein *Vergleich* ist.
+Im Kontext des Kartensortierens gehen wir davon aus, dass der- oder diejenige, die die Karten sortiert, weiß, was eine *Ordnung*, eine *Reihenfolge* und ein *Vergleich* ist.
 Wenn wir die Anweisung
 
 ```python
 Platziere Karte x an die vorderste Stelle
 ```
 
-geben, gehen wir davon aus, dass aus dem *Kontext* klar hervorgeht, was genau zu tun ist.
-Zum Beispiel, dass wir unsere rechte Hand bewegen, mit den Fingern die Karte greifen und an die Position $0$ setzen müssen.
+geben, gehen wir davon aus, dass aus dem Kontext klar hervorgeht, was genau zu tun ist.
+Zum Beispiel, dass wir unsere rechte Hand bewegen, mit den Fingern die Karte greifen und an die Position 0 setzen müssen.
 Die genaue *Realisierung* von 
 
 ```python
@@ -104,12 +46,58 @@ Platziere Karte x an die vorderste Stelle
 ```
 nehmen wir als gegeben an.
 
-Ist in diesem Kontext klar was **Sortiere Karten** bedeuetet (nämlich genau das was wir möchten).
-Wäre folgende Lösung bereits aussreichend:
+Geht aus dem Kontext hervor was genau **Sortiere Karten** bedeutet.
+Wäre folgende Lösung bereits ausreichend:
 
 ```python
 Sortiere Karten
 ```
+
+Geht dies nicht hervor, müssen wir mit den Mitteln die uns zur Verfügung stehen, d.h., mit dem bestehenden Kontext ausdrücken, **wie** das Kartensortieren realisiert wird.
+Der Unterschied zwischen dem **Wie** und dem **Was** ist wichtig zu begreifen.
+Der Kontext beschreibt viele verschiedene **Was**. 
+Mit diesen beschreiben wir **wie** wir ein anderes **Was** realisieren.
+Wir erweitern den Kontext um jenes **Was**, in unserem Fall das Kartensortieren. 
+
+Jede Beschreibung befindet sich auf einem mehr oder weniger abstraktem Level.
+Zum Beispiel können wir schreiben:
+
+```python
+Lege kleinste Karte, welche sich auf der Hand befindet, auf einen Stapel
+Lege kleinste Karte, welche sich auf der Hand befindet, auf einen Stapel
+```
+
+Das **Was** der beiden Zeilen ist: Die zwei kleinsten Karten werden von der Hand auf den Stapel gelegt.
+Das **Wie** beschreiben die beiden Zeilen: Wir nehmen die kleinste Karte auf der Hand und legen sie ab, dann wiederholen wir dies.
+Das **Wie** des einzelnen Schritts, also
+
+```python
+Lege kleinste Karte, welche sich auf der Hand befindet, auf einen Stapel
+```
+
+ist unklar.
+
+Eine gewisse Unklarheit bezüglich des **Wie** wird immer bestehen bleiben.
+Das ist auch nichts ungewöhnliches.
+Selbst wenn wir mit einem Stift auf ein Blatt Papier schreiben ist uns nicht vollkommen klar was auf der Atomebene bei diesem Vorgang vor sich geht.
+Die Frage lautet daher welche Mittel wir zur Verfügung haben und in welchem Kontext wir uns befinden.
+Können wir davon ausgehen, dass aus dem Kontext das **Was** klar hervorgeht?
+Ist also klar, wie wir die kleinste Karte auf der Hand überhaupt finden?
+In unserem Fall würden wir dies mit einem nein beantworten.
+
+Wie sieht es zum Beispiel mit
+
+```python
+Lege dritte Karte von der Hand auf den Stapel
+```
+
+Hier würden wir sagen, dass diese Beschreibung für den Kontext genau genug ist.
+Wir können davon ausgehen, dass die ausführende Einheit (der oder diejenige) weiß **Wie** dieses **Was** durchzuführen ist.
+
+Wir müssen also festlegen was die ausführende Einheit kann und was nicht -- was sie versteht und was nicht.
+Genauso verhält es sich mit dem digitalen Computer und den Programmiersprachen.
+Zusammen geben sie uns einen Kontext in dem bestimmte **Was** kein **Wie** benötigen.
+Während des Programmierens erweitern wir unseren Kontext und können die von uns entwickelten **Was** benutzten.
 
 ## Bewusstes Denken
 
@@ -308,7 +296,7 @@ Skizze des Algorithmus zum Finden der kleinsten Karte auf der Hand.
 
 Wer unseren *Kontext* nur erahnt könnte es mit einem Vergleich, also sind die Karten (Objekte) mit den Namen ``s`` und ``k`` gleich, verwechseln.
 Mit einer anderen [Syntax](def-syntax), können wir solchen Missverständnissen vorbeugen.
-Ändern wir nur die *Syntax* ändert sich die Bedeutung der Ausdrücke ([Semantik](def-semantik)) nicht.
+Ändern wir nur die Syntax ändert sich die Bedeutung der Ausdrücke ([Semantik](def-semantik)) nicht.
 Ein Beispiel wäre
 
 ```
@@ -330,4 +318,81 @@ Für den Vergleich verwendet man üblicherweise ``==``.
 Das kann anfänglich verwirrend sein, da das ``=`` nicht dem mathematischen $=$ entspricht.
 ```
 
+## Mathematisches Denken
 
+Das mathematische Denken ist eng mit dem Computational Thinking verknüpft.
+In der Mathematik sind alle Objekte und Operationen präzise und unmissverständlich formuliert.
+Zugleich verzichtet man auf überflüssige Informationen und versucht Definitionen so allgemein, d.h. abstrakt wie möglich zu halten.
+
+Bei jeder Priorisierung oder Sortierung müssen wir Objekte vergleichen können.
+Das Sortieren von Karten können wir intuitiv ohne großartig darüber nachzudenken.
+Wir haben bereits ein Verständnis durch unsere Lebenserfahrung erlangt.
+Selbst jemand der noch nie Karten sortiert hat, weiß zumindest wie sich vergleichbare Dinge ordnen lassen.
+In der Schule sind wir größer oder kleiner als andere Schüler gewesen.
+Schon sehr früh können wir Objekte ihrer Größe, Länge oder ihres Gewichts nach ordnen.
+
+Für eine genaue und unmissverständliche Beschreibung können wir von der Mathematik Gebrauch machen.
+Sie ist eine internationale äußerst kompakte Sprache mit der wir die Natur beschreiben können.
+Zudem ist die Mathematik bereits entwickelt, wir können uns also vieler Konzepte bedienen, die allgemein bekannt sind.
+Somit drücken wir uns für all jene verständlich aus, die das nötige mathematische Verständnis mitbringen.
+
+Lassen Sie uns zwei wesentliche Dinge mathematisch betrachten, welche wir beim Sortieren der Karten intuitiv verwenden:
+
+1. Die sog. [Ordnungsrelation](def-order) und
+2. Objekte in einer Reihenfolge angeordnet.
+
+
+### Ordnung
+
+Für die Entwicklung eines [Algorithmus](def-algorithm) zum Sortieren von Karten brauchen wir eine präzise Definition einer *Ordnungsrelation* um Karten vergleichen zu können.
+
+```{admonition} (Totale) Ordnungsrelation
+:name: def-order
+
+Eine *Ordnungsrelation* $R \subset K \times K$ auf einer Menge $K$ (z.B. Menge der Karten) ist eine Relation mit ganz bestimmten Eigenschaften (Reflexivität, Antisymmetrie und Transitivität).
+Befindet sich ein Element $a \in K$ in Relation mit einem anderen Element $b \in K$ schreibt man häufig anstatt $(a,b) \in R$ 
+
+$$a \leq_R b$$
+
+und geht aus dem Kontext hervor welche Relation gemeint ist, schreibt man häufig
+
+$$a \leq b.$$
+
+Die Eigenschaften, die eine *Ordnungsrelation* erfüllen muss sind:
+
+1. Reflexivität: $\forall a \in K : a \leq_R a$
+2. Antisymmetrie: $\forall a, b \in K : a \leq_R b \land b \leq_R a \Rightarrow a = b$
+3. Transitivität: $\forall a, b, c \in K : a \leq_R b \in R \land b \leq_R c \Rightarrow a \leq_R c$
+
+Eine *Ordnungsrelation* ist *total* wenn für alle $a,b \in K$ $a \leq_R b$ oder $b \leq_R a$ gilt.
+
+```
+Ist unsere Menge $K$ die Menge der Karten, wobei wir zwei Karten mit der gleichen Augenzahl aber unterschiedlicher Farbe als gleich ansehen, dann können wir eine *(totale) Ordnungsrelation* auf den Karten definieren. Ist zum Beispiel $K = \{6,7,8,9,10,\text{Bube},\text{Dame},\text{König},\text{Ass}\}$, so wäre
+
+$$R = \{(6,6),(6,7),(6,8),\ldots,(6,A), (7,7), (7,8), \ldots, (\text{König},\text{Ass}), (\text{Ass},\text{Ass})\}$$
+
+eine *(totale) Ordnungsrelation*.
+
+### Reihenfolge
+
+Die Karten auf der Hand betrachten wir von links nach rechts.
+Wir nehmen demnach an, dass es genau eine bestimmte *Reihenfolge* der Karten auf der Hand gibt.
+Karten die auf unserer Hand nebeneinander liegen, liegen auch in unserer *Reihenfolge* nebeneinander.
+
+````{admonition} Mathematisches Tupel
+
+Ein *mathematisches Tupel* besteht aus endlich vielen, nicht notwendigerweise voneinander verschiedenen Objekte. 
+Dabei spielt, im Gegensatz zu Mengen, die Reihenfolge der Objekte eine Rolle.
+````
+
+Die Hand mit $n$ Karten lässt sich als sog. $n$-*Tupel* mathematisch ausdrücken.
+Zum Beispiel,
+
+$$H = (6, 7, \text{Bube}, 8, \text{Bube})$$
+
+Wäre ein $5$-Tupel, welches eine Hand *modelliert*, welche die Karten 6, 7, Bube, 8, Bube von links nach rechts beinhaltet.
+
+Anders als mathematische Mengen sind Tupel geordnet und endlich.
+Zugleich können mehrere gleiche Elemente enthalten.
+
+In ``Python`` gibt es zwei Datenstrukturen ([Liste](sec-list), [Tupel](sec-tuple)), welche ein mathematisches endliches Tupel modellieren.

@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -874,7 +875,7 @@
 <p>Bevor wir genauer darauf eingehen wie der Informationskreislauf vollzogen wird, müssen wir uns ansehen wie Computer unterschiedliche Arten von Information (<a class="reference internal" href="#representation-text"><span class="std std-ref">Text</span></a>, <a class="reference internal" href="#representation-sound"><span class="std std-ref">Ton</span></a>, <a class="reference internal" href="#representation-pictures"><span class="std std-ref">Bild</span></a>, usw.) repräsentieren.</p>
 <div class="section" id="das-binarsystem">
 <span id="sec-binary-system"></span><h2><span class="section-number">1.3.1. </span>Das Binärsystem<a class="headerlink" href="#das-binarsystem" title="Permalink to this headline">¶</a></h2>
-<p>Computer arbeiten auf der Basis von zwei Zuständen (0,1).
+<p>Computer arbeiten auf der Basis von zwei Zuständen (0 und 1).
 Man kann sagen sie sprechen die Binärsprache.
 Da die kleinste Informationseinheit, das <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a>, nur zwei Zustände annehmen kann, sind die Operationen äußerst simpel.
 Die Komplexität entsteht durch das Kombinieren und Hintereinanderschalten von Millionen dieser Operationen.</p>
@@ -890,11 +891,11 @@ Entweder die Lampe ist aus (0) oder sie ist an (1).</p>
 <a class="reference internal image-reference" href="../../_images/lamps.png"><img alt="../../_images/lamps.png" src="../../_images/lamps.png" style="width: 200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Eine Lampe die entweder aus (links) oder an (rechts) geschaltet sein kann.</span><a class="headerlink" href="#fig-lamps" title="Permalink to this image">¶</a></p>
 </div>
-<p>Entweder es <strong>fließt Strom hindurch</strong>, was dem Zustand 1 entspricht, oder es <strong>fließt kein Strom hindurch</strong>, was den Zustand 0 darstellt.
-Natürlich könnte man mehr Zustände darstellen indem man misst wie viel Strom fließt oder wie viel Spannung angesetzt ist.
+<p>Entweder es <strong>fließt Strom hindurch</strong>, was dem Zustand 1 entspricht, oder es <strong>fließt kein Strom hindurch</strong>, was den Zustand 0 darstellt.</p>
+<p>Natürlich könnte man mehr Zustände darstellen indem man misst wie viel Strom fließt oder wie viel Spannung angesetzt ist.
 Es hat sich aber herausgestellt, dass das einfache <strong>Strom an</strong> und <strong>Strom aus</strong> robuster, sicherer und effizienter ist.
-So lassen sich die zwei Zustände sehr einfach unterscheiden.
-Mit <strong>Strom an</strong>, <strong>Strom aus</strong> können wir zum Beispiel folgende Mengen repräsentieren:</p>
+So lassen sich die zwei Zustände sehr einfach unterscheiden.</p>
+<p>Mit <strong>Strom an</strong>, <strong>Strom aus</strong> können wir zum Beispiel folgende Mengen repräsentieren:</p>
 <table class="table">
 <colgroup>
 <col style="width: 50%" />
@@ -920,7 +921,7 @@ Mit <strong>Strom an</strong>, <strong>Strom aus</strong> können wir zum Beispi
 </tr>
 </tbody>
 </table>
-<p>Mit einer Lampe können jede zweielementige Menge repräsentieren.
+<p>Mit einer Lampe können wir jede zweielementige Menge repräsentieren.
 Der einzelne Zustand einer Lampe, also <strong>Strom aus</strong> oder <strong>Strom an</strong> nennen wir <em>Bit</em>, es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.</p>
 <div class="admonition-bit admonition" id="def-bit">
 <p class="admonition-title">Bit</p>
@@ -933,7 +934,7 @@ Mit zwei Lampen können wir bereits vier Zustände:</p>
 <p>darstellen. Mit drei Lampen sind es bereits acht:</p>
 <div class="math notranslate nohighlight">
 \[(0,0,0), (0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1).\]</div>
-<p>Mit jedem weiteren Lampe verdoppelt sich die Anzahl der Zustände.
+<p>Mit jeder weiteren Lampe verdoppelt sich die Anzahl der repräsentierbaren Zustände.
 Und somit können wir mit <span class="math notranslate nohighlight">\(n\)</span> Kabeln eine Menge mit <span class="math notranslate nohighlight">\(2^n\)</span> Elementen repräsentieren.
 Dieser exponentieller Anstieg ist enorm wichtig.
 Ohne diese Eigenschaft würden die Speicher der Computer sehr schnell volllaufen.</p>
@@ -942,14 +943,14 @@ Ohne diese Eigenschaft würden die Speicher der Computer sehr schnell volllaufen
 <p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Zwei der <span class="math notranslate nohighlight">\(2^8 = 256\)</span> möglichen Zustände von acht Lampen.</span><a class="headerlink" href="#fig-lamps-example" title="Permalink to this image">¶</a></p>
 </div>
 <p>Weshalb verwenden wir aber kein Zahlensystem mit drei oder mehr Zuständen?
-Wie oben erwähnt ist es aus technischer Sicht, bisher deutlich einfacher und effizienter mit nur zwei Zuständen zu arbeiten.
-Zudem ist die Einsparung die wir durch mehr Zustände erzielen würden unwesentlich.</p>
+Wie oben erwähnt ist es aus technischer Sicht bisher deutlich einfacher und effizienter mit nur zwei Zuständen zu arbeiten.
+Zudem ist die Einsparung, die wir durch mehr Zustände erzielen würden, unwesentlich.</p>
 <p>Wir könnten auch mit nur einem Zustand, z.B. <strong>Strom aus</strong>, Informationen repräsentieren.
 Diese sog. <em>Unärsystem</em> verwenden wir Menschen, wenn wir mit den Händen zählen.
 Das System ist allerdings für größere Datenmengen ungeeignet, da wir für eine Menge mit <span class="math notranslate nohighlight">\(n\)</span> Elementen <span class="math notranslate nohighlight">\(n\)</span> <em>Bits</em> bräuchten, um diese zu repräsentieren.
 Wechseln wir zu einem System mit drei Zuständen, bräuchten wir im Vergleich zum <em>Binärsystem</em> noch weniger <em>Bits</em>, doch ist das was wir gewinnen unwesentlich.
-Der Grund ist das Verhalten des Logarithmus.
-Der folgende Plot illustriert wie viele <em>Bits</em> (y-Achse) für eine Menge mit <span class="math notranslate nohighlight">\(n\)</span> Elementen (x-Achse) im jeweiligen Zahlensystem notwendig sind.
+Der Grund ist das Verhalten des Logarithmus.</p>
+<p>Der folgende Plot illustriert wie viele <em>Bits</em> (y-Achse) für eine Menge mit <span class="math notranslate nohighlight">\(n\)</span> Elementen (x-Achse) im jeweiligen Zahlensystem notwendig sind.
 Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingegen der Unterschied zwischen <em>Binär</em> und, zum Beispiel, <span class="math notranslate nohighlight">\(\log_5(n)\)</span> gering ist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -967,21 +968,19 @@ Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingege
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">log_4(n)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">log_5(n)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x102d72490&gt;
-</pre></div>
-</div>
-<img alt="../../_images/2-representation_1_1.png" src="../../_images/2-representation_1_1.png" />
+<img alt="../../_images/2-representation_1_0.png" src="../../_images/2-representation_1_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="zahlen-im-binarsystem">
 <span id="sec-binary-numbers"></span><h2><span class="section-number">1.3.2. </span>Zahlen im Binärsystem<a class="headerlink" href="#zahlen-im-binarsystem" title="Permalink to this headline">¶</a></h2>
 <p>Werfen wir einen genaueren Blick aufs <em>Binärsystem</em> oder auch <em>binäre Zahlensystem</em>.
-Um Zahlen mit <strong>Strom an</strong> und <strong>Strom aus</strong>, also den zwei Zuständen einer Lampe/Transistors/<em>Bit</em> zu repräsentieren verwenden Computer das <em>Binärsystem</em>.</p>
+Um Zahlen mit <strong>Strom an</strong> und <strong>Strom aus</strong>, also den zwei Zuständen einer Lampe/Transistors/<em>Bit</em> zu repräsentieren, verwenden Computer das <em>Binärsystem</em>.</p>
 <div class="hint admonition">
 <p class="admonition-title">Notation mit verschiedenen Zahlensystemen</p>
 <p>Um der Verwirrung vorzubeugen notieren wir eine Zahl <span class="math notranslate nohighlight">\(k\)</span>, geschrieben in der Dezimaldarstellung, auch durch <span class="math notranslate nohighlight">\(k_{10}\)</span>
@@ -1008,7 +1007,7 @@ Eine Zahl als Folge von Ziffern <span class="math notranslate nohighlight">\(b_{
 <div class="math notranslate nohighlight">
 \[1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 0 + 1 = 13.\]</div>
 <p><span class="math notranslate nohighlight">\(1001_2\)</span> (binär) und <span class="math notranslate nohighlight">\(13_{10}\)</span> (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung ist eine andere.
-Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welche Wert <span class="math notranslate nohighlight">\(1001_2\)</span> repräsentiert.</p>
+Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welchen Wert <span class="math notranslate nohighlight">\(1001_2\)</span> repräsentiert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung</span>
@@ -1032,7 +1031,7 @@ Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um 
 </div>
 <p>Ok, wir können also eine Binärzahl (= Zahl in Binärdarstellung) recht einfach in eine Dezimalzahl umwandeln.
 Wie aber wandeln wir eine Dezimalzahl in eine Binärzahl um?</p>
-<div class="hint admonition" id="def-euclid-division">
+<div class="admonition-restwertdivision admonition" id="def-euclid-division">
 <p class="admonition-title">Restwertdivision</p>
 <p>Für zwei ganze Zahlen <span class="math notranslate nohighlight">\(n, m \in \mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(m \neq 0\)</span> gibt es zwei eindeutige ganze Zahlen <span class="math notranslate nohighlight">\(a, r \in \mathbb{Z}\)</span>, sodass</p>
 <div class="math notranslate nohighlight">
@@ -1147,14 +1146,21 @@ Alles was der Computer kennt sind Bits und Bytes.
 Wollen wir also anstatt der natürlichen Zahlen die ganzen Zahlen repräsentieren, müssen wir das Vorzeichen irgendwie codieren.</p>
 <p>Wollen wir ganze Zahlen repräsentieren so entscheidet das höchste <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a>, ob es sich bei der Zahl um eine negative oder positive Zahl handelt.
 Eine Möglichkeit wäre es dieses höchste <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> als <code class="docutils literal notranslate"><span class="pre">-</span></code> zu interpretieren, wenn es den Wert 1 hat und als <code class="docutils literal notranslate"><span class="pre">+</span></code> andernfalls.
-In diesem Fall könnten wir Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(1.3)</a> verwenden, mit dem Unterschied, dass wir das höchste bit ausschließen und stattdessen als Vorzeichen interpretieren.</p>
+In diesem Fall könnten wir Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(1.3)</a> verwenden, mit dem Unterschied, dass wir das höchste Bit ausschließen und stattdessen als Vorzeichen interpretieren.</p>
 <p>So wäre</p>
 <div class="math notranslate nohighlight">
 \[1011_2 = -011_2 = -3_{10}.\]</div>
 <p>Möchte man jedoch mit dieser Codierung rechnen, ergeben sich einige Schwierigkeiten.
 Zudem verlieren wir ein Bit für das Vorzeichen.</p>
+<div class="admonition-komplement-einer-bitfolge admonition" id="def-complement">
+<p class="admonition-title">Komplement einer Bitfolge</p>
+<p>Das <em>Komplement</em> einer Bitfolge <span class="math notranslate nohighlight">\(b_{n-1} \ldots b_0\)</span>, geschrieben als</p>
+<div class="math notranslate nohighlight">
+\[\overline{b_{n-1} \ldots b_0},\]</div>
+<p>erhalten wir indem wir jedes Bit mit dem Wert <span class="math notranslate nohighlight">\(0\)</span> mit einem Bit mit dem Wert <span class="math notranslate nohighlight">\(1\)</span> und jedes Bit mit dem Wert <span class="math notranslate nohighlight">\(1\)</span> mit einem Bit mit dem Wert <span class="math notranslate nohighlight">\(0\)</span> ersetzten.</p>
+</div>
 <p>Anstatt das Vorzeichen und den Betrag als getrennte Teile der Binärfolge zu codieren bietet das sogenannte <em>Zweierkomplement</em>, oder auch 2-Komplement, die bevorzugte Codierung für negative Zahlen.
-Das höchste Bit wird dabei nicht als Vorzeichen, sondern als negativen Anteil interpretiert.</p>
+Das höchste Bit wird dabei nicht als Vorzeichen, sondern als negativer Anteil interpretiert.</p>
 <p>So ist</p>
 <div class="math notranslate nohighlight">
 \[1011_2 = -2^3 \cdot 1 + 2^2 \cdot 0 + 2^1 \cdot 1 + 2^0 \cdot 1 = -8 + 2 + 1 = -5\]</div>
@@ -1182,7 +1188,7 @@ Sei <span class="math notranslate nohighlight">\(b_{n-1} \ldots b_0\)</span> ein
 <div class="math notranslate nohighlight">
 \[\overline{b_{n-1} \ldots b_0} + 1\]</div>
 <p>gleich <span class="math notranslate nohighlight">\(-k\)</span>.
-Dies gilt sowohl für positive wie auch negative Zahlen <span class="math notranslate nohighlight">\(k\)</span>!</p>
+Dies gilt sowohl für positive wie auch negative Zahlen <span class="math notranslate nohighlight">\(k\)</span>.</p>
 <div class="exercise admonition" id="complement-of-complement-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.5 </span>(Komplement des Komplements (schwer))</p>
 <div class="section" id="exercise-content">
@@ -1195,15 +1201,13 @@ Dies gilt sowohl für positive wie auch negative Zahlen <span class="math notran
 <div class="solution dropdown admonition" id="complement-of-complement-solution">
 <p class="admonition-title">Solution to <a class="reference external" href="#complement-of-complement-exercise"><span>Exercise 1.5</span></a></p>
 <div class="section" id="solution-content">
-<p>Angenommen das niederste Bit <span class="math notranslate nohighlight">\(b_0\)</span> ist gleich <span class="math notranslate nohighlight">\(1\)</span>.
-Dann folgt <span class="math notranslate nohighlight">\(\overline{b_{n-1}\ldots b_0} + 1 = \overline{b_{n-1}\ldots b_1}1\)</span>, d.h., <span class="math notranslate nohighlight">\(b_0\)</span> bleibt <span class="math notranslate nohighlight">\(1\)</span> und der erst der Bits werden komplementiert.
-Wiederholen wir dies, werden diese Bits bis auf <span class="math notranslate nohighlight">\(b_0\)</span> erneut komplementiert und <span class="math notranslate nohighlight">\(b_0\)</span> bleibt <span class="math notranslate nohighlight">\(1\)</span>.</p>
-<p>Angenommen das niederste Bit <span class="math notranslate nohighlight">\(b_0\)</span> ist gleich <span class="math notranslate nohighlight">\(0\)</span>.
-Sei <span class="math notranslate nohighlight">\(b_k\)</span> das niedrigste erste Bit welches den Wert <span class="math notranslate nohighlight">\(1\)</span> annimmt.
-Dann folgt <span class="math notranslate nohighlight">\(\overline{b_{n-1}\ldots b_0} = \overline{b_{n-1}\ldots b_{k-1}}01\ldots 1\)</span>.
-In anderen Worten <span class="math notranslate nohighlight">\(b_k\)</span> wird zu <span class="math notranslate nohighlight">\(0\)</span> und alle niedrigeren Bits nehmen den Wert <span class="math notranslate nohighlight">\(1\)</span> an.
+<p>Sei <span class="math notranslate nohighlight">\(b_k\)</span> das niedrigste erste Bit welches den Wert <span class="math notranslate nohighlight">\(1\)</span> annimmt.
+Dann folgt</p>
+<div class="math notranslate nohighlight">
+\[\overline{b_{n-1}\ldots b_0} = \overline{b_{n-1}\ldots b_{k-1}}01\ldots 1.\]</div>
+<p>In anderen Worten <span class="math notranslate nohighlight">\(b_k\)</span> wird zu <span class="math notranslate nohighlight">\(0\)</span> und alle niedrigeren Bits nehmen den Wert <span class="math notranslate nohighlight">\(1\)</span> an.
 Addieren wir nun <span class="math notranslate nohighlight">\(1\)</span> werden alle diese niediederen Bit <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(b_k\)</span> nimmt den Wert <span class="math notranslate nohighlight">\(1\)</span> an.
-Alle höheren Bits bleiben unberührt.</p>
+Alle höheren Bits bleiben unberührt:</p>
 <div class="math notranslate nohighlight">
 \[\overline{b_{n-1}\ldots b_{k-1}}01\ldots 1 + 1 = \overline{b_{n-1}\ldots b_{k-1}}10\ldots 0\]</div>
 <p>Wiederholen wir diesen Vorgang ergibt sich</p>
@@ -1212,13 +1216,6 @@ Alle höheren Bits bleiben unberührt.</p>
 </div>
 </div>
 <p>Das Bilden des Komplements ist für den Computer eine äußerst einfache und schnelle Operation, siehe Abschnitt <a class="reference internal" href="3-manipulation.html#sec-manipulation"><span class="std std-ref">Manipulation</span></a>.</p>
-<div class="admonition-komplement-einer-bitfolge admonition" id="def-complement">
-<p class="admonition-title">Komplement einer Bitfolge</p>
-<p>Das <em>Komplement</em> einer Bitfolge <span class="math notranslate nohighlight">\(b_{n-1} \ldots b_0\)</span>, geschrieben als</p>
-<div class="math notranslate nohighlight">
-\[\overline{b_{n-1} \ldots b_0},\]</div>
-<p>erhalten wir indem wir jedes Bit mit dem Wert <span class="math notranslate nohighlight">\(0\)</span> mit einem Bit mit dem Wert <span class="math notranslate nohighlight">\(1\)</span> und jedes Bit mit dem Wert <span class="math notranslate nohighlight">\(1\)</span> mit einem Bit mit dem Wert <span class="math notranslate nohighlight">\(0\)</span> ersetzten.</p>
-</div>
 <p>Wichtig ist festzuhalten, dass jede ganze Zahl als Binärzahl dargestellt werden kann!
 Und da wir jede <strong>ganze Zahl</strong> als Binärzahl, also als Folge von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> darstellen können, können wir all das, was wir durch Zahlen repräsentieren können, auch durch <strong>Strom an</strong> und <strong>Strom aus</strong> endlich vieler Lampen repräsentieren.</p>
 </div>
@@ -1367,10 +1364,10 @@ Zum Beispiel wäre <em>BAD</em> repräsentiert durch <span class="math notransla
 Im Computer würden demnach <span class="math notranslate nohighlight">\(15\)</span> Kabel/Leitungen oder Transistoren die entweder den Zustand <strong>Strom aus</strong> oder <strong>Strom an</strong> haben das Wort repräsentieren.</p>
 <p>Sonderzeichen wie Leerzeichen oder weitere Zeichen müssten wir in unsere Codierung noch einfügen.
 Auch könnten wir einen vollkommen anderen Zeichensatz benutzten.
-Programme die auf diesem aufbauen müssen die Codierung lediglich kennen.
-Auch können wir längere Wörter oder ganze Sätze bilden, brauchen dafür natürlich Speicherplatz.
+Programme die auf diesem aufbauen müssen die Codierung lediglich kennen.</p>
+<p>Auch können wir längere Wörter oder ganze Sätze bilden, brauchen dafür natürlich Speicherplatz.
 In unserem Beispiel benötigt jeder Buchstabe 5 Bits.
-D.h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen wir die Bauteile für mindestens 1500 Bits was wiederum 187.5 Bytes bzw. 0.1875 KibiByte (KB oder KiB) sind.</p>
+D.h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen wir die Bauteile für mindestens 1500 Bits was wiederum 187.5 Bytes bzw. 0.1875 <a class="reference external" href="https://en.wikipedia.org/wiki/Kilobyte">kiloByte</a> (kB) (<span class="math notranslate nohighlight">\(10^3\)</span> Byte) und ca. 0.1831 <a class="reference external" href="https://en.wikipedia.org/wiki/Kilobyte">kibiByte</a> (KB/KiB) (<span class="math notranslate nohighlight">\(2^{10}\)</span> Byte) sind.</p>
 </div>
 <div class="section" id="bilder">
 <span id="representation-pictures"></span><h2><span class="section-number">1.3.4. </span>Bilder<a class="headerlink" href="#bilder" title="Permalink to this headline">¶</a></h2>
@@ -1384,12 +1381,12 @@ Farben werden wiederum durch Zahlen repräsentiert.</p>
 <a class="reference internal image-reference" href="../../_images/pixel-image.png"><img alt="../../_images/pixel-image.png" src="../../_images/pixel-image.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Transformation eines Bildes in <em>Bytes</em> bzw. <em>Bits</em>.</span><a class="headerlink" href="#fig-pixel-image" title="Permalink to this image">¶</a></p>
 </div>
-<p>Eine gängige Möglichkeit ist eine Farbe durch den Anteil von Rot, Grün und Blau (RGB) zu definieren.
+<p>Eine gängige Möglichkeit ist es eine Farbe durch den Anteil von Rot, Grün und Blau (RGB) zu definieren.
 Somit wird ein Pixel durch drei Zahlen repräsentiert und es ist üblich <span class="math notranslate nohighlight">\(256\)</span> Rot-, Blau- und Grün- Intensitäten zu verwenden.
 Damit lassen sich <span class="math notranslate nohighlight">\(256^3\)</span> unterschiedliche Farben repräsentieren. Zum Beispiel repräsentiert</p>
 <div class="math notranslate nohighlight">
 \[(253, 10, 10)\]</div>
-<p>einen sehr rötlicher Farbton.
+<p>einen sehr rötlichen Farbton.
 Für die <span class="math notranslate nohighlight">\(256\)</span> Intensitäten brauchen wir je <span class="math notranslate nohighlight">\(8\)</span> <em>Bits</em>, d.h. ein <em>Byte</em>.</p>
 <div class="admonition-byte admonition" id="def-byte">
 <p class="admonition-title">Byte</p>
@@ -1399,7 +1396,7 @@ Für die <span class="math notranslate nohighlight">\(256\)</span> Intensitäten
 <p class="admonition-title">Byte</p>
 <p>Oftmals ist ein <em>Byte</em> die kleinste Einheit auf die ein Computer zugreift.</p>
 <p><strong>Beispiel:</strong>
-Anstatt beispielsweise ein einzelnes <em>Bit</em> aus dem Speicher in die CPU zu laden, wird ein ganzes <em>Byte</em> gelesen.</p>
+Anstatt beispielsweise ein einzelnes <em>Bit</em> aus dem Speicher in die CPU zu laden, wird ein ganzes oder gar mehrere <em>Bytes</em> gelesen.</p>
 </div>
 <p>Pro Pixel benötigen wir also <span class="math notranslate nohighlight">\(3\)</span> Byte.
 Heute bestehen Bilder oft aus Millionen von Pixeln und ein gewöhnliches Video zeigt ca. <span class="math notranslate nohighlight">\(30\)</span> Bilder pro Sekunde.
@@ -1416,8 +1413,8 @@ Zum Beispiel könnten wir ein Bild durch folgende Zeichenanweisungen beschreiben
 </pre></div>
 </div>
 <p>Was so viel bedeutet wie Zeichne ein Rechteck von <span class="math notranslate nohighlight">\((0,0)\)</span> bis <span class="math notranslate nohighlight">\((100,100)\)</span> und eine Linie definiert durch <span class="math notranslate nohighlight">\((1,1)\)</span> und <span class="math notranslate nohighlight">\((99,99)\)</span> in einer rötlichen Farbe.</p>
-<p>Anstatt des ‘fertigen’ Bildes, speichern wir also eine Vorschrift, wie dieses Bild gezeichnet wird.
-Diese Vorschrift wird in Binärcode umgewandelt und ein Programm, was solch eine Vorschrift lesen kann, kümmert sich um die Umwandlung in eine <em>Rastergrafik</em>.</p>
+<p>Anstatt des ‘fertigen’ Bildes, speichern wir eine Vorschrift bzw. einen <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a>, der angibt wie dieses Bild gezeichnet wird.
+Diese Vorschrift wird in Binärcode umgewandelt und ein Programm, was solch eine Vorschrift lesen bzw. einen solchen Algorithmus ausführen kann, kümmert sich um die Umwandlung in eine <em>Rastergrafik</em>.</p>
 <p>Diese Bilder sind sog. <em>Vektorgrafiken</em>.
 Der Vorteil der <em>Vektorgrafik</em> ist, dass die Beschreibung eine analoge/verlustfreie Beschreibung ist und die Digitalisierung (Verpixelung/Rasterisierung) des Bildes dynamisch, jedesmal wenn das Bild angezeigt wird, vollzogen wird.
 Dadurch ist es möglich die Schärfe des Bildes zu erhalten, selbst wenn Sie hineinzoomen.
@@ -1449,8 +1446,8 @@ Dann können wir entweder alle <span class="math notranslate nohighlight">\(200\
 </pre></div>
 </div>
 <p>was uns 6 Byte kostet.
-Wir bräuchten dann ein Programm, was die Anweisung <code class="docutils literal notranslate"><span class="pre">'ab'*100</span></code> versteht und ausführt.
-Wir reduzieren also Speicherplatz auf Kosten von Rechenzeit.</p>
+Wir bräuchten dann ein Programm (einen Übersetzer), was die Anweisung <code class="docutils literal notranslate"><span class="pre">'ab'*100</span></code> versteht und ausführt.
+Wir verringern somit den verbrauchten Speicherplatz auf Kosten der Rechenzeit.</p>
 </div>
 </div>
 <div class="section" id="ton">
@@ -1461,19 +1458,19 @@ Die Oszillation lässt sich als periodische Funktion über die Zeit darstellen.
 Ton ist nichts anderes als eine Funktion <span class="math notranslate nohighlight">\(f(t)\)</span> der Amplitude (Lautstärke) über die Zeit <span class="math notranslate nohighlight">\(t\)</span>.
 Die Frequenz der Oszillation bestimmt die Tonhöhe.</p>
 <p>Wir können keine Funktion mit nur <strong>Strom aus</strong> und <strong>Strom an</strong> repräsentieren, da diese unendlich viele Werte annimmt.
-Wir können von der Funktion aber eine sogenannte Stichprobe (ein Sample) erstellen.
+Wir können von der Funktion aber eine sogenannte <em>Stichprobe (engl. Sample)</em> erstellen.
 Dazu werten wir die Funktion an endlich vielen Stellen <span class="math notranslate nohighlight">\(t = t_0, \ldots, t_n\)</span> aus und speichern die zugehörigen Werte <span class="math notranslate nohighlight">\(f(t_0), \ldots, f(t_n)\)</span> ab.
-Je mehr Punkte ein Sample für eine Sekunde Ton aufweist und je genauer wir die Amplitude an diesen Punkten treffen, desto genauer wird unsere eigentliche Funktion <span class="math notranslate nohighlight">\(f(t)\)</span> angenähert.</p>
+Je mehr <em>Samples</em> wir pro Sekunde machen und je genauer wir die Amplitude an den Samplepunkten treffen, desto genauer wird unsere eigentliche Funktion <span class="math notranslate nohighlight">\(f(t)\)</span> angenähert.</p>
 <div class="figure align-default" id="fig-sound-wave">
 <a class="reference internal image-reference" href="../../_images/sound-wave.png"><img alt="../../_images/sound-wave.png" src="../../_images/sound-wave.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.4 </span><span class="caption-text">Transformation des analogen Tons in ein digitales Sample.
-Links das analoge Signal und rechts das digitale Sample.
+<p class="caption"><span class="caption-number">Fig. 1.4 </span><span class="caption-text">Transformation des analogen Tons in digitale Samples.
+Links das analoge Signal und rechts die Samples.
 Erst erhöhen wir die Bit-Tiefe (zweite Zeile), dann die Sample-Rate (dritte Zeile).</span><a class="headerlink" href="#fig-sound-wave" title="Permalink to this image">¶</a></p>
 </div>
 <p>Ton wird also als Folge von Zahlen repräsentiert.
 Diese Folge transformieren Lautsprecher in Vibration und damit in Ton.
-Gewöhnlich verwendet man eine sog. Sample-Rate (Stichproben-Rate) von 44.1 kHz, d.h. 44100 Stichproben pro Sekunde.
-Der Wert der Amplitude also <span class="math notranslate nohighlight">\(f(t_i)\)</span> wird heute normalerweise in 32 <em>Bits</em> also 4 <em>Byte</em> repräsentiert.</p>
+Gewöhnlich verwendet man eine sog. <em>Sample-Rate (Stichproben-Rate)</em> von 44.1 kHz, d.h. 44100 Stichproben pro Sekunde.
+Der Wert der Amplitude <span class="math notranslate nohighlight">\(f(t_i)\)</span> wird heute normalerweise durch 32 <em>Bits</em> also 4 <em>Byte</em> repräsentiert.</p>
 <div class="exercise admonition" id="sound-memory-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 1.10 </span>(Speicherplatz)</p>
 <div class="section" id="exercise-content">
