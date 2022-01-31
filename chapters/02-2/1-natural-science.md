@@ -62,7 +62,7 @@ Die Entropie beschreibt die Anzahl der Teilchenanordnungen (Mikrozustände), die
 
 Nun gut, wir wissen was Entropie ist.
 Wie aber definieren Physiker die *Information*?
-Ist die Entropie groß, so bedarf es viel Information um auf die korrekte (mikroskopische) Teilchenanordnung zu schließen.
+Ist die Entropie groß, so bedarf es viel Information um auf die korrekte (mikroskopische) Teilchenanordnung zu schließen -- es bedarf eines größeren *Informationsgehalts*.
 Deshalb ist der Mangel an Information groß.
 
 ```{admonition} Information (Physik)

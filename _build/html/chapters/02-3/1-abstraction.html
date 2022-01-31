@@ -820,22 +820,24 @@
 Der Computer muss erst <em>booten</em>.
 Dann muss das Programm in den Speicher geladen werden.
 Dieses muss ausgeführt werden, was wiederum die zu addierenden Zahlen schlussendlich in Register platziert.
-Die arithmetische Einheit berechnet dann das Ergebnis was wiederum in den Hauptspeicher zurückgeschrieben werden muss.
+Die arithmetische Einheit berechnet dann das Ergebnis, was wiederum in den Hauptspeicher zurückgeschrieben werden muss.
 Welch ein Aufwand!
 Müssen wir uns um all das kümmern?</p>
-<p>Ja und nein lautet unsere Antwort.
-<strong>Programmiersprachen abstrahieren die Spezifika des digitalen Computers.</strong>
-Die Hardware wird durch Programmiersprachen so weit abstrahiert, dass wir uns um Register, Kontrolleinheit, arithmetische Einheit und oft nicht einmal den Hauptspeicher kümmern müssen.
-Je nach Wahl der Programmiersprache unterscheidet sich dieses Abstraktionniveau.</p>
-<p>In <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-computability"><span class="std std-ref">Berechenbarkeit</span></a> haben wir Ihnen gezeigt, dass Computer als auch Programmiersprachen <em>Turing-vollständig</em> sind.
-Der Computer ist eine <em>universelle Turingmaschine</em> und simuliert die <em>Turingmaschinen</em> (Programme) die in seinem Speicher liegen.
-Der Computer spricht <a class="reference internal" href="../02-1/2-representation.html#sec-binary-system"><span class="std std-ref">binär</span></a>, d.h. jeder Teil des Befehls</p>
+<p>Ja und nein lautet unsere Antwort.</p>
+<blockquote>
+<div><p>Programmiersprachen abstrahieren die Spezifika des digitalen Computers.</p>
+</div></blockquote>
+<p>Die Hardware wird durch Programmiersprachen so weit abstrahiert, dass wir uns um Register, Kontrolleinheit, arithmetische Einheit und oft nicht einmal mehr um den Hauptspeicher kümmern müssen.
+Je nach Wahl der Programmiersprache unterscheidet sich dieses <em>Abstraktionsniveau</em>.</p>
+<p>In <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-computability"><span class="std std-ref">Berechenbarkeit</span></a> haben wir Ihnen gezeigt, dass Computer als auch Programmiersprachen <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a> sind.
+Der Computer ist eine <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-utm"><span class="std std-ref">universelle Turingmaschine</span></a> und simuliert die <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-universal-turing-machine"><span class="std std-ref">Turingmaschinen</span></a> (Programme) die in seinem Speicher liegen.
+Der Computer spricht <a class="reference internal" href="../02-1/2-representation.html#sec-binary-system"><span class="std std-ref">binär</span></a>, d.h., jeder Teil des Befehls</p>
 <div class="math notranslate nohighlight">
 \[\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3\]</div>
 <p>wird durch codiert und durch eine Folge von <span class="math notranslate nohighlight">\(0\)</span>, und <span class="math notranslate nohighlight">\(1\)</span> repräsentiert.
 Zum Beispiel könnte es sein, dass <span class="math notranslate nohighlight">\(\text{ADD }\)</span> durch <span class="math notranslate nohighlight">\(1001\)</span> codiert wird.
 Uns Menschen fällt es extrem schwer ein Programm in Form einer langen Sequenz von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> zu lesen.
-Deshalb gibt es Programme (<em>Interpreter</em> oder <em>Compiler</em>), die einen abstrakten Programmcode, geschrieben in Sprache <code class="docutils literal notranslate"><span class="pre">A</span></code> in maschinennäheren Code der Sprache <code class="docutils literal notranslate"><span class="pre">B</span></code> überführen.</p>
+Deshalb gibt es Programme (<a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> und <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">Compiler</span></a>), die einen abstrakten Programmcode, geschrieben in Sprache <span class="math notranslate nohighlight">\(L_1\)</span> in maschinennäheren Code der Sprache <span class="math notranslate nohighlight">\(L_2\)</span> überführen.</p>
 <p>In sogenannten Hochsprachen kümmern Sie sich nicht mehr um Register.
 Ein Befehl wie</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>

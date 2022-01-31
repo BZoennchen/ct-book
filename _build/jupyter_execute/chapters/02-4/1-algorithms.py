@@ -1,12 +1,10 @@
 # Algorithmen
-Donald Knuth definiert in seiner Bibel der Programmierung (*The Art of Programming*) einen Algorithmus wie folgt:
-
->Ein \[Computer-\]Algorithmus ist eine endliche Folge von Anweisung um für eine bestimmte Eingabe eine bestimmte Ausgabe zu erzeugen.
-Jede Anweisung bzw. jeder Schritt muss so präzise und unmissverständlich beschrieben sein, sodass er von einer Maschine verstanden und schlussendlich ausgeführt werden kann. -- Donald Knuth (1977)
+Donald Knuth definiert in seiner Bibel der Programmierung (*The Art of Programming*) einen Algorithmus wie folgt.
 
 ```{admonition} Algorithmus
 :name: def-algorithm
-Ein Algorithmus ist eine endliche Folge von unmissverständlich beschriebenen ausführbaren Anweisung (z.B. Text/Programmcode) um für eine bestimmte endliche Eingabe in endlich vielen Schritten eine endliche Ausgabe zu erzeugen (wobei zu jeder Zeit der Ausführung nur endlich viel Speicherplatz verwendet wird).
+
+Ein Algorithmus ist eine endliche Folge von unmissverständlich beschriebenen ausführbaren Anweisung (z.B. Text/Programmcode), um für eine bestimmte endliche Eingabe in endlich vielen Schritten eine endliche Ausgabe zu erzeugen, wobei zu jeder Zeit der Ausführung nur endlich viel Speicherplatz verwendet wird.
 ```
 
 Ein Algorithmus hat demnach folgende Eigenschaften:

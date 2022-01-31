@@ -22,25 +22,27 @@ Sie haben gesehen, dass die einfache Addition von zwei natürlichen Zahlen durch
 Der Computer muss erst *booten*.
 Dann muss das Programm in den Speicher geladen werden.
 Dieses muss ausgeführt werden, was wiederum die zu addierenden Zahlen schlussendlich in Register platziert.
-Die arithmetische Einheit berechnet dann das Ergebnis was wiederum in den Hauptspeicher zurückgeschrieben werden muss.
+Die arithmetische Einheit berechnet dann das Ergebnis, was wiederum in den Hauptspeicher zurückgeschrieben werden muss.
 Welch ein Aufwand!
 Müssen wir uns um all das kümmern?
 
 Ja und nein lautet unsere Antwort.
-**Programmiersprachen abstrahieren die Spezifika des digitalen Computers.**
-Die Hardware wird durch Programmiersprachen so weit abstrahiert, dass wir uns um Register, Kontrolleinheit, arithmetische Einheit und oft nicht einmal den Hauptspeicher kümmern müssen.
-Je nach Wahl der Programmiersprache unterscheidet sich dieses Abstraktionniveau.
 
-In [Berechenbarkeit](sec-computability) haben wir Ihnen gezeigt, dass Computer als auch Programmiersprachen *Turing-vollständig* sind.
-Der Computer ist eine *universelle Turingmaschine* und simuliert die *Turingmaschinen* (Programme) die in seinem Speicher liegen.
-Der Computer spricht [binär](sec-binary-system), d.h. jeder Teil des Befehls
+>Programmiersprachen abstrahieren die Spezifika des digitalen Computers.
+
+Die Hardware wird durch Programmiersprachen so weit abstrahiert, dass wir uns um Register, Kontrolleinheit, arithmetische Einheit und oft nicht einmal mehr um den Hauptspeicher kümmern müssen.
+Je nach Wahl der Programmiersprache unterscheidet sich dieses *Abstraktionsniveau*.
+
+In [Berechenbarkeit](sec-computability) haben wir Ihnen gezeigt, dass Computer als auch Programmiersprachen [Turing-vollständig](def-turing-complete) sind.
+Der Computer ist eine [universelle Turingmaschine](sec-utm) und simuliert die [Turingmaschinen](info-universal-turing-machine) (Programme) die in seinem Speicher liegen.
+Der Computer spricht [binär](sec-binary-system), d.h., jeder Teil des Befehls
 
 $$\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3$$
 
 wird durch codiert und durch eine Folge von $0$, und $1$ repräsentiert.
 Zum Beispiel könnte es sein, dass $\text{ADD }$ durch $1001$ codiert wird.
 Uns Menschen fällt es extrem schwer ein Programm in Form einer langen Sequenz von $0$ und $1$ zu lesen.
-Deshalb gibt es Programme (*Interpreter* oder *Compiler*), die einen abstrakten Programmcode, geschrieben in Sprache ``A`` in maschinennäheren Code der Sprache ``B`` überführen.
+Deshalb gibt es Programme ([Interpreter](def-interpreter) und [Compiler](def-compiler)), die einen abstrakten Programmcode, geschrieben in Sprache $L_1$ in maschinennäheren Code der Sprache $L_2$ überführen.
 
 In sogenannten Hochsprachen kümmern Sie sich nicht mehr um Register.
 Ein Befehl wie
@@ -77,8 +79,8 @@ python_compile_mul(3, 4)
 
 ````
 
-Sprachen wie ``Java``, ``Python`` und ``C#`` bieten ein sehr hohes Abstraktionniveau wohingegen ``C++`` maschinennäher ist.
-Doch selbst wenn das Abstraktionniveau weniger hoch ist, können wir uns als Programmier\*innen selbst auf ein höheres Niveau hieven.
+Sprachen wie ``Java``, ``Python`` und ``C#`` bieten ein sehr hohes Abstraktionsniveau wohingegen ``C++`` maschinennäher ist.
+Doch selbst wenn das Abstraktionsniveau weniger hoch ist, können wir uns als Programmierer\*innen selbst auf ein höheres Niveau hieven.
 Nehmen wir zum Beispiel einmal an, unsere Sprache könnte keine Zahlen multiplizieren.
 Das einzige was wir zur Verfügung haben ist die Addition ``+`` und die Möglichkeit Anweisungen ``n``-mal zu wiederholen ``for i in range(n)``.
 Mit diesen Mitteln können wir uns die Multiplikation selbst bauen:

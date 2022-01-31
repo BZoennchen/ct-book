@@ -1,35 +1,51 @@
 (sec-programming-languages)=
 # Programmiersprachen
 
-Ein Algorithmus ist eine endliche Folge von Anweisung um für eine bestimmte Eingabe eine bestimmte Ausgabe zu erzeugen.
+Ein [Algorithmus](def-algorithm) ist eine endliche Folge von Anweisung um für eine bestimmte Eingabe eine bestimmte Ausgabe zu erzeugen.
 Durch Programmiersprachen können wir Algorithmen so niederschreiben, dass der Computer diese abarbeiten kann.
 
 ```{admonition} Lernziel
 :class: learngoals
 
-In diesem Abschnitt möchten wir Ihnen aufzeigen was Programmiersprachen eigentlich sind, wozu sie gebraucht werden, weshalb es verschiedene Sprachen gibt und welche unterschieldichen Eigenschaften diese Sprachen haben können.
+In diesem Abschnitt möchten wir Ihnen aufzeigen was Programmiersprachen eigentlich sind, wozu sie gebraucht werden, weshalb es verschiedene Sprachen gibt und welche unterschiedlichen Eigenschaften diese Sprachen haben können.
 ```
 
 Wie bei einer natürlichen Sprache ist eine Programmiersprache eine Vorschrift auf die man sich zur Verständigung geeinigt hat.
-Sie ist Teil unseres *Kontexts* den wir kennelernen müssen um Programme zu schreiben.
+Sie ist Teil unseres *Kontexts* den wir kennenlernen müssen um Programme zu schreiben.
 Anders als die natürliche Sprache sind Programmiersprachen *unmissverständlich* bzw. *eindeutig*.
 Das soll nicht heißen, dass es einfach ist einen Programmiercode zu verstehen, doch gibt es nur eine eindeutige Interpretation.
 
-Diese Klarheit hat ihren ganz eigenen Reiz.
+Als Theoretiker\*innen betrachten wir Programmiersprachen oft als [universelle Turingmaschinen](sec-utm).
+Doch sei gesagt, dass es viele Programmierer\*innen und auch Entwickler\*innen von Programmiersprachen gibt, die sich mit [Turingmaschinen](info-turingmaschine) nicht beschäftigen.
+Wir raten Ihnen dennoch sich mit dem Konzept der Turingmaschine zu beschäftigen.
+
+Die Klarheit von Programmiersprachen hat ihren ganz eigenen Reiz.
 Irgendwann werden Sie vielleicht diese Klarheit auch in Texten oder Diskussionen aus ihrem Alltag suchen und werden feststellen, wie schwammig und manchmal diffus so manche Argumentation ist.
 
-Quellcode ist in einer bestimmten Programmiersprache geschrieben.
-Wie natürliche Sprachen definieren Programmiersprachen eine **Syntax**, d.h. Regeln, welche vorgeben wie Sätze in der Sprache aufgebaut sein müssen.
-Wir sprechen bei der **Syntax** auch von einer Beziehung der Symbole zueinander.
-Die **Syntax** vom ``Python`` legt zum Beispiel fest, dass nach dem Wort ``def`` und einem Leerzeichen, ein Name folgen muss.
+Eine Programmiersprache ist durch eine sog. *Grammatik* definiert.
+Diese Grammatik legt die [Syntax](def-syntax) einer Programmiersprache fest.
+Wir sprechen bei der Syntax auch von einer Beziehung der Symbole zueinander.
+In anderen Worten, die Grammatik $G$ einer Programmiersprache $L$ legt fest, welche Zeichenfolge ein syntaktisch korrektes Programm darstellen.
+Das bedeutet ob eine Programmcode $w$ in der Sprache $L$ liegt, die durch eine Grammatik $G$ definiert ist.
+Ist dies der Fall, schreiben wir
+
+$$w \in L(G).$$
+
+Dabei muss dieses Programm $w$ noch lange nicht zum gewünschten Ergebnis führen.
+Quellcode bzw. ein Programm bzw. ein Algorithmus $w$ ist in einer bestimmten Programmiersprache $L$ geschrieben.
+Die Syntax vom ``Python`` legt zum Beispiel fest, dass nach dem Wort ``def`` und einem Leerzeichen, ein Name folgen muss.
 
 ```python
 def function():
     ...
 ```
 
-Welche Bedeutung bzw. **Semantik** die **syntaktisch** korrekten Symbole besitzen, wird ebenfalls von der Programmiersprache festgelegt.
+Welche [Bedeutung/Semantik](def-semantik) die syntaktisch korrekten Symbole besitzen, wird ebenfalls von der Programmiersprache festgelegt.
 So definieren wir durch die obige Zeichenfolge eine neue Funktion mit dem Namen ``function``.
+Beachten Sie, dass wir hier einen informatischen Begriff der Semantik verwenden.
+Diesen haben wir auch im Abschnitt [Interpretation](sec-interpretation) kennengelernt.
+Ein Computer kennt eigentlich keine Bedeutung im menschlichen Sinne. 
+Er kann lediglich Symbole manipulieren.
 
-Um die Sprache nutzten zu können müssen wir sowohl Ihre **Syntax** als auch ihre **Semantik** erlernen.
-Für eine geisteswissenschaftliche Definition der **Syntax** und **Semantik** verweisen wir an dieser Stelle auf das Kapitel [Information](sec-information).
+Um die Sprache nutzten zu können müssen wir sowohl Ihre [Syntax](def-syntax) als auch ihre [Semantik](def-semantik) erlernen.
+Für eine geisteswissenschaftliche Definition der dieser beiden Begriffe verweisen wir an dieser Stelle auf das Kapitel [Information](sec-information).
