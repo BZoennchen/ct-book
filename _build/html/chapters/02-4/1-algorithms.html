@@ -806,13 +806,23 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#euklid-s-algorithmus">
+   4.1.1. Euklid’s Algorithmus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition">
+   4.1.2. Definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#das-was-und-das-wie">
-   4.1.1. Das Was und das Wie
+   4.1.3. Das Was und das Wie
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#die-natur-eines-algorithmus">
-   4.1.2. Die Natur eines Algorithmus
+   4.1.4. Die Natur eines Algorithmus
   </a>
  </li>
 </ul>
@@ -828,37 +838,151 @@
                 
   <div class="section" id="algorithmen">
 <h1><span class="section-number">4.1. </span>Algorithmen<a class="headerlink" href="#algorithmen" title="Permalink to this headline">¶</a></h1>
-<p>Donald Knuth definiert in seiner Bibel der Programmierung (<em>The Art of Programming</em>) einen Algorithmus wie folgt.</p>
-<div class="admonition-algorithmus admonition" id="def-algorithm">
-<p class="admonition-title">Algorithmus</p>
-<p>Ein Algorithmus ist eine endliche Folge von unmissverständlich beschriebenen ausführbaren Anweisung (z.B. Text/Programmcode), um für eine bestimmte endliche Eingabe in endlich vielen Schritten eine endliche Ausgabe zu erzeugen, wobei zu jeder Zeit der Ausführung nur endlich viel Speicherplatz verwendet wird.</p>
+<p>Der Ursprungs des Begriffs <em>Algorithmus</em> war lange Zeit ungeklärt.
+Erst recht spät fanden Historiker*innen heraus, dass der Begriff von der leichten Veränderung des Namens des berühmten persischen Autors <em>Abu Dschaʿfar Muhammad ibn Musa al-Chwārizmī</em> stammt.
+Der Begriff wurde dann durch <em>Algorismi</em> latinisiert und durch <em>Algorismus</em> ins mittelhochdeutsch übersetzt.
+Vor nicht allzu langer Zeit wurde das Wort mit dem griechischen Begriff <em>Arithmetik</em> verknüpft und so entstand schließlich der Name <em>Algorithmus</em>.</p>
+<p>Lange Zeit verstand man darunter die Kombination aus arithmetischen Operationen (Addition, Subtraktion, Multiplikation und Division).
+Um 1950 herum deutete der Begriff auf Euklid’s berühmten Algorithmus zum finden des größten gemeinsamen Teilers.
+Das heißt, ab dieser Zeit verblasste die Vorstellung von der Kombination rein arithmetischer Operationen.
+<em>Algorithmen</em> begannen kombinatorische Operationen und Kontrollstrukturen zu enthalten.</p>
+<p>Heute verbinden wir mit Algorithmus Begriffe wie Rezept, Berechnungsvorschrift, Prozess, Prozedur, Methode, Routine und so weiter.</p>
+<div class="section" id="euklid-s-algorithmus">
+<h2><span class="section-number">4.1.1. </span>Euklid’s Algorithmus<a class="headerlink" href="#euklid-s-algorithmus" title="Permalink to this headline">¶</a></h2>
+<p>Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: Euklid’s Algorithmus.</p>
+<p>Gegeben seien zwei natürliche Zahlen <span class="math notranslate nohighlight">\(n, m \in \mathbb{N}\)</span>.
+Wir suchen nach dem größten gemeinsamen Teiler (ggT) von <span class="math notranslate nohighlight">\(n\)</span> und <span class="math notranslate nohighlight">\(m\)</span>, d.h., die größte natürliche Zahl die sowohl <span class="math notranslate nohighlight">\(n\)</span> als auch <span class="math notranslate nohighlight">\(m\)</span> teilt.</p>
+<p>In unserer Pseudocodeschreibweise, sieht Euklid’s Algorithmus wie folgt aus.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">&lt;-</span> <span class="n">c0</span>
+<span class="n">m</span> <span class="o">&lt;-</span> <span class="n">c1</span>
+<span class="n">Solange</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">r</span> <span class="o">&lt;-</span> <span class="n">n</span> <span class="o">%</span> <span class="n">m</span>
+    <span class="n">n</span> <span class="o">&lt;-</span> <span class="n">m</span>
+    <span class="n">m</span> <span class="o">&lt;-</span> <span class="n">r</span>
+</pre></div>
+</div>
+<p>Dabei sind <code class="docutils literal notranslate"><span class="pre">c0</span></code> und <code class="docutils literal notranslate"><span class="pre">c1</span></code> irgendwelche natürliche Zahlen.
+Die Anweisungen werden von oben nach unten ausgeführt, wobei <code class="docutils literal notranslate"><span class="pre">Solange</span></code> eine Wiederholung markiert.
+Alles was unter dieser Anweisung eingerückt steht, wird wiederholt, solange die Bedingung <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> gilt.
+Nach diesen Schritten ist der Wert auf den die Variable <code class="docutils literal notranslate"><span class="pre">n</span></code>  verweist, der größten gemeinsamen Teiler (ggT) von <code class="docutils literal notranslate"><span class="pre">c0</span></code> und <code class="docutils literal notranslate"><span class="pre">c1</span></code>.
+Die Operation <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">m</span></code> berechnet den Rest der <a class="reference internal" href="../02-1/2-representation.html#def-euclid-division"><span class="std std-ref">Restwertdivision</span></a>.
+Unter <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">&lt;-</span> <span class="pre">n</span> <span class="pre">%</span> <span class="pre">m</span></code> verstehen wir die Zuweisung des Wertes <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">m</span></code> zur Variablen <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p>
+<p>Um einen Algorithmus zu verstehen hilft es oft ihn auszuführen.
+Wir möchten den ggT von <span class="math notranslate nohighlight">\(544\)</span> und <span class="math notranslate nohighlight">\(119\)</span> bestimmen.
+Wir beginnen mit</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(n \leftarrow 544\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m \leftarrow 119\)</span>.</p></li>
+</ol>
+<p>Wir treten in die Wiederholung ein, da <span class="math notranslate nohighlight">\(m &gt; 0\)</span> gilt. Es ergibt sich:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(r \leftarrow 68\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n \leftarrow 119\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m \leftarrow 68\)</span></p></li>
+</ol>
+<p>Erneut treten wir in die Wiederholung ein, da weiterhin <span class="math notranslate nohighlight">\(m &gt; 0\)</span> gilt. Es ergibt sich:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(r \leftarrow 51\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n \leftarrow 68\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m \leftarrow 51\)</span></p></li>
+</ol>
+<p>Erneut treten wir in die Wiederholung ein, da weiterhin <span class="math notranslate nohighlight">\(m &gt; 0\)</span> gilt. Es ergibt sich:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(r \leftarrow 17\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n \leftarrow 51\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m \leftarrow 17\)</span></p></li>
+</ol>
+<p>Erneut treten wir in die Wiederholung ein, da weiterhin <span class="math notranslate nohighlight">\(m &gt; 0\)</span> gilt. Es ergibt sich:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(r \leftarrow 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n \leftarrow 17\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m \leftarrow 0\)</span></p></li>
+</ol>
+<p>Da nun <span class="math notranslate nohighlight">\(m\)</span> den Wert <span class="math notranslate nohighlight">\(0\)</span> hat, verlassen wir die Wiederholung und das Ergebnis steht in <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Lassen Sie uns den Algorithmus in ein <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Programm überführen.
+Dazu schreiben wir eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion <code class="docutils literal notranslate"><span class="pre">gcd(n,m)</span></code> (greatest common divisor).
+Zuweisungen werden in den allermeisten Programmiersprachen anstatt mit <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> mit dem <code class="docutils literal notranslate"><span class="pre">=</span></code> durchgeführt (siehe auch Abschnitt <a class="reference internal" href="../03-3/1-variables.html#sec-assignment"><span class="std std-ref">Initialisierung und Zuweisung</span></a>).
+Das mathematische <span class="math notranslate nohighlight">\(=\)</span> wird aufgrund dessen mit <code class="docutils literal notranslate"><span class="pre">==</span></code> ausgedrückt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="n">m</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">m</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+<span class="n">gcd</span><span class="p">(</span><span class="mi">544</span><span class="p">,</span> <span class="mi">119</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">gcd</span></code> hat zwei Parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> und <code class="docutils literal notranslate"><span class="pre">m</span></code> die mit den Argumenten <code class="docutils literal notranslate"><span class="pre">544</span></code> und <code class="docutils literal notranslate"><span class="pre">119</span></code> initialisiert werden.
+Nachdem die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife (Wiederholung) verlassen wird, gibt die Funktion <code class="docutils literal notranslate"><span class="pre">n</span></code> zurück.</p>
+<p>Das ist also ein Algorithmus.
+Was zeichnet ihn nun genau aus?</p>
+</div>
+<div class="section" id="definition">
+<h2><span class="section-number">4.1.2. </span>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+<p>Nach dieser Intuition wollen wir den Begriff <em>Algorithmus</em> klar definieren.
+Dabei bedienen wir uns bei <em>Donald E. Knuth</em>, dem Autor der Programmierbibel <em>The Art of Programming</em> und Urheber des Textsatzsystems <em>TeX</em>.</p>
+<div class="definition admonition" id="def-algorithm">
+<p class="admonition-title">Algorithmus (informell)</p>
+<p>Ein <em>Algorithmus</em> ist eine endliche Folge von unmissverständlich beschriebenen ausführbaren Anweisung (z.B. Text/Programmcode), um für eine bestimmte endliche Eingabe in endlich vielen Schritten eine endliche Ausgabe zu erzeugen, wobei zu jeder Zeit der Ausführung nur endlich viel Speicherplatz verwendet wird.</p>
 </div>
 <p>Ein Algorithmus hat demnach folgende Eigenschaften:</p>
-<ol class="simple">
-<li><p><strong>Endlichkeit</strong>: Er besteht aus einer endlichen Folge von Anweisungen.</p></li>
-<li><p><strong>Eindeutigkeit</strong>: Jede Anweisung hat eine eindeutige Bedeutung.</p></li>
-<li><p><strong>Ausführbarkeit</strong>: Jede Anweisung ist ausführbar.</p></li>
-<li><p><strong>Gebundenheit</strong>: Bei der Ausführung (unabhängig von der endlichen Eingabe) benötigt der Algorithmus zu jeder Zeit endlich viel Speicher</p></li>
-<li><p><strong>Terminierung</strong>: Der Algorithmus endet nach endlich vielen Schritten</p></li>
-</ol>
-<p>oftmals wird zudem erwartet, dass</p>
-<ol class="simple">
-<li><p><strong>Determiniertheit</strong>: Der Algorithmus erzeugt bei gleicher Eingabe auch die gleiche Ausgabe.</p></li>
-<li><p><strong>Deterministisch</strong>: Während der Ausführung definiert der Algorithmus zu jedem Zeitpunkt die nächste Anweisung.</p></li>
-</ol>
+<p><strong>(1) Endlichkeit:</strong> Genau wie die Beschreibung einer Turingmaschine besteht ein Algorithmus aus endlich vielen Zeichen.
+Anders ausgedrückt, können wir ihn in endlich viel Zeit niederschreiben.
+Durch seine Endlichkeit, kann ein Algorithmus als Programm in einem Speicher abgelegt werden.</p>
+<p><strong>(2) Ausführbarkeit:</strong> Jede Anweisung des Algorithmus muss ausführbar sein.
+Das heißt, die Semantik einer jeden Anweisung muss im jeweiligen Kontext eindeutig definiert sein.
+Es muss in jedem Schritt nicht nur klar sein was zu tun ist, sondern dieses was muss auch tatsächlich möglich sein.</p>
+<p><strong>(3) Gebundenheit:</strong> Während der Ausführung des Algorithmus wird lediglich endlich viel Speicher bzw. eine endliche Anzahl an Variablen benötigt.
+<strong>(1)</strong> und <strong>(4)</strong> stellen sicher, dass ein Programm und dessen Ressourcen zusammengenommen nur endlich viel Speicher verbrauchen.
+In der Komplexitätstheorie spricht man hierbei von <em>dynamischer Finitheit</em> des Speicherbedarfs.</p>
+<p><strong>(4) Terminierung:</strong> Die Ausführung eines Algorithmus muss nach endlich vielen Schritten enden.
+Die Terminierung ist das Gegenstück zur <em>Gebundenheit</em> bezogen auf die Zeit.</p>
+<p><strong>(5) Eingabe:</strong> Jeder Algorithmus hat keine oder mehrere Eingabewerte.</p>
+<p><strong>(6) Ausgabe:</strong> Jeder Algorithmus liefert mindestens eine Ausgabe, d.h., ein Ergebnis zurück.</p>
+<p>Es gibt zwei optionale Eigenschaften für Algorithmen: <strong>(7) Determiniertheit</strong> und <strong>(8) Determinismus</strong>.</p>
+<p><strong>(7) Determiniertheit:</strong> Wir nennen einen Algorithmus <strong>determiniert</strong> wenn er bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.
+Entscheidet ein Algorithmus durch einen <em>echten Münzwurf</em> (keine pseudo Münzwurf) über die den Verlauf der Ausführung, so wäre jener Algorithmus nicht determiniert.
+Algorithmen basieren wenn überhaupt auf Pseudozufallszahlen, deren Erzeugung mit einem Startwert (<em>Seed</em>) initialisiert wird.
+Bei gleichem <em>Seed</em> und gleicher Eingabe erzeugen diese Algorithmen auch das gleiche Ergebnis.
+Da der <em>Seed</em> zur Eingabe gehört, sind jene Algorithmen determiniert.</p>
+<p><strong>(8) Determinismus:</strong> Wir nennen ihn zudem <strong>deterministisch</strong> während seiner Ausführung dieser zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
+Es gibt keine reale Maschine die nichtdeterministische Algorithmen direkt umsetzten kann.
+Ein Beispiel für einen nichtdeterministischen Algorithmus wäre die Wanderung durch ein Labyrinth wobei Sie bei jeder Verzweigung beide Wege zeitgleich ablaufen.
+Dies ist nicht möglich, da Sie sich klonen müssten.
+Verwechseln Sie dies nicht mit der <strong>Parallelität</strong>.
+Es ist natürlich möglich, dass sich zwei Personen bei einer Abzweigung trennen.
+Nichtdeterminismus bedarf jedoch der Kopie des gesamten Zustands der Maschine!</p>
+<div class="definition admonition" id="def-algorithm-formal">
+<p class="admonition-title">Algorithmus (formal)</p>
+<p>Eine Berechnungsvorschrift ist genau dann ein Algorithmus, wenn eine zu dieser Berechnungsvorschrift äquivalente <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschine</span></a> <span class="math notranslate nohighlight">\(T\)</span> existiert, die für jede Eingabe <span class="math notranslate nohighlight">\(w\)</span> stoppt und die gleiche Ausgabe wie die Berechnungsvorschrift liefert.</p>
+</div>
+<p>Im Abschnitt <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-computability"><span class="std std-ref">Berechenbarkeit</span></a> haben wir bereits erwähnt, dass das Halteproblem nicht berechenbar ist.
+D.h., es gibt keine Turingmaschine/Algorithmus die/der für beliebige Turingmaschinen/Algorithmen prüfen kann ob diese terminieren.
+Die <strong>Terminierung</strong> ist damit im Einzelfall zu prüfen.</p>
+</div>
 <div class="section" id="das-was-und-das-wie">
-<span id="sec-what-and-how"></span><h2><span class="section-number">4.1.1. </span>Das Was und das Wie<a class="headerlink" href="#das-was-und-das-wie" title="Permalink to this headline">¶</a></h2>
+<span id="sec-what-and-how"></span><h2><span class="section-number">4.1.3. </span>Das Was und das Wie<a class="headerlink" href="#das-was-und-das-wie" title="Permalink to this headline">¶</a></h2>
 <p>Nach unserer Auffassung muss ein Algorithmus nicht zwangsläufig von einer Maschine verstanden werden.
-Die Unmissverständlichkeit bezieht sich hingegen auf einen bestimmten <em>Kontext</em> und im Falle der von Maschinen ausgeführten Algorithmen gehört die Maschine zu diesem <em>Kontext</em>.
+Die Unmissverständlichkeit bezieht sich hingegen auf einen bestimmten <em>Kontext</em> und im Falle der von Maschinen ausgeführten Algorithmen, gehört die Maschine zu diesem <em>Kontext</em>.
 So ist ein Kochrezept ein Algorithmus der im <em>Kontext</em> der Küche und des Kochens eine (hoffentlich) unmissverständliche endliche Folge von Anweisungen darstellt.
 Durch das Ausführen des Kochrezepts können wir mithilfe von bestimmten Kochutensilien (Eingabe) ein bestimmtes Gericht (Ausgabe) zubereiten.</p>
 <p>Algorithmen lassen sich auch von der ausführenden Einheit, also der Maschine oder dem Koch loslösen.
-Während des entwickeln eines Algorithmus ist uns oft klar was eine bestimmte Anweisung tut, d.h., <strong>was</strong> passiert, doch unklar ist oft <strong>wie</strong> dies realisiert ist.
+Während des Entwickelns eines Algorithmus ist uns oft klar was eine bestimmte Anweisung tut, d.h., <strong>was</strong> passiert, doch unklar ist oft <strong>wie</strong> dies realisiert ist.
 In der Realwelt sind wir daran gewöhnt.
-Wir wissen zwar dass uns der Flieger von München nach Frankfurt bringt, wie das aber im Detail funktioniert ist uns jedoch unklar.
+Wir wissen zwar dass uns der Flieger von München nach Frankfurt bringt, wie das aber im Detail funktioniert ist nicht bekannt.
 Selbst bei den einfachsten Dingen des Alltags wissen wir sehr oft nicht wie die Dinge genau funktionieren.
 Bevor wir uns Gedanken über Hammer und Nagel machen, hauen wir den Hammer in die Wand.</p>
-<p>Ein Beispiel aus der Programmiere wäre folgendes: Nehmen wir an <code class="docutils literal notranslate"><span class="pre">min</span></code> lieft uns die kleinste und <code class="docutils literal notranslate"><span class="pre">max</span></code> die größte Zahl aus einer Liste von Zahlen.
+<p>Ein Beispiel aus der Programmierung wäre folgendes: Nehmen wir an <code class="docutils literal notranslate"><span class="pre">min</span></code> liefert uns die kleinste und <code class="docutils literal notranslate"><span class="pre">max</span></code> die größte Zahl aus einer Liste von Zahlen.
 Wir kennen also das <strong>Was</strong>.
 <strong>Wie</strong> <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code> dies realisieren bleibt im folgenden Algorithmus verborgen und selbstverständlich können wir <code class="docutils literal notranslate"><span class="pre">min</span></code> btw. <code class="docutils literal notranslate"><span class="pre">max</span></code> verwenden ohne das <strong>Wie</strong> zu kennen.</p>
 <div class="cell docutils container">
@@ -910,20 +1034,23 @@ Die zusätzliche Kontrolle, die Sie dann nicht einfach abgeben können, führt d
 </div>
 <p>Je näher Sie an der Maschine programmieren, desto näher befinden Sie sich in der wirklichen physikalischen Welt der Transistoren und elektrischen Schaltkreise.
 Paradoxerweise führt die Nähe zur wirklichen Welt dazu, dass es schwerer wird die wirkliche Welt zu modellieren.
-Wir sprechen hier von zwei verschiedenen Welten, der Welt der elektrischen Schaltkreise und beispielsweise der Welt der Planeten oder die Welt des Kartensortierens.</p>
+Wir sprechen hier von zwei verschiedenen Welten, der Welt der elektrischen Schaltkreise und beispielsweise der Welt der Planeten oder die Welt des Kartensortierens.
+Programmiersprachen katapultieren uns in eine <strong>abstrakte Welt</strong> mit der wir eine konkrete Welt <strong>modellieren</strong> können.
+Das Modell wird durch die konkrete <strong>Computerwelt</strong> schlussendlich berechnet.
+Vergleichen Sie hierzu die <a class="reference internal" href="#fig-world-code-computer"><span class="std std-numref">Abbildung 4.1</span></a>.</p>
 <p>Wie wir uns von der Maschine wegbewegen und so an Abstraktheit gewinnen hat wiederum mit der von uns bereits diskutierten <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> <span class="math notranslate nohighlight">\(I\)</span> zu tun.
 Die oben beschriebene Funktion <code class="docutils literal notranslate"><span class="pre">min_and_max</span></code> führt zu einer neuen Interpretation in welcher <code class="docutils literal notranslate"><span class="pre">min_and_max</span></code> ein Repräsentant ist.
 Dieser repräsentiert alle notwendigen Anweisungen für die Berechnung und Rückgabe des maximalen und minimalen Elements einer Liste.
-<code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code> <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">l_min,</span> <span class="pre">l_max</span></code> können wir als Bedeutungen dieser Interpretation.
+<code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code> <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">l_min,</span> <span class="pre">l_max</span></code> können wir als Bedeutungen dieser Interpretation ansehen.
 Gleichzeitig sind diese Anweisungen wiederum Repräsentanten einer weiteren Interpretation, welche ins Konkretere führt.</p>
 <p>Sogenannte Hochsprachen wie <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C#</span></code> abstrahieren die Welt der elektrischen Schaltkreise in eine phantastische Welt aus Datenstrukturen, Variablen, Funktionen, Klassen und Objekte.
 Pakete und Bibliotheken reichern diese Welt mit weiteren Algorithmen und Datenstrukturen an.
-Diese Pakete und Bibliotheken werden unentwegt von Programmierer*innen durch <em>Computational Thinking</em> erschaffen.
+Diese Pakete und Bibliotheken werden unentwegt von Programmierer*innen durch <a class="reference internal" href="../01-2/what-is-ct.html#sec-what-is-ct"><span class="std std-ref">Computational Thinking</span></a> erschaffen.
 Durch die Abstraktion wird es möglich, dass elektrische Schaltkreise ganze Galaxien simulieren, Fahrzeuge bewegen oder Transaktionen durchführen.
 Schlussendlich basiert jedoch alles auf zwei Zuständen, 0 und 1, unvorstellbar vieler winziger elektrischer Bauteile.</p>
 </div>
 <div class="section" id="die-natur-eines-algorithmus">
-<h2><span class="section-number">4.1.2. </span>Die Natur eines Algorithmus<a class="headerlink" href="#die-natur-eines-algorithmus" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.4. </span>Die Natur eines Algorithmus<a class="headerlink" href="#die-natur-eines-algorithmus" title="Permalink to this headline">¶</a></h2>
 <p>Lassen Sie uns noch ein wenig tiefer in die Natur eines Algorithmus einsteigen.
 Achtung! Es wird ein wenig philosophisch.</p>
 <p>Überlegen Sie sich einmal was die Zahl <span class="math notranslate nohighlight">\(2\)</span> eigentlich ist?
@@ -937,7 +1064,7 @@ Die Idee der <span class="math notranslate nohighlight">\(2\)</span> scheint dur
 Vertreter dieser Strömung (z.b. Gottlob Frege, Kurt Gödel, Hilary Putnam, Penelope Maddy) werden als mathematische Platonisten bezeichnet.</p>
 <p>Nominalisten (z.B. Ludwig Wittgenstein, Rudolf Carnap, Harty Field) lehnen diese Ideenwelt ab und definieren die <span class="math notranslate nohighlight">\(2\)</span> als Objekt in Raum und Zeit, welches ein Repräsentant aller zwei realen Objekte ist.
 So gesehen würde die <span class="math notranslate nohighlight">\(2\)</span> aus unserer Welt verschwinden sobald es keine Repräsentanten von ihr mehr gäbe.</p>
-<p>Das ist ja alles schön und gut aber was hat das mit den Algorithmen zu tun.
+<p>Das ist ja alles schön und gut aber was hat das mit den Algorithmen zu tun?
 Ein Algorithmus kann auch als ein Repräsentant (oder als eine Idee der Ideenwelt) aufgefasst werden.
 Euklid’s Algorithmus zum Finden des größten gemeinsamen Teilers <code class="docutils literal notranslate"><span class="pre">gcd</span></code>, kann in vielen Unterschiedlichen Formen niedergeschrieben werden.
 Der Algorithmus kann sogar nur in unserem Kopf existieren.

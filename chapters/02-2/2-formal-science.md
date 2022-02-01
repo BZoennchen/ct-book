@@ -97,6 +97,7 @@ $$I(\sigma_i) = \log_2\left( \frac{1}{p_i} \right) = -\log_2(p_i).$$
 
 ```{admonition} Entropie (Informatik)
 :name: def-entropie
+:class: definition
 
 Sei $X$ eine Zufallsvariable einer gedächtnislosen Quelle über einem endlichen, aus Zeichen bestehenden Alphabet $\Sigma = \left\{ \sigma_1, \ldots, \sigma_m \right\}$.
 Sei $p_i = P(X = \sigma_i)$ die Wahrscheinlichkeit, dass die Zufallsvariable $X$ das Zeichen $\sigma_i$ annimmt.
@@ -180,6 +181,7 @@ Zudem ist die Summe dieser Teilchen die Information selbst.
 Beim Zusammensetzen der Einzelteile, also der Kombination von Symbolen, entsteht demnach keine neue Qualität, welche eben nicht auf die einzelnen Symbole reduziert werden kann.
 
 ```{admonition} Information (Informatik)
+:class: remark
 Eine *Information* ist eine übertragene Nachricht und kann als die Summe ihrer Einzelteile betrachtet werden.
 ```
 
@@ -191,7 +193,7 @@ Zwar kann der Computer, zum Beispiel zwei Binärzahlen addieren, doch hat er kei
 Alle Manipulationen sind syntaktischer Natur, d.h. eine Manipulation von Zeichen.
 
 ```{admonition} Formale Methoden
-:class: hint
+:class: remark
 Formale Methoden sind unter anderem eine Anstrengung um wesentliche semantische Aspekte von Sprache und Denken auf regelgeleitete, rein syntaktische Symbolmanipulation zurückzuführen.
 ```
 
@@ -209,6 +211,7 @@ Je kürzer der Algorithmus bzw. die Beschreibung, desto weniger Information enth
 
 ```{admonition} Kolmogorow-Komplexität
 :name: def-kolmogorow-complexity
+:class: definition
 
 Für eine Programmiersprache $U$, z.B. beschrieben als [universelle Turingmaschine](sec-utm), ist der *Informationsgehalt* oder *Kolmogorow-Komplexität* $C_U(w)$ einer Zeichenfolge $w$ definiert als die Bitlänge des kürzesten Programms $T$ (z.B. [Turingmaschine](info-turingmaschine)), das ohne weitere Eingabe die Zeichenfolge $w$ als Ausgabe erzeugt. 
 Mathematisch ausgedrückt:
@@ -266,7 +269,7 @@ Das bedeutet, wir können immer die Zeichenkette in Form einer Programmiersprach
 
 ```{admonition} Algorithmische Zufälligkeit
 :name: def-compressible
-
+:class: definition
 Falls die Länge der kürzesten Beschreibung einer Zeichenkette größer oder gleich der Länge der Zeichenkette selbst ist, dann ist nennen wir diese Zeichenkette *algorithmisch zufällig* und *unkomprimierbar*.
 ```
 
@@ -274,8 +277,7 @@ Problematisch an der [Kolmogorow-Komplexität](def-kolmogorow-complexity) und im
 
 ```{admonition} Unberechenbarkeit der Kolmogorow-Komplexität
 :name: def-uncomputable
-:class: warning
-
+:class: theorem
 Sei eine beliebige Zeichenkette $w$ und $U$ eine Programmiersprache gegeben, so ist die Kolmogorow-Komplexität $C_U(w)$ im Allgemeinen **nicht** [berechenbar](def-computable).
 ```
 

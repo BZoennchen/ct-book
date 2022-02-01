@@ -21,7 +21,7 @@ Die elektrischen Signale (**Strom aus** und **Strom an**) gelangen über mikrosk
 *Logikgatter* oder kurz *Gatter* sind konzeptionelle Anordnungen von elektrischen Schaltungen, welche boolsche Operationen durchführen.
 
 ```{admonition} Gatter und Bauteile
-:class: hint
+:class: remark
 
 Gatter beschreiben die Funktionsweise.
 Elektrische Schaltkreise und Transistoren sind eine mögliche Realisierung.
@@ -419,7 +419,7 @@ laddn([1,1,1,1], [1,0,0,1])
 ````
 
 ```{admonition} Modellierung der Gatter und Addierer
-:class: hint
+:class: remark
 Unser ``Python`` Code modelliert den Addierer als Gatterzusammenschluss.
 Natürlich können wir in ``Python`` deutlich einfacher zwei Zahlen addieren.
 ```
@@ -427,7 +427,7 @@ Natürlich können wir in ``Python`` deutlich einfacher zwei Zahlen addieren.
 Es gibt auch noch andere Gatter als **AND**, **NOT** und **OR** z.B. **NAND**, **XOR** oder **NOR**, aber all diese Gatter lassen sich durch die drei fundamentalen Gatter ausdrücken.
 
 ```{admonition} Anzahl, Größer und Geschwindigkeit
-:class: hint
+:class: remark
 Gatter beschreiben die Funktionsweise, realisiert durch Transistoren, sind unvorstellbar klein und können unvorstellbar oft angesteuert werden.
 Transistoren sind dünner als wenige Nanometer (etwa 4000 mal dünner als ein Haar) und lassen sich hunderte Milliarden Mal in der Sekunde ansteuern.
 Zum Beispiel befinden sich auf dem Intel i7 4770K Prozessor ca. 1.4 Milliarden Transistoren auf einer Fläche von 177 Quadratmillimeter.

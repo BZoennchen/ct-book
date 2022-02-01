@@ -31,7 +31,7 @@ Es sind unterschiedliche Denkweisen.
 Wir können rekursiv oder iterativ denken.
 
 ```{admonition} Iteration und Rekursion
-:class: important
+:class: theorem
 Sofern bei der Iteration, die Anzahl der Durchläufe nicht zur Laufzeit vor der Ausführung der Iteration bekannt sein muss, können wir überraschenderweise jede Rekursion in eine Iteration und jede Iteration in eine Rekursion umwandeln!
 ```
 
@@ -104,6 +104,7 @@ Betrachten wir die rekursive Lösung benötigen wir für die Berechnung lediglic
 
 ```{admonition} Rekursion
 :name: def-recursion
+:class: definition
 Als *Rekursion* wird ein Vorgang bezeichnet, welcher sich selbst als Teil enthält oder mithilfe von sich selbst definierbar ist.
 ```
 

@@ -107,7 +107,7 @@ Wir sind darauf trainiert schnelle einigermaßen gute Einschätzungen zu vollzie
 Wenn wir beispielsweise einen Ball fangen möchten, dann starten wir keine komplizierten Berechnungen und lösen ein System von Differentialgleichungen, sondern folgen der sog. Blickheuristik.
 
 ```{admonition} Blickheuristik
-:class: hint
+:class: remark
 
 Ein Fänger, der die Blickheuristik verwendet, beobachtet den Anfangswinkel des Balls und rennt so darauf zu, dass dieser Winkel konstant bleibt.
 ```
@@ -117,7 +117,7 @@ Sie können eine handvoll Karten oder ein kleines Sudoku noch mit Hilfe von Heur
 Und selbst wenn Sie das Problem heuristisch lösen, um Ihre Lösungsstrategie jemandem mitzuteilen, müssen Sie sich ihrer Heuristik bewusst werden!
 
 ```{admonition} Heuristische Algorithmen
-:class: hint
+:class: remark
 
 Heuristische Algorithmen folgen einfachen Daumenregeln die oft zu guten aber nicht zwangsläufig den besten Resultaten führen.
 
@@ -312,7 +312,6 @@ Lege s auf S.
 
 ```{admonition} Zuweisung und Vergleich
 :class: attention
-
 In den allermeisten Programmiersprachen wird eine solche Umbenennung (*Zuweisung*) anstatt durch ``<-`` durch das ``=`` realisiert.
 Für den Vergleich verwendet man üblicherweise ``==``.
 Das kann anfänglich verwirrend sein, da das ``=`` nicht dem mathematischen $=$ entspricht.
@@ -348,6 +347,7 @@ Für die Entwicklung eines [Algorithmus](def-algorithm) zum Sortieren von Karten
 
 ```{admonition} (Totale) Ordnungsrelation
 :name: def-order
+:class: definition
 
 Eine *Ordnungsrelation* $R \subset K \times K$ auf einer Menge $K$ (z.B. Menge der Karten) ist eine Relation mit ganz bestimmten Eigenschaften (Reflexivität, Antisymmetrie und Transitivität).
 Befindet sich ein Element $a \in K$ in Relation mit einem anderen Element $b \in K$ schreibt man häufig anstatt $(a,b) \in R$ 
@@ -380,6 +380,7 @@ Wir nehmen demnach an, dass es genau eine bestimmte *Reihenfolge* der Karten auf
 Karten die auf unserer Hand nebeneinander liegen, liegen auch in unserer *Reihenfolge* nebeneinander.
 
 ````{admonition} Mathematisches Tupel
+:class: definition
 
 Ein *mathematisches Tupel* besteht aus endlich vielen, nicht notwendigerweise voneinander verschiedenen Objekte. 
 Dabei spielt, im Gegensatz zu Mengen, die Reihenfolge der Objekte eine Rolle.

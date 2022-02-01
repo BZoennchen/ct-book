@@ -67,8 +67,8 @@ python_compile_mul(3, 4)
 
 ````
 
-Sprachen wie ``Java``, ``Python`` und ``C#`` bieten ein sehr hohes Abstraktionniveau wohingegen ``C++`` maschinennäher ist.
-Doch selbst wenn das Abstraktionniveau weniger hoch ist, können wir uns als Programmier\*innen selbst auf ein höheres Niveau hieven.
+Sprachen wie ``Java``, ``Python`` und ``C#`` bieten ein sehr hohes Abstraktionsniveau wohingegen ``C++`` maschinennäher ist.
+Doch selbst wenn das Abstraktionsniveau weniger hoch ist, können wir uns als Programmierer\*innen selbst auf ein höheres Niveau hieven.
 Nehmen wir zum Beispiel einmal an, unsere Sprache könnte keine Zahlen multiplizieren.
 Das einzige was wir zur Verfügung haben ist die Addition ``+`` und die Möglichkeit Anweisungen ``n``-mal zu wiederholen ``for i in range(n)``.
 Mit diesen Mitteln können wir uns die Multiplikation selbst bauen:
@@ -115,11 +115,11 @@ werden auf maschinennaher Ebene die Zahlen nebeneinander in den Hauptspeicher ge
 Programme geschrieben in verschiedenen Programmiersprachen steuern den Computer und abstrahieren damit die reale physikalische Welt der elektrischen Schaltungen und Transistoren.
 Sie hieven uns in eine abstrakte Welt der Algorithmen und Datenstrukturen.
 Wir treten aus der Welt der Register und Speicheradressen hinaus in eine Welt der Variablen, Listen, Tupel, Schleifen, Bedingungen, Objekte und alles was wiederum von diesen Konstrukten abstrahiert werden kann.
-Wir verlieren jedoch auch nichts [essenzielles](sec-essenz-of-computers-and-languages), da jede Hochsprache eben auch *Turing-vollständig* ist!
+Wir verlieren jedoch auch nichts [essenzielles](sec-essenz-of-computers-and-languages), da jede Hochsprache eben auch [Turing-vollständig](def-turing-complete) ist!
 
 Als *Computational Thinker\*innen* konzipieren Sie Algorithmen durch Nachdenken, Skizzen und Mitschriften.
-Können Sie ihr Problem durch einen [Algorithmus](def-algorithm) lösen, so existiert eine *Turingmaschine* der ihr Problem löst.
-Da alle gängigen Programmiersprachen *Turing-vollständig* sind, können Sie jeden [Algorithmus](def-algorithm) in einer solchen Sprache formulieren!
+Können Sie ihr Problem durch einen [Algorithmus](def-algorithm) lösen, so existiert eine [Turingmaschinen](info-universal-turing-machine) die ihr Problem löst.
+Da alle gängigen Programmiersprachen Turing-vollständig sind, können Sie jeden [Algorithmus](def-algorithm) in einer solchen Sprache formulieren!
 Diese Gewissheit befreit Sie von
 
 1. der physischen Welt der Computer aber auch
@@ -127,9 +127,9 @@ Diese Gewissheit befreit Sie von
 
 ```{admonition} Nutzen der Programmiersprachen
 :name: languages-usfulness-complete
-:class: hint
+:class: remark
 
-Da alle gängigen [Programmiersprachen](sec-programming-languages) *Turing-vollständig* sind, können Sie jeden [Algorithmus](def-algorithm) in einer solchen Sprache formulieren!
-[Programmiersprachen](sec-programming-languages) sind das Bindeglied zwischen Mensch und Maschine.
+Da alle gängigen Programmiersprachen Turing-vollständig sind, können Sie jeden Algorithmus in einer solchen Sprache formulieren!
+Programmiersprachen sind das Bindeglied zwischen Mensch und Maschine.
 
 ```

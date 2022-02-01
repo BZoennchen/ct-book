@@ -137,11 +137,11 @@ werden auf maschinennaher Ebene die Zahlen nebeneinander in den Hauptspeicher ge
 Programme geschrieben in verschiedenen Programmiersprachen steuern den Computer und abstrahieren damit die reale physikalische Welt der elektrischen Schaltungen und Transistoren.
 Sie hieven uns in eine abstrakte Welt der Algorithmen und Datenstrukturen.
 Wir treten aus der Welt der Register und Speicheradressen hinaus in eine Welt der Variablen, Listen, Tupel, Schleifen, Bedingungen, Objekte und alles was wiederum von diesen Konstrukten abstrahiert werden kann.
-Wir verlieren jedoch auch nichts [essenzielles](sec-essenz-of-computers-and-languages), da jede Hochsprache eben auch *Turing-vollständig* ist!
+Wir verlieren jedoch auch nichts [essenzielles](sec-essenz-of-computers-and-languages), da jede Hochsprache eben auch [Turing-vollständig](def-turing-complete) ist!
 
 Als *Computational Thinker\*innen* konzipieren Sie Algorithmen durch Nachdenken, Skizzen und Mitschriften.
-Können Sie ihr Problem durch einen [Algorithmus](def-algorithm) lösen, so existiert eine *Turingmaschine* der ihr Problem löst.
-Da alle gängigen Programmiersprachen *Turing-vollständig* sind, können Sie jeden [Algorithmus](def-algorithm) in einer solchen Sprache formulieren!
+Können Sie ihr Problem durch einen [Algorithmus](def-algorithm) lösen, so existiert eine [Turingmaschinen](info-universal-turing-machine) die ihr Problem löst.
+Da alle gängigen Programmiersprachen Turing-vollständig sind, können Sie jeden [Algorithmus](def-algorithm) in einer solchen Sprache formulieren!
 Diese Gewissheit befreit Sie von
 
 1. der physischen Welt der Computer aber auch
@@ -149,9 +149,9 @@ Diese Gewissheit befreit Sie von
 
 ```{admonition} Nutzen der Programmiersprachen
 :name: languages-usfulness-complete
-:class: hint
+:class: remark
 
-Da alle gängigen [Programmiersprachen](sec-programming-languages) *Turing-vollständig* sind, können Sie jeden [Algorithmus](def-algorithm) in einer solchen Sprache formulieren!
-[Programmiersprachen](sec-programming-languages) sind das Bindeglied zwischen Mensch und Maschine.
+Da alle gängigen Programmiersprachen Turing-vollständig sind, können Sie jeden Algorithmus in einer solchen Sprache formulieren!
+Programmiersprachen sind das Bindeglied zwischen Mensch und Maschine.
 
 ```

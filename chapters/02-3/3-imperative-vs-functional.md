@@ -12,10 +12,12 @@ kernelspec:
 
 # Imperativ vs. funktional
 
-Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte *Seiteneffekte* nicht erlauben und anstatt Variablen (abänderbar) nur mit Konstanten (unabänderlich) zulassen.
+Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte *Seiteneffekte* nicht erlauben und anstatt Variablen (abänderbar) nur Konstanten (unabänderlich) zulassen.
 
 ```{admonition} Seiteneffekt
-Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und ändert diese Funktion diese, dann sprechen wir von einem *Seiteneffet*.
+:name: def-side-effect
+:class: definition
+Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und ändert diese Funktion diese, dann sprechen wir von einem *Seiteneffekt*.
 ```
 
 In imperativen Programmiersprachen (``Python``, ``Java``, ``C#``, ``C++``, ``C``, ``JavaScript``, ...) sind *Seiteneffekte* manchmal erwünscht und auch notwendig.
@@ -45,20 +47,21 @@ print(no_sideeffect(y))
 print(y)
 ```
 
-Funktionale Sprachen umgehen *Seiteneffekte* indem sie keine Datenstrukturen ändern sondern stattdessen neu erzeugen.
+Funktionale Sprachen umgehen *Seiteneffekte* indem sie keine Datenstrukturen ändern, sondern stattdessen neu erzeugen.
 Fügt man ein neues Element in eine Liste an, entsteht eine komplett neue Liste.
-Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch Konstanten und sog. *Pure Functions* (= mathematische Funktionen).
+Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch Konstanten und sog. *Pure Functions* (mathematische Funktionen).
 
-```{admonition} Pure Function
+```{admonition} Reine Funktion (pure Function)
 :name: def-pure-function
+:class: definition
 
-Eine Funktion nennen wir *Pure Function* wenn
+Eine Funktion nennen wir *reine Funktion* wenn
 1. Der Rückgabewert der Funktion für die gleiche Funktionsargumente stets identisch ist.
 2. Wenn die Funktion keine *Seiteneffekte* hat.
 ```
 
-*Pure Functions* verhalten sich deshalb wie mathematische Funktionen.
-Die folgende Funktion ist eine *Pure Functions*.
+*Reine Funktionen* verhalten sich deshalb wie mathematische Funktionen.
+Die folgende Funktion ist eine *reine Funktion*.
 
 ```{code-cell} python3
 def f(x):
@@ -67,7 +70,7 @@ def f(x):
 print(f(2))
 ```
 
-Folgende Funktion ist keine *Pure Function*.
+Folgende Funktion ist keine *reine Funktion*.
 
 ```{code-cell} python3
 y = 2
@@ -82,9 +85,9 @@ y = 1
 print(f(2))
 ```
 
-````{admonition} Pure Function und Python
-:class: hint
-``Python`` macht es uns schwer keine *Pure Functions* zu konstruieren.
+````{admonition} Reine Funktion und Python
+:class: python
+``Python`` macht es uns schwer keine *reine Funktion* zu konstruieren.
 Zum Beispiel würde folgender Code zu einem Fehler führen:
 
 ```python
@@ -116,7 +119,9 @@ Code der auf Funktionen ohne Seiteneffekte basiert, lässt sich leichter lesen, 
 Besonders wenn die Reihenfolge in der die Funktionen aufgerufen werden nicht mehr eindeutig ist (Parallelität), kann eine Fehlersuche unglaublich schwierig werden, wenn *Seiteneffekte* vorhanden sind.
 ```
 
-Funktionale Sprachen wie ``Haskell`` waren anfänglich reine akademische Sprachen mit denen sich in der Praxis nichts wirklich anfangen ließ.
+Wir besprechen reine Funktionen in ``Python`` im Abschnitt [Reinheit](sec-purity).
+
+Funktionale Sprachen wie ``Haskell`` waren anfänglich rein akademische Sprachen mit denen sich in der Praxis nichts wirklich anfangen ließ.
 Nichtsdestotrotz haben diese Sprachen interessante Konzepte zutage gebracht.
 Von extrem sicher aber unbrauchbar wandern funktionale Sprachen Schritt für Schritt in Richtung extrem sicher und brauchbar.
 
@@ -134,7 +139,7 @@ list(map(square, [1,2,3]))
 
 eine neue Liste mit den quadrierten Zahlen der Ursprungsliste.
 Das besondere dabei ist, dass wir die Funktion ``square`` einer anderen Funktion ``map`` übergeben.
-Funktionen als Übergabeparameter sind ein Konzept der funktionalen Sprachen.
+Funktionen als Übergabeparameter sind ein Konzept der funktionalen Sprachen mit dem Namen [Funktion erster Klasse](sec-first-class-functions) (first class function).
 In ``Haskell`` sieht das ganze wie folgt aus
 
 ```haskell

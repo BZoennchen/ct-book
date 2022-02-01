@@ -79,5 +79,7 @@ Was also ist *Computational Thinking* in einem kurzen knackigen Satz?
 
 ```{admonition} Computational Thinking
 :name: def-ct
+:class: definition
+
 *Computational Thinking* ist der Denkprozess den Informatiker\*innen sich angeeignet haben.
 ```

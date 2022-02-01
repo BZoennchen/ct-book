@@ -10,6 +10,7 @@ Alle Computer basieren auf diesen vier grundlegenden Aufgabe:
 Sie bilden das Fundament eines jeden Computers.
 
 ```{admonition} EVA-Prinzip
+:class: remark
 Der Computer basiert auf dem sog. *EVA-Prinzip* (**Eingabe**, **Verarbeitung** und **Ausgabe**).
 ```
 

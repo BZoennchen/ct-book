@@ -22,8 +22,8 @@ wurde
 Runnable runnable = () -> System.out.println("Hello world two!");
 ```
 
-Java 9 brachte dann das sogenannte ``Type-Inference`` (die automatische Typerkennung).
-Dadurch wird der Datentyp einer Variable aus dem Kontext bestimmt und der Programmierer bzw. die Programmiererin muss diesen nicht explizit angeben.
+Java 9 brachte dann das sogenannte ``Type-Inference`` (die automatische Typ-Erkennung).
+Dadurch wird der Datentyp einer Variable aus dem Kontext bestimmt und die Programmierer\*innen müssen diesen nicht explizit angeben.
 Aus
 
 ```java
@@ -38,7 +38,7 @@ var name = "Julia";
 var age = 23;
 ```
 
-Mit Java 14 kamen dann die ``record``s und aus
+Mit Java 14 kamen dann die ``records`` in die Sprache und aus
 
 ```java
 final class Point {
@@ -58,9 +58,9 @@ wurde
 record Point(int x, int y) { }
 ```
 
-All diese Konzepte sind aus anderen Sprachen (vorallem funktionalen Sprachen) motiviert.
-Sie erweitern die Syntax, d.h. die alte Schreibweise ist immernoch gültig und die Sprache wurde, bezogen auf die angeführten Beispiele, nicht um Funktionalität erweitert, sondern um neue **syntaktische Mittel**.
-Durch die kürzere Schreibweise müssen Programmierer\*innen wissen was dahinter steckt (**Semantik**).
+All diese Konzepte sind aus anderen Sprachen (vor allem funktionalen Sprachen) motiviert.
+Sie erweitern die [Syntax](def-syntax), d.h., die alte Schreibweise ist immer noch gültig und die Sprache wurde, bezogen auf die angeführten Beispiele, nicht um Funktionalität erweitert, sondern um neue syntaktische Mittel.
+Durch die kürzere Schreibweise müssen Programmierer\*innen wissen was dahinter steckt ([Semantik](def-semantik)).
 Es werden also bewerte und sich wiederholende **Muster** vereinfacht.
 
 Neue Hardwareanforderungen übertragen sich auch auf Programmiersprachen.
@@ -70,9 +70,9 @@ Deshalb gibt es statt schnellerer Prozessoren mehr Prozessoren.
 
 Um dies zu nutzen müssen wir mit Parallelität umgehen, doch ist die Entwicklung paralleler Algorithmen schwierig.
 Auch hier wird versucht immer wiederkehrende **Muster** direkt in die Sprache zu übertragen.
-Da für die *Nebenläufigkeit* *Seiteneffekte* besonders problematisch sind, lernen imperative Sprachen auch hier von den funktionalen Sprachen.
+Da für die *Nebenläufigkeit* [Seiteneffekte](def-side-effect) besonders problematisch sind, lernen imperative Sprachen auch hier von den funktionalen Sprachen.
 
-In Java 8 führte man sogenannte ``Stream``s ein, um zum Beispiel eine Liste von Zahlen ohne großen Programmieraufwand parallel addieren zu können:
+In Java 8 führte man sogenannte ``Streams`` ein, um zum Beispiel eine Liste von Zahlen ohne großen Programmieraufwand parallel addieren zu können:
 
 ```java
 // List of Integers

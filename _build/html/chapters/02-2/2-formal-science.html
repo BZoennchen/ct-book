@@ -899,7 +899,7 @@ Jedes Zeichen <span class="math notranslate nohighlight">\(\sigma_i\)</span> kan
 Der <em>Informationsgehalt</em> <span class="math notranslate nohighlight">\(I\)</span>, der dann in dem <span class="math notranslate nohighlight">\(i\)</span>-ten Symbol <span class="math notranslate nohighlight">\(\sigma_i\)</span> steckt, ist dann</p>
 <div class="math notranslate nohighlight">
 \[I(\sigma_i) = \log_2\left( \frac{1}{p_i} \right) = -\log_2(p_i).\]</div>
-<div class="admonition-entropie-informatik admonition" id="def-entropie">
+<div class="definition admonition" id="def-entropie">
 <p class="admonition-title">Entropie (Informatik)</p>
 <p>Sei <span class="math notranslate nohighlight">\(X\)</span> eine Zufallsvariable einer gedächtnislosen Quelle über einem endlichen, aus Zeichen bestehenden Alphabet <span class="math notranslate nohighlight">\(\Sigma = \left\{ \sigma_1, \ldots, \sigma_m \right\}\)</span>.
 Sei <span class="math notranslate nohighlight">\(p_i = P(X = \sigma_i)\)</span> die Wahrscheinlichkeit, dass die Zufallsvariable <span class="math notranslate nohighlight">\(X\)</span> das Zeichen <span class="math notranslate nohighlight">\(\sigma_i\)</span> annimmt.
@@ -967,7 +967,7 @@ Die rein zufällige Folge aus <span class="math notranslate nohighlight">\(0\)</
 <p>Bei Shannon’s Informationsbegriff gehen wir davon aus, dass Information in kleinste Informationsteile (<a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>) zerlegbar sind.
 Zudem ist die Summe dieser Teilchen die Information selbst.
 Beim Zusammensetzen der Einzelteile, also der Kombination von Symbolen, entsteht demnach keine neue Qualität, welche eben nicht auf die einzelnen Symbole reduziert werden kann.</p>
-<div class="admonition-information-informatik admonition">
+<div class="remark admonition">
 <p class="admonition-title">Information (Informatik)</p>
 <p>Eine <em>Information</em> ist eine übertragene Nachricht und kann als die Summe ihrer Einzelteile betrachtet werden.</p>
 </div>
@@ -977,7 +977,7 @@ Eine hohe <a class="reference internal" href="#def-entropie"><span class="std st
 Außerdem kann die Entropie als Informationsgehalt aus Sicht der digitalen Maschine verstanden werden, da sie keinerlei Semantik a priori kennt.
 Zwar kann der Computer, zum Beispiel zwei Binärzahlen addieren, doch hat er keinerlei Vorstellung vom Gegenstand der Zahl.
 Alle Manipulationen sind syntaktischer Natur, d.h. eine Manipulation von Zeichen.</p>
-<div class="hint admonition">
+<div class="remark admonition">
 <p class="admonition-title">Formale Methoden</p>
 <p>Formale Methoden sind unter anderem eine Anstrengung um wesentliche semantische Aspekte von Sprache und Denken auf regelgeleitete, rein syntaktische Symbolmanipulation zurückzuführen.</p>
 </div>
@@ -992,7 +992,7 @@ Um seinen Informationsbegriff auf eine einzelne Zeichenkette zu nutzten, müsste
 Kurz gesagt: Die Kolmogorow-Komplexität einer Zeichenkette ist die Länger ihrer kürzesten Beschreibung.
 Jene Beschreibung ist nichts anderes als ein Algorithmus!
 Je kürzer der Algorithmus bzw. die Beschreibung, desto weniger Information enthält die durch ihn erzeugte/beschriebene Zeichenkette.</p>
-<div class="admonition-kolmogorow-komplexitat admonition" id="def-kolmogorow-complexity">
+<div class="definition admonition" id="def-kolmogorow-complexity">
 <p class="admonition-title">Kolmogorow-Komplexität</p>
 <p>Für eine Programmiersprache <span class="math notranslate nohighlight">\(U\)</span>, z.B. beschrieben als <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-utm"><span class="std std-ref">universelle Turingmaschine</span></a>, ist der <em>Informationsgehalt</em> oder <em>Kolmogorow-Komplexität</em> <span class="math notranslate nohighlight">\(C_U(w)\)</span> einer Zeichenfolge <span class="math notranslate nohighlight">\(w\)</span> definiert als die Bitlänge des kürzesten Programms <span class="math notranslate nohighlight">\(T\)</span> (z.B. <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschine</span></a>), das ohne weitere Eingabe die Zeichenfolge <span class="math notranslate nohighlight">\(w\)</span> als Ausgabe erzeugt.
 Mathematisch ausgedrückt:</p>
@@ -1070,12 +1070,12 @@ Löschen wir ein <span class="math notranslate nohighlight">\(\text{a}\)</span> 
 Kürzere Zeichenketten können nach dieser Definition mehr Informationen enthalten als längere, entscheidend ist deren <em>Beschreibungslänge</em>.</p>
 <p>Die kürzeste Beschreibung kann nicht länger als die nicht-algorithmische Beschreibung der Zeichenkette sein.
 Das bedeutet, wir können immer die Zeichenkette in Form einer Programmiersprache niederschreiben, so wie wir das ganz zu Beginn getan haben.</p>
-<div class="admonition-algorithmische-zufalligkeit admonition" id="def-compressible">
+<div class="definition admonition" id="def-compressible">
 <p class="admonition-title">Algorithmische Zufälligkeit</p>
 <p>Falls die Länge der kürzesten Beschreibung einer Zeichenkette größer oder gleich der Länge der Zeichenkette selbst ist, dann ist nennen wir diese Zeichenkette <em>algorithmisch zufällig</em> und <em>unkomprimierbar</em>.</p>
 </div>
 <p>Problematisch an der <a class="reference internal" href="#def-kolmogorow-complexity"><span class="std std-ref">Kolmogorow-Komplexität</span></a> und im Gegensatz zur <a class="reference internal" href="#def-entropie"><span class="std std-ref">Entropie</span></a> gilt, dass wir sie im Allgemeinen nicht berechnen können.</p>
-<div class="warning admonition" id="def-uncomputable">
+<div class="theorem admonition" id="def-uncomputable">
 <p class="admonition-title">Unberechenbarkeit der Kolmogorow-Komplexität</p>
 <p>Sei eine beliebige Zeichenkette <span class="math notranslate nohighlight">\(w\)</span> und <span class="math notranslate nohighlight">\(U\)</span> eine Programmiersprache gegeben, so ist die Kolmogorow-Komplexität <span class="math notranslate nohighlight">\(C_U(w)\)</span> im Allgemeinen <strong>nicht</strong> <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-computable"><span class="std std-ref">berechenbar</span></a>.</p>
 </div>

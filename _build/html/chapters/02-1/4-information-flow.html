@@ -839,22 +839,22 @@ Zusammengenommen bilden sie den <em>digitalen Computer</em>.
 Eine solche Beschreibung bezeichnen wir als <em>Hardware-Architektur</em>.
 Sie kann selbstverständlich unterschiedlich detailliert ausfallen.
 So gibt es auch Beschreibungen einzelner Bauteile die wiederum die Interaktion ihrer Einzelkomponenten beschreiben.</p>
-<p>Wie der Bauplan eines Hauses, in dem festgelegt ist wie Küche und Bad miteinander verbunden sind und wie die Bewohner das Gebäude nutzen können, legt eine Architektur fest über welche Leitungen beispielweise der Speicher mit den Recheneinheiten interagiert.</p>
+<p>Wie der Bauplan eines Hauses, in dem festgelegt ist wie Küche und Bad miteinander verbunden sind und wie die Bewohner das Gebäude nutzen können, legt eine Architektur fest über welche Leitungen beispielsweise der Speicher mit den Recheneinheiten interagiert.</p>
 <div class="figure align-default" id="von-neumann-architecture-2">
 <a class="reference internal image-reference" href="../../_images/von-neumann-architecture.png"><img alt="../../_images/von-neumann-architecture.png" src="../../_images/von-neumann-architecture.png" style="height: 300px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Die Von-Neumann-Architektur auch bekannt als Princeton Architektur.</span><a class="headerlink" href="#von-neumann-architecture-2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Die <em>Von-Neumann-Architektur</em> ist wohl die bekannteste und zugleich meist verwendete Hardware-Architektur bzw. <em>Rechnerarchitektur</em> die den Aufbau der Computer beschreibt.
 Jeder Rechner den Sie je benutzt haben basiert höchstwahrscheinlich auf dieser Architektur.</p>
-<div class="admonition-arbeitsspreicher admonition" id="def-main-memory">
-<p class="admonition-title">Arbeitsspreicher</p>
-<p>Der <em>Arbeitsspeicher</em> oder <em>Hauptspeicher</em> oder <em>RAM (Random Acess Memory)</em> eines Computers ist jener Speicher der die gerade auszuführenden <strong>Programme</strong> oder <strong>Programmteile</strong> und die dabei benötigten <strong>Daten</strong> enthält.</p>
+<div class="definition admonition" id="def-main-memory">
+<p class="admonition-title">Arbeitsspeicher</p>
+<p>Der <em>Arbeitsspeicher</em> oder <em>Hauptspeicher</em> oder <em>RAM (Random Access Memory)</em> eines Computers ist jener Speicher der die gerade auszuführenden <strong>Programme</strong> oder <strong>Programmteile</strong> und die dabei benötigten <strong>Daten</strong> enthält.</p>
 </div>
 <p>Die erste wichtige Komponente ist der sogenannten <em>Hauptspeicher</em>, auch <em>Arbeitsspeicher</em> genannt.
 Im Bild oben haben wir <em>Hauptspeicher</em> und <em>Festplattenspeicher</em> mit Speicher zusammengefasst.
 Was der unterschied dieser beiden Speicherkomponenten ist besprechen wir weiter unten.
 Im <em>Speicher</em> befinden sich die Anweisungen der Informationsmanipulation, d.h. das <strong>auszuführende Programm</strong> als auch alle zu verarbeitenden <strong>Daten</strong>, welche vom Programm verarbeitet werden.</p>
-<div class="admonition-bus admonition" id="def-bus">
+<div class="definition admonition" id="def-bus">
 <p class="admonition-title">Bus</p>
 <p>Elektrische Leitungen, über welche die <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Bytes</span></a> von verschiedenen Einheiten übermittelt werden nennen wir den <em>Bus</em>.</p>
 </div>
@@ -865,7 +865,7 @@ Es gibt aber auch <em>Bus-Systeme</em> die unterschiedliche Computer oder andere
 <p>Die <em>Kontrolleinheit</em> besteht aus einer Komposition von Gattern, einem <em>Instruktionsregister</em> sowie einem <a class="reference internal" href="#def-program-counter"><span class="std std-ref">Befehlszeiger</span></a>.
 Sie fungiert als Programminterpreter oder ‘Mastermind’ und delegiert Aufgaben an die jeweils dafür geeigneten Recheneinheiten weiter.
 Sie ließt die Programmanweisungen aus dem Hauptspeicher und realisiert diese indem sie die <em>arithmetische/logische Einheit</em> mit Instruktionen und den notwendigen, aus dem Hauptspeicher geladenen Daten versorgt.
-Fließkommaoperationen delegiert die Kontrolleinheit häufig an eine spezielle (hier nicht eingezeichnete) <em>Fließkommarecheneinheit</em>.
+Fließkommaoperationen delegiert die Kontrolleinheit häufig an eine spezielle (hier nicht eingezeichnete) <em>Fließkomma-Recheneinheit</em>.
 Der <em>Befehlszeiger</em> beinhaltet eine Hauptspeicheradresse, die auf den aktuelle auszuführenden Befehl im Hauptspeicher zeigt.
 Der Befehl <span class="math notranslate nohighlight">\(\text{ADD}\)</span> steht zum Beispiel für die Addition von zwei ganzen Zahlen.
 Er wird allerdings im Hauptspeicher als Binärfolge abgespeichert!
@@ -874,10 +874,10 @@ Die Zahlen, die addiert werden sollen, werden ebenfalls von der Kontrolleinheit 
 Dann wird die arithmetische/logische Einheit aktiviert.
 Diese berechnet das Ergebnis und schreibt es in ein weiteres <a class="reference internal" href="#def-register"><span class="std std-ref">Register</span></a>.
 Die Kontrolleinheit schreibt das Ergebnis an die vom Programm definierte Stelle (Adresse) im Hauptspeicher.</p>
-<p>Die Recheneinheiten (arithmetische/logische Einheit und Fließkommarecheneinheit) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit Registern (das was kleine Informationseinheiten enthält) die mit anderen Einheiten über den <a class="reference internal" href="#def-bus"><span class="std std-ref">Bus</span></a> (das was Daten von einer Einheit zur anderen transportiert) verbunden sind.</p>
-<div class="admonition-central-processing-unit-cpu admonition" id="def-cpu">
+<p>Die Recheneinheiten (arithmetische/logische Einheit und Fließkomma-Recheneinheit) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit Registern (das was kleine Informationseinheiten enthält) die mit anderen Einheiten über den <a class="reference internal" href="#def-bus"><span class="std std-ref">Bus</span></a> (das was Daten von einer Einheit zur anderen transportiert) verbunden sind.</p>
+<div class="definition admonition" id="def-cpu">
 <p class="admonition-title">Central Processing Unit (CPU)</p>
-<p>Der <em>Hauptprozessor</em> oder <em>Central Processing Unit (CPU)</em> besteht aus Leitungen (Bus), Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkommarecheneinheit.</p>
+<p>Der <em>Hauptprozessor</em> oder <em>Central Processing Unit (CPU)</em> besteht aus Leitungen (Bus), Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkomma-Recheneinheit.</p>
 </div>
 <p><em>Register</em> sind die kleinsten aber auch schnellsten <em>flüchtigen</em> (engl. volatile) Speichereinheiten.
 Sie sind dafür gedacht die Variablen einer Operation zu halten.
@@ -891,7 +891,7 @@ Sogenannte <em>Flip-Flops</em> können, anders als reine Logikgatter, elektrisch
 Konzeptionell sind sie eine Kombination aus rückgekoppelten Logikgatter.
 Für die Speicherung von Bits benötigen sie allerdings eine Stromversorgung.
 Deshalb sind Register wie auch der Hauptspeicher <em>flüchtig</em> - sie verlieren alle Daten sobald die Stromverbindung unterbrochen wird.</p>
-<div class="admonition-register admonition" id="def-register">
+<div class="definition admonition" id="def-register">
 <p class="admonition-title">Register</p>
 <p><em>Register</em>, sind extrem schnelle kleine flüchtige Speichereinheiten, welche die CPU für viele Operationen verwendet.</p>
 </div>
@@ -906,7 +906,7 @@ Anstatt in die nächst gelegene Stadt zu reisen (Hauptspeicher), fliegen wir zum
 <a class="reference internal image-reference" href="../../_images/memory-cache-register.png"><img alt="../../_images/memory-cache-register.png" src="../../_images/memory-cache-register.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.11 </span><span class="caption-text">Zusammenhang zwischen Größe und Geschwindigkeit der verschiedenen <em>flüchtigen</em> Speicher des Computers.</span><a class="headerlink" href="#fig-memory-cache-register" title="Permalink to this image">¶</a></p>
 </div>
-<div class="admonition-cache admonition" id="def-cache">
+<div class="definition admonition" id="def-cache">
 <p class="admonition-title">Cache</p>
 <p>Ein <em>Cache</em> dient als (kleiner) Puffer.
 Er enthält einen (kleinen) Teil der Daten die zeitlich gesehen gerade verwendet werden.
@@ -919,9 +919,9 @@ Sie beinhalten die Daten die zuletzt von der CPU verwendet wurden.
 Fordert die CPU diese Daten erneut an, so ist der Zugriff über den Cache noch einmal viel schneller als über den Hauptspeicher.
 Dieses Konzept wird verallgemeinert und so gibt es mehrere Caches die hintereinandergeschaltet sind.
 Auch der Cache ist natürlich <em>flüchtig</em>.</p>
-<div class="hint admonition" id="neumann-vs-harward">
-<p class="admonition-title">Von-Neumann vs. Harward-Architektur</p>
-<p>Eine weitere beachtenswerte Architektur ist die sog. <em>Harward-Architektur</em>.
+<div class="remark admonition" id="neumann-vs-harward">
+<p class="admonition-title">Von-Neumann vs. Harvard-Architektur</p>
+<p>Eine weitere beachtenswerte Architektur ist die sog. <em>Harvard-Architektur</em>.
 Im Unterschied zur <em>Von-Neumann-Architektur</em> hat sie zwei unterschiedliche und separierte Speicher, einen für den Programmcode und einen für die zu verarbeitenden Daten.
 Das verkompliziert die Architektur und erfordert mehr Bauteile, jedoch kann die CPU <strong>gleichzeitig</strong> Programmcode laden als auch in den <a class="reference internal" href="#def-main-memory"><span class="std std-ref">Hauptspeicher</span></a> schreiben oder aus ihm lesen.</p>
 </div>
@@ -935,7 +935,7 @@ Sie kann auch als <em>Eingabe</em> für andere Computer oder Maschinen dienen.</
 <p>Damit die <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Byte</span></a> nicht durcheinander gelesen, manipuliert und geschrieben werden ist die CPU <em>getaktet</em>.
 Es gibt eine (global) tickende Uhr, die vorgibt wann die Komponenten aktiv werden können.
 Bei jedem Tick oder anders gesagt, in jedem <em>CPU-Zyklus</em>, können die jeweiligen Komponenten aktiv werden.
-Eine CPU die mit 3 Gigaherz (GHz) getaktet ist, führt 3 Milliarden Zyklen in der Sekunde durch.
+Eine CPU die mit 3 Gigahertz (GHz) getaktet ist, führt 3 Milliarden Zyklen in der Sekunde durch.
 Nicht jede Berechnung oder jeder Speichertransfer benötigt die gleiche Anzahl an Zyklen.
 Zum Beispiel ist benötigt die Division zweier Zahlen deutlich mehr Zyklen als die Addition.</p>
 </div>
@@ -954,7 +954,7 @@ Nun bevor wir dazu kommen, müssen wir überlegen was hierzu nötig ist:</p>
 Wie führt er nicht nur einzelne Operationen sondern ein ganzes Programm aus?
 Und wie ist es möglich, dass scheinbar gleichzeitig viele verschiedene Programme auf einem Computer laufen?
 Antworten finden wir wenn wir uns das ‘Masterprogramm’ eines Computers ansehen: Das <em>Betriebssystem</em>.</p>
-<div class="admonition-betriebssystem admonition" id="def-operating-system">
+<div class="definition admonition" id="def-operating-system">
 <p class="admonition-title">Betriebssystem</p>
 <p>Das <em>Betriebssystem</em> eines Computers ist ein spezielles Hauptprogramm, welches alle anderen Programme und die Rechnerressourcen des Computers verwaltet.</p>
 </div>
@@ -965,8 +965,8 @@ In der Realität wechselt das Betriebssystem die aktiven Programme fortwährend 
 Diesen Vorgang nennen wir <em>Booten</em>.
 Aber wie soll das funktionieren?
 Braucht es nicht ein Programm um das Betriebssystem zu laden und braucht dieses Programm nicht wieder ein Programm um es zu laden?
-Befinden wir uns nicht in einem Hänne-Ei-Problem?</p>
-<div class="admonition-bootvorgang admonition" id="def-booting">
+Befinden wir uns nicht in einem Henne-Ei-Problem?</p>
+<div class="definition admonition" id="def-booting">
 <p class="admonition-title">Bootvorgang</p>
 <p>Das Betriebssystem wird beim Start des Computers geladen.
 Diesen Vorgang nennen wir <em>Bootenvorgang</em> oder kurz das <em>Booten</em>.</p>
@@ -1009,7 +1009,7 @@ Sie spart sich einige Zyklen die nötig wären um die Daten aus dem Speicher in 
 Dieses Register nennen wir <em>Befehlszähler</em> oder <em>Befehlszeiger</em>.
 Ist der Befehl an der angegebenen Adresse ein <em>Sprungbefehl</em> ändert sich der Wert des <em>Befehlszeigers</em> entsprechend.
 Andernfalls wird der Befehl (z.B. <span class="math notranslate nohighlight">\(\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3\)</span>) von der CPU ausgeführt und der <em>Befehlszeiger</em> wird um <span class="math notranslate nohighlight">\(1\)</span> erhöht.</p>
-<div class="admonition-befehlszeiger admonition" id="def-program-counter">
+<div class="definition admonition" id="def-program-counter">
 <p class="admonition-title">Befehlszeiger</p>
 <p>Der <em>Befehlszeiger</em> ist ein spezielles <a class="reference internal" href="#def-register"><span class="std std-ref">Register</span></a> der <em>Kontrolleinheit</em> welches die <em>Arbeitsspeicheradresse</em> des nächsten auszuführenden Befehls enthält.</p>
 </div>
@@ -1038,11 +1038,11 @@ Sie hat die arithmetischen Einheit instruiert die Addition durchzuführen und da
 <p>Haben wir (1) den Computer <em>gebootet</em> und (2) das Textverarbeitungsprogramm gestartet und drücken dann <code class="docutils literal notranslate"><span class="pre">A</span></code>, was passiert dann?
 Das Eingabegerät (die Tastatur) sendet eine Unterbrechungsanforderung (Interrupt Request (IRQ)) an die CPU.
 Nach der Anforderung führt die CPU eine Unterbrechungsroutine aus, diese leitet das <code class="docutils literal notranslate"><span class="pre">A</span></code> an das Textverarbeitungsprogramm weiter.</p>
-<div class="admonition-interrupt-request-irq admonition" id="def-irq">
+<div class="definition admonition" id="def-irq">
 <p class="admonition-title">Interrupt Request (IRQ)</p>
 <p>Ein sog. <em>Interrupt</em> zu Deutsch <em>Unterbrechung</em> (welcher gewöhnlich von Eingabegeräten ausgelöst wird) erzeugt einen sog. <em>Interrupt Request (IRQ)</em> zu Deutsch <em>eine Unterbrechungsanforderung</em>, welche den aktuelle Programmablauf unterbricht und eine spezielle Befehlsfolge ausführt um Programme über den <em>Interrupt</em> zu informieren.</p>
 </div>
-<p>Das Textverarbeitungsprogramm hat sich hierfür über eine <em>Arbeitspeicheradresse</em> für einen solchen IRQ registriert.
+<p>Das Textverarbeitungsprogramm hat sich hierfür über eine <em>Arbeitsspeicheradresse</em> für einen solchen IRQ registriert.
 Das heißt, es wird der Programmcode der an dieser Adresse beginnt ausgeführt.</p>
 <p>Über viele tausende Operationen berechnet das Textverarbeitungsprogramm wie das <code class="docutils literal notranslate"><span class="pre">A</span></code> dargestellt werden soll (in welcher Schriftart, und welcher Position und so weiter).
 Die Darstellung besteht aus vielen Pixeln welche das Programm an den Monitor weiterleitet.

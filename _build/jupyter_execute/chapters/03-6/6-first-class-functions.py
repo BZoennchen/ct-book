@@ -1,3 +1,4 @@
+(sec-first-class-functions)=
 # First-Class-Funktion
 
 Wie in ``JavaScript``, so sind Funktionen in ``Python`` ebenfalls First-Class-Funktionen (Funktionen erster Klasse).

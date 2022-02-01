@@ -34,8 +34,8 @@ Die Lösung ist weder effizient noch besonders elegant.
 Da unser *Kontext* natürlich keine physikalische Hand definiert, müssen wir diese anderweitig *modellieren*.
 Hierbei kommt die Abstraktion ins Spiel.
 
-```{admonition} Modellierung der Hand
-:class: attention
+```{exercise} Modellierung
+:label: exercise-sort-cards-modelling
 Welche Eigenschaften der Hand benötigen wir und welche sind überflüssig?
 ```
 
@@ -53,7 +53,7 @@ Wir lassen alle unnötigen Informationen, wie zum Beispiel die Kartenfarbe, weg 
 Eine Hand modellieren wir als Liste von Karten (Liste von Zeichenketten).
 
 ````{admonition} Liste (Python)
-
+:class: python
 Eine [Python Liste](sec-list) repräsentiert ein endliches *veränderbares mathematisches Tupel*.
 Elemente können an jeder Position aus der Liste entfernt, und eingefügt werden.
 Die Position eines Elements in der Liste nennen wir *Index*.
@@ -98,7 +98,7 @@ Das Tupel muss lediglich alle möglichen Kartentypen geordnet enthalten.
 Wir verwenden diesmal keine ``list`` sondern ein unveränderbares ``Python``-``tuple``.
 
 ````{admonition} Tupel (Python)
-
+:class: python
 Ein [Python-Tupel](sec-tuple) repräsentiert ein endliches *unveränderbares mathematisches Tupel*.
 Die Position eines Elements im Tupel nennen wir *Index*.
 Beinhaltet das Tupel ``tpl``, ``n`` Elemente, so sind 

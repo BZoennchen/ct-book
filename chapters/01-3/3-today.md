@@ -35,8 +35,8 @@ Anstoß dazu gaben David Hilbert und Wilhelm Ackermann, die 1928 das sog. *Entsc
 Es ist ein Problem, welche wie kein zweites die Logik und Informatik verbindet:
 
 ```{admonition} Das Entscheidungsproblem
-:class: hint
-Existiert ein Algorithmus der für jedes Element einer vorgegebenen Menge beantworten kann, ob eine vorgegebene Eigenschaft zutrifft oder nicht?
+:class: definition
+Das Entscheidungsproblem verlangt nach der Beantwortung der Frage ob ein Algorithmus existiert, der für jedes Element einer vorgegebenen Menge beantworten kann, ob eine vorgegebene Eigenschaft zutrifft oder nicht?
 ```
 
 Der österreichische Mathematiker Kurt Gödel beantwortet die Frage mit einem *nein* und sowohl Alonzo Church wie auch Alan Turing veröffentlichen unabhängige Beiträge, die zeigen, dass das *Entscheidungsproblem* nicht zu lösen ist, sofern alles was *grundsätzlich berechenbar* ist, sich mit dem deckt, was *Turing-berechenbar* ist.
@@ -45,8 +45,8 @@ Trifft die These zu ist alles was *grundsätzlich berechenbar* ist auch von eine
 Über das *Entscheidungsproblem* konnte Turing die Fragestellung des sog. *Halteproblem* beantworten.
 
 ```{admonition} Das Halteproblem
-:class: hint
-Existiert ein Algorithmus der für einen anderen beliebigen Algorithmus und einer Eingabe bestimmen kann ob dieser Algorithmus je stehen bleibt oder nicht?
+:class: definition
+Das Halteproblem verlangt nach der Beantwortung der Frage ob ein Algorithmus existiert, der für einen anderen beliebigen Algorithmus und eine Eingabe bestimmen kann ob dieser Algorithmus je stehen bleibt oder nicht?
 ```
 
 Auch ein solcher Algorithmus wird niemals existieren.

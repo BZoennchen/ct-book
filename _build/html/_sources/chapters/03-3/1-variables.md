@@ -17,6 +17,7 @@ kernelspec:
 Mit diesem Namen können wir einen Wert im [Arbeitsspeicherspeicher](def-main-memory) des Computers identifizieren.
 So können wir uns Zwischenergebnisse merken und damit weiter rechnen.
 
+(sec-assignment)=
 ## Initialisierung und Zuweisung
 
 Durch das ``=`` Zeichen weisen wir einer *Variablen* auf der linken Seite den Wert des *Ausdrucks* auf der rechten Seite zu.

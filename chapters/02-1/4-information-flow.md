@@ -29,7 +29,7 @@ Eine solche Beschreibung bezeichnen wir als *Hardware-Architektur*.
 Sie kann selbstverständlich unterschiedlich detailliert ausfallen.
 So gibt es auch Beschreibungen einzelner Bauteile die wiederum die Interaktion ihrer Einzelkomponenten beschreiben.
 
-Wie der Bauplan eines Hauses, in dem festgelegt ist wie Küche und Bad miteinander verbunden sind und wie die Bewohner das Gebäude nutzen können, legt eine Architektur fest über welche Leitungen beispielweise der Speicher mit den Recheneinheiten interagiert.
+Wie der Bauplan eines Hauses, in dem festgelegt ist wie Küche und Bad miteinander verbunden sind und wie die Bewohner das Gebäude nutzen können, legt eine Architektur fest über welche Leitungen beispielsweise der Speicher mit den Recheneinheiten interagiert.
 
 ```{figure} ../../figs/von-neumann-architecture.png
 ---
@@ -42,9 +42,10 @@ Die Von-Neumann-Architektur auch bekannt als Princeton Architektur.
 Die *Von-Neumann-Architektur* ist wohl die bekannteste und zugleich meist verwendete Hardware-Architektur bzw. *Rechnerarchitektur* die den Aufbau der Computer beschreibt.
 Jeder Rechner den Sie je benutzt haben basiert höchstwahrscheinlich auf dieser Architektur.
 
-```{admonition} Arbeitsspreicher
+```{admonition} Arbeitsspeicher
 :name: def-main-memory
-Der *Arbeitsspeicher* oder *Hauptspeicher* oder *RAM (Random Acess Memory)* eines Computers ist jener Speicher der die gerade auszuführenden **Programme** oder **Programmteile** und die dabei benötigten **Daten** enthält.
+:class: definition
+Der *Arbeitsspeicher* oder *Hauptspeicher* oder *RAM (Random Access Memory)* eines Computers ist jener Speicher der die gerade auszuführenden **Programme** oder **Programmteile** und die dabei benötigten **Daten** enthält.
 ```
 
 Die erste wichtige Komponente ist der sogenannten *Hauptspeicher*, auch *Arbeitsspeicher* genannt.
@@ -54,6 +55,7 @@ Im *Speicher* befinden sich die Anweisungen der Informationsmanipulation, d.h. d
 
 ```{admonition} Bus
 :name: def-bus
+:class: definition
 Elektrische Leitungen, über welche die [Bits](def-bit) und [Bytes](def-byte) von verschiedenen Einheiten übermittelt werden nennen wir den *Bus*.
 ```
 
@@ -66,7 +68,7 @@ Die *Hauptplatine* ist jenes Bauteil auf dem die CPU-nahen Komponenten (CPU, Hau
 Die *Kontrolleinheit* besteht aus einer Komposition von Gattern, einem *Instruktionsregister* sowie einem [Befehlszeiger](def-program-counter).
 Sie fungiert als Programminterpreter oder 'Mastermind' und delegiert Aufgaben an die jeweils dafür geeigneten Recheneinheiten weiter.
 Sie ließt die Programmanweisungen aus dem Hauptspeicher und realisiert diese indem sie die *arithmetische/logische Einheit* mit Instruktionen und den notwendigen, aus dem Hauptspeicher geladenen Daten versorgt.
-Fließkommaoperationen delegiert die Kontrolleinheit häufig an eine spezielle (hier nicht eingezeichnete) *Fließkommarecheneinheit*.
+Fließkommaoperationen delegiert die Kontrolleinheit häufig an eine spezielle (hier nicht eingezeichnete) *Fließkomma-Recheneinheit*.
 Der *Befehlszeiger* beinhaltet eine Hauptspeicheradresse, die auf den aktuelle auszuführenden Befehl im Hauptspeicher zeigt. 
 Der Befehl $\text{ADD}$ steht zum Beispiel für die Addition von zwei ganzen Zahlen.
 Er wird allerdings im Hauptspeicher als Binärfolge abgespeichert!
@@ -76,12 +78,12 @@ Dann wird die arithmetische/logische Einheit aktiviert.
 Diese berechnet das Ergebnis und schreibt es in ein weiteres [Register](def-register).
 Die Kontrolleinheit schreibt das Ergebnis an die vom Programm definierte Stelle (Adresse) im Hauptspeicher.
 
-Die Recheneinheiten (arithmetische/logische Einheit und Fließkommarecheneinheit) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit Registern (das was kleine Informationseinheiten enthält) die mit anderen Einheiten über den [Bus](def-bus) (das was Daten von einer Einheit zur anderen transportiert) verbunden sind.
+Die Recheneinheiten (arithmetische/logische Einheit und Fließkomma-Recheneinheit) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit Registern (das was kleine Informationseinheiten enthält) die mit anderen Einheiten über den [Bus](def-bus) (das was Daten von einer Einheit zur anderen transportiert) verbunden sind.
 
 ```{admonition} Central Processing Unit (CPU)
 :name: def-cpu
-
-Der *Hauptprozessor* oder *Central Processing Unit (CPU)* besteht aus Leitungen (Bus), Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkommarecheneinheit.
+:class: definition
+Der *Hauptprozessor* oder *Central Processing Unit (CPU)* besteht aus Leitungen (Bus), Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkomma-Recheneinheit.
 ```
 
 *Register* sind die kleinsten aber auch schnellsten *flüchtigen* (engl. volatile) Speichereinheiten.
@@ -100,6 +102,7 @@ Deshalb sind Register wie auch der Hauptspeicher *flüchtig* - sie verlieren all
 
 ```{admonition} Register
 :name: def-register
+:class: definition
 *Register*, sind extrem schnelle kleine flüchtige Speichereinheiten, welche die CPU für viele Operationen verwendet.
 ```
 
@@ -121,7 +124,7 @@ Zusammenhang zwischen Größe und Geschwindigkeit der verschiedenen *flüchtigen
 
 ```{admonition} Cache
 :name: def-cache
-
+:class: definition
 Ein *Cache* dient als (kleiner) Puffer.
 Er enthält einen (kleinen) Teil der Daten die zeitlich gesehen gerade verwendet werden.
 Er dient dazu wiederholte Zugriffe auf ein langsames Hintergrundmedium (wie den Hauptspeicher) zu vermeiden.
@@ -135,11 +138,11 @@ Fordert die CPU diese Daten erneut an, so ist der Zugriff über den Cache noch e
 Dieses Konzept wird verallgemeinert und so gibt es mehrere Caches die hintereinandergeschaltet sind.
 Auch der Cache ist natürlich *flüchtig*.
 
-```{admonition} Von-Neumann vs. Harward-Architektur
-:class: hint
+```{admonition} Von-Neumann vs. Harvard-Architektur
+:class: remark
 :name: neumann-vs-harward
 
-Eine weitere beachtenswerte Architektur ist die sog. *Harward-Architektur*.
+Eine weitere beachtenswerte Architektur ist die sog. *Harvard-Architektur*.
 Im Unterschied zur *Von-Neumann-Architektur* hat sie zwei unterschiedliche und separierte Speicher, einen für den Programmcode und einen für die zu verarbeitenden Daten.
 Das verkompliziert die Architektur und erfordert mehr Bauteile, jedoch kann die CPU **gleichzeitig** Programmcode laden als auch in den [Hauptspeicher](def-main-memory) schreiben oder aus ihm lesen.
 
@@ -157,7 +160,7 @@ Sie kann auch als *Eingabe* für andere Computer oder Maschinen dienen.
 Damit die [Bits](def-bit) und [Byte](def-byte) nicht durcheinander gelesen, manipuliert und geschrieben werden ist die CPU *getaktet*.
 Es gibt eine (global) tickende Uhr, die vorgibt wann die Komponenten aktiv werden können.
 Bei jedem Tick oder anders gesagt, in jedem *CPU-Zyklus*, können die jeweiligen Komponenten aktiv werden.
-Eine CPU die mit 3 Gigaherz (GHz) getaktet ist, führt 3 Milliarden Zyklen in der Sekunde durch.
+Eine CPU die mit 3 Gigahertz (GHz) getaktet ist, führt 3 Milliarden Zyklen in der Sekunde durch.
 Nicht jede Berechnung oder jeder Speichertransfer benötigt die gleiche Anzahl an Zyklen.
 Zum Beispiel ist benötigt die Division zweier Zahlen deutlich mehr Zyklen als die Addition.
 
@@ -179,6 +182,7 @@ Antworten finden wir wenn wir uns das 'Masterprogramm' eines Computers ansehen: 
 
 ```{admonition} Betriebssystem
 :name: def-operating-system
+:class: definition
 Das *Betriebssystem* eines Computers ist ein spezielles Hauptprogramm, welches alle anderen Programme und die Rechnerressourcen des Computers verwaltet.
 ```
 
@@ -190,10 +194,11 @@ Das *Betriebssystem* wird beim Start des Computers geladen.
 Diesen Vorgang nennen wir *Booten*.
 Aber wie soll das funktionieren?
 Braucht es nicht ein Programm um das Betriebssystem zu laden und braucht dieses Programm nicht wieder ein Programm um es zu laden?
-Befinden wir uns nicht in einem Hänne-Ei-Problem?
+Befinden wir uns nicht in einem Henne-Ei-Problem?
 
 ```{admonition} Bootvorgang
 :name: def-booting
+:class: definition
 Das Betriebssystem wird beim Start des Computers geladen.
 Diesen Vorgang nennen wir *Bootenvorgang* oder kurz das *Booten*.
 ```
@@ -250,6 +255,7 @@ Andernfalls wird der Befehl (z.B. $\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{
 
 ```{admonition} Befehlszeiger
 :name: def-program-counter
+:class: definition
 Der *Befehlszeiger* ist ein spezielles [Register](def-register) der *Kontrolleinheit* welches die *Arbeitsspeicheradresse* des nächsten auszuführenden Befehls enthält.
 ```
 
@@ -281,10 +287,11 @@ Nach der Anforderung führt die CPU eine Unterbrechungsroutine aus, diese leitet
 
 ```{admonition} Interrupt Request (IRQ)
 :name: def-irq
+:class: definition
 Ein sog. *Interrupt* zu Deutsch *Unterbrechung* (welcher gewöhnlich von Eingabegeräten ausgelöst wird) erzeugt einen sog. *Interrupt Request (IRQ)* zu Deutsch *eine Unterbrechungsanforderung*, welche den aktuelle Programmablauf unterbricht und eine spezielle Befehlsfolge ausführt um Programme über den *Interrupt* zu informieren.
 ```
 
-Das Textverarbeitungsprogramm hat sich hierfür über eine *Arbeitspeicheradresse* für einen solchen IRQ registriert.
+Das Textverarbeitungsprogramm hat sich hierfür über eine *Arbeitsspeicheradresse* für einen solchen IRQ registriert.
 Das heißt, es wird der Programmcode der an dieser Adresse beginnt ausgeführt.
 
 Über viele tausende Operationen berechnet das Textverarbeitungsprogramm wie das ``A`` dargestellt werden soll (in welcher Schriftart, und welcher Position und so weiter).
