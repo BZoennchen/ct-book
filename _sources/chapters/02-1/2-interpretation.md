@@ -91,6 +91,7 @@ Durch die **Interpretation** $I$ erlangt der **Repräsentant** $r \in R$ seine *
 
 ```{admonition} Semantik (Informatik)
 :name: def-semantik
+:class: definition
 Die Bedeutung eines Repräsentanten bezeichnen wir als seine *Semantik*.
 ```
 
@@ -101,6 +102,7 @@ In den obigen Beispielen repräsentiert die Bitfolge ``00`` einmal die Zeichenke
 
 ```{admonition} Syntax (Informatik)
 :name: def-syntax
+:class: definition
 Die Art und Weise wie ein Repräsentant niedergeschrieben ist nennen wir *Syntax*.
 ```
 
@@ -112,6 +114,7 @@ Ein Monitor interpretiert die Bitfolgen als Pixelintensitäten (wie stark und in
 
 ```{admonition} Interpreter
 :name: def-interpreter
+:class: definition
 TODO
 ```
 
@@ -164,6 +167,7 @@ So wird es möglich, dass sich Entwickler\*innen nicht mehr in einer Welt der Bi
 
 ```{admonition} Kompilierer
 :name: def-compiler
+:class: definition
 TODO
 ```
 

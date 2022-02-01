@@ -73,6 +73,7 @@ Der einzelne Zustand einer Lampe, also **Strom aus** oder **Strom an** nennen wi
 
 ```{admonition} Bit
 :name: def-bit
+:class: definition
 Der einzelne Zustand eines Kabels, also **Strom aus** oder **Strom an** nennen wir *Bit*, es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.
 ```
 
@@ -136,7 +137,7 @@ Werfen wir einen genaueren Blick aufs *Binärsystem* oder auch *binäre Zahlensy
 Um Zahlen mit **Strom an** und **Strom aus**, also den zwei Zuständen einer Lampe/Transistors/*Bit* zu repräsentieren, verwenden Computer das *Binärsystem*.
 
 ```{admonition} Notation mit verschiedenen Zahlensystemen
-:class: hint
+:class: remark
 Um der Verwirrung vorzubeugen notieren wir eine Zahl $k$, geschrieben in der Dezimaldarstellung, auch durch $k_{10}$
 und eine Zahl $b$ in der Binärdarstellung durch $b_2$.
 ```
@@ -192,6 +193,7 @@ Wie aber wandeln wir eine Dezimalzahl in eine Binärzahl um?
 
 ```{admonition} Restwertdivision
 :name: def-euclid-division
+:class: definition
 
 Für zwei ganze Zahlen $n, m \in \mathbb{Z}$, $m \neq 0$ gibt es zwei eindeutige ganze Zahlen $a, r \in \mathbb{Z}$, sodass
 
@@ -338,6 +340,7 @@ Zudem verlieren wir ein Bit für das Vorzeichen.
 
 ````{admonition} Komplement einer Bitfolge
 :name: def-complement
+:class: definition
 Das *Komplement* einer Bitfolge $b_{n-1} \ldots b_0$, geschrieben als
 
 ```{math}
@@ -605,11 +608,12 @@ Für die $256$ Intensitäten brauchen wir je $8$ *Bits*, d.h. ein *Byte*.
 
 ```{admonition} Byte
 :name: def-byte
+:class: definition
 $8$ [Bit](def-bit) ergeben ein *Byte*.
 ```
 
 ```{admonition} Byte
-:class: hint
+:class: remark
 Oftmals ist ein *Byte* die kleinste Einheit auf die ein Computer zugreift.
 
 **Beispiel:**

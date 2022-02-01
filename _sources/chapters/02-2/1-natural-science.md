@@ -13,12 +13,12 @@ Das hat jedoch nichts mit der Energieerhaltung des Systems zu tun.
 Es wäre nach dem Energieerhaltungssatz durchaus möglich, dass Ihre Hände wärme der Tasse zuführen obwohl die Tasse deutlich wärmer ist.
 Es wäre theoretisch sogar möglich, dass ein Ei, was Ihnen auf dem Boden zersprungen ist, wieder zu Ihnen zurückspringt.
 
-Beide eben beschriebenen Prozesse nennen Physiker *irriversibel*. Damit ist gemeint, dass solche Prozesse durch kleine Änderungen in der Umgebung nie rückgängig gemacht werden können.
+Beide eben beschriebenen Prozesse nennen Physiker *irreversibel*. Damit ist gemeint, dass solche Prozesse durch kleine Änderungen in der Umgebung nie rückgängig gemacht werden können.
 Wir würden vermutlich an unserem Verstand zweifeln, sollte so etwas passieren.
 Warum dies nicht geschieht und weshalb sich Ihre Hände erwärmen, liegt an der Entropie bzw. an der Entropieänderung.
 
 ```{admonition} Irreversible Prozesse
-class: info
+:class: remark
 
 Findet in einem abgeschlossenen System ein *irreversibler Prozess* statt (einer der sich nicht umkehren lässt), so nimmt die *Entropie* dieses Systems immer zu. Sie nimmt niemals ab!
 ```
@@ -57,16 +57,18 @@ Besitzt jeder Mikrozustand die gleiche Wahrscheinlichkeit, so steigt die Wahrsch
 Und da das Ei, welches Ihnen entgegen springt, derart wenige Mikrozustände hat, tritt dieser Zustand niemals ein.
 
 ```{admonition} Entropie (Physik)
+:class: definition
 Die Entropie beschreibt die Anzahl der Teilchenanordnungen (Mikrozustände), die zu einem gegebenen (Makro)-Zustand des Systems führen.
 ```
 
 Nun gut, wir wissen was Entropie ist.
 Wie aber definieren Physiker die *Information*?
-Ist die Entropie groß, so bedarf es viel Information um auf die korrekte (mikroskopische) Teilchenanordnung zu schließen.
+Ist die Entropie groß, so bedarf es viel Information um auf die korrekte (mikroskopische) Teilchenanordnung zu schließen -- es bedarf eines größeren *Informationsgehalts*.
 Deshalb ist der Mangel an Information groß.
 
 ```{admonition} Information (Physik)
-Die *Information* ist jenes etwas, durch was ein Beobachter auf die exakte Teilchenanordnungen eines Systems schließen kann.
+:class: definition
+Die *Information* ist jenes etwas, durch das ein Beobachter auf die exakte Teilchenanordnungen eines Systems schließen kann.
 ```
 
 Da bei irreversiblen Prozessen die Entropie stets *mit der Zeit* zunimmt, bezeichnen Physiker die Entropieänderung auch als den *Pfeil der Zeit*.

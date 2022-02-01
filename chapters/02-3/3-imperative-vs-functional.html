@@ -808,10 +808,10 @@
                 
   <div class="section" id="imperativ-vs-funktional">
 <h1><span class="section-number">3.3. </span>Imperativ vs. funktional<a class="headerlink" href="#imperativ-vs-funktional" title="Permalink to this headline">¶</a></h1>
-<p>Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte <em>Seiteneffekte</em> nicht erlauben und anstatt Variablen (abänderbar) nur mit Konstanten (unabänderlich) zulassen.</p>
-<div class="admonition-seiteneffekt admonition">
+<p>Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte <em>Seiteneffekte</em> nicht erlauben und anstatt Variablen (abänderbar) nur Konstanten (unabänderlich) zulassen.</p>
+<div class="definition admonition" id="def-side-effect">
 <p class="admonition-title">Seiteneffekt</p>
-<p>Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und ändert diese Funktion diese, dann sprechen wir von einem <em>Seiteneffet</em>.</p>
+<p>Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und ändert diese Funktion diese, dann sprechen wir von einem <em>Seiteneffekt</em>.</p>
 </div>
 <p>In imperativen Programmiersprachen (<code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C#</span></code>, <code class="docutils literal notranslate"><span class="pre">C++</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code>, …) sind <em>Seiteneffekte</em> manchmal erwünscht und auch notwendig.
 Folgender Code zeigt einen Seiteneffekt in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
@@ -859,19 +859,19 @@ Wir können den obigen <em>Seiteneffekt</em> in <code class="docutils literal no
 </div>
 </div>
 </div>
-<p>Funktionale Sprachen umgehen <em>Seiteneffekte</em> indem sie keine Datenstrukturen ändern sondern stattdessen neu erzeugen.
+<p>Funktionale Sprachen umgehen <em>Seiteneffekte</em> indem sie keine Datenstrukturen ändern, sondern stattdessen neu erzeugen.
 Fügt man ein neues Element in eine Liste an, entsteht eine komplett neue Liste.
-Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch Konstanten und sog. <em>Pure Functions</em> (= mathematische Funktionen).</p>
-<div class="admonition-pure-function admonition" id="def-pure-function">
-<p class="admonition-title">Pure Function</p>
-<p>Eine Funktion nennen wir <em>Pure Function</em> wenn</p>
+Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch Konstanten und sog. <em>Pure Functions</em> (mathematische Funktionen).</p>
+<div class="definition admonition" id="def-pure-function">
+<p class="admonition-title">Reine Funktion (pure Function)</p>
+<p>Eine Funktion nennen wir <em>reine Funktion</em> wenn</p>
 <ol class="simple">
 <li><p>Der Rückgabewert der Funktion für die gleiche Funktionsargumente stets identisch ist.</p></li>
 <li><p>Wenn die Funktion keine <em>Seiteneffekte</em> hat.</p></li>
 </ol>
 </div>
-<p><em>Pure Functions</em> verhalten sich deshalb wie mathematische Funktionen.
-Die folgende Funktion ist eine <em>Pure Functions</em>.</p>
+<p><em>Reine Funktionen</em> verhalten sich deshalb wie mathematische Funktionen.
+Die folgende Funktion ist eine <em>reine Funktion</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -887,7 +887,7 @@ Die folgende Funktion ist eine <em>Pure Functions</em>.</p>
 </div>
 </div>
 </div>
-<p>Folgende Funktion ist keine <em>Pure Function</em>.</p>
+<p>Folgende Funktion ist keine <em>reine Funktion</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
@@ -910,9 +910,9 @@ Die folgende Funktion ist eine <em>Pure Functions</em>.</p>
 </div>
 </div>
 </div>
-<div class="hint admonition">
-<p class="admonition-title">Pure Function und Python</p>
-<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> macht es uns schwer keine <em>Pure Functions</em> zu konstruieren.
+<div class="python admonition">
+<p class="admonition-title">Reine Funktion und Python</p>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> macht es uns schwer keine <em>reine Funktion</em> zu konstruieren.
 Zum Beispiel würde folgender Code zu einem Fehler führen:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -941,7 +941,8 @@ Die Ein- und Ausgabe kann ohne <em>Seiteneffekte</em> nicht realisiert werden.</
 Besonders wenn die Reihenfolge in der die Funktionen aufgerufen werden nicht mehr eindeutig ist (Parallelität), kann eine Fehlersuche unglaublich schwierig werden, wenn <em>Seiteneffekte</em> vorhanden sind.</p>
 </div>
 </div>
-<p>Funktionale Sprachen wie <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> waren anfänglich reine akademische Sprachen mit denen sich in der Praxis nichts wirklich anfangen ließ.
+<p>Wir besprechen reine Funktionen in <code class="docutils literal notranslate"><span class="pre">Python</span></code> im Abschnitt <a class="reference internal" href="../03-6/1-purity.html#sec-purity"><span class="std std-ref">Reinheit</span></a>.</p>
+<p>Funktionale Sprachen wie <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> waren anfänglich rein akademische Sprachen mit denen sich in der Praxis nichts wirklich anfangen ließ.
 Nichtsdestotrotz haben diese Sprachen interessante Konzepte zutage gebracht.
 Von extrem sicher aber unbrauchbar wandern funktionale Sprachen Schritt für Schritt in Richtung extrem sicher und brauchbar.</p>
 <p>Imperative Sprachen hingegen wandern tendenziell von sehr brauchbar aber unsicher, zu sehr brauchbar und sicher.
@@ -965,7 +966,7 @@ Zum Beispiel erzeugt</p>
 </div>
 <p>eine neue Liste mit den quadrierten Zahlen der Ursprungsliste.
 Das besondere dabei ist, dass wir die Funktion <code class="docutils literal notranslate"><span class="pre">square</span></code> einer anderen Funktion <code class="docutils literal notranslate"><span class="pre">map</span></code> übergeben.
-Funktionen als Übergabeparameter sind ein Konzept der funktionalen Sprachen.
+Funktionen als Übergabeparameter sind ein Konzept der funktionalen Sprachen mit dem Namen <a class="reference internal" href="../03-6/6-first-class-functions.html#sec-first-class-functions"><span class="std std-ref">Funktion erster Klasse</span></a> (first class function).
 In <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> sieht das ganze wie folgt aus</p>
 <div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="nf">square</span> <span class="ow">::</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
 <span class="nf">square</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>

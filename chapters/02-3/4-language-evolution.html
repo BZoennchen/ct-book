@@ -802,8 +802,8 @@ Mit Java 8 führte man deshalb <code class="docutils literal notranslate"><span 
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Runnable</span> <span class="n">runnable</span> <span class="o">=</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello world two!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Java 9 brachte dann das sogenannte <code class="docutils literal notranslate"><span class="pre">Type-Inference</span></code> (die automatische Typerkennung).
-Dadurch wird der Datentyp einer Variable aus dem Kontext bestimmt und der Programmierer bzw. die Programmiererin muss diesen nicht explizit angeben.
+<p>Java 9 brachte dann das sogenannte <code class="docutils literal notranslate"><span class="pre">Type-Inference</span></code> (die automatische Typ-Erkennung).
+Dadurch wird der Datentyp einer Variable aus dem Kontext bestimmt und die Programmierer*innen müssen diesen nicht explizit angeben.
 Aus</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Julia&quot;</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">23</span><span class="p">;</span>
@@ -814,7 +814,7 @@ Aus</p>
 <span class="kd">var</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">23</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Mit Java 14 kamen dann die <code class="docutils literal notranslate"><span class="pre">record</span></code>s und aus</p>
+<p>Mit Java 14 kamen dann die <code class="docutils literal notranslate"><span class="pre">records</span></code> in die Sprache und aus</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span> <span class="kd">class</span> <span class="nc">Point</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
     <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
@@ -830,9 +830,9 @@ Aus</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">record</span> <span class="nf">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 </pre></div>
 </div>
-<p>All diese Konzepte sind aus anderen Sprachen (vorallem funktionalen Sprachen) motiviert.
-Sie erweitern die Syntax, d.h. die alte Schreibweise ist immernoch gültig und die Sprache wurde, bezogen auf die angeführten Beispiele, nicht um Funktionalität erweitert, sondern um neue <strong>syntaktische Mittel</strong>.
-Durch die kürzere Schreibweise müssen Programmierer*innen wissen was dahinter steckt (<strong>Semantik</strong>).
+<p>All diese Konzepte sind aus anderen Sprachen (vor allem funktionalen Sprachen) motiviert.
+Sie erweitern die <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a>, d.h., die alte Schreibweise ist immer noch gültig und die Sprache wurde, bezogen auf die angeführten Beispiele, nicht um Funktionalität erweitert, sondern um neue syntaktische Mittel.
+Durch die kürzere Schreibweise müssen Programmierer*innen wissen was dahinter steckt (<a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a>).
 Es werden also bewerte und sich wiederholende <strong>Muster</strong> vereinfacht.</p>
 <p>Neue Hardwareanforderungen übertragen sich auch auf Programmiersprachen.
 Wie Sie vielleicht beobachtet haben, hat sich die Taktrate der Prozessoren in den letzten Jahren nicht mehr verbessert.
@@ -840,8 +840,8 @@ Wir sind an eine Grenze gestoßen.
 Deshalb gibt es statt schnellerer Prozessoren mehr Prozessoren.</p>
 <p>Um dies zu nutzen müssen wir mit Parallelität umgehen, doch ist die Entwicklung paralleler Algorithmen schwierig.
 Auch hier wird versucht immer wiederkehrende <strong>Muster</strong> direkt in die Sprache zu übertragen.
-Da für die <em>Nebenläufigkeit</em> <em>Seiteneffekte</em> besonders problematisch sind, lernen imperative Sprachen auch hier von den funktionalen Sprachen.</p>
-<p>In Java 8 führte man sogenannte <code class="docutils literal notranslate"><span class="pre">Stream</span></code>s ein, um zum Beispiel eine Liste von Zahlen ohne großen Programmieraufwand parallel addieren zu können:</p>
+Da für die <em>Nebenläufigkeit</em> <a class="reference internal" href="3-imperative-vs-functional.html#def-side-effect"><span class="std std-ref">Seiteneffekte</span></a> besonders problematisch sind, lernen imperative Sprachen auch hier von den funktionalen Sprachen.</p>
+<p>In Java 8 führte man sogenannte <code class="docutils literal notranslate"><span class="pre">Streams</span></code> ein, um zum Beispiel eine Liste von Zahlen ohne großen Programmieraufwand parallel addieren zu können:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// List of Integers</span>
 <span class="kd">var</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 

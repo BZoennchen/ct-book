@@ -820,22 +820,24 @@
 Der Computer muss erst <em>booten</em>.
 Dann muss das Programm in den Speicher geladen werden.
 Dieses muss ausgeführt werden, was wiederum die zu addierenden Zahlen schlussendlich in Register platziert.
-Die arithmetische Einheit berechnet dann das Ergebnis was wiederum in den Hauptspeicher zurückgeschrieben werden muss.
+Die arithmetische Einheit berechnet dann das Ergebnis, was wiederum in den Hauptspeicher zurückgeschrieben werden muss.
 Welch ein Aufwand!
 Müssen wir uns um all das kümmern?</p>
-<p>Ja und nein lautet unsere Antwort.
-<strong>Programmiersprachen abstrahieren die Spezifika des digitalen Computers.</strong>
-Die Hardware wird durch Programmiersprachen so weit abstrahiert, dass wir uns um Register, Kontrolleinheit, arithmetische Einheit und oft nicht einmal den Hauptspeicher kümmern müssen.
-Je nach Wahl der Programmiersprache unterscheidet sich dieses Abstraktionniveau.</p>
-<p>In <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-computability"><span class="std std-ref">Berechenbarkeit</span></a> haben wir Ihnen gezeigt, dass Computer als auch Programmiersprachen <em>Turing-vollständig</em> sind.
-Der Computer ist eine <em>universelle Turingmaschine</em> und simuliert die <em>Turingmaschinen</em> (Programme) die in seinem Speicher liegen.
-Der Computer spricht <a class="reference internal" href="../02-1/2-representation.html#sec-binary-system"><span class="std std-ref">binär</span></a>, d.h. jeder Teil des Befehls</p>
+<p>Ja und nein lautet unsere Antwort.</p>
+<blockquote>
+<div><p>Programmiersprachen abstrahieren die Spezifika des digitalen Computers.</p>
+</div></blockquote>
+<p>Die Hardware wird durch Programmiersprachen so weit abstrahiert, dass wir uns um Register, Kontrolleinheit, arithmetische Einheit und oft nicht einmal mehr um den Hauptspeicher kümmern müssen.
+Je nach Wahl der Programmiersprache unterscheidet sich dieses <em>Abstraktionsniveau</em>.</p>
+<p>In <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-computability"><span class="std std-ref">Berechenbarkeit</span></a> haben wir Ihnen gezeigt, dass Computer als auch Programmiersprachen <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a> sind.
+Der Computer ist eine <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-utm"><span class="std std-ref">universelle Turingmaschine</span></a> und simuliert die <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-universal-turing-machine"><span class="std std-ref">Turingmaschinen</span></a> (Programme) die in seinem Speicher liegen.
+Der Computer spricht <a class="reference internal" href="../02-1/2-representation.html#sec-binary-system"><span class="std std-ref">binär</span></a>, d.h., jeder Teil des Befehls</p>
 <div class="math notranslate nohighlight">
 \[\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3\]</div>
 <p>wird durch codiert und durch eine Folge von <span class="math notranslate nohighlight">\(0\)</span>, und <span class="math notranslate nohighlight">\(1\)</span> repräsentiert.
 Zum Beispiel könnte es sein, dass <span class="math notranslate nohighlight">\(\text{ADD }\)</span> durch <span class="math notranslate nohighlight">\(1001\)</span> codiert wird.
 Uns Menschen fällt es extrem schwer ein Programm in Form einer langen Sequenz von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> zu lesen.
-Deshalb gibt es Programme (<em>Interpreter</em> oder <em>Compiler</em>), die einen abstrakten Programmcode, geschrieben in Sprache <code class="docutils literal notranslate"><span class="pre">A</span></code> in maschinennäheren Code der Sprache <code class="docutils literal notranslate"><span class="pre">B</span></code> überführen.</p>
+Deshalb gibt es Programme (<a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> und <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">Compiler</span></a>), die einen abstrakten Programmcode, geschrieben in Sprache <span class="math notranslate nohighlight">\(L_1\)</span> in maschinennäheren Code der Sprache <span class="math notranslate nohighlight">\(L_2\)</span> überführen.</p>
 <p>In sogenannten Hochsprachen kümmern Sie sich nicht mehr um Register.
 Ein Befehl wie</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -864,8 +866,8 @@ Zunächst möglicherweise in <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 </div>
-<p>Sprachen wie <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">Python</span></code> und <code class="docutils literal notranslate"><span class="pre">C#</span></code> bieten ein sehr hohes Abstraktionniveau wohingegen <code class="docutils literal notranslate"><span class="pre">C++</span></code> maschinennäher ist.
-Doch selbst wenn das Abstraktionniveau weniger hoch ist, können wir uns als Programmier*innen selbst auf ein höheres Niveau hieven.
+<p>Sprachen wie <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">Python</span></code> und <code class="docutils literal notranslate"><span class="pre">C#</span></code> bieten ein sehr hohes Abstraktionsniveau wohingegen <code class="docutils literal notranslate"><span class="pre">C++</span></code> maschinennäher ist.
+Doch selbst wenn das Abstraktionsniveau weniger hoch ist, können wir uns als Programmierer*innen selbst auf ein höheres Niveau hieven.
 Nehmen wir zum Beispiel einmal an, unsere Sprache könnte keine Zahlen multiplizieren.
 Das einzige was wir zur Verfügung haben ist die Addition <code class="docutils literal notranslate"><span class="pre">+</span></code> und die Möglichkeit Anweisungen <code class="docutils literal notranslate"><span class="pre">n</span></code>-mal zu wiederholen <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n)</span></code>.
 Mit diesen Mitteln können wir uns die Multiplikation selbst bauen:</p>
@@ -950,19 +952,19 @@ Erstellen wir zum Beispiel eine Liste</p>
 <p>Programme geschrieben in verschiedenen Programmiersprachen steuern den Computer und abstrahieren damit die reale physikalische Welt der elektrischen Schaltungen und Transistoren.
 Sie hieven uns in eine abstrakte Welt der Algorithmen und Datenstrukturen.
 Wir treten aus der Welt der Register und Speicheradressen hinaus in eine Welt der Variablen, Listen, Tupel, Schleifen, Bedingungen, Objekte und alles was wiederum von diesen Konstrukten abstrahiert werden kann.
-Wir verlieren jedoch auch nichts <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-essenz-of-computers-and-languages"><span class="std std-ref">essenzielles</span></a>, da jede Hochsprache eben auch <em>Turing-vollständig</em> ist!</p>
+Wir verlieren jedoch auch nichts <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-essenz-of-computers-and-languages"><span class="std std-ref">essenzielles</span></a>, da jede Hochsprache eben auch <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a> ist!</p>
 <p>Als <em>Computational Thinker*innen</em> konzipieren Sie Algorithmen durch Nachdenken, Skizzen und Mitschriften.
-Können Sie ihr Problem durch einen <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a> lösen, so existiert eine <em>Turingmaschine</em> der ihr Problem löst.
-Da alle gängigen Programmiersprachen <em>Turing-vollständig</em> sind, können Sie jeden <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a> in einer solchen Sprache formulieren!
+Können Sie ihr Problem durch einen <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a> lösen, so existiert eine <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-universal-turing-machine"><span class="std std-ref">Turingmaschinen</span></a> die ihr Problem löst.
+Da alle gängigen Programmiersprachen Turing-vollständig sind, können Sie jeden <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a> in einer solchen Sprache formulieren!
 Diese Gewissheit befreit Sie von</p>
 <ol class="simple">
 <li><p>der physischen Welt der Computer aber auch</p></li>
 <li><p>von der konkreten Programmiersprache</p></li>
 </ol>
-<div class="hint admonition" id="languages-usfulness-complete">
+<div class="remark admonition" id="languages-usfulness-complete">
 <p class="admonition-title">Nutzen der Programmiersprachen</p>
-<p>Da alle gängigen <a class="reference internal" href="languages.html#sec-programming-languages"><span class="std std-ref">Programmiersprachen</span></a> <em>Turing-vollständig</em> sind, können Sie jeden <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a> in einer solchen Sprache formulieren!
-<a class="reference internal" href="languages.html#sec-programming-languages"><span class="std std-ref">Programmiersprachen</span></a> sind das Bindeglied zwischen Mensch und Maschine.</p>
+<p>Da alle gängigen Programmiersprachen Turing-vollständig sind, können Sie jeden Algorithmus in einer solchen Sprache formulieren!
+Programmiersprachen sind das Bindeglied zwischen Mensch und Maschine.</p>
 </div>
 </div>
 

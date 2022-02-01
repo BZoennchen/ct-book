@@ -1,7 +1,7 @@
 # Erfolgsfaktoren
 
 In den Entwurf von Programmiersprachen ist viel Denkkraft hineingeflossen.
-Wie Sie im Beispiel des Kartensortierens gesehen haben, ist es nicht einfach eine saubere gut leserliche und unmissverständliche Sprache zu entwickeln.
+Wie Sie im Beispiel des [Kartensortierens](sec-sorting) gesehen haben, ist es nicht einfach eine saubere gut leserliche und unmissverständliche Sprache zu entwickeln.
 Zum Glück können wir von den Vorarbeiten anderer Denker\*innen profitieren und müssen uns über die Entwicklung einer Programmiersprache keine Gedanken machen.
 Wir möchten Ihnen dennoch einen Einblick geben, weshalb neue Programmiersprachen entwickelt werden und welche Art von Programmiersprachen es gibt.
 
@@ -23,13 +23,13 @@ Die wesentlichen Teile die wir bei einer Sprache beurteilen können sind:
 4. ihre **Performance** (Laufzeit des Programmcodes)
 
 Diese vier Säulen stehen in Beziehung.
-Eine angenehme gut leserliche Syntax führt zu einer regen Benutzung und damit zu einem starken Ökosystem, was den Anwendungsbereich erweitert.
+Eine angenehme gut leserliche [Syntax](def-syntax) führt zu einer regen Benutzung und damit zu einem starken Ökosystem, was den Anwendungsbereich erweitert.
 Ein vielschichtiger Anwendungsbereich stärkt die Diversität des Ökosystems und kann zu neuen syntaktischen Erweiterungen der Sprache führen.
 Entwickelt sich die Sprache weiter und wird vielfach verwendet, wird sie oftmals auch hinsichtlich ihrer Performance optimiert.
 Diese Rückkoppelung kann deshalb dazu führen, dass eine neue Sprache schnell an Fahrt aufnimmt.
 
 Performance und Lesbarkeit bzw. Entwicklungszeit stehen aber auch im Konflikt.
-Um feinste Optimierungen durchzuführen muss die Sprache über Mittel verfügen, die die Entwicklungszeit erhöht und die Lesbarkeit des Codes erschwert.
+Um feinste Optimierungen durchführen zu können, muss die Sprache über Mittel verfügen, die die Entwicklungszeit erhöht und die Lesbarkeit des Codes erschweren.
 Hohe Lesbarkeit und eine hohe Performance sind gleichzeitig schwer zu erreichen.
 ``Python`` hat hier einen Weg gefunden (siehe [Python](sec-python)).
 
@@ -37,12 +37,12 @@ Neue Programmiersprachen haben es natürlich erst einmal schwer, denn etablierte
 Niemand schreibt diese Systeme erneut, es sei denn es lohnt sich wirklich.
 Zudem gibt es für etablierte Sprachen eine über die Jahre entwickelte Ansammlung an Bibliotheken, Tools, Tutorials und Dokumentationen - sie besitzten bereits ein gutes **Ökosystem**.
 
-Es gibt Sprachen, wie zum Beispiel ``CUDA``, die einen sehr engen Anwendungsbereich haben: die Programmierung von Nvidea Grafikkarten.
+Es gibt Sprachen, wie zum Beispiel ``CUDA``, die einen sehr engen Anwendungsbereich haben. In diesem Beispiel ist es die Programmierung von Nvidea Grafikkarten.
 Für den Erfolg der Sprache kann das von Vorteil sein, sofern es schwer ist in dem Anwendungsbereich Fuß zu fassen oder dieser keine breite Anwender\*innen- oder Entwickler\*innenbasis besitzt.
 Da GPUs fundamental anders funktionieren als CPUs, bedurfte es neuer Sprachen um die Programmierung dieser Geräte zu vereinfachen.
 Im Fall von Nvidea schützt der Hardwarehersteller sein geistiges Eigentum und macht es für andere Entwickler schwierig neue Sprache für Nvidea GPUs zu entwickeln.
 Der offene Standard ``OpenCL`` wird nicht mehr von Nvidea weiterentwickelt und so können ``OpenCL`` Programmierer\*innen wichtige Features der Grafikkarten nicht nutzen.
-Solche Monopole können eine Sprache auch vorran bringen, sind aber heute unserer Ansicht nach nicht mehr Zeitgemäß, da sie die Innovation tendenziell verlangsamen.
+Solche Monopole können eine Sprache auch voranbringen, sind aber heute unserer Ansicht nach nicht mehr Zeitgemäß, da sie die Innovation tendenziell verlangsamen.
 
 Folgender ``OpenCL``-Code addiert zwei große Vektoren (zwei große Listen).
 Die Operation wird auf tausenden kleinen Prozessoren parallel ausgeführt.
@@ -57,7 +57,7 @@ __kernel void vecAdd(__global double *a, __global double *b, __global double *c,
 }
 ```
 
-Viele Sprachen werden einmalig in Forschungsprojekten für ganz spezielle Zwecke von ihrem Erfinder benutzt und versinken dann wieder in der Versenkung.
+Viele Sprachen werden einmalig in Forschungsprojekten für ganz spezielle Zwecke von ihren Erfinder\*innen benutzt und versinken dann wieder in der Versenkung.
 Von diesen haben und werden wir nie etwas mitbekommen.
 Sehr wenige davon treffen jedoch ins Schwarze.
 
@@ -71,14 +71,14 @@ Sie wächst zu schnell.
 Überhastet werden Neuerungen eingebracht, die sich später als Fehler herausstellen.
 Befinden sich erst einmal bestimmte Konzepte in einer Sprache, kann man diese nur sehr schwer wieder herausbringen, da bereits viele Software-Systeme auf die Konzepte angewiesen sind.
 So wird die Vorhersage ob sich eine Sprache durchsetzen wird zu einer eher chaotischen Wettervorhersage.
-Es gibt viele unsicherer Variablen inklusive der zukünftigen technischen Entwicklung.
+Es gibt viele unsichere Variablen inklusive der zukünftigen technischen Entwicklung.
 
 ``Haskell`` ist eine Sprache die sehr gemächlich an Erfolg gewonnen hat.
 Sie war nie die Nummer eins und ist noch immer eher eine Nischensprache, doch ist sie auch nicht verschwunden.
 Das war jedoch nur möglich, da sie von einer kleinen Gruppe am Leben gehalten wurde.
 
 Eine weitere wichtige Ursache für den Erfolg einer Sprache ist deren Leserlichkeit aber auch deren allgemeiner Zugang.
-Wird die Sprache oder Bibliotheken kommerzialisiert?
+Wird die Sprache oder ihre Bibliotheken kommerzialisiert?
 Gibt es eine starke Open-Source oder Free-Source Gemeinschaft?
 Wird die Sprache von großen Unternehmen unterstützt?
 Gibt es freie Programmierwerkzeuge?
@@ -96,6 +96,8 @@ x = y - z + a + u;
 durchführt.
 
 Möchte ich hingegen eine kürzere Entwicklungszeit und weniger Fehlerquellen in meinem Code, mache ich womöglich bei der Geschwindigkeit kleinere Abstriche und wähle stattdessen leichter zu erlernende Sprache wie ``Python``, ``Java`` oder ``C#``.
+Auch setzt ein optimierter Code voraus, dass die Entwickler\*innen dieser Optimierung gewachsen sind.
+Schlechter ``C++``-Code läuft oft langsamer als schlechter ``Java`` code, da im Fall von ``Java`` viel automatisch optimiert wird.
 
 Für die Anwendung der linearen Algebra ist es sinnvoll der Programmiererin oder dem Programmierer die Möglichkeit zu geben, Matrizen zu multiplizieren.
 Im folgenden sehen Sie wie dies in ``MATLAB`` syntaktisch möglich ist.
@@ -113,12 +115,12 @@ Ein Beispiel ist das Projekt [Node.js](https://en.wikipedia.org/wiki/Node.js).
 
 Unterschiedliche Sprachen folgen unterschiedlichen Philosophien.
 In ``Python`` gibt es oft nur den einen richtigen Weg um etwas auszudrücken.
-In Sprachen wie ``JavaScript`` gibt es hingegen viele ausdrucksweisen (syntaktische Unterschiede) für die gleiche Semantik.
+In Sprachen wie ``JavaScript`` gibt es hingegen viele Ausdrucksweisen ([syntaktische](def-syntax) Unterschiede) für die gleiche [Semantik](def-semantik).
 Im Falle von ``Python`` hat es den Vorteil, dass fremder Code leichter zu lesen ist.
-Sind hingegen mehrere Programmierstile valide, dann treffen möglicherweise zwei verschiedene Stile aufeinander was wiederum die Zusammenarbeit behindert.
+Sind hingegen mehrere Programmierstile valide, dann treffen möglicherweise zwei verschiedene Stile aufeinander was wiederum die Zusammenarbeit erschwert.
 Andererseits kann mehr Freiheit in der Ausdrucksweise auch zu innovativem Code führen, der sich dann als *Best-Practice* herausstellt und zum neuen Standard wird.
 
-Es gibt Sprachen die kompakt sind dafür aber impliziert Dinge annehmen und Sprachen die viel Text erfordern, dafür aber wenig implizieren.
+Es gibt Sprachen die kompakt sind, dafür aber implizit Dinge annehmen und Sprachen die viel Text erfordern, dafür aber wenig implizieren.
 Kompakte Sprachen integrieren oft etablierte Praktiken bzw. immer wiederkehrende Codestrukturen (**Muster**).
 Für den Einstieg sind kompakte Sprachen oder kompakter Code oft ein Hindernis.
 Doch je erfahrener man mit der Sprache wird, desto lästiger wird das immer gleiche Getippe.

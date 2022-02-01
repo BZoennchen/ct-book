@@ -750,7 +750,10 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/02-2/2-formal-science.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/02-2/2-formal-science.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -771,6 +774,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/02-2/2-formal-science.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -813,10 +836,10 @@ Es ist äußerst wichtig zu verstehen, dass es Shannon um die <em>Informationsü
 Sie ist für sein Modell von zentraler Bedeutung.
 So schreibt er in <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id6">Sha48</a>]</span>:</p>
 <blockquote>
-<div><p>Frequently the messages have meaning; that is they refer to or are correleted according to some system with certain physical or conceptual entities. These <strong>smenatic aspects of communication are irrelevant</strong> to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design. – Claude E. Shannon</p>
+<div><p>Frequently the messages have meaning; that is they refer to or are correleted according to some system with certain physical or conceptual entities. These <strong>semantic aspects of communication are irrelevant</strong> to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design. – Claude E. Shannon</p>
 </div></blockquote>
-<p>Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung (Semantik) gehört doch war diese für die <em>Informationsübertragung</em> über ein Medium für ihn irrelevant.
-Die Übertragung besteht dabei aus mehreren Teilen:</p>
+<p>Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung (Semantik) gehört, doch befand er diese für die <em>Informationsübertragung</em> über ein Medium als irrelevant.</p>
+<p>Die Übertragung besteht dabei aus mehreren Teilen:</p>
 <ol class="simple">
 <li><p>Eine (Informations)-<strong>Quelle</strong> versendet eine <strong>Nachricht</strong>.</p></li>
 <li><p>Diese Nachricht wird durch einen <strong>Sender</strong> in ein <strong>Signal</strong> codiert und in einen <strong>Kanal</strong> eingespeist.</p></li>
@@ -828,31 +851,65 @@ Die Übertragung besteht dabei aus mehreren Teilen:</p>
 <a class="reference internal image-reference" href="../../_images/shannon-messages.png"><img alt="../../_images/shannon-messages.png" src="../../_images/shannon-messages.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Shannon’s Schema der Nachrichtenübertragung bzw. Kommunikation.</span><a class="headerlink" href="#fig-shannon-messages" title="Permalink to this image">¶</a></p>
 </div>
-<p>In diesem Modell ist die Nachricht eine <em>Information</em> und der <em>Informationsgehalt</em> ist umso größer je mehr mögliche Nachrichten es gibt.</p>
+<p>In diesem Modell ist die Nachricht/Symbolfolge/Zeichenfolge eine <em>Information</em> und der <em>Informationsgehalt</em> ist umso größer je mehr mögliche Nachrichten es gibt.</p>
 <blockquote>
 <div><p>If the number of [possible] messages […] is finite then this number […] can be regarded as a measure of the information produced when one message [… from the set of possible messages], all
 choices being equally likely – Claude E. Shannon</p>
 </div></blockquote>
+<p>Betrachten wir die folgenden beiden Zeichenfolgen:</p>
+<ol class="simple">
+<li><p>Prüfung bestanden</p></li>
+<li><p>brüeung Pfnsanedt</p></li>
+</ol>
+<p>Nach Shannon’s Definition enthalten beide Symbolketten/Zeichenfolgen gleich viel Information.
+Die Anzahl der <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>, welche wir bräuchten um die beiden Nachrichten auf einem Kanal zu übertragen ist dieselbe.
+Intuitiv würden wir sagen, dass die erste Nachricht mehr Information beinhaltet.
+Dies liegt daran, dass wir automatisch die <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> (Bedeutung) einer Zeichenfolge betrachten.
+Shannon’s Definition ist jedoch rein <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">syntaktisch</span></a>, denn Maschinen fehlt (bis heute) die Eigenschaft der semantischen Betrachtung.
+In der Informatik gibt es deshalb (noch) keine befriedigende Definition von Information, die auch der Bedeutung der betrachteten Information gerecht wird und selbst die syntaktischen Definitionen sind nicht besonders aussagekräftig.
+Das ist doch sehr erstaunlich, dass die Informatik, also jene Wissenschaft, die sich als ihr zentrales Forschungsobjekt, mit der Information beschäftigt, keine wirklich aussagekräftige Definition von genau jener Information kennt.</p>
 <p>Gehen wir zurück zu unserem Einführungsbeispiel in der U-Bahn.
 Falls der Wetterbericht Ihnen lediglich mitteilen kann ob es regnet oder nicht, so ist der Informationsgehalt, dass es regnet gering.
-Wenn aber der Wetterbericht Ihnen unterschiedliche Arten von Regen oder anderen Wetterlagen berichten kann so trägt eine dieser konkreten Wetterlagen einen großen Informationsgehalt in sich.
-Schon an diesem Beispiel sehen wir aber auch eine schwäche dieser Definition: Ob es draußen 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
-Doch ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon’s Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.
-Der Informationsgehalt ist rein <strong>syntaktisch</strong> definiert.</p>
+Wenn aber der Wetterbericht Ihnen unterschiedliche Arten von Regen oder andere Wetterlagen berichten kann, so trägt eine dieser konkreten Wetterlagen einen großen Informationsgehalt in sich.
+Auch hier sehen wir aber die schwäche dieser Definition: Ob es draußen 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
+Doch ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon’s Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.</p>
 <p>Einer der Vorzüge der (strukturwissenschaftlichen) Definition ist jedoch, dass wir ein Maß für den <em>Informationsgehalt</em> definieren können.
-Shannon misst den <em>Informationsgehalt</em> einer Nachricht über die <em>Entropie</em>, welche uns in der Physik schon über den Weg gelaufen ist.
+Shannon misst den Informationsgehalt einer Nachricht über die <em>Entropie</em>, welche uns in der Physik schon über den Weg gelaufen ist.
 Die Entropie in der Informatik ist ein Maß für den <em>mittleren Informationsgehalt</em> einer <em>Nachricht</em>.</p>
-<div class="admonition-entropie-informatik admonition">
+<p>Betrachten wir eine bestimmte endliche Menge an Zeichen die bei einer Übertragung auftauchen können.
+Diese Menge bezeichnet man üblicherweise als Alphabet <span class="math notranslate nohighlight">\(\Sigma\)</span>.
+Sei nun <span class="math notranslate nohighlight">\(a \in \Sigma\)</span> ein Zeichen.
+Wie wahrscheinlich ist es, dass ein Zeichen <span class="math notranslate nohighlight">\(X\)</span> einer Nachricht gleich <span class="math notranslate nohighlight">\(a\)</span> ist, d.h. wie groß ist</p>
+<div class="math notranslate nohighlight">
+\[P(X = \sigma) = p_\sigma ?\]</div>
+<p>Wenn jedes Zeichen mit gleicher Wahrscheinlichkeit in einer Nachricht auftritt, dann ist</p>
+<div class="math notranslate nohighlight">
+\[P(X = \sigma) = \frac{1}{N},\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(N = |\Sigma|\)</span> gleich der Anzahl der Zeichen im Alphabet <span class="math notranslate nohighlight">\(\Sigma\)</span> ist.</p>
+<p>Wie viel Information steckt dann in einem Zeichen?
+Anders gefragt: Wie viel Unsicherheit eliminiert ein Zeichen oder wie viel Ja/Nein Fragen müssten wir stellen um auf das übertragene Zeichen <span class="math notranslate nohighlight">\(\sigma\)</span> zu kommen?
+Die wenigsten Fragen müssen wir stellen wenn wir mit der sog. <a class="reference internal" href="../04/dive-bell.html#def-binary-search"><span class="std std-ref">binären Suche</span></a> vorgehen, siehe auch die Übung <a class="reference internal" href="../04/dive-bell.html#sec-dive-bell"><span class="std std-ref">Sprechen in der Taucherglocke</span></a>.
+Dabei verringert sich bei jeder Frage die Anzahl der Möglichkeiten um die Hälfte.
+Mit dieser Strategie benötigen wir</p>
+<div class="math notranslate nohighlight">
+\[\log_2\left( N \right) = \log_2\left( \frac{1}{p_\sigma} \right)\]</div>
+<p>Fragen.
+Da in einer normalen Sprache jedoch nicht jedes Zeichen mit der gleichen Wahrscheinlichkeit auftritt, berücksichtigen wir diese ebenfalls.
+Jedes Zeichen <span class="math notranslate nohighlight">\(\sigma_i\)</span> kann eine andere Auftrittswahrscheinlichkeit <span class="math notranslate nohighlight">\(p_i\)</span> besitzen.
+Der <em>Informationsgehalt</em> <span class="math notranslate nohighlight">\(I\)</span>, der dann in dem <span class="math notranslate nohighlight">\(i\)</span>-ten Symbol <span class="math notranslate nohighlight">\(\sigma_i\)</span> steckt, ist dann</p>
+<div class="math notranslate nohighlight">
+\[I(\sigma_i) = \log_2\left( \frac{1}{p_i} \right) = -\log_2(p_i).\]</div>
+<div class="definition admonition" id="def-entropie">
 <p class="admonition-title">Entropie (Informatik)</p>
 <p>Sei <span class="math notranslate nohighlight">\(X\)</span> eine Zufallsvariable einer gedächtnislosen Quelle über einem endlichen, aus Zeichen bestehenden Alphabet <span class="math notranslate nohighlight">\(\Sigma = \left\{ \sigma_1, \ldots, \sigma_m \right\}\)</span>.
-Sei <span class="math notranslate nohighlight">\(p_\sigma = P(X = \sigma)\)</span> die Wahrscheinlichkeit, dass die Zufallsvariable <span class="math notranslate nohighlight">\(X\)</span> das Zeichen <span class="math notranslate nohighlight">\(\sigma\)</span> annimmt.
+Sei <span class="math notranslate nohighlight">\(p_i = P(X = \sigma_i)\)</span> die Wahrscheinlichkeit, dass die Zufallsvariable <span class="math notranslate nohighlight">\(X\)</span> das Zeichen <span class="math notranslate nohighlight">\(\sigma_i\)</span> annimmt.
 Dann ist</p>
 <div class="math notranslate nohighlight">
-\[I(\sigma) = \log_2(1/p_\sigma) = - \log_2(p_\sigma)\]</div>
-<p>der <strong>Informationsgehalt des Zeichens</strong> (notwendige Binärbits um <span class="math notranslate nohighlight">\(1 / p_\sigma\)</span> Ereignisse zu unterscheiden).</p>
+\[I(\sigma_i) = \log_2(1/p_i) = - \log_2(p_i)\]</div>
+<p>der <strong>Informationsgehalt des Zeichens</strong> (notwendige Binärbits um <span class="math notranslate nohighlight">\(1 / p_i\)</span> Ereignisse zu unterscheiden).</p>
 <p>Die <strong>Entropie eines Zeichens</strong> ist definiert als der Erwartungswert des Informationsgehalts:</p>
 <div class="math notranslate nohighlight">
-\[H_1 = E[I] = \sum_{\sigma \in \Sigma} p_\sigma I(\sigma) = - \sum_{\sigma \in \Sigma} p_\sigma \log_2(p_\sigma)\]</div>
+\[H_1 = E[I] = \sum^m_{i=1} p_i I(\sigma_i) = - \sum^m_{i=1} p_i \log_2(p_i)\]</div>
 <p>Die <strong>Entropie</strong> <span class="math notranslate nohighlight">\(H_n\)</span> <strong>für Wörter</strong> <span class="math notranslate nohighlight">\(w \in \Sigma^n\)</span> der Länge <span class="math notranslate nohighlight">\(n\)</span> ergibt sich durch</p>
 <div class="math notranslate nohighlight">
 \[H_n = - \sum_{w \in \Sigma^n} p_w \log_2(p_w),\]</div>
@@ -865,10 +922,14 @@ Dann ist</p>
 Kurz gesagt: je größer die Gewissheit, desto kleiner ist der Informationsgehalt.
 Information führt zur Beseitigung von Unsicherheit.
 Je mehr Unsicherheit beseitigt wird, desto größer ist der Informationsgehalt!</p>
+<p>Zwischen der Entropie eines Zeichens und den notwendigen Bits einer Nachricht gibt es einen schönen Zusammenhang:
+Ist ein bestimmtes Alphabet <span class="math notranslate nohighlight">\(\Sigma\)</span> mit all den Auftrittswahrscheinlichkeiten seiner Zeichen gegeben, so benötigen wir</p>
+<div class="math notranslate nohighlight">
+\[m \cdot H_1\]</div>
+<p><a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> um eine Nachricht mit <span class="math notranslate nohighlight">\(m\)</span> Zeichen zu übertragen.</p>
 <p>Das Konzept der <em>Entropie</em> wird schnell anhand eines Beispiels klar.
 Nehmen wir den Münzwurf mit einer perfekten Münze.
-Werfen Sie die Münze einmal so ist der Informationsgehalt <span class="math notranslate nohighlight">\(H_1 = 1\)</span>.
-Die Wahrscheinlichkeit für Kopf oder Zahl liegt bei <span class="math notranslate nohighlight">\(0.5\)</span>, daraus ergibt sich:</p>
+Werfen Sie die Münze einmal, so ist der Informationsgehalt <span class="math notranslate nohighlight">\(H_1 = 1\)</span>, denn die Wahrscheinlichkeit für Kopf oder Zahl liegt bei <span class="math notranslate nohighlight">\(0.5\)</span> und daraus ergibt sich:</p>
 <div class="math notranslate nohighlight">
 \[H_1 = 0.5 \cdot \log_2(2) + 0.5 \cdot \log_2(2) = 0.5 + 0.5 = 1\]</div>
 <p>Die Informationsquelle ist der Münzwurf, die Nachricht das Ergebnis des Wurfes und der Empfänger sind wir, die den Münzwurf beobachten.</p>
@@ -887,12 +948,13 @@ Die Wahrscheinlichkeit für Kopf oder Zahl liegt bei <span class="math notransla
 <p>Lassen Sie uns ein weiteres Beispiel betrachten.
 Stellen Sie sich vor, Sie hätten eine Informationsquelle die fortwährend die Folge <span class="math notranslate nohighlight">\(0,1,0,1,0,1, \ldots\)</span> ausspuckt.
 Für <span class="math notranslate nohighlight">\(H_1\)</span> ergibt sich <span class="math notranslate nohighlight">\(H_1 = 1\)</span>, denn wie beim Münzwurf besteht eine Wahrscheinlichkeit von <span class="math notranslate nohighlight">\(0.5\)</span> ob wir eine <span class="math notranslate nohighlight">\(0\)</span> oder <span class="math notranslate nohighlight">\(1\)</span> für ein Zeichen an einer zufälligen Stelle erhalten.
-Das ändert sich jedoch nicht wenn wir die Wortlänge auf <span class="math notranslate nohighlight">\(2\)</span> erhöhen (<span class="math notranslate nohighlight">\(H_2 = 1\)</span>), denn mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(0.5\)</span> sehen wir entweder <span class="math notranslate nohighlight">\(1,0\)</span> oder <span class="math notranslate nohighlight">\(0,1\)</span>.
-Wäre die Folge rein zufällig wäre <span class="math notranslate nohighlight">\(H_2 = 2\)</span>, denn mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(0.25\)</span> sähen wir <span class="math notranslate nohighlight">\(0,0\)</span> oder <span class="math notranslate nohighlight">\(0,1\)</span> oder <span class="math notranslate nohighlight">\(1,0\)</span> oder <span class="math notranslate nohighlight">\(1,1\)</span>.
+Das ändert sich jedoch nicht wenn wir die Wortlänge auf <span class="math notranslate nohighlight">\(2\)</span> erhöhen. Es ergibt sich <span class="math notranslate nohighlight">\(H_2 = 1\)</span>, denn mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(0.5\)</span> sehen wir entweder <span class="math notranslate nohighlight">\(1,0\)</span> oder <span class="math notranslate nohighlight">\(0,1\)</span>.
+Wäre die Folge rein zufällig, wäre <span class="math notranslate nohighlight">\(H_2 = 2\)</span>, denn mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(0.25\)</span> sähen wir <span class="math notranslate nohighlight">\(0,0\)</span> oder <span class="math notranslate nohighlight">\(0,1\)</span> oder <span class="math notranslate nohighlight">\(1,0\)</span> oder <span class="math notranslate nohighlight">\(1,1\)</span>.
 Es ergibt sich:</p>
 <div class="math notranslate nohighlight">
 \[H_2 = 4 \cdot 0.25 \cdot \log_2(4) = \log_2(4) = 2\]</div>
-<p>Für unsere Folge <span class="math notranslate nohighlight">\(0,1,0,1,0,1, \ldots\)</span> entscheidet das erste Zeichen über alle weiteren Zeichen egal wie lang das Wort ist welches wir betrachten, somit ist die Entropie <span class="math notranslate nohighlight">\(H_n = 1\)</span> und damit</p>
+<p>Für unsere Folge <span class="math notranslate nohighlight">\(0,1,0,1,0,1, \ldots\)</span> entscheidet das erste Zeichen über alle weitere Zeichen, egal wie lang das Wort ist, welches wir betrachten.
+Somit ist die Entropie <span class="math notranslate nohighlight">\(H_n = 1\)</span> und damit</p>
 <div class="math notranslate nohighlight">
 \[H = \lim_{n \rightarrow \infty} \frac{H_n}{n} = \lim_{n \rightarrow \infty} \frac{1}{n} = 0\]</div>
 <p>Der Informationsgehalt ist gering und wir könnten mit deutlich weniger Zeichen, die gleiche Information übertragen!
@@ -902,40 +964,136 @@ Die rein zufällige Folge aus <span class="math notranslate nohighlight">\(0\)</
 <p>und damit gilt</p>
 <div class="math notranslate nohighlight">
 \[H = \lim_{n \rightarrow \infty} \frac{H_n}{n} = \lim_{n \rightarrow \infty} \frac{n}{n} = 1.\]</div>
-<p>Bei Shannon’s Informationsbegriff gehen wir davon aus, dass Information in kleinste Informationsteile (<em>Bits</em>) zerlegbar.
+<p>Bei Shannon’s Informationsbegriff gehen wir davon aus, dass Information in kleinste Informationsteile (<a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>) zerlegbar sind.
 Zudem ist die Summe dieser Teilchen die Information selbst.
 Beim Zusammensetzen der Einzelteile, also der Kombination von Symbolen, entsteht demnach keine neue Qualität, welche eben nicht auf die einzelnen Symbole reduziert werden kann.</p>
-<div class="admonition-information-informatik admonition">
+<div class="remark admonition">
 <p class="admonition-title">Information (Informatik)</p>
 <p>Eine <em>Information</em> ist eine übertragene Nachricht und kann als die Summe ihrer Einzelteile betrachtet werden.</p>
 </div>
-<p>Shannon’s Informationsbegriff ignoriert jedwede Semantik und verdinglicht die Information, dennoch ist er aus technischer Sicht sehr nützlich.
-Sie hiflt uns zu bestimmen wie viel Zeichen (Syntax) notwendig sind um etwas auszudrücken.
-Eine hohe <em>Entropie</em> bedeutet in diesem Zusammenhang, dass wir unsere Zeichen sparsam nutzen.
-Außerdem kann die <em>Entropie</em> als Informationsgehalt aus Sicht der digitalen Maschine verstanden werden, da sie keinerlei Semantik a priori kennt.
+<p>Shannon’s Informationsbegriff ignoriert jedwede <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> und verdinglicht die Information, dennoch ist er aus technischer Sicht sehr nützlich.
+Sie hilft uns zu bestimmen wie viel Zeichen (<a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a>) notwendig sind, um etwas auszudrücken.
+Eine hohe <a class="reference internal" href="#def-entropie"><span class="std std-ref">Entropie</span></a> bedeutet in diesem Zusammenhang, dass wir unsere Zeichen sparsam nutzen.
+Außerdem kann die Entropie als Informationsgehalt aus Sicht der digitalen Maschine verstanden werden, da sie keinerlei Semantik a priori kennt.
 Zwar kann der Computer, zum Beispiel zwei Binärzahlen addieren, doch hat er keinerlei Vorstellung vom Gegenstand der Zahl.
 Alle Manipulationen sind syntaktischer Natur, d.h. eine Manipulation von Zeichen.</p>
-<div class="hint admonition">
+<div class="remark admonition">
 <p class="admonition-title">Formale Methoden</p>
 <p>Formale Methoden sind unter anderem eine Anstrengung um wesentliche semantische Aspekte von Sprache und Denken auf regelgeleitete, rein syntaktische Symbolmanipulation zurückzuführen.</p>
 </div>
 </div>
 <div class="section" id="informationstheorie">
 <h2><span class="section-number">2.2.2. </span>Informationstheorie<a class="headerlink" href="#informationstheorie" title="Permalink to this headline">¶</a></h2>
-<p>Ein weiterer äußerst interessanter technischer Informationsbegriff (die Kolmogorow-Komplexität) stammt aus der Theoretischen Informatik.
-Wir werden diesen Begriff hier nur am Rande erwähnen.</p>
-<p>Wir wechseln die Perspektive von der <em>Nachricht</em> zu ihrer <em>Konstruktion</em> durch einen Algorithmus.
-Wir suchen den ‘einfachsten’ Algorithmus der eine bestimmte Information erzeugen kann.
+<p>Verlassen wir die Sicht der Nachrichtenübertragung, so hilft uns der klassische Informationsbegriff von Shannon nicht sonderlich weiter.
+Wie etwa unterscheidet sich der <em>Informationsgehalt</em> von einer zufälligen Bitfolge der Länge <span class="math notranslate nohighlight">\(n\)</span> zu einer angenäherten Darstellung der Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> beschränkt auf <span class="math notranslate nohighlight">\(n\)</span> <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>?
+In Shannon’s Theorie agiert ein Zusammenschluss von Akteuren (Sender, Empfänger, Kanal, Nachricht).
+Um seinen Informationsbegriff auf eine einzelne Zeichenkette zu nutzten, müssten uns irgendwie einen künstlichen Nachrichtenkanal und Sender konstruieren.</p>
+<p>Anstatt der Perspektive aus der Nachrichtenübertragung betrachtet die algorithmische Informationstheorie mit der Kolmogorow-Komplexität die algorithmische Beschreibung einer Zeichenfolge.
+Kurz gesagt: Die Kolmogorow-Komplexität einer Zeichenkette ist die Länger ihrer kürzesten Beschreibung.
+Jene Beschreibung ist nichts anderes als ein Algorithmus!
+Je kürzer der Algorithmus bzw. die Beschreibung, desto weniger Information enthält die durch ihn erzeugte/beschriebene Zeichenkette.</p>
+<div class="definition admonition" id="def-kolmogorow-complexity">
+<p class="admonition-title">Kolmogorow-Komplexität</p>
+<p>Für eine Programmiersprache <span class="math notranslate nohighlight">\(U\)</span>, z.B. beschrieben als <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-utm"><span class="std std-ref">universelle Turingmaschine</span></a>, ist der <em>Informationsgehalt</em> oder <em>Kolmogorow-Komplexität</em> <span class="math notranslate nohighlight">\(C_U(w)\)</span> einer Zeichenfolge <span class="math notranslate nohighlight">\(w\)</span> definiert als die Bitlänge des kürzesten Programms <span class="math notranslate nohighlight">\(T\)</span> (z.B. <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschine</span></a>), das ohne weitere Eingabe die Zeichenfolge <span class="math notranslate nohighlight">\(w\)</span> als Ausgabe erzeugt.
+Mathematisch ausgedrückt:</p>
+<div class="math notranslate nohighlight">
+\[C_U(w) = \min\limits_{\alpha_T} \left\{ |\alpha_T| : U(\alpha_T) = T() = w\right\},\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(T()\)</span> bedeutet, dass die Turingmaschine <span class="math notranslate nohighlight">\(T\)</span>, welche durch <span class="math notranslate nohighlight">\(\alpha_T\)</span> beschrieben ist, ohne Eingabe startet.
+<span class="math notranslate nohighlight">\(|\alpha_T|\)</span> ist die Länge der Beschreibung der Turingmaschine <span class="math notranslate nohighlight">\(T\)</span>.</p>
+</div>
+<p>Nehmen wir an wir möchten folgende Zeichenkette</p>
+<div class="math notranslate nohighlight">
+\[\text{abababababababababab}\]</div>
+<p>also 10 mal die Zeichen <span class="math notranslate nohighlight">\(\text{ab}\)</span> <em>beschreiben</em>.
+In <code class="docutils literal notranslate"><span class="pre">Python</span></code> können wir das mit folgendem Algorithmus vollziehen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;abababababababababab&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abababababababababab&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dieser Algorithmus benötigt insgesamt 22 Zeichen.
+Allerdings ist das nicht das kürzeste Programm.
+Folgender Algorithmus/Beschreibung</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ab&#39;</span><span class="o">*</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abababababababababab&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>benötigt lediglich 7 Zeichen und erzeugt die gleiche Zeichenkette.
+Wie sieht es nun aus wenn wir aus dem mittleren <span class="math notranslate nohighlight">\(\text{a}\)</span> ein <span class="math notranslate nohighlight">\(\text{b}\)</span> machen?
+Wenn wir also</p>
+<div class="math notranslate nohighlight">
+\[\text{ababababaaababababab}\]</div>
+<p>beschreiben wollen?
+Folgendes <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Programm erzeugt die neue Zeichenkette:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ab&#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s1">&#39;aa&#39;</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="s1">&#39;ab&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ababababaaababababab&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wären wir uns sicher, dass die angegebenen Algorithmen die kürzesten Beschreibungen sind, so können wir sagen dass <span class="math notranslate nohighlight">\(\text{abababababababababab}\)</span> weniger Information enthält als <span class="math notranslate nohighlight">\(\text{ababababaaababababab}\)</span>.
+Löschen wir ein <span class="math notranslate nohighlight">\(\text{a}\)</span> aus der ursprünglichen Zeichenkette, z.B. <span class="math notranslate nohighlight">\(\text{ababbababababababab}\)</span> so müssen wir den <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code wie folgt anpassen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ab&#39;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="s1">&#39;b&#39;</span><span class="o">+</span><span class="mi">7</span><span class="o">*</span><span class="s1">&#39;ab&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ababbababababababab&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obwohl die Zeichenkette kürzer ist, enthält sie mehr Information.
+Kürzere Zeichenketten können nach dieser Definition mehr Informationen enthalten als längere, entscheidend ist deren <em>Beschreibungslänge</em>.</p>
+<p>Die kürzeste Beschreibung kann nicht länger als die nicht-algorithmische Beschreibung der Zeichenkette sein.
+Das bedeutet, wir können immer die Zeichenkette in Form einer Programmiersprache niederschreiben, so wie wir das ganz zu Beginn getan haben.</p>
+<div class="definition admonition" id="def-compressible">
+<p class="admonition-title">Algorithmische Zufälligkeit</p>
+<p>Falls die Länge der kürzesten Beschreibung einer Zeichenkette größer oder gleich der Länge der Zeichenkette selbst ist, dann ist nennen wir diese Zeichenkette <em>algorithmisch zufällig</em> und <em>unkomprimierbar</em>.</p>
+</div>
+<p>Problematisch an der <a class="reference internal" href="#def-kolmogorow-complexity"><span class="std std-ref">Kolmogorow-Komplexität</span></a> und im Gegensatz zur <a class="reference internal" href="#def-entropie"><span class="std std-ref">Entropie</span></a> gilt, dass wir sie im Allgemeinen nicht berechnen können.</p>
+<div class="theorem admonition" id="def-uncomputable">
+<p class="admonition-title">Unberechenbarkeit der Kolmogorow-Komplexität</p>
+<p>Sei eine beliebige Zeichenkette <span class="math notranslate nohighlight">\(w\)</span> und <span class="math notranslate nohighlight">\(U\)</span> eine Programmiersprache gegeben, so ist die Kolmogorow-Komplexität <span class="math notranslate nohighlight">\(C_U(w)\)</span> im Allgemeinen <strong>nicht</strong> <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-computable"><span class="std std-ref">berechenbar</span></a>.</p>
+</div>
+<p>Haben wir eine bestimmte Beschreibung für eine Zeichenkette, könnte es immer eine noch kürzere Beschreibung geben.
+Wir können jedoch immer eine Obergrenze für die Kolmogorow-Komplexität bestimmen.</p>
+<p>Außerdem kann man zeigen, dass für zwei universelle Turingmaschinen <span class="math notranslate nohighlight">\(U\)</span> und <span class="math notranslate nohighlight">\(U'\)</span> sich <span class="math notranslate nohighlight">\(C_U(w)\)</span> und <span class="math notranslate nohighlight">\(C_{U'}(w)\)</span> für alle <span class="math notranslate nohighlight">\(w\)</span> maximal um eine additive Konstante unterscheiden (<em>Theorem der Invarianz</em>).
+Das geht aus der Komplexitätstheorie hervor.
+Somit ist die <a class="reference internal" href="#def-kolmogorow-complexity"><span class="std std-ref">Kolmogorow-Komplexität</span></a> von den verwendeten Modellierungsmitteln, z.B. Programmiersprachen, ‘weitestgehend’ unabhängig.</p>
+<p>Durch die Kolmogorow-Komplexität wechseln wir die Perspektive von der <em>Nachricht</em> zu ihrer <em>Konstruktion</em> durch einen Algorithmus.
+Wir suchen den kürzesten Algorithmus / die kürzeste Beschreibung für die Erzeugung einer Zeichenkette.
 Daraufhin analysieren wir nicht die Information selbst, sondern jenen Algorithmus.
-Ist dieser einfach, im Sinne der Kolmogorow-Komplexität, so ist der Informationsgehalt gering.
-Ist der Algorithmus hingegen komplex, so ist der Informationsgehalt hoch.</p>
-<p>Anders ausgedrückt ist der <em>Informationsgehalt</em> einer Nachricht gleich der Länge der bestmöglichen eigenständigen Komprimierung jener Nachricht.
-Eine solche Komprimierung kann als Programm aufgefasst werden.
-Aus dieser Sicht enthält ein <span class="math notranslate nohighlight">\(3000\)</span>-seitiges Lexikon weniger Informationen als eine gleich lange rein zufällig generierte Zeichenkette, obwohl das Lexikon selbstverständlich viel nützlicher ist.
-Wir könnten aus den Wörtern des Lexikons einige Buchstaben löschen und, aufgrund unserer Sprachkenntnisse, das Werk wieder rekonstruieren.
-Für die zufällige Folge an Zeichen gilt dies nicht.</p>
-<p>Auch dieser Begriff bezieht nur die Syntax einer vorliegenden <em>Information</em> ein.
-Die Semantik wird erneut ausgeklammert.</p>
+Je kürzer der Algorithmus, desto geringer der <em>Informationsgehalt</em>.</p>
+<p>Eine Komprimierung ist ein Programm, welches kürzer als der Text ist, welches jenes Programm erzeugt.
+Aus Sicht der Kolmogorow-Komplexität enthält ein 3000-seitiges Lexikon weniger Informationen als eine gleich lange rein zufällig generierte Zeichenkette, obwohl das Lexikon selbstverständlich viel nützlicher ist.
+Wir könnten aus den Wörtern des Lexikons bestimmte Zeichenfolgen komprimieren.
+Für die zufällige Folge an Zeichen ist dies nicht möglich.</p>
+<p>Auch dieser Begriff bezieht nur die <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> einer vorliegenden <em>Information</em> ein.
+Die <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> wird erneut ausgeklammert.</p>
 </div>
 </div>
 

@@ -1,3 +1,4 @@
+(sec-sorting)=
 # Lasst uns Denken
 
 Springen wir gleich ins kalte Wasser und wagen uns an ein konkretes Problem -- praktizieren wir [Computational Thinking](sec-what-is-ct).

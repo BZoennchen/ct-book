@@ -816,8 +816,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#das-halteproblem">
+   1.6.3. Das Halteproblem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung">
-   1.6.3. Zusammenfassung
+   1.6.4. Zusammenfassung
   </a>
  </li>
 </ul>
@@ -837,8 +842,8 @@
 In diesem Zusammenhang folgt unweigerlich die Frage: Welche Mittel benötigen wir um eines der berechenbaren Probleme zu berechnen (<strong>Turing-Vollständigkeit</strong>)?
 Und was benötigen wir um jedes dieser Probleme berechnen zu können (<strong>universelle Turingmaschine</strong>)?</p>
 <p>Beginnen wir mit einer kurzen Untersuchung von Hard- und Software, d.h., Bauteile des Computers und Programmcode.
-Stellen Sie sich vor Sie haben einen Addierer <code class="docutils literal notranslate"><span class="pre">ladd</span></code> als Bauteil, also als <em>Hardware</em> realisiert.
-Wir stellen uns also vor, dass der Befehl <code class="docutils literal notranslate"><span class="pre">ladd(a,b)</span></code> die beiden Binärzahlen <code class="docutils literal notranslate"><span class="pre">a</span></code> und <code class="docutils literal notranslate"><span class="pre">b</span></code> durch ein Bauteil addiert.
+Stellen Sie sich vor Sie haben einen Addierer als Bauteil, also als <em>Hardware</em> zur Verfügung haben.
+Und dass der Befehl <code class="docutils literal notranslate"><span class="pre">ladd(a,b)</span></code> diesen realisiert, d.h., die beiden Binärzahlen <code class="docutils literal notranslate"><span class="pre">a</span></code> und <code class="docutils literal notranslate"><span class="pre">b</span></code> durch ein Bauteil addiert.
 Wir haben gesehen, wie dies durch ein <em>Gatterzusammenschluss</em> (siehe <a class="reference internal" href="3-manipulation.html#sec-manipulation"><span class="std std-ref">Manipulation</span></a>) möglich ist.</p>
 <p>Um zwei Zahlen <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> zu multiplizieren könnten wir aus mehreren Addierern einen Multiplizierer bauen.
 Wir können also durch Komposition von bereits existierenden Bauteilen ein neues Bauteil mit einer neuen Funktion konstruieren.
@@ -890,7 +895,7 @@ Doch genauso gut können wir durch Programmcode den Addierer mehrfach aufrufen u
 </div>
 </div>
 </div>
-<p>Halten wir also fest: Wir können einen Multiplizierer als Bauteil konstruieren, z.B. indem wir mehrere Addierer hintereinander schalten, oder wir schreiben Programmcode der die Multiplikation durch das mehrfache Aufrufen von dem Addierer realisiert.
+<p>Halten wir also fest: Wir können einen Multiplizierer als Bauteil konstruieren, z.B. indem wir mehrere Addierer hintereinander schalten, oder wir schreiben Programmcode der die Multiplikation durch das mehrfache Aufrufen des Addierers realisiert.
 Wo liegt hierbei der Unterschied?</p>
 <p>Interessiert uns nur das Ergebnis, so ist es egal welche der beiden Methoden wir verwenden.
 Im Endeffekt sparen wir uns bei der zweiten Berechnung ein Bauteil.
@@ -900,6 +905,7 @@ Werden bestimmte Berechnungen sehr häufig benötigt, so ist es sinnvoll darübe
 <p>Die Grafikkarte (GPU) ist ein solches Beispiel.
 Theoretisch kann die <a class="reference internal" href="4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> all das berechnen, was die Grafikkarte berechnen kann.
 Allerdings ist die Grafikkarte darauf optimiert eine bestimmte Operation auf eine Vielzahl an Daten parallel anzuwenden (Single Instruction Multiple Data).
+Moderne CPUs können das mittlerweile auch, allerdings ist deren Parallelität geringer, d.h., sie besitzen weniger Prozessorkerne.
 Auch verwenden viele Grafikkarten eine weniger genaue Darstellung der Fließkommazahlen, da bei der Generierung von Bildern oder Animationen kleine Fehler nicht auffallen.
 Moderne Grafikkarten werden wegen ihres hohen Datendurchsatzes heute für das <em>maschinelle Lernen</em> eingesetzt.
 Sie haben dazu Bauteile mit denen sich die Matrixmultiplikation kleiner Matrizen sehr effizient berechnen lässt.</p>
@@ -931,7 +937,7 @@ Salopp fragen wir:</p>
 <p class="caption"><span class="caption-number">Fig. 1.13 </span><span class="caption-text">Skizze eine Turingmaschine die sich gerade in Zustand <span class="math notranslate nohighlight">\(q_4\)</span> befindet.</span><a class="headerlink" href="#fig-tm" title="Permalink to this image">¶</a></p>
 </div>
 <p>Die <a class="reference external" href="https://de.wikipedia.org/wiki/Turingmaschine">Turingmaschine (TM)</a> besteht aus gerade einmal so viel Hardware, dass sie all das berechnen kann, was allgemein als berechenbar gilt.</p>
-<div class="admonition-turingmaschine-informell admonition" id="info-turingmaschine">
+<div class="definition admonition" id="info-turingmaschine">
 <p class="admonition-title">Turingmaschine (informell)</p>
 <p>Eine <em>Turingmaschine</em> <span class="math notranslate nohighlight">\(T\)</span> besteht aus:</p>
 <ol class="simple">
@@ -964,7 +970,7 @@ Befindet sich die Maschine in Zustand <span class="math notranslate nohighlight"
 <div class="math notranslate nohighlight">
 \[\delta(q, 1)\]</div>
 <p>das was die Maschine zu tun hat, z.B., <span class="math notranslate nohighlight">\((p, 1, \text{N})\)</span>, also gehe in Zustand <span class="math notranslate nohighlight">\(p\)</span>, schreibe eine 1 und bewege deinen Kopf nicht.</p>
-<p>Je nachdem was wir berechnen wollen, müssen wir entsprechendes Programm formulieren, d.h. eine Zustandsmenge <span class="math notranslate nohighlight">\(Q\)</span> und eine Übergangstabelle <span class="math notranslate nohighlight">\(\delta\)</span>.
+<p>Je nachdem was wir berechnen wollen, müssen wir ein entsprechendes Programm formulieren, d.h. eine Zustandsmenge <span class="math notranslate nohighlight">\(Q\)</span> und eine Übergangstabelle <span class="math notranslate nohighlight">\(\delta\)</span>.
 Da die Turingmaschine nur sehr simple Operationen erlaubt, ist es nicht einfach ein Programm für sie zu schreiben.
 Schon das Addieren von zwei Zahlen ist eine Herausforderung.
 Folgende Zustandsmengen <span class="math notranslate nohighlight">\(Q = \{q_0, q_e\}, F = \{q_e\}\)</span> und <span class="math notranslate nohighlight">\(\delta\)</span>:</p>
@@ -1002,22 +1008,22 @@ Folgende Zustandsmengen <span class="math notranslate nohighlight">\(Q = \{q_0, 
 Dabei gehen wir davon aus, dass der Schreib-/Lesekopf auf das erste Zeichen der Eingabe zeigt (links).
 Die Maschine bewegt ihren Kopf einmal von links nach rechts und schreibt eine 0 wenn sie eine 1 ließt und eine 1 wenn sie eine 0 ließt.
 Sobald sie ein Leerzeichen <span class="math notranslate nohighlight">\(\#\)</span> ließt bleibt geht sie in den Endzustand <span class="math notranslate nohighlight">\(q_e\)</span>.</p>
-<div class="admonition-berechenbar admonition" id="def-computable">
-<p class="admonition-title">Berechenbar</p>
-<p>Ein Problem ist <em>berechenbar</em>, wenn es für die Lösung ein Algorithmus formuliert werden kann.</p>
+<div class="definition admonition" id="def-computable">
+<p class="admonition-title">Allgemeine Berechenbarkeit</p>
+<p>Ein Problem ist <em>berechenbar</em>, wenn für jenes Problem eine Lösung berechnet werden kann.</p>
 </div>
 <p>Der Schreib-/Lesekopf können wir als CPU und das Band als Speicher interpretieren.
 Die Endlichkeit von <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(F\)</span> und <span class="math notranslate nohighlight">\(\delta\)</span> garantiert, dass unser Algorithmus durch endlich viel Text niedergeschrieben werden kann.
 Die Turingmaschine geht davon aus, dass ihr unendlich viel Speicher zur Verfügung steht.
 Das stellt aber kein Problem dar, denn sofern die Maschine stehen bleibt (unser Algorithmus terminiert) kann sie nur endlich viel Zellen auf dem Band abgefahren haben.</p>
-<div class="admonition-turing-berechenbarkeit admonition" id="def-turing-computable">
+<div class="definition admonition" id="def-turing-computable">
 <p class="admonition-title">Turing-Berechenbarkeit</p>
-<p>Ein Problem ist <em>Turing-berechenbar</em>, wenn es für die Lösung eine Turingmaschine existiert.</p>
+<p>Ein Problem ist genau dann <em>Turing-berechenbar</em>, wenn eine Turingmaschine existiert, die bei jeder Eingabe hält und die Lösung bei entsprechender Eingabe berechnet.</p>
 </div>
 <p>Die Probleme die wir mit der <em>Turingmaschine</em> berechnen können, bilden eine gewisse Problemklasse.
 Nach der unbeweisbaren <em>Turing-Church-These</em> handelt es sich bei diesen Problemen um all diejenigen die im <a class="reference internal" href="#def-computable"><span class="std std-ref">allgemeinen berechenbar</span></a> sind.
 Das heißt eine <em>Turingmaschine</em> kann alles berechnen was wir vermutlich allgemein berechnet können.</p>
-<div class="admonition-turing-church-these-unbeweisbar admonition" id="def-church-these">
+<div class="conjecture admonition" id="def-church-these">
 <p class="admonition-title">Turing-Church-These (unbeweisbar)</p>
 <p>Ein Problem ist genau dann <em>berechenbar</em>, wenn es auch <em>Turing-berechenbar</em> ist.</p>
 </div>
@@ -1025,7 +1031,7 @@ Das heißt eine <em>Turingmaschine</em> kann alles berechnen was wir vermutlich 
 Wir brauchen soviel Hardware, dass unser Computer all das kann was eine <em>Turingmaschine</em> kann.</p>
 <p>Alan Turing definierte den Begriff der <em>Turing-Vollständigkeit</em>.
 Eine Rechenmaschine die <em>Turing-vollständig</em> ist, kann all das berechnen was eine Turingmaschine berechnen kann.</p>
-<div class="admonition-turing-vollstandigkeit admonition" id="def-turing-complete">
+<div class="definition admonition" id="def-turing-complete">
 <p class="admonition-title">Turing-Vollständigkeit</p>
 <p>Eine Rechenmaschine (oder Programmiersprache) ist <em>Turing-vollständig</em> genau dann wenn sie all das berechnen kann was eine Turingmaschine berechnen kann.</p>
 </div>
@@ -1033,8 +1039,8 @@ Eine Rechenmaschine die <em>Turing-vollständig</em> ist, kann all das berechnen
 Uns ist klar, dass es sich dabei um ein sehr theoretisches Konstrukt handelt.
 Wir ersparen Ihnen die formale Definition und möchten Sie dennoch bestärken ein intuitives Verständnis über die Turingmaschine während Ihres Studiums aufzubauen.</p>
 <p>Die Turingmaschine kommt mit erstaunlich wenig Hardware aus.
-Ein pfiffiger Bastler kann diese Maschine als Heimwerkerprojekt in seinem Keller bauen.
-Es steht ihm zwar kein unendliches Band zur Verfügung doch falls Ihr Algorithmus terminiert, kann der Schreib-/Lesekopf nur eine endliche Distanz fahren und somit reicht ein endliches Band.
+Ein pfiffige Bastler*innen können diese Maschine als Heimwerkerprojekt im Keller bauen.
+Es steht ihnen zwar kein unendliches Band zur Verfügung doch falls ein Algorithmus terminiert, kann der Schreib-/Lesekopf nur eine endliche Distanz fahren und somit ist ein endliches Band ausreichend.
 Wie lange dies jedoch sein muss ist im Vornhinein unklar.</p>
 <div class="figure align-default" id="model-of-a-tm-2">
 <a class="reference internal image-reference" href="../../_images/model-of-a-tm.jpeg"><img alt="../../_images/model-of-a-tm.jpeg" src="../../_images/model-of-a-tm.jpeg" style="height: 200px;" /></a>
@@ -1042,7 +1048,7 @@ Wie lange dies jedoch sein muss ist im Vornhinein unklar.</p>
 </div>
 </div>
 <div class="section" id="die-universelle-turingmaschine">
-<h2><span class="section-number">1.6.2. </span>Die universelle Turingmaschine<a class="headerlink" href="#die-universelle-turingmaschine" title="Permalink to this headline">¶</a></h2>
+<span id="sec-utm"></span><h2><span class="section-number">1.6.2. </span>Die universelle Turingmaschine<a class="headerlink" href="#die-universelle-turingmaschine" title="Permalink to this headline">¶</a></h2>
 <p>Bis heute können wir jedes berechenbare Problem durch eine bestimmte Turingmaschine berechnen.
 Natürlich müssen wir eine <em>Turingmaschine</em> für das jeweilige Problem konstruieren.
 Ein Computer löst aber nicht nur ein bestimmtes Problem, sondern ist im Stande <strong>jedes</strong> Problem, was durch eine Turingmaschine gelöst werden kann zu berechnen.</p>
@@ -1056,13 +1062,32 @@ Sie simuliert <span class="math notranslate nohighlight">\(T\)</span> unter der 
 Der Repräsentant von <span class="math notranslate nohighlight">\(\alpha_T\)</span> muss ein Binärcode sein, sodass wir ihn auf das Band von <span class="math notranslate nohighlight">\(U\)</span> schreiben können.
 Wie <span class="math notranslate nohighlight">\(U\)</span> genau aussieht werden wir uns nicht ansehen.
 Sie können sich denken, dass die Übergangstabelle von <span class="math notranslate nohighlight">\(U\)</span> sehr groß ist.</p>
-<div class="admonition-universelle-turingmaschine-informell admonition" id="info-universal-turing-machine">
+<div class="definition admonition" id="info-universal-turing-machine">
 <p class="admonition-title">Universelle Turingmaschine (informell)</p>
 <p>Eine <em>universelle Turingmaschine</em> <span class="math notranslate nohighlight">\(U\)</span> ist eine Turingmaschine, die eine beliebige Turingmaschine <span class="math notranslate nohighlight">\(T\)</span> auf beliebiger Eingabe <span class="math notranslate nohighlight">\(w\)</span> simuliert.</p>
 </div>
 </div>
+<div class="section" id="das-halteproblem">
+<h2><span class="section-number">1.6.3. </span>Das Halteproblem<a class="headerlink" href="#das-halteproblem" title="Permalink to this headline">¶</a></h2>
+<p>Das Halteproblem ist eines der bekanntesten Probleme der Informatik, da es wesentliche Implikationen über die Mächtigkeit von Computern offenlegt.
+Wir würden uns als Programmierer*innen wünschen, dass es Programm gäbe, dass uns für ein anderes beliebiges Programm mit einer bestimmten Eingabe verrät ob dieses auch halten wird oder ob wir in einer Endlosschleife laufen.</p>
+<div class="definition admonition" id="def-halting-problem">
+<p class="admonition-title">Das Halteproblem</p>
+<p>Gegeben eine Beschreibung <span class="math notranslate nohighlight">\(\alpha_T\)</span> einer Turingmaschine <span class="math notranslate nohighlight">\(T\)</span> und deren Eingabe <span class="math notranslate nohighlight">\(w\)</span>, so verlangt das Halteproblem, nach der Antwort der Frage ob <span class="math notranslate nohighlight">\(T(w)\)</span> hält oder nicht.</p>
+</div>
+<p>Leider hat sich herausgestellt, dass das Halteproblem nicht berechenbar ist.</p>
+<div class="theorem admonition" id="theorem-halting-problem-theorem">
+<p class="admonition-title">Unberechenbarkeit des Halteproblems</p>
+<p>Das Halteproblem ist nicht berechenbar.</p>
+</div>
+<p>Wir können natürlich <span class="math notranslate nohighlight">\(T(w)\)</span> ausführen und einfach abwarten ob die Turingmaschine <span class="math notranslate nohighlight">\(T\)</span> hält oder nicht.
+Wenn sie aber nicht hält, können wir das niemals feststellen – wir müssten unendlich lange warten.</p>
+<p>Das bedeutet: Es wird niemals einen Algorithmus geben (geschrieben in einer Turing-vollständigen Sprache), welcher für beliebige Programme prüfen kann ob diese auch terminieren.
+Das bedeutet jedoch nicht, dass wir dies nicht im Einzelfall selbst prüfen können oder das es Programme gibt, die für viele Programme prüfen können ob diese terminieren.
+Es gibt also Hoffnung.</p>
+</div>
 <div class="section" id="zusammenfassung">
-<span id="sec-essenz-of-computers-and-languages"></span><h2><span class="section-number">1.6.3. </span>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
+<span id="sec-essenz-of-computers-and-languages"></span><h2><span class="section-number">1.6.4. </span>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
 <p>Weshalb reiten wir so auf diesen theoretischen Konzepten herum?
 Was kümmern uns imaginäre Turingmaschinen?
 Diese Maschinen können zwar all das berechnen was ein Computer berechnet, funktionieren aber doch ganz anders.
@@ -1094,9 +1119,10 @@ Können Sie mit der Sprache <code class="docutils literal notranslate"><span cla
 </div>
 <p>Man muss sich vor Augen halten, dass Alan Turing bereits 1936 die Grundlagen für alle modernen Computer und Programmiersprachen dieser Welt gelegt hat.</p>
 <p>Gehen wir nun zurück zur Frage nach dem Unterschied zwischen Hard-/ und Software.
-Der wesentlichen Unterschied zwischen dem Computer (Hardware) und einem Programm (Software) ist die Art und Weise wie die <a class="reference internal" href="#def-turing-complete"><span class="std std-ref">Turing-Vollständigkeit</span></a> realisiert wird – durch elektrische Bauteile oder einer Programmiersprache.</p>
-<p>Programme als auch Computer sind Turingmaschinen und da der Computer Programme, also andere Turingmaschinen, simuliert ist er eine <a class="reference internal" href="#info-universal-turing-machine"><span class="std std-ref">universelle Turingmaschine</span></a>.</p>
-<div class="attention admonition" id="computer-universal-turing">
+Der wesentlichen Unterschied zwischen dem Computer (Hardware) und einem Programm (Software) ist die Art und Weise wie die <a class="reference internal" href="#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a> realisiert wird – durch elektrische Bauteile oder einer Programmiersprache.</p>
+<p>Programme als auch Computer sind Turingmaschinen und da der Computer Programme, also andere Turingmaschinen, simuliert ist er eine
+<a class="reference internal" href="#info-universal-turing-machine"><span class="std std-ref">universelle Turingmaschine</span></a>.</p>
+<div class="remark admonition" id="computer-universal-turing">
 <p class="admonition-title">Computer sind universelle Turingmaschinen</p>
 <p>Ein handelsüblicher Computer ist eine universelle Turingmaschine.</p>
 </div>

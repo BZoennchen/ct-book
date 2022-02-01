@@ -5,6 +5,6 @@ Programmiercode ist ein niedergeschriebener Algorithmus (oder eine Sammlung von 
 Der Quellcode ist das Resultat des *Computational Thinkings*.
 
 ```{admonition} Von anderen Entwickler\*innen lernen
-:class: hint
+:class: remark
 Um neue Denkmuster anderer Denker\*innen zu erlernen oder sich von ihnen inspirieren zu lassen, lohnt es sich den Programmiercode anderer Entwickler\*innen zu analysieren.
 ```
