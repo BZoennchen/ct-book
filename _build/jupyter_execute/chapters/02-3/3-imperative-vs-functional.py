@@ -1,4 +1,4 @@
-# Imperativ vs. funktional
+# Imperativ und funktional
 
 Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte *Seiteneffekte* nicht erlauben und anstatt Variablen (abänderbar) nur Konstanten (unabänderlich) zulassen.
 

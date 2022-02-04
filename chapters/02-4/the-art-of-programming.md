@@ -25,8 +25,8 @@ Diese Fragestellungen gehen weit über den Computer hinaus.
 Zum Beispiel, stellen wir die Frage der Komplexität zwar im Bezug auf die Anzahl der Schritte die ein Computer benötigt, doch können wir dies leicht auf den Menschen und andere 'natürliche' Rechenmaschinen übertragen.
 Zum Beispiel, würden Sie uns vermutlich zustimmen wenn wir behaupten, dass Karten sortieren ein weniger *schweres* Problem ist als das Lösen eines Sudokus.
 
-Ihre zweite Wissenschaftsrubrik, die *Ingenieurswissenschaft*, bezieht sich auf die konstruktion und analyse von Informationsverarbeitungssystemen.
-Und genau hier finden wir das was wir als **die Kunst des Programmierens** bezeichnen.
+Ihre zweite Wissenschaftsrubrik, die *Ingenieurswissenschaft*, bezieht sich auf die Konstruktion und analyse von Informationsverarbeitungssystemen.
+Und genau hier finden wir das was wir als die Kunst des Programmierens bezeichnen.
 Von Außen betrachtet wirkt das Programmieren als die vielleicht langweiligste Tätigkeit auf diesem Planeten.
 Diese Einschätzung ist nach unserer Auffassung natürlich vollkommen falsch.
 

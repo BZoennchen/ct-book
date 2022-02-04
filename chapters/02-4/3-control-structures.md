@@ -10,8 +10,67 @@ kernelspec:
   name: python3
 ---
 
+(sec-control-structures)=
+# Kontrollstrukturen
+
+*Schleifen* vermeiden wir es Anweisungen die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
+Erst durch diese fundamentale Eigenschaft, ist es überhaupt möglich, dass wir die Anzahl der ausgeführten Anweisungen von der Länge des Programmcodes entkoppeln.
+
+*Fallunterscheidungen* erlauben es uns wiederum bestimmte Anweisungen nur dann auszuführen, wenn eine bestimmte Bedingung zur Laufzeit des Programms erfüllt ist.
+
+Diese zwei Kontrollstrukturen sind bereits alles was wir benötigen.
+Um unseren Programmcode zu strukturieren und bestimmte Programmteile an verschiedenen Stellen aufzurufen, gibt es noch Programmierfunktionen oder kurz *Funktionen*.
+
+```{admonition} Kontrollstrukturen
+:name: def-control-structure
+:class: definition
+
+*Kontrollstrukturen* sind Anweisungen, welche die Abarbeitungsreihenfolge von anderen Anweisungen, und damit den Programmablauf kontrollieren.
+```
+
+Zusammenfassend konzentrieren wir uns auf:
+
+1. Fallunterscheidungen (bedingte Ausführung)
+2. Schleifen (Wiederholung)
+3. Funktionen (Wiederholung)
+
+Wie sich gezeigt hat, muss eine Programmiersprache nur sehr weniger und sehr primitiver Kontrollstrukturen anbieten damit diese als [Turing-vollständig](def-turing-complete) gilt.
+Theoretisch ist es bereits ausreichend wenn eine Programmiersprache 
+
+1. Variablen unterstützt, auf die wir einen konstanten Wert addieren oder subtrahieren können und
+2. eine Wiederholung unterstützt, dessen Abbruchbedingung vor dem Eintritt in die Wiederholung unbekannt ist (``while``-Schleife)
+
+Die Fallunterscheidung, lässt sich (in hässlicher Form) durch eine Schleife ausdrücken.
+
+(sec-if-else)=
+## Fallunterscheidungen
+
+Die erste Kontrollstruktur realisiert die bedingte Ausführung, das bedeutet, ein bestimmte Sequenz von Anweisungen ``A1, ... ,An`` wird nur dann ausgeführt, wenn eine Bedingung ``B`` zutrifft.
+
+```
+if B:
+    A1
+    ...
+    An
+```
+
+Die Bedingung ``B`` kann nur zu wahr ``True`` oder falsch ``False`` ausgewertet werden.
+Gewöhnlich hängt der Wahrheitswert der Bedingung vom Programmablauf ab, d.h., er ist erst zur Laufzeit bekannt.
+Zum Beispiel gibt folgendes Programm ``'you win!'`` mit einer (pseudo) Wahrscheinlichkeit von 50% aus, da ``x`` ein Zufallswert zwischen 0 und 1 (Gleichverteilung) zugewiesen wird.
+
+```{code-cell} python3
+import random as rnd
+
+x = rnd.random()
+if x > 0.5:
+    print('you win!')
+```
+
+Es gibt von diesen Fallunterscheidungen verschiedene Varianten, wobei diese lediglich syntaktischer Zucker sind.
+Wir besprechen diese für ``Python`` ausführlich im Teil **PYTHON** in [Kontrollstrukturen](sec-cases).
+
 (sec-repetition-and-recursion)=
-# Wiederholung
+## Wiederholung
 
 Das fundamentale Prinzip der *Wiederholung* ist zentraler Bestandteil des Computational Thinkings.
 Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
@@ -49,7 +108,7 @@ Sofern bei der Iteration, die Anzahl der Durchläufe nicht zur Laufzeit vor der 
 
 Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen.
 
-## Iteration
+### Iteration
 
 Wenn Sie Erfahrung im entwickeln von iterativen Algorithmen gesammelt haben und iterative Algorithmen analysiert und verwendet haben, dann werden Sie beginnen in Iterationen zu denken.
 Sie werden beginnen in Iterationen von Iterationen von Iterationen zu denken.
@@ -84,7 +143,27 @@ Damit brauchen wir maximal so viele Durchläufe (1. Iterationen) wie es Elemente
 Jeder Durchlauf benötigt ebenfalls maximal so viel Schritte wie es Elemente sind.
 Damit hat der Algorithmus im schlechtesten Fall eine quadratische Laufzeit.
 
-## Rekursion
+```{exercise} Fallunterscheidung durch Schleife
+:label: if-by-for-exercise
+Schreiben Sie ein Programm, welches den Algorithmus von oben (die zufällige Ausgabe von ``'you win!'``) realisiert, ohne eine Fallunterscheidung zu verwenden.
+```
+
+````{solution} if-by-for-exercise
+:label: if-by-for-solution
+:class: dropdown
+
+```python
+import random as rnd
+
+x = rnd.random()
+for i in range(int(0.5+x)):
+    print('you win!')
+```
+
+````
+
+(sec-recursion)=
+### Rekursion
 
 Rekursion scheint dieses unverständliche Konzept, welches Mathematiker\*innen lieben und vor dem Programmierer\*innen anfänglich davonlaufen.
 Derweil würden wir behaupten, dass die *rekursive denkweise* uns Menschen näher ist als das Denken in Iterationen.
@@ -126,7 +205,8 @@ Betrachten wir die rekursive Lösung benötigen wir für die Berechnung lediglic
 Als *Rekursion* wird ein Vorgang bezeichnet, welcher sich selbst als Teil enthält oder mithilfe von sich selbst definierbar ist.
 ```
 
-## Die Türme von Hanoi
+(sec-hanoi)=
+### Die Türme von Hanoi
 
 Probleme lassen sich immer dann leichter rekursiv lösen, wenn der Selbstbezug offensichtlich oder einfach zu finden ist.
 Ein Beispiel sind die sog. [Türme von Hanoi](https://de.wikipedia.org/wiki/T%C3%BCrme_von_Hanoi).

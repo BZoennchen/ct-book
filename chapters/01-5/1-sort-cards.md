@@ -343,30 +343,8 @@ Lassen Sie uns zwei wesentliche Dinge mathematisch betrachten, welche wir beim S
 
 ### Ordnung
 
-Für die Entwicklung eines [Algorithmus](def-algorithm) zum Sortieren von Karten brauchen wir eine präzise Definition einer *Ordnungsrelation* um Karten vergleichen zu können.
+Für die Entwicklung eines [Algorithmus](def-algorithm) zum Sortieren von Karten brauchen wir eine präzise Definition einer [Ordnungsrelation](def-math-order) um Karten vergleichen zu können.
 
-```{admonition} (Totale) Ordnungsrelation
-:name: def-order
-:class: definition
-
-Eine *Ordnungsrelation* $R \subset K \times K$ auf einer Menge $K$ (z.B. Menge der Karten) ist eine Relation mit ganz bestimmten Eigenschaften (Reflexivität, Antisymmetrie und Transitivität).
-Befindet sich ein Element $a \in K$ in Relation mit einem anderen Element $b \in K$ schreibt man häufig anstatt $(a,b) \in R$ 
-
-$$a \leq_R b$$
-
-und geht aus dem Kontext hervor welche Relation gemeint ist, schreibt man häufig
-
-$$a \leq b.$$
-
-Die Eigenschaften, die eine *Ordnungsrelation* erfüllen muss sind:
-
-1. Reflexivität: $\forall a \in K : a \leq_R a$
-2. Antisymmetrie: $\forall a, b \in K : a \leq_R b \land b \leq_R a \Rightarrow a = b$
-3. Transitivität: $\forall a, b, c \in K : a \leq_R b \in R \land b \leq_R c \Rightarrow a \leq_R c$
-
-Eine *Ordnungsrelation* ist *total* wenn für alle $a,b \in K$ $a \leq_R b$ oder $b \leq_R a$ gilt.
-
-```
 Ist unsere Menge $K$ die Menge der Karten, wobei wir zwei Karten mit der gleichen Augenzahl aber unterschiedlicher Farbe als gleich ansehen, dann können wir eine *(totale) Ordnungsrelation* auf den Karten definieren. Ist zum Beispiel $K = \{6,7,8,9,10,\text{Bube},\text{Dame},\text{König},\text{Ass}\}$, so wäre
 
 $$R = \{(6,6),(6,7),(6,8),\ldots,(6,A), (7,7), (7,8), \ldots, (\text{König},\text{Ass}), (\text{Ass},\text{Ass})\}$$
@@ -379,14 +357,7 @@ Die Karten auf der Hand betrachten wir von links nach rechts.
 Wir nehmen demnach an, dass es genau eine bestimmte *Reihenfolge* der Karten auf der Hand gibt.
 Karten die auf unserer Hand nebeneinander liegen, liegen auch in unserer *Reihenfolge* nebeneinander.
 
-````{admonition} Mathematisches Tupel
-:class: definition
-
-Ein *mathematisches Tupel* besteht aus endlich vielen, nicht notwendigerweise voneinander verschiedenen Objekte. 
-Dabei spielt, im Gegensatz zu Mengen, die Reihenfolge der Objekte eine Rolle.
-````
-
-Die Hand mit $n$ Karten lässt sich als sog. $n$-*Tupel* mathematisch ausdrücken.
+Die Hand mit $n$ Karten lässt sich als sog. $n$-[Tupel](def-math-tuple) mathematisch ausdrücken.
 Zum Beispiel,
 
 $$H = (6, 7, \text{Bube}, 8, \text{Bube})$$

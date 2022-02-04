@@ -112,12 +112,6 @@ Diese Interpretation wurde den Komponenten von uns Menschen 'beigebracht'.
 
 Ein Monitor interpretiert die Bitfolgen als Pixelintensitäten (wie stark und in welcher Farbe leuchtet jeweils der Pixel), ein Addierer interpretiert Bitfolgen als Zahlen, ein Mikrofon interpretiert Bitfolgen als Amplitudenwerte.
 
-```{admonition} Interpreter
-:name: def-interpreter
-:class: definition
-TODO
-```
-
 Software basiert auf dem gleichen Verständnis, denn Hardware ist Software realisiert durch Bauteile (siehe Abschnitt [Berechenbarkeit](sec-computability)).
 Öffnen Sie ein Bild in einem Texteditor, so sehen Sie die Interpretation des Bildes ihres Texteditors.
 Öffnen Sie die gleiche Datei in einem Bildverarbeitungsprogramm, sehen sie eine andere Interpretation der Bits und Bytes.
@@ -135,12 +129,18 @@ Programmcode ist Text den der Computer als Anweisungen interpretiert.
 Wie aber soll das funktionieren, wenn die Hardware doch nur [Bits](def-bit) und [Bytes](def-byte) verarbeiten kann?
 Wie im obigen Beispiel des Textverarbeitungsprogramms hindert uns niemand Text zu schreiben, welcher dann in Binärcode durch eine Interpretation umgewandelt wird.
 Diese spezielle Interpretation $I$ macht aus dem Text einen Binärcode der ausführbar ist, d.h., den die Computerhardware versteht.
-Programme die eine solche Interpretation realisieren bezeichnen wir sehr passend als [Interpreter](def-interpreter) oder [Kompilierer / Übersetzer](def-compiler) (engl. Compiler).
+Programme die eine solche Interpretation realisieren bezeichnen wir sehr passend als [Interpreter](def-interpreter) oder [Übersetzer](def-compiler) (engl. Compiler).
 Interpreter werten $I$ aus, während der Programmcode ausgeführt wird.
 Dahingegen werten Compiler $I$ für den gesamten Code aus, bevor dieser ausgeführt wird.
 
+```{admonition} Übersetzer / Compiler
+:name: def-compiler
+:class: definition
+Ein *Übersetzer*  (engl. *Compiler*) ist ein Programm welches ein anderes Programm $\alpha_H$, geschrieben in einer Hochsprache $L_H$, entgegennimmt und in ein Programm $\alpha_M$, geschrieben in einer Maschinensprache $L_M$, ausgibt. $\alpha_M$ realisiert $\alpha_H$ auf einer konkreten Maschine, d.h., $\alpha_M$ steuert die konkrete Maschine, sodass es das berechnet was $\alpha_H$ auf abstrakterer Ebene vorgibt zu berechnen.
+```
+
 Ok, das ist noch nicht die ganze Wahrheit.
-In der Praxis ist es nicht ein einzelner Compiler oder Interpreter sondern eine hintereinandergeschaltete Kette und damit auch eine Kette an Interpretationen $I_0, \ldots, I_n$.
+In der Praxis wenden Compiler oder Interpreter eine hintereinandergeschaltete eine Kette an Interpretationen $I_0, \ldots, I_n$ an.
 Wir als Programmierer möchten zum Beispiel zwei Zahlen addieren und schreiben folgenden ``Python``-Code:
 
 ```python
@@ -149,7 +149,7 @@ x = 4 + 9
 
 ``Python`` interpretiert dies als das Speichern der Addition der Zahlen ``4`` und ``9`` in der Variable ``x``.
 Das verstehen die Hardwarekomponenten des Computer jedoch nicht.
-Eine Kette aus Compilern interpretiert / übersetzt diesen Code, sodass er in Assemblercode transformiert wird.
+Der Compiler übersetzt durch die Anwendung einer Kette von Interpretationen diesen Code, sodass er in Assemblercode transformiert wird.
 Dieser könnte in etwa folgende Gestalt annehmen:
 
 ```
@@ -162,18 +162,26 @@ STORE $2 # 16
 ```
 
 Diese Befehle sprechen direkt bestimmte Hardwarekomponenten an und werden im letzten Schritt in reinen Binärcode übersetzt.
-Jeder Kompilierer erhält als Eingabe einen Programmcode, geschrieben in einer bestimmten Vorschrift ([Syntax](def-syntax)), und wandelt diesen anhand seiner Interpretation in einen anderen Programmcode, einer anderen Vorschrift (Syntax), um.
+Jeder Compiler erhält als Eingabe einen Programmcode, geschrieben in einer bestimmten Vorschrift ([Syntax](def-syntax)), und wandelt diesen anhand seiner Interpretation in einen anderen Programmcode, einer anderen Vorschrift (Syntax), um.
 So wird es möglich, dass sich Entwickler\*innen nicht mehr in einer Welt der Bits und Bytes befinden sondern in einer Welt aus Dezimalzahlen, Zeichenketten, Listen, Webservices, Webseiten, Apps und so weiter.
 
-```{admonition} Kompilierer
-:name: def-compiler
+```{admonition} Interpreter
+:name: def-interpreter
 :class: definition
-TODO
+
+Ein *Interpreter* ist ein Programm, welches Befehle, geschriebenen in einer Hochsprache $L_H$ direkt ausführt ohne diese in eine Maschinensprache zu [übersetzen](def-compiler).
+Da die Maschine, die Sprache $L_H$ jedoch nicht versteht, **simuliert** der Interpreter die Befehle (siehe [universellen Turingmaschine](sec-utm)).
+
 ```
 
 Übertragen wir dies auf das Beispiel mit dem gezeichneten Apfel, so interpretiert der Bleistift den Druck und den Winkel als Anzahl und Positionierung von Graphitteilchen.
 Wir als Zeichner\*innen verlassen die Welt der Graphitteilchen und begeben uns stattdessen in die Welt der Zeichentechniken.
-Dieser Kontextwechsel wird durch den Übersetzer / Interpreter / Compiler -- den Bleistift -- ermöglicht!
+Dieser Kontextwechsel wird durch den [Interpreter](def-interpreter) -- den Bleistift -- ermöglicht!
+
+Ein [Übersetzer / Compiler](def-compiler) wandelt hingegen ein gesamtes Kunstwerk in einem Stück in ein anderes Werk um.
+Zum Beispiel eine Folge von Bildern in ein Video.
+Der Vorteil dabei ist, dass der Übersetzer Optimierungen durchführen kann, da ihm das gesamte zu übersetzende Werk zur Verfügung steht.
+Dafür ist er für die Anwender\*innen weniger flexibel, denn diese müssen ihm immer ein gesamtes Werk übergeben.
 
 ```{exercise} Übersetzer und Interpreter
 :label: interpreter-compiler-examples-exercise

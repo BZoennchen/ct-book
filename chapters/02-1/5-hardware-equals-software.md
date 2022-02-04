@@ -315,19 +315,19 @@ Für alle gängigen Programmiersprachen gilt, dass Sie mit ihnen Algorithmen for
 ```{exercise} Kompilieren und Interpretieren
 :label: programming-languages-turing-exercise
 
-Angenommen Sie haben zwei Turing-vollständige Programmiersprachen ``A`` und ``B``.
-Können Sie mit der Sprache ``A`` ein Programm ``a`` schreiben, welches Programmcode ``b`` der Sprache ``B`` für eine beliebige Eingabe simuliert?
+Angenommen Sie haben zwei Turing-vollständige Programmiersprachen $L_1$ und $L_2$.
+Ihr Computer versteht jedoch nur die Sprache $L_1$.
+Können Sie Programme $\alpha_{T_2}$ geschrieben in der Sprache $L_2$ ausführen und wenn ja wie?
 ```
 
 ```{solution} programming-languages-turing-exercise
 :label: programming-languages-turing-solution
 :class: dropdown
-Ja das ist möglich!
+Ja das ist möglich! Zur Übung verwenden wir für unsere Lösung die Notation der Beschreibung $\alpha_T$ einer Turingmaschine $T$ und die Programmausführung $T(w)$ für eine Eingabe $w$.
 
-1. **Kompilieren**: Da beide Sprachen Turing-vollständig sind, können Sie ein Programm in der Sprache ``B`` schreiben was den Programmcode ``b`` in einen Programmcode ``a`` der Sprache ``A`` überführt, sodass ``a`` das gleiche berechnet wie ``b``. Diesen Vorgang nennen wir *kompilieren*.
+1. **Kompilieren**: Da beide Sprachen [Turing-vollständig](def-turing-complete) sind, können Sie einen [Übersetzer/Compiler](def-compiler) $\alpha_{T_C}$ in der Sprache $L_1$ schreiben, sodass für jedes beliebige Programm $\alpha_{T_2} \in L_2$ gilt: $T_C(\alpha_{T_1}) = \alpha_{T_2}$ mit $T_1(w) = T_2(w)$ für jede beliebige Eingabe $w$. Diesen Vorgang nennen wir *kompilieren*.
 
-2. **Interpretieren**: Wir können auch fortwährend ein Programm ``a`` in ``A`` immer wieder schreiben, welches die nächsten $n$ Befehle von ``b`` simuliert, d.h. den Code in ``b`` Schritt für Schritt ausführt.
-
+2. **Interpretieren**: Sie können auch einen [Interpreter](def-interpreter) $\alpha_{T_I}$ in der Sprache $L_1$ schreiben. Dieser gleicht einer universellen Turingmaschine und simuliert Programme $\alpha_{T_2}$, welche in der Sprache $L_2$ geschrieben sind. Das heißt $T_I(\alpha_{T_2}, w) = T_2(w)$ für eine beliebige Eingabe $w$.
 ```
 
 Man muss sich vor Augen halten, dass Alan Turing bereits 1936 die Grundlagen für alle modernen Computer und Programmiersprachen dieser Welt gelegt hat.
