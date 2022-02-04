@@ -191,25 +191,6 @@ to_decimal([1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1])
 Ok, wir können also eine Binärzahl (= Zahl in Binärdarstellung) recht einfach in eine Dezimalzahl umwandeln.
 Wie aber wandeln wir eine Dezimalzahl in eine Binärzahl um?
 
-```{admonition} Restwertdivision
-:name: def-euclid-division
-:class: definition
-
-Für zwei ganze Zahlen $n, m \in \mathbb{Z}$, $m \neq 0$ gibt es zwei eindeutige ganze Zahlen $a, r \in \mathbb{Z}$, sodass
-
-$$
-n = m \cdot a + r, \quad 0 \leq r < |m|,
-$$
-
-wobei $|\cdot|$ der Betrag ist. 
-Wir nennen $r$ den Rest.
-Seien $n, m$ gegeben so lassen sich $a$ und $r$ durch die Division ermitteln:
-
-$$a = \left \lfloor{ n / m}\right \rfloor, \quad r = n - a \cdot m,$$
-
-wobei $\left \lfloor{\cdot }\right \rfloor$ auf die nächst größte ganze Zahl abrundet.
-```
-
 Nehmen wir als Beispiel die Dezimalzahl $9$.
 Wir suchen eine Binärzahl $b_{n-1}\ldots b_0$, sodass
 

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.3. Programmiercode &#8212; Computational Thinking</title>
+    <title>1.6. Operationen &#8212; Computational Thinking</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,10 +53,12 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.4. Wiederholung" href="4-repetition-and-recursion.html" />
-    <link rel="prev" title="4.2. Programmieren" href="2-programming.html" />
+    <link rel="next" title="1.7. Vollständige Induktion" href="7-induction.html" />
+    <link rel="prev" title="1.5. Funktionen" href="5-function.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -241,51 +243,56 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02-1/information-processing.html">
-   1. Der digitale Computer
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="math.html">
+   1. Mathematische Grundlagen
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/1-basics.html">
-     1.1. Grundlagen
+    <a class="reference internal" href="1-notation.html">
+     1.1. Notation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/2-interpretation.html">
-     1.2. Interpretation
+    <a class="reference internal" href="2-set.html">
+     1.2. Mengen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/2-representation.html">
-     1.3. Repräsentationen
+    <a class="reference internal" href="3-tuple.html">
+     1.3. Tupel
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/3-manipulation.html">
-     1.4. Manipulation
+    <a class="reference internal" href="4-relation.html">
+     1.4. Relationen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/4-information-flow.html">
-     1.5. Der Informationskreislauf
+    <a class="reference internal" href="5-function.html">
+     1.5. Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.6. Operationen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/5-hardware-equals-software.html">
-     1.6. Berechenbarkeit
+    <a class="reference internal" href="7-induction.html">
+     1.7. Vollständige Induktion
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02-2/information.html">
-   2. Was ist Information?
+  <a class="reference internal" href="../02-1/information-processing.html">
+   2. Der digitale Computer
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -294,35 +301,40 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/1-natural-science.html">
-     2.1. Naturwissenschaften
+    <a class="reference internal" href="../02-1/1-basics.html">
+     2.1. Grundlagen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/2-formal-science.html">
-     2.2. Strukturwissenschaften
+    <a class="reference internal" href="../02-1/2-interpretation.html">
+     2.2. Interpretation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/3-critic.html">
-     2.3. Kritik
+    <a class="reference internal" href="../02-1/2-representation.html">
+     2.3. Repräsentationen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/4-humanics.html">
-     2.4. Geisteswissenschaften
+    <a class="reference internal" href="../02-1/3-manipulation.html">
+     2.4. Manipulation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/5-summary.html">
-     2.5. Zusammenfassung
+    <a class="reference internal" href="../02-1/4-information-flow.html">
+     2.5. Der Informationskreislauf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-1/5-hardware-equals-software.html">
+     2.6. Berechenbarkeit
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02-3/languages.html">
-   3. Programmiersprachen
+  <a class="reference internal" href="../02-2/information.html">
+   3. Was ist Information?
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -331,65 +343,102 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/1-abstraction.html">
-     3.1. Abstraktion des Computers
+    <a class="reference internal" href="../02-2/1-natural-science.html">
+     3.1. Naturwissenschaften
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/2-success-criteria.html">
-     3.2. Erfolgsfaktoren
+    <a class="reference internal" href="../02-2/2-formal-science.html">
+     3.2. Strukturwissenschaften
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/3-imperative-vs-functional.html">
-     3.3. Imperativ vs. funktional
+    <a class="reference internal" href="../02-2/3-critic.html">
+     3.3. Kritik
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/4-language-evolution.html">
-     3.4. Sprachevolution
+    <a class="reference internal" href="../02-2/4-humanics.html">
+     3.4. Geisteswissenschaften
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/5-python.html">
-     3.5. Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/6-diversity.html">
-     3.6. Diversität
+    <a class="reference internal" href="../02-2/5-summary.html">
+     3.5. Zusammenfassung
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="the-art-of-programming.html">
-   4. Die Kunst des Programmierens
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-3/languages.html">
+   4. Programmiersprachen
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="1-algorithms.html">
-     4.1. Algorithmen
+    <a class="reference internal" href="../02-3/1-abstraction.html">
+     4.1. Abstraktion des Computers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-programming.html">
-     4.2. Programmieren
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     4.3. Programmiercode
+    <a class="reference internal" href="../02-3/2-success-criteria.html">
+     4.2. Erfolgsfaktoren
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-repetition-and-recursion.html">
-     4.4. Wiederholung
+    <a class="reference internal" href="../02-3/3-imperative-vs-functional.html">
+     4.3. Imperativ und funktional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/4-language-evolution.html">
+     4.4. Sprachevolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/5-python.html">
+     4.5. Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-3/6-diversity.html">
+     4.6. Diversität
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02-4/the-art-of-programming.html">
+   5. Die Kunst des Programmierens
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/1-algorithms.html">
+     5.1. Algorithmen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/2-programming.html">
+     5.2. Programmieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/3-control-structures.html">
+     5.3. Kontrollstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-4/4-data-structures.html">
+     5.4. Datenstrukturen
     </a>
    </li>
   </ul>
@@ -410,8 +459,8 @@
   <a class="reference internal" href="../03-2/python-environment.html">
    2. Das Python Ökosystem
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -442,8 +491,8 @@
   <a class="reference internal" href="../03-3/intro.html">
    3. Variablen, Ausdrücke und Funktionsaufrufe
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -469,8 +518,8 @@
   <a class="reference internal" href="../03-4/intro.html">
    4. Datentypen (Grundlagen)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -536,8 +585,8 @@
   <a class="reference internal" href="../03-5/intro.html">
    5. Datentypen (Fortsetzung)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -573,8 +622,8 @@
   <a class="reference internal" href="../03-6/intro.html">
    6. Funktionen
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -620,8 +669,8 @@
   <a class="reference internal" href="../03-7/intro.html">
    7. Kontrollstrukturen
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -647,8 +696,8 @@
   <a class="reference internal" href="../03-8/intro.html">
    8. Objektorientierte Programmierung
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -748,9 +797,12 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/02-0/6-operations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/02-4/3-code.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/02-0/6-operations.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -770,11 +822,59 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/02-0/6-operations.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#betrag">
+   1.6.1. Betrag
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#max-und-minimum">
+   1.6.2. Max- und Minimum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ab-und-aufrunden">
+   1.6.3. Ab- und Aufrunden
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-restwertdivision">
+   1.6.4. Die Restwertdivision
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -783,14 +883,160 @@
         
               <div>
                 
-  <div class="section" id="programmiercode">
-<h1><span class="section-number">4.3. </span>Programmiercode<a class="headerlink" href="#programmiercode" title="Permalink to this headline">¶</a></h1>
-<p>Programmiercode auch genannt <em>Quellcode</em>, <em>Source Code</em> oder kurz <em>Code</em>, ist das Resultat der <em>Programmierung</em> und damit eine Manifestation des <em>Computational Thinkings</em> in Form von endlichem Text.
-Programmiercode ist ein niedergeschriebener Algorithmus (oder eine Sammlung von niedergeschriebenen Algorithmen) in einer Form, welche die auszuführende Einheit (in unserem Fall der Computer) versteht.
-Der Quellcode ist das Resultat des <em>Computational Thinkings</em>.</p>
-<div class="remark admonition">
-<p class="admonition-title">Von anderen Entwickler*innen lernen</p>
-<p>Um neue Denkmuster anderer Denker*innen zu erlernen oder sich von ihnen inspirieren zu lassen, lohnt es sich den Programmiercode anderer Entwickler*innen zu analysieren.</p>
+  <div class="section" id="operationen">
+<h1><span class="section-number">1.6. </span>Operationen<a class="headerlink" href="#operationen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="betrag">
+<h2><span class="section-number">1.6.1. </span>Betrag<a class="headerlink" href="#betrag" title="Permalink to this headline">¶</a></h2>
+<p>Die Betragsfunktion <span class="math notranslate nohighlight">\(|\cdot| : \mathbb{R} \rightarrow \mathbb{R}^+\)</span> wandelt eine negative Zahl in eine positive Zahl um.</p>
+<div class="definition admonition" id="def-math-abs">
+<p class="admonition-title">Betragsfunktion</p>
+<p>Sei <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> eine reelle Zahl, so ist ihr <em>Betrag</em> definiert als</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}|x| = \begin{cases} -x, &amp; \text{ falls } x &lt; 0 \\ x, &amp; \text{ sonst.} \end{cases}\end{split}\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="max-und-minimum">
+<h2><span class="section-number">1.6.2. </span>Max- und Minimum<a class="headerlink" href="#max-und-minimum" title="Permalink to this headline">¶</a></h2>
+<div class="definition admonition" id="def-math-max">
+<p class="admonition-title">Maximum</p>
+<p>Für eine nicht leere Menge <span class="math notranslate nohighlight">\(M \subset \mathbb{R}\)</span> ist das <em>Maximum</em> <span class="math notranslate nohighlight">\(\max M\)</span> definiert als</p>
+<div class="math notranslate nohighlight">
+\[\max M = x \text{ sodass } x \in M \text{ und } \forall y \in M : x \geq y\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="definition admonition" id="def-math-min">
+<p class="admonition-title">Maximum</p>
+<p>Für eine nicht leere Menge <span class="math notranslate nohighlight">\(M \subset \mathbb{R}\)</span> ist das <em>Minimum</em> <span class="math notranslate nohighlight">\(\min M\)</span> definiert als</p>
+<div class="math notranslate nohighlight">
+\[\min M = x \text{ sodass } x \in M \text{ und } \forall y \in M : x \leq y.\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+<span class="nb">min</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ab-und-aufrunden">
+<h2><span class="section-number">1.6.3. </span>Ab- und Aufrunden<a class="headerlink" href="#ab-und-aufrunden" title="Permalink to this headline">¶</a></h2>
+<p>Bei der Entwicklung Ihrer Algorithmen werden sie das <em>Abrunden</em> sehr oft einsetzten.
+Es wird in allen gängigen Programmiersprachen implizit durchgeführt, wenn Sie eine Gleitkommazahl in eine ganze Zahl umwandeln.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">1.49</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">1.49</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Diese Abrundungsfunktion <span class="math notranslate nohighlight">\(\left \lfloor{\cdot}\right \rfloor : \mathbb{R} \rightarrow \mathbb{Z}\)</span> rundet Zahlen zur nächst größeren ganzen Zahl auf.</p>
+<div class="definition admonition" id="def-math-floor">
+<p class="admonition-title">Maximum</p>
+<p>Sei <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> so ist <span class="math notranslate nohighlight">\(x\)</span> aufgerundet gleich</p>
+<div class="math notranslate nohighlight">
+\[\left \lfloor{x}\right \rfloor = \max\{k \in \mathbb{Z} : k \leq x \}.\]</div>
+</div>
+<p>Diese Aufrundungsfunktion <span class="math notranslate nohighlight">\(\left \lceil{\cdot}\right \rceil : \mathbb{R} \rightarrow \mathbb{Z}\)</span> rundet Zahlen zur nächst kleineren ganzen Zahl ab.</p>
+<div class="definition admonition" id="def-math-ceil">
+<p class="admonition-title">Maximum</p>
+<p>Sei <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> so ist <span class="math notranslate nohighlight">\(x\)</span> abgerundet gleich</p>
+<div class="math notranslate nohighlight">
+\[\left \lceil{x}\right \rceil = \min\{k \in \mathbb{Z} : k \geq x \}.\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">1.49</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">1.49</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+-1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="die-restwertdivision">
+<h2><span class="section-number">1.6.4. </span>Die Restwertdivision<a class="headerlink" href="#die-restwertdivision" title="Permalink to this headline">¶</a></h2>
+<div class="definition admonition" id="def-euclid-division">
+<p class="admonition-title">Restwert</p>
+<p>Für zwei ganze Zahlen <span class="math notranslate nohighlight">\(n, m \in \mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(m \neq 0\)</span> gibt es zwei eindeutige ganze Zahlen <span class="math notranslate nohighlight">\(a, r \in \mathbb{Z}\)</span>, sodass</p>
+<div class="math notranslate nohighlight">
+\[
+n = m \cdot a + r, \quad 0 \leq r &lt; |m|.
+\]</div>
+<p>Wir nennen <span class="math notranslate nohighlight">\(r\)</span> den <em>Rest</em>.</p>
+</div>
+<p>Seien <span class="math notranslate nohighlight">\(n, m\)</span> gegeben so lassen sich <span class="math notranslate nohighlight">\(a\)</span> durch die Division und das Abrunden ermitteln.</p>
+<div class="math notranslate nohighlight">
+\[a = \left \lfloor{ n / m}\right \rfloor\]</div>
+<p>und damit lässt sich der <em>Rest</em> <span class="math notranslate nohighlight">\(r\)</span> bestimmen</p>
+<div class="math notranslate nohighlight">
+\[r = n - a \cdot m.\]</div>
+<p>Zum Beispiel gilt für <span class="math notranslate nohighlight">\(n = 13\)</span>, <span class="math notranslate nohighlight">\(m = 5\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{gather*} 
+a = \left \lfloor{13/5}\right \rfloor = 2\\
+r = 13 - 2 \cdot 5 = 3.
+\end{gather*}\]</div>
+<p>Die <em>Restwertdivision</em> wird von allem gängigen Programmiersprachen durch den <code class="docutils literal notranslate"><span class="pre">%</span></code> Operator unterstützt und ist für Computer relativ günstig zu berechnen.
+Mithilfe dieser Operation können wir zum Beispiel feststellen ob eine ganze Zahl gerade oder ungerade ist.
+Das ist genau dann der Fall wenn der Rest <span class="math notranslate nohighlight">\(r\)</span> der Restwertdivision mit 2 gleich null ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">13</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+3
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -807,7 +1053,7 @@ Der Quellcode ist das Resultat des <em>Computational Thinkings</em>.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/02-4"
+            path: "./chapters/02-0"
         },
         predefinedOutput: true
     }
@@ -819,8 +1065,8 @@ Der Quellcode ist das Resultat des <em>Computational Thinkings</em>.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="2-programming.html" title="previous page"><span class="section-number">4.2. </span>Programmieren</a>
-    <a class='right-next' id="next-link" href="4-repetition-and-recursion.html" title="next page"><span class="section-number">4.4. </span>Wiederholung</a>
+    <a class='left-prev' id="prev-link" href="5-function.html" title="previous page"><span class="section-number">1.5. </span>Funktionen</a>
+    <a class='right-next' id="next-link" href="7-induction.html" title="next page"><span class="section-number">1.7. </span>Vollständige Induktion</a>
 
         </div>
         

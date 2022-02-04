@@ -1,6 +1,58 @@
 # Programmieren
 
-TODO: beschreibe die Verbindung zwischen Algorithmus, dem digitalen Computer und den Algorithmen! Abstraktion von Hardware gehört auch hier hinein
+Programmieren ist eine Tätigkeit bei der wir unsere Ideen und Konzepte, d.h. das was wir beim [Computational Thinking](sec-what-is-ct) mental zustande bekommen haben, in Text überzuführen.
+Ob das Programmieren nun wirklich mit dem Schreiben des Codes beginnt oder wir den ganzen Prozess der Softwareentwicklung als das Programmieren betrachten sei dahingestellt.
+Auch ist klar, dass geschriebener Code wie auch die Betrachtung von Code neue Ideen hervorrufen wird und zu neuen Lösungen führen wird.
+
+Als gute Programmierer\*innen müssen wir 
+
++ unseren Kontext kennen.
++ logisch und mathematisch Denken können.
++ uns exakt ausdrücken können und uns auch unmissverständlich mit anderen austauschen können.
++ unsere Entwicklungswerkzeuge beherrschen können.
+  
+Wir benötigen ein Grundverständnis davon wie ein [Computer funktioniert](sec-information-processing) und wie wir uns in der abstrakten Welt der [Kontrollstrukturen](sec-control-structures) und [Datenstrukturen](sec-data-structures) ausdrücken können.
+
+## Begrifflichkeiten
+
+Die Begriffe *Algorithmus*, *Pseudocode*, *Programmcode* und *Programm* ähneln sich sehr und wir haben noch keine strickte Differenzierung durchgenommen.
+Im Abschnitt [Algorithmen](sec-algorithms) ist klar definiert, was genau ein Algorithmus ist.
+
+```{admonition} Pseudocode
+:name: def-pseudocode
+:class: definition
+
+*Pseudocode* ist eine einfache, weniger strikte Beschreibung eines Algorithmus in einer der natürlichen Sprache ähnlicheren Art.
+```
+
+Mit *Pseudocode* können wir einen Algorithmus in einer Sprache beschreiben, die keine bestimmte Programmiersprache zur Basis hat.
+
+```{admonition} Programm
+:name: def-program
+:class: definition
+
+Ein *Programm* ist eine Folge von Instruktionen, die ein konkreter Computer (über die Umwege eines [Übersetzers](def-compiler) oder [Interpreters](def-interpreter)) ausführen kann.
+```
+
+Ein *Algorithmus* ist eine wohldefinierte Sequenz von Anweisungen, welche eine Lösung für ein bestimmtes Problem berechnen.
+Er kann in der Form von *Pseudocode* niedergeschrieben werden, sofern die Beschreibung alle Eigenschaften für einen Algorithmus erfüllt.
+Er kann aber auch in einer ganz anderen Form niedergeschrieben werden, z.B., einem Flussdiagramm.
+
+*Pseudocode* orientiert sich an der Syntax von Programmiersprachen, wird aber sprachenübergreifend verwendet.
+
+Ein *Programm* ist im Gegensatz dazu in einer Programmiersprache wie ``Python`` geschrieben und kann auf einer Maschine ausgeführt werden.
+*Programmiercode* auch genannt *Quellcode*, *Source Code* oder kurz *Code*, ist das Resultat der *Programmierung* und teil eines *Programms*.
+Das heißt zur Ausführung des *Quellcodes* fehlt möglicherweise ein Teil des gesamten Codes.
+
+*Pseudocode*, *Quellcode* *Programme* und *Algorithmen* sind Manifestation des [Computational Thinkings](sec-what-is-ct) in Form von endlichem Text.
+
+Ein *Algorithmus* kann auch in einer Programmiersprache niedergeschrieben werden.
+Dies werden wir in diesem Kurs bevorzugen und den Umweg über *Pseudocode* weitestgehend vermeiden.
+
+```{admonition} Von anderen Entwickler\*innen lernen
+:class: remark
+Um neue Denkmuster anderer Denker\*innen zu erlernen oder sich von ihnen inspirieren zu lassen, lohnt es sich den Programmiercode anderer Entwickler\*innen zu analysieren.
+```
 
 ## Kenne deinen Kontext
 

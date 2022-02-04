@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-algorithms)=
 # Algorithmen
 
 Der Ursprungs des Begriffs *Algorithmus* war lange Zeit ungeklärt.
@@ -26,12 +27,91 @@ Heute verbinden wir mit Algorithmus Begriffe wie Rezept, Berechnungsvorschrift, 
 
 ## Euklid's Algorithmus
 
-Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: Euklid's Algorithmus.
+Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: *Euklid's Algorithmus*.
+
+```{exercise} Euklid's Algorithmus
+:label: euclid-exercise
 
 Gegeben seien zwei natürliche Zahlen $n, m \in \mathbb{N}$.
 Wir suchen nach dem größten gemeinsamen Teiler (ggT) von $n$ und $m$, d.h., die größte natürliche Zahl die sowohl $n$ als auch $m$ teilt.
+```
 
-In unserer Pseudocodeschreibweise, sieht Euklid's Algorithmus wie folgt aus.
+Der ggT von 44 und 12 ist zum Beispiel 4.
+Wie vieles bei den Griechen ist der Algorithmus geometrisch motiviert.
+Euklid berechnet den ggT, indem er nach einem gemeinsamen 'Maß' für die Längen zweier Linien sucht.
+Dazu zieht er wiederholt die kleiner der beiden Längen von der größeren ab.
+Der ggT verändert sich dadurch nicht.
+
+```{admonition} Größter gemeinsamer Teiler
+:name: ggt-theorem
+:class: theorem
+
+Seien $n$, $m$ zwei natürliche Zahlen mit $n > m$ und $d = n - m$ so ist der *größte gemeinsame Teiler* von $n$, $m$ und $d$ identisch.
+```
+
+```{admonition} Beweis
+:name: ggt-theorem-proof
+:class: proof dropdown
+
+Jede natürliche Zahl kann als Produkt ihrer Primfaktorzerlegung geschrieben werden.
+Der ggT von $n$ und $m$ ergibt sich aus der Multiplikation aller Primzahlen die in beiden Zerlegungen (möglicherweise mehrfach) vorkommen.
+
+Zum Beispiel ist: $44 = (2 \cdot 2) \cdot 11$ und $12 = (2 \cdot 2) \cdot 3$ und ihr ggT $2 \cdot 2$.
+
+Seien nun $n = p_1 \cdot \ldots \cdot p_k \cdot q_1$ und $m = p_1 \cdot \ldots \cdot p_k \cdot q_2$ wobei $p_1, \ldots, p_k$ die $k$ gleichen Primzahlen der Zerlegungen sind.
+Dann folgt 
+
+$$d = n - m = (p_1 \cdot \ldots \cdot p_k) \cdot (q_1 - q_2)$$
+
+und damit bleibt der ggT unverändert.
+```
+
+### Version 1
+
+Gehen wir wie Euklid vor und beschreiben diese Vorgehensweise in Pseudocode:
+
+```
+n <- c0
+m <- c1
+Solange m nicht n teilt:
+  n <- n - m
+  Falls m > n:
+    t <- m
+    m <- n
+    n <- t
+```
+
+Dabei sind ``c0`` und ``c1`` irgendwelche natürliche Zahlen wobei ``c0`` größer gleich ``c1`` sein muss.
+Überführen wir diesen Code in ein ``Python``-Programm um.
+Durch die [Restwertdivision](def-euclid-division) können ``m nicht n teilt`` in ``Python`` realisieren:
+
+```{code-cell} python3
+def gcd(n,m):
+    while n % m != 0: # Solange m nicht n teilt:
+        n = n - m
+        if m > n:
+          t = m
+          m = n
+          n = t
+    return m
+
+gcd(544, 119)
+```
+
+Die Funktion ``gcd`` hat zwei Parameter ``n`` und ``m`` die mit den Argumenten ``544`` und ``119`` initialisiert werden.
+Implizit wird angenommen, dass ``n > m`` gilt.
+Nachdem die ``while``-Schleife (Wiederholung) verlassen wird, gibt die Funktion ``m`` zurück.
+
+Zuweisungen werden in den allermeisten Programmiersprachen anstatt mit ``<-`` mit dem ``=`` durchgeführt (siehe auch Abschnitt [Initialisierung und Zuweisung](sec-assignment)).
+Das mathematische $=$ wird aufgrund dessen mit ``==`` ausgedrückt.
+
+### Version 2
+
+Da uns die [Restwertdivision](def-euclid-division) als Operation zur Verfügung steht können wir die wiederholte Subtraktion beschleunigen.
+Anstatt zum Beispiel ``43 - 11 - 11 - 11 == 10`` zu rechnen ergibt ``43 % 11 == 10``.
+Diese Operation steht Ihnen in allen gängigen Programmiersprachen zur Verfügung und kann auf dem Computer sehr schnell ausgeführt werden.
+
+Dadurch vereinfacht sich Euklid's Algorithmus zu:
 
 ```
 n <- c0
@@ -42,7 +122,7 @@ Solange m > 0:
     m <- r
 ```
 
-Dabei sind ``c0`` und ``c1`` irgendwelche natürliche Zahlen.
+
 Die Anweisungen werden von oben nach unten ausgeführt, wobei ``Solange`` eine Wiederholung markiert.
 Alles was unter dieser Anweisung eingerückt steht, wird wiederholt, solange die Bedingung ``m > 0`` gilt.
 Nach diesen Schritten ist der Wert auf den die Variable ``n``  verweist, der größten gemeinsamen Teiler (ggT) von ``c0`` und ``c1``.
@@ -79,8 +159,6 @@ Da nun $m$ den Wert $0$ hat, verlassen wir die Wiederholung und das Ergebnis ste
 
 Lassen Sie uns den Algorithmus in ein ``Python``-Programm überführen.
 Dazu schreiben wir eine ``Python``-Funktion ``gcd(n,m)`` (greatest common divisor).
-Zuweisungen werden in den allermeisten Programmiersprachen anstatt mit ``<-`` mit dem ``=`` durchgeführt (siehe auch Abschnitt [Initialisierung und Zuweisung](sec-assignment)).
-Das mathematische $=$ wird aufgrund dessen mit ``==`` ausgedrückt.
 
 ```{code-cell} python3
 def gcd(n,m):
@@ -96,8 +174,26 @@ gcd(544, 119)
 Die Funktion ``gcd`` hat zwei Parameter ``n`` und ``m`` die mit den Argumenten ``544`` und ``119`` initialisiert werden.
 Nachdem die ``while``-Schleife (Wiederholung) verlassen wird, gibt die Funktion ``n`` zurück.
 
-Das ist also ein Algorithmus.
-Was zeichnet ihn nun genau aus?
+### Version 3
+
+In ``Python`` können wir das Vertauschen der Variablen durch Tupel und das sog. Packing kürzer schreiben.
+Auch ist die Bedingung einer ``while``-Schleife wahr sofern eine ganze Zahl nicht gleich 0 ist.
+Daraus ergibt sich die sehr kurze Version 3:
+
+```{code-cell} python3
+def gcd(a,b):
+    while b:
+        a, b = b, a % b
+    return a
+
+gcd(544, 119)
+```
+
+Alle drei Versionen berechnen den ggT, also den gleichen Wert.
+Version 1 und 2 unterscheiden sich [semantisch](def-semantik) wohingegen Version 2 und 3 sich lediglich [syntaktisch](def-syntax) unterscheiden.
+Das sind also Algorithmen.
+
+>Was zeichnet nun aber einen Algorithmus genau aus?
 
 ## Definition
 
@@ -113,9 +209,9 @@ Ein *Algorithmus* ist eine endliche Folge von unmissverständlich beschriebenen 
 
 Ein Algorithmus hat demnach folgende Eigenschaften:
 
-**(1) Endlichkeit:** Genau wie die Beschreibung einer Turingmaschine besteht ein Algorithmus aus endlich vielen Zeichen.
+**(1) Endlichkeit:** Identisch zur Beschreibung einer [Turingmaschine](info-universal-turing-machine), besteht ein Algorithmus aus endlich vielen Zeichen.
 Anders ausgedrückt, können wir ihn in endlich viel Zeit niederschreiben.
-Durch seine Endlichkeit, kann ein Algorithmus als Programm in einem Speicher abgelegt werden.
+Durch seine Endlichkeit, kann ein Algorithmus als Programm in einem (endlichen) Speicher abgelegt werden.
 
 **(2) Ausführbarkeit:** Jede Anweisung des Algorithmus muss ausführbar sein.
 Das heißt, die Semantik einer jeden Anweisung muss im jeweiligen Kontext eindeutig definiert sein.
@@ -132,18 +228,20 @@ Die Terminierung ist das Gegenstück zur *Gebundenheit* bezogen auf die Zeit.
 
 **(6) Ausgabe:** Jeder Algorithmus liefert mindestens eine Ausgabe, d.h., ein Ergebnis zurück.
 
-Es gibt zwei optionale Eigenschaften für Algorithmen: **(7) Determiniertheit** und **(8) Determinismus**.
+Es gibt noch zwei optionale Eigenschaften für Algorithmen, welche oftmals gefordert werden:
 
-**(7) Determiniertheit:** Wir nennen einen Algorithmus **determiniert** wenn er bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.
-Entscheidet ein Algorithmus durch einen *echten Münzwurf* (keine pseudo Münzwurf) über die den Verlauf der Ausführung, so wäre jener Algorithmus nicht determiniert.
+**(7) Determiniertheit:** Wir nennen einen Algorithmus **determiniert**, wenn er bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.
+
+Entscheidet ein Algorithmus durch einen *echten Münzwurf* (kein pseudo Zufall sondern echter Zufall) über den Verlauf der Ausführung, so wäre jener Algorithmus nicht determiniert.
 Algorithmen basieren wenn überhaupt auf Pseudozufallszahlen, deren Erzeugung mit einem Startwert (*Seed*) initialisiert wird.
 Bei gleichem *Seed* und gleicher Eingabe erzeugen diese Algorithmen auch das gleiche Ergebnis.
 Da der *Seed* zur Eingabe gehört, sind jene Algorithmen determiniert.
 
-**(8) Determinismus:** Wir nennen ihn zudem **deterministisch** während seiner Ausführung dieser zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
+**(8) Determinismus:** Wir nennen einen Algorithmus **deterministisch**, wenn während seiner Ausführung dieser zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
+
 Es gibt keine reale Maschine die nichtdeterministische Algorithmen direkt umsetzten kann.
 Ein Beispiel für einen nichtdeterministischen Algorithmus wäre die Wanderung durch ein Labyrinth wobei Sie bei jeder Verzweigung beide Wege zeitgleich ablaufen.
-Dies ist nicht möglich, da Sie sich klonen müssten.
+Dies ist nicht möglich, da Sie sich klonen müssten bzw. an zwei Orten gleichzeitig sein müssten.
 Verwechseln Sie dies nicht mit der **Parallelität**.
 Es ist natürlich möglich, dass sich zwei Personen bei einer Abzweigung trennen.
 Nichtdeterminismus bedarf jedoch der Kopie des gesamten Zustands der Maschine!
@@ -168,8 +266,8 @@ Die Unmissverständlichkeit bezieht sich hingegen auf einen bestimmten *Kontext*
 So ist ein Kochrezept ein Algorithmus der im *Kontext* der Küche und des Kochens eine (hoffentlich) unmissverständliche endliche Folge von Anweisungen darstellt.
 Durch das Ausführen des Kochrezepts können wir mithilfe von bestimmten Kochutensilien (Eingabe) ein bestimmtes Gericht (Ausgabe) zubereiten.
 
-Algorithmen lassen sich auch von der ausführenden Einheit, also der Maschine oder dem Koch loslösen.
-Während des Entwickelns eines Algorithmus ist uns oft klar was eine bestimmte Anweisung tut, d.h., **was** passiert, doch unklar ist oft **wie** dies realisiert ist.
+Algorithmen lassen sich auch von der ausführenden Einheit, also der Maschine oder dem Koch / der Köchin loslösen.
+Während des Entwickelns eines Algorithmus sollte uns immer klar sein was eine bestimmte Anweisung berechnet, d.h., **was** passiert, doch kann es unklar sein **wie** dies realisiert wird.
 In der Realwelt sind wir daran gewöhnt.
 Wir wissen zwar dass uns der Flieger von München nach Frankfurt bringt, wie das aber im Detail funktioniert ist nicht bekannt.
 Selbst bei den einfachsten Dingen des Alltags wissen wir sehr oft nicht wie die Dinge genau funktionieren.
@@ -256,13 +354,26 @@ So gesehen würde die $2$ aus unserer Welt verschwinden sobald es keine Repräse
 
 Das ist ja alles schön und gut aber was hat das mit den Algorithmen zu tun?
 Ein Algorithmus kann auch als ein Repräsentant (oder als eine Idee der Ideenwelt) aufgefasst werden.
-Euklid's Algorithmus zum Finden des größten gemeinsamen Teilers ``gcd``, kann in vielen Unterschiedlichen Formen niedergeschrieben werden.
+*Euklid's Algorithmus* zum Finden des größten gemeinsamen Teilers ``gcd``, kann in vielen Unterschiedlichen Formen niedergeschrieben werden.
+Wie oben bereits beobachtet, kann es unterschiedliche Versionen, d.h., unterschiedliche Algorithmen geben, die genau das gleiche berechnen.
 Der Algorithmus kann sogar nur in unserem Kopf existieren.
 Ist der ``gcd`` in ``Java`` ein anderer Algorithmus als der in ``Python``?
 Ändere ich die Namen meiner Variablen, ist es dann ein anderer Algorithmus?
 Darüber lässt sich streiten.
-Wir sagen aber gewöhnlich: *Ich habe den ``gcd``-Algorithmus in ``Python`` programmiert* oder *das ist der Pseudocode für den ``gcd``-Algorithmus*.
+Sicher können wir zwei Versionen auf [syntaktische](def-syntax) und [semantische](def-semantik) Unterschiede vergleichen.
 
-Ob nun ein Algorithmus ein Re­prä­sen­tant all seiner Realisierungen ist oder ob jede Realisierung ein eigener Algorithmus ist, ist in der Praxis unwichtig.
+```{admonition} Unterschiedliche Algorithmen
+:name: remark-nature-of-algorithm
+:class: remark
+
+Unterscheiden sich zwei Beschreibungen eines Algorithmus semantisch, sprechen wir von zwei verschiedenen Algorithmen.
+Sind die beiden Beschreibungen semantisch identisch, dann handelt es sich auch um den gleichen Algorithmus.
+
+```
+
+Wir sagen aber gewöhnlich: *Ich habe den ``gcd``-Algorithmus in ``Python`` programmiert* oder *das ist der Pseudocode für den ``gcd``-Algorithmus*.
+Und damit meinen wir in der Regel einen von vielen effizienten Algorithmen, welche allesamt den ggT berechnen.
+
+Ob nun ein Algorithmus ein Repräsentant all seiner Realisierungen ist oder ob jede Realisierung ein eigener Algorithmus ist, ist in der Praxis unwichtig.
 Dennoch lohnt es sich ein paar Gehirnzellen dieser Fragestellung zu widmen.
 Beantworten Sie es für sich selbst.
