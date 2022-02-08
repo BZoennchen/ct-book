@@ -885,7 +885,7 @@ Einzig bei der Erstellung verwenden wir statt der eckigen die runden Klammern:</
 </div>
 </div>
 <p>Der große Unterschied lieft in der Veränderbarkeit, denn Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind <strong>unveränderlich</strong> (engl. <strong>immutable</strong>)!</p>
-<div class="important admonition">
+<div class="attention admonition">
 <p class="admonition-title">Unveränderlichkeit</p>
 <p>Im Gegensatz zu Listen sind Tupel <em>unveränderliche</em> Datenstrukturen.</p>
 </div>
@@ -911,7 +911,7 @@ Was wir jedoch nicht verändern können sind die <strong>Adressen</strong> bzw. 
 </div>
 </div>
 </div>
-<p>Doch können wir eine <em>Datenstruktur</em> die Element eines Tupels ist durchaus verändern:</p>
+<p>Doch können wir eine <em>Datenstruktur</em>, die Element eines Tupels ist, durchaus verändern:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
@@ -928,7 +928,7 @@ Was wir jedoch nicht verändern können sind die <strong>Adressen</strong> bzw. 
 </div>
 <p>Tupel werden oft verwendet wenn wir eine Ansammlung von heterogenen Datentypen zusammenfassen wollen, und wir explizit ausdrücken bzw. sicher gehen wollen, dass dieses Tupel nicht verändert wird.</p>
 <p>Um beispielsweise das sich nicht ändernde Alphabet zu modellieren, eignet sich ein Tupel:</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span>
 <span class="n">alphabet</span>
@@ -1009,7 +1009,7 @@ Was wir jedoch nicht verändern können sind die <strong>Adressen</strong> bzw. 
 </div>
 </div>
 <p>funktioniert nicht!</p>
-<p>Python bietet auch das Konzept des <em>tuple-packing</em> und <em>tuple-unpacking</em>, was enorm praktisch ist:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet auch das Konzept des <em>tuple-packing</em> und <em>tuple-unpacking</em>, was enorm praktisch ist:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">triple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -1048,7 +1048,7 @@ Packing bzw. unpacking ist insbesondere praktisch, wenn Sie eine Funktion schrei
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>red = 31, green = 225, blue = 207
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>red = 127, green = 134, blue = 92
 </pre></div>
 </div>
 </div>
@@ -1072,7 +1072,7 @@ Testen wir es aus:</p>
 </div>
 </div>
 <p>Kein Fehler!
-Wird nun doch also doch <code class="docutils literal notranslate"><span class="pre">numbers</span></code>?
+Wird nun doch <code class="docutils literal notranslate"><span class="pre">numbers</span></code> verändert?
 Ja und nein.
 Der Speicherbereich des ursprünglichen Tupels bleibt unverändert, stattdessen wird eine Kopie angelegt.</p>
 <div class="cell tag_raises-exception docutils container">
@@ -1089,19 +1089,20 @@ Der Speicherbereich des ursprünglichen Tupels bleibt unverändert, stattdessen 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id before += 4554101520
-id after += 4554007824
-id after += of the original 4554101520
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id before += 4398803360
+id after += 4398732560
+id after += of the original 4398803360
 numbers: (1, 2, 3, 4, 5, 6, 7, 8)
 numbers_copy: (1, 2, 3, 4, 5)
 </pre></div>
 </div>
 </div>
 </div>
+<p>Diese Inkonsistenz kann gefährlich sein, denn obwohl die <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> der Listenverkettung und Tupelverkettung sehr ähnlich sind, ist ihre <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> sehr verschieden.</p>
 <div class="exercise admonition" id="tuple-vs-lists-appending-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.4 </span>(Tupel vs Listen (Effizienz))</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.6 </span>(Effizienzbetrachtung von Tupeln und Listen)</p>
 <div class="section" id="exercise-content">
-<p>Welche der folgenden Code-Teile benötigt nach Ihrer meinung mehr Computerressourcen und warum?</p>
+<p>Welche der folgenden Code-Teile benötigt nach Ihrer Meinung mehr Computerressourcen und warum?</p>
 <p>Listenerzeugung durch Anhängen:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1123,7 +1124,7 @@ numbers_copy: (1, 2, 3, 4, 5)
 </div>
 </div>
 <div class="solution dropdown admonition" id="tuple-vs-lists-appending-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#tuple-vs-lists-appending-exercise"><span>Exercise 4.4</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#tuple-vs-lists-appending-exercise"><span>Exercise 4.6</span></a></p>
 <div class="section" id="solution-content">
 <p>Die Tupelerzeugung durch Anhängen ist deutlich langsamer und speicherintensiver, denn bei jeder Konkatenation <code class="docutils literal notranslate"><span class="pre">+=</span></code> wird <code class="docutils literal notranslate"><span class="pre">numbers</span></code> im Speicher kopiert.
 Der Code erzeugt damit 100 unterschiedliche Tupel!

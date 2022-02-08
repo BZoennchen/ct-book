@@ -18,8 +18,8 @@ print(text)
 
 Um Variablen oder Werte anderer Datentypen mit ``print`` auszugeben, mussten wir diese immer mit der *built-in Funktion* ``str`` in eine Zeichenkette umwandeln.
 Da dies so häufig gemacht werden muss, haben die Entwickler\*innen von ``Python`` sich etwas einfallen lassen.
-Stellen wir vor unsere Zeichenkette ein ``f`` so handelt es sich um eine sog. *formatierte Zeichenkette*.
-Die hilft uns Variablen oder Werte direkt in diese formatierte Zeichenkette einzufügen.
+Stellen wir vor unsere Zeichenkette ein ``f``, so handelt es sich um eine sog. *formatierte Zeichenkette*.
+Diese helfen uns Variablen oder Werte direkt in eine Zeichenkette einzufügen.
 Vergleichen Sie folgenden Code:
 
 x = 5
@@ -61,7 +61,8 @@ print('The correct' + empty_str + empty_str + empty_str + ' answer is 42!')
 
 'Hello' == 'Hello' + empty_str
 
-Zeichenketten lassen sich wie Listen und Tupel [indexieren](sec-list-index) und mit der *built-in Funktion* ``len``, kann man die Länge einer Zeichenkette erfragen.
+Zeichenketten lassen sich wie Listen und Tupel [indexieren](sec-list-index),
+Mit der *built-in Funktion* ``len``, kann man die Länge einer Zeichenkette erfragen.
 Folgender Code gibt jedes einzelne Zeichen einer Zeichenkette aus.
 
 text = 'Hello World!'
@@ -95,7 +96,7 @@ for i in range(len(text)):
 print(text)
 print(reverse_text)
 
-Wie bei Listen und Tupeln können wir auch einen Teil einer Zeichenkette ausschneiden ([indexieren](sec-list-index)).
+Genau wie [Listen](sec-list) und [Tupeln](sec-tuple), lassen sich auch Zeichenketten zerschneiden ([indexieren](sec-list-index)).
 
 text = 'Zeichensalat'
 print(text[0:2])
@@ -113,8 +114,9 @@ Dafür müssen wir das ``'``-Zeichen mit einem ``\`` *maskieren*:
 
 print('Anna sagte: \'Wie geht es dir\'')
 
-Auf Zeichenketten können wir viele nützliche Funktionen aufrufen.
-Zu beachten ist, dass Zeichenketten unveränderlich sind, d.h. die Funktionen liefern eine neue Zeichenkette zurück, die ursprüngliche bleibt unverändert.
+Zeichenketten sind Objekte die uns viele nützliche Funktionen anbieten.
+Zu beachten ist, dass Zeichenketten **unveränderlich** sind, d.h. die Funktionen liefern neue Zeichenkette zurück, die ursprüngliche bleibt unverändert.
+
 Mit ``text.upper()`` können wir beispielsweise alle Zeichen einer Zeichenkette in Großbuchstaben transformieren.
 
 text = 'Zeichensalat'
@@ -129,4 +131,4 @@ print(text.count('a'))
 print(text.replace('salat', 'spinat'))
 
 Es würde zu weit gehen alle Funktionen zu besprechen -- das wäre auch ziemlich langweilig.
-Schauen Sie sich einfach die [Dokumentation](https://docs.python.org/3/library/string.html) an, wenn Sie nach einer Funktion suchen oder verwenden Sie die eingebaute Hilfe ``help(str)``.
+Schauen Sie sich einfach die [Dokumentation](https://docs.python.org/3/library/string.html) an oder verwenden Sie die eingebaute Hilfe ``help(str)``.

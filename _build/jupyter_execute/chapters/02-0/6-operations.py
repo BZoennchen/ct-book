@@ -1,5 +1,6 @@
 # Operationen
 
+(sec-abs)=
 ## Betrag
 
 Die Betragsfunktion $|\cdot| : \mathbb{R} \rightarrow \mathbb{R}^+$ wandelt eine negative Zahl in eine positive Zahl um.
@@ -10,7 +11,7 @@ Die Betragsfunktion $|\cdot| : \mathbb{R} \rightarrow \mathbb{R}^+$ wandelt eine
 
 Sei $x \in \mathbb{R}$ eine reelle Zahl, so ist ihr *Betrag* definiert als
 
-$$|x| = \begin{cases} -x, & \text{ falls } x < 0 \\ x, & \text{ sonst.} \end{cases}$$
+$$\text{abs}(x) = |x| = \begin{cases} -x, & \text{ falls } x < 0 \\ x, & \text{ sonst.} \end{cases}$$
 ```
 
 abs(-10)
@@ -41,6 +42,7 @@ $$\min M = x \text{ sodass } x \in M \text{ und } \forall y \in M : x \leq y.$$
 M = {1,2,3,4,5}
 min(M)
 
+(sec-math-rounding)=
 ## Ab- und Aufrunden
 
 Bei der Entwicklung Ihrer Algorithmen werden sie das *Abrunden* sehr oft einsetzten.
@@ -58,7 +60,7 @@ Diese Abrundungsfunktion $\left \lfloor{\cdot}\right \rfloor : \mathbb{R} \right
 
 Sei $x \in \mathbb{R}$ so ist $x$ aufgerundet gleich
 
-$$\left \lfloor{x}\right \rfloor = \max\{k \in \mathbb{Z} : k \leq x \}.$$
+$$\text{floor}(x) = \left \lfloor{x}\right \rfloor = \max\{k \in \mathbb{Z} : k \leq x \}.$$
 ```
 
 Diese Aufrundungsfunktion $\left \lceil{\cdot}\right \rceil : \mathbb{R} \rightarrow \mathbb{Z}$ rundet Zahlen zur nächst kleineren ganzen Zahl ab. 
@@ -69,7 +71,7 @@ Diese Aufrundungsfunktion $\left \lceil{\cdot}\right \rceil : \mathbb{R} \righta
 
 Sei $x \in \mathbb{R}$ so ist $x$ abgerundet gleich
 
-$$\left \lceil{x}\right \rceil = \min\{k \in \mathbb{Z} : k \geq x \}.$$
+$$\text{ceil}(x) = \left \lceil{x}\right \rceil = \min\{k \in \mathbb{Z} : k \geq x \}.$$
 ```
 
 import math

@@ -892,11 +892,11 @@
                 
   <div class="section" id="kontrollstrukturen">
 <span id="sec-control-structures"></span><h1><span class="section-number">5.3. </span>Kontrollstrukturen<a class="headerlink" href="#kontrollstrukturen" title="Permalink to this headline">¶</a></h1>
-<p><em>Schleifen</em> vermeiden wir es Anweisungen die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
+<p>Durch <a class="reference internal" href="#sec-repetition-and-recursion"><span class="std std-ref">Wiederholung</span></a> in Form von <em>Schleifen</em> und <em>(rekursive) Funktionen</em> vermeiden wir es Anweisungen, die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
 Erst durch diese fundamentale Eigenschaft, ist es überhaupt möglich, dass wir die Anzahl der ausgeführten Anweisungen von der Länge des Programmcodes entkoppeln.</p>
-<p><em>Fallunterscheidungen</em> erlauben es uns wiederum bestimmte Anweisungen nur dann auszuführen, wenn eine bestimmte Bedingung zur Laufzeit des Programms erfüllt ist.</p>
-<p>Diese zwei Kontrollstrukturen sind bereits alles was wir benötigen.
-Um unseren Programmcode zu strukturieren und bestimmte Programmteile an verschiedenen Stellen aufzurufen, gibt es noch Programmierfunktionen oder kurz <em>Funktionen</em>.</p>
+<p><a class="reference internal" href="#sec-if-else"><span class="std std-ref">Fallunterscheidungen</span></a> erlauben es uns wiederum bestimmte Anweisungen nur dann auszuführen, wenn eine bestimmte Bedingung zur Laufzeit des Programms erfüllt ist.</p>
+<p>Diese zwei <em>Schleifen</em> und <em>Fallunterscheidungen</em> kombiniert mit <em>Variablen</em> sind bereits alles was wir benötigen.
+Um unseren Programmcode zu strukturieren und bestimmte Programmteile an verschiedenen Stellen aufzurufen, gibt es zusätzlich das Konzept der Programmierfunktionen oder kurz <em>Funktionen</em>.</p>
 <div class="definition admonition" id="def-control-structure">
 <p class="admonition-title">Kontrollstrukturen</p>
 <p><em>Kontrollstrukturen</em> sind Anweisungen, welche die Abarbeitungsreihenfolge von anderen Anweisungen, und damit den Programmablauf kontrollieren.</p>
@@ -907,7 +907,7 @@ Um unseren Programmcode zu strukturieren und bestimmte Programmteile an verschie
 <li><p>Schleifen (Wiederholung)</p></li>
 <li><p>Funktionen (Wiederholung)</p></li>
 </ol>
-<p>Wie sich gezeigt hat, muss eine Programmiersprache nur sehr weniger und sehr primitiver Kontrollstrukturen anbieten damit diese als <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a> gilt.
+<p>Wie bereits erwähnt, muss eine Programmiersprache nur sehr weniger und sehr primitiver Kontrollstrukturen anbieten damit diese als <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a> gilt.
 Theoretisch ist es bereits ausreichend wenn eine Programmiersprache</p>
 <ol class="simple">
 <li><p>Variablen unterstützt, auf die wir einen konstanten Wert addieren oder subtrahieren können und</p></li>
@@ -916,7 +916,7 @@ Theoretisch ist es bereits ausreichend wenn eine Programmiersprache</p>
 <p>Die Fallunterscheidung, lässt sich (in hässlicher Form) durch eine Schleife ausdrücken.</p>
 <div class="section" id="fallunterscheidungen">
 <span id="sec-if-else"></span><h2><span class="section-number">5.3.1. </span>Fallunterscheidungen<a class="headerlink" href="#fallunterscheidungen" title="Permalink to this headline">¶</a></h2>
-<p>Die erste Kontrollstruktur realisiert die bedingte Ausführung, das bedeutet, ein bestimmte Sequenz von Anweisungen <code class="docutils literal notranslate"><span class="pre">A1,</span> <span class="pre">...</span> <span class="pre">,An</span></code> wird nur dann ausgeführt, wenn eine Bedingung <code class="docutils literal notranslate"><span class="pre">B</span></code> zutrifft.</p>
+<p>Die erste Kontrollstruktur realisiert die bedingte Ausführung, das bedeutet, eine bestimmte Sequenz von Anweisungen <code class="docutils literal notranslate"><span class="pre">A1,</span> <span class="pre">...</span> <span class="pre">,An</span></code> wird nur dann ausgeführt, wenn eine Bedingung <code class="docutils literal notranslate"><span class="pre">B</span></code> zutrifft.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">B</span><span class="p">:</span>
     <span class="n">A1</span>
     <span class="o">...</span>
@@ -925,7 +925,7 @@ Theoretisch ist es bereits ausreichend wenn eine Programmiersprache</p>
 </div>
 <p>Die Bedingung <code class="docutils literal notranslate"><span class="pre">B</span></code> kann nur zu wahr <code class="docutils literal notranslate"><span class="pre">True</span></code> oder falsch <code class="docutils literal notranslate"><span class="pre">False</span></code> ausgewertet werden.
 Gewöhnlich hängt der Wahrheitswert der Bedingung vom Programmablauf ab, d.h., er ist erst zur Laufzeit bekannt.
-Zum Beispiel gibt folgendes Programm <code class="docutils literal notranslate"><span class="pre">'you</span> <span class="pre">win!'</span></code> mit einer (pseudo) Wahrscheinlichkeit von 50% aus, da <code class="docutils literal notranslate"><span class="pre">x</span></code> ein Zufallswert zwischen 0 und 1 (Gleichverteilung) zugewiesen wird.</p>
+Zum Beispiel gibt folgendes Programm <code class="docutils literal notranslate"><span class="pre">'you</span> <span class="pre">win!'</span></code> mit einer (pseudo) Wahrscheinlichkeit von 50% aus, da der <em>Variablen</em> <code class="docutils literal notranslate"><span class="pre">x</span></code> ein Zufallswert zwischen 0 und 1 (Gleichverteilung) zugewiesen wird.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
@@ -936,54 +936,87 @@ Zum Beispiel gibt folgendes Programm <code class="docutils literal notranslate">
 </pre></div>
 </div>
 </div>
+</div>
+<p>Es gibt von diesen Fallunterscheidungen verschiedene Varianten, wobei diese lediglich syntaktischer Zucker sind.
+Für <code class="docutils literal notranslate"><span class="pre">Python</span></code> besprechen wir alle Möglichkeiten im Teil <strong>PYTHON</strong> in <a class="reference internal" href="../03-7/1-cases.html#sec-cases"><span class="std std-ref">Kontrollstrukturen</span></a>.</p>
+</div>
+<div class="section" id="wiederholung">
+<span id="sec-repetition-and-recursion"></span><h2><span class="section-number">5.3.2. </span>Wiederholung<a class="headerlink" href="#wiederholung" title="Permalink to this headline">¶</a></h2>
+<p>Das fundamentale Prinzip der <em>Wiederholung</em> ist zentraler Bestandteil des <a class="reference internal" href="../01-2/what-is-ct.html#sec-what-is-ct"><span class="std std-ref">Computational Thinkings</span></a>.
+Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
+Sortieralgorithmen, die Berechnung eine Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen <em>iterativ</em> verarbeiten.</p>
+<p>Nach der Definition eines Algorithmus, muss dieser aus endlich vielen Anweisungen bestehen.
+Will man jedoch eine variable Menge an Information verarbeiten, so muss ein Algorithmus, abhängig von der Eingabegröße, unterschiedlich viele Anweisungen ausführen.
+Das bedeutet, dass die Länge des Algorithmus (Textlänge) unabhängig von der Anzahl der auszuführenden Anweisungen (für eine gegebenen Eingabe) sein muss!
+Nach dem Schubfachprinzip bedeutet dies wiederum, dass in diesem Fall Teile des Algorithmus öfters durchlaufen werden - Wiederholung muss also in irgendeiner Form stattfinden.</p>
+<p>Überraschenderweise hat sich herausgestellt, dass <em>Wiederholung</em> in Kombination mit der <em>Fallunterscheidung</em> ausreicht, um alles berechnen zu können was wir bisher als natürlich <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-computable"><span class="std std-ref">berechenbar</span></a> ansehen.
+Nach der unbeweisbaren <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-church-these"><span class="std std-ref">Church-Turing-These</span></a> werden wir kein Problem finden, welches natürlich berechenbar aber nicht durch einen Computer berechnet werden kann.
+Die Fallunterscheidung in Kombination mit der Wiederholung ist scheinbar ausreichend.</p>
+<p>Nun haben Sie vielleicht die Hoffnung, Sie müssten nur die <a class="reference internal" href="#sec-repetition-and-recursion"><span class="std std-ref">Wiederholung</span></a> und die <a class="reference internal" href="#sec-if-else"><span class="std std-ref">Fallunterscheidungen</span></a> beherrschen und können dann jedes Problem lösen.
+Leider sind diese beiden Techniken derart grundlegend, dass sie eine notwendige nicht aber ausreichende Bedingung für die Entwicklung von Algorithmen darstellen.
+Wir können das mit der Sprache vergleichen.
+Nur weil wir Laute von uns geben können, heißt das nicht, dass wir uns in jeder Sprache verständigen können.
+Ein weiteres Beispiel wären die Naturwissenschaften.
+Nur weil wir die kleinsten Teilchen im Universum verstehen, bedeutet dass nicht, dass wir damit das entstehen von Leben oder andere komplexe Übergängen erklären können.</p>
+<p>Wir kennen zwei Arten von Wiederholungen:</p>
+<ol class="simple">
+<li><p>Die <a class="reference internal" href="#sec-iteration"><span class="std std-ref">Iteration</span></a> und</p></li>
+<li><p>die <a class="reference internal" href="#sec-recursion"><span class="std std-ref">Rekursion</span></a>.</p></li>
+</ol>
+<p>Auf der konzeptionellen Ebene erscheinen Iteration und Rekursion grundverschieden – es sind unterschiedliche Denkweisen.
+Wir können rekursiv oder iterativ denken.</p>
+<div class="theorem admonition">
+<p class="admonition-title">Iteration und Rekursion</p>
+<p>Sofern beim Mittel der Iteration, die Anzahl der Durchläufe vor ihrer Ausführung bekannt sein muss, können wir überraschenderweise jede Rekursion in eine Iteration und jede Iteration in eine Rekursion umwandeln!</p>
+</div>
+<p>Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen bzw. durchdenken.</p>
+<div class="section" id="iteration">
+<span id="sec-iteration"></span><h3><span class="section-number">5.3.2.1. </span>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h3>
+<p>Wenn Sie Erfahrung im entwickeln von iterativen Algorithmen gesammelt haben und iterative Algorithmen analysiert und verwendet haben, dann werden Sie beginnen in Iterationen zu denken.
+Sie werden beginnen in Iterationen von Iterationen von Iterationen zu denken.</p>
+<p>Das wohl einfachste Beispiel für eine Iteration ist die Addition einer Menge von Zahlen.
+Lassen Sie uns alle geraden Zahlen von <code class="docutils literal notranslate"><span class="pre">2</span></code> bis <code class="docutils literal notranslate"><span class="pre">n</span></code> addieren.
+Hierzu brauchen wir eine Variable <code class="docutils literal notranslate"><span class="pre">acc</span></code>, welche wir mit dem Wert <code class="docutils literal notranslate"><span class="pre">0</span></code> initialisieren und dann iterativ 2 dann 4, und so weiter addieren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">acc</span> <span class="o">+=</span> <span class="n">k</span>
+
+<span class="n">acc</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>you win!
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2450
 </pre></div>
 </div>
 </div>
 </div>
-<p>Es gibt von diesen Fallunterscheidungen verschiedene Varianten, wobei diese lediglich syntaktischer Zucker sind.
-Wir besprechen diese für <code class="docutils literal notranslate"><span class="pre">Python</span></code> ausführlich im Teil <strong>PYTHON</strong> in <a class="reference internal" href="../03-7/1-cases.html#sec-cases"><span class="std std-ref">Kontrollstrukturen</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">while</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">acc</span> <span class="o">+=</span> <span class="n">k</span>
+    <span class="n">k</span> <span class="o">+=</span> <span class="mi">2</span>
+
+<span class="n">acc</span>
+</pre></div>
 </div>
-<div class="section" id="wiederholung">
-<span id="sec-repetition-and-recursion"></span><h2><span class="section-number">5.3.2. </span>Wiederholung<a class="headerlink" href="#wiederholung" title="Permalink to this headline">¶</a></h2>
-<p>Das fundamentale Prinzip der <em>Wiederholung</em> ist zentraler Bestandteil des Computational Thinkings.
-Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
-Sortieralgorithmen, die Berechnung eine Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen <em>iterativ</em> verarbeiten.</p>
-<p>Nach der Definition eines Algorithmus, muss dieser aus endlich vielen Anweisungen bestehen.
-Will man jedoch eine variable Menge an Information verarbeiten, so muss ein Algorithmus abhängig von der Eingabegröße unterschiedlich viele Anweisungen ausführen.
-Das bedeutet, dass die Länge des Algorithmus unabhängig von der Anzahl der auszuführenden Anweisungen (für eine gegebenen Eingabe) sein können muss!
-Nach dem Schubfachprinzip bedeutet dies wiederum, dass in diesem Fall Teile des Algorithmus öfters durchlaufen werden - Wiederholung muss also in irgendeiner Form stattfinden.</p>
-<p>Überraschenderweise hat sich herausgestellt, dass <em>Wiederholung</em> in Kombination mit der <em>Fallunterscheidung</em> ausreicht, um alles berechnen zu können was wir bisher als natürlich berechenbar ansehen.
-Nach der unbeweisbaren Church-Turung-These werden wir keine Problem finden, was natürlich berechenbar aber nicht durch einen Computer berechnet werden kann.
-Die Fallunterscheidung in Kombination mit der Wiederholung ist scheinbar ausreichend.</p>
-<p>Nun haben Sie vielleicht die Hoffnung, Sie müssten nur die <em>Wiederholung</em> und die <em>Fallunterscheidung</em> beherrschen und können dann jedes Problem lösen.
-Leider sind diese beiden Techniken derart grundlegend, dass sie eine notwendige nicht aber ausreichende Bedingung für die Entwicklung von Algorithmen darstellen.
-Wir können das mit der Sprache vergleichen.
-Nur weil wir laute von uns geben können, heißt das nicht, dass wir uns in jeder Sprache verständigen können.
-Ein weiteres Beispiel wären die Naturwissenschaften.
-Nur weil wir die kleinsten Teilchen im Universum verstehen, bedeutet dass nicht, dass wir damit das entstehen von Leben oder anderen emergenten Übergängen erklären können.</p>
-<p>Wir kennen zwei Arten von Wiederholungen:</p>
-<ol class="simple">
-<li><p>Die Iteration und</p></li>
-<li><p>die Rekursion.</p></li>
-</ol>
-<p>Auf der konzeptionellen Ebene erscheinen Iteration und Rekursion grundverschieden.
-Es sind unterschiedliche Denkweisen.
-Wir können rekursiv oder iterativ denken.</p>
-<div class="theorem admonition">
-<p class="admonition-title">Iteration und Rekursion</p>
-<p>Sofern bei der Iteration, die Anzahl der Durchläufe nicht zur Laufzeit vor der Ausführung der Iteration bekannt sein muss, können wir überraschenderweise jede Rekursion in eine Iteration und jede Iteration in eine Rekursion umwandeln!</p>
 </div>
-<p>Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen.</p>
-<div class="section" id="iteration">
-<h3><span class="section-number">5.3.2.1. </span>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h3>
-<p>Wenn Sie Erfahrung im entwickeln von iterativen Algorithmen gesammelt haben und iterative Algorithmen analysiert und verwendet haben, dann werden Sie beginnen in Iterationen zu denken.
-Sie werden beginnen in Iterationen von Iterationen von Iterationen zu denken.</p>
-<p>Nehmen wir zum Beispiel den <a class="reference external" href="https://en.wikipedia.org/wiki/Bubble_sort">Bubblesort Algorithmus</a>.
-Wir möchten eine Liste von Zahlen sortieren.
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2550
+</pre></div>
+</div>
+</div>
+</div>
+<p>Betrachten einen etwas komplizierteren Algorithmus: Den <a class="reference external" href="https://en.wikipedia.org/wiki/Bubble_sort">Bubblesort Algorithmus</a>.
+Dieser sortiert eine eine Liste von Zahlen sortieren.
 Wir gehen durch die Liste (1. <em>Iterationen</em>) und wann immer zwei nebeneinander liegende Zahlen falsch sortiert sind, vertauschen wir diese.
-Wir wiederholen dies (2. <em>Iterationen</em>) solange bis keine Zahl mehr falsch sortiert ist.</p>
+Wir wiederholen dies (2. <em>Iterationen</em>) solange bis keine zwei benachbarte Zahlen falsch sortiert sind.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
@@ -1006,17 +1039,18 @@ Wir wiederholen dies (2. <em>Iterationen</em>) solange bis keine Zahl mehr falsc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before sorting: [4, 3, 5, 2, 8, 1, 6, 7, 9]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before sorting: [6, 1, 2, 3, 9, 7, 8, 5, 4]
 after sorting: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Die beiden Schleifen liefern uns auch einen Hinweis auf die Laufzeit des simplen Sortieralgorithmus.
+<p>Die beiden Schleifen liefern uns auch einen Hinweis auf die Laufzeit dieses simplen Sortieralgorithmus.
 Nach jedem ausführen der inneren Schleife befindet sich ein neues Element an seiner korrekten Position.
 Damit brauchen wir maximal so viele Durchläufe (1. Iterationen) wie es Elemente sind.
 Jeder Durchlauf benötigt ebenfalls maximal so viel Schritte wie es Elemente sind.
-Damit hat der Algorithmus im schlechtesten Fall eine quadratische Laufzeit.</p>
+Damit hat der Algorithmus im schlechtesten Fall eine quadratische Laufzeit.
+Das bedeutet, wollen wir <span class="math notranslate nohighlight">\(n\)</span> Zahlen sortieren ist die <span class="xref myst">Zeitkomplexität</span> des Algorithmus gleich <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span>.</p>
 <div class="exercise admonition" id="if-by-for-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.7 </span>(Fallunterscheidung durch Schleife)</p>
 <div class="section" id="exercise-content">
@@ -1038,10 +1072,11 @@ Damit hat der Algorithmus im schlechtesten Fall eine quadratische Laufzeit.</p>
 </div>
 <div class="section" id="rekursion">
 <span id="sec-recursion"></span><h3><span class="section-number">5.3.2.2. </span>Rekursion<a class="headerlink" href="#rekursion" title="Permalink to this headline">¶</a></h3>
-<p>Rekursion scheint dieses unverständliche Konzept, welches Mathematiker*innen lieben und vor dem Programmierer*innen anfänglich davonlaufen.
-Derweil würden wir behaupten, dass die <em>rekursive denkweise</em> uns Menschen näher ist als das Denken in Iterationen.
-Rekursive Lösungen sind oft eleganter, kürzer, verständlicher aber leider auch langsamer als iterative Lösungen.</p>
-<p>Nehmen wir die Berechnung der Fakultät, einmal iterativ</p>
+<p>Rekursion ist dieses scheinbar unverständliche Konzept, welches Mathematiker*innen lieben und vor dem Programmierer*innen anfänglich davonlaufen.
+Derweil würden wir behaupten, dass die <em>rekursive Denkweise</em> uns Menschen näher ist als das Denken in Iterationen.
+Rekursive Lösungen sind oft eleganter, kürzer, verständlicher aber leider auch langsamer als iterative Lösungen.
+Die Rekursion hängt dabei stark mit der Induktion zusammen, siehe Abschnitt <a class="reference internal" href="../02-0/7-induction.html#sec-induction"><span class="std std-ref">vollständige Induktion</span></a>.</p>
+<p>Nehmen wir die Berechnung der Fakultät, einmal <em>iterativ</em></p>
 <div class="math notranslate nohighlight">
 \[\text{fac}_\text{it}(n) = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 = \prod\limits_{i=1}^n i\]</div>
 <div class="cell docutils container">
@@ -1062,7 +1097,7 @@ Rekursive Lösungen sind oft eleganter, kürzer, verständlicher aber leider auc
 </div>
 </div>
 </div>
-<p>und einmal rekursiv</p>
+<p>und einmal <em>rekursiv</em></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\text{fac}_\text{rec}(n) = \begin{cases} 1 &amp; \text{ falls } n = 0\\ n \cdot \text{fac}_\text{rec}(n-1) &amp; \text{ sonst}\end{cases}\end{split}\]</div>
 <div class="cell docutils container">
@@ -1097,8 +1132,8 @@ Ein Beispiel sind die sog. <a class="reference external" href="https://de.wikipe
 Der Turm wird nach oben immer schmaler, d.h., die Schicht die über einer anderen liegt ist schmaler.
 Wir können nur eine einzelne Schicht bewegen und wir dürfen keine Schicht auf eine schmälere legen.
 Es gibt nur einen zusätzlichen Ablegeort 1.
-Wie bringen wir den Turm nun von Ort 1 nach Ort 2?</p>
-<p>Hat der Turm nur eine Schicht, ist das Problem schnell gelöst: Bewege Schicht von 0 nach 2.</p>
+Wie bringen wir den Turm nun von Ort 0 nach Ort 2?</p>
+<p><strong>(1) Induktionsanfang:</strong> Hat der Turm nur eine Schicht, ist das Problem schnell gelöst: Bewege Schicht von 0 nach 2.</p>
 <p>Besteht der Turm aus zwei Schichten, ist das Problem auch noch einfach zu lösen:</p>
 <ol class="simple">
 <li><p>Bewege oberste Schickt von 0 nach 1.</p></li>
@@ -1109,8 +1144,8 @@ Wie bringen wir den Turm nun von Ort 1 nach Ort 2?</p>
 <a class="reference internal image-reference" href="../../_images/hanoi.png"><img alt="../../_images/hanoi.png" src="../../_images/hanoi.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.3 </span><span class="caption-text">Die Türme von Hanoi mit drei Schichten.</span><a class="headerlink" href="#fig-hanoi-3" title="Permalink to this image">¶</a></p>
 </div>
-<p>Wie gehen wir aber für einen allgemeinen Fall mit <span class="math notranslate nohighlight">\(n\)</span> Schichten vor?
-Nun,</p>
+<p>Wie gehen wir aber für einen allgemeinen Fall mit <span class="math notranslate nohighlight">\(n\)</span> Schichten vor?</p>
+<p><strong>(2) Induktionsschritt:</strong> Nun,</p>
 <ol class="simple">
 <li><p>wir bringen die obersten <span class="math notranslate nohighlight">\(n-1\)</span> Schichten von 0 nach 1,</p></li>
 <li><p>die unterste Schicht von 0 nach 2 und dann</p></li>
@@ -1173,10 +1208,23 @@ Wir gehen also davon aus es gäbe eine Funktion <code class="docutils literal no
 </div>
 </div>
 <p>Erstaunlich, wie kurz die Lösung am Ende ausfällt.
-Es fühlt sich fast so an als hätten wir an irgendeiner Stelle betrogen.
-Aber Vorsicht, zu beweisen, dass der Algorithmus korrekt funktioniert ist nicht trivial.
+Es fühlt sich fast so an als hätten wir an irgendeiner Stelle betrogen.</p>
+<p>Aber Vorsicht!
+Zu beweisen, dass der Algorithmus korrekt funktioniert ist nicht trivial.
 In anderen Worten, es ist nicht offensichtlich, dass der Algorithmus korrekt ist dennoch ist es intuitiv plausibel.
-Um eine gute iterative Lösung zu finden braucht es Gehirnschmalz, doch denken Sie daran: Es gibt sie immer!</p>
+Wir die Korrektheit mit einem <a class="reference internal" href="../02-0/7-induction.html#sec-induction-proof"><span class="std std-ref">Induktionsbeweis</span></a> zeigen.
+Dazu müssen wir zeigen:</p>
+<ol class="simple">
+<li><p><strong>Induktionsschritt:</strong> Zeige <span class="math notranslate nohighlight">\(A(n_0)\)</span>, d.h., <code class="docutils literal notranslate"><span class="pre">move_tower</span></code> liefert das korrekte Ergebnis für einen Turm der aus nur einer Scheibe besteht (<span class="math notranslate nohighlight">\(n_0 = 1\)</span>)</p></li>
+<li><p><strong>Induktionsschritt:</strong> Zeige <span class="math notranslate nohighlight">\(A(n) \Rightarrow A(n+1)\)</span>, d.h. falls <code class="docutils literal notranslate"><span class="pre">move_tower</span></code> das richtige Ergebnis für Turm mit <span class="math notranslate nohighlight">\(n\)</span> Schreiben liefert, dann liefert die Funktion auch das richtige Ergebnis für <span class="math notranslate nohighlight">\(n+1\)</span> Scheiben.</p></li>
+</ol>
+<p>Um eine gute iterative Lösung zu finden braucht es Gehirnschmalz, doch denken Sie daran: Es gibt sie immer!</p>
+<div class="exercise admonition" id="hanoi-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 5.8 </span>(Türme von Hanoi)</p>
+<div class="section" id="exercise-content">
+<p>Zeigen Sie, dass der oben beschriebene Algorithmus das korrekte Ergebnis liefer.</p>
+</div>
+</div>
 </div>
 </div>
 </div>

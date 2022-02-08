@@ -2,19 +2,19 @@
 # Mengen - set
 
 ``Python``-Mengen (engl. [Set](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)) ``set`` ist eine ungeordnete Zusammenfassung (engl. collection) von Elementen, wobei jedes Element in der Menge einzigartig ist.
-Damit repräsentieren ``Python``-Mengen ``set`` *endliche* Mengen im mathematischen Sinne.
+Damit repräsentieren ``Python``-Mengen ``set`` *endliche* [Mengen](sec-math-set) im mathematischen Sinne.
 Endlich deshalb, weil die Elemente von ``Python``-Mengen explizit im Speicher liegen und wir nur endlich viel Arbeitsspeicher zur Verfügung haben.
 
 Eine mathematische Menge $M$ ist ein abstraktes Objekt, das aus der Zusammenfassung einer Anzahl von einzelnen Elementen hervorgeht.
 Dabei ist jedes Element was sich in der Menge befindet von allen anderen Elementen verschieden.
-Anders als mathematische Tupel (durch die ``Python``-Tupel und den Listen motiviert sind) sind Mengen ungeordnet.
+Anders als [mathematische Tupel](sec-math-tuple) (durch die ``Python``-Tupel und den Listen motiviert sind) sind Mengen ungeordnet.
 
 Von hier an meinen wir mit Mengen die ``Python``-Mengen ``set`` und sprechen ansonsten von mathematischen Mengen.
 
 ## Motivation
 
-Mengen benutzten wir immer dann, wenn wir die Eigenschaft der Eindeutigkeit und Unordnung nutzten wollen.
-Dabei bezieht sich diese Eindeutigkeit auf die [Gleichheit](warning-equality-and-identity) und nicht auf die Identität.
+Mengen benutzten wir immer dann, wenn wir die Eigenschaft der **Eindeutigkeit** und **Unordnung** nutzten wollen.
+Dabei bezieht sich diese Eindeutigkeit auf die [Gleichheit](def-equality) und nicht auf die [Identität](def-identity).
 D.h. eine ``Python``-Menge enthält keine zwei Elemente ``x``, ``y`` für die ``x == y`` zu ``True`` ausgewertet wird.
 
 Es ist an dieser Stelle anzumerken, dass der Test 
@@ -22,10 +22,12 @@ Es ist an dieser Stelle anzumerken, dass der Test
 $$e \in M$$
 
 für eine Menge deutlich weniger Rechenzeit benötigt als für eine Liste.
-Dies hängt natürlich von der Größe der Liste ``list`` ab, überraschenderweise jedoch nicht von der Größe der Menge ``set``.
-Befinden sich $n$ Elemente der Liste bzw. Menge so benötigen wir im schlechtesten Fall ca. $n$ Berechnungsschritte um festzustellen ob sich eine Element in der Liste befindet.
+Präziser ausgedrückt, ist die Laufzeit dieser Operation für Mengen konstant $\mathcal{O}(1)$ und für Listen wächst sie linear mit der Anzahl ihrer Elemente $\mathcal{O}(n)$.
+
+Befinden sich $n$ Elemente in der Liste bzw. Menge so benötigen wir im schlechtesten Fall $n$ Berechnungsschritte um festzustellen ob sich ein bestimmtes Element in der Liste befindet.
 Verwenden wir hingegen eine Menge, so benötigen wir nicht mehr als eine bestimmte konstante Anzahl an Schritten.
 In anderen Worten, die Laufzeit des Test ist (nahezu) unabhängig von der Anzahl der Elemente die sich in der Menge befinden!
+Das heißt, die Laufzeit hängt von der Größe der Liste ``list`` ab, überraschenderweise jedoch nicht von der Größe der Menge ``set``.
 
 ## Erstellung
 
@@ -70,7 +72,7 @@ for number in numbers:
     print(number)
 
 doch bleibt uns der Zugriff auf einzelne Elemente verwehrt.
-Mengen bieten weder einen Index noch irgendetwas anderes durch das wir auf einzelne Mengenelemente zugreifen können.
+Mengen bieten weder einen Index noch irgendeine anderes Möglichkeit, um auf bestimmte einzelne Mengenelemente zugreifen zu können.
 
 ## Mengenoperationen
 
@@ -120,7 +122,7 @@ Damit darf eine Menge keine Listen enthalten, weshalb folgender Code zu einem Fe
 
 ```{admonition} Mengen in Python
 :name: alert-sets-in-python
-:class: warning
+:class: attention
 Eine Menge ist **veränderlich** darf jedoch lediglich **unveränderliche** Elemente enthalten.
 ```
 
@@ -148,7 +150,7 @@ Die Menge müsste deshalb von dieser Änderung etwas mitbekommen und daraufhin s
 Das würde die Implementierung einer Menge immens verkomplizieren und würde zu großen Problemen führen.
 Deshalb bekommt die Menge von dieser Änderung nichts mit und somit hätten wir den Salat.
 
-Wir können mit den Funktionen ``add()`` und ``remove()`` Elemente zu einer Menge hinzufügen und löschen.
+Wir können mit den Funktionen ``add()`` und ``remove()`` Elemente zu einer Menge hinzufügen und von ihr entfernen.
 
 numbers = {0, 1, 2}
 numbers.add(0)    # add duplicate, silently ignored
@@ -226,7 +228,7 @@ Nehmen wir einmal an Sie möchten eine veränderliche Menge von ganzen Zahlen *m
 Sie wissen jedoch, dass die Zahlen $k$ alle zwischen 100 und 130 liegen, genauer gesagt $100 \leq k < 130$.
 Wie könnten wir unter diesen Voraussetzungen eine Menge als Liste implementieren?
 
-Wir wählen eine Liste die immer hundert Elemente enthält, sodass wir für eine gegebene Zahl $k$ den zugehörigen Listenindex
+Wir wählen eine Liste die immer 30 Elemente enthält, sodass wir für eine gegebene Zahl $k$ den zugehörigen Listenindex
 
 $$i \leftarrow (k-100)$$
 
@@ -269,10 +271,12 @@ Sowohl das Hinzufügen als auch das Testen sind immens schnelle Operationen.
 Wir müssen nur eine arithmetische Berechnung durchführen und sind bereits am Ziel.
 
 Auf diesem Prinzip basieren Mengen ``set`` bzw. ``frozenset`` (und auch Wörterbücher ``dict``) in ``Python`` und anderen Programmiersprachen.
-Der Index wird abhängig vom Element selbst berechnet.
-Eine Menge verwendet bzw. verbraucht mehr Speicher als Ihre Elemente benötigen -- anders als Listen enthält sie 'Lücken'.
-Dadurch sind die Elemente im Speicher breit verteilt.
+Der Index wird abhängig vom Element durch eine sog. Hashfunktion berechnet.
+Diese Hashfunktion erhält als Argument das Element selbst.
 
-Für ganze Zahlen in einem bestimmten Bereich ist das noch einfach, da die Funktion für die Berechnung des Index simpel ist.
+Eine Menge verwendet bzw. verbraucht mehr Speicher als Ihre Elemente benötigen -- anders als Listen enthält sie 'Lücken'.
+Dadurch sind die Elemente im Speicher breit verteilt, d.h., *gestreut*.
+
+Für ganze Zahlen in einem bestimmten Bereich ist das noch einfach, da die Hashfunktion für die Berechnung des Index simpel ist.
 Für beliebige Objekte wird dies deutlich schwieriger.
 Wir diskutieren dies im Kapitel [Namensregister](sec-name-register) im Detail.

@@ -1005,13 +1005,13 @@ Dabei kann jeder Speicher des Computers nur eine endlich große Zahl aufnehmen, 
 Wir wählen die Dezimaldarstellung um es uns ein wenig einfacher und lesbarer zu gestalten.</p>
 <p>Die <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> und deren <a class="reference internal" href="../02-1/4-information-flow.html#def-register"><span class="std std-ref">Register</span></a> werden wir nicht modellieren, deshalb gehen wir davon aus, dass in unserem Speicher nur Daten und keine Anweisungen bzw. Programme stehen.</p>
 <div class="exercise admonition" id="memory-finite-real-numbers-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.5 </span>(Endlichkeit und reelle Zahlen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.7 </span>(Endlichkeit und reelle Zahlen)</p>
 <div class="section" id="exercise-content">
 <p>Kann der Computer die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> als numerischen Wert im Speicher halten?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-finite-real-numbers-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-finite-real-numbers-exercise"><span>Exercise 4.5</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-finite-real-numbers-exercise"><span>Exercise 4.7</span></a></p>
 <div class="section" id="solution-content">
 <p>Nein! Die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> niedergeschrieben hat unendlich viele sich nicht wiederholende Nachkommastellen.
 Die Speicherressourcen eines Computers sind jedoch endlich.</p>
@@ -1092,13 +1092,13 @@ Jedoch soll auch für unsere Liste gelten, dass</p>
 <p class="caption"><span class="caption-number">Fig. 4.8 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste von natürlichen Zahlen als Modell für den <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a>.</span><a class="headerlink" href="#fig-list-as-memory" title="Permalink to this image">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-decimal-numbers-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.6 </span>(Kapazität des Speicherbereichs)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.8 </span>(Kapazität des Speicherbereichs)</p>
 <div class="section" id="exercise-content">
 <p>Wie lautet die größte Dezimalzahl die wir in einem Speicherbereich / einem Listeneintrag halten können?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-decimal-numbers-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-decimal-numbers-exercise"><span>Exercise 4.6</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-decimal-numbers-exercise"><span>Exercise 4.8</span></a></p>
 <div class="section" id="solution-content">
 <p>Die Zahl <span class="math notranslate nohighlight">\(1111 1111\)</span> in Binärschreibweise ist die größte die wir darstellen können.
 Diese ist gleich der Zahl <span class="math notranslate nohighlight">\(1 0000 0000 - 1\)</span> (binär) was wiederum gleich:</p>
@@ -1136,14 +1136,14 @@ Dadurch könnten wir jedoch nur noch 128 verschiedene Zahlen pro Speicherbereich
 Außerdem müssten wir dann jedesmal wenn wir einen Speicherbereich nicht mehr verwenden, diese Zahl hineinschreiben.</p>
 <p>Wir verwenden für die Markierung stattdessen eine zweite Liste <code class="docutils literal notranslate"><span class="pre">inuse</span></code>.</p>
 <div class="exercise admonition" id="memory-in-use-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.7 </span>(Speicherbelegung)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.9 </span>(Speicherbelegung)</p>
 <div class="section" id="exercise-content">
 <p>Wie könnte eine zweite Liste uns Aufschluss geben ob ein Speicherbereich verwendet wird oder nicht?
 Wie viel Speicher würde diese Liste benötigen?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-in-use-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-in-use-exercise"><span>Exercise 4.7</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-in-use-exercise"><span>Exercise 4.9</span></a></p>
 <div class="section" id="solution-content">
 <p>Eine zweite Liste <code class="docutils literal notranslate"><span class="pre">inuse[i]</span></code> könnte durch einen Boolschen Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> anzeigen, dass der Speicherbereich an der Stelle <code class="docutils literal notranslate"><span class="pre">i</span></code> allokiert ist oder nicht.
 Jeder Eintrag braucht 1 Bit.
@@ -1211,7 +1211,7 @@ Sie können sich Ihre eigene Codierung überlegen oder die <code class="docutils
 <p>Wenn wir für Zahlen ebenfalls nur zwei Speicherbereiche (Datentyp und Wert) vorsehen, schränken wir uns zu sehr ein.
 Denn dann ist die größte Zahl die wir darstellen können die 255.</p>
 <div class="exercise admonition" id="memory-whole-numbers-computer-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.8 </span>(Ganze Zahlen auf Ihrem Computer)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.10 </span>(Ganze Zahlen auf Ihrem Computer)</p>
 <div class="section" id="exercise-content">
 <p>Finden Sie heraus was die größte natürliche Zahl ist, die Ihr Computer abspeichern kann.</p>
 </div>
@@ -1219,13 +1219,13 @@ Denn dann ist die größte Zahl die wir darstellen können die 255.</p>
 <p>Wir legen fest, dass drei Speicherbereiche (einen für den Datentyp und zwei für den Wert) ausreichen.
 Das ist natürlich eine willkürliche Festlegung, für den Computer hat die Einschränkung hardwaretechnische Gründe.</p>
 <div class="exercise admonition" id="memory-biggest-number-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.9 </span>(Ganze Zahlen auf dem Computer)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.11 </span>(Ganze Zahlen auf dem Computer)</p>
 <div class="section" id="exercise-content">
 <p>Wie lautet die größte natürliche Zahl (nur der Wert), welche wir mit zwei Speicherbereichen also 2 Byte darstellen können?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-biggest-number-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-biggest-number-exercise"><span>Exercise 4.9</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-biggest-number-exercise"><span>Exercise 4.11</span></a></p>
 <div class="section" id="solution-content">
 <div class="math notranslate nohighlight">
 \[
@@ -1249,7 +1249,7 @@ Das Nein werden Sie gleich verstehen, wenn wir den Datentyp der Liste besprechen
 Wie dies funktionieren kann werden Sie vielleicht auch verstehen, wenn wir die Listen-Realisierung besprechen.</p>
 <p>Was passiert eigentlich wenn wir den Bereich der Darstellbarkeit überschreiten?</p>
 <div class="exercise admonition" id="memory-overflow-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.10 </span>(Überlauf von ganzen Zahlen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.12 </span>(Überlauf von ganzen Zahlen)</p>
 <div class="section" id="exercise-content">
 <p>Welcher Wert steht nach der Ausführung folgender <code class="docutils literal notranslate"><span class="pre">Java</span></code>-Codezeilen in der Variable <code class="docutils literal notranslate"><span class="pre">z</span></code>?
 Sie können den Code zum Beispiel <a class="reference external" href="https://www.learnjavaonline.org/">hier</a> ausführen.</p>
@@ -1262,7 +1262,7 @@ Sie können den Code zum Beispiel <a class="reference external" href="https://ww
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-overflow-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-overflow-exercise"><span>Exercise 4.10</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-overflow-exercise"><span>Exercise 4.12</span></a></p>
 <div class="section" id="solution-content">
 <p><code class="docutils literal notranslate"><span class="pre">z</span></code> enthält den Wert -128.</p>
 <p>Da ein <code class="docutils literal notranslate"><span class="pre">byte</span></code> (eine 8 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a>) ganze Zahle und keine natürliche Zahl repräsentiert, wird das höchste <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> als negativer Anteil interpretiert, siehe Abschnitt <a class="reference internal" href="../02-1/2-representation.html#sec-intergers"><span class="std std-ref">Ganze Zahlen</span></a> Gleichung <a class="reference internal" href="../02-1/2-representation.html#equation-eq-binary-integer">(2.5)</a>.
@@ -1299,7 +1299,7 @@ Um jeden Speicherbereich (jedes Byte) adressieren zu können müssen wir Zahlen 
 Damit ist die größtmögliche Speicheradresse eine harte Grenze für die Menge an Speicher!
 Wir einigen uns wie bei den natürlichen Zahlen auf einen <em>Adressraum</em> von 2 Byte.</p>
 <div class="exercise admonition" id="memory-adress-space-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.11 </span>(Adressraum)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.13 </span>(Adressraum)</p>
 <div class="section" id="exercise-content">
 <ol class="simple">
 <li><p>Wie groß kann unser Speicher sein wenn wir 2 Byte für die Adressierung verwenden?</p></li>
@@ -1308,7 +1308,7 @@ Wir einigen uns wie bei den natürlichen Zahlen auf einen <em>Adressraum</em> vo
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-adress-space-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-adress-space-exercise"><span>Exercise 4.11</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-adress-space-exercise"><span>Exercise 4.13</span></a></p>
 <div class="section" id="solution-content">
 <ol class="simple">
 <li><p>Wir können <span class="math notranslate nohighlight">\(2^{16} = 2^6 \cdot 2^{10} = 65536\)</span> Byte also 64 KibiByte (KB) adressieren.</p></li>
@@ -1341,7 +1341,7 @@ Nach dieser Prämisse folgen die eigentlichen Elemente ohne Datentypinformation.
 <p class="caption"><span class="caption-number">Fig. 4.10 </span><span class="caption-text">Elemente wie sie im Speicher liegen je Datentyp. Die Liste ist eine Liste aus natürlichen Zahlen.</span><a class="headerlink" href="#fig-datatypes-in-memory" title="Permalink to this image">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-list-adressing-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.12 </span>(Listen-Adressierung)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.14 </span>(Listen-Adressierung)</p>
 <div class="section" id="exercise-content">
 <ol class="simple">
 <li><p>Angenommen jedes Listen-Element belegt 2 Speicherbereiche (2 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Byte</span></a>) und die Liste beginnt am Index <code class="docutils literal notranslate"><span class="pre">j</span></code> in <code class="docutils literal notranslate"><span class="pre">memory</span></code>.
@@ -1351,7 +1351,7 @@ Wie lautet dann der Index für <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-list-adressing-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-list-adressing-exercise"><span>Exercise 4.12</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-list-adressing-exercise"><span>Exercise 4.14</span></a></p>
 <div class="section" id="solution-content">
 <ol class="simple">
 <li><p>Auf das gesuchte Element greifen wir durch <code class="docutils literal notranslate"><span class="pre">memory[4</span> <span class="pre">+</span> <span class="pre">j</span> <span class="pre">+</span> <span class="pre">i</span> <span class="pre">*</span> <span class="pre">2]</span></code> zu.</p></li>
@@ -1363,14 +1363,14 @@ Wie lautet dann der Index für <code class="docutils literal notranslate"><span 
 Dies ist ein ganz wesentliches Prinzip aller modernen Computer!
 Es vereinfacht bzw. beschleunigt die Adressierung.</p>
 <div class="exercise admonition" id="memory-list-variable-memory-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.13 </span>(Primitive Datentypen mit variablem Speicherverbrauch)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.15 </span>(Primitive Datentypen mit variablem Speicherverbrauch)</p>
 <div class="section" id="exercise-content">
 <p>Angenommen wir hätten einen variablen Speicherverbrauch, d.h. kleinere Zahlen belegen weniger Speicher als große Zahlen.
 Wie müssten wir dann unsere Liste dann realisieren?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-list-variable-memory-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-list-variable-memory-exercise"><span>Exercise 4.13</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-list-variable-memory-exercise"><span>Exercise 4.15</span></a></p>
 <div class="section" id="solution-content">
 <p>Vor dem Wert der Zahl müsste deren Speicherbedarf stehen, also in unserem Beispiel ob die Zahl einen oder zwei Speicherbereiche belegt.</p>
 <p>Da Zahlen unterschiedlich viele Speicherbereiche belegen, können wir mit dem Speicherbereich an dem die Liste beginnt (Adresse) und dem Index des Elements der Liste nicht mehr berechnen wo dieses Element beginnt.
@@ -1404,7 +1404,7 @@ Bleiben Sie geduldig, auch das klären wir noch.</p>
 <h3><span class="section-number">4.3.1. </span>Speicher initialisieren<a class="headerlink" href="#speicher-initialisieren" title="Permalink to this headline">¶</a></h3>
 <p>Realisieren wir zunächst einmal die Initialisierung.</p>
 <div class="exercise admonition" id="memory-initialization-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.14 </span>(Speicherinitialisierung)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.16 </span>(Speicherinitialisierung)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">initialize(n)</span></code>, die einen <code class="docutils literal notranslate"><span class="pre">n-byte</span></code> Speicher initialisiert.
 Initialisieren Sie einen Speicher mit 1024 Byte.
@@ -1434,7 +1434,7 @@ inuse = [False, False, False, False, False, False, False, False, False, False, F
 <p>Um mit dem Speicher hantieren zu können brauchen wir einige Hilfsfunktionen.
 Lassen Sie uns in ganz kleinen Schritten nach vorne tasten.</p>
 <div class="exercise admonition" id="memory-helpers-1-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.15 </span>(Valider Speicherbereich?)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.17 </span>(Valider Speicherbereich?)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie folgende Hilfsfunktionen:</p>
 <ul class="simple">
@@ -1465,7 +1465,7 @@ Dieser sagen wir wie viel Speicher wir gerne hätten und sie gibt uns eine entpr
 <p>Auch wäre es praktisch eine Art Umkehrfunktion dieser Operation zu haben.
 Also eine Funktion die den Speicher an einer bestimmten Adresse wieder freigibt.</p>
 <div class="exercise admonition" id="memory-malloc-free-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.16 </span>(Speicher statisch allokieren)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.18 </span>(Speicher statisch allokieren)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie folgende Funktionen:</p>
 <ul class="simple">
@@ -1572,7 +1572,7 @@ Wir müssen Speicher auch nicht freigeben, auch darum kümmert sich <code class=
 Das ist für Listen besonders trickreich.
 Lassen wir Listen deshalb zunächst außer acht.</p>
 <div class="exercise admonition" id="memory-alloc-free-without-list-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.17 </span>(Speicher dynamisch allokieren)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.19 </span>(Speicher dynamisch allokieren)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie zunächst folgende einfache Hilfsfunktionen:</p>
 <ul class="simple">
@@ -1727,7 +1727,7 @@ Da Listenelemente keine Datentypinformation benötigen!</p>
 <p class="caption"><span class="caption-number">Fig. 4.11 </span><span class="caption-text">Liste wie sie im Speicher liegt. Um den Speicherbedarf zu berechnen benötigen wir die <strong>Länge der Liste</strong>, und den <strong>Datentyp der Listenelemente</strong>.</span><a class="headerlink" href="#fig-list-in-memory" title="Permalink to this image">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-alloc-list-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.18 </span>(Speicher für Listen allokieren)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.20 </span>(Speicher für Listen allokieren)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">calc_list_bytes(addr,</span> <span class="pre">memory)</span></code>, welche den benötigten Speicherbereich einer Liste, welche an Adresse <code class="docutils literal notranslate"><span class="pre">addr</span></code> startet, berechnet.
 Bauen Sie diese Funktion in <code class="docutils literal notranslate"><span class="pre">free</span></code> ein.</p>
@@ -1789,7 +1789,7 @@ Bauen Sie diese Funktion in <code class="docutils literal notranslate"><span cla
 <p>ist diese unbefüllt und wir können mit ihr noch nichts anfangen.
 Wir benötigen Funktionen für den Zugriff.</p>
 <div class="exercise admonition" id="memory-access-list-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.19 </span>(Listenverwaltung)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.21 </span>(Listenverwaltung)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie folgende Funktionen zur Verwaltung einer Liste:</p>
 <ul class="simple">
@@ -1896,14 +1896,14 @@ Die Liste <code class="docutils literal notranslate"><span class="pre">two_dim_l
 Diese bietet uns zugleich eine Möglichkeit Listen mit Elementen mit unterschiedlichen Datentypen zu erstellen.
 Haben Sie eine Idee wie wir das erreichen können?</p>
 <div class="exercise admonition" id="memory-list-pointer-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.20 </span>(Listen und Zeiger)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.22 </span>(Listen und Zeiger)</p>
 <div class="section" id="exercise-content">
 <p>Wie können wir Listen mit Elementen mit unterschiedlichen Datentypen realisieren?</p>
 <p><strong>Tipp:</strong> Denken Sie an den Datentyp, den wir bis jetzt noch gar nicht verwendet haben.</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-list-pointer-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-list-pointer-exercise"><span>Exercise 4.20</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-list-pointer-exercise"><span>Exercise 4.22</span></a></p>
 <div class="section" id="solution-content">
 <p>Wir können Adressen (Zeiger) als Listenelemente verwenden.
 Diese Adressen können auf unterschiedliche <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> aber auch andere Listen zeigen!</p>
@@ -2019,7 +2019,7 @@ Handelt es sich um eine Adresse verfahren wir entsprechend weiter.
 Nachdem wir durch eine Liste iteriert sind, geben wir <code class="docutils literal notranslate"><span class="pre">]</span></code> aus.</p>
 <p>Da unsere <strong>Syntax</strong> rekursiv definiert ist, eignet sich auch eine rekursive Funktion um die Ausgabe zu erzeugen.</p>
 <div class="exercise admonition" id="memory-rekursive-print-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.21 </span>(Rekursive Ausgabe)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.23 </span>(Rekursive Ausgabe)</p>
 <div class="section" id="exercise-content">
 <p>Implementieren Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">mem_to_string(addr,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code> die eine Zeichenkette des an der Adresse <code class="docutils literal notranslate"><span class="pre">addr</span></code> liegenden Elements zurückliefert.</p>
 </div>
@@ -2121,7 +2121,9 @@ Zum Beispiel können wir nun unsere <em>Variablen</em> durch <code class="docuti
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 + 130 = 134
-A
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A
 B
 </pre></div>
 </div>
@@ -2138,7 +2140,7 @@ Wäre es nicht toll wenn wir durch folgenden Code eine neue Liste aus Zahlen ode
 </pre></div>
 </div>
 <div class="exercise admonition" id="memory-list-generation-primitive-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.22 </span>(Listen für primitive Datentypen erzeugen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.24 </span>(Listen für primitive Datentypen erzeugen)</p>
 <div class="section" id="exercise-content">
 <p>Implementieren Sie die Funktion <code class="docutils literal notranslate"><span class="pre">new_primitive_list(values,</span> <span class="pre">data_type,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code>.
 Verwenden Sie hierfür <code class="docutils literal notranslate"><span class="pre">alloc_list</span></code> und <code class="docutils literal notranslate"><span class="pre">set_list_value</span></code>.
@@ -2177,7 +2179,7 @@ Wäre es nicht wundervoll, wenn folgender Code funktionieren würde:</p>
 </pre></div>
 </div>
 <div class="exercise admonition" id="memory-list-generation-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.23 </span>(Listen erzeugen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.25 </span>(Listen erzeugen)</p>
 <div class="section" id="exercise-content">
 <p>Implementieren Sie die gewünschte Funktion <code class="docutils literal notranslate"><span class="pre">new_list(values,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code>.
 Sie müssen dabei für jeden Eintrag in <code class="docutils literal notranslate"><span class="pre">values</span></code> den Datentyp berechnen.
@@ -2627,7 +2629,7 @@ Adressen bzw. <strong>Zeiger</strong> auf andere Speicherobjekte werden Ihnen in
 Sie sind ein essenzielles Konzept der Programmierung, welches Sie auch bei der Programmierung <code class="docutils literal notranslate"><span class="pre">Python</span></code> kennen und verstehen sollten.</p>
 <p>Sollten Sie je mit einer Sprache in Kontakt kommen in der Sie den Speicher selbst verwalten müssen (z.B. <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>), so haben Sie hierfür eine erste Verständnisgrundlage.</p>
 <div class="exercise admonition" id="memory-management-c-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.24 </span>(Speicherverwaltung in C)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.26 </span>(Speicherverwaltung in C)</p>
 <div class="section" id="exercise-content">
 <p>Können Sie erraten was folgender <code class="docutils literal notranslate"><span class="pre">C</span></code>-Code macht?</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
@@ -2638,7 +2640,7 @@ Sie sind ein essenzielles Konzept der Programmierung, welches Sie auch bei der P
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-management-c-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-management-c-exercise"><span>Exercise 4.24</span></a></p>
+<p class="admonition-title">Solution to <a class="reference external" href="#memory-management-c-exercise"><span>Exercise 4.26</span></a></p>
 <div class="section" id="solution-content">
 <p>Die erste Zeile allokiert einen Speicher für ein Array (Liste) aus Fließkommazahlen (<code class="docutils literal notranslate"><span class="pre">float</span></code>) der größe 100.
 <code class="docutils literal notranslate"><span class="pre">ptr</span></code> ist der Zeiger der auf das Array zeigt. <code class="docutils literal notranslate"><span class="pre">free(ptr)</span></code> gibt den Speicher des Arrays frei.</p>

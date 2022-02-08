@@ -16,7 +16,7 @@ Jedes Objekt einer bestimmten Klasse beinhaltet andere Werte, jedoch sind die Me
 
 ## Klassen
 
-Eine *Klasse* ist eine Definition eines [zusammengesetzten Datentyps](def-datastructure) angereichert mit *Methoden*, die auf dem Datentyp ausgeführt werden sollen.
+Eine *Klasse* ist eine Definition eines [zusammengesetzten Datentyps](sec-datastructures) angereichert mit *Methoden*, die auf dem Datentyp ausgeführt werden sollen.
 Sie ist ein Codeblock der mit dem ``class``-Ausdruck beginnt:
 
 ```python

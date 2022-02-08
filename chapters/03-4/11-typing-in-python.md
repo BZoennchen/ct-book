@@ -18,7 +18,7 @@ Eine *Variable* kann demnach als Tripel, bestehend aus
 
 + **Wert**
 + **Datentyp**
-+ **Adresse**,
++ **Adresse**
 
 verstanden werden.
 Die **Speicheradresse** der Variable zeigt in den Arbeitsspeicher an eine bestimmte Stelle.
@@ -45,8 +45,8 @@ Das *Dateiformat* ``PNG`` oder ``JPEG`` gibt an, wie diese Bits von der Computer
 
 ```{admonition} Datentypen
 :name: def-datatypes
-
-Ein *Datentyp* oder auch kurz *Typ* ist ein Attribut eines Werts, welches dem Compiler oder Interpreter angibt, wie der Wert zu verwenden bzw. zu interpretieren ist.
+:class: definition
+Ein *Datentyp* oder auch kurz *Typ* ist ein Attribut eines Werts, welches dem [Compiler](def-compiler) oder [Interpreter](def-interpreter) angibt, wie der Wert zu verwenden bzw. zu interpretieren ist.
 
 ```
 
@@ -72,4 +72,4 @@ Eine **andere** Einheit, die Fließkomma-Einheit, der CPU wird aktiviert!
 ## Übungsaufgabe
 
 Um das Konzept um die Datentypen für dynamisch getypte Sprachen zu durchdringen empfehlen wir zu einem späteren Zeitpunkt die Übung [Speicher - alles ist eine Liste](sec-memory).
-Diese Übung ist sehr umfangreich und benötigt ein gutes Verständnis von Variablen, Funktionen, Listen und Rekursion.
+Diese Übung ist sehr umfangreich und benötigt ein gutes Verständnis von [Variablen](sec-variables), [Funktionen](sec-functions), [Listen](sec-list) und [Rekursion](sec-recursive-functions).

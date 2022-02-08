@@ -15,7 +15,7 @@ print(numbers[2:4])
 Der große Unterschied lieft in der Veränderbarkeit, denn Tupel ``tuple`` sind **unveränderlich** (engl. **immutable**)!
 
 ```{admonition} Unveränderlichkeit
-:class: important
+:class: attention
 Im Gegensatz zu Listen sind Tupel *unveränderliche* Datenstrukturen.
 ```
 
@@ -27,7 +27,7 @@ Folgender Code führt zu einem Fehler:
 numbers = (1, 2, 3, 4, 5)
 numbers[2] = -10
 
-Doch können wir eine *Datenstruktur* die Element eines Tupels ist durchaus verändern:
+Doch können wir eine *Datenstruktur*, die Element eines Tupels ist, durchaus verändern:
 
 numbers = (1, 2, [3, 4, 5])
 numbers[2][0] = 'a'
@@ -57,7 +57,7 @@ number
 
 funktioniert nicht!
 
-Python bietet auch das Konzept des *tuple-packing* und *tuple-unpacking*, was enorm praktisch ist:
+``Python`` bietet auch das Konzept des *tuple-packing* und *tuple-unpacking*, was enorm praktisch ist:
 
 triple = (1, 2, 3)
 x, y, z = triple  # unpacking
@@ -90,7 +90,7 @@ numbers += (6,7,8)
 numbers
 
 Kein Fehler!
-Wird nun doch also doch ``numbers``?
+Wird nun doch ``numbers`` verändert?
 Ja und nein.
 Der Speicherbereich des ursprünglichen Tupels bleibt unverändert, stattdessen wird eine Kopie angelegt.
 
@@ -103,9 +103,11 @@ print(f'id after += of the original {id(numbers_copy)}')
 print(f'numbers: {numbers}')
 print(f'numbers_copy: {numbers_copy}')
 
-````{exercise} Tupel vs Listen (Effizienz)
+Diese Inkonsistenz kann gefährlich sein, denn obwohl die [Syntax](def-syntax) der Listenverkettung und Tupelverkettung sehr ähnlich sind, ist ihre [Semantik](def-semantik) sehr verschieden.
+
+````{exercise} Effizienzbetrachtung von Tupeln und Listen
 :label: tuple-vs-lists-appending-exercise
-Welche der folgenden Code-Teile benötigt nach Ihrer meinung mehr Computerressourcen und warum?
+Welche der folgenden Code-Teile benötigt nach Ihrer Meinung mehr Computerressourcen und warum?
 
 Listenerzeugung durch Anhängen:
 

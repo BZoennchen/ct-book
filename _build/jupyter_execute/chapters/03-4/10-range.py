@@ -7,7 +7,7 @@ In ``Python`` verwenden wir diese *Bereiche*, wenn wir einen bestimmten Programm
 *Faul* (engl. *lazy*) bedeutet, dass Werte erst dann erzeugt werden, wenn Sie gebraucht werden.
 Der Aufruf ``range(10)`` erzeugt einen *Zahlenbereich*, welcher die Zahlen $0, 1, \ldots 9$ enthält.
 Doch anders als eine Liste, liegen die ganzen Zahlen noch nicht im Speicher.
-Sie werden bei Zugriff auf den jeweiligen *Zahlenbereich* **berechnet**.
+Sie werden beim Zugriff auf den jeweiligen *Zahlenbereich* **berechnet**.
 
 Die Eigenschaft der *Faulheit* wurde mit **Python 3** eingeführt.
 

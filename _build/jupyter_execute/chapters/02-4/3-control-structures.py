@@ -1,13 +1,13 @@
 (sec-control-structures)=
 # Kontrollstrukturen
 
-*Schleifen* vermeiden wir es Anweisungen die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
+Durch [Wiederholung](sec-repetition-and-recursion) in Form von *Schleifen* und *(rekursive) Funktionen* vermeiden wir es Anweisungen, die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
 Erst durch diese fundamentale Eigenschaft, ist es überhaupt möglich, dass wir die Anzahl der ausgeführten Anweisungen von der Länge des Programmcodes entkoppeln.
 
-*Fallunterscheidungen* erlauben es uns wiederum bestimmte Anweisungen nur dann auszuführen, wenn eine bestimmte Bedingung zur Laufzeit des Programms erfüllt ist.
+[Fallunterscheidungen](sec-if-else) erlauben es uns wiederum bestimmte Anweisungen nur dann auszuführen, wenn eine bestimmte Bedingung zur Laufzeit des Programms erfüllt ist.
 
-Diese zwei Kontrollstrukturen sind bereits alles was wir benötigen.
-Um unseren Programmcode zu strukturieren und bestimmte Programmteile an verschiedenen Stellen aufzurufen, gibt es noch Programmierfunktionen oder kurz *Funktionen*.
+Diese zwei *Schleifen* und *Fallunterscheidungen* kombiniert mit *Variablen* sind bereits alles was wir benötigen.
+Um unseren Programmcode zu strukturieren und bestimmte Programmteile an verschiedenen Stellen aufzurufen, gibt es zusätzlich das Konzept der Programmierfunktionen oder kurz *Funktionen*.
 
 ```{admonition} Kontrollstrukturen
 :name: def-control-structure
@@ -22,7 +22,7 @@ Zusammenfassend konzentrieren wir uns auf:
 2. Schleifen (Wiederholung)
 3. Funktionen (Wiederholung)
 
-Wie sich gezeigt hat, muss eine Programmiersprache nur sehr weniger und sehr primitiver Kontrollstrukturen anbieten damit diese als [Turing-vollständig](def-turing-complete) gilt.
+Wie bereits erwähnt, muss eine Programmiersprache nur sehr weniger und sehr primitiver Kontrollstrukturen anbieten damit diese als [Turing-vollständig](def-turing-complete) gilt.
 Theoretisch ist es bereits ausreichend wenn eine Programmiersprache 
 
 1. Variablen unterstützt, auf die wir einen konstanten Wert addieren oder subtrahieren können und
@@ -33,7 +33,7 @@ Die Fallunterscheidung, lässt sich (in hässlicher Form) durch eine Schleife au
 (sec-if-else)=
 ## Fallunterscheidungen
 
-Die erste Kontrollstruktur realisiert die bedingte Ausführung, das bedeutet, ein bestimmte Sequenz von Anweisungen ``A1, ... ,An`` wird nur dann ausgeführt, wenn eine Bedingung ``B`` zutrifft.
+Die erste Kontrollstruktur realisiert die bedingte Ausführung, das bedeutet, eine bestimmte Sequenz von Anweisungen ``A1, ... ,An`` wird nur dann ausgeführt, wenn eine Bedingung ``B`` zutrifft.
 
 ```
 if B:
@@ -44,7 +44,7 @@ if B:
 
 Die Bedingung ``B`` kann nur zu wahr ``True`` oder falsch ``False`` ausgewertet werden.
 Gewöhnlich hängt der Wahrheitswert der Bedingung vom Programmablauf ab, d.h., er ist erst zur Laufzeit bekannt.
-Zum Beispiel gibt folgendes Programm ``'you win!'`` mit einer (pseudo) Wahrscheinlichkeit von 50% aus, da ``x`` ein Zufallswert zwischen 0 und 1 (Gleichverteilung) zugewiesen wird.
+Zum Beispiel gibt folgendes Programm ``'you win!'`` mit einer (pseudo) Wahrscheinlichkeit von 50% aus, da der *Variablen* ``x`` ein Zufallswert zwischen 0 und 1 (Gleichverteilung) zugewiesen wird.
 
 import random as rnd
 
@@ -53,56 +53,76 @@ if x > 0.5:
     print('you win!')
 
 Es gibt von diesen Fallunterscheidungen verschiedene Varianten, wobei diese lediglich syntaktischer Zucker sind.
-Wir besprechen diese für ``Python`` ausführlich im Teil **PYTHON** in [Kontrollstrukturen](sec-cases).
+Für ``Python`` besprechen wir alle Möglichkeiten im Teil **PYTHON** in [Kontrollstrukturen](sec-cases).
 
 (sec-repetition-and-recursion)=
 ## Wiederholung
 
-Das fundamentale Prinzip der *Wiederholung* ist zentraler Bestandteil des Computational Thinkings.
+Das fundamentale Prinzip der *Wiederholung* ist zentraler Bestandteil des [Computational Thinkings](sec-what-is-ct).
 Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
 Sortieralgorithmen, die Berechnung eine Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen *iterativ* verarbeiten.
 
 Nach der Definition eines Algorithmus, muss dieser aus endlich vielen Anweisungen bestehen.
-Will man jedoch eine variable Menge an Information verarbeiten, so muss ein Algorithmus abhängig von der Eingabegröße unterschiedlich viele Anweisungen ausführen.
-Das bedeutet, dass die Länge des Algorithmus unabhängig von der Anzahl der auszuführenden Anweisungen (für eine gegebenen Eingabe) sein können muss!
+Will man jedoch eine variable Menge an Information verarbeiten, so muss ein Algorithmus, abhängig von der Eingabegröße, unterschiedlich viele Anweisungen ausführen.
+Das bedeutet, dass die Länge des Algorithmus (Textlänge) unabhängig von der Anzahl der auszuführenden Anweisungen (für eine gegebenen Eingabe) sein muss!
 Nach dem Schubfachprinzip bedeutet dies wiederum, dass in diesem Fall Teile des Algorithmus öfters durchlaufen werden - Wiederholung muss also in irgendeiner Form stattfinden.
 
-Überraschenderweise hat sich herausgestellt, dass *Wiederholung* in Kombination mit der *Fallunterscheidung* ausreicht, um alles berechnen zu können was wir bisher als natürlich berechenbar ansehen.
-Nach der unbeweisbaren Church-Turung-These werden wir keine Problem finden, was natürlich berechenbar aber nicht durch einen Computer berechnet werden kann.
+Überraschenderweise hat sich herausgestellt, dass *Wiederholung* in Kombination mit der *Fallunterscheidung* ausreicht, um alles berechnen zu können was wir bisher als natürlich [berechenbar](def-turing-computable) ansehen.
+Nach der unbeweisbaren [Church-Turing-These](def-church-these) werden wir kein Problem finden, welches natürlich berechenbar aber nicht durch einen Computer berechnet werden kann.
 Die Fallunterscheidung in Kombination mit der Wiederholung ist scheinbar ausreichend.
 
-Nun haben Sie vielleicht die Hoffnung, Sie müssten nur die *Wiederholung* und die *Fallunterscheidung* beherrschen und können dann jedes Problem lösen.
+Nun haben Sie vielleicht die Hoffnung, Sie müssten nur die [Wiederholung](sec-repetition-and-recursion) und die [Fallunterscheidungen](sec-if-else) beherrschen und können dann jedes Problem lösen.
 Leider sind diese beiden Techniken derart grundlegend, dass sie eine notwendige nicht aber ausreichende Bedingung für die Entwicklung von Algorithmen darstellen.
 Wir können das mit der Sprache vergleichen.
-Nur weil wir laute von uns geben können, heißt das nicht, dass wir uns in jeder Sprache verständigen können.
+Nur weil wir Laute von uns geben können, heißt das nicht, dass wir uns in jeder Sprache verständigen können.
 Ein weiteres Beispiel wären die Naturwissenschaften.
-Nur weil wir die kleinsten Teilchen im Universum verstehen, bedeutet dass nicht, dass wir damit das entstehen von Leben oder anderen emergenten Übergängen erklären können.
+Nur weil wir die kleinsten Teilchen im Universum verstehen, bedeutet dass nicht, dass wir damit das entstehen von Leben oder andere komplexe Übergängen erklären können.
 
 Wir kennen zwei Arten von Wiederholungen:
 
-1. Die Iteration und 
-2. die Rekursion.
+1. Die [Iteration](sec-iteration) und 
+2. die [Rekursion](sec-recursion).
 
-Auf der konzeptionellen Ebene erscheinen Iteration und Rekursion grundverschieden.
-Es sind unterschiedliche Denkweisen.
+Auf der konzeptionellen Ebene erscheinen Iteration und Rekursion grundverschieden -- es sind unterschiedliche Denkweisen.
 Wir können rekursiv oder iterativ denken.
 
 ```{admonition} Iteration und Rekursion
 :class: theorem
-Sofern bei der Iteration, die Anzahl der Durchläufe nicht zur Laufzeit vor der Ausführung der Iteration bekannt sein muss, können wir überraschenderweise jede Rekursion in eine Iteration und jede Iteration in eine Rekursion umwandeln!
+Sofern beim Mittel der Iteration, die Anzahl der Durchläufe vor ihrer Ausführung bekannt sein muss, können wir überraschenderweise jede Rekursion in eine Iteration und jede Iteration in eine Rekursion umwandeln!
 ```
 
-Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen.
+Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen bzw. durchdenken.
 
+(sec-iteration)=
 ### Iteration
 
 Wenn Sie Erfahrung im entwickeln von iterativen Algorithmen gesammelt haben und iterative Algorithmen analysiert und verwendet haben, dann werden Sie beginnen in Iterationen zu denken.
 Sie werden beginnen in Iterationen von Iterationen von Iterationen zu denken.
 
-Nehmen wir zum Beispiel den [Bubblesort Algorithmus](https://en.wikipedia.org/wiki/Bubble_sort).
-Wir möchten eine Liste von Zahlen sortieren.
+Das wohl einfachste Beispiel für eine Iteration ist die Addition einer Menge von Zahlen.
+Lassen Sie uns alle geraden Zahlen von ``2`` bis ``n`` addieren.
+Hierzu brauchen wir eine Variable ``acc``, welche wir mit dem Wert ``0`` initialisieren und dann iterativ 2 dann 4, und so weiter addieren.
+
+acc = 0
+n = 100
+for k in range(2,n,2):
+    acc += k
+
+acc
+
+acc = 0
+n = 100
+k = 2
+while k <= n:
+    acc += k
+    k += 2
+
+acc
+
+Betrachten einen etwas komplizierteren Algorithmus: Den [Bubblesort Algorithmus](https://en.wikipedia.org/wiki/Bubble_sort).
+Dieser sortiert eine eine Liste von Zahlen sortieren.
 Wir gehen durch die Liste (1. *Iterationen*) und wann immer zwei nebeneinander liegende Zahlen falsch sortiert sind, vertauschen wir diese.
-Wir wiederholen dies (2. *Iterationen*) solange bis keine Zahl mehr falsch sortiert ist.
+Wir wiederholen dies (2. *Iterationen*) solange bis keine zwei benachbarte Zahlen falsch sortiert sind.
 
 import random as rnd
 
@@ -121,11 +141,12 @@ print(f'before sorting: {numbers}')
 bubble_sort(numbers)
 print(f'after sorting: {numbers}')
 
-Die beiden Schleifen liefern uns auch einen Hinweis auf die Laufzeit des simplen Sortieralgorithmus.
+Die beiden Schleifen liefern uns auch einen Hinweis auf die Laufzeit dieses simplen Sortieralgorithmus.
 Nach jedem ausführen der inneren Schleife befindet sich ein neues Element an seiner korrekten Position.
 Damit brauchen wir maximal so viele Durchläufe (1. Iterationen) wie es Elemente sind.
 Jeder Durchlauf benötigt ebenfalls maximal so viel Schritte wie es Elemente sind.
 Damit hat der Algorithmus im schlechtesten Fall eine quadratische Laufzeit.
+Das bedeutet, wollen wir $n$ Zahlen sortieren ist die [Zeitkomplexität](sec-complexity) des Algorithmus gleich $\mathcal{O}(n^2)$.
 
 ```{exercise} Fallunterscheidung durch Schleife
 :label: if-by-for-exercise
@@ -149,11 +170,12 @@ for i in range(int(0.5+x)):
 (sec-recursion)=
 ### Rekursion
 
-Rekursion scheint dieses unverständliche Konzept, welches Mathematiker\*innen lieben und vor dem Programmierer\*innen anfänglich davonlaufen.
-Derweil würden wir behaupten, dass die *rekursive denkweise* uns Menschen näher ist als das Denken in Iterationen.
+Rekursion ist dieses scheinbar unverständliche Konzept, welches Mathematiker\*innen lieben und vor dem Programmierer\*innen anfänglich davonlaufen.
+Derweil würden wir behaupten, dass die *rekursive Denkweise* uns Menschen näher ist als das Denken in Iterationen.
 Rekursive Lösungen sind oft eleganter, kürzer, verständlicher aber leider auch langsamer als iterative Lösungen.
+Die Rekursion hängt dabei stark mit der Induktion zusammen, siehe Abschnitt [vollständige Induktion](sec-induction).
 
-Nehmen wir die Berechnung der Fakultät, einmal iterativ
+Nehmen wir die Berechnung der Fakultät, einmal *iterativ*
 
 $$\text{fac}_\text{it}(n) = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 = \prod\limits_{i=1}^n i$$
 
@@ -165,7 +187,7 @@ def fac_it(n):
 
 fac_it(5)
 
-und einmal rekursiv
+und einmal *rekursiv*
 
 $$\text{fac}_\text{rec}(n) = \begin{cases} 1 & \text{ falls } n = 0\\ n \cdot \text{fac}_\text{rec}(n-1) & \text{ sonst}\end{cases}$$
 
@@ -195,9 +217,9 @@ Ein Turm bestehend aus $n$ unterschiedlich breiten Schichten soll von einem Ort 
 Der Turm wird nach oben immer schmaler, d.h., die Schicht die über einer anderen liegt ist schmaler.
 Wir können nur eine einzelne Schicht bewegen und wir dürfen keine Schicht auf eine schmälere legen.
 Es gibt nur einen zusätzlichen Ablegeort 1.
-Wie bringen wir den Turm nun von Ort 1 nach Ort 2?
+Wie bringen wir den Turm nun von Ort 0 nach Ort 2?
 
-Hat der Turm nur eine Schicht, ist das Problem schnell gelöst: Bewege Schicht von 0 nach 2.
+**(1) Induktionsanfang:** Hat der Turm nur eine Schicht, ist das Problem schnell gelöst: Bewege Schicht von 0 nach 2.
 
 Besteht der Turm aus zwei Schichten, ist das Problem auch noch einfach zu lösen: 
 
@@ -214,7 +236,8 @@ Die Türme von Hanoi mit drei Schichten.
 ```
 
 Wie gehen wir aber für einen allgemeinen Fall mit $n$ Schichten vor?
-Nun,
+
+**(2) Induktionsschritt:** Nun,
 
 1. wir bringen die obersten $n-1$ Schichten von 0 nach 1,
 2. die unterste Schicht von 0 nach 2 und dann 
@@ -277,6 +300,19 @@ print(hanoi)
 
 Erstaunlich, wie kurz die Lösung am Ende ausfällt.
 Es fühlt sich fast so an als hätten wir an irgendeiner Stelle betrogen.
-Aber Vorsicht, zu beweisen, dass der Algorithmus korrekt funktioniert ist nicht trivial.
+
+Aber Vorsicht! 
+Zu beweisen, dass der Algorithmus korrekt funktioniert ist nicht trivial.
 In anderen Worten, es ist nicht offensichtlich, dass der Algorithmus korrekt ist dennoch ist es intuitiv plausibel.
+Wir die Korrektheit mit einem [Induktionsbeweis](sec-induction-proof) zeigen.
+Dazu müssen wir zeigen:
+
+1. **Induktionsschritt:** Zeige $A(n_0)$, d.h., ``move_tower`` liefert das korrekte Ergebnis für einen Turm der aus nur einer Scheibe besteht ($n_0 = 1$)
+2. **Induktionsschritt:** Zeige $A(n) \Rightarrow A(n+1)$, d.h. falls ``move_tower`` das richtige Ergebnis für Turm mit $n$ Schreiben liefert, dann liefert die Funktion auch das richtige Ergebnis für $n+1$ Scheiben.
+
 Um eine gute iterative Lösung zu finden braucht es Gehirnschmalz, doch denken Sie daran: Es gibt sie immer!
+
+```{exercise} Türme von Hanoi
+:label: hanoi-exercise
+Zeigen Sie, dass der oben beschriebene Algorithmus das korrekte Ergebnis liefer.
+```

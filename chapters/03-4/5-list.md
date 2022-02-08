@@ -13,7 +13,7 @@ kernelspec:
 (sec-list)=
 # Listen - list
 
-Listen (engl. [List](https://docs.python.org/3/library/stdtypes.html#list)) ``list`` sind eine der wichtigsten *Datentypen* und zugleich einfachsten *Datenstrukturen* in ``Python``.
+Listen (engl. [List](https://docs.python.org/3/library/stdtypes.html#list)) ``list`` sind eine der wichtigsten *Datentypen* und zugleich einfachsten [Datenstrukturen](sec-data-structures) in ``Python``.
 Sobald Sie irgendetwas sinnvolles programmieren möchten, kommen Sie um die Liste kaum herum.
 Das Grundkonzept einer Liste ist einfach und doch so fundamental wichtig!
 
@@ -21,8 +21,9 @@ Das Grundkonzept einer Liste ist einfach und doch so fundamental wichtig!
 
 Nehmen wir einmal an wir bekämen den Auftrag ein Programm zu schreiben, welches ``n`` ganze Zahlen aufaddiert, wobei wir weder ``n`` noch die Zahlen kennen.
 Zugegeben, das Programm ist nicht gerade interessant aber aller Anfang ist klein.
-Eine variable Anzahl an unbekannten Zahlen lässt sich hervorragend durch eine *Liste* modellieren.
+Eine variable Anzahl an unbekannten Zahlen lässt sich hervorragend durch eine Liste *modellieren*.
 Wir gehen also davon aus, dass wir eine Liste ``numbers`` bekommen und daraus die Summe berechnen müssen.
+
 Folgender Code löst die Aufgabe.
 ``numbers`` ist eine Liste, welche zwei Zahlen (1 und 2) enthält.
 
@@ -36,12 +37,12 @@ for x in numbers:
 result
 ```
 
-Der Code funktioniert auch noch wenn ``numbers`` mehr, weniger oder andere Zahlen enthält!
+Der Code funktioniert auch dann noch, wenn ``numbers`` mehr, weniger oder andere Zahlen enthält!
 Probieren Sie es aus.
 
 ```{admonition} Python's Datenstrukturen
-:class: important
-In ``Python`` können Datenstrukturen Werte von unterschiedlichen Datentypen enthalten.
+:class: remark
+In ``Python`` können *Datenstrukturen* Werte von unterschiedlichen *Datentypen* enthalten.
 ```
 
 Wie alle Datenstrukturen in ``Python``, können Listen Werte mit unterschiedlichen Datentypen enthalten.
@@ -58,10 +59,20 @@ mylist = [['a','b','c'], 2, 3, [1, 2, 3]]
 mylist
 ```
 
+So können wir beispielsweise eine (mathematische) $m \times n$ Matrix ``A`` als zweidimensionale Liste *modellieren*:
+
+```{code-cell} python3
+A = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+```
+
+In diesem Fall repräsentiert ``A`` die Identitätsmatrix
+
+$$\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}.$$
+
 ## Erstellung
 
-Es gibt unterschiedliche Möglichkeiten eine Liste zu erzeugen.
-Wir können z.B. mit einer leeren Liste starten und diese füllen:
+Es gibt unterschiedliche Möglichkeiten um eine Liste zu erzeugen.
+Wir können, z.B., mit einer leeren Liste starten und diese füllen:
 
 ```{code-cell} python3
 numbers = []
@@ -91,7 +102,7 @@ numbers = [0, 1, 2, 3, 4, 5]
 numbers
 ```
 
-Die *built-in* Funktion ``range()`` erzeugt einen sog. Zahlenbereich (engl. [Range](https://docs.python.org/3/library/stdtypes.html#typesseq-range)), welchen wir im Abschnitt [Bereich - range](sec-range) erörtern.
+Die *built-in* Funktion ``range()`` erzeugt einen sog. Zahlenbereich (engl. [Range](https://docs.python.org/3/library/stdtypes.html#typesseq-range)), welchen wir im Abschnitt [Bereich - range](sec-range) noch erörtern werden.
 Wir können diesen Bereich, der auch eine Sequenz ist, in eine Liste packen bzw. in eine Liste umwandeln:
 
 ```{code-cell} python3
@@ -99,7 +110,7 @@ numbers = [i for i in range(10)]
 numbers
 ```
 
-oder noch kürzer:
+Oder noch kürzer:
 
 ```{code-cell} python3
 numbers = list(range(10))
@@ -108,49 +119,49 @@ numbers
 (sec-list-index)=
 ## Indexierung
 
-Wir können auf die Elemente einer Liste mit einem Index zugreifen.
-Dieser Index beginnt bei 0 und endet bei der Länge der Liste - 1, d.h. ``len(mylist) - 1``.
-``len(mylist)`` gibt eine natürliche Zahl (0 inklusive) zurück, welche die Länge der Liste ``mylist`` angibt.
+Wir können auf die Elemente einer Liste mit einem *Index* zugreifen.
+Dieser Index beginnt bei $0$ und endet bei der $n - 1$, wobei $n$ gleich der Länge der Liste ist (``n = len(lst) - 1``).
+``len(lst)`` gibt eine natürliche Zahl (0 inklusive) zurück, welche die Länge der Liste ``lst`` angibt.
 
 ```{code-cell} python3
-mylist = [1,2,3,'a','b','c',1.0,2.0,3.0]
-len(mylist)
+lst = [1,2,3,'a','b','c',1.0,2.0,3.0]
+len(lst)
 ```
 
 In anderen Worten: Die Elemente einer Liste sind in aufsteigender Reihenfolge angeordnet.
 Jedes Element hat seinen Platz bzw. Index und kein Platz ist leer!
 
 ```{code-cell} python3
-print(mylist[0])
-print(mylist[len(mylist)-1])
+print(lst[0])
+print(lst[len(lst)-1])
 ```
 
-In ``Python`` können wir statt ``mylist[len(mylist)-1]``  auch ``mylist[-1]`` schreiben.
+In ``Python`` können wir statt ``lst[len(lst)-1]``  auch ``lst[-1]`` schreiben.
 
 ```{code-cell} python3
-print(mylist[len(mylist)-1])
-print(mylist[-1])
+print(lst[len(lst)-1])
+print(lst[-1])
 ```
 
-``Python`` bietet eine angenehme und mächtige [Syntax](def-syntax) um einen Teil der Liste in eine neue Liste zu **kopieren** (*flache Kopie*).
-Mit ``mylist[start:ende:i]`` nehmen wir jedes ``i``-te Element beginnend von ``start`` bis ``ende``.
+``Python`` bietet eine angenehme und mächtige [Syntax](def-syntax) um einen Teil der Liste in eine neue Liste zu **kopieren** ([flache Kopie](sec-copy-of-ds)).
+Mit ``lst[start:ende:i]`` nehmen wir jedes ``i``-te Element beginnend von ``start`` bis ``ende``.
 Dabei ist ``i`` optional und ist gleich ``1``, wenn es nicht angegeben wird.
-Bei diesem Operationen bleibt ``mylist`` unverändert.
+Bei diesen Operationen bleibt ``lst`` unverändert.
 
 ```{code-cell} python3
-mylist = [1,2,3,'a','b','c',1.0,2.0,3.0]
-print(mylist[1:8:2])
-print(mylist[1:8:1])
-print(mylist[1:8])
-print(mylist)
+lst = [1,2,3,'a','b','c',1.0,2.0,3.0]
+print(lst[1:8:2])
+print(lst[1:8:1])
+print(lst[1:8])
+print(lst)
 ```
 
 Auch eine negative Indexierung ist erlaubt.
 
 ```{code-cell} python3
-mylist = [1,2,3,'a','b','c',1.0,2.0,3.0]
-print(mylist[8:1:-2])
-print(mylist[-3:-8:-2])
+lst = [1,2,3,'a','b','c',1.0,2.0,3.0]
+print(lst[8:1:-2])
+print(lst[-3:-8:-2])
 ```
 
 ## Veränderung
@@ -198,7 +209,7 @@ chars.insert(1, 'd')
 print(f'chars: {chars} after insert.')
 ```
 
-Dies fügt das Element ``'d'`` vor das Element mit dem Index 1 ein.
+Dieser Code fügt das Element ``'d'`` vor das Element mit dem Index 1 ein.
 Anders ausgedrückt: Das eingefügte Element ``element`` hat nach der Operation ``insert(index, element)`` den Index ``index``.
 
 (sec-list-and-memory)=
@@ -210,11 +221,19 @@ Also wie ist sie im Speicher abgelegt, was passiert wenn wir sie verändern und 
 ### Anordnung im Speicher
 
 Um zu verstehen wie und warum Listen funktionieren müssen wir eine wichtige Tatsache festhalten, die wir bereits im Abschnitt [Variablen](sec-variables) unbemerkt verwendet haben:
-Kennen wir eine **Adresse** eines **Wertes**, kurz gesagt die *Variable* welche auf den Wert zeigt, so ist der Zugriff auf diesen Wert extrem schnell!
-Solange wir die **Adressen** kennen, ist der Zugriff in den **Arbeitsspeicher** generell extrem schnell.
-Es gibt kleine 'Strafen', wenn **Adressen** weit auseinander liegen, diese sind jedoch in den meisten Anwendungen vernachlässigbar.
+Kennen wir eine **Adresse** eines **Werts**, kurz gesagt die *Variable* welche auf den Wert zeigt, so ist der Zugriff auf diesen Wert extrem schnell!
 
-Mit dieser Information, lassen Sie uns anhand eines Beispiel testen, wie sich die **Adressen** und **Werte** einer ``list`` (aus Zahlen) verhalten.
+```{admonition} Speicheradressierung
+:name: remark-mem-addr-speed
+:class: remark
+
+Kennen wir die Speicheradresse, so können wir die Adressierung als Operation mit konstanter Laufzeit $\mathcal{O}(1)$ annehmen.
+```
+
+Es gibt kleine 'Strafen', wenn **Adressen**, die wir nacheinander verwenden, weit auseinander liegen.
+Diese Strafen sind jedoch in den meisten Anwendungen vernachlässigbar.
+
+Lassen Sie uns mit dieser Information anhand eines Beispiel testen, wie sich die **Adressen** und **Werte** einer ``list`` (aus Zahlen) verhalten.
 
 ```{code-cell} python3
 numbers = [1, 2, 3, 4, 5]
@@ -236,7 +255,7 @@ print(f'id of numbers[2] = {id(numbers[2])}')
 Im obigen Code erstellen wir eine Liste, welche die Zahlen 1 bis 5 enthält.
 Dann verändern wir das zweite Element der Liste (eine Liste startet mit dem 0-ten Element).
 Die **Adresse** der *Variable* ``numbers`` ändert sich bei diesem Vorgang nicht!
-Allerdings ändert sich die Adresse des Elements ``numbers[2]`` und der **Wert** von ``numbers``.
+Allerdings ändert sich die Adresse des Elements ``numbers[2]`` und somit der **Wert** von ``numbers``.
 
 ```{figure} ../../figs/python-tutorial/datatypes/list.png
 ---
@@ -309,12 +328,12 @@ name: fig-data-type-list-in-list-2
 Die Liste aus unserem obigen Beispiel **nachdem** wir den Wert ``'a'`` auf ``'c'`` gesetzt haben.
 ```
 
-Selbst wenn wir Anstatt einer Liste einen **unveränderlichen** [Tupel](sec-tuple) verwenden würden, könnten wir diese Veränderung durchführen.
+Selbst wenn wir anstatt einer Liste ein **unveränderliches** [Tupel](sec-tuple) verwenden würden, könnten wir diese Veränderung durchführen.
 
 ```{admonition} Unveränderlichkeit in Python
-:class: warning
-Ist eine Datenstruktur *unveränderlich* bedeutet dies lediglich, dass sich die Adressen, welche die Datenstruktur enthält nicht ändern können.
-Enthält die Datenstruktur jedoch eine weitere Datenstruktur, so können sich die Adressen dieser Datenstruktur und damit der Wert unserer Liste durchaus ändern!
+:class: attention
+Ist eine Datenstruktur ``ds`` *unveränderlich* bedeutet dies lediglich, dass sich die Adressen, welche ``ds`` enthält nicht ändern können.
+Enthält die Datenstruktur jedoch eine weitere *veränderliche* Datenstruktur ``mut_ds``, so können sich die Adressen von ``mut_ds`` und damit der Wert von ``ds`` durchaus ändern!
 ```
 
 Das besondere einer Liste, bzw. die Charakteristik welches Sie auszeichnet ist, dass 
@@ -324,31 +343,33 @@ Das besondere einer Liste, bzw. die Charakteristik welches Sie auszeichnet ist, 
 
 ### Adressenberechnung
 
-Da **Adressen** immer die gleiche feste Anzahl an Bits benötigen, kann man für eine gegebene
+Da **Adressen** immer die gleiche feste Anzahl an [Bits](def-bit) benötigen, kann man für eine gegebene
 
 + Adresse $adr$ einer Liste und
-+ des Index $i$ eines Elements,
++ einem Index $i$ eines Elements,
 
-die Speicheradresse $adr_i^*$ an der Speicheradresse $adr_i$, die auf das $i$-te Element zeigt extrem schnell berechnen.
+die Speicheradresse $adr_i^*$, welche die Speicheradresse $adr_i$ enthält, die auf das $i$-te Element zeigt, extrem schnell berechnen.
 Das klingt verwirrend, ist im Grunde aber ganz simpel.
 
-Angenommen die Adresse der Liste ``mylist`` ist $adr$ und jede Adresse benötigt 4 Byte und wir können 1 Byte adressieren, dann befindet sich die Adresse $adr_i^*$ des $i$-ten Elements an der Speicheradresse:
+Angenommen die Adresse der Liste ``lst`` ist $adr$ und jede Adresse benötigt 4 Byte und wir können 1 Byte adressieren.
+Nehmen wir zusätzlich an, die Länge der Liste befindet sich ganz vorne im Speicherbereich der Liste und verbraucht einen Adressenplatz. 
+Dann befindet sich die Adresse $adr_i^*$ des $i$-ten Elements an der Speicheradresse:
 
-$$adr_i = adr + i \cdot 4.$$
+$$adr_i = 4 + adr + i \cdot 4 = adr + (i+1) \cdot 4.$$
 
 Vergleichen Sie die {numref}`Abbildung {number} <fig-data-type-list-in-list>` und {numref}`{number} <fig-data-type-list-in-list-2>`.
-Diese Rechnung kann der Rechner sehr schnell durchführen und deshalb können wir auf Elemente einer Liste deren Index $i$ wir kennen extrem schnell zugreifen.
+Diese Rechnung kann der Rechner sehr schnell durchführen und deshalb können wir auf ein Element einer Liste dessen Index wir kennen extrem schnell zugreifen.
 
 ### Übung
 
-Um dieses Konzept besser zu verstehen und herauszufinden wie sich *atomare* wie auch *zusammengesetzt Datentypen* verhalten, hilft oft nur eins: Ausprobieren!
+Um dieses Konzept besser zu verstehen und herauszufinden wie sich [atomare](def-atomare-data-types) wie auch [zusammengesetzte Datentypen](def-data-structures) verhalten, hilft oft nur eins: Ausprobieren!
 
-Im Kapitel [Speicher - alles ist eine Liste](sec-memory) erstellen wir unser eigenes Speichermanagementsystem durch ``Python``-Listen.
+Im Kapitel [Speicher - alles ist eine Liste](sec-memory) erstellen wir unser eigenes Speicherverwaltungssystem durch ``Python``-Listen.
 Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers und wie es gelingt Listen voller **Adressen** zu verwalten.
 
 ## Der Unterschied zwischen + und +=
 
-Der ``+`` und auch der ``+=``-Operator ist in ``Python`` auch für Listen definiert.
+Die Operatoren ``+`` und ``+=`` sind in ``Python`` auch für Listen definiert.
 Ähnlich wie bei [Zeichenketten](sec-string), verkettet er zwei Listen.
 Überraschenderweise bewirkt jedoch folgender Code
 
@@ -372,13 +393,13 @@ print(f' id after concat: {id(list1)}')
 list1
 ```
 
-auch wenn ``list1`` in beiden Fällen die gleichen Werte enthält so ändert sich im ersten Fall die **Adresse** von ``list1``.
+auch wenn ``list1`` in beiden Fällen die gleichen Werte enthält, so ändert sich im ersten Fall die **Adresse** von ``list1``.
 Im zweiten Fall bleibt die ``id`` und damit die **Adresse** unverändert.
 Was bedeutet das?
 
 Verwenden wir ``liste1 + liste2`` so wird eine neue Liste im Speicher angelegt und die Verkettung der beiden Listen wird dort abgelegt.
 D.h. die **Adressen** $adr_0^*, adr_1^0, \ldots$ der Listenelemente der beiden Listen werden **kopiert**!
-Die beiden Listen die bei der Operation teilnehmen bleiben unverändert.
+Die beiden Listen, die bei der Operation teilnehmen, bleiben unverändert.
 
 Verwenden wir hingegen ``liste1 += liste2`` so werden die **Adressen** der Elemente von ``liste2`` kopiert und an ``liste1`` angehängt.
 Damit wird ``list1`` verändert und es wird keine neue Liste angelegt!
@@ -405,19 +426,20 @@ for x in list2:
 concat_list
 ```
 
-```{admonition} += und +
-:class: hint
+```{admonition} Die += und + Operatoren
+:class: remark
 Nicht nur ``+=`` und ``+`` verhalten sich in dieser Art und Weise, sondern auch ``-=`` und ``-`` oder ``|=`` und ``|`` und viele weitere Operatoren.
 ```
 
 (sec-copy-of-ds)=
 ## Tiefe und flache Kopien
 
-Wir müssen uns noch einmal dem wichtigen unterschied zwischen [Identität und Gleichheit](warning-equality-and-identity) widmen.
+Wir müssen uns noch einmal dem wichtigen Unterschied zwischen [Identität und Gleichheit](sec-vars-equality-and-identity) widmen.
 
-### Identität vs Gleichheit
+### Identität und Gleichheit
 
-Wollen wir einen Wert einer Variablen ``x`` kopieren, so stellt sich die Frage: Soll das Original ``x`` und die Kopie ``y`` **gleich** oder **identisch** sein?
+Wollen wir einen Wert einer Variablen ``x`` kopieren, so stellt sich die Frage: 
+Sollen das Original ``x`` und die Kopie ``y`` **gleich** oder **identisch** sein?
 Ein Beispiel:
 
 ```{code-cell} python3
@@ -436,7 +458,7 @@ print(f'x and y are identical? answer: {x is y}')
 print(f'x and y are equals? answer: {x == y}')
 ```
 
-Im ersten Fall setzten wir die Adresse von ``y`` auf die Adresse von ``x``.
+Im ersten Fall setzen wir die Adresse von ``y`` auf die Adresse von ``x``.
 Somit *zeigen* beide Variablen auf die gleiche Adresse d.h. auf den *identischen* Wert.
 Sind zwei Variablen identisch so sind sie immer auch gleich.
 
@@ -446,15 +468,22 @@ Somit sind die Variablen gleich aber nicht identisch.
 
 Kopieren wir eine Variable, so gibt es diese beiden Möglichkeiten.
 Entweder ist die Kopie *identisch* oder aber *gleich*.
-Und je nachdem was wir erzielen, sprechen wir von einer *flachen* oder *tiefen Kopie*.
+Und je nachdem was wir erzielen, sprechen wir von einer *flachen* (Kopie ist identisch) oder *tiefen Kopie* (Kopie ist gleich).
 
-Im ersten Fall, handelt es sich um eine *flache* und im zweiten obigen Fall um eine *tiefe Kopie*
+Im ersten Fall, handelt es sich um eine *flache* und im zweiten obigen Fall um eine *tiefe Kopie*.
 Im Fall von *atomaren Datentypen* spielt es keine Rolle ob wir eine flache oder tiefe Kopie machen.
 Warum? Weil wir den Wert im Speicher eines *atomaren Datentyps* ohnehin nicht verändern können.
-Egal auf welche Speicheradresse ``y`` im obigen Beispiel zeigt, solange ihr Wert den richtigen Wert ``100_000`` hat, kann nichts schief gehen. 
-Um Speicherplatz zu sparen, sind deshalb *flache Kopien* für *atomare Datentypen* vorzuziehen.
+Egal auf welche Speicheradresse ``y`` im obigen Beispiel zeigt, solange ihr Wert den richtigen Wert ``100_000`` hat, kann nichts schief gehen.
+
+Diese Gleichgültigkeit ist wesentlich für die digitale Welt, welche ausschließlich aus [Repräsentanten](sec-representation) besteht.
+In der Realwelt macht es einen riesigen Unterschied ob sich, zum Beispiel, zwei Menschen ein Bett teilen -- ob also ihr Bett identisch ist -- oder ob sie das exakt gleiche Bett besitzen.
+Da auf dem digitalen Computer nur Repräsentanten existieren, welche auf etwas 'Echtes' verweisen, ergibt sich diese Gleichgültigkeit.
+Um Speicherplatz zu sparen sind deshalb *flache Kopien* im Fall von *atomare Datentypen* besser geeignet.
 
 Anders als für *atomare Datentypen* ist es für *Datenstrukturen* ganz und gar nicht egal ob wir eine *flache* oder *tiefe Kopie* erzeugen.
+[Datenstrukturen](def-data-structures) sind Repräsentanten die andere Repräsentanten strukturieren.
+Doch ändert sich die Struktur, d.h., der Inhalt der Datenstruktur, so ändert sich auch das was die Datenstruktur repräsentiert.
+Anders als *atomare Datentypen* kann sich die [Bedeutung](def-semantik) der Datenstruktur ändern (siehe auch Abschnitt [Interpretation](sec-interpretation)).
 
 ```{code-cell} python3
 # shallow copy
@@ -471,6 +500,9 @@ print(f'value of x: {x}')
 print(f'value of y: {y}')
 ```
 
+Handelt es sich um eine *flache Kopie* so zeigen beide **Adressen** der Datenstrukturen auf den jeweils gleichen Speicherbereich.
+Ändern wir diesen Speicherbereich, so wirkt sich das auf beide Variablen gleichermaßen aus.
+
 ```{code-cell} python3
 # deep copy
 x = [1,2,3]
@@ -486,9 +518,7 @@ print(f'value of x: {x}')
 print(f'value of y: {y}')
 ```
 
-Handelt es sich um eine *flache Kopie* so zeigen beide **Adresse** der Variablen auf den gleichen Speicherbereich.
-Ändern wir diesen Speicherbereich, so wirkt sich das auf beide Variablen gleichermaßen aus.
-Im Fall einer *tiefen Kopie* wirkt sich keine Änderung der des Werts der einen Variablen auf die andere aus.
+Im Fall einer *tiefen Kopie* wirkt sich die Änderung des Werts der einen Variablen nicht auf die andere aus.
 Vergleichen Sie das obige Beispiel.
 
 ### Datenstrukturen kopieren
@@ -497,19 +527,22 @@ Für Datenstrukturen gibt es nicht nur die eine *flache Kopie*.
 Stattdessen kommt es ganz darauf an, wie tief wir Kopien anlegen.
 
 ```{admonition} Tiefe Kopie einer Datenstruktur
-Wir sprechen nur dann von einer *tiefen Kopie* (engl. deep copy) ``y`` von einer *Datenstruktur* ``x``, wenn jede **Adresse** die ``y`` und deren *Kinder* enthalten zu den **Adressen** die ``x`` und dessen *Kinder* enthalten, verschieden sind.
+:class: python
+Wir sprechen nur dann von einer *tiefen Kopie* (engl. deep copy) ``x_copy`` von einer *Datenstruktur* ``x``, wenn alle **Adresse** von, welche ``x_copy`` und deren *Kinder* enthalten, zu den **Adressen** die ``x`` und dessen *Kinder* enthalten, verschieden sind.
 ```
 
 Eine Datenstruktur ``z``, die sich in einer anderen Datenstruktur ``x`` befindet, bezeichnen wir als *Kind* von ``x``.
 Alle *Kinder* von ``z`` sind wiederum auch *Kinder* von ``x`` und so weiter und so fort.
 
 ```{admonition} Flache Kopie einer Datenstruktur
-Wir sprechen nur dann von einer *flachen Kopie* (engl. shallow copy) ``y`` von einer *Datenstruktur* ``x``, wenn ``y`` keine *tiefe Kopie* ist.
+:class: python
+Wir sprechen nur dann von einer *flachen Kopie* (engl. shallow copy) ``x_copy`` von einer *Datenstruktur* ``x``, wenn ``x_copy`` keine *tiefe Kopie* ist.
 ```
 
-Kopieren wir eine Liste durch Indexierung oder durch die Funktion ``mylist.copy()`` so wird noch immer eine *flache* (engl. shallow) Kopie angelegt.
-Es werden lediglich die **Adressen**, welche sich in der Liste befinden kopiert, siehe {numref}`Abbildung {number} <fig-data-type-list>` oder {numref}`{number} <fig-data-type-list-in-list>`.
-Genau wie bei Variablen *atomarer Datentypen* ist dies in jedem Fall ausreichend sofern diese **Adressen** auf Werte *atomare Datentypen* zeigen.
+Kopieren wir eine Liste durch Indexierung oder durch die Funktion ``mylist.copy()`` so wird eine eine *flache* (engl. shallow) Kopie angelegt.
+Es werden dabei lediglich die **Adressen**, welche sich in der Liste befinden kopiert, siehe {numref}`Abbildung {number} <fig-data-type-list>` oder {numref}`{number} <fig-data-type-list-in-list>`.
+
+Eine flache Kopie ist in jedem Fall ausreichend sofern alle **Adressen** auf Werte *atomarer Datentypen* zeigen.
 In diesem Fall macht es keinen Unterschied ob die *atomaren Datentypen* Kopien sind oder nicht.
 
 Folgender Code zeigt, dass die **Adressen** der Elemente der Kopie identisch sind:
@@ -527,7 +560,8 @@ for x in numbers_shallow_copy:
     print(id(x))
 ```
 
-Problematisch kann es werden, wenn wir in einer *Datenstruktur* eine weitere *Datenstruktur* halten und eine *flache Kopie* anfertigen.
+Problematisch kann es werden, *Datenstrukturen* andere *Datenstrukturen* halten.
+Fertigen wir dann lediglich eine *flache Kopie* an, so kann es zu einem unerwünschten *Seiteneffekt* kommen.
 Blicken Sie auf folgendes Beispiel:
 
 ```{code-cell} python3
@@ -538,7 +572,7 @@ numbers[2][0] = 'b'
 numbers_shallow_copy
 ```
 
-Wir ändern etwas in der Liste ``number`` und diese Änderung wird auch in ``numbers_shallow_copy`` übernommen.
+Wir ändern einen Eintrag in der Liste ``numbers`` und diese Änderung wird auch in ``numbers_shallow_copy`` übernommen.
 Warum?
 Nunja, die **Adressen** 
 
@@ -548,10 +582,10 @@ print(id(numbers_shallow_copy[2]))
 ```
 
 sind identisch!
-Wir verändern den Speicherbereich der sich an **Adresse** befindet und da beide Listen auf diesen Bereich zeigen, werden beide Listen verändert.
+Wir verändern den Speicherbereich, der sich an einer **Adresse** befindet und da beide Listen auf diesen Bereich zeigen, werden beide Listen verändert.
 
 Dieses Verhalten kann auch durchaus wünschenswert sein.
-Allerdings wollen wir häufig eine echte d.h. *tiefe Kopie* einer Datenstruktur erhalten.
+Allerdings wollen wir häufig eine echte d.h. *tiefe Kopie* einer Datenstruktur erstellen.
 Um dies zu erreichen, reicht es nicht, nur die *Datenstruktur* zu kopieren.
 Sie müssen stattdessen alle *Datenstrukturen*, die diese *Datenstruktur* enthält, ebenfalls kopieren und auch alle *Datenstrukturen* die diese enthalten und so weiter und so fort.
 Anders ausgedrückt: Sie müssen alle *Kinder* der Datenstruktur kopieren.
@@ -596,7 +630,7 @@ for x in mylist_deep_copy[2]:
 Diese sind gleich geblieben, da es sich um *atomare Datentypen* handelt und somit eine Kopie lediglich Speicher verbrauchen würde.
 
 Und was machen wir wenn wir eine dreidimensionale oder gar vierdimensionale Liste haben?
-Wir bräuchten eine sog. *rekursive Funktion*, welche uns eine Kopie erstellt.
+Wir bräuchten eine sog. [rekursive Funktion](sec-recursive-functions), welche uns eine Kopie erstellt.
 Glücklicherweise bietet uns ``Python`` durch das ``copy``-Modul bereits Funktionen zur Erstellung *flacher* und *tiefer Kopien*.
 Die Funktion ``copy()`` liefert eine *flache* und die Funktion ``deepcopy()`` eine *tiefe Kopie*:
 
@@ -612,3 +646,26 @@ numbers[2][1][0] = 'b'
 print(f'shallow copy: {numbers_shallow_copy}')
 print(f'deep copy: {numbers_deep_copy}')
 ```
+
+```{exercise} Tiefe Kopie
+:label: deep-copy-list-exercise
+Definieren Sie eine Funktion ``deep_copy(lst)``, die eine *tiefe Kopie* einer $n$-dimensionalen Liste anlegt.
+```
+
+````{solution} deep-copy-list-exercise
+:label: deep-copy-list-solution
+:class: dropdown
+
+```python
+def deep_copy(lst):
+    lst_copy = []
+    for element in lst:
+        if type(element) == list:
+            element_copy = deep_copy(element)
+        else:
+            element_copy = element
+        lst_copy.append(element_copy)
+    return lst_copy
+```
+
+````

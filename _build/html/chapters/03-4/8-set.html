@@ -896,25 +896,26 @@
   <div class="section" id="mengen-set">
 <span id="sec-set"></span><h1><span class="section-number">4.8. </span>Mengen - set<a class="headerlink" href="#mengen-set" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>-Mengen (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">Set</a>) <code class="docutils literal notranslate"><span class="pre">set</span></code> ist eine ungeordnete Zusammenfassung (engl. collection) von Elementen, wobei jedes Element in der Menge einzigartig ist.
-Damit repräsentieren <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> <em>endliche</em> Mengen im mathematischen Sinne.
+Damit repräsentieren <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> <em>endliche</em> <a class="reference internal" href="../02-0/2-set.html#sec-math-set"><span class="std std-ref">Mengen</span></a> im mathematischen Sinne.
 Endlich deshalb, weil die Elemente von <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Mengen explizit im Speicher liegen und wir nur endlich viel Arbeitsspeicher zur Verfügung haben.</p>
 <p>Eine mathematische Menge <span class="math notranslate nohighlight">\(M\)</span> ist ein abstraktes Objekt, das aus der Zusammenfassung einer Anzahl von einzelnen Elementen hervorgeht.
 Dabei ist jedes Element was sich in der Menge befindet von allen anderen Elementen verschieden.
-Anders als mathematische Tupel (durch die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Tupel und den Listen motiviert sind) sind Mengen ungeordnet.</p>
+Anders als <a class="reference internal" href="../02-0/3-tuple.html#sec-math-tuple"><span class="std std-ref">mathematische Tupel</span></a> (durch die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Tupel und den Listen motiviert sind) sind Mengen ungeordnet.</p>
 <p>Von hier an meinen wir mit Mengen die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> und sprechen ansonsten von mathematischen Mengen.</p>
 <div class="section" id="motivation">
 <h2><span class="section-number">4.8.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
-<p>Mengen benutzten wir immer dann, wenn wir die Eigenschaft der Eindeutigkeit und Unordnung nutzten wollen.
-Dabei bezieht sich diese Eindeutigkeit auf die <a class="reference internal" href="../03-3/1-variables.html#warning-equality-and-identity"><span class="std std-ref">Gleichheit</span></a> und nicht auf die Identität.
+<p>Mengen benutzten wir immer dann, wenn wir die Eigenschaft der <strong>Eindeutigkeit</strong> und <strong>Unordnung</strong> nutzten wollen.
+Dabei bezieht sich diese Eindeutigkeit auf die <a class="reference internal" href="../03-3/1-variables.html#def-equality"><span class="std std-ref">Gleichheit</span></a> und nicht auf die <a class="reference internal" href="../03-3/1-variables.html#def-identity"><span class="std std-ref">Identität</span></a>.
 D.h. eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Menge enthält keine zwei Elemente <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> für die <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code> zu <code class="docutils literal notranslate"><span class="pre">True</span></code> ausgewertet wird.</p>
 <p>Es ist an dieser Stelle anzumerken, dass der Test</p>
 <div class="math notranslate nohighlight">
 \[e \in M\]</div>
 <p>für eine Menge deutlich weniger Rechenzeit benötigt als für eine Liste.
-Dies hängt natürlich von der Größe der Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> ab, überraschenderweise jedoch nicht von der Größe der Menge <code class="docutils literal notranslate"><span class="pre">set</span></code>.
-Befinden sich <span class="math notranslate nohighlight">\(n\)</span> Elemente der Liste bzw. Menge so benötigen wir im schlechtesten Fall ca. <span class="math notranslate nohighlight">\(n\)</span> Berechnungsschritte um festzustellen ob sich eine Element in der Liste befindet.
+Präziser ausgedrückt, ist die Laufzeit dieser Operation für Mengen konstant <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> und für Listen wächst sie linear mit der Anzahl ihrer Elemente <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.</p>
+<p>Befinden sich <span class="math notranslate nohighlight">\(n\)</span> Elemente in der Liste bzw. Menge so benötigen wir im schlechtesten Fall <span class="math notranslate nohighlight">\(n\)</span> Berechnungsschritte um festzustellen ob sich ein bestimmtes Element in der Liste befindet.
 Verwenden wir hingegen eine Menge, so benötigen wir nicht mehr als eine bestimmte konstante Anzahl an Schritten.
-In anderen Worten, die Laufzeit des Test ist (nahezu) unabhängig von der Anzahl der Elemente die sich in der Menge befinden!</p>
+In anderen Worten, die Laufzeit des Test ist (nahezu) unabhängig von der Anzahl der Elemente die sich in der Menge befinden!
+Das heißt, die Laufzeit hängt von der Größe der Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> ab, überraschenderweise jedoch nicht von der Größe der Menge <code class="docutils literal notranslate"><span class="pre">set</span></code>.</p>
 </div>
 <div class="section" id="erstellung">
 <h2><span class="section-number">4.8.2. </span>Erstellung<a class="headerlink" href="#erstellung" title="Permalink to this headline">¶</a></h2>
@@ -944,7 +945,7 @@ In anderen Worten, die Laufzeit des Test ist (nahezu) unabhängig von der Anzahl
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}
-{&#39;d&#39;, &#39;c&#39;, &#39;b&#39;, &#39;e&#39;, &#39;f&#39;, &#39;a&#39;}
+{&#39;e&#39;, &#39;d&#39;, &#39;f&#39;, &#39;b&#39;, &#39;c&#39;, &#39;a&#39;}
 </pre></div>
 </div>
 </div>
@@ -1026,7 +1027,7 @@ Folgender Code führt zu einem Fehler.</p>
 </div>
 </div>
 <p>doch bleibt uns der Zugriff auf einzelne Elemente verwehrt.
-Mengen bieten weder einen Index noch irgendetwas anderes durch das wir auf einzelne Mengenelemente zugreifen können.</p>
+Mengen bieten weder einen Index noch irgendeine anderes Möglichkeit, um auf bestimmte einzelne Mengenelemente zugreifen zu können.</p>
 </div>
 <div class="section" id="mengenoperationen">
 <h2><span class="section-number">4.8.4. </span>Mengenoperationen<a class="headerlink" href="#mengenoperationen" title="Permalink to this headline">¶</a></h2>
@@ -1115,7 +1116,7 @@ Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="m
 <h2><span class="section-number">4.8.5. </span>Veränderung<a class="headerlink" href="#veranderung" title="Permalink to this headline">¶</a></h2>
 <p>Mengen sind <strong>veränderlich</strong> (engl. mutable) allerdings darf eine Menge nur <strong>unveränderliche</strong> (engl. immutable) Elemente enthalten!
 Damit darf eine Menge keine Listen enthalten, weshalb folgender Code zu einem Fehler führt</p>
-<div class="warning admonition" id="alert-sets-in-python">
+<div class="attention admonition" id="alert-sets-in-python">
 <p class="admonition-title">Mengen in Python</p>
 <p>Eine Menge ist <strong>veränderlich</strong> darf jedoch lediglich <strong>unveränderliche</strong> Elemente enthalten.</p>
 </div>
@@ -1153,7 +1154,7 @@ Was passiert allerdings wenn wir <code class="docutils literal notranslate"><spa
 Die Menge müsste deshalb von dieser Änderung etwas mitbekommen und daraufhin sich selbst anpassen.
 Das würde die Implementierung einer Menge immens verkomplizieren und würde zu großen Problemen führen.
 Deshalb bekommt die Menge von dieser Änderung nichts mit und somit hätten wir den Salat.</p>
-<p>Wir können mit den Funktionen <code class="docutils literal notranslate"><span class="pre">add()</span></code> und <code class="docutils literal notranslate"><span class="pre">remove()</span></code> Elemente zu einer Menge hinzufügen und löschen.</p>
+<p>Wir können mit den Funktionen <code class="docutils literal notranslate"><span class="pre">add()</span></code> und <code class="docutils literal notranslate"><span class="pre">remove()</span></code> Elemente zu einer Menge hinzufügen und von ihr entfernen.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
@@ -1210,9 +1211,9 @@ Dies sehen wir, wie so oft, wenn wir uns die <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4579888256
-id of a after difference: 4579888256
-id of c: 4579888480
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4427648128
+id of a after difference: 4427648128
+id of c: 4427648352
 a = {0, 1, 2, 3, 4, 5}
 b = {1, 3, 5, 7, 9, 11}
 c = {0, 2, 4}
@@ -1236,8 +1237,8 @@ c = {0, 2, 4}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4579888928
-id of a after difference: 4579888928
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4427648800
+id of a after difference: 4427648800
 a = {0, 2, 4}
 b = {1, 3, 5, 7, 9, 11}
 </pre></div>
@@ -1292,7 +1293,7 @@ Kennen wir die Adresse, so ist der Zugriff enorm schnell.</p>
 Nehmen wir einmal an Sie möchten eine veränderliche Menge von ganzen Zahlen <em>modellieren</em>.
 Sie wissen jedoch, dass die Zahlen <span class="math notranslate nohighlight">\(k\)</span> alle zwischen 100 und 130 liegen, genauer gesagt <span class="math notranslate nohighlight">\(100 \leq k &lt; 130\)</span>.
 Wie könnten wir unter diesen Voraussetzungen eine Menge als Liste implementieren?</p>
-<p>Wir wählen eine Liste die immer hundert Elemente enthält, sodass wir für eine gegebene Zahl <span class="math notranslate nohighlight">\(k\)</span> den zugehörigen Listenindex</p>
+<p>Wir wählen eine Liste die immer 30 Elemente enthält, sodass wir für eine gegebene Zahl <span class="math notranslate nohighlight">\(k\)</span> den zugehörigen Listenindex</p>
 <div class="math notranslate nohighlight">
 \[i \leftarrow (k-100)\]</div>
 <p>sehr einfach berechnen können.</p>
@@ -1300,7 +1301,7 @@ Wie könnten wir unter diesen Voraussetzungen eine Menge als Liste implementiere
 Wir können künstliche Lücken einfügen.
 Unsere leere Menge enthält 30 ‘Lücken’.
 Wir verwenden hierfür das Symbol für das Nichts, d.h., <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">emptyset</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">)]</span>
 <span class="n">emptyset</span>
@@ -1347,7 +1348,7 @@ Wir verwenden hierfür das Symbol für das Nichts, d.h., <code class="docutils l
 <li><p>seinen Index berechnen</p></li>
 <li><p>und es hinzufügen.</p></li>
 </ol>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myset</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">)]</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">122</span>
@@ -1420,10 +1421,11 @@ Wir verwenden hierfür das Symbol für das Nichts, d.h., <code class="docutils l
 <p>Sowohl das Hinzufügen als auch das Testen sind immens schnelle Operationen.
 Wir müssen nur eine arithmetische Berechnung durchführen und sind bereits am Ziel.</p>
 <p>Auf diesem Prinzip basieren Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> (und auch Wörterbücher <code class="docutils literal notranslate"><span class="pre">dict</span></code>) in <code class="docutils literal notranslate"><span class="pre">Python</span></code> und anderen Programmiersprachen.
-Der Index wird abhängig vom Element selbst berechnet.
-Eine Menge verwendet bzw. verbraucht mehr Speicher als Ihre Elemente benötigen – anders als Listen enthält sie ‘Lücken’.
-Dadurch sind die Elemente im Speicher breit verteilt.</p>
-<p>Für ganze Zahlen in einem bestimmten Bereich ist das noch einfach, da die Funktion für die Berechnung des Index simpel ist.
+Der Index wird abhängig vom Element durch eine sog. Hashfunktion berechnet.
+Diese Hashfunktion erhält als Argument das Element selbst.</p>
+<p>Eine Menge verwendet bzw. verbraucht mehr Speicher als Ihre Elemente benötigen – anders als Listen enthält sie ‘Lücken’.
+Dadurch sind die Elemente im Speicher breit verteilt, d.h., <em>gestreut</em>.</p>
+<p>Für ganze Zahlen in einem bestimmten Bereich ist das noch einfach, da die Hashfunktion für die Berechnung des Index simpel ist.
 Für beliebige Objekte wird dies deutlich schwieriger.
 Wir diskutieren dies im Kapitel <a class="reference internal" href="../04/name-register.html#sec-name-register"><span class="std std-ref">Namensregister</span></a> im Detail.</p>
 </div>

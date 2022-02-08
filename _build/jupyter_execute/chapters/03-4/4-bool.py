@@ -4,13 +4,13 @@ Ein Wahrheitswert ([Boolean](https://docs.python.org/3/library/stdtypes.html#tru
 ``True`` bedeutet wahr und ``False`` falsch.
 
 ``True`` oder ``False`` verwenden wir sehr selten explizit.
-Viel häufiger wird ein logischer Ausdruck, nach *Auswertung* entweder ``True`` oder ``False``.
+Viel häufiger wird ein logischer Ausdruck, zu ``True`` oder ``False`` *ausgewertet*.
 
 x = 9
 is_lesser_than_10 = x < 10
 print(is_lesser_than_10)
 
-In diesem Beispiel verwenden wir einen [Vergleichsoperator](sec-python-operator-compare), der den Ausdruck $x < 10$ zu ``True`` auswertet, da $x = 9 < 10$ gilt.
+In diesem Beispiel verwenden wir einen [Vergleichsoperator](sec-python-operator-compare), der den Ausdruck ``x < 10`` zu ``True`` auswertet, da $x = 9 < 10$ gilt.
 *Boolsche* bzw. *logische Ausdrücke* lassen sich durch [logische Operatoren](sec-logic-expressions) verknüpfen.
 
 *Boolsche Ausdrücke* und damit Wahrheitswerte ``bool`` benötigen wir für die Steuerung unseres Programmablaufs.
@@ -36,7 +36,7 @@ for x in range(11):
   else:
     print(f'{x} not is less than 10')
 
-Würden wir die ``for``-Schleife und die ``if``-Bedingung *ausbreiten*, sähe der Code wie folgt aus:
+Würden wir die ``for``-[Schleife](sec-for) und die ``if``-[Bedingung](sec-cases) *ausbreiten*, sähe der Code wie folgt aus:
 
 x = 0
 print(f'{x} is less than 10')

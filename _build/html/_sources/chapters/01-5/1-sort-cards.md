@@ -337,7 +337,7 @@ Somit drücken wir uns für all jene verständlich aus, die das nötige mathemat
 
 Lassen Sie uns zwei wesentliche Dinge mathematisch betrachten, welche wir beim Sortieren der Karten intuitiv verwenden:
 
-1. Die sog. [Ordnungsrelation](def-order) und
+1. Die sog. [Ordnungsrelation](def-math-order) und
 2. Objekte in einer Reihenfolge angeordnet.
 
 

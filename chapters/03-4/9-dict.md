@@ -23,9 +23,9 @@ Wir können sie uns als zweispaltige Tabelle vorstellen.
 Eine Spalte beinhaltet die **eindeutigen** sog. **Schlüssel** ``key``s und die andere Spalte enthält die sog. **Werte**  ``value``s.
 Jede Zeile ist ein Tupel ``tuple`` aus ``key`` und ``value``.
 
-Da die Schlüssel im Sinne der [Gleichheit](warning-equality-and-identity) eindeutig sind, kann die Spalte aus ``key``s als Menge ``set`` an **Schlüsseln** angesehen werden.
+Da die Schlüssel im Sinne der [Gleichheit](def-identity) eindeutig sind, kann die Spalte aus ``key``s als Menge ``set`` an **Schlüsseln** angesehen werden.
 Die **Werte** müssen hingegen nicht eindeutig sein.
-Sind Sie wie ich ein Freund der Mathematik, so realisiert ein Wörterbücher ``dict`` eine Funktion:
+Sind Sie wie ich ein Freund der Mathematik, so realisiert ein Wörterbücher ``dict`` eine [(mathematische) Funktion](sec-math-function):
 
 $$f : K \rightarrow V,$$
 

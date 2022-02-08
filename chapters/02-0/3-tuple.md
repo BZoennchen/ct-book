@@ -1,3 +1,4 @@
+(sec-math-tuple)=
 # Tupel
 
 Tupel sind ebenfalls eine Ansammlung von Elementen, allerdings sind diese geordnet und Elemente können mehrfach in einem Tupel enthalten sein.
