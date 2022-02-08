@@ -807,13 +807,13 @@ codebook
 ```
 
 Lassen Sie uns noch einmal rekapitulieren weshalb die [binäre Suche](def-binary-search) anwendbar ist.
-Was wir vorraussetzen ist, dass wir gute Fragen stellen können und, anhand jeder Antwort, die Menge schnell verkleinern können.
+Was wir voraussetzen ist, dass wir gute Fragen stellen können und, anhand jeder Antwort, die Menge schnell verkleinern können.
 Mit schnell meinen wir, dass es keinen großen Aufwand kostet!
-Wenn Sie beispielsweise in unserem Ratespiel die Frage nach dem Geschlecht stellen, sie aber ersteinmal jeden Menschen betrachten müssen um das Geschlecht herauszufinden,
+Wenn Sie beispielsweise in unserem Ratespiel die Frage nach dem Geschlecht stellen, sie aber erst einmal jeden Menschen betrachten müssen um das Geschlecht herauszufinden,
 ist diese Frage zu aufwendig zu beantworten.
-Im Fall der Buchstabencodierung, verwenden wir eine [totale Ordnung](def-order) der Buchstaben und können durch einen entsprechenden *Vergleichsoperator* die Buchstabenmengen immer weiter verfeinern, indem wir das *Intervall* der Buchstaben, die wir betrachten, verkleinern.
+Im Fall der Buchstabencodierung, verwenden wir eine [totale Ordnung](def-math-order) der Buchstaben und können durch einen entsprechenden *Vergleichsoperator* die Buchstabenmengen immer weiter verfeinern, indem wir das *Intervall* der Buchstaben, die wir betrachten, verkleinern.
 
-Wenn Sie sich unsere Lösung ansehen werden Sie vielleicht festellen, dass wir jede endliche Menge mit einer [totale Ordnung](def-order) codieren können, sofern der ``<=``-Operator definiert ist.
+Wenn Sie sich unsere Lösung ansehen werden Sie vielleicht festellen, dass wir jede endliche Menge mit einer [totale Ordnung](def-math-order) codieren können, sofern der ``<=``-Operator definiert ist.
 Zum Beispiel können wir Zahlen codieren:
 
 ```{code-cell} python3

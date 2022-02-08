@@ -886,13 +886,13 @@
   <div class="section" id="operationen">
 <h1><span class="section-number">1.6. </span>Operationen<a class="headerlink" href="#operationen" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="betrag">
-<h2><span class="section-number">1.6.1. </span>Betrag<a class="headerlink" href="#betrag" title="Permalink to this headline">¶</a></h2>
+<span id="sec-abs"></span><h2><span class="section-number">1.6.1. </span>Betrag<a class="headerlink" href="#betrag" title="Permalink to this headline">¶</a></h2>
 <p>Die Betragsfunktion <span class="math notranslate nohighlight">\(|\cdot| : \mathbb{R} \rightarrow \mathbb{R}^+\)</span> wandelt eine negative Zahl in eine positive Zahl um.</p>
 <div class="definition admonition" id="def-math-abs">
 <p class="admonition-title">Betragsfunktion</p>
 <p>Sei <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> eine reelle Zahl, so ist ihr <em>Betrag</em> definiert als</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}|x| = \begin{cases} -x, &amp; \text{ falls } x &lt; 0 \\ x, &amp; \text{ sonst.} \end{cases}\end{split}\]</div>
+\[\begin{split}\text{abs}(x) = |x| = \begin{cases} -x, &amp; \text{ falls } x &lt; 0 \\ x, &amp; \text{ sonst.} \end{cases}\end{split}\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -949,7 +949,7 @@
 </div>
 </div>
 <div class="section" id="ab-und-aufrunden">
-<h2><span class="section-number">1.6.3. </span>Ab- und Aufrunden<a class="headerlink" href="#ab-und-aufrunden" title="Permalink to this headline">¶</a></h2>
+<span id="sec-math-rounding"></span><h2><span class="section-number">1.6.3. </span>Ab- und Aufrunden<a class="headerlink" href="#ab-und-aufrunden" title="Permalink to this headline">¶</a></h2>
 <p>Bei der Entwicklung Ihrer Algorithmen werden sie das <em>Abrunden</em> sehr oft einsetzten.
 Es wird in allen gängigen Programmiersprachen implizit durchgeführt, wenn Sie eine Gleitkommazahl in eine ganze Zahl umwandeln.</p>
 <div class="cell docutils container">
@@ -972,14 +972,14 @@ Es wird in allen gängigen Programmiersprachen implizit durchgeführt, wenn Sie 
 <p class="admonition-title">Maximum</p>
 <p>Sei <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> so ist <span class="math notranslate nohighlight">\(x\)</span> aufgerundet gleich</p>
 <div class="math notranslate nohighlight">
-\[\left \lfloor{x}\right \rfloor = \max\{k \in \mathbb{Z} : k \leq x \}.\]</div>
+\[\text{floor}(x) = \left \lfloor{x}\right \rfloor = \max\{k \in \mathbb{Z} : k \leq x \}.\]</div>
 </div>
 <p>Diese Aufrundungsfunktion <span class="math notranslate nohighlight">\(\left \lceil{\cdot}\right \rceil : \mathbb{R} \rightarrow \mathbb{Z}\)</span> rundet Zahlen zur nächst kleineren ganzen Zahl ab.</p>
 <div class="definition admonition" id="def-math-ceil">
 <p class="admonition-title">Maximum</p>
 <p>Sei <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> so ist <span class="math notranslate nohighlight">\(x\)</span> abgerundet gleich</p>
 <div class="math notranslate nohighlight">
-\[\left \lceil{x}\right \rceil = \min\{k \in \mathbb{Z} : k \geq x \}.\]</div>
+\[\text{ceil}(x) = \left \lceil{x}\right \rceil = \min\{k \in \mathbb{Z} : k \geq x \}.\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-induction)=
 # Vollständige Induktion
 
 Die *vollständige Induktion* ist eine mathematische Beweistechnik aber viel mehr ist sie auch eine *Denkart* die insbesondere bei der Entwicklung von Datenstrukturen und Algorithmen eine große Rolle spielt.
@@ -73,6 +74,7 @@ Wenn wir wissen dass
 dann folgt daraus, dass alle Steine umfallen!
 Wir zeigen zwei lokale Sachverhalte und können dadurch auf einen globalen Sachverhalt schließen.
 
+(sec-induction-proof)=
 ## Induktionsbeweis
 
 Beim Induktionsbeweis wollen wir eine Aussage $A(n)$ für alle $n \geq n_0$ beweisen.

@@ -1,3 +1,4 @@
+(sec-math-function)=
 # Funktionen
 
 Eine Funktion ist eine Relation für die bestimmte Bedingungen zutreffen müssen.

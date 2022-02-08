@@ -208,7 +208,7 @@ $$[0;149], [0;73], [37;73], [37;54], [46;54], [46;49], [48;49]$$
 ### Algorithmische Beschreibung
 
 Die wesentliche Eigenschaft welche die [binäre Suche](def-binary-search) ausnutzt sind in Gleichungen {eq}`name-register-eq-1`, {eq}`name-register-eq-2` und {eq}`name-register-eq-3` zusammengefasst.
-Wir benötigen eine [Ordnung](def-order), sodass es einen Komparator $f_E$ gibt.
+Wir benötigen eine [Ordnung](def-math-order), sodass es einen Komparator $f_E$ gibt.
 Das Tupel bzw. unsere Liste muss sortiert sein {eq}`name-register-eq-3`.
 
 Der Komparator $f_E$ wird passend zur Menge der möglichen Listelemente $E$ definiert, d.h. je nachdem welche Art von Liste (Namensliste, Telefonbucheinträge, Zahlen, Klausuren) wir vorfinden, müssen wir ein geeignetes $f_E$ konstruieren. 

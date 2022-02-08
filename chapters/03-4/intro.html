@@ -856,12 +856,12 @@
               <div>
                 
   <div class="section" id="datentypen-grundlagen">
-<h1><span class="section-number">4. </span>Datentypen (Grundlagen)<a class="headerlink" href="#datentypen-grundlagen" title="Permalink to this headline">¶</a></h1>
+<span id="sec-python-data-types"></span><h1><span class="section-number">4. </span>Datentypen (Grundlagen)<a class="headerlink" href="#datentypen-grundlagen" title="Permalink to this headline">¶</a></h1>
 <p>Wie in Abschnitt <a class="reference internal" href="../02-1/2-representation.html#sec-representation"><span class="std std-ref">Repräsentation</span></a> beschrieben, befinden sich im Speicher des (digitalen) Computers ausschließlich <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>.
 Sie können sich den Speicher als eine lange lange Liste von Bits vorstellen.
-Diese können nur einen von zwei Zuständen (0 und 1) annehmen.
+Diese Bits können nur einen von zwei Zuständen (0 und 1) annehmen.
 Dennoch verarbeiten Computer Zahlen, Text, Bilder und mehr.</p>
-<p>Die ‘Magie’ dahinter geschieht durch die Wahl und Implementierung einer <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a>.
+<p>Diese ‘Magie’ geschieht durch die Wahl und Implementierung einer <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a>.
 Unterschiedliche Interpretationen ermöglichen es, Bits und <a class="reference internal" href="../02-1/2-representation.html#def-byte"><span class="std std-ref">Byte</span></a> als Zahlen, Text, Bilder usw. zu verarbeiten.</p>
 <p>Im Abschnitt <a class="reference internal" href="../03-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> haben wir von einer <em>Variable</em> als Tupel von <strong>Wert</strong> und <strong>Speicheradresse</strong> gesprochen.
 Die <em>Variable</em> ‘kennt’ die Speicheradresse an der der Wert im Speicher steht.
@@ -925,22 +925,23 @@ type of char: &lt;class &#39;str&#39;&gt;
 </div>
 </div>
 </div>
-<p>Der Datentyp der Variablen <code class="docutils literal notranslate"><span class="pre">char</span></code> ist <code class="docutils literal notranslate"><span class="pre">str</span></code> (Zeichenkette).
-Diese Information bekommt der Interpreter und interpretiert deshalb die Bitfolge im Speicher als Zeichenkette.
-Und die <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operation ist für Kombination von Datentypen <code class="docutils literal notranslate"><span class="pre">int</span></code> und <code class="docutils literal notranslate"><span class="pre">str</span></code> nicht definiert.
-Das ist allerdings eine unbefriedigende Antwort, denn wir wissen noch nicht wie Datentypen realisiert werden.
+<p>Der Datentyp der Variablen <code class="docutils literal notranslate"><span class="pre">char</span></code> ist <code class="docutils literal notranslate"><span class="pre">str</span></code> (<a class="reference internal" href="7-string.html#sec-string"><span class="std std-ref">Zeichenkette</span></a>).
+Diese Information erhält der <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> und <em>interpretiert</em> deshalb die Bitfolge im Speicher als Zeichenkette.
+Die <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operation ist für die Kombination von Datentypen <code class="docutils literal notranslate"><span class="pre">int</span></code> und <code class="docutils literal notranslate"><span class="pre">str</span></code> nicht definiert.
+Deshalb kommt es zu einem Fehler.</p>
+<p>Das ist allerdings eine unbefriedigende Erklärung, denn wir wissen noch nicht wie Datentypen realisiert werden.
 Wie ist der Zusammenhang zwischen den Programmiersprachen, welche alle auf Datentypen basieren, und den <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">Übersetzern</span></a> oder <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpretern</span></a> und der Computerhardware?</p>
 <p>In diesem und nächstem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
 Dies beinhaltet Theorie und Praxis.
 Um in <code class="docutils literal notranslate"><span class="pre">Python</span></code> mit den Datentypen praktisch umgehen zu können reicht Ihnen dieses Kapitel.
 Im nächsten Kapitel <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a> werden wir hingegen genauer untersuchen, weshalb es Datentypen gibt und welchen Einfluss diese im Detail haben.
-Möchten Sie jedoch ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich der Blick in das nächste Kapitel <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a>.</p>
+Möchten Sie also ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich der Blick in das nächste Kapitel <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a>.</p>
 <p>Wir versuchen folgende Fragen zu beantworten:</p>
 <ol class="simple">
 <li><p>Grundlagen</p>
 <ol class="simple">
-<li><p>Was kann ich in <strong>Python</strong> mit einer Variable eines bestimmten Typs anfangen? Abschnitt 4.1 bis 4.9.</p></li>
-<li><p>Welche Typisierung verwendet <strong>Python</strong>? Abschnitt <a class="reference internal" href="11-typing-in-python.html#sec-typing-in-python"><span class="std std-ref">4.2 Pythons Typisierung</span></a>.</p></li>
+<li><p>Was kann ich in <code class="docutils literal notranslate"><span class="pre">Python</span></code> mit einer Variable eines bestimmten Typs anfangen? Abschnitt 4.1 bis 4.9.</p></li>
+<li><p>Welche Typisierung verwendet <code class="docutils literal notranslate"><span class="pre">Python</span></code>? Abschnitt <a class="reference internal" href="11-typing-in-python.html#sec-typing-in-python"><span class="std std-ref">4.2 Pythons Typisierung</span></a>.</p></li>
 </ol>
 </li>
 <li><p>Fortsetzung</p>

@@ -855,14 +855,18 @@
                 
   <div class="section" id="ganze-zahlen-int">
 <span id="sec-int"></span><h1><span class="section-number">4.2. </span>Ganze Zahlen - int<a class="headerlink" href="#ganze-zahlen-int" title="Permalink to this headline">¶</a></h1>
-<p>Ganze Zahlen (engl. <a class="reference external" href="https://docs.python.org/3/library/functions.html#int">Integer</a>) <code class="docutils literal notranslate"><span class="pre">int</span></code> ist ein <em>atomarer Datentyp</em> und verhält sich so wie wir es erwarten.</p>
-<p>Falls Sie bereits Programmierkenntnisse besitzen, so gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> jedoch eine Besonderheit: Ganze Zahlen können nicht überlaufen.
-Anders als Fließkommazahlen benötigen ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine variable Anzahl an Bits.
+<p>Der Datentyp, welcher ganze Zahlen repräsentiert <code class="docutils literal notranslate"><span class="pre">int</span></code> (engl. <a class="reference external" href="https://docs.python.org/3/library/functions.html#int">Integer</a>) ist ein <a class="reference internal" href="1-data-types.html#def-atomare-data-types"><span class="std std-ref">atomarer Datentyp</span></a> und verhält sich so wie wir es erwarten.</p>
+<p>Falls Sie jedoch bereits Programmierkenntnisse besitzen, so gibt es für Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Besonderheit:</p>
+<div class="remark admonition" id="remark-int-overflow">
+<p class="admonition-title">Fehlender Überlauf</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> gibt es <strong>keinen</strong> Überlauf für ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+</div>
+<p>Anders als Fließkommazahlen benötigen ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine variable Anzahl an Bits.
 Anders ausgedrückt: Nicht jede Zahl benötigt die gleiche Anzahl an Bits im Speicher!
 Solange Ihr Speicher nicht komplett belegt ist, können Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> somit mit sehr großen ganzen Zahlen rechnen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">100</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">100</span> 
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">large_number</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">large_number</span><span class="p">)</span>
 </pre></div>
@@ -874,10 +878,6 @@ Solange Ihr Speicher nicht komplett belegt ist, können Sie in <code class="docu
 </pre></div>
 </div>
 </div>
-</div>
-<div class="important admonition">
-<p class="admonition-title">Python und der Überlauf</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> gibt es keinen <em>Überlauf</em> für ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 </div>
 <p>Da wir bei mathematischen Operationen wie <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code> und <code class="docutils literal notranslate"><span class="pre">**</span></code> ganze Zahlen <code class="docutils literal notranslate"><span class="pre">int</span></code> und Fließkommazahlen <code class="docutils literal notranslate"><span class="pre">float</span></code> vermischen können, müssen wir darauf achten welcher Datentyp am Ende herauskommt.
 Sobald eine Fließkommazahl ein Teil der Berechnung ist, ist das Ergebnis vom Typ <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
@@ -898,7 +898,7 @@ Sobald eine Fließkommazahl ein Teil der Berechnung ist, ist das Ergebnis vom Ty
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="mi">100</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="mi">100</span>     <span class="c1"># float ** int -&gt; float  </span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">large_number</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">large_number</span><span class="p">)</span>
 </pre></div>
@@ -911,7 +911,7 @@ Sobald eine Fließkommazahl ein Teil der Berechnung ist, ist das Ergebnis vom Ty
 </div>
 </div>
 </div>
-<p>Auch bei der ganzzahligen Division <code class="docutils literal notranslate"><span class="pre">//</span></code> erhalten wir als Datentyp eine Fließkommazahl sofern eine Fließkommazahl bei der Operation teilnimmt:</p>
+<p>Auch für die ganzzahligen Division <code class="docutils literal notranslate"><span class="pre">//</span></code> erhalten wir als Datentyp eine Fließkommazahl sofern eine Fließkommazahl bei der Operation teilnimmt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">//</span> <span class="mi">2</span>     <span class="c1"># float // int -&gt; float   </span>

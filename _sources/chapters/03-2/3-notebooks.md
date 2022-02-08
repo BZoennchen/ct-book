@@ -206,8 +206,8 @@ x
 ```
 
 ```{admonition} Auswertungsreihenfolge (Notebooks)
-:name: hint-evaluation-ordering
-:class: hint
+:name: remark-evaluation-ordering
+:class: remark
 Sie sollten darauf achten, dass ihr Code das gewünschte Resultat erzeugt indem alle Zellen von oben nach unten ausgeführt werden.
 ```
 

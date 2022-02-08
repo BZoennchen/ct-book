@@ -880,17 +880,26 @@
                 
   <div class="section" id="funktionsaufrufe">
 <h1><span class="section-number">3.3. </span>Funktionsaufrufe<a class="headerlink" href="#funktionsaufrufe" title="Permalink to this headline">¶</a></h1>
-<p>Wie wir eigene Funktionen definieren werden wir uns noch genauer ansehen.
+<p>Wenn Sie das Buch von vorne bis hierhin gelesen haben, werden Ihnen so einige Funktionsdefinitionen über den Weg gelaufen sein.
+Wie wir eigene Funktionen definieren werden wir uns noch genauer ansehen.
 Vorerst begnügen wir uns mit dem <em>Aufrufen</em> von bereits existierenden <em>Funktionen</em>.</p>
-<p>Vorab sei betont, dass eine <em>mathematische Funktion</em> sich von einer <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion unterscheidet.
-Wollen wir eine bestimmte Abfolge von <a class="reference internal" href="2-expressions.html#sec-expressions"><span class="std std-ref">Ausdrücken</span></a> wieder und wieder aufrufen, so können wir diese Ausdrücke in einer Funktion <em>kapseln</em>.
-Diese Funktion erfüllt einen bestimmten Zweck.
-Benutzten wir bereits existierende Funktionen, so kennen wir (jedenfalls sollte das so sein) <strong>Wie</strong> aber nicht unbedingt das <strong>Wie</strong>.</p>
-<p>Wir rufen eine Funktion mit dem Namen <code class="docutils literal notranslate"><span class="pre">name</span></code> auf indem wir an den Namen Runde Klammern anfügen: <code class="docutils literal notranslate"><span class="pre">name()</span></code>.
-Funktionen erwarten eine bestimmte Anzahl an <em>Argumenten</em>, wobei es manchmal auch <em>optionale Argumente</em> geben kann.
-Argumente sind Werte, welche die Funktion erwartet und die wir übergeben müssen.
+<p>Vorab sei betont, dass eine <em>mathematische Funktion</em> sich von einer <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion wesentlich unterscheidet.
+Wir diskutieren dies genaue im Abschnitt <a class="reference internal" href="../03-6/1-purity.html#sec-purity"><span class="std std-ref">Reinheit</span></a>.</p>
+<p>Wollen wir eine bestimmte Abfolge von <a class="reference internal" href="2-expressions.html#sec-expressions"><span class="std std-ref">Ausdrücken</span></a> wieder und wieder aufrufen, so können wir diese Ausdrücke in einer Funktion <em>kapseln</em>.
+Diese Funktion erfüllt einen bestimmten Zweck.</p>
+<p>Benutzten wir bereits existierende Funktionen, so kennen wir (jedenfalls sollte das so sein) das <strong>WAS</strong> aber nicht unbedingt das <strong>WIE</strong>.
+Das bedeutet für geübte Programmierer*innen, dass diese sich viel mit Dokumentationen diverser Module beschäftigen.
+Einerseits um das <strong>WAS</strong> in Erfahrung zu bringen und andererseits um eine Vorstellung vom <strong>WIE</strong> zu erhalten.</p>
+<p>Wir rufen eine Funktion mit dem Namen <code class="docutils literal notranslate"><span class="pre">name</span></code> auf, indem wir an den Namen runde Klammern anfügen: <code class="docutils literal notranslate"><span class="pre">name(par1,</span> <span class="pre">par2)</span></code>.
+Funktionen erwarten eine bestimmte Anzahl an <em>Parametern</em> (hier <code class="docutils literal notranslate"><span class="pre">par1</span></code>, <code class="docutils literal notranslate"><span class="pre">par2</span></code>), wobei es manchmal auch <em>optionale Parameter</em> geben kann.</p>
+<div class="definition admonition" id="def-parameter">
+<p class="admonition-title">Parameter und Argumente</p>
+<p>Die in der Funktionsdefinition angegebenen Namen (Variablen) heißen <em>Parameter</em>.
+Die Werte, welche diese Parameter erhalten bezeichnen wir als <em>Argumente</em> des Funktionsaufrufs.</p>
+</div>
+<p>Argumente sind Werte, welche die Funktion erwartet und die wir übergeben müssen.
 Diese Argumente werden von der Funktion verarbeitet.</p>
-<p>Zum Beispiel bietet <code class="docutils literal notranslate"><span class="pre">Python</span></code> die vordefinierte Funktion <code class="docutils literal notranslate"><span class="pre">abs</span></code> an, welche ein Argument erwartet, eine Zahl, erwartet.</p>
+<p>Zum Beispiel bietet <code class="docutils literal notranslate"><span class="pre">Python</span></code> die vordefinierte Funktion <code class="docutils literal notranslate"><span class="pre">abs</span></code> an, welche eine Zahl als Argument erwartet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">23</span><span class="p">)</span>
@@ -903,7 +912,7 @@ Diese Argumente werden von der Funktion verarbeitet.</p>
 </div>
 </div>
 </div>
-<p>In diesem Fall realisiert diese <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion eine <em>mathematische Funktion</em>, nämlich den Betrag <span class="math notranslate nohighlight">\(abs(x) = |x|\)</span>.
+<p>In diesem Fall realisiert diese <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion eine <em>mathematische Funktion</em>, nämlich den <a class="reference internal" href="../02-0/6-operations.html#def-math-abs"><span class="std std-ref">Betrag</span></a> <span class="math notranslate nohighlight">\(\text{abs}(x) = |x|\)</span>.
 Weitere Beispiele sind die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionen <code class="docutils literal notranslate"><span class="pre">round</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -943,19 +952,23 @@ Weitere Beispiele sind die <code class="docutils literal notranslate"><span clas
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">round</span></code> erwartet ebenfalls eine Zahl als Argument.
 Die Funktion berechnet aus dem Argument die am nächsten liegende ganze Zahl und liefert diese zurück.
-In anderen Worten, <code class="docutils literal notranslate"><span class="pre">round</span></code> rundet zur nächst liegenden ganzen Zahl.
-<code class="docutils literal notranslate"><span class="pre">max</span></code> erwartet zwei Zahlen oder als Argumente und liefert die größte Zahl zurück.
-Bemerkenswert beim obigen <em>Funktionsaufruf</em> ist, dass die <em>Ausdrücke</em> <code class="docutils literal notranslate"><span class="pre">5-3</span></code> und <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">3</span></code> ausgewertet werden bevor die Funktion aufgerufen wird.
-Das heißt die Funktion wird mit den Argumenten <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">2</span></code> und <code class="docutils literal notranslate"><span class="pre">9</span></code> aufgerufen.
-Wir sehen auch, dass <code class="docutils literal notranslate"><span class="pre">max</span></code> mit einer unterschiedlichen Anzahl an Argumenten umgehen kann.</p>
+In anderen Worten, <code class="docutils literal notranslate"><span class="pre">round</span></code> rundet zur nächst liegenden ganzen Zahl.</p>
+<p><code class="docutils literal notranslate"><span class="pre">max</span></code> erwartet zwei Zahlen oder als Argumente und liefert die größere Zahl zurück.</p>
+<p>Bemerkenswert beim obigen <em>Funktionsaufruf</em> ist, dass die <em>Ausdrücke</em> <code class="docutils literal notranslate"><span class="pre">5-3</span></code> und <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">3</span></code> ausgewertet werden bevor die Funktion aufgerufen wird.
+Das heißt, die Funktion wird mit den Argumenten <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">2</span></code> und <code class="docutils literal notranslate"><span class="pre">9</span></code> aufgerufen.</p>
+<p>Wir sehen auch, dass <code class="docutils literal notranslate"><span class="pre">max</span></code> mit einer unterschiedlichen Anzahl an Argumenten umgehen kann.</p>
 <div class="section" id="module">
 <h2><span class="section-number">3.3.1. </span>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
 <p>Es gibt nur wenige vordefinierte Funktionen, die keine Argumente besitzen.
-Ein Beispiel hierfür ist die Funktion <code class="docutils literal notranslate"><span class="pre">random()</span></code> des <em>Moduls</em> <code class="docutils literal notranslate"><span class="pre">random</span></code>.
-Ein <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Modul ist eine Ansammlung von Funktionalität, es ist eine Zusammenstellung von Funktionen, welche zusammengehören.
-Im Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> befinden sich zum Beispiel viele Funktionen bei denen es um den Zufall und Wahrscheinlichkeiten geht.</p>
+Ein Beispiel hierfür ist die Funktion <code class="docutils literal notranslate"><span class="pre">random()</span></code> des <em>Moduls</em> <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
+<div class="python admonition" id="def-module">
+<p class="admonition-title">Module</p>
+<p>Ein <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Modul ist eine Ansammlung von Funktionalität.
+Es ist eine Zusammenstellung von Funktionen, welche zusammengehören.</p>
+</div>
+<p>Im Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> befinden sich, zum Beispiel, viele Funktionen die Operatoren aus der Wahrscheinlichkeitstheorie realisieren.</p>
 <p>Um ein Modul nutzten zu können muss es, d.h. dessen Quellcode, auf Ihrem System installiert sein.
-Manche Module wie beispielsweise <code class="docutils literal notranslate"><span class="pre">random</span></code> gehören zur Standardbibliothek von <code class="docutils literal notranslate"><span class="pre">Python</span></code> und werden installiert sobald <code class="docutils literal notranslate"><span class="pre">Python</span></code> installiert wird.
+Manche Module wie beispielsweise <code class="docutils literal notranslate"><span class="pre">random</span></code> gehören zur Standardbibliothek von <code class="docutils literal notranslate"><span class="pre">Python</span></code> und werden mit <code class="docutils literal notranslate"><span class="pre">Python</span></code> selbst installiert.
 Ist das Modul installiert, müssen wir es in unseren Code <em>importieren</em>.
 Wir machen es unserem Code bekannt, sodass wir es auch nutzten können.
 Dies geschieht mit dem <em>Schlüsselwort</em> <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
@@ -967,20 +980,43 @@ Dies geschieht mit dem <em>Schlüsselwort</em> <code class="docutils literal not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6715377813995534
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.05898553586719657
 </pre></div>
 </div>
 </div>
 </div>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code> machen wir das Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> unter dem Namen <code class="docutils literal notranslate"><span class="pre">random</span></code> bekannt.
+<p>Mit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+<p>machen wir das Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> unter dem Namen <code class="docutils literal notranslate"><span class="pre">random</span></code> bekannt.
 In der zweiten Zeile des Codes rufen wir die Funktion <code class="docutils literal notranslate"><span class="pre">random</span></code> des Moduls <code class="docutils literal notranslate"><span class="pre">random</span></code> auf.
 Diese kann ohne Argumente aufgerufen werden.</p>
+<p>Wir können dem Modul auch einen anderen Namen verpassen.
+Mit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
+</pre></div>
+</div>
+<p>machen wir das Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> unter dem Namen <code class="docutils literal notranslate"><span class="pre">rnd</span></code> bekannt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
+<span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9480928426336953
+</pre></div>
+</div>
+</div>
+</div>
 <p>Was macht diese Funktion?
 Wenn Sie die obige Zelle mehrfach ausführen werden Sie feststellen, dass sie uns eine zufällige Fließkommazahl zwischen 0 und 1 zurückliefert.</p>
 <p>Funktionen, Module und auch Funktionen von Modulen enthalten oft eine Dokumentation in Form von Kommentaren.
-Wir können uns deshalb Informationen zu dem <strong>Was</strong> (und manchmal auch zu dem <strong>Wie</strong>) einer Funktion holen.
+Wir können uns deshalb Informationen zu dem <strong>WAS</strong> (und manchmal auch zu dem <strong>WIE</strong>) einer Funktion holen.
 Hierzu schreiben wir den Funktionsnamen ohne die runden Klammern und fügen ein <code class="docutils literal notranslate"><span class="pre">?</span></code> an.
-Oder Sie verwenden die Hilfefunktion <code class="docutils literal notranslate"><span class="pre">help</span></code> und übergeben die Funktion: <code class="docutils literal notranslate"><span class="pre">help(random.random)</span></code>.</p>
+Alternativ können Sie auch die Hilfefunktion <code class="docutils literal notranslate"><span class="pre">help</span></code> verwenden: <code class="docutils literal notranslate"><span class="pre">help(random.random)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -1004,13 +1040,13 @@ random() method of random.Random instance
     <span class="n">random</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">interval</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">random()</span> <span class="pre">-&gt;</span> <span class="pre">x</span></code> bedeutet, dass <code class="docutils literal notranslate"><span class="pre">random()</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">x</span></code> zurückgibt, wobei <code class="docutils literal notranslate"><span class="pre">x</span></code> im Intervall <span class="math notranslate nohighlight">\([0;1)\)</span> liegt.
+<p><code class="docutils literal notranslate"><span class="pre">random()</span> <span class="pre">-&gt;</span> <span class="pre">x</span></code> bedeutet, dass <code class="docutils literal notranslate"><span class="pre">random()</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">x</span></code> zurückgibt, wobei <code class="docutils literal notranslate"><span class="pre">x</span></code> im halb offenen Intervall <span class="math notranslate nohighlight">\([0;1)\)</span> liegt.
 In anderen Worten: Die Funktion <code class="docutils literal notranslate"><span class="pre">random()</span></code> liefert einen Wert zwischen 0 und 1 zurück, wobei die 1 ausgeschlossen ist.</p>
 <div class="exercise admonition" id="help-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.2 </span>(Hilfe)</p>
 <div class="section" id="exercise-content">
 <p>Nutzten Sie die eingebaute Hilfe und betrachten Sie die Ausgabe von <code class="docutils literal notranslate"><span class="pre">help(max)</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">max?</span></code>.
-Beschreiben Sie die möglichen Argumente der Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> und das <strong>Was</strong> jener Funktion.
+Beschreiben Sie die möglichen Argumente der Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> und das <strong>WAS</strong> jener Funktion.
 Sie müssen nicht jedes Wort verstehen aber ziehen Sie ihre Schlüsse.</p>
 </div>
 </div>
@@ -1019,7 +1055,7 @@ Sie müssen nicht jedes Wort verstehen aber ziehen Sie ihre Schlüsse.</p>
 <div class="section" id="solution-content">
 <p>Neben der optionalen Argumente erwartet <code class="docutils literal notranslate"><span class="pre">max</span></code> entweder ein iterierbares Argument oder aber mindestens zwei Argumente.
 Im ersten Fall gibt <code class="docutils literal notranslate"><span class="pre">max</span></code> das größte Element des iterierbaren Arguments zurück.
-D.h. ein iterierbares Argument ist wohl so etwas wie eine Sequenz, Liste, Menge an Elementen.</p>
+D.h., ein iterierbares Argument ist wohl so etwas wie eine Sequenz, Liste, Menge an Elementen.</p>
 </div>
 </div>
 </div>
@@ -1040,10 +1076,15 @@ Blicken Sie auf folgenden Ausdruck:</p>
 </div>
 </div>
 <p>Dieser Ausdruck besteht aus mehreren Ausdrücken.
-Die Auswertung des gesamten Ausdrucks erfolgt von innen nach außen.
-Um <code class="docutils literal notranslate"><span class="pre">round</span></code> auszuwerten muss zu aller erst der Ausdruck <code class="docutils literal notranslate"><span class="pre">max(abs(-abs(-3)),</span> <span class="pre">3,</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">-</span> <span class="pre">0.6</span></code> ausgewertet werden.
+Die Auswertung des gesamten Ausdrucks erfolgt von links nach rechts, wobei die notwendigen Argumente, welche durch einen Ausdruck berechnet werden, ausgewertet werden.
+Deshalb springen wir von Außen nach Innen und werten dann von Innen nach Außen aus.</p>
+<div class="figure align-default" id="fig-eval">
+<a class="reference internal image-reference" href="../../_images/eval.png"><img alt="../../_images/eval.png" src="../../_images/eval.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.19 </span><span class="caption-text">Skizze der Auswertung / Evaluierung des obigen Ausdrucks.</span><a class="headerlink" href="#fig-eval" title="Permalink to this image">¶</a></p>
+</div>
+<p>Um <code class="docutils literal notranslate"><span class="pre">round</span></code> auszuwerten muss zu aller erst der Ausdruck <code class="docutils literal notranslate"><span class="pre">max(abs(-abs(-3)),</span> <span class="pre">3,</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">-</span> <span class="pre">0.6</span></code> ausgewertet werden.
 Deshalb wird <code class="docutils literal notranslate"><span class="pre">max(abs(-abs(-3)),</span> <span class="pre">3,</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">3)</span></code> ausgewertet.
-Um jedoch <code class="docutils literal notranslate"><span class="pre">max</span></code> auszuwerten werden alle Argumente berechnet.
+Um jedoch <code class="docutils literal notranslate"><span class="pre">max</span></code> auszuwerten werden alle Argumente von links nach rechts berechnet.
 Es beginnt mit dem ersten Argument: <code class="docutils literal notranslate"><span class="pre">abs(-abs(-3))</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">abs(-3)</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">3</span></code> und wir erhalten <code class="docutils literal notranslate"><span class="pre">max(3,</span> <span class="pre">3,</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">3)</span></code>.
 Das zweite Argument ist bereits ausgewertet und aus <code class="docutils literal notranslate"><span class="pre">5+3</span></code> wird <code class="docutils literal notranslate"><span class="pre">8</span></code>.
 Schlussendlich wird <code class="docutils literal notranslate"><span class="pre">max(3,</span> <span class="pre">3,</span> <span class="pre">8)</span></code> zu <code class="docutils literal notranslate"><span class="pre">8</span></code>.
@@ -1065,7 +1106,7 @@ Dieser wird ausgewertet und das Ergebnis wird der Variablen zugewiesen.</p>
 </div>
 </div>
 <p>Auch können wir Funktionsausdrücke mit anderen Ausdrucken wie etwa <a class="reference internal" href="2-expressions.html#sec-python-operator-arithmetic"><span class="std std-ref">arithmetische Operatoren</span></a> kombinieren.
-Durch die folgende Abfolge von Ausdrücken berechnen wir den prozentualen Anteil der Einwohner in Deutschland, die in München wohnen auf zwei Nachkommastellen gerundet:</p>
+Durch die folgende Abfolge von Ausdrücken berechnen wir den prozentualen Anteil der Einwohner in Deutschland, die in München wohnen und zwar auf zwei Nachkommastellen gerundet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population_munich</span> <span class="o">=</span> <span class="mi">1_553_373</span>
@@ -1085,7 +1126,7 @@ Durch die folgende Abfolge von Ausdrücken berechnen wir den prozentualen Anteil
 <div class="section" id="das-kennenlernen">
 <h2><span class="section-number">3.3.3. </span>Das Kennenlernen<a class="headerlink" href="#das-kennenlernen" title="Permalink to this headline">¶</a></h2>
 <p>Programmieren beginnt oft mit der Dokumentation von Modulen und Bibliotheken.
-Bevor wir loslegen müssen wir erst in Erfahrung bringen <strong>was</strong> überhaupt möglich ist.
+Bevor wir loslegen müssen wir erst in Erfahrung bringen <strong>WAS</strong> überhaupt möglich ist.
 Welche vordefinierten Funktionen und welche Module gibt es bzw. welche dieser Module könnten für meine Zwecke nützlich sein.</p>
 <p>Selbst nach Jahren an Programmierkenntnissen hört dieser Lernprozess nie auf.
 Ständig werden neue nützliche Module programmiert und auch Sie werden noch irgendwann Ihre eigenen Module implementieren und nutzten.
@@ -1097,7 +1138,7 @@ Dort finden wir eine Funktion <code class="docutils literal notranslate"><span c
 <div class="exercise admonition" id="documentation-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.3 </span>(Dokumentation)</p>
 <div class="section" id="exercise-content">
-<p>Finden Sie die Dokumentation der Funktion <code class="docutils literal notranslate"><span class="pre">random.shuffle</span></code> und beschreiben Sie anhand der Dokumentation das <strong>Was</strong> dieser Funktion.</p>
+<p>Finden Sie die Dokumentation der Funktion <code class="docutils literal notranslate"><span class="pre">random.shuffle</span></code> und beschreiben Sie anhand der Dokumentation das <strong>WAS</strong> dieser Funktion.</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="documentation-solution">
