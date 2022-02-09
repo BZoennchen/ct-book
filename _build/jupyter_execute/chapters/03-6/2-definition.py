@@ -1,15 +1,15 @@
 # Grundlagen
 
-Ok, lasst uns ganz frisch starten, von der Definition einer Funktion bis hin zu ihrer Benutzung!
+Ok, lassen Sie ganz frisch starten, von der Definition einer Funktion bis hin zu ihrer Benutzung!
 
 ## Definition
 
 In ``Python`` definieren wir eine Funktion mit dem Signalwort ``def`` (für Definition).
-Es folgt der Funktionsname und in runden Klammern, getrennt durch Komma, die Argumente der Funktion.
+Es folgt der Funktionsname und in runden Klammern, getrennt durch Komma, die Parameter der Funktion.
 Nach dem ``:`` beginnt der Funktionskörper, welcher eingerückt sein muss!
 
 ```python
-def name_der_funktion(argument1, argument2, ...):
+def name_der_funktion(parameter1, parameter2, ...):
     '''
     An dieser Stelle steht der sog. "docstring".
     Dieser wird ausgegeben wenn help() zur Funktion aufgerufen wird.
@@ -30,7 +30,7 @@ Allerdings liefert eine ``Python``-Funktion immer etwas zurück.
 Sollte die Funktion keinen ``return``-Ausdruck beinhalten oder das Programm in einen Zweig laufen, welcher ohne ein ``return`` endet, so gibt die Funktion ``None`` zurück.
 
 Der Name für ``name_der_funktion`` darf frei vergeben werden.
-Jedoch achtet man in der Programmierung stets auf **sprechende** Funktions- und Argumentnamen.
+Jedoch achtet man in der Programmierung stets auf **sprechende** Funktions- und Parameternamen.
 Vergleichen Sie:
 
 def dddd(something, l):
@@ -51,10 +51,11 @@ subtract(5, 6)
 
 Die erste Benennung erschwert das Lesen und Verstehen der Funktion.
 Für die zweite Version müssen wir lediglich auf den Namen ``subtract`` und den kurzen ``docstring`` blicken um zu verstehen was die Funktion tut.
+
 Den ``docstring`` könnten wir uns auch schenken, doch bedenken Sie dass andere Entwickler\*innen, welche Ihren Code benutzten, oft nicht in den Code blicken sondern sich lediglich den ``docstring`` ausgeben lassen.
 
 ```{admonition} Docstrings und Kommentare
-:class: warning
+:class: attention
 
 Nichts ist irreführender als fehlerhafte, widersprüchliche oder schlicht falsche Kommentare!
 ```
@@ -97,14 +98,14 @@ def print42():
     
 print(print42())
 
-## Standardwerte für Argumente
+## Standardargumente für Parameter
 
-Wir können Argumenten auch einen sog. Standardwert verpassen.
-Dieser wird genau dann verwendet, wenn dieses Argument beim Aufruf der Funktion nicht definiert wurde.
+Wir können Parametern auch einen sog. Standardargumente (Standardwerte) verpassen.
+Das Standardargument wird genau dann verwendet, wenn der Wert des Parameters beim Aufruf der Funktion nicht definiert wurde.
 
 Erinnern Sie sich noch an die Funktion ``range()``?
 Diese konnten wir mit einem, zwei, oder drei Argumenten aufrufen.
-Das gelang, weil auch ``range()`` Standardwerte für zwei der drei Argumente festlegt.
+Das gelang, weil auch ``range()`` Standardwerte für zwei der drei Parameter festlegt.
 
 Lassen Sie uns eine Funktion ``lrange(start, stop, step)`` definieren, welche eine Liste bestehend aus dem entsprechenden Zahlenbereich ``range(start, stop, step)`` zurückliefert:
 
@@ -115,15 +116,15 @@ def lrange(start, stop, step):
 lrange(0, 10, 2)
 
 Die Funktion ``lrange()`` verhält sich wie ``range()``, jedoch gibt Sie eine Liste zurück.
-Ohne Standardwerte für die Argumente können wir die Funktion jedoch nicht mit nur einem Argument aufrufen.
+Ohne Standardargumente können wir die Funktion jedoch nicht mit nur einem Argument aufrufen.
 
 lrange(10)
 
-Definieren wir Standardwerte, müssen wir uns überlegen welche Werte sinnvoll sind.
-Was soll also passieren wenn wir beim Funktionsaufruf bestimmte Argumente weglassen?
+Definieren wir Standardargumente, müssen wir uns überlegen welche Werte sinnvoll sind.
+Was soll also passieren wenn wir beim Funktionsaufruf bestimmte Parameter weglassen?
 
-Standardwerte setzten wir durch eine Zuweisung im Funktionskopf.
-Dabei müssen alle Argumente mit Standardwerten **hinten stehen!** 
+Standardargumente setzten wir durch eine Zuweisung im Funktionskopf.
+Dabei müssen alle Parameter mit Standardargumenten **hinten stehen!** 
 Folgender Code wird ebenfalls zu einem Fehler führen:
 
 def lrange(start=0, stop, step=1):
@@ -132,7 +133,7 @@ def lrange(start=0, stop, step=1):
 
 lrange(0, 10, 2)
 
-Wir müssen die Reihenfolge der Argumente verändern (und diese Änderung auch beim Aufruf der Funktion berücksichtigen):
+Wir müssen die Reihenfolge der Parameter verändern (und diese Änderung auch beim Aufruf der Funktion berücksichtigen):
 
 def lrange(stop, start=0, step=1):
     numbers = list(range(start, stop, step))
@@ -151,15 +152,15 @@ Um den Code besser lesen zu können macht es hin und wieder Sinn, diese Schreibw
 
 lrange(stop=10, start=0, step=2)
 
-Verwenden wir diese Schreibweise, können wir auch die Reihenfolge der Argumente missachten:
+Verwenden wir diese Schreibweise, können wir auch die Reihenfolge der Parameter missachten:
 
 lrange(start=0, stop=10, step=2)
 
-Lassen Sie sich nicht verwirren wenn wir einem Argument eine Variable zuweisen die denselben Namen trägt:
+Lassen Sie sich nicht verwirren wenn wir einem Parameter eine Variable zuweisen, die denselben Namen trägt:
 
 start = 0
 lrange(start=start, stop=10, step=2)
 
 Diese beiden Variablen mit dem Namen ``start`` sind nicht dieselben Variablen.
-Das linke ``start`` ist das Argument welches die Funktion schlussendlich verwendet und das rechte ``start`` ist die Variable, die wir zuvor definiert haben.
+Das linke ``start`` ist der Parameter welches die Funktion schlussendlich verwendet und das rechte ``start`` ist das Argument, welches wir zuvor definiert haben.
 Wir setzten beim Aufruf die Adresse des linken ``start`` auf die Adresse des rechten ``start``.

@@ -7,17 +7,23 @@ Nehmen Sie nur das Nachschlagen einer Telefonnummer im Telefonbuch (falls Sie so
 
 Auch ganz alltägliche Dinge wie der Abwasch, Zähneputzen, Kochen, ja nahezu jede Aktion beinhaltet die eine oder andere Art der Wiederholung.
 
-Wie sich gezeigt hat, können wir interessanterweise durch diese langweiligen Wiederholungen ganz erstaunliche Dinge vollbringen. **Wiederholung ist die Grundlage aller Berechnung.**
+Wie sich gezeigt hat, können wir interessanterweise durch diese langweiligen Wiederholungen ganz erstaunliche Dinge vollbringen. 
+
+```{admonition} Wiederholung
+:class: remark
+
+Wiederholung ist die Grundlage aller Berechnung.
+```
 
 ## Motivation
 
 Lassen Sie uns einmal auf unseren Roboter blicken.
 Dieser bewegt sich auf einem Gitter.
 Jeder Gitterpunkt ist entweder begehbar oder durch ein Hindernis belegt.
-Der Roboter kann nur nach Vorne laufen und sich nach links um 90 Grad drehen.
+Der Roboter kann nur nach vorne laufen und sich nach links um 90 Grad drehen.
 Eine genauere Beschreibung des Roboters und seiner Welt finden Sie in der Übung [Roboterwelt](sec-robo-world).
 
-Die Folgende Welt enthält unseren Roboter (türkis), das Ziel (gelb), begehbare Zellen (lila) und unbegehbare Hindernisse (blau).
+Die folgende Welt enthält unseren Roboter (türkis), das Ziel (gelb), begehbare Zellen (lila) und unbegehbare Hindernisse (blau).
 
 import roboworld as rw
 
@@ -25,7 +31,8 @@ world = rw.complex_maze(nrows=5, ncols=7)
 world.show()
 
 Wir sollen nun einen Algorithmus entwerfen, welcher den Roboter zum Ziel führt (sofern dies möglich ist).
-Diese Aufgabe scheint überwältigend schwierig.
+Diese Aufgabe scheint überwältigend schwierig!
+
 Wir verwenden das ``random``-Modul um einen *fairen Münzwurf* zu simulieren.
 Zudem verwenden wir lediglich folgende Methoden des Roboters:
 + ``turn_left()``
@@ -64,7 +71,7 @@ Der Algorithmus ist sehr einfach und benötigt unter Umständen sehr viel Rechen
 Dennoch zeigt dieses Beispiel, dass die Wiederholung von einfachen Befehlen zu komplexen Lösungen führen können!
 
 ```{admonition} Wiederholung und Codekomplexität
-:class: hint
+:class: remark
 *Wiederholung* trennt den Aufwand zum Lösen einer Aufgabe von der Komplexität des Codes.
 Eine Berechnung kann enorm aufwendig sein und dennoch benötigen wir wenig Denkarbeit (wenig Code) um einen Algorithmus für die Lösung zu entwerfen!
 ```
@@ -72,7 +79,7 @@ Eine Berechnung kann enorm aufwendig sein und dennoch benötigen wir wenig Denka
 (sec-for)=
 ## Die ``for``-Schleife
 
-Die ``for``-Schleife verwenden wir immer dann, wenn wir (zur Laufzeit) wissen wie viele Wiederholungen wir **maximal** benötigen.
+Die ``for``-Schleife verwenden wir immer dann, wenn wir (zur Laufzeit) vor dem Eintritt in die Wiederholung wissen, wie viele Wiederholungen wir **maximal** benötigen.
 Dabei wollen wir entweder
 
 1. für eine bestimmte Anzahl $n \in \mathbb{N}$, oder
@@ -96,7 +103,7 @@ Der Name der *Zählervariable* (hier ``i``) kann frei gewählt werden, allerding
 for i in range(10):
     print(i**2)
 
-Will man andeutet, dass die *Zählervariable* nicht benötigt wird, so verwendet man den ``_`` als ihren Namen.
+Will man andeutet, dass die *Zählervariable* nicht benötigt wird, so verwendet man den Unterstrich ``_`` als ihren Namen.
 
 for _ in range(10):
     print('42 ist die Antwort!')
@@ -119,10 +126,11 @@ for name in names:
 ``range()`` ist, genau wie eine Liste und ein Tupel, auch eine *Sequenz*.
 Eine ``for``-Schleife läuft über die Einträge einer *Sequenz* oder anderer *iterierbarer* Strukturen.
 
-Es kann durchaus sein, dass wir die ``for``-Schleife auch dann verwenden, wenn nicht genau klar ist wie viele Wiederholungen wir benötigen, sondern nur klar ist, wie viele Wiederholungen wir **maximal** benötigen.
+Es kann durchaus sein, dass wir die ``for``-Schleife auch dann verwenden, wenn nicht genau klar ist wie viele Wiederholungen wir benötigen.
+Ist uns bekannt wie viele Wiederholungen wir **maximal** benötigen ist dies kein Problem.
 
 Nehmen wir den Test ob eine Zahl $n$ eine Primzahl ist.
-Ein einfacher Algorithmus für den Test, testet für jede Zahl $2 \leq m < n$ ob $m$ die Zahl $n$ teilt.
+Ein einfacher Algorithmus für den Test, testet für jede Zahl $m \in \{2, 3, \ldots, n-1\}$ ob $m$ die Zahl $n$ teilt.
 Wenn dies der Fall ist, ist $n$ keine Primzahl und wir können die Wiederholung stoppen.
 Wir wissen demnach, dass wir maximal $n-m-3$ Wiederholungen benötigen.
 Es könnten jedoch auch weniger sein:
@@ -142,7 +150,7 @@ print(is_prime(83))
 
 Um die ``for``-Schleife frühzeitig zu beenden verwenden wir ``break``.
 Mit ``break`` springen wir aus der **innersten** Schleife heraus.
-Wir könnten stattdessen auch ``return`` verwenden, um aus der Funktion herauszuspringen:
+Wir könnten stattdessen auch ``return`` verwenden, um aus der gesamten Funktion herauszuspringen:
 
 def is_prime(n):
     for i in range(2, n):
@@ -184,7 +192,7 @@ numbers = list(range(10))
 double_even_numbers(numbers)
 
 ```{admonition} Kontrollmechanismen der for-Schleife
-:class: hint
+:class: remark
 Gehen Sie sparsam mit ``break`` und ``continue`` um, oftmals brauchen Sie es nicht!
 ```
 
@@ -196,15 +204,15 @@ Die Wiederholung endet sobald eine bestimmte Bedingung, d.h. ein *logischer Ausd
 ```python
 while P:
     # Codeblock1
-else:
+else: # (optional)
     # Codeblock2
 ```
 
 ``Codeblock2`` wird einmal ausgeführt sobald ``P`` zu ``False`` ausgewertet wird und die ``while``-Schleife verlassen wird, d.h. als letzter Schritt.
 
 ```{admonition} Endlosschleifen
-:class: warning
-Wird ``P`` niemals ``False`` endet die Wiederholung niemals und wir haben eine sog. *Endlosschleife*!
+:class: attention
+Wird ``P`` niemals ``False``, so endet die Wiederholung niemals und wir haben eine sog. *Endlosschleife*!
 ```
 
 i = 0
@@ -215,7 +223,7 @@ else:
     print('end of the while-loop')
 
 ```{admonition} Mächtigkeit der While-Schleife
-:class: important
+:class: theorem
 Jede ``for``-Schleife lässt sich in eine ``while``-Schleife transformieren!
 ```
 
@@ -234,14 +242,14 @@ while i < len(names):
 ``while``-Schleifen sind mächtiger aber auch gefährlicher bzw. oftmals schwerer zu lesen und zu verstehen als ``for``-Schleifen.
 
 ```{admonition} Verwendungskriterium
-:class: hint
+:class: remark
 Verwenden Sie die ``while``-Schleife nur wenn die ``for``-Schleife ungeeignet ist.
 ```
 
 ``break`` und ``continue`` funktionieren für die ``while``-Schleife genauso wie für die ``for``-Schleife.
 
 ```{admonition} Verwendungskriterium While-Schleife
-:class: hint
+:class: remark
 Gehen Sie sparsam mit ``break`` und ``continue`` um, oftmals brauchen Sie es nicht!
 ```
 
@@ -264,7 +272,7 @@ while i < 10:
     if i % 2 == 1:
         print(i)
 
-Oder aber einfach die Zählervariable um zwei statt um eins erhöhen.
+Oder aber Sie erhöhen die Zählervariable um zwei anstatt um eins.
 
 # even better!
 i = 1
@@ -279,14 +287,13 @@ for i in range(1,10,2):
   print(i)
 
 ```{admonition} Verhindern von Endlosschleifen
-:class: hint
+:class: remark
 Prüfen Sie immer ob Ihre Bedingung ``P`` durch den Schleifenrumpf garantiert irgendwann ``False`` ergibt!
 ```
 
-
 ## Beispiel (ggT)
 
-Lassen Sie uns Euklid's Algorithmus ``gcd(m,n)`` zum finden des Größter gemeinsamer Teiler (ggT) zweier ganzer Zahlen von $m$ und $n$ implementieren.
+Lassen Sie uns [Euklid's Algorithmus](sec-euclid-alg) ``gcd(m,n)`` zum finden des Größter gemeinsamer Teiler (ggT) zweier ganzer Zahlen von $m$ und $n$ erneut implementieren.
 
 Euklid's Algorithmus geht wie folgt vor:
 

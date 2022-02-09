@@ -13,6 +13,7 @@ Das heißt, ab dieser Zeit verblasste die Vorstellung von der Kombination rein a
 
 Heute verbinden wir mit Algorithmus Begriffe wie Rezept, Berechnungsvorschrift, Prozess, Prozedur, Methode, Routine und so weiter.
 
+(sec-euclid-alg)=
 ## Euklid's Algorithmus
 
 Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: *Euklid's Algorithmus*.

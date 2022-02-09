@@ -833,20 +833,22 @@
   <div class="section" id="primitive-datentypen-in-python">
 <span id="sec-primitive-data-types-in-python"></span><h1><span class="section-number">5.5. </span>Primitive Datentypen in Python?<a class="headerlink" href="#primitive-datentypen-in-python" title="Permalink to this headline">¶</a></h1>
 <p>Jetzt kommen wir zu einer Besonderheit in <code class="docutils literal notranslate"><span class="pre">Python</span></code>, welche Sie als Anfänger erst einmal ignorieren können.
-Dennoch möchten wir Sie Ihnen nicht vorenthalten und auch kein Halbwissen vermitteln!</p>
+Dennoch möchten wir Sie Ihnen nicht vorenthalten und auch kein Halbwissen vermitteln!
+Wir haben es auch bereits angesprochen.</p>
 <p>Sie vermuten wohl zurecht, dass <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> <a class="reference internal" href="4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> sind und Sie lägen bei vielen anderen Programmiersprachen richtig, doch in <code class="docutils literal notranslate"><span class="pre">Python</span></code> gibt es gar keine primitiven Datentypen.
 Das ist für Anfänger verwirrend!
 Wie kann es keine primitive Datentypen geben?
 Irgendwann muss sich doch ein Datentyp nicht mehr weiter zerlegen lassen?
-Und weshalb ist eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> kein <em>primitiver Datentyp</em>?</p>
-<div class="warning admonition" id="alert-datatypes-python">
+Und weshalb ist eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> kein primitiver Datentyp?</p>
+<div class="attention admonition" id="alert-datatypes-python">
 <p class="admonition-title">Datentypen in Python</p>
 <p>Es gibt in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine primitiven Datentypen!</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> kapselt die primitiven Datentypen für uns Programmierer*innen.
 Zu unserem eigenen Schutz können wir auf diese nicht direkt zugreifen und mit ihnen nicht direkt arbeiten.
-Hinter dem Datentyp <code class="docutils literal notranslate"><span class="pre">int</span></code> verbirgt sich ein zusammengesetzter Datentyp, der es uns leichter macht mit ganzen Zahlen umzugehen.
-Implementiert ist dieser Datentyp in der Programmiersprache <code class="docutils literal notranslate"><span class="pre">C++</span></code> und <code class="docutils literal notranslate"><span class="pre">Python</span></code> ruft am Ende des Tages <code class="docutils literal notranslate"><span class="pre">C++</span></code>-Code auf.
+Hinter dem Datentyp <code class="docutils literal notranslate"><span class="pre">int</span></code> verbirgt sich ein <a class="reference internal" href="../03-4/1-data-types.html#def-atomare-data-types"><span class="std std-ref">atomarer Datentyp</span></a>, der es uns leichter macht mit ganzen Zahlen umzugehen.
+Implementiert ist dieser Datentyp in der Programmiersprache <code class="docutils literal notranslate"><span class="pre">C++</span></code>.
+<code class="docutils literal notranslate"><span class="pre">Python</span></code> ruft am Ende des Tages <code class="docutils literal notranslate"><span class="pre">C++</span></code>-Code auf.
 Die Implementierung von <code class="docutils literal notranslate"><span class="pre">int</span></code> findet sich in den folgenden Dateien (<strong>bitte lassen Sie sich davon nicht abschrecken, Sie müssen diesen Code nicht verstehen!</strong>)</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/python/cpython/blob/main/Objects/longobject.c">longobject.c</a></p></li>
@@ -857,10 +859,10 @@ Die Implementierung von <code class="docutils literal notranslate"><span class="
 Deshalb ist es, anders als in vielen anderen Sprachen, in <code class="docutils literal notranslate"><span class="pre">Python</span></code> möglich mit sehr großen ganzen Zahlen zu rechnen.
 Wäre <code class="docutils literal notranslate"><span class="pre">int</span></code> ein primitiver Datentyp, wie etwa in <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>, so würde ein <code class="docutils literal notranslate"><span class="pre">int</span></code> Wert immer gleich viel Speicherplatz belegen.
 Ob im Speicher eine <code class="docutils literal notranslate"><span class="pre">5</span></code> oder eine <code class="docutils literal notranslate"><span class="pre">1000</span></code> steht ist für den Speicherplatz den diese Werte verbrauchen egal.</p>
-<p>Wie alle Datentypen in <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist auch <code class="docutils literal notranslate"><span class="pre">str</span></code> ein zusammengesetzter Datentyp.
-Anders als in vielen anderen Sprachen gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keinen Datentyp für ein einzelnes Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code>.
-Ein einzelnes Zeichen ist in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Zeichenkette der Länge 1.
-Dennoch ist <code class="docutils literal notranslate"><span class="pre">str</span></code> kein primitiver Datentyp.</p>
+<p>Eine Zeichenkette <code class="docutils literal notranslate"><span class="pre">str</span></code> ist in <code class="docutils literal notranslate"><span class="pre">Python</span></code> ein <a class="reference internal" href="../03-4/1-data-types.html#def-data-structures"><span class="std std-ref">zusammengesetzter Datentyp</span></a>.
+Wir haben keine Möglichkeit auf den Datentyp der das einzelne Zeichen repräsentiert zuzugreifen.
+D.h., anders als in vielen anderen Sprachen gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keinen Datentyp für ein einzelnes Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code>.
+Ein einzelnes Zeichen ist in <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Zeichenkette der Länge 1.</p>
 </div>
 
     <script type="text/x-thebe-config">

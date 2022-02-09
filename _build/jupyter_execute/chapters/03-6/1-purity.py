@@ -9,8 +9,8 @@ Den Begriff 'Funktion' kennen wir aus der Mathematik, z.B. ist
 
 $$f(x) = 2 \cdot x + 3$$
 
-eine mathematische Funktion.
-Sind wir pedantisch oder geht der Definitions- und Wertebereich nicht aus dem Kontext hervor, so geben wir bei einer Funktion $f$ üblicherweise diese beiden Mengen an, z.B.
+eine [mathematische Funktion](sec-math-function).
+Sind wir pedantisch oder geht der Definitions- und Wertebereich nicht aus dem Kontext hervor, so geben wir bei einer Funktionsdefinition üblicherweise diese beiden Mengen an, z.B.
 
 $$f : \mathbb{R} \rightarrow \mathbb{R}$$
 
@@ -28,7 +28,7 @@ Wir bringen das Abstrakte in die echte Welt.
 Funktionen, welche Funktionen im mathematischen Sinne sind, bezeichnet man als [reine Funktionen](def-pure-function) (engl. *pure Functions*).
 
 ```{admonition} Reine Funktionen
-:class: warning
+:class: attention
 
 *Unreine Funktionen* zu definieren sollte einen wichtigen Grund haben, andernfalls sind *reine Funktionen* zu bevorzugen! 
 ```
@@ -41,9 +41,10 @@ Sie erhält einen oder mehrere Argumente und gibt ein Ergebnis zurück -- das is
 
 In ``Python`` und nahezu allen anderen Programmiersprachen gibt es jedoch Dinge die sich ändern können, nämlich zusammengesetzte Datentypen bzw. *Datenstrukturen*.
 Und niemand verbietet uns diese *Datenstrukturen* innerhalb einer Funktion zu verändern.
+
 Zum Beispiel löscht folgende ``Python``-Funktion das letzte Element aus einer Liste.
-Sie hat kein ``return``-Ausdruck und gibt deshalb ``None`` zurück.
-Allerdings verändert Sie die übergebene Liste ``mylist``!
+Sie hat keinen ``return``-Ausdruck und gibt deshalb ``None`` zurück.
+Allerdings verändert sie die übergebene Liste ``mylist``!
 
 def remove_last(mylist):
     del mylist[-1]

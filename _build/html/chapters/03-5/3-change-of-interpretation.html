@@ -888,32 +888,35 @@ In der zweiten Zeile weisen wir die Zeichenkette <code class="docutils literal n
 <p>Würden wir uns die Bits der Speicherbereiche der Variablen <code class="docutils literal notranslate"><span class="pre">number</span></code> und <code class="docutils literal notranslate"><span class="pre">characters</span></code> anzeigen, so wären diese Bits <strong>nicht</strong> identisch.
 Die Bits welche die Zahl 90 ergeben, d.h. <span class="math notranslate nohighlight">\(90_{10} = 01011010_2\)</span> ergeben in der von <code class="docutils literal notranslate"><span class="pre">Python</span></code> gewählten Interpretation (ASCII) <strong>nicht</strong> die Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code>.
 Auch die Datentypen der beiden Variablen sind unterschiedlich.
-<code class="docutils literal notranslate"><span class="pre">characters</span></code> ist eine sogenannte Zeichenkette (String <code class="docutils literal notranslate"><span class="pre">str</span></code>) und <code class="docutils literal notranslate"><span class="pre">number</span></code> eine ganze Zahl (Integer <code class="docutils literal notranslate"><span class="pre">int</span></code>).</p>
+<code class="docutils literal notranslate"><span class="pre">characters</span></code> ist eine <a class="reference internal" href="../03-4/7-string.html#sec-string"><span class="std std-ref">Zeichenkette</span></a> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) und <code class="docutils literal notranslate"><span class="pre">number</span></code> eine <a class="reference internal" href="../03-4/2-int.html#sec-int"><span class="std std-ref">ganze Zahl</span></a> (<code class="docutils literal notranslate"><span class="pre">int</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; tpye of number </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; tpye of characters </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">characters</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; type of number </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; type of characters </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">characters</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> tpye of number &lt;class &#39;int&#39;&gt;
- tpye of characters &lt;class &#39;str&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> type of number &lt;class &#39;int&#39;&gt;
+ type of characters &lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>In diesem Beispiel wechseln wir nicht nur die Interpretation von ‘interpretiere Bits als Zahl’ auf ‘interpretiere Bits als Zeichenkette’ sondern auch den <strong>Wert</strong> – die Bits werden ebenfalls verändert.
-Mit <code class="docutils literal notranslate"><span class="pre">str(90)</span></code> sagen wir <code class="docutils literal notranslate"><span class="pre">Python</span></code>: Bitte mach uns aus der Zahl 90 die Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code>.
-Es wird außerdem klar, dass wir eine Zahl in ihrer Gestalt als <code class="docutils literal notranslate"><span class="pre">int</span></code> gar nicht ausgeben können!
+<p>In diesem Beispiel wechseln wir nicht nur die <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> von ‘interpretiere Bits als Zahl’ auf ‘interpretiere Bits als Zeichenkette’ sondern auch den <strong>Wert</strong> – die Bits werden ebenfalls verändert.
+Mit <code class="docutils literal notranslate"><span class="pre">str(90)</span></code> sagen wir <code class="docutils literal notranslate"><span class="pre">Python</span></code>: Bitte mach uns aus der Zahl 90 die Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code>.</p>
+<p>Es wird außerdem klar, dass wir eine Zahl in ihrer Gestalt als <code class="docutils literal notranslate"><span class="pre">int</span></code> gar nicht ausgeben können!
 Stattdessen wird diese immer erst in eine Zeichenkette umgewandelt.
 Die Funktion <code class="docutils literal notranslate"><span class="pre">print</span></code> sorgt dafür, dass sowohl der Inhalt von <code class="docutils literal notranslate"><span class="pre">number</span></code> als auch <code class="docutils literal notranslate"><span class="pre">90</span></code> in die Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code> umgewandelt werden.</p>
 <p>Mit Ausnahme der <a class="reference internal" href="../03-3/2-expressions.html#sec-bit-operations"><span class="std std-ref">Bitoperationen</span></a> bieten Hochsprachen wie <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> bewusst kaum die Möglichkeit direkt mit den Bits im Speicher zu interagieren.
 Wir ändern Zahlen, Text und anderes und die Hochsprachen kümmern sich darum, dass die Werte im Speicher dementsprechend angepasst werden.
 Diese Abstraktion schützt Programmierer*innen vor Fehlern und erhöht die Lesbarkeit des Quellcodes.
-Es macht keinen Sinn eine Bitfolge die erst als Text interpretiert wird, auf einmal als Zahl zu interpretieren.</p>
-<p>Eine Dezimalzahl als Binärzahl zu interpretieren kann durchaus Sinn ergeben.
-Deshalb stellen die Bitoperationen eine Ausnahme dar.
+Es macht keinen Sinn eine Bitfolge, die erst als Text interpretiert wird, auf einmal als Zahl zu interpretieren.</p>
+<p>Die Art und Weise wie Werte im Speicher bei der Typumwandlung verändert werden ist für uns Menschen gemacht.
+Würden wir lieber in der Binärdarstellung unsere Zahlen betrachten, wäre es besser wenn die Zahl <code class="docutils literal notranslate"><span class="pre">90</span></code> auch als Binärzahl ausgegeben wird.
+Dies ist allerdings im Allgemeinen (noch) nicht der Fall.</p>
+<p>Eine Dezimalzahl als Binärzahl zu interpretieren kann dennoch in besonderen Fällen Sinn ergeben.
+Einen solchen Fall stellen die Bitoperationen dar.
 Die folgende Bitverschiebung manipuliert einen Bereich des Speichers direkt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -939,8 +942,8 @@ Folgender Code führt zu einem Fehler, da er kaum einen Sinn oder Nutzten hat:</
 Auch in diesen Sprachen ist es gute Praxis, dies nicht zu tun, obwohl es theoretisch möglich ist.
 Hier kann man Diskutieren was besser ist: Alles erlauben um maximale Freiheit zu gewährleisten oder Programmierer*innen einschränken, um sie zu schützen.</p>
 <p>Wir können das Zeichen <code class="docutils literal notranslate"><span class="pre">'a'</span></code> mit der Funktion <code class="docutils literal notranslate"><span class="pre">ord</span></code> in eine Zahl umwandeln.
-Das Ergebnis hängt mit der von <code class="docutils literal notranslate"><span class="pre">Python</span></code> gewählten Interpretation (ASCII) zusammen.
-Daraufhin können wir den Bitshift durchführen und die Zahl mit <code class="docutils literal notranslate"><span class="pre">chr</span></code> wieder in ein Zeichen zurück transformieren.</p>
+Das Ergebnis hängt mit der von <code class="docutils literal notranslate"><span class="pre">Python</span></code> gewählten <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> (ASCII) zusammen.
+Daraufhin können wir die Bitverschiebung durchführen und die Zahl mit <code class="docutils literal notranslate"><span class="pre">chr</span></code> wieder in ein Zeichen zurück transformieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>
@@ -956,7 +959,7 @@ Daraufhin können wir den Bitshift durchführen und die Zahl mit <code class="do
 <p>Wir erhalten ein neues Zeichen: Ein <code class="docutils literal notranslate"><span class="pre">'Â'</span></code>, können wir das irgendwo gebrauchen?
 Das ist zu bezweifeln und selbst wenn, ist dieser Code besser lesbar, da wir explizit die Anweisung zur Umwandlung in eine Zahl angeben.</p>
 <p>Ändern wir in einer Hochsprache die Interpretation, so ändert sich meist auch der Wert im Speicher, da es meistens anders keinen Sinn macht und wir genau das erreichen wollen.
-Hochsprachen lösen uns von den Bits und Byte, stattdessen betrachten wir Zahlen in der Dezimalschreibweise.
+Hochsprachen lösen uns von den <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="../02-1/2-representation.html#def-byte"><span class="std std-ref">Byte</span></a>, stattdessen betrachten wir Zahlen in der Dezimalschreibweise.
 Vergessen wir einmal die Bits im Speicher und achten nur auf die Zahl <code class="docutils literal notranslate"><span class="pre">90</span></code> im obigen Beispiel, so können wir sagen dass sich der Wert <code class="docutils literal notranslate"><span class="pre">90</span></code> nicht ändern.
 Was sich ändert ist die Interpretation: Einmal die <code class="docutils literal notranslate"><span class="pre">90</span></code> als Zahl und einmal als Zeichenkette <code class="docutils literal notranslate"><span class="pre">'90'</span></code>.</p>
 </div>

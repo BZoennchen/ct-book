@@ -1,18 +1,24 @@
+(sec-class-and-object)=
 # Klassen und Objekte
 
 Eine *Klasse* ist die Blaupause seiner *Objekte*.
-Sie ist ein *zusammengesetzter Datentyp* welche *Methoden* enthält, die allesamt auf jenen Datentyp angewendet werden sollen.
-Eine *Klasse* definiert somit ein Bündel aus **Daten** und **Funktionen** (welche wir *Methoden* nennen).
-Und ein *Objekt* ist eine konkrete *Instanz* einer *Klasse*, d.h. eine Variable eines *zusammengesetzte Datentyp* belegt mit bestimmten Werten.
+
+```{admonition} Klassen
+:class: definition
+Eine Klasse ist ein *zusammengesetzter Datentyp* der *Methoden* definiert, die allesamt auf Werte des eigenen Typs angewendet werden können.
+Eine *Klasse* definiert eine Blaupause für ein Bündel aus **Daten** und **Funktionen**, welche wir *Methoden* nennen.
+```
+
+Und ein *Objekt* ist eine konkrete *Instanz* einer *Klasse*, d.h. eine Variable eines *zusammengesetzte Datentyp* belegt mit bestimmten Werten und ausgestattet mit Methoden der Klasse.
 
 ```{admonition} Objekte in Python
-:class: important
+:class: attention
 In ``Python`` ist alles (auch Werte von atomaren Datentypen) ein Objekt.
 ```
 
-Von einem *Objekt* gibt es nur eine *Klasse*, doch gibt es viele *Objekte* dieser *Klasse*.
+Es kann viele *Objekte* einer *Klasse* geben.
 Jedes *Objekt* liegt als *Datenbündel* im Speicher.
-Jedes Objekt einer bestimmten Klasse beinhaltet andere Werte, jedoch sind die Methoden allesamt die gleichen.
+Jedes Objekt einer bestimmten Klasse beinhaltet andere Werte, doch sind die Methoden aller Objekte einer Klasse [identisch](def-identity).
 
 ## Klassen
 
@@ -30,32 +36,35 @@ class ClassName(Superclass):
 
 Ähnlich wie eine Funktion, müssen wir eine Klasse zuerst definieren bevor wir sie nutzten können.
 Doch anders als Funktionen, schreibt man Klassennamen (hier ``ClassName``) in [CamelCase/CamelCaps](https://en.wikipedia.org/wiki/Camel_case).
-``superclass`` ist optional und ist die Klasse von der ``ClassName`` *erbt*.
+``Superclass`` ist optional und ist die Klasse von der ``ClassName`` *erbt*.
 Was das bedeutet, werden wir im Abschnitt [Vererbung](sec-inheritance) besprechen.
 
 Methoden der Form ``__method_name__()``, sind spezielle ``Python``-Methoden die eine vordefinierte Bedeutung besitzen.
 Die voran- und nachgestellten doppelten Unterstriche deuten an, dass diese Methoden für spezielle Zwecke reserviert sind.
 ``__init__()`` wird ausgeführt sobald ein Objekt der Klasse instanziiert / erzeugt wurde.
-Genau genommen ist ``__init__()`` nicht der Konstruktor](def-constructor), sondern wird direkt nach dem Konstruktor aufgerufen.
+Genau genommen ist ``__init__()`` nicht der [Konstruktor](def-constructor), sondern wird direkt nach dem Konstruktor aufgerufen.
+
 In ``Python`` definieren wir den Konstruktor nicht explizit.
 ``__init__()``  füllt das Objekt mit seinen Daten bevor das Objekt benutzt wird.
 
 ```{admonition} Konstruktor
 :name: def-constructor
+:class: definition
 Als *Konstruktor* bezeichnen wir eine spezielle Methode einer Klasse, die beim Erzeugen des Objekts der Klasse aufgerufen wird.
-Die Methode erzeugt das Objekt, d.h., diese Methode reserviert Speicher und legt es das Objekt in den Arbeitsspeicher an die entsprechende Speicheradresse.
+Die Methode erzeugt das Objekt, d.h., diese Methode reserviert Speicher und legt es das Objekt in den Arbeitsspeicher, an die entsprechende Speicheradresse.
 ```
 
 Die Methode ``other_method`` ist eine Funktion des Objekts der Klasse ``ClassName``.
-Es wird Ihnen aufgefallen sein, dass jede der Methoden als erstes Argument ``self`` definiert.
-Jede Klassenmethode muss dieses Extraargument ``self`` besitzen.
-Dieses Argument referenziert das Objekt **selbst**.
-Durch dieses ``self`` können wir auf alle Attribute und Methoden des Objektes zugreifen (auch die privaten).
-Greifen wir auf Attribute oder Methoden des Objekts zu, so müssen wir den Weg über das ``self``-Argument gehen.
+
+Es wird Ihnen aufgefallen sein, dass jede der Methoden als ersten Parameter ``self`` definiert.
+Jede Klassenmethode muss diesen Extraparameter ``self`` besitzen.
+Der Wert dieses ersten Parameters wird automatisch mit dem Objekt **selbst** initialisiert.
+Durch dieses ``self`` können wir auf alle Attribute und Methoden des Objekts zugreifen (auch die privaten).
+Greifen wir auf Attribute oder Methoden des Objekts zu, so müssen wir den Weg über den ``self``-Parameter gehen.
 
 Blicken wir auf ein Beispiel.
 Wir definieren eine neue Klasse ``Student`` mit den *Attributen* ``sid`` (id der Studierenden), ``name``, ``type`` und ``age``.
-Wir definieren eine Methode ``say_name`` welche uns einen Text über den Studierenden ausgibt.
+Wir definieren eine Methode ``say_name`` welche Informationen über den Studierenden ausgibt.
 Alle Attribute bis auf ``type`` werden bei der Objekterzeugung übergeben.
 
 class Student():
@@ -70,7 +79,7 @@ class Student():
 
 Sie sehen wie wir über ``self.attributename`` auf die *Attribute* des Objekts zugreifen können.
 Für Methoden gilt diese Regel ebenso.
-Lassen Sie uns das veranschaulichen indem wir unsere Klasse um eine weitere Methode ``report`` erweitern.
+Lassen Sie uns dies veranschaulichen, indem wir unsere Klasse um eine weitere Methode ``report`` erweitern.
 
 class Student():
     def __init__(self, sid, name, age):
@@ -90,7 +99,7 @@ class Student():
 
 ``report`` ruft die Methode ``say_name`` durch ``self.say_name()`` auf.
 Beachten Sie, dass wir das ``self`` **nicht** als Argument übergeben müssen!
-Der Interpreter wandelt im Grunde ``self.say_name()`` zu ``say_name(self)`` um.
+Der Interpreter wandelt ``self.say_name()`` zu ``say_name(self)`` um.
 
 In ``report`` übergeben wir ein weiteres Argument ``score``, welches wir wie gewöhnt durch seinen Namen ansprechen können.
 
@@ -101,6 +110,11 @@ Die *Klasse* ist der *Datentyp* und das Objekt ist ein *Wert* vom Typ der Klasse
 Wir können viele verschiedene und auch gleiche *Objekte* einer *Klasse* erzeugen.
 Die Klasse können wir als den Bauplan der Objekte verstehen.
 
+```{admonition} Objekte
+:class: definition
+Ein *Objekt* ist eine konkrete Instanz einer Klasse.
+```
+
 Rufen wir Methoden eines Objekts auf, müssen wir das erste spezielle ``self``-Argument nicht angeben.
 Eine Methode ``methodname`` des Objekts ``objectname`` rufen wir durch
 
@@ -109,10 +123,12 @@ objectname.methodname(arguments)
 ```
 
 auf.
+
 Ein solcher Aufruf wird auch als Nachricht, die wir an einen Empfänger schicken, verstanden.
 Dabei ist die Nachricht gleich ``methodname(arguments)`` und der Empfänger ist das Objekt ``objectname``.
 Diese Analogie wird deutlich wenn wir uns an den Roboter ``robo`` erinnern.
 Diesen haben wir mit der Nachricht ``move()`` gesagt, er solle sich bewegen.
+
 Auch im folgenden Beispiel können wir Methodenaufrufe als Anweisungen oder Nachrichten die an das Objekt gesendet werden verstehen:
 
 student1 = Student("001", "Susan", 24)
@@ -133,10 +149,12 @@ Rufen wir ``report`` auf, so wird intern (innerhalb des Objekts) die Methode ``s
 
 ``self.attributename`` sind *Attribute* des *Objekts*.
 Diese können für jedes Objekt einen anderen Wert besitzen.
+
 *Klassenattribute* sind hingegen *Attribute* einer Klasse und da es nur eine *Klasse* eines bestimmten *Typs* gibt, teilen sich alle *Objekte* einer *Klasse* deren *Klassenattribute*.
 
 Wir definieren *Klassenattribute* indem wir das ``self`` weglassen und diese außerhalb jedweder Methode niederschreiben.
-Um es zu verwenden müssen wir den Klassennamen voranstellen, d.h. ``ClassName.attributename``.
+Um ein Klassenattribute zu verwenden, müssen wir den Klassennamen voranstellen, d.h. ``ClassName.attributename``.
+
 Im folgenden Fall führen wir ein *Klassenattribut* ``n_instances`` ein, welches die Anzahl der erzeugten Objekte der Klasse ``Student`` beinhaltet.
 
 class Student():
@@ -176,7 +194,7 @@ Bei der Erzeugung der Klasse wird ``n_instances`` auf den Wert ``0`` gesetzt.
 Immer wenn wir ein ``Student``-Objekt erzeugen, erhöht sich das *Klassenattribut* ``n_instances`` um eins.
 
 ```{admonition} Klassenattribute
-:class: warning
+:class: attention
 *Klassenattribute* sollten sparsam eingesetzt werden und sollten niemals dazu verwendet werden um das Verhalten eines Objekts zu beeinflussen!
 Das *Verhalten* muss sich stets aus der Kombination von Objektattributen und Methoden ergeben.
 ```

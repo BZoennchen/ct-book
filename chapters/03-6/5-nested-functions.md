@@ -41,6 +41,7 @@ func(3)
 ```
 
 Zu beachten ist, dass dabei der sog. [umschließende Namensraum](sec-local-namespace) ins Spiel kommt.
-Dieser bleibt auch dann am Leben, wenn die *umschließenden Funktion* abgearbeitet wurde.
+Dieser bleibt auch dann am Leben, wenn die *umschließende Funktion* abgearbeitet wurde.
+
 Im obigen Fall existiert das ``z`` aus der Funktion ``f()`` beim Aufruf ``func(3)`` noch und hat den Wert ``5``.
 Der Aufruf ``func(3)`` wird zu ``h(3)`` und dies wird zu ``3 * 3 * 5`` ausgewertet.

@@ -877,18 +877,21 @@
               <div>
                 
   <div class="section" id="klassen-und-objekte">
-<h1><span class="section-number">8.1. </span>Klassen und Objekte<a class="headerlink" href="#klassen-und-objekte" title="Permalink to this headline">¶</a></h1>
-<p>Eine <em>Klasse</em> ist die Blaupause seiner <em>Objekte</em>.
-Sie ist ein <em>zusammengesetzter Datentyp</em> welche <em>Methoden</em> enthält, die allesamt auf jenen Datentyp angewendet werden sollen.
-Eine <em>Klasse</em> definiert somit ein Bündel aus <strong>Daten</strong> und <strong>Funktionen</strong> (welche wir <em>Methoden</em> nennen).
-Und ein <em>Objekt</em> ist eine konkrete <em>Instanz</em> einer <em>Klasse</em>, d.h. eine Variable eines <em>zusammengesetzte Datentyp</em> belegt mit bestimmten Werten.</p>
-<div class="important admonition">
+<span id="sec-class-and-object"></span><h1><span class="section-number">8.1. </span>Klassen und Objekte<a class="headerlink" href="#klassen-und-objekte" title="Permalink to this headline">¶</a></h1>
+<p>Eine <em>Klasse</em> ist die Blaupause seiner <em>Objekte</em>.</p>
+<div class="definition admonition">
+<p class="admonition-title">Klassen</p>
+<p>Eine Klasse ist ein <em>zusammengesetzter Datentyp</em> der <em>Methoden</em> definiert, die allesamt auf Werte des eigenen Typs angewendet werden können.
+Eine <em>Klasse</em> definiert eine Blaupause für ein Bündel aus <strong>Daten</strong> und <strong>Funktionen</strong>, welche wir <em>Methoden</em> nennen.</p>
+</div>
+<p>Und ein <em>Objekt</em> ist eine konkrete <em>Instanz</em> einer <em>Klasse</em>, d.h. eine Variable eines <em>zusammengesetzte Datentyp</em> belegt mit bestimmten Werten und ausgestattet mit Methoden der Klasse.</p>
+<div class="attention admonition">
 <p class="admonition-title">Objekte in Python</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist alles (auch Werte von atomaren Datentypen) ein Objekt.</p>
 </div>
-<p>Von einem <em>Objekt</em> gibt es nur eine <em>Klasse</em>, doch gibt es viele <em>Objekte</em> dieser <em>Klasse</em>.
+<p>Es kann viele <em>Objekte</em> einer <em>Klasse</em> geben.
 Jedes <em>Objekt</em> liegt als <em>Datenbündel</em> im Speicher.
-Jedes Objekt einer bestimmten Klasse beinhaltet andere Werte, jedoch sind die Methoden allesamt die gleichen.</p>
+Jedes Objekt einer bestimmten Klasse beinhaltet andere Werte, doch sind die Methoden aller Objekte einer Klasse <a class="reference internal" href="../03-3/1-variables.html#def-identity"><span class="std std-ref">identisch</span></a>.</p>
 <div class="section" id="klassen">
 <h2><span class="section-number">8.1.1. </span>Klassen<a class="headerlink" href="#klassen" title="Permalink to this headline">¶</a></h2>
 <p>Eine <em>Klasse</em> ist eine Definition eines <a class="reference internal" href="../03-4/1-data-types.html#sec-datastructures"><span class="std std-ref">zusammengesetzten Datentyps</span></a> angereichert mit <em>Methoden</em>, die auf dem Datentyp ausgeführt werden sollen.
@@ -903,28 +906,28 @@ Sie ist ein Codeblock der mit dem <code class="docutils literal notranslate"><sp
 </div>
 <p>Ähnlich wie eine Funktion, müssen wir eine Klasse zuerst definieren bevor wir sie nutzten können.
 Doch anders als Funktionen, schreibt man Klassennamen (hier <code class="docutils literal notranslate"><span class="pre">ClassName</span></code>) in <a class="reference external" href="https://en.wikipedia.org/wiki/Camel_case">CamelCase/CamelCaps</a>.
-<code class="docutils literal notranslate"><span class="pre">superclass</span></code> ist optional und ist die Klasse von der <code class="docutils literal notranslate"><span class="pre">ClassName</span></code> <em>erbt</em>.
+<code class="docutils literal notranslate"><span class="pre">Superclass</span></code> ist optional und ist die Klasse von der <code class="docutils literal notranslate"><span class="pre">ClassName</span></code> <em>erbt</em>.
 Was das bedeutet, werden wir im Abschnitt <a class="reference internal" href="2-inheritance-poly-encap.html#sec-inheritance"><span class="std std-ref">Vererbung</span></a> besprechen.</p>
 <p>Methoden der Form <code class="docutils literal notranslate"><span class="pre">__method_name__()</span></code>, sind spezielle <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Methoden die eine vordefinierte Bedeutung besitzen.
 Die voran- und nachgestellten doppelten Unterstriche deuten an, dass diese Methoden für spezielle Zwecke reserviert sind.
 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> wird ausgeführt sobald ein Objekt der Klasse instanziiert / erzeugt wurde.
-Genau genommen ist <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> nicht der Konstruktor](def-constructor), sondern wird direkt nach dem Konstruktor aufgerufen.
-In <code class="docutils literal notranslate"><span class="pre">Python</span></code> definieren wir den Konstruktor nicht explizit.
+Genau genommen ist <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> nicht der <a class="reference internal" href="#def-constructor"><span class="std std-ref">Konstruktor</span></a>, sondern wird direkt nach dem Konstruktor aufgerufen.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> definieren wir den Konstruktor nicht explizit.
 <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>  füllt das Objekt mit seinen Daten bevor das Objekt benutzt wird.</p>
-<div class="admonition-konstruktor admonition" id="def-constructor">
+<div class="definition admonition" id="def-constructor">
 <p class="admonition-title">Konstruktor</p>
 <p>Als <em>Konstruktor</em> bezeichnen wir eine spezielle Methode einer Klasse, die beim Erzeugen des Objekts der Klasse aufgerufen wird.
-Die Methode erzeugt das Objekt, d.h., diese Methode reserviert Speicher und legt es das Objekt in den Arbeitsspeicher an die entsprechende Speicheradresse.</p>
+Die Methode erzeugt das Objekt, d.h., diese Methode reserviert Speicher und legt es das Objekt in den Arbeitsspeicher, an die entsprechende Speicheradresse.</p>
 </div>
-<p>Die Methode <code class="docutils literal notranslate"><span class="pre">other_method</span></code> ist eine Funktion des Objekts der Klasse <code class="docutils literal notranslate"><span class="pre">ClassName</span></code>.
-Es wird Ihnen aufgefallen sein, dass jede der Methoden als erstes Argument <code class="docutils literal notranslate"><span class="pre">self</span></code> definiert.
-Jede Klassenmethode muss dieses Extraargument <code class="docutils literal notranslate"><span class="pre">self</span></code> besitzen.
-Dieses Argument referenziert das Objekt <strong>selbst</strong>.
-Durch dieses <code class="docutils literal notranslate"><span class="pre">self</span></code> können wir auf alle Attribute und Methoden des Objektes zugreifen (auch die privaten).
-Greifen wir auf Attribute oder Methoden des Objekts zu, so müssen wir den Weg über das <code class="docutils literal notranslate"><span class="pre">self</span></code>-Argument gehen.</p>
+<p>Die Methode <code class="docutils literal notranslate"><span class="pre">other_method</span></code> ist eine Funktion des Objekts der Klasse <code class="docutils literal notranslate"><span class="pre">ClassName</span></code>.</p>
+<p>Es wird Ihnen aufgefallen sein, dass jede der Methoden als ersten Parameter <code class="docutils literal notranslate"><span class="pre">self</span></code> definiert.
+Jede Klassenmethode muss diesen Extraparameter <code class="docutils literal notranslate"><span class="pre">self</span></code> besitzen.
+Der Wert dieses ersten Parameters wird automatisch mit dem Objekt <strong>selbst</strong> initialisiert.
+Durch dieses <code class="docutils literal notranslate"><span class="pre">self</span></code> können wir auf alle Attribute und Methoden des Objekts zugreifen (auch die privaten).
+Greifen wir auf Attribute oder Methoden des Objekts zu, so müssen wir den Weg über den <code class="docutils literal notranslate"><span class="pre">self</span></code>-Parameter gehen.</p>
 <p>Blicken wir auf ein Beispiel.
 Wir definieren eine neue Klasse <code class="docutils literal notranslate"><span class="pre">Student</span></code> mit den <em>Attributen</em> <code class="docutils literal notranslate"><span class="pre">sid</span></code> (id der Studierenden), <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code> und <code class="docutils literal notranslate"><span class="pre">age</span></code>.
-Wir definieren eine Methode <code class="docutils literal notranslate"><span class="pre">say_name</span></code> welche uns einen Text über den Studierenden ausgibt.
+Wir definieren eine Methode <code class="docutils literal notranslate"><span class="pre">say_name</span></code> welche Informationen über den Studierenden ausgibt.
 Alle Attribute bis auf <code class="docutils literal notranslate"><span class="pre">type</span></code> werden bei der Objekterzeugung übergeben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -943,7 +946,7 @@ Alle Attribute bis auf <code class="docutils literal notranslate"><span class="p
 </div>
 <p>Sie sehen wie wir über <code class="docutils literal notranslate"><span class="pre">self.attributename</span></code> auf die <em>Attribute</em> des Objekts zugreifen können.
 Für Methoden gilt diese Regel ebenso.
-Lassen Sie uns das veranschaulichen indem wir unsere Klasse um eine weitere Methode <code class="docutils literal notranslate"><span class="pre">report</span></code> erweitern.</p>
+Lassen Sie uns dies veranschaulichen, indem wir unsere Klasse um eine weitere Methode <code class="docutils literal notranslate"><span class="pre">report</span></code> erweitern.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
@@ -967,7 +970,7 @@ Lassen Sie uns das veranschaulichen indem wir unsere Klasse um eine weitere Meth
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">report</span></code> ruft die Methode <code class="docutils literal notranslate"><span class="pre">say_name</span></code> durch <code class="docutils literal notranslate"><span class="pre">self.say_name()</span></code> auf.
 Beachten Sie, dass wir das <code class="docutils literal notranslate"><span class="pre">self</span></code> <strong>nicht</strong> als Argument übergeben müssen!
-Der Interpreter wandelt im Grunde <code class="docutils literal notranslate"><span class="pre">self.say_name()</span></code> zu <code class="docutils literal notranslate"><span class="pre">say_name(self)</span></code> um.</p>
+Der Interpreter wandelt <code class="docutils literal notranslate"><span class="pre">self.say_name()</span></code> zu <code class="docutils literal notranslate"><span class="pre">say_name(self)</span></code> um.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">report</span></code> übergeben wir ein weiteres Argument <code class="docutils literal notranslate"><span class="pre">score</span></code>, welches wir wie gewöhnt durch seinen Namen ansprechen können.</p>
 </div>
 <div class="section" id="objekte">
@@ -976,17 +979,21 @@ Der Interpreter wandelt im Grunde <code class="docutils literal notranslate"><sp
 Die <em>Klasse</em> ist der <em>Datentyp</em> und das Objekt ist ein <em>Wert</em> vom Typ der Klasse angereichert mit den Methoden, die in der Klasse definiert wurden.
 Wir können viele verschiedene und auch gleiche <em>Objekte</em> einer <em>Klasse</em> erzeugen.
 Die Klasse können wir als den Bauplan der Objekte verstehen.</p>
+<div class="definition admonition">
+<p class="admonition-title">Objekte</p>
+<p>Ein <em>Objekt</em> ist eine konkrete Instanz einer Klasse.</p>
+</div>
 <p>Rufen wir Methoden eines Objekts auf, müssen wir das erste spezielle <code class="docutils literal notranslate"><span class="pre">self</span></code>-Argument nicht angeben.
 Eine Methode <code class="docutils literal notranslate"><span class="pre">methodname</span></code> des Objekts <code class="docutils literal notranslate"><span class="pre">objectname</span></code> rufen wir durch</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">objectname</span><span class="o">.</span><span class="n">methodname</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>auf.
-Ein solcher Aufruf wird auch als Nachricht, die wir an einen Empfänger schicken, verstanden.
+<p>auf.</p>
+<p>Ein solcher Aufruf wird auch als Nachricht, die wir an einen Empfänger schicken, verstanden.
 Dabei ist die Nachricht gleich <code class="docutils literal notranslate"><span class="pre">methodname(arguments)</span></code> und der Empfänger ist das Objekt <code class="docutils literal notranslate"><span class="pre">objectname</span></code>.
 Diese Analogie wird deutlich wenn wir uns an den Roboter <code class="docutils literal notranslate"><span class="pre">robo</span></code> erinnern.
-Diesen haben wir mit der Nachricht <code class="docutils literal notranslate"><span class="pre">move()</span></code> gesagt, er solle sich bewegen.
-Auch im folgenden Beispiel können wir Methodenaufrufe als Anweisungen oder Nachrichten die an das Objekt gesendet werden verstehen:</p>
+Diesen haben wir mit der Nachricht <code class="docutils literal notranslate"><span class="pre">move()</span></code> gesagt, er solle sich bewegen.</p>
+<p>Auch im folgenden Beispiel können wir Methodenaufrufe als Anweisungen oder Nachrichten die an das Objekt gesendet werden verstehen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;001&quot;</span><span class="p">,</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
@@ -1022,11 +1029,11 @@ Rufen wir <code class="docutils literal notranslate"><span class="pre">report</s
 <div class="section" id="klassenattribute">
 <h2><span class="section-number">8.1.3. </span>Klassenattribute<a class="headerlink" href="#klassenattribute" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">self.attributename</span></code> sind <em>Attribute</em> des <em>Objekts</em>.
-Diese können für jedes Objekt einen anderen Wert besitzen.
-<em>Klassenattribute</em> sind hingegen <em>Attribute</em> einer Klasse und da es nur eine <em>Klasse</em> eines bestimmten <em>Typs</em> gibt, teilen sich alle <em>Objekte</em> einer <em>Klasse</em> deren <em>Klassenattribute</em>.</p>
+Diese können für jedes Objekt einen anderen Wert besitzen.</p>
+<p><em>Klassenattribute</em> sind hingegen <em>Attribute</em> einer Klasse und da es nur eine <em>Klasse</em> eines bestimmten <em>Typs</em> gibt, teilen sich alle <em>Objekte</em> einer <em>Klasse</em> deren <em>Klassenattribute</em>.</p>
 <p>Wir definieren <em>Klassenattribute</em> indem wir das <code class="docutils literal notranslate"><span class="pre">self</span></code> weglassen und diese außerhalb jedweder Methode niederschreiben.
-Um es zu verwenden müssen wir den Klassennamen voranstellen, d.h. <code class="docutils literal notranslate"><span class="pre">ClassName.attributename</span></code>.
-Im folgenden Fall führen wir ein <em>Klassenattribut</em> <code class="docutils literal notranslate"><span class="pre">n_instances</span></code> ein, welches die Anzahl der erzeugten Objekte der Klasse <code class="docutils literal notranslate"><span class="pre">Student</span></code> beinhaltet.</p>
+Um ein Klassenattribute zu verwenden, müssen wir den Klassennamen voranstellen, d.h. <code class="docutils literal notranslate"><span class="pre">ClassName.attributename</span></code>.</p>
+<p>Im folgenden Fall führen wir ein <em>Klassenattribut</em> <code class="docutils literal notranslate"><span class="pre">n_instances</span></code> ein, welches die Anzahl der erzeugten Objekte der Klasse <code class="docutils literal notranslate"><span class="pre">Student</span></code> beinhaltet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
@@ -1078,7 +1085,7 @@ We have 2-instance in total
 Doch <code class="docutils literal notranslate"><span class="pre">n_instances</span></code> wird <strong>objektübergreifend</strong> geteilt.
 Bei der Erzeugung der Klasse wird <code class="docutils literal notranslate"><span class="pre">n_instances</span></code> auf den Wert <code class="docutils literal notranslate"><span class="pre">0</span></code> gesetzt.
 Immer wenn wir ein <code class="docutils literal notranslate"><span class="pre">Student</span></code>-Objekt erzeugen, erhöht sich das <em>Klassenattribut</em> <code class="docutils literal notranslate"><span class="pre">n_instances</span></code> um eins.</p>
-<div class="warning admonition">
+<div class="attention admonition">
 <p class="admonition-title">Klassenattribute</p>
 <p><em>Klassenattribute</em> sollten sparsam eingesetzt werden und sollten niemals dazu verwendet werden um das Verhalten eines Objekts zu beeinflussen!
 Das <em>Verhalten</em> muss sich stets aus der Kombination von Objektattributen und Methoden ergeben.</p>

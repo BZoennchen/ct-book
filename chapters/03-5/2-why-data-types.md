@@ -13,19 +13,23 @@ kernelspec:
 (sec-why-data-types)=
 # Existenzberechtigung
 
-Kommen wir noch einmal zurück zu unserer Analogie mit den *Dateiformaten*.
-Weshalb enden PDF-Dokumente mit ``.pdf`` und Bilder mit z.B. ``.png``?
-Ändern wir die Dateiendung oder lassen Sie Weg, so ändert sich der Inhalt der Datei nicht.
+Ziehen wir nochmals den Vergleich zwischen Datentypen und *Dateiformate*.
+
+Weshalb enden PDF-Dokumente mit ``.pdf`` und Bilder mit, z.B., ``.png``?
+Ändern wir die Dateiendung oder lassen Sie weg, so ändert sich der Inhalt der Datei nicht.
 Allerdings kann Ihr Programm zum Lesen von PDFs, ausschließlich PDFs lesen.
 Die Dateiendung ist ein Versprechen, dass es sich bei dieser Datei auch wirklich um eine PDF handelt.
-Zudem leitet Ihr Betriebssystem das öffnen der Datei an ein Programm weiter, welches das entsprechende Dateiformat verarbeiten kann.
+Zudem leitet Ihr Betriebssystem das Öffnen der Datei an ein Programm weiter, welches das entsprechende Dateiformat verarbeiten kann.
 Da das Betriebssystem nicht alle Dateiformate kennen kann (jeden Tag entstehen neue Formate) achtet es auf die Dateiendung.
-Wir als Benutzer können dem Betriebssystem mitteilen, welche Datei mit welchem Programm geöffnet werden soll.
+Wir als Benutzer können dem Betriebssystem mitteilen, welche Datei es mit welchem Programm öffnen soll.
 
-Datentypen existieren aus dem gleichen Grund.
-Sie sind ein verpflichtendes Versprechen, wie der Speicherbereich (die Bits und Byte) der den Wert ergibt aussieht und wie er interpretiert wird.
+Datentypen existieren aus einem ähnlichen Grund.
+Sie sind ein verpflichtendes Versprechen, wie der Speicherbereich (die Bits und Byte), der den Wert ausmacht, aussieht und wie er interpretiert werden muss.
 Funktionen und Operationen verlassen sich auf dieses Versprechen.
-Nur so können Sie Informationen verarbeiten, indem die [Interpretation](sec-interpretation) bekannt ist und auch eingehalten wird.
+
+Informationen können auch wir Menschen nur dann verarbeiten wenn wir uns auf eine [Interpretation](sec-interpretation) einigen, bzw. diese bekannt ist und auch eingehalten wird.
+Genauso verhält es sich mit Programmen und Maschinen.
+
 Zum Beispiel erwartet die Addition ``+`` zwei Zahlen.
 Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl ``int`` oder um eine Fließkommazahl handeln.
 
@@ -54,7 +58,7 @@ tags: [raises-exception]
 3 + 'a' # int + str -> Fehler!
 ```
 
-Der Fehler der durch diesen Code erzeugt wird besagt: ``unsupported operand type(s) for +: 'int' and 'str'``, d.h. diese Kombination aus Datentypen (``int`` und ``str``) wird nicht unterstützt.
+Der Fehler der durch diesen Code erzeugt wird besagt: ``unsupported operand type(s) for +: 'int' and 'str'``, d.h., diese Kombination aus Datentypen (``int`` und ``str``) wird nicht unterstützt.
 Was passiert wenn wir zwei Zeichenketten 'addieren'?
 
 ```{code-cell} python3
@@ -62,8 +66,15 @@ Was passiert wenn wir zwei Zeichenketten 'addieren'?
 ```
 
 Überraschenderweise führt dies nicht zu einem Fehler.
-Wir sprechen hierbei nicht mehr von einer Addition, stattdessen handelt es sich um die sog. Konkatenation (Verkettung) von Zeichenketten.
+Wir sprechen hierbei nicht mehr von einer Addition, stattdessen handelt es sich um die sog. *Konkatenation* (Verkettung) von Zeichenketten.
 In anderen Worten: Es entscheiden die Datentypen darüber, welche Operation der ``+``-Operator definiert bzw. welche Operation ausgeführt wird!
+
+In der [objektorientierten Programmierung](sec-oop) erzielt man dies indem Datentypen nicht nur einen Wert sondern auch Operationen, die auf dem Datentyp ausgeführt werden, definieren.
+Zum Beispiel bietet der Datentyp ``str`` die *Methode* ``count``:
+
+```{code-cell} python3
+'peter'.count('e')
+```
 
 Betrachten wir ein weiteres Beispiel:
 
@@ -78,7 +89,7 @@ max('a','b')
 ```
 
 Wir rufen beide Male die *built-in Funktion* ``max`` auf.
-Einmal ist das Argument eine Liste ``list`` und einmal rufen wir ``max`` mit zwei Argumenten, zwei ganzen Zeichenketten ``str`` auf.
+Einmal ist das Argument eine Liste ``list`` und einmal rufen wir ``max`` mit zwei Argumenten, zwei Zeichenketten ``str`` auf.
 Das Ergebnis ist einmal das größte Element der Liste und einmal das lexikographisch größere Element der beiden Argumente.
 Der Datentyp des Rückgabewerte ist einmal eine ganze Zahl ``int`` und einmal eine Zeichenkette ``str``.
 
@@ -92,7 +103,7 @@ max(3,'b')
 ```
 
 Wir können das an dieser Stelle nicht wissen.
-Es kommt darauf an **wie** die Funktion ``max`` implementiert wurde und **was** sie genau macht.
+Es kommt darauf an **WIE** die Funktion ``max`` implementiert wurde und **WAS** sie genau macht.
 Macht aus Ihrer Sicht ein solcher Aufruf Sinn?
 
 Führen wir den Code aus, so kommt es zu einem weiteren Fehler: ``'>' not supported between instances of 'str' and 'int'``.
@@ -129,19 +140,20 @@ Ist der Wert eine Zeichenkette, so transformieren wir diese in eine ganze Zahl (
 Andernfalls geben wir den Wert zurück (keine Transformation).
 
 Wir sagen der Funktion ``max`` Sie solle doch bitte vor jedem Vergleich die zu vergleichenden Werte durch unsere Funktion ``get_key`` transformieren.
-Was also passiert ist das ``max``
+Dies Funktionalität bietet uns ``max``.
+Somit sieht der Vergleich wie folgt aus
 
 ```{code-cell} python3
 get_key(3) > get_key('b')
 ```
 
-ausführt, also
+also
 
 ```{code-cell} python3
 3 > ord('b')
 ```
 
-und ``ord('b')`` ergibt ``98``.
+Dabei ergibt ``ord('b')`` den Wert ``98``.
 Der Rückgabewert ist eine Zeichenkette ``str``.
 Rufen wir allerdings folgenden Code auf
 

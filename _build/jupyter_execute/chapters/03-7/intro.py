@@ -11,3 +11,7 @@ Es gibt lediglich zwei wesentliche Kontrollstrukturen:
 2. [Schleifen](sec-loops) (führe Codeabschnitt A öfters aus)
 
 Beide Konzepte verwenden wir bereits immerzu in der 'echten' Welt.
+
+Funktionen kontrollieren ebenfalls den Programmablauf.
+Man kann sie auch als Kontrollstrukturen betrachten.
+Diese haben wir jedoch im Kapitel [Funktionen](sec-functions) besprochen.

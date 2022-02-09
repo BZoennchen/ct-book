@@ -1086,11 +1086,11 @@ Wir können uns alle Namen des <em>built-in</em> Namensraums ausgeben lassen:</p
 </div>
 </div>
 </div>
-<p>Sobald er startet, legt der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-<a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> den <em>built-in Namensraum</em> an sobald er startet.
+<p>Sobald er startet, legt der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-<a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> den <em>built-in Namensraum</em> an.
 Die <em>Lebensdauer</em> des Namensraums endet sobald der Interpreter beendet wird.</p>
 </div>
 <div class="section" id="global">
-<h3><span class="section-number">6.3.1.2. </span>Global<a class="headerlink" href="#global" title="Permalink to this headline">¶</a></h3>
+<span id="sec-global-namespace"></span><h3><span class="section-number">6.3.1.2. </span>Global<a class="headerlink" href="#global" title="Permalink to this headline">¶</a></h3>
 <p>Der <em>globale Namensraum</em> beinhaltet alle Namen die auf der Ebene des Hauptprogramms definiert wurden.
 <code class="docutils literal notranslate"><span class="pre">Python</span></code> erzeugt den globalen Namensraum sobald das Hauptprogramm startet.
 Der Namensraum existiert ebenfalls solange der Interpreter noch nicht beendet ist.</p>
@@ -1102,19 +1102,73 @@ Jedes Modul was wir mit <code class="docutils literal notranslate"><span class="
 <p>Wann immer eine Funktion ausgeführt wird, wird ein neuer <em>lokaler Namensraum</em> für diesen Funktionsaufruf erzeugt.
 Die Lebensdauer des Namensraums endet sobald die Funktion verlassen wird oder die Funktion durch einen Fehler abbricht.</p>
 <p>Ein <em>umschließender Namensraum</em> wird hingegen erzeugt, wenn wir innerhalb einer Funktion eine weitere Funktion definieren.
-Das haben wir bis hierher noch nie gemacht, sehen wir uns also ein Beispiel an:</p>
+Das haben wir bis hierher noch nie gemacht, sehen wir uns also ein Beispiel an.
+Der folgende extra kompliziert gestaltete Code veranschaulicht mehrere Konzepte zugleich:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;start f()&#39;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">99</span>
 
     <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;start g()&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x from the enclosing namespace </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y from the enclosing namespace </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;z from the enclosing namespace </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t from the local namespace </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;end g()&#39;</span><span class="p">)</span>
         <span class="k">return</span>
     
-    <span class="n">g</span><span class="p">()</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="mi">42</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;end f()&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">g</span>
+
+<span class="n">func</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">func</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>start f()
+end f()
+start g()
+x from the enclosing namespace 5
+y from the enclosing namespace -20
+z from the enclosing namespace 42
+t from the local namespace 0
+end g()
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> erzeugt während des Ablauf dieses Codes zwei Namensräume.</p>
+<ol class="simple">
+<li><p>einen lokalen Namensraum für den Aufruf von <code class="docutils literal notranslate"><span class="pre">g()</span></code></p></li>
+<li><p>einen umschließenden Namensraum für <code class="docutils literal notranslate"><span class="pre">f()</span></code></p></li>
+</ol>
+<p>Der nachdem der Funktionsaufruf <code class="docutils literal notranslate"><span class="pre">f(-20)</span></code> zurückspringt, kann die Funktion <code class="docutils literal notranslate"><span class="pre">g</span></code> noch immer auf <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code> zugreifen!
+Das funktioniert nur weil <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code> sich im <em>umschließenden Namensraum</em> von <code class="docutils literal notranslate"><span class="pre">f(-20)</span></code> befindet.</p>
+<p>In der letzten Zeile rufen wir dieses <code class="docutils literal notranslate"><span class="pre">g()</span></code> durch <code class="docutils literal notranslate"><span class="pre">func()</span></code> auf.
+Dabei wird ein lokaler Namensraum für den Aufruf erzeugt zugleich existiert der umschließende Namensraum.
+In beiden gibt es die Variable <code class="docutils literal notranslate"><span class="pre">t</span></code>.
+Es wird jedoch die des lokalen Namensraums bevorzugt!</p>
+<p>Nachdem wir wieder aus der Funktion <code class="docutils literal notranslate"><span class="pre">func()</span></code> zurückspringen wird der lokale Namensraum von <code class="docutils literal notranslate"><span class="pre">func()</span></code> gelöscht.
+Der umschließende Namensraum bleibt hingegen solange besteht, solange es noch eine Referenz auf <code class="docutils literal notranslate"><span class="pre">func</span></code> gibt.</p>
+<p>Bei jedem Aufruf von <code class="docutils literal notranslate"><span class="pre">f(y)</span></code> wird ein neuer umschließender Namensraum erzeugt.</p>
+<p>Beachten Sie, dass wir <code class="docutils literal notranslate"><span class="pre">z</span></code> in der Funktionsdefinition von <code class="docutils literal notranslate"><span class="pre">g</span></code> verwenden obwohl es unterhalb der Definition steht.
+Zur Laufzeit, d.h., wenn wir <code class="docutils literal notranslate"><span class="pre">g()</span></code> aufrufen existiert es jedoch.</p>
+<p>Im Gegensatz dazu kracht es bei folgendem Code, da wir <code class="docutils literal notranslate"><span class="pre">g()</span></code> aufrufen bevor <code class="docutils literal notranslate"><span class="pre">z</span></code> initialisiert wurde:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;z from the enclosing namespace </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">g</span><span class="p">()</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="mi">42</span>
     <span class="k">return</span>
 
 <span class="n">f</span><span class="p">()</span>
@@ -1122,17 +1176,32 @@ Das haben wir bis hierher noch nie gemacht, sehen wir uns also ein Beispiel an:<
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>start f()
-start g()
-end g()
-end f()
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">81</span><span class="n">bf949848b5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">return</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">f</span><span class="p">()</span>
+
+<span class="nn">&lt;ipython-input-3-81bf949848b5&gt;</span> in <span class="ni">f</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;z from the enclosing namespace </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">return</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">g</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">z</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">return</span>
+
+<span class="nn">&lt;ipython-input-3-81bf949848b5&gt;</span> in <span class="ni">g</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;z from the enclosing namespace </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">return</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">g</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: free variable &#39;z&#39; referenced before assignment in enclosing scope
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> erzeugt hierbei zwei Namensräume.
-Einen <em>lokalen Namensraum</em> für <code class="docutils literal notranslate"><span class="pre">g()</span></code> und einen <em>umschließenden Namensraum</em> für <code class="docutils literal notranslate"><span class="pre">f()</span></code>, denn <code class="docutils literal notranslate"><span class="pre">f()</span></code> <em>umschließt</em> <code class="docutils literal notranslate"><span class="pre">g()</span></code>.
-Beide Namensraume bleiben bestehen bis deren jeweilige Funktion beendet ist.</p>
 </div>
 </div>
 <div class="section" id="sichtbarkeit">
@@ -1143,7 +1212,7 @@ Allerdings kann es den gleichen Namen in verschiedenen Namensräumen geben und d
 Der Namensraum den <code class="docutils literal notranslate"><span class="pre">Python</span></code> wählt, legt fest welches Objekt (im Speicher) wir schlussendlich adressieren!</p>
 <p>Die <em>Sichtbarkeit</em> bzw. der <em>Scope</em> entscheidet darüber!
 Der <em>Scope</em> eines Namens ist der Bereich eines Programms in dem der Name eine Bedeutung hat.
-Der Interpreter bestimmt dies zur Laufzeit.
+Der <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> bestimmt dies zur Laufzeit.
 Als Basis verwendet er die Information, wo die Namensdefinitionen auftauchen, und wo der Name referenziert wird.</p>
 <p>Bezieht sich unser Code auf den Namen <code class="docutils literal notranslate"><span class="pre">x</span></code>, so sucht <code class="docutils literal notranslate"><span class="pre">Python</span></code> den Namen <code class="docutils literal notranslate"><span class="pre">x</span></code> in der folgenden Reihenfolge:</p>
 <ol class="simple">
@@ -1176,7 +1245,7 @@ Deshalb kommt es zu einem Fehler in der letzten Zeile.</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mf">7e9</span><span class="n">e0ad9033e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mf">7e9</span><span class="n">e0ad9033e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> 
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">printY</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">y</span>
@@ -1199,9 +1268,6 @@ Deshalb kommt es zu einem Fehler in der letzten Zeile.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1251,8 +1317,8 @@ Die eine Variable liegt im globalen Namensraum <code class="docutils literal not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>global z id: 4532922800
-lokal z id (after lokal z is defined): 4532923984
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>global z id: 4357159344
+lokal z id (after lokal z is defined): 4357160528
 42
 </pre></div>
 </div>
@@ -1261,9 +1327,9 @@ lokal z id (after lokal z is defined): 4532923984
 </div>
 </div>
 </div>
-<div class="hint admonition">
+<div class="remark admonition">
 <p class="admonition-title">Doppelte Namensräume?</p>
-<p>Eine Variable kann innerhalb einer Funktion entweder aus dem <strong>lokalen</strong> oder <strong>globalen</strong> Namensraum stammen.
+<p>Eine Variable kann innerhalb einer Funktion einem der vier Namensräume stammen.
 Niemals jedoch an der einen Stelle aus dem einen und an der anderen Stelle aus dem anderen Namensraum!</p>
 </div>
 <p>Der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Interpreter schützt uns vor möglichen und äußerst undurchsichtigen Verwendungen zweier Variablen mit dem scheinbar gleichen Namen.
@@ -1284,18 +1350,18 @@ Folgender Code führt zum Glück zu einem Fehler:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>global z id: 4532922800
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>global z id: 4357159344
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">UnboundLocalError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">5457</span><span class="n">ec48b571</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">5457</span><span class="n">ec48b571</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> 
 <span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">printZ</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">z</span>
 
-<span class="nn">&lt;ipython-input-7-5457ec48b571&gt;</span> in <span class="ni">printZ</span><span class="nt">()</span>
+<span class="nn">&lt;ipython-input-8-5457ec48b571&gt;</span> in <span class="ni">printZ</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;global z id: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">printZ</span><span class="p">():</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;lokal z id (before lokal z is defined): </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -1334,12 +1400,12 @@ Er lehnt es ab, stattdessen das <em>globale</em> <code class="docutils literal n
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>global z id: 4532922800
-lokal z id: 4532923984
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>global z id: 4357159344
+lokal z id: 4357160528
 42
 
-global z id: 4532923984
-global z id: 4532923984
+global z id: 4357160528
+global z id: 4357160528
 42
 </pre></div>
 </div>
@@ -1353,11 +1419,14 @@ Dieses <em>lokale</em> <code class="docutils literal notranslate"><span class="p
 Dann werden Adresse und Wert des <em>lokalen</em> <code class="docutils literal notranslate"><span class="pre">z</span></code> durch <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">42</span></code> geändert.
 Beim zweiten Funktionsaufruf wird diese Änderung nicht durchgeführt, da <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">==</span> <span class="pre">42</span></code>.</p>
 <p>Lassen Sie uns zum Abschluss noch ein Beispiel mit einem <em>umschließenden Namensraum</em> betrachten.
-Dabei werden wir jedoch eine Funktion als Rückgabewert verwenden.
-Wir werden dies noch ausführlicher besprechen, nehmen Sie es also als kleinen Ausblick:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">magic</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+Dabei werden wir erneut eine Funktion als Rückgabewert verwenden.
+Wir werden dies noch ausführlicher besprechen, nehmen Sie es also als kleinen Ausblick.</p>
+<div class="exercise admonition" id="closure-exercise">
+<p class="admonition-title"><span class="caption-number">Exercise 6.1 </span>(Umschließender Namensraum)</p>
+<div class="section" id="exercise-content">
+<p>Geben Sie an was folgender Code ausgibt.
+In welchem Namensraum liegen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">printX</span></code>?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">magic</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">printX</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">printX</span>
@@ -1369,22 +1438,15 @@ Wir werden dies noch ausführlicher besprechen, nehmen Sie es also als kleinen A
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
-42
-42
-</pre></div>
+</div>
+<div class="solution dropdown admonition" id="closure--solution">
+<p class="admonition-title">Solution to <a class="reference external" href="#closure-exercise"><span>Exercise 6.1</span></a></p>
+<div class="section" id="solution-content">
+<p>Es wird dreimal <code class="docutils literal notranslate"><span class="pre">42</span></code> ausgeben.
+<code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">printX</span></code> liegen im umschließenden Namensraum von <code class="docutils literal notranslate"><span class="pre">magic(42)</span></code>.</p>
 </div>
 </div>
-</div>
-<p>Hmm???
-Was passiert hier?
-Kurz gesagt: Die Funktion <code class="docutils literal notranslate"><span class="pre">magic()</span></code> gibt die Funktion <code class="docutils literal notranslate"><span class="pre">printX()</span></code> zurück.
-Der Name der Funktion befindet sich in <code class="docutils literal notranslate"><span class="pre">func</span></code> und wir rufen mit <code class="docutils literal notranslate"><span class="pre">func()</span></code> auf.
-Der Interpreter sucht im <em>lokalen Namensraum</em> von <code class="docutils literal notranslate"><span class="pre">func()</span></code>, d.h. im <em>lokalen Namensraum</em> von <code class="docutils literal notranslate"><span class="pre">printX()</span></code> und findet <code class="docutils literal notranslate"><span class="pre">x</span></code> nicht.
-Dann sucht er im <em>umschließenden Namensraum</em> und wird fündig.
-Das bedeutet der <em>umschließenden Namensraum</em> besteht möglicherweise weiterhin, auch nachdem die <em>umschließenden Funktion</em> beendet wurde.</p>
-<p>Dieses Konzept bezeichnet man als sog. <a class="reference external" href="https://de.wikipedia.org/wiki/Closure_(Funktion)">Closure</a>.</p>
+<p>Das Konzept der <em>umschließenden Namensräume</em> keine Eigenheit von <code class="docutils literal notranslate"><span class="pre">Python</span></code> sondern allgemein unter dem Begriff <a class="reference external" href="https://de.wikipedia.org/wiki/Closure_(Funktion)">Closure</a> bekannt.</p>
 </div>
 </div>
 

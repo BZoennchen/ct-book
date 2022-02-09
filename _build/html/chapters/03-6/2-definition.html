@@ -861,8 +861,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#standardwerte-fur-argumente">
-   6.2.3. Standardwerte für Argumente
+  <a class="reference internal nav-link" href="#standardargumente-fur-parameter">
+   6.2.3. Standardargumente für Parameter
   </a>
  </li>
 </ul>
@@ -878,13 +878,13 @@
                 
   <div class="section" id="grundlagen">
 <h1><span class="section-number">6.2. </span>Grundlagen<a class="headerlink" href="#grundlagen" title="Permalink to this headline">¶</a></h1>
-<p>Ok, lasst uns ganz frisch starten, von der Definition einer Funktion bis hin zu ihrer Benutzung!</p>
+<p>Ok, lassen Sie ganz frisch starten, von der Definition einer Funktion bis hin zu ihrer Benutzung!</p>
 <div class="section" id="definition">
 <h2><span class="section-number">6.2.1. </span>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> definieren wir eine Funktion mit dem Signalwort <code class="docutils literal notranslate"><span class="pre">def</span></code> (für Definition).
-Es folgt der Funktionsname und in runden Klammern, getrennt durch Komma, die Argumente der Funktion.
+Es folgt der Funktionsname und in runden Klammern, getrennt durch Komma, die Parameter der Funktion.
 Nach dem <code class="docutils literal notranslate"><span class="pre">:</span></code> beginnt der Funktionskörper, welcher eingerückt sein muss!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">name_der_funktion</span><span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">name_der_funktion</span><span class="p">(</span><span class="n">parameter1</span><span class="p">,</span> <span class="n">parameter2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    An dieser Stelle steht der sog. &quot;docstring&quot;.</span>
 <span class="sd">    Dieser wird ausgegeben wenn help() zur Funktion aufgerufen wird.</span>
@@ -903,7 +903,7 @@ Nach diesem <code class="docutils literal notranslate"><span class="pre">docstri
 Allerdings liefert eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion immer etwas zurück.
 Sollte die Funktion keinen <code class="docutils literal notranslate"><span class="pre">return</span></code>-Ausdruck beinhalten oder das Programm in einen Zweig laufen, welcher ohne ein <code class="docutils literal notranslate"><span class="pre">return</span></code> endet, so gibt die Funktion <code class="docutils literal notranslate"><span class="pre">None</span></code> zurück.</p>
 <p>Der Name für <code class="docutils literal notranslate"><span class="pre">name_der_funktion</span></code> darf frei vergeben werden.
-Jedoch achtet man in der Programmierung stets auf <strong>sprechende</strong> Funktions- und Argumentnamen.
+Jedoch achtet man in der Programmierung stets auf <strong>sprechende</strong> Funktions- und Parameternamen.
 Vergleichen Sie:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -941,9 +941,9 @@ Vergleichen Sie:</p>
 </div>
 </div>
 <p>Die erste Benennung erschwert das Lesen und Verstehen der Funktion.
-Für die zweite Version müssen wir lediglich auf den Namen <code class="docutils literal notranslate"><span class="pre">subtract</span></code> und den kurzen <code class="docutils literal notranslate"><span class="pre">docstring</span></code> blicken um zu verstehen was die Funktion tut.
-Den <code class="docutils literal notranslate"><span class="pre">docstring</span></code> könnten wir uns auch schenken, doch bedenken Sie dass andere Entwickler*innen, welche Ihren Code benutzten, oft nicht in den Code blicken sondern sich lediglich den <code class="docutils literal notranslate"><span class="pre">docstring</span></code> ausgeben lassen.</p>
-<div class="warning admonition">
+Für die zweite Version müssen wir lediglich auf den Namen <code class="docutils literal notranslate"><span class="pre">subtract</span></code> und den kurzen <code class="docutils literal notranslate"><span class="pre">docstring</span></code> blicken um zu verstehen was die Funktion tut.</p>
+<p>Den <code class="docutils literal notranslate"><span class="pre">docstring</span></code> könnten wir uns auch schenken, doch bedenken Sie dass andere Entwickler*innen, welche Ihren Code benutzten, oft nicht in den Code blicken sondern sich lediglich den <code class="docutils literal notranslate"><span class="pre">docstring</span></code> ausgeben lassen.</p>
+<div class="attention admonition">
 <p class="admonition-title">Docstrings und Kommentare</p>
 <p>Nichts ist irreführender als fehlerhafte, widersprüchliche oder schlicht falsche Kommentare!</p>
 </div>
@@ -1026,13 +1026,13 @@ None
 </div>
 </div>
 </div>
-<div class="section" id="standardwerte-fur-argumente">
-<h2><span class="section-number">6.2.3. </span>Standardwerte für Argumente<a class="headerlink" href="#standardwerte-fur-argumente" title="Permalink to this headline">¶</a></h2>
-<p>Wir können Argumenten auch einen sog. Standardwert verpassen.
-Dieser wird genau dann verwendet, wenn dieses Argument beim Aufruf der Funktion nicht definiert wurde.</p>
+<div class="section" id="standardargumente-fur-parameter">
+<h2><span class="section-number">6.2.3. </span>Standardargumente für Parameter<a class="headerlink" href="#standardargumente-fur-parameter" title="Permalink to this headline">¶</a></h2>
+<p>Wir können Parametern auch einen sog. Standardargumente (Standardwerte) verpassen.
+Das Standardargument wird genau dann verwendet, wenn der Wert des Parameters beim Aufruf der Funktion nicht definiert wurde.</p>
 <p>Erinnern Sie sich noch an die Funktion <code class="docutils literal notranslate"><span class="pre">range()</span></code>?
 Diese konnten wir mit einem, zwei, oder drei Argumenten aufrufen.
-Das gelang, weil auch <code class="docutils literal notranslate"><span class="pre">range()</span></code> Standardwerte für zwei der drei Argumente festlegt.</p>
+Das gelang, weil auch <code class="docutils literal notranslate"><span class="pre">range()</span></code> Standardwerte für zwei der drei Parameter festlegt.</p>
 <p>Lassen Sie uns eine Funktion <code class="docutils literal notranslate"><span class="pre">lrange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> definieren, welche eine Liste bestehend aus dem entsprechenden Zahlenbereich <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> zurückliefert:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1051,7 +1051,7 @@ Das gelang, weil auch <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <p>Die Funktion <code class="docutils literal notranslate"><span class="pre">lrange()</span></code> verhält sich wie <code class="docutils literal notranslate"><span class="pre">range()</span></code>, jedoch gibt Sie eine Liste zurück.
-Ohne Standardwerte für die Argumente können wir die Funktion jedoch nicht mit nur einem Argument aufrufen.</p>
+Ohne Standardargumente können wir die Funktion jedoch nicht mit nur einem Argument aufrufen.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1069,10 +1069,10 @@ Ohne Standardwerte für die Argumente können wir die Funktion jedoch nicht mit 
 </div>
 </div>
 </div>
-<p>Definieren wir Standardwerte, müssen wir uns überlegen welche Werte sinnvoll sind.
-Was soll also passieren wenn wir beim Funktionsaufruf bestimmte Argumente weglassen?</p>
-<p>Standardwerte setzten wir durch eine Zuweisung im Funktionskopf.
-Dabei müssen alle Argumente mit Standardwerten <strong>hinten stehen!</strong>
+<p>Definieren wir Standardargumente, müssen wir uns überlegen welche Werte sinnvoll sind.
+Was soll also passieren wenn wir beim Funktionsaufruf bestimmte Parameter weglassen?</p>
+<p>Standardargumente setzten wir durch eine Zuweisung im Funktionskopf.
+Dabei müssen alle Parameter mit Standardargumenten <strong>hinten stehen!</strong>
 Folgender Code wird ebenfalls zu einem Fehler führen:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -1093,7 +1093,7 @@ Folgender Code wird ebenfalls zu einem Fehler führen:</p>
 </div>
 </div>
 </div>
-<p>Wir müssen die Reihenfolge der Argumente verändern (und diese Änderung auch beim Aufruf der Funktion berücksichtigen):</p>
+<p>Wir müssen die Reihenfolge der Parameter verändern (und diese Änderung auch beim Aufruf der Funktion berücksichtigen):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lrange</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -1140,7 +1140,7 @@ Da wir <code class="docutils literal notranslate"><span class="pre">start</span>
 </div>
 </div>
 </div>
-<p>Verwenden wir diese Schreibweise, können wir auch die Reihenfolge der Argumente missachten:</p>
+<p>Verwenden wir diese Schreibweise, können wir auch die Reihenfolge der Parameter missachten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -1153,7 +1153,7 @@ Da wir <code class="docutils literal notranslate"><span class="pre">start</span>
 </div>
 </div>
 </div>
-<p>Lassen Sie sich nicht verwirren wenn wir einem Argument eine Variable zuweisen die denselben Namen trägt:</p>
+<p>Lassen Sie sich nicht verwirren wenn wir einem Parameter eine Variable zuweisen, die denselben Namen trägt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1168,7 +1168,7 @@ Da wir <code class="docutils literal notranslate"><span class="pre">start</span>
 </div>
 </div>
 <p>Diese beiden Variablen mit dem Namen <code class="docutils literal notranslate"><span class="pre">start</span></code> sind nicht dieselben Variablen.
-Das linke <code class="docutils literal notranslate"><span class="pre">start</span></code> ist das Argument welches die Funktion schlussendlich verwendet und das rechte <code class="docutils literal notranslate"><span class="pre">start</span></code> ist die Variable, die wir zuvor definiert haben.
+Das linke <code class="docutils literal notranslate"><span class="pre">start</span></code> ist der Parameter welches die Funktion schlussendlich verwendet und das rechte <code class="docutils literal notranslate"><span class="pre">start</span></code> ist das Argument, welches wir zuvor definiert haben.
 Wir setzten beim Aufruf die Adresse des linken <code class="docutils literal notranslate"><span class="pre">start</span></code> auf die Adresse des rechten <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
 </div>
 </div>

@@ -855,19 +855,20 @@
                 
   <div class="section" id="existenzberechtigung">
 <span id="sec-why-data-types"></span><h1><span class="section-number">5.2. </span>Existenzberechtigung<a class="headerlink" href="#existenzberechtigung" title="Permalink to this headline">¶</a></h1>
-<p>Kommen wir noch einmal zurück zu unserer Analogie mit den <em>Dateiformaten</em>.
-Weshalb enden PDF-Dokumente mit <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> und Bilder mit z.B. <code class="docutils literal notranslate"><span class="pre">.png</span></code>?
-Ändern wir die Dateiendung oder lassen Sie Weg, so ändert sich der Inhalt der Datei nicht.
+<p>Ziehen wir nochmals den Vergleich zwischen Datentypen und <em>Dateiformate</em>.</p>
+<p>Weshalb enden PDF-Dokumente mit <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> und Bilder mit, z.B., <code class="docutils literal notranslate"><span class="pre">.png</span></code>?
+Ändern wir die Dateiendung oder lassen Sie weg, so ändert sich der Inhalt der Datei nicht.
 Allerdings kann Ihr Programm zum Lesen von PDFs, ausschließlich PDFs lesen.
 Die Dateiendung ist ein Versprechen, dass es sich bei dieser Datei auch wirklich um eine PDF handelt.
-Zudem leitet Ihr Betriebssystem das öffnen der Datei an ein Programm weiter, welches das entsprechende Dateiformat verarbeiten kann.
+Zudem leitet Ihr Betriebssystem das Öffnen der Datei an ein Programm weiter, welches das entsprechende Dateiformat verarbeiten kann.
 Da das Betriebssystem nicht alle Dateiformate kennen kann (jeden Tag entstehen neue Formate) achtet es auf die Dateiendung.
-Wir als Benutzer können dem Betriebssystem mitteilen, welche Datei mit welchem Programm geöffnet werden soll.</p>
-<p>Datentypen existieren aus dem gleichen Grund.
-Sie sind ein verpflichtendes Versprechen, wie der Speicherbereich (die Bits und Byte) der den Wert ergibt aussieht und wie er interpretiert wird.
-Funktionen und Operationen verlassen sich auf dieses Versprechen.
-Nur so können Sie Informationen verarbeiten, indem die <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> bekannt ist und auch eingehalten wird.
-Zum Beispiel erwartet die Addition <code class="docutils literal notranslate"><span class="pre">+</span></code> zwei Zahlen.
+Wir als Benutzer können dem Betriebssystem mitteilen, welche Datei es mit welchem Programm öffnen soll.</p>
+<p>Datentypen existieren aus einem ähnlichen Grund.
+Sie sind ein verpflichtendes Versprechen, wie der Speicherbereich (die Bits und Byte), der den Wert ausmacht, aussieht und wie er interpretiert werden muss.
+Funktionen und Operationen verlassen sich auf dieses Versprechen.</p>
+<p>Informationen können auch wir Menschen nur dann verarbeiten wenn wir uns auf eine <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> einigen, bzw. diese bekannt ist und auch eingehalten wird.
+Genauso verhält es sich mit Programmen und Maschinen.</p>
+<p>Zum Beispiel erwartet die Addition <code class="docutils literal notranslate"><span class="pre">+</span></code> zwei Zahlen.
 Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> oder um eine Fließkommazahl handeln.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -921,7 +922,7 @@ Dabei kann es sich bei jeder der beiden Zahlen entweder um eine ganze Zahl <code
 </div>
 </div>
 </div>
-<p>Der Fehler der durch diesen Code erzeugt wird besagt: <code class="docutils literal notranslate"><span class="pre">unsupported</span> <span class="pre">operand</span> <span class="pre">type(s)</span> <span class="pre">for</span> <span class="pre">+:</span> <span class="pre">'int'</span> <span class="pre">and</span> <span class="pre">'str'</span></code>, d.h. diese Kombination aus Datentypen (<code class="docutils literal notranslate"><span class="pre">int</span></code> und <code class="docutils literal notranslate"><span class="pre">str</span></code>) wird nicht unterstützt.
+<p>Der Fehler der durch diesen Code erzeugt wird besagt: <code class="docutils literal notranslate"><span class="pre">unsupported</span> <span class="pre">operand</span> <span class="pre">type(s)</span> <span class="pre">for</span> <span class="pre">+:</span> <span class="pre">'int'</span> <span class="pre">and</span> <span class="pre">'str'</span></code>, d.h., diese Kombination aus Datentypen (<code class="docutils literal notranslate"><span class="pre">int</span></code> und <code class="docutils literal notranslate"><span class="pre">str</span></code>) wird nicht unterstützt.
 Was passiert wenn wir zwei Zeichenketten ‘addieren’?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -936,8 +937,22 @@ Was passiert wenn wir zwei Zeichenketten ‘addieren’?</p>
 </div>
 </div>
 <p>Überraschenderweise führt dies nicht zu einem Fehler.
-Wir sprechen hierbei nicht mehr von einer Addition, stattdessen handelt es sich um die sog. Konkatenation (Verkettung) von Zeichenketten.
+Wir sprechen hierbei nicht mehr von einer Addition, stattdessen handelt es sich um die sog. <em>Konkatenation</em> (Verkettung) von Zeichenketten.
 In anderen Worten: Es entscheiden die Datentypen darüber, welche Operation der <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator definiert bzw. welche Operation ausgeführt wird!</p>
+<p>In der <a class="reference internal" href="../03-8/intro.html#sec-oop"><span class="std std-ref">objektorientierten Programmierung</span></a> erzielt man dies indem Datentypen nicht nur einen Wert sondern auch Operationen, die auf dem Datentyp ausgeführt werden, definieren.
+Zum Beispiel bietet der Datentyp <code class="docutils literal notranslate"><span class="pre">str</span></code> die <em>Methode</em> <code class="docutils literal notranslate"><span class="pre">count</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;peter&#39;</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
 <p>Betrachten wir ein weiteres Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -965,7 +980,7 @@ In anderen Worten: Es entscheiden die Datentypen darüber, welche Operation der 
 </div>
 </div>
 <p>Wir rufen beide Male die <em>built-in Funktion</em> <code class="docutils literal notranslate"><span class="pre">max</span></code> auf.
-Einmal ist das Argument eine Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> und einmal rufen wir <code class="docutils literal notranslate"><span class="pre">max</span></code> mit zwei Argumenten, zwei ganzen Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> auf.
+Einmal ist das Argument eine Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> und einmal rufen wir <code class="docutils literal notranslate"><span class="pre">max</span></code> mit zwei Argumenten, zwei Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> auf.
 Das Ergebnis ist einmal das größte Element der Liste und einmal das lexikographisch größere Element der beiden Argumente.
 Der Datentyp des Rückgabewerte ist einmal eine ganze Zahl <code class="docutils literal notranslate"><span class="pre">int</span></code> und einmal eine Zeichenkette <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 <p>Wird folgender Code funktionieren?</p>
@@ -978,7 +993,7 @@ Der Datentyp des Rückgabewerte ist einmal eine ganze Zahl <code class="docutils
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">ce3c1a936c84</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">ce3c1a936c84</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
@@ -987,7 +1002,7 @@ Der Datentyp des Rückgabewerte ist einmal eine ganze Zahl <code class="docutils
 </div>
 </div>
 <p>Wir können das an dieser Stelle nicht wissen.
-Es kommt darauf an <strong>wie</strong> die Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> implementiert wurde und <strong>was</strong> sie genau macht.
+Es kommt darauf an <strong>WIE</strong> die Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> implementiert wurde und <strong>WAS</strong> sie genau macht.
 Macht aus Ihrer Sicht ein solcher Aufruf Sinn?</p>
 <p>Führen wir den Code aus, so kommt es zu einem weiteren Fehler: <code class="docutils literal notranslate"><span class="pre">'&gt;'</span> <span class="pre">not</span> <span class="pre">supported</span> <span class="pre">between</span> <span class="pre">instances</span> <span class="pre">of</span> <span class="pre">'str'</span> <span class="pre">and</span> <span class="pre">'int'</span></code>.
 Was soll das nun bedeuten?
@@ -1003,7 +1018,7 @@ Wir erhalten den gleichen Fehler mit</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">c502c5c8c73d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">c502c5c8c73d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="s1">&#39;b&#39;</span>
 
 <span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;
@@ -1038,7 +1053,8 @@ Diese transformiert den Wert, welchen wir vergleichen wollen, in einen anderen W
 Ist der Wert eine Zeichenkette, so transformieren wir diese in eine ganze Zahl (ihren ASCII-Code).
 Andernfalls geben wir den Wert zurück (keine Transformation).</p>
 <p>Wir sagen der Funktion <code class="docutils literal notranslate"><span class="pre">max</span></code> Sie solle doch bitte vor jedem Vergleich die zu vergleichenden Werte durch unsere Funktion <code class="docutils literal notranslate"><span class="pre">get_key</span></code> transformieren.
-Was also passiert ist das <code class="docutils literal notranslate"><span class="pre">max</span></code></p>
+Dies Funktionalität bietet uns <code class="docutils literal notranslate"><span class="pre">max</span></code>.
+Somit sieht der Vergleich wie folgt aus</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_key</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">get_key</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
@@ -1051,7 +1067,7 @@ Was also passiert ist das <code class="docutils literal notranslate"><span class
 </div>
 </div>
 </div>
-<p>ausführt, also</p>
+<p>also</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
@@ -1064,7 +1080,7 @@ Was also passiert ist das <code class="docutils literal notranslate"><span class
 </div>
 </div>
 </div>
-<p>und <code class="docutils literal notranslate"><span class="pre">ord('b')</span></code> ergibt <code class="docutils literal notranslate"><span class="pre">98</span></code>.
+<p>Dabei ergibt <code class="docutils literal notranslate"><span class="pre">ord('b')</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">98</span></code>.
 Der Rückgabewert ist eine Zeichenkette <code class="docutils literal notranslate"><span class="pre">str</span></code>.
 Rufen wir allerdings folgenden Code auf</p>
 <div class="cell docutils container">

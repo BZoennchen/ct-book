@@ -50,10 +50,10 @@ tags: [output_scroll]
 dir(__builtins__)
 ```
 
-Sobald er startet, legt der ``Python``-[Interpreter](def-interpreter) den *built-in Namensraum* an sobald er startet.
+Sobald er startet, legt der ``Python``-[Interpreter](def-interpreter) den *built-in Namensraum* an.
 Die *Lebensdauer* des Namensraums endet sobald der Interpreter beendet wird.
 
-
+(sec-global-namespace)=
 ### Global
 
 Der *globale Namensraum* beinhaltet alle Namen die auf der Ebene des Hauptprogramms definiert wurden.
@@ -70,27 +70,71 @@ Wann immer eine Funktion ausgeführt wird, wird ein neuer *lokaler Namensraum* f
 Die Lebensdauer des Namensraums endet sobald die Funktion verlassen wird oder die Funktion durch einen Fehler abbricht.
 
 Ein *umschließender Namensraum* wird hingegen erzeugt, wenn wir innerhalb einer Funktion eine weitere Funktion definieren.
-Das haben wir bis hierher noch nie gemacht, sehen wir uns also ein Beispiel an:
+Das haben wir bis hierher noch nie gemacht, sehen wir uns also ein Beispiel an.
+Der folgende extra kompliziert gestaltete Code veranschaulicht mehrere Konzepte zugleich:
 
 ```{code-cell} python3
-def f():
+def f(y):
     print('start f()')
+    x = 5
+    t = 99
 
     def g():
+        t = 0
         print('start g()')
+        print(f'x from the enclosing namespace {x}')
+        print(f'y from the enclosing namespace {y}')
+        print(f'z from the enclosing namespace {z}')
+        print(f't from the local namespace {t}')
         print('end g()')
         return
     
-    g()
+    z = 42
     print('end f()')
+    return g
+
+func = f(-20)
+func()
+```
+
+``Python`` erzeugt während des Ablauf dieses Codes zwei Namensräume.
+
+1. einen lokalen Namensraum für den Aufruf von ``g()``
+2. einen umschließenden Namensraum für ``f()`` 
+
+Der nachdem der Funktionsaufruf ``f(-20)`` zurückspringt, kann die Funktion ``g`` noch immer auf ``x``, ``y`` und ``z`` zugreifen!
+Das funktioniert nur weil ``x``, ``y`` und ``z`` sich im *umschließenden Namensraum* von ``f(-20)`` befindet.
+
+In der letzten Zeile rufen wir dieses ``g()`` durch ``func()`` auf.
+Dabei wird ein lokaler Namensraum für den Aufruf erzeugt zugleich existiert der umschließende Namensraum.
+In beiden gibt es die Variable ``t``.
+Es wird jedoch die des lokalen Namensraums bevorzugt!
+
+Nachdem wir wieder aus der Funktion ``func()`` zurückspringen wird der lokale Namensraum von ``func()`` gelöscht.
+Der umschließende Namensraum bleibt hingegen solange besteht, solange es noch eine Referenz auf ``func`` gibt.
+
+Bei jedem Aufruf von ``f(y)`` wird ein neuer umschließender Namensraum erzeugt.
+
+Beachten Sie, dass wir ``z`` in der Funktionsdefinition von ``g`` verwenden obwohl es unterhalb der Definition steht.
+Zur Laufzeit, d.h., wenn wir ``g()`` aufrufen existiert es jedoch.
+
+Im Gegensatz dazu kracht es bei folgendem Code, da wir ``g()`` aufrufen bevor ``z`` initialisiert wurde:
+
+```{code-cell} python3
+---
+tags: [raises-exception]
+---
+def f():
+    def g():
+        t = 0
+        print(f'z from the enclosing namespace {z}')
+        return
+    g()
+    z = 42
     return
 
 f()
 ```
-
-``Python`` erzeugt hierbei zwei Namensräume.
-Einen *lokalen Namensraum* für ``g()`` und einen *umschließenden Namensraum* für ``f()``, denn ``f()`` *umschließt* ``g()``.
-Beide Namensraume bleiben bestehen bis deren jeweilige Funktion beendet ist.
 
 ## Sichtbarkeit
 
@@ -102,7 +146,7 @@ Der Namensraum den ``Python`` wählt, legt fest welches Objekt (im Speicher) wir
 
 Die *Sichtbarkeit* bzw. der *Scope* entscheidet darüber!
 Der *Scope* eines Namens ist der Bereich eines Programms in dem der Name eine Bedeutung hat.
-Der Interpreter bestimmt dies zur Laufzeit.
+Der [Interpreter](def-interpreter) bestimmt dies zur Laufzeit.
 Als Basis verwendet er die Information, wo die Namensdefinitionen auftauchen, und wo der Name referenziert wird.
 
 Bezieht sich unser Code auf den Namen ``x``, so sucht ``Python`` den Namen ``x`` in der folgenden Reihenfolge:
@@ -178,9 +222,9 @@ z
 ```
 
 ```{admonition} Doppelte Namensräume?
-:class: hint
+:class: remark
 
-Eine Variable kann innerhalb einer Funktion entweder aus dem **lokalen** oder **globalen** Namensraum stammen.
+Eine Variable kann innerhalb einer Funktion einem der vier Namensräume stammen.
 Niemals jedoch an der einen Stelle aus dem einen und an der anderen Stelle aus dem anderen Namensraum!
 ```
 
@@ -238,10 +282,16 @@ Dann werden Adresse und Wert des *lokalen* ``z`` durch ``z = 42`` geändert.
 Beim zweiten Funktionsaufruf wird diese Änderung nicht durchgeführt, da ``z == 42``.
 
 Lassen Sie uns zum Abschluss noch ein Beispiel mit einem *umschließenden Namensraum* betrachten.
-Dabei werden wir jedoch eine Funktion als Rückgabewert verwenden.
-Wir werden dies noch ausführlicher besprechen, nehmen Sie es also als kleinen Ausblick:
+Dabei werden wir erneut eine Funktion als Rückgabewert verwenden.
+Wir werden dies noch ausführlicher besprechen, nehmen Sie es also als kleinen Ausblick.
 
-```{code-cell} python3
+````{exercise} Umschließender Namensraum
+:label: closure-exercise
+
+Geben Sie an was folgender Code ausgibt.
+In welchem Namensraum liegen ``x`` und ``printX``?
+
+```python
 def magic(x):
     def printX():
         print(x)
@@ -252,13 +302,14 @@ func()
 func()
 func()
 ```
+````
 
-Hmm???
-Was passiert hier?
-Kurz gesagt: Die Funktion ``magic()`` gibt die Funktion ``printX()`` zurück.
-Der Name der Funktion befindet sich in ``func`` und wir rufen mit ``func()`` auf.
-Der Interpreter sucht im *lokalen Namensraum* von ``func()``, d.h. im *lokalen Namensraum* von ``printX()`` und findet ``x`` nicht.
-Dann sucht er im *umschließenden Namensraum* und wird fündig.
-Das bedeutet der *umschließenden Namensraum* besteht möglicherweise weiterhin, auch nachdem die *umschließenden Funktion* beendet wurde.
+````{solution} closure-exercise
+:label: closure--solution
+:class: dropdown
 
-Dieses Konzept bezeichnet man als sog. [Closure](https://de.wikipedia.org/wiki/Closure_(Funktion)).
+Es wird dreimal ``42`` ausgeben.
+``x`` und ``printX`` liegen im umschließenden Namensraum von ``magic(42)``.
+````
+
+Das Konzept der *umschließenden Namensräume* keine Eigenheit von ``Python`` sondern allgemein unter dem Begriff [Closure](https://de.wikipedia.org/wiki/Closure_(Funktion)) bekannt.

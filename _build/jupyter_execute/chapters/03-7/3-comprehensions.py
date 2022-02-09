@@ -1,7 +1,7 @@
 (sec-comprehension)=
 # Comprehensions
 
-Comprehensions ist eine Art von ``Python``-[Syntax](def-syntax), die es uns durch eine sehr kompakte Schreibweise erlaubt aus einer Datenstruktur eine andere Datenstruktur zu erstellen.
+Eine Comprehension ist eine Art von ``Python``-[Syntax](def-syntax), die es uns durch eine sehr kompakte Schreibweise erlaubt aus einer Datenstruktur eine andere Datenstruktur zu erstellen.
 
 ## List-Comprehensions
 
@@ -14,7 +14,7 @@ print(f'numbers: {numbers}')
 print(f'squares: {squares}')
 
 Wir erzeugen erst eine Liste ``numbers`` und transformieren diese in eine neue Liste aus Quadratzahlen.
-Dieser Code wird durch den ``Python``-Interpreter in folgenden Code übersetzt:
+Dieser Code wird durch den ``Python``-[Interpreter](def-interpreter) in folgenden Code übersetzt:
 
 numbers = list(range(10))
 squares = []
@@ -65,7 +65,7 @@ print(f'numbers: {numbers}')
 Lassen Sie uns damit eine Matrix $A$ mit
 
 $$
-\begin{pmatrix}
+A = \begin{pmatrix}
     0+0 & 0+1 & 0+2 & \ldots & 0+(n-1)\\
     1+0 & 1+1 & 1+2 & \ldots & 1+(n-1)\\
     \vdots & \vdots & \vdots & \vdots\\
@@ -90,7 +90,7 @@ x = {'a': 1, 'b': 2, 'c': 3}
 
 ## Set-Comprehensions
 
-Sehr ähnlich lässt sich diese Schreibweise für [Mengen](sec-set) einsetzten.
+Und auch für [Mengen](sec-set) können wir Comprehensions verwenden.
 
 numbers = {1,2,3,4}
 

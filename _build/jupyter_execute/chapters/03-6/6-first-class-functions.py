@@ -43,7 +43,7 @@ Hierbei ist
 (x) -> x * x
 ```
 
-eine *anonymen Funktion* die wir scheinbar einer Variablen ``func`` zuweisen.
+eine [anonymen Funktion](sec-anonymous-function) die wir scheinbar einer Variablen ``func`` zuweisen.
 Doch im Hintergrund wird ein ganzes Objekt (Daten + Funktionen) erstellt, welches keine Daten und nur eine Funktion enthält.
 
 Sind Funktionen First-Class-Funktionen, so ist man als Programmierer\*in eher dazu ermuntert mehr in Funktionen als in Objekten und Methoden zu denken.

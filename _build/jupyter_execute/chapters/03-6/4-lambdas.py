@@ -11,6 +11,7 @@ Diese Funktion können wir über ihren Namen ansprechen:
 
 add(4, 6)
 
+Der Name befindet sich im [globalen Namensraum](sec-global-namespace) und verweist auf den Code der die Funktion realisiert.
 Wir können einen Verweis auf die Funktion auch in einer Variablen abspeichern, dazu verwenden wir lediglich den Namen der Funktion:
 
 func = add
@@ -24,8 +25,9 @@ func(4, 6)
 In ``Python`` sind *anonyme Funktionen* zugleich *kleine Funktionen*.
 
 Mit dem Signalwort ``lambda`` beginnt die Definition einer *anonyme Funktion*.
-Nach ``lambda`` folgen die Argumente und nach dem ``:`` der Funktionsrumpf.
-Die gesamte Funktionsdefinition muss dabei in eine Zeile passen und es darf sich beim Funktionsrumpf nur im **einen** Ausdruck handeln.
+Nach ``lambda`` folgen die Parameter und nach dem ``:`` der Funktionsrumpf.
+Die gesamte Funktionsdefinition muss dabei in eine Zeile passen.
+Es darf sich beim Funktionsrumpf nur im **einen** Ausdruck handeln.
 Der Rückgabewert ist automatisch der ausgewertete Ausdruck hinter dem ``:``.
 
 Bei dieser enormen Einschränkung stellt sich die Frage, wann verwenden wir *anonyme Funktionen*?
@@ -44,13 +46,13 @@ def square(x):
 
 list(map(square, numbers))
 
-Nach diesem Aufruf brauchen wir ``square()`` vermutlich nie wieder, zudem ist die Funktion so simpel, das eine vollwertige Definition übertrieben scheint.
+Nach diesem Aufruf brauchen wir ``square()`` vermutlich nie wieder, zudem ist die Funktion so simpel, dass eine vollwertige Definition übertrieben scheint.
 Kürzer geht das ganze mit einer *anonymen Funktion*:
 
 numbers = list(range(10))
 list(map(lambda x: x * x, numbers))
 
-Erwartet eine Funktion eine andere Funktion, so ist es oft sinnvoll den Standardwert des Arguments als *anonyme Funktion* zu definieren, da wir ihn nur an dieser Stelle brauchen:
+Erwartet eine Funktion eine andere Funktion, so ist es oft sinnvoll ein Standardarguments als *anonyme Funktion* festzulegen, da wir ihn nur an dieser Stelle brauchen:
 
 def apply(mylist, func = lambda e : e):
     return list(map(func, numbers))
@@ -59,8 +61,8 @@ numbers = list(range(10))
 print(apply(numbers))
 print(apply(numbers, lambda x: 2*x+1))
 
-Ein weiterer Fall für den sich eine *anonyme Funktion* eignen kann ist, wenn wir bestimmte Argumente fixieren wollen.
-Das bedeutet wir haben eine Funktion mit n Argumenten und wir möchten daraus eine neue Funktion mit m < n Argumenten bauen und dabei n-m Argumente fixieren.
+Ein weiterer Fall für den sich eine *anonyme Funktion* eignen kann ist, wenn wir bestimmte Parameter fixieren wollen.
+Das bedeutet wir haben eine Funktion mit $n$ Parametern und wir möchten daraus eine neue Funktion mit $m < n$ Parametern bauen und dabei $n-m$ Parameter fixieren.
 Zum Beispiel:
 
 def f(a, b, c, d):

@@ -42,7 +42,6 @@ Geben Sie an von welchem Datentyp die Variablen ``n``, ``sum``, ``i``, und ``arg
 
 ````
 
-
 Führen Sie folgenden Code aus:
 
 number = 5

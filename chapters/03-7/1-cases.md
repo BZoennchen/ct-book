@@ -15,9 +15,9 @@ kernelspec:
 
 Für eine Fallunterscheidung können wir für jeden Fall $i$ einen bestimmten Codeblock $B_i$ definieren.
 Dieser wird genau dann ausgeführt sofern ein logischer Ausdruck $P_i$ wahr, d.h. ``True`` ergibt und kein anderer logischer Ausdruck $P_j$ für $j < i$ bereits ``True`` ergeben hat.
-In anderen Worten, der Fall $i$ trifft zu und kein Fall davor ist eingetreten.
+In anderen Worten, der Fall $i$ trifft zu und kein Fall davor ist bereits eingetreten.
 
-Damit wird bei eine Fallunterscheidung **höchstens** einer der Codeblöcke $B_0, \ldots, B_n$ ausgeführt!
+Damit führt eine Fallunterscheidung zur Ausführung von **höchstens** einer der Codeblöcke $B_0, \ldots, B_n$.
 Trifft keiner der Fälle zu, d.h. kein $P_i$ ergibt ``True`` und es ist kein Alternativfall (``else``) definiert, so wird keiner der Codeblöcke ausgeführt.
 Eine Fallunterscheidung beginnt immer mit dem ``if``-Signalwort!
 
@@ -150,7 +150,7 @@ print(x)
 ```
 
 ```{admonition} Aufeinander folgende Fallunterscheidungen
-:class: hint
+:class: remark
 Es ist zu empfehlen aufeinanderfolgende ``if``-Statements durch eine Leerzeile zu trennen.
 ```
 
@@ -297,15 +297,16 @@ print(f'even: {even}')
 
 ## Beispiel (quadratische Gleichungen)
 
-Sei $f(x) = ax^2 + bx + c$ mit konstanten Zahlen $a, b, c \in \mathbb{R}$. Wir wissen, dass f(r) = 0 für
+Sei $f(x) = ax^2 + bx + c$ mit konstanten Zahlen $a, b, c \in \mathbb{R}$. Wir wissen, dass $f(x) = 0$ für
 
 $$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
 sofern $b^2 - 4ac >= 0$.
-Lassen Sie uns eine Funktion ``solve_quadratic(a, b, c)`` entwerfen, welche uns alle $x_{1,2}$ berechnet. (Es gibt eine, zwei oder keine Lösung).
+Lassen Sie uns eine Funktion ``solve_quadratic(a, b, c)`` entwerfen, welche uns alle $x_{1,2}$ berechnet. 
+Es gibt eine, zwei oder keine Lösung.
 
 Lassen Sie uns als erstes eine Funktion entwerfen, die testet ob eine Fließkommazahl annähernd gleich null ist.
-Beachten Sie: Fließkommazahlen sind lediglich eine Annäherung des echten Wertes und damit ist der exakte Vergleich ``==`` ungeeignet.
+Beachten Sie: [Fließkommazahlen](sec-float) sind lediglich eine Annäherung des echten Wertes und damit ist der exakte Vergleich ``==`` ungeeignet.
 Stattdessen ist unsere Fließkommazahl ``x`` gleich null, falls sie annähernd gleich null ist.
 
 ```{code-cell} python3
@@ -315,7 +316,7 @@ def is_zero(x):
 ```
 
 Lassen Sie uns nun die quadratische Gleichung lösen.
-Dazu müssen wir lediglich die Formel für $r$ implementieren:
+Dazu müssen wir lediglich die Formel für $x_{1,2}$ implementieren:
 
 ```{code-cell} python3
 def solve_quadratic(a, b, c):    
@@ -401,6 +402,9 @@ print(f'solution for x^2 = 0: {solve_quadratic(1, 0, 0)}')
 print(f'solution for -4x + 1 = 0: {solve_quadratic(0, -4, 1)}')
 print(f'solution for 1 = 0: {solve_quadratic(0, 0, 1)}')
 ```
+
+Gilt ``a == b == c == 0`` wird unsere Funktion zu $f(x) = 0$ und demnach gilt für jedes $x_0 \in \mathbb{R}$ dass es eine Nullstelle ist.
+Das wären unendlich viele Zahlen, deshalb werfen wir (``raise``) in diesem Fall einen Fehler.
 
 ```{code-cell} python3
 ---

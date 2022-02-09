@@ -93,7 +93,7 @@ self.age
 angesprochen werden, was wir in ``__str__(self)`` von ``Lecturer`` demonstrieren.
 
 ```{admonition} Vererbte Objektattribute
-:class: hint
+:class: remark
 Attribute eines Objekts egal ob *vererbt* oder nicht werden **immer** durch ``self.attributename`` und **niemals** über ``super().attributename`` angesprochen.
 ```
 
@@ -139,7 +139,7 @@ print(lecturer)
 lecturer.report()
 ```
 
-``Lecturer`` definiert keine Methode ``report``, doch da ``Person`` eine solche Methode enthält, existiert diese auch in ``Lecturer``.
+``Lecturer`` definiert keine Methode ``report``, doch da ``Person`` eine solche Methode enthält mit diesem Namen definiert, existiert diese auch in ``Lecturer``.
 Der folgende Code hätte die gleiche Wirkung:
 
 ```{code-cell} python3
@@ -155,7 +155,7 @@ class Lecturer(Person):
         super().report()
 ```
 
-Es wird demnach einfach die ``report`` Methode von ``Person`` aufgerufen!
+Es wird demnach die ``report`` Methode von ``Person`` aufgerufen!
 Alles in allem sparen wir Codezeilen bzw. doppelten Code.
 Es ist, zum Beispiel, möglich den Code aus ``Person.__init__()`` zu kopieren und die gesamte Initialisierung zu überschreiben:
 
@@ -173,7 +173,7 @@ class Lecturer(Person):
 Doch wenn wir die Initialisierung einer Person ``Person.__init__()`` ändern und sich diese Änderung auch auf alle Kinder auswirken soll, so müssten wir ``Lecturer.__init__()`` entsprechend anpassen.
 
 ```{admonition} Vererbung aber wann?
-:class: warning
+:class: attention
 Gehen Sie besser sparsam mit der Vererbung um. 
 Ruft die ``__init__``-Methode nicht ihre Eltern-``__init__`` auf, so ist die Vererbung an dieser Stelle wahrscheinlich nicht die richtige Wahl der Modellierung.
 ```
@@ -184,10 +184,17 @@ Vererbung ist ein mächtiges Werkzeug, doch sollten Sie damit bedacht und sparsa
 Tiefe Vererbungshierarchien tendieren dazu unverständlich zu werden.
 Die Mehrfachvererbung, welche wir in diesem Kurs nicht besprechen werden, ist in ``Python`` möglich, doch in den allermeisten Fällen nicht sinnvoll.
 
-Bei der Vererbung müssen Sie sich immer auf die Datenstruktur beziehen.
+```{admonition} Vererbung aber wann?
+:class: remark
+Ob eine Vererbung sinnvoll ist entscheidet sich durch die Datenstrukturen die Sie bauen wollen und nicht unbedingt durch die Realgegenstände, die diese Strukturen modellieren.
+```
+
 So könnte man schnell zu dem Schluss kommen, dass ein Quadrat ein spezielles Rechteck ist und dass es somit eine gute Idee ist Quadrat von Rechteck erben zu lassen.
 Doch besitzt ein Quadrat lediglich eine Position und eine Breite wohingegen ein Rechteck noch eine zusätzliche Höhe besitzt.
-Vererben wir Rechteck an Quadrat erhält es ein überflüssiges Attribut, welches schnell zu Problemen führen wird!
+Vererben wir Rechteck an Quadrat erhält es ein überflüssiges Attribut.
+Das ist erst einmal nicht tragisch, wenn wir dem Rechteck jedoch eine Methode verpassen mit dem es seine Höhe verändern kann, geraten wir in Probleme.
+Denn damit kann ein Rechteck etwas, was ein Quadrat nicht kann -- die Höhe nicht aber die Breite verändern.
+Die Datenstruktur Rechteck ist nicht länger einer Abstraktion von Quadrat.
 
 Oftmals ist es besser die *Komposition* der *Vererbung* vorzuziehen.
 *Komposition* bedeutet, dass wir eine Klasse definieren, die als Attribute weitere komplexere Klassen beinhaltet.
@@ -210,7 +217,7 @@ So gelangt Funktionalität nicht über Vererbung sondern durch Komposition in di
 ## Kapselung
 
 *Kapselung* ist ein weiteres fundamentales, wenn nicht sogar DAS fundamentalste aller Konzept der OOP.
-Zum einen geht es darum den gesamten sich ändernden Zustand eines Programms in kleine Zuständigkeiten aka Objekte aufzuteilen.
+Dabei wird der gesamte, sich ändernden Zustand eines Programms in kleine Zuständigkeiten aka Objekte aufgeteilt.
 
 Jedes Objekt kennt sein Innenleben und schützt dieses vor dem Zugriff von außen.
 Nach außen bietet das Objekt eine öffentliche Schnittstelle.
@@ -218,12 +225,12 @@ Nur über diese ist es möglich das Innenleben des Objekts zu verändern.
 Demnach verändert das Objekt sein Innenleben selbst indem es durch seine öffentlichen Methoden dazu aufgefordert wird.
 
 Die Einschränkung des Zugriffs auf bestimmte *Methoden* und *Attribute* eines *Objekts* ist ein wesentlicher Aspekt und wird durch die *Klasse* eines *Objekts* definiert.
-Die Idee dahinter ist es Komplexität vor dem Benutzer der Klasse und Objekte zu verbergen und das 'Innenleben' eines Objekts vor ungewollter Veränderung zu schützten.
+Die Idee dahinter ist es Komplexität vor dem Benutzer der Klasse zu verbergen und das 'Innenleben' eines Objekts vor ungewollter Veränderung zu schützten.
 Der Benutzer muss lediglich wissen **WAS** eine Methode bewirkt, **WIE** dies erreicht wird bleibt verborgen und gehört zur Zuständigkeit des *Objekts*.
 
 Angenommen wir konstruieren eine Klasse ``Circle`` mit den Attributen ``radius``, ``center`` und ``diameter``.
 Wir fügen noch eine Methode ``dist`` und ``contains`` hinzu.
-``dist`` berechnet die distanz zwischen dem Kreis und einem Punkt.
+``dist`` berechnet die Distanz zwischen dem Kreis und einem Punkt.
 Die Distanz ist negativ wenn sich der Punkt innerhalb des Kreises befindet.
 ``contains`` prüft ob sich ein Punkt innerhalb des Kreises befindet.
 
@@ -295,7 +302,7 @@ Doch dadurch dass wir eine Methode für die Veränderung verwenden, können wir 
 Durch die gleiche Schreibweise können wir auch *Methoden* in private Methoden umwandeln, sodass diese nur innerhalb der Klasse sichtbar und aufrufbar sind.
 Dies kann sinnvoll für Hilfsmethoden sein, die als solches, getrennt vom Aufruf anderer Methoden, nicht aufgerufen werden sollten.
 
-Das obige Beispiel ist etwas künstlich, denn eigentlich macht das Attribut ``diameter`` an dieser stelle keinen rechten Sinn.
+Das obige Beispiel ist etwas künstlich, denn eigentlich macht das Attribut ``diameter`` an dieser Stelle keinen rechten Sinn.
 Eine bessere Variante bietet folgender Code:
 
 ```{code-cell} python3
@@ -327,7 +334,10 @@ class Circle():
 
 ## Polymorphie
 
-Polymorphie ist das Angebot einer einzelnen Schnittstelle für Objekte unterschiedlichen Typs.
+```{admonition} Polymorphie
+:class: definition
+*Polymorphie* ist ein Konzept, welches ermöglicht, dass eine Operation abhängig von ihrer Verwendung Werte/Objekte unterschiedlichen Datentyps verarbeiten kann.
+```
 
 Wir haben schon einige Beispiele gesehen in der Polymorphie zum Einsatz kam.
 Der ``+``-Operator angewendet auf ganzen Zahlen und Zeichenketten wäre ein solches Beispiel:
@@ -338,6 +348,7 @@ print('3' + '6')
 ```
 
 Die Schnittstelle ist dabei der ``+``-Operator und die unterschiedlichen Objekte sind einmal vom Typ ``int`` und einmal vom Typ ``str``.
+
 Aber auch unser Beispiel mit den Klassen ``Person``, ``Student``, ``Lecturer`` bietet Polymorphie.
 Die gemeinsame Schnittstelle ist die Basisklasse ``Person``.
 Ein ``Student`` und ``Lecturer`` sind auch jeweils eine ``Person`` und bieten uns alle Attribute und Methoden die auch eine ``Person`` bietet.

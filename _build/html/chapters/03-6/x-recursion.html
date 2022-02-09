@@ -881,15 +881,21 @@
   <div class="section" id="rekursive-funktionen">
 <span id="sec-recursive-functions"></span><h1><span class="section-number">6.6. </span>Rekursive Funktionen<a class="headerlink" href="#rekursive-funktionen" title="Permalink to this headline">¶</a></h1>
 <p>Bevor Sie fortfahren sollten Sie sich den Abschnitt <a class="reference internal" href="../02-4/3-control-structures.html#sec-repetition-and-recursion"><span class="std std-ref">Wiederholung</span></a> durchgelesen haben.</p>
-<p>Wir werden in diesem Abschnitt nicht über Rekursion an sich sprechen, sondern wie <em>rekursive Funktionen</em> in den allermeisten Programmiersprachen realisiert werden.
-Wie realisiert der Computer rekursion?
-Was passiert bei einem rekursiven Aufruf?
-Und was sind überhaupt <em>rekursive Funktionen</em>?</p>
-<div class="admonition-rekursive-funktionen admonition">
+<p>Wir werden in diesem Abschnitt nicht über Rekursion an sich sprechen, sondern wie <em>rekursive Funktionen</em> in den allermeisten Programmiersprachen realisiert werden.</p>
+<blockquote>
+<div><p>Wie realisiert der Computer Rekursion?</p>
+</div></blockquote>
+<blockquote>
+<div><p>Was passiert bei einem rekursiven Aufruf?</p>
+</div></blockquote>
+<blockquote>
+<div><p>Und was sind überhaupt <em>rekursive Funktionen</em>?</p>
+</div></blockquote>
+<div class="definition admonition">
 <p class="admonition-title">Rekursive Funktionen</p>
-<p>Als <em>rekursive Funktion</em> wird eine Funktion bezeichnet, welche sich selbst für bestimmte Argumente aufruft.</p>
+<p>Als <em>rekursive Funktion</em> wird eine Funktion bezeichnet, welche sich für bestimmte Argumente selbst aufruft.</p>
 </div>
-<p>Die folgende Berechnung der Fakultät ist eine rekursive Funktion, welche wir bereits eingeführt haben.</p>
+<p>Die folgende Berechnung der Fakultät ist eine rekursive Funktion, welche wir bereits eingeführt hatten.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fac</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -910,21 +916,21 @@ Und was sind überhaupt <em>rekursive Funktionen</em>?</p>
 </div>
 <p>Damit eine rekursive Funktion terminiert benötigt sie mindestens einen <em>Basisfall</em>, d.h. einen Pfad an Anweisungen, welcher <strong>keinen</strong> Funktionsaufruf der Funktion selbst enthält.
 Das ist eine notwendige aber noch nicht hinreichende Bedingung.
-Um formal zu beweisen, dass eine rekursive Funktion terminiert und auch das richtig berechnet, verwendet man die sog. <em>Induktion</em>.</p>
+Um formal zu beweisen, dass eine rekursive Funktion terminiert und auch das richtig berechnet, verwendet man die sog. <a class="reference internal" href="../02-0/7-induction.html#sec-induction"><span class="std std-ref">Induktion</span></a>.</p>
 <p>Im obigen Fall sehen wir recht schnell, dass alles korrekt ablaufen sollte, sofern <code class="docutils literal notranslate"><span class="pre">n</span></code> eine natürliche Zahl ist.
 Da wir <code class="docutils literal notranslate"><span class="pre">n</span></code> bei jedem rekursiven Aufruf um 1 verkleinern, muss irgendwann die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingung zutreffen.
 In anderen Worten kommen wir immer irgendwann in den <em>Basisfall</em>!</p>
 <p>Wie aber werden die Variablen der unterschiedlichen Funktionsaufrufe verwaltet?
 Gibt es nur ein einzelnes <code class="docutils literal notranslate"><span class="pre">n</span></code>, welches von allen Funktionsaufrufen verwendet wird?
 Dieser Punkt ist äußerst wichtig.
-Lassen Sie uns den Funktionsaufruf <code class="docutils literal notranslate"><span class="pre">fac(4)</span></code> einmal ‘ausbreite’:
+Lassen Sie uns den Funktionsaufruf <code class="docutils literal notranslate"><span class="pre">fac(4)</span></code> einmal ‘ausbreiten’:
 <code class="docutils literal notranslate"><span class="pre">fac(4)</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">fac(3)</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">fac(2)</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">fac(1)</span></code> wird schließlich zu <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">1</span></code>.</p>
 <div class="section" id="stack-und-heap">
 <h2><span class="section-number">6.6.1. </span>Stack und Heap<a class="headerlink" href="#stack-und-heap" title="Permalink to this headline">¶</a></h2>
 <p>Es ist äußerst wichtig zu begreifen, dass bei jedem rekursiven Aufruf ein neuer <a class="reference internal" href="3-namespaces.html#sec-local-namespace"><span class="std std-ref">lokaler Namensraum</span></a> eröffnet wird!
 Das bedeutet, jeder Funktionsaufruf verwendet einen frischen Satz an Variablen.
 Dieser Namensraum befindet sich auf dem sog. <em>Stack</em>, zu deutsch <em>Stapel</em>.</p>
-<div class="admonition-stack-arbeitsspeicher admonition" id="def-stack">
+<div class="definition admonition" id="def-stack">
 <p class="admonition-title">Stack (Arbeitsspeicher)</p>
 <p>Der <em>Stack</em> ist ein spezieller Bereich des Arbeitsspeichers, auf welchem die Variablen des lokalen Namensraums liegen.
 Bei jedem Funktionsaufruf wird ein Namensraum automatisch auf den Stack gelegt und bei jedem Rücksprung (<code class="docutils literal notranslate"><span class="pre">return</span></code>) wird der entsprechende Namensraum automatisch vom Stack gelöscht.</p>
@@ -947,13 +953,13 @@ In diesem hat <code class="docutils literal notranslate"><span class="pre">n</sp
 </div>
 <p>Wann immer eine Funktion aufgerufen wird (egal ob rekursiv oder nicht) wird oben auf dem Stack ein Speicherblock für den lokalen Namensraum reserviert und wann immer die Funktion terminiert/zurückspringt der Speicherblock wird wieder freigegeben.
 Der Zugriff auf den Stack ist schnell, da die Reservierung und das Freigeben wenig Verwaltungsinformation benötigt.
-Außerdem ist der Stack ein zusammenhängender Speicherbereich, d.h., aufeinanderfolgende Zugriffe benötigen naheliegende Speicherbereiche.</p>
-<div class="hint admonition">
+Außerdem ist der Stack ein zusammenhängender Speicherbereich, d.h., aufeinanderfolgende Speicherzugriffe liegen nahe im Speicher beisammen.</p>
+<div class="remark admonition">
 <p class="admonition-title">Stack und Funktionsaufrufe</p>
-<p>Damit wir als Programmierer*innen nicht vor der Entscheidung stehen einen Codeblock nicht in eine Funktion auszulagern, da sich dadurch die Laufzeit verschlechtert, muss der <em>Stack</em> sehr effizient sein!</p>
+<p>Damit wir als Programmierer*innen Codeblöcke aus Gründen der Laufzeit Funktionen vermeiden, muss der <em>Stack</em> sehr effizient sein!</p>
 </div>
-<p>Die Größe des <em>Stacks</em> ist einen bestimmte Anzahl an Byte begrenzt.
-Ist unsere Rekursion zu tief, läuft dieser Speicher voll:</p>
+<p>Die maximale Tiefe des <em>Stacks</em> ist an eine bestimmte Zahl gebunden.
+Ist unsere Rekursion zu tief, läuft der Stacks voll:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fac</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
@@ -1004,14 +1010,14 @@ Ist unsere Rekursion zu tief, läuft dieser Speicher voll:</p>
 </div>
 </div>
 <p>Der andere Speicherbereich, welcher nicht zum <em>Stack</em> gehört, bezeichnen wir als <em>Heap</em>.</p>
-<div class="admonition-heap-arbeitsspeicher admonition" id="def-heap">
+<div class="definition admonition" id="def-heap">
 <p class="admonition-title">Heap (Arbeitsspeicher)</p>
 <p>Der <em>Heap</em> ist ein Speicherbereich für die <em>dynamische Speicherverwaltung</em>.
 Anders als beim <em>Stack</em> gibt es kein Muster mit dem der <em>Heap</em> gefüllt bzw. geleert werden muss.</p>
 </div>
-<p>Im den <em>Heap</em> kann man kreuz und quer Speicher reservieren und freigeben.
+<p>Im <em>Heap</em> kann man kreuz und quer Speicher reservieren und freigeben.
 Das macht die Verwaltung des <em>Heaps</em> komplexer.
-Im vergleich zum <em>Stack</em> ist es deutlich aufwendiger zu protokollieren, welche Speicherbereiche frei und welche belegt sind.</p>
+Im Vergleich zum <em>Stack</em> ist es deutlich aufwendiger zu protokollieren, welche Speicherbereiche frei und welche belegt sind.</p>
 </div>
 <div class="section" id="laufzeit">
 <h2><span class="section-number">6.6.2. </span>Laufzeit<a class="headerlink" href="#laufzeit" title="Permalink to this headline">¶</a></h2>
@@ -1043,7 +1049,7 @@ Läuft dieser voll, schlägt die Vorhersage fehl und die Ausführungszeit verlä
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>305 µs ± 6.93 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>303 µs ± 5.83 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1055,7 +1061,7 @@ Läuft dieser voll, schlägt die Vorhersage fehl und die Ausführungszeit verlä
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.3 ms ± 2.92 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.58 ms ± 481 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1070,12 +1076,12 @@ Das heißt die iterative Berechnung ist um einen Faktor von</p>
 <h2><span class="section-number">6.6.3. </span>Endrekursionen (in Python?)<a class="headerlink" href="#endrekursionen-in-python" title="Permalink to this headline">¶</a></h2>
 <p>Der Laufzeitvergleich hängt jedoch auch mit der verwendeten Programmiersprache zusammen.
 Funktionale Sprachen bieten, zum Beispiel, das Konzept der optimierten <em>Endrekursion</em> (engl. <em>Tail Recursion</em>).</p>
-<div class="admonition-endrekursion admonition" id="def-tail-recursion">
+<div class="definition admonition" id="def-tail-recursion">
 <p class="admonition-title">Endrekursion</p>
 <p><em>Endrekursion</em>  ist eine bestimmte Form der Rekursion bei der der rekursive Aufruf einer Funktion auch ihre <strong>letzte Anweisung</strong> ist.</p>
 </div>
-<p>Trifft dies zu eliminieren die <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">Compiler</span></a> oder <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> von funktionalen Sprachen die rekursiven Aufrufe der Funktion – der <em>Stack</em> bleibt (bis auf einen Eintrag) leer.
-Unsere <code class="docutils literal notranslate"><span class="pre">fac</span></code>-Funktion ist keine <em>Endrekursion</em>, denn nach dem rekursiven Aufruf wird die multipliziert.
+<p>Ist eine Funktion endrekursiv, eliminieren die <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">Compiler</span></a> oder <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> von funktionalen Sprachen die rekursiven Aufrufe der Funktion – der <em>Stack</em> bleibt (bis auf einen Eintrag) leer.
+Unsere <code class="docutils literal notranslate"><span class="pre">fac</span></code>-Funktion ist keine <em>Endrekursion</em>, denn nach dem rekursiven Aufruf folgt eine Multiplikation.
 Wir können daraus jedoch leicht eine <em>Endrekursion</em> machen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1096,12 +1102,16 @@ Wir können daraus jedoch leicht eine <em>Endrekursion</em> machen:</p>
 </div>
 </div>
 <p>Alle Arbeit ist getan und dann folgt der rekursive Aufruf.
-Deshalb können wir eigentlich alle Namensräume, welche auf dem <em>Stack</em> liegen vergessen.
+Deshalb können wir eigentlich alle Namensräume, welche auf dem <a class="reference internal" href="#def-stack"><span class="std std-ref">Stack</span></a> liegen vergessen.
 Wir haben <code class="docutils literal notranslate"><span class="pre">n</span></code> bereits verarbeitet und brauchen es nicht mehr.
-Deshalb belastet diese Rekursion den <em>Stack</em> nicht, sofern unser Compiler oder Interpreter dies auch optimiert.
-Der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Interpreter optimiert dies nicht!
+Deshalb belastet diese Rekursion den <em>Stack</em> nicht, sofern unser <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">Compiler</span></a> oder <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> dies auch optimiert.</p>
+<div class="remark admonition" id="remark-tail-recursion-python">
+<p class="admonition-title">Endrekursion in Python</p>
+<p>Der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Interpreter nutzt die <em>Endrekursion</em> nicht aus.</p>
+</div>
+<p>Der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Interpreter optimiert dies nicht!
 D.h. obwohl wir <code class="docutils literal notranslate"><span class="pre">n</span></code> vergessen könnten, wird es auf den <em>Stack</em> gelegt.
-Warum sich die Entwickler*innen gegen <em>elimination von Endrekursionen</em> (engl. <em>Tail Recursion Elimination (TRE)</em>) entschieden haben hat verschiedene Gründe:</p>
+Warum sich die Entwickler*innen gegen <em>elimination von Endrekursionen</em> (engl. <em>Tail Recursion Elimination (TRE)</em>) entschieden haben, hat verschiedene Gründe:</p>
 <ul class="simple">
 <li><p>TRE zerstört den sog. Stack Trace (wichtig für Fehlermeldungen)</p></li>
 <li><p>TRE als Option würde Entwickler*innen motivieren die Rekursion häufiger zu verwenden, doch würde der Code dann nicht überall gleich effizient laufen</p></li>
@@ -1130,13 +1140,11 @@ Warum sich die Entwickler*innen gegen <em>elimination von Endrekursionen</em> (e
 </div>
 <p>Wir binden <code class="docutils literal notranslate"><span class="pre">g</span></code> an das erste <code class="docutils literal notranslate"><span class="pre">f</span></code>.
 Dann aber definieren wir <code class="docutils literal notranslate"><span class="pre">f</span></code> neu.
-Aus <code class="docutils literal notranslate"><span class="pre">g(5)</span></code> ruft das alte <code class="docutils literal notranslate"><span class="pre">f</span></code> auf, nennen wir es <code class="docutils literal notranslate"><span class="pre">f_old</span></code>.
-Somit wird <code class="docutils literal notranslate"><span class="pre">g(5)</span></code> zu <code class="docutils literal notranslate"><span class="pre">f_old(5)</span></code> doch diese Funktion ruft nun das nicht rekursive neue <code class="docutils literal notranslate"><span class="pre">f</span></code> auf, d.h. <code class="docutils literal notranslate"><span class="pre">f(5-1)</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">f(4)</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">4</span></code>.
-Wie soll der Interpreter mit protokollieren welche Funktionen rekursiv sind und welche nicht oder nicht mehr?</p>
-<div class="warning admonition">
-<p class="admonition-title">Endrekursion und Python</p>
-<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> optimiert bzw. eliminiert keine Endrekursion!</p>
-</div>
+<code class="docutils literal notranslate"><span class="pre">g(5)</span></code> ruft das alte <code class="docutils literal notranslate"><span class="pre">f</span></code> auf, nennen wir es <code class="docutils literal notranslate"><span class="pre">f_old</span></code>.
+Somit wird <code class="docutils literal notranslate"><span class="pre">g(5)</span></code> zu <code class="docutils literal notranslate"><span class="pre">f_old(5)</span></code>.
+Diese Funktion ruft nun das nicht rekursive neue <code class="docutils literal notranslate"><span class="pre">f</span></code> auf, d.h. <code class="docutils literal notranslate"><span class="pre">f(5-1)</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">f(4)</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">4</span></code>.
+Wie soll der Interpreter protokollieren welche Funktionen rekursiv sind und welche nicht oder nicht mehr?
+Dadurch, dass wir Funktionsnamen in <code class="docutils literal notranslate"><span class="pre">Python</span></code> zur Laufzeit ändern können, wäre dies unglaublich aufwendig.</p>
 <p>An diesem Beispiel wird deutlich, dass die Flexibilität und Dynamik einer Sprache ihren Preis hat.
 Für Interpreter und Compiler wird es schwerer und schwerer Optimierungen durchzuführen!</p>
 </div>

@@ -968,8 +968,8 @@
 <span id="sec-cases"></span><h1><span class="section-number">7.1. </span>Fallunterscheidungen<a class="headerlink" href="#fallunterscheidungen" title="Permalink to this headline">¶</a></h1>
 <p>Für eine Fallunterscheidung können wir für jeden Fall <span class="math notranslate nohighlight">\(i\)</span> einen bestimmten Codeblock <span class="math notranslate nohighlight">\(B_i\)</span> definieren.
 Dieser wird genau dann ausgeführt sofern ein logischer Ausdruck <span class="math notranslate nohighlight">\(P_i\)</span> wahr, d.h. <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt und kein anderer logischer Ausdruck <span class="math notranslate nohighlight">\(P_j\)</span> für <span class="math notranslate nohighlight">\(j &lt; i\)</span> bereits <code class="docutils literal notranslate"><span class="pre">True</span></code> ergeben hat.
-In anderen Worten, der Fall <span class="math notranslate nohighlight">\(i\)</span> trifft zu und kein Fall davor ist eingetreten.</p>
-<p>Damit wird bei eine Fallunterscheidung <strong>höchstens</strong> einer der Codeblöcke <span class="math notranslate nohighlight">\(B_0, \ldots, B_n\)</span> ausgeführt!
+In anderen Worten, der Fall <span class="math notranslate nohighlight">\(i\)</span> trifft zu und kein Fall davor ist bereits eingetreten.</p>
+<p>Damit führt eine Fallunterscheidung zur Ausführung von <strong>höchstens</strong> einer der Codeblöcke <span class="math notranslate nohighlight">\(B_0, \ldots, B_n\)</span>.
 Trifft keiner der Fälle zu, d.h. kein <span class="math notranslate nohighlight">\(P_i\)</span> ergibt <code class="docutils literal notranslate"><span class="pre">True</span></code> und es ist kein Alternativfall (<code class="docutils literal notranslate"><span class="pre">else</span></code>) definiert, so wird keiner der Codeblöcke ausgeführt.
 Eine Fallunterscheidung beginnt immer mit dem <code class="docutils literal notranslate"><span class="pre">if</span></code>-Signalwort!</p>
 <div class="section" id="if">
@@ -1141,7 +1141,7 @@ x &lt;= 7
 </div>
 </div>
 </div>
-<div class="hint admonition">
+<div class="remark admonition">
 <p class="admonition-title">Aufeinander folgende Fallunterscheidungen</p>
 <p>Es ist zu empfehlen aufeinanderfolgende <code class="docutils literal notranslate"><span class="pre">if</span></code>-Statements durch eine Leerzeile zu trennen.</p>
 </div>
@@ -1323,13 +1323,14 @@ even: [True, False, True, False, True, False, True, False, True, False]
 </div>
 <div class="section" id="beispiel-quadratische-gleichungen">
 <h2><span class="section-number">7.1.8. </span>Beispiel (quadratische Gleichungen)<a class="headerlink" href="#beispiel-quadratische-gleichungen" title="Permalink to this headline">¶</a></h2>
-<p>Sei <span class="math notranslate nohighlight">\(f(x) = ax^2 + bx + c\)</span> mit konstanten Zahlen <span class="math notranslate nohighlight">\(a, b, c \in \mathbb{R}\)</span>. Wir wissen, dass f(r) = 0 für</p>
+<p>Sei <span class="math notranslate nohighlight">\(f(x) = ax^2 + bx + c\)</span> mit konstanten Zahlen <span class="math notranslate nohighlight">\(a, b, c \in \mathbb{R}\)</span>. Wir wissen, dass <span class="math notranslate nohighlight">\(f(x) = 0\)</span> für</p>
 <div class="math notranslate nohighlight">
 \[x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</div>
 <p>sofern <span class="math notranslate nohighlight">\(b^2 - 4ac &gt;= 0\)</span>.
-Lassen Sie uns eine Funktion <code class="docutils literal notranslate"><span class="pre">solve_quadratic(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code> entwerfen, welche uns alle <span class="math notranslate nohighlight">\(x_{1,2}\)</span> berechnet. (Es gibt eine, zwei oder keine Lösung).</p>
+Lassen Sie uns eine Funktion <code class="docutils literal notranslate"><span class="pre">solve_quadratic(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code> entwerfen, welche uns alle <span class="math notranslate nohighlight">\(x_{1,2}\)</span> berechnet.
+Es gibt eine, zwei oder keine Lösung.</p>
 <p>Lassen Sie uns als erstes eine Funktion entwerfen, die testet ob eine Fließkommazahl annähernd gleich null ist.
-Beachten Sie: Fließkommazahlen sind lediglich eine Annäherung des echten Wertes und damit ist der exakte Vergleich <code class="docutils literal notranslate"><span class="pre">==</span></code> ungeeignet.
+Beachten Sie: <a class="reference internal" href="../03-4/3-float.html#sec-float"><span class="std std-ref">Fließkommazahlen</span></a> sind lediglich eine Annäherung des echten Wertes und damit ist der exakte Vergleich <code class="docutils literal notranslate"><span class="pre">==</span></code> ungeeignet.
 Stattdessen ist unsere Fließkommazahl <code class="docutils literal notranslate"><span class="pre">x</span></code> gleich null, falls sie annähernd gleich null ist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1341,7 +1342,7 @@ Stattdessen ist unsere Fließkommazahl <code class="docutils literal notranslate
 </div>
 </div>
 <p>Lassen Sie uns nun die quadratische Gleichung lösen.
-Dazu müssen wir lediglich die Formel für <span class="math notranslate nohighlight">\(r\)</span> implementieren:</p>
+Dazu müssen wir lediglich die Formel für <span class="math notranslate nohighlight">\(x_{1,2}\)</span> implementieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_quadratic</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>    
@@ -1466,6 +1467,8 @@ solution for 1 = 0: ()
 </div>
 </div>
 </div>
+<p>Gilt <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span> <span class="pre">==</span> <span class="pre">c</span> <span class="pre">==</span> <span class="pre">0</span></code> wird unsere Funktion zu <span class="math notranslate nohighlight">\(f(x) = 0\)</span> und demnach gilt für jedes <span class="math notranslate nohighlight">\(x_0 \in \mathbb{R}\)</span> dass es eine Nullstelle ist.
+Das wären unendlich viele Zahlen, deshalb werfen wir (<code class="docutils literal notranslate"><span class="pre">raise</span></code>) in diesem Fall einen Fehler.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;solution for 0 = 0: </span><span class="si">{</span><span class="n">solve_quadratic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
