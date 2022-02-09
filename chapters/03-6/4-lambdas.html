@@ -53,6 +53,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6.5. Umschlossene Funktionen" href="5-nested-functions.html" />
@@ -878,7 +880,8 @@ Nehmen wir folgende Funktion mit dem Namen <code class="docutils literal notrans
 </div>
 </div>
 </div>
-<p>Wir können einen Verweis auf die Funktion auch in einer Variablen abspeichern, dazu verwenden wir lediglich den Namen der Funktion:</p>
+<p>Der Name befindet sich im <a class="reference internal" href="3-namespaces.html#sec-global-namespace"><span class="std std-ref">globalen Namensraum</span></a> und verweist auf den Code der die Funktion realisiert.
+Wir können einen Verweis auf die Funktion auch in einer Variablen abspeichern, dazu verwenden wir lediglich den Namen der Funktion:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="o">=</span> <span class="n">add</span>
@@ -908,8 +911,9 @@ Nehmen wir folgende Funktion mit dem Namen <code class="docutils literal notrans
 </div>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> sind <em>anonyme Funktionen</em> zugleich <em>kleine Funktionen</em>.</p>
 <p>Mit dem Signalwort <code class="docutils literal notranslate"><span class="pre">lambda</span></code> beginnt die Definition einer <em>anonyme Funktion</em>.
-Nach <code class="docutils literal notranslate"><span class="pre">lambda</span></code> folgen die Argumente und nach dem <code class="docutils literal notranslate"><span class="pre">:</span></code> der Funktionsrumpf.
-Die gesamte Funktionsdefinition muss dabei in eine Zeile passen und es darf sich beim Funktionsrumpf nur im <strong>einen</strong> Ausdruck handeln.
+Nach <code class="docutils literal notranslate"><span class="pre">lambda</span></code> folgen die Parameter und nach dem <code class="docutils literal notranslate"><span class="pre">:</span></code> der Funktionsrumpf.
+Die gesamte Funktionsdefinition muss dabei in eine Zeile passen.
+Es darf sich beim Funktionsrumpf nur im <strong>einen</strong> Ausdruck handeln.
 Der Rückgabewert ist automatisch der ausgewertete Ausdruck hinter dem <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
 <p>Bei dieser enormen Einschränkung stellt sich die Frage, wann verwenden wir <em>anonyme Funktionen</em>?
 Anonyme Funktionen werden oft benutzt wenn die Logik der Funktion sehr einfach ist und wir Funktionen als Argumente verwenden um das Verhalten anderer Funktionen zu verändern.
@@ -934,7 +938,7 @@ Die <em>built-in</em> Funktion <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
-<p>Nach diesem Aufruf brauchen wir <code class="docutils literal notranslate"><span class="pre">square()</span></code> vermutlich nie wieder, zudem ist die Funktion so simpel, das eine vollwertige Definition übertrieben scheint.
+<p>Nach diesem Aufruf brauchen wir <code class="docutils literal notranslate"><span class="pre">square()</span></code> vermutlich nie wieder, zudem ist die Funktion so simpel, dass eine vollwertige Definition übertrieben scheint.
 Kürzer geht das ganze mit einer <em>anonymen Funktion</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -949,7 +953,7 @@ Kürzer geht das ganze mit einer <em>anonymen Funktion</em>:</p>
 </div>
 </div>
 </div>
-<p>Erwartet eine Funktion eine andere Funktion, so ist es oft sinnvoll den Standardwert des Arguments als <em>anonyme Funktion</em> zu definieren, da wir ihn nur an dieser Stelle brauchen:</p>
+<p>Erwartet eine Funktion eine andere Funktion, so ist es oft sinnvoll ein Standardarguments als <em>anonyme Funktion</em> festzulegen, da wir ihn nur an dieser Stelle brauchen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">apply</span><span class="p">(</span><span class="n">mylist</span><span class="p">,</span> <span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">e</span> <span class="p">:</span> <span class="n">e</span><span class="p">):</span>
@@ -968,8 +972,8 @@ Kürzer geht das ganze mit einer <em>anonymen Funktion</em>:</p>
 </div>
 </div>
 </div>
-<p>Ein weiterer Fall für den sich eine <em>anonyme Funktion</em> eignen kann ist, wenn wir bestimmte Argumente fixieren wollen.
-Das bedeutet wir haben eine Funktion mit n Argumenten und wir möchten daraus eine neue Funktion mit m &lt; n Argumenten bauen und dabei n-m Argumente fixieren.
+<p>Ein weiterer Fall für den sich eine <em>anonyme Funktion</em> eignen kann ist, wenn wir bestimmte Parameter fixieren wollen.
+Das bedeutet wir haben eine Funktion mit <span class="math notranslate nohighlight">\(n\)</span> Parametern und wir möchten daraus eine neue Funktion mit <span class="math notranslate nohighlight">\(m &lt; n\)</span> Parametern bauen und dabei <span class="math notranslate nohighlight">\(n-m\)</span> Parameter fixieren.
 Zum Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -13,16 +13,16 @@ kernelspec:
 (sec-kind-of-data-types)=
 # Arten von Datentypen
 
-Der **Datentyp** einer Variablen gibt an, wie die Bits und Bytes interpretiert werden.
-Die Bits und Bytes des Speicherbereichs auf welchen die Variable *zeigt* machen den *Wert* der Variablen aus.
+Der *Datentyp* einer Variablen gibt an, wie die [Bits](def-bit) und [Bytes](def-byte) [interpretiert](sec-interpretation) werden.
+Die Bits und Bytes des Speicherbereichs, auf welchen die Variable *zeigt*, machen den *Wert* der Variablen aus.
 Im folgenden definieren und initialisieren wir Variablen mit unterschiedlichen Datentypen: 
 
-+ Ganze Zahl ``int``, 
-+ Fließkommazahl ``float``, 
-+ Zeichenkette ``str``, 
-+ Wahrheitswert ``bool``, 
-+ eine Liste ``list``, welche ganze Zahlen ``int`` enthält und
-+ ein Tupel ``tuple``, welche Zeichenketten ``str`` enthält.
++ [Ganze Zahl](sec-int) ``int``, 
++ [Fließkommazahl](sec-float) ``float``, 
++ [Zeichenkette](sec-string) ``str``, 
++ [Wahrheitswert](sec-bool) ``bool``, 
++ eine [Liste](sec-list) ``list``, welche ganze Zahlen ``int`` enthält und
++ ein [Tupel](sec-tuple) ``tuple``, welche Zeichenketten ``str`` enthält.
 
 ```{code-cell} python3
 number = 111
@@ -34,42 +34,54 @@ mytuple = ('A', 'B', 'C')
 ```
 
 Beim Datentyp ``list`` und ``tuple`` fällt auf, dass diese Werte eines anderen Datentyps enthalten, hier ``int`` und ``str``.
-Solche Datentypen nennen wir auch *zusammengesetzt Datentypen* wohingegen wir Datentypen, welche wir nicht zerlegen können als [primitive Datentypen](def-primitive-datatypes) bezeichnen.
-Zudem gibt es Datentypen, welche von der Programmiersprache die Sie verwenden von vornherein definiert sind und solche die Sie selbst definieren.
-Erstere nennen wir *built-in Datentypen* und letztere werden durch *Klassen* realisiert.
-Wir werden auf *Klassen* erst am Ende des Kurses eingehen.
+Solche Datentypen nennen wir [zusammengesetzt Datentypen](sec-datastructures)) wohingegen wir Datentypen, welche wir nicht zerlegen können als [atomare Datentypen](def-atomare-data-types) bezeichnen.
+Diese *atomaren Datentypen* können zudem auch [atomare Datentypen](def-primitive-datatypes) sein.
 
-Zusammenfassend gibt es vier Arten von Datentypen:
+Zudem gibt es Datentypen, welche von der jeweiligen Programmiersprache definiert sind und solche die Sie selbst definieren.
+Erstere nennen wir *built-in Datentypen* und letztere werden durch *Klassen* realisiert.
+Wir werden auf [Klassen](sec-class-and-object) erst am Ende des Kurses eingehen.
+
+Zusammenfassend gibt es fünf Arten von Datentypen:
 
 1. Primitive Datentypen,
-2. zusammengesetzte Datentypen,
-3. built-in Datentypen und
-4. eigens definierte Datentypen.
+2. atomare Datentypen
+3. zusammengesetzte Datentypen,
+4. built-in Datentypen und
+5. eigens definierte Datentypen.
 
-Dabei ist ein Datentyp entweder primitiv oder zusammengesetzt und zugleich entweder built-in oder eigens definiert.
-Oftmals sind built-in Datentypen zugleich primitive Datentypen (siehe z.B. ``Java``, ``C/C++``) und eigens definierte Datentypen sind immer auch zusammengesetzte Datentypen.
+Dabei ist ein Datentyp entweder atomar oder zusammengesetzt und zugleich entweder built-in oder eigens definiert.
+Primitive Datentypen sind spezielle atomare Datentypen.
+Oftmals sind built-in Datentypen zugleich primitive Datentypen (siehe z.B. ``Java``, ``C/C++``).
+Eigens definierte Datentypen können niemals primitiv sein.
 
 ## Primitive Datentypen
 
 ```{admonition} Primitive Datentypen
 :name: def-primitive-datatypes
+:class: definition
 
-*Primitive Datentypen* sind jene Datentypen für die wir einen festen Speicherbereich definieren.
-Ein *primitiver Datentyp* besteht aus keiner Komposition anderer Datentypen.
-Ebenso besteht eine Variable vom Typ eines primitive Datentypen eben nicht aus einer Komposition anderer Variablen.
+*Primitive Datentypen* sind jene Datentypen aus denen alle anderen Datentypen einer Sprache hervorgehen.
+Sie sind nicht weiter reduzierbar.
 ```
 
-Ein *Wert* eines *primitiven Datentyps* belegt im Speicher immer die selbe Anzahl an [Bits](def-bit), wohingegen Werte von *zusammengesetzte Datentypen* unterschiedlich viel Speicher verbrauchen können.
-Zudem kann ein *primitiver Datentyp* nicht weiter in andere Datentypen zerlegt werden.
+Unsere Definitionen von [atomaren](def-atomare-data-types) und [primitiven](def-primitive-datatypes) Datentypen ähneln sich sehr.
 
-Übertragen wir das auf die 'echte' Welt, so könnte man bei einem Brief von einem *zusammengesetzten Datentyp* sprechen.
+>Worin besteht der Unterschied zwischen einem primitiven und einem atomaren Datentyp?
+
+Nehmen wir zum Beispiel den ``Python`` Datentyp ``int``.
+Der Wert vom Typ ``int`` besteht nicht nur ais dem reinen Wert der ganzen Zahl sondern enthält zusätzlich noch einen Zähler, welcher angibt wie viele Variablen auf den Wert verweisen.
+Das heißt wir können ``int`` weiter in den Zähler und den eigentlichen Wert zerlegen.
+Allerdings macht es keinen Sinn diese beiden Teile zu zersplittern und separat weiter zu verarbeiten -- sie gehören zusammen, da sie nur gemeinsam verarbeitbar sind!
+Zeichenketten sind weder primitiv noch atomar, denn eine Zeichenkette lässt sich in ihre einzelnen Zeichen zersplittern und die Weiterverarbeitung der einzelner Zeichen macht durchaus Sinn.
+
+Übertragen wir das auf die 'echte' Welt, so könnte man bei einem Brief von einem Wert eines [zusammengesetzten Datentyps](def-data-structures) sprechen.
 Dieser enthält einen Briefkopf, ein Datum einen Absender, Empfänger und den Text.
 Das Datum ist wiederum ein *zusammengesetzten Datentyp* bestehend aus Tag, Monat und Jahr.
-Der Tag ist schließlich ein *primitiver Datentyp* (eine Zahl zwischen 0 und 31).
+Der Tag ist schließlich ein *primitiver* oder (in ``Python``) ein *atomarer* Datentyp (eine Zahl zwischen 0 und 31).
 
 ```{exercise} Der Datentyp Zeichenkette
 :label: datatype-str-exercise
-Ist ``str``, d.h. die Zeichenkette, ein primitiver oder zusammengesetzter Datentyp?
+Ist ``set``, d.h. eine Menge, ein atomarer oder zusammengesetzter Datentyp?
 Begründen Sie Ihre Antwort.
 ```
 
@@ -77,10 +89,7 @@ Begründen Sie Ihre Antwort.
 :label: datatype-str-solution
 :class: dropdown
 
-``str`` ist ein zusammengesetzter Datentyp.
-Zeichenketten haben eine variable Länge und so muss auch der Speicherbereich der von ihnen belegt wird variable sein.
-Eine Zeichenkette ist eine Liste aus Zeichen.
-Wir können den Datentyp Zeichenkette also in den Datentyp Zeichen zerlegen.
+``set`` ist ein zusammengesetzter Datentyp dessen Wert eine variable Anzahl an Werten verschiedener Datentypen enthalten kann.
 ```
 
 (sec-built-in-data-types)=
@@ -119,6 +128,7 @@ Diese Datentypen stehen Ihnen zur Verfügung sobald Sie ``Python`` auf Ihrem Sys
 
 Anders als in vielen anderen Sprachen müssen Sie den (built-in) Datentyp einer Variablen in ``Python`` nicht explizit angeben.
 ``Python`` schließt von der Schreibweise des Wertes automatisch auf den richtigen Datentyp.
+
 Eine Folge von Ziffern mit einem optional vorangestellten Minuszeichen werden als ganze Zahl ``int`` interpretiert.
 Befindet sich in der Folge ein Punkt ``.`` so wird der Wert als Fließkommazahl interpretiert.
 Sie können den Datentyp einer Variablen ``x`` oder eines Wertes mit ``type(x)`` abfragen:
@@ -146,19 +156,22 @@ print(f'Element 4 Type: {type(mylist[4])}')
 ## Zusammengesetzte Datentypen
 
 Zusammengesetzte Datentypen definieren wir durch andere Datentypen, welche bereits definiert wurden.
-Diese sind entweder *built-in Datentypen* der Sprache oder eigens definierte zusammengesetzte Datentypen.
+Die Basis der zusammengesetzten Datentypen sind deshalb entweder *built-in Datentypen* der Sprache oder eigens definierte zusammengesetzte Datentypen.
+
 Angenommen Sie wollen den Datentyp ``Person`` definieren welcher sich dadurch auszeichnet, dass er sich aus zwei Zeichenketten ``str`` nämlich dem Vor- und Nachnamen zusammensetzt.
-Durch *Klassen* können Sie einen solchen Datentyp definieren.
+Durch [Klassen](sec-class-and-object) können Sie einen solchen Datentyp definieren.
 Wie wir dies machen, werden wir auf einen späteren Zeitpunkt verschieben.
 
-Eine Listen ``list``, Tupel ``tuple``, Mengen ``set`` und Wörterbücher ``dict`` sind *zusammengesetzter built-in Datentypen* und zugleich enthalten die Werte (Objekte) dieser Datentypen eine
+Listen ``list``, Tupel ``tuple``, Mengen ``set`` und Wörterbücher ``dict`` sind *zusammengesetzter built-in Datentypen* und zugleich enthalten die Werte (Objekte) dieser Datentypen eine
 variable Anzahl an Elementen unterschiedlicher Datentypen.
 Eine gute Analogie zu diesen sog, [Sammlung / Kollektion (engl. Collections)](def-collection) sind physikalische Ordner, Schließfächer, Listen auf Papier geschrieben, Rücksäcke, Körbe, Tüten und andere physikalischen Objekte die wir im Alltag verwenden um andere physikalische Objekte zu ordnen, strukturieren oder schlicht zu halten.
 Auch der Arbeitsspeicher ist in diesem Sinne eine sowohl physikalische wie auch virtuelle Kollektion an Bits.
 
 ```{admonition} Sammlung (Collection)
 :name: def-collection
-Als *Sammlung* bezeichnen wir alle Datentypen (Tupel, [Dictionary](def-python-dictionary), Listen, usw.) die eine **variable Anzahl** an anderen Elementen (normalerweise mehrere) beinhalten.
+:class: definition
+
+Als *Sammlung* bezeichnen wir alle Datentypen ([Tupel](sec-tuple), [Dictionary](def-python-dictionary), [Listen](sec-list), [Mengen](sec-set) usw.), die eine **variable Anzahl** an anderen Elementen (normalerweise mehrere) beinhalten.
 
 ```
 

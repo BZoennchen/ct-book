@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-oop)=
 # Objektorientierte Programmierung
 
 Um zu verstehen was die *objektorientierte Programmierung* ist, ist es äußerst hilfreich sich klar zu machen, was die *objekt-orientierte Programmierung* nicht ist, beziehungsweise woraus die *objektorientierte Programmierung* entstanden ist.
@@ -19,7 +20,8 @@ Bis hierhin haben wir uns auf die *prozedurale Programmierung* beschränkt.
 Auch vor der Einführung der *objekt-orientierte Programmierung* war die *prozedurale Programmierung*, die dominierende Art und Weise zu programmieren.
 
 Im *prozeduralen Programmierparadigma* schreiben wir Funktionen, die bestimmte Daten verarbeiten.
-Jede Funktion steht für sich 'separat' neben den Daten und erhält (sofern sie keine globalen Variablen verwendet) alle Daten als Argumente übergeben.
+Jede Funktion steht für sich 'separat' neben den Daten und erhält (sofern sie keine globalen Variablen verwendet) alle Daten als Argumente.
+
 Zum Beispiel können wir als Daten ein Rechteck als Wörterbuch definieren:
 
 ```{code-cell} python3
@@ -55,14 +57,16 @@ print(rect1)
 Da wir in der *prozeduralen Programmierung* bevorzugt [reine Funktionen](sec-purity) verwenden, legt ``translate`` eine Kopie an und liefert diese verschobene Kopie zurück.
 
 ```{admonition} Prozedurale Programmierung
+:class: definition
 Die *prozedurale Programmierung* ist ein *Programmierparadigma*, welches auf *Funktionen / Prozeduren* aufgebaut ist.
 Sie gilt als Erweiterung des *imperativen Paradigmas*.
 ```
 
-Im Gegensatz dazu bündeln wir in der *objektorientierte Programmierung* Daten und deren Operanden.
+Im Gegensatz dazu bündeln wir in der *objektorientierte Programmierung* **Daten** und deren **Operanden**.
 Das heißt, Funktionen welche wir auf die Daten anwenden wollen und die Daten selbst werden in ein sog. *Objekt* gepackt.
+
 *Objekte* sind Daten angereichert mit Funktionen, welche wir als *Methoden des Objekts* bezeichnen.
-Objekte sind zugleich Werte bzw. Instanzen von einem bestimmten *benutzerdefinierten zusammengesetzten Datentyp*, den wir als *Klasse* bezeichnen.
+Objekte sind zugleich Werte bzw. Instanzen von einem bestimmten *benutzerdefinierten zusammengesetzten Datentyp*, die wir als *Klasse* bezeichnen.
 
 Lassen Sie uns zuerst einen *zusammengesetzten Datentyp* ``Rectangle`` erzeugen, welcher zugleich die *Methoden* ``contains`` und ``translate`` enthält.
 
@@ -109,6 +113,7 @@ Die ``__init__()`` Methode initialisiert das Objekt mit seinen Daten.
 Diese Methode wird aufgerufen sobald wir das Objekt durch ``Rectangle(x=10, y=10, width=100, height=20)`` erzeugt haben.
 
 ```{admonition} Objektorientierte Programmierung (OOP)
+:class: definition
 Die *objektorientierte Programmierung* ist ein Programmierparadigma, welches auf *Objekten* aufgebaut ist.
 Diese *Objekte* beinhalten und kapseln *Daten* und deren dazugehörige *Methoden*.
 ```

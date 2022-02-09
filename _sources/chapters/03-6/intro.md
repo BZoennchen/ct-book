@@ -13,12 +13,12 @@ kernelspec:
 (sec-functions)=
 # Funktionen
 
-Der Schlüssel zur Berechnung von Lösungen bzw. der Verarbeitung von Information ist die Wiederholung.
-Wo uns [Schleifen](sec-loops) erlauben eine bestimmte Folge von Arbeitsschritte *lokal* mehrfach auszuführen, erlauben es uns Funktionen eine Folge von Arbeitsschritte *global* auszuführen.
+Der Schlüssel zur Berechnung von Lösungen bzw. der Verarbeitung von Information ist die [Wiederholung](sec-repetition-and-recursion).
+Wo es uns [Schleifen](sec-loops) erlauben eine bestimmte Folge von Arbeitsschritte *lokal* mehrfach auszuführen, erlauben es uns Funktionen eine Folge von Arbeitsschritte *global* auszuführen.
 In beiden Fällen ändern wir den Verlauf der Codeausführung, sodass dieser nicht mehr der Befehlsfolge (gelesen von oben nach unten) entspricht.
 
 Funktionen bündeln eine Folge von Arbeitsschritten / Befehle.
-Es können Argumente definiert werden, die als Input der Funktionen dienen.
+Es können Parameter definiert werden, sodass wir der Funktion Argumente als Eingabe übergeben.
 Wir sind im Stande dieses Bündel irgendwo in unserem Code auszuführen (ohne es noch einmal niederzuschreiben).
 Wird die Funktion im Code aufgerufen, springen wir, bzw. die CPU durch ihren [Befehlszähler](def-program-counter), an die Stelle der Funktion, das Bündel an Anweisungen wird ausgeführt und schlussendlich springen wir wieder an jene Stelle zurück, von der wir hergekommen sind.
 
@@ -32,7 +32,7 @@ def successor(n):
 successor(successor(successor(1)))
 ```
 
-Ruft sich eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. [Rekursion](sec-recursive-functions) oder rekursiven Funktion.
+Ruft sich eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. [Rekursion](sec-recursion) oder [rekursiven Funktion](sec-recursive-functions).
 Zum Beispiel:
 
 ```{code-cell} python3

@@ -886,8 +886,8 @@
 <p>Den Begriff ‘Funktion’ kennen wir aus der Mathematik, z.B. ist</p>
 <div class="math notranslate nohighlight">
 \[f(x) = 2 \cdot x + 3\]</div>
-<p>eine mathematische Funktion.
-Sind wir pedantisch oder geht der Definitions- und Wertebereich nicht aus dem Kontext hervor, so geben wir bei einer Funktion <span class="math notranslate nohighlight">\(f\)</span> üblicherweise diese beiden Mengen an, z.B.</p>
+<p>eine <a class="reference internal" href="../02-0/5-function.html#sec-math-function"><span class="std std-ref">mathematische Funktion</span></a>.
+Sind wir pedantisch oder geht der Definitions- und Wertebereich nicht aus dem Kontext hervor, so geben wir bei einer Funktionsdefinition üblicherweise diese beiden Mengen an, z.B.</p>
 <div class="math notranslate nohighlight">
 \[f : \mathbb{R} \rightarrow \mathbb{R}\]</div>
 <p>Diese mathematische Funktion <span class="math notranslate nohighlight">\(f\)</span> können wir als <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion realisieren:</p>
@@ -910,7 +910,7 @@ Sind wir pedantisch oder geht der Definitions- und Wertebereich nicht aus dem Ko
 Die mathematische Funktion ist das abstrakte Etwas und die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion eine Realisierung.
 Wir bringen das Abstrakte in die echte Welt.</p>
 <p>Funktionen, welche Funktionen im mathematischen Sinne sind, bezeichnet man als <a class="reference internal" href="../02-3/3-imperative-vs-functional.html#def-pure-function"><span class="std std-ref">reine Funktionen</span></a> (engl. <em>pure Functions</em>).</p>
-<div class="warning admonition">
+<div class="attention admonition">
 <p class="admonition-title">Reine Funktionen</p>
 <p><em>Unreine Funktionen</em> zu definieren sollte einen wichtigen Grund haben, andernfalls sind <em>reine Funktionen</em> zu bevorzugen!</p>
 </div>
@@ -921,10 +921,10 @@ Wir bringen das Abstrakte in die echte Welt.</p>
 Eine mathematische Funktion <strong>kennt keinen Zustand</strong>, also keine Dinge die sich ändern können.
 Sie erhält einen oder mehrere Argumente und gibt ein Ergebnis zurück – das ist alles.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> und nahezu allen anderen Programmiersprachen gibt es jedoch Dinge die sich ändern können, nämlich zusammengesetzte Datentypen bzw. <em>Datenstrukturen</em>.
-Und niemand verbietet uns diese <em>Datenstrukturen</em> innerhalb einer Funktion zu verändern.
-Zum Beispiel löscht folgende <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion das letzte Element aus einer Liste.
-Sie hat kein <code class="docutils literal notranslate"><span class="pre">return</span></code>-Ausdruck und gibt deshalb <code class="docutils literal notranslate"><span class="pre">None</span></code> zurück.
-Allerdings verändert Sie die übergebene Liste <code class="docutils literal notranslate"><span class="pre">mylist</span></code>!</p>
+Und niemand verbietet uns diese <em>Datenstrukturen</em> innerhalb einer Funktion zu verändern.</p>
+<p>Zum Beispiel löscht folgende <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion das letzte Element aus einer Liste.
+Sie hat keinen <code class="docutils literal notranslate"><span class="pre">return</span></code>-Ausdruck und gibt deshalb <code class="docutils literal notranslate"><span class="pre">None</span></code> zurück.
+Allerdings verändert sie die übergebene Liste <code class="docutils literal notranslate"><span class="pre">mylist</span></code>!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_last</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
