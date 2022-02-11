@@ -17,19 +17,20 @@ kernelspec:
 :class: learngoals
 In diesem Abschnitt lernen Sie die Grundprinzipien der *Informationsübertragung*.
 Sie erlernen den Unterschied zwischen *Information*, *Daten* und *Codierung* und wie Kommunikation durch Einhaltung eines *Protokolls* möglich wird.
+
 Wir entwerfen und verbessern Algorithmen zur Kommunikation und diskutieren, wie sich Algorithmen vergleichen lassen.
 ```
 
 Beim sogenannten Locked-in-Syndrom ist man infolge eines Schlaganfalls vollständig gelähmt.
-Man kann zwar weiterhin ganz normal denken, sehen und hören, kann aber oft lediglich die Augenlieder bewegen (und manchmal auch das nicht).
+Man kann zwar weiterhin ganz normal denken, sehen und hören, kann aber oft lediglich die Augenlider bewegen (und manchmal auch das nicht).
 Oft sind die Heilmöglichkeiten sehr begrenzt und es bleibt den Mediziner\*innen nur die Möglichkeit den Patient\*innen das Leben so angenehm wie möglich zu gestalten.
 
-Sich mitzuteilen, sich zu verständigung, sich auszudrücken ist ein Grundbedürfnis eines jeden Menschen.
+Sich mitzuteilen, sich zu verständigen, sich auszudrücken ist ein Grundbedürfnis eines jeden Menschen.
 Eingeschlossen in unseren Körpern gelangen Ideen und Gefühle über Körperregungen in die Welt und deren Reaktion wieder zurück zu uns.
 Mit 43 Jahren erlitt der französische Schriftsteller Jean-Dominique Bauby im Dezember 1995 einen schweren Schlaganfall.
-Als er nach zwanzig Tagen im Hosiptal wieder aufwachte, war er buchstäblich sprachlos.
-Er konnte nur noch mit seinem linken Augenlied blinzeln.
-Der Körper versagte ihm nahezu alle Möglichkeiten der Verständigung und doch gelang es Dominique, über seine Erlebnisse im geistigen Gefängnis, ein ganzes Buch zu schreiben.
+Als er nach zwanzig Tagen im Krankenhaus wieder aufwachte, war er buchstäblich sprachlos.
+Er konnte nur noch mit seinem linken Augenlid blinzeln.
+Der Körper versagte ihm nahezu alle Möglichkeiten der Verständigung und doch gelang es Dominique, über seine Erlebnisse in der geistigen Isolation, ein ganzes Buch zu schreiben.
 Wie war dies möglich?
 
 ```{figure} ../../figs/dive-bell/jean-dominique-bauby.jpeg
@@ -41,9 +42,9 @@ Jean-Dominique Bauby (links) diktiert sein Buch Claude Mendibil (rechts).
 ```
 
 In seinem äußerst bewegenden Buch *Schmetterling und Taucherglocke* beschreibt er wie es ihm gelungen ist mit seinen Ärzten, Pflegern, Freunden und seiner Familie zu kommunizieren und wie frustrierend es gewesen ist, wenn seine Kommunikationspartner von den Regeln abwichen und so die Kommunikation abbrach.
-Er liefert uns tiefe Einblicke darüber wie wichtig Verständigung für den Menschen ist und wie sehr wir den anderen brauchen um uns selbst nicht zu verlieren.
+Er liefert uns tiefe Einblicke darüber, wie wichtig Verständigung für den Menschen ist und wie sehr wir einander brauchen um uns selbst nicht zu verlieren.
 
-Während Dominique sein Buch schrieb entwickelte er einen Algorithmus um die Kommunkation zu beschleunigen.
+Während Dominique sein Buch schrieb entwickelte er einen Algorithmus um die Kommunikation zu beschleunigen.
 Ohne es zu wissen bediente er sich des [Computational Thinkings](sec-what-is-ct).
 Im alter von 44 Jahren, zwei Tage nach der Veröffentlichung seines Buchs, verstarb Dominique an einer Lungenentzündung.
 
@@ -68,10 +69,11 @@ Stellen Sie sich nun vor Sie sind der Artzt oder die Ärtztin von Dominique.
 ```{solution} blinking-alphabet-exercise
 :label: blinking-alphabet-solution
 :class: dropdown
-Eine Möglichkeit wäre es, wenn Sie sich mit ihm darauf einigen, dass einmal blinzeln ``A`` bedeutet, zweimal ``B`` und so weiter und dass nach jedem Buchstaben eine kleine Pause folgt. 
+Eine Möglichkeit wäre es, wenn Sie sich mit ihm darauf einigen, dass einmal blinzeln ``A`` bedeutet, zweimal ``B`` und so weiter und dass nach jedem Buchstaben eine kleine Pause folgt.
+Diese Einigung kann selbst nur durch diese Strategie selbst beschlossen werden. 
 ```
 
-Bereits jetzt sind Sie als Informatiker aktiv!
+Bereits jetzt sind Sie als Informatiker\*in aktiv!
 Bevor wir überhaupt über den Computer auch nur nachgedacht haben, ist es uns gelungen einen *Algorithmus* zu entwickeln durch den wir Informationen (das Blinzeln) verarbeiten können.
 Wir haben ein Herzstück des *Computational Thinkings* betrieben: das *algorithmische Denken*.
 
@@ -81,19 +83,20 @@ Das tolle an einem *Algorithmus* ist, dass wir seine einzelnen *Anweisungen* aba
 Solange die Ausführenden, in diesem Fall Sie und Dominique, die einzelnen *Anweisungen* verstehen, können Sie den *Algorithmus* ausführen.
 Wir könnten eine Tabelle schreiben in der für jede Anzahl an Augenblinzeln der entsprechende Buchstabe steht, sodass Dominique nur richtig blinzeln muss und wir richtig zählen müssen.
 
-Durch stupides befolgen der Anweisungen enstehen erst wenige Buchstaben, dann Sätze, irgendwann Abschnitte, kleine Geschichten und schließlich ein ganzes Buch, was als Gesamtwerk vielschichtige Bedeutungen in sich trägt.
-Das Buch als Folge von sich bewegenenden Augenliedern und Pausen oder als Text enthält die gleiche Information jedoch unterschiedlich repräsentiert.
+Durch stupides befolgen der Anweisungen entstehen erst wenige Buchstaben, dann Sätze, irgendwann Abschnitte, kleine Geschichten und schließlich ein ganzes Buch, was als Gesamtwerk vielschichtige Bedeutungen in sich trägt.
+Das Buch als Folge von sich bewegenden Augenlidern und Pausen oder als Text enthält die gleiche [Information](sec-information) jedoch unterschiedlich [repräsentiert](sec-representation).
 
-Beim Zählen der Auf- und Abbewegung der Augenlieder kommt der (digitale) Computer ins Spiel, denn anders als wir Menschen, führen Computer solche Aufgaben immer korrekt aus.
+Beim Zählen der Auf- und Abwärtsbewegung der Augenlider kommt der (digitale) Computer ins Spiel, denn anders als wir Menschen, führen Computer solche Aufgaben immer korrekt aus.
 Sie verzählen sich niemals!
-Früher waren menschliche Computer ebenfalls darauf trainiert bei sich immer wiederholenden Aufgaben möglichst wenig Fehler zu machen.
+Früher waren menschliche Computer ebenfalls darauf trainiert bei sich wiederholenden Aufgaben möglichst wenig Fehler zu machen.
 Passiert sind diese verständlicherweise dennoch immer wieder.
 
 Testen Sie den *Algorithmus* mit ihren Kommiliton\*innen.
 
 ```{exercise} Name blinzeln
 :label: blinking-name-exercise
-Verwenden Sie den einfachen Blinzelalgorithmus aus obiger Lösung und diktieren Sie ihrem Nachbarn ihren Namen. Was fällt Ihnen auf?
+Verwenden Sie den einfachen Blinzelalgorithmus aus obiger Lösung und diktieren Sie ihrem Nachbarn ihren Namen.
+Was fällt Ihnen auf?
 ```
 
 ## Interaktives Blinzeln
@@ -110,7 +113,7 @@ Wenn Sie obigen Algorithmus angewendet haben, kommen Sie vielleicht selbst auf s
 :label: blinking-interactive-exercise
 Entwerfen Sie einen effizienteren Algorithmus der Kommunikation und testen Sie diesen.
 
-**Tipp:** Der zuvor Zählende stellt eine Frage und Dominique antwortet darauf.
+**Tipp:** Die oder der zuvor Zählende stellt eine Frage und Dominique antwortet darauf.
 ```
 
 ```{solution} blinking-interactive-exercise
@@ -129,26 +132,28 @@ Sie werden beobachten, dass wann immer Menschen Teil der Informationsverarbeitun
 Wir machen einfach gerne Fehler.
 In unserem Fall könnten wir uns darauf einigen, dass zweimal schnell blinzeln bedeutet, dass das letzte Zeichen zurückgenommen wird.
 
-Im Grunde schicken sich die beiden Teilnehmer der Kommunikation bestimmte Informationen hin und her.
-Der Sprecher beginnt mit ``A`` und Dominique blinzelt oder wartet.
-Der Sprecher wartet eine kurze Weile und falls kein Blinzeln kommt spricht er das ``B`` aus.
-Notiert er versehentlich den falschen Buchstaben, so kann Dominique mit einem zweifachen Binzeln dies korrigieren.
+Im Grunde schicken sich die beiden Teilnehmer\*innen der Kommunikation bestimmte Informationen hin und her.
+Der oder die Sprecher\*in beginnt mit ``A`` und Dominique blinzelt oder wartet.
+Der oder die Sprecher\*in wartet eine kurze Weile und falls kein Blinzeln kommt spricht sie/er das ``B`` aus.
+Notiert sie/er versehentlich den falschen Buchstaben, so kann Dominique mit einem zweifachen Binzeln dies korrigieren.
 
-Einen solchen Algorithmus, der eine Menge von Regeln für den Informationsaustausch bestimmter Informationen beschreibt, nennen Informatiker *Protokoll*.
+Einen solchen Algorithmus, der eine Menge von Regeln für den Informationsaustausch bestimmter Informationen beschreibt, nennen Informatiker *Kommunikationsprotokoll*.
 
-```{admonition} Protokoll
-TODO
+```{admonition} Kommunikationsprotokoll
+:class: definition
+Ein *Kommunikationsprotokoll* ist eine Vereinbarung zum Austausch von Informationen.
+Sie besteht aus einem Satz von Regeln und Formaten ([Syntax](def-syntax)), die das Kommunikationsverhalten der kommunizierenden Instanzen in den Computern bestimmen ([Semantik](def-semantik)).
 ```
 
 Wenn Sie mit ihrem Computer oder ihrem Handy über das Netzwerk kommunizieren, dann wird dieser Informationsaustausch ebenfalls über ein (sehr viel komplexeres) Protokoll geregelt.
 Im Wesentlichen unterscheiden sich diese Protokolle nicht von Protokollen die Sie bereits aus Ihrem Alltag kennen.
 Senden Sie zum Beispiel einen Brief, so setzen alle beteiligten Parteien ein bestimmtes Protokoll um.
-Manche Protokolle verwenden wir unbewusst, beispielsweise, wenn wir in einer Gruppe kommunizieren befolgen wir bestimmte Regeln bestehend aus Sprechen, Zuhören und Warten.
-Folgen Teilnehmer dem Protokoll nicht, so wird der Informationsaustausch erschwert oder kommt ganz zum erliegen.
+Manche Protokolle verwenden wir unbewusst, beispielsweise, wenn wir in einer Gruppe kommunizieren, dann befolgen wir bestimmte Regeln bestehend aus Sprechen, Zuhören und Warten.
+Folgen Teilnehmer dem Protokoll nicht, so wird der Informationsaustausch erschwert oder er kommt ganz zum erliegen.
 So berichtet Dominique von seinen Frustrationen, wenn seine Gesprächspartner sich nicht an das Protokoll gehalten haben.
 
 Denken in Algorithmen ist eine mächtige Art zu denken.
-Sie gelangen so zu Lösungsstrategien die nicht nur für ein spezielles Problem eine Lösung berechnen sondern für eine ganze, gewöhnlicherweise unendliche Anzahl an Problemen Lösungen berechnen können.
+Sie gelangen so zu Lösungsstrategien die nicht nur für ein spezielles Problem eine Lösung berechnen, sondern für eine ganze, gewöhnlicherweise unendliche Anzahl an Problemen Lösungen berechnen können.
 Mit dem beschriebenen Algorithmus können Sie all das kommunizieren, was sie auch niederschreiben könnten.
 Es ist eben nicht nur eine Möglichkeit ein bestimmtes Wort oder einen bestimmten Satz wiederzugeben!
 
@@ -199,18 +204,19 @@ Wir könnten uns darauf einigen, dass wann immer der Sprecher oder die Sprecheri
 Dominique hört sich den Vorschlag an und blinzelt falls dieser korrekt ist.
 ```
 
-Im Falle des Sprechers und Dominique muss der oder die Sprecher\*in abschätzen, wann es sich lohnt ein Wort vorzuschlagen.
+Im Falle der Sprecher\*innen und Dominique müssen die Sprecher\*innen abschätzen, wann es sich lohnt ein Wort vorzuschlagen.
 Hierbei aktiviert die Person ihre **Mustererkennung**.
 Sie wird, je länger sie mit Dominique kommuniziert, sehr wahrscheinlich immer besser.
 Das liegt nicht nur daran, dass sie im Wörterraten an sich besser wird, sondern auch daran, dass sie Dominique's Wortschatz aufnimmt.
+In der Sprache des *maschinellen Lernens* sagt man: Die Sprecher\*innen verbessern ihr Modell von Dominique's Wortschatz und bevorzugter Satzstruktur.
 
 Jeder Mensch verwendet Wörter in einer anderen Häufigkeit und so lernt der oder die Sprecher\*in (sofern es immer die gleiche Person ist), wie Dominique spricht.
-Durch Daten (den Wörtern) und deren Stuktur (Kombination, Reihenfolge, Sätze bzw. Grammatik) lernen die Sprecher\*innen genau jene Struktur bzw. Häufigkeiten.
+Durch Daten (den Wörtern) und deren Struktur (Kombination, Reihenfolge, Sätze bzw. Grammatik) lernen die Sprecher\*innen genau jene Struktur bzw. Häufigkeiten.
 Kommen neue Daten bei ihnen an, können sie die gelernte Struktur nutzen.
 Algorithmen die derartige Lernverfahren realisieren stammen aus dem Bereich der *künstlichen Intelligenz (KI)*.
 
 Dominique hatte nicht nur eine(n) Sprecher\*in.
-Ärtz\*innen und auch Pfleger\*innen wechselten durch und hin und wieder kam neue Sprecher\*innen hinzu.
+Ärtz\*innen und auch Pfleger\*innen wechselten durch und hin und wieder kamen neue Sprecher\*innen hinzu.
 Wie könnten wir das gelernte Wissen der Sprecher\*innen weitergeben?
 
 ```{exercise} Maschinelles Lernen
@@ -225,8 +231,9 @@ Beschreiben Sie wie man die Häufigkeit der von Dominique verwendeten Wörter fe
 Wir könnten eine große Tabelle pflegen, wobei die erste Spalte das Wort und die zweite Spalte seine Häufigkeit beinhaltet.
 ```
 
-````{admonition} Dictionary (Python)
+````{admonition} Dictionary wdh. (Python)
 :name: def-python-dictionary
+:class: python
 Ein ``Python`` *Dictionary* ist eine ungeordnete Sammlung von Daten.
 Jeder Datenpunkt bzw. **Wert** ``value`` benötigt einen eindeutigen **Schlüssel** ``key`` und kann über diesen Angesprochen werden.
 
@@ -238,21 +245,21 @@ word_frequency['hallo']
 ```
 ````
 
-Durch ein ``Python`` [Dictionary](def-python-dictionary) können wir eine solche Worttabelle in der Programmiersprache ``Python`` realisieren.
+Durch ein ``Python`` [Dictionary](sec-dict) können wir eine solche Worttabelle in der Programmiersprache ``Python`` realisieren.
 Diese Art von Datentyp finden Sie in allen Programmiersprachen, oft unter einem anderen Namen, z.B. *Map* oder *HashMap*.
 
 Anders als bei einer *Tabelle*, welche wir später noch kennenlernen, sind die Schlüssel-Wert-Paare ungeordnet.
-Einer Tabelle könnte zudem zweimal den gleichen Schlüssel enthalten, was in einem [Dictionary](def-python-dictionary) nicht möglich ist.
+Einer Tabelle könnte zudem zweimal den gleichen Schlüssel enthalten, was in einem [Dictionary](sec-dict) nicht möglich ist.
 Durch die Eindeutigkeit des Schlüssels ist der Zugriff auf den **Wert** durch den **Schlüssel** sehr schnell.
 
-Denken Sie gerne in mathematischen Objekten dann ist ein [Dictionary](def-python-dictionary) $D : K \rightarrow V$ nichts anderes als eine Funktion, wobei sowohl der Definitionsbereich $K$ als auch der Wertebereich $V$ endlich sind. $K$ enthält die Schlüssel und $V$ die Werte.
-Wir werden im Abschnitt [Hashing](sec-hashing) unser eigenes [Dictionary](def-python-dictionary) konstruieren und näher auf das Prinzip sogenannter *Hashfunktionen*, durch die wir durch den **Schlüssel** zum **Wert** gelangen, eingehen.
+Denken Sie gerne in mathematischen Objekten dann ist ein [Dictionary](sec-dict) $D : K \rightarrow V$ nichts anderes als eine Funktion, wobei sowohl der Definitionsbereich $K$ als auch der Wertebereich $V$ endlich sind. $K$ enthält die Schlüssel und $V$ die Werte.
+Wir werden im Abschnitt [Hashing](sec-hashing) unser eigenes [Dictionary](sec-dict) konstruieren und näher auf das Prinzip sogenannter *Hashfunktionen*, durch die wir mit einem gegebenen **Schlüssel** zu seinem **Wert** gelangen, eingehen.
 
 ````{exercise} Maschinelles Lernen
 :label: blinking-dictionary-exercise
-Schreiben Sie einen Programmiercode der Ihnen für ein bestimmtes Wort, sagen wir ``word``, die Häufigkeit von ``word`` im [Dictionary](def-python-dictionary) um eins erhöht.
-Gehen Sie davon aus, dass Sie nicht wissen wie das derzeitige [Dictionary](def-python-dictionary) ``word_frequency`` aussieht.
-Geben Sie ihr [Dictionary](def-python-dictionary) aus und führen Sie den Code mehrfach aus.
+Schreiben Sie einen Programmiercode der Ihnen für ein bestimmtes Wort, sagen wir ``word``, die Häufigkeit von ``word`` ein einem Dictionary um eins erhöht.
+Gehen Sie davon aus, dass Sie nicht wissen wie das derzeitige Dictionary ``word_frequency`` aussieht.
+Geben Sie ihr Dictionary aus und führen Sie den Code mehrfach aus.
 Was beobachten Sie?
 ```python
 word_frequency = {...}
@@ -276,9 +283,9 @@ word_frequency
 
 Kommen wir zurück zu Dominique und unserer Tabelle.
 Die Tabelle wird sich sehr schnell füllen und dies per Hand festzuhalten wird schwierig.
-Außerdem müssten wir unsere Tabelle hin und wieder nach der Häufigkeit der Worter sortieren, ansonsten suchen wir ewig nach den häufigsten Wörtern.
+Außerdem müssten wir unsere Tabelle hin und wieder nach der Häufigkeit der Wörter sortieren, ansonsten suchen wir ewig nach den häufigsten Wörtern.
 
-```{exercise} Tempräres Lernen
+```{exercise} Temporäres Lernen
 :label: blinking-temp-learning-exercise
 Überlegen Sie sich eine praktikable Möglichkeit wie wir die Lernmethode sinnvoll handschriftlich verwenden können.
 ```
@@ -293,7 +300,7 @@ Anstatt mit der gesamten Tabelle ins Gespräch zu gehen könnten wir lediglich d
 Wie würden wir die $n$ häufigsten Wörter in absteigender Reihenfolge aus unserem ``Python`` [Dictionary](def-python-dictionary) extrahieren?
 Können Sie hierfür eventuell die gleichen Algorithmen verwenden wie in [Karten sortieren in Python](sort-cards-with-python)?
 
-```{exercise} Tempräres Lernen mit dem Dictionary
+```{exercise} Temporäres Lernen mit dem Dictionary
 :label: blinking-temp-learning-dict-exercise
 Schreiben Sie eine Programmcode der Ihnen die ``n`` häufigsten Wörter in sortierter absteigender Reihenfolge aus dem [Dictionary](def-python-dictionary) ``word_frequency`` extrahiert.
 
@@ -348,7 +355,7 @@ Im obigen Code verwenden wir eine sog. [anonyme Funktion](sec-anonymous-function
 
 Wenn Sie die bisher entwickelten Algorithmen ohne technischen Hilfsmittel selbst angewendet haben, werden Sie feststellen, dass wir immer und immer *schneller* geworden sind, oder?
 Haben wir mehrere Algorithmen für den Informationsaustausch zwischen Sprecher\*in und Dominique entwickelt, stellt sich die Frage, welche der *beste* Algorithmus ist.
-Mit *besser* meinen Informatiker meistens *schneller*, doch gibt es auch andere Kriterien, über die *Energieeffizienz*, *Parallelisierbarkeit*, *Verständlichkeit* bis hin zur *Aesthetik*.
+Mit *besser* meinen Informatiker\*innen meistens *schneller*, doch gibt es auch andere Kriterien, zum Beispiel, die *Energieeffizienz*, *Parallelisierbarkeit*, *Verständlichkeit* oder auch *Ästhetik*.
 
 Gehen wir also zurück in die Zeit von Dominique.
 Lassen Sie uns die beiden interaktiven Algorithmen vergleichen.
@@ -360,7 +367,7 @@ Interessieren wir uns für den *schnellsten* Algorithmus, brauchen wir erst einm
 Eine erste Idee ist es einfach mit einer Stoppuhr die tatsächlich benötigte Zeit zu messen.
 Wir nehmen einen Text und messen für beide Algorithmen die Zeit die es braucht diesen auszudrücken.
 
-Tatsächlich werden solche Messungen durchgeführt vorallem dann, wenn es nicht mehr ersichtlich ist, wie viele Anweisungen genau im Laufe des Algorithmus durchgeführt werden.
+Tatsächlich werden solche Messungen durchgeführt insbesondere dann, wenn es nicht mehr ersichtlich ist, wie viele Anweisungen genau während des Ablaufs des Algorithmus durchgeführt werden.
 Hin und wieder werden unterschiedliche Anweisungen ausgeführt und jede Anweisung dauert unterschiedlich lange.
 Unterschiedliche Algorithmen verwenden unterschiedliche Anweisungen unterschiedlich oft und diese können auf unterschiedlicher Hardware unterschiedlich schnell abgearbeitet werden.
 Insofern bietet die Messung der *Laufzeit* immerhin einen kleinen Einblick.
@@ -386,35 +393,36 @@ Nehmen wir nur einen (Test-)Text zur Analyse unserer *Laufzeit*, wissen wir ledi
 Besser wäre es die *Laufzeitmessung* mit vielen verschiedenen Texten durchzuführen.
 Doch irgendwann wird Dominique müde werden und wir müssen an einem anderen Tag weiter machen.
 
-Solche *Laufzeitmessungen* sind wichtig besonders wenn die theoretische *Komplexität* zweier zu vergleichender Algorithmen identisch ist.
+Solche *Laufzeitmessungen* sind wichtig besonders wenn die [theoretische Komplexität](sec-complexity) zweier zu vergleichender Algorithmen identisch ist.
 Was das bedeutet dazu kommen wir gleich.
-Doch mit welchen Daten und wie oft und unter welchen Vorraussetzungen wir die Algorithmen ausführen, ist für sich eine schwieriger Bereich der Informatik.
+Doch mit welchen Daten und wie oft und unter welchen Voraussetzungen wir die Algorithmen ausführen, ist an und für sich ein schwieriger Bereich der Informatik.
 Häufig kommt es darauf an wie gut die gewählten Testdaten sind (z.B. ausgewogene Texte).
 Je nach Anwendungsbereich kann ein Algorithmus gute oder eher schlechte *Laufzeiten* haben.
+
 Neben diesen *experimentellen* Ansätzen können wir aber auch einen anderen Pfad einschlagen, indem wir unser **abstraktes Denken** aktivieren.
 Gemeint ist der *analytische Pfad*.
 
 ### Komplexitätsanalyse
 
-Anstatt in Zeit, denken wir bei der *Komplexitätanalyse* in Aufwand.
+Anstatt in Zeit, denken wir bei der [Komplexitätanalyse](sec-complexity) in Aufwand.
 Und anstatt mit der Stoppuhr die Zeit zu messen, zählen wir den Aufwand bzw. schätzen diesen ab.
 
 Da Dominique ohnehin nur blinzeln kann, können wir einfach zählen wie oft er blinzelt.
 Dabei gehen wir davon aus, dass jedes Blinzeln den gleichen Aufwand hat.
-Das heißt jedes Blinzeln dauert *in etwa* (aber nicht undbedingt genau) gleich lange.
+Das heißt jedes Blinzeln dauert *in etwa* (aber nicht unbedingt genau) gleich lange.
 Ebenso behaupten wir, dass das Aussprechen eines Buchstabens immer *in etwa* gleich lange dauert.
 
 In der Komplexitätsbetrachtung bedeutet *in etwa gleich lang*, dass es eine Konstante $c$ gibt, sodass jede Ausführung der betrachteten Anweisung (z.B. Blinzeln) nicht länger als $c$-mal so lange dauert wie die *schnellste* Ausführung.
 
 Das klingt natürlich absolut unbrauchbar, denn wir können $c$ beliebig groß wählen.
 Wenn $c$ zum Beispiel gleich $1000$ ist, wie kann man dann noch von *in etwa gleich lange* sprechen?
-Nun den Theoretikern ist nur wichtig, dass $c$ nicht von der Eingabe des Algorithmus abhängt.
+Nun den Theoretiker\*innen ist nur wichtig, dass $c$ nicht von der Eingabe des Algorithmus abhängt.
 In unserem Fall heißt das, dass $c$ nicht von der Länge und Art des Textes abhängt, den Dominique uns mitteilen will.
 
 Denken Sie an eine komplizierte Aufgabe, wie das Sortieren!
-Wenn das Sortieren von Karten *in etwa* so lange dauern würde wie einmal blinzeln, dann müsste es ein solches $c$ geben und egal wie viele Karten wir auch sortieren, der Algorithmus würde niemals länger brauchen als $c$-Mal die Zeit des Blinzeln.
+Wenn das Sortieren von Karten *in etwa* so lange dauern würde wie einmal blinzeln, dann müsste es ein solches $c$ geben und egal wie viele Karten wir auch sortieren, der Algorithmus würde niemals länger brauchen als $c$-mal die Zeit des Blinzeln.
 Glauben Sie, dass das so ist?
-Ist ein Algorithmus hingegen *echt langsamer* als ein anderer (im Sinne der Komplexität), dann wird ihn keine technische Verbesserung an den *echt schnelleren* Algorithmus heranbringen.
+Ist ein Algorithmus hingegen *echt langsamer* als ein anderer (im Sinne der Zeitkomplexität), dann wird ihn keine technische Verbesserung an den *echt schnelleren* Algorithmus heranbringen.
 Ist die Eingabe bzw. das Problem groß genug, wird der *echt schnellere* Algorithmus auch in Zukunft *schneller* sein.
 
 Haben Sie keine Angst, falls sie das noch nicht im Detail durchdringen.
@@ -432,13 +440,14 @@ Mehrmaliges blinzeln ohne Unterbrechung wird weniger Zeit in Anspruch nehmen als
 Außerdem kommt es vermutlich auf Dominique's Tagesform an und wie viel er schon geblinzelt hat.
 ```
 
-Aber nun erstmal genug von der theretischen Komplexität, werden wir erst später genauer betrachten.
+Aber nun erst einmal genug von der [theoretischen Komplexität](sec-complexity), diese betrachten wir näher im Abschnitt [Komplexität](sec-complexity).
+
 Lassen Sie uns die beiden interaktiven Algorithmen vergleichen.
 Einmal Sprechen wir das Alphabet von vorne nach hinten durch und warten auf ein blinzeln von Dominik und einmal Sprechen wir die Buchstaben in absteigender Häufigkeit durch und warten ebenfalls.
 Für jeden Buchstaben muss Dominique also einmal blinzeln und der Sprecher muss unterschiedlich viele Buchstaben nennen.
 Das Blinzeln und das Aussprechen eines Buchstabens können wir als jeweils eine Anweisung verstehen die einen bestimmten Aufwand hat.
-Da Dominique für jeden Algorithmus einmal blinzelt, können wir den Aufwand für das Blinzeln als identisch annehmen.
-Bleigt die Frage nach dem Aufwand für das Sprechen der Buchstaben.
+Da Dominique für jeden Algorithmus pro Buchstabe einmal blinzelt, können wir den Aufwand für das Blinzeln als identisch annehmen.
+Bleibt die Frage nach dem Aufwand für das Sprechen der Buchstaben.
 
 Betrachten wir den einfachen Algorithmus bei dem der Sprecher das Alphabet von vorne bis hinten durchspricht und ignorieren wir alle Sonderzeichen.
 Wir könnten uns nun nach dem schlimmsten Fall fragen.
@@ -466,7 +475,7 @@ char_frequency = {'E': 0.1740, 'N': 0.0978, 'I': 0.0755,
                   'X': 0.0003, 'Q': 0.0002}
 ```
 
-**Tipp (für die Schreibfaulen):** In Python können Sie Zeichenketten alphabetisch-lexikographisch vergleichen z.B. ``A`` < ``B`` ergibt ``True``.
+**Tipp (für die Schreibfaulen):** In ``Python`` können Sie Zeichenketten alphabetisch-lexikographisch vergleichen, z.B., resultiert ``'A' < 'B'`` in ``True``.
 ````
 
 ```{code-cell} python3
@@ -488,8 +497,8 @@ for i in range(len(chars)):
 avg_effort
 ```
 
-``avg_effort`` $(11.1526)$ ist der durchschnittliche Aufwand d.h. die durchschnittlich auszusprechenden Buchstaben je geschriebenem Buchstaben.
-Interpretieren wir die Häufigkeit als Wahrscheinlichkeit ist es der Erwartungswert der auszusprechenden Buchsteben je geschriebenem Buchstaben.
+``avg_effort`` (11.1526) ist der durchschnittliche Aufwand, d.h., die durchschnittlich auszusprechenden Buchstaben je geschriebenem Buchstaben.
+Interpretieren wir die Häufigkeit als Wahrscheinlichkeit ist es der Erwartungswert der auszusprechenden Buchstaben je geschriebenem Buchstaben.
 Lassen Sie uns das noch mit dem Aufwand der verbesserten Variante vergleichen, der in der wir die Buchstaben in der Reihenfolge ihrer Häufigkeit aufsagen.
 
 ```{exercise} Durchschnittlicher Aufwand für verbesserte Variante
@@ -508,13 +517,13 @@ for i in range(len(chars)):
 avg_effort
 ```
 
-Diesmal liegt der durchschnittliche Aufwand ``avg_effort`` bei $6.9836$, d.h. die verbesserte Variante ist **unter unserem Maß** fast doppelt so schnell.
+Diesmal liegt der durchschnittliche Aufwand ``avg_effort`` bei 6.9836, d.h., die verbesserte Variante ist **unter unserem Maß** fast doppelt so schnell.
 Glücklicherweise sind die Buchstaben, die wir selten verwenden tendenziell auch hinten im Alphabet angesiedelt.
-Können Sie bestimmen welcher Buchstabe im Sinne unseres Maß am schlechtesten im Alphabet positioniert ist?
+Können Sie bestimmen welcher Buchstabe, bezüglich unseres Maß am schlechtesten im Alphabet positioniert ist?
 
 ````{exercise} Schlechtester Buchstabe im Alphabet
 :label: blinking-worst-char-exercise
-Schreiben Sie ein kleines Programm was Ihnen den am schlechtest Positionierten Buchstaben berechnet.
+Schreiben Sie ein kleines Programm was Ihnen den am schlechtest positionierten Buchstaben berechnet.
 
 **Tipp** Nehmen Sie als Grundlage folgende Liste ``alphabet``, welche alle Buchstaben in der richtigen Reihenfolge enthält.
 
@@ -551,8 +560,8 @@ Wir speichern diese Distanzen in der Liste ``chars_diff`` und sortieren diese an
 
 ``S`` ist der Gewinner bzw. Verlierer gefolgt vom ``B`` und ``J``.
 ``S`` ist deutlich zu weit hinten anzutreffen und die beiden anderen deutlich zu weit vorne.
-Im Fall des Alphabets, fehlt uns kaum eine Situation ein in der das zum Nachteil wird.
-Doch ähnlich wie Dominique transformieren auch wir physikalische Bewegungen in Buchstaben um.
+Im Fall des Alphabets, fällt uns kaum eine Situation ein in der das zum Nachteil wird.
+Doch ähnlich wie Dominique [übersetzen](def-compiler) auch wir physikalische Bewegungen in Buchstaben.
 Wir verwenden hierfür zum Beispiel die Tastatur!
 
 ```{exercise} Die perfekte Tastatur
@@ -584,12 +593,12 @@ Im folgenden werden wir uns überlegen durch welche Strategie wir einen bestimmt
 ## Suchalgorithmen
 Spielen wir ein Ratespiel!
 Ich denke mir eine berühmte Person aus und Sie müssen diese erraten.
-Sie dürfen $20$ Ja-Nein-Fragen stellen die ich Ihnen wahrheitsgetreu mit ``Ja`` oder ``Nein`` beantworten muss.
+Sie dürfen 20 Ja-Nein-Fragen stellen die ich Ihnen wahrheitsgetreu mit ``Ja`` oder ``Nein`` beantworten muss.
 
 ```{exercise} Die perfekten Fragen
 :label: blinking-good-questions-exercise
 Welche Art von Fragen würden Sie als gute Fragen bezeichnen und warum?
-Ist 'Beginnt der Nachname mit einem ``A``'? bzw. 'Ist das Alter größer als 40?'
+Ist 'Beginnt der Nachname mit einem ``A``?' bzw. 'Ist das Alter größer als 40?'
 eine gute bzw. schlechte Frage?
 ```
 
@@ -600,9 +609,10 @@ Gute Fragen zerteilen die noch übrige Menge an infrage kommender Menschen in m�
 
 Dadurch fallen **garantiert** sehr viele Möglichkeiten weg!
 Deshalb ist 'Ist das Alter größer als 40?' eine gute Frage.
+
 Mit der Frage nach dem Anfangsbuchstaben können Sie natürlich Glück haben und einen Treffer landen.
-Wenn wir annehmen, dass die Anfangsbuchstaben gleich häufig auftreten (was nicht der Fall ist) hätten Sie im besten Fall $25/26$ der Möglichkeiten eliminiert!
-Sehr viel wahrscheinlich ist es jedoch, dass sie lediglich $1/26$ eliminieren.
+Wenn wir annehmen, dass die Anfangsbuchstaben gleich häufig auftreten (was nicht der Fall ist) hätten Sie im besten Fall 25/26 der Möglichkeiten eliminiert!
+Sehr viel wahrscheinlich ist es jedoch, dass sie lediglich 1/26 eliminieren.
 ```
 
 Mit jeder Ja-Nein-Frage zerteilen Sie die übrige Menge an Menschen in zwei Teilmengen.
@@ -617,12 +627,13 @@ $$k = \log_2(16)$$
 
 berechnen.
 Natürlich braucht es gute Fragen, aber dieses *Teilproblem* können wir aus dem Gesamtproblem herausziehen.
-Nehmen wir erst einmal an Sie fänden lauter gute Fragen - ein Vorgehen bei dem wir das Problem **Zerlegen** (Dekomposition) und uns jedes Teilproblems einzeln zuwenden.
+Nehmen wir erst einmal an Sie fänden lauter gute Fragen - ein Vorgehen bei dem wir das Problem **Zerlegen** (Dekomposition) und uns jedem Teilproblem getrennt zuwenden.
 
 ```{exercise} Wie viele Fragen?
 :label: blinking-enough-questions-exercise
+Angenommen Sie hätten perfekte Fragen auf vorrätig.
 Wie viele Fragen brauchen Sie um die besagte Person zu erraten?
-Reichen $20$ Fragen aus?
+Reichen 20 Fragen aus?
 ```
 
 ````{solution} blinking-enough-questions-exercise
@@ -649,18 +660,23 @@ Die Zeile ``np.ceil(np.log2(7.77 * 10**9))`` berechnet
 
 $$\lceil \log_2(7.77 \cdot 10^9) \rceil$$
 
-(aufgerundet).
+([aufgerundet](sec-math-rounding)).
 ````
 
-Das Fragespiel können wir auch als eine Suche interpretieren und in der Informatik werden Algorithmen, die eine bestimmte Menge *absuchen* als *Suchalgorithmen* bezeichnet.
-Die Strategie, in jedem Schritt in einer der Hälften der noch übrigen Menge weiter zu suchen, nennt sich *Binärsuche*.
-Würden wir jedes Element der Menge einzeln durchgehen, dann würden wir einer *linearen Suche* folgen.
-Dadurch, dass wir in der *Binärsuche* die Menge in jedem Schritt halbieren, verringert sich die Anzahl der übrigen Elemente exponentiell und die notwendigen Schritte ist durch den *Logarithmus* beschrieben.
+Das Fragespiel können wir auch als eine Suche interpretieren.
+In der Informatik werden Algorithmen, die eine bestimmte Menge *absuchen* als *Suchalgorithmen* bezeichnet.
+Die Strategie, in jedem Schritt in einer der Hälften der noch übrigen Menge weiterzusuchen, nennt sich [binäre Suche](def-binary-search).
+Würden wir jedes Element der Menge einzeln durchgehen, dann würden wir einer [linearen Suche](def-linear-search) folgen.
+
+Dadurch, dass wir durch die *binär Suche* die Menge in jedem Schritt halbieren, verringert sich die Anzahl der übrigen Elemente exponentiell und die notwendigen Schritte ist durch den *Logarithmus* beschrieben.
+
 Solche Algorithmen gehören, was die Berechnungszeit angeht, zu den Kronjuwelen - viel besser geht es oftmals nicht!
+
 Wie in [Informationsrepräsentation](sec-representation) bereits erwähnt, spielt die Basis des *Logarithmus*, also ob wir die Menge in zwei ($\log_2$), drei ($\log_3$), vier ($\log_4$) usw. Teile zerteilen keine so große Rolle, sobald die Menge nur groß genug ist.
 
 ```{admonition} Lineare Suche
 :name: def-linear-search
+:class: definition
 
 Die *lineare Suche* durchsucht eine Menge $E$ nach einem bestimmten Element $e$ indem sie jedes Element der Menge mit $e$ in irgendeiner Reihenfolge vergleicht.
 Sie benötigt im schlechtesten Fall $|E|$ Schritte.
@@ -676,6 +692,7 @@ Doch eine solch unvorstellbar große Menge werden wir womöglich in der Praxis n
 
 ```{admonition} Binäre Suche
 :name: def-binary-search
+:class: definition
 
 Die *binäre Suche* durchsucht eine sortierte Liste $L$ nach einem bestimmten Element $e$ indem sie in jedem Schritt die Liste in zwei gleiche Hälften teilt und mit nur einer der Hälften mit der Suche fortfährt.
 Sie benötigt $\log_2(|L|)$ Schritte.
@@ -710,13 +727,14 @@ import numpy as np
 np.ceil(np.log2(26))
 ```
 
-d.h. $5$ Schritte!
+d.h. 5 Schritte!
 ````
 
-Mit $5$ Schritten, sind wir im Durchschnitt besser als die [lineare Suche](def-linear-search), welche die Häufigkeit ausnutzt.
-Außerdem haben wir eine Garantie: wir benötigen niemals mehr als $5$ Schritte!
+Mit 5 Schritten, sind wir im Durchschnitt besser als die [lineare Suche](def-linear-search), welche die Häufigkeit ausnutzt.
+Außerdem haben wir eine Garantie: wir benötigen niemals mehr als 5 Schritte!
 
-Als Anwender von Algorithmen sind solche Garatien sehr wertvoll, denn wir müssen oft vom schlechtesten Fall ausgehen.
+Als Anwender von Algorithmen sind derartige Garantien sehr wertvoll, denn wir müssen oft vom schlechtesten Fall ausgehen.
+
 Würden wir mehr und mehr Zeichen aufnehmen (z.B. Ziffern und Sonderzeichen) können wir leicht bestimmen wie das den Aufwand beeinflusst.
 Für eine Menge von $n$ Elementen benötigt die [binäre Suche](def-binary-search) 
 
@@ -724,7 +742,7 @@ $$\log_2(n)$$
 
 (aufgerundet) Schritte.
 
-## Codierung
+## Repräsentation
 
 Möchte Dominique die [binäre Suche](def-binary-search) einsetzen muss er natürlich Wissen welche Buchstaben jeweils in welcher Menge sind.
 Falls er ein ``P`` blinzeln will, muss er wissen in welchen Teilmengen sich das ``P`` befindet.
@@ -759,7 +777,7 @@ Welches binäre Wort repräsentiert das ``A`` in unserer Codierung?
 ``A`` ergibt sich durch fünfmal **blinzeln**, d.h. $11111$ repräsentiert das ``A`` in unserer Codierung.
 ```
 
-Wir könnten Dominique eine Tabelle machen in der für jeden Buchstaben das entsprechende Codewort steht.
+Wir könnten für Dominique eine Tabelle machen in der für jeden Buchstaben das entsprechende Codewort steht.
 So müsste er sich nichts merken!
 Wir könnten diese Tabelle händisch erzeugen, aber warum überlassen wir das nicht dem Computer?
 
@@ -860,7 +878,7 @@ print(binary_search(-7,[1,2,3,4,5]))
 ```
 
 Die [binäre Suche](def-binary-search) nutzt die gegebene Struktur der Daten (Information) aus, wohingegen die [lineare Suche](def-linear-search) keinerlei Struktur nutzt.
-Besteht keinerlei ausnutbare Struktur bleibt uns nichts anderes übrig als die [lineare Suche](def-linear-search) zu verwenden.
+Besteht keinerlei ausnutzbare Struktur bleibt uns nichts anderes übrig als die [lineare Suche](def-linear-search) zu verwenden.
 
 ```{exercise} Lineare Suche
 :label: blinking-lin-searching-exercise
@@ -938,7 +956,7 @@ Wir haben also zwei Algorithmen die für eine Eingabe mit bestimmten Vorraussetz
 Blicken wir auf die Problemtypen welche die Algorithmen lösen können, ist die [lineare Suche](def-linear-search) mächtiger bzw. genereller.
 Die [binäre Suche](def-binary-search) kann nur eine Teilmenge der Probleme lösen ist jedoch, aufgrund der angenommen Struktur der Eingabe, deutlich effizienter.
 Diesem Sachverhalt werden Sie noch häufiger begegnen.
-Oft gibt es einen generellen Algorithmus der ein breites Spektrum an Problemen löst und speziellere Algorithmen, welche nur eine Teilmenge lösen können, dafür aber deutlich effizienter sind.
+Oft gibt es einen generellen Algorithmus der ein breites Spektrum an Problemen löst und speziellere Algorithmen, welche nur eine Teilmenge der Probleme lösen können, dafür aber deutlich effizienter sind.
 
 ## Das Wesen der Technik
 
@@ -946,8 +964,8 @@ Oft gibt es einen generellen Algorithmus der ein breites Spektrum an Problemen l
 
 ### Maschinelles Lernen
 
-Heute könnten wir eine kleine *App* schreiben mit der wir die Häufigkeit der Wörter bequem abspeichern.
-Wir könnten über *Spracherkennungsalgorithmen* einfach den Text, den Dominique uns zublinzelt hineinsprechen und die Software wäre in der Lage die Wörter zu extrahieren und eine *Datenbank* der Wörter mit ihrer Häufigkeit zu verwalten.
+Heute könnten wir eine kleine App schreiben mit der wir die Häufigkeit der Wörter bequem abspeichern.
+Wir könnten über *Spracherkennungsalgorithmen* einfach den Text, den Dominique uns zublinzelt hinein sprechen und die Software wäre in der Lage die Wörter zu extrahieren und eine *Datenbank* der Wörter mit ihrer Häufigkeit zu verwalten.
 
 Wir wären heute in der Lage eine Software zu entwickeln, die erkennt wenn ein Mensch blinzelt.
 Über eine Kamera würden wir das Blinzeln aufzeichnen und ein *trainierter* Algorithmus (*maschinelles Lernen*) könnte darauf schließen, nicht nur ob jemand blinzelt, sondern auch wie schnell.
@@ -957,7 +975,7 @@ Die Software könnte natürlich auch gleich das Lernen der Sprache des Gegenübe
 Noch besser!
 Algorithmen könnten lernen welche Vorschläge gut und welche schlecht waren und aufgrund dieser Information immer besser werden.
 Sie könnten nicht nur lernen welche vorgeschlagenen Wörter zum Erfolg führten sondern auch in welchem Zusammenhang.
-Zum Beispiel könnten sie festellen, dass vor ``Apfel`` sehr oft das Wort ``der`` steht.
+Zum Beispiel könnten sie feststellen, dass vor ``Apfel`` sehr oft das Wort ``der`` steht.
 
 Wir könnten Algorithmen entwickeln, die mehr als nur das Gesprochene/Geblinzelte speichern.
 Wie wäre es zum Beispiel mit dem Datum und der Uhrzeit?
@@ -966,21 +984,21 @@ Oder dass Dominique zwischen 18:00 und 19:00 Uhr über das Essen redet.
 
 Zuerst hätte diese Software bzw. Maschine die einfache Arbeit des Zählens des Blinzeln übernommen.
 Doch aus dieser Automatisierung ergeben sich vielerlei neue Möglichkeiten.
-Natürlich entwerfen sich diese kleveren Algorithmen nicht von alleine.
-Sie als *Computational Thinker* kommen auf solche Ideen und machen aus Ihnen Realität.
+Natürlich entwerfen sich diese cleveren Algorithmen nicht von alleine.
+Sie als *Computational Thinker\*innen* kommen auf solche Ideen und machen aus ihnen Realität.
 
 Zu Zeiten in denen Dominique im Krankenbett lag, gab es diese technischen Möglichkeiten noch nicht.
 Es gab keine Smartphone-Apps oder eine Maschine die das Blinzeln erkennt.
-Nichtsdestotrotz haben sich bereits viele Jahre zuvor *Computational Thinker* und *Mathematiker\*innen* mit solchen kleveren Algorithmen beschäftigt.
+Nichtsdestotrotz haben sich bereits viele Jahre zuvor *Computational Thinker\*innen* und *Mathematiker\*innen* mit solchen cleveren Algorithmen beschäftigt.
 Die Grundlagen des heute in aller Munde klingenden *maschinellen Lernens* wurden bereits vor langer Zeit erschlossen.
 Doch hatte man damals schlicht nicht die Rechnerressourcen um derartig kostenintensive Algorithmen auszuführen.
-Die Arbeiten blieben fast schon unbeachtet - heute ist die breite Datenanalyse von sehr sehr vielen Daten (BigData) an allen Ecken unserer (Informations-)Welt anzutreffen.
+Die Arbeiten blieben fast schon unbeachtet - heute ist die breite Datenanalyse von sehr sehr vielen Daten (*BigData*) an allen Ecken unserer (Informations-)Welt anzutreffen.
 Neben der Rechnerressourcen ist die Datenerhebung heute deutlich einfacher und hat Ausmaße angenommen, die uns in manchen Bereichen zu denken geben sollte.
 
 ### Der verlängerte Arm
 
 An diesem Beispiel sehen wir, dass Algorithmen das Leben vereinfachen können und unnötige Erschwernisse eliminieren können.
-Im besten Fall, wie im Fall des Dominique, **emanzipieren** Sie den Anwender.
+Im besten Fall, wie im Fall des Dominique, **emanzipieren** sie Anwender\*innen.
 Aber selbst in seinem Fall hätte diese Erleichterung womöglich auch Nachteile für ihn gehabt.
 Hätte Dominique durch die Maschine im Endeffekt weniger menschlichen Kontakt erfahren?
 Er hätte schließlich die Möglichkeit gehabt ganze Briefe/E-Mails zu schreiben oder sich durch soziale Medien auszutauschen.
@@ -991,16 +1009,17 @@ Andererseits wäre er durch die Erleichterungen womöglich motiviert gewesen kom
 
 Technologie betrachten wir gerne als etwas von uns getrenntes.
 Als etwas das wir jederzeit ablegen können, wenn wir möchten.
-Der hier konstruierte Fall Dominique zeigt jedoch, dass Technik zum verlängerten Arm werden kann - ein Arm der fest verwachsen ist und unsere Handlungen mitbestimmt.
+Der hier konstruierte Fall des Dominique zeigt jedoch, dass Technik zum verlängerten Arm werden kann - ein Arm der fest verwachsen ist und unsere Handlungen mitbestimmt.
 In Science Fiction Filmen und Büchern wie *Ghost in the Shell* verschmilzt Technik buchstäblich mit dem Menschen.
 Da gibt es verwachsene Roboterarme, implantierte Mikrochips für verbesserte kognitive Fähigkeiten und vieles mehr.
 Hier ist die Trennung zwischen Mensch und Maschine fließend - das Bewusstsein (der Ghost) ist in einer Hülle (Shell).
 Aber verhält es sich mit weniger ausgeklügelter Technik nicht ebenso?
 Ich wage zu behaupten, dass der Hammer eines Handwerkers, der Bogen eines Jägers oder das Smartphone von heute, zwar in einer anderen Tiefe aber dennoch ähnlich mit dem Menschen verwoben sind/waren wie die implantierten Mikrochips aus *Ghost in the Shell*. 
 
-Das ist im Allgemeinen weder gut noch schlecht und wir sollten uns dessen bewusst sein. 
+Das ist im Allgemeinen weder gut noch schlecht doch sollten wir uns dessen bewusst sein. 
 Technik ist mehr als ein neutrales Werkzeug außerhalb von jedem Kontext.
-Technik interagiert mit uns, verändert uns, wir interagieren mit ihr und durch sie wiederum mit uns.
+Technik interagiert mit uns, verändert uns.
+Wir interagieren mit ihr und durch sie hindurch, wiederum mit uns.
 Technik verändert Gesellschaften und Wirtschaftssysteme.
 So führte das Automobil dazu, dass insbesondere in den USA Geschäfte sich an bestimmten Orten konzentrierten und so jeder auf ein Auto angewiesen war.
 Heute tragen Informationssysteme zu den wesentlichsten gesellschaftlichen, kulturellen und wirtschaftlichen Veränderungen bei.
@@ -1012,7 +1031,7 @@ Und wie es dem Handwerker zugute kommen kann über das Wesen des Hammers nachzud
 ## Der Mensch im Zentrum
 
 Entwickeln wir neue Algorithmen und Informationssysteme für eine(n) Anwender\*in sollte der Mensch im Zentrum stehen.
-Wenn Dominique mit unserer verbesserten Variante der Kommunikation nicht so gut zurechtkommt oder diese schlicht zurechtkommen will, aus welchen Gründen auch immer, dann ist sie für ihn nutzlos.
+Wenn Dominique mit unserer verbesserten Variante der Kommunikation nicht so gut zurechtkommt oder mit diese schlicht nicht zurechtkommen will, aus welchen Gründen auch immer, dann ist sie für ihn nutzlos.
 Möchten wir Dominique helfen, müssen wir uns zu allerst mit ihm auseinandersetzen, mit ihm kommunizieren und herausfinden was er braucht und vorallem möchte und was eben nicht.
 
 Ist die Anwenderschaft groß bzw. breit aufgestellt, gilt dies ebenso.

@@ -13,9 +13,11 @@ herunterladen und installieren können.
 ```{admonition} Lernziel
 :class: learngoals
 Im [ersten Teil](sec-robo-world-part-1) dieser Übung machen wir Sie mit den Kontrollstrukturen von imperativen Programmiersprachen vertraut.
-Dazu tauchen Sie in eine vorgegebene Welt ein und lernen das **Was** von dem **Wie** zu trennen (siehe [Das Was und das Wie](sec-what-and-how)).
+Dazu tauchen Sie in eine vorgegebene Welt ein und lernen das **WAS** von dem **WIE** zu trennen (siehe [Das Was und das Wie](sec-what-and-how)).
 
-Im [zweiten Teil](sec-robo-world-part-2) werden wir interessante aber auch schwierigere Fragen diskutieren und durch *Computational Thinking* lösen.
+Im [zweiten Teil](sec-robo-world-part-2) werden wir interessante aber auch schwierigere Fragen diskutieren und durch [Computational Thinking](sec-what-is-ct) lösen und unser Denken dadurch trainieren.
+
+In dieser Übung beschäftigen uns mit der [Zufallsfahrt](https://de.wikipedia.org/wiki/Random_Walk), determinierten und nicht-determinierten [Algorithmen](sec-algorithm-def), [Simulationen](https://de.wikipedia.org/wiki/Monte-Carlo-Simulation), [Mittel-](https://de.wikipedia.org/wiki/Mittelwert) und [Erwartungswert](https://de.wikipedia.org/wiki/Erwartungswert), [Bäumen](https://de.wikipedia.org/wiki/Baum_(Datenstruktur)) und der [Tiefen-](https://de.wikipedia.org/wiki/Tiefensuche) wie auch [Breitensuche](https://de.wikipedia.org/wiki/Breitensuche).
 ```
 
 Roboter dienen uns heute in vielen Bereichen als Helfer und Assistenten.
@@ -28,7 +30,7 @@ Roboter agieren zu Land, Wasser als auch Luft -- ob als Drohnen, kleine Schiffsw
 Auch in unserem Alltag nehmen uns Roboter zunehmens die Arbeit ab.
 Ein prominentes Beispiel ist der Roboterstaubsauger, welcher autonom die Wohnung reinigt.
 
-Das große Feld der künstlichen Intelligenz als auch der Robotik sind interdisziplinäre Gebiete die eng miteinander verwoben sind, denn ein Roboter ist im Grunde eine mechanische Konstruktion versehen mit einer künstliche Intelligenz.
+Das große Feld der künstlichen Intelligenz als auch der Robotik sind interdisziplinäre Gebiete die eng miteinander verwoben sind, denn ein Roboter ist im Grunde eine mechanische Konstruktion versehen mit einer künstlichen Intelligenz.
 Um eine solche künstliche Intelligenz soll es in diesem Kapitel gehen.
 Genauer gesagt beschäftigen wir uns mit der Frage wie ein Roboter durch eine ihm unbekannte Welt navigiert.
 
@@ -82,16 +84,16 @@ Um sich die erzeugte Welt anzeigen zu lassen rufen Sie
 world.show()
 
 auf.
-Jede Zelle hat eine bestimmte Farbe die ihren aktuellen Zustand beschreibt.
+Jede Zelle hat eine bestimmte Farbe, die ihren aktuellen Zustand beschreibt.
 
 Die Welt ist eine statische Welt, welche nur vom Roboter selbst verändert werden kann.
-In anderen Worten, der Zustand der Zellen bleibt unverändert außer Ihr Roboter verändert ihren oder seinen eigenen Zustand.
+In anderen Worten, der Zustand der Zellen bleibt unverändert, außer Ihr Roboter verändert ihren oder seinen eigenen Zustand.
 
 ## Der Roboter
 
 Der Roboter kann sich durch ein Gebiet bewegen und Objekte aufnehmen, herumtragen und wieder absetzten.
-Außerdem kann er Zellen markieren auf denen er sich befinden ``set_mark()`` oder Markierungen von besuchten Zellen entfernen ``unset_mark()``.
-Um ihm Befehle zu erteilen müssen Sie ihn zunächst von der Welt durch
+Außerdem kann er eine Zelle markieren auf der er sich gerade befinden ``set_mark()`` oder eine Markierung von der aktuellen Zelle entfernen ``unset_mark()``.
+Um dem Roboter Befehle zu erteilen müssen Sie ihn zunächst von der Welt durch
 
 robo = world.get_robo()
 
@@ -119,27 +121,27 @@ erreichen. Diese Nachbarschaft heißt im übrigen *Von-Neumann-Nachbarschaft*, s
 width: 400px
 name: fig-robo-world-von-neumann-nh
 ---
-Die von Neumann Nachbarschaftsbeziehung.
+Die Von-Neumann-Nachbarschaftsbeziehung.
 ```
 
-Der Roboter kann durch ``is_wall_in_front()`` festellen ob direkt vor ihm ein Hindernis (oder der Rand des Gebiets) ist und durch ``is_mark_in_front()`` abfragen ob die Zelle vor der der Roboter steht markiert ist.
+Der Roboter kann durch ``is_wall_in_front()`` feststellen ob direkt vor ihm ein Hindernis (oder der Rand des Gebiets) ist und durch ``is_mark_in_front()`` abfragen ob die Zelle vor ihm markiert ist.
 
 Durch ``is_object_in_front()`` können Sie den Roboter fragen ob sich direkt vor ihm ein (verrückbares) Objekt befindet.
-Mit ``take()`` können Sie diese Objekt aufnehmen und es mit ``put()`` direkt vor dem Roboter absetzten (falls dies möglich ist).
+Mit ``take()`` können Sie dieses Objekt aufnehmen und es mit ``put()`` direkt vor dem Roboter absetzten (falls dies möglich ist).
 Dabei kann der Roboter jedoch nur ein Objekt gleichzeitig tragen.
 
 Fassen wir die Methoden des Roboters zusammen:
 
-+ ``move()`` bewegt den Roboter eine Zelle nach vorne,
-+ ``turn_left()`` lässt den Roboter um 90 Grad nach links drehen,
-+ ``is_facing_north()`` ist genau dann ``True`` wenn der Roboter nach norden (oben) ausgerichtet ist,
-+ ``is_wall_in_front()`` ist genau dann ``True`` wenn vor dem Roboter ein (unverrückbares) Hindernis ist,
-+ ``is_object_in_front()`` ist genau dann ``True`` wenn vor dem Roboter ein (verrückbares) Objekt ist,
-+ ``set_mark()`` markiert die Zelle auf der der Roboter gerade steht,
-+ ``is_mark_in_front()`` ist genau dann ``True`` wenn vor dem Roboter eine markierte Zelle ist,
-+ ``unset_mark()`` entfernt die Markierung von der Zelle auf der der Roboter gerade steht,
-+ ``take()`` nimmt ein Objekt auf, und
-+ ``put()`` legt es ab.
++ ``move()`` bewegt den Roboter eine Zelle nach vorne
++ ``turn_left()`` lässt den Roboter um 90 Grad nach links drehen
++ ``is_facing_north()`` ist genau dann ``True``, wenn der Roboter nach norden (oben) ausgerichtet ist
++ ``is_wall_in_front()`` ist genau dann ``True``, wenn vor dem Roboter ein (unverrückbares) Hindernis ist
++ ``is_object_in_front()`` ist genau dann ``True``, wenn vor dem Roboter ein (verrückbares) Objekt ist
++ ``set_mark()`` markiert die Zelle auf der der Roboter gerade steht
++ ``is_mark_in_front()`` ist genau dann ``True`` wenn vor dem Roboter eine markierte Zelle ist
++ ``unset_mark()`` entfernt die Markierung von der Zelle auf der der Roboter gerade steht
++ ``take()`` nimmt ein Objekt auf und
++ ``put()`` legt es ab
 
 Sie rufen eine Methode ``method()`` durch 
 
@@ -212,7 +214,7 @@ rw.animate(world)
 auf.
 
 ```{admonition} Animation
-:class: warning
+:class: remark
 Das Animieren der Welt kann nur einmal am Ende Ihrer Wanderung ausgeführt werden, da der Speicher (die Wanderung) danach vergessen wird.
 ```
 
@@ -297,10 +299,11 @@ world.show()
 
 Unser Roboter kann sich nur nach links drehen und wir können nur feststellen ob er gerade nach Norden ausgerichtet ist.
 Aus diesen beiden primitiven Operationen können wir jedoch komplexere Operationen durch **Komposition** erzeugen.
+
 Um den Roboter nach Osten auszurichten, drehen wir ihn solange nach links bis er nach norden ausgerichtet ist.
 Dann wissen wir, dass dreimal nach links drehen gleich einmal nach rechts drehen entspricht und wir somit den erwünschten Effekt erzielen.
 
-Um diese neue Operation *nach Osten Ausrichten* ``turn_east(robo)`` bequem in unserem Arsenal zu haben, extrahieren wir sie in eine eigene Funktion.
+Um diese neue Operation *nach Osten ausrichten* ``turn_east(robo)`` bequem in unserem Arsenal zu haben, extrahieren wir sie in eine eigene Funktion.
 
 ```{exercise} Nach Osten Ausrichten
 :label: robo-turn_east-exercise
@@ -371,21 +374,21 @@ Befinden sich diese Codezeilen in einer langen Codesequenz wird es nicht leichte
 
 Wir wollen mit diesen beiden Zeilen gerade bewirken, dass der Roboter zur nächsten Wand vor ihm läuft.
 Unser Gehirn hat diese Aufgabe bereits gelöst, weshalb sollten wir also Denkressourcen vergeuden, wenn wir nach einer gewissen Zeit wieder zu diesem Code zurückkehren?
-Da wir vergessen, müssen wir erneut feststellen was diese beiden Zeilen bewirken.
+Da wir vergessen, müssen wir erneut feststellen **WAS** diese beiden Zeilen bewirken.
 Wir könnten die Zeilen auch mit Kommentaren versehen:
 
 # move to wall in front
 while not robo.is_wall_in_front():
     robo.move()
 
-Doch nichts dient der Dokumentation besser als wohlstrukturierter Code mit sprechenden und wohlüberlegten Variablen und Funktionsnamen.
+Doch nichts dient der Dokumentation besser als wohlstrukturierter Code mit sprechenden und wohlüberlegten Variablen- und Funktionsnamen.
 Diese Benennung ist eine Kunst für sich.
 Wir haben uns für den Namen ``walk_to_wall`` entschieden.
 
 In der Informatik ist die Sprache der Wahl Englisch, daran müssen Sie sich gewöhnen.
 Die Gemeinschaft ist international, zudem ist Englisch oft prägnanter und kürzer als Deutsch.
 
-Andere Namen wären ebenso denkbar, z.B. würde ``walk_to_wall_in_front`` noch genauer beschreiben, **was** passiert.
+Andere Namen wären ebenso denkbar, z.B. würde ``walk_to_wall_in_front`` noch genauer beschreiben, **WAS** passiert.
 Doch zu lange Namen erschweren das Lesen, was den Vorteil der Strukturierung zunichte macht.
 Unserem Gehirn fällt es einfach sich an einen bestimmten Namen zu erinnern und sich über den Namen an den bereits betrachteten Code und dessen Auswirkung zu erinnern.
 Deshalb ist ein kurzer Name der viel über die Methode aussagt aber nicht alles im Detail beschreibt ein guter Name.
@@ -406,18 +409,20 @@ Gute Namen berücksichtigen die Zielgruppe.
 Namen sollten auch konsistent gewählt werden.
 Zum Beispiel haben wir uns entschieden alle Methoden des Roboters die entweder ``True`` oder ``False`` zurückgeben mit ``is`` zu beginnen.
 Es wäre inkonsistent wenn es eine Methode ``is_wall_in_front()`` und ``object_in_front()`` gäbe.
-Inkonsistenz verlangt beim Lesen mehr mentale Anstrengung, was zu vermeiden ist und damit eine Verschwendung geistiger Kräfte darstellt.
+Inkonsistenz verlangt beim Lesen mehr mentale Anstrengung, was zu vermeiden.
+Es ist Verschwendung geistiger Kraft.
 Unser Gehirn ist eine visuelle Mustererkennungsmaschine, deshalb ist nicht nur der Name an sich wichtig sondern auch die visuelle Darstellung des Codes.
 
-Um dieses Argument noch zu untermauern hier ein Beispiel, welches Ihnen bekannt vorkommen sollte.
+Um dieses Argument noch zu untermauern blicken wir auf folgendes bekanntes Beispiel.
 Sehen Sie sich folgendes Spielchen an:
 Sie haben die Menge $M = \{a,b,c,d,e,f,g,h,i\}$ und acht Teilmengen $\{a,b,c\}$, $\{d,e,f\}$, $\{g,h,i\}$, $\{a,d,g\}$, $\{b,e,h\}$, $\{c,f,i\}$, $\{a,e,i\}$ und $\{c,e,g\}$.
 Sie spielen zu zweit und jeder wählt nacheinander ein Element aus $M$.
 Jedes dieser Elemente kann nur einmal gewählt werden.
 Ziel ist es als erster Elemente zu wählen, sodass man alle Elemente einer der acht Teilmengen besitzt.
+
 In dieser Art und Weise formuliert, fällt es unserem Gehirn sehr schwer das Spiel zu spielen.
-Dabei ist das Spiel nichts anderes als *Tic-Tac-Toe*.
-In visueller Form, ist das Spiel sehr einfach zu spielen:
+Dabei ist das Spiel nichts anderes als [Tic-Tac-Toe](https://de.wikipedia.org/wiki/Tic-Tac-Toe).
+In visueller Form, ist das Spiel sehr einfach zu verstehen:
 
 ```{figure} ../../figs/roboworld/tic-tac-toe.png
 ---
@@ -429,6 +434,7 @@ name: fig-tic-tac-toe
 Gewisse Konsistenzen können wir nicht selbst wählen, da wir an einer Gemeinschaft teilnehmen.
 Zum Beispiel trennen wir in ``Python`` die Wörter, die einen Variablen- oder Funktions-/Methodennamen ausmachen durch den Unterstrick ``_`` und zwar nicht weil es zwangsläufig die beste Art und Weise ist, sondern weil sich die ``Python``-Gemeinschaft darauf geeinigt hat.
 In ``Java`` verwendet man hingegen die sogenannte Camel-Caps-Schreibweise: ``isWallInFront()``.
+
 Solche Normen erleichtern die Zusammenarbeit ungemein.
 Es lohnt sich frühzeitig diese Normen nachzuschlagen oder den Code von anderen Programmierer\*innen, auch wegen der Benennung von Variablen und Funktionen/Methoden, zu betrachten.
 
@@ -471,7 +477,7 @@ Lassen Sie sich die Animation anzeigen.
 ```{solution} robo-corridor-multi-exercise
 :label: robo-corridor-multi-solution
 :class: dropdown
-Der Roboter läuft zur Wand vor ihm dreht sich um 180 Grad.
+Der Roboter läuft zur Wand vor ihm und dreht sich um 180 Grad.
 Das wiederholt er fünfmal, somit läuft er hin und her.
 Am Ende befindet er sich ganz im Osten am Ziel.
 ```
@@ -523,7 +529,7 @@ def turn_east(robo):
 
 ### Korridor mit Objekten
 
-Die nächste Welt die unser Roboter durchlaufen soll ist ein Korridor der Objekte auf dem Weg zum Ziel enthalten kann.
+Die nächste Welt, die unser Roboter durchlaufen soll, ist ein Korridor der Objekte auf dem Weg zum Ziel enthalten kann.
 
 Der Roboter kann über diese nicht einfach drüber steigen.
 Er muss ein Objekt was vor ihm liegt aufnehmen ``take()`` und kann dann erst wieder weiterlaufen.
@@ -564,7 +570,7 @@ def move_object(robo):
     robo.put()
     turn(robo)
 
-Eine weitere Funktion ``walk(robo)`` lässt den Roboter solange nichts im Weg ist (``nothing_in_front(robo)``) laufen.
+Eine weitere Funktion ``walk(robo)`` lässt den Roboter, solange nichts im Weg ist (``nothing_in_front(robo)``), laufen.
 
 def nothing_in_front(robo):
     return not robo.is_wall_in_front() and not robo.is_object_in_front()
@@ -587,7 +593,7 @@ print(world.is_successful())
 :label: robo-walk-east-with-objects-impossible-exercise
 
 1. Funktioniert unser bzw. Ihr Code auch wenn keine Objekte vorhanden sind?
-2. Funktioniert unser bzw. Ihr Code für jeden möglichne Korridor mit Objekten?
+2. Funktioniert unser bzw. Ihr Code für jeden möglichen Korridor mit Objekten?
 3. Gibt es einen Korridor mit Objekten den wir unmöglich durchwandern können?
 
 ```
@@ -596,8 +602,8 @@ print(world.is_successful())
 :label: robo-walk-east-with-objects-impossible-solution
 :class: dropdown
 1. Ja, unser Code funktioniert auch wenn keine Objekte vorhanden sind.
-2. Nein, falls zu Beginn ein Objekt direkt vor uns ist, können wir es nicht beiseite schaffen. Wir müssten es aufnehmen und mindestens einen Schritt noch vorne laufen und es dann ablegen zu können!
-3. Ja, falls zu Beginn direkt zwei oder mehr Objekte vor uns liegen. Wir haben dann keine Möglichkeit diese beiseite zu schaffen!
+2. Nein, falls zu Beginn ein Objekt direkt vor uns ist, können wir es nicht beiseite schaffen. Wir müssten es aufnehmen und mindestens einen Schritt noch vorne laufen um es dann ablegen zu können.
+3. Ja, falls zu Beginn direkt zwei oder mehr Objekte vor uns liegen. Wir haben dann keine Möglichkeit diese beiseite zu schaffen.
 ```
 
 Anstatt ein Objekt aufzunehmen und es direkt wieder abzulegen, können wir es auch aufnehmen und erst dann ablegen wenn es notwendig ist.
@@ -669,12 +675,14 @@ Wir haben zwar einen sehr ineffektiven Algorithmus aber irgendwann findet er das
 
 Möchten wir den Algorithmus analysieren ergeben sich interessante Fragen.
 Zum Beispiel, wie viele Schritte der Roboter im *Durchschnitt* machen muss oder anders gefragt:
-Was ist der *Erwartungswert* für die Anzahl der Schritte, d.h. Aufrufe von ``move()``?
 
-Der umgangsprachliche *Durchschnitt* von zwei oder mehreren Zahlen nennen wir in der Mathematik *Mittelwert* oder *arithmetisches Mittel*.
-Der *Erwartungswert* (manchmal leider auch als Mittelwert bezeichnet) ist eine Zahl, die eine *Zufallsvariable* im Mittel annimmt.
+>Was ist der *Erwartungswert* für die Anzahl der Schritte, d.h. Aufrufe von ``move()``?
+
+Den umgangsprachliche *Durchschnitt* von zwei oder mehreren Zahlen nennen wir in der Mathematik *Mittelwert* oder *arithmetisches Mittel*.
+Der *Erwartungswert* (manchmal leider auch als Mittelwert bezeichnet) ist eine Zahl, die angibt welchen Wert eine *Zufallsvariable* im Mittel annimmt.
 Diese zwei Dinge sind grundverschieden!
 Im Fall des *Mittelwerts* sprechen wir vom durchschnittlichen Wert konkreter Zahlen und im Fall des *Erwartungswerts* von einer Zahl die eine Zufallsvariable im Mittel annimmt.
+
 Zum Beispiel können wir den Würfelwurf eines fairen Würfels betrachten.
 Die Zufallsvariable wäre in diesem Fall die Augenzahl des Würfelwurfs.
 Nehmen wir an wir Würfeln fünfmal und erhalten 1, 4, 1, 1, 2.
@@ -726,7 +734,7 @@ $$
 $$
 
 Wir benötigen noch die Wahrscheinlichkeit, dass das Ziel in einer der vier Zellen liegt.
-Da das Ziel gleichwahrscheinlich in eine der Zelle (die Zelle des Roboter ausgenommen) fällt, ergibt sich hierfür
+Da das Ziel mit gleicher Wahrscheinlichkeit in eine der Zellen (die Zelle des Roboter ausgenommen) fällt, ergibt sich hierfür
 
 $$
 4 / (5 \cdot 5 - 1) = 4 / 24 = 1 / 6
@@ -787,14 +795,15 @@ Um ein Gefühl für den *Erwartungswert* zu erlangen können wir nun den *Durchs
 ````{exercise} Entwicklung des Durchschnitts
 :label: robo-random-walk-mean-n-exercise
 
-Berechnen Sie für jeden Eintrag in ``x``
+Berechnen Sie für jeden Eintrag ``n`` in ``x``
 
 ```python
 x = list(range(1,401,1))
 ```
 
-den *Durchschnitt* für ``ncols=5``, ``nrows=5``, sodass ``y`` alle Durchschnitte enthält.
-Lassen Sie sich die Daten durch
+die *durchschnittliche* Länge des Roboterlaufs für ein $5 \times 5$ Gebiet (``ncols=5``, ``nrows=5``), d.h., bestimmen Sie ``experiments(5, 5, n)``.
+
+Speichern Sie all diese *Durchschnitte* in ``y`` ab und lassen Sie sich die Daten durch
 
 ```python
 import matplotlib.pyplot as plt
@@ -823,7 +832,8 @@ Mit
 plt.hlines([38, 38 + (56-38)/2, 56], xmin=0, xmax=nmax, colors='black')
 
 haben wir zwei horizontale Linien bei $y = 38$, $y = 38+(56-38)/2$ und $y = 56$ eingezeichnet um zu verdeutlichen, dass der *Erwartungswert* mit hoher Wahrscheinlichkeit in dem Interval $[38;56]$ liegt und der Mittelpunkt $38+(56-38)/2 = 47$ ein erster Schätzwert ist.
-Wir beoachten außerdem, dass die Berechnung einige Zeit in Anspruch nimmt und sich der *Durchschnitt* für größer werdende ``n`` einem bestimmten Wert (dem *Erwartungswert*) zu nähern scheint.
+
+Wir beobachten außerdem, dass die Berechnung einige Zeit in Anspruch nimmt und sich der *Durchschnitt* für größer werdende ``n`` einem bestimmten Wert (dem *Erwartungswert*) zu nähern scheint.
 
 ````{exercise} Plotten mit matplotlib
 :label: robo-plotten-exercise
@@ -861,7 +871,8 @@ plt.plot(x, y, 'b-', markersize=2.5, alpha=0.5)
 plt.hlines([38, 38 + (56-38)/2, 56], xmin=0, xmax=nmax, colors='black')
 
 Solche Berechnungen in Form von Experimenten/Simulationen werden oft durchgeführt, wenn keine analytische Lösung bekannt ist oder sie gar nicht erst existiert.
-Beim Suchen einer analytischen Lösung kann dies auch ein sehr hilfreiches Mittel sein.
+Beim Suchen einer analytischen Lösung kann dies auch ein sehr hilfreiches Mittel sein um einerseits eine Idee von der Lösung zu bekommen und andererseits seine Vermutung zu untermauern.
+Ganz nach dem Motto: Habe ich mich verrechnet?
 
 Den *Erwartungswert* der notwendigen Schritte des Zufallslauf zu bestimmen ist eine schwierige Aufgabe, der Sie wahrscheinlich noch nicht gewachsen sind.
 Dennoch können wir als *Computational Thinker\*innen* den Computer verwenden um durch (oft massiv viele) Berechnungen einen guten Schätzwert zu bestimmen.
@@ -904,15 +915,15 @@ for i in range(len(x)):
     overall_steps += x[i] * y[i]
 print(overall_steps)
 
-Ein etwas besser lesbarer Code entsteht wenn wir die ``Python`` Funktion ``zip`` verwenden:
+Ein etwas besser lesbarer Code entsteht, wenn wir die ``Python`` Funktion ``zip`` verwenden:
 
 overall_steps = 0
 for n, mean in zip(x,y):
     overall_steps += n * mean
 print(overall_steps)
 
-Das Ergebnis von 3 666 350 Schritten ist etwas geringer als unsere Abschätzung. 
-Wir haben uns um ``abs(3_666_350 - 3_769_400) / 3_666_350``, also circa 3 % verschätzt.
+Die tatsächliche Anzahl ``steps_sum`` an Schritten kann etwas geringer oder etwas größer als unsere Abschätzung sein. 
+Wir haben uns um ``abs(steps_sum - 3_769_400) / steps_sum`` Prozent verschätzt.
 
 Haben Sie die Aufgabe {ref}`robo-random-walk-wls-exercise` analytisch lösen können?
 Lassen Sie uns experimentell nachprüfen ob unsere Berechnungen stimmen!
@@ -953,26 +964,29 @@ Dieses Beispiel zeigt, wie Computer Sie bei Ihrer Denkarbeit unterstützten kön
 Durch eine Vielzahl an Berechnungen liefert Ihnen der Computer Hinweise zur Lösung eines Problems.
 
 ### Deterministischer Lauf
-Als nächstes sollen Sie das gleiche Gebiet deterministisch (ohne Zufall) durchlaufen.
+Als nächstes sollen Sie das gleiche Gebiet determiniert (ohne Zufall) durchlaufen.
 
-```{admonition} Determinismus in der Informatik
-:class: warning
-Die Begriffe **deterministisch** und **nicht-deterministisch** haben in der theoretischen Informatik eine ganz bestimmte Bedeutung, welche nichts mit dem Zufall zu tun haben.
-Es geht dabei um Zustandsübergänge:
+```{admonition} Determiniertheit und Determinismus
+:class: attention
+Die Begriffe **determiniert** und **deterministisch** haben in der Informatik eine ganz bestimmte Bedeutung, welche wir nur allzu gerne verwechseln.
 
-+ Deterministisch bedeutet etwas (z.B. der Computer) geht von einem Zustand in einen bestimmten anderen Zustand über.
-+ Nicht-deterministisch bedeutet etwas (z.B. der Computer) geht von einem Zustand in alle möglichen nächsten Zustände in einem Schritt (gleichzeitig) über.
++ Ein *determinierter* [Algorithmus](sec-algorithms) erzeugt bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.
++ Für einen *deterministischer* [Algorithmus](sec-algorithms) ist während seiner Ausführung zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
 ```
+
+Die Zufallsfahrt ist aus unserer Sicht nicht *determinierter*, da Sie bei jeder Ausführung einen anderen Pfad berechnet.
+Es sei jedoch erwähnt, dass der Lauf auf Pseudozufallsvariablen beruht.
+Würden jede Eingabe (auch den sog. Seed des Pseudozufallsgenerators) kennen, wäre jeder Lauf aus unserer Sicht *determiniert* und würde mit einer anderen Eingabe starten.
 
 Die Zufallsfahrt ist ineffektiv, wenn es unser Ziel ist mit so wenig Schritten wie möglich zum Ziel zu kommen.
 Wir haben keine Gewissheit wie lange es für einen bestimmten Lauf dauern mag.
 Lassen Sie uns nun eine Lauf zum Ziel entwickeln, für den wir eine feste Obergrenze an Schritten feststellen können.
 
-```{exercise} Deterministischer Lauf
+```{exercise} Determinierter Lauf
 :label: robo-det-walk-exercise
 
 1. Gehen Sie weg vom Rechner und überlegen Sie sich einen Algorithmus der den Roboter sicher ans Ziel des rechteckigen Gebiets ohne Hindernisse führt.
-2. Implementieren Sie eine Funktion ``deterininstic_walk(robo)`` die den Roboter ohne eine Zufallskomponente für **alle möglichen rechteckigen Welten ohne Objekte und Hindernisse** ins Ziel führt.
+2. Implementieren Sie eine Funktion ``determined_walk(robo)``, die den Roboter ohne eine Zufallskomponente für **alle möglichen rechteckigen Welten ohne Objekte und Hindernisse** ins Ziel führt.
 3. Bestimmen Sie wie viele Schritte höchstens (worst-case) sowie mindestens (best-case) nötig sind.
 
 ```
@@ -1012,7 +1026,7 @@ def walk_north_west(robo, condition = lambda robo: True):
     walk_west(robo, condition)
     walk_north(robo, condition)
 
-def deterministic_walk(robo):
+def determined_walk(robo):
     condition = lambda robo: not robo.is_at_goal()
     
     walk_north_west(robo, condition)
@@ -1047,8 +1061,7 @@ $$
 n \cdot m + \left \lceil{m/2}\right \rceil + \left \lceil{n/2}\right \rceil
 $$
 
-Schritte, wobei $\left \lceil{\cdot}\right \rceil$ Aufrunden auf die nächste ganze Zahl bedeutet.
-
+Schritte, wobei $\left \lceil{\cdot}\right \rceil$ gleich dem [Aufrunden](sec-math-rounding) auf die nächste ganze Zahl darstellt.
 
 Das animierte Ergebnis sieht wie folgt aus
 
@@ -1057,13 +1070,14 @@ Das animierte Ergebnis sieht wie folgt aus
 width: 400px
 name: fig-robo-world-det-walk
 ---
-Ein deterministischer Lauf zum Ziel.
+Ein determinierter Lauf zum Ziel.
 ```
 
 Erneut ergeben sich interessante Fragen:
 
-1. Gibt es einen Algorithmus der den Roboter (für ein beliebiges Gebiet) so bewegt, dass wir jede Zelle nur maximal einmal durchlaufen?
-2. Wenn nein, gibt es einen Algorithmus der dies für bestimmte Gebiete erzielt?
+>Gibt es einen Algorithmus der den Roboter (für ein beliebiges Gebiet) so bewegt, dass wir jede Zelle nur maximal einmal durchlaufen?
+
+>Wenn nein, gibt es einen Algorithmus der dies für bestimmte Gebiete erzielt?
 
 ```{exercise} Perfekter Lauf
 :label: robo-perfect-walk-exercise
@@ -1117,7 +1131,7 @@ Können Sie unseren Algorithmus aus der Lösung ({ref}`robo-perfect-walk-exercis
 ```{exercise} Perfekter Lauf im Quadrat
 :label: robo-perfect-walk-square-exercise
 
-Implementieren Sie eine Funktion ``deterministic_walk_quare(robo)`` die den Roboter ohne eine Zufallskomponente für **alle möglichen quadratischen Welten ohne Objekte und Hindernisse** ins Ziel führt und jede Zelle maximal einmal besucht.
+Implementieren Sie eine Funktion ``determined_walk_square(robo)`` die den Roboter ohne eine Zufallskomponente für **alle möglichen quadratischen Welten ohne Objekte und Hindernisse** ins Ziel führt und jede Zelle maximal einmal besucht.
 Die Funktion sollte die Anzahl der benötigten Schritte zurückgeben.
 
 **Hinweis:** Wir empfehlen erneut vom Rechner weg zu gehen und sich erst einmal mit Stift und Papier zu überlegen welche Roboterbewegungen nötig sind und in welches **Muster** diese fallen.
@@ -1129,24 +1143,24 @@ Der Zustand des Roboters wurde lediglich durch seine Ausrichtung beschrieben.
 Dies ändert sich nun!
 
 Gilt für unser $n \times n$-Gebiet, dass $n$ eine gerade Zahl ist so befindet sich der Roboter nicht genau in der Mitte des Gebiets.
-Er gefindet sich eine Zelle weiter im Norden als im Süden und eine Zelle weiter im Osten als im Osten!
+Er befindet sich eine Zelle weiter im Norden als im Süden und eine Zelle weiter im Osten als im Osten!
 Deshalb laufen wir mit dem ersten Schritt immer erst nach Westen und dann nach Süden, sodass wir gegen den Uhrzeigersinn laufen!
 
-Zwischen der Drehung nach links (``turn_left()``) und den Schritten (``move()``) können wir folgenden Zusammenhang festellen:
-Die Anzahl der Schritte erhöt sich nach jeder zweiten Drehung um eins.
+Zwischen der Drehung nach links (``turn_left()``) und den Schritten (``move()``) können wir folgenden Zusammenhang feststellen:
+Die Anzahl der Schritte erhöht sich nach jeder zweiten Drehung um eins.
 
 ```{figure} ../../figs/roboworld/spiral-walk.png
 ---
 width: 400px
 name: fig-robo-world-spiral-walk
 ---
-Spirallauf: die Anzahl der ``move()`` Aufrufe erhöt sich um eins nach jedem zweiten ``turn_left()``.
+Spirallauf: die Anzahl der ``move()``-Aufrufe erhöht sich um eins nach jedem zweiten ``turn_left()``.
 ```
 
 Wir müssen nun noch darauf achten, dass wir nicht übers Ziel hinauslaufen.
 Das ist auch schon alles.
 
-def deterministic_walk_quare(robo):
+def determined_walk_square(robo):
     steps = 0
     moves = 1
     turn_west(robo)
@@ -1170,7 +1184,7 @@ world = rw.new_world(nrows=nrows, ncols=ncols)
 robo = world.get_robo()
 robo.disable_print()
 world.show()
-steps = deterministic_walk_quare(robo)
+steps = determined_walk_square(robo)
 assert nrows * ncols > steps
 print(world.is_successful())
 
@@ -1179,15 +1193,15 @@ rw.animate(world)
 ### Eine künstliche Intelligenz (optional)
 
 Bis hierher haben wir Algorithmen entwickelt um unseren Roboter sicher durch eine teilweise bekannte Welt zu bewegen.
-Wir wussten zwar nicht exakt wie diese Welt aussieht jedoch wussten wir, dass sie zum Beipiel keine Hindernisse oder Objekte enthält.
-In anderen Worten, wir wussten unser Gebiet ist rechteckig.
+Wir wussten zwar nicht exakt wie diese Welt aussieht jedoch wussten wir, dass sie zum Beispiel keine Hindernisse oder Objekte enthält.
+Oder wir wussten, dass unser Gebiet rechteckig ist.
 Zudem wussten wir wo der Roboter startet (in der Mitte bzw. ganz im Westen).
 
 Ändern wir die Perspektive und versetzten uns in den Roboter hinein.
 Nehmen wir an wir wissen rein gar nichts über das Gebiet.
 Wir kennen nur unseren, d.h. den Zustand des Roboters selbst.
 Bewegen wir uns, können wir uns natürlich merken, wohin wir uns bewegt haben und wie die Welt dort aussah.
-Wir können die Welt erkunden und so Unsicherheiten auflösen, in anderen Worten, wir können Informationen durch Erkundingen einholen.
+Wir können die Welt erkunden und so Unsicherheiten auflösen, in anderen Worten, wir können Informationen durch Erkundungen einholen.
 
 Lassen wir verrückbare Objekte außer acht. 
 Die Welt in der der Roboter sein Ziel finden muss ist eine Welt voller **unverrückbarer Hindernisse**.
@@ -1220,10 +1234,10 @@ So können wir leicht alle möglichen Läufe mit drei ``move()`` Befehlen auflis
 9. ``move()``, ``turn_left()``, ``turn_left()``, ``move()``, ``move()``
 10. ...
 
-#### Codierung der Läufe
+#### Repräsentation der Läufe
 
-Wir können hierfür eine andere, kürzere und besser handhabbare Repräsentation wählen, indem wir lediglich die Anzahl der ``turn_left()`` vor jedem ``move()`` notieren.
-Wir lassen überflüssige Informationen weg:
+Wir können hierfür eine andere, kürzere und besser handhabbare [Repräsentation](sec-representation)/Codierung wählen, indem wir lediglich die Anzahl der ``turn_left()`` vor jedem ``move()`` notieren.
+Wir lassen überflüssige [Informationen](sec-information) weg:
 
 1. 000
 2. 001
@@ -1269,7 +1283,7 @@ Darum kümmern wir uns später noch.
 
 Von hier an verwenden wir für die Schreibweise eines Laufs die Codierung durch Zahlen.
 
-Oben haben wir alle Laufe der Länge drei in einer bestimmten Art und Weise aufgelistet!
+Oben haben wir alle Läufe der Länge drei in einer bestimmten Art und Weise aufgelistet!
 Wir starten mit 000 was als Dezimalzahl die 0 ist und addieren für jeden nächsten Lauf eins drauf:
 
 1. 000 
@@ -1299,7 +1313,7 @@ Jeder Knoten hat genau 4 Kanten:
 + eine für 3
 
 Jeder Lauf ist durch ein Blatt (Knoten ohne Kinder) definiert.
-Der Baum ist in {numref}`Abbildung {number} <fig-robo-world-tree>` skizziert.
+Der Baum ist für Läufe der Länge 2 in {numref}`Abbildung {number} <fig-robo-world-tree>` skizziert.
 
 ```{figure} ../../figs/roboworld/robo-world-tree.png
 ---
@@ -1338,7 +1352,7 @@ name: fig-robo-world-breadth-first-search
 Um nun eine der beiden *Suchalgorithmen* als einen Roboterlauf zu implementieren haben wir noch ein Problem!
 Wir können nicht so einfach von z.B. 03 nach 10 gehen.
 Wann immer wir von einem Knoten wieder nach oben im Baum laufen, müssen wir auch mit dem Roboter den gelaufenen Weg zurücklaufen!
-Deshalb benötigen wir für jede Kombination aus Drehungen und einen Schritt nach vorne laufen, die inverse Operation:
+Deshalb benötigen wir für jede Kombination aus Drehungen und Schritt nach vorne laufen, die inverse Operation:
 Laufe zurück und richte den Rober so aus, wie er zuvor ausgerichtet war.
 
 ```{exercise} Inverse Operation
@@ -1386,7 +1400,7 @@ def inverse_move(robo, code):
 Sofern wir die inversen Operationen an der richtigen Stelle aufrufen, können diese nicht schiefgehen.
 Der Roboter kommt schließlich von der Zelle zu der wir zurücklaufen.
 Anders verhält es sich jedoch mit ``move(robo, code)``!
-Diese Funktion kann schieflaufen, sofern nach der Drehung ein Hindernis vor uns steht.
+Diese Funktion kann in einem Fehler enden, sofern nach der Drehung ein Hindernis vor uns steht.
 
 ```{exercise} Codierung in Operationen übersetzten (verbessert)
 :label: robo-code-to-operation-improved-exercise
@@ -1445,7 +1459,7 @@ Wann wissen Sie, dass es keinen Weg zum Ziel gibt?
 
 ```{exercise} Tiefensuche des Roboters (schwer!)
 :label: robo-depth-walk-impl-exercise
-Implementieren Sie nun die Tiefensuche ``depth_first_walk(robo)`` welche den Roboter zum Ziel führt und eine Liste zurück gibt, welche den Pfad im Suchbaum darstellt.
+Implementieren Sie nun die *Tiefensuche* ``depth_first_walk(robo)`` welche den Roboter zum Ziel führt und eine Liste zurückgibt, welche den Pfad im Suchbaum darstellt.
 Falls es keinen Weg zum Ziel gibt, so sollte diese Funktion eine leere Liste zurückgeben.
 ```
 
@@ -1547,6 +1561,7 @@ Mit der *Breitensuche* würden wir im Schnitt mit dem Roboter deutlich mehr Schr
 Anstatt irgendeinen Weg zu finden wäre es noch interessant einen Weg zu finden, sodass es keinen anderen Weg gibt der kürzer ist.
 Einer der bekanntesten Algorithmen für dieses Problem ist der sogenannte [Dijkstra-Algorithmus](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm).
 In unserem Fall handelt es sich jedoch um einen Spezialfall, denn jeder Schritt des Roboters überwindet die gleiche Distanz -- er springt von Zelle zu Zelle.
+Deshalb suchen wir den Pfad der zum Ziel führt und die minimale Anzahl an Zellen besucht.
 
 ```{exercise} Breitensuche und kürzester Weg
 :label: robo-shortest-path-exercise

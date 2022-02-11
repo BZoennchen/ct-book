@@ -196,6 +196,7 @@ Das sind also Algorithmen.
 
 >Was zeichnet nun aber einen Algorithmus genau aus?
 
+(sec-algorithm-def)=
 ## Definition
 
 Nach dieser Intuition wollen wir den Begriff *Algorithmus* klar definieren.
