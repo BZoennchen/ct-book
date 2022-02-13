@@ -142,7 +142,7 @@ Je kleiner die Chips desto kleiner ist die Distanz, welche die Signale wandern m
 
 ## Komplement
 
-In Abschnitt [Ganze Zahlen](sec-intergers) haben wir besprochen wie diese durch das zweier Komplement repräsentiert werden.
+In Abschnitt [Ganze Zahlen](sec-integers) haben wir besprochen wie diese durch das zweier Komplement repräsentiert werden.
 Um aus eine Binärzahl $k = b_{n-1}\ldots b_0$ ihr Negativ zu bilden, also $-k$, bilden wir das Komplement und addieren eins:
 
 $$-k = \overline{b_{n-1}\ldots b_0} + 1$$

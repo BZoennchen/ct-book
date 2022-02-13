@@ -526,7 +526,7 @@ Sammeln Sie nun alle Schlüssel ein und packen Sie diese in eine Liste.
 countings = count_all(names)
 unique_names = list(countings.keys())
 
-In [Karten sortieren](sort-cards-with-python) haben wir selbst einen Sortieralgorithmus entworfen.
+In [Karten sortieren](sec-sort-cards-with-python) haben wir selbst einen Sortieralgorithmus entworfen.
 Selbstverständlich hat ``Python`` bereits einen solchen Algorithmus im Angebot.
 Diesen haben wir oben beim Generieren des zufälligen Telefonbuchs verwendet.
 

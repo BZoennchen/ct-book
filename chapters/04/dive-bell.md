@@ -407,7 +407,7 @@ Gemeint ist der *analytische Pfad*.
 
 ### Komplexitätsanalyse
 
-Anstatt in Zeit, denken wir bei der [Komplexitätanalyse](sec-complexity) in Aufwand.
+Anstatt in Zeit, denken wir bei der [Komplexitätsanalyse](sec-complexity) in Aufwand.
 Und anstatt mit der Stoppuhr die Zeit zu messen, zählen wir den Aufwand bzw. schätzen diesen ab.
 
 Da Dominique ohnehin nur blinzeln kann, können wir einfach zählen wie oft er blinzelt.
