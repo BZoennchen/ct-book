@@ -992,9 +992,9 @@ Im Fall der unsortierten Liste bleibt uns nichts anderes übrig als die Liste vo
 <div class="section" id="solution-content">
 <p>Wir schätzen erst ab wo die Namen mit dem Buchstaben <code class="docutils literal notranslate"><span class="pre">R</span></code> beginnen.
 Wir schlagen das Buch recht weit hinten auf und betrachten den ersten und letzten Namen der Seite.
-Kommt der erste Name vor, und der letzte Name nach <code class="docutils literal notranslate"><span class="pre">Reichel</span></code> so suchen wir den Namen auf der Seite.</p>
-<p>Kommt der erste Name nach <code class="docutils literal notranslate"><span class="pre">Reichel</span></code>, finden wir den Namen im vorderen Teil des Buches.
-Kommt der letzte Name vor <code class="docutils literal notranslate"><span class="pre">Reichel</span></code>, finden wir den Namen im hintern Teil des Buches.</p>
+Ist der erste Name lexikographisch kleiner und der letzte lexikographisch größer als <code class="docutils literal notranslate"><span class="pre">Reichel</span></code>, so suchen wir den Namen auf der Seite.</p>
+<p>Ist der erste Name lexikographisch größer als <code class="docutils literal notranslate"><span class="pre">Reichel</span></code>, finden wir den Namen im vorderen Teil des Buches.
+Ist der letzte Name lexikographisch kleiner als <code class="docutils literal notranslate"><span class="pre">Reichel</span></code>, finden wir den Namen im hinteren Teil des Buches.</p>
 <p>Wir nehmen den entsprechenden Teil und schlagen die Seite in der Mitte dieses Teils auf.
 Den anderen Teil werden wir nie wieder betrachten.</p>
 <p>Diesen Prozess wiederholen wir bis wir die entsprechende Seite gefunden haben.
@@ -1023,17 +1023,18 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-868ecd74-0a3e-43b9-b28c-92f2b0f1f553">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-868ecd74-0a3e-43b9-b28c-92f2b0f1f553" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-68ced247-e250-468b-b369-5ab49d288215">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-68ced247-e250-468b-b369-5ab49d288215" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
 \end{gather}\]</div>
 <p>Für das Tupel nehmen wir an dass</p>
 <div class="math notranslate nohighlight" id="equation-name-register-eq-3">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-name-register-eq-3" title="Permalink to this equation">¶</a></span>\[f_E(e_i, e_j) \leq 0 \iff i &lt; j,\]</div>
-<p>das heißt, das Tupel ist sortiert. Wir suchen nun ein Element <span class="math notranslate nohighlight">\(e \in E\)</span>.
-Schrittweise zerteilen wir Liste oder das Tupel <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> in zwei gleiche Hälften und wählen eine davon.
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-name-register-eq-3" title="Permalink to this equation">¶</a></span>\[i &lt; j \Rightarrow f_E(e_i, e_j) \leq 0 ,\]</div>
+<p>das heißt, das Tupel ist sortiert.</p>
+<p>Wir suchen nun ein Element <span class="math notranslate nohighlight">\(e \in E\)</span>.
+Schrittweise zerteilen wir die Liste oder das Tupel <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> in zwei gleiche Hälften und wählen eine davon.
 Dabei passen wir das Intervall <span class="math notranslate nohighlight">\(I = [a;b]\)</span> der Listenindices an, welche diese Hälften definieren.</p>
 <p>Wir beginnen mit <span class="math notranslate nohighlight">\(a_0 = 0, b_0 = |\mathcal{L}|-1\)</span> und berechnen ein Pivotindex</p>
 <div class="math notranslate nohighlight">
@@ -1068,14 +1069,14 @@ b_0, &amp; \quad \text{sonst}
 <a class="reference internal image-reference" href="../../_images/binary-search.png"><img alt="../../_images/binary-search.png" src="../../_images/binary-search.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.5 </span><span class="caption-text">Binäre Suche nach dem Element <span class="math notranslate nohighlight">\(e = 8\)</span> in einer sortierten Liste <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> aus Zahlen.</span><a class="headerlink" href="#fig-binary-search" title="Permalink to this image">¶</a></p>
 </div>
-<div class="hint dropdown admonition">
+<div class="remark dropdown admonition">
 <p class="admonition-title">Zuweisung (Notation)</p>
 <p>Falls wir uns der mathematischen Schreibweise bedienen vermeiden wir die Zuweisung über das <span class="math notranslate nohighlight">\(=\)</span> Zeichen.
 <span class="math notranslate nohighlight">\(a = 2\)</span> bedeutet, dass <span class="math notranslate nohighlight">\(a\)</span> gleich <span class="math notranslate nohighlight">\(2\)</span> ist.
 Der Ausdruck</p>
 <div class="math notranslate nohighlight">
 \[a = a + 2\]</div>
-<p>macht keinen Sinn bzw. ist eine falsche Aussage.
+<p>ist eine falsche Aussage.
 Oben haben wir stattdessen viele Variablen verwendet also</p>
 <div class="math notranslate nohighlight">
 \[a_1 = a_0 + 2.\]</div>
@@ -1092,7 +1093,7 @@ So ist folgende Sequenz die Sequenz der Intervalle:</p>
 <div class="exercise admonition" id="binary-search-interval-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.13 </span>(Binäre Suchen - Intervalle)</p>
 <div class="section" id="exercise-content">
-<p>Bestimmen Sie die Squenz der Intervalle für eine Liste mit <span class="math notranslate nohighlight">\(150\)</span> Elementen und <span class="math notranslate nohighlight">\(i = 48\)</span>.</p>
+<p>Bestimmen Sie die Sequenz der Intervalle für eine Liste mit <span class="math notranslate nohighlight">\(150\)</span> Elementen und <span class="math notranslate nohighlight">\(i = 48\)</span>.</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="binary-search-interval-solution">
@@ -1108,7 +1109,7 @@ So ist folgende Sequenz die Sequenz der Intervalle:</p>
 <p>Die wesentliche Eigenschaft welche die <a class="reference internal" href="dive-bell.html#def-binary-search"><span class="std std-ref">binäre Suche</span></a> ausnutzt sind in Gleichungen <a class="reference internal" href="#equation-name-register-eq-1">(5.1)</a>, <a class="reference internal" href="#equation-name-register-eq-2">(5.2)</a> und <a class="reference internal" href="#equation-name-register-eq-3">(5.4)</a> zusammengefasst.
 Wir benötigen eine <a class="reference internal" href="../02-0/4-relation.html#def-math-order"><span class="std std-ref">Ordnung</span></a>, sodass es einen Komparator <span class="math notranslate nohighlight">\(f_E\)</span> gibt.
 Das Tupel bzw. unsere Liste muss sortiert sein <a class="reference internal" href="#equation-name-register-eq-3">(5.4)</a>.</p>
-<p>Der Komparator <span class="math notranslate nohighlight">\(f_E\)</span> wird passend zur Menge der möglichen Listelemente <span class="math notranslate nohighlight">\(E\)</span> definiert, d.h. je nachdem welche Art von Liste (Namensliste, Telefonbucheinträge, Zahlen, Klausuren) wir vorfinden, müssen wir ein geeignetes <span class="math notranslate nohighlight">\(f_E\)</span> konstruieren.</p>
+<p>Der Komparator <span class="math notranslate nohighlight">\(f_E\)</span> wird passend zur Menge der möglichen Listenelemente <span class="math notranslate nohighlight">\(E\)</span> definiert, d.h. je nachdem welche Art von Liste (Namensliste, Telefonbucheinträge, Zahlen, Klausuren) wir vorfinden, müssen wir ein geeignetes <span class="math notranslate nohighlight">\(f_E\)</span> konstruieren.</p>
 <p>Zum Beispiel ist für die Klausuren <span class="math notranslate nohighlight">\(f_E(e_i, e_j)\)</span> gleich <span class="math notranslate nohighlight">\(-1\)</span> wenn der Name des Studierenden der Klausur <span class="math notranslate nohighlight">\(e_i\)</span> lexikographisch kleiner ist als der Name des Studierenden der Klausur <span class="math notranslate nohighlight">\(e_j\)</span>.
 <span class="math notranslate nohighlight">\(f_E\)</span> <strong>abstrahiert</strong> alle unwichtigen Eigenschaften der Elemente der gegebenen Liste <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
 <p>Wie das passende <span class="math notranslate nohighlight">\(f_E\)</span> definiert ist, wissen wir als Entwickler*innen des Suchalgorithmus nicht und müssen es auch nicht wissen.
@@ -1127,7 +1128,7 @@ Doch dieses gesuchte Element wollen wir ja gerade finden!
 Wir kennen es nicht aber wir kennen etwas mit dem wir es identifizieren können.
 Im Fall des Telefonbuchs, kennen wir den Nachnamen des Eintrags (Elements).
 Der Nachname ist ein sogenannter Schlüssel, der ein Element eindeutig identifiziert.</p>
-<p>Erneut können wir diesen Schlüssel heraus<strong>abstrahieren</strong> und erneut machen wir dies durch eine Funktion</p>
+<p>Erneut können wir diesen Schlüssel heraus<strong>abstrahieren</strong>. Erneut erfolgt dies durch eine Funktion</p>
 <div class="math notranslate nohighlight">
 \[g: E \rightarrow \mathcal{K},\]</div>
 <p>wobei <span class="math notranslate nohighlight">\(\mathcal{K}\)</span> die Menge der Schlüssel ist.
@@ -1141,17 +1142,17 @@ Da wir demnach Schlüssel vergleichen ändern wir den <strong>Komperator</strong
 <p><strong>Hinweis:</strong> In <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist es möglich Funktionen einer anderen Funktion als Argument zu übergeben.</p>
 </div>
 </div>
-<div class="admonition-ganzahlendivision-python admonition">
+<div class="python admonition" id="python-int-division">
 <p class="admonition-title">Ganzahlendivision (Python)</p>
-<p>Teilen wir in <code class="docutils literal notranslate"><span class="pre">Python</span></code> zwei ganze Zahlen <code class="docutils literal notranslate"><span class="pre">/</span></code> so erhalten wir eine Fließkommazahl selbst wenn die Division eine Ganzzahl ergeben würde!</p>
+<p>Teilen wir in <code class="docutils literal notranslate"><span class="pre">Python</span></code> zwei ganze Zahlen mit <code class="docutils literal notranslate"><span class="pre">/</span></code> so erhalten wir eine Fließkommazahl selbst wenn die Division eine Ganzzahl ergeben würde!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet aber auch eine die Ganzzahlendivision <code class="docutils literal notranslate"><span class="pre">//</span></code> an bei der das Ergebnis immer eine Ganzzahl ist.
-Es wird dabei stets auf die nächst liegende Ganzzahl <strong>abgerundet</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet aber auch die Ganzzahlendivision <code class="docutils literal notranslate"><span class="pre">//</span></code> an bei der das Ergebnis immer eine Ganzzahl ist.
+Es wird dabei stets auf die nächst liegende ganze Zahl <a class="reference internal" href="../02-0/6-operations.html#def-math-floor"><span class="std std-ref">abgerundet</span></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">3</span><span class="o">//</span><span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
@@ -1178,7 +1179,7 @@ Es wird dabei stets auf die nächst liegende Ganzzahl <strong>abgerundet</strong
 </div>
 </div>
 </div>
-<p>In unserer Lösung ist <code class="docutils literal notranslate"><span class="pre">g</span></code> als <em>Defaultwert</em> die Identität.
+<p>In unserer Lösung belegen wir <code class="docutils literal notranslate"><span class="pre">g</span></code> mit der Identität als Standardargument.
 Das heißt, wenn die Anwender*innen kein <code class="docutils literal notranslate"><span class="pre">g</span></code> spezifizieren, gehen wir davon aus, dass</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{K} = E\]</div>
@@ -1271,12 +1272,12 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Pinson&#39;, &#39;phone_number&#39;: &#39;0261-5153201&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Mundy&#39;, &#39;phone_number&#39;: &#39;0198-7279585&#39;}
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition-zeichenkettenvergleich-python admonition">
+<div class="python admonition" id="python-string-concat">
 <p class="admonition-title">Zeichenkettenvergleich (Python)</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> werden Zeichenketten lexikographisch verglichen. Zum Beispiel ergibt</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Abraham&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;Anna&quot;</span>
@@ -1295,14 +1296,14 @@ Kleinbuchstaben sind also lexikographisch größer als Großbuchstaben.</p>
 </div>
 <div class="section" id="facher-und-markierungen">
 <h2><span class="section-number">5.2. </span>Fächer und Markierungen<a class="headerlink" href="#facher-und-markierungen" title="Permalink to this headline">¶</a></h2>
-<p>An Telefonbüchern finden sich häufig <strong>Markierungen</strong>, welche die Suche weiter beschleunigen.
-Für jeden Buchstaben finden wir oft eine Markierung, sodass wir genau wissen wo wir Namen mit dem Anfangsbuchsten, z.B. <code class="docutils literal notranslate"><span class="pre">C</span></code>, finden.
+<p>An Telefonbüchern finden sich häufig <em>Markierungen</em>, welche die Suche weiter beschleunigen.
+Für jeden Buchstaben finden wir oft eine Markierung, sodass wir genau wissen wo wir Namen mit dem Anfangsbuchstaben, z.B. <code class="docutils literal notranslate"><span class="pre">C</span></code>, finden.
 Anstatt die <a class="reference internal" href="dive-bell.html#def-binary-search"><span class="std std-ref">binäre Suche</span></a> über alle Einträge durchzuführen, müssen wir lediglich alle Einträge, die mit <code class="docutils literal notranslate"><span class="pre">C</span></code> starten betrachten.</p>
 <div class="exercise admonition" id="binary-search-supported-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.17 </span>(Unterstützte binäre Suche)</p>
 <div class="section" id="exercise-content">
 <p>Angenommen jeder Buchstabe kommt als Anfangsbuchstabe gleich häufig vor.
-Wie viele Schritte (Intervallanpassungen) sparen Sie sich durch die Markierungen, wenn ihr Telefonbuch <span class="math notranslate nohighlight">\(20 000\)</span> Einträge enthält?</p>
+Wie viele Schritte (Intervallanpassungen) sparen Sie sich durch die Markierungen, wenn ihr Telefonbuch 20 000 Einträge enthält?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="binary-search-supported-solution">
@@ -1314,7 +1315,7 @@ Wie viele Schritte (Intervallanpassungen) sparen Sie sich durch die Markierungen
 <p>Damit sparen wir uns <span class="math notranslate nohighlight">\(5\)</span> Schritte.</p>
 </div>
 </div>
-<p>Eine weitere Variante Dinge zu Ordnen ist diese in unterschiedliche leicht identifizierbare <strong>Fächer</strong> zu packen.
+<p>Eine weitere Variante Dinge zu Ordnen ist diese in unterschiedliche leicht identifizierbare <em>Fächer</em> zu packen.
 Wir könnten zum Beispiel für jeden Anfangsbuchstaben ein Fach eröffnen und alle Seiten des Telefonbuchs in das jeweilige Fach packen.
 Dafür müssten wir das Buch natürlich zerschneiden.</p>
 <p>Diese zwei Varianten möchten wir uns ansehen</p>
@@ -1326,7 +1327,7 @@ Dafür müssten wir das Buch natürlich zerschneiden.</p>
 <div class="section" id="eine-csv-datei-lesen">
 <h3><span class="section-number">5.2.1. </span>Eine CSV Datei lesen<a class="headerlink" href="#eine-csv-datei-lesen" title="Permalink to this headline">¶</a></h3>
 <p>Lassen Sie uns diese Markierungen nutzten.
-Wir werden dafür eine Liste der beliebtesten 1000 Mädchen- und Jungennamen von 1880 bis 2009 in den USA verwenden.
+Wir werden dafür eine Liste der beliebtesten 1000 Mädchen- und Jungen-Namen von 1880 bis 2009 in den USA verwenden.
 Die Datei ist eine CSV (Comma Seperated Value) Datei.
 Eine solche Datei hat meist einen sogenannten <em>Header</em> (Kopfzeile) gefolgt von den jeweiligen Daten.
 In unserem Fall sieht der Inhalt der Datei wie folgt aus.</p>
@@ -1340,12 +1341,12 @@ In unserem Fall sieht der Inhalt der Datei wie folgt aus.</p>
 </pre></div>
 </div>
 <p>Wir möchten aus dieser Datei lediglich die Namen also die Spalte <code class="docutils literal notranslate"><span class="pre">name</span></code> extrahieren.
-Später werden wir noch das Paket <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> kennenlernen mit dem dies sehr viel einfacher geht.
+Mit dem bekannten Modul <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> können wir mit solchen Dateien bzw. Daten sehr viel einfacher umgehen.
 Doch hier möchten wir selbst Hand anlegen.</p>
 <p>Der folgende Code öffnet die Datei <code class="docutils literal notranslate"><span class="pre">baby-names.csv</span></code> und ließt diese, sodass nach der Ausführung <code class="docutils literal notranslate"><span class="pre">names</span></code> alle Namen von <code class="docutils literal notranslate"><span class="pre">baby-names.csv</span></code> enthält (auch doppelte Einträge).
 <code class="docutils literal notranslate"><span class="pre">babynames</span></code> ist eine Sequenz von gelesenen Zeilen der CSV.
 Durch <code class="docutils literal notranslate"><span class="pre">next(babynames)</span></code> überspringen wir die <em>Kopfzeile</em>.
-Die <code class="docutils literal notranslate"><span class="pre">for</span></code> schleife iteriert über alle Zeilen.
+Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife iteriert über alle Zeilen.
 Jede Zeile <code class="docutils literal notranslate"><span class="pre">row</span></code> beinhaltet für jede Spalte einen Eintrag.
 <code class="docutils literal notranslate"><span class="pre">row[0]</span></code> ist das Jahr <code class="docutils literal notranslate"><span class="pre">year</span></code> und <code class="docutils literal notranslate"><span class="pre">row[0]</span></code> der Name <code class="docutils literal notranslate"><span class="pre">name</span></code>, den wir extrahieren möchten.</p>
 <div class="cell tag_hide-output docutils container">
@@ -2378,7 +2379,7 @@ Jede Zeile <code class="docutils literal notranslate"><span class="pre">row</spa
 <div class="exercise admonition" id="count-duplicates-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.18 </span>(Zählen doppelter Einträge)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">count(name,</span> <span class="pre">names)</span></code>, welche die Anzahl der Einträge in <code class="docutils literal notranslate"><span class="pre">names</span></code> die gleich <code class="docutils literal notranslate"><span class="pre">name</span></code> sind zurückgibt.
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">count(name,</span> <span class="pre">names)</span></code>, welche die Anzahl der Einträge in <code class="docutils literal notranslate"><span class="pre">names</span></code>, die gleich <code class="docutils literal notranslate"><span class="pre">name</span></code> sind, zurückgibt.
 Zählen Sie die Vorkommen von <code class="docutils literal notranslate"><span class="pre">John</span></code>.</p>
 </div>
 </div>
@@ -2403,7 +2404,7 @@ Zählen Sie die Vorkommen von <code class="docutils literal notranslate"><span c
 </div>
 <p>Wir möchten nun die Anzahl aller Namen in <code class="docutils literal notranslate"><span class="pre">names</span></code> zählen.
 Diese Anzahl sagt uns wie oft ein Name von 1880 bis 2008 in den Top 1000 der beliebtesten Namen in den USA war.
-Dazu legen wir ein <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> an wobei der Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> des <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionarys</span></a> ein Name ist und dessen Wert <code class="docutils literal notranslate"><span class="pre">value</span></code> wie oft dieser Name vorkommt.
+Dazu legen wir ein <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> an, wobei der Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> des <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionarys</span></a> ein Name ist und dessen Wert <code class="docutils literal notranslate"><span class="pre">value</span></code> angibt wie oft dieser Name vorkommt.
 Zum Beispiel:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">countings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;John&#39;</span><span class="p">:</span> <span class="mi">234</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">:</span> <span class="mi">201</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
 </pre></div>
@@ -2494,13 +2495,13 @@ sorted(iterable, /, *, key=None, reverse=False)
 </div>
 </div>
 </div>
-<p>Liefert Ihnen Hinweise darüber was die Funktion macht und wie sie zu benutzten ist.</p>
+<p>liefert Ihnen Hinweise darüber was die Funktion macht und wie sie zu benutzten ist.</p>
 <div class="exercise admonition" id="unique-entries-sort-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.21 </span>(Einzigartige Einträge sortieren)</p>
 <div class="section" id="exercise-content">
-<p>Verwedenden Sie <code class="docutils literal notranslate"><span class="pre">sorted</span></code> um <code class="docutils literal notranslate"><span class="pre">unique_names</span></code></p>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">sorted</span></code> um <code class="docutils literal notranslate"><span class="pre">unique_names</span></code></p>
 <ol class="simple">
-<li><p>lexikographisch</p></li>
+<li><p>lexikographisch und</p></li>
 <li><p>nach der Anzahl der Einträge in <code class="docutils literal notranslate"><span class="pre">names</span></code> (meist vorkommende Name ganz vorne in der Liste)</p></li>
 </ol>
 <p>zu sortieren</p>
@@ -2518,9 +2519,9 @@ sorted(iterable, /, *, key=None, reverse=False)
 <div class="section" id="ordnung-durch-facher">
 <h3><span class="section-number">5.2.3. </span>Ordnung durch Fächer<a class="headerlink" href="#ordnung-durch-facher" title="Permalink to this headline">¶</a></h3>
 <p>Mit <code class="docutils literal notranslate"><span class="pre">unique_names_lex</span></code> haben wir eine lexikographisch sortierte Liste an beliebten Babynamen in den USA.
-Wäre es nicht praktisch sich die Namen, welche mit einem bestimmten Buchstaben beginnen aus der Lister herauszuziehen?
+Wäre es nicht praktisch sich die Namen, welche mit einem bestimmten Buchstaben beginnen aus der Liste herauszuziehen?
 Dies vereinfacht die Suche nach einem bestimmten Namen.
-Lassen Sie uns überdenken wie und warum wir Menschen Dinge in <strong>Fächern</strong> (engl. <strong>Buckets</strong>) ordnen.</p>
+Lassen Sie uns überdenken wie und warum wir Menschen Dinge in <em>Fächern</em> (engl. <em>Buckets</em>) ordnen.</p>
 <p>Wie ordnen wir Menschen ganz alltägliche Dinge?
 Zum Beispiel in der Küche oder im Schlafzimmer?
 Gläser befinden sich in einem bestimmten Schrank, Teller in einem anderen.
@@ -2532,26 +2533,26 @@ In einem Ordner sammeln wir Steuerunterlagen in dem anderen Arbeitsverträge ode
 Nun damit wir bestimmte Dinge schneller finden.
 Anstatt den gesamten Schrank nach einer Hose zu durchsuchen, müssen wir nur einen kleinen Teil durchwühlen.
 Diese Ordnung dient natürlich auch der Übersicht.
-So sehen wir sehr schnell, wie viele Hosen wir überhaupt besitzten und ob es Zeit wird sich mal wieder eine neue zu besorgen.</p>
-<p>Die wesentliche Eigenschaft, die wir diesen Beispielen entziehen können ist, dass wir Dinge in <strong>Fächern</strong> ordnen.
-Diese <strong>Fächer</strong> können wir eindeutig und schnell identifizieren bzw. auf diese schnell zugreifen.
+So sehen wir sehr schnell, wie viele Hosen wir überhaupt besitzen und ob es Zeit wird sich mal wieder eine neue zu besorgen.</p>
+<p>Die wesentliche Eigenschaft, die wir diesen Beispielen entziehen können ist, dass wir Dinge <em>Fächern</em> zuordnen.
+Diese <em>Fächer</em> können wir eindeutig und schnell identifizieren bzw. auf diese schnell zugreifen.
 So wissen wir in welcher Schublade sich das Besteck befindet und in welchem Unterabteil der Schublade wir zur Gabel greifen.
-<strong>Fächer</strong> können sortiert sein, z.B. sind unsere Hemden möglicherweise in einer ganz bestimmten Reihenfolge aufgehängt.
+<em>Fächer</em> können sortiert sein, z.B. sind unsere Hemden möglicherweise in einer ganz bestimmten Reihenfolge aufgehängt.
 Sie können aber auch unsortiert sein, z.B. sind alle Gabeln durcheinander in einem Schubladenabteil.
-Befindet sich eine bestimmte Art von Dingen in einem <strong>Fach</strong> so können wir uns einen Überblick über diese eine Art verschaffen.</p>
-<p>Es ist kein Zufall, dass wir Menschen Dinge in <strong>Fächern</strong> ordnen.
+Befindet sich eine bestimmte Art von Dingen in einem <em>Fach</em> so können wir uns einen Überblick über diese eine Art verschaffen.</p>
+<p>Es ist kein Zufall, dass wir Menschen Dinge durch <em>Fächer</em> ordnen.
 Wir passen uns auch im Alltag den algorithmischen Strukturen an, die uns durch die Natur gegeben sind.
 Besonders bei den simpleren Datenstrukturen wird klar, dass es nicht die Informatiker*innen waren, die diese Strukturen erfunden haben.
-Sie haben diese lediglich aus der Natur <strong>abstrahiert</strong>, in ein imaginäres Objekt umgewandelt und schließlich wieder als reales Objekt auf den Computer gebracht.</p>
-<p>In der <strong>abstrakten Welt</strong> modellieren wir mehrere <strong>Fächer</strong> meist durch eine einfache Liste.
-Jeder Listeneintrag <strong>repräsentiert</strong> ein <strong>Fach</strong> was wiederum eine Liste aber auch ein anderer <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung (Collection)</span></a> sein kann, siehe untere
+Sie haben diese lediglich aus der Natur <em>abstrahiert</em>, in ein imaginäres Objekt umgewandelt und schließlich wieder als reales Objekt auf den Computer gebracht.</p>
+<p>In der <em>abstrakten Welt</em> modellieren wir mehrere <em>Fächer</em> meist durch eine einfache Liste.
+Jeder Listeneintrag <em>repräsentiert</em> ein <em>Fach</em>, was wiederum eine Liste aber auch eine andere <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung (Collection)</span></a> sein kann, siehe untere
 <a class="reference internal" href="#fig-buckets"><span class="std std-numref">Abbildung 5.6</span></a>.</p>
 <div class="figure align-default" id="fig-buckets">
 <a class="reference internal image-reference" href="../../_images/bucket.png"><img alt="../../_images/bucket.png" src="../../_images/bucket.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.6 </span><span class="caption-text">Fächer als Liste von Listen</span><a class="headerlink" href="#fig-buckets" title="Permalink to this image">¶</a></p>
 </div>
-<p>Da wir eine Liste zur Modellierung verwenden müssen wir anhand des Listenindex das gewünschte Fach identifizieren können.
-In unserem Beispiel brauchen wir eine Funktion <code class="docutils literal notranslate"><span class="pre">index_of</span></code> die uns für einen Buchstaben den korrekten Index gibt.</p>
+<p>Da wir eine Liste zur Modellierung verwenden, müssen wir anhand des Listenindex das gewünschte Fach identifizieren können.
+In unserem Beispiel brauchen wir eine Funktion <code class="docutils literal notranslate"><span class="pre">index_of</span></code> die uns für einen Buchstaben den korrekten Index liefert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
@@ -2599,14 +2600,14 @@ In unserem Beispiel brauchen wir eine Funktion <code class="docutils literal not
 Warum?
 Nun es könnte sein, dass es einen Buchstaben gibt, für den gar kein Name in der Liste ist.</p>
 <p>Um mit unserer neuen Datenstruktur zurecht zu kommen, können wir uns weitere Hilfsfunktionen basteln.
-Zum Beispiel wäre es praktisch auf ein bestimmtes <strong>Fach</strong> nicht über den Index <span class="math notranslate nohighlight">\(0,1,\ldots, 25\)</span> sondern über den entsprechenden Buchstaben <code class="docutils literal notranslate"><span class="pre">A</span></code>,<code class="docutils literal notranslate"><span class="pre">B</span></code>,…,<code class="docutils literal notranslate"><span class="pre">Z</span></code> zuzugreifen.</p>
+Zum Beispiel wäre es praktisch auf ein bestimmtes <em>Fach</em> nicht über den Index 0,1,…, 25, sondern über den entsprechenden Buchstaben <code class="docutils literal notranslate"><span class="pre">A</span></code>,<code class="docutils literal notranslate"><span class="pre">B</span></code>,…,<code class="docutils literal notranslate"><span class="pre">Z</span></code> zuzugreifen.</p>
 <div class="exercise admonition" id="access-with-buckets">
 <p class="admonition-title"><span class="caption-number">Exercise 5.23 </span>(Zugriff eines Fachs)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">get_names(char,</span> <span class="pre">names_by_letter)</span></code>, die Ihnen für einen Buchstaben <code class="docutils literal notranslate"><span class="pre">char</span></code> die Liste mit allen Babynamen, welche mit <code class="docutils literal notranslate"><span class="pre">char</span></code> beginnen (der soeben erzeugen Datenstruktur <code class="docutils literal notranslate"><span class="pre">names_by_letter</span></code>) zurückliefert.</p>
 </div>
 </div>
-<div class="cell tag_hide-output docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_names</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">names_by_letter</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">names_by_letter</span><span class="p">[</span><span class="n">index_of</span><span class="p">(</span><span class="n">char</span><span class="p">)]</span>
@@ -3141,39 +3142,40 @@ Zum Beispiel wäre es praktisch auf ein bestimmtes <strong>Fach</strong> nicht �
 </div>
 <div class="section" id="ordnung-durch-markierungen">
 <h3><span class="section-number">5.2.4. </span>Ordnung durch Markierungen<a class="headerlink" href="#ordnung-durch-markierungen" title="Permalink to this headline">¶</a></h3>
-<p>Wenn wir ein Telefonbuch genauer betrachten werden wir feststellen, dass es mit gut sichtbaren <strong>Markierungen</strong> versehen ist.
+<p>Wenn wir ein Telefonbuch genauer betrachten werden wir feststellen, dass es mit gut sichtbaren <em>Markierungen</em> versehen ist.
 Zum Beispiel finden wir häufig für jeden Anfangsbuchstaben eine solche Markierung.
-Wir können diese <strong>Markierungen</strong> auch als <strong>Fächer</strong> interpretieren denn mithilfe von zwei aufeinanderfolgenden <strong>Markierungen</strong> beschreiben wir ein <strong>Fach</strong>.
-Nehmen wir zum Beispiel die Markierung für <code class="docutils literal notranslate"><span class="pre">C</span></code> und <code class="docutils literal notranslate"><span class="pre">D</span></code> so können wir das <strong>Fach</strong> <code class="docutils literal notranslate"><span class="pre">C</span></code> bzw. 2 identifizieren.</p>
-<p>Diese Gemeinsamkeit ist ersichtlich doch worin unterscheiden sich <strong>Markierungen</strong> von <strong>Fächern</strong>?
+Wir können diese <em>Markierungen</em> auch als <em>Fächer</em> interpretieren, denn mithilfe von zwei aufeinanderfolgenden <em>Markierungen</em> beschreiben wir ein <em>Fach</em>.
+Nehmen wir zum Beispiel die Markierung für <code class="docutils literal notranslate"><span class="pre">C</span></code> und <code class="docutils literal notranslate"><span class="pre">D</span></code>, so können wir das <em>Fach</em> <code class="docutils literal notranslate"><span class="pre">C</span></code> bzw. mit dem Index 2 identifizieren.</p>
+<p>Diese Gemeinsamkeit ist ersichtlich doch worin unterscheiden sich <em>Markierungen</em> von <em>Fächern</em>?
 Anders gefragt: Worin unterscheidet sich Ihr Kleiderschrank von einem Telefonbuch im wesentlichen?</p>
 <div class="exercise admonition" id="buckets-vs-marks-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.24 </span>(Kleiderschrank und Telefonbücher)</p>
 <div class="section" id="exercise-content">
-<p>Welche wesentliche Eigenschaft unterscheidet einen Kleiderschrank (<strong>Fächer</strong>) von einem Telefonbuch (<strong>Markierungen</strong>)?
-Es geht uns um eine Eigenschaft, die sich auf die Implementierung auswirkt.</p>
+<p>Welche wesentliche Eigenschaft unterscheidet einen Kleiderschrank (<em>Fächer</em>) von einem Telefonbuch (<em>Markierungen</em>)?</p>
+<p><strong>Hinweis:</strong> Es geht uns um eine Eigenschaft, die sich auf die Implementierung auswirken wird.</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="buckets-vs-marks-solution">
 <p class="admonition-title">Solution to <a class="reference external" href="#buckets-vs-marks-exercise"><span>Exercise 5.24</span></a></p>
 <div class="section" id="solution-content">
-<p>Einen Kleiderschrank befüllen und leeren wir, er ist <strong>veränderlich</strong> (engl. <strong>mutable</strong>)!
-Wir legen neue Kleider hinein und holen Kleider heraus.
-Ein Telefonbuch ist <strong>unveränderlich</strong> (engl. <strong>immutable</strong>).</p>
+<p>Einen Kleiderschrank können wir jederzeit befüllen und leeren, er ist <em>veränderlich</em> (engl. <em>mutable</em>)!
+Wir legen neue Kleider hinein und holen Kleider heraus.</p>
+<p>Ein Telefonbuch ist in der Regel <em>unveränderlich</em> (engl. <em>immutable</em>).</p>
 </div>
 </div>
-<p>Wenn Sie sich unsere Implementierung der <strong>Fächer</strong> ansehen, wird klar, dass wir sehr einfach neue Namen hinzufügen können.
-Falls uns doppelte Elemente und die Sortierung innerhalb eines <strong>Fachs</strong> gleichgültig sind, reicht es das Element hinten anzuhängen.
-Andernfalls müssen wir die richtige Stelle identifizieren an der wir ein neues Element einfügen können.
-Wir müssen jedoch so oder so nichts an der Anordnung der <strong>Fächer</strong> ändern!</p>
-<p>Wie realisieren wir <strong>Markierungen</strong>?
-Eine <strong>Markierung</strong> zeigt auf eine bestimmte Seite im Telefonbuch in unserem Beispiel mit den Babynamen zeigt sie auf einen bestimmten Index der Liste aus Babynamen.
-Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="pre">unique_names_lex</span></code> fügen aber eine weitere unterstützende Liste <code class="docutils literal notranslate"><span class="pre">marks</span></code> hinzu sodass</p>
+<p>Wenn Sie sich unsere Implementierung der <em>Fächer</em> ansehen, wird klar, dass wir sehr einfach neue Namen hinzufügen können.
+Falls uns doppelte Elemente und die Sortierung innerhalb eines <em>Fachs</em> gleichgültig sind, reicht es das Element hinten anzuhängen.
+Andernfalls müssen wir die richtige Stelle identifizieren an der wir ein neues Element einfügen wollen.
+Wir müssen in jedem Fall nichts an der Anordnung der <em>Fächer</em> ändern!</p>
+<p>Wie realisieren wir <em>Markierungen</em>?
+Eine <em>Markierung</em> zeigt auf eine bestimmte Seite im Telefonbuch.
+Im Beispiel mit den Babynamen, zeigt sie auf einen bestimmten Index der Liste aus Babynamen.
+Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="pre">unique_names_lex</span></code>, fügen aber eine weitere unterstützende Liste <code class="docutils literal notranslate"><span class="pre">marks</span></code> hinzu, sodass</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">marks[0]</span></code> auf den kleinsten Index zeigt der einen Namen der mit einem <code class="docutils literal notranslate"><span class="pre">A</span></code> startet enthält,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">marks[1]</span></code> auf den kleinsten Index zeigt der einen Namen der mit einem <code class="docutils literal notranslate"><span class="pre">B</span></code> startet enthält,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marks[0]</span></code> ist der kleinste Index der Indices der Wörter die mit einem <code class="docutils literal notranslate"><span class="pre">A</span></code> beginnen,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marks[1]</span></code> ist der kleinste Index der Indices der Wörter die mit einem <code class="docutils literal notranslate"><span class="pre">B</span></code> beginnen,</p></li>
 <li><p>…</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">marks[25]</span></code> auf den kleinsten Index zeigt der einen Namen der mit einem <code class="docutils literal notranslate"><span class="pre">Z</span></code> startet enthält.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marks[25]</span></code> ist der kleinste Index der Indices der Wörter die mit einem <code class="docutils literal notranslate"><span class="pre">Z</span></code> beginnen,</p></li>
 </ul>
 <div class="figure align-default" id="fig-babynames-marks">
 <a class="reference internal image-reference" href="../../_images/marks.png"><img alt="../../_images/marks.png" src="../../_images/marks.png" style="width: 250px;" /></a>
@@ -3182,7 +3184,7 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 <div class="exercise admonition" id="babynames-marks-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.25 </span>(Markierungen erzeugen)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">generate_marks(names_by_letter)</span></code> die Ihnen Markierungen <code class="docutils literal notranslate"><span class="pre">marks</span></code> aus <a class="reference internal" href="#fig-babynames-marks"><span class="std std-numref">Abbildung 5.8</span></a> erzeugt.</p>
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">generate_marks(names_by_letter)</span></code> die Ihnen die Markierungen <code class="docutils literal notranslate"><span class="pre">marks</span></code> aus <a class="reference internal" href="#fig-babynames-marks"><span class="std std-numref">Abbildung 5.8</span></a> erzeugt.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -3209,8 +3211,8 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 </div>
-<p>Wir können nun sehr einfach durch alle Namen iterieren die mit einem <code class="docutils literal notranslate"><span class="pre">C</span></code> starten:</p>
-<div class="cell tag_hide-output docutils container">
+<p>Wir können nun sehr einfach durch alle Namen iterieren, die mit einem <code class="docutils literal notranslate"><span class="pre">C</span></code> starten:</p>
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marks</span> <span class="o">=</span> <span class="n">generate_marks</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
 
@@ -3742,8 +3744,8 @@ Cyril
 </div>
 </div>
 </div>
-<p>Oder wir können uns eine Teilliste kopieren die nur Namen beinhaltet die mit <code class="docutils literal notranslate"><span class="pre">D</span></code> starten:</p>
-<div class="cell tag_hide-output docutils container">
+<p>Oder wir können uns eine Teilliste kopieren, die nur Namen beinhaltet die mit <code class="docutils literal notranslate"><span class="pre">D</span></code> starten:</p>
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mark_index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 <span class="n">unique_names_lex</span><span class="p">[</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="p">]:</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
@@ -4227,7 +4229,7 @@ Cyril
 </div>
 </div>
 </div>
-<p>Wir hatten festgehalten, dass sich ein Telefonbuch mit <strong>Markierungen</strong> nicht verändert.
+<p>Wir hatten festgehalten, dass sich ein Telefonbuch mit <em>Markierungen</em> nicht verändert.
 Welches Problem tritt auf wenn wir Elemente in die Liste der sortierten Babynamen einfügen?</p>
 <div class="exercise admonition" id="babynames-marks-insert-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.26 </span>(Elemente einfügen und Markierungen anpassen)</p>
@@ -4317,36 +4319,36 @@ True
 </div>
 </div>
 </div>
-<p>Jedesmal wenn wir die Liste mit sortierten Babynamen ändern, müssen wir auch <code class="docutils literal notranslate"><span class="pre">marks</span></code> anpassen.
-Je nachdem wie viele <strong>Markierungen</strong> wir haben, kann dies viel Zeit kosten.</p>
+<p>Immer wenn wir die Liste mit sortierten Babynamen ändern, müssen wir auch <code class="docutils literal notranslate"><span class="pre">marks</span></code> anpassen.
+Je nachdem wie viele <em>Markierungen</em> wir haben, kann dies viel Zeit kosten.</p>
 </div>
 </div>
 <div class="section" id="hashing-und-das-dictionary">
 <span id="sec-hashing"></span><h2><span class="section-number">5.3. </span>Hashing und das Dictionary<a class="headerlink" href="#hashing-und-das-dictionary" title="Permalink to this headline">¶</a></h2>
 <p>In <a class="reference internal" href="memory.html#sec-memory"><span class="std std-ref">Speicher - alles ist eine Liste</span></a> haben wir uns angesehen wie Listen im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> realisiert werden.
 Erinnern Sie sich!
-Im Speicher liegen nur Zahlen und aus diesen Zahlen haben wir uns den Datentyp Liste gebastelt.
-Was wir nicht beschrieben haben ist wie die zweite wesentliche Datenstruktur, das <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> im Speicher realisiert ist.
+Im Speicher liegen nur Zahlen und aus diesen Zahlen haben wir uns den Datentyp Liste gebastelt.</p>
+<p>Was wir nicht beschrieben haben ist wie die zweite wesentliche Datenstruktur, das <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> im Speicher realisiert ist.
 Wie der Titel dieser Aufgabe betont, ist alles eine Liste.
-Der <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> ist eine Liste durch den wir <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Listen erhalten und die Basis des <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> ist Liste die im Speicher liegt.</p>
-<p>In diesem Abschnitt werden wir uns gemeinsam erarbeiten wie wir von einer Liste zu einem <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> gelangen.
+Der Arbeitsspeicher ist eine Liste durch den wir <code class="docutils literal notranslate"><span class="pre">Python</span></code>-<a class="reference internal" href="../03-4/5-list.html#sec-list"><span class="std std-ref">Listen</span></a> erhalten und die Basis des Dictionary ist Liste die im Speicher liegt.</p>
+<p>In diesem Abschnitt werden wir uns gemeinsam erarbeiten wie wir von einer Liste zu einem Wörterbuch/Dictionary gelangen.
 Der Schlüssel hierfür sind die sogenannten Hashingverfahren.</p>
-<p>Datenstrukturen die das <strong>Hashing</strong> verwenden versuchen die Speicheradresse (siehe <a class="reference internal" href="memory.html#sec-memory"><span class="std std-ref">Speicher - alles ist eine Liste</span></a>) bzw. den Index eines Elements in einer Liste <em>direkt</em> durch einfache arithmetische Operationen aus einem Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> des Elements zu berechnen.
-Genau genommen verwendet unsere obige Fächer-Datenstruktur Hashing, denn wir berechnen anhand des Anfangsbuchstaben eines Elements (d.h. seinem <code class="docutils literal notranslate"><span class="pre">key</span></code>) einen Index.</p>
-<p>Mit “versuchen” meinen wir, dass zwei unterschiedliche Elemente aber auch zwei verschiedene Schlüssel den gleichen Index ergeben können.
-Dies bezeichnen wir als <strong>Kollision</strong>.
-Diese Kollisionen müssen wir irgendwie auflösen.</p>
-<div class="admonition-universum-schlussel-liste-und-hashfunktion admonition">
+<p>Datenstrukturen die das <em>Hashing</em> verwenden versuchen die Speicheradresse (siehe <a class="reference internal" href="memory.html#sec-memory"><span class="std std-ref">Speicher - alles ist eine Liste</span></a>) bzw. den Index eines Elements in einer Liste <em>direkt</em> durch einfache arithmetische Operationen aus einem Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> des Elements zu berechnen.
+Genau genommen verwendet unsere obige Fächer-Datenstruktur ein einfache Hashfunktion, denn wir berechnen anhand des Anfangsbuchstaben eines Elements (d.h. seinem <code class="docutils literal notranslate"><span class="pre">key</span></code>) einen Index.</p>
+<p>Mit ‘versuchen’ meinen wir, dass zwei unterschiedliche Elemente mit unterschiedlichen Schlüsseln durchaus den gleichen Index ergeben können.
+Dies bezeichnen wir als <em>Kollision</em>.
+Diese Kollisionen müssen wir irgendwie auflösen und wir hoffen, dass wir möglichst weniger solcher Kollisionen erzeugen.</p>
+<div class="definition admonition" id="def-hashing-universe">
 <p class="admonition-title">Universum, Schlüssel, Liste und Hashfunktion</p>
 <p>Für die weitere Diskussion benötigen wir folgende Definitionen:</p>
 <ul class="simple">
 <li><p>Ein <em>Universum</em> <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> an möglichen Schlüsseln, zum Beispiel <span class="math notranslate nohighlight">\(\mathcal{U} \subseteq \mathbb{N}_0\)</span>,</p></li>
-<li><p>Eine Menge an <em>Schlüsseln</em> <span class="math notranslate nohighlight">\(\mathcal{K} \subseteq \mathcal{U}\)</span>,</p></li>
-<li><p>Eine Liste <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> mit <span class="math notranslate nohighlight">\(|\mathcal{L}| = n\)</span>, oft auch <em>Hashtabelle</em> genannt,</p></li>
-<li><p>und eine <em>Hashfunktion</em> <span class="math notranslate nohighlight">\(h : \mathcal{U} \rightarrow \{0, \ldots, n-1\}\)</span></p></li>
+<li><p>eine Menge an <em>Schlüsseln</em> <span class="math notranslate nohighlight">\(\mathcal{K} \subseteq \mathcal{U}\)</span>,</p></li>
+<li><p>eine Liste <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> mit <span class="math notranslate nohighlight">\(|\mathcal{L}| = n\)</span>, oft auch <em>Hashtabelle</em> genannt, und</p></li>
+<li><p>eine <em>Hashfunktion</em> <span class="math notranslate nohighlight">\(h : \mathcal{U} \rightarrow \{0, \ldots, n-1\}\)</span></p></li>
 </ul>
 </div>
-<p>In unserer Fächer-Datenstruktur, lösen wir es indem wir alle Elemente mit dem gleichen Index in eine zweite Liste packen.
+<p>In unserer Fächer-Datenstruktur, lösen wir Kollisionen auf indem wir alle Elemente mit gleichem Index in eine zweite Liste packen.
 Ein solches Verfahren heißt <em>offenes Hashing mit geschlossener Adressierung</em>.</p>
 <div class="figure align-default" id="fig-open-hashing">
 <a class="reference internal image-reference" href="../../_images/open-hashing.png"><img alt="../../_images/open-hashing.png" src="../../_images/open-hashing.png" style="width: 530px;" /></a>
@@ -4365,23 +4367,23 @@ Ein solches Verfahren heißt <em>offenes Hashing mit geschlossener Adressierung<
 <li><p><span class="math notranslate nohighlight">\(\mathcal{U}\)</span> = alle möglichen Zeichenketten</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{K}\)</span> = alle Zeichenketten in <code class="docutils literal notranslate"><span class="pre">unique_names_lex</span></code></p></li>
 <li><p><span class="math notranslate nohighlight">\(n = 26\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(h\)</span>: Entspricht <code class="docutils literal notranslate"><span class="pre">index_of(name)</span></code> und berechnet aus dem ersten Zeichen einer Zeichenkette die Stelle des Buchstabens im Alphabet (beginnend bei null).</p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span>: Entspricht <code class="docutils literal notranslate"><span class="pre">index_of(name)</span></code> und berechnet aus dem ersten Zeichen einer Zeichenkette die Stelle des Buchstabens im Alphabet (beginnend bei Null).</p></li>
 </ul>
 </div>
 </div>
-<p>Eine weitere Möglichkeit eine <strong>Kollision</strong> aufzulösen ist es nur eine große Liste zu verwenden.
+<p>Eine weitere Möglichkeit eine <em>Kollision</em> aufzulösen ist es nur eine große Liste zu verwenden.
 Tritt eine Kollision auf, so wird nach einem anderen freien Platz gesucht.
 Für diese Technik muss <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> deutlich größer sein.
-Sobald die Liste droht voll zu laufen muss sie vergößert werden.
-Ein solches Verfahren heißt <em>geschlossenes Hashing mit offener Adressierung</em>.
+Sobald die Liste droht voll zu laufen muss sie vergrößert werden.</p>
+<p>Ein solches Verfahren heißt <em>geschlossenes Hashing mit offener Adressierung</em>.
 In <a class="reference internal" href="#fig-closed-hashing"><span class="std std-numref">Abbildung 5.10</span></a> ist dieses mit einer der einfachsten Kollisionsauflösungen skizziert: Falls ein Platz belegt ist suchen wir aufsteigend nach dem nächst liegenden freien Platz.</p>
 <div class="figure align-default" id="fig-closed-hashing">
 <a class="reference internal image-reference" href="../../_images/closed-hashing.png"><img alt="../../_images/closed-hashing.png" src="../../_images/closed-hashing.png" style="width: 430px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.10 </span><span class="caption-text">Geschlossenes Hashing</span><a class="headerlink" href="#fig-closed-hashing" title="Permalink to this image">¶</a></p>
 </div>
-<p>Egal welche Technik verwendet wird, eine solche <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> enthält keine doppelten Schlüssel.
-Wir nennen eine solche <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> auch <strong>Hashtable</strong>.
-Ziel ist es in <strong>konstant vielen Schritten</strong> auf ein beliebiges Element einer solchen <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a></p>
+<p>Egal welche Technik verwendet wird, eine solche <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> enthält <strong>keine doppelten Schlüssel</strong>.
+Wir nennen eine solche <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> auch <em>Hashtable</em>.
+Ziel ist es in konstant vielen Schritten <span class="math notranslate nohighlight">\((\mathcal{O}(1))\)</span> auf ein beliebiges Element einer solchen <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a></p>
 <ul class="simple">
 <li><p>zuzugreifen <code class="docutils literal notranslate"><span class="pre">search</span></code>,</p></li>
 <li><p>ein Element einzufügen <code class="docutils literal notranslate"><span class="pre">insert</span></code>,</p></li>
@@ -4389,7 +4391,7 @@ Ziel ist es in <strong>konstant vielen Schritten</strong> auf ein beliebiges Ele
 </ul>
 <div class="section" id="geschlossenes-hashing">
 <h3><span class="section-number">5.3.1. </span>Geschlossenes Hashing<a class="headerlink" href="#geschlossenes-hashing" title="Permalink to this headline">¶</a></h3>
-<p>Lassen Sie uns aus anstatt des <em>offenen Hashings</em> das <em>geschlossene Hashing</em> aus <a class="reference internal" href="#fig-closed-hashing"><span class="std std-numref">Abbildung 5.10</span></a> verwenden.
+<p>Lassen Sie uns anstatt des <em>offenen Hashings</em> das <em>geschlossene Hashing</em> aus <a class="reference internal" href="#fig-closed-hashing"><span class="std std-numref">Abbildung 5.10</span></a> verwenden.
 Wir möchten dabei zunächst unsere bereits bekannte <em>Hashfunktion</em> <code class="docutils literal notranslate"><span class="pre">index_of(name)</span></code> einsetzten.
 Außerdem gehen wir zunächst davon aus, dass die Menge der Schlüssel erneut unsere Babynamen sind.</p>
 <div class="exercise admonition" id="name-register-open-hashing-index-search-exercise">
@@ -4527,24 +4529,24 @@ hashtable = [&#39;Aaden&#39;, &#39;Aaliyah&#39;, &#39;Aarav&#39;, &#39;Aaron&#39
 </div>
 <p>Die letzte Zeile des Codes erzeugt eine Liste aus boolschen Werten und wertet diese durch <code class="docutils literal notranslate"><span class="pre">all</span></code> aus.
 <code class="docutils literal notranslate"><span class="pre">all</span></code> ergibt genau dann <code class="docutils literal notranslate"><span class="pre">True</span></code> wenn jeder Wert in der Liste <code class="docutils literal notranslate"><span class="pre">True</span></code> ist.
-Der Wert am Index <code class="docutils literal notranslate"><span class="pre">index</span></code> ist dabei <code class="docutils literal notranslate"><span class="pre">True</span></code> genau dann wenn der <code class="docutils literal notranslate"><span class="pre">search_index(name,</span> <span class="pre">hashtable)</span> <span class="pre">=</span> <span class="pre">index</span></code> wobei <code class="docutils literal notranslate"><span class="pre">name</span></code> am Index <code class="docutils literal notranslate"><span class="pre">index</span></code> der Liste <code class="docutils literal notranslate"><span class="pre">hashtable</span></code> steht.</p>
+Der Wert am Index <code class="docutils literal notranslate"><span class="pre">index</span></code> ist <code class="docutils literal notranslate"><span class="pre">True</span></code> genau dann wenn der <code class="docutils literal notranslate"><span class="pre">search_index(name,</span> <span class="pre">hashtable)</span> <span class="pre">=</span> <span class="pre">index</span></code>, wobei <code class="docutils literal notranslate"><span class="pre">name</span></code> am Index <code class="docutils literal notranslate"><span class="pre">index</span></code> der Liste <code class="docutils literal notranslate"><span class="pre">hashtable</span></code> steht.</p>
 <p>Was noch fehlt ist das Löschen eines Elements in unserer Hashtable.
 Für das offene Hashing ist dies recht einfach: Wir suchen das Fach und löschen das Element aus diesem heraus.
 Für das geschlossenes Hashing ist dies jedoch nicht so einfach!
-Angenommen wir fürgen die Schlüssel <code class="docutils literal notranslate"><span class="pre">'Anna'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Alex'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Clara'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Alba'</span></code> und <code class="docutils literal notranslate"><span class="pre">'Fabian'</span></code> nacheinander in eine leere Hashtabelle ein.
+Angenommen wir fügen die Schlüssel <code class="docutils literal notranslate"><span class="pre">'Anna'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Alex'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Clara'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Alba'</span></code> und <code class="docutils literal notranslate"><span class="pre">'Fabian'</span></code> nacheinander in eine leere Hashtabelle ein.
 Und angenommen wir verwenden als Hashfunktion <code class="docutils literal notranslate"><span class="pre">index_of</span></code> und eine <em>lineare Sondierung</em>.
-Dann erhalten wir als Resultat die Liste in <a class="reference internal" href="#fig-closed-hashing-deletion"><span class="std std-numref">Abbildung 5.11</span></a> aus.</p>
+Dann erhalten wir als Resultat die Liste aus <a class="reference internal" href="#fig-closed-hashing-deletion"><span class="std std-numref">Abbildung 5.11</span></a>.</p>
 <div class="figure align-default" id="fig-closed-hashing-deletion">
 <a class="reference internal image-reference" href="../../_images/closed-hashing-deletion.png"><img alt="../../_images/closed-hashing-deletion.png" src="../../_images/closed-hashing-deletion.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.11 </span><span class="caption-text">Löschvorgang beim geschlossenes Hashing mit linearer Sondierung: Es wird der Schlüssel <code class="docutils literal notranslate"><span class="pre">'Alex'</span></code> gelöscht.</span><a class="headerlink" href="#fig-closed-hashing-deletion" title="Permalink to this image">¶</a></p>
 </div>
 <p>Wenn wir nun <code class="docutils literal notranslate"><span class="pre">'Alex'</span></code> einfach löschen und anschließend nach <code class="docutils literal notranslate"><span class="pre">'Alba'</span></code> suchen, werden wir beim Index <code class="docutils literal notranslate"><span class="pre">1</span></code> stoppen und diesen Namen nicht mehr finden!
-Löschen wir <code class="docutils literal notranslate"><span class="pre">'Alex'</span></code> müssen wir alle Namen die einen größeren Index wie <code class="docutils literal notranslate"><span class="pre">'Alex'</span></code> haben und lückenlos aufeinander folgen, ebenfalls löschen und erneut einfügen.
+Löschen wir <code class="docutils literal notranslate"><span class="pre">'Alex'</span></code>, so müssen wir alle Namen die einen größeren Index als <code class="docutils literal notranslate"><span class="pre">'Alex'</span></code> haben und lückenlos aufeinander folgen, ebenfalls löschen und erneut einfügen.
 Beachten Sie, dass sich die Position von <code class="docutils literal notranslate"><span class="pre">'Clare'</span></code> in der Liste in <a class="reference internal" href="#fig-closed-hashing-deletion"><span class="std std-numref">Abbildung 5.11</span></a> nicht verändert, da <code class="docutils literal notranslate"><span class="pre">index_of('Clare')</span> <span class="pre">==</span> <span class="pre">2</span></code>.</p>
 <div class="exercise admonition" id="name-register-open-hashing-delete-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.30 </span>(Schlüssel löschen)</p>
 <div class="section" id="exercise-content">
-<p>Implementieren Sie den beschriebenen Algorithmus zum löschen eines Schlüssels in der Hashtabelle, d.h. implementieren Sie die Funktion <code class="docutils literal notranslate"><span class="pre">delete(name,</span> <span class="pre">hashtable)</span></code>.</p>
+<p>Implementieren Sie den beschriebenen Algorithmus zum löschen eines Schlüssels in der Hashtabelle, d.h., implementieren Sie die Funktion <code class="docutils literal notranslate"><span class="pre">delete(name,</span> <span class="pre">hashtable)</span></code>.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -4584,7 +4586,7 @@ Beachten Sie, dass sich die Position von <code class="docutils literal notransla
 </div>
 </div>
 </div>
-<p>Nun wird es zeit unsere Hashtabelle mit den Babynamen aus <code class="docutils literal notranslate"><span class="pre">unique_names_lex</span></code> zu befüllen.</p>
+<p>Nun wird es Zeit unsere Hashtabelle mit den Babynamen aus <code class="docutils literal notranslate"><span class="pre">unique_names_lex</span></code> zu befüllen.</p>
 <div class="exercise admonition" id="name-register-open-hashing-fill-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.31 </span>(Hashtable füllen)</p>
 <div class="section" id="exercise-content">
@@ -4613,70 +4615,75 @@ Insgesamt benötigen wir damit in etwa</p>
 \[
 \sum_{i=1}^n i = \frac{n \cdot (n+1)}{2}
 \]</div>
-<p>das sind</p>
+<p>also</p>
 <div class="math notranslate nohighlight">
 \[
-6782 \cdot 6783 / 2 \approx 23 \cdot 10^6
+6782 \cdot 6783 / 2 \approx 23 \cdot 10^6,
 \]</div>
-<p>also circa 23 Millionen Schritte! In anderen Worten wir haben immens viele Kollisionen d.h. unsere Hashfunktion <code class="docutils literal notranslate"><span class="pre">index_of</span></code> ist miserabel!</p>
+<p>d.h., circa 23 Millionen Schritte! In anderen Worten wir haben immens viele Kollisionen.
+Unsere Hashfunktion <code class="docutils literal notranslate"><span class="pre">index_of</span></code> ist keine gute Hashfunktion!</p>
 </div>
 </div>
 </div>
 <div class="section" id="hashfunktionen">
 <h3><span class="section-number">5.3.2. </span>Hashfunktionen<a class="headerlink" href="#hashfunktionen" title="Permalink to this headline">¶</a></h3>
 <p>Was genau ist eine Hashfunktion und wozu ist diese gut?</p>
-<div class="admonition-hashfunktion admonition">
+<div class="definition admonition" id="def-hash-function">
 <p class="admonition-title">Hashfunktion</p>
-<p>Eine Hashfunktion über einer Menge <span class="math notranslate nohighlight">\(E\)</span> (zum Beispiel die Menge aller Zeichenketten)</p>
+<p>Eine <em>Hashfunktion</em> über einem <em>Universum</em> <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> (zum Beispiel die Menge aller Zeichenketten)</p>
 <div class="math notranslate nohighlight">
 \[h : \mathcal{U} \rightarrow \{0, \ldots, n\}\]</div>
-<p>erzeugt durch meist einfache arithmetische Berechnungen aus einem Schlüssel <span class="math notranslate nohighlight">\(k \in \mathcal{K} \subseteq \mathcal{U}\)</span> eine natürliche Zahl, sodass</p>
+<p>erzeugt durch meist einfache arithmetische Berechnungen aus einem Schlüssel <span class="math notranslate nohighlight">\(k \in \mathcal{K} \subseteq \mathcal{U}\)</span> eine natürliche Zahl h(k), sodass</p>
 <div class="math notranslate nohighlight" id="equation-name-register-hash-eq-1">
-<span class="eqno">(5.5)<a class="headerlink" href="#equation-name-register-hash-eq-1" title="Permalink to this equation">¶</a></span>\[k_i = k_j \Rightarrow h(k_i) = h(k_j)\]</div>
-<p>Den Wert <span class="math notranslate nohighlight">\(h(k)\)</span> nennen wir Hashwert von <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-name-register-hash-eq-1" title="Permalink to this equation">¶</a></span>\[k_i = k_j \Rightarrow h(k_i) = h(k_j).\]</div>
+<p>Den Wert <span class="math notranslate nohighlight">\(h(k)\)</span> nennen wir <em>Hashwert</em> oder kurz <em>Hash</em> von <span class="math notranslate nohighlight">\(k\)</span>.</p>
 </div>
 <p>Sind zwei Schlüssel verschieden muss die Hashfunktion hingegen keine verschiedenen Zahlen zurückliefern!
-Die einfachste gültige und zugleich recht nutzlose Hashfunktion ist eine Konstante z.B. <span class="math notranslate nohighlight">\(h(k) = 0\)</span>.</p>
+Die einfachste gültige und zugleich recht nutzlose Hashfunktion ist eine Konstante, z.B., <span class="math notranslate nohighlight">\(h(k) = 0\)</span>.</p>
 <p>Hashfunktionen werden oft verwendet um zu prüfen ob zwei Schlüssel gleich sind.
 Aus Gleichung <a class="reference internal" href="#equation-name-register-hash-eq-1">(5.5)</a> folgt:</p>
 <div class="math notranslate nohighlight" id="equation-name-register-hash-eq-2">
 <span class="eqno">(5.6)<a class="headerlink" href="#equation-name-register-hash-eq-2" title="Permalink to this equation">¶</a></span>\[h(k_i) \neq h(k_j) \Rightarrow k_i \neq k_j.\]</div>
-<p>Deshalb wertet man erst die Hashfunktion der beiden Schlüssel aus und erst wenn diese die gleichen Werte liefert, prüft man genauer weiter.
+<p>Deshalb wertet man erst die Hashfunktion der beiden Schlüssel aus.
+Erst wenn die Hashfunktion die gleichen Werte liefert, prüft man genauer weiter.
 Da die Hashfunktion oft sehr schnell ausgewertet werden kann,
-Insbesondere wenn</p>
+insbesondere wenn</p>
 <ol class="simple">
 <li><p>die Ungleichheit wahrscheinlich ist und</p></li>
-<li><p>wir eine <strong>gute Hashfunktion</strong> besitzten</p></li>
+<li><p>wir eine gute Hashfunktion besitzen</p></li>
 </ol>
 <p>sind enorme Ersparnisse der Rechenzeit möglich.
-Sie können zum Beispiel aus einem riesigen Textdokument einen Hashwert generieren und so zwei Textdokumente auf Gleichheit prüfen.</p>
-<p>Was aber ist eine <strong>gute Hashfunktion</strong>?</p>
-<p>Die erste wichtige Eigenschaft einer guten Hashfunktion <span class="math notranslate nohighlight">\(h\)</span> ist, dass diese gut <strong>streut</strong>.
-D.h. Werten wir alle Hashwerte für unsere Schlüssel <span class="math notranslate nohighlight">\(\mathcal{K}\)</span> aus, dann wäre es optimal wenn jeder Hashwert eindeutig ist, d.h. wenn</p>
+Sie können, zum Beispiel, aus einem riesigen Textdokument einen Hashwert generieren und so zwei Textdokumente auf Gleichheit prüfen.</p>
+<blockquote>
+<div><p>Was aber ist eine gute Hashfunktion?</p>
+</div></blockquote>
+<p>Die erste wichtige Eigenschaft einer guten Hashfunktion <span class="math notranslate nohighlight">\(h\)</span> ist, dass diese gut <em>streut</em>.
+D.h., werten wir alle Hashwerte für unsere Schlüssel <span class="math notranslate nohighlight">\(\mathcal{K}\)</span> aus, dann wäre es optimal, wenn jeder Hashwert eindeutig ist, d.h. wenn</p>
 <div class="math notranslate nohighlight">
 \[
 k_i \neq k_j \Rightarrow h(k_i) \neq h(k_j) 
 \]</div>
 <p>gilt.
-Ist der Hashwert nahezu zufällig gleichverteilt zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(n-1\)</span> ist dies ebenfalls noch eine sehr gute Hashfunktion.
-Leider ist das <em>Universum</em> <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> meistens riesig, insbesondere deutlich größer als die Hashtabelle <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.
+Ist der Hashwert nahezu zufällig gleichverteilt zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(n-1\)</span> ist dies ebenfalls eine sehr gute Hashfunktion.</p>
+<p>Leider ist das <em>Universum</em> <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> meistens riesig, insbesondere deutlich größer als die Hashtabelle <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.
 Kennen wir <span class="math notranslate nohighlight">\(\mathcal{K}\)</span> im Voraus und ändert sich diese Menge nicht, dann lässt sich oft eine perfekte Hashfunktion berechnen.
-Ein Geburtsdatum oder der Fingerabdruck (in einer Zahl codiert) wären Hashwert einer Person aus dem echten Leben.
+Ein Beispiel sind unsere oben besprochenen Markierungen.</p>
+<p>Ein Geburtsdatum oder der Fingerabdruck (in einer Zahl codiert) wären Hashwert einer Person aus dem echten Leben.
 Das Geburtsdatum wäre jedoch ein schlechter Hashwert, da er für sehr viele Menschen gleich ist.
 Der Fingerabdruck hingegen ist ein sehr guter Hashwert.</p>
-<p>Die zweite wichtige Eigenschaft einer guten Hashfunktion <span class="math notranslate nohighlight">\(h\)</span> ist, dass ihre Auswertung <strong>billig</strong> ist.
+<p>Die zweite wichtige Eigenschaft einer guten Hashfunktion <span class="math notranslate nohighlight">\(h\)</span> ist, dass ihre Auswertung <em>billig</em> ist.
 Die Auswertung sollte in konstant vielen Schritten vonstatten gehen.
 Nur wenn Sie billig ist, lohnt sich der Umweg über eine Hashfunktion.</p>
 </div>
 <div class="section" id="die-build-in-hashfunktion">
 <h3><span class="section-number">5.3.3. </span>Die Build-in Hashfunktion<a class="headerlink" href="#die-build-in-hashfunktion" title="Permalink to this headline">¶</a></h3>
-<p>Bevor wir unsere eigene verbesserte Hashfunktion schreiben, nutzten wir doch einmal was uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> gegeben hat.</p>
+<p>Bevor wir unsere eigene verbesserte Hashfunktion schreiben, nutzten wir doch einmal was uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> bereits bietet.</p>
 <div class="exercise admonition" id="name-register-hashing-pythons-hash-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.32 </span>(Pythons Hashfunktion)</p>
 <div class="section" id="exercise-content">
 <ol>
 <li><p>Lesen Sie die Dokumentation zur <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion <code class="docutils literal notranslate"><span class="pre">hash</span></code>. Sie finden diese <a class="reference external" href="https://docs.python.org/3/library/functions.html?highlight=hash#hash">hier</a>.</p></li>
-<li><p>Verwenden Sie die <code class="docutils literal notranslate"><span class="pre">hash</span></code> als Ihre Hashfunktion. Bauen Sie dafür die Funktionen aus der vorherigen Aufgabe so um, dass sie diesen eine Hashfunktion <code class="docutils literal notranslate"><span class="pre">hash_func</span></code> als Argument übergeben können.</p></li>
+<li><p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">hash</span></code> als Ihre Hashfunktion. Bauen Sie dafür die Funktionen aus der vorherigen Aufgabe so um, dass sie diesen eine Hashfunktion <code class="docutils literal notranslate"><span class="pre">hash_func</span></code> als Argument übergeben können.</p></li>
 <li><p>Führen Sie anschließend</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span>
 </pre></div>
@@ -4769,7 +4776,7 @@ Lassen Sie uns erneut testen ob alles mit rechten Dingen zugeht.</p>
 <div class="exercise admonition" id="name-register-hashing-countcollisions-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.33 </span>(Kollisionen zählen)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion <code class="docutils literal notranslate"><span class="pre">collisions(hashtable,</span> <span class="pre">hash_func)</span></code>, welche Ihnen für die Liste Elemente der Liste <code class="docutils literal notranslate"><span class="pre">hashtable</span></code> die Kollisionen abhängig von der Hashfunktion <code class="docutils literal notranslate"><span class="pre">hash_func</span></code> zählt.
+<p>Schreiben Sie eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion <code class="docutils literal notranslate"><span class="pre">collisions(hashtable,</span> <span class="pre">hash_func)</span></code>, welche Ihnen für die Listenelemente der Liste <code class="docutils literal notranslate"><span class="pre">hashtable</span></code> die Kollisionen, abhängig von der Hashfunktion <code class="docutils literal notranslate"><span class="pre">hash_func</span></code> zählt.
 In anderen Worten <code class="docutils literal notranslate"><span class="pre">collisions(hashtable,</span> <span class="pre">hash_func)</span></code> berechnet die Anzahl die Kollisionen die stattgefunden haben um die Elemente in <code class="docutils literal notranslate"><span class="pre">hashtable</span></code> einzufügen.</p>
 <p>Vergleiche Sie die Hashfunktionen <code class="docutils literal notranslate"><span class="pre">index_of</span></code> und <code class="docutils literal notranslate"><span class="pre">hash</span></code>.</p>
 </div>
@@ -4789,23 +4796,25 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="nb">hash</span><span class="p">),</span> <span class="nb">hash</span><span class="p">))</span>         <span class="c1"># 3610</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">index_of</span><span class="p">),</span> <span class="n">index_of</span><span class="p">))</span> <span class="c1"># 60751108</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number of elements: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; collisions with hash: </span><span class="si">{</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="nb">hash</span><span class="p">),</span> <span class="nb">hash</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>         <span class="c1"># 16914</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; collisions with index_of: </span><span class="si">{</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">index_of</span><span class="p">),</span> <span class="n">index_of</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 60751108</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3585
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of elements: 6782
+ collisions with hash: 3264
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60751108
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> collisions with index_of: 60751108
 </pre></div>
 </div>
 </div>
 </div>
-<p>3610 <strong>Kollisionen</strong> für das Einfügen von 6782 ist ein sehr guter Schnitt.
-Das ist weniger als eine Kollision pro Element!
-<code class="docutils literal notranslate"><span class="pre">index_of</span></code> verursacht hingegen über 60 Millionen <strong>Kollisionen</strong>!</p>
+<p>16914 <em>Kollisionen</em> für das Einfügen von 6782 ist ein akzeptabler Schnitt.
+Das ist ca. 2.5 Kollision pro Element!
+<code class="docutils literal notranslate"><span class="pre">index_of</span></code> verursacht hingegen über 60 Millionen <em>Kollisionen</em>!</p>
 <p>Im Abschnitt <a class="reference internal" href="../02-3/5-python.html#sec-python"><span class="std std-ref">Python</span></a> hatten wir erwähnt, dass <code class="docutils literal notranslate"><span class="pre">Python</span></code> aufwendige Berechnungen in <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>-Coder verlagert.
 Dies ist auch für die Funktion <code class="docutils literal notranslate"><span class="pre">hash</span></code> der Fall.
 Im folgenden zeigen wir ihnen den Code der Hashfunktion <code class="docutils literal notranslate"><span class="pre">hash</span></code> für Zeichenketten.
@@ -4854,7 +4863,7 @@ Man sieht dem Code an, dass er auf Performance und nicht auf Lesbarkeit getrimmt
 <h3><span class="section-number">5.3.4. </span>Eine eigene gute Hashfunktion<a class="headerlink" href="#eine-eigene-gute-hashfunktion" title="Permalink to this headline">¶</a></h3>
 <p>Lassen Sie uns nun unsere eigene verbesserte Hashfunktion entwickeln.
 Wir suchen nach einer Funktion, welche verschiedene Zeichenketten in verschiedene natürliche Zahlen umwandelt.
-Verwenden wir nur ein Zeichen für die Berechnung ist klar, dass wir nicht mehr als 25 verschiedene Zahlen erwarten können.</p>
+Verwenden wir nur ein Zeichen für die Berechnung ist klar, dass wir nicht mehr als 26 verschiedene Zahlen erwarten können.</p>
 <p>Lassen Sie uns deshalb mehrere Zeichen für die Berechnung des Hashwerts verwenden.
 Eine erste Idee wäre die Summe der codierten Zeichen:</p>
 <div class="cell docutils container">
@@ -4875,7 +4884,7 @@ Eine erste Idee wäre die Summe der codierten Zeichen:</p>
 </div>
 </div>
 </div>
-<p>Immerhin erreichen wir damit nur noch 20 Millionen <strong>Kollisionen</strong>, was jedoch immernoch viel zu viel ist.
+<p>Immerhin erreichen wir damit nur noch 20 Millionen <em>Kollisionen</em>, was jedoch immernoch viel zu viel ist.
 Wie sieht es mit der Multiplikation aus?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4899,25 +4908,25 @@ Wie sieht es mit der Multiplikation aus?</p>
 <div class="exercise admonition" id="hash-add-mul-hashmap-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.34 </span>(Hashfunktion der Addition und Multiplikation)</p>
 <div class="section" id="exercise-content">
-<p>Warum ist die beiden Hashfunktion <code class="docutils literal notranslate"><span class="pre">hash_func_sum</span></code> und <code class="docutils literal notranslate"><span class="pre">hash_func_mul</span></code>, keine besonders guten Hashfunktionen?</p>
+<p>Warum sind die beiden Hashfunktion <code class="docutils literal notranslate"><span class="pre">hash_func_sum</span></code> und <code class="docutils literal notranslate"><span class="pre">hash_func_mul</span></code>, keine besonders guten Hashfunktionen?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="hash-add-mul-hashmap-solution">
 <p class="admonition-title">Solution to <a class="reference external" href="#hash-add-mul-hashmap-exercise"><span>Exercise 5.34</span></a></p>
 <div class="section" id="solution-content">
-<p>Sowohl die Addition als auch die Multiplikation ist kommutativ deswegen fließt die Reihenfolge der Zeichen nicht in die Berechnung ein.
+<p>Sowohl die Addition als auch die Multiplikation ist kommutativ. Deswegen fließt die Reihenfolge der Zeichen nicht in die Berechnung ein.
 <code class="docutils literal notranslate"><span class="pre">Thomas</span></code> und <code class="docutils literal notranslate"><span class="pre">hasToh</span></code> haben den gleichen Hashwert.</p>
 </div>
 </div>
-<p>Erinnern wir uns zurück an die Darstellung von Zahlen im Binär und Dezimalsystem, siehe <a class="reference internal" href="../02-1/2-representation.html#sec-binary-numbers"><span class="std std-ref">Zahlen im Binärsystem</span></a>.
+<p>Erinnern wir uns zurück an die Darstellung von Zahlen im Binär- und Dezimalsystem, siehe <a class="reference internal" href="../02-1/2-representation.html#sec-binary-numbers"><span class="std std-ref">Zahlen im Binärsystem</span></a>.
 Auch hier haben wir aus einer Folge von Zeichen <code class="docutils literal notranslate"><span class="pre">0</span></code> und <code class="docutils literal notranslate"><span class="pre">1</span></code> eine <strong>eindeutige Zahl</strong> berechnet.
 Aus einer Zahl <span class="math notranslate nohighlight">\(b_{n-1} \ldots b_2b_1b_0\)</span> in Binärdarstellung haben wir die eindeutige Dezimalzahl</p>
 <div class="math notranslate nohighlight">
 \[
 \sum\limits_{i=0}^n b_i \cdot 2^{i} = b_0 \cdot 2^0 + b_1 \cdot 2^1 + \cdots b_{n-1} \cdot 2^{n-1}
 \]</div>
-<p>berechnet. Dieses <strong>Berechnungsmuster</strong> können wir wiederverwenden!
-Angenommen unsere Zeichenkette als Folge von Zahlen (ASCII) ist <span class="math notranslate nohighlight">\(s_{n-1} \ldots s_2s_1s_0\)</span> und <span class="math notranslate nohighlight">\(p\)</span> ist irgendeine <em>Basis</em>, dann ist</p>
+<p>berechnet. Dieses <strong>Berechnungsmuster</strong> können wir wiederverwenden!</p>
+<p>Angenommen unsere Zeichenkette, interpretiert als Folge von Zahlen (ASCII), ist <span class="math notranslate nohighlight">\(s_{n-1} \ldots s_2s_1s_0\)</span> und <span class="math notranslate nohighlight">\(p\)</span> ist irgendeine <em>Basis</em>, dann ist</p>
 <div class="math notranslate nohighlight">
 \[
 \sum\limits_{i=0}^n s_i \cdot p^{i} = s_0 \cdot p^0 + s_1 \cdot p^1 + \cdots s_{n-1} \cdot p^{n-1}
@@ -4942,14 +4951,14 @@ Da wir jedoch keine unbedingte Eindeutigkeit benötigen ist ein kleineres <span 
 <p>Eine Primzahl <span class="math notranslate nohighlight">\(p\)</span> eignet sich besonders gut, da dann die Produkte</p>
 <div class="math notranslate nohighlight">
 \[
-s_i \cdot p^{n-1-i} \text{ und } s_j \cdot p^{n-1-j}
+s_i \cdot p^{i} \text{ und } s_j \cdot p^{j} \text{ mit } i \neq j
 \]</div>
 <p>nur gleich sein können, wenn <span class="math notranslate nohighlight">\(p\)</span> in der Faktorisierung von <span class="math notranslate nohighlight">\(s_i\)</span> oder <span class="math notranslate nohighlight">\(s_j\)</span> vorkommt.
-Ist <span class="math notranslate nohighlight">\(p\)</span> keine Primzahl gibt es mehr Möglichkeiten, dass die beiden Produkte gleich sind.</p>
+Ist <span class="math notranslate nohighlight">\(p\)</span> keine Primzahl gibt es mehr Möglichkeiten für die Gleichheit der beiden Produkte.</p>
 </div>
 </div>
-<p>Sie sehen wir tauchen ein wenig in die Zahlentheorie ein.
-Dieses mathematische Denken ist auch ein Teil des <a class="reference internal" href="../01-2/what-is-ct.html#sec-what-is-ct"><span class="std std-ref">Computational Thinkings</span></a>!</p>
+<p>Sie sehen, wir tauchen ein wenig in die Zahlentheorie ein.
+Dieses mathematische Denken ist auch ein Teil des <a class="reference internal" href="../01-2/what-is-ct.html#sec-what-is-ct"><span class="std std-ref">Computational Thinkings</span></a>.</p>
 <div class="exercise admonition" id="good-hashfunction-hashmap-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.36 </span>(Eine gute Hashfunktion)</p>
 <div class="section" id="exercise-content">
@@ -4981,8 +4990,8 @@ Dieses mathematische Denken ist auch ein Teil des <a class="reference internal" 
 </div>
 <p>Wir haben es geschafft!!!
 Nur noch 3432 Kollisionen!
-Damit sind wir für unseren Fall besser als die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion <code class="docutils literal notranslate"><span class="pre">hash</span></code>.
-Die Berechnungszeit hängt noch von der Anzahl der Zeichen eines Namen <code class="docutils literal notranslate"><span class="pre">name</span></code> ab.
+Damit sind wir für unseren Fall besser als die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion <code class="docutils literal notranslate"><span class="pre">hash</span></code>.</p>
+<p>Allerdings hängt die Berechnungszeit noch von der Anzahl der Zeichen eines Namen <code class="docutils literal notranslate"><span class="pre">name</span></code> ab.
 Wir könnten uns darauf einigen nur die ersten <span class="math notranslate nohighlight">\(m\)</span> Zeichen zu berücksichtige.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5004,7 +5013,7 @@ Wir könnten uns darauf einigen nur die ersten <span class="math notranslate noh
 </div>
 </div>
 </div>
-<p>Das Ergebnis ist mit 3692 Kollisionen immernoch sehr gut und die Auswertung benötigt nun eine konstante Anzahl von maximal 8 Schritten.</p>
+<p>Das Ergebnis ist mit 3692 Kollisionen immernoch sehr gut und die Auswertung benötigt nun eine <strong>konstante Anzahl</strong> von maximal 8 Schritten.</p>
 </div>
 <div class="section" id="unser-dictionary">
 <h3><span class="section-number">5.3.5. </span>Unser Dictionary<a class="headerlink" href="#unser-dictionary" title="Permalink to this headline">¶</a></h3>
@@ -5040,9 +5049,9 @@ Das besondere des <a class="reference internal" href="dive-bell.html#def-python-
 </div>
 </div>
 </div>
-<p>Das ist genau dann sehr nützlich, wenn wir den Schlüssel einfach berechnen und auch hashen können den Wert jedoch nicht.
+<p>Das ist genau dann sehr nützlich, wenn wir den Schlüssel einfach berechnen und auch hashen können, den Wert jedoch nicht.
 In unserer Hashtable sind Namen die Schlüssel, was bisher fehlt ist der Wert.
-Um unsere Hashtable um Werte zu erweitern machen wir aus der Liste <code class="docutils literal notranslate"><span class="pre">hashtable</span></code> wir zwei gleich Lange Listen <code class="docutils literal notranslate"><span class="pre">keys</span></code> und <code class="docutils literal notranslate"><span class="pre">values</span></code>.
+Um unsere Hashtable um Werte zu erweitern, machen wir aus der Liste <code class="docutils literal notranslate"><span class="pre">hashtable</span></code> zwei gleich Lange Listen <code class="docutils literal notranslate"><span class="pre">keys</span></code> und <code class="docutils literal notranslate"><span class="pre">values</span></code>.
 Dafür müssen wir selbstverständlich alle bisher implementierten Funktionen anpassen.</p>
 <div class="exercise admonition" id="our-dictionary-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.37 </span>(Unser Dictionary)</p>
@@ -5053,12 +5062,13 @@ Passen Sie alle Funktionen entsprechend an. Sie müssen folgenden Funktionen anp
 <li><p><code class="docutils literal notranslate"><span class="pre">search_index</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">contains</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">get_value</span></code>: Dies Funktion sollte nicht mehr den Schlüssel sondern den Wert zurückliefern!</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">insert</span></code>: Sollte nur einen neuen Wert einfügen falls es den Schlüssel dafür noch nicht gibt.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">insert</span></code>: Sollte nur einen neuen Wert einfügen, falls es den entsprechenden Schlüssel noch nicht gibt.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">delete</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">new_hash_table</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">collisions</span></code></p></li>
 </ul>
-<p>Führen Sie zusätzlich eine Funktion <code class="docutils literal notranslate"><span class="pre">set_value</span></code>, welche den Wert eines Schlüssels ändert, sofern dieser existiert.</p>
+<p>Führen Sie zusätzlich eine Funktion <code class="docutils literal notranslate"><span class="pre">set_value</span></code> ein.
+Diese soll den Wert eines passend zum übergebenen Schlüssel ändert, sofern dieser existiert.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -5181,16 +5191,16 @@ Anna
 </div>
 </div>
 </div>
-<p>Unsere Funktionen und das Paar <code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> bilden unser eigenes <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a>.</p>
+<p>Zusammen mit unseren Funktionen bildet das Paar <code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> unser eigenes <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a>.</p>
 </div>
 <div class="section" id="hashtable-klasse-optional">
 <h3><span class="section-number">5.3.6. </span>Hashtable Klasse (optional)<a class="headerlink" href="#hashtable-klasse-optional" title="Permalink to this headline">¶</a></h3>
-<p>Um die Funktionalität besser zu Kapseln und nicht eignet sich eine Klasse <code class="docutils literal notranslate"><span class="pre">Hashtable</span></code>.
-Wir haben Ihnen diese aus den Funktionen obigen und den zwei Listen gebaut.
-Anstatt <code class="docutils literal notranslate"><span class="pre">new_hash_table</span></code> haben wir durch <code class="docutils literal notranslate"><span class="pre">insert_all</span></code> ersetzt.</p>
+<p>Um die Funktionalität besser zu kapseln, können wir die Funktionalität mit samt der zwei Listen in eine Klasse <code class="docutils literal notranslate"><span class="pre">Hashtable</span></code> packen.
+Wir haben Ihnen diese zusammengestellt.
+<code class="docutils literal notranslate"><span class="pre">new_hash_table</span></code> haben wir durch <code class="docutils literal notranslate"><span class="pre">insert_all</span></code> ersetzt.</p>
 <p>Zudem gibt es noch drei weitere Funktionen <code class="docutils literal notranslate"><span class="pre">size</span></code>, <code class="docutils literal notranslate"><span class="pre">__has_to_resize</span></code> und <code class="docutils literal notranslate"><span class="pre">__resize</span></code>.
 <code class="docutils literal notranslate"><span class="pre">size</span></code> liefert die Anzahl der Elemente in der Hashtable zurück.
-<code class="docutils literal notranslate"><span class="pre">__has_to_resize</span></code> ist genau dann wahr wenn die Hashtable vergrößert oder verkleinert werden muss und <code class="docutils literal notranslate"><span class="pre">__resize</span></code> führt diese Anpassung durch.</p>
+<code class="docutils literal notranslate"><span class="pre">__has_to_resize</span></code> ist genau dann wahr, wenn die Hashtable vergrößert oder verkleinert werden muss und <code class="docutils literal notranslate"><span class="pre">__resize</span></code> führt diese Anpassung durch.</p>
 <p>Wann immer ein Element aus der Hashtable gelöscht oder eingefügt wird, testen wir mit <code class="docutils literal notranslate"><span class="pre">__has_to_resize</span></code> ob wir die Hashtable anpassen müssen.
 Ist die Hahstable <span class="math notranslate nohighlight">\(2/3\)</span> voll, dann wird sie vergrößert und ist sie nur <span class="math notranslate nohighlight">\(1/6\)</span> befüllt, wird sie verkleinert.
 Wann immer die Größe der Hahstable angepasst wird, wird diese auf <span class="math notranslate nohighlight">\(1/4\)</span> befüllt gesetzt.
@@ -5205,7 +5215,7 @@ Alle Elemente werden neu eingefügt.</p>
 <p class="admonition-title">Solution to <a class="reference external" href="#our-dictionary-size-exercise"><span>Exercise 5.38</span></a></p>
 <div class="section" id="solution-content">
 <p>Ist die Hashtable zu groß verbrauchen wir unnötig viel Speicher.
-Ist sie hingegen zu klein gibt es mehr und mehr <strong>Kollisionen</strong> und die Laufzeit der Funktionen der Hashtable erhöht sich!</p>
+Ist sie hingegen zu klein gibt es mehr und mehr <em>Kollisionen</em> und die Laufzeit der Funktionen der Hashtable erhöht sich!</p>
 </div>
 </div>
 <div class="cell docutils container">
