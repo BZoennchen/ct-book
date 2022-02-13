@@ -11,6 +11,7 @@ Wie sich gezeigt hat, können wir interessanterweise durch diese langweiligen Wi
 
 ```{admonition} Wiederholung
 :class: remark
+:name: remark-repetition
 
 Wiederholung ist die Grundlage aller Berechnung.
 ```
@@ -72,6 +73,7 @@ Dennoch zeigt dieses Beispiel, dass die Wiederholung von einfachen Befehlen zu k
 
 ```{admonition} Wiederholung und Codekomplexität
 :class: remark
+:name: remark-complexity-of-repetition
 *Wiederholung* trennt den Aufwand zum Lösen einer Aufgabe von der Komplexität des Codes.
 Eine Berechnung kann enorm aufwendig sein und dennoch benötigen wir wenig Denkarbeit (wenig Code) um einen Algorithmus für die Lösung zu entwerfen!
 ```
@@ -193,6 +195,7 @@ double_even_numbers(numbers)
 
 ```{admonition} Kontrollmechanismen der for-Schleife
 :class: remark
+:name: remark-control-structures-for
 Gehen Sie sparsam mit ``break`` und ``continue`` um, oftmals brauchen Sie es nicht!
 ```
 
@@ -212,6 +215,7 @@ else: # (optional)
 
 ```{admonition} Endlosschleifen
 :class: attention
+:name: attention-endless-loop
 Wird ``P`` niemals ``False``, so endet die Wiederholung niemals und wir haben eine sog. *Endlosschleife*!
 ```
 
@@ -224,6 +228,7 @@ else:
 
 ```{admonition} Mächtigkeit der While-Schleife
 :class: theorem
+:name: theorem-while-vs-for
 Jede ``for``-Schleife lässt sich in eine ``while``-Schleife transformieren!
 ```
 
@@ -243,6 +248,7 @@ while i < len(names):
 
 ```{admonition} Verwendungskriterium
 :class: remark
+:name: remark-while-vs-for
 Verwenden Sie die ``while``-Schleife nur wenn die ``for``-Schleife ungeeignet ist.
 ```
 
@@ -250,6 +256,7 @@ Verwenden Sie die ``while``-Schleife nur wenn die ``for``-Schleife ungeeignet is
 
 ```{admonition} Verwendungskriterium While-Schleife
 :class: remark
+:name: remark-while-usage
 Gehen Sie sparsam mit ``break`` und ``continue`` um, oftmals brauchen Sie es nicht!
 ```
 
@@ -288,6 +295,7 @@ for i in range(1,10,2):
 
 ```{admonition} Verhindern von Endlosschleifen
 :class: remark
+:name: remark-avoid-endless-loop
 Prüfen Sie immer ob Ihre Bedingung ``P`` durch den Schleifenrumpf garantiert irgendwann ``False`` ergibt!
 ```
 

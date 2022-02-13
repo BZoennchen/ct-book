@@ -339,7 +339,7 @@ Programme als auch Computer sind Turingmaschinen und da der Computer Programme, 
 {prf:ref}`universelle Turingmaschine <info-universal-turing-machine>`.
 
 ```{admonition} Computer sind universelle Turingmaschinen
-:name: computer-universal-turing
+:name: remark-computer-universal-turing
 :class: remark
 
 Ein handelsüblicher Computer ist eine universelle Turingmaschine.

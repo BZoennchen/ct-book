@@ -136,8 +136,9 @@ plt.show()
 Werfen wir einen genaueren Blick aufs *Binärsystem* oder auch *binäre Zahlensystem*.
 Um Zahlen mit **Strom an** und **Strom aus**, also den zwei Zuständen einer Lampe/Transistors/*Bit* zu repräsentieren, verwenden Computer das *Binärsystem*.
 
-```{admonition} Notation mit verschiedenen Zahlensystemen
+```{admonition} Notation verschiedener Zahlensysteme
 :class: remark
+:name: remark-number-systems-notation
 Um der Verwirrung vorzubeugen notieren wir eine Zahl $k$, geschrieben in der Dezimaldarstellung, auch durch $k_{10}$
 und eine Zahl $b$ in der Binärdarstellung durch $b_2$.
 ```
@@ -299,7 +300,7 @@ def to_binary(number):
 # Zahl in Decimaldarstellung wird umgewandelt
 to_binary(1871)
 ```
-(sec-intergers)=
+(sec-integers)=
 ### Ganze Zahlen
 
 Uns steht kein Minus- oder Pluszeichen zur Verfügung.
@@ -595,6 +596,7 @@ $8$ [Bit](def-bit) ergeben ein *Byte*.
 
 ```{admonition} Byte
 :class: remark
+:name: remark-byte
 Oftmals ist ein *Byte* die kleinste Einheit auf die ein Computer zugreift.
 
 **Beispiel:**

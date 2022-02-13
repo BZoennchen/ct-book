@@ -1,5 +1,5 @@
 (sec-typing-in-python)=
-# Pythons Typisierung
+# Python's Typisierung
 
 Für statisch getypte Sprachen (siehe Abschnitt [Dynamische und statische Typisierung](sec-type-systems)) wie beispielsweise ``C/C++`` und ``Java`` wird die Typinformation zur Laufzeit nicht benötigt.
 Die Typinformation, also welche Variable welchen Datentyp annimmt, wird beim Starten eines Programms vergessen bzw. weggelassen.

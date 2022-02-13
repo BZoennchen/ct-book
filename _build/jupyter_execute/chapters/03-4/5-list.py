@@ -28,6 +28,7 @@ Probieren Sie es aus.
 
 ```{admonition} Python's Datenstrukturen
 :class: remark
+:name: remark-python-ds
 In ``Python`` können *Datenstrukturen* Werte von unterschiedlichen *Datentypen* enthalten.
 ```
 
@@ -281,6 +282,7 @@ Selbst wenn wir anstatt einer Liste ein **unveränderliches** [Tupel](sec-tuple)
 
 ```{admonition} Unveränderlichkeit in Python
 :class: attention
+:name: attention-immutable-in-python
 Ist eine Datenstruktur ``ds`` *unveränderlich* bedeutet dies lediglich, dass sich die Adressen, welche ``ds`` enthält nicht ändern können.
 Enthält die Datenstruktur jedoch eine weitere *veränderliche* Datenstruktur ``mut_ds``, so können sich die Adressen von ``mut_ds`` und damit der Wert von ``ds`` durchaus ändern!
 ```
@@ -369,6 +371,7 @@ concat_list
 
 ```{admonition} Die += und + Operatoren
 :class: remark
+:name: remark-plus-and-plusequal
 Nicht nur ``+=`` und ``+`` verhalten sich in dieser Art und Weise, sondern auch ``-=`` und ``-`` oder ``|=`` und ``|`` und viele weitere Operatoren.
 ```
 
@@ -461,6 +464,7 @@ Stattdessen kommt es ganz darauf an, wie tief wir Kopien anlegen.
 
 ```{admonition} Tiefe Kopie einer Datenstruktur
 :class: python
+:name: python-deep-copy-ds
 Wir sprechen nur dann von einer *tiefen Kopie* (engl. deep copy) ``x_copy`` von einer *Datenstruktur* ``x``, wenn alle **Adresse** von, welche ``x_copy`` und deren *Kinder* enthalten, zu den **Adressen** die ``x`` und dessen *Kinder* enthalten, verschieden sind.
 ```
 
@@ -469,6 +473,7 @@ Alle *Kinder* von ``z`` sind wiederum auch *Kinder* von ``x`` und so weiter und 
 
 ```{admonition} Flache Kopie einer Datenstruktur
 :class: python
+:name: python-shallow-copy-ds
 Wir sprechen nur dann von einer *flachen Kopie* (engl. shallow copy) ``x_copy`` von einer *Datenstruktur* ``x``, wenn ``x_copy`` keine *tiefe Kopie* ist.
 ```
 

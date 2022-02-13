@@ -94,6 +94,7 @@ angesprochen werden, was wir in ``__str__(self)`` von ``Lecturer`` demonstrieren
 
 ```{admonition} Vererbte Objektattribute
 :class: remark
+:name: remark-inherited-attributes
 Attribute eines Objekts egal ob *vererbt* oder nicht werden **immer** durch ``self.attributename`` und **niemals** über ``super().attributename`` angesprochen.
 ```
 
@@ -174,6 +175,7 @@ Doch wenn wir die Initialisierung einer Person ``Person.__init__()`` ändern und
 
 ```{admonition} Vererbung aber wann?
 :class: attention
+:name: attention-when-inheritance
 Gehen Sie besser sparsam mit der Vererbung um. 
 Ruft die ``__init__``-Methode nicht ihre Eltern-``__init__`` auf, so ist die Vererbung an dieser Stelle wahrscheinlich nicht die richtige Wahl der Modellierung.
 ```
@@ -186,6 +188,7 @@ Die Mehrfachvererbung, welche wir in diesem Kurs nicht besprechen werden, ist in
 
 ```{admonition} Vererbung aber wann?
 :class: remark
+:name: remark-when-inheritance
 Ob eine Vererbung sinnvoll ist entscheidet sich durch die Datenstrukturen die Sie bauen wollen und nicht unbedingt durch die Realgegenstände, die diese Strukturen modellieren.
 ```
 
@@ -336,6 +339,7 @@ class Circle():
 
 ```{admonition} Polymorphie
 :class: definition
+:name: def-polymorph
 *Polymorphie* ist ein Konzept, welches ermöglicht, dass eine Operation abhängig von ihrer Verwendung Werte/Objekte unterschiedlichen Datentyps verarbeiten kann.
 ```
 

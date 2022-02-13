@@ -114,6 +114,7 @@ $$(1.0 \cdot 10^{10}) \cdot (1.0 \cdot 10^{-14}) = 1.0 \cdot 10^{10-14} = 1.0 \c
 
 ```{admonition} Ungenauigkeit der Fließkommazahlen
 :class: attention
+:name: attention-float-approx
 Prüfen Sie Fließkommazahlen niemals auf Gleichheit ``==``.
 Verwenden Sie stattdessen immer einen kleinen Bereich in dem die Zahl liegen sollte.
 ```

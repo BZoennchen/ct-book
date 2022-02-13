@@ -1,3 +1,4 @@
+(sec-languages-abstraction)=
 # Abstraktion des Computers
 
 Im Kapitel [Der digitale Computer](sec-information-processing) haben wir uns angesehen wie 
@@ -126,7 +127,7 @@ Diese Gewissheit befreit Sie von
 2. von der konkreten Programmiersprache
 
 ```{admonition} Nutzen der Programmiersprachen
-:name: languages-usfulness-complete
+:name: remark-languages-usefulness-complete
 :class: remark
 
 Da alle gängigen Programmiersprachen Turing-vollständig sind, können Sie jeden Algorithmus in einer solchen Sprache formulieren!

@@ -1,5 +1,5 @@
-(history-today)=
-# 19. Jahrundert bis heute
+(sec-history-today)=
+# 19. Jahrhundert bis heute
 
 1842 entwarf die britische Mathematikerin Ada Lovelace einen Algorithmus, mit welchem Bernoulli-Zahlen mit einer Rechenmaschine (Analytical Engine) berechnet werden konnten.
 Die Maschine wurde zu ihrer Lebzeit nie gebaut.
@@ -36,18 +36,14 @@ Es ist ein Problem, welche wie kein zweites die Logik und Informatik verbindet:
 
 ```{admonition} Das Entscheidungsproblem
 :class: definition
+:name: def-decision-problem
 Das Entscheidungsproblem verlangt nach der Beantwortung der Frage ob ein Algorithmus existiert, der für jedes Element einer vorgegebenen Menge beantworten kann, ob eine vorgegebene Eigenschaft zutrifft oder nicht?
 ```
 
 Der österreichische Mathematiker Kurt Gödel beantwortet die Frage mit einem *nein* und sowohl Alonzo Church wie auch Alan Turing veröffentlichen unabhängige Beiträge, die zeigen, dass das *Entscheidungsproblem* nicht zu lösen ist, sofern alles was *grundsätzlich berechenbar* ist, sich mit dem deckt, was *Turing-berechenbar* ist.
 Diese Annahme wird als *Church-Turing-These* bezeichnet.
 Trifft die These zu ist alles was *grundsätzlich berechenbar* ist auch von einem *Turing-vollständigen* Computer (jedem modernen Computer) berechenbar.
-Über das *Entscheidungsproblem* konnte Turing die Fragestellung des sog. *Halteproblem* beantworten.
-
-```{admonition} Das Halteproblem
-:class: definition
-Das Halteproblem verlangt nach der Beantwortung der Frage ob ein Algorithmus existiert, der für einen anderen beliebigen Algorithmus und eine Eingabe bestimmen kann ob dieser Algorithmus je stehen bleibt oder nicht?
-```
+Über das *Entscheidungsproblem* konnte Turing die Fragestellung des sog. [Halteproblem](def-halting-problem) beantworten.
 
 Auch ein solcher Algorithmus wird niemals existieren.
 Für uns als Programmierer\*innen bedeutet dies, dass wir selbst prüfen müssen ob unser Algorithmus das berechnet und vollzieht was vorgesehen ist.

@@ -160,12 +160,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-3/2-middleages.html">
-     3.2. Mittelalter bis 19. Jahrundert
+     3.2. Mittelalter bis 19. Jahrhundert
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-3/3-today.html">
-     3.3. 19. Jahrundert bis heute
+     3.3. 19. Jahrhundert bis heute
     </a>
    </li>
    <li class="toctree-l2">
@@ -574,7 +574,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11-typing-in-python.html">
-     4.11. Pythons Typisierung
+     4.11. Python’s Typisierung
     </a>
    </li>
   </ul>
@@ -887,7 +887,7 @@ Eine vollständige Liste der Datentypen finden Sie im Abschnitt <a class="refere
 </ol>
 <p>Haben Sie bereits Programmiererfahrung, so werden Sie <em>atomare Datentypen</em> als <em>primitive Datentypen</em> wahrnehmen, doch streng genommen gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine primitiven Datentypen.
 Dennoch verhalten sich <em>atomare Datentypen</em> ähnlich wie <em>primitive Datentypen</em>.</p>
-<div class="remark admonition" id="remark-primitive-data-types-in-python">
+<div class="theorem admonition" id="theorem-primitive-data-types-in-python">
 <p class="admonition-title">Python und primitive Datentypen</p>
 <p>Es gibt in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine primitiven Datentypen.</p>
 </div>
@@ -923,14 +923,14 @@ Der <strong>Wert</strong> einer Variable eines <em>atomaren Datentyps</em> liegt
 <p>Wird der <strong>Wert</strong> durch keiner Variablen adressiert, wird er (vom <a class="reference internal" href="../04/memory.html#def-garbage-collector"><span class="std std-ref">Garbage Collector</span></a>) zwar gelöscht.
 In anderen Worten, wird der Speicher von Ihrem laufenden Programm nicht mehr benötigt, kümmert sich der Garbage Collector, den von Ihnen belegten Speicher wieder freizugeben.
 Der Speicher der durch einen Wert eines <em>atomaren Datentyp</em> belegt ist kann also durchaus verändert werden, allerdings nur dann wenn er nicht mehr gebraucht wird.</p>
-<div class="attention admonition">
+<div class="theorem admonition" id="theorem-immutable-atom-data-types">
 <p class="admonition-title">Unveränderliche atomare Datentypen</p>
 <p>Atomare Datentypen sind <em>unveränderlich</em>.</p>
 </div>
 <p>Wir haben dieses Phänomen bereits im Abschnitt <a class="reference internal" href="../03-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> beobachtet.
 Wir hatten festgehalten, dass Veränderungen der einen Variablen keinen Effekt auf die <strong>Adresse</strong> bzw. <em>Identität</em> <code class="docutils literal notranslate"><span class="pre">id</span></code> anderer Variablen haben.
 Für <em>atomare Datentypen</em> gilt noch mehr:</p>
-<div class="remark admonition">
+<div class="remark admonition" id="remark-immutable-atom-data-types">
 <p class="admonition-title">Unveränderliche atomare Datentypen</p>
 <p>Ändern wir den <strong>Wert</strong> einer Variable vom Typ <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> oder <code class="docutils literal notranslate"><span class="pre">float</span></code>, so kann diese Änderung nicht den <strong>Wert</strong> einer anderen Variablen verändern.</p>
 </div>
@@ -956,14 +956,14 @@ Für <em>atomare Datentypen</em> gilt noch mehr:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 12313
-id of x = 4398329040
+id of x = 4507466768
 value of z = 12313
-id of z = 4398329040
+id of z = 4507466768
 change value of x
 value of x = 11341
-id of x = 4398329168
+id of x = 4507467088
 value of z = 12313
-id of z = 4398329040
+id of z = 4507466768
 </pre></div>
 </div>
 </div>

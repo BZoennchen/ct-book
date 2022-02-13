@@ -3,9 +3,9 @@
 
 Wie funktioniert der [Arbeitsspeicher](def-main-memory) im Detail?
 Wie werden Daten in ihm abgelegt und wie gelangt die [CPU](def-cpu) zu diesen zu verarbeitenden Daten?
-Warum gibt es Datentypen?
+Warum gibt es [Datentypen](sec-python-data-types)?
 Wie manipulieren wir Daten die im Speicher liegen?
-Was sind und warum gibt es Speicheradressen und wie wird aus einem Speicherbereich eine Datenstruktur? 
+Was sind und warum gibt es Speicheradressen und wie wird aus einem Speicherbereich eine Datenstruktur?
 Diesen Fragen wollen wir in diesem Abschnitt nachgehen.
 
 ```{admonition} Lernziel
@@ -13,24 +13,25 @@ Diesen Fragen wollen wir in diesem Abschnitt nachgehen.
 
 Diese Übung bietet Ihnen eine Erklärung wie aus einer langen Liste aus [Bits](def-bit) und [Bytes](def-byte), d.h. dem [Arbeitsspeicher](def-main-memory), Zahlen, Zeichen und Listen und 
 andere Datentypen entstehen.
-Sie werden begreifen weshalb es Datentypen gibt und weshalb am Ende des Tages alle Daten durch eine lange Liste aus Zahlen definiert sind.
+Sie werden begreifen weshalb es Datentypen gibt und weshalb am Ende des Tages alle Daten durch eine lange Liste aus Zahlen realisiert werden.
 
-Sie werden den Prozess der Abstraktion von einer konkreten in eine abstrakte Welt im Detail durchschreiten und dadurch besser verstehen.
+Sie werden den Prozess der Abstraktion, von einer konkreten in eine abstrakte Welt, im Detail betrachten und dadurch besser verstehen.
 
 ```
 
 Um ein tiefgreifendes Verständnis zu erwecken, reicht es uns nicht diese Fragen rein theoretisch zu beantworten.
-Stattdessen erarbeiten wir uns Antworten indem wir selbst Teile des [Arbeitsspeicher](def-main-memory) und dessen Handhabung modellieren und implementieren.
+Stattdessen erarbeiten wir uns Antworten indem wir selbst Teile des [Arbeitsspeicher](def-main-memory) und dessen Handhabung *modellieren* und implementieren.
 Dazu werden wir uns selbst, wie man salopp sagt, ins Knie schießen und uns zunächst stark einschränken.
 
-Den [Arbeitsspeicher](def-main-memory) modellieren wir durch eine ``Python``-Liste, welche ausschließlich natürliche Zahlen von 0 bis 255, also 1 [Byte](def-byte), enthalten darf.
-Warum durch eine ``Python``-Liste?
+Den [Arbeitsspeicher](def-main-memory) *modellieren* wir durch eine ``Python``-[Liste](sec-list), welche ausschließlich natürliche Zahlen von 0 bis 255, also 1 [Byte](def-byte), enthalten darf.
+
+Warum modellieren wir den Speicher durch eine ``Python``-Liste?
 Bei genauer Betrachtung ist der [Arbeitsspeicher](def-main-memory) nichts anderes als eine sehr sehr lange Liste.
-Jede 8-[bit](def-bit)-Speicherbereich hat seine eigene eindeutige Adresse.
-Die der [Befehlszeiger](def-program-counter) Kontrolleinheit zeigt auf die aktuelle zu lesende / zu beschreibende Speicheradresse.
+Jeder 8-[bit](def-bit)-Speicherbereich hat seine eigene eindeutige Adresse.
+Der [Befehlszeiger](def-program-counter) der Kontrolleinheit zeigt auf die aktuelle zu lesende / zu beschreibende Speicheradresse.
 Der Inhalt wird in ein [Register](def-register) der [CPU](def-cpu) geladen und dort verarbeitet.
 Zudem kann die [CPU](def-cpu) Ergebnisse an die Adresse des Befehlszeigers schreiben.
-Aufgrund der Befehle, welche aus dem [Arbeitsspeicher](def-main-memory) geladen werden, verändert die Kontrolleinheit den Befehlszeiger entsprechend, d.h. die Kontrolleinheit führt das im Speicher stehende Programm aus.
+Aufgrund der Befehle, welche aus dem [Arbeitsspeicher](def-main-memory) geladen werden, verändert die Kontrolleinheit den Befehlszeiger entsprechend, d.h., die Kontrolleinheit führt das im Speicher stehende Programm aus.
 
 ```{figure} ../../figs/program-run.png
 ---
@@ -58,14 +59,14 @@ Kann der Computer die Kreiszahl $\pi$ als numerischen Wert im Speicher halten?
 :label: memory-finite-real-numbers-solution
 :class: dropdown
 
-Nein! Die Kreiszahl $\pi$ niedergeschrieben hat unendlich viele sich nicht wiederholende Nachkommastellen.
+Nein! Die Kreiszahl $\pi$ hat niedergeschrieben unendlich viele sich nicht wiederholende Nachkommastellen.
 Die Speicherressourcen eines Computers sind jedoch endlich.
 
 ```
 
 Durch diese künstliche Einschränkung rücken wir näher an die konkrete Maschine heran.
 Daraufhin werden wir uns selbständig wieder von ihr entfernen.
-Dieser Prozess soll Ihnen aufzeigen, wie wir aus einer sehr konkreten Welt der Register, elektrischen Schaltungen und des endlichen Speichers, in eine abstrakte Welt der Datenstrukturen und [Algorithmen](def-algorithm) gelangen.
+Dieser Prozess soll Ihnen aufzeigen, wie wir aus einer sehr konkreten Welt der Register, elektrischen Schaltungen und des endlichen Speichers, in eine abstrakte Welt der [Datenstrukturen](sec-data-structures) und [Algorithmen](def-algorithm) gelangen.
 Dieser Prozess des Abstrahierens ist ein wesentlicher Bestandteil des [Computational Thinkings](sec-what-is-ct) und kann auf vielerlei Probleme angewendet werden.
 
 Ihnen wird diese Übung möglichweise sehr kleinlich und technisch vorkommen und damit liegen Sie richtig.
@@ -81,57 +82,96 @@ Wichtig ist der Weg und den beschreiten wir hier!
 
 ## Arbeitsspeicher als Python-Liste?
 
+### Adressierung
+
 Werfen wir einen kurzen Blick auf die Eigenschaften und Funktionsweise des [Arbeitsspeichers](def-main-memory).
 Ignorieren wir den [Cache](def-cache), so greift die [CPU](def-cpu) direkt auf den [Arbeitsspeicher](def-main-memory) zu.
-Ist unsere *Rechnerarchitektur* eine [von Neumann Architektur](sec-von-neumann) so befinden sich im [Arbeitsspeicher](def-main-memory) die **gerade** auszuführenden Anweisungen (Programme) als auch die Daten die verarbeitet werden.
+Ist unsere *Rechnerarchitektur* eine [Von-Neumann-Architektur](sec-von-neumann), so befinden sich im [Arbeitsspeicher](def-main-memory) die **gerade** auszuführenden Anweisungen (das Programm) als auch die Daten die verarbeitet werden.
 
 Der [Arbeitsspeicher](def-main-memory) wird auch **Random Access Memory** genannt.
-Der Name betont, dass egal auf welche Speicherstelle die [CPU](def-cpu) zugreift (Random Access Memory), dieser Zugriff in etwa die gleiche Zeit in Anspruch nimmt.
+Der Name betont, dass egal auf welche Speicherstelle die [CPU](def-cpu) zugreift (random access), dieser Zugriff in etwa die gleiche Zeit in Anspruch nimmt.
 Genauer gesagt eine bestimmte Anzahl an Zyklen.
-Diese Zeit ist viel viel kürzer als der Zugriff auf persistente Speicher wie die Festplatte.
+Diese Zeit ist viel viel kürzer als der Zugriff auf persistente Speicher, wie etwa die Festplatte.
 
 Der Speicher ist unterteilt in 8-[bit](def-bit) (1-[byte](def-byte)) Bereiche.
 Wenn die [CPU](def-cpu) auf einen Speicherbereich zugreifen möchte, so **adressiert** sie diesen Bereich über eine **Speicheradresse**.
 Die Adresse, als auch der Inhalt des gesamten Speichers ist [binär codiert](sec-binary-numbers).
 
-Der Zugriff auf den Inhalt einer ``Python``-Liste funktioniert ähnlich.
-Auch hier greifen wir über eine **Speicheradresse** auf einen **Bereich**, d.h. ein **Listenelement**, zu.
+Der Zugriff auf den Inhalt einer ``Python``-[Liste](sec-list) funktioniert ähnlich.
+Auch hier greifen wir über eine **Adresse** auf einen **Bereich**, d.h. ein **Listenelement**, zu.
 Diese Adresse nennen wir **Index**.
 Sie ist eine Dezimalzahl welche zwischen 0 und (Länger der Liste - 1) liegt.
 In einem **Speicherbereich** des [Arbeitsspeicher](def-main-memory) stehen exakt 8 [Bit](def-bit), dies gilt für eine ``Python``-Liste nicht.
 Diese ist viel flexibler und kann allerart von Daten enthalten.
 
-In ``Python`` können wir bequem mit unterschiedlichen Datentypen umgehen.
-Datentypen aller Programmiersprachen unterteilen wir in zwei Typen, den **primitiven** und den **nicht-primitiven** (zusammengesetzten) **Datentypen**.
-In ``Python`` gibt es jedoch keine **primitive Datentypen**.
-Wie in Abschnitt [Datentypen](sec-data-types-advanced) besprochen, ist jeder Datentyp in ``Python`` ein zusammengesetzter Datentyp!
-In den meisten anderen Programmiersprachen sind, die folgenden Datentypen, primitive Datentypen:
-
-+ ganzen Zahlen ``int``
-+ Zeichen ``char``
-+ Fließkommazahlen ``float``
-+ Boolsche Werte ``bool``
-
-und
-+ Listen ``list``
-+ Tupel ``tupel``
-+ Dictionary ``dict``
-+ Zeichenketten ``str``,
-
-zusammengesetzte, d.h. nicht-primitive Datentypen.
-Obwohl es diese primitiven Datentypen in ``Python`` nicht gibt, ist das Prinzip dieser sehr wichtig.
-Sie werden in fast allen anderen Sprachen mit primitiven Datentypen in Berührung kommen und auch in ``Python`` verhalten sich ``int``, ``float`` und co. ähnlich dieser Art von Datentyp.
-
-Weshalb es diese Aufteilung gibt und was sie bedeutet und wie aus [Bits](def-bit) und [Bytes](def-byte) verschiedene Datentypen entstehen erfahren sie gleich im Abschnitt [Datentypen](sec-memory-datatypes).
-
 Modellieren wir unsere Speicheradressen als Listenindices und sind die Listenelemente natürliche Zahlen von 0 bis 255, so kommen wir schon sehr nah an die Beschränkungen bzw. Einfachheit des [Arbeitsspeichers](def-main-memory) heran.
 
+### Primitive Datentypen
+
+In ``Python`` können wir bequem mit unterschiedlichen [Datentypen](sec-python-data-types) umgehen.
+Gewöhnlich unterteilt man Datentypen einer Programmiersprache in zwei Typen:
+
+1. den [primitiven](def-primitive-datatypes) und den 
+2. [zusammengesetzten Datentypen](def-data-structures)
+
+In ``Python`` gibt es jedoch keine **primitive Datentypen**.
+Wie in Abschnitt [Datentypen](sec-data-types-advanced) besprochen, ist jeder Datentyp in ``Python`` ein [atomarer](def-atomare-data-types) oder [zusammengesetzter Datentyp](def-data-structures)!
+
+In ``Java`` gibt es zum Beispiel folgende primitiven Datentypen:
+
++ ganzen Zahlen ``byte`` (8-Bit)
++ ganzen Zahlen ``short`` (16-Bit)
++ ganzen Zahlen ``int`` (32-Bit)
++ ganzen Zahlen ``long`` (64-Bit)
++ Zeichen ``char`` (16-Bit)
++ Fließkommazahlen ``float`` (32-Bit)
++ Fließkommazahlen ``double`` (64-Bit)
++ boolsche Werte ``boolean`` (1-Bit)
+
+Sie sehen, dass es für ganze Zahlen und Gleitkommazahlen mehrere Datentypen gibt, dessen Werte unterschiedlich viel Platz verbrauchen können.
+
+```{admonition} Speicherverbrauch primitiver Datentypen
+:name: remark-memory-of-primitive-data-types
+:class: remark
+
+Der Speicherplatz, den ein Wert eines primitiven Datentyps verbraucht ist durch den Datentyp festgelegt und variiert nicht!
+```
+
+Obwohl es diese primitiven Datentypen in ``Python`` nicht gibt, stellen wir uns für diese Übung vor, dass auch alle atomaren Datentypen eine feste und bestimmte Anzahl an Bits verbrauchen (dies ist für ``int`` nicht wahr!).
+
+Sie werden in fast allen anderen Sprachen mit primitiven Datentypen in Berührung kommen und auch in ``Python`` verhalten sich ``int``, ``float`` und co. sehr ähnlich.
+Zum Beispiel sind die Werte von atomaren Datentypen *unveränderlich* (engl. *immutable*).
+
+Weshalb es diese Aufteilung gibt und wie aus [Bits](def-bit) und [Bytes](def-byte) verschiedene Datentypen entstehen erfahren sie in dieser Übung. Zusätzlich verweisen wir auf die Kapitel [Datentypen (Grundlagen)](sec-python-data-types) und [Datentypen (Fortsetzung)](sec-data-types-advanced).
+
 Wie es möglich ist, dass wir in ``Python`` mit all den schönen Datentypen und Datenstrukturen hantieren können, werden wir uns nun Schritt für Schritt erarbeiten.
-Wir werden uns in dieser Übung auf die Modellierung von Zahlen, Zeichen und Listen beschränken.
-Aus der Liste ergibt sich das Tupel, welches eine unveränderliche Liste ist.
+Wir werden uns in dieser Übung auf die *Modellierung* von Zahlen, Zeichen und Listen beschränken.
 
 Wie der Titel dieser Übung suggeriert, ist alles eine Liste und so ist die Basis des [Dictionary](def-python-dictionary) ebenfalls eine Liste.
-Wenn Sie erfahren wollen wie aus einer Liste ein [Dictionary](def-python-dictionary) wird empfehlen wir Ihnen das Kapitel [Namensregister](sec-name-register), insbesondere den Abschnitt [Hashing und das Dictionary](sec-hashing).
+Wenn Sie erfahren wollen wie aus einer Liste ein [Dictionary](def-python-dictionary) wird, empfehlen wir Ihnen das Kapitel [Namensregister](sec-name-register), insbesondere den Abschnitt [Hashing und das Dictionary](sec-hashing).
+
+```{exercise} Speicherverbrauch von Fließkommazahlen
+:label: memory-expensive-float-exercise
+
+Finden Sie heraus wie viel Speicher ein ``float`` Wert in ``Python`` verbraucht.
+```
+
+````{solution} memory-expensive-float-exercise
+:label: memory-expensive-float-solution
+:class: dropdown
+Die Antwort hängt von Ihrem System und Ihrer ``Python``-Version ab.
+
+```python
+import sys
+x = 1.313
+sys.getsizeof(x)
+```
+
+````
+
+import sys
+x = 1.313
+sys.getsizeof(x)
 
 ## Modellierung des Arbeitsspeichers
 
@@ -153,7 +193,7 @@ name: fig-list-as-memory
 ```{exercise} Kapazität des Speicherbereichs
 :label: memory-decimal-numbers-exercise
 
-Wie lautet die größte Dezimalzahl die wir in einem Speicherbereich / einem Listeneintrag halten können?
+Wie lautet die größte positive Dezimalzahl die wir in einem adressierbaren Speicherbereich, d.h., einem Listeneintrag halten können, sofern wir das [Zweierkomplement](sec-integers) als Codierung verwenden?
 
 ```
 
@@ -161,20 +201,20 @@ Wie lautet die größte Dezimalzahl die wir in einem Speicherbereich / einem Lis
 :label: memory-decimal-numbers-solution
 :class: dropdown
 
-Die Zahl $1111 1111$ in Binärschreibweise ist die größte die wir darstellen können.
-Diese ist gleich der Zahl $1 0000 0000 - 1$ (binär) was wiederum gleich:
+Die Zahl $0111\, 1111_2$ in Binärschreibweise ist die größte positive die wir darstellen können.
+Binär ergibt dies $0\,1000\,0000_2 - 1_2$ (binär) was wiederum gleich
 
 $$
-2^8 - 1 = 255
+2^7 - 1 = 127_{10}
 $$
 
-dezimal ist.
+(dezimal) ist.
 
 ```
 
-Im [Arbeitsspeicher](def-main-memory) eines Computers der die [von Neumann Architektur](sec-von-neumann) realisiert, liegen **Daten** wie auch **Anweisungen**.
+Im [Arbeitsspeicher](def-main-memory) eines Computers, der die [Von-Neumann-Architektur](sec-von-neumann) realisiert, liegen **Daten** wie auch **Anweisungen**.
 Damit es nicht zu kompliziert wird, werden wir in dieser Übung uns nur auf die **Daten** konzentrieren und die Anweisungen außer acht lassen.
-Wir gehen also davon aus, dass die *Kontrolleinheit* (siehe [Programmausführung](sec-run-program)) Ihre Befehle wie in der [Harward Architektur](neumann-vs-harward) von einem anderen Speicher lädt.
+Wir gehen also davon aus, dass die *Kontrolleinheit* (siehe [Programmausführung](sec-run-program)) Ihre Befehle wie in der [Harvard Architektur](remark-neumann-vs-harvard) von einem anderen Speicher lädt.
 Diesen modellieren wir nicht.
 
 Die Ausführung der Befehle simulieren wir als ``Python``-Code, d.h. wir erlauben uns ganz normalen ``Python``-Code für die Manipulation des Speichers zu schreiben.
@@ -182,36 +222,37 @@ Bedenken Sie jedoch, dass in der Realität dieser Code ebenfalls im [Arbeitsspei
 
 ### Initialisierung
 
-Der [Arbeitsspeicher](def-main-memory) ist rießig, d.h. wir arbeiten mit einer großen Liste.
+Der [Arbeitsspeicher](def-main-memory) ist riesig, d.h., wir arbeiten mit einer großen Liste.
 In seinem Initialzustand steht im *flüchtige* Speicher kein festgelegter Wert.
-Wir initialisieren unseren Speicher mit lauter nullen.
+Wir initialisieren unseren Speicher mit lauter Nullen.
 Den Speicher modellieren wir durch eine lange eindimensionale Liste namens ``memory``.
 
-Programme die durch die [CPU](def-cpu) auf Speicherbereiche zugreifen dürfen sich ihren Speicher nicht gegenseitig überschreiben bzw. in den Speicherbereich eines anderen Programms schreiben.
+Programme, die durch die [CPU](def-cpu) auf Speicherbereiche zugreifen, dürfen sich ihren Speicher nicht gegenseitig überschreiben bzw. in den Speicherbereich eines anderen Programms schreiben.
 Deshalb ist es notwendig Speicher zu reservieren und, da dieser endlich ist, wieder freizugeben.
 
 ```{admonition} Speicher allokieren
 :name: def-allocation
+:class: definition
 
 Das Reservieren von Speicherbereichen des [Arbeitsspeicher](def-main-memory) nennen wir *Allokation*.
 
 ```
 
 Woher wissen wir, wann ein Speicherbereich ungenutzt/frei bzw. genutzt/reserviert ist?
-Steht in einem Speicherbereich eine null deutet das erst einmal auf den Wert null und nicht auf einen freien Bereich hin.
+Steht in einem Speicherbereich eine Null, deutet das erst einmal auf den Wert Null und nicht auf einen freien Bereich hin.
 Was wir brauchen ist eine Markierung die uns über den Zustand des Speicherbereichs **allokiert** oder **frei** informiert.
 
 Wir könnten dafür eines der 8 [Bit](def-bit) eines Speicherbereichs verwenden.
 Diese 1-[Bit](def-bit) Markierung könnte anzeigen, dass dieser Speicherbereich nicht **allokiert** ist 1 oder **frei** 0.
 Dadurch könnten wir jedoch nur noch 128 verschiedene Zahlen pro Speicherbereich darstellen.
-Außerdem müssten wir dann jedesmal wenn wir einen Speicherbereich nicht mehr verwenden, diese Zahl hineinschreiben.
+Außerdem müssten wir dann immer wenn wir einen Speicherbereich nicht mehr verwenden, diese Zahl hineinschreiben.
 
 Wir verwenden für die Markierung stattdessen eine zweite Liste ``inuse``.
 
 ```{exercise} Speicherbelegung
 :label: memory-in-use-exercise
 
-Wie könnte eine zweite Liste uns Aufschluss geben ob ein Speicherbereich verwendet wird oder nicht?
+Wie könnte eine zweite Liste uns Aufschluss geben ob ein Speicherbereich in Verwendung ist oder nicht?
 Wie viel Speicher würde diese Liste benötigen?
 
 ```
@@ -220,23 +261,26 @@ Wie viel Speicher würde diese Liste benötigen?
 :label: memory-in-use-solution
 :class: dropdown
 
-Eine zweite Liste ``inuse[i]`` könnte durch einen Boolschen Wert ``True`` oder ``False`` anzeigen, dass der Speicherbereich an der Stelle ``i`` allokiert ist oder nicht.
-Jeder Eintrag braucht 1 Bit.
+Eine zweite Liste ``inuse[i]`` könnte durch einen boolschen Wert ``True`` oder ``False`` anzeigen, dass der Speicherbereich an der Stelle ``i`` allokiert ist oder nicht.
+
+Jeder Eintrag braucht 1 [Bit](def-bit).
 Damit bräuchte die Liste $n$ Bit, wobei $n$ die Anzahl der Speicherbereiche (Länge der Liste) ist.
 
 ```
 (sec-memory-datatypes)=
 ### Datentypen
 
-Was sind Datentypen und weshalb brauchen wir diese?
+>Was sind Datentypen und weshalb brauchen wir diese?
+
 In unserem Speicher ``memory`` befinden sich nur natürliche Zahlen von 0 bis 255.
 Doch möchten wir natürlich auch Zeichen oder größere Zahlen repräsentieren.
-Es braucht also eine Information, wie ein bestimmter Speicherbereich, d.h. ein Listenelement ``memory[i]`` zu interpretieren ist.
+Für interpretierte dynamisch getypte Sprachen wie ``Python`` (siehe Abschnitt [Python's Typisierung](sec-typing-in-python)) benötigt der [Interpreter](def-interpreter) Information darüber, wie er bestimmter Speicherbereich, d.h., ein Listenelement ``memory[i]`` zu interpretieren hat.
+
 Datentypen liefern diese Information.
 Neben dem eigentlichen Wert beschreiben sie, wie dieser Wert zu interpretieren ist!
 
-Da in ``memory`` nur Zahlen stehen können, ist auch diese Information eine Zahl.
-Brauchen wir dann nicht eine weitere Information die uns sagt, dass es sich um diesen oder jenen Speicherbereich um die Datentypinformation handelt?
+Da in ``memory`` nur Zahlen stehen können, ist auch diese Datentypinformation als Zahl codiert.
+Brauchen wir dann nicht eine weitere Information die uns sagt, dass es sich bei diesem oder jenem Speicherbereich um die Datentypinformation handelt?
 Wenn ja kommen wir aus dem Schlamassel nicht mehr heraus.
 
 ```{figure} ../../figs/memory/data-type-key-pair.png
@@ -251,7 +295,7 @@ Die Datentypinformation ist eine **explizite** Information, d.h. die Information
 Um zu entscheiden, ob ein Speicherbereich den Datentyp beschreibt, verwenden wir hingegen **implizites** Wissen/Information.
 Wir einigen uns einfach darauf, dass ein Paar (Datentyp, Wert) mit dem Datentyp beginnt und dieser genau durch das erste [Byte](def-byte) beschrieben wird.
 Wenn wir wissen, dass ein solches Paar an der Adresse / Index ``i`` beginnt, können wir den Datentyp aus dem Speicherbereich ``memory[i]`` herauslesen.
-Zu wissen, wo ein solches Paar beginnt, ist eine notwendige Vorraussetzung.
+Zu wissen, wo ein solches Paar beginnt, ist eine notwendige Voraussetzung.
 
 Wir beschränken uns auf die folgenden Datentypen, wovon die Werte der [primitiven Datentypen](def-primitive-datatypes) einen festen Speicherbedarf benötigen.
 
@@ -261,18 +305,19 @@ Wir beschränken uns auf die folgenden Datentypen, wovon die Werte der [primitiv
 4. [Listen](sec-memory-list), variabler Speicherbedarf
 6. ([Zeichenketten](sec-memory-string), variabler Speicherbedarf)
 
-Eine Zeichenketten oder Listen sind von keinem [primitiven Datentyp](def-primitive-datatypes), denn sie haben eine variable Länge und können weiter zerlegt werden.
-Die Festlegung des Speicherbedarfs für [primitive Datentyp](def-primitive-datatypes) bedeutet auch, dass wir für kleine Zahlen z.B. die 0 mehr Speicher verbrauchen als eigentlich notwendig.
+Zeichenketten oder Listen sind von keinem [primitiven Datentyp](def-primitive-datatypes), denn sie haben eine variable Länge und können weiter zerlegt werden.
+Die Festlegung des Speicherbedarfs für [primitive Datentyp](def-primitive-datatypes) bedeutet auch, dass wir für kleine Zahlen, z.B., die 0 mehr Speicher verbrauchen als eigentlich notwendig.
 Weshalb diese Lösung dennoch besser ist als einen variable Speicherbedarf zu verwalten wird gleich ersichtlich.
+Jetzt wird Ihnen vielleicht auch klar warum es in ``Java`` und ``C/C++`` verschiedene Datentypen für ganze Zahlen gibt.
 
-Fassen wir noch einmal die implizieten und explizieten Informationen zusammen.
+Fassen wir noch einmal die impliziten und expliziten Informationen zusammen.
 
 + **Explizite Information:** Eine Zahl steht für einen bestimmten Datentyp:
-  + ``0`` bedeutet, dass das was folgt eine natürlichen Zahl ist
+  + ``0`` bedeutet, dass das was folgt eine natürlichen Zahl ist (wir verzichten auf negative Zahlen)
   + ``1`` bedeutet, dass das was folgt ein Zeichen ist
   + ``2`` bedeutet, dass das was folgt eine Liste ist
   + ``3`` bedeutet, dass das was folgt eine Speicheradresse ist
-+ **Implizite Information:** Jedes Objekt (Zahl, Buchstabe, Liste, Adresse) beginnt mit der Markierung für den Datentyp. Den Speicherbedarf je Datentyp nehmen wir ebenfalls impliziet an.
++ **Implizite Information:** Jedes Objekt (Zahl, Buchstabe, Liste, Adresse) beginnt mit der Datentypinformation. Den Speicherbedarf je Datentyp nehmen wir ebenfalls implizit an.
 
 (sec-memory-string)=
 #### Zeichenketten
@@ -285,7 +330,8 @@ Eine Zeichenkette ist nichts anderes als eine Liste von Zeichen und diese beiden
 
 256 unterschiedliche Zahlen, reichen uns aus um einfache Texte mit ``a-z``, ``A-Z`` und die Sonderzeichen ``.``, ``,``, ``?``, ``!`` zu codieren.
 Im Speicherbereich, der auf den Bereich des Datentyps (``1``) folgt, können wir demnach das Zeichen als Zahl hineinschreiben.
-Mittels Codierung, welche uns für eine Zahl ein Zeichen ausspuckt (implizietes Wissen), können wir einzelne Buchstaben in den Speicher schreiben und von diesem lesen.
+
+Mittels Codierung, welche uns für eine Zahl ein Zeichen ausspuckt (implizites Wissen), können wir einzelne Buchstaben in den Speicher schreiben und von diesem lesen.
 Sie können sich Ihre eigene Codierung überlegen oder die ``Python``-Funktionen [ord](https://www.w3schools.com/python/ref_func_ord.asp) und [chr](https://www.w3schools.com/python/ref_func_chr.asp) verwenden.
 
 (sec-memory-natural-numbers)=
@@ -297,7 +343,7 @@ Denn dann ist die größte Zahl die wir darstellen können die 255.
 ```{exercise} Ganze Zahlen auf Ihrem Computer
 :label: memory-whole-numbers-computer-exercise
 
-Finden Sie heraus was die größte natürliche Zahl ist, die Ihr Computer abspeichern kann.
+Finden Sie heraus was die größte natürliche Zahl ist, die Ihr Computer (in Form eines primitiven Datentyps) abspeichern kann.
 
 ```
 
@@ -307,7 +353,7 @@ Das ist natürlich eine willkürliche Festlegung, für den Computer hat die Eins
 ```{exercise} Ganze Zahlen auf dem Computer
 :label: memory-biggest-number-exercise
 
-Wie lautet die größte natürliche Zahl (nur der Wert), welche wir mit zwei Speicherbereichen also 2 Byte darstellen können?
+Wie lautet die größte **natürliche Zahl** (nur der Wert), welche wir mit zwei Speicherbereichen also 2 Byte darstellen können?
 
 ```
 
@@ -326,14 +372,14 @@ Die Antwort hierfür lautet ja und nein.
 Das Ja ist offensichtlich: Wir sparen uns Speicher.
 Das Nein werden Sie gleich verstehen, wenn wir den Datentyp der Liste besprechen.
 
-In der Realität führt man weitere Datentypen ein z.B. gibt es in ``Java`` die folgenden Datentypen für ganze Zahlen:
+In der Realität führt man weitere Datentypen ein, z.B., gibt es in ``Java`` die folgenden Datentypen für ganze Zahlen:
 
 + ``long``: 64-bit
 + ``int``: 32-bit
 + ``short``: 16-bit
 + ``byte``: 8-bit
 
-In ``Python`` wird uns diese Entscheidung abgenommen bzw. werden Zahlen so realisiert, dass es keine harte Grenze gibt!
+In ``Python`` wird uns diese Entscheidung abgenommen bzw. werden ganze Zahlen so realisiert, dass es keine harte Grenze gibt!
 Wie dies funktionieren kann werden Sie vielleicht auch verstehen, wenn wir die Listen-Realisierung besprechen.
 
 Was passiert eigentlich wenn wir den Bereich der Darstellbarkeit überschreiten?
@@ -359,7 +405,8 @@ System.out.println(z);
 
 ``z`` enthält den Wert -128.
 
-Da ein ``byte`` (eine 8 [Bit](def-bit)) ganze Zahle und keine natürliche Zahl repräsentiert, wird das höchste [Bit](def-bit) als negativer Anteil interpretiert, siehe Abschnitt [Ganze Zahlen](sec-intergers) Gleichung {eq}`eq:binary:integer`.
+Da ein ``byte`` (eine 8 [Bit](def-bit)) ganze Zahle statt natürliche Zahl repräsentiert, wird das höchste [Bit](def-bit) als negativer Anteil interpretiert, siehe Abschnitt [Ganze Zahlen](sec-integers) Gleichung {eq}`eq:binary:integer`.
+
 Ist dieses [Bit](def-bit) gleich $1$, so ist die Zahl negativ.
 Ist das [Bit](def-bit) dagegen $0$, so ist die Zahl positiv.
 
@@ -376,15 +423,17 @@ Was wiederum nach Gleichung {eq}`eq:binary:integer`
 1 \cdot (-2^8) + 0 \cdot 2^7 + \ldots + 0 \cdot 2^0 = -2^8 = -128
 ```
 
-ergibt. Es kommt zu einem **unerwünschten Überlauf** (engl. *Overflow*).
+ergibt. Es kommt zu einem **unerwünschten Überlauf** (engl. *overflow*).
 ````
 
 ```{admonition} Überlauf in Python
-:name: python-overflow
-:class: attention
+:name: remark-python-overflow
+:class: remark
 
-In ``Python`` habe nur Fließkommazahlen ``float`` ein hartes Limit.
-Ganze Zahlen (Integer) ``int`` sind als sogenannte **long integer objects** implementiert, welche keine harte Grenze haben und damit zu keinem *Überlauf* führen.
+In ``Python`` haben Fließkommazahlen ``float`` ein hartes Limit, ganze Zahlen ``int`` jedoch nicht.
+
+Ganze Zahlen ``int`` sind als sogenannte **long integer objects** implementiert, welche keine harte Grenze haben und damit zu keinem *Überlauf* führen.
+
 Ganze Zahlen sind in ``Python`` keine [primitiven Datentypen](def-primitive-datatypes).
 
 ```
@@ -399,18 +448,19 @@ Doch angenommen wir hätten derartige Anweisungen, dann würde, zum Beispiel, ei
 Da diese Anweisungen selbst im [Arbeitsspeicher](def-main-memory) liegen, müssen auch die Speicheradresse im [Arbeitsspeicher](def-main-memory) liegen.
 
 Ein weiterer Grund erschließt sich, wenn wir den Datentyp der Liste besprechen.
-Überlegen Sie vielleicht schonmal was wir durch eine Liste von Speicheradressen erzielen könnten?
+Überlegen Sie vielleicht schon einmal was wir durch eine Liste von Speicheradressen erzielen könnten?
 
 Die Speicheradresse ist, wie erwähnt, nichts weiter als eine natürliche Zahl.
 Angenommen unser Speicher besteht aus $n$ Byte.
 Um jeden Speicherbereich (jedes Byte) adressieren zu können müssen wir Zahlen von $0$ bis $n-1$ darstellen können.
 Damit ist die größtmögliche Speicheradresse eine harte Grenze für die Menge an Speicher!
-Wir einigen uns wie bei den natürlichen Zahlen auf einen *Adressraum* von 2 Byte.
+
+Wir einigen uns, identisch zu den natürlichen Zahlen, auf einen *Adressraum* von 2 Byte.
 
 ```{exercise} Adressraum
 :label: memory-adress-space-exercise
 
-1. Wie groß kann unser Speicher sein wenn wir 2 Byte für die Adressierung verwenden?
+1. Wie groß kann unser Speicher sein, wenn wir 2 Byte für die Adressierung verwenden?
 2. Recherchieren Sie wie groß der Adressraum Ihres Computers ist.
 
 ```
@@ -426,19 +476,20 @@ Wir einigen uns wie bei den natürlichen Zahlen auf einen *Adressraum* von 2 Byt
 (sec-memory-list)=
 #### Listen
 
-Die wesentliche Eigenschaft einer Liste (wie auch des [Arbeitsspeichers](def-main-memory)) ist, dass der Zugriff auf ein Element bei bekannten Index ``i`` sehr schnell und in etwa gleich schnell für jedes beliebige ``i`` vonstattengeht.
+Die wesentliche Eigenschaft einer Liste (wie auch des [Arbeitsspeichers](def-main-memory)) ist, die schnelle Adressierung bei bekannter Adresse.
+Kennen wir den Index ``i`` eines Wertes, so können wir auf den Wert in konstanter Laufzeit $\mathcal{O}(1)$ zugreifen.
 
 Wenn wir wissen, dass die Liste an einer bestimmten Speicheradresse ``j`` in unserem Arbeitsspeicher ``memory`` beginnt, welche Informationen benötigen wir um schnell auf das ``i``-te Element der Liste zuzugreifen?
 Falls jedes Element **gleich viel** Speicher einnimmt ist die Sache ganz einfach:
 Wir müssen nur wissen wie viel Speicher jedes Element verbraucht!
 
-Wenn eine Liste nur Elemente des gleichen Datentyps enthält, müssen wir den Datentyp auch nur einmal an den Anfang der Liste packen.
-Die Elemente brauchen keine Information mehr über ihren Datentyp!
+Wenn eine Liste Elemente des **gleichen** Datentyps enthält, müssen wir den Datentyp auch nur einmal an den Anfang der Liste packen.
+Die Elemente selbst brauchen keine Information über ihren Datentyp!
 
 Was noch fehlt ist die Länge der Liste.
 Diese sollten wir mit abspeichern um testen zu können ob ein Index ``i`` überhaupt noch im Speicherbereich der Liste liegt.
 Was ist diese Länge?
-Es ist eine natürliche Zahl.
+Sie ist eine natürliche Zahl!
 Auch hier können wir uns den Datentyp schenken, da wir impliziert wissen, dass es eine natürliche Zahl ist!
 
 Fassen wir zusammen: Unsere Liste beginnt mit dem Datentyp ``2`` (Liste) welcher 8 [Bit](def-bit) belegt.
@@ -454,28 +505,28 @@ Nach dieser Prämisse folgen die eigentlichen Elemente ohne Datentypinformation.
 width: 500px
 name: fig-datatypes-in-memory
 ---
-Elemente wie sie im Speicher liegen je Datentyp. Die Liste ist eine Liste aus natürlichen Zahlen.
+Speicheranordnung von Werten verschiedener Datentypen. Die Liste ist eine Liste aus natürlichen Zahlen.
 ```
 
 ```{exercise} Listen-Adressierung
-:label: memory-list-adressing-exercise
+:label: memory-list-addressing-exercise
 
 1. Angenommen jedes Listen-Element belegt 2 Speicherbereiche (2 [Byte](def-bit)) und die Liste beginnt am Index ``j`` in ``memory``.
-Wie lautet dann der Index für ``memory`` des $i$-ten Elements der Liste?
+Wie lautet dann der Index von ``memory`` des ``i``-ten Elements der Liste?
 2. Wie viele Elemente kann eine Liste in unserem Fall maximal enthalten?
 
 ```
 
-```{solution} memory-list-adressing-exercise
-:label: memory-list-adressing-solution
+```{solution} memory-list-addressing-exercise
+:label: memory-list-addressing-solution
 :class: dropdown
 
 1. Auf das gesuchte Element greifen wir durch ``memory[4 + j + i * 2]`` zu.
-2. Die Liste kann maximal so viele Elemente enthalten wie eins plus der größten natürliche Zahl, die wir darstellen können, d.h. 65536 Elemente.
+2. Die größte natürliche Zahl, die wir abspeichern können ist eine harte Grenze für die Länge der Liste, d.h., $2^{16}-1$ Elemente.
 
 ```
 
-Die schnelle und einfache Indexberechnung ist der Grund weshalb jedes Element eines [primitive Datentyps](def-primitive-datatypes) gleich viel Speicher verbraucht und wir keinen variablen Speicherverbrauch für diese Datentypen haben.
+Die schnelle und einfache Indexberechnung ist der Grund weshalb jedes Element eines [primitive Datentyps](def-primitive-datatypes) gleich viel Speicher verbraucht.
 Dies ist ein ganz wesentliches Prinzip aller modernen Computer!
 Es vereinfacht bzw. beschleunigt die Adressierung.
 
@@ -483,7 +534,7 @@ Es vereinfacht bzw. beschleunigt die Adressierung.
 :label: memory-list-variable-memory-exercise
 
 Angenommen wir hätten einen variablen Speicherverbrauch, d.h. kleinere Zahlen belegen weniger Speicher als große Zahlen.
-Wie müssten wir dann unsere Liste dann realisieren?
+Wie müssten wir dann unsere Liste realisieren?
 
 ```
 
@@ -493,9 +544,9 @@ Wie müssten wir dann unsere Liste dann realisieren?
 
 Vor dem Wert der Zahl müsste deren Speicherbedarf stehen, also in unserem Beispiel ob die Zahl einen oder zwei Speicherbereiche belegt.
 
-Da Zahlen unterschiedlich viele Speicherbereiche belegen, können wir mit dem Speicherbereich an dem die Liste beginnt (Adresse) und dem Index des Elements der Liste nicht mehr berechnen wo dieses Element beginnt.
-Das heißt, wir müssten die Liste von vorne nach hinten durchgehen bis wir am entsprechenden Index gelangt sind.
+Da Zahlen unterschiedlich viele Speicherbereiche belegen, haben wir keine Möglichkeit durch die Adressen der Liste und dem Index des gesuchten Elements, auf dieses direkt zuzugreifen. 
 
+Das heißt, wir müssten die Liste von vorne nach hinten durchgehen bis wir am entsprechenden Index angelangt sind.
 ```
 
 Aber moment!
@@ -533,7 +584,7 @@ print(f'meomry = {memory}')
 print(f'inuse = {inuse}')
 
 Um mit dem Speicher hantieren zu können brauchen wir einige Hilfsfunktionen.
-Lassen Sie uns in ganz kleinen Schritten nach vorne tasten.
+Wir tasten uns im Folgenden in ganz kleinen Schritten nach vorne.
 
 ```{exercise} Valider Speicherbereich?
 :label: memory-helpers-1-exercise
@@ -557,7 +608,7 @@ Stellen Sie sich vor wir haben wild und durcheinander in unserem Speicher geschr
 Wir müssten uns merken welche Speicherbereiche bereits belegt sind.
 Das ist nicht gerade praktikabel.
 Wie wäre es stattdessen wenn wir diese Aufgabe einer Funktion überlassen!
-Dieser sagen wir wie viel Speicher wir gerne hätten und sie gibt uns eine entprechende Speicheradresse zurück und setzt den benötigten Speicher auf ``inuse`` (allokiert).
+Dieser sagen wir wie viel Speicher wir gerne hätten und sie gibt uns eine entsprechende Speicheradresse zurück und setzt den benötigten Speicher auf ``inuse`` (Allokation).
 
 Auch wäre es praktisch eine Art Umkehrfunktion dieser Operation zu haben.
 Also eine Funktion die den Speicher an einer bestimmten Adresse wieder freigibt.
@@ -567,7 +618,7 @@ Also eine Funktion die den Speicher an einer bestimmten Adresse wieder freigibt.
 
 Schreiben Sie folgende Funktionen:
 
-+ ``malloc(n_bytes, memory, inuse)``: Liefert eine Adresse ``addr`` zurück die auf einen neu allokierten Speicher von ``n_bytes`` Bytes zeigt.
++ ``malloc(n_bytes, memory, inuse)``: Liefert eine Adresse ``addr`` zurück, die auf einen neu allokierten Speicher von ``n_bytes`` Bytes zeigt.
 + ``mfree(addr, n_bytes, memory, inuse)``: Gibt ``n_bytes`` Bytes Speicher an der Adresse ``addr`` frei.
 
 ```
@@ -578,7 +629,7 @@ Zum Beispiel könnte das der Fall sein, wenn der gesamte Speicher schon reservie
 
 ``malloc`` geht von vorne bis hinten durch den Speicher durch und sucht nach genügend zusammenhängenden freien [Bytes](def-byte).
 Das ist nicht sonderlich effektiv aber für unsere Zwecke ausreichend.
-Nachdem diese zusammenhängenden [Bytes](def-byte) gefunden wurden, setzten wir deren Markierung auf **allokiert** bzw. auf in Benutzung, d.h. ``inuse[i] = True``.
+Nachdem diese zusammenhängenden [Bytes](def-byte) gefunden wurden, setzten wir deren Markierung auf **allokiert** bzw. auf **in Benutzung**, d.h., ``inuse[i] = True``.
 
 ``mfree`` verändert nur die Markierungen und setzt diese auf **frei**.
 
@@ -638,7 +689,7 @@ free(x)
 free(y)
 ```
 
-Dieser Code allokiert zwei Speicherbereiche für jeweils eine natürliche Zahl und initialisiert diese mit 50 und 1000.
+Dieser Code allokiert zwei Speicherbereiche für jeweils eine natürliche Zahl und initialisiert diese mit 50 bzw. 1000.
 Dann addieren wir die zwei Zahlen die im Speicher an der Adresse ``x`` und ``y`` stehen und schreiben das Ergebnis nach ``z``, wobei ``z`` automatisch reserviert wird.
 Schlussendlich geben wir die beiden Speicherbereiche bei ``x`` und ``y`` frei.
 
@@ -647,7 +698,7 @@ Das verwundert nicht denn hinter einer Zuweisung
 
 x = 50
 
-steckt eine Speicherallokation und eine **Variable** ``x`` ist nichts anderes als ein **Zeiger**, d.h. eine **Speicheradresse** die auf den Speicherbreich zeigt, der den Wert ``50`` enthält.
+steckt eine Speicherallokation und eine **Variable** ``x`` ist nichts anderes als ein **Zeiger**, d.h. eine **Speicheradresse** die auf den Speicherbereich zeigt, der den Wert ``50`` enthält.
 ``Python`` und andere Hochsprachen nehmen uns diese Speicherorganisation ab.
 Wir müssen Speicher auch nicht freigeben, auch darum kümmert sich ``Python`` automatisch.
 
@@ -662,12 +713,12 @@ Schreiben Sie zunächst folgende einfache Hilfsfunktionen:
 
 + ``number_to_byte(number)``: Wandelt eine natürliche Zahl in 2 [Bytes](def-byte) um.
 + ``to_number(byte1, byte2)``: Wandelt 2 [Bytes](def-byte) in eine natürliche Zahl um.
-+ ``char_to_byte(char)``: Wandelt eine Zeichen in ein [Byte](def-byte)  um.
++ ``char_to_byte(char)``: Wandelt ein Zeichen in ein [Byte](def-byte)  um.
 + ``to_char(byte)``: Wandelt ein [Byte](def-byte) in ein Zeichen um.
 
 Daraufhin definieren Sie folgende Funktionen zur Speicherverwaltung:
 
-+ ``calc_bytes(data_type, memory, inuse)``: Berechnet die Anzahl an Bytes, welche das Element (einzelnes Datum (Datentyp + Wert)) an der Adresse ``addr`` verbraucht.
++ ``calc_bytes(data_type)``: Berechnet die Anzahl an Bytes, welche ein Wert vom Typ ``data_type`` verbraucht.
 + ``alloc(data_type, value, memory, inuse)``: Liefert eine Adresse ``addr`` zurück, die auf einen neu reservierten Speicher zeigt und schreibt den Wert ``value`` gleich an die richtige Stelle.
 + ``free(addr, memory, inuse)``: Gibt den Speicher an ``addr`` frei.
 
@@ -738,7 +789,7 @@ print(alloc(to_data_type('number'), 6, memory, inuse))   # allocate bytes 0,1,2,
 
 ### Addieren im Speicher
 
-Um zwei Zahlen im Speicher zu addieren fehlt uns nur noch eine Funktion die zwei Zahlen an zwei Speicheradressen liest und an eine neu reservierte Speicheradresse schreibt.
+Um zwei Zahlen im Speicher zu addieren fehlt uns nur noch eine Funktion die zwei Zahlen an zwei Speicheradressen liest und das Ergebnis der Addition an eine neu reservierte Speicheradresse schreibt.
 Diese neue Adresse sollte die Funktion zurückgeben.
 
 def read_number(addr, memory):
@@ -768,7 +819,13 @@ print(read_number(z, memory))                          # 1050
 Was fehlt ist ``alloc`` und ``free`` für eine Liste.
 Was wir benötigen ist die Berechnung des Speicherbedarfs einer Liste.
 Betrachten Sie {numref}`Abbildung {number} <fig-list-in-memory>`.
-Wir berechnen den Speicherbedarf einer Liste durch ``n * (calc_byte(memory[addr+3])-1)`` wobei ``n`` die Anzahl der Listenelemente ist.
+Wir berechnen den Speicherbedarf einer Liste durch 
+
+```python
+4 + n * (calc_byte(memory[addr+3])-1)
+```
+
+wobei ``n`` die Anzahl der Listenelemente ist.
 Weshalb subtrahieren wir die eins?
 Da Listenelemente keine Datentypinformation benötigen!
 
@@ -786,7 +843,7 @@ Liste wie sie im Speicher liegt. Um den Speicherbedarf zu berechnen benötigen w
 Schreiben Sie eine Funktion ``calc_list_bytes(addr, memory)``, welche den benötigten Speicherbereich einer Liste, welche an Adresse ``addr`` startet, berechnet.
 Bauen Sie diese Funktion in ``free`` ein. 
 
-Schreiben Sie eine weitere Funktion ``alloc_list(data_type, n, memory, inuse)`` die Speicher für eine Liste reserviert wobei ``data_type`` der Datentyp der Listenelemente ist und ``n`` die Anzahl der Listenelemente.
+Schreiben Sie eine weitere Funktion ``alloc_list(data_type, n, memory, inuse)`` die Speicher für eine Liste reserviert, wobei ``data_type`` der Datentyp der Listenelemente und ``n`` die Anzahl der Listenelemente ist.
 
 **Hinweis:** Sie müssen die natürliche 2-byte Zahl in eine herkömmliche Dezimalzahl umwandeln. Hierfür empfiehlt sich die Hilfsfunktion ``to_number(byte1, byte2)``.
 ```
@@ -895,11 +952,11 @@ print(f"Our list in mememory: {memory[0:n_allocated_bytes]}")
 Wenn Sie ``alloc_list`` betrachten werden Sie festellen, dass eine Liste aus Elementen vom Datentyp ``to_data_type('list')`` nicht zulässig ist.
 Unsere Liste darf derzeit nur [primitive Datentypen](def-primitive-datatypes) (natürliche Zahlen, Zeichen und Adressen) beinhalten.
 
-Mehrdimensionale Listen aus Elementen eines [primitiven Datentyps](def-primitive-datatypes) lassen sich recht einfach erstellen, wenn wir anstatt eine Länge der Liste, für jede Dimension eine Länge anfügen.
+Mehrdimensionale Listen aus Elementen eines [primitiven Datentyps](def-primitive-datatypes) lassen sich recht einfach erstellen, wenn wir anstatt einer Länge, für jede Dimension eine Länge anfügen.
 Eine solche Liste würde anstatt einer Länge eine Liste aus Längen beinhalten.
 Zudem würden wir die Elemente immernoch linear nebeneinander anordnen.
 
-Nehmen wir zum Beispiel an, wir möchten eine zweidimensionale Liste, wobei die erste Dimension die Länge $n$ und die zweite die Länge $m$ hätte.
+Nehmen wir zum Beispiel an, wir möchten eine zweidimensionale Liste erzeugen, wobei die erste Dimension die Länge $n$ und die zweite die Länge $m$ hat.
 Die Liste ``two_dim_list`` enthält demnach
 
 $$n \cdot m$$
@@ -980,26 +1037,27 @@ print(f"We allocated {len([e for e in inuse if e])} bytes")
 
 All das übernimmt in ``Python`` der sogenannte [Garbage Collector](def-garbage-collector).
 
-(def-garbage-collector)=
 ```{admonition} Garbage Collector (Python)
+:name: def-garbage-collector
+:class: definition
 
-TODO
+Der *Garbage Collector* bezeichnet eine automatische Speicherverwaltung, die zur Vermeidung von Speicherproblemen beiträgt und zur Laufzeit nicht länger benötigte Speicherbereiche automatisch freigibt. Der Vorteil wird mit einem erhöhten Ressourcenverbrauch erkauft.
 
 ```
 
 ### Ein einfacher Parser
 
-Um die Manipulationen im Speicher besser nachzuvollziehen zu können wäre es großartig eine Funktion ``mem_to_string(addr, memory, inuse)`` zu haben, welche einen [primitiven Datentyp](def-primitive-datatypes) oder eine [Liste](sec-memory-list) in einer gut leserlichen Formatierung als Zeichenkette zurückgibt.
+Um die Manipulationen im Speicher besser nachzuvollziehen zu können wäre es großartig eine Funktion ``mem_to_string(addr, memory, inuse)`` zu haben, welche einen [primitiven Datentyp](def-primitive-datatypes) oder eine [Liste](sec-memory-list) in einer gut leserliche Zeichenkette umwandelt.
 
 An einer Adresse ``ADDR`` kann sich eine andere ``ADDR``, eine Zahl ``number``, ein Zeichen ``char`` oder eine Liste ``LIST`` befinden.
 Eine Liste ``LIST`` kann wiederum natürliche Zahlen ``number``, Zeichen ``char`` oder Adressen ``ADDR`` enthalten.
 Diese Struktur ist eine von uns definierte **Syntax**!
-Was wir benötigen ist ein Programm (in unserem Fall nur eine Funktion), welche diese **Syntax** versteht und umwandelt.
+Was wir benötigen ist ein Programm (in unserem Fall nur eine Funktion), welche diese **Syntax** versteht und umwandelt -- wir brauchen einen Interpreter.
 Ein solches Programm nennt man [Parser](def-parser).
 
-(parser)=
 ```{admonition} Parser
 :name: def-parser
+:class: definition
 
 Ein *Parser* wandelt eine Struktur (z.B. Datenstruktur oder eine Zeichenkette) in eine andere Struktur um.
 Die Syntax der Quell- und Zielstruktur sind oft durch eine Grammatik definiert.
@@ -1021,12 +1079,12 @@ Handelt es sich bei einem Listenelement um eine Zahl oder ein Zeichen, geben wir
 Handelt es sich um eine Adresse verfahren wir entsprechend weiter.
 Nachdem wir durch eine Liste iteriert sind, geben wir ``]`` aus.
 
-Da unsere **Syntax** rekursiv definiert ist, eignet sich auch eine rekursive Funktion um die Ausgabe zu erzeugen.
+Da unsere [Syntax](def-syntax) rekursiv definiert ist, eignet sich auch eine [rekursive Funktion](sec-recursive-functions) um die Ausgabe zu erzeugen.
 
 ```{exercise} Rekursive Ausgabe
 :label: memory-rekursive-print-exercise
 
-Implementieren Sie eine Funktion ``mem_to_string(addr, memory, inuse)`` die eine Zeichenkette des an der Adresse ``addr`` liegenden Elements zurückliefert.
+Implementieren Sie eine Funktion ``mem_to_string(addr, memory, inuse)``, die eine geeignete Zeichenkette des an der Adresse ``addr`` liegenden Elements zurückliefert.
 
 ```
 
@@ -1075,30 +1133,26 @@ Für Sie transformieren wir den Wert im Speicher gegeben durch ``addr`` in eine 
 Das übernehmen die Funktionen ``char_to_str`` und ``number_to_str``.
 
 Handelt es sich hingegen um eine Adresse holen wir ebenfalls den Wert der Adresse ``new_addr`` aus dem Speicher.
-Wir sind wieder am Ausgangspunkt, d.h. wir haben erneut eine Adresse ``new_addr`` und möchten den Wert der an dieser Adresse steht in eine schön formatierte Zeichenkette unwandeln.
+Wir sind wieder am Ausgangspunkt, d.h. wir haben erneut eine Adresse ``new_addr`` und möchten den Wert, der an dieser Adresse steht, in eine schön formatierte Zeichenkette umwandeln.
 Demnach rufen wir ``mem_to_string`` mit dieser neuen Adresse ``new_addr`` auf.
-Hier verwenden wir die Rekursion.
 Würde an der neuen Adresse erneut eine Adresse stehen würden wir den Vorgang wiederholen und zwar solange bis an der Adresse keine neue Adresse mehr steht.
 
 Bleibt noch der Fall der Liste.
 Wenn der Datentyp an der Adresse ``addr`` eine Liste ist, wandeln wir diese Liste durch ``list_to_str`` in eine Zeichenkette um.
-
-Betrachten wir nun ``list_to_str``.
 Glücklicherweise können wir unsere zuvor definierten Hilfsfunktionen ``list_len`` und ``get_list_value`` nutzen.
 Die Zeichenkette lassen wir mit einem ``"["`` beginnen um den Anfang der Liste zu markieren.
 Durch ``list_len`` holen wir die Längeninformation der Liste aus dem Speicher.
 Anhand unserer Listendefinition in {numref}`Abbildung {number} <fig-list-in-memory>`, wissen wir dass an ``memory[mylist+3]`` der Datentyp der Listenelemente der Liste steht.
-Was folgt ist eine Iteration über die Listenelmente.
+Was folgt ist eine Iteration über die Listenelemente.
 ``get_list_value`` liefert uns je ein Listenelement.
 Erneut ist der Fall für die Zahlen und Zeichenketten klar.
 ``get_list_value`` holt den Wert aus dem Speicher, diesen wandeln wir in eine Zeichenkette um.
 Für eine Adresse gilt das gleiche und wir haben bereits eine Funktion die diese Aufgabe übernehmen kann.
 Sie heißt ``mem_to_string``!
-An dieser Stelle setzten wir erneut auf die Rekursion.
-
+An dieser Stelle setzten wir erneut auf die [Rekursion](sec-recursion).
 Wir trennen jedes Listenelement durch ``", "`` und fügen am Ende noch die geschlossene Klammer ``"]"`` an, um das Ende der Liste zu markieren.
 
-Die beiden Rekursionsaufrufe ergeben sich aus der beschriebenen **Syntax**.
+Die beiden rekursiven Funktionsaufrufe ergeben sich aus der beschriebenen [Syntax](def-syntax).
 Im ersten Fall aus 
 
 ``ADDR`` -> ``ADDR`` 
@@ -1177,11 +1231,11 @@ Verwenden Sie ``alloc_list``, ``alloc`` und ``set_list_value``.
 
 **Hinweise:**
 1. Da Ihre Liste weitere Listen enthalten kann werden Sie vermutlich auf die Rekursion zurückgreifen müssen.
-2. Da Ihre Listen gemischte Datentypen enthalten sollten Sie Zeiger / Adressen verwenden.
+2. Da Ihre Listen gemischte Datentypen enthalten, sollten Sie Zeiger / Adressen verwenden.
 ```
 
 Wir haben eine kleine Hilfsfunktion ``get_data_type(value)`` geschrieben, die uns den Datentyp anhand des Wertes ``value`` bestimmt.
-Wichtig dabei ist, dass eine Zeichenkette mit Länge gleich 1 eine ``char`` ist, wobei eine Zeichenkette mit Läger > 1 eine Liste (aus ``char``) ist!
+Wichtig dabei ist, dass eine Zeichenkette mit Länge gleich 1 ein ``char`` ist, wobei eine Zeichenkette mit Länger > 1 eine Liste (aus ``char``) ist!
 
 def get_data_type(value):
     if type(value) == int:
@@ -1243,7 +1297,7 @@ Wie wäre es mit weiteren Datentypen wie ``bool``, ``float`` oder ihrem ganz eig
 
 In dieser Übung haben wir nur die Daten in den Speicher ``memory`` geschrieben.
 Die *Kontrolleinheit* der [CPU](def-cpu) haben wir nicht modelliert.
-Anstatt [Register](def-register) haben wir auf ``Python``-Variablen und anstatt des [Befehlszählers](def-program-counter) und der Sprungbefehlen, auf ``Python``-Schleifen und ``if``-Ausdrücken zurückgegriffen.
+Anstatt [Register](def-register) haben wir auf ``Python``-Variablen und anstatt des [Befehlszählers](def-program-counter) und der Sprungbefehlen, auf ``Python``-Schleifen und ``if``-Ausdrücke zurückgegriffen.
 Wenn Sie mit Ihrem Modell noch näher an die reale [CPU](def-cpu) herankommen wollen, könnten Sie die Anweisungen ebenfalls in den Speicher packen.
 Sie dürften nur die Hardware in ``Python``-Befehle gießen, die auf der [CPU](def-cpu) auch tatsächlich vorhanden sind.
 Damit hätten Sie nur eine endliche Menge von Variablen (je eine pro [Register](def-register)) keine Schleifen und nur ``if``-Ausdrücke der Form:
@@ -1558,7 +1612,7 @@ Wie stellen wir fest, dass keine Adresse mehr auf einen bestimmten Speicherberei
 
 Wenn Sie der Übung folgen konnten, haben Sie ihr Verständnis der Programmausführung auf einem Computer geschärft.
 Sie haben aus primitiven Mitteln (einem linearen Speicher aus Zahlen (0 bis 255)) komplexe Strukturen (mehrdimensionale Listen) und Manipulationen errichtet.
-Im Endeffekt haben Sie einen kleinen Compiler geschrieben, der Ihnen den Befehl
+Im Endeffekt haben Sie einen kleinen [Compiler](def-compiler) geschrieben, der Ihnen den Befehl
 
 memory, inuse = initialize(1024)
 mylist = new_list([1,2,"Hello World",4,5], memory, inuse)
@@ -1573,7 +1627,7 @@ Sollten Sie je mit einer Sprache in Kontakt kommen in der Sie den Speicher selbs
 ````{exercise} Speicherverwaltung in C
 :label: memory-management-c-exercise
 
-Können Sie erraten was folgender ``C``-Code macht?
+Können Sie erraten welche Auswirkungen folgender ``C``-Code hat?
 
 ```c
 ptr = (float*) malloc(100 * sizeof(float));

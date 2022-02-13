@@ -155,7 +155,7 @@ Mengen sind **veränderlich** (engl. mutable) allerdings darf eine Menge nur **u
 Damit darf eine Menge keine Listen enthalten, weshalb folgender Code zu einem Fehler führt
 
 ```{admonition} Mengen in Python
-:name: alert-sets-in-python
+:name: attention-sets-in-python
 :class: attention
 Eine Menge ist **veränderlich** darf jedoch lediglich **unveränderliche** Elemente enthalten.
 ```

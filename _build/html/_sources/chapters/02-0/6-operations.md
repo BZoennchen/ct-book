@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-math-operations)=
 # Operationen
 
 (sec-abs)=
@@ -73,22 +74,22 @@ print(math.floor(1.49))
 
 Diese Abrundungsfunktion $\left \lfloor{\cdot}\right \rfloor : \mathbb{R} \rightarrow \mathbb{Z}$ rundet Zahlen zur nächst größeren ganzen Zahl auf. 
 
-```{admonition} Maximum
+```{admonition} Abrunden
 :name: def-math-floor
 :class: definition
 
-Sei $x \in \mathbb{R}$ so ist $x$ aufgerundet gleich
+Sei $x \in \mathbb{R}$ so ist $x$ *aufgerundet* gleich
 
 $$\text{floor}(x) = \left \lfloor{x}\right \rfloor = \max\{k \in \mathbb{Z} : k \leq x \}.$$
 ```
 
 Diese Aufrundungsfunktion $\left \lceil{\cdot}\right \rceil : \mathbb{R} \rightarrow \mathbb{Z}$ rundet Zahlen zur nächst kleineren ganzen Zahl ab. 
 
-```{admonition} Maximum
+```{admonition} Aufrunden
 :name: def-math-ceil
 :class: definition
 
-Sei $x \in \mathbb{R}$ so ist $x$ abgerundet gleich
+Sei $x \in \mathbb{R}$ so ist $x$ *abgerundet* gleich
 
 $$\text{ceil}(x) = \left \lceil{x}\right \rceil = \min\{k \in \mathbb{Z} : k \geq x \}.$$
 ```

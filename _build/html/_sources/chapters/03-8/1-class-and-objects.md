@@ -17,6 +17,7 @@ Eine *Klasse* ist die Blaupause seiner *Objekte*.
 
 ```{admonition} Klassen
 :class: definition
+:name: def-class
 Eine Klasse ist ein *zusammengesetzter Datentyp* der *Methoden* definiert, die allesamt auf Werte des eigenen Typs angewendet werden können.
 Eine *Klasse* definiert eine Blaupause für ein Bündel aus **Daten** und **Funktionen**, welche wir *Methoden* nennen.
 ```
@@ -25,6 +26,7 @@ Und ein *Objekt* ist eine konkrete *Instanz* einer *Klasse*, d.h. eine Variable 
 
 ```{admonition} Objekte in Python
 :class: attention
+:name: attention-objects-in-python
 In ``Python`` ist alles (auch Werte von atomaren Datentypen) ein Objekt.
 ```
 
@@ -128,6 +130,7 @@ Die Klasse können wir als den Bauplan der Objekte verstehen.
 
 ```{admonition} Objekte
 :class: definition
+:name: def-objects
 Ein *Objekt* ist eine konkrete Instanz einer Klasse.
 ```
 
@@ -217,6 +220,7 @@ Immer wenn wir ein ``Student``-Objekt erzeugen, erhöht sich das *Klassenattribu
 
 ```{admonition} Klassenattribute
 :class: attention
+:name: attention-class-attributes
 *Klassenattribute* sollten sparsam eingesetzt werden und sollten niemals dazu verwendet werden um das Verhalten eines Objekts zu beeinflussen!
 Das *Verhalten* muss sich stets aus der Kombination von Objektattributen und Methoden ergeben.
 ```

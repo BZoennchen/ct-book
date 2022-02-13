@@ -162,12 +162,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-3/2-middleages.html">
-     3.2. Mittelalter bis 19. Jahrundert
+     3.2. Mittelalter bis 19. Jahrhundert
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-3/3-today.html">
-     3.3. 19. Jahrundert bis heute
+     3.3. 19. Jahrhundert bis heute
     </a>
    </li>
    <li class="toctree-l2">
@@ -576,7 +576,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/11-typing-in-python.html">
-     4.11. Pythons Typisierung
+     4.11. Python’s Typisierung
     </a>
    </li>
   </ul>
@@ -1028,8 +1028,8 @@ Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingege
 <span id="sec-binary-numbers"></span><h2><span class="section-number">2.3.2. </span>Zahlen im Binärsystem<a class="headerlink" href="#zahlen-im-binarsystem" title="Permalink to this headline">¶</a></h2>
 <p>Werfen wir einen genaueren Blick aufs <em>Binärsystem</em> oder auch <em>binäre Zahlensystem</em>.
 Um Zahlen mit <strong>Strom an</strong> und <strong>Strom aus</strong>, also den zwei Zuständen einer Lampe/Transistors/<em>Bit</em> zu repräsentieren, verwenden Computer das <em>Binärsystem</em>.</p>
-<div class="remark admonition">
-<p class="admonition-title">Notation mit verschiedenen Zahlensystemen</p>
+<div class="remark admonition" id="remark-number-systems-notation">
+<p class="admonition-title">Notation verschiedener Zahlensysteme</p>
 <p>Um der Verwirrung vorzubeugen notieren wir eine Zahl <span class="math notranslate nohighlight">\(k\)</span>, geschrieben in der Dezimaldarstellung, auch durch <span class="math notranslate nohighlight">\(k_{10}\)</span>
 und eine Zahl <span class="math notranslate nohighlight">\(b\)</span> in der Binärdarstellung durch <span class="math notranslate nohighlight">\(b_2\)</span>.</p>
 </div>
@@ -1041,13 +1041,13 @@ Zum Beispiel ist <span class="math notranslate nohighlight">\(1871\)</span> glei
 \[1 \cdot 10^3 + 8 \cdot 10^2 + 7 \cdot 10^1 + 1 \cdot 10^0.\]</div>
 <p>Die Zahl, beschrieben als Folge von Ziffern <span class="math notranslate nohighlight">\(d_{n-1} \ldots d_0\)</span> mit <span class="math notranslate nohighlight">\(d_i \in \{0,1,2,3,4,5,6,7,8,9\}\)</span>, hat den Wert</p>
 <div class="math notranslate nohighlight" id="equation-eq-decimal-natural">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-eq-decimal-natural" title="Permalink to this equation">¶</a></span>\[d_{n-1} \ldots d_0 
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-decimal-natural" title="Permalink to this equation">¶</a></span>\[d_{n-1} \ldots d_0 
 = d_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 10^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \ldots + d_{\class{hm-lightblue} 0} \cdot 10^{\class{hm-lightblue} 0} 
 = \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} d_{\class{hm-lightblue} i} \cdot 10^{\class{hm-lightblue} i}.\]</div>
 <p>Im <em>Binärsystem</em> verwenden wir hingegen lediglich die Ziffern <span class="math notranslate nohighlight">\(0, 1\)</span> und die Basis <span class="math notranslate nohighlight">\(2\)</span>.
 Eine Zahl als Folge von Ziffern <span class="math notranslate nohighlight">\(b_{n-1} \ldots b_0\)</span> mit <span class="math notranslate nohighlight">\(b_i \in \{0,1\}\)</span> hat den Wert</p>
 <div class="math notranslate nohighlight" id="equation-eq-binary-natural">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-eq-binary-natural" title="Permalink to this equation">¶</a></span>\[    b_{n-1} \ldots b_0 
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-eq-binary-natural" title="Permalink to this equation">¶</a></span>\[    b_{n-1} \ldots b_0 
     = b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \ldots + b_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0}
     = \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} b_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i}.\]</div>
 <p>Zum Beispiel hat <span class="math notranslate nohighlight">\(1101_2\)</span> den Wert</p>
@@ -1081,9 +1081,9 @@ Wie aber wandeln wir eine Dezimalzahl in eine Binärzahl um?</p>
 <p>Nehmen wir als Beispiel die Dezimalzahl <span class="math notranslate nohighlight">\(9\)</span>.
 Wir suchen eine Binärzahl <span class="math notranslate nohighlight">\(b_{n-1}\ldots b_0\)</span>, sodass</p>
 <div class="math notranslate nohighlight" id="equation-eq-nine-to-binary">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-eq-nine-to-binary" title="Permalink to this equation">¶</a></span>\[b_{n-1} \cdot 2^{n-1} + \ldots + b_0 \cdot 2^0 = 9\]</div>
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-eq-nine-to-binary" title="Permalink to this equation">¶</a></span>\[b_{n-1} \cdot 2^{n-1} + \ldots + b_0 \cdot 2^0 = 9\]</div>
 <p>ergibt.
-Was passiert wenn wir in Gleichung <a class="reference internal" href="#equation-eq-nine-to-binary">(2.4)</a> beide Seiten durch <span class="math notranslate nohighlight">\(2\)</span> dividieren?</p>
+Was passiert wenn wir in Gleichung <a class="reference internal" href="#equation-eq-nine-to-binary">(2.3)</a> beide Seiten durch <span class="math notranslate nohighlight">\(2\)</span> dividieren?</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}  \begin{split}
     b_{n-1} \cdot 2^{n-1} + \ldots + b_0 \cdot 2^0 &amp;= 9 \iff \\
@@ -1173,13 +1173,13 @@ Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
 </div>
 </div>
 <div class="section" id="ganze-zahlen">
-<span id="sec-intergers"></span><h3><span class="section-number">2.3.2.2. </span>Ganze Zahlen<a class="headerlink" href="#ganze-zahlen" title="Permalink to this headline">¶</a></h3>
+<span id="sec-integers"></span><h3><span class="section-number">2.3.2.2. </span>Ganze Zahlen<a class="headerlink" href="#ganze-zahlen" title="Permalink to this headline">¶</a></h3>
 <p>Uns steht kein Minus- oder Pluszeichen zur Verfügung.
 Alles was der Computer kennt sind Bits und Bytes.
 Wollen wir also anstatt der natürlichen Zahlen die ganzen Zahlen repräsentieren, müssen wir das Vorzeichen irgendwie codieren.</p>
 <p>Wollen wir ganze Zahlen repräsentieren so entscheidet das höchste <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a>, ob es sich bei der Zahl um eine negative oder positive Zahl handelt.
 Eine Möglichkeit wäre es dieses höchste <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> als <code class="docutils literal notranslate"><span class="pre">-</span></code> zu interpretieren, wenn es den Wert 1 hat und als <code class="docutils literal notranslate"><span class="pre">+</span></code> andernfalls.
-In diesem Fall könnten wir Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(2.3)</a> verwenden, mit dem Unterschied, dass wir das höchste Bit ausschließen und stattdessen als Vorzeichen interpretieren.</p>
+In diesem Fall könnten wir Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(2.2)</a> verwenden, mit dem Unterschied, dass wir das höchste Bit ausschließen und stattdessen als Vorzeichen interpretieren.</p>
 <p>So wäre</p>
 <div class="math notranslate nohighlight">
 \[1011_2 = -011_2 = -3_{10}.\]</div>
@@ -1200,15 +1200,15 @@ Das höchste Bit wird dabei nicht als Vorzeichen, sondern als negativer Anteil i
 <p>und</p>
 <div class="math notranslate nohighlight">
 \[111_2 = -2^2 \cdot 1 + 2^1 \cdot 1 + 2^0 \cdot 1 = -4 + 2 + 1 = -1.\]</div>
-<p>Aus Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(2.3)</a> wird</p>
+<p>Aus Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(2.2)</a> wird</p>
 <div class="math notranslate nohighlight" id="equation-eq-binary-integer">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-eq-binary-integer" title="Permalink to this equation">¶</a></span>\[\begin{split}  \begin{split}
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-eq-binary-integer" title="Permalink to this equation">¶</a></span>\[\begin{split}  \begin{split}
     b_{n-1} \ldots b_0 &amp;= -b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}2} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}2} + \ldots + b_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0}\\
     &amp;= -b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \sum\limits_{{\class{hm-lightblue} i}=0}^{n-2} b_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i}.
   \end{split}\end{split}\]</div>
-<p>Wir können Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(2.3)</a> auch umschreiben, indem wir das <a class="reference internal" href="#def-complement"><span class="std std-ref">Komplement</span></a> eines jeden <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> verwenden, daher der Name <em>Zweierkomplement</em>.</p>
+<p>Wir können Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(2.2)</a> auch umschreiben, indem wir das <a class="reference internal" href="#def-complement"><span class="std std-ref">Komplement</span></a> eines jeden <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> verwenden, daher der Name <em>Zweierkomplement</em>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-binary-integer-complement">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-eq-binary-integer-complement" title="Permalink to this equation">¶</a></span>\[\begin{split}  \begin{split}
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-eq-binary-integer-complement" title="Permalink to this equation">¶</a></span>\[\begin{split}  \begin{split}
     b_{n-1} \ldots b_0 &amp;= -\overline{b}_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} - \ldots - \overline{b}_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0} - 1\\
     &amp;= -\left( \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} \overline{b}_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i} \right) - 1.
   \end{split}\end{split}\]</div>
@@ -1425,7 +1425,7 @@ Für die <span class="math notranslate nohighlight">\(256\)</span> Intensitäten
 <p class="admonition-title">Byte</p>
 <p><span class="math notranslate nohighlight">\(8\)</span> <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> ergeben ein <em>Byte</em>.</p>
 </div>
-<div class="remark admonition">
+<div class="remark admonition" id="remark-byte">
 <p class="admonition-title">Byte</p>
 <p>Oftmals ist ein <em>Byte</em> die kleinste Einheit auf die ein Computer zugreift.</p>
 <p><strong>Beispiel:</strong>

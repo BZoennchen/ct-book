@@ -29,7 +29,7 @@ Dazu tauchen Sie in eine vorgegebene Welt ein und lernen das **WAS** von dem **W
 
 Im [zweiten Teil](sec-robo-world-part-2) werden wir interessante aber auch schwierigere Fragen diskutieren und durch [Computational Thinking](sec-what-is-ct) lösen und unser Denken dadurch trainieren.
 
-In dieser Übung beschäftigen uns mit der [Zufallsfahrt](https://de.wikipedia.org/wiki/Random_Walk), determinierten und nicht-determinierten [Algorithmen](sec-algorithm-def), [Simulationen](https://de.wikipedia.org/wiki/Monte-Carlo-Simulation), [Mittel-](https://de.wikipedia.org/wiki/Mittelwert) und [Erwartungswert](https://de.wikipedia.org/wiki/Erwartungswert), [Bäumen](https://de.wikipedia.org/wiki/Baum_(Datenstruktur)) und der [Tiefen-](https://de.wikipedia.org/wiki/Tiefensuche) wie auch [Breitensuche](https://de.wikipedia.org/wiki/Breitensuche).
+In dieser Übung beschäftigen wir uns mit der [Zufallsfahrt](https://de.wikipedia.org/wiki/Random_Walk), determinierten und nicht-determinierten [Algorithmen](sec-algorithm-def), [Simulationen](https://de.wikipedia.org/wiki/Monte-Carlo-Simulation), [Mittel-](https://de.wikipedia.org/wiki/Mittelwert) und [Erwartungswert](https://de.wikipedia.org/wiki/Erwartungswert), [Bäumen](https://de.wikipedia.org/wiki/Baum_(Datenstruktur)) und der [Tiefen-](https://de.wikipedia.org/wiki/Tiefensuche) wie auch [Breitensuche](https://de.wikipedia.org/wiki/Breitensuche).
 ```
 
 Roboter dienen uns heute in vielen Bereichen als Helfer und Assistenten.
@@ -243,6 +243,7 @@ auf.
 
 ```{admonition} Animation
 :class: remark
+:name: remark-robo-animation
 Das Animieren der Welt kann nur einmal am Ende Ihrer Wanderung ausgeführt werden, da der Speicher (die Wanderung) danach vergessen wird.
 ```
 
@@ -1071,6 +1072,7 @@ Als nächstes sollen Sie das gleiche Gebiet determiniert (ohne Zufall) durchlauf
 
 ```{admonition} Determiniertheit und Determinismus
 :class: attention
+:name: attention-determinism-vs-determination
 Die Begriffe **determiniert** und **deterministisch** haben in der Informatik eine ganz bestimmte Bedeutung, welche wir nur allzu gerne verwechseln.
 
 + Ein *determinierter* [Algorithmus](sec-algorithms) erzeugt bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.

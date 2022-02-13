@@ -1,3 +1,4 @@
+(sec-computer-basics)=
 # Grundlagen
 
 Beim Design der Computer kristallisierten sich vier wesentliche Aufgaben heraus.
@@ -11,6 +12,7 @@ Sie bilden das Fundament eines jeden Computers.
 
 ```{admonition} EVA-Prinzip
 :class: remark
+:name: remark-eva
 Der Computer basiert auf dem sog. *EVA-Prinzip* (**Eingabe**, **Verarbeitung** und **Ausgabe**).
 ```
 

@@ -58,6 +58,7 @@ Da wir in der *prozeduralen Programmierung* bevorzugt [reine Funktionen](sec-pur
 
 ```{admonition} Prozedurale Programmierung
 :class: definition
+:name: def-procedural-programming
 Die *prozedurale Programmierung* ist ein *Programmierparadigma*, welches auf *Funktionen / Prozeduren* aufgebaut ist.
 Sie gilt als Erweiterung des *imperativen Paradigmas*.
 ```
@@ -114,6 +115,7 @@ Diese Methode wird aufgerufen sobald wir das Objekt durch ``Rectangle(x=10, y=10
 
 ```{admonition} Objektorientierte Programmierung (OOP)
 :class: definition
+:name: def-oop
 Die *objektorientierte Programmierung* ist ein Programmierparadigma, welches auf *Objekten* aufgebaut ist.
 Diese *Objekte* beinhalten und kapseln *Daten* und deren dazugehörige *Methoden*.
 ```

@@ -34,8 +34,8 @@ Haben Sie bereits Programmiererfahrung, so werden Sie *atomare Datentypen* als *
 Dennoch verhalten sich *atomare Datentypen* ähnlich wie *primitive Datentypen*.
 
 ```{admonition} Python und primitive Datentypen
-:name: remark-primitive-data-types-in-python
-:class: remark
+:name: theorem-primitive-data-types-in-python
+:class: theorem
 
 Es gibt in ``Python`` keine primitiven Datentypen.
 ```
@@ -72,7 +72,8 @@ In anderen Worten, wird der Speicher von Ihrem laufenden Programm nicht mehr ben
 Der Speicher der durch einen Wert eines *atomaren Datentyp* belegt ist kann also durchaus verändert werden, allerdings nur dann wenn er nicht mehr gebraucht wird.
 
 ```{admonition} Unveränderliche atomare Datentypen
-:class: attention
+:class: theorem
+:name: theorem-immutable-atom-data-types
 Atomare Datentypen sind *unveränderlich*.
 ```
 
@@ -82,6 +83,7 @@ Für *atomare Datentypen* gilt noch mehr:
 
 ```{admonition} Unveränderliche atomare Datentypen
 :class: remark
+:name: remark-immutable-atom-data-types
 Ändern wir den **Wert** einer Variable vom Typ ``int``, ``bool`` oder ``float``, so kann diese Änderung nicht den **Wert** einer anderen Variablen verändern.
 ```
 

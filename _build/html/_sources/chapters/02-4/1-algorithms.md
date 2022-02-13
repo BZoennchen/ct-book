@@ -44,14 +44,14 @@ Dazu zieht er wiederholt die kleiner der beiden Längen von der größeren ab.
 Der ggT verändert sich dadurch nicht.
 
 ```{admonition} Größter gemeinsamer Teiler
-:name: ggt-theorem
+:name: theorem-ggt
 :class: theorem
 
 Seien $n$, $m$ zwei natürliche Zahlen mit $n > m$ und $d = n - m$ so ist der *größte gemeinsame Teiler* von $n$, $m$ und $d$ identisch.
 ```
 
 ```{admonition} Beweis
-:name: ggt-theorem-proof
+:name: proof-theorem-ggt
 :class: proof dropdown
 
 Jede natürliche Zahl kann als Produkt ihrer Primfaktorzerlegung geschrieben werden.

@@ -1,3 +1,4 @@
+(sec-math-relation)=
 # Relationen
 
 ## Das Kartesisches Produkt

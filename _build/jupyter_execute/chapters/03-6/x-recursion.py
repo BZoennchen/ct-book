@@ -13,6 +13,7 @@ Wir werden in diesem Abschnitt nicht über Rekursion an sich sprechen, sondern w
 
 ```{admonition} Rekursive Funktionen
 :class: definition
+:name: def-recursive-function
 Als *rekursive Funktion* wird eine Funktion bezeichnet, welche sich für bestimmte Argumente selbst aufruft.
 ```
 
@@ -87,6 +88,7 @@ Außerdem ist der Stack ein zusammenhängender Speicherbereich, d.h., aufeinande
 
 ```{admonition} Stack und Funktionsaufrufe
 :class: remark
+:name: remark-stack-speed
 Damit wir als Programmierer\*innen Codeblöcke aus Gründen der Laufzeit Funktionen vermeiden, muss der *Stack* sehr effizient sein!
 ```
 

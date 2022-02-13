@@ -1,3 +1,4 @@
+(sec-imperativ-and-functional)=
 # Imperativ und funktional
 
 Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte *Seiteneffekte* nicht erlauben und anstatt Variablen (abänderbar) nur Konstanten (unabänderlich) zulassen.
@@ -67,7 +68,8 @@ y = 1
 print(f(2))
 
 ````{admonition} Reine Funktion und Python
-:class: python
+:class: remark
+:name: remark-python-pure-functions
 ``Python`` macht es uns schwer keine *reine Funktion* zu konstruieren.
 Zum Beispiel würde folgender Code zu einem Fehler führen:
 

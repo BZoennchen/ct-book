@@ -1,3 +1,4 @@
+(sec-sorting-cards-alg)=
 # Karten sortieren
 
 Stellen Sie sich vor, Sie beginnen in einer gemütlichen Runde einen Spielabend.
@@ -108,6 +109,7 @@ Wenn wir beispielsweise einen Ball fangen möchten, dann starten wir keine kompl
 
 ```{admonition} Blickheuristik
 :class: remark
+:name: remark-looking-heuristics
 
 Ein Fänger, der die Blickheuristik verwendet, beobachtet den Anfangswinkel des Balls und rennt so darauf zu, dass dieser Winkel konstant bleibt.
 ```
@@ -118,6 +120,7 @@ Und selbst wenn Sie das Problem heuristisch lösen, um Ihre Lösungsstrategie je
 
 ```{admonition} Heuristische Algorithmen
 :class: remark
+:name: remark-heuristics
 
 Heuristische Algorithmen folgen einfachen Daumenregeln die oft zu guten aber nicht zwangsläufig den besten Resultaten führen.
 

@@ -129,6 +129,7 @@ print(x)
 
 ```{admonition} Aufeinander folgende Fallunterscheidungen
 :class: remark
+:name: remark-multi-cases
 Es ist zu empfehlen aufeinanderfolgende ``if``-Statements durch eine Leerzeile zu trennen.
 ```
 

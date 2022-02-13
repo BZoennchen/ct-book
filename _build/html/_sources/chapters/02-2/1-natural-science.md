@@ -1,3 +1,4 @@
+(sec-information-natural-sciences)=
 # Naturwissenschaften
 
 Beginnen wir mit der naturwissenschaftlichen Perspektive, hauptsächlich aus der *Informatik* und Physik.
@@ -19,6 +20,7 @@ Warum dies nicht geschieht und weshalb sich Ihre Hände erwärmen, liegt an der 
 
 ```{admonition} Irreversible Prozesse
 :class: remark
+:name: remark-irreversible-process
 
 Findet in einem abgeschlossenen System ein *irreversibler Prozess* statt (einer der sich nicht umkehren lässt), so nimmt die *Entropie* dieses Systems immer zu. Sie nimmt niemals ab!
 ```
@@ -58,6 +60,7 @@ Und da das Ei, welches Ihnen entgegen springt, derart wenige Mikrozustände hat,
 
 ```{admonition} Entropie (Physik)
 :class: definition
+:name: def-entropy-physics
 Die Entropie beschreibt die Anzahl der Teilchenanordnungen (Mikrozustände), die zu einem gegebenen (Makro)-Zustand des Systems führen.
 ```
 
@@ -68,6 +71,7 @@ Deshalb ist der Mangel an Information groß.
 
 ```{admonition} Information (Physik)
 :class: definition
+:name: def-information-physics
 Die *Information* ist jenes etwas, durch das ein Beobachter auf die exakte Teilchenanordnungen eines Systems schließen kann.
 ```
 

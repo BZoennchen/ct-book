@@ -1,3 +1,4 @@
+(sec-function-calls)=
 # Funktionsaufrufe
 
 Wenn Sie das Buch von vorne bis hierhin gelesen haben, werden Ihnen so einige Funktionsdefinitionen über den Weg gelaufen sein.

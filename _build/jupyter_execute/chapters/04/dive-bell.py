@@ -7,6 +7,8 @@ In diesem Abschnitt lernen Sie die Grundprinzipien der *Informationsübertragung
 Sie erlernen den Unterschied zwischen *Information*, *Daten* und *Codierung* und wie Kommunikation durch Einhaltung eines *Protokolls* möglich wird.
 
 Wir entwerfen und verbessern Algorithmen zur Kommunikation und diskutieren, wie sich Algorithmen vergleichen lassen.
+
+In dieser Übung beschäftigen wir uns mit der [linearen](def-linear-search) und [binären Suche](def-binary-search), Codierungsbäumen, künstlicher Intelligenz und welche Fragen zur Technik wir uns Entwickler\*innen möglicherweise widmen sollten.
 ```
 
 Beim sogenannten Locked-in-Syndrom ist man infolge eines Schlaganfalls vollständig gelähmt.
@@ -129,6 +131,7 @@ Einen solchen Algorithmus, der eine Menge von Regeln für den Informationsaustau
 
 ```{admonition} Kommunikationsprotokoll
 :class: definition
+:name: def-protocols
 Ein *Kommunikationsprotokoll* ist eine Vereinbarung zum Austausch von Informationen.
 Sie besteht aus einem Satz von Regeln und Formaten ([Syntax](def-syntax)), die das Kommunikationsverhalten der kommunizierenden Instanzen in den Computern bestimmen ([Semantik](def-semantik)).
 ```
@@ -284,13 +287,13 @@ Anstatt mit der gesamten Tabelle ins Gespräch zu gehen könnten wir lediglich d
 ```
 
 Wie würden wir die $n$ häufigsten Wörter in absteigender Reihenfolge aus unserem ``Python`` [Dictionary](def-python-dictionary) extrahieren?
-Können Sie hierfür eventuell die gleichen Algorithmen verwenden wie in [Karten sortieren in Python](sort-cards-with-python)?
+Können Sie hierfür eventuell die gleichen Algorithmen verwenden wie in [Karten sortieren in Python](sec-sort-cards-with-python)?
 
 ```{exercise} Temporäres Lernen mit dem Dictionary
 :label: blinking-temp-learning-dict-exercise
 Schreiben Sie eine Programmcode der Ihnen die ``n`` häufigsten Wörter in sortierter absteigender Reihenfolge aus dem [Dictionary](def-python-dictionary) ``word_frequency`` extrahiert.
 
-**Tipp:** Bauen Sie eine Liste die alle Schlüssel enthält und sortieren Sie diese anhand des [Dictionarys](def-python-dictionary). Sie können den Code aus [Karten sortieren in Python](sort-cards-with-python) verwenden.
+**Tipp:** Bauen Sie eine Liste die alle Schlüssel enthält und sortieren Sie diese anhand des [Dictionarys](def-python-dictionary). Sie können den Code aus [Karten sortieren in Python](sec-sort-cards-with-python) verwenden.
 ```
 
 ########### Diesen Code haben wir einfach kopiert ###########
@@ -1001,15 +1004,15 @@ Und wie es dem Handwerker zugute kommen kann über das Wesen des Hammers nachzud
 ## Der Mensch im Zentrum
 
 Entwickeln wir neue Algorithmen und Informationssysteme für eine(n) Anwender\*in sollte der Mensch im Zentrum stehen.
-Wenn Dominique mit unserer verbesserten Variante der Kommunikation nicht so gut zurechtkommt oder mit diese schlicht nicht zurechtkommen will, aus welchen Gründen auch immer, dann ist sie für ihn nutzlos.
-Möchten wir Dominique helfen, müssen wir uns zu allerst mit ihm auseinandersetzen, mit ihm kommunizieren und herausfinden was er braucht und vorallem möchte und was eben nicht.
+Wenn Dominique mit unserer verbesserten Variante der Kommunikation nicht so gut zurechtkommt oder mit dieser schlicht nicht zurechtkommen will, aus welchen Gründen auch immer, dann ist sie für ihn nutzlos.
+Möchten wir Dominique helfen, müssen wir uns zuallererst mit ihm auseinandersetzen, mit ihm kommunizieren und herausfinden was er braucht und möchte und was eben nicht.
 
 Ist die Anwenderschaft groß bzw. breit aufgestellt, gilt dies ebenso.
 Allerdings gestaltet sich die Beantwortung dieser Fragen dann als viel schwieriger.
 Hinzu kommt, dass wir uns fragen sollten welche Auswirkungen unsere Anwendung, nicht nur auf die Anwenderschaft, sondern eben auch auf jene Menschen hat, die sich von unserer Anwendung, aus verschiedenen Gründen, fernhalten wollen oder müssen.
 Gründe hierfür gibt es viele.
-Möglicherweise fehlt manchen Menschen der Zugang, sei es wegen kognitiver oder physischer Gegebenheiten, finanzieller Mittel oder weil Dienste nicht angeboten werden.
+Möglicherweise fehlt manchen Menschen der Zugang, sei es wegen kognitiver oder physischer Gegebenheiten, finanziellen Mittel oder weil Dienste nicht angeboten werden.
 Andere sehen in der Anwendung eine Gefahr oder möchten sie, aus welchen Gründen auch immer, nicht nutzen.
 
 Neue Technik der Technik wegen, kann und sollte nicht unser Anspruch sein.
-Anstattdessen sollte Technik den Menschen emanzipieren.
+Stattdessen sollte Technik den Menschen emanzipieren.

@@ -37,6 +37,7 @@ Besonders wichtig sind dabei die Zahlenmengen:
 + Ganzen Zahlen: $\mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \}$
 + Rationalen Zahlen: $\mathbb{Q} = \left\{ \frac{a}{b} : a \in \mathbb{Z}, b \in \mathbb{N} \right\}$
 + Reelle Zahlen:  $\mathbb{R} = \{ \ldots, -e, 1.5, \sqrt{2}, \pi, \ldots \}$
++ Binäre Zahlen: $\mathbb{B} = \{0,1\}$
 
 Enthält eine Menge $B$ alle Elemente einer Menge $A$ so drücken wir diesen Sachverhalt mit
 

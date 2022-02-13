@@ -88,6 +88,7 @@ Wir können rekursiv oder iterativ denken.
 
 ```{admonition} Iteration und Rekursion
 :class: theorem
+:name: theorem-iteration-and-recursion
 Sofern beim Mittel der Iteration, die Anzahl der Durchläufe vor ihrer Ausführung bekannt sein muss, können wir überraschenderweise jede Rekursion in eine Iteration und jede Iteration in eine Rekursion umwandeln!
 ```
 

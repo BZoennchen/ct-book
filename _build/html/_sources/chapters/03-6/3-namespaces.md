@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-namespaces)=
 # Namensräume und Sichtbarkeit
 
 Jeder *Name*, d.h. jede *Variable* in einem Programm hat einen sogenannten 
@@ -221,8 +222,9 @@ printZ()
 z
 ```
 
-```{admonition} Doppelte Namensräume?
+```{admonition} Mehrere Namensräume?
 :class: remark
+:name: remark-duplicated-namespaces
 
 Eine Variable kann innerhalb einer Funktion einem der vier Namensräume stammen.
 Niemals jedoch an der einen Stelle aus dem einen und an der anderen Stelle aus dem anderen Namensraum!

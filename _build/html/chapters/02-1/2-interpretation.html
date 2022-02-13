@@ -162,12 +162,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-3/2-middleages.html">
-     3.2. Mittelalter bis 19. Jahrundert
+     3.2. Mittelalter bis 19. Jahrhundert
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-3/3-today.html">
-     3.3. 19. Jahrundert bis heute
+     3.3. 19. Jahrhundert bis heute
     </a>
    </li>
    <li class="toctree-l2">
@@ -576,7 +576,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/11-typing-in-python.html">
-     4.11. Pythons Typisierung
+     4.11. Python’s Typisierung
     </a>
    </li>
   </ul>
@@ -887,7 +887,7 @@ Die Zeichenfolge <code class="docutils literal notranslate"><span class="pre">23
 <p>Die Repräsentanten werden in einer ganz bestimmten Art und Weise niedergeschrieben.
 Diese Vorschrift bezeichnen wir als <a class="reference internal" href="#def-syntax"><span class="std std-ref">Syntax</span></a>.
 Die <a class="reference internal" href="#def-syntax"><span class="std std-ref">Syntax</span></a> des Datums <code class="docutils literal notranslate"><span class="pre">23.10.2022</span></code> lautet <code class="docutils literal notranslate"><span class="pre">tt.mm.jjjj</span></code>, wobei <code class="docutils literal notranslate"><span class="pre">tt</span></code> eine Zahl zwischen 1 und 31 sein muss.
-Das Stopsymbol gibt es in leicht unterschiedlichen Ausführungen (Größe, Farbe) doch bleiben dessen Charakteristiken sehr ähnlich.</p>
+Das Stop-Symbol gibt es in leicht unterschiedlichen Ausführungen (Größe, Farbe) doch bleiben dessen Charakteristiken sehr ähnlich.</p>
 <div class="exercise admonition" id="syntax-and-semantik-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span>(Syntax und Semantik)</p>
 <div class="section" id="exercise-content">
@@ -899,10 +899,10 @@ Die Zeichenkette <code class="docutils literal notranslate"><span class="pre">23
 Zudem referenziert die Zeichenfolge einen realen Gegenstand, den echten <code class="docutils literal notranslate"><span class="pre">23.</span> <span class="pre">Oktober</span> <span class="pre">2022</span></code>.
 <code class="docutils literal notranslate"><span class="pre">23.</span> <span class="pre">Oktober</span> <span class="pre">2022</span></code> ist wiederum ein Repräsentant!
 Wir können den echten Tag nicht niederschreiben, wir können ihn lediglich referenzieren.</p>
-<p>Das Stopsymbol symbolisiert das Stehenbleiben und dessen Qualität (Abbremsen, Autofahren, Straße, Straßenverkehr, …).
+<p>Das Stop-Symbol symbolisiert das Stehenbleiben und dessen Qualität (Abbremsen, Autofahren, Straße, Straßenverkehr, …).
 Es referenziert einen Sachverhalt der Realwelt, das Stehenbleiben eines konkreten Fahrzeugs.
 Zusätzlich hat es auf uns eine bestimmte Wirkung, nämlich dass wir, wenn wir es sehen, stehenbleiben.</p>
-<p>Repräsentanten können mehrere Interpretationen besitzen und ein echter Gegenstand oder Sachverhalt kann mehrere Repräsentanten besitzten.
+<p>Repräsentanten können mehrere Interpretationen besitzen und ein echter Gegenstand oder Sachverhalt kann mehrere Repräsentanten besitzen.
 Zum Beispiel haben folgende Wörter eine doppelte Bedeutung.</p>
 <ul class="simple">
 <li><p>Flügel (Instrument und Körperteil eines Vogels)</p></li>
@@ -913,10 +913,16 @@ Zum Beispiel haben folgende Wörter eine doppelte Bedeutung.</p>
 <div class="section" id="der-computer">
 <h2><span class="section-number">2.2.2. </span>Der Computer<a class="headerlink" href="#der-computer" title="Permalink to this headline">¶</a></h2>
 <p>Der Computer und seine Bestandteile (Hardware und Software) interpretieren anstelle von Zeichnungen, Folgen von <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Bytes</span></a> in einer von uns Menschen vordefinierten Art und Weise.
-Im Zusammenhang mit dem Computer sind <strong>Bedeutung</strong> <span class="math notranslate nohighlight">\(B\)</span> und <strong>Repräsentation</strong> <span class="math notranslate nohighlight">\(R\)</span> Mengen, wohingegen die <strong>Interpretation</strong> <span class="math notranslate nohighlight">\(I\)</span> eine Funktion</p>
-<div class="math notranslate nohighlight" id="equation-eq-interpretation">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-interpretation" title="Permalink to this equation">¶</a></span>\[I : R \rightarrow B\]</div>
-<p>ist.</p>
+Im Zusammenhang mit dem Computer sind <strong>Bedeutung</strong> <span class="math notranslate nohighlight">\(B\)</span> und <strong>Repräsentation</strong> <span class="math notranslate nohighlight">\(R\)</span> Mengen, wohingegen die <strong>Interpretation</strong> <span class="math notranslate nohighlight">\(I\)</span> eine Funktion ist.</p>
+<div class="definition admonition" id="def-interpretation">
+<p class="admonition-title">Interpretation</p>
+<p>Eine <em>Interpretation</em> <span class="math notranslate nohighlight">\(I\)</span> ist eine Funktion</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+I : R \rightarrow B
+\end{equation*}\]</div>
+<p>welche jedem Repräsentanten <span class="math notranslate nohighlight">\(r \in R\)</span> seine Bedeutung <span class="math notranslate nohighlight">\(I(r) \in B\)</span> zuweist.</p>
+</div>
 <p>Ein Beispiel ist die Codierung von Zahlen durch zwei Bits.</p>
 <ul class="simple">
 <li><p>Bedeutung <span class="math notranslate nohighlight">\(B = \left\{ 0, 1, 2, 3 \right\}\)</span></p></li>

@@ -37,7 +37,7 @@ interpretieren wir als Anweisung beim Autofahren.
 Die Repräsentanten werden in einer ganz bestimmten Art und Weise niedergeschrieben.
 Diese Vorschrift bezeichnen wir als [Syntax](def-syntax).
 Die [Syntax](def-syntax) des Datums ``23.10.2022`` lautet ``tt.mm.jjjj``, wobei ``tt`` eine Zahl zwischen 1 und 31 sein muss.
-Das Stopsymbol gibt es in leicht unterschiedlichen Ausführungen (Größe, Farbe) doch bleiben dessen Charakteristiken sehr ähnlich.
+Das Stop-Symbol gibt es in leicht unterschiedlichen Ausführungen (Größe, Farbe) doch bleiben dessen Charakteristiken sehr ähnlich.
 
 ```{exercise} Syntax und Semantik
 :label: syntax-and-semantik-exercise
@@ -50,11 +50,11 @@ Zudem referenziert die Zeichenfolge einen realen Gegenstand, den echten ``23. Ok
 ``23. Oktober 2022`` ist wiederum ein Repräsentant!
 Wir können den echten Tag nicht niederschreiben, wir können ihn lediglich referenzieren.
 
-Das Stopsymbol symbolisiert das Stehenbleiben und dessen Qualität (Abbremsen, Autofahren, Straße, Straßenverkehr, ...).
+Das Stop-Symbol symbolisiert das Stehenbleiben und dessen Qualität (Abbremsen, Autofahren, Straße, Straßenverkehr, ...).
 Es referenziert einen Sachverhalt der Realwelt, das Stehenbleiben eines konkreten Fahrzeugs.
 Zusätzlich hat es auf uns eine bestimmte Wirkung, nämlich dass wir, wenn wir es sehen, stehenbleiben.
 
-Repräsentanten können mehrere Interpretationen besitzen und ein echter Gegenstand oder Sachverhalt kann mehrere Repräsentanten besitzten.
+Repräsentanten können mehrere Interpretationen besitzen und ein echter Gegenstand oder Sachverhalt kann mehrere Repräsentanten besitzen.
 Zum Beispiel haben folgende Wörter eine doppelte Bedeutung.
 
 + Flügel (Instrument und Körperteil eines Vogels)
@@ -64,14 +64,20 @@ Zum Beispiel haben folgende Wörter eine doppelte Bedeutung.
 ## Der Computer
 
 Der Computer und seine Bestandteile (Hardware und Software) interpretieren anstelle von Zeichnungen, Folgen von [Bits](def-bit) und [Bytes](def-byte) in einer von uns Menschen vordefinierten Art und Weise.
-Im Zusammenhang mit dem Computer sind **Bedeutung** $B$ und **Repräsentation** $R$ Mengen, wohingegen die **Interpretation** $I$ eine Funktion
+Im Zusammenhang mit dem Computer sind **Bedeutung** $B$ und **Repräsentation** $R$ Mengen, wohingegen die **Interpretation** $I$ eine Funktion ist.
 
-```{math}
-:label: eq:interpretation
+````{admonition} Interpretation
+:class: definition
+:name: def-interpretation
+Eine *Interpretation* $I$ ist eine Funktion 
+
+\begin{equation*}
 I : R \rightarrow B
-```
+\end{equation*}
 
-ist.
+welche jedem Repräsentanten $r \in R$ seine Bedeutung $I(r) \in B$ zuweist.
+
+````
 
 Ein Beispiel ist die Codierung von Zahlen durch zwei Bits.
 

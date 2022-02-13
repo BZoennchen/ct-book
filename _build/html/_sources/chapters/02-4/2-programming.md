@@ -1,3 +1,4 @@
+(sec-programming)=
 # Programmieren
 
 Programmieren ist eine Tätigkeit bei der wir unsere Ideen und Konzepte, d.h. das was wir beim [Computational Thinking](sec-what-is-ct) mental zustande bekommen haben, in Text überzuführen.
@@ -51,6 +52,7 @@ Dies werden wir in diesem Kurs bevorzugen und den Umweg über *Pseudocode* weite
 
 ```{admonition} Von anderen Entwickler\*innen lernen
 :class: remark
+:name: remark-learning-from-code
 Um neue Denkmuster anderer Denker\*innen zu erlernen oder sich von ihnen inspirieren zu lassen, lohnt es sich den Programmiercode anderer Entwickler\*innen zu analysieren.
 ```
 
