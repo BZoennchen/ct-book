@@ -43,6 +43,7 @@ Funktionen, welche Funktionen im mathematischen Sinne sind, bezeichnet man als [
 
 ```{admonition} Reine Funktionen
 :class: attention
+:name: attention-pure-functions
 
 *Unreine Funktionen* zu definieren sollte einen wichtigen Grund haben, andernfalls sind *reine Funktionen* zu bevorzugen! 
 ```

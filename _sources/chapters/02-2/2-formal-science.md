@@ -9,6 +9,7 @@ kernelspec:
   language: python
   name: python3
 ---
+(sec-information-cs)=
 # Strukturwissenschaften
 
 ## Nachrichtentechnik 
@@ -182,6 +183,7 @@ Beim Zusammensetzen der Einzelteile, also der Kombination von Symbolen, entsteht
 
 ```{admonition} Information (Informatik)
 :class: remark
+:name: remark-information-cs
 Eine *Information* ist eine übertragene Nachricht und kann als die Summe ihrer Einzelteile betrachtet werden.
 ```
 
@@ -194,6 +196,7 @@ Alle Manipulationen sind syntaktischer Natur, d.h. eine Manipulation von Zeichen
 
 ```{admonition} Formale Methoden
 :class: remark
+:name: remark-formal-methods
 Formale Methoden sind unter anderem eine Anstrengung um wesentliche semantische Aspekte von Sprache und Denken auf regelgeleitete, rein syntaktische Symbolmanipulation zurückzuführen.
 ```
 
@@ -276,7 +279,7 @@ Falls die Länge der kürzesten Beschreibung einer Zeichenkette größer oder gl
 Problematisch an der [Kolmogorow-Komplexität](def-kolmogorow-complexity) und im Gegensatz zur [Entropie](def-entropie) gilt, dass wir sie im Allgemeinen nicht berechnen können.
 
 ```{admonition} Unberechenbarkeit der Kolmogorow-Komplexität
-:name: def-uncomputable
+:name: theorem-uncomputable
 :class: theorem
 Sei eine beliebige Zeichenkette $w$ und $U$ eine Programmiersprache gegeben, so ist die Kolmogorow-Komplexität $C_U(w)$ im Allgemeinen **nicht** [berechenbar](def-computable).
 ```

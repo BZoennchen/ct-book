@@ -12,7 +12,7 @@ Irgendwann muss sich doch ein Datentyp nicht mehr weiter zerlegen lassen?
 Und weshalb ist eine ganze Zahl ``int`` kein primitiver Datentyp?
 
 ```{admonition} Datentypen in Python
-:name: alert-datatypes-python
+:name: attention-primitive-ds-in-python
 :class: attention
 Es gibt in ``Python`` keine primitiven Datentypen!
 ```

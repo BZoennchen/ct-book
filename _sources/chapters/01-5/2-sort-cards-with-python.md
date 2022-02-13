@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-(sort-cards-with-python)=
+(sec-sort-cards-with-python)=
 # Karten sortieren in Python
 
 Wir gehen nicht davon aus, dass Sie bereits jetzt alles verstehen was wir im Folgenden programmieren werden.
@@ -54,6 +54,8 @@ Eine Hand modellieren wir als Liste von Karten (Liste von Zeichenketten).
 
 ````{admonition} Liste (Python)
 :class: python
+:name: python-list
+
 Eine [Python Liste](sec-list) repräsentiert ein endliches *veränderbares mathematisches Tupel*.
 Elemente können an jeder Position aus der Liste entfernt, und eingefügt werden.
 Die Position eines Elements in der Liste nennen wir *Index*.
@@ -99,6 +101,8 @@ Wir verwenden diesmal keine ``list`` sondern ein unveränderbares ``Python``-``t
 
 ````{admonition} Tupel (Python)
 :class: python
+:name: python-tuple
+
 Ein [Python-Tupel](sec-tuple) repräsentiert ein endliches *unveränderbares mathematisches Tupel*.
 Die Position eines Elements im Tupel nennen wir *Index*.
 Beinhaltet das Tupel ``tpl``, ``n`` Elemente, so sind 

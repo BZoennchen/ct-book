@@ -162,12 +162,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-3/2-middleages.html">
-     3.2. Mittelalter bis 19. Jahrundert
+     3.2. Mittelalter bis 19. Jahrhundert
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-3/3-today.html">
-     3.3. 19. Jahrundert bis heute
+     3.3. 19. Jahrhundert bis heute
     </a>
    </li>
    <li class="toctree-l2">
@@ -576,7 +576,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/11-typing-in-python.html">
-     4.11. Pythons Typisierung
+     4.11. Python’s Typisierung
     </a>
    </li>
   </ul>
@@ -853,38 +853,40 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#das-bildformat-informationsreprasentation">
-   3.1. Das Bildformat (Informationsrepräsentation)
+  <a class="reference internal nav-link" href="#interpretation">
+   3.1. Interpretation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listen-in-python">
+     3.1.1. Listen in Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funktionen-in-python">
+     3.1.2. Funktionen in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#informationserzeugung">
+   3.2. Informationserzeugung
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#listen-in-python">
-   3.2. Listen in Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funktionen-in-python">
-   3.3. Funktionen in Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bildgenerierung-informationserzeugung">
-   3.4. Bildgenerierung (Informationserzeugung)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zeichnen-informationsmanipulation">
-   3.5. Zeichnen (Informationsmanipulation)
+  <a class="reference internal nav-link" href="#informationsmanipulation">
+   3.3. Informationsmanipulation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#daumenkino">
-   3.6. Daumenkino
+   3.4. Daumenkino
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fourier-zeichnungen-optional">
-   3.7. Fourier-Zeichnungen (optional)
+   3.5. Fourier-Zeichnungen (optional)
   </a>
  </li>
 </ul>
@@ -899,31 +901,35 @@
               <div>
                 
   <div class="section" id="binares-zeichnen-struktur-ist-information">
-<h1><span class="section-number">3. </span>Binäres Zeichnen - Struktur ist Information<a class="headerlink" href="#binares-zeichnen-struktur-ist-information" title="Permalink to this headline">¶</a></h1>
+<span id="sec-binary-drawing"></span><h1><span class="section-number">3. </span>Binäres Zeichnen - Struktur ist Information<a class="headerlink" href="#binares-zeichnen-struktur-ist-information" title="Permalink to this headline">¶</a></h1>
 <div class="learngoals admonition">
 <p class="admonition-title">Lernziel</p>
-<p>In diesem Abschnitt nutzen wir zwei Zustände <strong>Strom aus</strong>, <strong>Strom an</strong> bzw. <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> um erst ein Schwarz-Weiß-Bild</p>
+<p>In diesem Abschnitt werden wir das was wir im Abschnitt <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> und <a class="reference internal" href="../02-1/2-representation.html#sec-representation"><span class="std std-ref">Repräsentation</span></a> besprochen hatten konkretisieren.
+Wir werden eine bestimmte Interpretation nutzten um aus einer Folge von 0 und 1 Bilder</p>
 <div class="figure align-default" id="fig-zero-and-one-to-bw-picture">
 <a class="reference internal image-reference" href="../../_images/zero-and-one-to-bw-picture.png"><img alt="../../_images/zero-and-one-to-bw-picture.png" src="../../_images/zero-and-one-to-bw-picture.png" style="width: 200px;" /></a>
 </div>
-<p>und schlussendlich ein Video bzw. eine Animation</p>
+<p>und Animationen zu generieren.</p>
 <div class="figure align-default" id="fig-flower">
 <a class="reference internal image-reference" href="../../_images/flower.gif"><img alt="../../_images/flower.gif" src="../../_images/flower.gif" style="width: 200px;" /></a>
 </div>
 <p>zu repräsentieren.</p>
-<p>Diese Übung soll verdeutlichen, wie Informationen erst durch einen Interpreter eine bestimmte Bedeutung erlangen.
-Sie sollen selbst erfahren, wie durch Strukturen in einer Folge aus <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> Information entsteht.
-Sie werden diese Struktur selbst erarbeiten.</p>
-<p>In Sachen <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Programmierung lernen Sie mit mehrdimensionalen Listen und Tupeln umzugehen und wie sie Ihren Code durch Funktionen strukturieren können.</p>
-<p>Zudem werden Sie sehen, wie Sie durch <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionen in eine abstraktere Welt gelangen und in dieser denken können.
-Wir werden Probleme in viele Teilprobleme aufteilen (<strong>Dekomposition</strong>), Sie werden Ihre <strong>Mustererkennung</strong> benötigen und auch <strong>mathematisches Denken</strong> trainieren.</p>
+<p>Sie werden lernen wie <a class="reference internal" href="../02-2/information.html#sec-information"><span class="std std-ref">Informationen</span></a> erst durch einen <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> eine bestimmte Bedeutung erlangen.
+Sie werden den Umgang mit mehrdimensionalen <code class="docutils literal notranslate"><span class="pre">Python</span></code>-<a class="reference internal" href="../03-4/5-list.html#sec-list"><span class="std std-ref">Listen</span></a> und <a class="reference internal" href="../03-4/6-tuple.html#sec-tuple"><span class="std std-ref">Tupeln</span></a> erlernen.
+Außerdem werden Sie durch die Konstruktion einer eignen Interpretation in eine abstraktere Welt gelangen und sich in dieser austoben.
+Im Zuge dessen werden Sie Probleme in viele Teilprobleme aufteilen (<strong>Dekomposition</strong>).
+Sie werden Ihre <strong>Mustererkennung</strong> benötigen und auch <strong>mathematisches Denken</strong> praktizieren.</p>
 </div>
-<div class="section" id="das-bildformat-informationsreprasentation">
-<h2><span class="section-number">3.1. </span>Das Bildformat (Informationsrepräsentation)<a class="headerlink" href="#das-bildformat-informationsreprasentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="interpretation">
+<h2><span class="section-number">3.1. </span>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this headline">¶</a></h2>
 <p>Wir beginnen mit einem Schwarz-Weiß-Rasterbild.
-Ein <a class="reference internal" href="../02-1/2-representation.html#pixel-image"><span class="std std-ref">Rasterbild</span></a> hat eine bestimmte Anzahl <span class="math notranslate nohighlight">\(m\)</span> an Pixel in <span class="math notranslate nohighlight">\(y\)</span>-Richtung (Zeilen) und eine bestimmte Anzahl <span class="math notranslate nohighlight">\(n\)</span> an Pixel in <span class="math notranslate nohighlight">\(x\)</span>-Richtung (Spalten).
-Das Bild kann als <span class="math notranslate nohighlight">\(m \times n\)</span>-Matrix aufgefasst werden.
-In unserem Fall des Schwarz-Weiß-Bilds ist jeder Pixel entweder schwarz <span class="math notranslate nohighlight">\(0\)</span> oder weiß <span class="math notranslate nohighlight">\(1\)</span>.</p>
+In anderen Worten: Lassen Sie uns unsere eigene Interpretation konstruieren.</p>
+<p>Wir orientieren uns an dem sog. <a class="reference internal" href="../02-1/2-representation.html#pixel-image"><span class="std std-ref">Rasterbild</span></a>.
+Es hat eine bestimmte Anzahl an Pixel in <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span>-Richtung.
+Die Anzahl <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(x\)</span>-Richtung bezeichnen wir als Spalten und die Anzahl <span class="math notranslate nohighlight">\(m\)</span> in <span class="math notranslate nohighlight">\(y\)</span>-Richtung bezeichnen wir als Zeilen.
+Wir wollen lediglich Schwarz-Weiß-Bilder zeichnen können, deshalb benötigen wir nur zwei mögliche Zustände je Pixel.
+Wir <em>modellieren</em> dies mit 0 (schwarz) und 1 (weiß).
+Das Bild kann als <span class="math notranslate nohighlight">\(m \times n\)</span>-Matrix <span class="math notranslate nohighlight">\(B\)</span> mit <span class="math notranslate nohighlight">\(B \in \mathbb{B}^{m \times n}\)</span> aufgefasst werden.</p>
 <div class="exercise admonition" id="repraesentation-bw-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.4 </span>(Bits pro Pixel)</p>
 <div class="section" id="exercise-content">
@@ -936,8 +942,8 @@ In unserem Fall des Schwarz-Weiß-Bilds ist jeder Pixel entweder schwarz <span c
 <p>Jeder Pixel kann nur einen von zwei Zuständen annehmen, demnach brauchen wir pro Pixel <span class="math notranslate nohighlight">\(1\)</span> <em>Bit</em>.</p>
 </div>
 </div>
-<p>Jede Zeile des Bildes repräsentieren wir als Folge von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span>.
-Da wir unser Bild verändern möchten eignet sich in <code class="docutils literal notranslate"><span class="pre">Python</span></code> hierfür die Liste <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<p>Jede Zeile des Bildes repräsentieren wir als Folge von 0 und 1.
+Da wir unser Bild verändern möchten, eignet sich in <code class="docutils literal notranslate"><span class="pre">Python</span></code> hierfür die Liste <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -945,7 +951,7 @@ Da wir unser Bild verändern möchten eignet sich in <code class="docutils liter
 </div>
 </div>
 </div>
-<p>Ein Bild modellieren wir wiederum als eine Liste von Zeilen (Pixelstreifen) oder eben eine Liste von Listen.</p>
+<p>Ein Bild <em>modellieren</em> wir wiederum als Liste von Zeilen (Pixelstreifen) oder eben eine Liste von Listen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># 1. Zeile</span>
@@ -956,10 +962,28 @@ Da wir unser Bild verändern möchten eignet sich in <code class="docutils liter
 </div>
 </div>
 </div>
+<p>Unsere Interpretation erhält als Argument, d.h., als Repräsentanten eine zweidimensionale Liste aus Binärzahlen und liefert ein Schwarz-Weiß-Bild.
+Den notwendigen Interpreter, der diese Interpretation realisiert, bietet uns folgende Funktion:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/image-representation_5_0.png" src="../../_images/image-representation_5_0.png" />
+</div>
 </div>
 <div class="section" id="listen-in-python">
-<h2><span class="section-number">3.2. </span>Listen in Python<a class="headerlink" href="#listen-in-python" title="Permalink to this headline">¶</a></h2>
-<p>Mit</p>
+<h3><span class="section-number">3.1.1. </span>Listen in Python<a class="headerlink" href="#listen-in-python" title="Permalink to this headline">¶</a></h3>
+<p>Bevor wir weiter fortfahren, lassen Sie uns einen wiederholten Blick auf die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste werfen.
+Eine ausführlichere Diskussion zu Listen finden Sie im Abschnitt <a class="reference internal" href="../03-4/5-list.html#sec-list"><span class="std std-ref">Listen</span></a> im Teil <strong>PYTHON</strong>.</p>
+<p>Der Zugriff auf einzelne Listenelemente einer zweidimensionalen Liste unterscheidet sich im Endeffekt nicht von dem der eindimensionalen Liste.
+Mit</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picture</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span>
@@ -972,9 +996,12 @@ Da wir unser Bild verändern möchten eignet sich in <code class="docutils liter
 </div>
 </div>
 </div>
-<p>greifen wir auf das Element in der <code class="docutils literal notranslate"><span class="pre">4</span></code>-ten Zeile und <code class="docutils literal notranslate"><span class="pre">6</span></code>-ten Spalte zu denn der Index einer Liste beginnt mit <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
-<p>Bevor wir weiter fortfahren möchten wir ein wichtiges Merkmal der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste hervorheben.
-Sie könnten dazu geneigt sein folgender Code zu verwenden um ein Bild mit zwei identischen Zeilen zu erzeugen.</p>
+<p>greifen wir auf die vierte Liste der Liste <code class="docutils literal notranslate"><span class="pre">picture</span></code> zu und in dieser auf das sechste Element.
+Bedenken Sie, dass der Index einer Liste mit 0 startet.
+Im Falle unseres Bildes entspricht dies dem Zugriff des sechsten Elements in der vierten Zeile.</p>
+<p>Wenn Sie mit Listen arbeiten, ist es wichtig zu wissen wie diese im Speicher abgelegt werden, siehe Abschnitt <a class="reference internal" href="../03-4/5-list.html#sec-list-and-memory"><span class="std std-ref">Listen und der Speicher</span></a>.
+Wenn wir unser Rasterbild aus Listen von Listen konstruieren müssen wir dieses Wissen mit einbeziehen.
+Folgender Code erzeugt ein Bild mit zwei <a class="reference internal" href="../03-3/1-variables.html#def-identity"><span class="std std-ref">identischen</span></a> Zeilen zu erzeugen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -983,11 +1010,11 @@ Sie könnten dazu geneigt sein folgender Code zu verwenden um ein Bild mit zwei 
 </div>
 </div>
 </div>
-<p>Doch hierbei entsteht ein merkwürdiges Phänomen, welches die folgende Aufgabe zum Vorschein bringt.</p>
+<p>Da die beiden Zeilen identische sind, entsteht ein merkwürdiges Phänomen, welches die folgende Aufgabe zum Vorschein bringt.</p>
 <div class="exercise admonition" id="copy-list-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.5 </span>(Kopie einer Liste)</p>
 <div class="section" id="exercise-content">
-<p>Ändern Sie nun ein einzelnen Pixel und lassen Sie sich das Ergebnis anzeigen.
+<p>Ändern Sie einen einzelnen Pixel des eben konstruierten Bildes <code class="docutils literal notranslate"><span class="pre">picture</span></code> und lassen Sie sich das Ergebnis anzeigen.
 Was stellen Sie fest?</p>
 </div>
 </div>
@@ -1001,9 +1028,26 @@ Was stellen Sie fest?</p>
 <p>so ändert wir sowohl <code class="docutils literal notranslate"><span class="pre">picture[0][0]</span></code> als auch <code class="docutils literal notranslate"><span class="pre">picture[1][0]</span></code>.</p>
 </div>
 </div>
-<p>Unser Bild enthält keine zwei identische Zeilen sondern zweimal die gleiche Zeile.
-Es wird nicht der Wert also <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">1]</span></code> kopiert sondern die Referenz / der Zeiger welche auf eine Liste zeigt.</p>
-<p>Um das gewünschte Ergebnis zu erzielen müssen wir die Liste und nicht ihre Referenz kopieren, hierzu bietet uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> die Listen-Methode <code class="docutils literal notranslate"><span class="pre">copy()</span></code> an:</p>
+<p>Unser Bild enthält nicht nur zwei <a class="reference internal" href="../03-3/1-variables.html#def-equality"><span class="std std-ref">gleiche</span></a> sondern zwei <a class="reference internal" href="../03-3/1-variables.html#def-identity"><span class="std std-ref">identische</span></a> Zeilen.
+Die Zeile, also der Wert <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">1]</span></code> wird nicht kopiert.
+Stattdessen wird die Speicheradresse kopiert, sodass beide Einträge der Liste <code class="docutils literal notranslate"><span class="pre">picture</span></code> die gleiche Adresse enthalten:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Address of first row is </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Address of second row is </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">picture</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Address of first row is 4762055232
+Address of second row is 4762055232
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um das gewünschte Ergebnis zu erzielen, müssen wir den Wert der Liste <code class="docutils literal notranslate"><span class="pre">row</span></code> und nicht deren Adresse kopieren.
+In anderen Worten: Wir müssen eine <em>tiefe</em> und keine <em>flache Kopie</em> anlegen, siehe Abschnitt <a class="reference internal" href="../03-4/5-list.html#sec-copy-of-ds"><span class="std std-ref">Tiefe und flache Kopie</span></a>.
+Hierzu bietet uns <code class="docutils literal notranslate"><span class="pre">Python</span></code> die Listen-Methode <code class="docutils literal notranslate"><span class="pre">copy()</span></code> an:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -1012,21 +1056,34 @@ Es wird nicht der Wert also <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 </div>
-<p>Da eine Kopie der Liste (des Objekts) gemacht wird, können Sie sicher sein, dass Änderungen der Listenelemente nur jene eine Liste betreffen.
-Bedenken Sie jedoch, dass keine sog. <em>tiefe Kopie</em> gemacht wird.
-Zum Beispiel laufen Sie mit</p>
+<p>Da nun alle Listenelemente in <code class="docutils literal notranslate"><span class="pre">row</span></code> kopiert werden, können Sie sicher sein, dass Änderungen der Listenelemente nur jene eine Liste betreffen.
+Bedenken Sie jedoch, dass <code class="docutils literal notranslate"><span class="pre">copy</span></code> nicht zwangsläufig eine <em>tiefe Kopie</em> erzeugt.
+Es kopiert lediglich die Elemente einer Liste indem deren Adressen kopiert werden.
+Ist Ihre Liste eine mehrdimensionale Liste, laufen Sie in das gleiche Problem:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">picture</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">row</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
-<span class="n">picture2</span> <span class="o">=</span> <span class="n">picture</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">picture2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">picture_copy</span> <span class="o">=</span> <span class="n">picture</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">picture_copy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">picture</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">picture_copy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1
 </pre></div>
 </div>
 </div>
 </div>
-<p>in das gleiche Problem.</p>
-<p>Um Listen zu verketten können Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> den <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator verwenden.</p>
+<div class="remark admonition" id="remark-deep-copy-python">
+<p class="admonition-title">Tiefe Kopie in Python</p>
+<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">deepcopy</span></code> des Moduls <code class="docutils literal notranslate"><span class="pre">copy</span></code> um eine <em>tiefe Kopie</em> in <code class="docutils literal notranslate"><span class="pre">Python</span></code> zu erzeugen.</p>
+</div>
+<p>Um Listen zu verketten, können Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> den <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator verwenden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
@@ -1040,17 +1097,16 @@ Zum Beispiel laufen Sie mit</p>
 </div>
 </div>
 <p>Das Ergebnis ist eine neue eindimensionale Liste die alle Elemente der beiden Listen in genau jener Reihenfolge enthält.
-Allerdings unterscheidet <code class="docutils literal notranslate"><span class="pre">Python</span></code> zwischen <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">+=</span> <span class="pre">other_list</span></code> und <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">=</span> <span class="pre">mylist</span> <span class="pre">+</span> <span class="pre">other_list</span></code>!
-Ersteres, also <code class="docutils literal notranslate"><span class="pre">+=</span></code>, führt eine <a class="reference internal" href="#def-mutable"><span class="std std-ref">veränderbare</span></a> (engl. <em>mutable</em>) Addition durch, d.h. hier wird <code class="docutils literal notranslate"><span class="pre">mylist</span></code> verändert.
-Letzteres, also <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">+</span> <span class="pre">other_list</span></code>, führt eine <a class="reference internal" href="#def-mutable"><span class="std std-ref">unveränderbare</span></a> (engl. <em>immutable</em>) Addition durch, wodurch eine Kopie erzeugt wird. D.h. <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">=</span> <span class="pre">mylist</span> <span class="pre">+</span> <span class="pre">other_list</span></code> erzeugt eine völlig neue Liste und ordnet es <code class="docutils literal notranslate"><span class="pre">mylist</span></code> zu.</p>
-<div class="admonition-veranderlich-und-unveranderlichkeit admonition" id="def-mutable">
-<p class="admonition-title">Veränderlich und Un­ver­än­der­lich­keit</p>
-<p>Wir nennen ein Objekt, z.B. eine Variable, <em>veränderlich</em> (engl. <em>mutable</em>) wenn wir dessen Wert verändern können indem wir den Speicherbereich des Objekts verändern können.
-Ein Objekt ist dagegen <em>unveränderlich</em> (engl. <em>immutable</em>) wenn wir dessen Speicherbereich nicht verändern können.
-Ist ein Objekt <em>unveränderlich</em> so wird dessen Veränderung durch eine Kopie (einen neuen Speicherbereich) realisiert.
-Das Ursprungsobjekt bleibt <em>unverändert</em>.</p>
-<p>Ist eine Operation <em>unveränderlich</em> so verändert sie den Speicherbereich der Objekte, auf denen sie ausgeführt wird, nicht</p>
+Allerdings unterscheidet <code class="docutils literal notranslate"><span class="pre">Python</span></code> zwischen</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">+=</span> <span class="n">other_list</span>
+</pre></div>
 </div>
+<p>und</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="n">mylist</span> <span class="o">+</span> <span class="n">other_list</span>
+</pre></div>
+</div>
+<p>Ersteres, also <code class="docutils literal notranslate"><span class="pre">+=</span></code>, führt eine <a class="reference internal" href="../03-3/1-variables.html#def-mutable"><span class="std std-ref">veränderbare</span></a> (engl. <em>mutable</em>) Konkatenation durch, d.h. hier wird <code class="docutils literal notranslate"><span class="pre">mylist</span></code> verändert.
+Letzteres, also <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">+</span> <span class="pre">other_list</span></code>, führt eine <a class="reference internal" href="../03-3/1-variables.html#def-mutable"><span class="std std-ref">unveränderbare</span></a> (engl. <em>immutable</em>) Konkatenation durch, wodurch eine Kopie erzeugt wird. D.h. <code class="docutils literal notranslate"><span class="pre">mylist</span> <span class="pre">=</span> <span class="pre">mylist</span> <span class="pre">+</span> <span class="pre">other_list</span></code> erzeugt eine völlig neue Liste und ordnet es <code class="docutils literal notranslate"><span class="pre">mylist</span></code> zu.</p>
 <p>Sie mögen nun denken, dass Ergebnis ist doch identisch?
 Sehen wir uns folgenden Code an:</p>
 <div class="cell docutils container">
@@ -1090,13 +1146,13 @@ c = [1, 2, 3, 4, 5, 6, 7, 8]
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">concat_mutable</span></code> verändert <code class="docutils literal notranslate"><span class="pre">list1</span></code> und da es sich nicht um einen <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> handelt, wird nur die Referenz kopiert und nicht die Liste <code class="docutils literal notranslate"><span class="pre">a</span></code> selbst.
 Somit wird <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code> ausgeführt und <code class="docutils literal notranslate"><span class="pre">a</span></code> wird verändert.
-Dies bezeichnen wir als sogenannten <em>Seiteneffekt</em> und in diesem Fall ist es ein unerwarteter <em>Seiteneffekt</em> den wir vermeiden sollten!
+Dies bezeichnen wir als sogenannten <a class="reference internal" href="../02-3/3-imperative-vs-functional.html#def-side-effect"><span class="std std-ref">Seiteneffekt</span></a> und in diesem Fall ist es ein <em>unerwarteter Seiteneffekt</em>, den wir vermeiden sollten!
 Dennoch ist <code class="docutils literal notranslate"><span class="pre">+=</span></code> immer dann sehr sinnvoll wenn Sie eine Liste sukzessive füllen wollen.
-Denn jedesmal die gesamte Liste zu kopieren kann zu einer langen Laufzeit führen.</p>
+Denn jedes Mal die gesamte Liste zu kopieren kann zu einer langen Laufzeit führen.</p>
 <div class="exercise admonition" id="mutable-vs-immutable-concat">
 <p class="admonition-title"><span class="caption-number">Exercise 3.6 </span>(Immutable vs. Mutable)</p>
 <div class="section" id="exercise-content">
-<p>Welcher der beiden Funktionen wird bei gleicher Eingabe schneller laufen und warum?
+<p>Welcher der beiden Funktionen wird bei gleicher Eingabe in kürzerer Zeit ablaufen und warum?
 Testen Sie beide Versionen für große <code class="docutils literal notranslate"><span class="pre">n</span></code> &gt; 0.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_range_mutable</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">number</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1113,7 +1169,7 @@ Testen Sie beide Versionen für große <code class="docutils literal notranslate
 </div>
 </div>
 </div>
-<p>Um über die Elemente einer Liste zu <em>iterieren</em>, verwendet man in <code class="docutils literal notranslate"><span class="pre">Python</span></code> das <a class="reference external" href="https://www.python-kurs.eu/python3_for-schleife.php">For-Schleife</a> und wie immer bestimmt die <a class="reference external" href="https://www.python-kurs.eu/python3_bloecke.php">Einrückung</a> die Strukturierung (<code class="docutils literal notranslate"><span class="pre">Python</span></code> verzichtet auf Klammern):</p>
+<p>Um über die Elemente einer Liste zu <em>iterieren</em>, verwendet man in <code class="docutils literal notranslate"><span class="pre">Python</span></code> die <code class="docutils literal notranslate"><span class="pre">for</span></code>-<a class="reference internal" href="../03-7/2-loops.html#sec-for"><span class="std std-ref">Schleife</span></a> und wie immer bestimmt die <a class="reference external" href="https://www.python-kurs.eu/python3_bloecke.php">Einrückung</a> die Strukturierung (<code class="docutils literal notranslate"><span class="pre">Python</span></code> verzichtet auf Klammern):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">picture</span><span class="p">:</span>
@@ -1163,11 +1219,10 @@ Testen Sie beide Versionen für große <code class="docutils literal notranslate
 </div>
 </div>
 <div class="section" id="funktionen-in-python">
-<span id="sec-python-function"></span><h2><span class="section-number">3.3. </span>Funktionen in Python<a class="headerlink" href="#funktionen-in-python" title="Permalink to this headline">¶</a></h2>
-<p>Funktionen definieren wir mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> gefolgt vom Funktionsnamen und den <em>Argumenten</em> der Funktion sowie ihrer Logik.
-Anstatt <em>Argumente</em> sprechen wir auch von <em>Parametern</em>.
-Falls Sie mit Ihrer Funktion einen Wert, eine Liste, oder ein anderes Objekt zurückgeben möchten nutzen Sie das <code class="docutils literal notranslate"><span class="pre">return</span></code>-Schlüsselwort.
-Variablen der Funktion sind ihre Argumente und alle anderen Variablen die sie innerhalb der Funktion definieren.
+<span id="sec-python-function"></span><h3><span class="section-number">3.1.2. </span>Funktionen in Python<a class="headerlink" href="#funktionen-in-python" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../03-6/intro.html#sec-functions"><span class="std std-ref">Funktionen</span></a> definieren wir mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> gefolgt vom Funktionsnamen und den <a class="reference internal" href="../03-3/3-invoking-functions.html#def-parameter"><span class="std std-ref">Parametern</span></a>  der Funktion sowie ihrer Logik.
+Die Werte, die diese <em>Parameter</em> beim Funktionsaufruf annehmen, nennen wir <em>Argumente</em>.</p>
+<p>Falls Sie mit Ihrer Funktion einen Wert, eine Liste, oder ein anderes Objekt zurückgeben möchten nutzen Sie das <code class="docutils literal notranslate"><span class="pre">return</span></code>-Schlüsselwort.
 Zum Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1186,15 +1241,16 @@ Zum Beispiel:</p>
 </div>
 </div>
 </div>
-<p>Die Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">c</span></code> außerhalb der Funktion haben nichts mit den Variablen innerhalb oder Argumenten der Funktion zu tun.
-Sie bleiben unverändert.
-Durch den obigen Aufruf wird erhalt das Argument <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">15</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> die Referenz zu <code class="docutils literal notranslate"><span class="pre">x</span></code> außerhalb der Funktion.
-<code class="docutils literal notranslate"><span class="pre">c</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">25</span></code> und wird zurückgegeben.
-Falls <code class="docutils literal notranslate"><span class="pre">y</span></code> innerhalb der Funktion verändert wird, würde <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine neue Kopie anlegen, da es sich um einen <em>unveränderlichen</em> (<em>immutable</em>) Datentyp handelt.
-Alle <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentypen</span></a> wie <code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">bool</span></code> aber auch <code class="docutils literal notranslate"><span class="pre">str</span></code>(Zeichenketten) und <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind unveränderlich.
+<p>Die <a class="reference internal" href="../03-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">c</span></code> außerhalb der Funktion befinden sich in einem anderen <a class="reference internal" href="../03-6/3-namespaces.html#sec-namespaces"><span class="std std-ref">Namensraum</span></a>.
+Deshalb bleiben diese unverändert.</p>
+<p>Durch den obigen Aufruf wird der Parameter <code class="docutils literal notranslate"><span class="pre">x</span></code> auf eine Speicheradresse gesetzt, die auf den Wert <code class="docutils literal notranslate"><span class="pre">15</span></code> <em>referenziert</em>.
+<code class="docutils literal notranslate"><span class="pre">y</span></code> hingegen wird auf die Speicheradresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> (welches sich außerhalb der Funktion befindet) gesetzt.
+<code class="docutils literal notranslate"><span class="pre">c</span></code> wird zu <code class="docutils literal notranslate"><span class="pre">25</span></code> und wird zurückgegeben.</p>
+<p>Falls <code class="docutils literal notranslate"><span class="pre">y</span></code> innerhalb der Funktion verändert wird, würde <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine neue Kopie des Werts im Speicher anlegen, da es sich um einen <em>unveränderlichen</em> (<em>immutable</em>) Datentyp handelt.
+Alle <a class="reference internal" href="../03-4/1-data-types.html#def-atomare-data-types"><span class="std std-ref">atomaren Datentypen</span></a> wie <code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">float,</span> <span class="pre">bool</span></code> aber auch <code class="docutils literal notranslate"><span class="pre">str</span></code>(Zeichenketten) und <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind unveränderlich.
 Listen jedoch nicht!</p>
-<p>Eine gute Übung ist es eine Liste zu <em>flatten</em>, d.h. aus einer mehrdimensionalen Liste, eine Liste der Dimension <span class="math notranslate nohighlight">\(1\)</span> zu machen.
-Hierbei soll die Reihenfolge der Elemente erhalten bleiben.</p>
+<p>Eine gute Übung ist es eine mehrdimensionale Liste zu <em>abzuflachen</em> (engl. <em>flatten</em>), d.h., aus einer mehrdimensionalen Liste wird eine Liste, welche eine Dimension weniger hat erzeugt.
+Hierbei bleibt die Reihenfolge der Elemente gewöhnlich erhalten.</p>
 <div class="exercise admonition" id="flatten-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 3.8 </span>(Flatten)</p>
 <div class="section" id="exercise-content">
@@ -1224,12 +1280,14 @@ Zum Beispiel soll aus <code class="docutils literal notranslate"><span class="pr
 </div>
 <p>In unserer Lösung bewirkt <code class="docutils literal notranslate"><span class="pre">result.append(element)</span></code> das gleich wie <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">+=</span> <span class="pre">[element]</span></code> jedoch ist die erste Version klarer zu lesen denn wir wollen das Element <code class="docutils literal notranslate"><span class="pre">element</span></code> anhängen (engl. append).</p>
 </div>
-<div class="section" id="bildgenerierung-informationserzeugung">
-<h2><span class="section-number">3.4. </span>Bildgenerierung (Informationserzeugung)<a class="headerlink" href="#bildgenerierung-informationserzeugung" title="Permalink to this headline">¶</a></h2>
-<div class="exercise admonition" id="repraesentation-pic-with-border">
+</div>
+<div class="section" id="informationserzeugung">
+<h2><span class="section-number">3.2. </span>Informationserzeugung<a class="headerlink" href="#informationserzeugung" title="Permalink to this headline">¶</a></h2>
+<div class="exercise admonition" id="representation-pic-with-border">
 <p class="admonition-title"><span class="caption-number">Exercise 3.9 </span>(Bild generieren)</p>
 <div class="section" id="exercise-content">
-<p>Generieren Sie ein weißes <span class="math notranslate nohighlight">\(10 \times 10\)</span> Rasterbild mit einem ein Pixel breiten schwarzen Rand.
+<p>Generieren Sie ein weißes <span class="math notranslate nohighlight">\(10 \times 10\)</span> Rasterbild.
+Dieses soll einen schwarzen Rand besitzen, welches einen Pixel breit ist.
 Nutzen Sie die Programmierung um sich Zeit zu sparen!</p>
 </div>
 </div>
@@ -1257,11 +1315,11 @@ Nutzen Sie die Programmierung um sich Zeit zu sparen!</p>
 </div>
 </div>
 </div>
-<p>Auch hier müssen Sie darauf achten die richtigen Kopien zu machen.
-Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim Schreiben sparen.</p>
-<div class="dropdown admonition">
+<p>Auch bei der Erzeugung dieses Bilds müssen Sie darauf achten die richtige Art von Kopien zu erzeugen.
+Um sich Code zu sparen kann das sog. <a class="reference internal" href="../03-7/3-comprehensions.html#sec-comprehension"><span class="std std-ref">List-Comprehension</span></a> Ihnen Zeit beim Schreiben sparen.</p>
+<div class="dropdown python admonition" id="python-list-comprehension">
 <p class="admonition-title">List Comprehension (Python)</p>
-<p>Das <em>List Comprehension</em> ist eine kurze Syntax um aus einer bestehenden Sequenz/Liste eine neue Liste zu erzeugen.</p>
+<p>Das <a class="reference internal" href="../03-7/3-comprehensions.html#sec-comprehension"><span class="std std-ref">List-Comprehension</span></a> ist eine kurze <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> um aus einer bestehenden Sequenz/Liste eine neue Liste zu erzeugen.</p>
 <p><strong>Beispiel:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
@@ -1281,8 +1339,8 @@ Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-8">
 <p class="admonition-title"><span class="caption-number">Exercise 3.10 </span>(Bild manipulieren)</p>
 <div class="section" id="exercise-content">
-<p>Testen Sie ihr generiertes Bild.
-Ändern Sie den Pixel in der <span class="math notranslate nohighlight">\(5\)</span>-ten Zeile und und <span class="math notranslate nohighlight">\(5\)</span>-Spalte, sowie einen Pixeln in der ersten Spalte und einen in der ersten Zeile</p>
+<p>Testen Sie Ihr generiertes Bild.
+Ändern Sie den Pixel in der 5-ten Zeile und und 5-ten Spalte, sowie einen Pixeln in der ersten Spalte und einen in der ersten Zeile</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1354,8 +1412,8 @@ Um sich Code zu sparen kann das sog. <em>List Comprehension</em> Ihnen Zeit beim
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-9">
 <p class="admonition-title"><span class="caption-number">Exercise 3.11 </span>(Variables Bild generieren)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion die Ihnen ein weißes Bild mit schwarzem Rand generiert.
-Dabei soll die Breite <code class="docutils literal notranslate"><span class="pre">width</span></code> und Höhe <code class="docutils literal notranslate"><span class="pre">height</span></code> sowie die Randbreite <code class="docutils literal notranslate"><span class="pre">border_width</span></code> ein Argument der Funktion sein.</p>
+<p>Schreiben Sie eine Funktion, die Ihnen ein weißes Bild mit schwarzem Rand generiert.
+Dabei soll die Breite <code class="docutils literal notranslate"><span class="pre">width</span></code> und Höhe <code class="docutils literal notranslate"><span class="pre">height</span></code> sowie die Randbreite <code class="docutils literal notranslate"><span class="pre">border_width</span></code> ein Parameter der Funktion sein.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1415,15 +1473,6 @@ Dabei soll die Breite <code class="docutils literal notranslate"><span class="pr
 <p>Sehen Sie sich die dazugehörige <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html">Dokumentation</a> an und nutzen Sie die Funktion.</p>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="k">def</span> <span class="nf">plot_picture</span><span class="p">(</span><span class="n">picture</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Mit folgendem Code können wir uns unser Bild anzeigen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1433,34 +1482,37 @@ Dabei soll die Breite <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/image-representation_35_0.png" src="../../_images/image-representation_35_0.png" />
+<img alt="../../_images/image-representation_37_0.png" src="../../_images/image-representation_37_0.png" />
 </div>
 </div>
 </div>
-<div class="section" id="zeichnen-informationsmanipulation">
-<h2><span class="section-number">3.5. </span>Zeichnen (Informationsmanipulation)<a class="headerlink" href="#zeichnen-informationsmanipulation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="informationsmanipulation">
+<h2><span class="section-number">3.3. </span>Informationsmanipulation<a class="headerlink" href="#informationsmanipulation" title="Permalink to this headline">¶</a></h2>
 <p>Wir haben bereits jetzt ein neues Bildformat geschaffen und ein kleines Programm, welches unser Format interpretieren und als Rasterbild anzeigt.
-Jetzt können wir uns austoben und weitere Bilder generieren.
+In anderen Worten, unsere erdachte <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> wurde realisiert.</p>
+<p>Jetzt können wir uns austoben und weitere Bilder generieren.
 Wie wäre es zum Beispiel mit einem Kreis, Rechteck oder Dreieck?
-Diese Objekte direkt als Ansammlung von Pixeln zu beschreiben ist schwierig und unflexibel.
-Was uns das Leben deutlich leichter macht ist die Anwendung der <strong>Abstraktion</strong>.
-Wir starten mit den geometrischen mathematischen Objekten Kreis, Rechteck und Dreieck und überlegen uns eine Funktion die diese Objekte <strong>digitalisiert</strong>.</p>
+Diese Objekte direkt als Ansammlung von Pixeln zu beschreiben ist schwierig und unflexibel.</p>
+<p>Was uns das Leben deutlich leichter macht, ist die Einführung einer weiteren Interpretation.
+Diese soll uns in eine <strong>abstraktere</strong> Welt ka­ta­pul­tie­ren.
+In anderen Worten: Wir konstruieren eine Interpretation die geometrische (mathematische) Objekten wie den Kreis, ein Rechteck oder Dreieck (Repräsentanten) in eine zweidimensionale Liste aus 0 und 1 (Bedeutung) übersetzt.
+Diese Übersetzung bezeichnet man auch als <strong>Digitalisierung</strong>.</p>
 <div class="figure align-default" id="fig-point-to-pixel">
 <a class="reference internal image-reference" href="../../_images/point-to-pixel.png"><img alt="../../_images/point-to-pixel.png" src="../../_images/point-to-pixel.png" style="height: 350px;" /></a>
 </div>
 <p>Unsere geometrischen Objekte haben reelle Koordinaten z.B. können wir einen Kreis durch seinen Mittelpunkt <span class="math notranslate nohighlight">\(c = (x,y)\)</span> und Radius <span class="math notranslate nohighlight">\(r\)</span> eindeutig beschreiben.
 Um die Koordinaten in Pixelkoordinaten zu transformieren legen wir auf das Rasterbild ein reeles Koordinatensystem.
-Hat unser Bild <span class="math notranslate nohighlight">\(n \times n\)</span> Pixelbild und wir möchten den Raum <span class="math notranslate nohighlight">\(10 \times 10 \subset \mathbb{R}^2\)</span> durch das Bild abbilden, entspricht die erste Bildzeile dem Raum <span class="math notranslate nohighlight">\(10 \times 1\)</span>.
-Um keine Verzerrung zu erhalten sollten Pixel in <span class="math notranslate nohighlight">\(x\)</span> und in <span class="math notranslate nohighlight">\(y\)</span> Richtung gleich viel Anteil des Euklidischen Raumes überziehen.
+Hat unser Bild <span class="math notranslate nohighlight">\(n \times n\)</span> Pixelbild und wir möchten den Raum <span class="math notranslate nohighlight">\(10 \times 10 \subset \mathbb{R}^2\)</span> durch das Bild abbilden, entspricht die erste Bildzeile dem Raum <span class="math notranslate nohighlight">\(10 \times 1\)</span>.</p>
+<p>Um keine Verzerrung zu erhalten sollten Pixel in <span class="math notranslate nohighlight">\(x\)</span> und in <span class="math notranslate nohighlight">\(y\)</span> Richtung gleich viel Anteil des Euklidischen Raumes überziehen.
 Die Auflösung <code class="docutils literal notranslate"><span class="pre">resolution</span></code> gibt an wie viel Raum ein Pixel repräsentiert.
 Bei einer <code class="docutils literal notranslate"><span class="pre">resolution</span> <span class="pre">=</span> <span class="pre">0.1</span></code> repräsentiert ein Pixel den Raum <span class="math notranslate nohighlight">\(0.1 \times 0.1\)</span>.
 Anders ausgedrückt, braucht es <span class="math notranslate nohighlight">\(10 \times 10\)</span> Pixel um den Raum <span class="math notranslate nohighlight">\(1 \times 1\)</span> im <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> zu repräsentieren.</p>
-<p>Kennen wir die <code class="docutils literal notranslate"><span class="pre">resolution</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(x\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">cols</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(y\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">rows</span></code> und gehen davon aus, dass der Raum <span class="math notranslate nohighlight">\(R\)</span> den wir Abbilden möchten in <span class="math notranslate nohighlight">\((0,0)\)</span> beginnt und nur positive Werte enthält also <span class="math notranslate nohighlight">\(R = [0;w] \times [0;h]\)</span>, dann können wir für einen gegebenen Punkt <span class="math notranslate nohighlight">\(p = (x,y) \in \mathbb{R}^2\)</span> den Pixel <span class="math notranslate nohighlight">\((i,j) \in \mathbb{N}^2\)</span> berechnen der <span class="math notranslate nohighlight">\(p\)</span> enthält.</p>
+<p>Kennen wir die <code class="docutils literal notranslate"><span class="pre">resolution</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(x\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">cols</span></code>, die Anzahl der Pixel in <span class="math notranslate nohighlight">\(y\)</span>-Richtung <code class="docutils literal notranslate"><span class="pre">rows</span></code> und gehen davon aus, dass der Raum <span class="math notranslate nohighlight">\(R\)</span> den wir Abbilden möchten in <span class="math notranslate nohighlight">\((0,0)\)</span> beginnt und nur positive Werte enthält, also <span class="math notranslate nohighlight">\(R = [0;w] \times [0;h]\)</span>, dann können wir für einen gegebenen Punkt <span class="math notranslate nohighlight">\(p = (x,y) \in \mathbb{R}^2\)</span> den Pixel <span class="math notranslate nohighlight">\((i,j) \in \mathbb{N}^2\)</span> berechnen der <span class="math notranslate nohighlight">\(p\)</span> enthält.</p>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-12">
 <p class="admonition-title"><span class="caption-number">Exercise 3.14 </span>(Pixel berechnen)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">to_pixel(p,</span> <span class="pre">resolution)</span></code> die Ihnen den Pixel <code class="docutils literal notranslate"><span class="pre">(i,j)</span></code> zurückgibt der den Punkt <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">(x,y)</span></code> enthält.
-Bedenken Sie, dass wir Pixel beginnend mit <span class="math notranslate nohighlight">\(0\)</span> zählen.</p>
+Bedenken Sie, dass die Indexierung der Pixel mit 0 beginnt.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1481,9 +1533,9 @@ Bedenken Sie, dass wir Pixel beginnend mit <span class="math notranslate nohighl
 </div>
 <p>Soweit so gut!
 Widmen wir uns nun dem Problem ein Rechteck bzw. Dreieck zu zeichnen.
-Wir wenden die <strong>Mustererkennung</strong> an und bemerken, dass sowohl das Dreieck als auch Rechteck aus Segmenten besteht (drei für das Dreieck und 4 für das Rechteck).
+Wir wenden die <strong>Mustererkennung</strong> an und bemerken, dass sowohl das Dreieck als auch das Rechteck aus Segmenten besteht (drei für das Dreieck und 4 für das Rechteck).
 Deshalb können wir das Problem in das Zeichnen mehrere Segmente <strong>zerteilen</strong>.</p>
-<p>Ein Segment ist definiert durch zwei Punkte <span class="math notranslate nohighlight">\(p_1 = (x_1, y_1)\)</span> und <span class="math notranslate nohighlight">\(p_2 = (x_2, y_2)\)</span>.
+<p>Ein Segment können wir durch zwei Punkte <span class="math notranslate nohighlight">\(p_1 = (x_1, y_1)\)</span> und <span class="math notranslate nohighlight">\(p_2 = (x_2, y_2)\)</span> definieren.
 Wir könnten aus den Punkten die Geradengleichung <span class="math notranslate nohighlight">\(f(x) = mx + t\)</span> berechnen und diese ‘abfahren’.
 Hier würden wir jedoch auf unangenehme Sonderfälle stoßen.
 Zum Beispiel, lässt sich ein Segment was parallel zur <span class="math notranslate nohighlight">\(y\)</span>-Achse verläuft nicht durch eine Funktion beschreiben.</p>
@@ -1495,7 +1547,7 @@ Ist <span class="math notranslate nohighlight">\(p_1, p_2\)</span> gegeben dann 
 Außerdem erhalten wir neue Segmente <span class="math notranslate nohighlight">\((p_1,m_1)\)</span> und <span class="math notranslate nohighlight">\((m_1,p_2)\)</span>.
 Wir können dies mit den beiden neuen Segmenten wiederholen und erhalten vier neue Segmente.
 Diesen Vorgang können wir solange fortsetzen, bis ein Segment komplett in einem Pixel enthalten ist und eine weitere Verfeinerung keine Wirkung mehr erzeugt.</p>
-<p>Wir können diesen Vorgang <strong>rekursiv</strong> realisieren.
+<p>Wir können diesen Vorgang <a class="reference internal" href="../02-4/3-control-structures.html#sec-recursion"><span class="std std-ref">rekursiv</span></a> realisieren.
 Das heißt die Funktion, welche den Mittelpunkt berechnet, wird innerhalb dieser Funktion erneut aufgerufen.
 Das kann endlos so weiter gehen und wir müssen uns eine <strong>Abbruchbedingung</strong> überlegen.</p>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-13">
@@ -1520,9 +1572,9 @@ Das kann endlos so weiter gehen und wir müssen uns eine <strong>Abbruchbedingun
 </div>
 </div>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-14">
-<p class="admonition-title"><span class="caption-number">Exercise 3.16 </span>(Mittelpunkt berechnen)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.16 </span>(Länge berechnen)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)</span></code> die Ihnen den Mittelpunkt die Länge des Segments <code class="docutils literal notranslate"><span class="pre">(p1=(x1,y1),</span> <span class="pre">p2=(x2,</span> <span class="pre">y2))</span></code> zurückgibt.</p>
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)</span></code>, die Ihnen die Länge des Segments <code class="docutils literal notranslate"><span class="pre">(p1=(x1,y1),</span> <span class="pre">p2=(x2,</span> <span class="pre">y2))</span></code> zurückgibt.</p>
 <p><strong>Tipp:</strong> Sie können die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> der <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Bibliothek verwenden, d.h.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="o">...</span>
@@ -1540,7 +1592,7 @@ Ist <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">line(p1,</span> <span class="pre">p2,</span> <span class="pre">resolution)</span></code>, die Ihnen Punkte des Segments <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> erzeugt und als Liste zurückgibt.</p>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
@@ -1599,8 +1651,8 @@ Ist <code class="docutils literal notranslate"><span class="pre">distance(p1,p2)
 </div>
 </div>
 </div>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">line</span></code> können nun Punkte eines Segments erzeugen und durch <code class="docutils literal notranslate"><span class="pre">to_pixel</span></code> können wir diese Punkte in Pixel umwandeln.
-Lassen Sie uns nun einmal ein Bild mit einer Geraden zeichen:</p>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">line</span></code> können wir Punkte eines Segments erzeugen und durch <code class="docutils literal notranslate"><span class="pre">to_pixel</span></code> können wir diese Punkte in Pixel umwandeln.
+Lassen Sie uns ein Bild einer Geraden zeichnen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.1</span>
@@ -1615,16 +1667,16 @@ Lassen Sie uns nun einmal ein Bild mit einer Geraden zeichen:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/image-representation_43_0.png" src="../../_images/image-representation_43_0.png" />
+<img alt="../../_images/image-representation_45_0.png" src="../../_images/image-representation_45_0.png" />
 </div>
 </div>
 <p>Das sieht schon recht gut aus.
-Da der Pixel <code class="docutils literal notranslate"><span class="pre">picture[0][0]</span></code> rechts oben ist, ist unser Koordinatensystem an der <span class="math notranslate nohighlight">\(x\)</span>-Achse gespiegelt und nach oben verschoben, was wir jedoch hier vernachlässigen.</p>
+Da der Pixel <code class="docutils literal notranslate"><span class="pre">picture[0][0]</span></code> rechts oben ist, ist unser Koordinatensystem an der <span class="math notranslate nohighlight">\(x\)</span>-Achse gespiegelt und nach oben verschoben, was wir vernachlässigen können.</p>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-16">
 <p class="admonition-title"><span class="caption-number">Exercise 3.18 </span>(Linie zeichnen)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_line(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">resolution)</span></code>, die das Segment <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
-Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll dann kein Fehler kommen sondern der Teil der nicht hinein passt wird abgeschnitten).</p>
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_line(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">resolution)</span></code>, die das Segment <code class="docutils literal notranslate"><span class="pre">(p1,p2)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hinein zeichnen.
+Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll dann kein Fehler erscheinen, sondern der Teil der nicht hinein passt wird abgeschnitten).</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1647,14 +1699,14 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/image-representation_45_0.png" src="../../_images/image-representation_45_0.png" />
+<img alt="../../_images/image-representation_47_0.png" src="../../_images/image-representation_47_0.png" />
 </div>
 </div>
 <p>Jetzt haben wir alle Teilprobleme gelöst und können das Dreieck bzw. Rechteck zeichnen.</p>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-17">
 <p class="admonition-title"><span class="caption-number">Exercise 3.19 </span>(Dreieck zeichnen)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_triangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">resolution)</span></code> die das Dreieck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.</p>
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_triangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">resolution)</span></code> die das Dreieck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hinein zeichnet.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1672,13 +1724,13 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/image-representation_47_0.png" src="../../_images/image-representation_47_0.png" />
+<img alt="../../_images/image-representation_49_0.png" src="../../_images/image-representation_49_0.png" />
 </div>
 </div>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-18">
 <p class="admonition-title"><span class="caption-number">Exercise 3.20 </span>(Rechteck zeichnen)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_rectangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">p4,</span> <span class="pre">resolution)</span></code> die das Rechteck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3,p4)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.</p>
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_rectangle(picture,</span> <span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">p4,</span> <span class="pre">resolution)</span></code> die das Rechteck <code class="docutils literal notranslate"><span class="pre">(p1,p2,p3,p4)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hinein zeichnet.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1697,17 +1749,18 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/image-representation_49_0.png" src="../../_images/image-representation_49_0.png" />
+<img alt="../../_images/image-representation_51_0.png" src="../../_images/image-representation_51_0.png" />
 </div>
 </div>
-<p>Wenn wir uns nun die beiden Funktionen <code class="docutils literal notranslate"><span class="pre">draw_triangle</span></code> und <code class="docutils literal notranslate"><span class="pre">draw_rectangle</span></code> genauer ansehen und unsere <strong>Mustererkennung</strong> aktivieren könnte uns etwas auffallen?
+<p>Wenn wir uns die beiden Funktionen <code class="docutils literal notranslate"><span class="pre">draw_triangle</span></code> und <code class="docutils literal notranslate"><span class="pre">draw_rectangle</span></code> genauer ansehen und unsere <strong>Mustererkennung</strong> aktivieren, könnte uns etwas auffallen?
 Die Funktionen gleichen sich!
-Beide zeichnen eine Sequenz/Liste von zusammenhängenden Segmenten oder anders gesagt: beide zeichnen ein Polygon!</p>
+Beide zeichnen eine Sequenz/Liste von zusammenhängenden Segmenten oder anders gesagt: Beide zeichnen ein Polygon!</p>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-19">
 <p class="admonition-title"><span class="caption-number">Exercise 3.21 </span>(Polygon zeichnen)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_polygon(picture,</span> <span class="pre">polygon,</span> <span class="pre">resolution)</span></code> die das Polygon <code class="docutils literal notranslate"><span class="pre">polygon</span> <span class="pre">=</span> <span class="pre">(p1,p2,p3,p4,p5,...)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
-<code class="docutils literal notranslate"><span class="pre">polygon</span></code> kann eine Liste oder Tupel sein.</p>
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_polygon(picture,</span> <span class="pre">polygon,</span> <span class="pre">resolution)</span></code> die das Polygon <code class="docutils literal notranslate"><span class="pre">polygon</span> <span class="pre">=</span> <span class="pre">(p1,p2,p3,p4,p5,...)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hinein zeichnet.
+<code class="docutils literal notranslate"><span class="pre">polygon</span></code> kann eine Liste oder Tupel aus Punkten sein.</p>
+<p><strong>Annahme:</strong> Gehen Sie davon aus, dass die Reihenfolge der Punkte korrekt ist.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1724,12 +1777,12 @@ Beide zeichnen eine Sequenz/Liste von zusammenhängenden Segmenten oder anders g
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/image-representation_51_0.png" src="../../_images/image-representation_51_0.png" />
+<img alt="../../_images/image-representation_53_0.png" src="../../_images/image-representation_53_0.png" />
 </div>
 </div>
-<p>Dreieck und Reckteck hätten wir geschafft.
-Für den Kreis <span class="math notranslate nohighlight">\(K\)</span> müssen wir zurück in unsere <strong>abstrakte</strong> Welt der geometrischen Objekte, denn einen Kreis nicht mit lauter Segmenten darzustellen macht wenig Sinn.
-Die Punkte eines Kreises lassen sich durch eine <em>Kurve</em> beschreiben.
+<p>Dreieck, Rechteck und Polygon hätten wir geschafft.
+Für den Kreis <span class="math notranslate nohighlight">\(K\)</span> müssen wir zurück in unsere <strong>abstrakte</strong> Welt der geometrischen Objekte, denn einen Kreis mit lauter Segmenten darzustellen macht wenig Sinn.</p>
+<p>Die Punkte eines Kreises lassen sich durch eine <em>Kurve</em> beschreiben.
 Sie der Kreis durch seinen Mittelpunkt <span class="math notranslate nohighlight">\(m = (x_m, y_m)\)</span> und den radius <span class="math notranslate nohighlight">\(r\)</span> beschrieben dann sind</p>
 <div class="math notranslate nohighlight">
 \[K = \{(x_m + \cos(t) \cdot r, y_m + \sin(t) \cdot r) : t \in [0;2\pi]\}\]</div>
@@ -1739,7 +1792,7 @@ Wir könnten z.B. <span class="math notranslate nohighlight">\(n\)</span> so wä
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-20">
 <p class="admonition-title"><span class="caption-number">Exercise 3.22 </span>(Kreis zeichnen)</p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_circle(picture,</span> <span class="pre">circle,</span> <span class="pre">resolution)</span></code> die den Kreis <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">(m=(x,y),</span> <span class="pre">r)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hineinzeichnet.
+<p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">draw_circle(picture,</span> <span class="pre">circle,</span> <span class="pre">resolution)</span></code>, die den Kreis <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">(m=(x,y),</span> <span class="pre">r)</span></code> in das Bild <code class="docutils literal notranslate"><span class="pre">picture</span></code> hinein zeichnet.
 Sie können erneut <code class="docutils literal notranslate"><span class="pre">numpy</span></code> verwenden, d.h. <code class="docutils literal notranslate"><span class="pre">np.sin()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.cos()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> und (optional) <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>.</p>
 </div>
 </div>
@@ -1766,14 +1819,14 @@ Sie können erneut <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/image-representation_53_0.png" src="../../_images/image-representation_53_0.png" />
+<img alt="../../_images/image-representation_55_0.png" src="../../_images/image-representation_55_0.png" />
 </div>
 </div>
 <p>Im Falle des Kreises beschreibt</p>
 <div class="math notranslate nohighlight">
 \[k(t) = (x_m + \cos(t) \cdot r, y_m + \sin(t) \cdot r)\]</div>
 <p>die <em>Kurve</em> des Kreises.
-Wir können aber auch andere <em>Kurven</em> wir zum Beispiel die Funktion <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> durch die <em>Kurve</em> <span class="math notranslate nohighlight">\(k(t) = (t, f(t))\)</span> zeichnen.
+Wir können aber auch andere <em>Kurven</em> wie zum Beispiel die Funktion <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> durch die <em>Kurve</em> <span class="math notranslate nohighlight">\(k(t) = (t, f(t))\)</span> zeichnen.
 Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgemeinen nicht so einfach zu schätzen.</p>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-21">
 <p class="admonition-title"><span class="caption-number">Exercise 3.23 </span>((mathematische) Funktion zeichnen)</p>
@@ -1800,13 +1853,14 @@ Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgem
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/image-representation_55_0.png" src="../../_images/image-representation_55_0.png" />
+<img alt="../../_images/image-representation_57_0.png" src="../../_images/image-representation_57_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="daumenkino">
-<h2><span class="section-number">3.6. </span>Daumenkino<a class="headerlink" href="#daumenkino" title="Permalink to this headline">¶</a></h2>
-<p>Die folgende Methode erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots) und falls Sie das Argument <code class="docutils literal notranslate"><span class="pre">save</span></code> auf <code class="docutils literal notranslate"><span class="pre">True</span></code> setzen wird ein GIF (eine Bildfolge/Daumenkino/Minivideo) erzeugt und in der Datei <code class="docutils literal notranslate"><span class="pre">'binary-drawing.gif'</span></code> abgespeichert.</p>
+<h2><span class="section-number">3.4. </span>Daumenkino<a class="headerlink" href="#daumenkino" title="Permalink to this headline">¶</a></h2>
+<p>Die folgende Methode (<em>Interpreter</em>) erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots).
+Falls Sie den Parameter <code class="docutils literal notranslate"><span class="pre">save</span></code> auf <code class="docutils literal notranslate"><span class="pre">True</span></code> setzen, wird ein GIF (eine Bildfolge/Daumenkino/Minivideo) erzeugt und in der Datei <code class="docutils literal notranslate"><span class="pre">'binary-drawing.gif'</span></code> abgespeichert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -2048,42 +2102,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img7bea5b3339cc492f9d059f0aa0bffb03">
+  <img id="_anim_img4ad75afa760c40239c75c18bbac1ce81">
   <div class="anim-controls">
-    <input id="_anim_slider7bea5b3339cc492f9d059f0aa0bffb03" type="range" class="anim-slider"
+    <input id="_anim_slider4ad75afa760c40239c75c18bbac1ce81" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim7bea5b3339cc492f9d059f0aa0bffb03.set_frame(parseInt(this.value));"></input>
+           oninput="anim4ad75afa760c40239c75c18bbac1ce81.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="anim7bea5b3339cc492f9d059f0aa0bffb03.slower()">
+      <button title="Decrease speed" onclick="anim4ad75afa760c40239c75c18bbac1ce81.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="anim7bea5b3339cc492f9d059f0aa0bffb03.first_frame()">
+      <button title="First frame" onclick="anim4ad75afa760c40239c75c18bbac1ce81.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="anim7bea5b3339cc492f9d059f0aa0bffb03.previous_frame()">
+      <button title="Previous frame" onclick="anim4ad75afa760c40239c75c18bbac1ce81.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="anim7bea5b3339cc492f9d059f0aa0bffb03.reverse_animation()">
+      <button title="Play backwards" onclick="anim4ad75afa760c40239c75c18bbac1ce81.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="anim7bea5b3339cc492f9d059f0aa0bffb03.pause_animation()">
+      <button title="Pause" onclick="anim4ad75afa760c40239c75c18bbac1ce81.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="anim7bea5b3339cc492f9d059f0aa0bffb03.play_animation()">
+      <button title="Play" onclick="anim4ad75afa760c40239c75c18bbac1ce81.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="anim7bea5b3339cc492f9d059f0aa0bffb03.next_frame()">
+      <button title="Next frame" onclick="anim4ad75afa760c40239c75c18bbac1ce81.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="anim7bea5b3339cc492f9d059f0aa0bffb03.last_frame()">
+      <button title="Last frame" onclick="anim4ad75afa760c40239c75c18bbac1ce81.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="anim7bea5b3339cc492f9d059f0aa0bffb03.faster()">
+      <button title="Increase speed" onclick="anim4ad75afa760c40239c75c18bbac1ce81.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_select7bea5b3339cc492f9d059f0aa0bffb03"
+    <form title="Repetition mode" action="#n" name="_anim_loop_select4ad75afa760c40239c75c18bbac1ce81"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_7bea5b3339cc492f9d059f0aa0bffb03"
+      <input type="radio" name="state" value="once" id="_anim_radio1_4ad75afa760c40239c75c18bbac1ce81"
              >
-      <label for="_anim_radio1_7bea5b3339cc492f9d059f0aa0bffb03">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_7bea5b3339cc492f9d059f0aa0bffb03"
+      <label for="_anim_radio1_4ad75afa760c40239c75c18bbac1ce81">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_4ad75afa760c40239c75c18bbac1ce81"
              checked>
-      <label for="_anim_radio2_7bea5b3339cc492f9d059f0aa0bffb03">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_7bea5b3339cc492f9d059f0aa0bffb03"
+      <label for="_anim_radio2_4ad75afa760c40239c75c18bbac1ce81">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_4ad75afa760c40239c75c18bbac1ce81"
              >
-      <label for="_anim_radio3_7bea5b3339cc492f9d059f0aa0bffb03">Reflect</label>
+      <label for="_anim_radio3_4ad75afa760c40239c75c18bbac1ce81">Reflect</label>
     </form>
   </div>
 </div>
@@ -2093,9 +2147,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img7bea5b3339cc492f9d059f0aa0bffb03";
-    var slider_id = "_anim_slider7bea5b3339cc492f9d059f0aa0bffb03";
-    var loop_select_id = "_anim_loop_select7bea5b3339cc492f9d059f0aa0bffb03";
+    var img_id = "_anim_img4ad75afa760c40239c75c18bbac1ce81";
+    var slider_id = "_anim_slider4ad75afa760c40239c75c18bbac1ce81";
+    var loop_select_id = "_anim_loop_select4ad75afa760c40239c75c18bbac1ce81";
     var frames = new Array(19);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbAAAAEgCAYAAADVKCZpAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -3491,7 +3545,7 @@ SS0ZMElSSwZMktTS/wOc77bhSMsv0gAAAABJRU5ErkJggg==\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim7bea5b3339cc492f9d059f0aa0bffb03 = new Animation(frames, img_id, slider_id, 100.0,
+        anim4ad75afa760c40239c75c18bbac1ce81 = new Animation(frames, img_id, slider_id, 100.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -3499,16 +3553,16 @@ SS0ZMElSSwZMktTS/wOc77bhSMsv0gAAAABJRU5ErkJggg==\
 </div></div>
 </div>
 <p>Fassen wir noch einmal kurz zusammen was wir bis jetzt geschafft haben:
-Wir haben uns ein Format für ein Schwarz-Weiß-Bild ausgedacht und umgesetzt.
-Durch ein wenig Hilfe externer Bibliotheken können wir unser Rasterbild anzeigen.
+Wir haben uns ein Format / eine <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> für ein Schwarz-Weiß-Bild ausgedacht und umgesetzt.
+Durch ein wenig Hilfe externer Module können wir unser Rasterbild anzeigen.
 Wir haben Algorithmen implementiert die uns Polygone (inkl. Dreiecke und Rechtecke), Kreise und sogar Funktionen zeichnen.
 Und jetzt haben wir sogar die Möglichkeit aus einer Folge von Bildern ein kleines Video zu generieren.
-Dieses Video wiederum ist nichts anderes als eine Liste von Listen von Listen von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span>.
-Wir haben nun die Möglichkeit eine unbegrenzte Menge an Animationen zu erzeugen, von bewegten geometrischen Objekten bis hin zum <a class="reference external" href="https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens">Game Of Life</a> - Ihre Kreativität ist das Limit.</p>
+Dieses Video wiederum ist nichts anderes als eine Liste von Listen von Listen bestehend aus Nullen und Einsen.</p>
+<p>Wir haben jetzt die Möglichkeit eine unbegrenzte Menge an Animationen zu erzeugen, von bewegten geometrischen Objekten bis hin zum <a class="reference external" href="https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens">Game Of Life</a> - Ihre Kreativität ist das Limit.</p>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-23">
 <p class="admonition-title"><span class="caption-number">Exercise 3.25 </span>(Simulation eines Partikels)</p>
 <div class="section" id="exercise-content">
-<p>Generieren Sie eine Animation ein Partikel (einen Ball) der sich in einer Box bewegt, d.h. der Ball bewegt sich mit konstanter Geschwindigkeit und prallt von der Wand ab.</p>
+<p>Generieren Sie eine Animation eines Balls, welcher sich in einer Box bewegt, d.h. der Ball bewegt sich mit konstanter Geschwindigkeit und prallt von der Wand ab.</p>
 <div class="figure align-default" id="fig-daumenkino-ball">
 <a class="reference internal image-reference" href="../../_images/daumenkino_ball.gif"><img alt="../../_images/daumenkino_ball.gif" src="../../_images/daumenkino_ball.gif" style="height: 150px;" /></a>
 </div>
@@ -3743,42 +3797,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imgfc3896638cf04bc5af91056bdd529003">
+  <img id="_anim_img6ab93c60f5c04b4884aeb65565bef24b">
   <div class="anim-controls">
-    <input id="_anim_sliderfc3896638cf04bc5af91056bdd529003" type="range" class="anim-slider"
+    <input id="_anim_slider6ab93c60f5c04b4884aeb65565bef24b" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="animfc3896638cf04bc5af91056bdd529003.set_frame(parseInt(this.value));"></input>
+           oninput="anim6ab93c60f5c04b4884aeb65565bef24b.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="animfc3896638cf04bc5af91056bdd529003.slower()">
+      <button title="Decrease speed" onclick="anim6ab93c60f5c04b4884aeb65565bef24b.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="animfc3896638cf04bc5af91056bdd529003.first_frame()">
+      <button title="First frame" onclick="anim6ab93c60f5c04b4884aeb65565bef24b.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="animfc3896638cf04bc5af91056bdd529003.previous_frame()">
+      <button title="Previous frame" onclick="anim6ab93c60f5c04b4884aeb65565bef24b.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="animfc3896638cf04bc5af91056bdd529003.reverse_animation()">
+      <button title="Play backwards" onclick="anim6ab93c60f5c04b4884aeb65565bef24b.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="animfc3896638cf04bc5af91056bdd529003.pause_animation()">
+      <button title="Pause" onclick="anim6ab93c60f5c04b4884aeb65565bef24b.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="animfc3896638cf04bc5af91056bdd529003.play_animation()">
+      <button title="Play" onclick="anim6ab93c60f5c04b4884aeb65565bef24b.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="animfc3896638cf04bc5af91056bdd529003.next_frame()">
+      <button title="Next frame" onclick="anim6ab93c60f5c04b4884aeb65565bef24b.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="animfc3896638cf04bc5af91056bdd529003.last_frame()">
+      <button title="Last frame" onclick="anim6ab93c60f5c04b4884aeb65565bef24b.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="animfc3896638cf04bc5af91056bdd529003.faster()">
+      <button title="Increase speed" onclick="anim6ab93c60f5c04b4884aeb65565bef24b.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_selectfc3896638cf04bc5af91056bdd529003"
+    <form title="Repetition mode" action="#n" name="_anim_loop_select6ab93c60f5c04b4884aeb65565bef24b"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_fc3896638cf04bc5af91056bdd529003"
+      <input type="radio" name="state" value="once" id="_anim_radio1_6ab93c60f5c04b4884aeb65565bef24b"
              >
-      <label for="_anim_radio1_fc3896638cf04bc5af91056bdd529003">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_fc3896638cf04bc5af91056bdd529003"
+      <label for="_anim_radio1_6ab93c60f5c04b4884aeb65565bef24b">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_6ab93c60f5c04b4884aeb65565bef24b"
              checked>
-      <label for="_anim_radio2_fc3896638cf04bc5af91056bdd529003">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_fc3896638cf04bc5af91056bdd529003"
+      <label for="_anim_radio2_6ab93c60f5c04b4884aeb65565bef24b">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_6ab93c60f5c04b4884aeb65565bef24b"
              >
-      <label for="_anim_radio3_fc3896638cf04bc5af91056bdd529003">Reflect</label>
+      <label for="_anim_radio3_6ab93c60f5c04b4884aeb65565bef24b">Reflect</label>
     </form>
   </div>
 </div>
@@ -3788,9 +3842,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imgfc3896638cf04bc5af91056bdd529003";
-    var slider_id = "_anim_sliderfc3896638cf04bc5af91056bdd529003";
-    var loop_select_id = "_anim_loop_selectfc3896638cf04bc5af91056bdd529003";
+    var img_id = "_anim_img6ab93c60f5c04b4884aeb65565bef24b";
+    var slider_id = "_anim_slider6ab93c60f5c04b4884aeb65565bef24b";
+    var loop_select_id = "_anim_loop_select6ab93c60f5c04b4884aeb65565bef24b";
     var frames = new Array(100);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbAAAAEgCAYAAADVKCZpAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -13022,7 +13076,7 @@ sg4AAAAASUVORK5CYII=\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        animfc3896638cf04bc5af91056bdd529003 = new Animation(frames, img_id, slider_id, 100.0,
+        anim6ab93c60f5c04b4884aeb65565bef24b = new Animation(frames, img_id, slider_id, 100.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -13037,19 +13091,25 @@ sg4AAAAASUVORK5CYII=\
 </div>
 </div>
 <div class="section" id="fourier-zeichnungen-optional">
-<h2><span class="section-number">3.7. </span>Fourier-Zeichnungen (optional)<a class="headerlink" href="#fourier-zeichnungen-optional" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.5. </span>Fourier-Zeichnungen (optional)<a class="headerlink" href="#fourier-zeichnungen-optional" title="Permalink to this headline">¶</a></h2>
 <p>Was nun folgt ist ein sich Austoben in der Welt die wir uns geschaffen haben.
-Wir möchten Ihnen eine ganz bestimmte Zeichenmethode nicht vorenthalten.
-Stellen Sie sich ein Blatt Papier vor.
+Wir möchten Ihnen eine ganz bestimmte Zeichenmethode nicht vorenthalten.</p>
+<p>Stellen Sie sich ein Blatt Papier vor.
 Auf diesem zeichnen Sie einen Kreis <span class="math notranslate nohighlight">\(K_0\)</span>.
-Anhand dieses Kreises zeichnen Sie einen weiteren Kreis <span class="math notranslate nohighlight">\(K_1\)</span> sodass der Mittelpunkt von <span class="math notranslate nohighlight">\(K_1\)</span> während Sie zeichnen auf <span class="math notranslate nohighlight">\(K_0\)</span> wandert.
-Nachdem Sie fertig sind, löschen <span class="math notranslate nohighlight">\(K_0\)</span>.
-Ihr Ergebnis hängt davon ab wie schnell sie auf <span class="math notranslate nohighlight">\(K_0\)</span> wandern und wie schnell Sie <span class="math notranslate nohighlight">\(K_1\)</span> zeichen, d.h. das Ergebnis hängt von den Frequenzen ab.
-Zeichnen Sie beide Kreise mit der gleichen Frequenz und starten beide Kreise bei <span class="math notranslate nohighlight">\(y = 0\)</span> so ist <span class="math notranslate nohighlight">\(K_1\)</span> ein Kreis wobei dessen Radius die Summe der Radii der beiden Kreise ist.</p>
-<p>Angenommen <span class="math notranslate nohighlight">\(K_0(t) = (x_0 + \cos(\omega_0 \cdot t) \cdot r_0, y_0 + \sin(\omega_0 \cdot t) \cdot r_0)\)</span> und <span class="math notranslate nohighlight">\(K_1(t) = (\cos(\omega_1 \cdot t) \cdot r_1, \sin(\omega_1 \cdot t) \cdot r_1)\)</span> dann gilt für ihre gezeichnete Kurve</p>
+Anhand dieses Kreises zeichnen Sie einen weiteren Kreis <span class="math notranslate nohighlight">\(K_1\)</span>, sodass der Mittelpunkt von <span class="math notranslate nohighlight">\(K_1\)</span>, während Sie zeichnen, auf <span class="math notranslate nohighlight">\(K_0\)</span> wandert.
+Nachdem Sie fertig sind, löschen Sie <span class="math notranslate nohighlight">\(K_0\)</span>.</p>
+<p>Ihr Ergebnis hängt davon ab, wie schnell sie auf <span class="math notranslate nohighlight">\(K_0\)</span> wandern und wie schnell Sie <span class="math notranslate nohighlight">\(K_1\)</span> zeichnen, d.h. das Ergebnis hängt von den Frequenzen und Radii ab.</p>
+<p>Zeichnen Sie beide Kreise mit der gleichen Frequenz und starten Sie beide Kreise bei <span class="math notranslate nohighlight">\(y = 0\)</span>, so ist <span class="math notranslate nohighlight">\(K_1\)</span> ein Kreis wobei dessen Radius die Summe der Radii der beiden Kreise ist.</p>
+<p>Angenommen</p>
+<div class="math notranslate nohighlight">
+\[K_0(t) = (x_0 + \cos(\omega_0 \cdot t) \cdot r_0, y_0 + \sin(\omega_0 \cdot t) \cdot r_0)\]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[K_1(t) = (\cos(\omega_1 \cdot t) \cdot r_1, \sin(\omega_1 \cdot t) \cdot r_1)\]</div>
+<p>dann gilt für ihre gezeichnete Kurve</p>
 <div class="math notranslate nohighlight">
 \[K(t) = K_0(t) + K_1(t)\]</div>
-<p>Wir können das weiter verallgemeinen und von <span class="math notranslate nohighlight">\(n\)</span> Kreisen ausgehen, dann gilt für ihre Zeichnung:</p>
+<p>Wir können das weiter verallgemeinern und von <span class="math notranslate nohighlight">\(n\)</span> Kreisen ausgehen, dann gilt für ihre Zeichnung:</p>
 <div class="math notranslate nohighlight">
 \[K(t) = \sum_{i=0}^{n-1} K_i(t)\]</div>
 <div class="exercise admonition" id="chapters/04/image-representation-exercise-25">
@@ -13098,7 +13158,7 @@ Dabei soll <code class="docutils literal notranslate"><span class="pre">center</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/image-representation_63_0.png" src="../../_images/image-representation_63_0.png" />
+<img alt="../../_images/image-representation_65_0.png" src="../../_images/image-representation_65_0.png" />
 </div>
 </div>
 <p>Es ergeben sich interessante Fragen.
@@ -13106,7 +13166,7 @@ Zum Beispiel, mit welchen Argumenten erhalten Sie ein <strong>harmonisches</stro
 Wann erhalten Sie hingegen ein komplexeres Gebilde?
 Was hat das mit den <strong>harmonischen</strong> bzw. <strong>unharmonischen</strong> Schwingungen und einem <strong>harmonischen</strong> bzw. <strong>unharmonischen</strong> Ton zu tun?
 Können wir durch unsere Zeichenmethode Ton zeichnen?</p>
-<p>Falls Sie sich mehr mathematisches Wissen zu diesem Thema aneignen möchten, ist folgendes exzellentes Video von <strong>Grant Sanderson</strong> ein wunderbarer Einstieg:</p>
+<p>Falls Sie sich mehr mathematisches Wissen zu diesem Thema aneignen möchten, ist folgendes exzellentes Video von <strong>Grant Sanderson</strong> ein wunderbarer Einstieg.</p>
 <div style="display: block;margin-left: auto;margin-right: auto;width: 632px;">
 <iframe width="632" height="276" src="https://www.youtube.com/embed/r6sGWTCMz2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div></div>

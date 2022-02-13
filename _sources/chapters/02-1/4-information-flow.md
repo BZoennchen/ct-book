@@ -1,3 +1,4 @@
+(sec-information-flow)=
 # Der Informationskreislauf
 
 Sie kennen nun die vier grundlegenden Aufgaben eines Computers und wissen wie er aus den zwei Zuständen **Strom aus** und **Strom an** Informationen der unterschiedlichsten Art repräsentieren kann.
@@ -140,7 +141,7 @@ Auch der Cache ist natürlich *flüchtig*.
 
 ```{admonition} Von-Neumann vs. Harvard-Architektur
 :class: remark
-:name: neumann-vs-harward
+:name: remark-neumann-vs-harvard
 
 Eine weitere beachtenswerte Architektur ist die sog. *Harvard-Architektur*.
 Im Unterschied zur *Von-Neumann-Architektur* hat sie zwei unterschiedliche und separierte Speicher, einen für den Programmcode und einen für die zu verarbeitenden Daten.

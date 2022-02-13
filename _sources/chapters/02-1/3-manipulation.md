@@ -22,6 +22,7 @@ Die elektrischen Signale (**Strom aus** und **Strom an**) gelangen über mikrosk
 
 ```{admonition} Gatter und Bauteile
 :class: remark
+:name: remark-gates
 
 Gatter beschreiben die Funktionsweise.
 Elektrische Schaltkreise und Transistoren sind eine mögliche Realisierung.
@@ -420,6 +421,7 @@ laddn([1,1,1,1], [1,0,0,1])
 
 ```{admonition} Modellierung der Gatter und Addierer
 :class: remark
+:name: remark-adder-gates
 Unser ``Python`` Code modelliert den Addierer als Gatterzusammenschluss.
 Natürlich können wir in ``Python`` deutlich einfacher zwei Zahlen addieren.
 ```
@@ -428,6 +430,7 @@ Es gibt auch noch andere Gatter als **AND**, **NOT** und **OR** z.B. **NAND**, *
 
 ```{admonition} Anzahl, Größer und Geschwindigkeit
 :class: remark
+:name: remark-gate-speed
 Gatter beschreiben die Funktionsweise, realisiert durch Transistoren, sind unvorstellbar klein und können unvorstellbar oft angesteuert werden.
 Transistoren sind dünner als wenige Nanometer (etwa 4000 mal dünner als ein Haar) und lassen sich hunderte Milliarden Mal in der Sekunde ansteuern.
 Zum Beispiel befinden sich auf dem Intel i7 4770K Prozessor ca. 1.4 Milliarden Transistoren auf einer Fläche von 177 Quadratmillimeter.

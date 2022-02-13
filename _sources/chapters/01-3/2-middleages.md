@@ -1,4 +1,4 @@
-# Mittelalter bis 19. Jahrundert
+# Mittelalter bis 19. Jahrhundert
 
 Nach dem Zusammenbruch des römischen Reiches, der sich über eine lange Zeit erstreckte, dauert es eine Weile bis sich neue Fortschritte zeigen sollten.
 Ca. 1200 nach Christus tauchte der Astrolabium, ein scheibenförmiges astronomisches Rechen- und Messinstrument, erneut auf.

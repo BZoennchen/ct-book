@@ -229,6 +229,17 @@ Wir müssen jedoch zwischen zwei Veränderungen einer Variablen ``x`` unterschei
 1. der Veränderung ihrer Wertes ``x``
 2. der Veränderung ihrer Speicheradresse ``id(x)`` (die auf den Wert zeigt)
 
+```{admonition} Veränderlich und Un­ver­än­der­lich­keit
+:name: def-mutable
+:class: definition
+
+Wir nennen ein eine Variable, *veränderlich* (engl. *mutable*) wenn wir deren Wert verändern können indem wir den Speicherbereich der Variable verändern können.
+Ein Variable ist dagegen *unveränderlich* (engl. *immutable*) wenn wir deren Speicherbereich nicht verändern können.
+
+Ist eine Variable *unveränderlich*, so wird deren Veränderung durch eine Kopie (einen neuen Speicherbereich) realisiert.
+Das Ursprungsobjekt bleibt *unverändert*.
+```
+
 ### Zuweisung eines neuen Werts
 
 Eine *Variable* kann immer nur einen **Wert** bzw. auf einen bestimmten Speicherbereich *zeigen*.

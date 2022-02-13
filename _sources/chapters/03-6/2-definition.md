@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-functions-basics)=
 # Grundlagen
 
 Ok, lassen Sie ganz frisch starten, von der Definition einer Funktion bis hin zu ihrer Benutzung!
@@ -72,6 +73,7 @@ Den ``docstring`` könnten wir uns auch schenken, doch bedenken Sie dass andere 
 
 ```{admonition} Docstrings und Kommentare
 :class: attention
+:name: attention-missleading-doc
 
 Nichts ist irreführender als fehlerhafte, widersprüchliche oder schlicht falsche Kommentare!
 ```
