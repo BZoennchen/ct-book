@@ -62,17 +62,16 @@ Beschreiben Sie informell, wie Sie nach der Telefonnummer von Fr. ``Reichel`` su
 
 Wir schätzen erst ab wo die Namen mit dem Buchstaben ``R`` beginnen.
 Wir schlagen das Buch recht weit hinten auf und betrachten den ersten und letzten Namen der Seite.
-Kommt der erste Name vor, und der letzte Name nach ``Reichel`` so suchen wir den Namen auf der Seite.
+Ist der erste Name lexikographisch kleiner und der letzte lexikographisch größer als ``Reichel``, so suchen wir den Namen auf der Seite.
 
-Kommt der erste Name nach ``Reichel``, finden wir den Namen im vorderen Teil des Buches.
-Kommt der letzte Name vor ``Reichel``, finden wir den Namen im hintern Teil des Buches.
+Ist der erste Name lexikographisch größer als ``Reichel``, finden wir den Namen im vorderen Teil des Buches.
+Ist der letzte Name lexikographisch kleiner als ``Reichel``, finden wir den Namen im hinteren Teil des Buches.
 
 Wir nehmen den entsprechenden Teil und schlagen die Seite in der Mitte dieses Teils auf.
 Den anderen Teil werden wir nie wieder betrachten.
 
 Diesen Prozess wiederholen wir bis wir die entsprechende Seite gefunden haben.
 Dann können wir entweder den Namen auf der Seite mit einer [linearen Suche](def-linear-search) auffinden oder die gleiche [binäre Suche](def-binary-search) mit den Namen auf der Seite vollziehen.
-
 ```
 
 Im Abschnitt [Sprechen in der Taucherglocke](sec-dive-bell) haben wir unter [Suchalgorithmen](sec-dive-bell-binary-search) bereits diese sogenannte [binäre Suche](def-binary-search) angewendet.
@@ -116,11 +115,13 @@ Für das Tupel nehmen wir an dass
 
 ```{math}
 :label: name-register-eq-3
-f_E(e_i, e_j) \leq 0 \iff i < j,
+i < j \Rightarrow f_E(e_i, e_j) \leq 0 ,
 ```
 
-das heißt, das Tupel ist sortiert. Wir suchen nun ein Element $e \in E$.
-Schrittweise zerteilen wir Liste oder das Tupel $\mathcal{L}$ in zwei gleiche Hälften und wählen eine davon.
+das heißt, das Tupel ist sortiert. 
+
+Wir suchen nun ein Element $e \in E$.
+Schrittweise zerteilen wir die Liste oder das Tupel $\mathcal{L}$ in zwei gleiche Hälften und wählen eine davon.
 Dabei passen wir das Intervall $I = [a;b]$ der Listenindices an, welche diese Hälften definieren.
 
 Wir beginnen mit $a_0 = 0, b_0 = |\mathcal{L}|-1$ und berechnen ein Pivotindex 
@@ -167,7 +168,7 @@ Binäre Suche nach dem Element $e = 8$ in einer sortierten Liste $\mathcal{L}$ a
 ```
 
 ```{admonition} Zuweisung (Notation)
-:class: hint dropdown
+:class: remark dropdown
 
 Falls wir uns der mathematischen Schreibweise bedienen vermeiden wir die Zuweisung über das $=$ Zeichen.
 $a = 2$ bedeutet, dass $a$ gleich $2$ ist.
@@ -175,7 +176,7 @@ Der Ausdruck
 
 $$a = a + 2$$ 
 
-macht keinen Sinn bzw. ist eine falsche Aussage.
+ist eine falsche Aussage.
 Oben haben wir stattdessen viele Variablen verwendet also
 
 $$a_1 = a_0 + 2.$$
@@ -194,7 +195,7 @@ $$[0;99], [50;99], [50;73], [62;73], [62;66], [65;66], [66;66]$$
 
 ```{exercise} Binäre Suchen - Intervalle
 :label: binary-search-interval-exercise
-Bestimmen Sie die Squenz der Intervalle für eine Liste mit $150$ Elementen und $i = 48$.
+Bestimmen Sie die Sequenz der Intervalle für eine Liste mit $150$ Elementen und $i = 48$.
 ```
 
 ```{solution} binary-search-interval-exercise
@@ -211,7 +212,7 @@ Die wesentliche Eigenschaft welche die [binäre Suche](def-binary-search) ausnut
 Wir benötigen eine [Ordnung](def-math-order), sodass es einen Komparator $f_E$ gibt.
 Das Tupel bzw. unsere Liste muss sortiert sein {eq}`name-register-eq-3`.
 
-Der Komparator $f_E$ wird passend zur Menge der möglichen Listelemente $E$ definiert, d.h. je nachdem welche Art von Liste (Namensliste, Telefonbucheinträge, Zahlen, Klausuren) wir vorfinden, müssen wir ein geeignetes $f_E$ konstruieren. 
+Der Komparator $f_E$ wird passend zur Menge der möglichen Listenelemente $E$ definiert, d.h. je nachdem welche Art von Liste (Namensliste, Telefonbucheinträge, Zahlen, Klausuren) wir vorfinden, müssen wir ein geeignetes $f_E$ konstruieren. 
 
 Zum Beispiel ist für die Klausuren $f_E(e_i, e_j)$ gleich $-1$ wenn der Name des Studierenden der Klausur $e_i$ lexikographisch kleiner ist als der Name des Studierenden der Klausur $e_j$.
 $f_E$ **abstrahiert** alle unwichtigen Eigenschaften der Elemente der gegebenen Liste $\mathcal{L}$.
@@ -234,7 +235,7 @@ Wir kennen es nicht aber wir kennen etwas mit dem wir es identifizieren können.
 Im Fall des Telefonbuchs, kennen wir den Nachnamen des Eintrags (Elements).
 Der Nachname ist ein sogenannter Schlüssel, der ein Element eindeutig identifiziert.
 
-Erneut können wir diesen Schlüssel heraus**abstrahieren** und erneut machen wir dies durch eine Funktion
+Erneut können wir diesen Schlüssel heraus**abstrahieren**. Erneut erfolgt dies durch eine Funktion
 
 $$g: E \rightarrow \mathcal{K},$$
 
@@ -252,8 +253,9 @@ Transformieren Sie die formale Beschreibung (erneut) in eine ``Python`` Funktion
 ```
 
 ````{admonition} Ganzahlendivision (Python)
-
-Teilen wir in ``Python`` zwei ganze Zahlen ``/`` so erhalten wir eine Fließkommazahl selbst wenn die Division eine Ganzzahl ergeben würde!
+:name: python-int-division
+:class: python
+Teilen wir in ``Python`` zwei ganze Zahlen mit ``/`` so erhalten wir eine Fließkommazahl selbst wenn die Division eine Ganzzahl ergeben würde!
 
 ```python
 print(3/2)
@@ -262,8 +264,8 @@ print(4/2)
 print(type(4/2))
 ```
 
-``Python`` bietet aber auch eine die Ganzzahlendivision ``//`` an bei der das Ergebnis immer eine Ganzzahl ist.
-Es wird dabei stets auf die nächst liegende Ganzzahl **abgerundet**.
+``Python`` bietet aber auch die Ganzzahlendivision ``//`` an bei der das Ergebnis immer eine Ganzzahl ist.
+Es wird dabei stets auf die nächst liegende ganze Zahl [abgerundet](def-math-floor).
 
 ```python
 print(3//2)
@@ -290,7 +292,7 @@ def binary_search(key, mylist, f, g = lambda x : x):
     return None
 ```
 
-In unserer Lösung ist ``g`` als *Defaultwert* die Identität.
+In unserer Lösung belegen wir ``g`` mit der Identität als Standardargument.
 Das heißt, wenn die Anwender\*innen kein ``g`` spezifizieren, gehen wir davon aus, dass 
 
 $$\mathcal{K} = E$$
@@ -374,7 +376,8 @@ print(binary_search(key, telbook, cmp_strings, g))
 ```
 
 ````{admonition} Zeichenkettenvergleich (Python)
-
+:class: python
+:name: python-string-concat
 In ``Python`` werden Zeichenketten lexikographisch verglichen. Zum Beispiel ergibt
 
 ```python
@@ -396,15 +399,15 @@ Kleinbuchstaben sind also lexikographisch größer als Großbuchstaben.
 
 ## Fächer und Markierungen
 
-An Telefonbüchern finden sich häufig **Markierungen**, welche die Suche weiter beschleunigen.
-Für jeden Buchstaben finden wir oft eine Markierung, sodass wir genau wissen wo wir Namen mit dem Anfangsbuchsten, z.B. ``C``, finden.
+An Telefonbüchern finden sich häufig *Markierungen*, welche die Suche weiter beschleunigen.
+Für jeden Buchstaben finden wir oft eine Markierung, sodass wir genau wissen wo wir Namen mit dem Anfangsbuchstaben, z.B. ``C``, finden.
 Anstatt die [binäre Suche](def-binary-search) über alle Einträge durchzuführen, müssen wir lediglich alle Einträge, die mit ``C`` starten betrachten.
 
 ```{exercise} Unterstützte binäre Suche
 :label: binary-search-supported-exercise
 
 Angenommen jeder Buchstabe kommt als Anfangsbuchstabe gleich häufig vor.
-Wie viele Schritte (Intervallanpassungen) sparen Sie sich durch die Markierungen, wenn ihr Telefonbuch $20 000$ Einträge enthält?
+Wie viele Schritte (Intervallanpassungen) sparen Sie sich durch die Markierungen, wenn ihr Telefonbuch 20 000 Einträge enthält?
 
 ```
 
@@ -420,7 +423,7 @@ Damit sparen wir uns $5$ Schritte.
 
 ```
 
-Eine weitere Variante Dinge zu Ordnen ist diese in unterschiedliche leicht identifizierbare **Fächer** zu packen.
+Eine weitere Variante Dinge zu Ordnen ist diese in unterschiedliche leicht identifizierbare *Fächer* zu packen.
 Wir könnten zum Beispiel für jeden Anfangsbuchstaben ein Fach eröffnen und alle Seiten des Telefonbuchs in das jeweilige Fach packen.
 Dafür müssten wir das Buch natürlich zerschneiden.
 
@@ -434,7 +437,7 @@ Dazu werden wir zunächst Namen aus einer Datei einlesen und doppelte Einträge 
 ### Eine CSV Datei lesen
 
 Lassen Sie uns diese Markierungen nutzten.
-Wir werden dafür eine Liste der beliebtesten 1000 Mädchen- und Jungennamen von 1880 bis 2009 in den USA verwenden.
+Wir werden dafür eine Liste der beliebtesten 1000 Mädchen- und Jungen-Namen von 1880 bis 2009 in den USA verwenden.
 Die Datei ist eine CSV (Comma Seperated Value) Datei.
 Eine solche Datei hat meist einen sogenannten *Header* (Kopfzeile) gefolgt von den jeweiligen Daten.
 In unserem Fall sieht der Inhalt der Datei wie folgt aus.
@@ -450,13 +453,13 @@ In unserem Fall sieht der Inhalt der Datei wie folgt aus.
 ```
 
 Wir möchten aus dieser Datei lediglich die Namen also die Spalte ``name`` extrahieren.
-Später werden wir noch das Paket ``Pandas`` kennenlernen mit dem dies sehr viel einfacher geht.
+Mit dem bekannten Modul ``Pandas`` können wir mit solchen Dateien bzw. Daten sehr viel einfacher umgehen.
 Doch hier möchten wir selbst Hand anlegen.
 
 Der folgende Code öffnet die Datei ``baby-names.csv`` und ließt diese, sodass nach der Ausführung ``names`` alle Namen von ``baby-names.csv`` enthält (auch doppelte Einträge).
 ``babynames`` ist eine Sequenz von gelesenen Zeilen der CSV.
 Durch ``next(babynames)`` überspringen wir die *Kopfzeile*.
-Die ``for`` schleife iteriert über alle Zeilen.
+Die ``for``-Schleife iteriert über alle Zeilen.
 Jede Zeile ``row`` beinhaltet für jede Spalte einen Eintrag.
 ``row[0]`` ist das Jahr ``year`` und ``row[0]`` der Name ``name``, den wir extrahieren möchten.
 
@@ -483,7 +486,7 @@ names
 
 ```{exercise} Zählen doppelter Einträge
 :label: count-duplicates-exercise
-Schreiben Sie eine Funktion ``count(name, names)``, welche die Anzahl der Einträge in ``names`` die gleich ``name`` sind zurückgibt.
+Schreiben Sie eine Funktion ``count(name, names)``, welche die Anzahl der Einträge in ``names``, die gleich ``name`` sind, zurückgibt.
 Zählen Sie die Vorkommen von ``John``.
 ```
 
@@ -500,7 +503,7 @@ count("John", names)
 
 Wir möchten nun die Anzahl aller Namen in ``names`` zählen.
 Diese Anzahl sagt uns wie oft ein Name von 1880 bis 2008 in den Top 1000 der beliebtesten Namen in den USA war.
-Dazu legen wir ein [Dictionary](def-python-dictionary) an wobei der Schlüssel ``key`` des [Dictionarys](def-python-dictionary) ein Name ist und dessen Wert ``value`` wie oft dieser Name vorkommt.
+Dazu legen wir ein [Dictionary](def-python-dictionary) an, wobei der Schlüssel ``key`` des [Dictionarys](def-python-dictionary) ein Name ist und dessen Wert ``value`` angibt wie oft dieser Name vorkommt.
 Zum Beispiel:
 
 ```python
@@ -574,15 +577,15 @@ bzw.
 help(sorted)
 ```
 
-Liefert Ihnen Hinweise darüber was die Funktion macht und wie sie zu benutzten ist.
+liefert Ihnen Hinweise darüber was die Funktion macht und wie sie zu benutzten ist.
 
 
 ```{exercise} Einzigartige Einträge sortieren
 :label: unique-entries-sort-exercise
 
-Verwedenden Sie ``sorted`` um ``unique_names``
+Verwenden Sie ``sorted`` um ``unique_names``
 
-1. lexikographisch
+1. lexikographisch und
 2. nach der Anzahl der Einträge in ``names`` (meist vorkommende Name ganz vorne in der Liste)
 
 zu sortieren
@@ -597,9 +600,9 @@ unique_names_count = sorted(unique_names, key = lambda entry : countings[entry],
 ### Ordnung durch Fächer 
 
 Mit ``unique_names_lex`` haben wir eine lexikographisch sortierte Liste an beliebten Babynamen in den USA.
-Wäre es nicht praktisch sich die Namen, welche mit einem bestimmten Buchstaben beginnen aus der Lister herauszuziehen?
+Wäre es nicht praktisch sich die Namen, welche mit einem bestimmten Buchstaben beginnen aus der Liste herauszuziehen?
 Dies vereinfacht die Suche nach einem bestimmten Namen.
-Lassen Sie uns überdenken wie und warum wir Menschen Dinge in **Fächern** (engl. **Buckets**) ordnen.
+Lassen Sie uns überdenken wie und warum wir Menschen Dinge in *Fächern* (engl. *Buckets*) ordnen.
 
 Wie ordnen wir Menschen ganz alltägliche Dinge?
 Zum Beispiel in der Küche oder im Schlafzimmer?
@@ -613,22 +616,22 @@ Warum machen wir das?
 Nun damit wir bestimmte Dinge schneller finden.
 Anstatt den gesamten Schrank nach einer Hose zu durchsuchen, müssen wir nur einen kleinen Teil durchwühlen.
 Diese Ordnung dient natürlich auch der Übersicht.
-So sehen wir sehr schnell, wie viele Hosen wir überhaupt besitzten und ob es Zeit wird sich mal wieder eine neue zu besorgen.
+So sehen wir sehr schnell, wie viele Hosen wir überhaupt besitzen und ob es Zeit wird sich mal wieder eine neue zu besorgen.
 
-Die wesentliche Eigenschaft, die wir diesen Beispielen entziehen können ist, dass wir Dinge in **Fächern** ordnen.
-Diese **Fächer** können wir eindeutig und schnell identifizieren bzw. auf diese schnell zugreifen.
+Die wesentliche Eigenschaft, die wir diesen Beispielen entziehen können ist, dass wir Dinge *Fächern* zuordnen.
+Diese *Fächer* können wir eindeutig und schnell identifizieren bzw. auf diese schnell zugreifen.
 So wissen wir in welcher Schublade sich das Besteck befindet und in welchem Unterabteil der Schublade wir zur Gabel greifen.
-**Fächer** können sortiert sein, z.B. sind unsere Hemden möglicherweise in einer ganz bestimmten Reihenfolge aufgehängt.
+*Fächer* können sortiert sein, z.B. sind unsere Hemden möglicherweise in einer ganz bestimmten Reihenfolge aufgehängt.
 Sie können aber auch unsortiert sein, z.B. sind alle Gabeln durcheinander in einem Schubladenabteil.
-Befindet sich eine bestimmte Art von Dingen in einem **Fach** so können wir uns einen Überblick über diese eine Art verschaffen.
+Befindet sich eine bestimmte Art von Dingen in einem *Fach* so können wir uns einen Überblick über diese eine Art verschaffen.
 
-Es ist kein Zufall, dass wir Menschen Dinge in **Fächern** ordnen.
+Es ist kein Zufall, dass wir Menschen Dinge durch *Fächer* ordnen.
 Wir passen uns auch im Alltag den algorithmischen Strukturen an, die uns durch die Natur gegeben sind.
 Besonders bei den simpleren Datenstrukturen wird klar, dass es nicht die Informatiker\*innen waren, die diese Strukturen erfunden haben.
-Sie haben diese lediglich aus der Natur **abstrahiert**, in ein imaginäres Objekt umgewandelt und schließlich wieder als reales Objekt auf den Computer gebracht.
+Sie haben diese lediglich aus der Natur *abstrahiert*, in ein imaginäres Objekt umgewandelt und schließlich wieder als reales Objekt auf den Computer gebracht.
 
-In der **abstrakten Welt** modellieren wir mehrere **Fächer** meist durch eine einfache Liste.
-Jeder Listeneintrag **repräsentiert** ein **Fach** was wiederum eine Liste aber auch ein anderer [Sammlung (Collection)](def-collection) sein kann, siehe untere 
+In der *abstrakten Welt* modellieren wir mehrere *Fächer* meist durch eine einfache Liste.
+Jeder Listeneintrag *repräsentiert* ein *Fach*, was wiederum eine Liste aber auch eine andere [Sammlung (Collection)](def-collection) sein kann, siehe untere 
 {numref}`Abbildung {number} <fig-buckets>`.
 
 ```{figure} ../../figs/name-register/bucket.png
@@ -639,8 +642,8 @@ name: fig-buckets
 Fächer als Liste von Listen
 ```
 
-Da wir eine Liste zur Modellierung verwenden müssen wir anhand des Listenindex das gewünschte Fach identifizieren können.
-In unserem Beispiel brauchen wir eine Funktion ``index_of`` die uns für einen Buchstaben den korrekten Index gibt.
+Da wir eine Liste zur Modellierung verwenden, müssen wir anhand des Listenindex das gewünschte Fach identifizieren können.
+In unserem Beispiel brauchen wir eine Funktion ``index_of`` die uns für einen Buchstaben den korrekten Index liefert.
 
 ```{code-cell} python3
 def index_of(name):
@@ -690,7 +693,7 @@ Warum?
 Nun es könnte sein, dass es einen Buchstaben gibt, für den gar kein Name in der Liste ist.
 
 Um mit unserer neuen Datenstruktur zurecht zu kommen, können wir uns weitere Hilfsfunktionen basteln.
-Zum Beispiel wäre es praktisch auf ein bestimmtes **Fach** nicht über den Index $0,1,\ldots, 25$ sondern über den entsprechenden Buchstaben ``A``,``B``,...,``Z`` zuzugreifen.
+Zum Beispiel wäre es praktisch auf ein bestimmtes *Fach* nicht über den Index 0,1,..., 25, sondern über den entsprechenden Buchstaben ``A``,``B``,...,``Z`` zuzugreifen.
 
 ```{exercise} Zugriff eines Fachs
 :label: access-with-buckets
@@ -701,7 +704,7 @@ Schreiben Sie eine Funktion ``get_names(char, names_by_letter)``, die Ihnen für
 
 ```{code-cell} python3
 ---
-tags: [hide-output]
+tags: [output_scroll]
 ---
 def get_names(char, names_by_letter):
     return names_by_letter[index_of(char)]
@@ -711,19 +714,20 @@ get_names('C', names_by_letter)
 
 ### Ordnung durch Markierungen
 
-Wenn wir ein Telefonbuch genauer betrachten werden wir feststellen, dass es mit gut sichtbaren **Markierungen** versehen ist.
+Wenn wir ein Telefonbuch genauer betrachten werden wir feststellen, dass es mit gut sichtbaren *Markierungen* versehen ist.
 Zum Beispiel finden wir häufig für jeden Anfangsbuchstaben eine solche Markierung.
-Wir können diese **Markierungen** auch als **Fächer** interpretieren denn mithilfe von zwei aufeinanderfolgenden **Markierungen** beschreiben wir ein **Fach**.
-Nehmen wir zum Beispiel die Markierung für ``C`` und ``D`` so können wir das **Fach** ``C`` bzw. 2 identifizieren.
+Wir können diese *Markierungen* auch als *Fächer* interpretieren, denn mithilfe von zwei aufeinanderfolgenden *Markierungen* beschreiben wir ein *Fach*.
+Nehmen wir zum Beispiel die Markierung für ``C`` und ``D``, so können wir das *Fach* ``C`` bzw. mit dem Index 2 identifizieren.
 
-Diese Gemeinsamkeit ist ersichtlich doch worin unterscheiden sich **Markierungen** von **Fächern**?
+Diese Gemeinsamkeit ist ersichtlich doch worin unterscheiden sich *Markierungen* von *Fächern*?
 Anders gefragt: Worin unterscheidet sich Ihr Kleiderschrank von einem Telefonbuch im wesentlichen?
 
 ```{exercise} Kleiderschrank und Telefonbücher
 :label: buckets-vs-marks-exercise
 
-Welche wesentliche Eigenschaft unterscheidet einen Kleiderschrank (**Fächer**) von einem Telefonbuch (**Markierungen**)?
-Es geht uns um eine Eigenschaft, die sich auf die Implementierung auswirkt.
+Welche wesentliche Eigenschaft unterscheidet einen Kleiderschrank (*Fächer*) von einem Telefonbuch (*Markierungen*)?
+
+**Hinweis:** Es geht uns um eine Eigenschaft, die sich auf die Implementierung auswirken wird.
 
 ```
 
@@ -731,25 +735,26 @@ Es geht uns um eine Eigenschaft, die sich auf die Implementierung auswirkt.
 :label: buckets-vs-marks-solution
 :class: dropdown
 
-Einen Kleiderschrank befüllen und leeren wir, er ist **veränderlich** (engl. **mutable**)!
+Einen Kleiderschrank können wir jederzeit befüllen und leeren, er ist *veränderlich* (engl. *mutable*)!
 Wir legen neue Kleider hinein und holen Kleider heraus.
-Ein Telefonbuch ist **unveränderlich** (engl. **immutable**).
 
+Ein Telefonbuch ist in der Regel *unveränderlich* (engl. *immutable*).
 ```
 
-Wenn Sie sich unsere Implementierung der **Fächer** ansehen, wird klar, dass wir sehr einfach neue Namen hinzufügen können.
-Falls uns doppelte Elemente und die Sortierung innerhalb eines **Fachs** gleichgültig sind, reicht es das Element hinten anzuhängen.
-Andernfalls müssen wir die richtige Stelle identifizieren an der wir ein neues Element einfügen können.
-Wir müssen jedoch so oder so nichts an der Anordnung der **Fächer** ändern!
+Wenn Sie sich unsere Implementierung der *Fächer* ansehen, wird klar, dass wir sehr einfach neue Namen hinzufügen können.
+Falls uns doppelte Elemente und die Sortierung innerhalb eines *Fachs* gleichgültig sind, reicht es das Element hinten anzuhängen.
+Andernfalls müssen wir die richtige Stelle identifizieren an der wir ein neues Element einfügen wollen.
+Wir müssen in jedem Fall nichts an der Anordnung der *Fächer* ändern!
 
-Wie realisieren wir **Markierungen**?
-Eine **Markierung** zeigt auf eine bestimmte Seite im Telefonbuch in unserem Beispiel mit den Babynamen zeigt sie auf einen bestimmten Index der Liste aus Babynamen.
-Wir verwenden weiterhin ``unique_names_lex`` fügen aber eine weitere unterstützende Liste ``marks`` hinzu sodass
+Wie realisieren wir *Markierungen*?
+Eine *Markierung* zeigt auf eine bestimmte Seite im Telefonbuch.
+Im Beispiel mit den Babynamen, zeigt sie auf einen bestimmten Index der Liste aus Babynamen.
+Wir verwenden weiterhin ``unique_names_lex``, fügen aber eine weitere unterstützende Liste ``marks`` hinzu, sodass
 
-+ ``marks[0]`` auf den kleinsten Index zeigt der einen Namen der mit einem ``A`` startet enthält,
-+ ``marks[1]`` auf den kleinsten Index zeigt der einen Namen der mit einem ``B`` startet enthält,
++ ``marks[0]`` ist der kleinste Index der Indices der Wörter die mit einem ``A`` beginnen,
++ ``marks[1]`` ist der kleinste Index der Indices der Wörter die mit einem ``B`` beginnen,
 + ...
-+ ``marks[25]`` auf den kleinsten Index zeigt der einen Namen der mit einem ``Z`` startet enthält.
++ ``marks[25]`` ist der kleinste Index der Indices der Wörter die mit einem ``Z`` beginnen,
 
 ```{figure} ../../figs/name-register/marks.png
 ---
@@ -762,7 +767,7 @@ Babynamen (rechts) mit Markierungen (links)
 ```{exercise} Markierungen erzeugen
 :label: babynames-marks-exercise
 
-Schreiben Sie eine Funktion ``generate_marks(names_by_letter)`` die Ihnen Markierungen ``marks`` aus {numref}`Abbildung {number} <fig-babynames-marks>` erzeugt.
+Schreiben Sie eine Funktion ``generate_marks(names_by_letter)`` die Ihnen die Markierungen ``marks`` aus {numref}`Abbildung {number} <fig-babynames-marks>` erzeugt.
 
 ```
 
@@ -782,11 +787,11 @@ marks = generate_marks(unique_names_lex)
 unique_names_lex[marks[1]-1]
 ```
 
-Wir können nun sehr einfach durch alle Namen iterieren die mit einem ``C`` starten:
+Wir können nun sehr einfach durch alle Namen iterieren, die mit einem ``C`` starten:
 
 ```{code-cell} python3
 ---
-tags: [hide-output]
+tags: [output_scroll]
 ---
 marks = generate_marks(unique_names_lex)
 
@@ -795,17 +800,17 @@ for i in range(marks[mark_index], marks[mark_index+1]-1, 1):
     print(unique_names_lex[i])
 ```
 
-Oder wir können uns eine Teilliste kopieren die nur Namen beinhaltet die mit ``D`` starten:
+Oder wir können uns eine Teilliste kopieren, die nur Namen beinhaltet die mit ``D`` starten:
 
 ```{code-cell} python3
 ---
-tags: [hide-output]
+tags: [output_scroll]
 ---
 mark_index = index_of('D')
 unique_names_lex[marks[mark_index]:marks[mark_index+1]]
 ```
 
-Wir hatten festgehalten, dass sich ein Telefonbuch mit **Markierungen** nicht verändert.
+Wir hatten festgehalten, dass sich ein Telefonbuch mit *Markierungen* nicht verändert.
 Welches Problem tritt auf wenn wir Elemente in die Liste der sortierten Babynamen einfügen?
 
 ```{exercise} Elemente einfügen und Markierungen anpassen
@@ -884,8 +889,8 @@ remove_element(name, unique_names_lex, marks)
 print(len(unique_names_lex))
 ```
 
-Jedesmal wenn wir die Liste mit sortierten Babynamen ändern, müssen wir auch ``marks`` anpassen.
-Je nachdem wie viele **Markierungen** wir haben, kann dies viel Zeit kosten.
+Immer wenn wir die Liste mit sortierten Babynamen ändern, müssen wir auch ``marks`` anpassen.
+Je nachdem wie viele *Markierungen* wir haben, kann dies viel Zeit kosten.
 
 (sec-hashing)=
 ## Hashing und das Dictionary
@@ -893,32 +898,34 @@ Je nachdem wie viele **Markierungen** wir haben, kann dies viel Zeit kosten.
 In [Speicher - alles ist eine Liste](sec-memory) haben wir uns angesehen wie Listen im [Arbeitsspeicher](def-main-memory) realisiert werden.
 Erinnern Sie sich!
 Im Speicher liegen nur Zahlen und aus diesen Zahlen haben wir uns den Datentyp Liste gebastelt.
+
 Was wir nicht beschrieben haben ist wie die zweite wesentliche Datenstruktur, das [Dictionary](def-python-dictionary) im Speicher realisiert ist.
 Wie der Titel dieser Aufgabe betont, ist alles eine Liste.
-Der [Arbeitsspeicher](def-main-memory) ist eine Liste durch den wir ``Python``-Listen erhalten und die Basis des [Dictionary](def-python-dictionary) ist Liste die im Speicher liegt.
+Der Arbeitsspeicher ist eine Liste durch den wir ``Python``-[Listen](sec-list) erhalten und die Basis des Dictionary ist Liste die im Speicher liegt.
 
-In diesem Abschnitt werden wir uns gemeinsam erarbeiten wie wir von einer Liste zu einem [Dictionary](def-python-dictionary) gelangen.
+In diesem Abschnitt werden wir uns gemeinsam erarbeiten wie wir von einer Liste zu einem Wörterbuch/Dictionary gelangen.
 Der Schlüssel hierfür sind die sogenannten Hashingverfahren.
 
-Datenstrukturen die das **Hashing** verwenden versuchen die Speicheradresse (siehe [Speicher - alles ist eine Liste](sec-memory)) bzw. den Index eines Elements in einer Liste *direkt* durch einfache arithmetische Operationen aus einem Schlüssel ``key`` des Elements zu berechnen.
-Genau genommen verwendet unsere obige Fächer-Datenstruktur Hashing, denn wir berechnen anhand des Anfangsbuchstaben eines Elements (d.h. seinem ``key``) einen Index.
+Datenstrukturen die das *Hashing* verwenden versuchen die Speicheradresse (siehe [Speicher - alles ist eine Liste](sec-memory)) bzw. den Index eines Elements in einer Liste *direkt* durch einfache arithmetische Operationen aus einem Schlüssel ``key`` des Elements zu berechnen.
+Genau genommen verwendet unsere obige Fächer-Datenstruktur ein einfache Hashfunktion, denn wir berechnen anhand des Anfangsbuchstaben eines Elements (d.h. seinem ``key``) einen Index.
 
-Mit "versuchen" meinen wir, dass zwei unterschiedliche Elemente aber auch zwei verschiedene Schlüssel den gleichen Index ergeben können.
-Dies bezeichnen wir als **Kollision**.
-Diese Kollisionen müssen wir irgendwie auflösen.
+Mit 'versuchen' meinen wir, dass zwei unterschiedliche Elemente mit unterschiedlichen Schlüsseln durchaus den gleichen Index ergeben können.
+Dies bezeichnen wir als *Kollision*.
+Diese Kollisionen müssen wir irgendwie auflösen und wir hoffen, dass wir möglichst weniger solcher Kollisionen erzeugen.
 
 ```{admonition} Universum, Schlüssel, Liste und Hashfunktion
-
+:name: def-hashing-universe
+:class: definition
 Für die weitere Diskussion benötigen wir folgende Definitionen:
 
 + Ein *Universum* $\mathcal{U}$ an möglichen Schlüsseln, zum Beispiel $\mathcal{U} \subseteq \mathbb{N}_0$,
-+ Eine Menge an *Schlüsseln* $\mathcal{K} \subseteq \mathcal{U}$,
-+ Eine Liste $\mathcal{L}$ mit $|\mathcal{L}| = n$, oft auch *Hashtabelle* genannt,
-+ und eine *Hashfunktion* $h : \mathcal{U} \rightarrow \{0, \ldots, n-1\}$
++ eine Menge an *Schlüsseln* $\mathcal{K} \subseteq \mathcal{U}$,
++ eine Liste $\mathcal{L}$ mit $|\mathcal{L}| = n$, oft auch *Hashtabelle* genannt, und
++ eine *Hashfunktion* $h : \mathcal{U} \rightarrow \{0, \ldots, n-1\}$
 
 ```
 
-In unserer Fächer-Datenstruktur, lösen wir es indem wir alle Elemente mit dem gleichen Index in eine zweite Liste packen.
+In unserer Fächer-Datenstruktur, lösen wir Kollisionen auf indem wir alle Elemente mit gleichem Index in eine zweite Liste packen.
 Ein solches Verfahren heißt *offenes Hashing mit geschlossener Adressierung*.
 
 ```{figure} ../../figs/name-register/open-hashing.png
@@ -943,14 +950,15 @@ Benennen Sie $\mathcal{U}$, $\mathcal{K}$, $n$ unserer Fächer-Datenstruktur und
 + $\mathcal{U}$ = alle möglichen Zeichenketten
 + $\mathcal{K}$ = alle Zeichenketten in ``unique_names_lex``
 + $n = 26$
-+ $h$: Entspricht ``index_of(name)`` und berechnet aus dem ersten Zeichen einer Zeichenkette die Stelle des Buchstabens im Alphabet (beginnend bei null).
++ $h$: Entspricht ``index_of(name)`` und berechnet aus dem ersten Zeichen einer Zeichenkette die Stelle des Buchstabens im Alphabet (beginnend bei Null).
 
 ```
 
-Eine weitere Möglichkeit eine **Kollision** aufzulösen ist es nur eine große Liste zu verwenden.
+Eine weitere Möglichkeit eine *Kollision* aufzulösen ist es nur eine große Liste zu verwenden.
 Tritt eine Kollision auf, so wird nach einem anderen freien Platz gesucht.
 Für diese Technik muss $\mathcal{L}$ deutlich größer sein.
-Sobald die Liste droht voll zu laufen muss sie vergößert werden.
+Sobald die Liste droht voll zu laufen muss sie vergrößert werden.
+
 Ein solches Verfahren heißt *geschlossenes Hashing mit offener Adressierung*.
 In {numref}`Abbildung {number} <fig-closed-hashing>` ist dieses mit einer der einfachsten Kollisionsauflösungen skizziert: Falls ein Platz belegt ist suchen wir aufsteigend nach dem nächst liegenden freien Platz.
 
@@ -962,9 +970,9 @@ name: fig-closed-hashing
 Geschlossenes Hashing
 ```
 
-Egal welche Technik verwendet wird, eine solche [Sammlung](def-collection) enthält keine doppelten Schlüssel.
-Wir nennen eine solche [Sammlung](def-collection) auch **Hashtable**.
-Ziel ist es in **konstant vielen Schritten** auf ein beliebiges Element einer solchen [Sammlung](def-collection) 
+Egal welche Technik verwendet wird, eine solche [Sammlung](def-collection) enthält **keine doppelten Schlüssel**.
+Wir nennen eine solche [Sammlung](def-collection) auch *Hashtable*.
+Ziel ist es in konstant vielen Schritten $(\mathcal{O}(1))$ auf ein beliebiges Element einer solchen [Sammlung](def-collection) 
 
 + zuzugreifen ``search``,
 + ein Element einzufügen ``insert``,
@@ -972,7 +980,7 @@ Ziel ist es in **konstant vielen Schritten** auf ein beliebiges Element einer so
 
 ### Geschlossenes Hashing
 
-Lassen Sie uns aus anstatt des *offenen Hashings* das *geschlossene Hashing* aus {numref}`Abbildung {number} <fig-closed-hashing>` verwenden.
+Lassen Sie uns anstatt des *offenen Hashings* das *geschlossene Hashing* aus {numref}`Abbildung {number} <fig-closed-hashing>` verwenden.
 Wir möchten dabei zunächst unsere bereits bekannte *Hashfunktion* ``index_of(name)`` einsetzten.
 Außerdem gehen wir zunächst davon aus, dass die Menge der Schlüssel erneut unsere Babynamen sind.
 
@@ -1092,14 +1100,14 @@ all([search_index(name, hashtable) == index for index, name in enumerate(hashtab
 
 Die letzte Zeile des Codes erzeugt eine Liste aus boolschen Werten und wertet diese durch ``all`` aus.
 ``all`` ergibt genau dann ``True`` wenn jeder Wert in der Liste ``True`` ist.
-Der Wert am Index ``index`` ist dabei ``True`` genau dann wenn der ``search_index(name, hashtable) = index`` wobei ``name`` am Index ``index`` der Liste ``hashtable`` steht.
+Der Wert am Index ``index`` ist ``True`` genau dann wenn der ``search_index(name, hashtable) = index``, wobei ``name`` am Index ``index`` der Liste ``hashtable`` steht.
 
 Was noch fehlt ist das Löschen eines Elements in unserer Hashtable.
 Für das offene Hashing ist dies recht einfach: Wir suchen das Fach und löschen das Element aus diesem heraus.
 Für das geschlossenes Hashing ist dies jedoch nicht so einfach!
-Angenommen wir fürgen die Schlüssel ``'Anna'``, ``'Alex'``, ``'Clara'``, ``'Alba'`` und ``'Fabian'`` nacheinander in eine leere Hashtabelle ein.
+Angenommen wir fügen die Schlüssel ``'Anna'``, ``'Alex'``, ``'Clara'``, ``'Alba'`` und ``'Fabian'`` nacheinander in eine leere Hashtabelle ein.
 Und angenommen wir verwenden als Hashfunktion ``index_of`` und eine *lineare Sondierung*.
-Dann erhalten wir als Resultat die Liste in {numref}`Abbildung {number} <fig-closed-hashing-deletion>` aus.
+Dann erhalten wir als Resultat die Liste aus {numref}`Abbildung {number} <fig-closed-hashing-deletion>`.
 
 ```{figure} ../../figs/name-register/closed-hashing-deletion.png
 ---
@@ -1110,13 +1118,13 @@ Löschvorgang beim geschlossenes Hashing mit linearer Sondierung: Es wird der Sc
 ```
 
 Wenn wir nun ``'Alex'`` einfach löschen und anschließend nach ``'Alba'`` suchen, werden wir beim Index ``1`` stoppen und diesen Namen nicht mehr finden!
-Löschen wir ``'Alex'`` müssen wir alle Namen die einen größeren Index wie ``'Alex'`` haben und lückenlos aufeinander folgen, ebenfalls löschen und erneut einfügen.
+Löschen wir ``'Alex'``, so müssen wir alle Namen die einen größeren Index als ``'Alex'`` haben und lückenlos aufeinander folgen, ebenfalls löschen und erneut einfügen.
 Beachten Sie, dass sich die Position von ``'Clare'`` in der Liste in {numref}`Abbildung {number} <fig-closed-hashing-deletion>` nicht verändert, da ``index_of('Clare') == 2``.
 
 ```{exercise} Schlüssel löschen
 :label: name-register-open-hashing-delete-exercise
 
-Implementieren Sie den beschriebenen Algorithmus zum löschen eines Schlüssels in der Hashtabelle, d.h. implementieren Sie die Funktion ``delete(name, hashtable)``.
+Implementieren Sie den beschriebenen Algorithmus zum löschen eines Schlüssels in der Hashtabelle, d.h., implementieren Sie die Funktion ``delete(name, hashtable)``.
 
 ```
 
@@ -1146,7 +1154,7 @@ delete('Alex', hashtable)
 print(hashtable)
 ```
 
-Nun wird es zeit unsere Hashtabelle mit den Babynamen aus ``unique_names_lex`` zu befüllen.
+Nun wird es Zeit unsere Hashtabelle mit den Babynamen aus ``unique_names_lex`` zu befüllen.
 
 ```{exercise} Hashtable füllen
 :label: name-register-open-hashing-fill-exercise
@@ -1176,13 +1184,14 @@ $$
 \sum_{i=1}^n i = \frac{n \cdot (n+1)}{2}
 $$
 
-das sind
+also 
 
 $$
-6782 \cdot 6783 / 2 \approx 23 \cdot 10^6
+6782 \cdot 6783 / 2 \approx 23 \cdot 10^6,
 $$
 
-also circa 23 Millionen Schritte! In anderen Worten wir haben immens viele Kollisionen d.h. unsere Hashfunktion ``index_of`` ist miserabel!
+d.h., circa 23 Millionen Schritte! In anderen Worten wir haben immens viele Kollisionen.
+Unsere Hashfunktion ``index_of`` ist keine gute Hashfunktion!
 
 ```
 
@@ -1191,23 +1200,25 @@ also circa 23 Millionen Schritte! In anderen Worten wir haben immens viele Kolli
 Was genau ist eine Hashfunktion und wozu ist diese gut?
 
 ````{admonition} Hashfunktion
+:name: def-hash-function
+:class: definition
 
-Eine Hashfunktion über einer Menge $E$ (zum Beispiel die Menge aller Zeichenketten)
+Eine *Hashfunktion* über einem *Universum* $\mathcal{U}$ (zum Beispiel die Menge aller Zeichenketten)
 
 $$h : \mathcal{U} \rightarrow \{0, \ldots, n\}$$ 
 
-erzeugt durch meist einfache arithmetische Berechnungen aus einem Schlüssel $k \in \mathcal{K} \subseteq \mathcal{U}$ eine natürliche Zahl, sodass
+erzeugt durch meist einfache arithmetische Berechnungen aus einem Schlüssel $k \in \mathcal{K} \subseteq \mathcal{U}$ eine natürliche Zahl h(k), sodass
 
 ```{math}
 :label: name-register-hash-eq-1
-k_i = k_j \Rightarrow h(k_i) = h(k_j)
+k_i = k_j \Rightarrow h(k_i) = h(k_j).
 ```
 
-Den Wert $h(k)$ nennen wir Hashwert von $k$.
+Den Wert $h(k)$ nennen wir *Hashwert* oder kurz *Hash* von $k$.
 ````
 
 Sind zwei Schlüssel verschieden muss die Hashfunktion hingegen keine verschiedenen Zahlen zurückliefern!
-Die einfachste gültige und zugleich recht nutzlose Hashfunktion ist eine Konstante z.B. $h(k) = 0$.
+Die einfachste gültige und zugleich recht nutzlose Hashfunktion ist eine Konstante, z.B., $h(k) = 0$.
 
 Hashfunktionen werden oft verwendet um zu prüfen ob zwei Schlüssel gleich sind.
 Aus Gleichung {eq}`name-register-hash-eq-1` folgt:
@@ -1217,47 +1228,51 @@ Aus Gleichung {eq}`name-register-hash-eq-1` folgt:
 h(k_i) \neq h(k_j) \Rightarrow k_i \neq k_j.
 ```
 
-Deshalb wertet man erst die Hashfunktion der beiden Schlüssel aus und erst wenn diese die gleichen Werte liefert, prüft man genauer weiter.
+Deshalb wertet man erst die Hashfunktion der beiden Schlüssel aus.
+Erst wenn die Hashfunktion die gleichen Werte liefert, prüft man genauer weiter.
 Da die Hashfunktion oft sehr schnell ausgewertet werden kann, 
-Insbesondere wenn 
+insbesondere wenn 
 
 1. die Ungleichheit wahrscheinlich ist und 
-2. wir eine **gute Hashfunktion** besitzten
+2. wir eine gute Hashfunktion besitzen
 
 sind enorme Ersparnisse der Rechenzeit möglich.
-Sie können zum Beispiel aus einem riesigen Textdokument einen Hashwert generieren und so zwei Textdokumente auf Gleichheit prüfen.
+Sie können, zum Beispiel, aus einem riesigen Textdokument einen Hashwert generieren und so zwei Textdokumente auf Gleichheit prüfen.
 
-Was aber ist eine **gute Hashfunktion**?
+>Was aber ist eine gute Hashfunktion?
 
-Die erste wichtige Eigenschaft einer guten Hashfunktion $h$ ist, dass diese gut **streut**.
-D.h. Werten wir alle Hashwerte für unsere Schlüssel $\mathcal{K}$ aus, dann wäre es optimal wenn jeder Hashwert eindeutig ist, d.h. wenn
+Die erste wichtige Eigenschaft einer guten Hashfunktion $h$ ist, dass diese gut *streut*.
+D.h., werten wir alle Hashwerte für unsere Schlüssel $\mathcal{K}$ aus, dann wäre es optimal, wenn jeder Hashwert eindeutig ist, d.h. wenn
 
 $$
 k_i \neq k_j \Rightarrow h(k_i) \neq h(k_j) 
 $$
 
 gilt.
-Ist der Hashwert nahezu zufällig gleichverteilt zwischen $0$ und $n-1$ ist dies ebenfalls noch eine sehr gute Hashfunktion.
+Ist der Hashwert nahezu zufällig gleichverteilt zwischen $0$ und $n-1$ ist dies ebenfalls eine sehr gute Hashfunktion.
+
 Leider ist das *Universum* $\mathcal{U}$ meistens riesig, insbesondere deutlich größer als die Hashtabelle $\mathcal{L}$.
 Kennen wir $\mathcal{K}$ im Voraus und ändert sich diese Menge nicht, dann lässt sich oft eine perfekte Hashfunktion berechnen.
+Ein Beispiel sind unsere oben besprochenen Markierungen.
+
 Ein Geburtsdatum oder der Fingerabdruck (in einer Zahl codiert) wären Hashwert einer Person aus dem echten Leben.
 Das Geburtsdatum wäre jedoch ein schlechter Hashwert, da er für sehr viele Menschen gleich ist.
 Der Fingerabdruck hingegen ist ein sehr guter Hashwert.
 
-Die zweite wichtige Eigenschaft einer guten Hashfunktion $h$ ist, dass ihre Auswertung **billig** ist.
+Die zweite wichtige Eigenschaft einer guten Hashfunktion $h$ ist, dass ihre Auswertung *billig* ist.
 Die Auswertung sollte in konstant vielen Schritten vonstatten gehen.
 Nur wenn Sie billig ist, lohnt sich der Umweg über eine Hashfunktion.
 
 ### Die Build-in Hashfunktion
 
-Bevor wir unsere eigene verbesserte Hashfunktion schreiben, nutzten wir doch einmal was uns ``Python`` gegeben hat.
+Bevor wir unsere eigene verbesserte Hashfunktion schreiben, nutzten wir doch einmal was uns ``Python`` bereits bietet.
 
 ````{exercise} Pythons Hashfunktion
 :label: name-register-hashing-pythons-hash-exercise
 
 1. Lesen Sie die Dokumentation zur ``Python``-Funktion ``hash``. Sie finden diese [hier](https://docs.python.org/3/library/functions.html?highlight=hash#hash).
 
-2. Verwenden Sie die ``hash`` als Ihre Hashfunktion. Bauen Sie dafür die Funktionen aus der vorherigen Aufgabe so um, dass sie diesen eine Hashfunktion ``hash_func`` als Argument übergeben können.
+2. Verwenden Sie ``hash`` als Ihre Hashfunktion. Bauen Sie dafür die Funktionen aus der vorherigen Aufgabe so um, dass sie diesen eine Hashfunktion ``hash_func`` als Argument übergeben können.
 3. Führen Sie anschließend
     ```python
     hashtable = new_hash_table(unique_names_lex, hash_func=hash)
@@ -1338,7 +1353,7 @@ all([search_index(name, hashtable, hash_func=hash) == index
 ```{exercise} Kollisionen zählen
 :label: name-register-hashing-countcollisions-exercise
 
-Schreiben Sie eine ``Python``-Funktion ``collisions(hashtable, hash_func)``, welche Ihnen für die Liste Elemente der Liste ``hashtable`` die Kollisionen abhängig von der Hashfunktion ``hash_func`` zählt.
+Schreiben Sie eine ``Python``-Funktion ``collisions(hashtable, hash_func)``, welche Ihnen für die Listenelemente der Liste ``hashtable`` die Kollisionen, abhängig von der Hashfunktion ``hash_func`` zählt.
 In anderen Worten ``collisions(hashtable, hash_func)`` berechnet die Anzahl die Kollisionen die stattgefunden haben um die Elemente in ``hashtable`` einzufügen.
 
 Vergleiche Sie die Hashfunktionen ``index_of`` und ``hash``.
@@ -1355,13 +1370,14 @@ def collisions(hashtable, hash_func=hash):
 ```
 
 ```{code-cell} python3
-print(collisions(new_hash_table(unique_names_lex, hash), hash))         # 3610
-print(collisions(new_hash_table(unique_names_lex, index_of), index_of)) # 60751108
+print(f'number of elements: {len(unique_names_lex)}')
+print(f' collisions with hash: {collisions(new_hash_table(unique_names_lex, hash), hash)}')         # 16914
+print(f' collisions with index_of: {collisions(new_hash_table(unique_names_lex, index_of), index_of)}') # 60751108
 ```
 
-3610 **Kollisionen** für das Einfügen von 6782 ist ein sehr guter Schnitt.
-Das ist weniger als eine Kollision pro Element!
-``index_of`` verursacht hingegen über 60 Millionen **Kollisionen**!
+16914 *Kollisionen* für das Einfügen von 6782 ist ein akzeptabler Schnitt.
+Das ist ca. 2.5 Kollision pro Element!
+``index_of`` verursacht hingegen über 60 Millionen *Kollisionen*!
 
 Im Abschnitt [Python](sec-python) hatten wir erwähnt, dass ``Python`` aufwendige Berechnungen in ``C/C++``-Coder verlagert.
 Dies ist auch für die Funktion ``hash`` der Fall.
@@ -1412,7 +1428,7 @@ string_hash(PyStringObject *a)
 
 Lassen Sie uns nun unsere eigene verbesserte Hashfunktion entwickeln.
 Wir suchen nach einer Funktion, welche verschiedene Zeichenketten in verschiedene natürliche Zahlen umwandelt.
-Verwenden wir nur ein Zeichen für die Berechnung ist klar, dass wir nicht mehr als 25 verschiedene Zahlen erwarten können.
+Verwenden wir nur ein Zeichen für die Berechnung ist klar, dass wir nicht mehr als 26 verschiedene Zahlen erwarten können.
 
 Lassen Sie uns deshalb mehrere Zeichen für die Berechnung des Hashwerts verwenden.
 Eine erste Idee wäre die Summe der codierten Zeichen:
@@ -1427,7 +1443,7 @@ def hash_func_sum(name):
 print(collisions(new_hash_table(unique_names_lex, hash_func_sum), hash_func_sum))
 ```
 
-Immerhin erreichen wir damit nur noch 20 Millionen **Kollisionen**, was jedoch immernoch viel zu viel ist.
+Immerhin erreichen wir damit nur noch 20 Millionen *Kollisionen*, was jedoch immernoch viel zu viel ist.
 Wie sieht es mit der Multiplikation aus?
 
 ```{code-cell} python3
@@ -1444,17 +1460,17 @@ Etwas schlechter fällt hierfür das Ergebnis aus.
 
 ```{exercise} Hashfunktion der Addition und Multiplikation
 :label: hash-add-mul-hashmap-exercise
-Warum ist die beiden Hashfunktion ``hash_func_sum`` und ``hash_func_mul``, keine besonders guten Hashfunktionen?
+Warum sind die beiden Hashfunktion ``hash_func_sum`` und ``hash_func_mul``, keine besonders guten Hashfunktionen?
 ```
 
 ```{solution} hash-add-mul-hashmap-exercise
 :label: hash-add-mul-hashmap-solution
 :class: dropdown
-Sowohl die Addition als auch die Multiplikation ist kommutativ deswegen fließt die Reihenfolge der Zeichen nicht in die Berechnung ein.
+Sowohl die Addition als auch die Multiplikation ist kommutativ. Deswegen fließt die Reihenfolge der Zeichen nicht in die Berechnung ein.
 ``Thomas`` und ``hasToh`` haben den gleichen Hashwert.
 ```
 
-Erinnern wir uns zurück an die Darstellung von Zahlen im Binär und Dezimalsystem, siehe [Zahlen im Binärsystem](sec-binary-numbers).
+Erinnern wir uns zurück an die Darstellung von Zahlen im Binär- und Dezimalsystem, siehe [Zahlen im Binärsystem](sec-binary-numbers).
 Auch hier haben wir aus einer Folge von Zeichen ``0`` und ``1`` eine **eindeutige Zahl** berechnet.
 Aus einer Zahl $b_{n-1} \ldots b_2b_1b_0$ in Binärdarstellung haben wir die eindeutige Dezimalzahl
 
@@ -1463,7 +1479,8 @@ $$
 $$
 
 berechnet. Dieses **Berechnungsmuster** können wir wiederverwenden!
-Angenommen unsere Zeichenkette als Folge von Zahlen (ASCII) ist $s_{n-1} \ldots s_2s_1s_0$ und $p$ ist irgendeine *Basis*, dann ist 
+
+Angenommen unsere Zeichenkette, interpretiert als Folge von Zahlen (ASCII), ist $s_{n-1} \ldots s_2s_1s_0$ und $p$ ist irgendeine *Basis*, dann ist 
 
 $$
 \sum\limits_{i=0}^n s_i \cdot p^{i} = s_0 \cdot p^0 + s_1 \cdot p^1 + \cdots s_{n-1} \cdot p^{n-1}
@@ -1495,15 +1512,15 @@ Was für ein kleines $p$ könnte sich besonders gut eignen und warum?
 Eine Primzahl $p$ eignet sich besonders gut, da dann die Produkte
 
 $$
-s_i \cdot p^{n-1-i} \text{ und } s_j \cdot p^{n-1-j}
+s_i \cdot p^{i} \text{ und } s_j \cdot p^{j} \text{ mit } i \neq j
 $$ 
 
 nur gleich sein können, wenn $p$ in der Faktorisierung von $s_i$ oder $s_j$ vorkommt.
-Ist $p$ keine Primzahl gibt es mehr Möglichkeiten, dass die beiden Produkte gleich sind.
+Ist $p$ keine Primzahl gibt es mehr Möglichkeiten für die Gleichheit der beiden Produkte.
 ```
 
-Sie sehen wir tauchen ein wenig in die Zahlentheorie ein.
-Dieses mathematische Denken ist auch ein Teil des [Computational Thinkings](sec-what-is-ct)!
+Sie sehen, wir tauchen ein wenig in die Zahlentheorie ein.
+Dieses mathematische Denken ist auch ein Teil des [Computational Thinkings](sec-what-is-ct).
 
 ```{exercise} Eine gute Hashfunktion
 :label: good-hashfunction-hashmap-exercise
@@ -1527,7 +1544,8 @@ print(collisions(new_hash_table(unique_names_lex, hash_func), hash_func)) # 3432
 Wir haben es geschafft!!!
 Nur noch 3432 Kollisionen!
 Damit sind wir für unseren Fall besser als die ``Python``-Funktion ``hash``.
-Die Berechnungszeit hängt noch von der Anzahl der Zeichen eines Namen ``name`` ab.
+
+Allerdings hängt die Berechnungszeit noch von der Anzahl der Zeichen eines Namen ``name`` ab.
 Wir könnten uns darauf einigen nur die ersten $m$ Zeichen zu berücksichtige.
 
 ```{code-cell} python3
@@ -1542,7 +1560,7 @@ def hash_func(name):
 print(collisions(new_hash_table(unique_names_lex, hash_func), hash_func))
 ```
 
-Das Ergebnis ist mit 3692 Kollisionen immernoch sehr gut und die Auswertung benötigt nun eine konstante Anzahl von maximal 8 Schritten.
+Das Ergebnis ist mit 3692 Kollisionen immernoch sehr gut und die Auswertung benötigt nun eine **konstante Anzahl** von maximal 8 Schritten.
 
 ### Unser Dictionary
 
@@ -1563,9 +1581,9 @@ print(dictionary['Dieter'])
 print(dictionary['Bella'])
 ```
 
-Das ist genau dann sehr nützlich, wenn wir den Schlüssel einfach berechnen und auch hashen können den Wert jedoch nicht.
+Das ist genau dann sehr nützlich, wenn wir den Schlüssel einfach berechnen und auch hashen können, den Wert jedoch nicht.
 In unserer Hashtable sind Namen die Schlüssel, was bisher fehlt ist der Wert.
-Um unsere Hashtable um Werte zu erweitern machen wir aus der Liste ``hashtable`` wir zwei gleich Lange Listen ``keys`` und ``values``.
+Um unsere Hashtable um Werte zu erweitern, machen wir aus der Liste ``hashtable`` zwei gleich Lange Listen ``keys`` und ``values``.
 Dafür müssen wir selbstverständlich alle bisher implementierten Funktionen anpassen.
 
 ```{exercise} Unser Dictionary
@@ -1576,12 +1594,13 @@ Passen Sie alle Funktionen entsprechend an. Sie müssen folgenden Funktionen anp
 + ``search_index``
 + ``contains``
 + ``get_value``: Dies Funktion sollte nicht mehr den Schlüssel sondern den Wert zurückliefern!
-+ ``insert``: Sollte nur einen neuen Wert einfügen falls es den Schlüssel dafür noch nicht gibt.
++ ``insert``: Sollte nur einen neuen Wert einfügen, falls es den entsprechenden Schlüssel noch nicht gibt.
 + ``delete``
 + ``new_hash_table``
 + ``collisions``
 
-Führen Sie zusätzlich eine Funktion ``set_value``, welche den Wert eines Schlüssels ändert, sofern dieser existiert.
+Führen Sie zusätzlich eine Funktion ``set_value`` ein.
+Diese soll den Wert eines passend zum übergebenen Schlüssel ändert, sofern dieser existiert.
 
 ```
 
@@ -1690,17 +1709,17 @@ print(insert('3', 'Anna', hashtable, hash_func))    # True
 print(get_value('3', hashtable, hash_func))         # Anna
 ```
 
-Unsere Funktionen und das Paar ``keys``, ``values`` bilden unser eigenes [Dictionary](def-python-dictionary).
+Zusammen mit unseren Funktionen bildet das Paar ``keys``, ``values`` unser eigenes [Dictionary](def-python-dictionary).
 
 ### Hashtable Klasse (optional)
 
-Um die Funktionalität besser zu Kapseln und nicht eignet sich eine Klasse ``Hashtable``.
-Wir haben Ihnen diese aus den Funktionen obigen und den zwei Listen gebaut.
-Anstatt ``new_hash_table`` haben wir durch ``insert_all`` ersetzt.
+Um die Funktionalität besser zu kapseln, können wir die Funktionalität mit samt der zwei Listen in eine Klasse ``Hashtable`` packen.
+Wir haben Ihnen diese zusammengestellt.
+``new_hash_table`` haben wir durch ``insert_all`` ersetzt.
 
 Zudem gibt es noch drei weitere Funktionen ``size``, ``__has_to_resize`` und ``__resize``.
 ``size`` liefert die Anzahl der Elemente in der Hashtable zurück.
-``__has_to_resize`` ist genau dann wahr wenn die Hashtable vergrößert oder verkleinert werden muss und ``__resize`` führt diese Anpassung durch.
+``__has_to_resize`` ist genau dann wahr, wenn die Hashtable vergrößert oder verkleinert werden muss und ``__resize`` führt diese Anpassung durch.
 
 Wann immer ein Element aus der Hashtable gelöscht oder eingefügt wird, testen wir mit ``__has_to_resize`` ob wir die Hashtable anpassen müssen.
 Ist die Hahstable $2/3$ voll, dann wird sie vergrößert und ist sie nur $1/6$ befüllt, wird sie verkleinert.
@@ -1717,7 +1736,7 @@ Weshalb sollte die Hashtable nicht zu groß und nicht zu klein sein?
 :class: dropdown
 
 Ist die Hashtable zu groß verbrauchen wir unnötig viel Speicher.
-Ist sie hingegen zu klein gibt es mehr und mehr **Kollisionen** und die Laufzeit der Funktionen der Hashtable erhöht sich!
+Ist sie hingegen zu klein gibt es mehr und mehr *Kollisionen* und die Laufzeit der Funktionen der Hashtable erhöht sich!
 
 ```
 
