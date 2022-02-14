@@ -8,8 +8,9 @@ In einem solchen Buch standen die Telefonnummern der Menschen, welche in einem b
 ```{admonition} Lernziel
 :class: learngoals
 
-TODO
-
+In der Übung [Speicher - alles ist eine Liste](sec-memory) hatten wir uns angesehen, wie eine [Liste](sec-list) im Arbeitsspeicher realisiert wird.
+In dieser Übung lernen Sie wie aus dieser Liste mittels einer Hashfunktion die zweite wichtige Datenstruktur, das [Wörterbuch / Dictionary](sec-dict) entsteht.
+Sie werden Ihr eigenes Wörterbuch Schritt für Schritt entwickeln.
 ```
 
 Ein Telefonbuch liefert Ihnen für einen gegebenen Namen die zugehörige Telefonnummer der Familie oder Person.
