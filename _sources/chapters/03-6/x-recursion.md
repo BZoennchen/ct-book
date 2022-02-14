@@ -114,7 +114,7 @@ Ist unsere Rekursion zu tief, läuft der Stacks voll:
 tags: [raises-exception]
 ---
 
-fac(5000)
+fac(1000)
 ```
 
 Wir können die maximale erlaubte Rekursionstiefe auch anpassen:
@@ -124,9 +124,9 @@ Wir können die maximale erlaubte Rekursionstiefe auch anpassen:
 tags: [raises-exception]
 ---
 import sys
-sys.setrecursionlimit(10**5)
+sys.setrecursionlimit(5000)
 
-fac(5000)
+fac(1000)
 ```
 
 Der andere Speicherbereich, welcher nicht zum *Stack* gehört, bezeichnen wir als *Heap*.
@@ -168,17 +168,17 @@ Läuft dieser voll, schlägt die Vorhersage fehl und die Ausführungszeit verlä
 Lassen Sie uns die Laufzeiten der beiden Implementierungen vergleichen:
 
 ```{code-cell} python3
-%timeit fac_it(5000)
+%timeit fac_it(1000)
 ```
 
 ```{code-cell} python3
-%timeit fac(5000)
+%timeit fac(1000)
 ```
 
-Der rekursive Aufruf benötigt ca. 8 Millisekunden, wohingegen die iterative Berechnung ca. 340 Nanosekunden benötigt.
+Der rekursive Aufruf benötigt ca. 473 Nanosekunden, wohingegen die iterative Berechnung ca. 60 Nanosekunden benötigt.
 Das heißt die iterative Berechnung ist um einen Faktor von
 
-$$\frac{8000}{340} \approx 24$$
+$$\frac{473}{60} \approx 7.8$$
 
 schneller!
 
