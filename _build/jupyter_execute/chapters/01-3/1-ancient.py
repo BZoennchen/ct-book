@@ -13,7 +13,7 @@ Dieser antike Computer war dazu gedacht, bestimmte Positionen der Himmelskörper
 height: 150px
 name: greeks
 ---
-Denker*innen Ihrer Zeit: Euklid, Eratosthenes, Hypatia.
+Denker*innen Ihrer Zeit: Euklid, Eratosthenes, Hypatia, Quellen: [2](https://en.wikipedia.org/wiki/File:Eratosthene.01.png), [3](https://commons.wikimedia.org/wiki/File:Hypatia_portrait.png).
 ```
 
 Sumerer, Ägypter, Babylonier, Chinesen, Griechen und andere antike Völker entwickelten Rechenhilfsmittel um insbesondere die Bewegung der Himmelskörper besser zu bestimmen und zu verstehen.
@@ -73,7 +73,7 @@ Es ist eine clevere Technik um Primzahlen zu berechnen.
 height: 150px
 name: fig-euklid-elements
 ---
-Ein Fragment der Werke *Die Elemente*.
+Ein Fragment der Werke *Die Elemente*, [Quelle](http://www.math.ubc.ca/~cass/Euclid/papyrus/papyrus.html).
 ```
 
 Doch noch vor Eratosthenes, notierte Euklid von Alexandria (ca 450 v. Chr. - Mitte 350 v. Chr.) in seinem Werk *Die Elemente*, einen Algorithmus für die Berechnung des größten gemeinsamen Teilers ``gcd(a,b)`` zweier natürlicher Zahlen ``a``, ``b``.
@@ -101,7 +101,7 @@ Jedoch sollten erst im 19. Jahrhundert, durch Mathematiker wie George Boole, Got
 height: 150px
 name: logicians
 ---
-Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russell.
+Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russell, Quellen: [1](https://commons.wikimedia.org/wiki/File:George_Boole_color.jpg), [2](https://commons.wikimedia.org/wiki/File:Young_frege.jpg).
 ```
 
 In China wurde zwischen 200 vor und 100 nach Christus das Mathematikbuch *Jiu Zhang Suanshu* (*Neun Bücher arithmetischer Technik*) verfasst.

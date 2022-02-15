@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="4. Speicher - alles ist eine Liste" href="memory.html" />
     <link rel="prev" title="2. Sprechen in der Taucherglocke" href="dive-bell.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,32 +793,50 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
             href="../../_sources/chapters/04/image-representation.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/04/image-representation.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/04/image-representation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/04/image-representation.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -828,7 +847,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/04/image-representation.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -836,7 +855,7 @@
         
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -848,7 +867,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -901,7 +920,7 @@
               <div>
                 
   <div class="section" id="binares-zeichnen-struktur-ist-information">
-<span id="sec-binary-drawing"></span><h1><span class="section-number">3. </span>Binäres Zeichnen - Struktur ist Information<a class="headerlink" href="#binares-zeichnen-struktur-ist-information" title="Permalink to this headline">¶</a></h1>
+<span id="sec-binary-drawing"></span><h1><span class="section-number">3. </span>Binäres Zeichnen - Struktur ist Information<a class="headerlink" href="#binares-zeichnen-struktur-ist-information" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="learngoals admonition">
 <p class="admonition-title">Lernziel</p>
 <p>In diesem Abschnitt werden wir das was wir im Abschnitt <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> und <a class="reference internal" href="../02-1/2-representation.html#sec-representation"><span class="std std-ref">Repräsentation</span></a> besprochen hatten konkretisieren.
@@ -921,7 +940,7 @@ Im Zuge dessen werden Sie Probleme in viele Teilprobleme aufteilen (<strong>Deko
 Sie werden Ihre <strong>Mustererkennung</strong> benötigen und auch <strong>mathematisches Denken</strong> praktizieren.</p>
 </div>
 <div class="section" id="interpretation">
-<h2><span class="section-number">3.1. </span>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Interpretation<a class="headerlink" href="#interpretation" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wir beginnen mit einem Schwarz-Weiß-Rasterbild.
 In anderen Worten: Lassen Sie uns unsere eigene Interpretation konstruieren.</p>
 <p>Wir orientieren uns an dem sog. <a class="reference internal" href="../02-1/2-representation.html#pixel-image"><span class="std std-ref">Rasterbild</span></a>.
@@ -979,7 +998,7 @@ Den notwendigen Interpreter, der diese Interpretation realisiert, bietet uns fol
 </div>
 </div>
 <div class="section" id="listen-in-python">
-<h3><span class="section-number">3.1.1. </span>Listen in Python<a class="headerlink" href="#listen-in-python" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1. </span>Listen in Python<a class="headerlink" href="#listen-in-python" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Bevor wir weiter fortfahren, lassen Sie uns einen wiederholten Blick auf die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste werfen.
 Eine ausführlichere Diskussion zu Listen finden Sie im Abschnitt <a class="reference internal" href="../03-4/5-list.html#sec-list"><span class="std std-ref">Listen</span></a> im Teil <strong>PYTHON</strong>.</p>
 <p>Der Zugriff auf einzelne Listenelemente einer zweidimensionalen Liste unterscheidet sich im Endeffekt nicht von dem der eindimensionalen Liste.
@@ -1039,8 +1058,8 @@ Stattdessen wird die Speicheradresse kopiert, sodass beide Einträge der Liste <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Address of first row is 4606169920
-Address of second row is 4606169920
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Address of first row is 4573968576
+Address of second row is 4573968576
 </pre></div>
 </div>
 </div>
@@ -1219,7 +1238,7 @@ Testen Sie beide Versionen für große <code class="docutils literal notranslate
 </div>
 </div>
 <div class="section" id="funktionen-in-python">
-<span id="sec-python-function"></span><h3><span class="section-number">3.1.2. </span>Funktionen in Python<a class="headerlink" href="#funktionen-in-python" title="Permalink to this headline">¶</a></h3>
+<span id="sec-python-function"></span><h3><span class="section-number">3.1.2. </span>Funktionen in Python<a class="headerlink" href="#funktionen-in-python" title="Link zu dieser Überschrift">¶</a></h3>
 <p><a class="reference internal" href="../03-6/intro.html#sec-functions"><span class="std std-ref">Funktionen</span></a> definieren wir mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">def</span></code> gefolgt vom Funktionsnamen und den <a class="reference internal" href="../03-3/3-invoking-functions.html#def-parameter"><span class="std std-ref">Parametern</span></a>  der Funktion sowie ihrer Logik.
 Die Werte, die diese <em>Parameter</em> beim Funktionsaufruf annehmen, nennen wir <em>Argumente</em>.</p>
 <p>Falls Sie mit Ihrer Funktion einen Wert, eine Liste, oder ein anderes Objekt zurückgeben möchten nutzen Sie das <code class="docutils literal notranslate"><span class="pre">return</span></code>-Schlüsselwort.
@@ -1282,7 +1301,7 @@ Zum Beispiel soll aus <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <div class="section" id="informationserzeugung">
-<h2><span class="section-number">3.2. </span>Informationserzeugung<a class="headerlink" href="#informationserzeugung" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Informationserzeugung<a class="headerlink" href="#informationserzeugung" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="exercise admonition" id="representation-pic-with-border">
 <p class="admonition-title"><span class="caption-number">Exercise 3.9 </span>(Bild generieren)</p>
 <div class="section" id="exercise-content">
@@ -1487,7 +1506,7 @@ Dabei soll die Breite <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <div class="section" id="informationsmanipulation">
-<h2><span class="section-number">3.3. </span>Informationsmanipulation<a class="headerlink" href="#informationsmanipulation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Informationsmanipulation<a class="headerlink" href="#informationsmanipulation" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wir haben bereits jetzt ein neues Bildformat geschaffen und ein kleines Programm, welches unser Format interpretieren und als Rasterbild anzeigt.
 In anderen Worten, unsere erdachte <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> wurde realisiert.</p>
 <p>Jetzt können wir uns austoben und weitere Bilder generieren.
@@ -1536,7 +1555,7 @@ Widmen wir uns nun dem Problem ein Rechteck bzw. Dreieck zu zeichnen.
 Wir wenden die <strong>Mustererkennung</strong> an und bemerken, dass sowohl das Dreieck als auch das Rechteck aus Segmenten besteht (drei für das Dreieck und 4 für das Rechteck).
 Deshalb können wir das Problem in das Zeichnen mehrere Segmente <strong>zerteilen</strong>.</p>
 <p>Ein Segment können wir durch zwei Punkte <span class="math notranslate nohighlight">\(p_1 = (x_1, y_1)\)</span> und <span class="math notranslate nohighlight">\(p_2 = (x_2, y_2)\)</span> definieren.
-Wir könnten aus den Punkten die Geradengleichung <span class="math notranslate nohighlight">\(f(x) = mx + t\)</span> berechnen und diese ‘abfahren’.
+Wir könnten aus den Punkten die Geradengleichung <span class="math notranslate nohighlight">\(f(x) = mx + t\)</span> berechnen und diese ‚abfahren‘.
 Hier würden wir jedoch auf unangenehme Sonderfälle stoßen.
 Zum Beispiel, lässt sich ein Segment was parallel zur <span class="math notranslate nohighlight">\(y\)</span>-Achse verläuft nicht durch eine Funktion beschreiben.</p>
 <div class="figure align-default" id="fig-midpoint">
@@ -1858,7 +1877,7 @@ Durch wie viele Punkte die Funktion noch gut erkennbar ist, ist jedoch im allgem
 </div>
 </div>
 <div class="section" id="daumenkino">
-<h2><span class="section-number">3.4. </span>Daumenkino<a class="headerlink" href="#daumenkino" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>Daumenkino<a class="headerlink" href="#daumenkino" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die folgende Methode (<em>Interpreter</em>) erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots).
 Falls Sie den Parameter <code class="docutils literal notranslate"><span class="pre">save</span></code> auf <code class="docutils literal notranslate"><span class="pre">True</span></code> setzen, wird ein GIF (eine Bildfolge/Daumenkino/Minivideo) erzeugt und in der Datei <code class="docutils literal notranslate"><span class="pre">'binary-drawing.gif'</span></code> abgespeichert.</p>
 <div class="cell docutils container">
@@ -2102,42 +2121,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img58667c2bb7364eb59f9042e96305d589">
+  <img id="_anim_imgc051641ae77b4fb2a4028f1ceef40aac">
   <div class="anim-controls">
-    <input id="_anim_slider58667c2bb7364eb59f9042e96305d589" type="range" class="anim-slider"
+    <input id="_anim_sliderc051641ae77b4fb2a4028f1ceef40aac" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim58667c2bb7364eb59f9042e96305d589.set_frame(parseInt(this.value));"></input>
+           oninput="animc051641ae77b4fb2a4028f1ceef40aac.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="anim58667c2bb7364eb59f9042e96305d589.slower()">
+      <button title="Decrease speed" onclick="animc051641ae77b4fb2a4028f1ceef40aac.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="anim58667c2bb7364eb59f9042e96305d589.first_frame()">
+      <button title="First frame" onclick="animc051641ae77b4fb2a4028f1ceef40aac.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="anim58667c2bb7364eb59f9042e96305d589.previous_frame()">
+      <button title="Previous frame" onclick="animc051641ae77b4fb2a4028f1ceef40aac.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="anim58667c2bb7364eb59f9042e96305d589.reverse_animation()">
+      <button title="Play backwards" onclick="animc051641ae77b4fb2a4028f1ceef40aac.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="anim58667c2bb7364eb59f9042e96305d589.pause_animation()">
+      <button title="Pause" onclick="animc051641ae77b4fb2a4028f1ceef40aac.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="anim58667c2bb7364eb59f9042e96305d589.play_animation()">
+      <button title="Play" onclick="animc051641ae77b4fb2a4028f1ceef40aac.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="anim58667c2bb7364eb59f9042e96305d589.next_frame()">
+      <button title="Next frame" onclick="animc051641ae77b4fb2a4028f1ceef40aac.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="anim58667c2bb7364eb59f9042e96305d589.last_frame()">
+      <button title="Last frame" onclick="animc051641ae77b4fb2a4028f1ceef40aac.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="anim58667c2bb7364eb59f9042e96305d589.faster()">
+      <button title="Increase speed" onclick="animc051641ae77b4fb2a4028f1ceef40aac.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_select58667c2bb7364eb59f9042e96305d589"
+    <form title="Repetition mode" action="#n" name="_anim_loop_selectc051641ae77b4fb2a4028f1ceef40aac"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_58667c2bb7364eb59f9042e96305d589"
+      <input type="radio" name="state" value="once" id="_anim_radio1_c051641ae77b4fb2a4028f1ceef40aac"
              >
-      <label for="_anim_radio1_58667c2bb7364eb59f9042e96305d589">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_58667c2bb7364eb59f9042e96305d589"
+      <label for="_anim_radio1_c051641ae77b4fb2a4028f1ceef40aac">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_c051641ae77b4fb2a4028f1ceef40aac"
              checked>
-      <label for="_anim_radio2_58667c2bb7364eb59f9042e96305d589">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_58667c2bb7364eb59f9042e96305d589"
+      <label for="_anim_radio2_c051641ae77b4fb2a4028f1ceef40aac">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_c051641ae77b4fb2a4028f1ceef40aac"
              >
-      <label for="_anim_radio3_58667c2bb7364eb59f9042e96305d589">Reflect</label>
+      <label for="_anim_radio3_c051641ae77b4fb2a4028f1ceef40aac">Reflect</label>
     </form>
   </div>
 </div>
@@ -2147,9 +2166,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img58667c2bb7364eb59f9042e96305d589";
-    var slider_id = "_anim_slider58667c2bb7364eb59f9042e96305d589";
-    var loop_select_id = "_anim_loop_select58667c2bb7364eb59f9042e96305d589";
+    var img_id = "_anim_imgc051641ae77b4fb2a4028f1ceef40aac";
+    var slider_id = "_anim_sliderc051641ae77b4fb2a4028f1ceef40aac";
+    var loop_select_id = "_anim_loop_selectc051641ae77b4fb2a4028f1ceef40aac";
     var frames = new Array(19);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbAAAAEgCAYAAADVKCZpAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -3545,7 +3564,7 @@ SS0ZMElSSwZMktTS/wOc77bhSMsv0gAAAABJRU5ErkJggg==\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim58667c2bb7364eb59f9042e96305d589 = new Animation(frames, img_id, slider_id, 100.0,
+        animc051641ae77b4fb2a4028f1ceef40aac = new Animation(frames, img_id, slider_id, 100.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -3797,42 +3816,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imgd4c78ada383e4b53ad59bccfb6e3807d">
+  <img id="_anim_imgf86f37dc207048eab6dfc764cc789bb9">
   <div class="anim-controls">
-    <input id="_anim_sliderd4c78ada383e4b53ad59bccfb6e3807d" type="range" class="anim-slider"
+    <input id="_anim_sliderf86f37dc207048eab6dfc764cc789bb9" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="animd4c78ada383e4b53ad59bccfb6e3807d.set_frame(parseInt(this.value));"></input>
+           oninput="animf86f37dc207048eab6dfc764cc789bb9.set_frame(parseInt(this.value));"></input>
     <div class="anim-buttons">
-      <button title="Decrease speed" onclick="animd4c78ada383e4b53ad59bccfb6e3807d.slower()">
+      <button title="Decrease speed" onclick="animf86f37dc207048eab6dfc764cc789bb9.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" onclick="animd4c78ada383e4b53ad59bccfb6e3807d.first_frame()">
+      <button title="First frame" onclick="animf86f37dc207048eab6dfc764cc789bb9.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" onclick="animd4c78ada383e4b53ad59bccfb6e3807d.previous_frame()">
+      <button title="Previous frame" onclick="animf86f37dc207048eab6dfc764cc789bb9.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" onclick="animd4c78ada383e4b53ad59bccfb6e3807d.reverse_animation()">
+      <button title="Play backwards" onclick="animf86f37dc207048eab6dfc764cc789bb9.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" onclick="animd4c78ada383e4b53ad59bccfb6e3807d.pause_animation()">
+      <button title="Pause" onclick="animf86f37dc207048eab6dfc764cc789bb9.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" onclick="animd4c78ada383e4b53ad59bccfb6e3807d.play_animation()">
+      <button title="Play" onclick="animf86f37dc207048eab6dfc764cc789bb9.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" onclick="animd4c78ada383e4b53ad59bccfb6e3807d.next_frame()">
+      <button title="Next frame" onclick="animf86f37dc207048eab6dfc764cc789bb9.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" onclick="animd4c78ada383e4b53ad59bccfb6e3807d.last_frame()">
+      <button title="Last frame" onclick="animf86f37dc207048eab6dfc764cc789bb9.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" onclick="animd4c78ada383e4b53ad59bccfb6e3807d.faster()">
+      <button title="Increase speed" onclick="animf86f37dc207048eab6dfc764cc789bb9.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" action="#n" name="_anim_loop_selectd4c78ada383e4b53ad59bccfb6e3807d"
+    <form title="Repetition mode" action="#n" name="_anim_loop_selectf86f37dc207048eab6dfc764cc789bb9"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_d4c78ada383e4b53ad59bccfb6e3807d"
+      <input type="radio" name="state" value="once" id="_anim_radio1_f86f37dc207048eab6dfc764cc789bb9"
              >
-      <label for="_anim_radio1_d4c78ada383e4b53ad59bccfb6e3807d">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_d4c78ada383e4b53ad59bccfb6e3807d"
+      <label for="_anim_radio1_f86f37dc207048eab6dfc764cc789bb9">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_f86f37dc207048eab6dfc764cc789bb9"
              checked>
-      <label for="_anim_radio2_d4c78ada383e4b53ad59bccfb6e3807d">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_d4c78ada383e4b53ad59bccfb6e3807d"
+      <label for="_anim_radio2_f86f37dc207048eab6dfc764cc789bb9">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_f86f37dc207048eab6dfc764cc789bb9"
              >
-      <label for="_anim_radio3_d4c78ada383e4b53ad59bccfb6e3807d">Reflect</label>
+      <label for="_anim_radio3_f86f37dc207048eab6dfc764cc789bb9">Reflect</label>
     </form>
   </div>
 </div>
@@ -3842,9 +3861,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imgd4c78ada383e4b53ad59bccfb6e3807d";
-    var slider_id = "_anim_sliderd4c78ada383e4b53ad59bccfb6e3807d";
-    var loop_select_id = "_anim_loop_selectd4c78ada383e4b53ad59bccfb6e3807d";
+    var img_id = "_anim_imgf86f37dc207048eab6dfc764cc789bb9";
+    var slider_id = "_anim_sliderf86f37dc207048eab6dfc764cc789bb9";
+    var loop_select_id = "_anim_loop_selectf86f37dc207048eab6dfc764cc789bb9";
     var frames = new Array(100);
 
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbAAAAEgCAYAAADVKCZpAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -13076,7 +13095,7 @@ sg4AAAAASUVORK5CYII=\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        animd4c78ada383e4b53ad59bccfb6e3807d = new Animation(frames, img_id, slider_id, 100.0,
+        animf86f37dc207048eab6dfc764cc789bb9 = new Animation(frames, img_id, slider_id, 100.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -13091,7 +13110,7 @@ sg4AAAAASUVORK5CYII=\
 </div>
 </div>
 <div class="section" id="fourier-zeichnungen-optional">
-<h2><span class="section-number">3.5. </span>Fourier-Zeichnungen (optional)<a class="headerlink" href="#fourier-zeichnungen-optional" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.5. </span>Fourier-Zeichnungen (optional)<a class="headerlink" href="#fourier-zeichnungen-optional" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Was nun folgt ist ein sich Austoben in der Welt die wir uns geschaffen haben.
 Wir möchten Ihnen eine ganz bestimmte Zeichenmethode nicht vorenthalten.</p>
 <p>Stellen Sie sich ein Blatt Papier vor.
@@ -13208,9 +13227,9 @@ Können wir durch unsere Zeichenmethode Ton zeichnen?</p>
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

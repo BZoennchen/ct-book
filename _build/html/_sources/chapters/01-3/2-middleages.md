@@ -17,7 +17,7 @@ Die zu berechnende Fläche wird dabei in viele kleine Parallelogramme und Dreiec
 height: 150px
 name: fig-amsler-polarplanimeter
 ---
-Amsler Polarplanimeter.
+Amsler Polarplanimeter, [Quelle](https://en.wikipedia.org/wiki/Planimeter#/media/File:Amsler-Polarplanimeter-2.jpg).
 ```
 
 1854 wurde das Polarplanimeter vom Ingenieur Jakob Amsler-Laffon erfunden.

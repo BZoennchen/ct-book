@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -53,8 +54,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="5.5. Primitive Datentypen in Python?" href="5-primitive-data-types.html" />
     <link rel="prev" title="5.3. Interpretationswechsel" href="3-change-of-interpretation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -75,7 +76,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -83,7 +84,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -762,7 +763,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -781,8 +782,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -790,32 +791,50 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
             href="../../_sources/chapters/03-5/4-kind-of-data-types.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/03-5/4-kind-of-data-types.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/03-5/4-kind-of-data-types.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/03-5/4-kind-of-data-types.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -826,7 +845,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-5/4-kind-of-data-types.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -834,7 +853,7 @@
         
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -846,7 +865,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -877,7 +896,7 @@
               <div>
                 
   <div class="section" id="arten-von-datentypen">
-<span id="sec-kind-of-data-types"></span><h1><span class="section-number">5.4. </span>Arten von Datentypen<a class="headerlink" href="#arten-von-datentypen" title="Permalink to this headline">¶</a></h1>
+<span id="sec-kind-of-data-types"></span><h1><span class="section-number">5.4. </span>Arten von Datentypen<a class="headerlink" href="#arten-von-datentypen" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Der <em>Datentyp</em> einer Variablen gibt an, wie die <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="../02-1/2-representation.html#def-byte"><span class="std std-ref">Bytes</span></a> <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">interpretiert</span></a> werden.
 Die Bits und Bytes des Speicherbereichs, auf welchen die Variable <em>zeigt</em>, machen den <em>Wert</em> der Variablen aus.
 Im folgenden definieren und initialisieren wir Variablen mit unterschiedlichen Datentypen:</p>
@@ -920,7 +939,7 @@ Primitive Datentypen sind spezielle atomare Datentypen.
 Oftmals sind built-in Datentypen zugleich primitive Datentypen (siehe z.B. <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>).
 Eigens definierte Datentypen können niemals primitiv sein.</p>
 <div class="section" id="primitive-datentypen">
-<h2><span class="section-number">5.4.1. </span>Primitive Datentypen<a class="headerlink" href="#primitive-datentypen" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.1. </span>Primitive Datentypen<a class="headerlink" href="#primitive-datentypen" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="definition admonition" id="def-primitive-datatypes">
 <p class="admonition-title">Primitive Datentypen</p>
 <p><em>Primitive Datentypen</em> sind jene Datentypen aus denen alle anderen Datentypen einer Sprache hervorgehen.
@@ -935,7 +954,7 @@ Der Wert vom Typ <code class="docutils literal notranslate"><span class="pre">in
 Das heißt wir können <code class="docutils literal notranslate"><span class="pre">int</span></code> weiter in den Zähler und den eigentlichen Wert zerlegen.
 Allerdings macht es keinen Sinn diese beiden Teile zu zersplittern und separat weiter zu verarbeiten – sie gehören zusammen, da sie nur gemeinsam verarbeitbar sind!
 Zeichenketten sind weder primitiv noch atomar, denn eine Zeichenkette lässt sich in ihre einzelnen Zeichen zersplittern und die Weiterverarbeitung der einzelner Zeichen macht durchaus Sinn.</p>
-<p>Übertragen wir das auf die ‘echte’ Welt, so könnte man bei einem Brief von einem Wert eines <a class="reference internal" href="../03-4/1-data-types.html#def-data-structures"><span class="std std-ref">zusammengesetzten Datentyps</span></a> sprechen.
+<p>Übertragen wir das auf die ‚echte‘ Welt, so könnte man bei einem Brief von einem Wert eines <a class="reference internal" href="../03-4/1-data-types.html#def-data-structures"><span class="std std-ref">zusammengesetzten Datentyps</span></a> sprechen.
 Dieser enthält einen Briefkopf, ein Datum einen Absender, Empfänger und den Text.
 Das Datum ist wiederum ein <em>zusammengesetzten Datentyp</em> bestehend aus Tag, Monat und Jahr.
 Der Tag ist schließlich ein <em>primitiver</em> oder (in <code class="docutils literal notranslate"><span class="pre">Python</span></code>) ein <em>atomarer</em> Datentyp (eine Zahl zwischen 0 und 31).</p>
@@ -954,7 +973,7 @@ Begründen Sie Ihre Antwort.</p>
 </div>
 </div>
 <div class="section" id="built-in-datentypen">
-<span id="sec-built-in-data-types"></span><h2><span class="section-number">5.4.2. </span>Built-in Datentypen<a class="headerlink" href="#built-in-datentypen" title="Permalink to this headline">¶</a></h2>
+<span id="sec-built-in-data-types"></span><h2><span class="section-number">5.4.2. </span>Built-in Datentypen<a class="headerlink" href="#built-in-datentypen" title="Link zu dieser Überschrift">¶</a></h2>
 <p><em>Built-in</em> Datentypen sind jene Datentypen, welche die Programmiersprache (ohne weitere Bibliotheken) mitliefert.
 Zur Vollständigkeit listen wir hier alle <em>built-in Datentypen</em> von <code class="docutils literal notranslate"><span class="pre">Python</span></code> auf.
 Einige davon werden Sie jedoch in diesem Kurs nicht verwenden.
@@ -1067,7 +1086,7 @@ Element 4 Type: &lt;class &#39;str&#39;&gt;
 </div>
 </div>
 <div class="section" id="zusammengesetzte-datentypen">
-<h2><span class="section-number">5.4.3. </span>Zusammengesetzte Datentypen<a class="headerlink" href="#zusammengesetzte-datentypen" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4.3. </span>Zusammengesetzte Datentypen<a class="headerlink" href="#zusammengesetzte-datentypen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Zusammengesetzte Datentypen definieren wir durch andere Datentypen, welche bereits definiert wurden.
 Die Basis der zusammengesetzten Datentypen sind deshalb entweder <em>built-in Datentypen</em> der Sprache oder eigens definierte zusammengesetzte Datentypen.</p>
 <p>Angenommen Sie wollen den Datentyp <code class="docutils literal notranslate"><span class="pre">Person</span></code> definieren welcher sich dadurch auszeichnet, dass er sich aus zwei Zeichenketten <code class="docutils literal notranslate"><span class="pre">str</span></code> nämlich dem Vor- und Nachnamen zusammensetzt.
@@ -1175,9 +1194,9 @@ Es kann dennoch sein, dass eine Sammlung die 10 Elemente enthält nicht verände
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

@@ -216,7 +216,7 @@ Wie lange dies jedoch sein muss ist im Vornhinein unklar.
 height: 200px
 name: model-of-a-tm-2
 ---
-Eine konkrete Konstruktion einer Turingmaschine.
+Eine konkrete Konstruktion einer Turingmaschine, [Quelle](https://de.wikipedia.org/wiki/Turingmaschine#/media/Datei:Model_of_a_Turing_machine.jpg).
 ```
 
 (sec-utm)=

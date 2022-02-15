@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -53,8 +54,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="3.2. Mittelalter bis 19. Jahrhundert" href="2-middleages.html" />
     <link rel="prev" title="3. Geschichte der Computer und Algorithmen" href="history.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -75,7 +76,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -83,7 +84,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -762,7 +763,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -781,8 +782,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -790,32 +791,50 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
             href="../../_sources/chapters/01-3/1-ancient.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/01-3/1-ancient.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/01-3/1-ancient.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/01-3/1-ancient.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -826,7 +845,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/01-3/1-ancient.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -834,7 +853,7 @@
         
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -854,7 +873,7 @@
               <div>
                 
   <div class="section" id="antike">
-<h1><span class="section-number">3.1. </span>Antike<a class="headerlink" href="#antike" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.1. </span>Antike<a class="headerlink" href="#antike" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Die Geschichte der Computer und Algorithmen beginnt 2700 bis 2400 Jahre vor Christus.
 Zu dieser Zeit konstruierten vermutlich die Sumerer das älteste bekannte Rechenhilfsmittel, den Abakus.
 Er unterstützte sie bei der Addition, Subtraktion, Multiplikation und Division ganzer Zahlen.
@@ -863,7 +882,7 @@ Ziel war es Rechenfehler bei einfachen Berechnungen zu verhindern.</p>
 Dieser antike Computer war dazu gedacht, bestimmte Positionen der Himmelskörper zu bestimmen – schon immer waren wir Menschen von der Frage nach unserem Platz und unserer Bedeutung im Universum angetrieben.</p>
 <div class="figure align-default" id="greeks">
 <a class="reference internal image-reference" href="../../_images/greeks.png"><img alt="../../_images/greeks.png" src="../../_images/greeks.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Denker*innen Ihrer Zeit: Euklid, Eratosthenes, Hypatia.</span><a class="headerlink" href="#greeks" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.1 </span><span class="caption-text">Denker*innen Ihrer Zeit: Euklid, Eratosthenes, Hypatia, Quellen: <a class="reference external" href="https://en.wikipedia.org/wiki/File:Eratosthene.01.png">2</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Hypatia_portrait.png">3</a>.</span><a class="headerlink" href="#greeks" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Sumerer, Ägypter, Babylonier, Chinesen, Griechen und andere antike Völker entwickelten Rechenhilfsmittel um insbesondere die Bewegung der Himmelskörper besser zu bestimmen und zu verstehen.
 In Alexandria bildete sich das Zentrum der damaligen Wissenschaft.
@@ -873,7 +892,7 @@ Schiffe, die im Hafen ankerten, wurden nach neuen Mitschriften durchsucht.
 In der Agora wurde rege über die Laufbahn der Himmelskörper, geometrische Körper und besondere Zahlen diskutiert.</p>
 <div class="figure align-default" id="fig-earth-curvature">
 <a class="reference internal image-reference" href="../../_images/earth-curvature.png"><img alt="../../_images/earth-curvature.png" src="../../_images/earth-curvature.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Eratosthenes und die Erdkrümmung.</span><a class="headerlink" href="#fig-earth-curvature" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.2 </span><span class="caption-text">Eratosthenes und die Erdkrümmung.</span><a class="headerlink" href="#fig-earth-curvature" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Eratosthenes (276 v. Chr. - 194 v. Chr.) war einer der herausragenden Denker dieser Zeit und zugleich Leiter der Bibliothek in Alexandria.
 Eines Tages, so erzählt man sich, machte er eine herausragende Entdeckung:
@@ -945,7 +964,7 @@ Nach Eratosthenes ist einer der ersten Algorithmen überhaupt benannt, der <a cl
 Es ist eine clevere Technik um Primzahlen zu berechnen.</p>
 <div class="figure align-default" id="fig-euklid-elements">
 <a class="reference internal image-reference" href="../../_images/the-elements.jpg"><img alt="../../_images/the-elements.jpg" src="../../_images/the-elements.jpg" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Ein Fragment der Werke <em>Die Elemente</em>.</span><a class="headerlink" href="#fig-euklid-elements" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.3 </span><span class="caption-text">Ein Fragment der Werke <em>Die Elemente</em>, <a class="reference external" href="http://www.math.ubc.ca/~cass/Euclid/papyrus/papyrus.html">Quelle</a>.</span><a class="headerlink" href="#fig-euklid-elements" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Doch noch vor Eratosthenes, notierte Euklid von Alexandria (ca 450 v. Chr. - Mitte 350 v. Chr.) in seinem Werk <em>Die Elemente</em>, einen Algorithmus für die Berechnung des größten gemeinsamen Teilers <code class="docutils literal notranslate"><span class="pre">gcd(a,b)</span></code> zweier natürlicher Zahlen <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>.
 Über zweitausend Jahre später finden wir jene Algorithmen in einer anderen Form wieder.</p>
@@ -978,7 +997,7 @@ Zur Zeit des römischen Reichs formulierten dann die Stoiker das erste aussagelo
 Jedoch sollten erst im 19. Jahrhundert, durch Mathematiker wie George Boole, Gottlob Frege und Bertrand Russell, weitreichende Fortschritte möglich werden.</p>
 <div class="figure align-default" id="logicians">
 <a class="reference internal image-reference" href="../../_images/logicians.png"><img alt="../../_images/logicians.png" src="../../_images/logicians.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russell.</span><a class="headerlink" href="#logicians" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.4 </span><span class="caption-text">Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russell, Quellen: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:George_Boole_color.jpg">1</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Young_frege.jpg">2</a>.</span><a class="headerlink" href="#logicians" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>In China wurde zwischen 200 vor und 100 nach Christus das Mathematikbuch <em>Jiu Zhang Suanshu</em> (<em>Neun Bücher arithmetischer Technik</em>) verfasst.
 In ihm findet sich einer der noch heute bekanntesten Algorithmen zum Lösen linearer Gleichungssystem: Das sog. <em>Gaußsche Eliminationsverfahren</em>.
@@ -1026,9 +1045,9 @@ Wir wissen natürlich nicht welches, möglicherweise entscheidendes Wissen durch
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

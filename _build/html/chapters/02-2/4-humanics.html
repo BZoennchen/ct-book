@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -53,8 +54,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="3.5. Zusammenfassung" href="5-summary.html" />
     <link rel="prev" title="3.3. Kritik" href="3-critic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -75,7 +76,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -83,7 +84,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -762,7 +763,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -781,8 +782,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -790,7 +791,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -798,21 +799,39 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/02-2/4-humanics.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-2/4-humanics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-2/4-humanics.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -823,7 +842,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -849,9 +868,9 @@
               <div>
                 
   <div class="section" id="geisteswissenschaften">
-<h1><span class="section-number">3.4. </span>Geisteswissenschaften<a class="headerlink" href="#geisteswissenschaften" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.4. </span>Geisteswissenschaften<a class="headerlink" href="#geisteswissenschaften" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="semiotik">
-<h2><span class="section-number">3.4.1. </span>Semiotik<a class="headerlink" href="#semiotik" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.1. </span>Semiotik<a class="headerlink" href="#semiotik" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die <em>Semiotik</em> (<em>Lehre der Zeichen</em>), ist die Wissenschaft, die sich mit Zeichensystemen aller Art befasst.
 Charles W. Morris erarbeitete ein semiotisches Informationsmodell, bei dem er drei Zeichenebenen unterschied:</p>
 <ol class="simple">
@@ -863,7 +882,7 @@ Charles W. Morris erarbeitete ein semiotisches Informationsmodell, bei dem er dr
 <p>In der Semiotik wird Information durch diese vierstellige Struktur verstanden.</p>
 <div class="figure align-default" id="fig-semiotik-information">
 <a class="reference internal image-reference" href="../../_images/semiotik-information.png"><img alt="../../_images/semiotik-information.png" src="../../_images/semiotik-information.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.14 </span><span class="caption-text">Semiotisches Viereck.</span><a class="headerlink" href="#fig-semiotik-information" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.14 </span><span class="caption-text">Semiotisches Viereck.</span><a class="headerlink" href="#fig-semiotik-information" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Die Syntax, wie etwa die deutsche Grammatik, stellt eine Beziehung zu den Zeichen (unserem Alphabet) her.
 Zeichen stehen mit anderen Zeichen durch eine Syntax in Beziehung.
@@ -892,13 +911,13 @@ Die <strong>pragmatische</strong> Wirkung ist etwa: Die Zeichenempfänger*innen 
 Bei Missachtung muss er mit einer Sanktion rechnen.</p>
 </div>
 <div class="section" id="evolutionare-perspektive">
-<h2><span class="section-number">3.4.2. </span>Evolutionäre Perspektive<a class="headerlink" href="#evolutionare-perspektive" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.2. </span>Evolutionäre Perspektive<a class="headerlink" href="#evolutionare-perspektive" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Der deutsche Informatiker Klaus Fuchs-Kittowski greift die Perspektive aus der Semiotik wieder auf.
 Er versteht unter <em>Information</em> eine Einheit von <strong>Syntax</strong>, <strong>Semantik</strong> und <strong>Pragmatik</strong>.
 Dabei müssen alle drei Aspekte gleichzeitige Vorliegen, um etwas als <em>Information</em> qualifizieren zu können.</p>
 <div class="figure align-default" id="fuchs-pyramid">
 <a class="reference internal image-reference" href="../../_images/fuchs-pyramid.png"><img alt="../../_images/fuchs-pyramid.png" src="../../_images/fuchs-pyramid.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.15 </span><span class="caption-text">Wissenspyramide nach Fuchs-Kittowski.</span><a class="headerlink" href="#fuchs-pyramid" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.15 </span><span class="caption-text">Wissenspyramide nach Fuchs-Kittowski.</span><a class="headerlink" href="#fuchs-pyramid" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Fuchs-Kittowski stellt einige Thesen auf:</p>
 <ul class="simple">
@@ -926,7 +945,7 @@ Sie gehen stattdessen davon aus, dass es drei verschieden komplexe selbstorganis
 <li><p>Soziale Systeme</p></li>
 </ol>
 <p>Die Qualitäten einer höheren Ebene <strong>emergieren</strong> aus der jeweils darunterliegenden Ebene.
-Wie oben bereits erwähnt ist mit <strong>emergieren</strong> gemeint, dass ohne hierarchisch vorgebende Struktur durch das Zusammenspiel der Einzelteile, etwas Neues ‘aus sich selbst heraus’ entsteht.
+Wie oben bereits erwähnt ist mit <strong>emergieren</strong> gemeint, dass ohne hierarchisch vorgebende Struktur durch das Zusammenspiel der Einzelteile, etwas Neues ‚aus sich selbst heraus‘ entsteht.
 Ein höheres System weißt Aspekte von Information auf, welches die niedrigeren Systeme nicht aufweisen.
 Gleichzeitig gibt es Aspekte der Information, die für evolutionär-aufeinanderfolgenden Systemen gleichermaßen zutreffen.</p>
 <p>In <em>physikalisch-chemischen Systemen</em> (niedrigste Ebene) hat die Information einen rein <strong>syntaktischen</strong> Charakter.
@@ -989,9 +1008,9 @@ Nach Fuchs und Hofkirchner, entsteht <strong>soziale Inklusion</strong> durch <s
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

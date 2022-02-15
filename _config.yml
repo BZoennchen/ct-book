@@ -1,6 +1,6 @@
 title: Computational Thinking
-logo: figs/logo-HM.png
-author: Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger
+logo: figs/logo-HM-small.png
+author: "" #
 email: zoennchen.benedikt@hm.edu
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "de_computational-thinking.md", "Planung-Computational-Thinking-ALLGEMEIN.md", "README.md"]
 only_build_toc_files: true
@@ -8,10 +8,12 @@ only_build_toc_files: true
 bibtex_bibfiles:
   - references.bib
 
+bibtex_reference_style: author_year
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: auto
+  execute_notebooks: auto # off
   timeout: 200
 
 
@@ -29,6 +31,8 @@ sphinx:
   config:
     myst_enable_extensions: ["dollarmath", "amsmath", "colon_fence"]
     myst_heading_anchors : 3
+    html_show_copyright: false
+    language: de
 
 # Information about where the book exists on the web
 repository:
@@ -39,3 +43,21 @@ launch_buttons:
 #  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
 #  jupyterhub_url: "https://datahub.cs.hm.edu/"  # The URL for your JupyterHub. (e.g., https://datahub.berkeley.edu)
   thebe: true
+
+html:
+  navbar_number_sections    : True  # Add a number to each section in your left navbar
+  use_edit_page_button      : True  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button     : True  # Whether to add a link to your repository button
+  use_issues_button         : True  # Whether to add an "open an issue" button
+  home_page_in_navbar       : True  # Whether to include your home page in the left Navigation Bar
+  extra_navbar: Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
+  extra_footer: #
+    <div class="container">
+    <div class="col1">
+      <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo">
+    <div>
+    <div class="col1">
+      Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br>
+      lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    </div>

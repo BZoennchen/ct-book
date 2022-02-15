@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="2.6. Berechenbarkeit" href="5-hardware-equals-software.html" />
     <link rel="prev" title="2.4. Manipulation" href="3-manipulation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,7 +793,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -800,21 +801,39 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/02-1/4-information-flow.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-1/4-information-flow.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-1/4-information-flow.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -825,7 +844,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -861,7 +880,7 @@
               <div>
                 
   <div class="section" id="der-informationskreislauf">
-<span id="sec-information-flow"></span><h1><span class="section-number">2.5. </span>Der Informationskreislauf<a class="headerlink" href="#der-informationskreislauf" title="Permalink to this headline">¶</a></h1>
+<span id="sec-information-flow"></span><h1><span class="section-number">2.5. </span>Der Informationskreislauf<a class="headerlink" href="#der-informationskreislauf" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Sie kennen nun die vier grundlegenden Aufgaben eines Computers und wissen wie er aus den zwei Zuständen <strong>Strom aus</strong> und <strong>Strom an</strong> Informationen der unterschiedlichsten Art repräsentieren kann.
 Zudem haben wir uns angesehen, wie aus primitiven boolschen Operationen, welche über Gatter/Schaltungen realisiert werden, komplexe Berechnungen entstehen.</p>
 <p>Bereits an dieser Stelle wird deutlich, dass Abstraktion und Komposition eine zentrale Rolle in der Informatik spielen.
@@ -880,7 +899,7 @@ Wie wird aus Gattern, elektrischen Leitungen und dem Speicher ein vollwertiger (
 </ol>
 <p>realisiert?</p>
 <div class="section" id="die-von-neumann-architektur">
-<span id="sec-von-neumann"></span><h2><span class="section-number">2.5.1. </span>Die Von-Neumann-Architektur<a class="headerlink" href="#die-von-neumann-architektur" title="Permalink to this headline">¶</a></h2>
+<span id="sec-von-neumann"></span><h2><span class="section-number">2.5.1. </span>Die Von-Neumann-Architektur<a class="headerlink" href="#die-von-neumann-architektur" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Bevor wir diese Frage klären brauchen wir ein konzeptionelles Verständnis der wesentlichen Bauteile und deren grundsätzlichen Interaktion.
 Zusammengenommen bilden sie den <em>digitalen Computer</em>.
 Eine solche Beschreibung bezeichnen wir als <em>Hardware-Architektur</em>.
@@ -889,7 +908,7 @@ So gibt es auch Beschreibungen einzelner Bauteile die wiederum die Interaktion i
 <p>Wie der Bauplan eines Hauses, in dem festgelegt ist wie Küche und Bad miteinander verbunden sind und wie die Bewohner das Gebäude nutzen können, legt eine Architektur fest über welche Leitungen beispielsweise der Speicher mit den Recheneinheiten interagiert.</p>
 <div class="figure align-default" id="von-neumann-architecture-2">
 <a class="reference internal image-reference" href="../../_images/von-neumann-architecture.png"><img alt="../../_images/von-neumann-architecture.png" src="../../_images/von-neumann-architecture.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Die Von-Neumann-Architektur auch bekannt als Princeton Architektur.</span><a class="headerlink" href="#von-neumann-architecture-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 2.10 </span><span class="caption-text">Die Von-Neumann-Architektur auch bekannt als Princeton Architektur.</span><a class="headerlink" href="#von-neumann-architecture-2" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Die <em>Von-Neumann-Architektur</em> ist wohl die bekannteste und zugleich meist verwendete Hardware-Architektur bzw. <em>Rechnerarchitektur</em> die den Aufbau der Computer beschreibt.
 Jeder Rechner den Sie je benutzt haben basiert höchstwahrscheinlich auf dieser Architektur.</p>
@@ -910,7 +929,7 @@ Der <em>interne Bus</em> auch <em>Speicher-Bus</em> oder <em>System-Bus</em> gen
 Es gibt aber auch <em>Bus-Systeme</em> die unterschiedliche Computer oder andere Geräte (z.B. externen Speicher) miteinander verbinden.</p>
 <p>Die <em>Hauptplatine</em> ist jenes Bauteil auf dem die CPU-nahen Komponenten (CPU, Hauptspeicher, Grafikkarte, interne Bus-Systeme) montiert werden.</p>
 <p>Die <em>Kontrolleinheit</em> besteht aus einer Komposition von Gattern, einem <em>Instruktionsregister</em> sowie einem <a class="reference internal" href="#def-program-counter"><span class="std std-ref">Befehlszeiger</span></a>.
-Sie fungiert als Programminterpreter oder ‘Mastermind’ und delegiert Aufgaben an die jeweils dafür geeigneten Recheneinheiten weiter.
+Sie fungiert als Programminterpreter oder ‚Mastermind‘ und delegiert Aufgaben an die jeweils dafür geeigneten Recheneinheiten weiter.
 Sie ließt die Programmanweisungen aus dem Hauptspeicher und realisiert diese indem sie die <em>arithmetische/logische Einheit</em> mit Instruktionen und den notwendigen, aus dem Hauptspeicher geladenen Daten versorgt.
 Fließkommaoperationen delegiert die Kontrolleinheit häufig an eine spezielle (hier nicht eingezeichnete) <em>Fließkomma-Recheneinheit</em>.
 Der <em>Befehlszeiger</em> beinhaltet eine Hauptspeicheradresse, die auf den aktuelle auszuführenden Befehl im Hauptspeicher zeigt.
@@ -951,7 +970,7 @@ Der Geschwindigkeitsunterschied ist enorm.
 Anstatt in die nächst gelegene Stadt zu reisen (Hauptspeicher), fliegen wir zum Mond (Festplattenspeicher).</p>
 <div class="figure align-default" id="fig-memory-cache-register">
 <a class="reference internal image-reference" href="../../_images/memory-cache-register.png"><img alt="../../_images/memory-cache-register.png" src="../../_images/memory-cache-register.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Zusammenhang zwischen Größe und Geschwindigkeit der verschiedenen <em>flüchtigen</em> Speicher des Computers.</span><a class="headerlink" href="#fig-memory-cache-register" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 2.11 </span><span class="caption-text">Zusammenhang zwischen Größe und Geschwindigkeit der verschiedenen <em>flüchtigen</em> Speicher des Computers.</span><a class="headerlink" href="#fig-memory-cache-register" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="definition admonition" id="def-cache">
 <p class="admonition-title">Cache</p>
@@ -987,7 +1006,7 @@ Nicht jede Berechnung oder jeder Speichertransfer benötigt die gleiche Anzahl a
 Zum Beispiel ist benötigt die Division zweier Zahlen deutlich mehr Zyklen als die Addition.</p>
 </div>
 <div class="section" id="das-betriebssystem">
-<h2><span class="section-number">2.5.2. </span>Das Betriebssystem<a class="headerlink" href="#das-betriebssystem" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.2. </span>Das Betriebssystem<a class="headerlink" href="#das-betriebssystem" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Soweit so gut.
 Wie funktioniert das aber im Detail?
 Was passiert zum Beispiel, wenn ich in meinem Textverarbeitungsprogramm die Taste <code class="docutils literal notranslate"><span class="pre">A</span></code> drücke.
@@ -1000,7 +1019,7 @@ Nun bevor wir dazu kommen, müssen wir überlegen was hierzu nötig ist:</p>
 <p>Wie aber startet der Computer?
 Wie führt er nicht nur einzelne Operationen sondern ein ganzes Programm aus?
 Und wie ist es möglich, dass scheinbar gleichzeitig viele verschiedene Programme auf einem Computer laufen?
-Antworten finden wir wenn wir uns das ‘Masterprogramm’ eines Computers ansehen: Das <em>Betriebssystem</em>.</p>
+Antworten finden wir wenn wir uns das ‚Masterprogramm‘ eines Computers ansehen: Das <em>Betriebssystem</em>.</p>
 <div class="definition admonition" id="def-operating-system">
 <p class="admonition-title">Betriebssystem</p>
 <p>Das <em>Betriebssystem</em> eines Computers ist ein spezielles Hauptprogramm, welches alle anderen Programme und die Rechnerressourcen des Computers verwaltet.</p>
@@ -1026,7 +1045,7 @@ Das heißt, das Programm auf dem Festwertspeicher bleibt auch nach dem Ausschalt
 Der Computer zieht sich quasi wie Münchhausen an den Haaren selbst aus dem Sumpf.</p>
 </div>
 <div class="section" id="programme-ausfuhren">
-<span id="sec-run-program"></span><h2><span class="section-number">2.5.3. </span>Programme ausführen<a class="headerlink" href="#programme-ausfuhren" title="Permalink to this headline">¶</a></h2>
+<span id="sec-run-program"></span><h2><span class="section-number">2.5.3. </span>Programme ausführen<a class="headerlink" href="#programme-ausfuhren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Starten Sie ein Programm, sagen Sie eigentlich dem Betriebssystem Sie möchten dieses oder jenes Programm ausführen.
 Das <em>Betriebssystem</em> sorgt dafür, dass es in den Hauptspeicher geladen wird und teilt ihm entsprechende Ressourcen zu.
 Erinnern Sie sich an die <em>Von-Neumann-Architektur</em>!
@@ -1050,7 +1069,7 @@ Stattdessen benutzt die CPU den Wert im Register und gewinnt dadurch an Berechnu
 Sie spart sich einige Zyklen die nötig wären um die Daten aus dem Speicher in den Register zu laden.</p>
 <div class="figure align-default" id="fig-program-run">
 <a class="reference internal image-reference" href="../../_images/program-run.png"><img alt="../../_images/program-run.png" src="../../_images/program-run.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Zusammenspiel zwischen Kontrolleinheit und arithmetische/logische Einheit, Register, Befehlszeiger (CPU) und Arbeitsspeicher.</span><a class="headerlink" href="#fig-program-run" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 2.12 </span><span class="caption-text">Zusammenspiel zwischen Kontrolleinheit und arithmetische/logische Einheit, Register, Befehlszeiger (CPU) und Arbeitsspeicher.</span><a class="headerlink" href="#fig-program-run" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Innerhalb der <em>Kontrolleinheit</em> befindet sich ein spezielles <em>Register</em>, welches die <em>Arbeitsspeicheradresse</em> des nächsten auszuführenden Befehls enthält.
 Dieses Register nennen wir <em>Befehlszähler</em> oder <em>Befehlszeiger</em>.
@@ -1081,7 +1100,7 @@ Sie hat die arithmetischen Einheit instruiert die Addition durchzuführen und da
 </div>
 </div>
 <div class="section" id="der-eva-kreislauf">
-<h2><span class="section-number">2.5.4. </span>Der EVA-Kreislauf<a class="headerlink" href="#der-eva-kreislauf" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5.4. </span>Der EVA-Kreislauf<a class="headerlink" href="#der-eva-kreislauf" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Haben wir (1) den Computer <em>gebootet</em> und (2) das Textverarbeitungsprogramm gestartet und drücken dann <code class="docutils literal notranslate"><span class="pre">A</span></code>, was passiert dann?
 Das Eingabegerät (die Tastatur) sendet eine Unterbrechungsanforderung (Interrupt Request (IRQ)) an die CPU.
 Nach der Anforderung führt die CPU eine Unterbrechungsroutine aus, diese leitet das <code class="docutils literal notranslate"><span class="pre">A</span></code> an das Textverarbeitungsprogramm weiter.</p>
@@ -1133,9 +1152,9 @@ Dieser wandelt die Folge aus <span class="math notranslate nohighlight">\(0\)</s
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

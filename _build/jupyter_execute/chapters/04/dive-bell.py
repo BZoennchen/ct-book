@@ -28,7 +28,7 @@ Wie war dies möglich?
 height: 100px
 name: jean-dominique-bauby
 ---
-Jean-Dominique Bauby (links) diktiert sein Buch Claude Mendibil (rechts).
+Jean-Dominique Bauby (links) diktiert sein Buch Claude Mendibil (rechts), [Quelle](https://en.wikipedia.org/wiki/File:Jean-Dominique_Bauby.jpg).
 ```
 
 In seinem äußerst bewegenden Buch *Schmetterling und Taucherglocke* beschreibt er wie es ihm gelungen ist mit seinen Ärzten, Pflegern, Freunden und seiner Familie zu kommunizieren und wie frustrierend es gewesen ist, wenn seine Kommunikationspartner von den Regeln abwichen und so die Kommunikation abbrach.

@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="3.4. Ausblick" href="4-future.html" />
     <link rel="prev" title="3.2. Mittelalter bis 19. Jahrhundert" href="2-middleages.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,7 +793,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -800,21 +801,39 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/01-3/3-today.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/01-3/3-today.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/01-3/3-today.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -833,7 +852,7 @@
               <div>
                 
   <div class="section" id="jahrhundert-bis-heute">
-<span id="sec-history-today"></span><h1><span class="section-number">3.3. </span>19. Jahrhundert bis heute<a class="headerlink" href="#jahrhundert-bis-heute" title="Permalink to this headline">¶</a></h1>
+<span id="sec-history-today"></span><h1><span class="section-number">3.3. </span>19. Jahrhundert bis heute<a class="headerlink" href="#jahrhundert-bis-heute" title="Link zu dieser Überschrift">¶</a></h1>
 <p>1842 entwarf die britische Mathematikerin Ada Lovelace einen Algorithmus, mit welchem Bernoulli-Zahlen mit einer Rechenmaschine (Analytical Engine) berechnet werden konnten.
 Die Maschine wurde zu ihrer Lebzeit nie gebaut.
 Sie gilt heute als die erste Programmiererin und wurde mit dem Namen der Programmiersprache Ada gewürdigt.
@@ -841,7 +860,7 @@ Es sei hier erwähnt, dass Frauen der Zugang zu Bildung und Hochschulausbildung 
 Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia dar, welche aus politisch-religösen Gründen ermordet wurde.</p>
 <div class="figure align-default" id="ada-lovelace">
 <a class="reference internal image-reference" href="../../_images/ada-lovelace.jpeg"><img alt="../../_images/ada-lovelace.jpeg" src="../../_images/ada-lovelace.jpeg" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.6 </span><span class="caption-text">Erste bekannte Programmiererin Ada Lovelace.</span><a class="headerlink" href="#ada-lovelace" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.6 </span><span class="caption-text">Erste bekannte Programmiererin Ada Lovelace.</span><a class="headerlink" href="#ada-lovelace" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>1847 führte der englische Mathematiker und Philosoph Georg Boole in seinem Buch <em>The Mathematical Analysis of Logic</em> die sog. boolsche Algebra ein.
 Insbesondere die <em>zweielementige boolsche Algebra</em> mit den Elementen 0 und 1, welche Anwendungen in der Aussagenlogik hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
@@ -872,7 +891,7 @@ Für uns als Programmierer*innen bedeutet dies, dass wir selbst prüfen müssen 
 Es gibt keine Software, die uns für einen beliebigen Quellcode sagen kann ob wir eine Endlosschleife programmiert haben.</p>
 <div class="figure align-default" id="goedel-church-turing">
 <a class="reference internal image-reference" href="../../_images/goedel-church-turing.png"><img alt="../../_images/goedel-church-turing.png" src="../../_images/goedel-church-turing.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.7 </span><span class="caption-text">Mathematiker Kurt Gödel, Alonzo Church und Alan Turing.</span><a class="headerlink" href="#goedel-church-turing" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.7 </span><span class="caption-text">Mathematiker Kurt Gödel, Alonzo Church und Alan Turing, Quellen: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:1925_kurt_g%C3%B6del.png">1</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg">2</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg">3</a>.</span><a class="headerlink" href="#goedel-church-turing" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Was aus dem theoretischem Diskurs hervorging waren jedoch nicht nur zerstörte Träume, sondern auch neue fruchtbare Theorien, die das Fundament der Informatik und damit auch des künftigen Computational Thinkings prägen sollten.
 Alan Turing entwickelte mit seiner <em>Turingmaschine</em> ein sehr konkretes Modell für einen Computer, welcher im Stande war all das zu berechnen, was heute moderne Computer berechnen können.
@@ -888,7 +907,7 @@ Zu dieser Zeit stellte man sich das menschliche Gehirn als eine Art Uhr vor.
 Inwieweit sich dieser Computationalismus bestätigt oder widerlegt bleibt abzuwarten.</p>
 <div class="figure align-default" id="model-of-a-tm">
 <a class="reference internal image-reference" href="../../_images/model-of-a-tm.jpeg"><img alt="../../_images/model-of-a-tm.jpeg" src="../../_images/model-of-a-tm.jpeg" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.8 </span><span class="caption-text">Eine konkrete Konstruktion einer Turingmaschine.</span><a class="headerlink" href="#model-of-a-tm" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.8 </span><span class="caption-text">Eine konkrete Konstruktion einer Turingmaschine, <a class="reference external" href="https://de.wikipedia.org/wiki/Turingmaschine#/media/Datei:Model_of_a_Turing_machine.jpg">Quelle</a>.</span><a class="headerlink" href="#model-of-a-tm" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Von den Ingenieuren wurden diese theoretischen Erfolge zunächst kaum beachtet.
 Stattdessen wurde vieles ausprobiert.
@@ -903,7 +922,7 @@ Zudem fiel die Bezahlung der Frauen deutlich geringer aus und so konnten Kosten 
 Frauen wurden sehr häufig auch als menschliche Computer eingestellt, ihre Erfolge gingen in der Geschichte leider oft unter.</p>
 <div class="figure align-default" id="turing-bomb">
 <a class="reference internal image-reference" href="../../_images/turing-bomb.jpeg"><img alt="../../_images/turing-bomb.jpeg" src="../../_images/turing-bomb.jpeg" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.9 </span><span class="caption-text">Die sog. Turing-Bombe, welche für die Entschlüsselung der Enigma verwendet wurde.</span><a class="headerlink" href="#turing-bomb" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.9 </span><span class="caption-text">Die sog. Turing-Bombe, welche für die Entschlüsselung der Enigma verwendet wurde, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Wartime_picture_of_a_Bletchley_Park_Bombe.jpg">Quelle</a>.</span><a class="headerlink" href="#turing-bomb" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Zur Zeit des Weltkriegs gelang es den Codeknackern um Alan Turing die Verschlüsselung der Enigma zu schlagen.
 Etwas später wurde auch der Code der Lorenz SZ 40/42 durch Max Newman und seiner Gruppe geknackt.
@@ -914,7 +933,7 @@ Beide Maschinen waren <em>Turing-vollständig</em>.
 Für den Erfolg der ENIAC wurden Kathleen McNulty Mauchly Antonelli, Jean Bartik, Frances Elizabeth Holberton, Marlyn Meltzer, Frances Spence und Ruth Teitelbaum über 50 Jahre nach ihren männlichen Kollegen ausgezeichnet.</p>
 <div class="figure align-default" id="eniac-programmiererinnen">
 <a class="reference internal image-reference" href="../../_images/eniac-programmiererinnen.png"><img alt="../../_images/eniac-programmiererinnen.png" src="../../_images/eniac-programmiererinnen.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10 </span><span class="caption-text">ENIAC-Programmiererinnen Marlyn Wescoff und Ruth Lichterman.</span><a class="headerlink" href="#eniac-programmiererinnen" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.10 </span><span class="caption-text">ENIAC-Programmiererinnen Marlyn Wescoff und Ruth Lichterman, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Reprogramming_ENIAC.png">Quelle</a>.</span><a class="headerlink" href="#eniac-programmiererinnen" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Im Jahr 1945 begann Turing mit seiner Arbeit an der Entwicklung eines elektronisch-programmierbaren Computers mit Speicher.
 Zur gleichen Zeit notierte der charismatische John von Neumann auf einem 101-seitigen Dokument einen ähnlichen Entwurf.
@@ -923,7 +942,7 @@ Auf jener Architektur basieren heute nahezu alle modernen Computer und auch zuk�
 Weitere konzeptuelle Entwicklungen sollten folgen, doch die grobe Architektur blieb seither nahezu unberührt.</p>
 <div class="figure align-default" id="von-neumann-architecture">
 <a class="reference internal image-reference" href="../../_images/von-neumann-architecture.png"><img alt="../../_images/von-neumann-architecture.png" src="../../_images/von-neumann-architecture.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.11 </span><span class="caption-text">Die von Neumann Architektur.</span><a class="headerlink" href="#von-neumann-architecture" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.11 </span><span class="caption-text">Die Von-Neumann-Architektur.</span><a class="headerlink" href="#von-neumann-architecture" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>In den darauffolgenden Jahren waren es insbesondere Entwicklungen von neuen Bauteilen, wie Transistoren und integrierten Schaltkreisen, die die Leistungsfähigkeit der Computer immer weiter verbesserten.
 Die Bauteile wurden stetig kleiner und die Taktrate der Rechner wurde immer weiter in die Höhe getrieben.
@@ -1006,9 +1025,9 @@ Diskriminierungen, welche sich in den Daten finden, werden auch lernende Algorit
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

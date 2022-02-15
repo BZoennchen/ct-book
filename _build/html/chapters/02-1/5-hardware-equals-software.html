@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="3. Was ist Information?" href="../02-2/information.html" />
     <link rel="prev" title="2.5. Der Informationskreislauf" href="4-information-flow.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,32 +793,50 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
             href="../../_sources/chapters/02-1/5-hardware-equals-software.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/02-1/5-hardware-equals-software.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-1/5-hardware-equals-software.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-1/5-hardware-equals-software.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -828,7 +847,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/02-1/5-hardware-equals-software.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -836,7 +855,7 @@
         
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -848,7 +867,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -884,7 +903,7 @@
               <div>
                 
   <div class="section" id="berechenbarkeit">
-<span id="sec-computability"></span><h1><span class="section-number">2.6. </span>Berechenbarkeit<a class="headerlink" href="#berechenbarkeit" title="Permalink to this headline">¶</a></h1>
+<span id="sec-computability"></span><h1><span class="section-number">2.6. </span>Berechenbarkeit<a class="headerlink" href="#berechenbarkeit" title="Link zu dieser Überschrift">¶</a></h1>
 <p>In diesem Abschnitt tauchen wir in die theoretische Informatik ein und widmen uns der Frage was wir überhaupt berechnen können (<strong>Berechenbarkeit</strong>).
 In diesem Zusammenhang folgt unweigerlich die Frage: Welche Mittel benötigen wir um eines der berechenbaren Probleme zu berechnen (<strong>Turing-Vollständigkeit</strong>)?
 Und was benötigen wir um jedes dieser Probleme berechnen zu können (<strong>universelle Turingmaschine</strong>)?</p>
@@ -962,13 +981,13 @@ Löst ein Bauteil das Problem so ist es mit sehr großer Wahrscheinlichkeit schn
 <p>Auf algorithmischer Ebene ähneln sich Hardware und Software sehr.
 Sie gleichen sich mit dem feinen Unterschied, dass Software eine bestimmte Hardware benötigt um überhaupt lauffähig zu sein.</p>
 <div class="section" id="turingmaschinen">
-<h2><span class="section-number">2.6.1. </span>Turingmaschinen<a class="headerlink" href="#turingmaschinen" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.1. </span>Turingmaschinen<a class="headerlink" href="#turingmaschinen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wir haben gesehen, dass der Unterschied zwischen Hard- uns Software geringer ist als wir vielleicht angenommen hatten.
 Klar ist aber auch, dass ein Computer ohne Hardware nicht funktionieren wird.
 Wir können nun die zentralen Fragen der Informatik stellen.
 Salopp fragen wir:</p>
 <blockquote>
-<div><p>‘Wie viel’ Hardware braucht es denn?</p>
+<div><p>‚Wie viel‘ Hardware braucht es denn?</p>
 </div></blockquote>
 <p>Oder genauer gefragt:</p>
 <blockquote>
@@ -981,7 +1000,7 @@ Salopp fragen wir:</p>
 <p>Beide Fragen wollte Alan Turing mit seinem Berechnungsmodell, d.h., mit seiner <em>Turingmaschine</em> beantworten.</p>
 <div class="figure align-default" id="fig-tm">
 <a class="reference internal image-reference" href="../../_images/tm.png"><img alt="../../_images/tm.png" src="../../_images/tm.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Skizze eine Turingmaschine die sich gerade in Zustand <span class="math notranslate nohighlight">\(q_4\)</span> befindet.</span><a class="headerlink" href="#fig-tm" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 2.13 </span><span class="caption-text">Skizze eine Turingmaschine die sich gerade in Zustand <span class="math notranslate nohighlight">\(q_4\)</span> befindet.</span><a class="headerlink" href="#fig-tm" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Die <a class="reference external" href="https://de.wikipedia.org/wiki/Turingmaschine">Turingmaschine (TM)</a> besteht aus gerade einmal so viel Hardware, dass sie all das berechnen kann, was allgemein als berechenbar gilt.</p>
 <div class="definition admonition" id="info-turingmaschine">
@@ -1082,7 +1101,7 @@ Eine Rechenmaschine die <em>Turing-vollständig</em> ist, kann all das berechnen
 <p class="admonition-title">Turing-Vollständigkeit</p>
 <p>Eine Rechenmaschine (oder Programmiersprache) ist <em>Turing-vollständig</em> genau dann wenn sie all das berechnen kann was eine Turingmaschine berechnen kann.</p>
 </div>
-<p>Wenn Sie also verstehen möchten, ‘wie viel Hardware’ ein Computer braucht, lohnt sich ein Blick hin zur Turingmaschine.
+<p>Wenn Sie also verstehen möchten, ‚wie viel Hardware‘ ein Computer braucht, lohnt sich ein Blick hin zur Turingmaschine.
 Uns ist klar, dass es sich dabei um ein sehr theoretisches Konstrukt handelt.
 Wir ersparen Ihnen die formale Definition und möchten Sie dennoch bestärken ein intuitives Verständnis über die Turingmaschine während Ihres Studiums aufzubauen.</p>
 <p>Die Turingmaschine kommt mit erstaunlich wenig Hardware aus.
@@ -1091,11 +1110,11 @@ Es steht ihnen zwar kein unendliches Band zur Verfügung doch falls ein Algorith
 Wie lange dies jedoch sein muss ist im Vornhinein unklar.</p>
 <div class="figure align-default" id="model-of-a-tm-2">
 <a class="reference internal image-reference" href="../../_images/model-of-a-tm.jpeg"><img alt="../../_images/model-of-a-tm.jpeg" src="../../_images/model-of-a-tm.jpeg" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Eine konkrete Konstruktion einer Turingmaschine.</span><a class="headerlink" href="#model-of-a-tm-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 2.14 </span><span class="caption-text">Eine konkrete Konstruktion einer Turingmaschine, <a class="reference external" href="https://de.wikipedia.org/wiki/Turingmaschine#/media/Datei:Model_of_a_Turing_machine.jpg">Quelle</a>.</span><a class="headerlink" href="#model-of-a-tm-2" title="Link zu diesem Bild">¶</a></p>
 </div>
 </div>
 <div class="section" id="die-universelle-turingmaschine">
-<span id="sec-utm"></span><h2><span class="section-number">2.6.2. </span>Die universelle Turingmaschine<a class="headerlink" href="#die-universelle-turingmaschine" title="Permalink to this headline">¶</a></h2>
+<span id="sec-utm"></span><h2><span class="section-number">2.6.2. </span>Die universelle Turingmaschine<a class="headerlink" href="#die-universelle-turingmaschine" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Bis heute können wir jedes berechenbare Problem durch eine bestimmte Turingmaschine berechnen.
 Natürlich müssen wir eine <em>Turingmaschine</em> für das jeweilige Problem konstruieren.
 Ein Computer löst aber nicht nur ein bestimmtes Problem, sondern ist im Stande <strong>jedes</strong> Problem, was durch eine Turingmaschine gelöst werden kann zu berechnen.</p>
@@ -1115,7 +1134,7 @@ Sie können sich denken, dass die Übergangstabelle von <span class="math notran
 </div>
 </div>
 <div class="section" id="das-halteproblem">
-<h2><span class="section-number">2.6.3. </span>Das Halteproblem<a class="headerlink" href="#das-halteproblem" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6.3. </span>Das Halteproblem<a class="headerlink" href="#das-halteproblem" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Das Halteproblem ist eines der bekanntesten Probleme der Informatik, da es wesentliche Implikationen über die Mächtigkeit von Computern offenlegt.
 Wir würden uns als Programmierer*innen wünschen, dass es Programm gäbe, dass uns für ein anderes beliebiges Programm mit einer bestimmten Eingabe verrät ob dieses auch halten wird oder ob wir in einer Endlosschleife laufen.</p>
 <div class="definition admonition" id="def-halting-problem">
@@ -1134,7 +1153,7 @@ Das bedeutet jedoch nicht, dass wir dies nicht im Einzelfall selbst prüfen kön
 Es gibt also Hoffnung.</p>
 </div>
 <div class="section" id="zusammenfassung">
-<span id="sec-essenz-of-computers-and-languages"></span><h2><span class="section-number">2.6.4. </span>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
+<span id="sec-essenz-of-computers-and-languages"></span><h2><span class="section-number">2.6.4. </span>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Weshalb reiten wir so auf diesen theoretischen Konzepten herum?
 Was kümmern uns imaginäre Turingmaschinen?
 Diese Maschinen können zwar all das berechnen was ein Computer berechnet, funktionieren aber doch ganz anders.
@@ -1175,9 +1194,9 @@ Der wesentlichen Unterschied zwischen dem Computer (Hardware) und einem Programm
 <p>Ein handelsüblicher Computer ist eine universelle Turingmaschine.</p>
 </div>
 <p>Sobald ein Computer Turing-vollständig ist, sind alle weiteren Bauteile ein Bonus.
-In der Theorie ist die universelle Turingmaschine ebenso ‘schnell’ wie ein moderner Computer.
+In der Theorie ist die universelle Turingmaschine ebenso ‚schnell‘ wie ein moderner Computer.
 In der Praxis wäre sie allerdings unfassbar langsam.
-In der Theorie ist sogar jeder Prozessor ‘gleich schnell’.
+In der Theorie ist sogar jeder Prozessor ‚gleich schnell‘.
 In der Praxis ist das natürlich nicht der Fall.
 Die Turingmaschine hilft uns dabei die Begriffe <em>schnell</em>, <em>schneller</em> und <em>langsamer</em> und <em>gleich schnell</em> formal zu definieren.
 Wir werden in Abschnitt <span class="xref myst">Komplexitätstheorie</span> sehen, dass diese Komplexitätsklassen uns etwas über die Schwierigkeit eines Problems verraten, doch in der Praxis mit Vorsicht zu genießen sind.</p>
@@ -1226,9 +1245,9 @@ Hardware ist die Manifestation von Software und Software ist die Manifestation d
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

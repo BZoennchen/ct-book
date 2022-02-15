@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="4.9. Wörterbücher - dict" href="9-dict.html" />
     <link rel="prev" title="4.7. Zeichenketten - str" href="7-string.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,32 +793,50 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
             href="../../_sources/chapters/03-4/8-set.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/03-4/8-set.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/03-4/8-set.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/03-4/8-set.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -828,7 +847,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-4/8-set.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -836,7 +855,7 @@
         
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -848,7 +867,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -894,7 +913,7 @@
               <div>
                 
   <div class="section" id="mengen-set">
-<span id="sec-set"></span><h1><span class="section-number">4.8. </span>Mengen - set<a class="headerlink" href="#mengen-set" title="Permalink to this headline">¶</a></h1>
+<span id="sec-set"></span><h1><span class="section-number">4.8. </span>Mengen - set<a class="headerlink" href="#mengen-set" title="Link zu dieser Überschrift">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>-Mengen (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset">Set</a>) <code class="docutils literal notranslate"><span class="pre">set</span></code> ist eine ungeordnete Zusammenfassung (engl. collection) von Elementen, wobei jedes Element in der Menge einzigartig ist.
 Damit repräsentieren <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> <em>endliche</em> <a class="reference internal" href="../02-0/2-set.html#sec-math-set"><span class="std std-ref">Mengen</span></a> im mathematischen Sinne.
 Endlich deshalb, weil die Elemente von <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Mengen explizit im Speicher liegen und wir nur endlich viel Arbeitsspeicher zur Verfügung haben.</p>
@@ -903,7 +922,7 @@ Dabei ist jedes Element was sich in der Menge befindet von allen anderen Element
 Anders als <a class="reference internal" href="../02-0/3-tuple.html#sec-math-tuple"><span class="std std-ref">mathematische Tupel</span></a> (durch die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Tupel und den Listen motiviert sind) sind Mengen ungeordnet.</p>
 <p>Von hier an meinen wir mit Mengen die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> und sprechen ansonsten von mathematischen Mengen.</p>
 <div class="section" id="motivation">
-<h2><span class="section-number">4.8.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.1. </span>Motivation<a class="headerlink" href="#motivation" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Mengen benutzten wir immer dann, wenn wir die Eigenschaft der <strong>Eindeutigkeit</strong> und <strong>Unordnung</strong> nutzten wollen.
 Dabei bezieht sich diese Eindeutigkeit auf die <a class="reference internal" href="../03-3/1-variables.html#def-equality"><span class="std std-ref">Gleichheit</span></a> und nicht auf die <a class="reference internal" href="../03-3/1-variables.html#def-identity"><span class="std std-ref">Identität</span></a>.
 D.h. eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Menge enthält keine zwei Elemente <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> für die <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code> zu <code class="docutils literal notranslate"><span class="pre">True</span></code> ausgewertet wird.</p>
@@ -918,7 +937,7 @@ In anderen Worten, die Laufzeit des Test ist (nahezu) unabhängig von der Anzahl
 Das heißt, die Laufzeit hängt von der Größe der Liste <code class="docutils literal notranslate"><span class="pre">list</span></code> ab, überraschenderweise jedoch nicht von der Größe der Menge <code class="docutils literal notranslate"><span class="pre">set</span></code>.</p>
 </div>
 <div class="section" id="erstellung">
-<h2><span class="section-number">4.8.2. </span>Erstellung<a class="headerlink" href="#erstellung" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.2. </span>Erstellung<a class="headerlink" href="#erstellung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Eine Menge erzeugen Sie ähnlich wie eine Liste, allerdings verwenden wir die geschweiften Klammern:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -945,7 +964,7 @@ Das heißt, die Laufzeit hängt von der Größe der Liste <code class="docutils 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}
-{&#39;d&#39;, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;f&#39;, &#39;e&#39;}
+{&#39;b&#39;, &#39;f&#39;, &#39;a&#39;, &#39;e&#39;, &#39;d&#39;, &#39;c&#39;}
 </pre></div>
 </div>
 </div>
@@ -968,7 +987,7 @@ Beachten Sie auch, dass Sie eine leere Menge <strong>nicht</strong> mit <code cl
 <p>erzeugen! <code class="docutils literal notranslate"><span class="pre">{}</span></code> erzeugt hingegen ein leeres <a class="reference internal" href="9-dict.html#sec-dict"><span class="std std-ref">Wörterbuch</span></a>.</p>
 </div>
 <div class="section" id="indexierung">
-<h2><span class="section-number">4.8.3. </span>Indexierung?<a class="headerlink" href="#indexierung" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.3. </span>Indexierung?<a class="headerlink" href="#indexierung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Da Mengen ungeordnet sind, können wir diese nicht indexieren.
 Folgender Code führt zu einem Fehler.</p>
 <div class="cell tag_raises-exception docutils container">
@@ -1030,7 +1049,7 @@ Folgender Code führt zu einem Fehler.</p>
 Mengen bieten weder einen Index noch irgendeine anderes Möglichkeit, um auf bestimmte einzelne Mengenelemente zugreifen zu können.</p>
 </div>
 <div class="section" id="mengenoperationen">
-<h2><span class="section-number">4.8.4. </span>Mengenoperationen<a class="headerlink" href="#mengenoperationen" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.4. </span>Mengenoperationen<a class="headerlink" href="#mengenoperationen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Was Mengen bieten sind die sog. Mengenoperationen, welche den mathematischen Mengenoperationen gleichen.
 Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> mathematische Mengen und <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> ihre entsprechenden <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Repräsentanten, dann entspricht</p>
 <div class="cell docutils container">
@@ -1113,7 +1132,7 @@ Seien <span class="math notranslate nohighlight">\(A\)</span> und <span class="m
 <p>d.h., Elemente in entweder <span class="math notranslate nohighlight">\(A\)</span> oder <span class="math notranslate nohighlight">\(B\)</span> jedoch keine Elemente die in <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span> vorkommen (exklusives Oder).</p>
 </div>
 <div class="section" id="veranderung">
-<h2><span class="section-number">4.8.5. </span>Veränderung<a class="headerlink" href="#veranderung" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.5. </span>Veränderung<a class="headerlink" href="#veranderung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Mengen sind <strong>veränderlich</strong> (engl. mutable) allerdings darf eine Menge nur <strong>unveränderliche</strong> (engl. immutable) Elemente enthalten!
 Damit darf eine Menge keine Listen enthalten, weshalb folgender Code zu einem Fehler führt</p>
 <div class="attention admonition" id="attention-sets-in-python">
@@ -1211,9 +1230,9 @@ Dies sehen wir, wie so oft, wenn wir uns die <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4490714240
-id of a after difference: 4490714240
-id of c: 4490714464
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4503465088
+id of a after difference: 4503465088
+id of c: 4503465312
 a = {0, 1, 2, 3, 4, 5}
 b = {1, 3, 5, 7, 9, 11}
 c = {0, 2, 4}
@@ -1237,8 +1256,8 @@ c = {0, 2, 4}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4490714912
-id of a after difference: 4490714912
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4503465760
+id of a after difference: 4503465760
 a = {0, 2, 4}
 b = {1, 3, 5, 7, 9, 11}
 </pre></div>
@@ -1248,7 +1267,7 @@ b = {1, 3, 5, 7, 9, 11}
 <p>Wir sehen, dass in diesem Fall der Speicherbereich durch den wir zu Beginn durch <code class="docutils literal notranslate"><span class="pre">a</span></code> zugreifen können, verändert wird.</p>
 </div>
 <div class="section" id="mengen-und-der-speicher">
-<h2><span class="section-number">4.8.6. </span>Mengen und der Speicher<a class="headerlink" href="#mengen-und-der-speicher" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.8.6. </span>Mengen und der Speicher<a class="headerlink" href="#mengen-und-der-speicher" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wenn Sie verstanden haben wie Mengen im Speicher realisiert werden, wird Ihnen noch klarer warum diese nur <strong>unveränderliche</strong> Elemente enthalten dürfen.
 Eine ausgiebige Beschreibung dessen finden Sie im Kapitel <a class="reference internal" href="../04/name-register.html#sec-name-register"><span class="std std-ref">Namensregister</span></a>, genauer im Abschnitt <a class="reference internal" href="../04/name-register.html#sec-hashing"><span class="std std-ref">Hashing und das Dictionary</span></a>.
 Lassen Sie uns dennoch versuchen die Grundproblematik und das Grundprinzip herauszuarbeiten.</p>
@@ -1299,7 +1318,7 @@ Wie könnten wir unter diesen Voraussetzungen eine Menge als Liste implementiere
 <p>sehr einfach berechnen können.</p>
 <p>Aber hatten wir nicht gesagt, dass eine Liste keine Lücken enthält?
 Wir können künstliche Lücken einfügen.
-Unsere leere Menge enthält 30 ‘Lücken’.
+Unsere leere Menge enthält 30 ‚Lücken‘.
 Wir verwenden hierfür das Symbol für das Nichts, d.h., <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -1423,7 +1442,7 @@ Wir müssen nur eine arithmetische Berechnung durchführen und sind bereits am Z
 <p>Auf diesem Prinzip basieren Mengen <code class="docutils literal notranslate"><span class="pre">set</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> (und auch Wörterbücher <code class="docutils literal notranslate"><span class="pre">dict</span></code>) in <code class="docutils literal notranslate"><span class="pre">Python</span></code> und anderen Programmiersprachen.
 Der Index wird abhängig vom Element durch eine sog. Hashfunktion berechnet.
 Diese Hashfunktion erhält als Argument das Element selbst.</p>
-<p>Eine Menge verwendet bzw. verbraucht mehr Speicher als Ihre Elemente benötigen – anders als Listen enthält sie ‘Lücken’.
+<p>Eine Menge verwendet bzw. verbraucht mehr Speicher als Ihre Elemente benötigen – anders als Listen enthält sie ‚Lücken‘.
 Dadurch sind die Elemente im Speicher breit verteilt, d.h., <em>gestreut</em>.</p>
 <p>Für ganze Zahlen in einem bestimmten Bereich ist das noch einfach, da die Hashfunktion für die Berechnung des Index simpel ist.
 Für beliebige Objekte wird dies deutlich schwieriger.
@@ -1467,9 +1486,9 @@ Wir diskutieren dies im Kapitel <a class="reference internal" href="../04/name-r
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>
