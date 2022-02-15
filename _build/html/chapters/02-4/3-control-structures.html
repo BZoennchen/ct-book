@@ -947,11 +947,16 @@ Gewöhnlich hängt der Wahrheitswert der Bedingung vom Programmablauf ab, d.h., 
 Zum Beispiel gibt folgendes Programm <code class="docutils literal notranslate"><span class="pre">'you</span> <span class="pre">win!'</span></code> mit einer (pseudo) Wahrscheinlichkeit von 50% aus, da der <em>Variablen</em> <code class="docutils literal notranslate"><span class="pre">x</span></code> ein Zufallswert zwischen 0 und 1 (Gleichverteilung) zugewiesen wird.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you win!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>you win!
 </pre></div>
 </div>
 </div>
@@ -998,7 +1003,7 @@ Lassen Sie uns alle geraden Zahlen von <code class="docutils literal notranslate
 Hierzu brauchen wir eine Variable <code class="docutils literal notranslate"><span class="pre">acc</span></code>, welche wir mit dem Wert <code class="docutils literal notranslate"><span class="pre">0</span></code> initialisieren und dann iterativ 2 dann 4, und so weiter addieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
     <span class="n">acc</span> <span class="o">+=</span> <span class="n">k</span>
@@ -1007,10 +1012,15 @@ Hierzu brauchen wir eine Variable <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2450
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
@@ -1021,6 +1031,11 @@ Hierzu brauchen wir eine Variable <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2550
+</pre></div>
+</div>
+</div>
 </div>
 <p>Betrachten einen etwas komplizierteren Algorithmus: Den <a class="reference external" href="https://en.wikipedia.org/wiki/Bubble_sort">Bubblesort Algorithmus</a>.
 Dieser sortiert eine eine Liste von Zahlen sortieren.
@@ -1028,7 +1043,7 @@ Wir gehen durch die Liste (1. <em>Iterationen</em>) und wann immer zwei nebenein
 Wir wiederholen dies (2. <em>Iterationen</em>) solange bis keine zwei benachbarte Zahlen falsch sortiert sind.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
 
 <span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
     <span class="n">finished</span> <span class="o">=</span> <span class="kc">False</span>
@@ -1044,6 +1059,12 @@ Wir wiederholen dies (2. <em>Iterationen</em>) solange bis keine zwei benachbart
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;before sorting: </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">bubble_sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;after sorting: </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before sorting: [3, 9, 2, 6, 4, 1, 5, 8, 7]
+after sorting: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre></div>
 </div>
 </div>
@@ -1084,7 +1105,7 @@ Die Rekursion hängt dabei stark mit der Induktion zusammen, siehe Abschnitt <a 
 \[\text{fac}_\text{it}(n) = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 = \prod\limits_{i=1}^n i\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fac_it</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fac_it</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">result</span> <span class="o">*=</span> <span class="n">i</span>
@@ -1094,18 +1115,28 @@ Die Rekursion hängt dabei stark mit der Induktion zusammen, siehe Abschnitt <a 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+</pre></div>
+</div>
+</div>
 </div>
 <p>und einmal <em>rekursiv</em></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\text{fac}_\text{rec}(n) = \begin{cases} 1 &amp; \text{ falls } n = 0\\ n \cdot \text{fac}_\text{rec}(n-1) &amp; \text{ sonst}\end{cases}\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fac_rec</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fac_rec</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac_rec</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">fac_rec</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
 </pre></div>
 </div>
 </div>
@@ -1171,7 +1202,7 @@ Wir gehen also davon aus es gäbe eine Funktion <code class="docutils literal no
 <p>Um das ganze vorzuführen modellieren wir einen Turm als Liste von Zahlen und die drei Plätze als Liste der Länge 3.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">hanoi</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">hanoi</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span><span class="p">):</span>
     <span class="n">hanoi</span><span class="p">[</span><span class="n">to</span><span class="p">]</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">hanoi</span><span class="p">[</span><span class="n">fr</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">del</span> <span class="n">hanoi</span><span class="p">[</span><span class="n">fr</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
@@ -1190,6 +1221,12 @@ Wir gehen also davon aus es gäbe eine Funktion <code class="docutils literal no
 
 <span class="n">move_tower</span><span class="p">(</span><span class="n">hanoi</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hanoi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 1, 2, 3, 4, 5], [], []]
+[[], [], [0, 1, 2, 3, 4, 5]]
 </pre></div>
 </div>
 </div>

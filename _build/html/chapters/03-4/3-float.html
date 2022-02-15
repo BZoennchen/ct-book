@@ -888,10 +888,16 @@ Zum Beispiel können wir problemlos die Zahl</p>
 <p>als Fließkommazahl definieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">small_float</span> <span class="o">=</span> <span class="mf">0.0000000001</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_float</span> <span class="o">=</span> <span class="mf">0.0000000001</span>
 <span class="n">large_float</span> <span class="o">=</span> <span class="mf">10000000.0</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">small_float</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">large_float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1e-10
+10000000.0
 </pre></div>
 </div>
 </div>
@@ -940,7 +946,12 @@ Demnach ist eine Fließkommazahl immer nur eine gute <strong>Annäherung</strong
 <p>Weshalb folgende Rechnung nicht 0.3 ergibt, erklärt sich durch diese <strong>Annäherung</strong> in Kombination mit der Binärdarstellung!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
 </pre></div>
 </div>
 </div>
@@ -953,7 +964,7 @@ Folgender Code subtrahiert 20 mal <span class="math notranslate nohighlight">\(1
 Doch verändern diese Subtraktionen <code class="docutils literal notranslate"><span class="pre">x</span></code> nicht.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1e10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1e10</span>
 <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-14</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;epsilon = </span><span class="si">{</span><span class="n">epsilon</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -966,19 +977,33 @@ Doch verändern diese Subtraktionen <code class="docutils literal notranslate"><
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epsilon = 1e-14
+x = 10000000000.0 before subtraction
+x = 10000000000.0 after subtraction
+</pre></div>
+</div>
+</div>
 </div>
 <p>Das zeigt, dass der (akkumulierte) Fehler theoretisch unendlich groß werden kann.
 Kritisch ist die Addition bzw. Subtraktion von Zahlen die in sehr unterschiedlichen Skalen liegen.
 Die Multiplikation und Division ist für Fließkommazahlen sehr viel ungefährlicher.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1e10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1e10</span>
 <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-14</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;epsilon = </span><span class="si">{</span><span class="n">epsilon</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> before multiplication&#39;</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">epsilon</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> after multiplication&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epsilon = 1e-14
+x = 10000000000.0 before multiplication
+x = 0.0001 after multiplication
 </pre></div>
 </div>
 </div>
@@ -995,7 +1020,7 @@ Verwenden Sie stattdessen immer einen kleinen Bereich in dem die Zahl liegen sol
 Anstatt des korrekten Ergebnisses erhalten wir eine Zahl deren relative Abweichung vom richtigen Ergebnis weit daneben liegen kann:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">100123123123.101</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">100123123123.101</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">100123123123.102</span>
 
 <span class="n">abs_error</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="mf">0.001</span> <span class="o">-</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
@@ -1008,12 +1033,21 @@ Anstatt des korrekten Ergebnisses erhalten wir eine Zahl deren relative Abweichu
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 100123123123.101
+y = 100123123123.102
+x-y = -0.001007080078125
+relative error = 0.007080078124999979
+absolute error = 7.080078124999979e-06
+</pre></div>
+</div>
+</div>
 </div>
 <p>Sowohl der absolute als auch der relative Fehler sind groß.
 Wir können den absoluten Fehler durch weitere Operationen beliebig erhöhen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">100123123123.101</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">100123123123.101</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">100123123123.102</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">100000000</span>
 
@@ -1026,6 +1060,15 @@ Wir können den absoluten Fehler durch weitere Operationen beliebig erhöhen:</p
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;result = </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;relative error = </span><span class="si">{</span><span class="n">abs_error</span><span class="o">/</span><span class="mi">100000</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;absolute error = </span><span class="si">{</span><span class="n">abs_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 100123123123.101
+y = 100123123123.102
+result = -100708.0078125
+relative error = 0.007080078124999979
+absolute error = 708.007812499998
 </pre></div>
 </div>
 </div>
