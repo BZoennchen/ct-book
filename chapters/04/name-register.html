@@ -1044,8 +1044,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9cfade7a-94ca-4217-8eb9-9808b390cd0c">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-9cfade7a-94ca-4217-8eb9-9808b390cd0c" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-af4b8ea5-657b-445e-b59b-3b1a5994a0bc">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-af4b8ea5-657b-445e-b59b-3b1a5994a0bc" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -1183,7 +1183,7 @@ Es wird dabei stets auf die nächst liegende ganze Zahl <a class="reference inte
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">mylist</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">mylist</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">b</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
     <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
@@ -1213,7 +1213,7 @@ Das heißt, wenn die Anwender*innen kein <code class="docutils literal notransla
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cmp_numbers</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cmp_numbers</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">number1</span> <span class="o">&lt;</span> <span class="n">number2</span><span class="p">:</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
     <span class="k">elif</span> <span class="n">number1</span> <span class="o">&gt;</span> <span class="n">number2</span><span class="p">:</span>
@@ -1226,19 +1226,12 @@ Das heißt, wenn die Anwender*innen kein <code class="docutils literal notransla
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-None
-None
-</pre></div>
-</div>
-</div>
 </div>
 <p>Lassen Sie uns noch das Telefonbuchbeispiel testen.
 Folgender Code generiert Ihnen durch den Aufruf der Funktion <code class="docutils literal notranslate"><span class="pre">random_phone_book(n)</span></code> ein zufälliges Telefonbuch mit <code class="docutils literal notranslate"><span class="pre">100</span></code> Einträgen (unser Telefonbuch hat keine Seiten sondern nur Einträge).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">names</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">names</span>
 <span class="kn">import</span> <span class="nn">functools</span> <span class="k">as</span> <span class="nn">func</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -1276,7 +1269,7 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">66</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">66</span>
 <span class="n">key</span> <span class="o">=</span> <span class="n">telbook</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">entry</span> <span class="p">:</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 
@@ -1289,11 +1282,6 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
     
 
 <span class="nb">print</span><span class="p">(</span><span class="n">binary_search</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">telbook</span><span class="p">,</span> <span class="n">cmp_strings</span><span class="p">,</span> <span class="n">g</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Plummer&#39;, &#39;phone_number&#39;: &#39;0727-1503446&#39;}
 </pre></div>
 </div>
 </div>
@@ -1372,7 +1360,7 @@ Jede Zeile <code class="docutils literal notranslate"><span class="pre">row</spa
 <code class="docutils literal notranslate"><span class="pre">row[0]</span></code> ist das Jahr <code class="docutils literal notranslate"><span class="pre">year</span></code> und <code class="docutils literal notranslate"><span class="pre">row[0]</span></code> der Name <code class="docutils literal notranslate"><span class="pre">name</span></code>, den wir extrahieren möchten.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span>
 
 <span class="k">def</span> <span class="nf">read_babynames</span><span class="p">():</span>
     <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1385,1011 +1373,6 @@ Jede Zeile <code class="docutils literal notranslate"><span class="pre">row</spa
 
 <span class="n">names</span> <span class="o">=</span> <span class="n">read_babynames</span><span class="p">()</span>
 <span class="n">names</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;John&#39;,
- &#39;William&#39;,
- &#39;James&#39;,
- &#39;Charles&#39;,
- &#39;George&#39;,
- &#39;Frank&#39;,
- &#39;Joseph&#39;,
- &#39;Thomas&#39;,
- &#39;Henry&#39;,
- &#39;Robert&#39;,
- &#39;Edward&#39;,
- &#39;Harry&#39;,
- &#39;Walter&#39;,
- &#39;Arthur&#39;,
- &#39;Fred&#39;,
- &#39;Albert&#39;,
- &#39;Samuel&#39;,
- &#39;David&#39;,
- &#39;Louis&#39;,
- &#39;Joe&#39;,
- &#39;Charlie&#39;,
- &#39;Clarence&#39;,
- &#39;Richard&#39;,
- &#39;Andrew&#39;,
- &#39;Daniel&#39;,
- &#39;Ernest&#39;,
- &#39;Will&#39;,
- &#39;Jesse&#39;,
- &#39;Oscar&#39;,
- &#39;Lewis&#39;,
- &#39;Peter&#39;,
- &#39;Benjamin&#39;,
- &#39;Frederick&#39;,
- &#39;Willie&#39;,
- &#39;Alfred&#39;,
- &#39;Sam&#39;,
- &#39;Roy&#39;,
- &#39;Herbert&#39;,
- &#39;Jacob&#39;,
- &#39;Tom&#39;,
- &#39;Elmer&#39;,
- &#39;Carl&#39;,
- &#39;Lee&#39;,
- &#39;Howard&#39;,
- &#39;Martin&#39;,
- &#39;Michael&#39;,
- &#39;Bert&#39;,
- &#39;Herman&#39;,
- &#39;Jim&#39;,
- &#39;Francis&#39;,
- &#39;Harvey&#39;,
- &#39;Earl&#39;,
- &#39;Eugene&#39;,
- &#39;Ralph&#39;,
- &#39;Ed&#39;,
- &#39;Claude&#39;,
- &#39;Edwin&#39;,
- &#39;Ben&#39;,
- &#39;Charley&#39;,
- &#39;Paul&#39;,
- &#39;Edgar&#39;,
- &#39;Isaac&#39;,
- &#39;Otto&#39;,
- &#39;Luther&#39;,
- &#39;Lawrence&#39;,
- &#39;Ira&#39;,
- &#39;Patrick&#39;,
- &#39;Guy&#39;,
- &#39;Oliver&#39;,
- &#39;Theodore&#39;,
- &#39;Hugh&#39;,
- &#39;Clyde&#39;,
- &#39;Alexander&#39;,
- &#39;August&#39;,
- &#39;Floyd&#39;,
- &#39;Homer&#39;,
- &#39;Jack&#39;,
- &#39;Leonard&#39;,
- &#39;Horace&#39;,
- &#39;Marion&#39;,
- &#39;Philip&#39;,
- &#39;Allen&#39;,
- &#39;Archie&#39;,
- &#39;Stephen&#39;,
- &#39;Chester&#39;,
- &#39;Willis&#39;,
- &#39;Raymond&#39;,
- &#39;Rufus&#39;,
- &#39;Warren&#39;,
- &#39;Jessie&#39;,
- &#39;Milton&#39;,
- &#39;Alex&#39;,
- &#39;Leo&#39;,
- &#39;Julius&#39;,
- &#39;Ray&#39;,
- &#39;Sidney&#39;,
- &#39;Bernard&#39;,
- &#39;Dan&#39;,
- &#39;Jerry&#39;,
- &#39;Calvin&#39;,
- &#39;Perry&#39;,
- &#39;Dave&#39;,
- &#39;Anthony&#39;,
- &#39;Eddie&#39;,
- &#39;Amos&#39;,
- &#39;Dennis&#39;,
- &#39;Clifford&#39;,
- &#39;Leroy&#39;,
- &#39;Wesley&#39;,
- &#39;Alonzo&#39;,
- &#39;Garfield&#39;,
- &#39;Franklin&#39;,
- &#39;Emil&#39;,
- &#39;Leon&#39;,
- &#39;Nathan&#39;,
- &#39;Harold&#39;,
- &#39;Matthew&#39;,
- &#39;Levi&#39;,
- &#39;Moses&#39;,
- &#39;Everett&#39;,
- &#39;Lester&#39;,
- &#39;Winfield&#39;,
- &#39;Adam&#39;,
- &#39;Lloyd&#39;,
- &#39;Mack&#39;,
- &#39;Fredrick&#39;,
- &#39;Jay&#39;,
- &#39;Jess&#39;,
- &#39;Melvin&#39;,
- &#39;Noah&#39;,
- &#39;Aaron&#39;,
- &#39;Alvin&#39;,
- &#39;Norman&#39;,
- &#39;Gilbert&#39;,
- &#39;Elijah&#39;,
- &#39;Victor&#39;,
- &#39;Gus&#39;,
- &#39;Nelson&#39;,
- &#39;Jasper&#39;,
- &#39;Silas&#39;,
- &#39;Christopher&#39;,
- &#39;Jake&#39;,
- &#39;Mike&#39;,
- &#39;Percy&#39;,
- &#39;Adolph&#39;,
- &#39;Maurice&#39;,
- &#39;Cornelius&#39;,
- &#39;Felix&#39;,
- &#39;Reuben&#39;,
- &#39;Wallace&#39;,
- &#39;Claud&#39;,
- &#39;Roscoe&#39;,
- &#39;Sylvester&#39;,
- &#39;Earnest&#39;,
- &#39;Hiram&#39;,
- &#39;Otis&#39;,
- &#39;Simon&#39;,
- &#39;Willard&#39;,
- &#39;Irvin&#39;,
- &#39;Mark&#39;,
- &#39;Jose&#39;,
- &#39;Wilbur&#39;,
- &#39;Abraham&#39;,
- &#39;Virgil&#39;,
- &#39;Clinton&#39;,
- &#39;Elbert&#39;,
- &#39;Leslie&#39;,
- &#39;Marshall&#39;,
- &#39;Owen&#39;,
- &#39;Wiley&#39;,
- &#39;Anton&#39;,
- &#39;Morris&#39;,
- &#39;Manuel&#39;,
- &#39;Phillip&#39;,
- &#39;Augustus&#39;,
- &#39;Emmett&#39;,
- &#39;Eli&#39;,
- &#39;Nicholas&#39;,
- &#39;Wilson&#39;,
- &#39;Alva&#39;,
- &#39;Harley&#39;,
- &#39;Newton&#39;,
- &#39;Timothy&#39;,
- &#39;Marvin&#39;,
- &#39;Ross&#39;,
- &#39;Curtis&#39;,
- &#39;Edmund&#39;,
- &#39;Jeff&#39;,
- &#39;Elias&#39;,
- &#39;Harrison&#39;,
- &#39;Stanley&#39;,
- &#39;Columbus&#39;,
- &#39;Lon&#39;,
- &#39;Ora&#39;,
- &#39;Ollie&#39;,
- &#39;Russell&#39;,
- &#39;Pearl&#39;,
- &#39;Solomon&#39;,
- &#39;Arch&#39;,
- &#39;Asa&#39;,
- &#39;Clayton&#39;,
- &#39;Enoch&#39;,
- &#39;Irving&#39;,
- &#39;Mathew&#39;,
- &#39;Nathaniel&#39;,
- &#39;Scott&#39;,
- &#39;Hubert&#39;,
- &#39;Lemuel&#39;,
- &#39;Andy&#39;,
- &#39;Ellis&#39;,
- &#39;Emanuel&#39;,
- &#39;Joshua&#39;,
- &#39;Millard&#39;,
- &#39;Vernon&#39;,
- &#39;Wade&#39;,
- &#39;Cyrus&#39;,
- &#39;Miles&#39;,
- &#39;Rudolph&#39;,
- &#39;Sherman&#39;,
- &#39;Austin&#39;,
- &#39;Bill&#39;,
- &#39;Chas&#39;,
- &#39;Lonnie&#39;,
- &#39;Monroe&#39;,
- &#39;Byron&#39;,
- &#39;Edd&#39;,
- &#39;Emery&#39;,
- &#39;Grant&#39;,
- &#39;Jerome&#39;,
- &#39;Max&#39;,
- &#39;Mose&#39;,
- &#39;Steve&#39;,
- &#39;Gordon&#39;,
- &#39;Abe&#39;,
- &#39;Pete&#39;,
- &#39;Chris&#39;,
- &#39;Clark&#39;,
- &#39;Gustave&#39;,
- &#39;Orville&#39;,
- &#39;Lorenzo&#39;,
- &#39;Bruce&#39;,
- &#39;Marcus&#39;,
- &#39;Preston&#39;,
- &#39;Bob&#39;,
- &#39;Dock&#39;,
- &#39;Donald&#39;,
- &#39;Jackson&#39;,
- &#39;Cecil&#39;,
- &#39;Barney&#39;,
- &#39;Delbert&#39;,
- &#39;Edmond&#39;,
- &#39;Anderson&#39;,
- &#39;Christian&#39;,
- &#39;Glenn&#39;,
- &#39;Jefferson&#39;,
- &#39;Luke&#39;,
- &#39;Neal&#39;,
- &#39;Burt&#39;,
- &#39;Ike&#39;,
- &#39;Myron&#39;,
- &#39;Tony&#39;,
- &#39;Conrad&#39;,
- &#39;Joel&#39;,
- &#39;Matt&#39;,
- &#39;Riley&#39;,
- &#39;Vincent&#39;,
- &#39;Emory&#39;,
- &#39;Isaiah&#39;,
- &#39;Nick&#39;,
- &#39;Ezra&#39;,
- &#39;Green&#39;,
- &#39;Juan&#39;,
- &#39;Clifton&#39;,
- &#39;Lucius&#39;,
- &#39;Porter&#39;,
- &#39;Arnold&#39;,
- &#39;Bud&#39;,
- &#39;Jeremiah&#39;,
- &#39;Taylor&#39;,
- &#39;Forrest&#39;,
- &#39;Roland&#39;,
- &#39;Spencer&#39;,
- &#39;Burton&#39;,
- &#39;Don&#39;,
- &#39;Emmet&#39;,
- &#39;Gustav&#39;,
- &#39;Louie&#39;,
- &#39;Morgan&#39;,
- &#39;Ned&#39;,
- &#39;Van&#39;,
- &#39;Ambrose&#39;,
- &#39;Chauncey&#39;,
- &#39;Elisha&#39;,
- &#39;Ferdinand&#39;,
- &#39;General&#39;,
- &#39;Julian&#39;,
- &#39;Kenneth&#39;,
- &#39;Mitchell&#39;,
- &#39;Allie&#39;,
- &#39;Josh&#39;,
- &#39;Judson&#39;,
- &#39;Lyman&#39;,
- &#39;Napoleon&#39;,
- &#39;Pedro&#39;,
- &#39;Berry&#39;,
- &#39;Dewitt&#39;,
- &#39;Ervin&#39;,
- &#39;Forest&#39;,
- &#39;Lynn&#39;,
- &#39;Pink&#39;,
- &#39;Ruben&#39;,
- &#39;Sanford&#39;,
- &#39;Ward&#39;,
- &#39;Douglas&#39;,
- &#39;Ole&#39;,
- &#39;Omer&#39;,
- &#39;Ulysses&#39;,
- &#39;Walker&#39;,
- &#39;Wilbert&#39;,
- &#39;Adelbert&#39;,
- &#39;Benjiman&#39;,
- &#39;Ivan&#39;,
- &#39;Jonas&#39;,
- &#39;Major&#39;,
- &#39;Abner&#39;,
- &#39;Archibald&#39;,
- &#39;Caleb&#39;,
- &#39;Clint&#39;,
- &#39;Dudley&#39;,
- &#39;Granville&#39;,
- &#39;King&#39;,
- &#39;Mary&#39;,
- &#39;Merton&#39;,
- &#39;Antonio&#39;,
- &#39;Bennie&#39;,
- &#39;Carroll&#39;,
- &#39;Freeman&#39;,
- &#39;Josiah&#39;,
- &#39;Milo&#39;,
- &#39;Royal&#39;,
- &#39;Dick&#39;,
- &#39;Earle&#39;,
- &#39;Elza&#39;,
- &#39;Emerson&#39;,
- &#39;Fletcher&#39;,
- &#39;Judge&#39;,
- &#39;Laurence&#39;,
- &#39;Neil&#39;,
- &#39;Roger&#39;,
- &#39;Seth&#39;,
- &#39;Glen&#39;,
- &#39;Hugo&#39;,
- &#39;Jimmie&#39;,
- &#39;Johnnie&#39;,
- &#39;Washington&#39;,
- &#39;Elwood&#39;,
- &#39;Gust&#39;,
- &#39;Harmon&#39;,
- &#39;Jordan&#39;,
- &#39;Simeon&#39;,
- &#39;Wayne&#39;,
- &#39;Wilber&#39;,
- &#39;Clem&#39;,
- &#39;Evan&#39;,
- &#39;Frederic&#39;,
- &#39;Irwin&#39;,
- &#39;Junius&#39;,
- &#39;Lafayette&#39;,
- &#39;Loren&#39;,
- &#39;Madison&#39;,
- &#39;Mason&#39;,
- &#39;Orval&#39;,
- &#39;Abram&#39;,
- &#39;Aubrey&#39;,
- &#39;Elliott&#39;,
- &#39;Hans&#39;,
- &#39;Karl&#39;,
- &#39;Minor&#39;,
- &#39;Wash&#39;,
- &#39;Wilfred&#39;,
- &#39;Allan&#39;,
- &#39;Alphonse&#39;,
- &#39;Dallas&#39;,
- &#39;Dee&#39;,
- &#39;Isiah&#39;,
- &#39;Jason&#39;,
- &#39;Johnny&#39;,
- &#39;Lawson&#39;,
- &#39;Lew&#39;,
- &#39;Micheal&#39;,
- &#39;Orin&#39;,
- &#39;Addison&#39;,
- &#39;Cal&#39;,
- &#39;Erastus&#39;,
- &#39;Francisco&#39;,
- &#39;Hardy&#39;,
- &#39;Lucien&#39;,
- &#39;Randolph&#39;,
- &#39;Stewart&#39;,
- &#39;Vern&#39;,
- &#39;Wilmer&#39;,
- &#39;Zack&#39;,
- &#39;Adrian&#39;,
- &#39;Alvah&#39;,
- &#39;Bertram&#39;,
- &#39;Clay&#39;,
- &#39;Ephraim&#39;,
- &#39;Fritz&#39;,
- &#39;Giles&#39;,
- &#39;Grover&#39;,
- &#39;Harris&#39;,
- &#39;Isom&#39;,
- &#39;Jesus&#39;,
- &#39;Johnie&#39;,
- &#39;Jonathan&#39;,
- &#39;Lucian&#39;,
- &#39;Malcolm&#39;,
- &#39;Merritt&#39;,
- &#39;Otho&#39;,
- &#39;Perley&#39;,
- &#39;Rolla&#39;,
- &#39;Sandy&#39;,
- &#39;Tomas&#39;,
- &#39;Wilford&#39;,
- &#39;Adolphus&#39;,
- &#39;Angus&#39;,
- &#39;Arther&#39;,
- &#39;Carlos&#39;,
- &#39;Cary&#39;,
- &#39;Cassius&#39;,
- &#39;Davis&#39;,
- &#39;Hamilton&#39;,
- &#39;Harve&#39;,
- &#39;Israel&#39;,
- &#39;Leander&#39;,
- &#39;Melville&#39;,
- &#39;Merle&#39;,
- &#39;Murray&#39;,
- &#39;Pleasant&#39;,
- &#39;Sterling&#39;,
- &#39;Steven&#39;,
- &#39;Axel&#39;,
- &#39;Boyd&#39;,
- &#39;Bryant&#39;,
- &#39;Clement&#39;,
- &#39;Erwin&#39;,
- &#39;Ezekiel&#39;,
- &#39;Foster&#39;,
- &#39;Frances&#39;,
- &#39;Geo&#39;,
- &#39;Houston&#39;,
- &#39;Issac&#39;,
- &#39;Jules&#39;,
- &#39;Larkin&#39;,
- &#39;Mat&#39;,
- &#39;Morton&#39;,
- &#39;Orlando&#39;,
- &#39;Pierce&#39;,
- &#39;Prince&#39;,
- &#39;Rollie&#39;,
- &#39;Rollin&#39;,
- &#39;Sim&#39;,
- &#39;Stuart&#39;,
- &#39;Wilburn&#39;,
- &#39;Bennett&#39;,
- &#39;Casper&#39;,
- &#39;Christ&#39;,
- &#39;Dell&#39;,
- &#39;Egbert&#39;,
- &#39;Elmo&#39;,
- &#39;Fay&#39;,
- &#39;Gabriel&#39;,
- &#39;Hector&#39;,
- &#39;Horatio&#39;,
- &#39;Lige&#39;,
- &#39;Saul&#39;,
- &#39;Smith&#39;,
- &#39;Squire&#39;,
- &#39;Tobe&#39;,
- &#39;Tommie&#39;,
- &#39;Wyatt&#39;,
- &#39;Alford&#39;,
- &#39;Alma&#39;,
- &#39;Alton&#39;,
- &#39;Andres&#39;,
- &#39;Burl&#39;,
- &#39;Cicero&#39;,
- &#39;Dean&#39;,
- &#39;Dorsey&#39;,
- &#39;Enos&#39;,
- &#39;Howell&#39;,
- &#39;Lou&#39;,
- &#39;Loyd&#39;,
- &#39;Mahlon&#39;,
- &#39;Nat&#39;,
- &#39;Omar&#39;,
- &#39;Oran&#39;,
- &#39;Parker&#39;,
- &#39;Raleigh&#39;,
- &#39;Reginald&#39;,
- &#39;Rubin&#39;,
- &#39;Seymour&#39;,
- &#39;Wm&#39;,
- &#39;Young&#39;,
- &#39;Benjamine&#39;,
- &#39;Carey&#39;,
- &#39;Carlton&#39;,
- &#39;Eldridge&#39;,
- &#39;Elzie&#39;,
- &#39;Garrett&#39;,
- &#39;Isham&#39;,
- &#39;Johnson&#39;,
- &#39;Larry&#39;,
- &#39;Logan&#39;,
- &#39;Merrill&#39;,
- &#39;Mont&#39;,
- &#39;Oren&#39;,
- &#39;Pierre&#39;,
- &#39;Rex&#39;,
- &#39;Rodney&#39;,
- &#39;Ted&#39;,
- &#39;Webster&#39;,
- &#39;West&#39;,
- &#39;Wheeler&#39;,
- &#39;Willam&#39;,
- &#39;Al&#39;,
- &#39;Aloysius&#39;,
- &#39;Alvie&#39;,
- &#39;Anna&#39;,
- &#39;Art&#39;,
- &#39;Augustine&#39;,
- &#39;Bailey&#39;,
- &#39;Benjaman&#39;,
- &#39;Beverly&#39;,
- &#39;Bishop&#39;,
- &#39;Clair&#39;,
- &#39;Cloyd&#39;,
- &#39;Coleman&#39;,
- &#39;Dana&#39;,
- &#39;Duncan&#39;,
- &#39;Dwight&#39;,
- &#39;Emile&#39;,
- &#39;Evert&#39;,
- &#39;Henderson&#39;,
- &#39;Hunter&#39;,
- &#39;Jean&#39;,
- &#39;Lem&#39;,
- &#39;Luis&#39;,
- &#39;Mathias&#39;,
- &#39;Maynard&#39;,
- &#39;Miguel&#39;,
- &#39;Mortimer&#39;,
- &#39;Nels&#39;,
- &#39;Norris&#39;,
- &#39;Pat&#39;,
- &#39;Phil&#39;,
- &#39;Rush&#39;,
- &#39;Santiago&#39;,
- &#39;Sol&#39;,
- &#39;Sydney&#39;,
- &#39;Thaddeus&#39;,
- &#39;Thornton&#39;,
- &#39;Tim&#39;,
- &#39;Travis&#39;,
- &#39;Truman&#39;,
- &#39;Watson&#39;,
- &#39;Webb&#39;,
- &#39;Wellington&#39;,
- &#39;Winfred&#39;,
- &#39;Wylie&#39;,
- &#39;Alec&#39;,
- &#39;Basil&#39;,
- &#39;Baxter&#39;,
- &#39;Bertrand&#39;,
- &#39;Buford&#39;,
- &#39;Burr&#39;,
- &#39;Cleveland&#39;,
- &#39;Colonel&#39;,
- &#39;Dempsey&#39;,
- &#39;Early&#39;,
- &#39;Ellsworth&#39;,
- &#39;Fate&#39;,
- &#39;Finley&#39;,
- &#39;Gabe&#39;,
- &#39;Garland&#39;,
- &#39;Gerald&#39;,
- &#39;Herschel&#39;,
- &#39;Hezekiah&#39;,
- &#39;Justus&#39;,
- &#39;Lindsey&#39;,
- &#39;Marcellus&#39;,
- &#39;Olaf&#39;,
- &#39;Olin&#39;,
- &#39;Pablo&#39;,
- &#39;Rolland&#39;,
- &#39;Turner&#39;,
- &#39;Verne&#39;,
- &#39;Volney&#39;,
- &#39;Williams&#39;,
- &#39;Almon&#39;,
- &#39;Alois&#39;,
- &#39;Alonza&#39;,
- &#39;Anson&#39;,
- &#39;Authur&#39;,
- &#39;Benton&#39;,
- &#39;Billie&#39;,
- &#39;Cornelious&#39;,
- &#39;Darius&#39;,
- &#39;Denis&#39;,
- &#39;Dillard&#39;,
- &#39;Doctor&#39;,
- &#39;Elvin&#39;,
- &#39;Emma&#39;,
- &#39;Eric&#39;,
- &#39;Evans&#39;,
- &#39;Gideon&#39;,
- &#39;Haywood&#39;,
- &#39;Hilliard&#39;,
- &#39;Hosea&#39;,
- &#39;Lincoln&#39;,
- &#39;Lonzo&#39;,
- &#39;Lucious&#39;,
- &#39;Lum&#39;,
- &#39;Malachi&#39;,
- &#39;Newt&#39;,
- &#39;Noel&#39;,
- &#39;Orie&#39;,
- &#39;Palmer&#39;,
- &#39;Pinkney&#39;,
- &#39;Shirley&#39;,
- &#39;Sumner&#39;,
- &#39;Terry&#39;,
- &#39;Urban&#39;,
- &#39;Uriah&#39;,
- &#39;Valentine&#39;,
- &#39;Waldo&#39;,
- &#39;Warner&#39;,
- &#39;Wong&#39;,
- &#39;Zeb&#39;,
- &#39;Abel&#39;,
- &#39;Alden&#39;,
- &#39;Archer&#39;,
- &#39;Avery&#39;,
- &#39;Carson&#39;,
- &#39;Cullen&#39;,
- &#39;Doc&#39;,
- &#39;Eben&#39;,
- &#39;Elige&#39;,
- &#39;Elizabeth&#39;,
- &#39;Elmore&#39;,
- &#39;Ernst&#39;,
- &#39;Finis&#39;,
- &#39;Freddie&#39;,
- &#39;Godfrey&#39;,
- &#39;Guss&#39;,
- &#39;Hamp&#39;,
- &#39;Hermann&#39;,
- &#39;Isadore&#39;,
- &#39;Isreal&#39;,
- &#39;Jones&#39;,
- &#39;June&#39;,
- &#39;Lacy&#39;,
- &#39;Lafe&#39;,
- &#39;Leland&#39;,
- &#39;Llewellyn&#39;,
- &#39;Ludwig&#39;,
- &#39;Manford&#39;,
- &#39;Maxwell&#39;,
- &#39;Minnie&#39;,
- &#39;Obie&#39;,
- &#39;Octave&#39;,
- &#39;Orrin&#39;,
- &#39;Ossie&#39;,
- &#39;Oswald&#39;,
- &#39;Park&#39;,
- &#39;Parley&#39;,
- &#39;Ramon&#39;,
- &#39;Rice&#39;,
- &#39;Stonewall&#39;,
- &#39;Theo&#39;,
- &#39;Tillman&#39;,
- &#39;Addie&#39;,
- &#39;Aron&#39;,
- &#39;Ashley&#39;,
- &#39;Bernhard&#39;,
- &#39;Bertie&#39;,
- &#39;Berton&#39;,
- &#39;Buster&#39;,
- &#39;Butler&#39;,
- &#39;Carleton&#39;,
- &#39;Carrie&#39;,
- &#39;Clara&#39;,
- &#39;Clarance&#39;,
- &#39;Clare&#39;,
- &#39;Crawford&#39;,
- &#39;Danial&#39;,
- &#39;Dayton&#39;,
- &#39;Dolphus&#39;,
- &#39;Elder&#39;,
- &#39;Ephriam&#39;,
- &#39;Fayette&#39;,
- &#39;Felipe&#39;,
- &#39;Fernando&#39;,
- &#39;Flem&#39;,
- &#39;Florence&#39;,
- &#39;Ford&#39;,
- &#39;Harlan&#39;,
- &#39;Hayes&#39;,
- &#39;Henery&#39;,
- &#39;Hoy&#39;,
- &#39;Huston&#39;,
- &#39;Ida&#39;,
- &#39;Ivory&#39;,
- &#39;Jonah&#39;,
- &#39;Justin&#39;,
- &#39;Lenard&#39;,
- &#39;Leopold&#39;,
- &#39;Lionel&#39;,
- &#39;Manley&#39;,
- &#39;Marquis&#39;,
- &#39;Marshal&#39;,
- &#39;Mart&#39;,
- &#39;Odie&#39;,
- &#39;Olen&#39;,
- &#39;Oral&#39;,
- &#39;Orley&#39;,
- &#39;Otha&#39;,
- &#39;Press&#39;,
- &#39;Price&#39;,
- &#39;Quincy&#39;,
- &#39;Randall&#39;,
- &#39;Rich&#39;,
- &#39;Richmond&#39;,
- &#39;Romeo&#39;,
- &#39;Russel&#39;,
- &#39;Rutherford&#39;,
- &#39;Shade&#39;,
- &#39;Shelby&#39;,
- &#39;Solon&#39;,
- &#39;Thurman&#39;,
- &#39;Tilden&#39;,
- &#39;Troy&#39;,
- &#39;Woodson&#39;,
- &#39;Worth&#39;,
- &#39;Aden&#39;,
- &#39;Alcide&#39;,
- &#39;Alf&#39;,
- &#39;Algie&#39;,
- &#39;Arlie&#39;,
- &#39;Bart&#39;,
- &#39;Bedford&#39;,
- &#39;Benito&#39;,
- &#39;Billy&#39;,
- &#39;Bird&#39;,
- &#39;Birt&#39;,
- &#39;Bruno&#39;,
- &#39;Burley&#39;,
- &#39;Chancy&#39;,
- &#39;Claus&#39;,
- &#39;Cliff&#39;,
- &#39;Clovis&#39;,
- &#39;Connie&#39;,
- &#39;Creed&#39;,
- &#39;Delos&#39;,
- &#39;Duke&#39;,
- &#39;Eber&#39;,
- &#39;Eligah&#39;,
- &#39;Elliot&#39;,
- &#39;Elton&#39;,
- &#39;Emmitt&#39;,
- &#39;Gene&#39;,
- &#39;Golden&#39;,
- &#39;Hal&#39;,
- &#39;Hardin&#39;,
- &#39;Harman&#39;,
- &#39;Hervey&#39;,
- &#39;Hollis&#39;,
- &#39;Ivey&#39;,
- &#39;Jennie&#39;,
- &#39;Len&#39;,
- &#39;Lindsay&#39;,
- &#39;Lonie&#39;,
- &#39;Lyle&#39;,
- &#39;Mac&#39;,
- &#39;Mal&#39;,
- &#39;Math&#39;,
- &#39;Miller&#39;,
- &#39;Orson&#39;,
- &#39;Osborne&#39;,
- &#39;Percival&#39;,
- &#39;Pleas&#39;,
- &#39;Ples&#39;,
- &#39;Rafael&#39;,
- &#39;Raoul&#39;,
- &#39;Roderick&#39;,
- &#39;Rose&#39;,
- &#39;Shelton&#39;,
- &#39;Sid&#39;,
- &#39;Theron&#39;,
- &#39;Tobias&#39;,
- &#39;Toney&#39;,
- &#39;Tyler&#39;,
- &#39;Vance&#39;,
- &#39;Vivian&#39;,
- &#39;Walton&#39;,
- &#39;Watt&#39;,
- &#39;Weaver&#39;,
- &#39;Wilton&#39;,
- &#39;Adolf&#39;,
- &#39;Albin&#39;,
- &#39;Albion&#39;,
- &#39;Allison&#39;,
- &#39;Alpha&#39;,
- &#39;Alpheus&#39;,
- &#39;Anastacio&#39;,
- &#39;Andre&#39;,
- &#39;Annie&#39;,
- &#39;Arlington&#39;,
- &#39;Armand&#39;,
- &#39;Asberry&#39;,
- &#39;Asbury&#39;,
- &#39;Asher&#39;,
- &#39;Augustin&#39;,
- &#39;Auther&#39;,
- &#39;Author&#39;,
- &#39;Ballard&#39;,
- &#39;Blas&#39;,
- &#39;Caesar&#39;,
- &#39;Candido&#39;,
- &#39;Cato&#39;,
- &#39;Clarke&#39;,
- &#39;Clemente&#39;,
- &#39;Colin&#39;,
- &#39;Commodore&#39;,
- &#39;Cora&#39;,
- &#39;Coy&#39;,
- &#39;Cruz&#39;,
- &#39;Curt&#39;,
- &#39;Damon&#39;,
- &#39;Davie&#39;,
- &#39;Delmar&#39;,
- &#39;Dexter&#39;,
- &#39;Dora&#39;,
- &#39;Doss&#39;,
- &#39;Drew&#39;,
- &#39;Edson&#39;,
- &#39;Elam&#39;,
- &#39;Elihu&#39;,
- &#39;Eliza&#39;,
- &#39;Elsie&#39;,
- &#39;Erie&#39;,
- &#39;Ernie&#39;,
- &#39;Ethel&#39;,
- &#39;Ferd&#39;,
- &#39;Friend&#39;,
- &#39;Garry&#39;,
- &#39;Gary&#39;,
- &#39;Grace&#39;,
- &#39;Gustaf&#39;,
- &#39;Hallie&#39;,
- &#39;Hampton&#39;,
- &#39;Harrie&#39;,
- &#39;Hattie&#39;,
- &#39;Hence&#39;,
- &#39;Hillard&#39;,
- &#39;Hollie&#39;,
- &#39;Holmes&#39;,
- &#39;Hope&#39;,
- &#39;Hyman&#39;,
- &#39;Ishmael&#39;,
- &#39;Jarrett&#39;,
- &#39;Jessee&#39;,
- &#39;Joeseph&#39;,
- &#39;Junious&#39;,
- &#39;Kirk&#39;,
- &#39;Levy&#39;,
- &#39;Mervin&#39;,
- &#39;Michel&#39;,
- &#39;Milford&#39;,
- &#39;Mitchel&#39;,
- &#39;Nellie&#39;,
- &#39;Noble&#39;,
- &#39;Obed&#39;,
- &#39;Oda&#39;,
- &#39;Orren&#39;,
- &#39;Ottis&#39;,
- &#39;Rafe&#39;,
- &#39;Redden&#39;,
- &#39;Reese&#39;,
- &#39;Rube&#39;,
- &#39;Ruby&#39;,
- &#39;Rupert&#39;,
- &#39;Salomon&#39;,
- &#39;Sammie&#39;,
- &#39;Sanders&#39;,
- &#39;Soloman&#39;,
- &#39;Stacy&#39;,
- &#39;Stanford&#39;,
- &#39;Stanton&#39;,
- &#39;Thad&#39;,
- &#39;Titus&#39;,
- &#39;Tracy&#39;,
- &#39;Vernie&#39;,
- &#39;Wendell&#39;,
- &#39;Wilhelm&#39;,
- &#39;Willian&#39;,
- &#39;Yee&#39;,
- &#39;Zeke&#39;,
- &#39;Ab&#39;,
- &#39;Abbott&#39;,
- &#39;Agustus&#39;,
- &#39;Albertus&#39;,
- &#39;Almer&#39;,
- &#39;Alphonso&#39;,
- &#39;Alvia&#39;,
- &#39;Artie&#39;,
- &#39;Arvid&#39;,
- &#39;Ashby&#39;,
- &#39;Augusta&#39;,
- &#39;Aurthur&#39;,
- &#39;Babe&#39;,
- &#39;Baldwin&#39;,
- &#39;Barnett&#39;,
- &#39;Bartholomew&#39;,
- &#39;Barton&#39;,
- &#39;Bernie&#39;,
- &#39;Blaine&#39;,
- &#39;Boston&#39;,
- &#39;Brad&#39;,
- &#39;Bradford&#39;,
- &#39;Bradley&#39;,
- &#39;Brooks&#39;,
- &#39;Buck&#39;,
- &#39;Budd&#39;,
- &#39;Ceylon&#39;,
- &#39;Chalmers&#39;,
- &#39;Chesley&#39;,
- &#39;Chin&#39;,
- &#39;Cleo&#39;,
- &#39;Crockett&#39;,
- &#39;Cyril&#39;,
- &#39;Daisy&#39;,
- &#39;Denver&#39;,
- &#39;Dow&#39;,
- &#39;Duff&#39;,
- &#39;Edie&#39;,
- &#39;Edith&#39;,
- &#39;Elick&#39;,
- &#39;Elie&#39;,
- &#39;Eliga&#39;,
- &#39;Eliseo&#39;,
- &#39;Elroy&#39;,
- &#39;Ely&#39;,
- &#39;Ennis&#39;,
- &#39;Enrique&#39;,
- &#39;Erasmus&#39;,
- &#39;Esau&#39;,
- &#39;Everette&#39;,
- &#39;Firman&#39;,
- &#39;Fleming&#39;,
- &#39;Flora&#39;,
- &#39;Gardner&#39;,
- &#39;Gee&#39;,
- &#39;Gorge&#39;,
- &#39;Gottlieb&#39;,
- &#39;Gregorio&#39;,
- &#39;Gregory&#39;,
- &#39;Gustavus&#39;,
- &#39;Halsey&#39;,
- &#39;Handy&#39;,
- &#39;Hardie&#39;,
- &#39;Harl&#39;,
- &#39;Hayden&#39;,
- &#39;Hays&#39;,
- &#39;Hermon&#39;,
- &#39;Hershel&#39;,
- &#39;Holly&#39;,
- &#39;Hosteen&#39;,
- &#39;Hoyt&#39;,
- &#39;Hudson&#39;,
- &#39;Huey&#39;,
- &#39;Humphrey&#39;,
- &#39;Hunt&#39;,
- &#39;Hyrum&#39;,
- &#39;Irven&#39;,
- &#39;Isam&#39;,
- &#39;Ivy&#39;,
- &#39;Jabez&#39;,
- &#39;Jewel&#39;,
- &#39;Jodie&#39;,
- &#39;Judd&#39;,
- &#39;Julious&#39;,
- &#39;Justice&#39;,
- &#39;Katherine&#39;,
- &#39;Kelly&#39;,
- &#39;Kit&#39;,
- &#39;Knute&#39;,
- &#39;Lavern&#39;,
- &#39;Lawyer&#39;,
- &#39;Layton&#39;,
- ...]
 </pre></div>
 </div>
 </div>
@@ -2406,7 +1389,7 @@ Zählen Sie die Vorkommen von <code class="docutils literal notranslate"><span c
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">names</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">names</span><span class="p">):</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">entry</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
@@ -2414,11 +1397,6 @@ Zählen Sie die Vorkommen von <code class="docutils literal notranslate"><span c
     <span class="k">return</span> <span class="n">count</span>
 
 <span class="n">count</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="n">names</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>238
 </pre></div>
 </div>
 </div>
@@ -2433,7 +1411,7 @@ Zum Beispiel:</p>
 <p>Wir haben die folgenden beiden Funktionen entwickelt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
     <span class="n">countings</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">countings</span><span class="p">:</span>
@@ -2446,7 +1424,7 @@ Zum Beispiel:</p>
 <p>und</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
     <span class="n">countings</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">countings</span><span class="p">:</span>
@@ -2481,7 +1459,7 @@ Zum Beispiel:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countings</span> <span class="o">=</span> <span class="n">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">countings</span> <span class="o">=</span> <span class="n">count_all</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="n">unique_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">countings</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -2492,7 +1470,7 @@ Selbstverständlich hat <code class="docutils literal notranslate"><span class="
 Diesen haben wir oben beim Generieren des zufälligen Telefonbuchs verwendet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sorted<span class="o">?</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sorted?
 </pre></div>
 </div>
 </div>
@@ -2500,18 +1478,7 @@ Diesen haben wir oben beim Generieren des zufälligen Telefonbuchs verwendet.</p
 <p>bzw.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">sorted</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function sorted in module builtins:
-
-sorted(iterable, /, *, key=None, reverse=False)
-    Return a new list containing all items from the iterable in ascending order.
-    
-    A custom key function can be supplied to customize the sort order, and the
-    reverse flag can be set to request the result in descending order.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">sorted</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2530,7 +1497,7 @@ sorted(iterable, /, *, key=None, reverse=False)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_names_lex</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_names</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unique_names_lex</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_names</span><span class="p">)</span>
 <span class="n">unique_names_count</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_names</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">entry</span> <span class="p">:</span> <span class="n">countings</span><span class="p">[</span><span class="n">entry</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2576,7 +1543,7 @@ Jeder Listeneintrag <em>repräsentiert</em> ein <em>Fach</em>, was wiederum eine
 In unserem Beispiel brauchen wir eine Funktion <code class="docutils literal notranslate"><span class="pre">index_of</span></code> die uns für einen Buchstaben den korrekten Index liefert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2601,7 +1568,7 @@ In unserem Beispiel brauchen wir eine Funktion <code class="docutils literal not
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_lex_buckets</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_lex_buckets</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">):</span>
     <span class="n">names_by_letter</span> <span class="o">=</span> <span class="p">[[]]</span>
     <span class="n">letter</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
 
@@ -2630,532 +1597,10 @@ Zum Beispiel wäre es praktisch auf ein bestimmtes <em>Fach</em> nicht über den
 </div>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_names</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">names_by_letter</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_names</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">names_by_letter</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">names_by_letter</span><span class="p">[</span><span class="n">index_of</span><span class="p">(</span><span class="n">char</span><span class="p">)]</span>
 
 <span class="n">get_names</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">names_by_letter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Caddie&#39;,
- &#39;Cade&#39;,
- &#39;Caden&#39;,
- &#39;Cadence&#39;,
- &#39;Cael&#39;,
- &#39;Caesar&#39;,
- &#39;Caiden&#39;,
- &#39;Cailyn&#39;,
- &#39;Cain&#39;,
- &#39;Caitlin&#39;,
- &#39;Caitlyn&#39;,
- &#39;Caitlynn&#39;,
- &#39;Cal&#39;,
- &#39;Caldonia&#39;,
- &#39;Cale&#39;,
- &#39;Caleb&#39;,
- &#39;Caleigh&#39;,
- &#39;Calhoun&#39;,
- &#39;Cali&#39;,
- &#39;Calista&#39;,
- &#39;Calla&#39;,
- &#39;Callie&#39;,
- &#39;Callum&#39;,
- &#39;Calvin&#39;,
- &#39;Cam&#39;,
- &#39;Camden&#39;,
- &#39;Cameron&#39;,
- &#39;Cami&#39;,
- &#39;Camila&#39;,
- &#39;Camilla&#39;,
- &#39;Camille&#39;,
- &#39;Camisha&#39;,
- &#39;Cammie&#39;,
- &#39;Campbell&#39;,
- &#39;Camren&#39;,
- &#39;Camron&#39;,
- &#39;Camryn&#39;,
- &#39;Candace&#39;,
- &#39;Candi&#39;,
- &#39;Candice&#39;,
- &#39;Candida&#39;,
- &#39;Candido&#39;,
- &#39;Candis&#39;,
- &#39;Candy&#39;,
- &#39;Candyce&#39;,
- &#39;Cannie&#39;,
- &#39;Cannon&#39;,
- &#39;Canyon&#39;,
- &#39;Cap&#39;,
- &#39;Capitola&#39;,
- &#39;Cappie&#39;,
- &#39;Caprice&#39;,
- &#39;Captain&#39;,
- &#39;Cara&#39;,
- &#39;Caren&#39;,
- &#39;Carey&#39;,
- &#39;Cari&#39;,
- &#39;Carie&#39;,
- &#39;Carin&#39;,
- &#39;Carina&#39;,
- &#39;Carisa&#39;,
- &#39;Carissa&#39;,
- &#39;Carl&#39;,
- &#39;Carla&#39;,
- &#39;Carlee&#39;,
- &#39;Carleen&#39;,
- &#39;Carleigh&#39;,
- &#39;Carlene&#39;,
- &#39;Carleton&#39;,
- &#39;Carley&#39;,
- &#39;Carli&#39;,
- &#39;Carlie&#39;,
- &#39;Carlisle&#39;,
- &#39;Carlo&#39;,
- &#39;Carlos&#39;,
- &#39;Carlota&#39;,
- &#39;Carlotta&#39;,
- &#39;Carlton&#39;,
- &#39;Carly&#39;,
- &#39;Carlyle&#39;,
- &#39;Carlyn&#39;,
- &#39;Carma&#39;,
- &#39;Carmel&#39;,
- &#39;Carmela&#39;,
- &#39;Carmelita&#39;,
- &#39;Carmella&#39;,
- &#39;Carmelo&#39;,
- &#39;Carmen&#39;,
- &#39;Carmine&#39;,
- &#39;Carnell&#39;,
- &#39;Caro&#39;,
- &#39;Carol&#39;,
- &#39;Carolann&#39;,
- &#39;Carole&#39;,
- &#39;Carolee&#39;,
- &#39;Carolina&#39;,
- &#39;Caroline&#39;,
- &#39;Carolyn&#39;,
- &#39;Carolyne&#39;,
- &#39;Carolynn&#39;,
- &#39;Caron&#39;,
- &#39;Carra&#39;,
- &#39;Carri&#39;,
- &#39;Carrie&#39;,
- &#39;Carrol&#39;,
- &#39;Carroll&#39;,
- &#39;Carry&#39;,
- &#39;Carsen&#39;,
- &#39;Carson&#39;,
- &#39;Carter&#39;,
- &#39;Cary&#39;,
- &#39;Caryl&#39;,
- &#39;Caryn&#39;,
- &#39;Cas&#39;,
- &#39;Casandra&#39;,
- &#39;Case&#39;,
- &#39;Casey&#39;,
- &#39;Cash&#39;,
- &#39;Casie&#39;,
- &#39;Casimer&#39;,
- &#39;Casimir&#39;,
- &#39;Casimiro&#39;,
- &#39;Cason&#39;,
- &#39;Casper&#39;,
- &#39;Cass&#39;,
- &#39;Cassandra&#39;,
- &#39;Cassidy&#39;,
- &#39;Cassie&#39;,
- &#39;Cassius&#39;,
- &#39;Cassondra&#39;,
- &#39;Caswell&#39;,
- &#39;Catalina&#39;,
- &#39;Catharine&#39;,
- &#39;Catherine&#39;,
- &#39;Cathern&#39;,
- &#39;Cathey&#39;,
- &#39;Cathi&#39;,
- &#39;Cathie&#39;,
- &#39;Cathleen&#39;,
- &#39;Cathrine&#39;,
- &#39;Cathryn&#39;,
- &#39;Cathy&#39;,
- &#39;Catina&#39;,
- &#39;Cato&#39;,
- &#39;Catrina&#39;,
- &#39;Cayden&#39;,
- &#39;Cayla&#39;,
- &#39;Caylee&#39;,
- &#39;Ceasar&#39;,
- &#39;Cecelia&#39;,
- &#39;Cecil&#39;,
- &#39;Cecile&#39;,
- &#39;Cecilia&#39;,
- &#39;Cecily&#39;,
- &#39;Cedric&#39;,
- &#39;Cedrick&#39;,
- &#39;Ceil&#39;,
- &#39;Celena&#39;,
- &#39;Celesta&#39;,
- &#39;Celeste&#39;,
- &#39;Celestia&#39;,
- &#39;Celestine&#39;,
- &#39;Celestino&#39;,
- &#39;Celia&#39;,
- &#39;Celie&#39;,
- &#39;Celina&#39;,
- &#39;Celine&#39;,
- &#39;Cena&#39;,
- &#39;Ceola&#39;,
- &#39;Cephus&#39;,
- &#39;Cesar&#39;,
- &#39;Ceylon&#39;,
- &#39;Chace&#39;,
- &#39;Chad&#39;,
- &#39;Chadd&#39;,
- &#39;Chadrick&#39;,
- &#39;Chadwick&#39;,
- &#39;Chaim&#39;,
- &#39;Chaka&#39;,
- &#39;Chalmer&#39;,
- &#39;Chalmers&#39;,
- &#39;Champ&#39;,
- &#39;Chana&#39;,
- &#39;Chance&#39;,
- &#39;Chancey&#39;,
- &#39;Chancy&#39;,
- &#39;Chanda&#39;,
- &#39;Chandler&#39;,
- &#39;Chandra&#39;,
- &#39;Chanel&#39;,
- &#39;Chanelle&#39;,
- &#39;Chaney&#39;,
- &#39;Chanie&#39;,
- &#39;Channie&#39;,
- &#39;Channing&#39;,
- &#39;Chantal&#39;,
- &#39;Chante&#39;,
- &#39;Chantel&#39;,
- &#39;Chantelle&#39;,
- &#39;Charissa&#39;,
- &#39;Charisse&#39;,
- &#39;Charity&#39;,
- &#39;Charla&#39;,
- &#39;Charle&#39;,
- &#39;Charlee&#39;,
- &#39;Charleen&#39;,
- &#39;Charlene&#39;,
- &#39;Charles&#39;,
- &#39;Charley&#39;,
- &#39;Charlie&#39;,
- &#39;Charline&#39;,
- &#39;Charlize&#39;,
- &#39;Charlotta&#39;,
- &#39;Charlotte&#39;,
- &#39;Charlottie&#39;,
- &#39;Charls&#39;,
- &#39;Charlsie&#39;,
- &#39;Charlton&#39;,
- &#39;Charly&#39;,
- &#39;Charmaine&#39;,
- &#39;Charolette&#39;,
- &#39;Chas&#39;,
- &#39;Chase&#39;,
- &#39;Chasity&#39;,
- &#39;Chastity&#39;,
- &#39;Chauncey&#39;,
- &#39;Chauncy&#39;,
- &#39;Chaya&#39;,
- &#39;Chaz&#39;,
- &#39;Che&#39;,
- &#39;Chelsea&#39;,
- &#39;Chelsey&#39;,
- &#39;Chelsi&#39;,
- &#39;Chelsie&#39;,
- &#39;Chelsy&#39;,
- &#39;Cher&#39;,
- &#39;Cherelle&#39;,
- &#39;Cheri&#39;,
- &#39;Cherie&#39;,
- &#39;Cherilyn&#39;,
- &#39;Cherise&#39;,
- &#39;Cherish&#39;,
- &#39;Cherrelle&#39;,
- &#39;Cherri&#39;,
- &#39;Cherrie&#39;,
- &#39;Cherry&#39;,
- &#39;Cherryl&#39;,
- &#39;Cheryl&#39;,
- &#39;Cheryle&#39;,
- &#39;Cheryll&#39;,
- &#39;Chesley&#39;,
- &#39;Chessie&#39;,
- &#39;Chester&#39;,
- &#39;Chestina&#39;,
- &#39;Chet&#39;,
- &#39;Cheyanne&#39;,
- &#39;Cheyenne&#39;,
- &#39;Chimere&#39;,
- &#39;Chin&#39;,
- &#39;China&#39;,
- &#39;Chip&#39;,
- &#39;Chiquita&#39;,
- &#39;Chloe&#39;,
- &#39;Chloie&#39;,
- &#39;Chris&#39;,
- &#39;Chrissie&#39;,
- &#39;Chrissy&#39;,
- &#39;Christ&#39;,
- &#39;Christa&#39;,
- &#39;Christal&#39;,
- &#39;Christeen&#39;,
- &#39;Christel&#39;,
- &#39;Christen&#39;,
- &#39;Christena&#39;,
- &#39;Christene&#39;,
- &#39;Christi&#39;,
- &#39;Christian&#39;,
- &#39;Christiana&#39;,
- &#39;Christie&#39;,
- &#39;Christin&#39;,
- &#39;Christina&#39;,
- &#39;Christine&#39;,
- &#39;Christion&#39;,
- &#39;Christop&#39;,
- &#39;Christoper&#39;,
- &#39;Christopher&#39;,
- &#39;Christy&#39;,
- &#39;Chrystal&#39;,
- &#39;Chuck&#39;,
- &#39;Chyna&#39;,
- &#39;Chynna&#39;,
- &#39;Ciara&#39;,
- &#39;Ciarra&#39;,
- &#39;Cicely&#39;,
- &#39;Cicero&#39;,
- &#39;Cielo&#39;,
- &#39;Ciera&#39;,
- &#39;Cierra&#39;,
- &#39;Ciji&#39;,
- &#39;Cilla&#39;,
- &#39;Cinda&#39;,
- &#39;Cindi&#39;,
- &#39;Cindy&#39;,
- &#39;Cinnamon&#39;,
- &#39;Cinthia&#39;,
- &#39;Citlali&#39;,
- &#39;Citlalli&#39;,
- &#39;Clabe&#39;,
- &#39;Claiborne&#39;,
- &#39;Clair&#39;,
- &#39;Claire&#39;,
- &#39;Clara&#39;,
- &#39;Clarabelle&#39;,
- &#39;Clarance&#39;,
- &#39;Clare&#39;,
- &#39;Clarence&#39;,
- &#39;Claribel&#39;,
- &#39;Clarice&#39;,
- &#39;Clarinda&#39;,
- &#39;Clarine&#39;,
- &#39;Clarisa&#39;,
- &#39;Clarissa&#39;,
- &#39;Clark&#39;,
- &#39;Clarke&#39;,
- &#39;Clarnce&#39;,
- &#39;Classie&#39;,
- &#39;Claud&#39;,
- &#39;Claude&#39;,
- &#39;Claudette&#39;,
- &#39;Claudia&#39;,
- &#39;Claudie&#39;,
- &#39;Claudine&#39;,
- &#39;Claudio&#39;,
- &#39;Claudius&#39;,
- &#39;Claus&#39;,
- &#39;Clay&#39;,
- &#39;Clayton&#39;,
- &#39;Clearence&#39;,
- &#39;Cleave&#39;,
- &#39;Cleda&#39;,
- &#39;Clell&#39;,
- &#39;Clella&#39;,
- &#39;Clem&#39;,
- &#39;Clemence&#39;,
- &#39;Clemens&#39;,
- &#39;Clement&#39;,
- &#39;Clemente&#39;,
- &#39;Clementina&#39;,
- &#39;Clementine&#39;,
- &#39;Clemie&#39;,
- &#39;Clemma&#39;,
- &#39;Clemmie&#39;,
- &#39;Clemon&#39;,
- &#39;Cleo&#39;,
- &#39;Cleola&#39;,
- &#39;Cleon&#39;,
- &#39;Cleone&#39;,
- &#39;Cleora&#39;,
- &#39;Cleta&#39;,
- &#39;Cletus&#39;,
- &#39;Cleva&#39;,
- &#39;Cleve&#39;,
- &#39;Cleveland&#39;,
- &#39;Clevie&#39;,
- &#39;Clide&#39;,
- &#39;Cliff&#39;,
- &#39;Cliffie&#39;,
- &#39;Clifford&#39;,
- &#39;Clifton&#39;,
- &#39;Clint&#39;,
- &#39;Clinton&#39;,
- &#39;Clive&#39;,
- &#39;Cloe&#39;,
- &#39;Clora&#39;,
- &#39;Clotilda&#39;,
- &#39;Clotilde&#39;,
- &#39;Clovis&#39;,
- &#39;Cloyd&#39;,
- &#39;Clyda&#39;,
- &#39;Clyde&#39;,
- &#39;Clydie&#39;,
- &#39;Clytie&#39;,
- &#39;Coby&#39;,
- &#39;Codey&#39;,
- &#39;Codi&#39;,
- &#39;Codie&#39;,
- &#39;Cody&#39;,
- &#39;Coen&#39;,
- &#39;Cohen&#39;,
- &#39;Colbert&#39;,
- &#39;Colby&#39;,
- &#39;Cole&#39;,
- &#39;Coleen&#39;,
- &#39;Coleman&#39;,
- &#39;Coleton&#39;,
- &#39;Coletta&#39;,
- &#39;Colette&#39;,
- &#39;Coley&#39;,
- &#39;Colie&#39;,
- &#39;Colin&#39;,
- &#39;Colleen&#39;,
- &#39;Collette&#39;,
- &#39;Collie&#39;,
- &#39;Collier&#39;,
- &#39;Collin&#39;,
- &#39;Collins&#39;,
- &#39;Collis&#39;,
- &#39;Colon&#39;,
- &#39;Colonel&#39;,
- &#39;Colt&#39;,
- &#39;Colten&#39;,
- &#39;Colter&#39;,
- &#39;Colton&#39;,
- &#39;Columbia&#39;,
- &#39;Columbus&#39;,
- &#39;Colvin&#39;,
- &#39;Commodore&#39;,
- &#39;Con&#39;,
- &#39;Conard&#39;,
- &#39;Concepcion&#39;,
- &#39;Concetta&#39;,
- &#39;Concha&#39;,
- &#39;Conley&#39;,
- &#39;Conner&#39;,
- &#39;Connie&#39;,
- &#39;Connor&#39;,
- &#39;Conor&#39;,
- &#39;Conrad&#39;,
- &#39;Constance&#39;,
- &#39;Constantine&#39;,
- &#39;Consuela&#39;,
- &#39;Consuelo&#39;,
- &#39;Contina&#39;,
- &#39;Conway&#39;,
- &#39;Coolidge&#39;,
- &#39;Cooper&#39;,
- &#39;Cora&#39;,
- &#39;Coraima&#39;,
- &#39;Coral&#39;,
- &#39;Coralie&#39;,
- &#39;Corbett&#39;,
- &#39;Corbin&#39;,
- &#39;Corda&#39;,
- &#39;Cordaro&#39;,
- &#39;Cordelia&#39;,
- &#39;Cordell&#39;,
- &#39;Cordella&#39;,
- &#39;Cordero&#39;,
- &#39;Cordia&#39;,
- &#39;Cordie&#39;,
- &#39;Corean&#39;,
- &#39;Corene&#39;,
- &#39;Coretta&#39;,
- &#39;Corey&#39;,
- &#39;Cori&#39;,
- &#39;Corie&#39;,
- &#39;Corina&#39;,
- &#39;Corine&#39;,
- &#39;Corinna&#39;,
- &#39;Corinne&#39;,
- &#39;Corliss&#39;,
- &#39;Cornel&#39;,
- &#39;Cornelia&#39;,
- &#39;Cornelious&#39;,
- &#39;Cornelius&#39;,
- &#39;Cornell&#39;,
- &#39;Cornie&#39;,
- &#39;Corrie&#39;,
- &#39;Corrina&#39;,
- &#39;Corrine&#39;,
- &#39;Corry&#39;,
- &#39;Cortez&#39;,
- &#39;Cortney&#39;,
- &#39;Corwin&#39;,
- &#39;Cory&#39;,
- &#39;Cosmo&#39;,
- &#39;Coty&#39;,
- &#39;Council&#39;,
- &#39;Courtland&#39;,
- &#39;Courtney&#39;,
- &#39;Coy&#39;,
- &#39;Craig&#39;,
- &#39;Crawford&#39;,
- &#39;Creed&#39;,
- &#39;Creola&#39;,
- &#39;Cressie&#39;,
- &#39;Crete&#39;,
- &#39;Cris&#39;,
- &#39;Crissie&#39;,
- &#39;Crissy&#39;,
- &#39;Crista&#39;,
- &#39;Cristal&#39;,
- &#39;Cristen&#39;,
- &#39;Cristi&#39;,
- &#39;Cristian&#39;,
- &#39;Cristin&#39;,
- &#39;Cristina&#39;,
- &#39;Cristine&#39;,
- &#39;Cristobal&#39;,
- &#39;Cristofer&#39;,
- &#39;Cristopher&#39;,
- &#39;Cristy&#39;,
- &#39;Crockett&#39;,
- &#39;Cruz&#39;,
- &#39;Crysta&#39;,
- &#39;Crystal&#39;,
- &#39;Cuba&#39;,
- &#39;Cullen&#39;,
- &#39;Curley&#39;,
- &#39;Curt&#39;,
- &#39;Curtis&#39;,
- &#39;Curtiss&#39;,
- &#39;Cydney&#39;,
- &#39;Cyndi&#39;,
- &#39;Cyntha&#39;,
- &#39;Cynthia&#39;,
- &#39;Cyril&#39;,
- &#39;Cyrus&#39;]
 </pre></div>
 </div>
 </div>
@@ -3210,7 +1655,7 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_marks</span><span class="p">(</span><span class="n">names_by_letter</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_marks</span><span class="p">(</span><span class="n">names_by_letter</span><span class="p">):</span>
     <span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">letter</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
     <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
@@ -3226,16 +1671,11 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Azzie&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Wir können nun sehr einfach durch alle Namen iterieren, die mit einem <code class="docutils literal notranslate"><span class="pre">C</span></code> starten:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marks</span> <span class="o">=</span> <span class="n">generate_marks</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">marks</span> <span class="o">=</span> <span class="n">generate_marks</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
 
 <span class="n">mark_index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="p">],</span> <span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
@@ -3243,1009 +1683,12 @@ Wir verwenden weiterhin <code class="docutils literal notranslate"><span class="
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Caddie
-Cade
-Caden
-Cadence
-Cael
-Caesar
-Caiden
-Cailyn
-Cain
-Caitlin
-Caitlyn
-Caitlynn
-Cal
-Caldonia
-Cale
-Caleb
-Caleigh
-Calhoun
-Cali
-Calista
-Calla
-Callie
-Callum
-Calvin
-Cam
-Camden
-Cameron
-Cami
-Camila
-Camilla
-Camille
-Camisha
-Cammie
-Campbell
-Camren
-Camron
-Camryn
-Candace
-Candi
-Candice
-Candida
-Candido
-Candis
-Candy
-Candyce
-Cannie
-Cannon
-Canyon
-Cap
-Capitola
-Cappie
-Caprice
-Captain
-Cara
-Caren
-Carey
-Cari
-Carie
-Carin
-Carina
-Carisa
-Carissa
-Carl
-Carla
-Carlee
-Carleen
-Carleigh
-Carlene
-Carleton
-Carley
-Carli
-Carlie
-Carlisle
-Carlo
-Carlos
-Carlota
-Carlotta
-Carlton
-Carly
-Carlyle
-Carlyn
-Carma
-Carmel
-Carmela
-Carmelita
-Carmella
-Carmelo
-Carmen
-Carmine
-Carnell
-Caro
-Carol
-Carolann
-Carole
-Carolee
-Carolina
-Caroline
-Carolyn
-Carolyne
-Carolynn
-Caron
-Carra
-Carri
-Carrie
-Carrol
-Carroll
-Carry
-Carsen
-Carson
-Carter
-Cary
-Caryl
-Caryn
-Cas
-Casandra
-Case
-Casey
-Cash
-Casie
-Casimer
-Casimir
-Casimiro
-Cason
-Casper
-Cass
-Cassandra
-Cassidy
-Cassie
-Cassius
-Cassondra
-Caswell
-Catalina
-Catharine
-Catherine
-Cathern
-Cathey
-Cathi
-Cathie
-Cathleen
-Cathrine
-Cathryn
-Cathy
-Catina
-Cato
-Catrina
-Cayden
-Cayla
-Caylee
-Ceasar
-Cecelia
-Cecil
-Cecile
-Cecilia
-Cecily
-Cedric
-Cedrick
-Ceil
-Celena
-Celesta
-Celeste
-Celestia
-Celestine
-Celestino
-Celia
-Celie
-Celina
-Celine
-Cena
-Ceola
-Cephus
-Cesar
-Ceylon
-Chace
-Chad
-Chadd
-Chadrick
-Chadwick
-Chaim
-Chaka
-Chalmer
-Chalmers
-Champ
-Chana
-Chance
-Chancey
-Chancy
-Chanda
-Chandler
-Chandra
-Chanel
-Chanelle
-Chaney
-Chanie
-Channie
-Channing
-Chantal
-Chante
-Chantel
-Chantelle
-Charissa
-Charisse
-Charity
-Charla
-Charle
-Charlee
-Charleen
-Charlene
-Charles
-Charley
-Charlie
-Charline
-Charlize
-Charlotta
-Charlotte
-Charlottie
-Charls
-Charlsie
-Charlton
-Charly
-Charmaine
-Charolette
-Chas
-Chase
-Chasity
-Chastity
-Chauncey
-Chauncy
-Chaya
-Chaz
-Che
-Chelsea
-Chelsey
-Chelsi
-Chelsie
-Chelsy
-Cher
-Cherelle
-Cheri
-Cherie
-Cherilyn
-Cherise
-Cherish
-Cherrelle
-Cherri
-Cherrie
-Cherry
-Cherryl
-Cheryl
-Cheryle
-Cheryll
-Chesley
-Chessie
-Chester
-Chestina
-Chet
-Cheyanne
-Cheyenne
-Chimere
-Chin
-China
-Chip
-Chiquita
-Chloe
-Chloie
-Chris
-Chrissie
-Chrissy
-Christ
-Christa
-Christal
-Christeen
-Christel
-Christen
-Christena
-Christene
-Christi
-Christian
-Christiana
-Christie
-Christin
-Christina
-Christine
-Christion
-Christop
-Christoper
-Christopher
-Christy
-Chrystal
-Chuck
-Chyna
-Chynna
-Ciara
-Ciarra
-Cicely
-Cicero
-Cielo
-Ciera
-Cierra
-Ciji
-Cilla
-Cinda
-Cindi
-Cindy
-Cinnamon
-Cinthia
-Citlali
-Citlalli
-Clabe
-Claiborne
-Clair
-Claire
-Clara
-Clarabelle
-Clarance
-Clare
-Clarence
-Claribel
-Clarice
-Clarinda
-Clarine
-Clarisa
-Clarissa
-Clark
-Clarke
-Clarnce
-Classie
-Claud
-Claude
-Claudette
-Claudia
-Claudie
-Claudine
-Claudio
-Claudius
-Claus
-Clay
-Clayton
-Clearence
-Cleave
-Cleda
-Clell
-Clella
-Clem
-Clemence
-Clemens
-Clement
-Clemente
-Clementina
-Clementine
-Clemie
-Clemma
-Clemmie
-Clemon
-Cleo
-Cleola
-Cleon
-Cleone
-Cleora
-Cleta
-Cletus
-Cleva
-Cleve
-Cleveland
-Clevie
-Clide
-Cliff
-Cliffie
-Clifford
-Clifton
-Clint
-Clinton
-Clive
-Cloe
-Clora
-Clotilda
-Clotilde
-Clovis
-Cloyd
-Clyda
-Clyde
-Clydie
-Clytie
-Coby
-Codey
-Codi
-Codie
-Cody
-Coen
-Cohen
-Colbert
-Colby
-Cole
-Coleen
-Coleman
-Coleton
-Coletta
-Colette
-Coley
-Colie
-Colin
-Colleen
-Collette
-Collie
-Collier
-Collin
-Collins
-Collis
-Colon
-Colonel
-Colt
-Colten
-Colter
-Colton
-Columbia
-Columbus
-Colvin
-Commodore
-Con
-Conard
-Concepcion
-Concetta
-Concha
-Conley
-Conner
-Connie
-Connor
-Conor
-Conrad
-Constance
-Constantine
-Consuela
-Consuelo
-Contina
-Conway
-Coolidge
-Cooper
-Cora
-Coraima
-Coral
-Coralie
-Corbett
-Corbin
-Corda
-Cordaro
-Cordelia
-Cordell
-Cordella
-Cordero
-Cordia
-Cordie
-Corean
-Corene
-Coretta
-Corey
-Cori
-Corie
-Corina
-Corine
-Corinna
-Corinne
-Corliss
-Cornel
-Cornelia
-Cornelious
-Cornelius
-Cornell
-Cornie
-Corrie
-Corrina
-Corrine
-Corry
-Cortez
-Cortney
-Corwin
-Cory
-Cosmo
-Coty
-Council
-Courtland
-Courtney
-Coy
-Craig
-Crawford
-Creed
-Creola
-Cressie
-Crete
-Cris
-Crissie
-Crissy
-Crista
-Cristal
-Cristen
-Cristi
-Cristian
-Cristin
-Cristina
-Cristine
-Cristobal
-Cristofer
-Cristopher
-Cristy
-Crockett
-Cruz
-Crysta
-Crystal
-Cuba
-Cullen
-Curley
-Curt
-Curtis
-Curtiss
-Cydney
-Cyndi
-Cyntha
-Cynthia
-Cyril
-</pre></div>
-</div>
-</div>
 </div>
 <p>Oder wir können uns eine Teilliste kopieren, die nur Namen beinhaltet die mit <code class="docutils literal notranslate"><span class="pre">D</span></code> starten:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mark_index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mark_index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 <span class="n">unique_names_lex</span><span class="p">[</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="p">]:</span><span class="n">marks</span><span class="p">[</span><span class="n">mark_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Dabney&#39;,
- &#39;Dafne&#39;,
- &#39;Dagmar&#39;,
- &#39;Dagny&#39;,
- &#39;Dahlia&#39;,
- &#39;Daija&#39;,
- &#39;Daijah&#39;,
- &#39;Daisey&#39;,
- &#39;Daisha&#39;,
- &#39;Daisie&#39;,
- &#39;Daisy&#39;,
- &#39;Daisye&#39;,
- &#39;Daja&#39;,
- &#39;Dakoda&#39;,
- &#39;Dakota&#39;,
- &#39;Dakotah&#39;,
- &#39;Dale&#39;,
- &#39;Dalia&#39;,
- &#39;Dallas&#39;,
- &#39;Dallin&#39;,
- &#39;Dalton&#39;,
- &#39;Dalvin&#39;,
- &#39;Damarcus&#39;,
- &#39;Damari&#39;,
- &#39;Damarion&#39;,
- &#39;Damaris&#39;,
- &#39;Dameon&#39;,
- &#39;Damian&#39;,
- &#39;Damien&#39;,
- &#39;Damion&#39;,
- &#39;Damon&#39;,
- &#39;Damond&#39;,
- &#39;Dan&#39;,
- &#39;Dana&#39;,
- &#39;Danae&#39;,
- &#39;Dandre&#39;,
- &#39;Dane&#39;,
- &#39;Daneen&#39;,
- &#39;Danelle&#39;,
- &#39;Danette&#39;,
- &#39;Dangelo&#39;,
- &#39;Dani&#39;,
- &#39;Dania&#39;,
- &#39;Danial&#39;,
- &#39;Danica&#39;,
- &#39;Daniel&#39;,
- &#39;Daniela&#39;,
- &#39;Daniele&#39;,
- &#39;Daniella&#39;,
- &#39;Danielle&#39;,
- &#39;Danika&#39;,
- &#39;Danita&#39;,
- &#39;Dann&#39;,
- &#39;Danna&#39;,
- &#39;Dannie&#39;,
- &#39;Danniel&#39;,
- &#39;Dannielle&#39;,
- &#39;Danny&#39;,
- &#39;Dante&#39;,
- &#39;Danyel&#39;,
- &#39;Danyell&#39;,
- &#39;Danyelle&#39;,
- &#39;Daphne&#39;,
- &#39;Daquan&#39;,
- &#39;Dara&#39;,
- &#39;Darby&#39;,
- &#39;Darci&#39;,
- &#39;Darcie&#39;,
- &#39;Darcy&#39;,
- &#39;Darell&#39;,
- &#39;Daren&#39;,
- &#39;Daria&#39;,
- &#39;Darian&#39;,
- &#39;Dariana&#39;,
- &#39;Darien&#39;,
- &#39;Darin&#39;,
- &#39;Dario&#39;,
- &#39;Darion&#39;,
- &#39;Darius&#39;,
- &#39;Darl&#39;,
- &#39;Darla&#39;,
- &#39;Darleen&#39;,
- &#39;Darlene&#39;,
- &#39;Darline&#39;,
- &#39;Darlyne&#39;,
- &#39;Darnell&#39;,
- &#39;Darold&#39;,
- &#39;Daron&#39;,
- &#39;Darrel&#39;,
- &#39;Darrell&#39;,
- &#39;Darren&#39;,
- &#39;Darrian&#39;,
- &#39;Darrick&#39;,
- &#39;Darrien&#39;,
- &#39;Darrin&#39;,
- &#39;Darrion&#39;,
- &#39;Darrius&#39;,
- &#39;Darron&#39;,
- &#39;Darry&#39;,
- &#39;Darryl&#39;,
- &#39;Darryle&#39;,
- &#39;Darryll&#39;,
- &#39;Darryn&#39;,
- &#39;Darvin&#39;,
- &#39;Darwin&#39;,
- &#39;Darwyn&#39;,
- &#39;Daryl&#39;,
- &#39;Daryle&#39;,
- &#39;Daryn&#39;,
- &#39;Dashawn&#39;,
- &#39;Dasia&#39;,
- &#39;Daulton&#39;,
- &#39;Daunte&#39;,
- &#39;Davante&#39;,
- &#39;Dave&#39;,
- &#39;Davey&#39;,
- &#39;Davian&#39;,
- &#39;David&#39;,
- &#39;Davie&#39;,
- &#39;Davin&#39;,
- &#39;Davina&#39;,
- &#39;Davion&#39;,
- &#39;Davis&#39;,
- &#39;Davon&#39;,
- &#39;Davonta&#39;,
- &#39;Davonte&#39;,
- &#39;Davy&#39;,
- &#39;Dawn&#39;,
- &#39;Dawna&#39;,
- &#39;Dawne&#39;,
- &#39;Dawson&#39;,
- &#39;Dax&#39;,
- &#39;Daxton&#39;,
- &#39;Dayami&#39;,
- &#39;Dayana&#39;,
- &#39;Dayanara&#39;,
- &#39;Dayle&#39;,
- &#39;Dayna&#39;,
- &#39;Dayne&#39;,
- &#39;Dayse&#39;,
- &#39;Dayton&#39;,
- &#39;Deacon&#39;,
- &#39;Dean&#39;,
- &#39;Deana&#39;,
- &#39;Deandra&#39;,
- &#39;Deandre&#39;,
- &#39;Deane&#39;,
- &#39;Deangelo&#39;,
- &#39;Deann&#39;,
- &#39;Deanna&#39;,
- &#39;Deanne&#39;,
- &#39;Deante&#39;,
- &#39;Deasia&#39;,
- &#39;Deb&#39;,
- &#39;Debbi&#39;,
- &#39;Debbie&#39;,
- &#39;Debbra&#39;,
- &#39;Debby&#39;,
- &#39;Debera&#39;,
- &#39;Debi&#39;,
- &#39;Debora&#39;,
- &#39;Deborah&#39;,
- &#39;Deborrah&#39;,
- &#39;Debra&#39;,
- &#39;Debrah&#39;,
- &#39;Debroah&#39;,
- &#39;Declan&#39;,
- &#39;Dedra&#39;,
- &#39;Dedric&#39;,
- &#39;Dedrick&#39;,
- &#39;Dee&#39;,
- &#39;Deeann&#39;,
- &#39;Deedee&#39;,
- &#39;Deegan&#39;,
- &#39;Deena&#39;,
- &#39;Deetta&#39;,
- &#39;Deforest&#39;,
- &#39;Deidra&#39;,
- &#39;Deidre&#39;,
- &#39;Deion&#39;,
- &#39;Deirdre&#39;,
- &#39;Deja&#39;,
- &#39;Dejah&#39;,
- &#39;Dejon&#39;,
- &#39;Dejuan&#39;,
- &#39;Del&#39;,
- &#39;Delaney&#39;,
- &#39;Delano&#39;,
- &#39;Delbert&#39;,
- &#39;Delcie&#39;,
- &#39;Delfina&#39;,
- &#39;Delia&#39;,
- &#39;Deliah&#39;,
- &#39;Delila&#39;,
- &#39;Delilah&#39;,
- &#39;Delina&#39;,
- &#39;Delinda&#39;,
- &#39;Delisa&#39;,
- &#39;Dell&#39;,
- &#39;Della&#39;,
- &#39;Dellar&#39;,
- &#39;Delle&#39;,
- &#39;Dellia&#39;,
- &#39;Dellie&#39;,
- &#39;Delma&#39;,
- &#39;Delmar&#39;,
- &#39;Delmas&#39;,
- &#39;Delmer&#39;,
- &#39;Delmus&#39;,
- &#39;Delois&#39;,
- &#39;Delora&#39;,
- &#39;Delores&#39;,
- &#39;Deloris&#39;,
- &#39;Delos&#39;,
- &#39;Delpha&#39;,
- &#39;Delphia&#39;,
- &#39;Delphin&#39;,
- &#39;Delphine&#39;,
- &#39;Delsie&#39;,
- &#39;Delta&#39;,
- &#39;Delton&#39;,
- &#39;Delvin&#39;,
- &#39;Delwin&#39;,
- &#39;Dema&#39;,
- &#39;Demarco&#39;,
- &#39;Demarcus&#39;,
- &#39;Demario&#39;,
- &#39;Demarion&#39;,
- &#39;Demetra&#39;,
- &#39;Demetri&#39;,
- &#39;Demetria&#39;,
- &#39;Demetric&#39;,
- &#39;Demetrios&#39;,
- &#39;Demetrius&#39;,
- &#39;Demi&#39;,
- &#39;Demian&#39;,
- &#39;Demond&#39;,
- &#39;Demonte&#39;,
- &#39;Dempsey&#39;,
- &#39;Dena&#39;,
- &#39;Deneen&#39;,
- &#39;Denese&#39;,
- &#39;Denice&#39;,
- &#39;Denine&#39;,
- &#39;Denis&#39;,
- &#39;Denise&#39;,
- &#39;Denisha&#39;,
- &#39;Denisse&#39;,
- &#39;Denita&#39;,
- &#39;Dennie&#39;,
- &#39;Dennis&#39;,
- &#39;Denny&#39;,
- &#39;Denton&#39;,
- &#39;Denver&#39;,
- &#39;Denzel&#39;,
- &#39;Denzell&#39;,
- &#39;Denzil&#39;,
- &#39;Deon&#39;,
- &#39;Deondre&#39;,
- &#39;Deonta&#39;,
- &#39;Deontae&#39;,
- &#39;Deonte&#39;,
- &#39;Dequan&#39;,
- &#39;Derald&#39;,
- &#39;Dereck&#39;,
- &#39;Derek&#39;,
- &#39;Dereon&#39;,
- &#39;Deric&#39;,
- &#39;Derick&#39;,
- &#39;Derik&#39;,
- &#39;Derl&#39;,
- &#39;Deron&#39;,
- &#39;Derrek&#39;,
- &#39;Derrell&#39;,
- &#39;Derrick&#39;,
- &#39;Derwin&#39;,
- &#39;Deryl&#39;,
- &#39;Desean&#39;,
- &#39;Deshaun&#39;,
- &#39;Deshawn&#39;,
- &#39;Desi&#39;,
- &#39;Desirae&#39;,
- &#39;Desiree&#39;,
- &#39;Desmond&#39;,
- &#39;Dessa&#39;,
- &#39;Dessie&#39;,
- &#39;Destany&#39;,
- &#39;Destin&#39;,
- &#39;Destinee&#39;,
- &#39;Destiney&#39;,
- &#39;Destini&#39;,
- &#39;Destiny&#39;,
- &#39;Destry&#39;,
- &#39;Devan&#39;,
- &#39;Devante&#39;,
- &#39;Devaughn&#39;,
- &#39;Deven&#39;,
- &#39;Devin&#39;,
- &#39;Devon&#39;,
- &#39;Devonta&#39;,
- &#39;Devontae&#39;,
- &#39;Devonte&#39;,
- &#39;Devyn&#39;,
- &#39;Deward&#39;,
- &#39;Dewayne&#39;,
- &#39;Dewey&#39;,
- &#39;Dewitt&#39;,
- &#39;Dexter&#39;,
- &#39;Deyanira&#39;,
- &#39;Dezzie&#39;,
- &#39;Diallo&#39;,
- &#39;Diamond&#39;,
- &#39;Dian&#39;,
- &#39;Diana&#39;,
- &#39;Diandra&#39;,
- &#39;Diane&#39;,
- &#39;Diann&#39;,
- &#39;Dianna&#39;,
- &#39;Dianne&#39;,
- &#39;Dicie&#39;,
- &#39;Dick&#39;,
- &#39;Dickie&#39;,
- &#39;Dicy&#39;,
- &#39;Diego&#39;,
- &#39;Dijon&#39;,
- &#39;Dillan&#39;,
- &#39;Dillard&#39;,
- &#39;Dillie&#39;,
- &#39;Dillion&#39;,
- &#39;Dillon&#39;,
- &#39;Dimitri&#39;,
- &#39;Dimitrios&#39;,
- &#39;Dimple&#39;,
- &#39;Dina&#39;,
- &#39;Dinah&#39;,
- &#39;Dink&#39;,
- &#39;Dino&#39;,
- &#39;Dion&#39;,
- &#39;Dione&#39;,
- &#39;Dionicio&#39;,
- &#39;Dionne&#39;,
- &#39;Dionte&#39;,
- &#39;Dirk&#39;,
- &#39;Dixie&#39;,
- &#39;Dixon&#39;,
- &#39;Diya&#39;,
- &#39;Djuana&#39;,
- &#39;Djuna&#39;,
- &#39;Doc&#39;,
- &#39;Docia&#39;,
- &#39;Dock&#39;,
- &#39;Doctor&#39;,
- &#39;Dola&#39;,
- &#39;Doll&#39;,
- &#39;Dollie&#39;,
- &#39;Dolly&#39;,
- &#39;Dollye&#39;,
- &#39;Dolores&#39;,
- &#39;Doloris&#39;,
- &#39;Dolph&#39;,
- &#39;Dolphus&#39;,
- &#39;Domenic&#39;,
- &#39;Domenica&#39;,
- &#39;Domenick&#39;,
- &#39;Domenico&#39;,
- &#39;Dominga&#39;,
- &#39;Domingo&#39;,
- &#39;Dominic&#39;,
- &#39;Dominick&#39;,
- &#39;Dominik&#39;,
- &#39;Dominique&#39;,
- &#39;Dominque&#39;,
- &#39;Domonique&#39;,
- &#39;Don&#39;,
- &#39;Dona&#39;,
- &#39;Donaciano&#39;,
- &#39;Donal&#39;,
- &#39;Donald&#39;,
- &#39;Donat&#39;,
- &#39;Donato&#39;,
- &#39;Donavan&#39;,
- &#39;Donavon&#39;,
- &#39;Dondre&#39;,
- &#39;Donell&#39;,
- &#39;Donia&#39;,
- &#39;Donie&#39;,
- &#39;Donita&#39;,
- &#39;Donn&#39;,
- &#39;Donna&#39;,
- &#39;Donnell&#39;,
- &#39;Donnie&#39;,
- &#39;Donny&#39;,
- &#39;Donovan&#39;,
- &#39;Donta&#39;,
- &#39;Dontae&#39;,
- &#39;Donte&#39;,
- &#39;Dora&#39;,
- &#39;Dorathea&#39;,
- &#39;Dorathy&#39;,
- &#39;Dorcas&#39;,
- &#39;Doreen&#39;,
- &#39;Dorene&#39;,
- &#39;Doretha&#39;,
- &#39;Doretta&#39;,
- &#39;Dori&#39;,
- &#39;Dorian&#39;,
- &#39;Dorinda&#39;,
- &#39;Dorine&#39;,
- &#39;Doris&#39;,
- &#39;Dorla&#39;,
- &#39;Dorman&#39;,
- &#39;Dorotha&#39;,
- &#39;Dorothea&#39;,
- &#39;Dorothy&#39;,
- &#39;Dorr&#39;,
- &#39;Dorris&#39;,
- &#39;Dorsey&#39;,
- &#39;Dortha&#39;,
- &#39;Dorthea&#39;,
- &#39;Dorthey&#39;,
- &#39;Dorthy&#39;,
- &#39;Dosha&#39;,
- &#39;Doshia&#39;,
- &#39;Doshie&#39;,
- &#39;Dosia&#39;,
- &#39;Doss&#39;,
- &#39;Dossie&#39;,
- &#39;Dot&#39;,
- &#39;Dottie&#39;,
- &#39;Dotty&#39;,
- &#39;Doug&#39;,
- &#39;Douglas&#39;,
- &#39;Douglass&#39;,
- &#39;Dove&#39;,
- &#39;Dovie&#39;,
- &#39;Dow&#39;,
- &#39;Doyle&#39;,
- &#39;Dozier&#39;,
- &#39;Drake&#39;,
- &#39;Draven&#39;,
- &#39;Drema&#39;,
- &#39;Drew&#39;,
- &#39;Drucilla&#39;,
- &#39;Drury&#39;,
- &#39;Drusilla&#39;,
- &#39;Duane&#39;,
- &#39;Duard&#39;,
- &#39;Dudley&#39;,
- &#39;Duff&#39;,
- &#39;Duke&#39;,
- &#39;Dulce&#39;,
- &#39;Dulcie&#39;,
- &#39;Duncan&#39;,
- &#39;Durell&#39;,
- &#39;Durrell&#39;,
- &#39;Durward&#39;,
- &#39;Durwood&#39;,
- &#39;Dustan&#39;,
- &#39;Dustin&#39;,
- &#39;Dusty&#39;,
- &#39;Duwayne&#39;,
- &#39;Dwain&#39;,
- &#39;Dwaine&#39;,
- &#39;Dwan&#39;,
- &#39;Dwane&#39;,
- &#39;Dwayne&#39;,
- &#39;Dwight&#39;,
- &#39;Dwyane&#39;,
- &#39;Dyan&#39;,
- &#39;Dylan&#39;,
- &#39;Dyllan&#39;,
- &#39;Dylon&#39;]
 </pre></div>
 </div>
 </div>
@@ -4268,7 +1711,7 @@ Eventuell macht es Sinn eine weitere Hilfsfunktion <code class="docutils literal
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">name</span> <span class="o">&lt;</span> <span class="n">unique_names_lex</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
         <span class="k">return</span> <span class="mi">0</span>
     
@@ -4327,15 +1770,6 @@ Eventuell macht es Sinn eine weitere Hilfsfunktion <code class="docutils literal
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">))</span>
 <span class="n">remove_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">marks</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-True
-6782
-6783
-6782
 </pre></div>
 </div>
 </div>
@@ -4424,7 +1858,7 @@ Gehen Sie davon aus, dass ein Platz in der Liste frei ist wenn dieser gleich <co
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">):</span>
     <span class="n">key</span> <span class="o">=</span> <span class="n">name</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">index_of</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)):</span>
@@ -4462,7 +1896,7 @@ Dann durchlaufen wir die Liste zyklisch bis wir einen freien Platz finden oder a
 <p>Falls <code class="docutils literal notranslate"><span class="pre">hashtable</span></code> voll ist fügen wir den einzufügenden Namen hinten an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">):</span>
@@ -4512,7 +1946,7 @@ Dann durchlaufen wir die Liste zyklisch bis wir einen freien Platz finden oder a
 <p>Lassen Sie uns die Funktionen testen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hans&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hans&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
 <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;hashtable = </span><span class="si">{</span><span class="n">hashtable</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;contains(&#39;Dieter&#39;, hashtable) = </span><span class="si">{</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># False</span>
@@ -4529,21 +1963,6 @@ Dann durchlaufen wir die Liste zyklisch bis wir einen freien Platz finden oder a
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;hashtable = </span><span class="si">{</span><span class="n">hashtable</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="nb">all</span><span class="p">([</span><span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span> <span class="o">==</span> <span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hashtable = [None, None, None, None, None, None, None, &#39;Hans&#39;, None, &#39;Thomas&#39;, None, None, None, &#39;Berta&#39;]
-contains(&#39;Dieter&#39;, hashtable) = False
-contains(&#39;Berta&#39;, hashtable) = True
-search_index(&#39;Dieter&#39;, hashtable) = 11
-search_index(&#39;Berta&#39;, hashtable) = 13
-insert(&#39;Dieter&#39;, hashtable) = True
-insert(&#39;Dieter&#39;, hashtable) = False
-hashtable = [&#39;Aaden&#39;, &#39;Aaliyah&#39;, &#39;Aarav&#39;, &#39;Aaron&#39;, &#39;Ab&#39;, &#39;Abagail&#39;, &#39;Abb&#39;, &#39;Hans&#39;, &#39;Abbey&#39;, &#39;Thomas&#39;, &#39;Abbie&#39;, &#39;Dieter&#39;, &#39;Abbigail&#39;, &#39;Berta&#39;, &#39;Abbott&#39;, &#39;Abby&#39;, &#39;Abdiel&#39;, &#39;Abdul&#39;, &#39;Abdullah&#39;, &#39;Abe&#39;, &#39;Abel&#39;, &#39;Abelardo&#39;, &#39;Abie&#39;, &#39;Abigail&#39;]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -4572,7 +1991,7 @@ Beachten Sie, dass sich die Position von <code class="docutils literal notransla
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">):</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span> <span class="ow">and</span> <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
         <span class="n">hashtable</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -4592,17 +2011,11 @@ Beachten Sie, dass sich die Position von <code class="docutils literal notransla
 <p>Lassen Sie uns das Beispiel aus <a class="reference internal" href="#fig-closed-hashing-deletion"><span class="std std-numref">Abbildung 5.11</span></a> testen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="s1">&#39;Clara&#39;</span><span class="p">,</span> <span class="s1">&#39;Alba&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabian&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="s1">&#39;Clara&#39;</span><span class="p">,</span> <span class="s1">&#39;Alba&#39;</span><span class="p">,</span> <span class="s1">&#39;Fabian&#39;</span><span class="p">]</span>
 <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
 <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Alex&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Anna&#39;, &#39;Alex&#39;, &#39;Alba&#39;, None, None, None, None, None, None, None, None, None, None, &#39;Fabian&#39;, None, None, &#39;Clara&#39;, None]
-[&#39;Anna&#39;, &#39;Alba&#39;, None, None, None, None, None, None, None, None, None, None, None, &#39;Fabian&#39;, None, None, &#39;Clara&#39;, None]
 </pre></div>
 </div>
 </div>
@@ -4619,7 +2032,7 @@ Finden Sie eine Erklärung.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4716,7 +2129,7 @@ Nur wenn Sie billig ist, lohnt sich der Umweg über eine Hashfunktion.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
@@ -4781,15 +2194,10 @@ Nur wenn Sie billig ist, lohnt sich der Umweg über eine Hashfunktion.</p>
 Lassen Sie uns erneut testen ob alles mit rechten Dingen zugeht.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span>
 <span class="nb">all</span><span class="p">([</span><span class="n">search_index</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">)</span> <span class="o">==</span> <span class="n">index</span> 
      <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hashtable</span><span class="p">)</span> 
      <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -4804,7 +2212,7 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collisions</span><span class="p">(</span><span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collisions</span><span class="p">(</span><span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
     <span class="n">collisions</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hashtable</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
@@ -4817,18 +2225,9 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number of elements: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number of elements: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; collisions with hash: </span><span class="si">{</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="nb">hash</span><span class="p">),</span> <span class="nb">hash</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>         <span class="c1"># 16914</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; collisions with index_of: </span><span class="si">{</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">index_of</span><span class="p">),</span> <span class="n">index_of</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 60751108</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of elements: 6782
- collisions with hash: 3445
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> collisions with index_of: 60751108
 </pre></div>
 </div>
 </div>
@@ -4889,7 +2288,7 @@ Verwenden wir nur ein Zeichen für die Berechnung ist klar, dass wir nicht mehr 
 Eine erste Idee wäre die Summe der codierten Zeichen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func_sum</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func_sum</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">hash_value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
         <span class="n">hash_value</span> <span class="o">+=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
@@ -4899,28 +2298,18 @@ Eine erste Idee wäre die Summe der codierten Zeichen:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20629463
-</pre></div>
-</div>
-</div>
 </div>
 <p>Immerhin erreichen wir damit nur noch 20 Millionen <em>Kollisionen</em>, was jedoch immernoch viel zu viel ist.
 Wie sieht es mit der Multiplikation aus?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func_mul</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func_mul</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">hash_value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
         <span class="n">hash_value</span> <span class="o">*=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">hash_value</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">hash_func_mul</span><span class="p">),</span> <span class="n">hash_func_mul</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22994371
 </pre></div>
 </div>
 </div>
@@ -4991,7 +2380,7 @@ Dieses mathematische Denken ist auch ein Teil des <a class="reference internal" 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">hash_value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">prime</span> <span class="o">=</span> <span class="mi">83</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
@@ -5003,11 +2392,6 @@ Dieses mathematische Denken ist auch ein Teil des <a class="reference internal" 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3432
-</pre></div>
-</div>
-</div>
 </div>
 <p>Wir haben es geschafft!!!
 Nur noch 3432 Kollisionen!
@@ -5016,7 +2400,7 @@ Damit sind wir für unseren Fall besser als die <code class="docutils literal no
 Wir könnten uns darauf einigen nur die ersten <span class="math notranslate nohighlight">\(m\)</span> Zeichen zu berücksichtige.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hash_func</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">hash_value</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">prime</span> <span class="o">=</span> <span class="mi">83</span>
     <span class="n">m</span> <span class="o">=</span> <span class="mi">8</span>
@@ -5028,11 +2412,6 @@ Wir könnten uns darauf einigen nur die ersten <span class="math notranslate noh
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3692
-</pre></div>
-</div>
-</div>
 </div>
 <p>Das Ergebnis ist mit 3692 Kollisionen immernoch sehr gut und die Auswertung benötigt nun eine <strong>konstante Anzahl</strong> von maximal 8 Schritten.</p>
 </div>
@@ -5041,14 +2420,9 @@ Wir könnten uns darauf einigen nur die ersten <span class="math notranslate noh
 <p>Bislang können wir in unsere Hashtable Namen einfügen, löschen und abfragen ob sich ein Element in unserer Hashmap befindet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 <span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 <span class="n">delete</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -5057,15 +2431,9 @@ Wir könnten uns darauf einigen nur die ersten <span class="math notranslate noh
 Das besondere des <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> ist, dass es einen Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> und einen Wert <code class="docutils literal notranslate"><span class="pre">value</span></code> gibt und dass wir den Wert mit dem Schlüssel identifizieren können:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Dieter&#39;</span><span class="p">:</span> <span class="s1">&#39;1977-05-06&#39;</span><span class="p">,</span> <span class="s1">&#39;Bella&#39;</span><span class="p">:</span> <span class="s1">&#39;1999-10-11&#39;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Dieter&#39;</span><span class="p">:</span> <span class="s1">&#39;1977-05-06&#39;</span><span class="p">,</span> <span class="s1">&#39;Bella&#39;</span><span class="p">:</span> <span class="s1">&#39;1999-10-11&#39;</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">[</span><span class="s1">&#39;Dieter&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">[</span><span class="s1">&#39;Bella&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1977-05-06
-1999-10-11
 </pre></div>
 </div>
 </div>
@@ -5094,7 +2462,7 @@ Diese soll den Wert eines passend zum übergebenen Schlüssel ändert, sofern di
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_index</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="nb">hash</span><span class="p">):</span>
     <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">hashtable</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">hash_func</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)):</span>
@@ -5188,7 +2556,7 @@ Diese soll den Wert eines passend zum übergebenen Schlüssel ändert, sofern di
 <p>Tests:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">]</span>
 <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hans&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
 <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>         <span class="c1"># Hans</span>
@@ -5198,16 +2566,6 @@ Diese soll den Wert eines passend zum übergebenen Schlüssel ändert, sofern di
 <span class="nb">print</span><span class="p">(</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>         <span class="c1"># Thomas</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>    <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">,</span> <span class="n">hash_func</span><span class="p">))</span>         <span class="c1"># Anna</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hans
-Peter
-False
-Thomas
-True
-Anna
 </pre></div>
 </div>
 </div>
@@ -5241,7 +2599,7 @@ Ist sie hingegen zu klein gibt es mehr und mehr <em>Kollisionen</em> und die Lau
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hashtable</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hashtable</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hashf</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">hashf</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">hash_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hashf</span>
@@ -5371,7 +2729,7 @@ Ist sie hingegen zu klein gibt es mehr und mehr <em>Kollisionen</em> und die Lau
 <p>Folgender Code zeigt die Verwendung der neuen Klasse</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashtable</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashtable</span>
 <span class="k">def</span> <span class="nf">simple_test</span><span class="p">():</span>
     <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">]</span>
     <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hans&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
@@ -5403,19 +2761,6 @@ Ist sie hingegen zu klein gibt es mehr und mehr <em>Kollisionen</em> und die Lau
 
 <span class="n">simple_test</span><span class="p">()</span>
 <span class="n">insert_and_delete_test</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hans
-Peter
-False
-Thomas
-True
-Anna
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -5461,7 +2806,7 @@ Anna
       <p>
         
           <div class="extra_footer">
-            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
           </div>
       </p>
     </div>

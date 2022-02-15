@@ -883,7 +883,7 @@ Jede Funktion steht für sich ‚separat‘ neben den Daten und erhält (sofern 
 <p>Zum Beispiel können wir als Daten ein Rechteck als Wörterbuch definieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rect1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rect1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">rect2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -892,7 +892,7 @@ Jede Funktion steht für sich ‚separat‘ neben den Daten und erhält (sofern 
 <p>Wenn wir nun eine Funktion schreiben wollen, welche tested ob ein Punkt sich in einem Rechteck befindet, würden wir das in der <em>prozeduralen Programmierung</em> wie folgt machen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rect</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rect</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]:</span>
     <span class="k">return</span> <span class="kc">False</span>
   <span class="k">if</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">rect</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">rect</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">rect</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">rect</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]:</span>
@@ -904,28 +904,16 @@ Jede Funktion steht für sich ‚separat‘ neben den Daten und erhält (sofern 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-</pre></div>
-</div>
-</div>
 </div>
 <p>Wir könnten uns weitere Funktionen überlegen, die wir auf ein Rechteck anwenden wollen.
 Zum Beispiel eine Funktion um das Rechteck zu verschieben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">delta</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">delta</span><span class="p">):</span>
   <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">rect</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">delta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">rect</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">delta</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="n">rect</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">rect</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">translate</span><span class="p">(</span><span class="n">rect1</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rect1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 20, &#39;y&#39;: 5, &#39;width&#39;: 100, &#39;height&#39;: 20}
-{&#39;x&#39;: 10, &#39;y&#39;: 10, &#39;width&#39;: 100, &#39;height&#39;: 20}
 </pre></div>
 </div>
 </div>
@@ -943,7 +931,7 @@ Objekte sind zugleich Werte bzw. Instanzen von einem bestimmten <em>benutzerdefi
 <p>Lassen Sie uns zuerst einen <em>zusammengesetzten Datentyp</em> <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> erzeugen, welcher zugleich die <em>Methoden</em> <code class="docutils literal notranslate"><span class="pre">contains</span></code> und <code class="docutils literal notranslate"><span class="pre">translate</span></code> enthält.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">():</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
@@ -970,21 +958,13 @@ Objekte sind zugleich Werte bzw. Instanzen von einem bestimmten <em>benutzerdefi
 <p>In dieser Version verändert <code class="docutils literal notranslate"><span class="pre">translate(point)</span></code> das <em>Objekt</em> anstatt eine Kopie zurückzuliefern.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">rect2</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">rect1</span><span class="o">.</span><span class="n">contains</span><span class="p">((</span><span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rect2</span><span class="o">.</span><span class="n">contains</span><span class="p">((</span><span class="mi">315</span><span class="p">,</span> <span class="mi">317</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rect1</span><span class="o">.</span><span class="n">translate</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rect1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-None
-x=20, y=5, width=100, height=20
 </pre></div>
 </div>
 </div>
@@ -1041,7 +1021,7 @@ Diese <em>Objekte</em> beinhalten und kapseln <em>Daten</em> und deren dazugehö
       <p>
         
           <div class="extra_footer">
-            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
           </div>
       </p>
     </div>

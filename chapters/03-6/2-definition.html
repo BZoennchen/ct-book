@@ -926,7 +926,7 @@ Jedoch achtet man in der Programmierung stets auf <strong>sprechende</strong> Fu
 Vergleichen Sie:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dddd</span><span class="p">(</span><span class="n">something</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dddd</span><span class="p">(</span><span class="n">something</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    computes the subtraction of something and l.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -935,26 +935,16 @@ Vergleichen Sie:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
-</pre></div>
-</div>
-</div>
 </div>
 <p>und</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    returns x - y</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
 <span class="n">subtract</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
 </pre></div>
 </div>
 </div>
@@ -972,7 +962,7 @@ Für die zweite Version müssen wir lediglich auf den Namen <code class="docutil
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist es sehr einfach mehrere Rückgabewerte zu definieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modulo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modulo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    returns div, rest such that n = k * div + rest, </span>
 <span class="sd">    where n, k, div, rest are whole numbers.</span>
@@ -985,26 +975,15 @@ Für die zweite Version müssen wir lediglich auf den Namen <code class="docutil
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 3)
-</pre></div>
-</div>
-</div>
 </div>
 <p>Doch genau genommen hat eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion genau einen Rückgabewert.
 Im obigen Beispiel handelt es sich um <strong>ein</strong> Tupel <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, wodurch der Eindruck entsteht, wir würden mehrere Werte zurückgeben.
 Durch das packing und unpacking (siehe Abschnitt <a class="reference internal" href="../03-4/6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a>) ‚simuliert‘ <code class="docutils literal notranslate"><span class="pre">Python</span></code> mehrere Rückgabewerte.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">div</span><span class="p">,</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">modulo</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">div</span><span class="p">,</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">modulo</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">div</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-3
 </pre></div>
 </div>
 </div>
@@ -1012,16 +991,10 @@ Durch das packing und unpacking (siehe Abschnitt <a class="reference internal" h
 <p>Verwenden wir kein <code class="docutils literal notranslate"><span class="pre">return</span></code> so gibt die Funktion (sofern sie keinen Fehler oder eine Endlosschleife verursacht) <code class="docutils literal notranslate"><span class="pre">None</span></code> zurück.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print42</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print42</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">)</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="n">print42</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
-None
 </pre></div>
 </div>
 </div>
@@ -1029,17 +1002,11 @@ None
 <p>entspricht</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print42</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print42</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">None</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="n">print42</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
-None
 </pre></div>
 </div>
 </div>
@@ -1055,16 +1022,11 @@ Das gelang, weil auch <code class="docutils literal notranslate"><span class="pr
 <p>Lassen Sie uns eine Funktion <code class="docutils literal notranslate"><span class="pre">lrange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> definieren, welche eine Liste bestehend aus dem entsprechenden Zahlenbereich <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> zurückliefert:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lrange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lrange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
     <span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">numbers</span>
 
 <span class="n">lrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8]
 </pre></div>
 </div>
 </div>
@@ -1073,17 +1035,7 @@ Das gelang, weil auch <code class="docutils literal notranslate"><span class="pr
 Ohne Standardargumente können wir die Funktion jedoch nicht mit nur einem Argument aufrufen.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">bafd5c29314f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">lrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: lrange() missing 2 required positional arguments: &#39;stop&#39; and &#39;step&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1095,7 +1047,7 @@ Dabei müssen alle Parameter mit Standardargumenten <strong>hinten stehen!</stro
 Folgender Code wird ebenfalls zu einem Fehler führen:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lrange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lrange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">numbers</span>
 
@@ -1103,30 +1055,16 @@ Folgender Code wird ebenfalls zu einem Fehler führen:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-9-acf95338e539&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="k">def</span> <span class="nf">lrange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-                              <span class="o">^</span>
-<span class="ne">SyntaxError</span>: non-default argument follows default argument
-</pre></div>
-</div>
-</div>
 </div>
 <p>Wir müssen die Reihenfolge der Parameter verändern (und diese Änderung auch beim Aufruf der Funktion berücksichtigen):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lrange</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lrange</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">numbers</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">lrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lrange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre></div>
 </div>
 </div>
@@ -1136,12 +1074,7 @@ Zum Beispiel wollen wir vielleicht eine Liste mit <code class="docutils literal 
 Da wir <code class="docutils literal notranslate"><span class="pre">start</span></code> weiterhin auf dem Standardwert <code class="docutils literal notranslate"><span class="pre">0</span></code> belassen, müssen wir es nicht angeben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1149,12 +1082,7 @@ Da wir <code class="docutils literal notranslate"><span class="pre">start</span>
 <p>Um den Code besser lesen zu können macht es hin und wieder Sinn, diese Schreibweise auch dann zu verwenden, wenn Sie eigentlich gar nicht notwendig wäre.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1162,12 +1090,7 @@ Da wir <code class="docutils literal notranslate"><span class="pre">start</span>
 <p>Verwenden wir diese Schreibweise, können wir auch die Reihenfolge der Parameter missachten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lrange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1175,13 +1098,8 @@ Da wir <code class="docutils literal notranslate"><span class="pre">start</span>
 <p>Lassen Sie sich nicht verwirren wenn wir einem Parameter eine Variable zuweisen, die denselben Namen trägt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">lrange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8]
 </pre></div>
 </div>
 </div>
@@ -1229,7 +1147,7 @@ Wir setzten beim Aufruf die Adresse des linken <code class="docutils literal not
       <p>
         
           <div class="extra_footer">
-            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
           </div>
       </p>
     </div>

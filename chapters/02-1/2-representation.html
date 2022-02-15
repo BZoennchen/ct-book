@@ -1020,7 +1020,7 @@ Der Grund ist das Verhalten des Logarithmus.</p>
 Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingegen der Unterschied zwischen <em>Binär</em> und, zum Beispiel, <span class="math notranslate nohighlight">\(\log_5(n)\)</span> gering ist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
@@ -1037,9 +1037,6 @@ Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingege
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2-representation_1_0.png" src="../../_images/2-representation_1_0.png" />
 </div>
 </div>
 </div>
@@ -1076,7 +1073,7 @@ Eine Zahl als Folge von Ziffern <span class="math notranslate nohighlight">\(b_{
 Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welchen Wert <span class="math notranslate nohighlight">\(1001_2\)</span> repräsentiert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung</span>
 <span class="k">def</span> <span class="nf">to_decimal</span><span class="p">(</span><span class="n">binary_number</span><span class="p">):</span>
     <span class="n">decimal_number</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">binary_number</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
@@ -1086,11 +1083,6 @@ Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um 
     <span class="k">return</span> <span class="n">decimal_number</span>
 <span class="c1"># Zahl in Binärdarstellung 111 0100 1111 wird umgewandelt</span>
 <span class="n">to_decimal</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1871
 </pre></div>
 </div>
 </div>
@@ -1171,7 +1163,7 @@ Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
 <p>Der folgende <code class="docutils literal notranslate"><span class="pre">Python</span></code> code wandelt eine Dezimalzahl in eine Binärzahl (als Liste von <span class="math notranslate nohighlight">\(0, 1\)</span>, gelesen von links nach rechts) um.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung</span>
 <span class="k">def</span> <span class="nf">to_binary</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="n">binary_number</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">while</span> <span class="n">number</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
@@ -1181,11 +1173,6 @@ Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
     <span class="k">return</span> <span class="n">binary_number</span>
 <span class="c1"># Zahl in Decimaldarstellung wird umgewandelt</span>
 <span class="n">to_binary</span><span class="p">(</span><span class="mi">1871</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1]
 </pre></div>
 </div>
 </div>
@@ -1543,7 +1530,7 @@ Es wird eine Sample-Rate von <span class="math notranslate nohighlight">\(3, 4, 
 Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möchten Sie zu einem späteren Zeitpunkt analysieren was hier geschieht.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">sine_wave</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -1577,9 +1564,6 @@ Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möch
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2-representation_7_0.png" src="../../_images/2-representation_7_0.png" />
 </div>
 </div>
 <div class="exercise admonition" id="data-vs-algo-exercise">
@@ -1641,7 +1625,7 @@ Das kostet uns nur wenige <em>Bits</em>.</p>
       <p>
         
           <div class="extra_footer">
-            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
           </div>
       </p>
     </div>
