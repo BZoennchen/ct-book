@@ -9,11 +9,11 @@ Hier feierten wir große Erfolge aber es wird auch deutlich, dass wir mit den im
 Ob das *maschinelle Lernen* uns bei der Energiewende wie auch bei der Eindämmung des Klimawandels behilflich sein kann oder sich als hinderlich erweisen wird, ist eine noch offene Forschungsfrage.
 
 Ein Bereich welcher sich unter anderem dem Energieproblem widmet, ist der des *Neuromorphic Computings*.
-Anstatt mühsam *neuronale Netze* auf einer [von Neumann Architektur](sec-von-neumann) zu simulieren ist es Ziel, neuronale Netze direkt in Hardware zu gießen.
+Anstatt mühsam *neuronale Netze* auf einer [Von-Neumann-Architektur](sec-von-neumann) zu simulieren ist es Ziel, neuronale Netze direkt in Hardware zu gießen.
 Das menschliche Gehirn ist zu ganz erstaunlichen Berechnungen fähig und verbraucht dabei gerade einmal 20 Watt.
-Computer basierend auf der von Neumann Architektur funktionieren jedoch wesentlich anders. 
+Computer basierend auf der Von-Neumann-Architektur funktionieren jedoch wesentlich anders. 
 Unter anderem benötigen sie durch die strikte Trennung zwischen Speicher und Recheneinheit sehr viel mehr Energie, um Daten zur Recheneinheit und wieder zurück zu befördern.
-Auch sind sie nicht im Stande persistent (ohne Stromzufuhr) ihren schnellen Speicher und die arbeitsweise ihrer Recheneinheiten zu verändern, d.h. zu lernen.
+Auch sind sie nicht im Stande persistent (ohne Stromzufuhr) ihren schnellen Speicher und die Arbeitsweise ihrer Recheneinheiten zu verändern, d.h. zu lernen.
 Ein in Hardware gegossenes neuronalen Netz klingt deshalb nach einer vielversprechenden Idee.
 
 Ein weiteres Schlagwort, was insbesondere durch die Medienlandschaft kreist, ist das sog. *Quantum Computing*.
@@ -33,7 +33,7 @@ Das Resultat ist Gegenstand laufender Diskussionen.
 Weitere Spieler in der Quantencomputerwelt zogen seither nach.
 Derzeit sind die zu lösenden Probleme noch speziell auf Quantencomputer angepasst, z.B., die Simulation von Quanteneffekten oder die Generierung von Zufallszahlen.
 
-Die Hoffnung ist groß, dass uns Quantencomputer in ein neues Zeitalter befördern, doch fehlt heute noch jedwede Bestätigung, dass Quantencomputer in der Breite anwendung finden.
+Die Hoffnung ist groß, dass uns Quantencomputer in ein neues Zeitalter befördern, doch fehlt heute noch jedwede Bestätigung, dass Quantencomputer in der Breite Anwendung finden.
 Der US-amerikanische Physiker Richard Feynman begann mit der Idee der Quantencomputer, da Simulationen von Quanteneffekten auf klassischen Computern schnell zu einem zu hohen Rechenaufwand führten.
 Vielleicht liegt hierin die beste Anwendungen der Technologie -- die Simulation des Kleinen.
 Es gibt zwar schon funktionierende Quantencomputer, allerdings braucht es für interessante Anwendungen noch deutlich mehr Qubits und hier liegt wohl die Herausforderung begraben.

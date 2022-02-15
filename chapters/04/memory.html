@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="5. Namensregister" href="name-register.html" />
     <link rel="prev" title="3. Binäres Zeichnen - Struktur ist Information" href="image-representation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,32 +793,50 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
             href="../../_sources/chapters/04/memory.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/04/memory.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/04/memory.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/04/memory.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -828,7 +847,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/04/memory.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -836,7 +855,7 @@
         
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -848,7 +867,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -982,7 +1001,7 @@
               <div>
                 
   <div class="section" id="speicher-alles-ist-eine-liste">
-<span id="sec-memory"></span><h1><span class="section-number">4. </span>Speicher - alles ist eine Liste<a class="headerlink" href="#speicher-alles-ist-eine-liste" title="Permalink to this headline">¶</a></h1>
+<span id="sec-memory"></span><h1><span class="section-number">4. </span>Speicher - alles ist eine Liste<a class="headerlink" href="#speicher-alles-ist-eine-liste" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Wie funktioniert der <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> im Detail?
 Wie werden Daten in ihm abgelegt und wie gelangt die <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> zu diesen zu verarbeitenden Daten?
 Warum gibt es <a class="reference internal" href="../03-4/intro.html#sec-python-data-types"><span class="std std-ref">Datentypen</span></a>?
@@ -1009,7 +1028,7 @@ Zudem kann die <a class="reference internal" href="../02-1/4-information-flow.ht
 Aufgrund der Befehle, welche aus dem <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> geladen werden, verändert die Kontrolleinheit den Befehlszeiger entsprechend, d.h., die Kontrolleinheit führt das im Speicher stehende Programm aus.</p>
 <div class="figure align-default" id="fig-program-run-memory">
 <a class="reference internal image-reference" href="../../_images/program-run.png"><img alt="../../_images/program-run.png" src="../../_images/program-run.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text">Bereiche des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a> (links) werden über eine Speicheradresse in <a class="reference internal" href="../02-1/4-information-flow.html#def-register"><span class="std std-ref">Register</span></a> der <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> (Kontrolleinheit und arithmetische/logische Einheit) geladen.</span><a class="headerlink" href="#fig-program-run-memory" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.7 </span><span class="caption-text">Bereiche des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a> (links) werden über eine Speicheradresse in <a class="reference internal" href="../02-1/4-information-flow.html#def-register"><span class="std std-ref">Register</span></a> der <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> (Kontrolleinheit und arithmetische/logische Einheit) geladen.</span><a class="headerlink" href="#fig-program-run-memory" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Warum darf die Liste nur Zahlen enthalten?
 Der gesamte Computer arbeitet mit Zahlen in der <a class="reference internal" href="../02-1/2-representation.html#sec-binary-numbers"><span class="std std-ref">Binärdarstellung</span></a>.
@@ -1044,9 +1063,9 @@ Die Fähigkeit des Abstrahierens bleibt auf allen Ebenen essenziell.
 Von wo aus wir mit der Abstraktion starten und wo wir hinaufsteigen, ist für das Lernen dieses Prozesses weniger wichtig.
 Wichtig ist der Weg und den beschreiten wir hier!</p>
 <div class="section" id="arbeitsspeicher-als-python-liste">
-<h2><span class="section-number">4.1. </span>Arbeitsspeicher als Python-Liste?<a class="headerlink" href="#arbeitsspeicher-als-python-liste" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Arbeitsspeicher als Python-Liste?<a class="headerlink" href="#arbeitsspeicher-als-python-liste" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="adressierung">
-<h3><span class="section-number">4.1.1. </span>Adressierung<a class="headerlink" href="#adressierung" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.1. </span>Adressierung<a class="headerlink" href="#adressierung" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Werfen wir einen kurzen Blick auf die Eigenschaften und Funktionsweise des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a>.
 Ignorieren wir den <a class="reference internal" href="../02-1/4-information-flow.html#def-cache"><span class="std std-ref">Cache</span></a>, so greift die <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> direkt auf den <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> zu.
 Ist unsere <em>Rechnerarchitektur</em> eine <a class="reference internal" href="../02-1/4-information-flow.html#sec-von-neumann"><span class="std std-ref">Von-Neumann-Architektur</span></a>, so befinden sich im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> die <strong>gerade</strong> auszuführenden Anweisungen (das Programm) als auch die Daten die verarbeitet werden.</p>
@@ -1066,7 +1085,7 @@ Diese ist viel flexibler und kann allerart von Daten enthalten.</p>
 <p>Modellieren wir unsere Speicheradressen als Listenindices und sind die Listenelemente natürliche Zahlen von 0 bis 255, so kommen wir schon sehr nah an die Beschränkungen bzw. Einfachheit des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a> heran.</p>
 </div>
 <div class="section" id="primitive-datentypen">
-<h3><span class="section-number">4.1.2. </span>Primitive Datentypen<a class="headerlink" href="#primitive-datentypen" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2. </span>Primitive Datentypen<a class="headerlink" href="#primitive-datentypen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> können wir bequem mit unterschiedlichen <a class="reference internal" href="../03-4/intro.html#sec-python-data-types"><span class="std std-ref">Datentypen</span></a> umgehen.
 Gewöhnlich unterteilt man Datentypen einer Programmiersprache in zwei Typen:</p>
 <ol class="simple">
@@ -1133,7 +1152,7 @@ Wenn Sie erfahren wollen wie aus einer Liste ein <a class="reference internal" h
 </div>
 </div>
 <div class="section" id="modellierung-des-arbeitsspeichers">
-<h2><span class="section-number">4.2. </span>Modellierung des Arbeitsspeichers<a class="headerlink" href="#modellierung-des-arbeitsspeichers" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Modellierung des Arbeitsspeichers<a class="headerlink" href="#modellierung-des-arbeitsspeichers" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wir wählen als Basis die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste und interpretieren den <strong>Index</strong> der Liste als <strong>Speicheradresse</strong> und den <strong>Listeneintrag</strong> als <strong>Speicherbereich</strong>.
 Wir verzichten auf die Binärschreibweise und arbeiten stattdessen aus Gründen der Lesbarkeit mit Dezimalzahlen.
 Jedoch soll auch für unsere Liste gelten, dass</p>
@@ -1143,7 +1162,7 @@ Jedoch soll auch für unsere Liste gelten, dass</p>
 </ol>
 <div class="figure align-default" id="fig-list-as-memory">
 <a class="reference internal image-reference" href="../../_images/list-as-memory.png"><img alt="../../_images/list-as-memory.png" src="../../_images/list-as-memory.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.8 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste von natürlichen Zahlen als Modell für den <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a>.</span><a class="headerlink" href="#fig-list-as-memory" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.8 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste von natürlichen Zahlen als Modell für den <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a>.</span><a class="headerlink" href="#fig-list-as-memory" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-decimal-numbers-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 4.9 </span>(Kapazität des Speicherbereichs)</p>
@@ -1170,7 +1189,7 @@ Diesen modellieren wir nicht.</p>
 <p>Die Ausführung der Befehle simulieren wir als <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code, d.h. wir erlauben uns ganz normalen <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code für die Manipulation des Speichers zu schreiben.
 Bedenken Sie jedoch, dass in der Realität dieser Code ebenfalls im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> stehen würde, dass Variablen in Register geladen werden müssten und <code class="docutils literal notranslate"><span class="pre">if</span></code>-Ausdrücke wie auch Schleifen durch Veränderungen des <em>Befehlszeigers</em> realisiert werden!</p>
 <div class="section" id="initialisierung">
-<h3><span class="section-number">4.2.1. </span>Initialisierung<a class="headerlink" href="#initialisierung" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1. </span>Initialisierung<a class="headerlink" href="#initialisierung" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Der <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> ist riesig, d.h., wir arbeiten mit einer großen Liste.
 In seinem Initialzustand steht im <em>flüchtige</em> Speicher kein festgelegter Wert.
 Wir initialisieren unseren Speicher mit lauter Nullen.
@@ -1206,7 +1225,7 @@ Damit bräuchte die Liste <span class="math notranslate nohighlight">\(n\)</span
 </div>
 </div>
 <div class="section" id="datentypen">
-<span id="sec-memory-datatypes"></span><h3><span class="section-number">4.2.2. </span>Datentypen<a class="headerlink" href="#datentypen" title="Permalink to this headline">¶</a></h3>
+<span id="sec-memory-datatypes"></span><h3><span class="section-number">4.2.2. </span>Datentypen<a class="headerlink" href="#datentypen" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
 <div><p>Was sind Datentypen und weshalb brauchen wir diese?</p>
 </div></blockquote>
@@ -1220,7 +1239,7 @@ Brauchen wir dann nicht eine weitere Information die uns sagt, dass es sich bei 
 Wenn ja kommen wir aus dem Schlamassel nicht mehr heraus.</p>
 <div class="figure align-default" id="fig-data-type-key-pair">
 <a class="reference internal image-reference" href="../../_images/data-type-key-pair1.png"><img alt="../../_images/data-type-key-pair1.png" src="../../_images/data-type-key-pair1.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.9 </span><span class="caption-text">(Datentyp, Wert)-Paar.</span><a class="headerlink" href="#fig-data-type-key-pair" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.9 </span><span class="caption-text">(Datentyp, Wert)-Paar.</span><a class="headerlink" href="#fig-data-type-key-pair" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Die Datentypinformation ist eine <strong>explizite</strong> Information, d.h. die Information wird niedergeschrieben.
 Um zu entscheiden, ob ein Speicherbereich den Datentyp beschreibt, verwenden wir hingegen <strong>implizites</strong> Wissen/Information.
@@ -1252,19 +1271,19 @@ Jetzt wird Ihnen vielleicht auch klar warum es in <code class="docutils literal 
 <li><p><strong>Implizite Information:</strong> Jedes Objekt (Zahl, Buchstabe, Liste, Adresse) beginnt mit der Datentypinformation. Den Speicherbedarf je Datentyp nehmen wir ebenfalls implizit an.</p></li>
 </ul>
 <div class="section" id="zeichenketten">
-<span id="sec-memory-string"></span><h4><span class="section-number">4.2.2.1. </span>Zeichenketten<a class="headerlink" href="#zeichenketten" title="Permalink to this headline">¶</a></h4>
+<span id="sec-memory-string"></span><h4><span class="section-number">4.2.2.1. </span>Zeichenketten<a class="headerlink" href="#zeichenketten" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Haben wir nicht die Zeichenketten vergessen?
 Eine Zeichenkette ist nichts anderes als eine Liste von Zeichen und diese beiden Datentypen haben wir bereits berücksichtigt.</p>
 </div>
 <div class="section" id="zeichen">
-<span id="sec-memory-char"></span><h4><span class="section-number">4.2.2.2. </span>Zeichen<a class="headerlink" href="#zeichen" title="Permalink to this headline">¶</a></h4>
+<span id="sec-memory-char"></span><h4><span class="section-number">4.2.2.2. </span>Zeichen<a class="headerlink" href="#zeichen" title="Link zu dieser Überschrift">¶</a></h4>
 <p>256 unterschiedliche Zahlen, reichen uns aus um einfache Texte mit <code class="docutils literal notranslate"><span class="pre">a-z</span></code>, <code class="docutils literal notranslate"><span class="pre">A-Z</span></code> und die Sonderzeichen <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code> zu codieren.
 Im Speicherbereich, der auf den Bereich des Datentyps (<code class="docutils literal notranslate"><span class="pre">1</span></code>) folgt, können wir demnach das Zeichen als Zahl hineinschreiben.</p>
 <p>Mittels Codierung, welche uns für eine Zahl ein Zeichen ausspuckt (implizites Wissen), können wir einzelne Buchstaben in den Speicher schreiben und von diesem lesen.
 Sie können sich Ihre eigene Codierung überlegen oder die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionen <a class="reference external" href="https://www.w3schools.com/python/ref_func_ord.asp">ord</a> und <a class="reference external" href="https://www.w3schools.com/python/ref_func_chr.asp">chr</a> verwenden.</p>
 </div>
 <div class="section" id="naturliche-zahlen">
-<span id="sec-memory-natural-numbers"></span><h4><span class="section-number">4.2.2.3. </span>Natürliche Zahlen<a class="headerlink" href="#naturliche-zahlen" title="Permalink to this headline">¶</a></h4>
+<span id="sec-memory-natural-numbers"></span><h4><span class="section-number">4.2.2.3. </span>Natürliche Zahlen<a class="headerlink" href="#naturliche-zahlen" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Wenn wir für Zahlen ebenfalls nur zwei Speicherbereiche (Datentyp und Wert) vorsehen, schränken wir uns zu sehr ein.
 Denn dann ist die größte Zahl die wir darstellen können die 255.</p>
 <div class="exercise admonition" id="memory-whole-numbers-computer-exercise">
@@ -1343,7 +1362,7 @@ Demnach gilt:</p>
 </div>
 </div>
 <div class="section" id="speicheradressen">
-<span id="sec-memory-address"></span><h4><span class="section-number">4.2.2.4. </span>Speicheradressen<a class="headerlink" href="#speicheradressen" title="Permalink to this headline">¶</a></h4>
+<span id="sec-memory-address"></span><h4><span class="section-number">4.2.2.4. </span>Speicheradressen<a class="headerlink" href="#speicheradressen" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Weshalb benötigen wir Speicheradressen als gesonderten Datentyp?</p>
 <p>Wir klammern bei unserer Modellierung Anweisungen aus.
 Doch angenommen wir hätten derartige Anweisungen, dann würde, zum Beispiel, eine Addition darin bestehen die arithmetische Einheit der <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> anzuweisen zwei Zahlen, welche sich an einer bestimmten Speicheradresse befinden, zu addieren und das Ergebnis wieder an eine neue Speicheradresse zu schreiben.
@@ -1375,7 +1394,7 @@ Damit ist die größtmögliche Speicheradresse eine harte Grenze für die Menge 
 </div>
 </div>
 <div class="section" id="listen">
-<span id="sec-memory-list"></span><h4><span class="section-number">4.2.2.5. </span>Listen<a class="headerlink" href="#listen" title="Permalink to this headline">¶</a></h4>
+<span id="sec-memory-list"></span><h4><span class="section-number">4.2.2.5. </span>Listen<a class="headerlink" href="#listen" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Die wesentliche Eigenschaft einer Liste (wie auch des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a>) ist, die schnelle Adressierung bei bekannter Adresse.
 Kennen wir den Index <code class="docutils literal notranslate"><span class="pre">i</span></code> eines Wertes, so können wir auf den Wert in konstanter Laufzeit <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> zugreifen.</p>
 <p>Wenn wir wissen, dass die Liste an einer bestimmten Speicheradresse <code class="docutils literal notranslate"><span class="pre">j</span></code> in unserem Arbeitsspeicher <code class="docutils literal notranslate"><span class="pre">memory</span></code> beginnt, welche Informationen benötigen wir um schnell auf das <code class="docutils literal notranslate"><span class="pre">i</span></code>-te Element der Liste zuzugreifen?
@@ -1396,7 +1415,7 @@ Nach dieser Prämisse folgen die eigentlichen Elemente ohne Datentypinformation.
 <p><a class="reference internal" href="#fig-datatypes-in-memory"><span class="std std-numref">Abbildung 4.10</span></a> fasst alle besprochenen Datentypen zusammen.</p>
 <div class="figure align-default" id="fig-datatypes-in-memory">
 <a class="reference internal image-reference" href="../../_images/datatypes-in-memory.png"><img alt="../../_images/datatypes-in-memory.png" src="../../_images/datatypes-in-memory.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.10 </span><span class="caption-text">Speicheranordnung von Werten verschiedener Datentypen. Die Liste ist eine Liste aus natürlichen Zahlen.</span><a class="headerlink" href="#fig-datatypes-in-memory" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.10 </span><span class="caption-text">Speicheranordnung von Werten verschiedener Datentypen. Die Liste ist eine Liste aus natürlichen Zahlen.</span><a class="headerlink" href="#fig-datatypes-in-memory" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-list-addressing-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 4.15 </span>(Listen-Adressierung)</p>
@@ -1457,9 +1476,9 @@ Bleiben Sie geduldig, auch das klären wir noch.</p>
 </div>
 </div>
 <div class="section" id="implementierung">
-<h2><span class="section-number">4.3. </span>Implementierung<a class="headerlink" href="#implementierung" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Implementierung<a class="headerlink" href="#implementierung" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="speicher-initialisieren">
-<h3><span class="section-number">4.3.1. </span>Speicher initialisieren<a class="headerlink" href="#speicher-initialisieren" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.1. </span>Speicher initialisieren<a class="headerlink" href="#speicher-initialisieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Realisieren wir zunächst einmal die Initialisierung.</p>
 <div class="exercise admonition" id="memory-initialization-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 4.17 </span>(Speicherinitialisierung)</p>
@@ -1514,7 +1533,7 @@ Wir tasten uns im Folgenden in ganz kleinen Schritten nach vorne.</p>
 </div>
 </div>
 <div class="section" id="speicherverwaltung-fur-primitive-datentypen">
-<h3><span class="section-number">4.3.2. </span>Speicherverwaltung für primitive Datentypen<a class="headerlink" href="#speicherverwaltung-fur-primitive-datentypen" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.2. </span>Speicherverwaltung für primitive Datentypen<a class="headerlink" href="#speicherverwaltung-fur-primitive-datentypen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Stellen Sie sich vor wir haben wild und durcheinander in unserem Speicher geschrieben und möchten nun erneut in den Speicher etwas schreiben.
 Wir müssten uns merken welche Speicherbereiche bereits belegt sind.
 Das ist nicht gerade praktikabel.
@@ -1732,7 +1751,7 @@ Lassen wir Listen deshalb zunächst außer acht.</p>
 </div>
 </div>
 <div class="section" id="addieren-im-speicher">
-<h3><span class="section-number">4.3.3. </span>Addieren im Speicher<a class="headerlink" href="#addieren-im-speicher" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.3. </span>Addieren im Speicher<a class="headerlink" href="#addieren-im-speicher" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um zwei Zahlen im Speicher zu addieren fehlt uns nur noch eine Funktion die zwei Zahlen an zwei Speicheradressen liest und das Ergebnis der Addition an eine neu reservierte Speicheradresse schreibt.
 Diese neue Adresse sollte die Funktion zurückgeben.</p>
 <div class="cell docutils container">
@@ -1773,7 +1792,7 @@ Diese neue Adresse sollte die Funktion zurückgeben.</p>
 </div>
 </div>
 <div class="section" id="speicherverwaltung-fur-listen">
-<h3><span class="section-number">4.3.4. </span>Speicherverwaltung für Listen<a class="headerlink" href="#speicherverwaltung-fur-listen" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.4. </span>Speicherverwaltung für Listen<a class="headerlink" href="#speicherverwaltung-fur-listen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Was fehlt ist <code class="docutils literal notranslate"><span class="pre">alloc</span></code> und <code class="docutils literal notranslate"><span class="pre">free</span></code> für eine Liste.
 Was wir benötigen ist die Berechnung des Speicherbedarfs einer Liste.
 Betrachten Sie <a class="reference internal" href="#fig-list-in-memory"><span class="std std-numref">Abbildung 4.11</span></a>.
@@ -1786,7 +1805,7 @@ Weshalb subtrahieren wir die eins?
 Da Listenelemente keine Datentypinformation benötigen!</p>
 <div class="figure align-default" id="fig-list-in-memory">
 <a class="reference internal image-reference" href="../../_images/list-in-memory.png"><img alt="../../_images/list-in-memory.png" src="../../_images/list-in-memory.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.11 </span><span class="caption-text">Liste wie sie im Speicher liegt. Um den Speicherbedarf zu berechnen benötigen wir die <strong>Länge der Liste</strong>, und den <strong>Datentyp der Listenelemente</strong>.</span><a class="headerlink" href="#fig-list-in-memory" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.11 </span><span class="caption-text">Liste wie sie im Speicher liegt. Um den Speicherbedarf zu berechnen benötigen wir die <strong>Länge der Liste</strong>, und den <strong>Datentyp der Listenelemente</strong>.</span><a class="headerlink" href="#fig-list-in-memory" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-alloc-list-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 4.21 </span>(Speicher für Listen allokieren)</p>
@@ -1938,7 +1957,7 @@ Our list in mememory: [2, 0, 10, 0, 0, 1, 0, 4, 0, 9, 0, 16, 0, 25, 0, 36, 0, 49
 </div>
 </div>
 <div class="section" id="mehrdimensionale-listen">
-<h3><span class="section-number">4.3.5. </span>Mehrdimensionale Listen<a class="headerlink" href="#mehrdimensionale-listen" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.5. </span>Mehrdimensionale Listen<a class="headerlink" href="#mehrdimensionale-listen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Wenn Sie <code class="docutils literal notranslate"><span class="pre">alloc_list</span></code> betrachten werden Sie festellen, dass eine Liste aus Elementen vom Datentyp <code class="docutils literal notranslate"><span class="pre">to_data_type('list')</span></code> nicht zulässig ist.
 Unsere Liste darf derzeit nur <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> (natürliche Zahlen, Zeichen und Adressen) beinhalten.</p>
 <p>Mehrdimensionale Listen aus Elementen eines <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyps</span></a> lassen sich recht einfach erstellen, wenn wir anstatt einer Länge, für jede Dimension eine Länge anfügen.
@@ -2054,7 +2073,7 @@ We allocated 0 bytes
 </div>
 </div>
 <div class="section" id="ein-einfacher-parser">
-<h3><span class="section-number">4.3.6. </span>Ein einfacher Parser<a class="headerlink" href="#ein-einfacher-parser" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.6. </span>Ein einfacher Parser<a class="headerlink" href="#ein-einfacher-parser" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um die Manipulationen im Speicher besser nachzuvollziehen zu können wäre es großartig eine Funktion <code class="docutils literal notranslate"><span class="pre">mem_to_string(addr,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code> zu haben, welche einen <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> oder eine <a class="reference internal" href="#sec-memory-list"><span class="std std-ref">Liste</span></a> in einer gut leserliche Zeichenkette umwandelt.</p>
 <p>An einer Adresse <code class="docutils literal notranslate"><span class="pre">ADDR</span></code> kann sich eine andere <code class="docutils literal notranslate"><span class="pre">ADDR</span></code>, eine Zahl <code class="docutils literal notranslate"><span class="pre">number</span></code>, ein Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code> oder eine Liste <code class="docutils literal notranslate"><span class="pre">LIST</span></code> befinden.
 Eine Liste <code class="docutils literal notranslate"><span class="pre">LIST</span></code> kann wiederum natürliche Zahlen <code class="docutils literal notranslate"><span class="pre">number</span></code>, Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code> oder Adressen <code class="docutils literal notranslate"><span class="pre">ADDR</span></code> enthalten.
@@ -2189,7 +2208,7 @@ B
 </div>
 </div>
 <div class="section" id="listen-erzeugen">
-<h3><span class="section-number">4.3.7. </span>Listen erzeugen<a class="headerlink" href="#listen-erzeugen" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.7. </span>Listen erzeugen<a class="headerlink" href="#listen-erzeugen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Wie Sie oben sehen, können wir durch <code class="docutils literal notranslate"><span class="pre">alloc</span></code> bereits sehr bequem mit primitiven Datentypen umgehen.
 Um eine Liste zu erstellen haben wir noch keine solche Hilfsfunktion implementiert.
 Wäre es nicht toll wenn wir durch folgenden Code eine neue Liste aus Zahlen oder Zeichen an die Adresse <code class="docutils literal notranslate"><span class="pre">numbers</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">chars</span></code> schreiben könnten?</p>
@@ -2305,7 +2324,7 @@ Wichtig dabei ist, dass eine Zeichenkette mit Länge gleich 1 ein <code class="d
 Die <strong>Dekomposition</strong> des Problems in viele kleinere Probleme hilft uns ungemein beim Lösen des Gesamtproblems.</p>
 </div>
 <div class="section" id="ende-der-reise">
-<h3><span class="section-number">4.3.8. </span>Ende der Reise<a class="headerlink" href="#ende-der-reise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.8. </span>Ende der Reise<a class="headerlink" href="#ende-der-reise" title="Link zu dieser Überschrift">¶</a></h3>
 <p>An dieser Stelle beenden wir die Reise.
 Sie können ihren Code selbständig gerne um weitere Funktionen erweitern.</p>
 <p>Wie wäre es zum Beispiel mit der Subtraktion von zwei Zahlen <span class="math notranslate nohighlight">\(a - b\)</span>?
@@ -2337,7 +2356,7 @@ Anfangs wäre der Berg von Problemen vor dem Sie stehen gigantisch.
 Doch wenn Sie sich erneut Schritt für Schritt voran kämpfen und den Berg in viele kleine Hügel aufteilen, kann auch das gelingen.</p>
 </div>
 <div class="section" id="memory-klasse">
-<h3><span class="section-number">4.3.9. </span>Memory Klasse<a class="headerlink" href="#memory-klasse" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.9. </span>Memory Klasse<a class="headerlink" href="#memory-klasse" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Wir haben Ihnen alle Funktionen als Klassenmethoden in die Klasse <code class="docutils literal notranslate"><span class="pre">Memory</span></code> gepackt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2618,7 +2637,7 @@ Doch wenn Sie sich erneut Schritt für Schritt voran kämpfen und den Berg in vi
 </div>
 </div>
 <div class="section" id="was-soll-das-alles">
-<h2><span class="section-number">4.4. </span>Was soll das alles?<a class="headerlink" href="#was-soll-das-alles" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4. </span>Was soll das alles?<a class="headerlink" href="#was-soll-das-alles" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Diese Übung scheint absonderlich.
 Wir haben uns um viel <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionalität beraubt, um diese dann wieder zu implementieren.
 Was soll das alles?</p>
@@ -2745,9 +2764,9 @@ Sie sind ein essenzielles Konzept der Programmierung, welches Sie auch bei der P
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

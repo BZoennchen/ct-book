@@ -54,7 +54,7 @@ Es gibt keine Software, die uns für einen beliebigen Quellcode sagen kann ob wi
 height: 150px
 name: goedel-church-turing
 ---
-Mathematiker Kurt Gödel, Alonzo Church und Alan Turing.
+Mathematiker Kurt Gödel, Alonzo Church und Alan Turing, Quellen: [1](https://commons.wikimedia.org/wiki/File:1925_kurt_g%C3%B6del.png), [2](https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg), [3](https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg).
 ```
 
 Was aus dem theoretischem Diskurs hervorging waren jedoch nicht nur zerstörte Träume, sondern auch neue fruchtbare Theorien, die das Fundament der Informatik und damit auch des künftigen Computational Thinkings prägen sollten.
@@ -76,7 +76,7 @@ Inwieweit sich dieser Computationalismus bestätigt oder widerlegt bleibt abzuwa
 height: 200px
 name: model-of-a-tm
 ---
-Eine konkrete Konstruktion einer Turingmaschine.
+Eine konkrete Konstruktion einer Turingmaschine, [Quelle](https://de.wikipedia.org/wiki/Turingmaschine#/media/Datei:Model_of_a_Turing_machine.jpg).
 ```
 
 Von den Ingenieuren wurden diese theoretischen Erfolge zunächst kaum beachtet.
@@ -97,7 +97,7 @@ Frauen wurden sehr häufig auch als menschliche Computer eingestellt, ihre Erfol
 height: 150px
 name: turing-bomb
 ---
-Die sog. Turing-Bombe, welche für die Entschlüsselung der Enigma verwendet wurde.
+Die sog. Turing-Bombe, welche für die Entschlüsselung der Enigma verwendet wurde, [Quelle](https://commons.wikimedia.org/wiki/File:Wartime_picture_of_a_Bletchley_Park_Bombe.jpg).
 ```
 
 Zur Zeit des Weltkriegs gelang es den Codeknackern um Alan Turing die Verschlüsselung der Enigma zu schlagen.
@@ -113,7 +113,7 @@ Für den Erfolg der ENIAC wurden Kathleen McNulty Mauchly Antonelli, Jean Bartik
 height: 150px
 name: eniac-programmiererinnen
 ---
-ENIAC-Programmiererinnen Marlyn Wescoff und Ruth Lichterman.
+ENIAC-Programmiererinnen Marlyn Wescoff und Ruth Lichterman, [Quelle](https://commons.wikimedia.org/wiki/File:Reprogramming_ENIAC.png).
 ```
 
 Im Jahr 1945 begann Turing mit seiner Arbeit an der Entwicklung eines elektronisch-programmierbaren Computers mit Speicher.
@@ -127,7 +127,7 @@ Weitere konzeptuelle Entwicklungen sollten folgen, doch die grobe Architektur bl
 height: 300px
 name: von-neumann-architecture
 ---
-Die von Neumann Architektur.
+Die Von-Neumann-Architektur.
 ```
 
 In den darauffolgenden Jahren waren es insbesondere Entwicklungen von neuen Bauteilen, wie Transistoren und integrierten Schaltkreisen, die die Leistungsfähigkeit der Computer immer weiter verbesserten.

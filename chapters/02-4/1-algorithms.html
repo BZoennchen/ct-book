@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="5.2. Programmieren" href="2-programming.html" />
     <link rel="prev" title="5. Die Kunst des Programmierens" href="the-art-of-programming.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,32 +793,50 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
             href="../../_sources/chapters/02-4/1-algorithms.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/02-4/1-algorithms.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-4/1-algorithms.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-4/1-algorithms.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -828,7 +847,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/02-4/1-algorithms.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -836,7 +855,7 @@
         
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -848,7 +867,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -901,7 +920,7 @@
               <div>
                 
   <div class="section" id="algorithmen">
-<span id="sec-algorithms"></span><h1><span class="section-number">5.1. </span>Algorithmen<a class="headerlink" href="#algorithmen" title="Permalink to this headline">¶</a></h1>
+<span id="sec-algorithms"></span><h1><span class="section-number">5.1. </span>Algorithmen<a class="headerlink" href="#algorithmen" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Der Ursprungs des Begriffs <em>Algorithmus</em> war lange Zeit ungeklärt.
 Erst recht spät fanden Historiker*innen heraus, dass der Begriff von der leichten Veränderung des Namens des berühmten persischen Autors <em>Abu Dschaʿfar Muhammad ibn Musa al-Chwārizmī</em> stammt.
 Der Begriff wurde dann durch <em>Algorismi</em> latinisiert und durch <em>Algorismus</em> ins mittelhochdeutsch übersetzt.
@@ -912,7 +931,7 @@ Das heißt, ab dieser Zeit verblasste die Vorstellung von der Kombination rein a
 <em>Algorithmen</em> begannen kombinatorische Operationen und Kontrollstrukturen zu enthalten.</p>
 <p>Heute verbinden wir mit Algorithmus Begriffe wie Rezept, Berechnungsvorschrift, Prozess, Prozedur, Methode, Routine und so weiter.</p>
 <div class="section" id="euklid-s-algorithmus">
-<span id="sec-euclid-alg"></span><h2><span class="section-number">5.1.1. </span>Euklid’s Algorithmus<a class="headerlink" href="#euklid-s-algorithmus" title="Permalink to this headline">¶</a></h2>
+<span id="sec-euclid-alg"></span><h2><span class="section-number">5.1.1. </span>Euklid’s Algorithmus<a class="headerlink" href="#euklid-s-algorithmus" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: <em>Euklid’s Algorithmus</em>.</p>
 <div class="exercise admonition" id="euclid-exercise">
 <p class="admonition-title"><span class="caption-number">Exercise 5.6 </span>(Euklid’s Algorithmus)</p>
@@ -923,7 +942,7 @@ Wir suchen nach dem größten gemeinsamen Teiler (ggT) von <span class="math not
 </div>
 <p>Der ggT von 44 und 12 ist zum Beispiel 4.
 Wie vieles bei den Griechen ist der Algorithmus geometrisch motiviert.
-Euklid berechnet den ggT, indem er nach einem gemeinsamen ‘Maß’ für die Längen zweier Linien sucht.
+Euklid berechnet den ggT, indem er nach einem gemeinsamen ‚Maß‘ für die Längen zweier Linien sucht.
 Dazu zieht er wiederholt die kleiner der beiden Längen von der größeren ab.
 Der ggT verändert sich dadurch nicht.</p>
 <div class="theorem admonition" id="theorem-ggt">
@@ -942,7 +961,7 @@ Dann folgt</p>
 <p>und damit bleibt der ggT unverändert.</p>
 </div>
 <div class="section" id="version-1">
-<h3><span class="section-number">5.1.1.1. </span>Version 1<a class="headerlink" href="#version-1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.1.1.1. </span>Version 1<a class="headerlink" href="#version-1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Gehen wir wie Euklid vor und beschreiben diese Vorgehensweise in Pseudocode:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">&lt;-</span> <span class="n">c0</span>
 <span class="n">m</span> <span class="o">&lt;-</span> <span class="n">c1</span>
@@ -985,7 +1004,7 @@ Nachdem die <code class="docutils literal notranslate"><span class="pre">while</
 Das mathematische <span class="math notranslate nohighlight">\(=\)</span> wird aufgrund dessen mit <code class="docutils literal notranslate"><span class="pre">==</span></code> ausgedrückt.</p>
 </div>
 <div class="section" id="version-2">
-<h3><span class="section-number">5.1.1.2. </span>Version 2<a class="headerlink" href="#version-2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.1.1.2. </span>Version 2<a class="headerlink" href="#version-2" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Da uns die <a class="reference internal" href="../02-0/6-operations.html#def-euclid-division"><span class="std std-ref">Restwertdivision</span></a> als Operation zur Verfügung steht können wir die wiederholte Subtraktion beschleunigen.
 Anstatt zum Beispiel <code class="docutils literal notranslate"><span class="pre">43</span> <span class="pre">-</span> <span class="pre">11</span> <span class="pre">-</span> <span class="pre">11</span> <span class="pre">-</span> <span class="pre">11</span> <span class="pre">==</span> <span class="pre">10</span></code> zu rechnen ergibt <code class="docutils literal notranslate"><span class="pre">43</span> <span class="pre">%</span> <span class="pre">11</span> <span class="pre">==</span> <span class="pre">10</span></code>.
 Diese Operation steht Ihnen in allen gängigen Programmiersprachen zur Verfügung und kann auf dem Computer sehr schnell ausgeführt werden.</p>
@@ -1060,7 +1079,7 @@ Dazu schreiben wir eine <code class="docutils literal notranslate"><span class="
 Nachdem die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife (Wiederholung) verlassen wird, gibt die Funktion <code class="docutils literal notranslate"><span class="pre">n</span></code> zurück.</p>
 </div>
 <div class="section" id="version-3">
-<h3><span class="section-number">5.1.1.3. </span>Version 3<a class="headerlink" href="#version-3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.1.1.3. </span>Version 3<a class="headerlink" href="#version-3" title="Link zu dieser Überschrift">¶</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> können wir das Vertauschen der Variablen durch Tupel und das sog. Packing kürzer schreiben.
 Auch ist die Bedingung einer <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife wahr sofern eine ganze Zahl nicht gleich 0 ist.
 Daraus ergibt sich die sehr kurze Version 3:</p>
@@ -1090,7 +1109,7 @@ Das sind also Algorithmen.</p>
 </div>
 </div>
 <div class="section" id="definition">
-<span id="sec-algorithm-def"></span><h2><span class="section-number">5.1.2. </span>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+<span id="sec-algorithm-def"></span><h2><span class="section-number">5.1.2. </span>Definition<a class="headerlink" href="#definition" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Nach dieser Intuition wollen wir den Begriff <em>Algorithmus</em> klar definieren.
 Dabei bedienen wir uns bei <em>Donald E. Knuth</em>, dem Autor der Programmierbibel <em>The Art of Programming</em> und Urheber des Textsatzsystems <em>TeX</em>.</p>
 <div class="definition admonition" id="def-algorithm">
@@ -1133,7 +1152,7 @@ D.h., es gibt keine Turingmaschine/Algorithmus die/der für beliebige Turingmasc
 Die <strong>Terminierung</strong> ist damit im Einzelfall zu prüfen.</p>
 </div>
 <div class="section" id="das-was-und-das-wie">
-<span id="sec-what-and-how"></span><h2><span class="section-number">5.1.3. </span>Das Was und das Wie<a class="headerlink" href="#das-was-und-das-wie" title="Permalink to this headline">¶</a></h2>
+<span id="sec-what-and-how"></span><h2><span class="section-number">5.1.3. </span>Das Was und das Wie<a class="headerlink" href="#das-was-und-das-wie" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Nach unserer Auffassung muss ein Algorithmus nicht zwangsläufig von einer Maschine verstanden werden.
 Die Unmissverständlichkeit bezieht sich hingegen auf einen bestimmten <em>Kontext</em> und im Falle der von Maschinen ausgeführten Algorithmen, gehört die Maschine zu diesem <em>Kontext</em>.
 So ist ein Kochrezept ein Algorithmus der im <em>Kontext</em> der Küche und des Kochens eine (hoffentlich) unmissverständliche endliche Folge von Anweisungen darstellt.
@@ -1192,7 +1211,7 @@ Zum Beispiel können wir eine Funktion schreiben, die uns das größte und klein
 Die zusätzliche Kontrolle, die Sie dann nicht einfach abgeben können, führt deshalb zu einem höheren <strong>Entwicklungsaufwand</strong>.</p>
 <div class="figure align-default" id="fig-world-code-computer">
 <a class="reference internal image-reference" href="../../_images/world-code-computer.png"><img alt="../../_images/world-code-computer.png" src="../../_images/world-code-computer.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Zusammenhang zwischen modellierter Welt, Quellcode und der realen Welt der Computer.</span><a class="headerlink" href="#fig-world-code-computer" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 5.2 </span><span class="caption-text">Zusammenhang zwischen modellierter Welt, Quellcode und der realen Welt der Computer.</span><a class="headerlink" href="#fig-world-code-computer" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Je näher Sie an der Maschine programmieren, desto näher befinden Sie sich in der wirklichen physikalischen Welt der Transistoren und elektrischen Schaltkreise.
 Paradoxerweise führt die Nähe zur wirklichen Welt dazu, dass es schwerer wird die wirkliche Welt zu modellieren.
@@ -1212,7 +1231,7 @@ Durch die Abstraktion wird es möglich, dass elektrische Schaltkreise ganze Gala
 Schlussendlich basiert jedoch alles auf zwei Zuständen, 0 und 1, unvorstellbar vieler winziger elektrischer Bauteile.</p>
 </div>
 <div class="section" id="die-natur-eines-algorithmus">
-<h2><span class="section-number">5.1.4. </span>Die Natur eines Algorithmus<a class="headerlink" href="#die-natur-eines-algorithmus" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.4. </span>Die Natur eines Algorithmus<a class="headerlink" href="#die-natur-eines-algorithmus" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Lassen Sie uns noch ein wenig tiefer in die Natur eines Algorithmus einsteigen.
 Achtung! Es wird ein wenig philosophisch.</p>
 <p>Überlegen Sie sich einmal was die Zahl <span class="math notranslate nohighlight">\(2\)</span> eigentlich ist?
@@ -1284,9 +1303,9 @@ Beantworten Sie es für sich selbst.</p>
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

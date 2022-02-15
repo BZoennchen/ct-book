@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="4.6. Tupel - tuple" href="6-tuple.html" />
     <link rel="prev" title="4.4. Wahrheitswerte - bool" href="4-bool.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,32 +793,50 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
             href="../../_sources/chapters/03-4/5-list.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/03-4/5-list.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/03-4/5-list.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/03-4/5-list.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -828,7 +847,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-4/5-list.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -836,7 +855,7 @@
         
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -848,7 +867,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -928,12 +947,12 @@
               <div>
                 
   <div class="section" id="listen-list">
-<span id="sec-list"></span><h1><span class="section-number">4.5. </span>Listen - list<a class="headerlink" href="#listen-list" title="Permalink to this headline">¶</a></h1>
+<span id="sec-list"></span><h1><span class="section-number">4.5. </span>Listen - list<a class="headerlink" href="#listen-list" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Listen (engl. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">List</a>) <code class="docutils literal notranslate"><span class="pre">list</span></code> sind eine der wichtigsten <em>Datentypen</em> und zugleich einfachsten <a class="reference internal" href="../02-4/4-data-structures.html#sec-data-structures"><span class="std std-ref">Datenstrukturen</span></a> in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.
 Sobald Sie irgendetwas sinnvolles programmieren möchten, kommen Sie um die Liste kaum herum.
 Das Grundkonzept einer Liste ist einfach und doch so fundamental wichtig!</p>
 <div class="section" id="motivation">
-<h2><span class="section-number">4.5.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.1. </span>Motivation<a class="headerlink" href="#motivation" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Nehmen wir einmal an wir bekämen den Auftrag ein Programm zu schreiben, welches <code class="docutils literal notranslate"><span class="pre">n</span></code> ganze Zahlen aufaddiert, wobei wir weder <code class="docutils literal notranslate"><span class="pre">n</span></code> noch die Zahlen kennen.
 Zugegeben, das Programm ist nicht gerade interessant aber aller Anfang ist klein.
 Eine variable Anzahl an unbekannten Zahlen lässt sich hervorragend durch eine Liste <em>modellieren</em>.
@@ -1005,7 +1024,7 @@ Probieren Sie es aus.</p>
 \[\begin{split}\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}.\end{split}\]</div>
 </div>
 <div class="section" id="erstellung">
-<h2><span class="section-number">4.5.2. </span>Erstellung<a class="headerlink" href="#erstellung" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.2. </span>Erstellung<a class="headerlink" href="#erstellung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Es gibt unterschiedliche Möglichkeiten um eine Liste zu erzeugen.
 Wir können, z.B., mit einer leeren Liste starten und diese füllen:</p>
 <div class="cell docutils container">
@@ -1089,7 +1108,7 @@ Wir können diesen Bereich, der auch eine Sequenz ist, in eine Liste packen bzw.
 </div>
 </div>
 <div class="section" id="indexierung">
-<span id="sec-list-index"></span><h2><span class="section-number">4.5.3. </span>Indexierung<a class="headerlink" href="#indexierung" title="Permalink to this headline">¶</a></h2>
+<span id="sec-list-index"></span><h2><span class="section-number">4.5.3. </span>Indexierung<a class="headerlink" href="#indexierung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wir können auf die Elemente einer Liste mit einem <em>Index</em> zugreifen.
 Dieser Index beginnt bei <span class="math notranslate nohighlight">\(0\)</span> und endet bei der <span class="math notranslate nohighlight">\(n - 1\)</span>, wobei <span class="math notranslate nohighlight">\(n\)</span> gleich der Länge der Liste ist (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">len(lst)</span> <span class="pre">-</span> <span class="pre">1</span></code>).
 <code class="docutils literal notranslate"><span class="pre">len(lst)</span></code> gibt eine natürliche Zahl (0 inklusive) zurück, welche die Länge der Liste <code class="docutils literal notranslate"><span class="pre">lst</span></code> angibt.</p>
@@ -1178,7 +1197,7 @@ Bei diesen Operationen bleibt <code class="docutils literal notranslate"><span c
 </div>
 </div>
 <div class="section" id="veranderung">
-<h2><span class="section-number">4.5.4. </span>Veränderung<a class="headerlink" href="#veranderung" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.4. </span>Veränderung<a class="headerlink" href="#veranderung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Anders als <a class="reference internal" href="6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a> <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sind Listen <em>veränderbar</em>, d.h. wir können Elemente löschen und hinzufügen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1258,18 +1277,18 @@ chars: [&#39;a&#39;, &#39;d&#39;, &#39;b&#39;, &#39;c&#39;] after insert.
 Anders ausgedrückt: Das eingefügte Element <code class="docutils literal notranslate"><span class="pre">element</span></code> hat nach der Operation <code class="docutils literal notranslate"><span class="pre">insert(index,</span> <span class="pre">element)</span></code> den Index <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
 </div>
 <div class="section" id="listen-und-der-speicher">
-<span id="sec-list-and-memory"></span><h2><span class="section-number">4.5.5. </span>Listen und der Speicher<a class="headerlink" href="#listen-und-der-speicher" title="Permalink to this headline">¶</a></h2>
+<span id="sec-list-and-memory"></span><h2><span class="section-number">4.5.5. </span>Listen und der Speicher<a class="headerlink" href="#listen-und-der-speicher" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wie funktioniert eine Liste im tieferen Sinne?
 Also wie ist sie im Speicher abgelegt, was passiert wenn wir sie verändern und wie greifen wir auf sie und ihre Elemente über <strong>Adressen</strong> zu?</p>
 <div class="section" id="anordnung-im-speicher">
-<h3><span class="section-number">4.5.5.1. </span>Anordnung im Speicher<a class="headerlink" href="#anordnung-im-speicher" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.5.5.1. </span>Anordnung im Speicher<a class="headerlink" href="#anordnung-im-speicher" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um zu verstehen wie und warum Listen funktionieren müssen wir eine wichtige Tatsache festhalten, die wir bereits im Abschnitt <a class="reference internal" href="../03-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> unbemerkt verwendet haben:
 Kennen wir eine <strong>Adresse</strong> eines <strong>Werts</strong>, kurz gesagt die <em>Variable</em> welche auf den Wert zeigt, so ist der Zugriff auf diesen Wert extrem schnell!</p>
 <div class="remark admonition" id="remark-mem-addr-speed">
 <p class="admonition-title">Speicheradressierung</p>
 <p>Kennen wir die Speicheradresse, so können wir die Adressierung als Operation mit konstanter Laufzeit <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> annehmen.</p>
 </div>
-<p>Es gibt kleine ‘Strafen’, wenn <strong>Adressen</strong>, die wir nacheinander verwenden, weit auseinander liegen.
+<p>Es gibt kleine ‚Strafen‘, wenn <strong>Adressen</strong>, die wir nacheinander verwenden, weit auseinander liegen.
 Diese Strafen sind jedoch in den meisten Anwendungen vernachlässigbar.</p>
 <p>Lassen Sie uns mit dieser Information anhand eines Beispiel testen, wie sich die <strong>Adressen</strong> und <strong>Werte</strong> einer <code class="docutils literal notranslate"><span class="pre">list</span></code> (aus Zahlen) verhalten.</p>
 <div class="cell docutils container">
@@ -1293,14 +1312,14 @@ Diese Strafen sind jedoch in den meisten Anwendungen vernachlässigbar.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
-id of numbers = 4552711872
+id of numbers = 4517630144
 value of numbers[2] = 3
-id of numbers[2] = 4511664496
+id of numbers[2] = 4475742576
 change value of numbers[2]
 value of numbers = [1, 2, -20, 4, 5]
-id of numbers = 4552711872
+id of numbers = 4517630144
 value of numbers[2] = -20
-id of numbers[2] = 4552766704
+id of numbers[2] = 4517709104
 </pre></div>
 </div>
 </div>
@@ -1311,7 +1330,7 @@ Die <strong>Adresse</strong> der <em>Variable</em> <code class="docutils literal
 Allerdings ändert sich die Adresse des Elements <code class="docutils literal notranslate"><span class="pre">numbers[2]</span></code> und somit der <strong>Wert</strong> von <code class="docutils literal notranslate"><span class="pre">numbers</span></code>.</p>
 <div class="figure align-default" id="fig-data-type-list">
 <a class="reference internal image-reference" href="../../_images/list.png"><img alt="../../_images/list.png" src="../../_images/list.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>bevor</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.2 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>bevor</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Ändern wir den <strong>Wert</strong> eines Listenelements, so verändern wir die <strong>Adresse</strong> am Index dieses Elements.
 In unserem Beispiel ändern wir den Wert am Index 2 von 5 auf -20.
@@ -1319,7 +1338,7 @@ Dadurch verändert sich die Adresse von <span class="math notranslate nohighligh
 Vergleichen Sie die <a class="reference internal" href="#fig-data-type-list"><span class="std std-numref">Abbildung 4.2</span></a> und <a class="reference internal" href="#fig-data-type-list-2"><span class="std std-numref">4.3</span></a>.</p>
 <div class="figure align-default" id="fig-data-type-list-2">
 <a class="reference internal image-reference" href="../../_images/list-2.png"><img alt="../../_images/list-2.png" src="../../_images/list-2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>nachdem</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.3 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>nachdem</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">3</span></code> auf <code class="docutils literal notranslate"><span class="pre">-20</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-2" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Alle <em>Datenstrukturen</em> sind <em>Behälter</em>, die andere Daten aufnehmen können, ähnlich wie Schließfächer, Ordner oder Rucksäcke.
 Nehmen wir als Analogie die Schließfächer aus der echten Welt.
@@ -1350,14 +1369,14 @@ Oder aber wir stellen uns eine Schnur vor, die von dem Schließfach auf das Obje
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of mylist = [1, [&#39;a&#39;, &#39;b&#39;], 5]
-id of mylist = 4552712640
+id of mylist = 4517629504
 value of mylist[1] = [&#39;a&#39;, &#39;b&#39;]
-id of mylist[1] = 4552711360
+id of mylist[1] = 4517555072
 change value mylist[1][0]
 value of mylist = [1, [&#39;c&#39;, &#39;b&#39;], 5]
-id of mylist = 4552712640
+id of mylist = 4517629504
 value of mylist[1] = [&#39;c&#39;, &#39;b&#39;]
-id of numbers[1] = 4552711360
+id of numbers[1] = 4517555072
 </pre></div>
 </div>
 </div>
@@ -1367,13 +1386,13 @@ Der Effekt ist ein anderer als zuvor, denn die Adresse <span class="math notrans
 Stattdessen verändern wir die Adresse <span class="math notranslate nohighlight">\(adr_{1,0}^*\)</span> der Datenstruktur, welche unsere Liste enthält.</p>
 <div class="figure align-default" id="fig-data-type-list-in-list">
 <a class="reference internal image-reference" href="../../_images/list-in-list.png"><img alt="../../_images/list-in-list.png" src="../../_images/list-in-list.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>bevor</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">'a'</span></code> auf <code class="docutils literal notranslate"><span class="pre">'c'</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-in-list" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.4 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>bevor</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">'a'</span></code> auf <code class="docutils literal notranslate"><span class="pre">'c'</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-in-list" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Die <strong>Adressen</strong> welche <code class="docutils literal notranslate"><span class="pre">mylist</span></code> enthält bleiben <strong>unverändert</strong> und trotzdem ändern wir den Inhalt von <code class="docutils literal notranslate"><span class="pre">mylist</span></code>.
 Vergleichen Sie die <a class="reference internal" href="#fig-data-type-list-in-list"><span class="std std-numref">Abbildung 4.4</span></a> und <a class="reference internal" href="#fig-data-type-list-in-list-2"><span class="std std-numref">4.5</span></a>.</p>
 <div class="figure align-default" id="fig-data-type-list-in-list-2">
 <a class="reference internal image-reference" href="../../_images/list-in-list-2.png"><img alt="../../_images/list-in-list-2.png" src="../../_images/list-in-list-2.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>nachdem</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">'a'</span></code> auf <code class="docutils literal notranslate"><span class="pre">'c'</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-in-list-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 4.5 </span><span class="caption-text">Die Liste aus unserem obigen Beispiel <strong>nachdem</strong> wir den Wert <code class="docutils literal notranslate"><span class="pre">'a'</span></code> auf <code class="docutils literal notranslate"><span class="pre">'c'</span></code> gesetzt haben.</span><a class="headerlink" href="#fig-data-type-list-in-list-2" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Selbst wenn wir anstatt einer Liste ein <strong>unveränderliches</strong> <a class="reference internal" href="6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a> verwenden würden, könnten wir diese Veränderung durchführen.</p>
 <div class="attention admonition" id="attention-immutable-in-python">
@@ -1388,7 +1407,7 @@ Enthält die Datenstruktur jedoch eine weitere <em>veränderliche</em> Datenstru
 </ol>
 </div>
 <div class="section" id="adressenberechnung">
-<h3><span class="section-number">4.5.5.2. </span>Adressenberechnung<a class="headerlink" href="#adressenberechnung" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.5.5.2. </span>Adressenberechnung<a class="headerlink" href="#adressenberechnung" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Da <strong>Adressen</strong> immer die gleiche feste Anzahl an <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> benötigen, kann man für eine gegebene</p>
 <ul class="simple">
 <li><p>Adresse <span class="math notranslate nohighlight">\(adr\)</span> einer Liste und</p></li>
@@ -1405,14 +1424,14 @@ Dann befindet sich die Adresse <span class="math notranslate nohighlight">\(adr_
 Diese Rechnung kann der Rechner sehr schnell durchführen und deshalb können wir auf ein Element einer Liste dessen Index wir kennen extrem schnell zugreifen.</p>
 </div>
 <div class="section" id="ubung">
-<h3><span class="section-number">4.5.5.3. </span>Übung<a class="headerlink" href="#ubung" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.5.5.3. </span>Übung<a class="headerlink" href="#ubung" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um dieses Konzept besser zu verstehen und herauszufinden wie sich <a class="reference internal" href="1-data-types.html#def-atomare-data-types"><span class="std std-ref">atomare</span></a> wie auch <a class="reference internal" href="1-data-types.html#def-data-structures"><span class="std std-ref">zusammengesetzte Datentypen</span></a> verhalten, hilft oft nur eins: Ausprobieren!</p>
 <p>Im Kapitel <a class="reference internal" href="../04/memory.html#sec-memory"><span class="std std-ref">Speicher - alles ist eine Liste</span></a> erstellen wir unser eigenes Speicherverwaltungssystem durch <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Listen.
 Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers und wie es gelingt Listen voller <strong>Adressen</strong> zu verwalten.</p>
 </div>
 </div>
 <div class="section" id="der-unterschied-zwischen-und">
-<h2><span class="section-number">4.5.6. </span>Der Unterschied zwischen + und +=<a class="headerlink" href="#der-unterschied-zwischen-und" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.6. </span>Der Unterschied zwischen + und +=<a class="headerlink" href="#der-unterschied-zwischen-und" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die Operatoren <code class="docutils literal notranslate"><span class="pre">+</span></code> und <code class="docutils literal notranslate"><span class="pre">+=</span></code> sind in <code class="docutils literal notranslate"><span class="pre">Python</span></code> auch für Listen definiert.
 Ähnlich wie bei <a class="reference internal" href="7-string.html#sec-string"><span class="std std-ref">Zeichenketten</span></a>, verkettet er zwei Listen.
 Überraschenderweise bewirkt jedoch folgender Code</p>
@@ -1428,8 +1447,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4552701120
- id after concat: 4552703872
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4517619456
+ id after concat: 4517626304
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1450,8 +1469,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4552168832
- id after concat: 4552168832
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 4517120256
+ id after concat: 4517120256
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1510,10 +1529,10 @@ Damit wird <code class="docutils literal notranslate"><span class="pre">list1</s
 </div>
 </div>
 <div class="section" id="tiefe-und-flache-kopien">
-<span id="sec-copy-of-ds"></span><h2><span class="section-number">4.5.7. </span>Tiefe und flache Kopien<a class="headerlink" href="#tiefe-und-flache-kopien" title="Permalink to this headline">¶</a></h2>
+<span id="sec-copy-of-ds"></span><h2><span class="section-number">4.5.7. </span>Tiefe und flache Kopien<a class="headerlink" href="#tiefe-und-flache-kopien" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wir müssen uns noch einmal dem wichtigen Unterschied zwischen <a class="reference internal" href="../03-3/1-variables.html#sec-vars-equality-and-identity"><span class="std std-ref">Identität und Gleichheit</span></a> widmen.</p>
 <div class="section" id="identitat-und-gleichheit">
-<h3><span class="section-number">4.5.7.1. </span>Identität und Gleichheit<a class="headerlink" href="#identitat-und-gleichheit" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.5.7.1. </span>Identität und Gleichheit<a class="headerlink" href="#identitat-und-gleichheit" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Wollen wir einen Wert einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> kopieren, so stellt sich die Frage:
 Sollen das Original <code class="docutils literal notranslate"><span class="pre">x</span></code> und die Kopie <code class="docutils literal notranslate"><span class="pre">y</span></code> <strong>gleich</strong> oder <strong>identisch</strong> sein?
 Ein Beispiel:</p>
@@ -1566,7 +1585,7 @@ Warum? Weil wir den Wert im Speicher eines <em>atomaren Datentyps</em> ohnehin n
 Egal auf welche Speicheradresse <code class="docutils literal notranslate"><span class="pre">y</span></code> im obigen Beispiel zeigt, solange ihr Wert den richtigen Wert <code class="docutils literal notranslate"><span class="pre">100_000</span></code> hat, kann nichts schief gehen.</p>
 <p>Diese Gleichgültigkeit ist wesentlich für die digitale Welt, welche ausschließlich aus <a class="reference internal" href="../02-1/2-representation.html#sec-representation"><span class="std std-ref">Repräsentanten</span></a> besteht.
 In der Realwelt macht es einen riesigen Unterschied ob sich, zum Beispiel, zwei Menschen ein Bett teilen – ob also ihr Bett identisch ist – oder ob sie das exakt gleiche Bett besitzen.
-Da auf dem digitalen Computer nur Repräsentanten existieren, welche auf etwas ‘Echtes’ verweisen, ergibt sich diese Gleichgültigkeit.
+Da auf dem digitalen Computer nur Repräsentanten existieren, welche auf etwas ‚Echtes‘ verweisen, ergibt sich diese Gleichgültigkeit.
 Um Speicherplatz zu sparen sind deshalb <em>flache Kopien</em> im Fall von <em>atomare Datentypen</em> besser geeignet.</p>
 <p>Anders als für <em>atomare Datentypen</em> ist es für <em>Datenstrukturen</em> ganz und gar nicht egal ob wir eine <em>flache</em> oder <em>tiefe Kopie</em> erzeugen.
 <a class="reference internal" href="1-data-types.html#def-data-structures"><span class="std std-ref">Datenstrukturen</span></a> sind Repräsentanten die andere Repräsentanten strukturieren.
@@ -1636,7 +1655,7 @@ value of y: [-20, 2, 3]
 Vergleichen Sie das obige Beispiel.</p>
 </div>
 <div class="section" id="datenstrukturen-kopieren">
-<h3><span class="section-number">4.5.7.2. </span>Datenstrukturen kopieren<a class="headerlink" href="#datenstrukturen-kopieren" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.5.7.2. </span>Datenstrukturen kopieren<a class="headerlink" href="#datenstrukturen-kopieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Für Datenstrukturen gibt es nicht nur die eine <em>flache Kopie</em>.
 Stattdessen kommt es ganz darauf an, wie tief wir Kopien anlegen.</p>
 <div class="python admonition" id="python-deep-copy-ds">
@@ -1671,13 +1690,13 @@ In diesem Fall macht es keinen Unterschied ob die <em>atomaren Datentypen</em> K
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers
-4511664432
-4511664464
-4511664496
+4475742512
+4475742544
+4475742576
 ids of numbers_shallow_copy
-4511664432
-4511664464
-4511664496
+4475742512
+4475742544
+4475742576
 </pre></div>
 </div>
 </div>
@@ -1712,8 +1731,8 @@ Nunja, die <strong>Adressen</strong></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4552693120
-4552693120
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4517536896
+4517536896
 </pre></div>
 </div>
 </div>
@@ -1752,14 +1771,14 @@ Anders ausgedrückt: Sie müssen alle <em>Kinder</em> der Datenstruktur kopieren
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers:
-4511664432
-4511664464
-4552709824
+4475742512
+4475742544
+4517553600
 
 ids of numbers_deep_copy:
-4511664432
-4511664464
-4552711360
+4475742512
+4475742544
+4517555072
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]]
@@ -1783,14 +1802,14 @@ Wie sieht es mit den Adressen der Elemente des Kindes aus?:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of mylist[2]
-4513273840
-4512708464
-4512416624
+4477351920
+4476786544
+4476494704
 
 ids of mylist_deep_copy[2]
-4513273840
-4512708464
-4512416624
+4477351920
+4476786544
+4476494704
 </pre></div>
 </div>
 </div>
@@ -1884,9 +1903,9 @@ deep copy: [1, 2, [3, [4, 5]]]
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

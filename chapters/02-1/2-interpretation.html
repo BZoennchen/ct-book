@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="2.3. Repräsentationen" href="2-representation.html" />
     <link rel="prev" title="2.1. Grundlagen" href="1-basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,7 +793,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -800,21 +801,39 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/02-1/2-interpretation.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-1/2-interpretation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-1/2-interpretation.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -825,7 +844,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -861,13 +880,13 @@
               <div>
                 
   <div class="section" id="interpretation">
-<span id="sec-interpretation"></span><h1><span class="section-number">2.2. </span>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this headline">¶</a></h1>
+<span id="sec-interpretation"></span><h1><span class="section-number">2.2. </span>Interpretation<a class="headerlink" href="#interpretation" title="Link zu dieser Überschrift">¶</a></h1>
 <p>In diesem Abschnitt unternehmen wir einen Versuch die Begriffe <strong>Interpretation</strong>, <strong>Repräsentation</strong>, <strong>Bedeutung</strong>, <strong>Semantik</strong> und <strong>Syntax</strong> zu erklären.
 Dadurch möchten wir ein theoretisches Fundament vorausschicken.
 Danach folgen im Abschnitt <a class="reference internal" href="2-representation.html#sec-representation"><span class="std std-ref">Repräsentation</span></a> verschiedene wichtige Beispiele, die verdeutlichen wie der Computer Information interpretiert und repräsentiert.
 Es mag für viele Leser sinnvoll sein mit den Beispielen zu starten, um danach die theoretische Diskussion besser nachvollziehen zu können.</p>
 <div class="section" id="der-mensch">
-<h2><span class="section-number">2.2.1. </span>Der Mensch<a class="headerlink" href="#der-mensch" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.1. </span>Der Mensch<a class="headerlink" href="#der-mensch" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wenn Sie mit einem Bleistift einen Apfel auf ein Blatt Papier zeichnen, was stellt Ihre Zeichnung dar?
 Physikalisch betrachtet befindet sich auf dem Blatt eine Menge von kleinen Graphitpartikeln.
 Diese sind in einer gewissen Weise angeordnet.</p>
@@ -911,7 +930,7 @@ Zum Beispiel haben folgende Wörter eine doppelte Bedeutung.</p>
 </ul>
 </div>
 <div class="section" id="der-computer">
-<h2><span class="section-number">2.2.2. </span>Der Computer<a class="headerlink" href="#der-computer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.2. </span>Der Computer<a class="headerlink" href="#der-computer" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Der Computer und seine Bestandteile (Hardware und Software) interpretieren anstelle von Zeichnungen, Folgen von <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Bytes</span></a> in einer von uns Menschen vordefinierten Art und Weise.
 Im Zusammenhang mit dem Computer sind <strong>Bedeutung</strong> <span class="math notranslate nohighlight">\(B\)</span> und <strong>Repräsentation</strong> <span class="math notranslate nohighlight">\(R\)</span> Mengen, wohingegen die <strong>Interpretation</strong> <span class="math notranslate nohighlight">\(I\)</span> eine Funktion ist.</p>
 <div class="definition admonition" id="def-interpretation">
@@ -952,7 +971,7 @@ In den obigen Beispielen repräsentiert die Bitfolge <code class="docutils liter
 </div>
 <p>Die Computerhardware (alle Bauteile) kann schlussendlich nur <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Bytes</span></a> verarbeiten.
 Jede Hardwarekomponente verwendet eine bestimmte Interpretation, welche auf der Repräsentation der <a class="reference internal" href="2-representation.html#sec-binary-system"><span class="std std-ref">Binärzahlen</span></a> basiert.
-Diese Interpretation wurde den Komponenten von uns Menschen ‘beigebracht’.</p>
+Diese Interpretation wurde den Komponenten von uns Menschen ‚beigebracht‘.</p>
 <p>Ein Monitor interpretiert die Bitfolgen als Pixelintensitäten (wie stark und in welcher Farbe leuchtet jeweils der Pixel), ein Addierer interpretiert Bitfolgen als Zahlen, ein Mikrofon interpretiert Bitfolgen als Amplitudenwerte.</p>
 <p>Software basiert auf dem gleichen Verständnis, denn Hardware ist Software realisiert durch Bauteile (siehe Abschnitt <a class="reference internal" href="5-hardware-equals-software.html#sec-computability"><span class="std std-ref">Berechenbarkeit</span></a>).
 Öffnen Sie ein Bild in einem Texteditor, so sehen Sie die Interpretation des Bildes ihres Texteditors.
@@ -965,7 +984,7 @@ Damit Sie den Buchstaben angezeigt bekommen, erhält der Monitor eine Bitfolge, 
 Am Ende der Kette sitzen wir vor dem Rechner und interpretieren diese Pixelintensitäten als den eben getippten Buchstaben.</p>
 </div>
 <div class="section" id="interpreter-und-compiler">
-<h2><span class="section-number">2.2.3. </span>Interpreter und Compiler<a class="headerlink" href="#interpreter-und-compiler" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.3. </span>Interpreter und Compiler<a class="headerlink" href="#interpreter-und-compiler" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Programmcode ist Text den der Computer als Anweisungen interpretiert.
 Wie aber soll das funktionieren, wenn die Hardware doch nur <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Bytes</span></a> verarbeiten kann?
 Wie im obigen Beispiel des Textverarbeitungsprogramms hindert uns niemand Text zu schreiben, welcher dann in Binärcode durch eine Interpretation umgewandelt wird.
@@ -1018,7 +1037,7 @@ Dafür ist er für die Anwender*innen weniger flexibel, denn diese müssen ihm i
 </div>
 </div>
 <div class="section" id="der-interpretierende-computer">
-<h2><span class="section-number">2.2.4. </span>Der interpretierende Computer?<a class="headerlink" href="#der-interpretierende-computer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.4. </span>Der interpretierende Computer?<a class="headerlink" href="#der-interpretierende-computer" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Unsere hier präsentierten Definitionen für <a class="reference internal" href="#def-semantik"><span class="std std-ref">Semantik</span></a> und <a class="reference internal" href="#def-syntax"><span class="std std-ref">Syntax</span></a> stammen aus der Informatik und stimmen nicht notwendigerweise mit den Definitionen aus anderen Bereichen der Wissenschaft überein.
 Auch müssen wir uns fragen ob sich der Interpreter in Form des Bleistifts, den wir als Werkzeug verwenden, und in Form des Menschen, der den Apfel erkennt, nicht fundamental unterscheiden.
 Der Stift ist lediglich ein verlängerter Arm des Zeichners.
@@ -1027,17 +1046,17 @@ Der Mensch hingegen, der die Graphitteilchen als Apfel interpretiert, ist ein de
 Wir haben auch behauptet, dass Computer ihre Interpretationen von uns Menschen diktiert bekommen.</p>
 <p>Es ergeben sich hierbei spannende Fragen aus dem Bereich der künstlichen Intelligenz und Philosophie:</p>
 <blockquote>
-<div><p>Ist der Computer im wesentlichen ein ‘besserer’ Bleistift ohne Intelligenz und Bewusstsein?</p>
+<div><p>Ist der Computer im wesentlichen ein ‚besserer‘ Bleistift ohne Intelligenz und Bewusstsein?</p>
 </div></blockquote>
 <blockquote>
 <div><p>Kann sich ein Computer eigene Interpretationen seiner digitalen Welt erschließen?</p>
 </div></blockquote>
 <p>Natürlich könnten wir die Frage auch umkehren und uns dem Menschen zuwenden:</p>
 <blockquote>
-<div><p>Ist der Mensch im wesentlichen ein ‘besserer’ Bleistift?</p>
+<div><p>Ist der Mensch im wesentlichen ein ‚besserer‘ Bleistift?</p>
 </div></blockquote>
 <p>Bisher besteht Zweifel daran, dass Computer jemals eine eigene Interpretation hervorbringen.
-Streng genommen ist es diskussionswürdig, ob Computer überhaupt irgendeine Bedeutung (<a class="reference internal" href="#def-semantik"><span class="std std-ref">Semantik</span></a>) ‘kennen’.
+Streng genommen ist es diskussionswürdig, ob Computer überhaupt irgendeine Bedeutung (<a class="reference internal" href="#def-semantik"><span class="std std-ref">Semantik</span></a>) ‚kennen‘.
 Anders ausgedrückt müssen wir uns fragen ob sie nicht doch nur bloße Transformatoren von Zeichen auf einer rein <a class="reference internal" href="#def-syntax"><span class="std std-ref">syntaktischen</span></a> Ebene sind – ganz so wie der Bleistift.
 Und wenn dem so ist, was muss getan werden um dies zu ändern?</p>
 <p>Im Kapitel <a class="reference internal" href="../02-2/information.html#sec-information"><span class="std std-ref">Was ist Information</span></a> schließen wir an diese Diskussion an, indem wir den Informationsbegriff aus verschiedenen Richtungen kritisch betrachten.</p>
@@ -1080,9 +1099,9 @@ Und wenn dem so ist, was muss getan werden um dies zu ändern?</p>
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>

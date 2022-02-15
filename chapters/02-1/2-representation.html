@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -55,8 +56,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="2.4. Manipulation" href="3-manipulation.html" />
     <link rel="prev" title="2.2. Interpretation" href="2-interpretation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,7 +78,7 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../../_static/logo-HM.png" class="logo" alt="logo">
+      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Thinking</h1>
@@ -85,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -764,7 +765,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -783,8 +784,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -792,32 +793,50 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
             href="../../_sources/chapters/02-1/2-representation.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/chapters/02-1/2-representation.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-1/2-representation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-1/2-representation.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -828,7 +847,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/02-1/2-representation.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -836,7 +855,7 @@
         
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -848,7 +867,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Inhalt
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
@@ -918,10 +937,10 @@
               <div>
                 
   <div class="section" id="reprasentationen">
-<span id="sec-representation"></span><h1><span class="section-number">2.3. </span>Repräsentationen<a class="headerlink" href="#reprasentationen" title="Permalink to this headline">¶</a></h1>
+<span id="sec-representation"></span><h1><span class="section-number">2.3. </span>Repräsentationen<a class="headerlink" href="#reprasentationen" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Bevor wir genauer darauf eingehen wie der Informationskreislauf vollzogen wird, müssen wir uns ansehen wie Computer unterschiedliche Arten von Information (<a class="reference internal" href="#representation-text"><span class="std std-ref">Text</span></a>, <a class="reference internal" href="#representation-sound"><span class="std std-ref">Ton</span></a>, <a class="reference internal" href="#representation-pictures"><span class="std std-ref">Bild</span></a>, usw.) repräsentieren.</p>
 <div class="section" id="das-binarsystem">
-<span id="sec-binary-system"></span><h2><span class="section-number">2.3.1. </span>Das Binärsystem<a class="headerlink" href="#das-binarsystem" title="Permalink to this headline">¶</a></h2>
+<span id="sec-binary-system"></span><h2><span class="section-number">2.3.1. </span>Das Binärsystem<a class="headerlink" href="#das-binarsystem" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Computer arbeiten auf der Basis von zwei Zuständen (0 und 1).
 Man kann sagen sie sprechen die Binärsprache.
 Da die kleinste Informationseinheit, das <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a>, nur zwei Zustände annehmen kann, sind die Operationen äußerst simpel.
@@ -936,7 +955,7 @@ Stellen wir uns eine Lampe vor, die zwei Zustände hat.
 Entweder die Lampe ist aus (0) oder sie ist an (1).</p>
 <div class="figure align-default" id="fig-lamps">
 <a class="reference internal image-reference" href="../../_images/lamps.png"><img alt="../../_images/lamps.png" src="../../_images/lamps.png" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Eine Lampe die entweder aus (links) oder an (rechts) geschaltet sein kann.</span><a class="headerlink" href="#fig-lamps" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 2.1 </span><span class="caption-text">Eine Lampe die entweder aus (links) oder an (rechts) geschaltet sein kann.</span><a class="headerlink" href="#fig-lamps" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Entweder es <strong>fließt Strom hindurch</strong>, was dem Zustand 1 entspricht, oder es <strong>fließt kein Strom hindurch</strong>, was den Zustand 0 darstellt.</p>
 <p>Natürlich könnte man mehr Zustände darstellen indem man misst wie viel Strom fließt oder wie viel Spannung angesetzt ist.
@@ -987,7 +1006,7 @@ Dieser exponentieller Anstieg ist enorm wichtig.
 Ohne diese Eigenschaft würden die Speicher der Computer sehr schnell volllaufen.</p>
 <div class="figure align-default" id="fig-lamps-example">
 <a class="reference internal image-reference" href="../../_images/lamps-example.png"><img alt="../../_images/lamps-example.png" src="../../_images/lamps-example.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Zwei der <span class="math notranslate nohighlight">\(2^8 = 256\)</span> möglichen Zustände von acht Lampen.</span><a class="headerlink" href="#fig-lamps-example" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 2.2 </span><span class="caption-text">Zwei der <span class="math notranslate nohighlight">\(2^8 = 256\)</span> möglichen Zustände von acht Lampen.</span><a class="headerlink" href="#fig-lamps-example" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Weshalb verwenden wir aber kein Zahlensystem mit drei oder mehr Zuständen?
 Wie oben erwähnt ist es aus technischer Sicht bisher deutlich einfacher und effizienter mit nur zwei Zuständen zu arbeiten.
@@ -1025,7 +1044,7 @@ Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingege
 </div>
 </div>
 <div class="section" id="zahlen-im-binarsystem">
-<span id="sec-binary-numbers"></span><h2><span class="section-number">2.3.2. </span>Zahlen im Binärsystem<a class="headerlink" href="#zahlen-im-binarsystem" title="Permalink to this headline">¶</a></h2>
+<span id="sec-binary-numbers"></span><h2><span class="section-number">2.3.2. </span>Zahlen im Binärsystem<a class="headerlink" href="#zahlen-im-binarsystem" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Werfen wir einen genaueren Blick aufs <em>Binärsystem</em> oder auch <em>binäre Zahlensystem</em>.
 Um Zahlen mit <strong>Strom an</strong> und <strong>Strom aus</strong>, also den zwei Zuständen einer Lampe/Transistors/<em>Bit</em> zu repräsentieren, verwenden Computer das <em>Binärsystem</em>.</p>
 <div class="remark admonition" id="remark-number-systems-notation">
@@ -1034,7 +1053,7 @@ Um Zahlen mit <strong>Strom an</strong> und <strong>Strom aus</strong>, also den
 und eine Zahl <span class="math notranslate nohighlight">\(b\)</span> in der Binärdarstellung durch <span class="math notranslate nohighlight">\(b_2\)</span>.</p>
 </div>
 <div class="section" id="naturliche-zahlen">
-<h3><span class="section-number">2.3.2.1. </span>Natürliche Zahlen<a class="headerlink" href="#naturliche-zahlen" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.2.1. </span>Natürliche Zahlen<a class="headerlink" href="#naturliche-zahlen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>In dem für Sie intuitiven <em>Dezimalsystem</em> schreiben wir eine Zahl mit den Ziffern <span class="math notranslate nohighlight">\(0, 1, 2, 4, 5, 6, 7, 8, 9\)</span> und verwenden eine Basis von <span class="math notranslate nohighlight">\(10\)</span>.
 Zum Beispiel ist <span class="math notranslate nohighlight">\(1871\)</span> gleich</p>
 <div class="math notranslate nohighlight">
@@ -1173,7 +1192,7 @@ Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
 </div>
 </div>
 <div class="section" id="ganze-zahlen">
-<span id="sec-integers"></span><h3><span class="section-number">2.3.2.2. </span>Ganze Zahlen<a class="headerlink" href="#ganze-zahlen" title="Permalink to this headline">¶</a></h3>
+<span id="sec-integers"></span><h3><span class="section-number">2.3.2.2. </span>Ganze Zahlen<a class="headerlink" href="#ganze-zahlen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Uns steht kein Minus- oder Pluszeichen zur Verfügung.
 Alles was der Computer kennt sind Bits und Bytes.
 Wollen wir also anstatt der natürlichen Zahlen die ganzen Zahlen repräsentieren, müssen wir das Vorzeichen irgendwie codieren.</p>
@@ -1253,7 +1272,7 @@ Alle höheren Bits bleiben unberührt:</p>
 Und da wir jede <strong>ganze Zahl</strong> als Binärzahl, also als Folge von <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> darstellen können, können wir all das, was wir durch Zahlen repräsentieren können, auch durch <strong>Strom an</strong> und <strong>Strom aus</strong> endlich vieler Lampen repräsentieren.</p>
 </div>
 <div class="section" id="addieren-und-subtrahieren">
-<h3><span class="section-number">2.3.2.3. </span>Addieren (und Subtrahieren)<a class="headerlink" href="#addieren-und-subtrahieren" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.2.3. </span>Addieren (und Subtrahieren)<a class="headerlink" href="#addieren-und-subtrahieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Im folgenden Abschnitt repräsentieren alle Zahlen in Binärdarstellung <strong>ganze Zahlen</strong>.
 Um mit dem <em>Zweierkomplement</em> rechnen zu können müssen wir die Anzahl der Bits fixieren, das heißt, alle Zahlen der Rechnung werden durch gleich viele Bits repräsentiert.
 Verwenden wir <span class="math notranslate nohighlight">\(5\)</span> Bits so ist <span class="math notranslate nohighlight">\(00011_2 = 3_{10}\)</span> und <span class="math notranslate nohighlight">\(10011_2 = - 13\)</span>.
@@ -1334,7 +1353,7 @@ Subtrahieren wir beispielsweise die Zahl <span class="math notranslate nohighlig
 </div>
 </div>
 <div class="section" id="text">
-<span id="representation-text"></span><h2><span class="section-number">2.3.3. </span>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<span id="representation-text"></span><h2><span class="section-number">2.3.3. </span>Text<a class="headerlink" href="#text" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wollen wir die Buchstaben des Alphabets in Binärdarstellung schreiben, so müssen wir uns darauf einigen welche Binärzahl welchen Buchstaben repräsentiert.
 Zum Beispiel könnten wir folgende Zuordnung verwenden:</p>
 <table class="colwidths-auto table">
@@ -1403,16 +1422,16 @@ In unserem Beispiel benötigt jeder Buchstabe 5 Bits.
 D.h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen wir die Bauteile für mindestens 1500 Bits was wiederum 187.5 Bytes bzw. 0.1875 <a class="reference external" href="https://en.wikipedia.org/wiki/Kilobyte">kiloByte</a> (kB) (<span class="math notranslate nohighlight">\(10^3\)</span> Byte) und ca. 0.1831 <a class="reference external" href="https://en.wikipedia.org/wiki/Kilobyte">kibiByte</a> (KB/KiB) (<span class="math notranslate nohighlight">\(2^{10}\)</span> Byte) sind.</p>
 </div>
 <div class="section" id="bilder">
-<span id="representation-pictures"></span><h2><span class="section-number">2.3.4. </span>Bilder<a class="headerlink" href="#bilder" title="Permalink to this headline">¶</a></h2>
+<span id="representation-pictures"></span><h2><span class="section-number">2.3.4. </span>Bilder<a class="headerlink" href="#bilder" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="rastergrafiken">
-<span id="pixel-image"></span><h3><span class="section-number">2.3.4.1. </span>Rastergrafiken<a class="headerlink" href="#rastergrafiken" title="Permalink to this headline">¶</a></h3>
+<span id="pixel-image"></span><h3><span class="section-number">2.3.4.1. </span>Rastergrafiken<a class="headerlink" href="#rastergrafiken" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Bilder, Videos und Grafiken in, z.B. Computerspielen, bestehen aus winzig kleinen quadratischen Pixeln.
 Jeder Pixel hat eine bestimmte Farbe.
 Wir nennen diese Grafiken auch <em>Rastergrafiken</em>.
 Farben werden wiederum durch Zahlen repräsentiert.</p>
 <div class="figure align-default" id="fig-pixel-image">
 <a class="reference internal image-reference" href="../../_images/pixel-image.png"><img alt="../../_images/pixel-image.png" src="../../_images/pixel-image.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Transformation eines Bildes in <em>Bytes</em> bzw. <em>Bits</em>.</span><a class="headerlink" href="#fig-pixel-image" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 2.3 </span><span class="caption-text">Transformation eines Bildes in <em>Bytes</em> bzw. <em>Bits</em>.</span><a class="headerlink" href="#fig-pixel-image" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Eine gängige Möglichkeit ist es eine Farbe durch den Anteil von Rot, Grün und Blau (RGB) zu definieren.
 Somit wird ein Pixel durch drei Zahlen repräsentiert und es ist üblich <span class="math notranslate nohighlight">\(256\)</span> Rot-, Blau- und Grün- Intensitäten zu verwenden.
@@ -1437,7 +1456,7 @@ Damit wird klar, dass eine enorme Datenmenge entsteht und es verwundert nicht, d
 Ist die Auflösung hoch, folgt daraus wiederum ein großer Energieverbrauch den die Video-Streamingdienste verursachen.</p>
 </div>
 <div class="section" id="vektorgrafiken">
-<h3><span class="section-number">2.3.4.2. </span>Vektorgrafiken<a class="headerlink" href="#vektorgrafiken" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.4.2. </span>Vektorgrafiken<a class="headerlink" href="#vektorgrafiken" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Eine weitere sehr interessante Technik ist es ein Bild durch einfache geometrische Objekte zu <strong>beschreiben</strong>.
 Zum Beispiel könnten wir ein Bild durch folgende Zeichenanweisungen beschreiben:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Color</span><span class="p">(</span><span class="mi">253</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>            <span class="c1"># Wähle Pinsel mit Farbe (253,10,10)</span>
@@ -1446,7 +1465,7 @@ Zum Beispiel könnten wir ein Bild durch folgende Zeichenanweisungen beschreiben
 </pre></div>
 </div>
 <p>Was so viel bedeutet wie Zeichne ein Rechteck von <span class="math notranslate nohighlight">\((0,0)\)</span> bis <span class="math notranslate nohighlight">\((100,100)\)</span> und eine Linie definiert durch <span class="math notranslate nohighlight">\((1,1)\)</span> und <span class="math notranslate nohighlight">\((99,99)\)</span> in einer rötlichen Farbe.</p>
-<p>Anstatt des ‘fertigen’ Bildes, speichern wir eine Vorschrift bzw. einen <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a>, der angibt wie dieses Bild gezeichnet wird.
+<p>Anstatt des ‚fertigen‘ Bildes, speichern wir eine Vorschrift bzw. einen <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a>, der angibt wie dieses Bild gezeichnet wird.
 Diese Vorschrift wird in Binärcode umgewandelt und ein Programm, was solch eine Vorschrift lesen bzw. einen solchen Algorithmus ausführen kann, kümmert sich um die Umwandlung in eine <em>Rastergrafik</em>.</p>
 <p>Diese Bilder sind sog. <em>Vektorgrafiken</em>.
 Der Vorteil der <em>Vektorgrafik</em> ist, dass die Beschreibung eine analoge/verlustfreie Beschreibung ist und die Digitalisierung (Verpixelung/Rasterisierung) des Bildes dynamisch, jedesmal wenn das Bild angezeigt wird, vollzogen wird.
@@ -1484,7 +1503,7 @@ Wir verringern somit den verbrauchten Speicherplatz auf Kosten der Rechenzeit.</
 </div>
 </div>
 <div class="section" id="ton">
-<span id="representation-sound"></span><h2><span class="section-number">2.3.5. </span>Ton<a class="headerlink" href="#ton" title="Permalink to this headline">¶</a></h2>
+<span id="representation-sound"></span><h2><span class="section-number">2.3.5. </span>Ton<a class="headerlink" href="#ton" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Ton entsteht durch Vibration der Luft.
 Unser Ohr erkennt die oszillierende Druckveränderung und es entsteht Ton.
 Die Oszillation lässt sich als periodische Funktion über die Zeit darstellen.
@@ -1496,9 +1515,9 @@ Dazu werten wir die Funktion an endlich vielen Stellen <span class="math notrans
 Je mehr <em>Samples</em> wir pro Sekunde machen und je genauer wir die Amplitude an den Samplepunkten treffen, desto genauer wird unsere eigentliche Funktion <span class="math notranslate nohighlight">\(f(t)\)</span> angenähert.</p>
 <div class="figure align-default" id="fig-sound-wave">
 <a class="reference internal image-reference" href="../../_images/sound-wave.png"><img alt="../../_images/sound-wave.png" src="../../_images/sound-wave.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Transformation des analogen Tons in digitale Samples.
+<p class="caption"><span class="caption-number">Abb. 2.4 </span><span class="caption-text">Transformation des analogen Tons in digitale Samples.
 Links das analoge Signal und rechts die Samples.
-Erst erhöhen wir die Bit-Tiefe (zweite Zeile), dann die Sample-Rate (dritte Zeile).</span><a class="headerlink" href="#fig-sound-wave" title="Permalink to this image">¶</a></p>
+Erst erhöhen wir die Bit-Tiefe (zweite Zeile), dann die Sample-Rate (dritte Zeile).</span><a class="headerlink" href="#fig-sound-wave" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Ton wird also als Folge von Zahlen repräsentiert.
 Diese Folge transformieren Lautsprecher in Vibration und damit in Ton.
@@ -1621,9 +1640,9 @@ Das kostet uns nur wenige <em>Bits</em>.</p>
     <div class="container">
       <p>
         
-          By Benedikt Zönnchen, Sarah Ottinger, Martin Hobelsberger<br/>
-        
-            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>d, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+          </div>
       </p>
     </div>
   </footer>
