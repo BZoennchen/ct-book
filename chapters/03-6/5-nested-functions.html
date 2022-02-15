@@ -877,7 +877,7 @@
 <p>Eine <em>umschlossene Funktion</em> ist eine Funktion, welche innerhalb einer anderen Funktion definiert wurde.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
@@ -887,13 +887,18 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62
+</pre></div>
+</div>
+</div>
 </div>
 <p>Sie werden vermutlich nur selten in die Verlegenheit kommen eine <em>umschlossene Funktion</em> zu verwenden.
 Dennoch, in manchen Fällen kann dies sinnvoll sein um zum Beispiel doppelten Code zu reduzieren.</p>
 <p>Spezieller wird es, wenn wir diese <em>umschlossene Funktion</em> zurückgeben und nach der Abarbeitung der <em>umschließenden Funktion</em> weiter verwenden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">z</span>
@@ -901,6 +906,11 @@ Dennoch, in manchen Fällen kann dies sinnvoll sein um zum Beispiel doppelten Co
 
 <span class="n">func</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45
 </pre></div>
 </div>
 </div>

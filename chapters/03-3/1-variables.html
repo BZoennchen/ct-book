@@ -935,7 +935,7 @@ So können wir uns Zwischenergebnisse merken und damit weiter rechnen.</p>
 Zum Beispiel, weist</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
@@ -947,7 +947,7 @@ Es ist äußerst wichtig, dass die den zwischen dem <code class="docutils litera
 <p>bedeutet, dass <span class="math notranslate nohighlight">\(x\)</span> gleich <span class="math notranslate nohighlight">\(13\)</span> ist, wohingegen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">13</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">13</span>
 </pre></div>
 </div>
 </div>
@@ -960,7 +960,7 @@ Um das mathematisch auszurücken verwendet man oft <span class="math notranslate
 Mit</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 </div>
@@ -968,7 +968,17 @@ Mit</p>
 <p>weisen wir <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">None</span></code> d.h. ‚Nichts‘ zu. Doch ist dieses ‚Nichts‘ nicht nichts ;). Versuchen wir eine <em>Variable</em> zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">4</span><span class="n">f5acf813e7b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
+
+<span class="ne">NameError</span>: name &#39;v&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -999,7 +1009,7 @@ In <code class="docutils literal notranslate"><span class="pre">Python</span></c
 <p>Mit</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
 </pre></div>
 </div>
 </div>
@@ -1014,10 +1024,16 @@ Folgende Abbildung verdeutlicht die Situation:</p>
 <p>Mit der <em>built-in</em>-Funktion <code class="docutils literal notranslate"><span class="pre">id</span></code> können Sie sich eine Identifikationsnummer einer Variablen ausgeben lassen. Für zwei <em>Variablen</em> ist diese genau dann gleich, wenn deren <strong>Arbeitsspeicheradressen</strong> gleich sind.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4474416176
+4474416176
 </pre></div>
 </div>
 </div>
@@ -1041,10 +1057,16 @@ Diese Situation sieht demnach wie folgt aus:</p>
 Wir als Programmierer*innen bekommen davon gar nichts mit. Verändern wir den Wert von <code class="docutils literal notranslate"><span class="pre">z</span></code> dann verändert sich auch deren <code class="docutils literal notranslate"><span class="pre">id</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">24</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4474416176
+4474416144
 </pre></div>
 </div>
 </div>
@@ -1070,10 +1092,16 @@ Das heißt aus</p>
 <p>Ein Beispiel für zwei Variablen mit gleichem Wert und unterschiedlicher Identität ist leicht konstruiert:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2131313</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2131313</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">2131313</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4514696528
+4514696336
 </pre></div>
 </div>
 </div>
@@ -1087,7 +1115,7 @@ Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten
 <p>Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1096,16 +1124,26 @@ Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>257
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wie sieht es mit negativen Zahlen aus?:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-6
 </pre></div>
 </div>
 </div>
@@ -1132,7 +1170,7 @@ Das Ursprungsobjekt bleibt <em>unverändert</em>.</p>
 Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird dieser <strong>Wert</strong> in den Speicher an eine freie <strong>Adresse</strong> geschrieben und die <strong>Adresse</strong> der Variablen auf jene neue <strong>Adresse</strong> gesetzt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">half</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">half</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of half = </span><span class="si">{</span><span class="n">half</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of half = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">half</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
@@ -1146,6 +1184,16 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
+id of half = 4514696272
+value of x = 25
+id of x = 4474416176
+value of x = 24
+id of x = 4474416144
+</pre></div>
+</div>
+</div>
 </div>
 <div class="theorem admonition" id="theorem-change-of-variable">
 <p class="admonition-title">Adressänderung</p>
@@ -1153,8 +1201,14 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of half = </span><span class="si">{</span><span class="n">half</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of half = </span><span class="si">{</span><span class="n">half</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of half = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">half</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
+id of half = 4514696272
 </pre></div>
 </div>
 </div>
@@ -1166,7 +1220,7 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 <p>Weisen wir einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> eine andere Variable <code class="docutils literal notranslate"><span class="pre">y</span></code> zu, so ändern wir die <strong>Adresse</strong> von <code class="docutils literal notranslate"><span class="pre">x</span></code> auf jene von <code class="docutils literal notranslate"><span class="pre">y</span></code>. Das heißt, nach der <em>Zuweisung</em> zeigen beide Variablen auf den gleichen Speicherbereich und damit auf den gleichen <strong>Wert</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2131313</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2131313</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">2131313</span>
 
@@ -1181,10 +1235,20 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
+id of x = 4515996208
+value of y = 10
+id of y = 4474415696
+value of z = 2131313
+id of z = 4515996528
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -1197,6 +1261,16 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
+id of x = 4515996208
+value of y = 2131313
+id of y = 4515996208
+value of z = 2131313
+id of z = 4515996528
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="seiteneffekte">
@@ -1206,8 +1280,13 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 <p>Eine Variable kann nicht nur einen einzelnen atomaren <strong>Wert</strong> wie eine Zahl enthalten, sondern auch einen <strong>Wert</strong> der sich aus anderen <strong>Werten</strong> zusammensetzt. Zum Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
 </pre></div>
 </div>
 </div>
@@ -1217,7 +1296,12 @@ In unserem Fall besteht die Liste und somit <code class="docutils literal notran
 Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir seinen Index. Zum Beispiel liefert uns der Index <code class="docutils literal notranslate"><span class="pre">1</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -1225,7 +1309,12 @@ Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir
 <p>Wie sieht das nun im Speicher aus??? Welche Adresse hat <code class="docutils literal notranslate"><span class="pre">x</span></code> und wie sieht der Speicher an der Adresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> aus? Der Aufruf</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4514545280
 </pre></div>
 </div>
 </div>
@@ -1233,7 +1322,12 @@ Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir
 <p>Liefert uns eine <code class="docutils literal notranslate"><span class="pre">id</span></code>, allerdings lieft uns der Aufruf</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4474415440
 </pre></div>
 </div>
 </div>
@@ -1241,7 +1335,12 @@ Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir
 <p>ebenfalls eine (andere) <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4474415472
 </pre></div>
 </div>
 </div>
@@ -1254,7 +1353,7 @@ Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir
 <p>Was aber passiert mit <code class="docutils literal notranslate"><span class="pre">x</span></code> wenn wir eines seiner Listenelemente verändern? Hier wird es spannend:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;id of x = </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value of x[1] = </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -1271,18 +1370,37 @@ Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = [1, 2, 3, 4, 5]
+id of x = 4514545280
+value of x[1] = 2
+id of x[1] = 4474415440
+
+value of x = [1, -10, 3, 4, 5]
+id of x = 4514545280
+value of x[1] = -10
+id of x[1] = 4515996592
+</pre></div>
+</div>
+</div>
 </div>
 <p>Die Adresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> ändert sich nicht!!! Es ändert sich nur die Adresse von <code class="docutils literal notranslate"><span class="pre">x[1]</span></code>!!! Mit anderen Worten durch die <em>Zuweisung</em> von <code class="docutils literal notranslate"><span class="pre">x[1]</span> <span class="pre">=</span> <span class="pre">-10</span></code> wird keine neue Liste im Speicher angelegt sondern nur ein neues Element!</p>
 <p>Warum? Listen können groß werden und würden wir bei jeder Änderung eines Listenelements die gesamte Liste im Speicher kopieren, wäre das zu teuer was die Laufzeit angeht.</p>
 <p>Dieses Verhalten hat jedoch Konsequenzen! Folgender Code führt zur Veränderung des Wertes der Variablen <code class="docutils literal notranslate"><span class="pre">y</span></code> von <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">==</span> <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> nach <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">==</span> <span class="pre">[[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> obwohl wir nicht direkt mit <code class="docutils literal notranslate"><span class="pre">y</span></code> interagieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 
 <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+[[-10, 2, 3], [-10, 2, 3], [1, 2, 3]]
 </pre></div>
 </div>
 </div>
@@ -1302,7 +1420,7 @@ Dennoch besitzt die <em>Variable</em> einen Wert, eben den Wert <code class="doc
 <code class="docutils literal notranslate"><span class="pre">None</span></code> repräsentiert somit das Nichts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">z</span> <span class="o">+</span> <span class="mi">20</span>
 <span class="n">z</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">z</span>
@@ -1313,9 +1431,15 @@ Dennoch besitzt die <em>Variable</em> einen Wert, eben den Wert <code class="doc
 <p>Die Ausgabemechanik des Notebooks ignoriert <code class="docutils literal notranslate"><span class="pre">None</span></code>, jedoch können wir die <em>Variable</em> in eine Zeichenkette umwandeln und dann ausgeben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4472954064
+None
 </pre></div>
 </div>
 </div>

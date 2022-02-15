@@ -924,7 +924,7 @@ Wir könnten eine weitere <em>spezielle</em> <code class="docutils literal notra
 <p>Unsere Eltern-Klasse oder auch Basis-Klasse <code class="docutils literal notranslate"><span class="pre">Person</span></code> ist eine <strong>Abstraktion</strong> von <code class="docutils literal notranslate"><span class="pre">Student</span></code> und <code class="docutils literal notranslate"><span class="pre">Lecturer</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
@@ -945,7 +945,7 @@ Wir könnten eine weitere <em>spezielle</em> <code class="docutils literal notra
 <p>Die beiden Kind-Klassen <em>erben</em> von <code class="docutils literal notranslate"><span class="pre">Person</span></code> und sind weniger abstrakt bzw. konkretere Dinge oder Subjekte:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sid</span> <span class="o">=</span> <span class="n">sid</span>
@@ -1003,27 +1003,51 @@ Aus</p>
 <p>Lassen Sie uns ein Objekt von jeder Klasse erzeugen und die Methoden testen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Bene&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Bene&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
 <span class="n">person</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;3131&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
-<span class="n">student</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="mi">413</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name: Bene, age: 25
+My name is Bene.
+My age is: 25
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lecturer</span> <span class="o">=</span> <span class="n">Lecturer</span><span class="p">(</span><span class="s1">&#39;Huber&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="s1">&#39;Prof.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;3131&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+<span class="n">student</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="mi">413</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name: Anna, age: 22, sid: 3131
+My name is Anna.
+My age is: 22
+My id is: 3131
+My score is: 413
+I am a student.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lecturer</span> <span class="o">=</span> <span class="n">Lecturer</span><span class="p">(</span><span class="s1">&#39;Huber&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="s1">&#39;Prof.&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lecturer</span><span class="p">)</span>
 <span class="n">lecturer</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prof. Huber
+My name is Huber.
+My age is: 45
 </pre></div>
 </div>
 </div>
@@ -1032,7 +1056,7 @@ Aus</p>
 Der folgende Code hätte die gleiche Wirkung:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Lecturer</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Lecturer</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
@@ -1115,7 +1139,7 @@ Die Distanz ist negativ wenn sich der Punkt innerhalb des Kreises befindet.
 <code class="docutils literal notranslate"><span class="pre">contains</span></code> prüft ob sich ein Punkt innerhalb des Kreises befindet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">center</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__radius</span> <span class="o">=</span> <span class="n">radius</span>
@@ -1152,8 +1176,13 @@ Damit der Benutzer nicht mehr direkt auf die Attribute <code class="docutils lit
 Dadurch werden diese Attribute <em>privat</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>center: (0, 0), radius: 3, diameter: 6
 </pre></div>
 </div>
 </div>
@@ -1161,9 +1190,24 @@ Dadurch werden diese Attribute <em>privat</em>.</p>
 <p>Versuchen wir auf die geschützten Attribute zuzugreifen, erhalten wir einen Fehler:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">circle</span><span class="o">.</span><span class="n">__radius</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>center: (6, 6), radius: 3, diameter: 6
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="n">ba1ec09e2b6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">circle</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">circle</span><span class="o">.</span><span class="n">__radius</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;Circle&#39; object has no attribute &#39;__radius&#39;
 </pre></div>
 </div>
 </div>
@@ -1173,9 +1217,15 @@ Wir bezeichnen dieses Attribut als <em>privates</em> Attribut der Klasse.</p>
 <p>In der Klasse finden sich die Methoden <code class="docutils literal notranslate"><span class="pre">get_radius</span></code> und <code class="docutils literal notranslate"><span class="pre">set_radius</span></code> über die wir den Radius wiederum verändern und auf den Wert des Radius zugreifen können:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span><span class="o">.</span><span class="n">set_radius</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span><span class="o">.</span><span class="n">set_radius</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">circle</span><span class="o">.</span><span class="n">get_radius</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>center: (6, 6), radius: 10, diameter: 20
+10
 </pre></div>
 </div>
 </div>
@@ -1187,7 +1237,7 @@ Dies kann sinnvoll für Hilfsmethoden sein, die als solches, getrennt vom Aufruf
 Eine bessere Variante bietet folgender Code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">center</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__radius</span> <span class="o">=</span> <span class="n">radius</span>
@@ -1226,8 +1276,14 @@ Eine bessere Variante bietet folgender Code:</p>
 Der <code class="docutils literal notranslate"><span class="pre">+</span></code>-Operator angewendet auf ganzen Zahlen und Zeichenketten wäre ein solches Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3&#39;</span> <span class="o">+</span> <span class="s1">&#39;6&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+36
 </pre></div>
 </div>
 </div>
@@ -1241,7 +1297,7 @@ Deren konkrete Implementierung kann sich jedoch unterscheiden.</p>
 Da diese Funktion mit <code class="docutils literal notranslate"><span class="pre">Person</span></code> als Typ umgehen kann, kann sie auch mit den Typen <code class="docutils literal notranslate"><span class="pre">Lecturer</span></code> und <code class="docutils literal notranslate"><span class="pre">Student</span></code> umgehen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printName</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printName</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
 <span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;3131&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
@@ -1249,6 +1305,12 @@ Da diese Funktion mit <code class="docutils literal notranslate"><span class="pr
 
 <span class="n">printName</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
 <span class="n">printName</span><span class="p">(</span><span class="n">lecturer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anna
+Huber
 </pre></div>
 </div>
 </div>

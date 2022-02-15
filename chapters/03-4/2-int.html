@@ -885,9 +885,15 @@ Anders ausgedrückt: Nicht jede Zahl benötigt die gleiche Anzahl an Bits im Spe
 Solange Ihr Speicher nicht komplett belegt ist, können Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> somit mit sehr großen ganzen Zahlen rechnen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">100</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">100</span> 
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">large_number</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">large_number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 </pre></div>
 </div>
 </div>
@@ -896,18 +902,30 @@ Solange Ihr Speicher nicht komplett belegt ist, können Sie in <code class="docu
 Sobald eine Fließkommazahl ein Teil der Berechnung ist, ist das Ergebnis vom Typ <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mf">1.0</span>     <span class="c1"># int * float -&gt; float   </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mf">1.0</span>     <span class="c1"># int * float -&gt; float   </span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+3.0
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="mi">100</span>     <span class="c1"># float ** int -&gt; float  </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_number</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="mi">100</span>     <span class="c1"># float ** int -&gt; float  </span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">large_number</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">large_number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+1e+100
 </pre></div>
 </div>
 </div>
@@ -915,27 +933,45 @@ Sobald eine Fließkommazahl ein Teil der Berechnung ist, ist das Ergebnis vom Ty
 <p>Auch für die ganzzahligen Division <code class="docutils literal notranslate"><span class="pre">//</span></code> erhalten wir als Datentyp eine Fließkommazahl sofern eine Fließkommazahl bei der Operation teilnimmt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">//</span> <span class="mi">2</span>     <span class="c1"># float // int -&gt; float   </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">//</span> <span class="mi">2</span>     <span class="c1"># float // int -&gt; float   </span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+1.0
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">//</span> <span class="mf">2.0</span>     <span class="c1"># int // float -&gt; float   </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">//</span> <span class="mf">2.0</span>     <span class="c1"># int // float -&gt; float   </span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+1.0
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span>     <span class="c1"># int // int -&gt; int   </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span>     <span class="c1"># int // int -&gt; int   </span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+1
 </pre></div>
 </div>
 </div>
