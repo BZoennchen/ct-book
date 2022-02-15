@@ -950,7 +950,7 @@ Wir definieren eine Methode <code class="docutils literal notranslate"><span cla
 Alle Attribute bis auf <code class="docutils literal notranslate"><span class="pre">type</span></code> werden bei der Objekterzeugung übergeben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sid</span> <span class="o">=</span> <span class="n">sid</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -968,7 +968,7 @@ Für Methoden gilt diese Regel ebenso.
 Lassen Sie uns dies veranschaulichen, indem wir unsere Klasse um eine weitere Methode <code class="docutils literal notranslate"><span class="pre">report</span></code> erweitern.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sid</span> <span class="o">=</span> <span class="n">sid</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -1015,7 +1015,7 @@ Diesen haben wir mit der Nachricht <code class="docutils literal notranslate"><s
 <p>Auch im folgenden Beispiel können wir Methodenaufrufe als Anweisungen oder Nachrichten die an das Objekt gesendet werden verstehen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;001&quot;</span><span class="p">,</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;001&quot;</span><span class="p">,</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
 <span class="n">student2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;002&quot;</span><span class="p">,</span> <span class="s2">&quot;Mike&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
 
 <span class="n">student1</span><span class="o">.</span><span class="n">say_name</span><span class="p">()</span>
@@ -1024,19 +1024,6 @@ Diesen haben wir mit der Nachricht <code class="docutils literal notranslate"><s
 <span class="nb">print</span><span class="p">(</span><span class="n">student1</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 <span class="n">student2</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="mi">331</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Susan.
-My name is Mike.
-learning
-24
-
-My name is Mike.
-My id is: 002
-My age is: 23
-My score is: 331
 </pre></div>
 </div>
 </div>
@@ -1055,7 +1042,7 @@ Um ein Klassenattribute zu verwenden, müssen wir den Klassennamen voranstellen,
 <p>Im folgenden Fall führen wir ein <em>Klassenattribut</em> <code class="docutils literal notranslate"><span class="pre">n_instances</span></code> ein, welches die Anzahl der erzeugten Objekte der Klasse <code class="docutils literal notranslate"><span class="pre">Student</span></code> beinhaltet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
     <span class="n">n_instances</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
@@ -1083,18 +1070,11 @@ Um ein Klassenattribute zu verwenden, müssen wir den Klassennamen voranstellen,
 <p>Lassen Sie uns den Code testen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;001&quot;</span><span class="p">,</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;001&quot;</span><span class="p">,</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
 <span class="n">student1</span><span class="o">.</span><span class="n">num_instances</span><span class="p">()</span>
 <span class="n">student2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;002&quot;</span><span class="p">,</span> <span class="s2">&quot;Mike&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">student1</span><span class="o">.</span><span class="n">num_instances</span><span class="p">()</span>
 <span class="n">student2</span><span class="o">.</span><span class="n">num_instances</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We have 1-instance in total
-We have 2-instance in total
-We have 2-instance in total
 </pre></div>
 </div>
 </div>
