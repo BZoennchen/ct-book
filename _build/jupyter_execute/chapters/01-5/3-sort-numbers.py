@@ -1,14 +1,20 @@
-# Zahlen sortieren in Python
+#!/usr/bin/env python
+# coding: utf-8
 
-Wunderbar, wir können nun Karten sortieren. 
-Aber können wir vielleicht noch viel mehr?
-Sehen Sie sich den Code aus dem letzten Abschnitt genau an.
-An welcher Stelle geht es wirklich um Karten?
-Wie und wo müsste man den Code ändern um z.B. Zahlen zu sortieren?
+# # Zahlen sortieren in Python
+# 
+# Wunderbar, wir können nun Karten sortieren. 
+# Aber können wir vielleicht noch viel mehr?
+# Sehen Sie sich den Code aus dem letzten Abschnitt genau an.
+# An welcher Stelle geht es wirklich um Karten?
+# Wie und wo müsste man den Code ändern um z.B. Zahlen zu sortieren?
+# 
+# ```{exercise} Zahlen sortieren in Python
+# Ändern oder erweitern Sie Ihren Programmiercode um Zahlen anstatt Karten zu sortieren.
+# ```
 
-```{exercise} Zahlen sortieren in Python
-Ändern oder erweitern Sie Ihren Programmiercode um Zahlen anstatt Karten zu sortieren.
-```
+# In[1]:
+
 
 # Kopie des Codes des vorherigen Abschnitts.
 
@@ -31,15 +37,24 @@ def stack_sort(hand):
         stack.append(remove_smallest_card(hand))
     return stack   
 
-Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller()``.
+
+# Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller()``.
+
+# In[2]:
+
 
 def is_smaller(number1, number2):
     return number1 < number2
 
 stack_sort([-11, 12, -6, 45, 1, 54, -55, 88])
 
+
+# In[3]:
+
+
 import random
 n_numbers = 1000
 
 hand = [random.randint(0, n_numbers) for _ in range(n_numbers)]
 stack_sort(hand)
+

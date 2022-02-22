@@ -1,25 +1,35 @@
-(sec-functions)=
-# Funktionen
+#!/usr/bin/env python
+# coding: utf-8
 
-Der Schlüssel zur Berechnung von Lösungen bzw. der Verarbeitung von Information ist die [Wiederholung](sec-repetition-and-recursion).
-Wo es uns [Schleifen](sec-loops) erlauben eine bestimmte Folge von Arbeitsschritte *lokal* mehrfach auszuführen, erlauben es uns Funktionen eine Folge von Arbeitsschritte *global* auszuführen.
-In beiden Fällen ändern wir den Verlauf der Codeausführung, sodass dieser nicht mehr der Befehlsfolge (gelesen von oben nach unten) entspricht.
+# (sec-functions)=
+# # Funktionen
+# 
+# Der Schlüssel zur Berechnung von Lösungen bzw. der Verarbeitung von Information ist die [Wiederholung](sec-repetition-and-recursion).
+# Wo es uns [Schleifen](sec-loops) erlauben eine bestimmte Folge von Arbeitsschritte *lokal* mehrfach auszuführen, erlauben es uns Funktionen eine Folge von Arbeitsschritte *global* auszuführen.
+# In beiden Fällen ändern wir den Verlauf der Codeausführung, sodass dieser nicht mehr der Befehlsfolge (gelesen von oben nach unten) entspricht.
+# 
+# Funktionen bündeln eine Folge von Arbeitsschritten / Befehle.
+# Es können Parameter definiert werden, sodass wir der Funktion Argumente als Eingabe übergeben.
+# Wir sind im Stande dieses Bündel irgendwo in unserem Code auszuführen (ohne es noch einmal niederzuschreiben).
+# Wird die Funktion im Code aufgerufen, springen wir, bzw. die CPU durch ihren [Befehlszähler](def-program-counter), an die Stelle der Funktion, das Bündel an Anweisungen wird ausgeführt und schlussendlich springen wir wieder an jene Stelle zurück, von der wir hergekommen sind.
+# 
+# Durch wiederholtes und verschachteltes Aufrufen einer Funktion erzeugen wir eine Art von Wiederholung.
+# Zum Beispiel:
 
-Funktionen bündeln eine Folge von Arbeitsschritten / Befehle.
-Es können Parameter definiert werden, sodass wir der Funktion Argumente als Eingabe übergeben.
-Wir sind im Stande dieses Bündel irgendwo in unserem Code auszuführen (ohne es noch einmal niederzuschreiben).
-Wird die Funktion im Code aufgerufen, springen wir, bzw. die CPU durch ihren [Befehlszähler](def-program-counter), an die Stelle der Funktion, das Bündel an Anweisungen wird ausgeführt und schlussendlich springen wir wieder an jene Stelle zurück, von der wir hergekommen sind.
+# In[1]:
 
-Durch wiederholtes und verschachteltes Aufrufen einer Funktion erzeugen wir eine Art von Wiederholung.
-Zum Beispiel:
 
 def successor(n):
   return n + 1
 
 successor(successor(successor(1)))
 
-Ruft sich eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. [Rekursion](sec-recursion) oder [rekursiven Funktion](sec-recursive-functions).
-Zum Beispiel:
+
+# Ruft sich eine Funktion, bis zu einer bestimmten Abbruchbedingung selbst auf, so sprechen wir von einer sog. [Rekursion](sec-recursion) oder [rekursiven Funktion](sec-recursive-functions).
+# Zum Beispiel:
+
+# In[2]:
+
 
 def fib(n):
   if n == 0:
@@ -30,33 +40,49 @@ def fib(n):
 
 fib(13)
 
-Viele sog. *built-in* (eingebaute) ``Python``-Funktionen haben wir bereits verwendet.
-Sie werden uns mit der ``Python``-Standard Bibliothek mitgeliefert.
-Zum Beispiel ist ``type()`` oder auch ``len()`` eine solche Funktion.
+
+# Viele sog. *built-in* (eingebaute) ``Python``-Funktionen haben wir bereits verwendet.
+# Sie werden uns mit der ``Python``-Standard Bibliothek mitgeliefert.
+# Zum Beispiel ist ``type()`` oder auch ``len()`` eine solche Funktion.
+
+# In[3]:
+
 
 type(len)
 
-``roboworld`` ist beispielsweise ein Modul, d.h. eine Ansammlung von Funktionalität, welches wir nutzten können.
-Deutlich bekannter ist das Modul ``numpy``, welches für numerische Berechnungen verwendet wird.
-Um eine Funktion eines Moduls aufzurufen stellen wir den Modulnamen, z.B. ``numpy`` und einen Punkt ``.`` vorne an. Zuvor müssen wir das Modul geladen haben:
+
+# ``roboworld`` ist beispielsweise ein Modul, d.h. eine Ansammlung von Funktionalität, welches wir nutzten können.
+# Deutlich bekannter ist das Modul ``numpy``, welches für numerische Berechnungen verwendet wird.
+# Um eine Funktion eines Moduls aufzurufen stellen wir den Modulnamen, z.B. ``numpy`` und einen Punkt ``.`` vorne an. Zuvor müssen wir das Modul geladen haben:
+
+# In[4]:
+
 
 import numpy
 numpy.linspace(0, 1, 100)
 
+
+# In[5]:
+
+
 type(numpy.linspace)
 
-Funktionen sind ein Mittel um Codewiederholungen zu verhindern und auch ein Mittel um Code zu strukturieren und bestimmte Funktionalität zu kapseln.
-Stellen Sie sich vor wir müssten jedes Mal wenn wir etwas ausgeben wollen den Code der Funktion ``print()`` niederschreiben.
-Schnell würden unsere Programme lange und auch langweilig und unübersichtlich werden.
 
-Gute Funktionen zu schreiben kann sehr befriedigend für uns Computational Thinker\*innen sein.
-Wir lösen damit oft ein Teilproblem und kommen der gesamten Lösung näher.
-Mit ein wenig Erfahrung können wir sogar Probleme lösen indem wir davon ausgehen, ein Teilproblem hätten wir bereits gelöst -- auch wenn dies noch nicht der Fall ist.
+# Funktionen sind ein Mittel um Codewiederholungen zu verhindern und auch ein Mittel um Code zu strukturieren und bestimmte Funktionalität zu kapseln.
+# Stellen Sie sich vor wir müssten jedes Mal wenn wir etwas ausgeben wollen den Code der Funktion ``print()`` niederschreiben.
+# Schnell würden unsere Programme lange und auch langweilig und unübersichtlich werden.
+# 
+# Gute Funktionen zu schreiben kann sehr befriedigend für uns Computational Thinker\*innen sein.
+# Wir lösen damit oft ein Teilproblem und kommen der gesamten Lösung näher.
+# Mit ein wenig Erfahrung können wir sogar Probleme lösen indem wir davon ausgehen, ein Teilproblem hätten wir bereits gelöst -- auch wenn dies noch nicht der Fall ist.
+# 
+# Wie ist das gemeint?
+# Nun, wir wollen zum Beispiel eine Funktion schreiben, welche uns die ersten ``n`` Primzahlen berechnet und in eine Liste packt.
+# Wir gehen einfach davon aus es gäbe eine Funktion ``is_prime(k)`` die prüft ob ``k`` eine Primzahl ist oder nicht.
+# Unter dieser Annahme schreiben wir unsere Funktion ``prime_list(n)``:
 
-Wie ist das gemeint?
-Nun, wir wollen zum Beispiel eine Funktion schreiben, welche uns die ersten ``n`` Primzahlen berechnet und in eine Liste packt.
-Wir gehen einfach davon aus es gäbe eine Funktion ``is_prime(k)`` die prüft ob ``k`` eine Primzahl ist oder nicht.
-Unter dieser Annahme schreiben wir unsere Funktion ``prime_list(n)``:
+# In[6]:
+
 
 def is_prime(k):
   pass
@@ -70,8 +96,12 @@ def prime_list(n):
     k += 1
   return primelist
 
-Nachdem wir uns um die Generierung der Liste gekümmert haben, widmen wir uns der Funktion ``is_prime(k)``.
-Oder andere Entwickler\*innen, die sich besser mit dem Problem auskennen, lösen es.
+
+# Nachdem wir uns um die Generierung der Liste gekümmert haben, widmen wir uns der Funktion ``is_prime(k)``.
+# Oder andere Entwickler\*innen, die sich besser mit dem Problem auskennen, lösen es.
+
+# In[7]:
+
 
 def is_prime(k):
   # a really stupid prime check
@@ -95,3 +125,4 @@ def prime_list(n):
   return primelist
 
 prime_list(20)
+
