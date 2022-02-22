@@ -1103,7 +1103,7 @@ print(f'Schätzwert: {count/n}, tatsächlicher Wert:{1/24}')
 # Dieses Beispiel zeigt, wie Computer Sie bei Ihrer Denkarbeit unterstützten können.
 # Durch eine Vielzahl an Berechnungen liefert Ihnen der Computer Hinweise zur Lösung eines Problems.
 # 
-# ### Deterministischer Lauf
+# ### Determinierter Lauf
 # Als nächstes sollen Sie das gleiche Gebiet determiniert (ohne Zufall) durchlaufen.
 # 
 # ```{admonition} Determiniertheit und Determinismus
