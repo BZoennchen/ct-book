@@ -15,6 +15,25 @@ Der von uns empfohlene Weg ist der über die Verwaltungssoftware **Miniconda**.
 Diese Software bietet Ihnen alles was Sie benötigen.
 Installieren Sie lediglich (reines) ``Python`` so müssen Sie für weitere nützliche Dienste möglicherweise weitere Programme installieren.
 
+## Unterschied zwischen conda und pip
+
+``pip`` ist ein *Paketverwaltungsprogramm* für ``Python``-Pakete aus dem Python Package Index (PyPI).
+PyPI ist ein Paketpool, welcher über 100 000 Pakete umfasst.
+Entwickler:innen können Pakete in den Pool hochladen und diese anderen Entwickler:innen und Anwender:innen zur Verfügung stellen.
+So haben wir, zum Beispiel, das ``roboworld``-Paket in PyPI eingepflegt (siehe [roboworld](https://pypi.org/project/roboworld/)).
+
+``conda`` ist ebenfalls ein *Paketverwaltungsprogramm*, welches vor ``pip`` entwickelt wurde und seine Pakete durch das Anaconda Repository und der Anaconda Cloud bereitstellt.
+Es wird vorallem für die Programmiersprachen ``Python`` und ``R`` verwendet und löst Paketabhängigkeiten, welche insbesondere im Bereich *Data Science*, eine große Herausforderunge waren.
+
+Im unterschied zu ``conda`` installiert ``pip`` Ihnen alle benötigten Paketabhängigkeiten, egal ob es *Konflikte* zu bereits installierten Paketen gibt oder nicht.
+Nehmen wir an Sie haben ein Paket ``A`` welches ein anderes Paket ``B`` in der Version ``1.1.0`` benötigt.
+Sie installieren ein Paket ``C`` welches ebenfalls das Paket ``B`` benötigt, jedoch in der neuesten Version ``1.1.1``.
+``pip`` installiert ``B`` in der Version ``1.1.1`` was jedoch dazu führen kann, dass Ihr Code, der Paket ``A`` verwendet nicht mehr funktioniert oder ein anderes Ergebnis liefert.
+Wurde die Version ``1.1.0`` für unseren Code spezifiziert würde ``conda`` entweder die selbst herausfinden wie diese weiterhin eingehalten werden kann oder aber melden, dass die Installation nicht möglich ist.
+
+Für diesen Kurs macht es keinen Unterschied ob Sie ``pip`` oder ``conda`` verwenden.
+Es ist auch möglich und manchmal auch sinnvoll beide parallel zu nutzen.
+
 ## Anaconda / Miniconda (empfohlen)
 
 Lassen Sie uns eine der meist benutzten Hilfswerkzeuge ansehen: [Anaconda](https://www.anaconda.com/products/individual).
@@ -81,7 +100,6 @@ Um z.B. **Jupyter-Notebooks** auszuführen benötigen Sie das Modul ``jupyter-no
 
 ### Modulverwaltung mit conda
 
-Anaconda bzw. Miniconda verwenden intern ebenso ``pip``.
 Mit dem Programm ``conda`` können Anaconda bzw. Miniconda ansprechen.
 Die Befehle im vergleich zu ``pip`` sind nahezu identisch!
 
@@ -111,6 +129,20 @@ conda install [modulename]
 ```
 
 wird die aktuelle Version des Moduls mit dem Namen ``modulename`` für Sie installiert in den entsprechenden Installationsordner Ihrer Anaconda bzw. Miniconda-Umgebung installiert.
+
+````{admonition} Module installieren mit conda
+:class: attention
+:name: attention-conda-pip-install
+
+Sollte das zu installierende Paket sich nicht im ``conda`` repository befinden und somit nicht über ``conda`` installierbar sein, können Sie es dennoch über
+
+```
+pip install [modulename]
+```
+
+installieren. Versuchen Sie jedoch ``conda`` vor ``pip``.
+
+````
 
 Versuchen wir einmal die Jupyter-Umgebung zum Ausführen der Jupyter-Notebooks zu starten.
 

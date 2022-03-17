@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Speicher - alles ist eine Liste &#8212; Computational Thinking</title>
+    <title>23. Speicher - alles ist eine Liste &#8212; Computational Thinking</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,34 +34,40 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
-    <link rel="next" title="5. Namensregister" href="name-register.html" />
-    <link rel="prev" title="3. Binäres Zeichnen - Struktur ist Information" href="image-representation.html" />
+    <link rel="next" title="24. Namensregister" href="name-register.html" />
+    <link rel="prev" title="22. Binäres Zeichnen - Struktur ist Information" href="image-representation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="de">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -78,6 +84,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
       
       
@@ -87,7 +97,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -96,7 +106,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Einleitung
  </span>
@@ -238,7 +248,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Theorie
  </span>
@@ -246,7 +256,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-0/math.html">
-   1. Mathematische Grundlagen
+   6. Mathematische Grundlagen
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -256,44 +266,44 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-0/1-notation.html">
-     1.1. Notation
+     6.1. Notation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-0/2-set.html">
-     1.2. Mengen
+     6.2. Mengen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-0/3-tuple.html">
-     1.3. Tupel
+     6.3. Tupel
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-0/4-relation.html">
-     1.4. Relationen
+     6.4. Relationen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-0/5-function.html">
-     1.5. Funktionen
+     6.5. Funktionen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-0/6-operations.html">
-     1.6. Operationen
+     6.6. Operationen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-0/7-induction.html">
-     1.7. Vollständige Induktion
+     6.7. Vollständige Induktion
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-1/information-processing.html">
-   2. Der digitale Computer
+   7. Der digitale Computer
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -303,39 +313,39 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-1/1-basics.html">
-     2.1. Grundlagen
+     7.1. Grundlagen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-1/2-interpretation.html">
-     2.2. Interpretation
+     7.2. Interpretation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-1/2-representation.html">
-     2.3. Repräsentationen
+     7.3. Repräsentationen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-1/3-manipulation.html">
-     2.4. Manipulation
+     7.4. Manipulation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-1/4-information-flow.html">
-     2.5. Der Informationskreislauf
+     7.5. Der Informationskreislauf
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-1/5-hardware-equals-software.html">
-     2.6. Berechenbarkeit
+     7.6. Berechenbarkeit
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-2/information.html">
-   3. Was ist Information?
+   8. Was ist Information?
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -345,34 +355,34 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-2/1-natural-science.html">
-     3.1. Naturwissenschaften
+     8.1. Naturwissenschaften
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-2/2-formal-science.html">
-     3.2. Strukturwissenschaften
+     8.2. Strukturwissenschaften
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-2/3-critic.html">
-     3.3. Kritik
+     8.3. Kritik
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-2/4-humanics.html">
-     3.4. Geisteswissenschaften
+     8.4. Geisteswissenschaften
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-2/5-summary.html">
-     3.5. Zusammenfassung
+     8.5. Zusammenfassung
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-3/languages.html">
-   4. Programmiersprachen
+   9. Programmiersprachen
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -382,39 +392,39 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-3/1-abstraction.html">
-     4.1. Abstraktion des Computers
+     9.1. Abstraktion des Computers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-3/2-success-criteria.html">
-     4.2. Erfolgsfaktoren
+     9.2. Erfolgsfaktoren
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-3/3-imperative-vs-functional.html">
-     4.3. Imperativ und funktional
+     9.3. Imperativ und funktional
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-3/4-language-evolution.html">
-     4.4. Sprachevolution
+     9.4. Sprachevolution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-3/5-python.html">
-     4.5. Python
+     9.5. Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-3/6-diversity.html">
-     4.6. Diversität
+     9.6. Diversität
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-4/the-art-of-programming.html">
-   5. Die Kunst des Programmierens
+   10. Die Kunst des Programmierens
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
   <label for="toctree-checkbox-10">
@@ -424,28 +434,28 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-4/1-algorithms.html">
-     5.1. Algorithmen
+     10.1. Algorithmen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-4/2-programming.html">
-     5.2. Programmieren
+     10.2. Programmieren
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-4/3-control-structures.html">
-     5.3. Kontrollstrukturen
+     10.3. Kontrollstrukturen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-4/4-data-structures.html">
-     5.4. Datenstrukturen
+     10.4. Datenstrukturen
     </a>
    </li>
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -453,12 +463,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../03-1/introduction.html">
-   1. Programmieren in Python
+   11. Programmieren in Python
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-2/python-environment.html">
-   2. Das Python Ökosystem
+   12. Das Python Ökosystem
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
@@ -468,29 +478,29 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-2/1-installation.html">
-     2.1. Installation
+     12.1. Installation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-2/2-run.html">
-     2.2. Python ausführen
+     12.2. Python ausführen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-2/3-notebooks.html">
-     2.3. Jupyter Notebooks
+     12.3. Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-2/4-modules.html">
-     2.4. Module
+     12.4. Module
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-3/intro.html">
-   3. Variablen, Ausdrücke und Funktionsaufrufe
+   13. Variablen, Ausdrücke und Funktionsaufrufe
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -500,24 +510,24 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-3/1-variables.html">
-     3.1. Variablen
+     13.1. Variablen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-3/2-expressions.html">
-     3.2. Ausdrücke
+     13.2. Ausdrücke
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-3/3-invoking-functions.html">
-     3.3. Funktionsaufrufe
+     13.3. Funktionsaufrufe
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-4/intro.html">
-   4. Datentypen (Grundlagen)
+   14. Datentypen (Grundlagen)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -527,64 +537,64 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/1-data-types.html">
-     4.1. Pythons Datentypen
+     14.1. Pythons Datentypen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/2-int.html">
-     4.2. Ganze Zahlen - int
+     14.2. Ganze Zahlen - int
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/3-float.html">
-     4.3. Fließkommazahlen - float
+     14.3. Fließkommazahlen - float
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/4-bool.html">
-     4.4. Wahrheitswerte - bool
+     14.4. Wahrheitswerte - bool
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/5-list.html">
-     4.5. Listen - list
+     14.5. Listen - list
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/6-tuple.html">
-     4.6. Tupel - tuple
+     14.6. Tupel - tuple
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/7-string.html">
-     4.7. Zeichenketten - str
+     14.7. Zeichenketten - str
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/8-set.html">
-     4.8. Mengen - set
+     14.8. Mengen - set
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/9-dict.html">
-     4.9. Wörterbücher - dict
+     14.9. Wörterbücher - dict
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/10-range.html">
-     4.10. Zahlenbereich - range
+     14.10. Zahlenbereich - range
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-4/11-typing-in-python.html">
-     4.11. Python’s Typisierung
+     14.11. Python’s Typisierung
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-5/intro.html">
-   5. Datentypen (Fortsetzung)
+   15. Datentypen (Fortsetzung)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
   <label for="toctree-checkbox-14">
@@ -594,34 +604,34 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-5/1-type-systems.html">
-     5.1. Dynamische und statische Typisierung
+     15.1. Dynamische und statische Typisierung
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-5/2-why-data-types.html">
-     5.2. Existenzberechtigung
+     15.2. Existenzberechtigung
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-5/3-change-of-interpretation.html">
-     5.3. Interpretationswechsel
+     15.3. Interpretationswechsel
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-5/4-kind-of-data-types.html">
-     5.4. Arten von Datentypen
+     15.4. Arten von Datentypen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-5/5-primitive-data-types.html">
-     5.5. Primitive Datentypen in Python?
+     15.5. Primitive Datentypen in Python?
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-6/intro.html">
-   6. Funktionen
+   16. Funktionen
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -631,44 +641,44 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-6/1-purity.html">
-     6.1. Reinheit
+     16.1. Reinheit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-6/2-definition.html">
-     6.2. Grundlagen
+     16.2. Grundlagen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-6/3-namespaces.html">
-     6.3. Namensräume und Sichtbarkeit
+     16.3. Namensräume und Sichtbarkeit
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-6/4-lambdas.html">
-     6.4. Anonyme Funktionen
+     16.4. Anonyme Funktionen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-6/5-nested-functions.html">
-     6.5. Umschlossene Funktionen
+     16.5. Umschlossene Funktionen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-6/x-recursion.html">
-     6.6. Rekursive Funktionen
+     16.6. Rekursive Funktionen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-6/6-first-class-functions.html">
-     6.7. First-Class-Funktion
+     16.7. First-Class-Funktion
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-7/intro.html">
-   7. Kontrollstrukturen
+   17. Kontrollstrukturen
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
   <label for="toctree-checkbox-16">
@@ -678,24 +688,24 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-7/1-cases.html">
-     7.1. Fallunterscheidungen
+     17.1. Fallunterscheidungen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-7/2-loops.html">
-     7.2. Schleifen
+     17.2. Schleifen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-7/3-comprehensions.html">
-     7.3. Comprehensions
+     17.3. Comprehensions
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-8/intro.html">
-   8. Objektorientierte Programmierung
+   18. Objektorientierte Programmierung
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
   <label for="toctree-checkbox-17">
@@ -705,18 +715,55 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-8/1-class-and-objects.html">
-     8.1. Klassen und Objekte
+     18.1. Klassen und Objekte
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">
-     8.2. Vererbung, Kapselung und Polymorphie
+     18.2. Vererbung, Kapselung und Polymorphie
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-9/cpython.html">
+   19. CPython
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/1-impl.html">
+     19.1. Implementierungen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/2-ref.html">
+     19.2. Referenzimplementierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/3-interpreter.html">
+     19.3. Interpreter und Compiler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/4-disassembly.html">
+     19.4. Zerlegung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/5-extending.html">
+     19.5. CPython erweitern
     </a>
    </li>
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   CT in Aktion
  </span>
@@ -724,31 +771,31 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="robo-world.html">
-   1. Roboterwelt
+   20. Roboterwelt
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dive-bell.html">
-   2. Sprechen in der Taucherglocke
+   21. Sprechen in der Taucherglocke
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="image-representation.html">
-   3. Binäres Zeichnen - Struktur ist Information
+   22. Binäres Zeichnen - Struktur ist Information
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   4. Speicher - alles ist eine Liste
+   23. Speicher - alles ist eine Liste
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="name-register.html">
-   5. Namensregister
+   24. Namensregister
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -808,7 +855,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -864,68 +911,68 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Inhalt
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#arbeitsspeicher-als-python-liste">
-   4.1. Arbeitsspeicher als Python-Liste?
+   23.1. Arbeitsspeicher als Python-Liste?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adressierung">
-     4.1.1. Adressierung
+     23.1.1. Adressierung
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#primitive-datentypen">
-     4.1.2. Primitive Datentypen
+     23.1.2. Primitive Datentypen
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modellierung-des-arbeitsspeichers">
-   4.2. Modellierung des Arbeitsspeichers
+   23.2. Modellierung des Arbeitsspeichers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#initialisierung">
-     4.2.1. Initialisierung
+     23.2.1. Initialisierung
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#datentypen">
-     4.2.2. Datentypen
+     23.2.2. Datentypen
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#zeichenketten">
-       4.2.2.1. Zeichenketten
+       23.2.2.1. Zeichenketten
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#zeichen">
-       4.2.2.2. Zeichen
+       23.2.2.2. Zeichen
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#naturliche-zahlen">
-       4.2.2.3. Natürliche Zahlen
+       23.2.2.3. Natürliche Zahlen
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#speicheradressen">
-       4.2.2.4. Speicheradressen
+       23.2.2.4. Speicheradressen
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#listen">
-       4.2.2.5. Listen
+       23.2.2.5. Listen
       </a>
      </li>
     </ul>
@@ -934,59 +981,59 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#implementierung">
-   4.3. Implementierung
+   23.3. Implementierung
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#speicher-initialisieren">
-     4.3.1. Speicher initialisieren
+     23.3.1. Speicher initialisieren
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#speicherverwaltung-fur-primitive-datentypen">
-     4.3.2. Speicherverwaltung für primitive Datentypen
+     23.3.2. Speicherverwaltung für primitive Datentypen
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#addieren-im-speicher">
-     4.3.3. Addieren im Speicher
+     23.3.3. Addieren im Speicher
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#speicherverwaltung-fur-listen">
-     4.3.4. Speicherverwaltung für Listen
+     23.3.4. Speicherverwaltung für Listen
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mehrdimensionale-listen">
-     4.3.5. Mehrdimensionale Listen
+     23.3.5. Mehrdimensionale Listen
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ein-einfacher-parser">
-     4.3.6. Ein einfacher Parser
+     23.3.6. Ein einfacher Parser
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#listen-erzeugen">
-     4.3.7. Listen erzeugen
+     23.3.7. Listen erzeugen
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ende-der-reise">
-     4.3.8. Ende der Reise
+     23.3.8. Ende der Reise
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#memory-klasse">
-     4.3.9. Memory Klasse
+     23.3.9. Memory Klasse
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#was-soll-das-alles">
-   4.4. Was soll das alles?
+   23.4. Was soll das alles?
   </a>
  </li>
 </ul>
@@ -997,11 +1044,147 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Speicher - alles ist eine Liste</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arbeitsspeicher-als-python-liste">
+   23.1. Arbeitsspeicher als Python-Liste?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adressierung">
+     23.1.1. Adressierung
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#primitive-datentypen">
+     23.1.2. Primitive Datentypen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modellierung-des-arbeitsspeichers">
+   23.2. Modellierung des Arbeitsspeichers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialisierung">
+     23.2.1. Initialisierung
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datentypen">
+     23.2.2. Datentypen
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zeichenketten">
+       23.2.2.1. Zeichenketten
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zeichen">
+       23.2.2.2. Zeichen
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#naturliche-zahlen">
+       23.2.2.3. Natürliche Zahlen
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#speicheradressen">
+       23.2.2.4. Speicheradressen
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#listen">
+       23.2.2.5. Listen
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementierung">
+   23.3. Implementierung
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#speicher-initialisieren">
+     23.3.1. Speicher initialisieren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#speicherverwaltung-fur-primitive-datentypen">
+     23.3.2. Speicherverwaltung für primitive Datentypen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#addieren-im-speicher">
+     23.3.3. Addieren im Speicher
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#speicherverwaltung-fur-listen">
+     23.3.4. Speicherverwaltung für Listen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mehrdimensionale-listen">
+     23.3.5. Mehrdimensionale Listen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ein-einfacher-parser">
+     23.3.6. Ein einfacher Parser
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listen-erzeugen">
+     23.3.7. Listen erzeugen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ende-der-reise">
+     23.3.8. Ende der Reise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#memory-klasse">
+     23.3.9. Memory Klasse
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#was-soll-das-alles">
+   23.4. Was soll das alles?
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="speicher-alles-ist-eine-liste">
-<span id="sec-memory"></span><h1><span class="section-number">4. </span>Speicher - alles ist eine Liste<a class="headerlink" href="#speicher-alles-ist-eine-liste" title="Link zu dieser Überschrift">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="speicher-alles-ist-eine-liste">
+<span id="sec-memory"></span><h1><span class="section-number">23. </span>Speicher - alles ist eine Liste<a class="headerlink" href="#speicher-alles-ist-eine-liste" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Wie funktioniert der <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> im Detail?
 Wie werden Daten in ihm abgelegt und wie gelangt die <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> zu diesen zu verarbeitenden Daten?
 Warum gibt es <a class="reference internal" href="../03-4/intro.html#sec-python-data-types"><span class="std std-ref">Datentypen</span></a>?
@@ -1028,7 +1211,7 @@ Zudem kann die <a class="reference internal" href="../02-1/4-information-flow.ht
 Aufgrund der Befehle, welche aus dem <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> geladen werden, verändert die Kontrolleinheit den Befehlszeiger entsprechend, d.h., die Kontrolleinheit führt das im Speicher stehende Programm aus.</p>
 <div class="figure align-default" id="fig-program-run-memory">
 <a class="reference internal image-reference" href="../../_images/program-run.png"><img alt="../../_images/program-run.png" src="../../_images/program-run.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 4.7 </span><span class="caption-text">Bereiche des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a> (links) werden über eine Speicheradresse in <a class="reference internal" href="../02-1/4-information-flow.html#def-register"><span class="std std-ref">Register</span></a> der <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> (Kontrolleinheit und arithmetische/logische Einheit) geladen.</span><a class="headerlink" href="#fig-program-run-memory" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 23.1 </span><span class="caption-text">Bereiche des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a> (links) werden über eine Speicheradresse in <a class="reference internal" href="../02-1/4-information-flow.html#def-register"><span class="std std-ref">Register</span></a> der <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> (Kontrolleinheit und arithmetische/logische Einheit) geladen.</span><a class="headerlink" href="#fig-program-run-memory" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Warum darf die Liste nur Zahlen enthalten?
 Der gesamte Computer arbeitet mit Zahlen in der <a class="reference internal" href="../02-1/2-representation.html#sec-binary-numbers"><span class="std std-ref">Binärdarstellung</span></a>.
@@ -1036,13 +1219,15 @@ Dabei kann jeder Speicher des Computers nur eine endlich große Zahl aufnehmen, 
 Wir wählen die Dezimaldarstellung um es uns ein wenig einfacher und lesbarer zu gestalten.</p>
 <p>Die <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> und deren <a class="reference internal" href="../02-1/4-information-flow.html#def-register"><span class="std std-ref">Register</span></a> werden wir nicht modellieren, deshalb gehen wir davon aus, dass in unserem Speicher nur Daten und keine Anweisungen bzw. Programme stehen.</p>
 <div class="exercise admonition" id="memory-finite-real-numbers-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.7 </span>(Endlichkeit und reelle Zahlen)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.1 </span> (Endlichkeit und reelle Zahlen)</p>
 <div class="section" id="exercise-content">
 <p>Kann der Computer die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> als numerischen Wert im Speicher halten?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-finite-real-numbers-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-finite-real-numbers-exercise"><span>Exercise 4.7</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-finite-real-numbers-exercise"> Exercise 23.1 (Endlichkeit und reelle Zahlen)</a></p>
 <div class="section" id="solution-content">
 <p>Nein! Die Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> hat niedergeschrieben unendlich viele sich nicht wiederholende Nachkommastellen.
 Die Speicherressourcen eines Computers sind jedoch endlich.</p>
@@ -1055,7 +1240,7 @@ Dieser Prozess des Abstrahierens ist ein wesentlicher Bestandteil des <a class="
 <p>Ihnen wird diese Übung möglichweise sehr kleinlich und technisch vorkommen und damit liegen Sie richtig.
 Die konkrete Welt ist kleinlich und technisch.
 Programmieren Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> bewegen Sie sich bereits in einer abstrakten Welt.
-Vergleichen Sie <a class="reference internal" href="../02-4/1-algorithms.html#fig-world-code-computer"><span class="std std-numref">Abbildung 5.2</span></a>.
+Vergleichen Sie <a class="reference internal" href="../02-4/1-algorithms.html#fig-world-code-computer"><span class="std std-numref">Abbildung 10.1</span></a>.
 Jede Welt lässt sich jedoch weiter abstrahieren.
 Für die <code class="docutils literal notranslate"><span class="pre">Assembler</span></code>-Programmierer*innen bietet <code class="docutils literal notranslate"><span class="pre">C</span></code> eine hohe Abstraktion und für die <code class="docutils literal notranslate"><span class="pre">C</span></code>-Programmierer*innen ist <code class="docutils literal notranslate"><span class="pre">Python</span></code> abstrakt.
 Bauen Sie Programme mit <code class="docutils literal notranslate"><span class="pre">Pyhton</span></code>, so sind diese eine weitere Abstraktion.
@@ -1063,9 +1248,9 @@ Die Fähigkeit des Abstrahierens bleibt auf allen Ebenen essenziell.
 Von wo aus wir mit der Abstraktion starten und wo wir hinaufsteigen, ist für das Lernen dieses Prozesses weniger wichtig.
 Wichtig ist der Weg und den beschreiten wir hier!</p>
 <div class="section" id="arbeitsspeicher-als-python-liste">
-<h2><span class="section-number">4.1. </span>Arbeitsspeicher als Python-Liste?<a class="headerlink" href="#arbeitsspeicher-als-python-liste" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">23.1. </span>Arbeitsspeicher als Python-Liste?<a class="headerlink" href="#arbeitsspeicher-als-python-liste" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="adressierung">
-<h3><span class="section-number">4.1.1. </span>Adressierung<a class="headerlink" href="#adressierung" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.1.1. </span>Adressierung<a class="headerlink" href="#adressierung" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Werfen wir einen kurzen Blick auf die Eigenschaften und Funktionsweise des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a>.
 Ignorieren wir den <a class="reference internal" href="../02-1/4-information-flow.html#def-cache"><span class="std std-ref">Cache</span></a>, so greift die <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> direkt auf den <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> zu.
 Ist unsere <em>Rechnerarchitektur</em> eine <a class="reference internal" href="../02-1/4-information-flow.html#sec-von-neumann"><span class="std std-ref">Von-Neumann-Architektur</span></a>, so befinden sich im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> die <strong>gerade</strong> auszuführenden Anweisungen (das Programm) als auch die Daten die verarbeitet werden.</p>
@@ -1085,7 +1270,7 @@ Diese ist viel flexibler und kann allerart von Daten enthalten.</p>
 <p>Modellieren wir unsere Speicheradressen als Listenindices und sind die Listenelemente natürliche Zahlen von 0 bis 255, so kommen wir schon sehr nah an die Beschränkungen bzw. Einfachheit des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a> heran.</p>
 </div>
 <div class="section" id="primitive-datentypen">
-<h3><span class="section-number">4.1.2. </span>Primitive Datentypen<a class="headerlink" href="#primitive-datentypen" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.1.2. </span>Primitive Datentypen<a class="headerlink" href="#primitive-datentypen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> können wir bequem mit unterschiedlichen <a class="reference internal" href="../03-4/intro.html#sec-python-data-types"><span class="std std-ref">Datentypen</span></a> umgehen.
 Gewöhnlich unterteilt man Datentypen einer Programmiersprache in zwei Typen:</p>
 <ol class="simple">
@@ -1119,13 +1304,15 @@ Wir werden uns in dieser Übung auf die <em>Modellierung</em> von Zahlen, Zeiche
 <p>Wie der Titel dieser Übung suggeriert, ist alles eine Liste und so ist die Basis des <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> ebenfalls eine Liste.
 Wenn Sie erfahren wollen wie aus einer Liste ein <a class="reference internal" href="dive-bell.html#def-python-dictionary"><span class="std std-ref">Dictionary</span></a> wird, empfehlen wir Ihnen das Kapitel <a class="reference internal" href="name-register.html#sec-name-register"><span class="std std-ref">Namensregister</span></a>, insbesondere den Abschnitt <a class="reference internal" href="name-register.html#sec-hashing"><span class="std std-ref">Hashing und das Dictionary</span></a>.</p>
 <div class="exercise admonition" id="memory-expensive-float-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.8 </span>(Speicherverbrauch von Fließkommazahlen)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.2 </span> (Speicherverbrauch von Fließkommazahlen)</p>
 <div class="section" id="exercise-content">
 <p>Finden Sie heraus wie viel Speicher ein <code class="docutils literal notranslate"><span class="pre">float</span></code> Wert in <code class="docutils literal notranslate"><span class="pre">Python</span></code> verbraucht.</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-expensive-float-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-expensive-float-exercise"><span>Exercise 4.8</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-expensive-float-exercise"> Exercise 23.2 (Speicherverbrauch von Fließkommazahlen)</a></p>
 <div class="section" id="solution-content">
 <p>Die Antwort hängt von Ihrem System und Ihrer <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Version ab.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -1152,7 +1339,7 @@ Wenn Sie erfahren wollen wie aus einer Liste ein <a class="reference internal" h
 </div>
 </div>
 <div class="section" id="modellierung-des-arbeitsspeichers">
-<h2><span class="section-number">4.2. </span>Modellierung des Arbeitsspeichers<a class="headerlink" href="#modellierung-des-arbeitsspeichers" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">23.2. </span>Modellierung des Arbeitsspeichers<a class="headerlink" href="#modellierung-des-arbeitsspeichers" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wir wählen als Basis die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste und interpretieren den <strong>Index</strong> der Liste als <strong>Speicheradresse</strong> und den <strong>Listeneintrag</strong> als <strong>Speicherbereich</strong>.
 Wir verzichten auf die Binärschreibweise und arbeiten stattdessen aus Gründen der Lesbarkeit mit Dezimalzahlen.
 Jedoch soll auch für unsere Liste gelten, dass</p>
@@ -1162,16 +1349,18 @@ Jedoch soll auch für unsere Liste gelten, dass</p>
 </ol>
 <div class="figure align-default" id="fig-list-as-memory">
 <a class="reference internal image-reference" href="../../_images/list-as-memory.png"><img alt="../../_images/list-as-memory.png" src="../../_images/list-as-memory.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 4.8 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste von natürlichen Zahlen als Modell für den <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a>.</span><a class="headerlink" href="#fig-list-as-memory" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 23.2 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste von natürlichen Zahlen als Modell für den <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a>.</span><a class="headerlink" href="#fig-list-as-memory" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-decimal-numbers-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.9 </span>(Kapazität des Speicherbereichs)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.3 </span> (Kapazität des Speicherbereichs)</p>
 <div class="section" id="exercise-content">
 <p>Wie lautet die größte positive Dezimalzahl die wir in einem adressierbaren Speicherbereich, d.h., einem Listeneintrag halten können, sofern wir das <a class="reference internal" href="../02-1/2-representation.html#sec-integers"><span class="std std-ref">Zweierkomplement</span></a> als Codierung verwenden?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-decimal-numbers-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-decimal-numbers-exercise"><span>Exercise 4.9</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-decimal-numbers-exercise"> Exercise 23.3 (Kapazität des Speicherbereichs)</a></p>
 <div class="section" id="solution-content">
 <p>Die Zahl <span class="math notranslate nohighlight">\(0111\, 1111_2\)</span> in Binärschreibweise ist die größte positive die wir darstellen können.
 Binär ergibt dies <span class="math notranslate nohighlight">\(0\,1000\,0000_2 - 1_2\)</span> (binär) was wiederum gleich</p>
@@ -1189,7 +1378,7 @@ Diesen modellieren wir nicht.</p>
 <p>Die Ausführung der Befehle simulieren wir als <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code, d.h. wir erlauben uns ganz normalen <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code für die Manipulation des Speichers zu schreiben.
 Bedenken Sie jedoch, dass in der Realität dieser Code ebenfalls im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> stehen würde, dass Variablen in Register geladen werden müssten und <code class="docutils literal notranslate"><span class="pre">if</span></code>-Ausdrücke wie auch Schleifen durch Veränderungen des <em>Befehlszeigers</em> realisiert werden!</p>
 <div class="section" id="initialisierung">
-<h3><span class="section-number">4.2.1. </span>Initialisierung<a class="headerlink" href="#initialisierung" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.2.1. </span>Initialisierung<a class="headerlink" href="#initialisierung" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Der <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> ist riesig, d.h., wir arbeiten mit einer großen Liste.
 In seinem Initialzustand steht im <em>flüchtige</em> Speicher kein festgelegter Wert.
 Wir initialisieren unseren Speicher mit lauter Nullen.
@@ -1209,14 +1398,16 @@ Dadurch könnten wir jedoch nur noch 128 verschiedene Zahlen pro Speicherbereich
 Außerdem müssten wir dann immer wenn wir einen Speicherbereich nicht mehr verwenden, diese Zahl hineinschreiben.</p>
 <p>Wir verwenden für die Markierung stattdessen eine zweite Liste <code class="docutils literal notranslate"><span class="pre">inuse</span></code>.</p>
 <div class="exercise admonition" id="memory-in-use-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.10 </span>(Speicherbelegung)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.4 </span> (Speicherbelegung)</p>
 <div class="section" id="exercise-content">
 <p>Wie könnte eine zweite Liste uns Aufschluss geben ob ein Speicherbereich in Verwendung ist oder nicht?
 Wie viel Speicher würde diese Liste benötigen?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-in-use-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-in-use-exercise"><span>Exercise 4.10</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-in-use-exercise"> Exercise 23.4 (Speicherbelegung)</a></p>
 <div class="section" id="solution-content">
 <p>Eine zweite Liste <code class="docutils literal notranslate"><span class="pre">inuse[i]</span></code> könnte durch einen boolschen Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> anzeigen, dass der Speicherbereich an der Stelle <code class="docutils literal notranslate"><span class="pre">i</span></code> allokiert ist oder nicht.</p>
 <p>Jeder Eintrag braucht 1 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a>.
@@ -1225,7 +1416,7 @@ Damit bräuchte die Liste <span class="math notranslate nohighlight">\(n\)</span
 </div>
 </div>
 <div class="section" id="datentypen">
-<span id="sec-memory-datatypes"></span><h3><span class="section-number">4.2.2. </span>Datentypen<a class="headerlink" href="#datentypen" title="Link zu dieser Überschrift">¶</a></h3>
+<span id="sec-memory-datatypes"></span><h3><span class="section-number">23.2.2. </span>Datentypen<a class="headerlink" href="#datentypen" title="Link zu dieser Überschrift">¶</a></h3>
 <blockquote>
 <div><p>Was sind Datentypen und weshalb brauchen wir diese?</p>
 </div></blockquote>
@@ -1239,7 +1430,7 @@ Brauchen wir dann nicht eine weitere Information die uns sagt, dass es sich bei 
 Wenn ja kommen wir aus dem Schlamassel nicht mehr heraus.</p>
 <div class="figure align-default" id="fig-data-type-key-pair">
 <a class="reference internal image-reference" href="../../_images/data-type-key-pair1.png"><img alt="../../_images/data-type-key-pair1.png" src="../../_images/data-type-key-pair1.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 4.9 </span><span class="caption-text">(Datentyp, Wert)-Paar.</span><a class="headerlink" href="#fig-data-type-key-pair" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 23.3 </span><span class="caption-text">(Datentyp, Wert)-Paar.</span><a class="headerlink" href="#fig-data-type-key-pair" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Die Datentypinformation ist eine <strong>explizite</strong> Information, d.h. die Information wird niedergeschrieben.
 Um zu entscheiden, ob ein Speicherbereich den Datentyp beschreibt, verwenden wir hingegen <strong>implizites</strong> Wissen/Information.
@@ -1271,23 +1462,24 @@ Jetzt wird Ihnen vielleicht auch klar warum es in <code class="docutils literal 
 <li><p><strong>Implizite Information:</strong> Jedes Objekt (Zahl, Buchstabe, Liste, Adresse) beginnt mit der Datentypinformation. Den Speicherbedarf je Datentyp nehmen wir ebenfalls implizit an.</p></li>
 </ul>
 <div class="section" id="zeichenketten">
-<span id="sec-memory-string"></span><h4><span class="section-number">4.2.2.1. </span>Zeichenketten<a class="headerlink" href="#zeichenketten" title="Link zu dieser Überschrift">¶</a></h4>
+<span id="sec-memory-string"></span><h4><span class="section-number">23.2.2.1. </span>Zeichenketten<a class="headerlink" href="#zeichenketten" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Haben wir nicht die Zeichenketten vergessen?
 Eine Zeichenkette ist nichts anderes als eine Liste von Zeichen und diese beiden Datentypen haben wir bereits berücksichtigt.</p>
 </div>
 <div class="section" id="zeichen">
-<span id="sec-memory-char"></span><h4><span class="section-number">4.2.2.2. </span>Zeichen<a class="headerlink" href="#zeichen" title="Link zu dieser Überschrift">¶</a></h4>
+<span id="sec-memory-char"></span><h4><span class="section-number">23.2.2.2. </span>Zeichen<a class="headerlink" href="#zeichen" title="Link zu dieser Überschrift">¶</a></h4>
 <p>256 unterschiedliche Zahlen, reichen uns aus um einfache Texte mit <code class="docutils literal notranslate"><span class="pre">a-z</span></code>, <code class="docutils literal notranslate"><span class="pre">A-Z</span></code> und die Sonderzeichen <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code> zu codieren.
 Im Speicherbereich, der auf den Bereich des Datentyps (<code class="docutils literal notranslate"><span class="pre">1</span></code>) folgt, können wir demnach das Zeichen als Zahl hineinschreiben.</p>
 <p>Mittels Codierung, welche uns für eine Zahl ein Zeichen ausspuckt (implizites Wissen), können wir einzelne Buchstaben in den Speicher schreiben und von diesem lesen.
 Sie können sich Ihre eigene Codierung überlegen oder die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionen <a class="reference external" href="https://www.w3schools.com/python/ref_func_ord.asp">ord</a> und <a class="reference external" href="https://www.w3schools.com/python/ref_func_chr.asp">chr</a> verwenden.</p>
 </div>
 <div class="section" id="naturliche-zahlen">
-<span id="sec-memory-natural-numbers"></span><h4><span class="section-number">4.2.2.3. </span>Natürliche Zahlen<a class="headerlink" href="#naturliche-zahlen" title="Link zu dieser Überschrift">¶</a></h4>
+<span id="sec-memory-natural-numbers"></span><h4><span class="section-number">23.2.2.3. </span>Natürliche Zahlen<a class="headerlink" href="#naturliche-zahlen" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Wenn wir für Zahlen ebenfalls nur zwei Speicherbereiche (Datentyp und Wert) vorsehen, schränken wir uns zu sehr ein.
 Denn dann ist die größte Zahl die wir darstellen können die 255.</p>
 <div class="exercise admonition" id="memory-whole-numbers-computer-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.11 </span>(Ganze Zahlen auf Ihrem Computer)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.5 </span> (Ganze Zahlen auf Ihrem Computer)</p>
 <div class="section" id="exercise-content">
 <p>Finden Sie heraus was die größte natürliche Zahl ist, die Ihr Computer (in Form eines primitiven Datentyps) abspeichern kann.</p>
 </div>
@@ -1295,13 +1487,15 @@ Denn dann ist die größte Zahl die wir darstellen können die 255.</p>
 <p>Wir legen fest, dass drei Speicherbereiche (einen für den Datentyp und zwei für den Wert) ausreichen.
 Das ist natürlich eine willkürliche Festlegung, für den Computer hat die Einschränkung hardwaretechnische Gründe.</p>
 <div class="exercise admonition" id="memory-biggest-number-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.12 </span>(Ganze Zahlen auf dem Computer)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.6 </span> (Ganze Zahlen auf dem Computer)</p>
 <div class="section" id="exercise-content">
 <p>Wie lautet die größte <strong>natürliche Zahl</strong> (nur der Wert), welche wir mit zwei Speicherbereichen also 2 Byte darstellen können?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-biggest-number-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-biggest-number-exercise"><span>Exercise 4.12</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-biggest-number-exercise"> Exercise 23.6 (Ganze Zahlen auf dem Computer)</a></p>
 <div class="section" id="solution-content">
 <div class="math notranslate nohighlight">
 \[
@@ -1325,7 +1519,8 @@ Das Nein werden Sie gleich verstehen, wenn wir den Datentyp der Liste besprechen
 Wie dies funktionieren kann werden Sie vielleicht auch verstehen, wenn wir die Listen-Realisierung besprechen.</p>
 <p>Was passiert eigentlich wenn wir den Bereich der Darstellbarkeit überschreiten?</p>
 <div class="exercise admonition" id="memory-overflow-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.13 </span>(Überlauf von ganzen Zahlen)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.7 </span> (Überlauf von ganzen Zahlen)</p>
 <div class="section" id="exercise-content">
 <p>Welcher Wert steht nach der Ausführung folgender <code class="docutils literal notranslate"><span class="pre">Java</span></code>-Codezeilen in der Variable <code class="docutils literal notranslate"><span class="pre">z</span></code>?
 Sie können den Code zum Beispiel <a class="reference external" href="https://www.learnjavaonline.org/">hier</a> ausführen.</p>
@@ -1338,17 +1533,18 @@ Sie können den Code zum Beispiel <a class="reference external" href="https://ww
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-overflow-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-overflow-exercise"><span>Exercise 4.13</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-overflow-exercise"> Exercise 23.7 (Überlauf von ganzen Zahlen)</a></p>
 <div class="section" id="solution-content">
 <p><code class="docutils literal notranslate"><span class="pre">z</span></code> enthält den Wert -128.</p>
-<p>Da ein <code class="docutils literal notranslate"><span class="pre">byte</span></code> (eine 8 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a>) ganze Zahle statt natürliche Zahl repräsentiert, wird das höchste <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> als negativer Anteil interpretiert, siehe Abschnitt <a class="reference internal" href="../02-1/2-representation.html#sec-integers"><span class="std std-ref">Ganze Zahlen</span></a> Gleichung <a class="reference internal" href="../02-1/2-representation.html#equation-eq-binary-integer">(2.4)</a>.</p>
+<p>Da ein <code class="docutils literal notranslate"><span class="pre">byte</span></code> (eine 8 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a>) ganze Zahle statt natürliche Zahl repräsentiert, wird das höchste <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> als negativer Anteil interpretiert, siehe Abschnitt <a class="reference internal" href="../02-1/2-representation.html#sec-integers"><span class="std std-ref">Ganze Zahlen</span></a> Gleichung <a class="reference internal" href="../02-1/2-representation.html#equation-eq-binary-integer">(7.4)</a>.</p>
 <p>Ist dieses <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> gleich <span class="math notranslate nohighlight">\(1\)</span>, so ist die Zahl negativ.
 Ist das <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> dagegen <span class="math notranslate nohighlight">\(0\)</span>, so ist die Zahl positiv.</p>
 <p>Da wir <span class="math notranslate nohighlight">\(8\)</span> Bits verwenden ist <span class="math notranslate nohighlight">\(127_{10} = 0111 1111_2\)</span> und <span class="math notranslate nohighlight">\(1_{10} = 0000 0001_2\)</span>.
 Demnach gilt:</p>
 <div class="math notranslate nohighlight">
 \[0111 1111_2 + 0000 0001_2 = 1000 0000_2.\]</div>
-<p>Was wiederum nach Gleichung <a class="reference internal" href="../02-1/2-representation.html#equation-eq-binary-integer">(2.4)</a></p>
+<p>Was wiederum nach Gleichung <a class="reference internal" href="../02-1/2-representation.html#equation-eq-binary-integer">(7.4)</a></p>
 <div class="math notranslate nohighlight">
 \[1 \cdot (-2^8) + 0 \cdot 2^7 + \ldots + 0 \cdot 2^0 = -2^8 = -128\]</div>
 <p>ergibt. Es kommt zu einem <strong>unerwünschten Überlauf</strong> (engl. <em>overflow</em>).</p>
@@ -1362,7 +1558,7 @@ Demnach gilt:</p>
 </div>
 </div>
 <div class="section" id="speicheradressen">
-<span id="sec-memory-address"></span><h4><span class="section-number">4.2.2.4. </span>Speicheradressen<a class="headerlink" href="#speicheradressen" title="Link zu dieser Überschrift">¶</a></h4>
+<span id="sec-memory-address"></span><h4><span class="section-number">23.2.2.4. </span>Speicheradressen<a class="headerlink" href="#speicheradressen" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Weshalb benötigen wir Speicheradressen als gesonderten Datentyp?</p>
 <p>Wir klammern bei unserer Modellierung Anweisungen aus.
 Doch angenommen wir hätten derartige Anweisungen, dann würde, zum Beispiel, eine Addition darin bestehen die arithmetische Einheit der <a class="reference internal" href="../02-1/4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> anzuweisen zwei Zahlen, welche sich an einer bestimmten Speicheradresse befinden, zu addieren und das Ergebnis wieder an eine neue Speicheradresse zu schreiben.
@@ -1375,7 +1571,8 @@ Um jeden Speicherbereich (jedes Byte) adressieren zu können müssen wir Zahlen 
 Damit ist die größtmögliche Speicheradresse eine harte Grenze für die Menge an Speicher!</p>
 <p>Wir einigen uns, identisch zu den natürlichen Zahlen, auf einen <em>Adressraum</em> von 2 Byte.</p>
 <div class="exercise admonition" id="memory-adress-space-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.14 </span>(Adressraum)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.8 </span> (Adressraum)</p>
 <div class="section" id="exercise-content">
 <ol class="simple">
 <li><p>Wie groß kann unser Speicher sein, wenn wir 2 Byte für die Adressierung verwenden?</p></li>
@@ -1384,7 +1581,8 @@ Damit ist die größtmögliche Speicheradresse eine harte Grenze für die Menge 
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-adress-space-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-adress-space-exercise"><span>Exercise 4.14</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-adress-space-exercise"> Exercise 23.8 (Adressraum)</a></p>
 <div class="section" id="solution-content">
 <ol class="simple">
 <li><p>Wir können <span class="math notranslate nohighlight">\(2^{16} = 2^6 \cdot 2^{10} = 65536\)</span> Byte also 64 KibiByte (KB) adressieren.</p></li>
@@ -1394,7 +1592,7 @@ Damit ist die größtmögliche Speicheradresse eine harte Grenze für die Menge 
 </div>
 </div>
 <div class="section" id="listen">
-<span id="sec-memory-list"></span><h4><span class="section-number">4.2.2.5. </span>Listen<a class="headerlink" href="#listen" title="Link zu dieser Überschrift">¶</a></h4>
+<span id="sec-memory-list"></span><h4><span class="section-number">23.2.2.5. </span>Listen<a class="headerlink" href="#listen" title="Link zu dieser Überschrift">¶</a></h4>
 <p>Die wesentliche Eigenschaft einer Liste (wie auch des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a>) ist, die schnelle Adressierung bei bekannter Adresse.
 Kennen wir den Index <code class="docutils literal notranslate"><span class="pre">i</span></code> eines Wertes, so können wir auf den Wert in konstanter Laufzeit <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span> zugreifen.</p>
 <p>Wenn wir wissen, dass die Liste an einer bestimmten Speicheradresse <code class="docutils literal notranslate"><span class="pre">j</span></code> in unserem Arbeitsspeicher <code class="docutils literal notranslate"><span class="pre">memory</span></code> beginnt, welche Informationen benötigen wir um schnell auf das <code class="docutils literal notranslate"><span class="pre">i</span></code>-te Element der Liste zuzugreifen?
@@ -1412,13 +1610,14 @@ Es folgt die Länge der Liste als natürlichen Zahl ohne Datentypinformation.
 Das sind weitere 16 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> für den Wert.
 Dann folgt der Datentyp der Listenelemente, was nochmals 8 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> sind.
 Nach dieser Prämisse folgen die eigentlichen Elemente ohne Datentypinformation.</p>
-<p><a class="reference internal" href="#fig-datatypes-in-memory"><span class="std std-numref">Abbildung 4.10</span></a> fasst alle besprochenen Datentypen zusammen.</p>
+<p><a class="reference internal" href="#fig-datatypes-in-memory"><span class="std std-numref">Abbildung 23.4</span></a> fasst alle besprochenen Datentypen zusammen.</p>
 <div class="figure align-default" id="fig-datatypes-in-memory">
 <a class="reference internal image-reference" href="../../_images/datatypes-in-memory.png"><img alt="../../_images/datatypes-in-memory.png" src="../../_images/datatypes-in-memory.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 4.10 </span><span class="caption-text">Speicheranordnung von Werten verschiedener Datentypen. Die Liste ist eine Liste aus natürlichen Zahlen.</span><a class="headerlink" href="#fig-datatypes-in-memory" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 23.4 </span><span class="caption-text">Speicheranordnung von Werten verschiedener Datentypen. Die Liste ist eine Liste aus natürlichen Zahlen.</span><a class="headerlink" href="#fig-datatypes-in-memory" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-list-addressing-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.15 </span>(Listen-Adressierung)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.9 </span> (Listen-Adressierung)</p>
 <div class="section" id="exercise-content">
 <ol class="simple">
 <li><p>Angenommen jedes Listen-Element belegt 2 Speicherbereiche (2 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Byte</span></a>) und die Liste beginnt am Index <code class="docutils literal notranslate"><span class="pre">j</span></code> in <code class="docutils literal notranslate"><span class="pre">memory</span></code>.
@@ -1428,7 +1627,8 @@ Wie lautet dann der Index von <code class="docutils literal notranslate"><span c
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-list-addressing-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-list-addressing-exercise"><span>Exercise 4.15</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-list-addressing-exercise"> Exercise 23.9 (Listen-Adressierung)</a></p>
 <div class="section" id="solution-content">
 <ol class="simple">
 <li><p>Auf das gesuchte Element greifen wir durch <code class="docutils literal notranslate"><span class="pre">memory[4</span> <span class="pre">+</span> <span class="pre">j</span> <span class="pre">+</span> <span class="pre">i</span> <span class="pre">*</span> <span class="pre">2]</span></code> zu.</p></li>
@@ -1440,14 +1640,16 @@ Wie lautet dann der Index von <code class="docutils literal notranslate"><span c
 Dies ist ein ganz wesentliches Prinzip aller modernen Computer!
 Es vereinfacht bzw. beschleunigt die Adressierung.</p>
 <div class="exercise admonition" id="memory-list-variable-memory-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.16 </span>(Primitive Datentypen mit variablem Speicherverbrauch)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.10 </span> (Primitive Datentypen mit variablem Speicherverbrauch)</p>
 <div class="section" id="exercise-content">
 <p>Angenommen wir hätten einen variablen Speicherverbrauch, d.h. kleinere Zahlen belegen weniger Speicher als große Zahlen.
 Wie müssten wir dann unsere Liste realisieren?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-list-variable-memory-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-list-variable-memory-exercise"><span>Exercise 4.16</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-list-variable-memory-exercise"> Exercise 23.10 (Primitive Datentypen mit variablem Speicherverbrauch)</a></p>
 <div class="section" id="solution-content">
 <p>Vor dem Wert der Zahl müsste deren Speicherbedarf stehen, also in unserem Beispiel ob die Zahl einen oder zwei Speicherbereiche belegt.</p>
 <p>Da Zahlen unterschiedlich viele Speicherbereiche belegen, haben wir keine Möglichkeit durch die Adressen der Liste und dem Index des gesuchten Elements, auf dieses direkt zuzugreifen.</p>
@@ -1476,12 +1678,13 @@ Bleiben Sie geduldig, auch das klären wir noch.</p>
 </div>
 </div>
 <div class="section" id="implementierung">
-<h2><span class="section-number">4.3. </span>Implementierung<a class="headerlink" href="#implementierung" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">23.3. </span>Implementierung<a class="headerlink" href="#implementierung" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="speicher-initialisieren">
-<h3><span class="section-number">4.3.1. </span>Speicher initialisieren<a class="headerlink" href="#speicher-initialisieren" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.3.1. </span>Speicher initialisieren<a class="headerlink" href="#speicher-initialisieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Realisieren wir zunächst einmal die Initialisierung.</p>
 <div class="exercise admonition" id="memory-initialization-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.17 </span>(Speicherinitialisierung)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.11 </span> (Speicherinitialisierung)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">initialize(n)</span></code>, die einen <code class="docutils literal notranslate"><span class="pre">n-byte</span></code> Speicher initialisiert.
 Initialisieren Sie einen Speicher mit 1024 Byte.
@@ -1511,7 +1714,8 @@ inuse = [False, False, False, False, False, False, False, False, False, False, F
 <p>Um mit dem Speicher hantieren zu können brauchen wir einige Hilfsfunktionen.
 Wir tasten uns im Folgenden in ganz kleinen Schritten nach vorne.</p>
 <div class="exercise admonition" id="memory-helpers-1-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.18 </span>(Valider Speicherbereich?)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.12 </span> (Valider Speicherbereich?)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie folgende Hilfsfunktionen:</p>
 <ul class="simple">
@@ -1533,7 +1737,7 @@ Wir tasten uns im Folgenden in ganz kleinen Schritten nach vorne.</p>
 </div>
 </div>
 <div class="section" id="speicherverwaltung-fur-primitive-datentypen">
-<h3><span class="section-number">4.3.2. </span>Speicherverwaltung für primitive Datentypen<a class="headerlink" href="#speicherverwaltung-fur-primitive-datentypen" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.3.2. </span>Speicherverwaltung für primitive Datentypen<a class="headerlink" href="#speicherverwaltung-fur-primitive-datentypen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Stellen Sie sich vor wir haben wild und durcheinander in unserem Speicher geschrieben und möchten nun erneut in den Speicher etwas schreiben.
 Wir müssten uns merken welche Speicherbereiche bereits belegt sind.
 Das ist nicht gerade praktikabel.
@@ -1542,7 +1746,8 @@ Dieser sagen wir wie viel Speicher wir gerne hätten und sie gibt uns eine entsp
 <p>Auch wäre es praktisch eine Art Umkehrfunktion dieser Operation zu haben.
 Also eine Funktion die den Speicher an einer bestimmten Adresse wieder freigibt.</p>
 <div class="exercise admonition" id="memory-malloc-free-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.19 </span>(Speicher statisch allokieren)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.13 </span> (Speicher statisch allokieren)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie folgende Funktionen:</p>
 <ul class="simple">
@@ -1649,7 +1854,8 @@ Wir müssen Speicher auch nicht freigeben, auch darum kümmert sich <code class=
 Das ist für Listen besonders trickreich.
 Lassen wir Listen deshalb zunächst außer acht.</p>
 <div class="exercise admonition" id="memory-alloc-free-without-list-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.20 </span>(Speicher dynamisch allokieren)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.14 </span> (Speicher dynamisch allokieren)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie zunächst folgende einfache Hilfsfunktionen:</p>
 <ul class="simple">
@@ -1751,7 +1957,7 @@ Lassen wir Listen deshalb zunächst außer acht.</p>
 </div>
 </div>
 <div class="section" id="addieren-im-speicher">
-<h3><span class="section-number">4.3.3. </span>Addieren im Speicher<a class="headerlink" href="#addieren-im-speicher" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.3.3. </span>Addieren im Speicher<a class="headerlink" href="#addieren-im-speicher" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um zwei Zahlen im Speicher zu addieren fehlt uns nur noch eine Funktion die zwei Zahlen an zwei Speicheradressen liest und das Ergebnis der Addition an eine neu reservierte Speicheradresse schreibt.
 Diese neue Adresse sollte die Funktion zurückgeben.</p>
 <div class="cell docutils container">
@@ -1792,10 +1998,10 @@ Diese neue Adresse sollte die Funktion zurückgeben.</p>
 </div>
 </div>
 <div class="section" id="speicherverwaltung-fur-listen">
-<h3><span class="section-number">4.3.4. </span>Speicherverwaltung für Listen<a class="headerlink" href="#speicherverwaltung-fur-listen" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.3.4. </span>Speicherverwaltung für Listen<a class="headerlink" href="#speicherverwaltung-fur-listen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Was fehlt ist <code class="docutils literal notranslate"><span class="pre">alloc</span></code> und <code class="docutils literal notranslate"><span class="pre">free</span></code> für eine Liste.
 Was wir benötigen ist die Berechnung des Speicherbedarfs einer Liste.
-Betrachten Sie <a class="reference internal" href="#fig-list-in-memory"><span class="std std-numref">Abbildung 4.11</span></a>.
+Betrachten Sie <a class="reference internal" href="#fig-list-in-memory"><span class="std std-numref">Abbildung 23.5</span></a>.
 Wir berechnen den Speicherbedarf einer Liste durch</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">+</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">calc_byte</span><span class="p">(</span><span class="n">memory</span><span class="p">[</span><span class="n">addr</span><span class="o">+</span><span class="mi">3</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -1805,10 +2011,11 @@ Weshalb subtrahieren wir die eins?
 Da Listenelemente keine Datentypinformation benötigen!</p>
 <div class="figure align-default" id="fig-list-in-memory">
 <a class="reference internal image-reference" href="../../_images/list-in-memory.png"><img alt="../../_images/list-in-memory.png" src="../../_images/list-in-memory.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 4.11 </span><span class="caption-text">Liste wie sie im Speicher liegt. Um den Speicherbedarf zu berechnen benötigen wir die <strong>Länge der Liste</strong>, und den <strong>Datentyp der Listenelemente</strong>.</span><a class="headerlink" href="#fig-list-in-memory" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 23.5 </span><span class="caption-text">Liste wie sie im Speicher liegt. Um den Speicherbedarf zu berechnen benötigen wir die <strong>Länge der Liste</strong>, und den <strong>Datentyp der Listenelemente</strong>.</span><a class="headerlink" href="#fig-list-in-memory" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="exercise admonition" id="memory-alloc-list-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.21 </span>(Speicher für Listen allokieren)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.15 </span> (Speicher für Listen allokieren)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">calc_list_bytes(addr,</span> <span class="pre">memory)</span></code>, welche den benötigten Speicherbereich einer Liste, welche an Adresse <code class="docutils literal notranslate"><span class="pre">addr</span></code> startet, berechnet.
 Bauen Sie diese Funktion in <code class="docutils literal notranslate"><span class="pre">free</span></code> ein.</p>
@@ -1870,7 +2077,8 @@ Bauen Sie diese Funktion in <code class="docutils literal notranslate"><span cla
 <p>ist diese unbefüllt und wir können mit ihr noch nichts anfangen.
 Wir benötigen Funktionen für den Zugriff.</p>
 <div class="exercise admonition" id="memory-access-list-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.22 </span>(Listenverwaltung)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.16 </span> (Listenverwaltung)</p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie folgende Funktionen zur Verwaltung einer Liste:</p>
 <ul class="simple">
@@ -1957,7 +2165,7 @@ Our list in mememory: [2, 0, 10, 0, 0, 1, 0, 4, 0, 9, 0, 16, 0, 25, 0, 36, 0, 49
 </div>
 </div>
 <div class="section" id="mehrdimensionale-listen">
-<h3><span class="section-number">4.3.5. </span>Mehrdimensionale Listen<a class="headerlink" href="#mehrdimensionale-listen" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.3.5. </span>Mehrdimensionale Listen<a class="headerlink" href="#mehrdimensionale-listen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Wenn Sie <code class="docutils literal notranslate"><span class="pre">alloc_list</span></code> betrachten werden Sie festellen, dass eine Liste aus Elementen vom Datentyp <code class="docutils literal notranslate"><span class="pre">to_data_type('list')</span></code> nicht zulässig ist.
 Unsere Liste darf derzeit nur <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> (natürliche Zahlen, Zeichen und Adressen) beinhalten.</p>
 <p>Mehrdimensionale Listen aus Elementen eines <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyps</span></a> lassen sich recht einfach erstellen, wenn wir anstatt einer Länge, für jede Dimension eine Länge anfügen.
@@ -1977,14 +2185,16 @@ Die Liste <code class="docutils literal notranslate"><span class="pre">two_dim_l
 Diese bietet uns zugleich eine Möglichkeit Listen mit Elementen mit unterschiedlichen Datentypen zu erstellen.
 Haben Sie eine Idee wie wir das erreichen können?</p>
 <div class="exercise admonition" id="memory-list-pointer-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.23 </span>(Listen und Zeiger)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.17 </span> (Listen und Zeiger)</p>
 <div class="section" id="exercise-content">
 <p>Wie können wir Listen mit Elementen mit unterschiedlichen Datentypen realisieren?</p>
 <p><strong>Tipp:</strong> Denken Sie an den Datentyp, den wir bis jetzt noch gar nicht verwendet haben.</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-list-pointer-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-list-pointer-exercise"><span>Exercise 4.23</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-list-pointer-exercise"> Exercise 23.17 (Listen und Zeiger)</a></p>
 <div class="section" id="solution-content">
 <p>Wir können Adressen (Zeiger) als Listenelemente verwenden.
 Diese Adressen können auf unterschiedliche <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> aber auch andere Listen zeigen!</p>
@@ -2073,7 +2283,7 @@ We allocated 0 bytes
 </div>
 </div>
 <div class="section" id="ein-einfacher-parser">
-<h3><span class="section-number">4.3.6. </span>Ein einfacher Parser<a class="headerlink" href="#ein-einfacher-parser" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.3.6. </span>Ein einfacher Parser<a class="headerlink" href="#ein-einfacher-parser" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um die Manipulationen im Speicher besser nachzuvollziehen zu können wäre es großartig eine Funktion <code class="docutils literal notranslate"><span class="pre">mem_to_string(addr,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code> zu haben, welche einen <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyp</span></a> oder eine <a class="reference internal" href="#sec-memory-list"><span class="std std-ref">Liste</span></a> in einer gut leserliche Zeichenkette umwandelt.</p>
 <p>An einer Adresse <code class="docutils literal notranslate"><span class="pre">ADDR</span></code> kann sich eine andere <code class="docutils literal notranslate"><span class="pre">ADDR</span></code>, eine Zahl <code class="docutils literal notranslate"><span class="pre">number</span></code>, ein Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code> oder eine Liste <code class="docutils literal notranslate"><span class="pre">LIST</span></code> befinden.
 Eine Liste <code class="docutils literal notranslate"><span class="pre">LIST</span></code> kann wiederum natürliche Zahlen <code class="docutils literal notranslate"><span class="pre">number</span></code>, Zeichen <code class="docutils literal notranslate"><span class="pre">char</span></code> oder Adressen <code class="docutils literal notranslate"><span class="pre">ADDR</span></code> enthalten.
@@ -2100,7 +2310,8 @@ Handelt es sich um eine Adresse verfahren wir entsprechend weiter.
 Nachdem wir durch eine Liste iteriert sind, geben wir <code class="docutils literal notranslate"><span class="pre">]</span></code> aus.</p>
 <p>Da unsere <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> rekursiv definiert ist, eignet sich auch eine <a class="reference internal" href="../03-6/x-recursion.html#sec-recursive-functions"><span class="std std-ref">rekursive Funktion</span></a> um die Ausgabe zu erzeugen.</p>
 <div class="exercise admonition" id="memory-rekursive-print-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.24 </span>(Rekursive Ausgabe)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.18 </span> (Rekursive Ausgabe)</p>
 <div class="section" id="exercise-content">
 <p>Implementieren Sie eine Funktion <code class="docutils literal notranslate"><span class="pre">mem_to_string(addr,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code>, die eine geeignete Zeichenkette des an der Adresse <code class="docutils literal notranslate"><span class="pre">addr</span></code> liegenden Elements zurückliefert.</p>
 </div>
@@ -2162,7 +2373,7 @@ Wenn der Datentyp an der Adresse <code class="docutils literal notranslate"><spa
 Glücklicherweise können wir unsere zuvor definierten Hilfsfunktionen <code class="docutils literal notranslate"><span class="pre">list_len</span></code> und <code class="docutils literal notranslate"><span class="pre">get_list_value</span></code> nutzen.
 Die Zeichenkette lassen wir mit einem <code class="docutils literal notranslate"><span class="pre">&quot;[&quot;</span></code> beginnen um den Anfang der Liste zu markieren.
 Durch <code class="docutils literal notranslate"><span class="pre">list_len</span></code> holen wir die Längeninformation der Liste aus dem Speicher.
-Anhand unserer Listendefinition in <a class="reference internal" href="#fig-list-in-memory"><span class="std std-numref">Abbildung 4.11</span></a>, wissen wir dass an <code class="docutils literal notranslate"><span class="pre">memory[mylist+3]</span></code> der Datentyp der Listenelemente der Liste steht.
+Anhand unserer Listendefinition in <a class="reference internal" href="#fig-list-in-memory"><span class="std std-numref">Abbildung 23.5</span></a>, wissen wir dass an <code class="docutils literal notranslate"><span class="pre">memory[mylist+3]</span></code> der Datentyp der Listenelemente der Liste steht.
 Was folgt ist eine Iteration über die Listenelemente.
 <code class="docutils literal notranslate"><span class="pre">get_list_value</span></code> liefert uns je ein Listenelement.
 Erneut ist der Fall für die Zahlen und Zeichenketten klar.
@@ -2208,7 +2419,7 @@ B
 </div>
 </div>
 <div class="section" id="listen-erzeugen">
-<h3><span class="section-number">4.3.7. </span>Listen erzeugen<a class="headerlink" href="#listen-erzeugen" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.3.7. </span>Listen erzeugen<a class="headerlink" href="#listen-erzeugen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Wie Sie oben sehen, können wir durch <code class="docutils literal notranslate"><span class="pre">alloc</span></code> bereits sehr bequem mit primitiven Datentypen umgehen.
 Um eine Liste zu erstellen haben wir noch keine solche Hilfsfunktion implementiert.
 Wäre es nicht toll wenn wir durch folgenden Code eine neue Liste aus Zahlen oder Zeichen an die Adresse <code class="docutils literal notranslate"><span class="pre">numbers</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">chars</span></code> schreiben könnten?</p>
@@ -2217,7 +2428,8 @@ Wäre es nicht toll wenn wir durch folgenden Code eine neue Liste aus Zahlen ode
 </pre></div>
 </div>
 <div class="exercise admonition" id="memory-list-generation-primitive-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.25 </span>(Listen für primitive Datentypen erzeugen)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.19 </span> (Listen für primitive Datentypen erzeugen)</p>
 <div class="section" id="exercise-content">
 <p>Implementieren Sie die Funktion <code class="docutils literal notranslate"><span class="pre">new_primitive_list(values,</span> <span class="pre">data_type,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code>.
 Verwenden Sie hierfür <code class="docutils literal notranslate"><span class="pre">alloc_list</span></code> und <code class="docutils literal notranslate"><span class="pre">set_list_value</span></code>.
@@ -2256,7 +2468,8 @@ Wäre es nicht wundervoll, wenn folgender Code funktionieren würde:</p>
 </pre></div>
 </div>
 <div class="exercise admonition" id="memory-list-generation-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.26 </span>(Listen erzeugen)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.20 </span> (Listen erzeugen)</p>
 <div class="section" id="exercise-content">
 <p>Implementieren Sie die gewünschte Funktion <code class="docutils literal notranslate"><span class="pre">new_list(values,</span> <span class="pre">memory,</span> <span class="pre">inuse)</span></code>.
 Sie müssen dabei für jeden Eintrag in <code class="docutils literal notranslate"><span class="pre">values</span></code> den Datentyp berechnen.
@@ -2324,7 +2537,7 @@ Wichtig dabei ist, dass eine Zeichenkette mit Länge gleich 1 ein <code class="d
 Die <strong>Dekomposition</strong> des Problems in viele kleinere Probleme hilft uns ungemein beim Lösen des Gesamtproblems.</p>
 </div>
 <div class="section" id="ende-der-reise">
-<h3><span class="section-number">4.3.8. </span>Ende der Reise<a class="headerlink" href="#ende-der-reise" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.3.8. </span>Ende der Reise<a class="headerlink" href="#ende-der-reise" title="Link zu dieser Überschrift">¶</a></h3>
 <p>An dieser Stelle beenden wir die Reise.
 Sie können ihren Code selbständig gerne um weitere Funktionen erweitern.</p>
 <p>Wie wäre es zum Beispiel mit der Subtraktion von zwei Zahlen <span class="math notranslate nohighlight">\(a - b\)</span>?
@@ -2356,7 +2569,7 @@ Anfangs wäre der Berg von Problemen vor dem Sie stehen gigantisch.
 Doch wenn Sie sich erneut Schritt für Schritt voran kämpfen und den Berg in viele kleine Hügel aufteilen, kann auch das gelingen.</p>
 </div>
 <div class="section" id="memory-klasse">
-<h3><span class="section-number">4.3.9. </span>Memory Klasse<a class="headerlink" href="#memory-klasse" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><span class="section-number">23.3.9. </span>Memory Klasse<a class="headerlink" href="#memory-klasse" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Wir haben Ihnen alle Funktionen als Klassenmethoden in die Klasse <code class="docutils literal notranslate"><span class="pre">Memory</span></code> gepackt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2637,7 +2850,7 @@ Doch wenn Sie sich erneut Schritt für Schritt voran kämpfen und den Berg in vi
 </div>
 </div>
 <div class="section" id="was-soll-das-alles">
-<h2><span class="section-number">4.4. </span>Was soll das alles?<a class="headerlink" href="#was-soll-das-alles" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">23.4. </span>Was soll das alles?<a class="headerlink" href="#was-soll-das-alles" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Diese Übung scheint absonderlich.
 Wir haben uns um viel <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktionalität beraubt, um diese dann wieder zu implementieren.
 Was soll das alles?</p>
@@ -2706,18 +2919,20 @@ Adressen bzw. <strong>Zeiger</strong> auf andere Speicherobjekte werden Ihnen in
 Sie sind ein essenzielles Konzept der Programmierung, welches Sie auch bei der Programmierung <code class="docutils literal notranslate"><span class="pre">Python</span></code> kennen und verstehen sollten.</p>
 <p>Sollten Sie je mit einer Sprache in Kontakt kommen in der Sie den Speicher selbst verwalten müssen (z.B. <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>), so haben Sie hierfür eine erste Verständnisgrundlage.</p>
 <div class="exercise admonition" id="memory-management-c-exercise">
-<p class="admonition-title"><span class="caption-number">Exercise 4.27 </span>(Speicherverwaltung in C)</p>
+
+<p class="admonition-title"><span class="caption-number">Exercise 23.21 </span> (Speicherverwaltung in C)</p>
 <div class="section" id="exercise-content">
 <p>Können Sie erraten welche Auswirkungen folgender <code class="docutils literal notranslate"><span class="pre">C</span></code>-Code hat?</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
-<span class="p">...</span>
-<span class="n">free</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="n">free</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="solution dropdown admonition" id="memory-management-c-solution">
-<p class="admonition-title">Solution to <a class="reference external" href="#memory-management-c-exercise"><span>Exercise 4.27</span></a></p>
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#memory-management-c-exercise"> Exercise 23.21 (Speicherverwaltung in C)</a></p>
 <div class="section" id="solution-content">
 <p>Die erste Zeile allokiert einen Speicher für ein Array (Liste) aus Fließkommazahlen (<code class="docutils literal notranslate"><span class="pre">float</span></code>) der größe 100.
 <code class="docutils literal notranslate"><span class="pre">ptr</span></code> ist der Zeiger der auf das Array zeigt. <code class="docutils literal notranslate"><span class="pre">free(ptr)</span></code> gibt den Speicher des Arrays frei.</p>
@@ -2750,34 +2965,42 @@ Sie sind ein essenzielles Konzept der Programmierung, welches Sie auch bei der P
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="image-representation.html" title="previous page"><span class="section-number">3. </span>Binäres Zeichnen - Struktur ist Information</a>
-    <a class='right-next' id="next-link" href="name-register.html" title="next page"><span class="section-number">5. </span>Namensregister</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="image-representation.html" title="zurück Seite">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">zurück</p>
+            <p class="prev-next-title"><span class="section-number">22. </span>Binäres Zeichnen - Struktur ist Information</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="name-register.html" title="weiter Seite">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">weiter</p>
+        <p class="prev-next-title"><span class="section-number">24. </span>Namensregister</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          <div class="extra_footer">
-            <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
-          </div>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      <div class="extra_footer">
+        <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
