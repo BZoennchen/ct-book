@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -1441,14 +1441,14 @@ Diese Strafen sind jedoch in den meisten Anwendungen vernachlässigbar.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of numbers = [1, 2, 3, 4, 5]
-id of numbers = 140381708036224
+id of numbers = 140433636403968
 value of numbers[2] = 3
-id of numbers[2] = 140381677349232
+id of numbers[2] = 140434693351792
 change value of numbers[2]
 value of numbers = [1, 2, -20, 4, 5]
-id of numbers = 140381708036224
+id of numbers = 140433636403968
 value of numbers[2] = -20
-id of numbers[2] = 140381707777808
+id of numbers[2] = 140433636145072
 </pre></div>
 </div>
 </div>
@@ -1498,14 +1498,14 @@ Oder aber wir stellen uns eine Schnur vor, die von dem Schließfach auf das Obje
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of mylist = [1, [&#39;a&#39;, &#39;b&#39;], 5]
-id of mylist = 140381708036992
+id of mylist = 140433636404672
 value of mylist[1] = [&#39;a&#39;, &#39;b&#39;]
-id of mylist[1] = 140381708035776
+id of mylist[1] = 140433636403456
 change value mylist[1][0]
 value of mylist = [1, [&#39;c&#39;, &#39;b&#39;], 5]
-id of mylist = 140381708036992
+id of mylist = 140433636404672
 value of mylist[1] = [&#39;c&#39;, &#39;b&#39;]
-id of numbers[1] = 140381708035776
+id of numbers[1] = 140433636403456
 </pre></div>
 </div>
 </div>
@@ -1576,8 +1576,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 140381708026944
- id after concat: 140381708029632
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 140433636401408
+ id after concat: 140433636387968
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1598,8 +1598,8 @@ Diese Übung bietet detaillierte Einblicke in die funktionsweise des Speichers u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 140381708035200
- id after concat: 140381708035200
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id before concat: 140433636211840
+ id after concat: 140433636211840
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
@@ -1819,13 +1819,13 @@ In diesem Fall macht es keinen Unterschied ob die <em>atomaren Datentypen</em> K
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers
-140381677349168
-140381677349200
-140381677349232
+140434693351728
+140434693351760
+140434693351792
 ids of numbers_shallow_copy
-140381677349168
-140381677349200
-140381677349232
+140434693351728
+140434693351760
+140434693351792
 </pre></div>
 </div>
 </div>
@@ -1860,8 +1860,8 @@ Nunja, die <strong>Adressen</strong></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140381708037440
-140381708037440
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140433636335552
+140433636335552
 </pre></div>
 </div>
 </div>
@@ -1900,14 +1900,14 @@ Anders ausgedrückt: Sie müssen alle <em>Kinder</em> der Datenstruktur kopieren
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of numbers:
-140381677349168
-140381677349200
-140381708036480
+140434693351728
+140434693351760
+140433636092416
 
 ids of numbers_deep_copy:
-140381677349168
-140381677349200
-140381708035776
+140434693351728
+140434693351760
+140433636403456
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]]
@@ -1931,14 +1931,14 @@ Wie sieht es mit den Adressen der Elemente des Kindes aus?:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ids of mylist[2]
-140381409256944
-140381408826864
-140381678130096
+140434156562032
+140434424829424
+140434694132656
 
 ids of mylist_deep_copy[2]
-140381409256944
-140381408826864
-140381678130096
+140434156562032
+140434424829424
+140434694132656
 </pre></div>
 </div>
 </div>
