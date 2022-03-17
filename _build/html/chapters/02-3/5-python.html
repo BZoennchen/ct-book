@@ -723,6 +723,43 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03-9/cpython.html">
+   19. CPython
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/1-impl.html">
+     19.1. Implementierungen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/2-ref.html">
+     19.2. Referenzimplementierung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/3-interpreter.html">
+     19.3. Interpreter und Compiler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/4-disassembly.html">
+     19.4. Zerlegung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-9/5-extending.html">
+     19.5. CPython erweitern
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -732,27 +769,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../04/robo-world.html">
-   19. Roboterwelt
+   20. Roboterwelt
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../04/dive-bell.html">
-   20. Sprechen in der Taucherglocke
+   21. Sprechen in der Taucherglocke
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../04/image-representation.html">
-   21. Binäres Zeichnen - Struktur ist Information
+   22. Binäres Zeichnen - Struktur ist Information
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../04/memory.html">
-   22. Speicher - alles ist eine Liste
+   23. Speicher - alles ist eine Liste
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../04/name-register.html">
-   23. Namensregister
+   24. Namensregister
   </a>
  </li>
 </ul>
@@ -874,6 +911,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laufzeitvergleiche">
+   9.5.1. Laufzeitvergleiche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-gegen-den-rest-der-welt">
+   9.5.2. Python gegen den Rest der Welt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kritik">
+   9.5.3. Kritik
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schlusswort">
+   9.5.4. Schlusswort
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -886,6 +951,34 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Inhalt </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laufzeitvergleiche">
+   9.5.1. Laufzeitvergleiche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-gegen-den-rest-der-welt">
+   9.5.2. Python gegen den Rest der Welt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kritik">
+   9.5.3. Kritik
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schlusswort">
+   9.5.4. Schlusswort
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -894,12 +987,35 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="python">
 <span id="sec-python"></span><h1><span class="section-number">9.5. </span>Python<a class="headerlink" href="#python" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Mit <strong>PYTHON</strong> haben widmen wir uns der Sprache <code class="docutils literal notranslate"><span class="pre">Python</span></code> für einen ganzen Teil des Buches.
+<p>Mit <strong>PYTHON</strong> widmen wir uns der Sprache <code class="docutils literal notranslate"><span class="pre">Python</span></code> für einen ganzen Teil des Buches.
 Dort besprechen wir die Einzelheiten der Programmierung mit <code class="docutils literal notranslate"><span class="pre">Python</span></code> und wie wir mit der Sprache Algorithmen entwickeln und niederschreiben können.
 In diesem Abschnitt versuchen wir hingegen die Sprache mit anderen Sprachen zu vergleichen.</p>
+<div class="section" id="laufzeitvergleiche">
+<h2><span class="section-number">9.5.1. </span>Laufzeitvergleiche<a class="headerlink" href="#laufzeitvergleiche" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ein Vergleich von Programmiersprachen geht über die eignentliche Sprache hinaus.
+Wir analysieren nicht nur die Grammatik einer Sprache oder was mit dieser ausgedrückt werden kann, sondern auch wie verbreitet die Sprache ist oder wie leicht es fällt Programme mit ihr zu schreiben.</p>
+<p>Insbesondere interessiert uns die Laufzeit der Programme die wir in einer Sprache verfassen.
+Dabei werden Begrifflichkeiten oft durcheinander geworfen.
+Oft hört man, zum Beispiel,</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">C</span></code> ist eine effiziente Sprache.</p>
+</div></blockquote>
+<p>Doch genau genommen macht diese Aussage keinen Sinn.
+Wie wir im Abschnitt <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> besprachen haben, wird Programmcode <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">übersetzt</span></a> oder <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">interpretiert</span></a>.
+Oftmals gibt es verschiedene Interpreter oder Übersetzer für ein und dieselbe Sprache.
+Wie effizient ein Programm läuft hängt von der konkreten Maschine und den Maschinenbefehlen in die das Programm übersetzt oder interpretiert wird ab.
+Verwenden wir zwei unterschiedliche Übersetzer für den gleichen Code und lassen den übersetzten Code auf der gleichen Maschine laufen, kann die Laufzeit sehr unterschiedlich sein.
+Dennoch werden Sie oft lesen, dass die Sprache <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine langsame Sprache sei!
+Präzise ausgedrückt müsste man sagen, dass:</p>
+<blockquote>
+<div><p>Die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Implementierungen (Interpreter/Übersetzer) üblicherweise zu einer langsamen Ausführung von <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Programmen führen.</p>
+</div></blockquote>
+</div>
+<div class="section" id="python-gegen-den-rest-der-welt">
+<h2><span class="section-number">9.5.2. </span>Python gegen den Rest der Welt<a class="headerlink" href="#python-gegen-den-rest-der-welt" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wie <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C++</span></code>, <code class="docutils literal notranslate"><span class="pre">C#</span></code>, <code class="docutils literal notranslate"><span class="pre">Scala</span></code> und viele mehr, zählt <code class="docutils literal notranslate"><span class="pre">Python</span></code> zu den Universalsprachen (General Purpose Languages) und ist damit <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-universal-turing-machine"><span class="std std-ref">Turing-vollständig</span></a>.
 Das heißt <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist in sehr vielen Bereichen anwendbar und ist im Stande all die Probleme zu lösen, die im Allgemeinen als lösbar angesehen werden.
-Der Name stammt von der Comedy-Gruppe Monty Python was möglicherweise darauf hindeuten soll, dass die Sprache Spaß verbreiten soll.</p>
+Der Name <code class="docutils literal notranslate"><span class="pre">Python</span></code> stammt von der Comedy-Gruppe Monty Python was möglicherweise darauf hindeuten soll, dass die Sprache Spaß verbreiten soll.</p>
 <p>Was unterscheidet aber <code class="docutils literal notranslate"><span class="pre">Python</span></code> von den anderen oben genannten Sprachen?
 <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist heute eine der weitverbreitetsten Sprachen und sie scheint sich weiter und weiter auszubreiten.
 Einer der Hauptgründe hierfür ist der einfache Zugang.
@@ -920,35 +1036,46 @@ Erstellen wir eine neue Datei <code class="docutils literal notranslate"><span c
 </div>
 <p>aus, erhalten wir als Ausgabe die Summe der Quadratzahlen von 1 bis 5.
 So schnell geht’s!</p>
-<p>Der einfache Zugang erklärt den anfänglichen Erfolg.
-Dieser Erfolg führte zur Unterstützung durch große IT-Unternehmen wie Google und Facebook aber auch der Universitäten, was wiederum die Entwicklung vieler Pakete insbesondere auch im wissenschaftlichen Umfeld antrieb.
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> wurde bereits 1990 entwickelt und damit älter als z.B. <code class="docutils literal notranslate"><span class="pre">Java</span></code>.
+Sie ist jedoch erst in den letzten Jahren so richtig in Fahrt gekommen.
+Der Zugang war vor nicht allzu langer Zeit keineswegs derart einfach, was den anfänglichen Erfolg behindert hat.
+Doch ist es unter Umständen auch ein Vorteil wenn eine Sprache langsam aber stetig an Verbreitung gewinnt.
+So bleibt den Entwicklern Zeit über neue Verbesserungen intensiv nachzudenken und sodass diese nicht unbedacht aufgenommen werden.</p>
+<p>Der Erfolg lässt sich auch auf die Unterstützung durch große IT-Unternehmen wie Google und Facebook aber auch der Universitäten zurückführen.
+Diese Unterstützung trieb die Entwicklung vieler Pakete, insbesondere im wissenschaftlichen Umfeld an.
 Paketen wie <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> ist es zu verdanken, dass <code class="docutils literal notranslate"><span class="pre">Python</span></code> im wissenschaftlichen Bereich derart verbreitet ist.
-Im Unterschied zu <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> und <code class="docutils literal notranslate"><span class="pre">Mathematica</span></code>, gegen die sich <code class="docutils literal notranslate"><span class="pre">Python</span></code> behaupten musste, ist <code class="docutils literal notranslate"><span class="pre">Python</span></code> frei zugänglich, was schlussendlich zu einer höheren Codequalität wie auch einer schnelleren Weiterentwicklung geführt hat.</p>
-<p>Wissenschaftler*innen sind keine Programmierexpert*innen, legen besonders viel Wert auf die Reproduzierbarkeit und haben oft auch noch hohe Ansprüche an die Geschwindigkeit.
+Im Unterschied zu <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> und <code class="docutils literal notranslate"><span class="pre">Mathematica</span></code>, gegen die sich <code class="docutils literal notranslate"><span class="pre">Python</span></code> im wissenschaftlichen Umfeld behaupten musste, ist <code class="docutils literal notranslate"><span class="pre">Python</span></code> frei zugänglich, was schlussendlich zu einer höheren Codequalität wie auch einer schnelleren Weiterentwicklung geführt hat.</p>
+<p>Wissenschaftler*innen sind keine Programmierexpert*innen, legen besonders viel Wert auf die Reproduzierbarkeit und haben oft auch noch hohe Ansprüche an die Geschwindigkeit des ausgeführten Codes.
 Sie entwickeln keine großen Geschäftsanwendungen aber durchaus effiziente Algorithmen.
+Im wissenschaftlichen Bereich der Modellierung und Simulation programmierte man beispielsweise hauptsächlich in <code class="docutils literal notranslate"><span class="pre">C/C++</span></code> und <code class="docutils literal notranslate"><span class="pre">Fortran</span></code> – zwei nicht gerade einfache Spachen.
 Die Möglichkeit sehr schnell gut leserliche Scripte zu schreiben, die auch noch performant laufen (dazu gleich mehr), brachte <code class="docutils literal notranslate"><span class="pre">Python</span></code> in der Wissenschaft schnell voran.
 Und da heute die Methoden des wissenschaftlichen Rechnens, <em>Big Data Analysis</em> und des <em>Machine Learnings</em> auch in der Wirtschaft immer wichtiger werden, überträgt sich dieser Erfolg auf die Wirtschaft.</p>
 <p>Mit den <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>-Notebooks haben Wissenschaftler*innen eine Möglichkeit erhalten, ihre Ergebnisse samt Code anderen in aufbereiteter Weise zur Verfügung zu stellen.
 Das beschleunigt den wissenschaftlichen Austausch und verbessert die Transparenz.
-Auch dieses Konzept gab es bereits durch <code class="docutils literal notranslate"><span class="pre">Mathematica</span></code> doch ist diese Sprache viel schwerer zu lesen und deren Lizenzen sind teuer.</p>
+Auch dieses Konzept gab es bereits durch <code class="docutils literal notranslate"><span class="pre">Mathematica</span></code>, doch ist diese Sprache viel schwerer zu lesen und deren Lizenzen sind teuer.</p>
 <p>Gute Scripte zu schreiben ist zudem nicht für Wissenschaftler*innen sondern auch für Systemadministrator*innen und DevOps wichtig.
-Auch in diesem Bereich trat <code class="docutils literal notranslate"><span class="pre">Python</span></code> deshalb einen Siegeszug an.</p>
+Deshalb trat auch in diesem Bereich <code class="docutils literal notranslate"><span class="pre">Python</span></code> einen Siegeszug an.</p>
 <p>Da <code class="docutils literal notranslate"><span class="pre">Python</span></code> einen so schnellen und einfachen Zugang bietet, begannen mehr und mehr Anfänger die Sprache zu nutzen.
 Das brachte eine große Menge neue potenzieller Entwickler*innen auf den Arbeitsmarkt.
 Um dieses Potenzial nutzen zu können wurden die Bibliotheken um weitere Pakete für die Webentwicklung (<code class="docutils literal notranslate"><span class="pre">Django</span></code>, <code class="docutils literal notranslate"><span class="pre">Flask</span></code>), graphische Benutzeroberflächen (<code class="docutils literal notranslate"><span class="pre">PyQt5</span></code>, <code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>, <code class="docutils literal notranslate"><span class="pre">Kivy</span></code>) und mehr ergänzt.
 Das <strong>Ökosystem</strong> passte sich diesem Potenzial an, ganz nach dem Motto:</p>
 <blockquote>
-<div><p>Wollen die Entwickler*innen nicht zum passenden <strong>Ökosystem</strong> kommen, muss das <strong>Ökosystem</strong> zu ihnen kommen.</p>
+<div><p>Wollen die Entwickler*innen nicht zum passenden Ökosystem kommen, muss das Ökosystem zu ihnen kommen.</p>
 </div></blockquote>
-<p>Dieses <strong>Ökosystem</strong> ist heute <code class="docutils literal notranslate"><span class="pre">Pythons</span></code> größte Stärke.
+<p>Dieses Ökosystem ist heute <code class="docutils literal notranslate"><span class="pre">Pythons</span></code> größte Stärke.
 Sie bekommen einen unglaublichen Schatz geschenkt!
 Das können Sie sich gar nicht vorstellen.
 Was Sie nicht kostenfrei und offen bekommen sind die riesigen Rechnerressourcen die in großen Rechenzentren schlummern.</p>
 <p>Wir hatten Eingangs erwähnt, dass man sich oft zwischen Performance und Lesbarkeit bzw. Entwicklungszeit entscheiden muss.
-<code class="docutils literal notranslate"><span class="pre">Python</span></code> trifft hier einen ganz bestimmten Sweetspot: die Sprache ist <strong>maschinenenfern</strong>, sehr <strong>leserlich</strong>, man bekommt schnell viel zustande und dennoch ist sie <strong>Leistungsstark</strong>, sofern wir das <strong>Ökosystem</strong> gut nutzen.
-Pakte verlagern aufwendige Berechnungen in <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>-Programme, eine <strong>maschinennahen</strong> und <strong>leistungsstarken</strong> Spache.
-Wie dies funktioniert, soll uns an dieser Stelle noch nicht kümmern.
-Durch dieses Zusammenspiel bekommen wir beides: die <strong>Leistung</strong> durch <code class="docutils literal notranslate"><span class="pre">C/C++</span></code> und <strong>Abstraktion</strong> und <strong>Lesbarkeit</strong> durch <code class="docutils literal notranslate"><span class="pre">Python</span></code>!</p>
+<code class="docutils literal notranslate"><span class="pre">Python</span></code> trifft hier einen ganz bestimmten Sweetspot: die Sprache ist maschinenenfern, sehr leserlich, man bekommt schnell viel zustande und dennoch ist sie leistungsstark, sofern wir das Ökosystem gut nutzen.
+Pakte verlagern aufwendige Berechnungen in <code class="docutils literal notranslate"><span class="pre">C/C++</span></code> oder gar <code class="docutils literal notranslate"><span class="pre">Fortran</span></code>-Programme.
+Diese Sprachen sind maschinennah und <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">kompilierbar</span></a> und damit leistungsstark.
+So heißt es auf der offiziellen <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>-Seite:</p>
+<blockquote>
+<div><p>SciPy wraps highly-optimized implementations written in low-level languages like Fortran, C, and C++. Enjoy the flexibility of Python with the speed of compiled code.</p>
+</div></blockquote>
+<p>Wie dies funktioniert, soll uns an dieser Stelle noch nicht kümmern.
+Durch das Zusammenspiel zwischen hocheffizientem kompiliertem Code und leicht leserlichen interpretierten Code bekommen wir beides: die Leistung der maschinennahen Spachen und Abstraktion und Lesbarkeit durch <code class="docutils literal notranslate"><span class="pre">Python</span></code>!</p>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> hat aber auch seine Tücken.
 Als <a class="reference internal" href="../03-5/1-type-systems.html#sec-type-systems"><span class="std std-ref">dynamisch getypte</span></a> sehr flexible und <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">interpretierte</span></a> Sprache kann es schwer sein Garantien für den geschriebenen Code sicherzustellen.
 Software oder auch Entwickler*innen, die Quellcode analysieren und auf Korrektheit prüfen, können es schwer haben.</p>
@@ -972,14 +1099,37 @@ Rufen wir die Methode mit einer Zeichenkette auf z.B. <code class="docutils lite
 </div>
 </div>
 </div>
-<p>In <a class="reference internal" href="../03-5/1-type-systems.html#sec-type-systems"><span class="std std-ref">statisch getypten</span></a> Sprachen wie <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C++</span></code> oder <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> (siehe oben), ist dies durch die Definition der Funktion festgelegt.
+<p>Für <a class="reference internal" href="../03-5/1-type-systems.html#sec-type-systems"><span class="std std-ref">statisch getypten</span></a> Sprachen wie <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C++</span></code> oder <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> (siehe oben), ist dies durch die Definition der Funktion festgelegt.
 Hier würde bereits vor dem Start des Programms ein Fehler entstehen, falls wir <code class="docutils literal notranslate"><span class="pre">sum_square('a')</span></code> ausführen.
 Gerade bei sicherheitsrelevanter Software wie der Flugzeugsteuerung, Finanzsystemen oder großen Businessanwendungen kann dies zum Problem werden.</p>
+</div>
+<div class="section" id="kritik">
+<h2><span class="section-number">9.5.3. </span>Kritik<a class="headerlink" href="#kritik" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die dynamische Typisierung gepaart mit der Interpretierung der Sprache bringt sicherheitsrelevante Nachteile.
+Syntaktische Fehler führen erst bei der Ausführung zu Fehlern und können unter Umstände zu Bugs führen, die lange unentdeckt bleiben.</p>
 <p>Ein zweiter Aspekt den man gut oder schlecht finden kann ist, dass es <code class="docutils literal notranslate"><span class="pre">Python</span></code> den Entwickler*innen erschwert ihren Code als geistiges Eigentum zu schützen.</p>
+<p>In den vorherschenden Implementationen ist die Laufzeit der Programme niedriger als bei vielen kompilierbaren Sprachen jedoch ähnlich zu <code class="docutils literal notranslate"><span class="pre">Perl</span></code>, <code class="docutils literal notranslate"><span class="pre">PHP</span></code> und <code class="docutils literal notranslate"><span class="pre">Ruby</span></code>.</p>
+<p>Ein weiterer Nachteil der Sprache ist, dass <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Programme, sofern sie keine externen kompilierten Code verwenden, eine langsame Laufzeit aufweisen.
+Angenommen wir haben ein Problem welches wir effizient lösen wollen.
+Finden wir keinen vorkompilierten Code im <code class="docutils literal notranslate"><span class="pre">Python</span></code>-<a class="reference internal" href="../03-2/python-environment.html#sec-python-ecosystem"><span class="std std-ref">Ökosystem</span></a>, so müssen wir möglicherweise selbst diesen Code entwickeln und das Ökosystem selbst erweitern.
+Natürlich können wir das Problem auch mit reinem <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code lösen, doch wird dieser Code, im Vergleich zu kompilierten Sprachen, langsamer laufen.
+Entwickler:innen, die hocheffiziente Python-Pakete entwickeln, benötigen häufig gute Kenntnisse in der Entwicklung mit <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>.</p>
+<p>Als letzter Punkt ist das sogenannte <em>GIL (Global Interpreter Lock)-Problem</em> von <a class="reference external" href="https://docs.python.org/3.11/">CPython</a> zu nennen.
+CPython ist die vorherrschende Implementierung von Python.
+Der <em>GIL</em> behindert die effiziente Nutzung von Multiprozessor-Systemen da durch ihn keine echte parallele Ausführung mehrere sog. Threads möglch ist.
+Um die Parallelität der Multiprozessoren nutzen zu können, müssen Entwickler*innen anstatt (leichtgewichter) Threads mehrere (schwergewichtige) Prozesse verwenden.
+In jedem Prozess läuft dann ein eigener CPython-<a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a>.
+Pakete/Module wie <code class="docutils literal notranslate"><span class="pre">numpy</span></code> nutzten vorkompilierten Code, welcher wiederum durchaus auf Threads basieren kann.</p>
+</div>
+<div class="section" id="schlusswort">
+<h2><span class="section-number">9.5.4. </span>Schlusswort<a class="headerlink" href="#schlusswort" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Heute ist <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine der populärsten Sprachen mit dem Potenzial immer weiter an Fahrt aufzunehmen.
-Sie hat eine sehr leserliche <strong>Syntax</strong>, ein herausragendes <strong>Ökosystem</strong>, ist in sehr vielen <strong>Anwendungsbereichen</strong> anzutreffen (Tendenz steigend) und bietet bei richtiger Verwendung auch gute <strong>Performance</strong>.
-Deshalb ist <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine ausgezeichnete Wahl.
-Wir empfehlen dennoch zusätzlich mindestens eine statisch getypte Sprache zu erlernen, da diese wesentliche Konzepte des digitalen Computers offenlegen.</p>
+Sie hat eine sehr leserliche <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a>, ein herausragendes <a class="reference internal" href="../03-2/python-environment.html#sec-python-ecosystem"><span class="std std-ref">Ökosystem</span></a>, ist in sehr vielen Anwendungsbereichen anzutreffen (Tendenz steigend) und bietet bei richtiger Verwendung auch eine gute Laufzeit.
+Die größe Stärke von <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist jedoch dessen Gemeinschaft.
+Neben den angeführten Pluspunkten entwickelt sich eine solche Gemeinschaft nur dann, wenn es den Entwickler*innen auch Spaß macht die Sprache zu verwenden.</p>
+<p>Deshalb ist <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine ausgezeichnete Wahl, wenn Sie eine neue Programmiersprache erlernen wollen.
+Wir empfehlen dennoch, im Laufe Ihres Studiums, zusätzlich mindestens eine <a class="reference internal" href="../03-5/1-type-systems.html#sec-type-systems"><span class="std std-ref">statisch getypte</span></a> <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">kompilierte</span></a> Sprache zu erlernen, da diese weitere wichtige wesentliche Konzepte des digitalen Computers und damit des <a class="reference internal" href="../01-2/what-is-ct.html#sec-what-is-ct"><span class="std std-ref">Computational Thinkings</span></a> offenlegen.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
