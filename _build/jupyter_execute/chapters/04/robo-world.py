@@ -1981,10 +1981,10 @@ world1.show()
 # In[53]:
 
 
-path, level = depth_first_walk(robo1, distance=None)
-inverse_walk(robo1, path)
+path1, level1 = depth_first_walk(robo1, distance=None)
+inverse_walk(robo1, path1)
 world1.enable_animation()
-walk(robo1, path)
+walk(robo1, path1)
 
 rw.animate(world1)
 
@@ -1995,10 +1995,10 @@ rw.animate(world1)
 # In[54]:
 
 
-path = find_shortest_walk(robo2)
-inverse_walk(robo2, path)
+path2 = find_shortest_walk(robo2)
+inverse_walk(robo2, path2)
 world2.enable_animation()
-walk(robo2, path)
+walk(robo2, path2)
 
 rw.animate(world2)
 
