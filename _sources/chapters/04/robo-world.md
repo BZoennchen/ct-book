@@ -73,10 +73,12 @@ Unser Roboter befindet sich in genau einer Zelle und kann von Zelle zu Zelle wan
 Eine Zelle hat einen von folgenden endlichen Zuständen:
 
 1. Leer (die Zelle ist leer)
-2. Roboter (der Roboter befindet sich in der Zelle)
-3. Hindernis (ein unverrückbares Objekt befindet sich in der Zelle)
-4. Objekt (ein verrückbares Objekt befindet sich in der Zelle)
-5. Ziel (die Zelle repräsentiert das örtliche Ziel des Roboters)
+2. Hindernis (ein **unverrückbares** und **unpassierbares** Objekt befindet sich in der Zelle)
+3. Steine (ein **verrückbares** und **unpassierbares** Objekt befindet sich in der Zelle)
+4. Blatt (ein **verrückbares** und **passierbares** Objekt)
+
+Sowohl der Roboter ``robo`` als auch sein Ziel können sich auf einer Zelle befinden.
+Der Zustand der Zelle ändert sich dadurch nicht.
 
 Um die Welt und ihren Roboter anzuzeigen benötigen Sie das Paket ``roboworld``.
 
@@ -114,16 +116,16 @@ Außerdem kann er eine Zelle markieren auf der er sich gerade befinden ``set_mar
 Um dem Roboter Befehle zu erteilen müssen Sie ihn zunächst von der Welt durch
 
 ```{code-cell} python3
-robo = world.get_robo()
+robo = world.robo
 ```
 
 heranholen.
 Der Roboter hat eine Ausrichtung, d.h. seine Nase zeigt in eine von vier Himmelsrichtungen:
 
-1. Norden
-2. Osten
-3. Süden
-4. Westen
+1. Norden ``'N'``
+2. Osten ``'E'`` (engl. east)
+3. Süden ``'S'``
+4. Westen ``'W'``
 
 Der Roboter kann nur geradeaus laufen ``move()`` und sich nur nach links drehen ``turn_left()``.
 Sie können durch ``is_facing_north()`` den Roboter fragen ob er nach Norden ausgerichtet ist.
@@ -146,8 +148,8 @@ Die Von-Neumann-Nachbarschaftsbeziehung.
 
 Der Roboter kann durch ``is_wall_in_front()`` feststellen ob direkt vor ihm ein Hindernis (oder der Rand des Gebiets) ist und durch ``is_mark_in_front()`` abfragen ob die Zelle vor ihm markiert ist.
 
-Durch ``is_object_in_front()`` können Sie den Roboter fragen ob sich direkt vor ihm ein (verrückbares) Objekt befindet.
-Mit ``take()`` können Sie dieses Objekt aufnehmen und es mit ``put()`` direkt vor dem Roboter absetzten (falls dies möglich ist).
+Durch ``is_stone_in_front()`` können Sie den Roboter fragen ob sich direkt vor ihm ein (verrückbarer) Stein befindet.
+Mit ``take_stone_in_front()`` können Sie diesen Stein aufnehmen und es mit ``put_stone_in_front()`` direkt vor dem Roboter absetzten (falls dies möglich ist).
 Dabei kann der Roboter jedoch nur ein Objekt gleichzeitig tragen.
 
 Fassen wir die Methoden des Roboters zusammen:
@@ -156,12 +158,12 @@ Fassen wir die Methoden des Roboters zusammen:
 + ``turn_left()`` lässt den Roboter um 90 Grad nach links drehen
 + ``is_facing_north()`` ist genau dann ``True``, wenn der Roboter nach norden (oben) ausgerichtet ist
 + ``is_wall_in_front()`` ist genau dann ``True``, wenn vor dem Roboter ein (unverrückbares) Hindernis ist
-+ ``is_object_in_front()`` ist genau dann ``True``, wenn vor dem Roboter ein (verrückbares) Objekt ist
++ ``is_stone_in_front()`` ist genau dann ``True``, wenn vor dem Roboter ein (verrückbares) Objekt ist
 + ``set_mark()`` markiert die Zelle auf der der Roboter gerade steht
 + ``is_mark_in_front()`` ist genau dann ``True`` wenn vor dem Roboter eine markierte Zelle ist
 + ``unset_mark()`` entfernt die Markierung von der Zelle auf der der Roboter gerade steht
-+ ``take()`` nimmt ein Objekt auf und
-+ ``put()`` legt es ab
++ ``take_stone_in_front()`` nimmt einen Stein auf und
++ ``put_stone_in_front()`` legt ihn ab
 
 Sie rufen eine Methode ``method()`` durch 
 
@@ -194,7 +196,7 @@ Das Ziel befindet sich ganz im Osten.
 
 ```{code-cell} python3
 world = rw.corridor()
-robo = world.get_robo()
+robo = world.robo
 world.show()
 ```
 
@@ -259,7 +261,7 @@ Sie können eine frische neue Welt erzeugen.
 
 ```{code-cell} python3
 world = rw.corridor()
-robo = world.get_robo()
+robo = world.robo
 
 for _ in range(9):
     robo.move()
@@ -295,7 +297,7 @@ tags: [output_scroll]
 
 length = 25
 world = rw.corridor(length)
-robo = world.get_robo()
+robo = world.robo
 
 while not robo.is_wall_in_front():
     robo.move()
@@ -328,7 +330,7 @@ tags: [output_scroll]
 
 length = 25
 world = rw.corridor(length, random_headway=True)
-robo = world.get_robo()
+robo = world.robo
 
 # be sure that robo is facing north
 while not robo.is_facing_north():
@@ -378,7 +380,7 @@ def turn_east(robo):
 length = 25
 world = rw.corridor(length, random_headway=True)
 
-robo = world.get_robo()
+robo = world.robo
 turn_east(robo)
 while not robo.is_wall_in_front():
     robo.move()
@@ -403,7 +405,7 @@ def walk_to_wall(robo):
 
 length = 25
 world = rw.corridor(length, random_headway=True)
-robo = world.get_robo()
+robo = world.robo
 
 turn_east(robo)
 walk_to_wall(robo)
@@ -470,7 +472,7 @@ Gute Namen berücksichtigen die Zielgruppe.
 
 Namen sollten auch konsistent gewählt werden.
 Zum Beispiel haben wir uns entschieden alle Methoden des Roboters die entweder ``True`` oder ``False`` zurückgeben mit ``is`` zu beginnen.
-Es wäre inkonsistent wenn es eine Methode ``is_wall_in_front()`` und ``object_in_front()`` gäbe.
+Es wäre inkonsistent wenn es eine Methode ``is_wall_in_front()`` und ``stone_in_front()`` gäbe.
 Inkonsistenz verlangt beim Lesen mehr mentale Anstrengung, was zu vermeiden.
 Es ist Verschwendung geistiger Kraft.
 Unser Gehirn ist eine visuelle Mustererkennungsmaschine, deshalb ist nicht nur der Name an sich wichtig sondern auch die visuelle Darstellung des Codes.
@@ -551,7 +553,7 @@ tags: [output_scroll]
 
 length = 25
 world = rw.corridor(length)
-robo = world.get_robo()
+robo = world.robo
 
 def turn(robo):
     robo.turn_left()
@@ -602,18 +604,18 @@ def turn_east(robo):
 Die nächste Welt, die unser Roboter durchlaufen soll, ist ein Korridor der Objekte auf dem Weg zum Ziel enthalten kann.
 
 Der Roboter kann über diese nicht einfach drüber steigen.
-Er muss ein Objekt was vor ihm liegt aufnehmen ``take()`` und kann dann erst wieder weiterlaufen.
-Zudem kann der Roboter nur ein Objekt gleichzeitig tragen.
-Falls er ein Objekt trägt, kann er es mit ``put()`` vor ihm ablegen.
-Sie können mit ``is_object_in_front()`` prüfen ob vor dem Roboter ein Objekt liegt.
+Er muss einen Stein der vor ihm liegt aufnehmen ``take_stone_in_front()`` und kann dann erst wieder weiterlaufen.
+Zudem kann der Roboter nur einen Stein gleichzeitig tragen.
+Falls er einen Stein trägt, kann er ihn mit ``put_stone_in_front()`` vor ihm ablegen.
+Sie können mit ``is_stone_in_front()`` prüfen ob vor dem Roboter ein Objekt liegt.
 
 Mit 
 
 ```{code-cell} python3
 length = 25
-nobjects = 4
-world = rw.corridor(length=length, nobjects=nobjects)
-robo = world.get_robo()
+nstones = 4
+world = rw.corridor(length=length, nstones=nstones)
+robo = world.robo
 world.show()
 ```
 
@@ -625,7 +627,7 @@ Diese Objekte werden zufällig in freien Zellen des Korridors verteilt.
 Lassen Sie Ihren Roboter erneut einmal von Westen nach Osten durch die Welt
 
 ```python
-world = rw.corridor(length=25, random_headway=True, nobjects=4)
+world = rw.corridor(length=25, random_headway=True, nstones=4)
 ```
 
 laufen.
@@ -633,14 +635,14 @@ Implementieren Sie geeignete Funktionen um Ihren Code lesbar zu halten.
 
 ````
 
-Um ein Objekt aus dem Weg zu räumen definieren wir die Funktion ``move_object(robo)``.
+Um ein Objekt aus dem Weg zu räumen definieren wir die Funktion ``move_stone(robo)``.
 Diese lässt den Roboter das Objekt, welches sich vor ihm befindet, aufnehmen und hinter sich ablegen.
 
 ```{code-cell} python3
-def move_object(robo):
-    robo.take()
+def move_stone(robo):
+    robo.take_stone_in_front()
     turn(robo)
-    robo.put()
+    robo.put_stone_in_front()
     turn(robo)
 ```
 
@@ -648,7 +650,7 @@ Eine weitere Funktion ``walk(robo)`` lässt den Roboter, solange nichts im Weg i
 
 ```{code-cell} python3
 def nothing_in_front(robo):
-    return not robo.is_wall_in_front() and not robo.is_object_in_front()
+    return not robo.is_wall_in_front() and not robo.is_stone_in_front()
 
 def walk(robo):
     while nothing_in_front(robo):
@@ -665,7 +667,7 @@ tags: [output_scroll]
 turn_east(robo)
 walk(robo)
 while not robo.is_wall_in_front():
-    move_object(robo)
+    move_stone(robo)
     walk(robo)
 
 print(world.is_successful())
@@ -674,39 +676,39 @@ print(world.is_successful())
 ```{exercise} Eine unmögliche Aufgabe
 :label: robo-walk-east-with-objects-impossible-exercise
 
-1. Funktioniert unser bzw. Ihr Code auch wenn keine Objekte vorhanden sind?
-2. Funktioniert unser bzw. Ihr Code für jeden möglichen Korridor mit Objekten?
-3. Gibt es einen Korridor mit Objekten den wir unmöglich durchwandern können?
+1. Funktioniert unser bzw. Ihr Code auch wenn keine Steine vorhanden sind?
+2. Funktioniert unser bzw. Ihr Code für jeden möglichen Korridor mit Steinen?
+3. Gibt es einen Korridor mit Steinen den wir unmöglich durchwandern können?
 
 ```
 
 ```{solution} robo-walk-east-with-objects-impossible-exercise
 :label: robo-walk-east-with-objects-impossible-solution
 :class: dropdown
-1. Ja, unser Code funktioniert auch wenn keine Objekte vorhanden sind.
-2. Nein, falls zu Beginn ein Objekt direkt vor uns ist, können wir es nicht beiseite schaffen. Wir müssten es aufnehmen und mindestens einen Schritt noch vorne laufen um es dann ablegen zu können.
-3. Ja, falls zu Beginn direkt zwei oder mehr Objekte vor uns liegen. Wir haben dann keine Möglichkeit diese beiseite zu schaffen.
+1. Ja, unser Code funktioniert auch wenn keine Steine vorhanden sind.
+2. Nein, falls zu Beginn ein Stein direkt vor uns ist, können wir ihn nicht beiseite schaffen. Wir müssten ihn aufnehmen und mindestens einen Schritt noch vorne laufen um ihn dann ablegen zu können.
+3. Ja, falls zu beginn direkt zwei oder mehr Steine vor uns liegen. Wir haben dann keine Möglichkeit diese beiseite zu schaffen.
 ```
 
-Anstatt ein Objekt aufzunehmen und es direkt wieder abzulegen, können wir es auch aufnehmen und erst dann ablegen wenn es notwendig ist.
+Anstatt einen Stein aufzunehmen und ihn direkt wieder abzulegen, können wir ihn auch aufnehmen und erst dann ablegen wenn es notwendig ist.
 
 ```{code-cell} python3
 def put_behind(robo):
     turn(robo)
-    robo.put()
+    robo.put_stone_in_front()
     turn(robo)
 
 turn_east(robo)
 walk(robo)
 while not robo.is_wall_in_front():
-    robo.take()
+    robo.take_stone_in_front()
     walk(robo)
     put_behind(robo)
 
 print(world.is_successful())
 ```
 
-Dieser Code funktioniert auch wenn direkt am Anfang ein Objekt auf uns wartet.
+Dieser Code funktioniert auch wenn direkt am Anfang ein Stein auf uns wartet.
 
 (sec-robo-world-part-2)=
 ## Komplexere Erkundungen
@@ -714,13 +716,13 @@ Dieser Code funktioniert auch wenn direkt am Anfang ein Objekt auf uns wartet.
 ### Zufallslauf
 Die nächste Aufgabe besteht darin durch ein quadratisches Gebiet ohne Hindernisse mithilfe des Zufalls zu navigieren.
 
-Betrachten wir ein quadratisches Gebiet mit ``nrow`` Zeilen und ``ncols`` Spalten (``nrow == ncols``) ohne Objekte oder Hindernisse, wobei sich der Roboter im Zentrum und sein Ziel an einen zufälligen Ort befinden:
+Betrachten wir ein quadratisches Gebiet mit ``nrow`` Zeilen und ``ncols`` Spalten (``nrow == ncols``) ohne Steine oder Hindernisse, wobei sich der Roboter im Zentrum und sein Ziel an einen zufälligen Ort befinden:
 
 ```{code-cell} python3
 nrows = 5
 ncols = 5
 world = rw.new_world(nrows=nrows, ncols=ncols)
-robo = world.get_robo()
+robo = world.robo
 world.show()
 ```
 
@@ -866,7 +868,7 @@ Implementieren Sie sodann eine Funktion ``experiments(nrows, ncols, n)`` welche 
 def experiment(nrows, ncols):
     world = rw.new_world(nrows=nrows, ncols=ncols)
     world.disable_animation()
-    robo = world.get_robo()
+    robo = world.robo
     robo.disable_print()
     return random_walk(robo)
 
@@ -1045,7 +1047,7 @@ def random_move(robo):
 def experiment(nrows, ncols):
     world = rw.new_world(nrows=nrows, ncols=ncols)
     world.disable_animation()
-    robo = world.get_robo()
+    robo = world.robo
     robo.disable_print()
     random_move(robo)
     return robo.is_at_goal()
@@ -1091,7 +1093,7 @@ Lassen Sie uns nun eine Lauf zum Ziel entwickeln, für den wir eine feste Obergr
 :label: robo-det-walk-exercise
 
 1. Gehen Sie weg vom Rechner und überlegen Sie sich einen Algorithmus der den Roboter sicher ans Ziel des rechteckigen Gebiets ohne Hindernisse führt.
-2. Implementieren Sie eine Funktion ``determined_walk(robo)``, die den Roboter ohne eine Zufallskomponente für **alle möglichen rechteckigen Welten ohne Objekte und Hindernisse** ins Ziel führt.
+2. Implementieren Sie eine Funktion ``determined_walk(robo)``, die den Roboter ohne eine Zufallskomponente für **alle möglichen rechteckigen Welten ohne Steine und Hindernisse** ins Ziel führt.
 3. Bestimmen Sie wie viele Schritte höchstens (worst-case) sowie mindestens (best-case) nötig sind.
 
 ```
@@ -1160,7 +1162,7 @@ Lassen Sie uns diesen Code testen.
 nrows = 11
 ncols = 11
 world = rw.new_world(nrows=nrows, ncols=ncols)
-robo = world.get_robo()
+robo = world.robo
 world.show()
 ```
 
@@ -1240,7 +1242,7 @@ Können Sie unseren Algorithmus aus der Lösung ({ref}`robo-perfect-walk-exercis
 ```{exercise} Perfekter Lauf im Quadrat
 :label: robo-perfect-walk-square-exercise
 
-Implementieren Sie eine Funktion ``determined_walk_square(robo)`` die den Roboter ohne eine Zufallskomponente für **alle möglichen quadratischen Welten ohne Objekte und Hindernisse** ins Ziel führt und jede Zelle maximal einmal besucht.
+Implementieren Sie eine Funktion ``determined_walk_square(robo)`` die den Roboter ohne eine Zufallskomponente für **alle möglichen quadratischen Welten ohne Steine und Hindernisse** ins Ziel führt und jede Zelle maximal einmal besucht.
 Die Funktion sollte die Anzahl der benötigten Schritte zurückgeben.
 
 **Hinweis:** Wir empfehlen erneut vom Rechner weg zu gehen und sich erst einmal mit Stift und Papier zu überlegen welche Roboterbewegungen nötig sind und in welches **Muster** diese fallen.
@@ -1293,7 +1295,7 @@ Lassen Sie es uns testen:
 nrows = 10
 ncols = 10
 world = rw.new_world(nrows=nrows, ncols=ncols)
-robo = world.get_robo()
+robo = world.robo
 robo.disable_print()
 world.show()
 steps = determined_walk_square(robo)
@@ -1306,7 +1308,7 @@ rw.animate(world)
 ### Eine künstliche Intelligenz (optional)
 
 Bis hierher haben wir Algorithmen entwickelt um unseren Roboter sicher durch eine teilweise bekannte Welt zu bewegen.
-Wir wussten zwar nicht exakt wie diese Welt aussieht jedoch wussten wir, dass sie zum Beispiel keine Hindernisse oder Objekte enthält.
+Wir wussten zwar nicht exakt wie diese Welt aussieht jedoch wussten wir, dass sie zum Beispiel keine Hindernisse oder Steine enthält.
 Oder wir wussten, dass unser Gebiet rechteckig ist.
 Zudem wussten wir wo der Roboter startet (in der Mitte bzw. ganz im Westen).
 
@@ -1316,7 +1318,7 @@ Wir kennen nur unseren, d.h. den Zustand des Roboters selbst.
 Bewegen wir uns, können wir uns natürlich merken, wohin wir uns bewegt haben und wie die Welt dort aussah.
 Wir können die Welt erkunden und so Unsicherheiten auflösen, in anderen Worten, wir können Informationen durch Erkundungen einholen.
 
-Lassen wir verrückbare Objekte außer acht. 
+Lassen wir verrückbare Steine außer acht. 
 Die Welt in der der Roboter sein Ziel finden muss ist eine Welt voller **unverrückbarer Hindernisse**.
 Wir wissen weder wo der Roboter startet noch wie die Welt genau aussieht.
 Der Roboter soll selbst den Weg durch Erkundung finden!
@@ -1657,7 +1659,7 @@ erzeugen können.
 
 ```{code-cell} python3
 world = rw.maze()
-robo = world.get_robo()
+robo = world.robo
 robo.disable_print()
 path = depth_first_walk(robo)
 assert world.is_successful()
@@ -1847,7 +1849,7 @@ Lassen Sie uns das einmal austesten.
 nrows = 10
 ncols = 10
 world = rw.new_world(nrows=nrows, ncols=ncols)
-robo = world.get_robo()
+robo = world.robo
 robo.disable_print()
 world.disable_animation()
 world.show()
@@ -1892,8 +1894,8 @@ import copy
 
 world1 = rw.complex_maze(10, 10)
 world2 = copy.deepcopy(world1)
-robo1 = world1.get_robo()
-robo2 = world2.get_robo()
+robo1 = world1.robo
+robo2 = world2.robo
 
 robo1.disable_print()
 robo2.disable_print()
