@@ -103,10 +103,15 @@ Wir können rekursiv oder iterativ denken.
 ```{admonition} Iteration und Rekursion
 :class: theorem
 :name: theorem-iteration-and-recursion
-Sofern beim Mittel der Iteration, die Anzahl der Durchläufe vor ihrer Ausführung bekannt sein muss, können wir überraschenderweise jede Rekursion in eine Iteration und jede Iteration in eine Rekursion umwandeln!
+
+Jede Rekursion kann in eine unbestimmte Iteration und jede (unbestimmte) Iteration in eine Rekursion umgewandelt werden.
+
 ```
 
-Dabei lassen sich manche Probleme leichter rekursiv und andere leichter iterativ lösen bzw. durchdenken.
+Mit *unbestimmt* meinen wir, dass bevor die Iteration beginnt nicht bekannt ist, wie viele Wiederholungen nötig sind.
+
+Manche Probleme lassen sich leichter rekursiv und andere leichter iterativ lösen bzw. durchdenken.
+In machen Fällen ist es beispielsweise sinnvoll eine rekursive Lösung zu entwickeln und diese dann in eine iterative umzuwandeln.
 
 (sec-iteration)=
 ### Iteration
