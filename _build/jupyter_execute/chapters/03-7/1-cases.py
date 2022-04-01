@@ -347,7 +347,7 @@ def solve_quadratic(a, b, c):
         return -b / (2*a),
     
     # default case => 2 solutions
-    return (-b + disc) / (2*a), (-b - disc) / (2*a)
+    return (-b + disc**0.5) / (2*a), (-b - disc**0.5) / (2*a)
 
 
 # Der Code scheint zur richtigen Lösung zu führen:
@@ -411,7 +411,7 @@ def solve_quadratic(a, b, c):
         return -b / (2*a),
     
     # default case => 2 solutions
-    return (-b + disc) / (2*a), (-b - disc) / (2*a)
+    return (-b + disc**0.5) / (2*a), (-b - disc**0.5) / (2*a)
 
 
 # In[16]:

@@ -23,7 +23,7 @@ Im Abschnitt [Algorithmen](sec-algorithms) ist klar definiert, was genau ein Alg
 :name: def-pseudocode
 :class: definition
 
-*Pseudocode* ist eine einfache, weniger strikte Beschreibung eines Algorithmus in einer der natürlichen Sprache ähnlicheren Art.
+*Pseudocode* ist eine einfache, weniger strikte Beschreibung eines Algorithmus in einer Sprache, die der natürlichen Sprache ähnelt.
 ```
 
 Mit *Pseudocode* können wir einen Algorithmus in einer Sprache beschreiben, die keine bestimmte Programmiersprache zur Basis hat.

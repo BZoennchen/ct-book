@@ -57,7 +57,7 @@ $$\mathbb{N} \subset \mathbb{N}_0 \subset \mathbb{Z} \subset \mathbb{Q} \subset 
 :name: def-math-set-cardinality
 :class: definition
 
-Die *Mächtigkeit* oder auch *Kardinalität* $|M|$ einer **endlichen** Menge $M$ ist gleich der Anzahl ihrer Elemente.
+Die *Mächtigkeit* oder auch *Kardinalität* $|M|$ einer Menge $M$  mit **endlich** vielen Objekten ist gleich der Anzahl ihrer Elemente.
 ```
 
 Die *leere Menge* notieren wir mit $\emptyset = \{\}$.
@@ -67,7 +67,7 @@ Sie enthält keine Elemente.
 :name: remark-math-set-cardinality-infinity
 :class: remark
 
-Die für einen sauberen *Mächtigkeitsbegriff* unendlicher Mengen benötigen wir Mittel, welche wir hier nicht besprechen.
+Für einen sauberen *Mächtigkeitsbegriff* von Mengen mit unendlich vielen Elementen benötigen wir Mittel, welche wir hier nicht besprechen.
 Es sei jedoch erwähnt, dass $|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}|$ gilt.
 Diese Mengen enthalten *abzählbar* viele Elemente, wohingegen $\mathbb{R}$ *überabzählbar* ($|\mathbb{R}| > |\mathbb{N}|$) viele Elemente enthält.
 ```

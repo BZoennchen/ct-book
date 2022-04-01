@@ -82,7 +82,7 @@ Eine *Variable* können wir als Paar von **Wert** und **Arbeitsspeicheradresse**
 ```{admonition} Pythons Typisierung
 :name: remark-python-type-mem
 :class: remark
-Eine ``Python`` *Variable* verweist durch eine Adresse eigentlich nicht nur auf einen Wert sondern auch auf einen [Datentyp](sec-typing-in-python) und einen Zahl, welche angibt wie viele Variablen auf den Wert verweisen.
+Eine ``Python`` *Variable* verweist durch eine Adresse eigentlich nicht nur auf einen Wert sondern auch auf einen [Datentyp](sec-typing-in-python) und auf den Referenzzähler, welcher angibt wie viele Variablen auf den Wert verweisen.
 Dies werden wir aber vorerst ignorieren.
 ```
 
