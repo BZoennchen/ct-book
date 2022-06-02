@@ -9,7 +9,7 @@
 # Ziel war es Rechenfehler bei einfachen Berechnungen zu verhindern.
 # 
 # Über zweitausend Jahre später erschufen die antiken Griechen eine Art mechanisch-analogen Computer -- eine ganz erstaunliche Leistung, die für die kommenden tausend Jahre einzigartig bleiben sollte.
-# Dieser antike Computer war dazu gedacht, bestimmte Positionen der Himmelskörper zu bestimmen -- schon immer waren wir Menschen von der Frage nach unserem Platz und unserer Bedeutung im Universum angetrieben.
+# Dieser antike Computer war dazu gedacht, bestimmte Positionen der Himmelskörper zu bestimmen -- schon immer wurden wir Menschen von der Frage nach unserem Platz und unserer Bedeutung im Universum angetrieben.
 # 
 # ```{figure} ../../figs/greeks.png
 # ---
@@ -68,7 +68,7 @@ sieve_of_eratosthenes(100)
 
 # Wir finden also bereits zu dieser Zeit erste Beispiele für eine computergestützte Forschung.
 # Für lästige und primitive Berechnungen begann man Computer zu beauftragen.
-# Der Begriff *Computer* sollte lange Zeit auf eine Person anstatt eine Maschine hindeuten.
+# Der Begriff *Computer* sollte lange Zeit auf eine Person anstatt auf eine Maschine hindeuten.
 # So wurden bis Ende des zweiten Weltkrieg menschliche Computer, oft Frauen, mit Berechnungen beauftragt.
 # 
 # Zur Zeit der antiken Griechen begann man die ersten uns überlieferten Algorithmen zu entwickeln.
@@ -100,11 +100,13 @@ gcd(36, 24)
 # >[The Euclidean algorithm] is the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has survived to the present day. -- Donald Knuth, The Art of Computer Programming, Vol 2.
 # 
 # Zwischen der Logik und der theoretischen Informatik gibt es einen sehr starken Zusammenhang.
-# Berechnungen eines Rechners basieren auf logischen Operationen und das theoretische Prinzip des universellen digitalen Computers, wie auch wichtige Grenzen dessen was berechenbar ist, entstand aus den Arbeiten vieler Logiker.
+# Berechnungen eines Rechners basieren auf logischen Operationen und das theoretische Prinzip des universellen digitalen Computers (der [universellen Turingmaschine](sec-utm)), wie auch wichtige Grenzen dessen was [berechenbar](def-turing-computable) ist, entstand aus den Arbeiten vieler Logiker.
+# 
 # Den Anfang machten auch hier die Griechen.
 # Ihnen haben wir ein System des logischen Schließens, die sog. *Syllogismen des Aristoteles*, zu verdanken.
 # Neben den Syllogismen beschäftigte sich Aristoteles bereits mit dem *Satz vom Widerspruch* und dem *Satz vom ausgeschlossenen Dritten* sowie der Beweistechnik des *indirekten Beweises* -- allesamt fundamentale mathematische Techniken und Fragestellungen.
-# Zur Zeit des römischen Reichs formulierten dann die Stoiker das erste aussagelogische Kalkül und auch im Mittelalter sollten sich kleinere Fortschritte im Bereich der Logik ergeben.
+# 
+# Zur Zeit des römischen Reichs formulierten die Stoiker das erste aussagelogische Kalkül und auch im Mittelalter sollten sich kleinere Fortschritte im Bereich der Logik ergeben.
 # Jedoch sollten erst im 19. Jahrhundert, durch Mathematiker wie George Boole, Gottlob Frege und Bertrand Russell, weitreichende Fortschritte möglich werden.
 # 
 # ```{figure} ../../figs/logicians.png
@@ -119,8 +121,8 @@ gcd(36, 24)
 # In ihm findet sich einer der noch heute bekanntesten Algorithmen zum Lösen linearer Gleichungssystem: Das sog. *Gaußsche Eliminationsverfahren*.
 # Es wurde in Europa 1759 vom italienischen Mathematiker Lagrange publiziert und wohl unabhängig davon vom deutschen Mathematiker Gauß im Jahr 1811 entwickelt.
 # Schon die Babylonier wussten wie sich Gleichungen mit zwei Unbekannten lösen lassen, jedoch waren ihre zu lösenden Probleme durch konkrete oft geometrische Fragestellungen motiviert.
-# Diese Limitierung auf die Geometrie war für die Anfänger sicherlich förderlich doch schlussendlich für weitere Fortschritte auch hinderlich.
-# Das Besondere am *Gaußsche Eliminationsverfahren* ist seine Abstraktion, die zu einer allgemeinen Lösungstheorie für *lineare Gleichungssysteme* führte.
+# Der Fokus auf die Geometrie war für die Anfänge sicherlich förderlich doch schlussendlich für weitere Fortschritte auch hinderlich.
+# Das Besondere am *Gaußschen Eliminationsverfahren* ist seine Abstraktion, die zu einer allgemeinen Lösungstheorie für *lineare Gleichungssysteme* führte.
 # 
 # Wie bereits erwähnt, dauerte es tausend Jahre bis an den Fortschritt der antiken Griechen wieder angeknüpft wurde.
-# Wir wissen natürlich nicht welches, möglicherweise entscheidendes Wissen durch die Zerstörung und Plünderung der Bibliothek von Alexandria verloren gegangen ist.
+# Wir wissen natürlich nicht welches, möglicherweise entscheidende Wissen durch die Zerstörung und Plünderung der Bibliothek von Alexandria verloren gegangen ist.

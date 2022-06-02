@@ -1,3 +1,4 @@
+(sec-math)=
 # Mathematische Grundlagen
 
 Für die Entwicklung nicht-trivialer Algorithmen benötigen wir ein wenig Mathematik, insbesondere die Mathematik, welche sich mit diskreten Dingen beschäftigt.
@@ -11,5 +12,5 @@ Dieses Kapitel dient als Nachschlagewerk und kann übersprungen werden.
 ```
 
 Dieses Kapitel ist als Nachschlagewerk gedacht.
-Wir bauen auf den Begriffen, die hierin vorkommen, auf.
-Sie können das Kapitel überspringen und zurückkommen, wenn Ihnen bestimmte mathematische Begrifflichkeiten unklar sind.
+Wir bauen auf den besprochenen Begriffen des Kapitels auf.
+Sie können das Kapitel überspringen und zurückkehren, wenn Ihnen bestimmte mathematische Begrifflichkeiten unklar sind.

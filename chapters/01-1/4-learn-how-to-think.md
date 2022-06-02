@@ -8,8 +8,10 @@ Wären Sie andernfalls überhaupt im Studium gelandet?
 
 ## Schnelles und langsames Denken
 
+In seinem Buch *Schnelles Denken, Langsames Denken* {cite}`kahneman:2011` beschreibt der Nobelpreisträger und einflussreiche Wissenschaftler unserer Zeit Daniel Kahneman sehr eindringlich, wie wir Menschen Entscheidungen treffen.
+Er betont dabei das Zögern ein überlebensnotwendiger Reflex ist und beschreibt was in unserem Gehirn vor sich geht, wenn wir andere Menschen oder Dinge beurteilen. 
 Vereinfacht ausgedrückt wird das menschliche Denken durch zwei kognitive Systeme bestimmt:
-Durch das System 1 des *schnellen Denkens* und durch das System 2 des *langsamen Denkens*.
+Durch das *(1) schnelle Denken* und durch das *(2) langsame Denken*.
 Blicken Sie auf folgende Aufgabe:
 
 ```{exercise} Blinzeln des Alphabets
@@ -19,10 +21,14 @@ Der Schläger kostet einen Euro mehr als der Ball.
 Wie viel kostet der Ball?
 ```
 
-Intuitiv beantworten wir diese Frage gerne mit: Der Ball kostet 10 Cent.
+Intuitiv, d.h., durch das *schnelle Denken* beantworten die meisten Menschen diese Frage mit: Der Ball kostet 10 Cent.
 Diese Antwort ist jedoch falsch!
-Nehmen wir uns einen Augenblick Zeit und aktivieren unser System 2, das *langsame Denken*, so erkennen wir, dass $b + s = 1.10$ und $s = b + 1$ und demnach $b = 1.10 - b - 1$.
-Dies ergibt $b = 0.05$ Euro, also 5 Cent.
+Nehmen wir uns einen Augenblick Zeit und aktivieren unser *langsames Denken*, so erkennen wir dass $b + s = 1.10$ und $s = b + 1$ gilt.
+Wir lösen beide Gleichungen nach $b$ auf und erhalten:
+
+$$b = s - 1 \land b = 1.10 - s \Rightarrow s-1 = 1.10-s \Rightarrow 2s = 2.10 \Rightarrow s = 1.05$$
+
+und demnach gilt $b = s - 1= 1.05-1 = 0.05$ also 5 Cent.
 Das falsche Ergebnis entstammt dem *schnellen* und das richtige dem *langsamen Denken*!
 
 Wenn Sie etwas intuitiv, quasi aus dem Bauch heraus und mühelos abschätzten oder unbewusst einfach tun, dann ist das *schnelle Denken* aktiv.
@@ -36,12 +42,12 @@ In der Fahrschule mussten wir noch über den genauen Ablauf beim Autofahren nach
 Tischtennisspieler\*innen benötigen tausende von Stunden Training, um derartige Leistungen zu erzielen.
 Durch das *langsame Denken* schaffen wir es Stück für Stück, entsprechende Fähigkeit ins *schnelle Denken* zu transformieren.
 Das allerdings kostet Zeit und Anstrengung, besonders zu Beginn.
-Können wir irgendwann das *schnelle Denken* nutzten vergessen wir häufig wie schwer es zu Beginn gewesen ist und wundern uns über Anfänger\*innen, welche sich noch in der Phase des *langsamen Denkens* befinden.
+Können wir irgendwann das *schnelle Denken* nutzen vergessen wir häufig wie schwer es zu Beginn gewesen ist und wundern uns über Anfänger\*innen, welche sich noch in der Phase des *langsamen Denkens* befinden.
 
 Als geübte und erfolgreiche Programmierer\*innen können wir auf viele Techniken, Konzepte, die Form und Bedeutung von Anweisungen, die Struktur des Programmiercodes, oder auch Codemuster im Modus des *schnellen Denkens* zugreifen.
 So können wir unser gesamtes *langsames Denken* auf das eigentlich zu lösende Problem loslassen.
 
-Jedoch geht es nicht nur darum, dass *schnelle Denken* zu nutzten, sondern es zu kontrollieren und es uns bewusst zu machen.
+Jedoch geht es nicht nur darum, dass *schnelle Denken* zu nutzen, sondern es zu kontrollieren und es uns bewusst zu machen.
 Man spricht dabei von der sog. *Metakognition*.
 Viele kognitive Verzerrungen (Bias) sind auf das *schnelle Denken* zurückzuführen.
 Zum Beispiel neigen wir aufgrund des sog. Bestätigungseffekt (engl. confirmation bias) dazu Informationen auszuwählen und aufzunehmen, die unserer vorher gebildeten Meinung entsprechen.
@@ -59,10 +65,10 @@ Doch können wir immer wieder innehalten und unser *langsames Denken* aktivieren
 
 ## Durch Fehler lernen
 
-Kreativ-logisches Denken, wie so vieles im Leben, ist keine polare Fähigkeit, die entweder vorhanden oder nicht vorhanden ist.
-Talent ist hilfreich aber um richtig gut darin zu werden braucht es Übung -- Denkmuskel müssen gefüttert werden.
-Was im Sport abgespeicherte Bewegungsabläufe sind, welche Sie problemlos automatisch abrufen können, sind im Denksport Muster, welche Sie problemlos erkennen.
-Schachspieler blicken auf einen Spielstand analysieren Muster (Positionen von mehreren Figuren als Ganzes), durch die sie auf neue Spielzüge kommen.
+Kreativ-logisches Denken ist, wie so vieles im Leben, keine polare Fähigkeit, die entweder vorhanden ist oder nicht.
+Ein gewisses Talent ist hilfreich aber um richtig gut darin zu werden braucht es Übung -- Denkmuskel müssen gefüttert werden.
+Vergleichbar mit den abgespeicherte Bewegungsabläufe im Leistungssport, welche Sie problemlos automatisch abrufen können, erlernen wir im Denksport Muster, welche Sie problemlos erkennen.
+Schachspieler blicken auf einen Spielstand analysieren Muster (Positionen von mehreren Figuren als Ganzes), durch die sie auf neue Spielzüge schließen.
 Das Lesen von mathematischen Ausdrücken wird Ihnen immer leichter Fallen je mehr Ausdrücke Sie lesen.
 Das liegt nicht nur daran, dass Sie besser in Mathe werden, sondern dass Sie die Symbole wie Ihre Muttersprache schneller und besser als Muster erkennen.
 Programmcode werden Sie immer schneller und besser verstehen, je mehr Programmcode Sie zu verstehen versuchen.

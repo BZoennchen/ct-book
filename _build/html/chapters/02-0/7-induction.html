@@ -123,13 +123,23 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-1/1-teaching.html">
-     1.1. Lehrkonzept
+    <a class="reference internal" href="../01-1/1-content.html">
+     1.1. Inhalt
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-1/2-learn-how-to-think.html">
-     1.2. Denken lernen?
+    <a class="reference internal" href="../01-1/2-reading.html">
+     1.2. Lesehinweise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/3-teaching.html">
+     1.3. Lehrkonzept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-1/4-learn-how-to-think.html">
+     1.4. Denken lernen?
     </a>
    </li>
   </ul>
@@ -994,7 +1004,7 @@ Mithilfe der vollständigen Induktion können wir oftmals die Korrektheit und La
 Auch ist die vollständige Induktion eine Art der <a class="reference internal" href="../02-4/3-control-structures.html#sec-recursion"><span class="std std-ref">(rekursiven) Wiederholung</span></a>.</p>
 <div class="section" id="gauszsche-summenformel">
 <h2><span class="section-number">6.7.1. </span>Gaußsche Summenformel<a class="headerlink" href="#gauszsche-summenformel" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Starten wir mit dem Mutter aller Beispiele: Der Addition aller natürlichen Zahlen die kleiner gleich <span class="math notranslate nohighlight">\(n\)</span> sind.
+<p>Starten wir mit der Mutter aller Beispiele: Der Addition aller natürlichen Zahlen die kleiner gleich <span class="math notranslate nohighlight">\(n\)</span> sind.
 Man erzählt sich, dass der kleine Gauß eines Tages in der Schule die Aufgabe erhielt alle natürlichen Zahlen von <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(n\)</span> zu addieren.
 Gesucht ist also:</p>
 <div class="math notranslate nohighlight">
@@ -1014,6 +1024,7 @@ Gesucht ist also:</p>
 </div>
 </div>
 <p>Der kleine Gauß hatte jedoch keinen Computer zur Hand und wollte sich die lästige Rechnerei vereinfachen.
+Er kam auf folgenden Gedanken:
 Sagen wir <span class="math notranslate nohighlight">\(n = 100\)</span>.
 Dann wird aus der Summe:</p>
 <div class="math notranslate nohighlight">
@@ -1039,7 +1050,7 @@ Es scheint als gelte</p>
 </div>
 <div class="section" id="der-dominoeffekt">
 <h2><span class="section-number">6.7.2. </span>Der Dominoeffekt<a class="headerlink" href="#der-dominoeffekt" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Der Trick bei der <em>vollständigen Induktion</em> könnten wir als den Dominoeffekt bezeichnen.
+<p>Den Trick den wir bei der <em>vollständigen Induktion</em> anwenden können wir als den Dominoeffekt bezeichnen.
 Wenn wir wissen dass</p>
 <ol class="simple">
 <li><p>der erste Dominostein umfällt und</p></li>
@@ -1064,6 +1075,7 @@ Wir nutzten den Dominoeffekt.</p>
 \[A(n) \Rightarrow A(n+1)\]</div>
 <p>gilt.</p>
 </div>
+<p>Lassen Sie uns folgendes Theorem beweisen.</p>
 <div class="theorem admonition" id="theorem-gauss-sum">
 <p class="admonition-title">Gaußsche Summenformel</p>
 <p>Sei <span class="math notranslate nohighlight">\(n\)</span> eine natürliche Zahl so gilt:</p>
@@ -1089,7 +1101,7 @@ Nun können wir die Formel etwas umstellen:</p>
 <p>Klammern wir <span class="math notranslate nohighlight">\(n+1\)</span> aus, erhalten wir:</p>
 <div class="math notranslate nohighlight">
 \[\frac{2n+2 + n \cdot (n+1)}{2} = \frac{(n+1) \cdot 2 + n \cdot (n+1)}{2} = \frac{(n+1) \cdot (n+2)}{2}.\]</div>
-<p>D.h. es gilt <span class="math notranslate nohighlight">\(A(n+1)\)</span> also</p>
+<p>D. h. es gilt <span class="math notranslate nohighlight">\(A(n+1)\)</span> also</p>
 <div class="math notranslate nohighlight">
 \[\sum\limits_{k=1}^{n+1} = \frac{(n+1) \cdot (n+2)}{2}\]</div>
 <p>unter der Annahme von <span class="math notranslate nohighlight">\(A(n)\)</span>.</p>
@@ -1099,8 +1111,8 @@ Nun können wir die Formel etwas umstellen:</p>
 <div class="section" id="induktive-denkweise">
 <h2><span class="section-number">6.7.4. </span>Induktive Denkweise<a class="headerlink" href="#induktive-denkweise" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Anstatt eine Aussage zu beweisen kann die Induktion auch dabei helfen Algorithmen zu entwickeln.
-Wenn Sie ein Problem für <span class="math notranslate nohighlight">\(n\)</span> Datenpunkte / Elemente lösen wollen hilft es möglicherweise, wenn Sie stattdessen das Problem für <span class="math notranslate nohighlight">\(n_0\)</span> Elemente zu lösen.
-Und zusätzlich das Problem für <span class="math notranslate nohighlight">\(n+1\)</span> Elemente lösen jedoch <strong>unter der Annahme</strong> Sie hätten es bereits für <span class="math notranslate nohighlight">\(n\)</span> Elemente gelöst.
+Wenn Sie ein Problem für <span class="math notranslate nohighlight">\(n\)</span> Datenpunkte / Elemente lösen wollen hilft es möglicherweise, wenn Sie stattdessen das Problem für <span class="math notranslate nohighlight">\(n_0\)</span> Elemente zu lösen versuchen.
+Und zusätzlich das Problem für <span class="math notranslate nohighlight">\(n+1\)</span> Elemente lösen, jedoch <strong>unter der Annahme</strong> Sie hätten es bereits für <span class="math notranslate nohighlight">\(n\)</span> Elemente gelöst.
 Zusammengenommen reicht das aus um das Problem für beliebig viele Elemente zu lösen!</p>
 <p>Ein Algorithmus der nach diesem Prinzip entwickelt wurde ist der <a class="reference external" href="https://de.wikipedia.org/wiki/Mergesort">Mergesort Algorithmus</a> oder die Lösung für die <a class="reference internal" href="../02-4/3-control-structures.html#sec-hanoi"><span class="std std-ref">Türme von Hanoi</span></a>.</p>
 <div class="exercise admonition" id="induction-permutation-exercise">
@@ -1117,8 +1129,8 @@ Eine Permutation ist ein Tupel mit den gleichen Elementen in einer anderen Reihe
 Für <span class="math notranslate nohighlight">\(n_0=1\)</span> enthält unsere Lösung genau ein Tupel.
 Es gibt genau eine Permutation.</p>
 <p><strong>(2) Induktionsschritt:</strong>
-Was machen wir für ein ein <span class="math notranslate nohighlight">\(n+1\)</span>-Tupel unter der Annahme wir haben das Problem für <span class="math notranslate nohighlight">\(n\)</span> gelöst?
-Nun, für jede Permutation des <span class="math notranslate nohighlight">\(n\)</span>-Tupels erzeugen wir <span class="math notranslate nohighlight">\(n+1\)</span> Permutationen des <span class="math notranslate nohighlight">\(n+1\)</span>-Tupels indem das hinzugekommene <span class="math notranslate nohighlight">\(n+1\)</span>-te Elemente zwischen jede zwei Zahlen (und an den Anfang und das Ende eines Tupels) stecke.</p>
+Was machen wir für ein <span class="math notranslate nohighlight">\(n+1\)</span>-Tupel unter der Annahme wir haben das Problem für <span class="math notranslate nohighlight">\(n\)</span> gelöst?
+Nun, für jede Permutation des <span class="math notranslate nohighlight">\(n\)</span>-Tupels erzeugen wir <span class="math notranslate nohighlight">\(n+1\)</span> Permutationen des <span class="math notranslate nohighlight">\(n+1\)</span>-Tupels indem wir das hinzugekommene <span class="math notranslate nohighlight">\(n+1\)</span>-te Elemente zwischen jede zwei Elemente (und an den Anfang und das Ende eines Tupels) stecken.</p>
 <p>Haben wir zum Beispiel das Tupel <span class="math notranslate nohighlight">\((1,2)\)</span> ergibt das die Permutationen <span class="math notranslate nohighlight">\((1,2), (2,1)\)</span>.
 Wollen wir nun die Permutationen von <span class="math notranslate nohighlight">\((1,2,3)\)</span> erzeugen ergibt dies: <span class="math notranslate nohighlight">\((3,1,2), (1,3,2), (1,2,3)\)</span> und <span class="math notranslate nohighlight">\((3, 2, 1), (2, 3, 1), (2, 1, 3)\)</span>.</p>
 <div class="cell docutils container">
@@ -1154,7 +1166,7 @@ Wollen wir nun die Permutationen von <span class="math notranslate nohighlight">
 <p>Ist das die beste, effizienteste bzw. einzige Lösung?
 Sicher nicht!
 Darum geht es vorerst auch nicht.</p>
-<p>Das schöne an <em>Induktionsbeweisen</em> ist, dass Sie konstruktiv sind, d.h., der Beweis offenbart uns einen Algorithmus, welcher zur Lösung führt!</p>
+<p>Das schöne an <em>Induktionsbeweisen</em> ist, dass Sie konstruktiv sind, d. h., der Beweis offenbart uns einen Algorithmus, welcher zur Lösung führt!</p>
 </div>
 </div>
 
@@ -1205,7 +1217,7 @@ Darum geht es vorerst auch nicht.</p>
   <p>
     
       <div class="extra_footer">
-        <div class="container"> <div class="col1"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+        <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
       </div>
   </p>
 </footer>

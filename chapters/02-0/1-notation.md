@@ -2,7 +2,7 @@
 
 Als Notation verstehen wir die [Syntax](def-syntax) und [Semantik](def-semantik) mathematischer Symbole.
 Auch wenn in vielen Bereichen der Mathematik die Notation bereits standardisiert ist, steht es schlussendlich den Autor\*innen frei eine individualisierte Notation zu verwenden.
-Zum Beispiel verwenden manche Autor\*innen als Symbol für die natürlichen Zahlen in $\mathbb{N}$ mit einem Doppelstrich andere verwenden ein fett gedrucktes $\mathbf{N}$.
+Zum Beispiel verwenden manche Autor\*innen als Symbol für die natürlichen Zahlen das $\mathbb{N}$ mit einem Doppelstrich, andere verwenden ein fett gedrucktes $\mathbf{N}$.
 
 ## Gleitkommazahlen
 
@@ -18,9 +18,9 @@ Zum Beispiel
 $$1, 2, 4, \ldots$$
 
 Die drei Punkte $\ldots$ deuten an, dass diese Folge unendlich lange weiter geht.
-Aus den ersten notierten Zahlen der Folge sollte dabei immer klar hervorgehen, wie diese voran schreitet.
+Aus den ersten notierten Zahlen der Folge sollte dabei immer klar hervorgehen, wie diese voranschreitet.
 
-Die gleiche Notation werden wir hin und wieder bei endlichen indexierten Folgen, zum Beispiel:
+Die gleiche Notation werden wir hin und wieder bei endlichen indexierten Folgen, zum Beispiel,
 
 $$a_0, a_1, \ldots, a_n$$
 
@@ -31,7 +31,7 @@ In diesem Beispiel hat die Folge $n+1$ Elemente.
 
 Um Summen ähnlich wie Folgen kompakter zu notieren, verwenden wir das Summensymbol $\sum$, zum Beispiel:
 
-$$1 + 2 + 3 + 4 + 5 + 6 = \sum\limits_{k=1}^6 k$$
+$$1 + 2 + 3 + 4 + 5 + 6 = \sum\limits_{k=1}^6 k.$$
 
 
 Dieses Summe besteht aus 
@@ -43,7 +43,7 @@ Dieses Summe besteht aus
 
 Der Endwert kann auch den 'Wert' unendlich $\infty$ annehmen:
 
-$$1 + 2 + 3 + 4 + 5 + \ldots = \sum\limits_{k=1}^\infty k$$
+$$1 + 2 + 3 + 4 + 5 + \ldots = \sum\limits_{k=1}^\infty k.$$
 
 Eine weitere Schreibweise deutet an, dass wir über die Elemente einer Menge $M$ iterieren.
 So könnten wir die obige Summe auch als
@@ -57,9 +57,9 @@ Dabei fehlen Start- und der Endwert, und werden durch eine Menge ersetzt, welche
 
 Analog zu Summen gibt es auch ein Produktsymbol $\prod$, wodurch sich Produkte kompakter schreiben lassen:
 
-$$1 \cdot 2 \cdot  3 \cdot  4 \cdot  5 \cdot  6 = \prod\limits_{k=1}^6 k$$
+$$1 \cdot 2 \cdot  3 \cdot  4 \cdot  5 \cdot  6 = \prod\limits_{k=1}^6 k.$$
 
-auch dafür lässt sich ein unendlich größer Endwert festlegen
+Auch dafür lässt sich ein unendlich großer Endwert festlegen
 
 $$1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot \ldots = \prod\limits_{k=1}^\infty k$$
 

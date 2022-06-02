@@ -7,7 +7,7 @@
 # Aber können wir vielleicht noch viel mehr?
 # Sehen Sie sich den Code aus dem letzten Abschnitt genau an.
 # An welcher Stelle geht es wirklich um Karten?
-# Wie und wo müsste man den Code ändern um z.B. Zahlen zu sortieren?
+# Wie und wo müsste man den Code ändern um, z. B., Zahlen zu sortieren?
 # 
 # ```{exercise} Zahlen sortieren in Python
 # Ändern oder erweitern Sie Ihren Programmiercode um Zahlen anstatt Karten zu sortieren.

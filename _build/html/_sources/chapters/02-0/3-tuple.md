@@ -21,7 +21,7 @@ $$R = (1,2,3,4)$$
 
 oder
 
-$$R = (1,2,3,\ldots,100)$$
+$$R = (1,2,3,\ldots,100).$$
 
 Je nachdem wie viele Elemente ein Tupel enthält trägt es einen besonderen Namen.
 Ein Tupel mit zwei Elementen nennen wir *Paar*.

@@ -1,6 +1,6 @@
 # Mittelalter bis 19. Jahrhundert
 
-Nach dem Zusammenbruch des römischen Reiches, der sich über eine lange Zeit erstreckte, dauert es eine Weile bis sich neue Fortschritte zeigen sollten.
+Nach dem Zusammenbruch des römischen Reichs, der sich über eine lange Zeit erstreckte, dauert es eine Weile bis sich neue Fortschritte zeigen sollten.
 Ca. 1200 nach Christus tauchte der Astrolabium, ein scheibenförmiges astronomisches Rechen- und Messinstrument, erneut auf.
 Was zu Zeiten von Eratosthenes noch eine Sphärenkonstruktion war, wurde als scheibenförmige Astrolabien im griechisch-römischen Raum entwickelt.
 Mit dem Astrolabium konnte man Sternenpositionen berechnen aber auch Landvermessungen und Zeitmessungen durchführen.
@@ -9,7 +9,7 @@ Es ist zu vermuten, dass Theon von Alexandria (ca. 330-400 n. Chr.) zusammen mit
 
 Der iranische Forscher Al-Biruni entwickelte ca. tausend Jahre nach Christus den ersten mechanischen Mond- und Sonnenkalender.
 Seine Konstruktion bestand aus Kabeln und Zahnrädern. 
-Zu dieser Zeit wurden auch das sogenannte Planimeter verwendet um beliebige Flächeninhalte in Landkarten oder anderen Zeichnungen anzunähern.
+Zu dieser Zeit verwendete man auch das sogenannte Planimeter um beliebige Flächeninhalte in Landkarten oder anderen Zeichnungen anzunähern.
 Die zu berechnende Fläche wird dabei in viele kleine Parallelogramme und Dreiecke zerteilt und so angenähert.
 
 ```{figure} ../../figs/amsler-polarplanimeter.jpeg
@@ -24,7 +24,7 @@ Amsler Polarplanimeter, [Quelle](https://en.wikipedia.org/wiki/Planimeter#/media
 
 Ein weiteres analoges Rechenhilfsmittel, der Rechenschieber, wurde um 1625 erfunden und entwickelt.
 Er basiert auf den kürzlich vorher entdeckten Rechengesetzen des Logarithmus.
-Nach diesen uns bekannten Gesetzten lässt sich die Multiplikation als Addition ausdrücken:
+Nach diesen uns bekannten Gesetzen lässt sich die Multiplikation als Addition ausdrücken:
 
 $$ \log_{10}(a \cdot b) = \log_{10}(a) + \log_{10}(b) $$
 

@@ -92,7 +92,7 @@ hand
 # ## Modellierung der Ordungsrelation
 # 
 # Auch hier gibt es viele verschiedene Möglichkeiten.
-# Eine Lösung besteht darin den *Index* eines Tupels als *Ordnung* zu verwenden.
+# Eine Lösung besteht darin den *Index* eines weiteren Tupels als *Ordnung* zu verwenden.
 # Das Tupel muss lediglich alle möglichen Kartentypen geordnet enthalten.
 # Wir verwenden diesmal keine ``list`` sondern ein unveränderbares ``Python``-``tuple``.
 # 
@@ -157,6 +157,9 @@ def is_smaller(card1, card2):
     return i < j           # Falls Position von Karte 1 < Position von Karte 2 gib wahr zurück, sonst falsch
 
 
+# Die Funktion ``is_smaller(card1, card2)`` gibt genau dann ``True`` (wahr) zurück, wenn die Karte ``card1`` kleiner ist als die Karte ``card2``.
+# Wir haben somit unseren *Kontext* erweitert.
+# 
 # ## Sortieralgorithmus
 # 
 # Blicken wir zurück auf unseren Sortieralgorithmus.

@@ -11,7 +11,7 @@ Eine *Funktion* $f : A \rightarrow B$ ist eine Relation (Beziehung) zwischen zwe
 $A$ bezeichnen wir als die *Definitionsmenge* und $B$ als die *Zielmenge* von $f$.
 ```
 
-Um durch die Notation anzudeuten, dass es sich bei der Relation um eine Funktionen handelt, schreibt man anstatt $f \subseteq A \times B$ eben
+Um durch die Notation anzudeuten, dass es sich bei der Relation um eine Funktionen handelt, schreibt man anstatt $f \subseteq A \times B$ auch
 
 $$f : A \rightarrow B.$$
 

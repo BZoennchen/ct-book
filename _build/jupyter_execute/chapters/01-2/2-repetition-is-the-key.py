@@ -19,10 +19,13 @@
 # Computer verschieben diese Grenzen nach oben.
 # Doch gehen auch Sie selbstverständlich irgendwann in die Knie.
 # 
-# Ähnlich wie in der Musik und Literatur brauchen wir für die Kommunikation unseres Denkprozesses eine einheitliche Basis, die wir Sprache nennen. 
-# Der einzige große Unterschied zur Musik und Literatur ist, dass diese [Programmiersprache](sec-programming-languages) auch von Rechenmaschinen verstanden wird. 
-# Wie bei einem Musikstück ist es eine notwendige Voraussetzung, dass wir dem Computer eine endliche Folge von unmissverständlichen Anweisungen mitgeben.
-# Die selben Anweisungen könnten wir auch einem Menschen mitgeben, jedoch können wir von ihm nur für kleine Aufgaben eine Antwort erwarten.
+# Ähnlich zur Musik und Literatur brauchen wir für die Kommunikation unseres Denkprozesses eine einheitliche Basis, die wir Sprache nennen. 
+# Der einzige große Unterschied zur Musik und Literatur ist, dass diese [Programmiersprache](sec-programming-languages) auch von Rechenmaschinen verstanden wird.
+# Egal ob Notenblatt oder Programmiercode, beide Beschreibungen müssen endlich und unmissverständlich sein.
+# Dies ist eine notwendige Voraussetzung!
+# Das Notenblatt bedarf der richtigen Interpretation, d.h., Musiker\*innen müssen Noten lesen können.
+# Genauso verhält es sich zum Programmiercode.
+# Ob Mensch oder Maschine ist an und für sich unwichtig, es bedarf der richtigen Interpretation des Codes.
 # 
 # Solange sich eine Problemlösung (unsere Musikkomposition) durch Wiederholung ausdrücken lässt, kann sie durch endlich viel Programmcode (Noten) beschrieben und damit (theoretisch) gelöst (aufgeführt) werden.
 # Die Komplexität des Programmcodes (die länge des Stücks) entkoppelt sich von der Komplexität der ausgeführten Berechnung (der Aufführung).

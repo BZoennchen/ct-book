@@ -3,9 +3,10 @@
 
 1842 entwarf die britische Mathematikerin Ada Lovelace einen Algorithmus, mit welchem Bernoulli-Zahlen mit einer Rechenmaschine (Analytical Engine) berechnet werden konnten.
 Die Maschine wurde zu ihrer Lebzeit nie gebaut.
-Sie gilt heute als die erste Programmiererin und wurde mit dem Namen der Programmiersprache Ada gewürdigt.
-Es sei hier erwähnt, dass Frauen der Zugang zu Bildung und Hochschulausbildung aus verschiedenen Gründen bis ins 20. Jahrhundert verwehrt wurde und sie auf männliche Hilfe angewiesen waren.
-Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia dar, welche aus politisch-religösen Gründen ermordet wurde. 
+Ada Lovelace gilt heute als die erste Programmiererin und wurde mit dem Namen der Programmiersprache ``Ada`` gewürdigt.
+
+Es sei an dieser Stelle erwähnt, dass Frauen der Zugang zu Bildung und einer Hochschulausbildung aus verschiedenen Gründen bis ins 20. Jahrhundert verwehrt wurde und sie auf männliche Hilfe angewiesen waren.
+Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia dar, welche aus politisch-religösen Gründen in Alexandria ermordet wurde. 
 
 ```{figure} ../../figs/ada-lovelace.jpeg
 ---
@@ -16,9 +17,10 @@ Erste bekannte Programmiererin Ada Lovelace.
 ```
 
 1847 führte der englische Mathematiker und Philosoph Georg Boole in seinem Buch *The Mathematical Analysis of Logic* die sog. boolsche Algebra ein.
-Insbesondere die *zweielementige boolsche Algebra* mit den Elementen 0 und 1, welche Anwendungen in der Aussagenlogik hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
+Insbesondere die *zweielementige boolsche Algebra* mit den Elementen 0 und 1, welche Anwendung in der Aussagenlogik hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
 Die *zweielementige boolsche Algebra* ist Teil jeder modernen Programmiersprache.
 Zusätzlich beruhen auf ihr alle (auch arithmetische) Operationen des Computers.
+
 Um 1930 beobachtete Claude Shannon, dass sich die Regeln der boolschen Algebra auf elektrische Schaltungen übertragen lassen.
 In fast allen digitalen Computern stellen elektrische Schaltungen die physikalische Manifestation boolscher Operationen dar.
 
@@ -26,8 +28,8 @@ Im 19. Jahrhundert konzipierte der Vater des Computers und Ingenieur, Charles Ba
 Baddage war seiner Zeit weit voraus.
 Programme und Daten seiner Maschine sollten per Lochkarten eingelesen werden.
 Die Machine sollte ihre Ergebnisse per Ausdruck ausgeben.
-Baddage's mechanischer Computer war bereits *Turing-vollständig* und konnte daher theoretisch all das berechnen, was heutige Computer berechnen können.
-Da ihm jedoch zu wenig finanzielle Mittel zur Verfügung standen, sollte es erst seinem Sohn im Jahr 1888 gelingen eine vereinfachte Variante der Machine herzustellen.
+Baddage's mechanischer Computer war bereits [Turing-vollständig](def-turing-complete) und konnte daher theoretisch all das berechnen, was heutige Computer berechnen können.
+Da ihm jedoch zu wenig finanzielle Mittel zur Verfügung standen, sollte es erst seinem Sohn im Jahr 1888 gelingen, eine vereinfachte Variante der Machine herzustellen.
 Zu jener Zeit war die Entwicklung analoger Computer bereits rückläufig.
 
 Die Theoretiker sollten, nach Baddage's Konzeption, zu den Ingenieuren wieder aufstoßen.
@@ -40,12 +42,12 @@ Es ist ein Problem, welche wie kein zweites die Logik und Informatik verbindet:
 Das Entscheidungsproblem verlangt nach der Beantwortung der Frage ob ein Algorithmus existiert, der für jedes Element einer vorgegebenen Menge beantworten kann, ob eine vorgegebene Eigenschaft zutrifft oder nicht?
 ```
 
-Der österreichische Mathematiker Kurt Gödel beantwortet die Frage mit einem *nein* und sowohl Alonzo Church wie auch Alan Turing veröffentlichen unabhängige Beiträge, die zeigen, dass das *Entscheidungsproblem* nicht zu lösen ist, sofern alles was *grundsätzlich berechenbar* ist, sich mit dem deckt, was *Turing-berechenbar* ist.
-Diese Annahme wird als *Church-Turing-These* bezeichnet.
-Trifft die These zu ist alles was *grundsätzlich berechenbar* ist auch von einem *Turing-vollständigen* Computer (jedem modernen Computer) berechenbar.
-Über das *Entscheidungsproblem* konnte Turing die Fragestellung des sog. [Halteproblem](def-halting-problem) beantworten.
+Der österreichische Mathematiker Kurt Gödel beantwortet die Frage mit einem *nein* und sowohl Alonzo Church wie auch Alan Turing veröffentlichen unabhängige Beiträge, die zeigen, dass das *Entscheidungsproblem* nicht zu lösen ist, sofern alles was *[grundsätzlich berechenbar](def-computable)* ist, sich mit dem deckt, was *[Turing-berechenbar](def-turing-computable)* ist.
+Diese Annahme wird als *[Church-Turing-These](def-church-these)* bezeichnet.
+Trifft die These zu, kann alles was *grundsätzlich berechenbar* ist auch von einem *[Turing-vollständigen](def-turing-complete)* Computer (jedem modernen Computer) berechnet werden.
 
-Auch ein solcher Algorithmus wird niemals existieren.
+Über das *Entscheidungsproblem* konnte Turing die Fragestellung des sog. [Halteproblem](def-halting-problem) beantworten.
+Es wird demnach keinen Algorithmus geben können, der für jedes beliebige Programm mit beliebiger Eingabewerte festellen kann ob dieses Programm jemals hält oder nicht.
 Für uns als Programmierer\*innen bedeutet dies, dass wir selbst prüfen müssen ob unser Algorithmus das berechnet und vollzieht was vorgesehen ist.
 Es gibt keine Software, die uns für einen beliebigen Quellcode sagen kann ob wir eine Endlosschleife programmiert haben.
 
@@ -57,10 +59,10 @@ name: goedel-church-turing
 Mathematiker Kurt Gödel, Alonzo Church und Alan Turing, Quellen: [1](https://commons.wikimedia.org/wiki/File:1925_kurt_g%C3%B6del.png), [2](https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg), [3](https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg).
 ```
 
-Was aus dem theoretischem Diskurs hervorging waren jedoch nicht nur zerstörte Träume, sondern auch neue fruchtbare Theorien, die das Fundament der Informatik und damit auch des künftigen Computational Thinkings prägen sollten.
-Alan Turing entwickelte mit seiner *Turingmaschine* ein sehr konkretes Modell für einen Computer, welcher im Stande war all das zu berechnen, was heute moderne Computer berechnen können.
+Was aus dem theoretischen Diskurs hervorging waren jedoch nicht nur zerstörte Träume, sondern auch neue fruchtbare Theorien, die das Fundament der Informatik und damit auch des künftigen Computational Thinkings prägen sollten.
+Alan Turing entwickelte mit seiner *[Turingmaschine](info-turingmaschine)* ein sehr konkretes Modell für einen Computer, welcher im Stande war all das zu berechnen, was heute moderne Computer berechnen können.
 Durch jenes Modell kann man noch heute prüfen ob konkrete Ingenieurskonstruktionen den Ansprüchen der *Turing-Vollständigkeit* genügen.
-Seine *universellen Turingmaschine* zeigt schon zu dieser Zeit einen fließenden Übergang zwischen Hard- und Software.
+Schon zu dieser Zeit belegt seine *universellen Turingmaschine* den fließenden Übergang zwischen Hard- und Software.
 Mit seiner Arbeit beeinflusste Turing imperative Programmiersprachen maßgeblich, wohingegen sein Doktorvater, Alonzo Church, mit dem *Lambda-Kalkül* *funktionale Programmiersprachen* ins Leben rufen sollte.
 
 Aus der Frage der Berechenbarkeit folgte unweigerlich die Frage der Komplexität, also wie *schwer* ein Problem ist und wie dies zu messen ist.
@@ -85,7 +87,7 @@ Konrad Zuse stellte 1939 einen der ersten auf Relais basierte elektromechanische
 Als die Zuverlässigkeit der Relais sichergestellt war, entwickelte Zuse den Z3, welcher mit einer Taktfrequenz von 5-10 Hz Gleitkommazahlen verarbeiten konnte.
 Anders als Baddage's machanischer Computer war der Z3 jedoch nicht *Turing-vollständig*.
 
-Während des tobenden zweiten Weltkriegs zwischen 1942 und 1944 wurde die Überlegenheit der Maschinen gegenüber dem menschlichen Computer deutlich.
+Zwischen 1942 und 1944, während des tobenden zweiten Weltkriegs, wurde die Überlegenheit der Maschinen gegenüber dem menschlichen Computer deutlich.
 Um die Kommunikation der deutschen Wehrmacht zu entschlüsseln wurden große Anstrengungen unternommen.
 Zu dieser Zeit war die Tätigkeit des Programmierens fast ausschließlich in der Hand von Frauen.
 Sie wurde als Bürotätigkeit angesehen, weshalb sie (wegen des damaligen Frauenbildes) an Frauen delegiert wurde.
@@ -118,7 +120,7 @@ ENIAC-Programmiererinnen Marlyn Wescoff und Ruth Lichterman, [Quelle](https://co
 
 Im Jahr 1945 begann Turing mit seiner Arbeit an der Entwicklung eines elektronisch-programmierbaren Computers mit Speicher.
 Zur gleichen Zeit notierte der charismatische John von Neumann auf einem 101-seitigen Dokument einen ähnlichen Entwurf.
-Dieser ist heute unter dem Namen *von Neumann Architektur* bekannt.
+Dieser ist heute unter dem Namen *[von Neumann Architektur](sec-von-neumann)* bekannt.
 Auf jener Architektur basieren heute nahezu alle modernen Computer und auch zukünftige Maschinen werden seinem Entwurf noch eine Zeit lang folgen.
 Weitere konzeptuelle Entwicklungen sollten folgen, doch die grobe Architektur blieb seither nahezu unberührt.
 
@@ -145,13 +147,13 @@ Abhilfe verspricht man sich durch die *Quantencomputer*.
 
 Schon in den 1940ger Jahren wurde versucht die Informationsverarbeitung am Beispiel des menschlichen Gehirns zu modellieren. 
 Dieser Ansatz wurde durch die Hirnforschung inspiriert.
-Die Idee war und ist es, eine riesige Anzahl an hochgradig vernetzter aber relativ simpler Neuronen durch Software zu simulieren.
+Die Idee war und ist es, eine riesige Anzahl an hochgradig vernetzter aber relativ simplen Neuronen durch Software zu simulieren.
 Dieser Ansatz wurde in den 80er Jahren aufgegriffen.
 Zu jener Zeit fehlten allerdings die Daten und die Rechenleistung, um derartige *Neuronale Netze* praktisch nutzen zu können.
 
 Etwa zehn Jahre später erklärt John McCarthy:
 
->[Es sei das Ziel von KI], intelligentes menschliches Verhalten durch Computerprogramme (künstlich) nachzubilden.
+>[Es sei das Ziel von künstlicher Intelligenz], intelligentes menschliches Verhalten durch Computerprogramme (künstlich) nachzubilden.
 
 Und 1959 entwickelte Arthur L. Samuels ein Programm, welches das Spiel *Dame* erlernen konnte.
 Heute ist die *künstliche Intelligenz (KI)* ein breites und interdisziplinäres Feld der Forschung und Entwicklung.

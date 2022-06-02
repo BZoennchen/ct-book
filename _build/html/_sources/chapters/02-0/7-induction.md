@@ -19,7 +19,7 @@ Auch ist die vollständige Induktion eine Art der [(rekursiven) Wiederholung](se
 
 ## Gaußsche Summenformel
 
-Starten wir mit dem Mutter aller Beispiele: Der Addition aller natürlichen Zahlen die kleiner gleich $n$ sind.
+Starten wir mit der Mutter aller Beispiele: Der Addition aller natürlichen Zahlen die kleiner gleich $n$ sind.
 Man erzählt sich, dass der kleine Gauß eines Tages in der Schule die Aufgabe erhielt alle natürlichen Zahlen von $1$ bis $n$ zu addieren.
 Gesucht ist also:
 
@@ -33,6 +33,7 @@ sum([i for i in range(n+1)])
 ```
 
 Der kleine Gauß hatte jedoch keinen Computer zur Hand und wollte sich die lästige Rechnerei vereinfachen.
+Er kam auf folgenden Gedanken:
 Sagen wir $n = 100$.
 Dann wird aus der Summe:
 
@@ -65,7 +66,7 @@ aber wir wollen dies nun auch beweisen, sodass es absolut einwandfrei und unangr
 
 ## Der Dominoeffekt
 
-Der Trick bei der *vollständigen Induktion* könnten wir als den Dominoeffekt bezeichnen.
+Den Trick den wir bei der *vollständigen Induktion* anwenden können wir als den Dominoeffekt bezeichnen.
 Wenn wir wissen dass
 
 1. der erste Dominostein umfällt und
@@ -95,6 +96,8 @@ $$A(n) \Rightarrow A(n+1)$$
 gilt.
 
 ```
+
+Lassen Sie uns folgendes Theorem beweisen.
 
 ````{admonition} Gaußsche Summenformel
 :name: theorem-gauss-sum
@@ -133,7 +136,7 @@ Klammern wir $n+1$ aus, erhalten wir:
 
 $$\frac{2n+2 + n \cdot (n+1)}{2} = \frac{(n+1) \cdot 2 + n \cdot (n+1)}{2} = \frac{(n+1) \cdot (n+2)}{2}.$$
 
-D.h. es gilt $A(n+1)$ also
+D. h. es gilt $A(n+1)$ also
 
 $$\sum\limits_{k=1}^{n+1} = \frac{(n+1) \cdot (n+2)}{2}$$
 
@@ -145,8 +148,8 @@ Aus **(1)** und **(2)** folgt die Aussage.
 ## Induktive Denkweise
 
 Anstatt eine Aussage zu beweisen kann die Induktion auch dabei helfen Algorithmen zu entwickeln.
-Wenn Sie ein Problem für $n$ Datenpunkte / Elemente lösen wollen hilft es möglicherweise, wenn Sie stattdessen das Problem für $n_0$ Elemente zu lösen.
-Und zusätzlich das Problem für $n+1$ Elemente lösen jedoch **unter der Annahme** Sie hätten es bereits für $n$ Elemente gelöst.
+Wenn Sie ein Problem für $n$ Datenpunkte / Elemente lösen wollen hilft es möglicherweise, wenn Sie stattdessen das Problem für $n_0$ Elemente zu lösen versuchen.
+Und zusätzlich das Problem für $n+1$ Elemente lösen, jedoch **unter der Annahme** Sie hätten es bereits für $n$ Elemente gelöst.
 Zusammengenommen reicht das aus um das Problem für beliebig viele Elemente zu lösen!
 
 Ein Algorithmus der nach diesem Prinzip entwickelt wurde ist der [Mergesort Algorithmus](https://de.wikipedia.org/wiki/Mergesort) oder die Lösung für die [Türme von Hanoi](sec-hanoi).
@@ -167,8 +170,8 @@ Für $n_0=1$ enthält unsere Lösung genau ein Tupel.
 Es gibt genau eine Permutation.
 
 **(2) Induktionsschritt:** 
-Was machen wir für ein ein $n+1$-Tupel unter der Annahme wir haben das Problem für $n$ gelöst?
-Nun, für jede Permutation des $n$-Tupels erzeugen wir $n+1$ Permutationen des $n+1$-Tupels indem das hinzugekommene $n+1$-te Elemente zwischen jede zwei Zahlen (und an den Anfang und das Ende eines Tupels) stecke.
+Was machen wir für ein $n+1$-Tupel unter der Annahme wir haben das Problem für $n$ gelöst?
+Nun, für jede Permutation des $n$-Tupels erzeugen wir $n+1$ Permutationen des $n+1$-Tupels indem wir das hinzugekommene $n+1$-te Elemente zwischen jede zwei Elemente (und an den Anfang und das Ende eines Tupels) stecken.
 
 Haben wir zum Beispiel das Tupel $(1,2)$ ergibt das die Permutationen $(1,2), (2,1)$.
 Wollen wir nun die Permutationen von $(1,2,3)$ erzeugen ergibt dies: $(3,1,2), (1,3,2), (1,2,3)$ und $(3, 2, 1), (2, 3, 1), (2, 1, 3)$.
@@ -200,4 +203,4 @@ Ist das die beste, effizienteste bzw. einzige Lösung?
 Sicher nicht!
 Darum geht es vorerst auch nicht.
 
-Das schöne an *Induktionsbeweisen* ist, dass Sie konstruktiv sind, d.h., der Beweis offenbart uns einen Algorithmus, welcher zur Lösung führt!
+Das schöne an *Induktionsbeweisen* ist, dass Sie konstruktiv sind, d. h., der Beweis offenbart uns einen Algorithmus, welcher zur Lösung führt!

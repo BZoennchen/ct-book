@@ -13,16 +13,16 @@ Wir konzentrieren uns in der Vorlesung zwar auf die Programmiersprache [Python](
 Vorweg ist zu sagen, dass wir in die *funktionale Programmierung* nicht tiefer einsteigen werden.
 Möchten Sie nach diesem Kurs Ihren Horizont erweitern und weitere abstraktere Denkweisen kennenlernen, lohnt sich der Blick in diesen zweiten Strom der Programmierung.
 
-Lernen geschieht weder an der Tafel oder am Rechner noch durch einen Lehrer.
+Lernen geschieht weder an der Tafel noch am Rechner noch durch einen Lehrer.
 Lernen geschieht in Ihrem Kopf.
-Egal welche Lernunterlagen und Utensilien Sie auch verwenden, um etwas zu erlernen, d.h. es nicht nur zu wissen sondern wirklich zu begreifen, müssen Sie aktiv werden.
+Egal welche Lernunterlagen und Utensilien Sie auch verwenden, um etwas zu erlernen, d.h., es nicht nur zu wissen sondern wirklich zu begreifen, müssen Sie aktiv werden.
 Es gibt keine Abkürzung, die Ihnen diesen Teil abnimmt.
 Gute Unterlagen und Werkzeuge können diesen Prozess beschleunigen, gleichzeitig können Sie Ihnen jedoch auch wichtige Lernerfahrungen vorenthalten.
 
 Ich vergleiche diesen Lernprozess gerne mit einer Reise an einen bestimmten Ort.
 Wenn Ihnen der Weg so gut es geht vorbereitet wird und Sie auf der Autobahn mit Ihren hundert Sachen unterwegs sind, werden Sie Ihr Ziel schnell erreichen, doch werden Sie nur wenig auf dem Weg dorthin in Erfahrung bringen.
-Die falsche Richtung einzuschlagen, sich in Umwegen verlieren und in Sackgassen stecken zu bleiben, sind essenzielle Bestandteil des Lernens.
-Fehler und Misserfolge führen zur Reflexion und ermöglichen es erst, dass wir etwas lernen.
+Die falsche Richtung einzuschlagen, sich in Umwegen verlieren und in Sackgassen stecken zu bleiben, sind essenzielle Bestandteile des Lernens.
+Fehler und Misserfolge führen zur Reflexion und sind deshalb für das Lernen unerlässlich.
 Je mehr Fehler Sie machen, desto mehr werden Sie in diesem Kurs auch mitnehmen.
 
 Das andere Extrem wäre es sich ohne jedwede Hinweise auf die Reise zu begeben.
