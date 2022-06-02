@@ -41,8 +41,9 @@ Besonders wichtig sind dabei die Zahlenmengen:
 
 Enthält eine Menge $B$ alle Elemente einer Menge $A$ so drücken wir diesen Sachverhalt mit
 
-$$A \subseteq B.$$
+$$A \subseteq B$$
 
+aus.
 Gilt zudem $b \in B$ und zugleich $b \notin A$, d.h., es gibt ein Element $b$ in $B$ welches nicht in $A$ enthalten ist, so drücken wir dies mit
 
 $$A \subset B$$

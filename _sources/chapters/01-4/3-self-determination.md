@@ -6,7 +6,7 @@ So führte die Einführung des Automobils auch dazu, dass kleine lokale Geschäf
 Der Gewinn an Mobilität machte damit Mobilität zur Notwendigkeit.
 Heute ist es kaum denkbar auf dem Land ohne Auto zurechtzukommen.
 
-Kaum eine Entwicklung hat mehr Auswirkungen auf unser gesellschaftliches Leben wie die Digitalisierung.
+Kaum eine Entwicklung hat mehr Auswirkungen auf unser gesellschaftliches Leben als die Digitalisierung.
 Ein aktuelles Beispiel wie [Algorithmen](def-algorithm) die Gesellschaft formen, zeigt der Fall *Cambridge Analytica*:
 Durch maschinelles Lernen und Big Data Analysis, lernen Algorithmen Strukturen in großen Datenmengen.
 Sie abstrahieren Eigenschaften aus einer vorgegebenen Datenmenge und Klassifizieren schließlich neue Datensätze auf Basis der gelernten Strukturen.
@@ -17,7 +17,7 @@ Sie abstrahieren Eigenschaften aus einer vorgegebenen Datenmenge und Klassifizie
 - und wie intelligent sie sind, welche Religionszugehörigkeit, Alkohol-, Zigaretten- und Drogenkonsum sie nachgehen oder ob ihre Eltern bis zu deren 21. Lebensjahres zusammengeblieben sind.
 
 Seine Arbeit finden Sie in {cite}`kosinski:2013,kosinski:2014,kosinski:2015`.
-Sein Modell wurde auf illegale Weise auf Facebook-Daten angewendet, um u.a. Wahlwerbung zu individualisieren (Mikrotargeting) und somit die Wahlen in den USA zu beeinflussen.
+Sein Modell wurde auf illegale Weise auf Facebook-Daten angewendet, um u. a. Wahlwerbung zu individualisieren (Mikrotargeting) und somit die Wahlen in den USA zu beeinflussen.
 
 Algorithmen die mit uns und miteinander auf der ganzen Welt agieren, verstärken die Effekte der Globalisierung und beeinflussen menschliches Verhalten auf dem Globus.
 Dies ist jedoch keine Einbahnstraße.

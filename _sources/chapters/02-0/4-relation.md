@@ -71,8 +71,8 @@ Eine *Ordnungsrelation* ist *total* wenn für alle $a,b \in M$ $a \leq_R b$ oder
 ```
 
 ```{admonition} Totale Ordnung
-:name: remark-math-order
-:class: remark
+:name: theorem-math-order
+:class: theorem
 
 Die *kleiner-gleich-Relation* $\leq$ auf den natürlichen Zahlen ist eine totale Ordnung.
 ```

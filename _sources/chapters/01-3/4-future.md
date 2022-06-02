@@ -5,16 +5,16 @@ Das wird sich auch in absehbarer Zukunft nicht verändern.
 
 Was sich verändert, sind technische Entwicklungen und neue Algorithmen -- d.h. Hard- und Software.
 Auf der Softwareseite sind insbesondere Algorithmen aus dem Bereich des *maschinellen Lernens* zu nennen.
-Hier feierten wir große Erfolge aber es wird auch deutlich, dass wir mit den immensen Rechenanforderungen und dem damit verbundenen und stetig steigenden Energieverbrauch in der nahen Zukunft in Probleme geraten.
+Hier feierten wir große Erfolge aber es wird auch deutlich, dass wir durch die immensen Rechenanforderungen und den damit verbundenen und stetig steigenden Energieverbrauch in der nahen Zukunft ein weiteres ökologisches Problem ansteuern.
 Ob das *maschinelle Lernen* uns bei der Energiewende wie auch bei der Eindämmung des Klimawandels behilflich sein kann oder sich als hinderlich erweisen wird, ist eine noch offene Forschungsfrage.
 
 Ein Bereich welcher sich unter anderem dem Energieproblem widmet, ist der des *Neuromorphic Computings*.
-Anstatt mühsam *neuronale Netze* auf einer [Von-Neumann-Architektur](sec-von-neumann) zu simulieren ist es Ziel, neuronale Netze direkt in Hardware zu gießen.
+Anstatt mühsam *neuronale Netze* auf einer [von Neumann Architektur](sec-von-neumann) zu simulieren ist es Ziel, neuronale Netze direkt in Hardware zu gießen.
 Das menschliche Gehirn ist zu ganz erstaunlichen Berechnungen fähig und verbraucht dabei gerade einmal 20 Watt.
-Computer basierend auf der Von-Neumann-Architektur funktionieren jedoch wesentlich anders. 
+Computer basierend auf der von Neumann Architektur und operieren wesentlich anders. 
 Unter anderem benötigen sie durch die strikte Trennung zwischen Speicher und Recheneinheit sehr viel mehr Energie, um Daten zur Recheneinheit und wieder zurück zu befördern.
-Auch sind sie nicht im Stande persistent (ohne Stromzufuhr) ihren schnellen Speicher und die Arbeitsweise ihrer Recheneinheiten zu verändern, d.h. zu lernen.
-Ein in Hardware gegossenes neuronalen Netz klingt deshalb nach einer vielversprechenden Idee.
+Auch sind sie nicht im Stande persistent (ohne Stromzufuhr) ihren schnellen Speicher und die Arbeitsweise ihrer Recheneinheiten zu verändern, d.h., zu lernen.
+Ein in Hardware gegossenes neuronalen Netz klingt deshalb nach einer vielversprechenden Idee um effizient und stromsparend dedizierte Berechnungen durchführen zu können.
 
 Ein weiteres Schlagwort, was insbesondere durch die Medienlandschaft kreist, ist das sog. *Quantum Computing*.
 Die Entwicklung um die Quantencomputer begann bereits 1980.
@@ -33,7 +33,8 @@ Das Resultat ist Gegenstand laufender Diskussionen.
 Weitere Spieler in der Quantencomputerwelt zogen seither nach.
 Derzeit sind die zu lösenden Probleme noch speziell auf Quantencomputer angepasst, z.B., die Simulation von Quanteneffekten oder die Generierung von Zufallszahlen.
 
-Die Hoffnung ist groß, dass uns Quantencomputer in ein neues Zeitalter befördern, doch fehlt heute noch jedwede Bestätigung, dass Quantencomputer in der Breite Anwendung finden.
+Die Hoffnung ist groß.
+Quantencomputer sollen uns in ein neues Zeitalter befördern, doch fehlt heute noch jedwede Bestätigung, dass Quantencomputer in der Breite Anwendung finden.
 Der US-amerikanische Physiker Richard Feynman begann mit der Idee der Quantencomputer, da Simulationen von Quanteneffekten auf klassischen Computern schnell zu einem zu hohen Rechenaufwand führten.
 Vielleicht liegt hierin die beste Anwendungen der Technologie -- die Simulation des Kleinen.
 Es gibt zwar schon funktionierende Quantencomputer, allerdings braucht es für interessante Anwendungen noch deutlich mehr Qubits und hier liegt wohl die Herausforderung begraben.

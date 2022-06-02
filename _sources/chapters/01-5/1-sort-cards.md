@@ -1,7 +1,7 @@
 (sec-sorting-cards-alg)=
 # Karten sortieren
 
-Stellen Sie sich vor, Sie beginnen in einer gemütlichen Runde einen Spielabend.
+Stellen Sie sich vor, Sie beginnen in einer gemütlichen Runde einen Spieleabend.
 Sie starten mit einem Kartenspiel.
 Sie erhalten eine Hand voll Karten.
 Um sich einen besseren Überblick zu verschaffen, möchten Sie die Karten auf Ihrer Hand sortieren.
@@ -16,7 +16,7 @@ Nehmen Sie sich ein paar gemischter Karten auf die Hand und sortieren Sie diese.
     + Wo blicken Sie mit den Augen hin? 
     + Was geht Ihnen durch den Kopf?
 2. Notieren Sie den Prozess, sodass ein kleines Kind Ihren Algorithmus nachvollziehen und ausführen kann.
-3. Lassen Sie den Prozess anhand ihrer Notizen von einer anderen Person durchführen.
+3. Lassen Sie Ihren notierten [Algorithmus](def-algorithm) von einer anderen Person ausführen.
 4. Beantworten Sie sich selbst folgende Fragen:
     + Führt Ihr Algorithmus zum erwünschten Ergebnis?
     + Wie oft müssen Sie die Karten bewegen (im schlechtesten und besten Fall)?
@@ -28,8 +28,8 @@ Nehmen Sie sich ein paar gemischter Karten auf die Hand und sortieren Sie diese.
 
 Stets befinden wir uns in einem *Kontext*.
 Dieser Kontext enthält Wörter denen er eine ganz bestimmte Bedeutung bzw. Abfolge von Wörtern zuweist.
-Fragen wir ein kleines Kind ob es zur Schule geht, meinen wir damit nicht ob es gerade jetzt auf dem Weg zur Schule ist, sondern ob es bereits eingeschult ist.
-In diesem Fall entsteht ein Missverständnis, falls wir und das Kind nicht den gleichen Kontext benutzten. 
+Fragen wir ein kleines Kind ob es zur Schule geht, meinen wir damit nicht, *ob es gerade jetzt auf dem Weg zur Schule ist*, sondern *ob es bereits eingeschult ist*.
+In diesem Fall entsteht ein Missverständnis, falls wir und das Kind nicht den gleichen Kontext benutzen.
 
 Im Kontext des Kartensortierens gehen wir davon aus, dass der- oder diejenige, die die Karten sortiert, weiß, was eine *Ordnung*, eine *Reihenfolge* und ein *Vergleich* ist.
 Wenn wir die Anweisung
@@ -54,11 +54,11 @@ Wäre folgende Lösung bereits ausreichend:
 Sortiere Karten
 ```
 
-Geht dies nicht hervor, müssen wir mit den Mitteln die uns zur Verfügung stehen, d.h., mit dem bestehenden Kontext ausdrücken, **wie** das Kartensortieren realisiert wird.
+Geht dies nicht hervor, müssen wir mit den Mitteln die uns zur Verfügung stehen, d. h., mit dem bestehenden Kontext ausdrücken, **wie** das Kartensortieren realisiert wird.
 Der Unterschied zwischen dem **Wie** und dem **Was** ist wichtig zu begreifen.
 Der Kontext beschreibt viele verschiedene **Was**. 
 Mit diesen beschreiben wir **wie** wir ein anderes **Was** realisieren.
-Wir erweitern den Kontext um jenes **Was**, in unserem Fall das Kartensortieren. 
+Wir erweitern den Kontext um jenes **Was**, in unserem Fall um das Kartensortieren. 
 
 Jede Beschreibung befindet sich auf einem mehr oder weniger abstraktem Level.
 Zum Beispiel können wir schreiben:
@@ -80,11 +80,11 @@ ist unklar.
 
 Eine gewisse Unklarheit bezüglich des **Wie** wird immer bestehen bleiben.
 Das ist auch nichts ungewöhnliches.
-Selbst wenn wir mit einem Stift auf ein Blatt Papier schreiben ist uns nicht vollkommen klar was auf der Atomebene bei diesem Vorgang vor sich geht.
+Selbst wenn wir mit einem Stift auf ein Blatt Papier schreiben ist uns nicht vollkommen klar was auf der atomaren Ebene bei diesem Vorgang vor sich geht.
 Die Frage lautet daher welche Mittel wir zur Verfügung haben und in welchem Kontext wir uns befinden.
 Können wir davon ausgehen, dass aus dem Kontext das **Was** klar hervorgeht?
 Ist also klar, wie wir die kleinste Karte auf der Hand überhaupt finden?
-In unserem Fall würden wir dies mit einem nein beantworten.
+In unserem Fall würden wir dies mit einem *nein* beantworten.
 
 Wie sieht es zum Beispiel mit
 
@@ -93,7 +93,7 @@ Lege dritte Karte von der Hand auf den Stapel
 ```
 
 Hier würden wir sagen, dass diese Beschreibung für den Kontext genau genug ist.
-Wir können davon ausgehen, dass die ausführende Einheit (der oder diejenige) weiß **Wie** dieses **Was** durchzuführen ist.
+Wir können davon ausgehen, dass die ausführende Einheit (der oder diejenige) weiß **Wie** dieses **Was** durchzuführen ist, sofern eine Nummerierung/Reihenfolge der Karten auf der Hand klar definiert ist.
 
 Wir müssen also festlegen was die ausführende Einheit kann und was nicht -- was sie versteht und was nicht.
 Genauso verhält es sich mit dem digitalen Computer und den Programmiersprachen.
@@ -102,7 +102,7 @@ Während des Programmierens erweitern wir unseren Kontext und können die von un
 
 ## Bewusstes Denken
 
-Selbst wenn Sie schon oft Karten sortiert haben, ist anzunehmen, dass Sie eher heuristisch vorgegangen sind und keinen präzise und unmissverständlichen Anweisungen, d.h. einem [Algorithmus](def-algorithm), gefolgt sind.
+Selbst wenn Sie schon oft Karten sortiert haben, ist anzunehmen, dass Sie eher heuristisch vorgegangen sind und keinen präzise und unmissverständlichen Anweisungen, d. h., einem [Algorithmus](def-algorithm), gefolgt sind.
 Das liegt in der Natur von uns Menschen.
 Wir sind darauf trainiert schnelle einigermaßen gute Einschätzungen zu vollziehen.
 Wenn wir beispielsweise einen Ball fangen möchten, dann starten wir keine komplizierten Berechnungen und lösen ein System von Differentialgleichungen, sondern folgen der sog. Blickheuristik.
@@ -129,7 +129,7 @@ Eine mögliche Heuristik wäre es, immer die gerade naheliegendste noch nicht be
 In den meisten praktischen Fällen führt das zu einem guten Ergebnis, doch das beste Ergebnis erzielt man damit oft nicht.
 ```
 
-Unsere (menschlichen) Heuristiken bedienen sich unseres Unterbewusstseins und rufen ab was wir verinnerlicht haben.
+Unsere (menschlichen) Heuristiken bedienen sich oft unseres Unterbewusstseins und rufen ab was wir verinnerlicht haben.
 Davon bekommen wir praktisch nichts mit.
 Eine Herausforderung des *Computational Thinking* ist es, sich das Unbewusste bewusst zu machen.
 Ein Problem muss im Detail verstanden werden.
@@ -147,6 +147,7 @@ Lege kleinste Karte auf der Hand auf einen Stapel.
 Lege kleinste Karte auf der Hand auf einen Stapel.
 ```
 
+Wenn wir immer die kleinste Karte von der Hand auf einen Stapel legen bis keine Karten mehr auf der Hand sind, dann ist der Stapel am Ende sortiert.
 Wir nehmen an, dass die obigen Anweisungen von links nach rechts und oben nach unten durchlaufen werden.
 Weshalb?
 Weil wir in der Vergangenheit Texte in dieser Art gelesen und interpretiert haben.
@@ -223,7 +224,7 @@ Ende
 ```
 
 kann sich sehen lassen.
-Sie ist präziser als all unsere Varianten zuvor, allerdings fällt es der menschlichen Wahrnehmung schwerer in sehr kurzer Zeit zu verstehen was vor sich geht.
+Diese Beschreibung ist präziser als all unsere Varianten zuvor, allerdings fällt es der menschlichen Wahrnehmung schwerer in sehr kurzer Zeit zu verstehen was vor sich geht.
 Ein anderes, für uns Menschen leserliches Beispiel wäre:
 
 ```
@@ -240,7 +241,7 @@ Wir sind es gewohnt Texte linear von oben nach unten zu lesen.
 Die Wiederholung von Textstellen bricht mit dieser Erfahrung.
 In der Variante zuvor, wird dieser Bruch nicht durch einen Bruch im Text hervorgehoben.
 Visuell sieht es nicht nach einer Wiederholung aus.
-Zudem ist der Teil, der wiederholt wird, nicht hervorgehoben.
+Der Teil, der wiederholt wird, wird nicht hervorgehoben.
 
 ## Dekomposition
 
@@ -252,14 +253,14 @@ Lege kleinste Karte auf der Hand auf S.
 ```
 
 von unserem *Kontext* definiert ist.
-Falls nicht, müssen wir selbst eine Definition mit den Mittel, die uns der *Kontext* zur Verfügung stellt, notieren.
+Falls nicht, müssen wir selbst eine Definition mit den Mitteln (alle **Was**), die uns der *Kontext* zur Verfügung stellt, notieren.
 Zum Beispiel:
 
 ```
-Sei s erste Karte (von links)
-Sei k erste Karte (von links)
+Sei s erste Karte auf der Hand (von links)
+Sei k erste Karte auf der Hand (von links)
 
-Solange sich eine Karte rechts von s befindet:
+Solange sich eine Karte rechts von s auf der Hand befindet:
     Sei k gleich die Karte rechts von k
     Falls k kleiner als s:
         Sei s gleich k
@@ -267,7 +268,7 @@ Lege s auf S.
 ```
 
 Wir holen uns also die kleinste Karte auf der Hand indem wir die Hand von links nach rechts durchsuchen.
-Sie werden vielleicht bemerkt haben, dass 
+Sie werden vielleicht bemerkt haben, dass die Ausdrücke
 
 ```
 Sei s gleich k
@@ -282,11 +283,11 @@ Sei k die Karte rechts von k
 und auch 
 
 ```
-Sei s erste Karte (von links)
-Sei k erste Karte (von links)
+Sei s erste Karte auf der Hand (von links)
+Sei k erste Karte auf der Hand (von links)
 ```
 
-missverständlich sein kann.
+missverständlich sein können.
 Mit ``Sei x gleich y`` meinen wir in unserem *Kontext*, dass der Name (die Variable) ``x`` der das Objekt ``o1`` (hier eine Karte) identifiziert, nach der Anweisung, das Objekt ``o2`` identifiziert, welches derzeit durch den Namen ``y`` identifiziert wird.
 
 ```{figure} ../../figs/find_min.png
@@ -303,10 +304,10 @@ Mit einer anderen [Syntax](def-syntax), können wir solchen Missverständnissen 
 Ein Beispiel wäre
 
 ```
-s <- erste Karte (von links)
-k <- erste Karte (von links)
+s <- erste Karte auf der Hand (von links)
+k <- erste Karte auf der Hand (von links)
 
-Solange eine sich eine Karte rechts von k befindet:
+Solange eine sich eine Karte rechts von k auf der Hand befindet:
     k <- die Karte rechts von k.
     Falls k kleiner als s:
         s <- k
@@ -324,24 +325,21 @@ Das kann anfänglich verwirrend sein, da das ``=`` nicht dem mathematischen $=$ 
 
 Das mathematische Denken ist eng mit dem Computational Thinking verknüpft.
 In der Mathematik sind alle Objekte und Operationen präzise und unmissverständlich formuliert.
-Zugleich verzichtet man auf überflüssige Informationen und versucht Definitionen so allgemein, d.h. abstrakt wie möglich zu halten.
+Zugleich verzichtet man auf überflüssige Informationen und versucht Definitionen so allgemein, d. h., so abstrakt wie möglich zu halten.
 
 Bei jeder Priorisierung oder Sortierung müssen wir Objekte vergleichen können.
-Das Sortieren von Karten können wir intuitiv ohne großartig darüber nachzudenken.
+Das Sortieren von Karten beherrschen wir intuitiv ohne großartig darüber nachzudenken.
 Wir haben bereits ein Verständnis durch unsere Lebenserfahrung erlangt.
 Selbst jemand der noch nie Karten sortiert hat, weiß zumindest wie sich vergleichbare Dinge ordnen lassen.
 In der Schule sind wir größer oder kleiner als andere Schüler gewesen.
 Schon sehr früh können wir Objekte ihrer Größe, Länge oder ihres Gewichts nach ordnen.
 
-Für eine genaue und unmissverständliche Beschreibung können wir von der Mathematik Gebrauch machen.
+Für eine genaue und unmissverständliche Beschreibung können wir von der Mathematik gebrauch machen.
 Sie ist eine internationale äußerst kompakte Sprache mit der wir die Natur beschreiben können.
 Zudem ist die Mathematik bereits entwickelt, wir können uns also vieler Konzepte bedienen, die allgemein bekannt sind.
 Somit drücken wir uns für all jene verständlich aus, die das nötige mathematische Verständnis mitbringen.
 
-Lassen Sie uns zwei wesentliche Dinge mathematisch betrachten, welche wir beim Sortieren der Karten intuitiv verwenden:
-
-1. Die sog. [Ordnungsrelation](def-math-order) und
-2. Objekte in einer Reihenfolge angeordnet.
+Lassen Sie uns zwei wesentliche Dinge mathematisch betrachten, welche wir beim Sortieren der Karten intuitiv verwenden: (1) Die sog. [Ordnungsrelation](def-math-order) und (2) Objekte in einer Reihenfolge anzuordnen.
 
 
 ### Ordnung
@@ -353,6 +351,7 @@ Ist unsere Menge $K$ die Menge der Karten, wobei wir zwei Karten mit der gleiche
 $$R = \{(6,6),(6,7),(6,8),\ldots,(6,A), (7,7), (7,8), \ldots, (\text{König},\text{Ass}), (\text{Ass},\text{Ass})\}$$
 
 eine *(totale) Ordnungsrelation*.
+Für jedes Element (Tupel) $(a, b)$ der Relation $R$ gilt: $a \leq b$.
 
 ### Reihenfolge
 
@@ -368,6 +367,6 @@ $$H = (6, 7, \text{Bube}, 8, \text{Bube})$$
 Wäre ein $5$-Tupel, welches eine Hand *modelliert*, welche die Karten 6, 7, Bube, 8, Bube von links nach rechts beinhaltet.
 
 Anders als mathematische Mengen sind Tupel geordnet und endlich.
-Zugleich können mehrere gleiche Elemente enthalten.
+Zugleich können sie mehrere gleiche Elemente enthalten.
 
 In ``Python`` gibt es zwei Datenstrukturen ([Liste](sec-list), [Tupel](sec-tuple)), welche ein mathematisches endliches Tupel modellieren.
