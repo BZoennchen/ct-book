@@ -20,7 +20,7 @@ Ziel war es Rechenfehler bei einfachen Berechnungen zu verhindern.
 Über zweitausend Jahre später erschufen die antiken Griechen eine Art mechanisch-analogen Computer -- eine ganz erstaunliche Leistung, die für die kommenden tausend Jahre einzigartig bleiben sollte.
 Dieser antike Computer war dazu gedacht, bestimmte Positionen der Himmelskörper zu bestimmen -- schon immer wurden wir Menschen von der Frage nach unserem Platz und unserer Bedeutung im Universum angetrieben.
 
-```{figure} ../../figs/greeks.png
+```{figure} ../../figs/history/greeks.png
 ---
 height: 150px
 name: greeks
@@ -35,7 +35,7 @@ Bücher von Reisenden wurden händisch kopiert.
 Schiffe, die im Hafen ankerten, wurden nach neuen Mitschriften durchsucht.
 In der Agora wurde rege über die Laufbahn der Himmelskörper, geometrische Körper und besondere Zahlen diskutiert.
 
-```{figure} ../../figs/earth-curvature.png
+```{figure} ../../figs/history/earth-curvature.png
 ---
 height: 150px
 name: fig-earth-curvature
@@ -85,7 +85,7 @@ Zur Zeit der antiken Griechen begann man die ersten uns überlieferten Algorithm
 Nach Eratosthenes ist einer der ersten Algorithmen überhaupt benannt, der [Sieb des Eratosthenes](https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes).
 Es ist eine clevere Technik um Primzahlen zu berechnen.
 
-```{figure} ../../figs/the-elements.jpg
+```{figure} ../../figs/history/the-elements.jpg
 ---
 height: 150px
 name: fig-euklid-elements
@@ -117,7 +117,7 @@ Neben den Syllogismen beschäftigte sich Aristoteles bereits mit dem *Satz vom W
 Zur Zeit des römischen Reichs formulierten die Stoiker das erste aussagelogische Kalkül und auch im Mittelalter sollten sich kleinere Fortschritte im Bereich der Logik ergeben.
 Jedoch sollten erst im 19. Jahrhundert, durch Mathematiker wie George Boole, Gottlob Frege und Bertrand Russell, weitreichende Fortschritte möglich werden.
 
-```{figure} ../../figs/logicians.png
+```{figure} ../../figs/history/logicians.png
 ---
 height: 150px
 name: logicians

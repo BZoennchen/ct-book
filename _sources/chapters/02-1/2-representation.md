@@ -34,7 +34,7 @@ Wie aber lassen sich Informationen mit solchen elektrischen Signalen darstellen?
 Stellen wir uns eine Lampe vor, die zwei Zustände hat.
 Entweder die Lampe ist aus (0) oder sie ist an (1).
 
-```{figure} ../../figs/lamps.png
+```{figure} ../../figs/digital-computer/representation/lamps.png
 ---
 width: 200px
 name: fig-lamps
@@ -69,12 +69,14 @@ Mit **Strom an**, **Strom aus** können wir zum Beispiel folgende Mengen repräs
 ``````
 
 Mit einer Lampe können wir jede zweielementige Menge repräsentieren.
-Der einzelne Zustand einer Lampe, also **Strom aus** oder **Strom an** nennen wir *Bit*, es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.
+Der einzelne Zustand einer Lampe, also **Strom aus** oder **Strom an** nennen wir *Bit*. 
+Es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.
 
 ```{admonition} Bit
 :name: def-bit
 :class: definition
-Der einzelne Zustand eines Kabels, also **Strom aus** oder **Strom an** nennen wir *Bit*, es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.
+Der einzelne Zustand eines Kabels, also **Strom aus** oder **Strom an** nennen wir *Bit*.
+Es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.
 ```
 
 Benutzen wir mehrere (geordnete) Lampen so erhalten wir mehrere *Bits* und können so komplexere Informationen speichern.
@@ -87,11 +89,11 @@ darstellen. Mit drei Lampen sind es bereits acht:
 $$(0,0,0), (0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1).$$
 
 Mit jeder weiteren Lampe verdoppelt sich die Anzahl der repräsentierbaren Zustände.
-Und somit können wir mit $n$ Kabeln eine Menge mit $2^n$ Elementen repräsentieren.
-Dieser exponentieller Anstieg ist enorm wichtig.
+Und somit können wir mit $n$ Lampen eine Menge mit $2^n$ Elementen repräsentieren.
+Dieser exponentielle Anstieg ist enorm wichtig.
 Ohne diese Eigenschaft würden die Speicher der Computer sehr schnell volllaufen.
 
-```{figure} ../../figs/lamps-example.png
+```{figure} ../../figs/digital-computer/representation/lamps-example.png
 ---
 width: 400px
 name: fig-lamps-example
@@ -111,16 +113,26 @@ Der Grund ist das Verhalten des Logarithmus.
 
 Der folgende Plot illustriert wie viele *Bits* (y-Achse) für eine Menge mit $n$ Elementen (x-Achse) im jeweiligen Zahlensystem notwendig sind.
 Der Unterschied zwischen *Binär* und *Unär* ist enorm, wohingegen der Unterschied zwischen *Binär* und, zum Beispiel, $\log_5(n)$ gering ist.
+Dies folgt aus den Rechengesetzen des Logarithmus:
+
+$$\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$$
+
+wobei $\log_b(a)$ eine Konstante ist.
 
 ```{code-cell} python3
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
+
+sns.set_style("whitegrid")
+sns.set_context("talk")
 
 def log(base, x):
     return np.log(x)/np.log(base)
 
-plt.rcParams['font.size'] = '16'
 n = np.arange(1,20,1)
+
+fig, axs = plt.subplots(1, 1, figsize=(10,5))
 plt.plot(n, n, label='Unär $n$')
 plt.plot(n, log(2, n), label='Binär $\\log_2(n)$')
 plt.plot(n, log(3, n), label='$\\log_3(n)$')
@@ -329,7 +341,7 @@ Das *Komplement* einer Bitfolge $b_{n-1} \ldots b_0$, geschrieben als
 \overline{b_{n-1} \ldots b_0},
 ```
 
-erhalten wir indem wir jedes Bit mit dem Wert $0$ mit einem Bit mit dem Wert $1$ und jedes Bit mit dem Wert $1$ mit einem Bit mit dem Wert $0$ ersetzten.
+erhalten wir indem wir jedes Bit, mit dem Wert $0$, mit einem Bit, mit dem Wert $1$, und jedes Bit, mit dem Wert $1$, mit einem Bit, mit dem Wert $0$, ersetzten.
 ````
 
 Anstatt das Vorzeichen und den Betrag als getrennte Teile der Binärfolge zu codieren bietet das sogenannte *Zweierkomplement*, oder auch 2-Komplement, die bevorzugte Codierung für negative Zahlen.
@@ -357,13 +369,14 @@ Aus Gleichung {eq}`eq:binary:natural` wird
   \end{split}
 ```
 
-Wir können Gleichung {eq}`eq:binary:natural` auch umschreiben, indem wir das [Komplement](def-complement) eines jeden [Bit](def-bit) verwenden, daher der Name *Zweierkomplement*.
+Sofern es sich um eine negative Zahl handelt, d. h. $b_{n-1} = 1$, so können wir die Gleichung {eq}`eq:binary:integer` auch umschreiben, indem wir das [Komplement](def-complement) eines jeden [Bit](def-bit) verwenden, daher der Name *Zweierkomplement*:
 
 ```{math}
 :label: eq:binary:integer:complement
   \begin{split}
     b_{n-1} \ldots b_0 &= -\overline{b}_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} - \ldots - \overline{b}_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0} - 1\\
-    &= -\left( \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} \overline{b}_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i} \right) - 1.
+    &= -\left( \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} \overline{b}_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i} \right) - 1,
+    \quad  \text{falls $b_{n-1} = 1$,}
   \end{split}
 ```
 
@@ -383,7 +396,14 @@ Sei $b_{n-1} \ldots b_0$ eine solche Zahl in Binärdarstellung, so ist ihr [Komp
 ```
 
 gleich $-k$.
-Dies gilt sowohl für positive wie auch negative Zahlen $k$.
+Dies gilt sowohl für positive wie auch negative Zahlen $k$. 
+Zum Beispiel ist $5_{10} = 0101_2$ und 
+
+$$\overline{0101}_2 + 1_2 = 1010_2+1_2 = 1011_2 = -8_{10}+2_{10}+1_{10} = -5_{10}.$$
+
+Zudem gilt: 
+
+$$\overline{1011}_2 + 1_2 = 0100_2 + 1_2 = 0101_2 = 5_{10}.$$
 
 ````{exercise} Komplement des Komplements (schwer)
 :label: complement-of-complement-exercise
@@ -421,17 +441,17 @@ $$\overline{\overline{b_{n-1}\ldots b_{k-1}}10\ldots 0} + 1 = b_{n-1}\ldots b_{k
 Das Bilden des Komplements ist für den Computer eine äußerst einfache und schnelle Operation, siehe Abschnitt [Manipulation](sec-manipulation).
 
 Wichtig ist festzuhalten, dass jede ganze Zahl als Binärzahl dargestellt werden kann!
-Und da wir jede **ganze Zahl** als Binärzahl, also als Folge von $0$ und $1$ darstellen können, können wir all das, was wir durch Zahlen repräsentieren können, auch durch **Strom an** und **Strom aus** endlich vieler Lampen repräsentieren.
+Und da wir jede **ganze Zahl** als Binärzahl, also als Folge von 0 und 1 darstellen können, können wir all das was wir durch Zahlen repräsentieren können auch durch **Strom an** und **Strom aus** endlich vieler Lampen repräsentieren.
 
 ### Addieren (und Subtrahieren)
 
 Im folgenden Abschnitt repräsentieren alle Zahlen in Binärdarstellung **ganze Zahlen**.
 Um mit dem *Zweierkomplement* rechnen zu können müssen wir die Anzahl der Bits fixieren, das heißt, alle Zahlen der Rechnung werden durch gleich viele Bits repräsentiert.
-Verwenden wir $5$ Bits so ist $00011_2 = 3_{10}$ und $10011_2 = - 13$.
-Erzeugen wir einen Überlauf, d.h., bräuchten wir mehr Bits als vorhanden, so werden die höchsten Bits einfach weggelassen.
+Verwenden wir 5 Bits so ist $00011_2 = 3_{10}$ und $10011_2 = - 13$.
+Erzeugen wir einen Überlauf, d. h., bräuchten wir mehr Bits als vorhanden, so werden die höchsten Bits einfach weggelassen.
 
 Mit diesen Annahmen funktioniert die Addition genauso wie Sie es im Dezimalsystem gewohnt sind, wobei $1_2 + 1_2 = 0_2$ mit dem *Übertrag* $1$ ergibt.
-Addieren wir beispielsweise die zwei $5$-Bit Zahlen $00011_2 = 3_{10}$ und $00111_2 = 7_{10}$ ergibt dies:
+Addieren wir beispielsweise die zwei 5-Bit Zahlen $00011_2 = 3_{10}$ und $00111_2 = 7_{10}$ ergibt dies:
 
 ```{math}
   \begin{split}
@@ -445,9 +465,9 @@ Addieren wir beispielsweise die zwei $5$-Bit Zahlen $00011_2 = 3_{10}$ und $0011
 Wir müssen jedoch Vorsichtig sein!
 Benötigt das Ergebnis mehr Bits als zu Verfügung stehen, kommt es zu einem *Überlauf*.
 
-Addieren wir beispielsweise die zwei $5$-Bit Zahlen $01011_2 = 11_{10}$ und $00111_2 = 7_{10}$ ergibt dies $010010_2 = 18_{10}$.
-Doch diese Zahl benötigt $6$ Bits.
-Abgeschnitten ergibt sich deshalb $10010_2 = -14_{10}$.
+Addieren wir beispielsweise die zwei 5-Bit Zahlen $01011_2 = 11_{10}$ und $00111_2 = 7_{10}$ ergibt dies $010010_2 = 18_{10}$.
+Doch diese Zahl benötigt 6 Bits.
+Abgeschnitten ergibt dies deshalb $10010_2 = -14_{10}$.
 Dies ist ein **unerwünschter Überlauf**!
 
 Durch das *Zweierkomplement* können wir auch negative Zahlen wie gewohnt addieren.
@@ -464,7 +484,7 @@ Addieren wir beispielsweise $01011_2 = 11_{10}$ und $1111_2 = -1_{10}$ ergibt di
 ```
 
 Jedoch benötigt $101010_2$ erneut zu viele Bits.
-Schneiden wir den Überlauf weg, so ergibt sich $01010_2 = 10_{10}$.
+Schneiden wir den Überlauf weg, so ergibt dies $01010_2 = 10_{10}$.
 Dies ist ein **erwünschter Überlauf**!
 
 ```{exercise} Erwünschter und unerwünschter Überlauf.
@@ -490,7 +510,7 @@ Subtrahieren wir beispielsweise die Zahl $00011_2 = 3_{10}$ von $00111_2 = 7_{10
 	\end{split}
 ```
 
-Der erwünschte Übertrag fällt weg und aus $100100_2$ wird $00100_2 = 4_{10}$.
+Der erwünschte Überlauf entsteht und aus $100100_2$ wird $00100_2 = 4_{10}$.
 
 ```{exercise} Addition und Subtraktion von Binärzahlen
 :label: binary-addition-substraction-exercise
@@ -531,7 +551,7 @@ Zum Beispiel könnten wir folgende Zuordnung verwenden:
 | ...       | ...         | ...       |
 | Z         | 25          | 11001     |
 
-Da in diesem Fall unsere Menge $26$ Elemente enthält brauchen wir $26$ Zustände und damit mindestens $5$ *Bits*, denn es gilt 
+Da in diesem Fall unsere Menge 26 Elemente enthält brauchen wir 26 Zustände und damit mindestens 5 *Bits*, denn es gilt 
 
 $$2^4 < 26 \leq 2^5.$$
 
@@ -548,9 +568,9 @@ Mit Kleinbuchstaben haben wir $52$ Elemente und brauche somit $6$ *Bits* denn
 $$2^5 < 52 \leq 2^6$$
 ```
 
-Ein Wort besteht dann aus mehreren Buchstaben.
+Ein Wort besteht natürlich aus mehreren Buchstaben.
 Zum Beispiel wäre *BAD* repräsentiert durch $00001 00000 00011$.
-Im Computer würden demnach $15$ Kabel/Leitungen oder Transistoren die entweder den Zustand **Strom aus** oder **Strom an** haben das Wort repräsentieren.
+Im Computer würden demnach 15 Lampen/Leitungen oder Transistoren, die entweder den Zustand **Strom aus** oder **Strom an** haben, das Wort repräsentieren.
 
 Sonderzeichen wie Leerzeichen oder weitere Zeichen müssten wir in unsere Codierung noch einfügen.
 Auch könnten wir einen vollkommen anderen Zeichensatz benutzten.
@@ -558,7 +578,7 @@ Programme die auf diesem aufbauen müssen die Codierung lediglich kennen.
 
 Auch können wir längere Wörter oder ganze Sätze bilden, brauchen dafür natürlich Speicherplatz.
 In unserem Beispiel benötigt jeder Buchstabe 5 Bits.
-D.h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen wir die Bauteile für mindestens 1500 Bits was wiederum 187.5 Bytes bzw. 0.1875 [kiloByte](https://en.wikipedia.org/wiki/Kilobyte) (kB) ($10^3$ Byte) und ca. 0.1831 [kibiByte](https://en.wikipedia.org/wiki/Kilobyte) (KB/KiB) ($2^{10}$ Byte) sind.
+D. h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen wir die Bauteile für mindestens 1500 Bits was wiederum 187.5 Bytes bzw. 0.1875 [kiloByte](https://en.wikipedia.org/wiki/Kilobyte) (kB) ($10^3$ Byte) und ca. 0.1831 [kibiByte](https://en.wikipedia.org/wiki/Kilobyte) (KB/KiB) ($2^{10}$ Byte) sind.
 
 (representation-pictures)=
 ## Bilder
@@ -566,12 +586,12 @@ D.h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen w
 (pixel-image)=
 ### Rastergrafiken
 
-Bilder, Videos und Grafiken in, z.B. Computerspielen, bestehen aus winzig kleinen quadratischen Pixeln.
+Bilder, Videos und Grafiken in, z. B., Computerspielen, bestehen aus winzig kleinen quadratischen Pixeln.
 Jeder Pixel hat eine bestimmte Farbe.
 Wir nennen diese Grafiken auch *Rastergrafiken*.
 Farben werden wiederum durch Zahlen repräsentiert.
 
-```{figure} ../../figs/pixel-image.png
+```{figure} ../../figs/digital-computer/representation/pixel-image.png
 ---
 width: 400px
 name: fig-pixel-image
@@ -580,13 +600,13 @@ Transformation eines Bildes in *Bytes* bzw. *Bits*.
 ```
 
 Eine gängige Möglichkeit ist es eine Farbe durch den Anteil von Rot, Grün und Blau (RGB) zu definieren.
-Somit wird ein Pixel durch drei Zahlen repräsentiert und es ist üblich $256$ Rot-, Blau- und Grün- Intensitäten zu verwenden.
+Somit wird ein Pixel durch drei Zahlen repräsentiert und es ist üblich 256 Rot-, Blau- und Grün- Intensitäten zu verwenden.
 Damit lassen sich $256^3$ unterschiedliche Farben repräsentieren. Zum Beispiel repräsentiert
 
 $$(253, 10, 10)$$
 
 einen sehr rötlichen Farbton.
-Für die $256$ Intensitäten brauchen wir je $8$ *Bits*, d.h. ein *Byte*.
+Für die 256 Intensitäten brauchen wir je 8 *Bits*, d.h. ein *Byte*.
 
 ```{admonition} Byte
 :name: def-byte
@@ -603,15 +623,15 @@ Oftmals ist ein *Byte* die kleinste Einheit auf die ein Computer zugreift.
 Anstatt beispielsweise ein einzelnes *Bit* aus dem Speicher in die CPU zu laden, wird ein ganzes oder gar mehrere *Bytes* gelesen.
 ```
 
-Pro Pixel benötigen wir also $3$ Byte.
-Heute bestehen Bilder oft aus Millionen von Pixeln und ein gewöhnliches Video zeigt ca. $30$ Bilder pro Sekunde.
+Pro Pixel benötigen wir demnach 3 Byte.
+Heute bestehen Bilder oft aus Millionen von Pixeln und ein gewöhnliches Video zeigt ca. 30 Bilder pro Sekunde.
 Damit wird klar, dass eine enorme Datenmenge entsteht und es verwundert nicht, dass Videos oftmals mehrere Gigabyte groß sind.
 Ist die Auflösung hoch, folgt daraus wiederum ein großer Energieverbrauch den die Video-Streamingdienste verursachen.
 
 ### Vektorgrafiken
 
 Eine weitere sehr interessante Technik ist es ein Bild durch einfache geometrische Objekte zu **beschreiben**.
-Zum Beispiel könnten wir ein Bild durch folgende Zeichenanweisungen beschreiben:
+Zum Beispiel könnten wir ein Bild durch folgende Zeichenanweisungen repräsentieren:
 
 ```python
 Color(253,10,10)            # Wähle Pinsel mit Farbe (253,10,10)
@@ -619,9 +639,9 @@ Rectangle(0,0,100,100)      # Zeichne Rechteck
 Line(1,1,99,99)             # Zeichne Linie
 ```
 
-Was so viel bedeutet wie Zeichne ein Rechteck von $(0,0)$ bis $(100,100)$ und eine Linie definiert durch $(1,1)$ und $(99,99)$ in einer rötlichen Farbe.
+Was so viel bedeutet wie: Zeichne ein Rechteck von $(0,0)$ bis $(100,100)$ und eine Liniensegment, definiert durch die Punkte $(1,1)$ und $(99,99)$, in einer rötlichen Farbe.
 
-Anstatt des 'fertigen' Bildes, speichern wir eine Vorschrift bzw. einen [Algorithmus](def-algorithm), der angibt wie dieses Bild gezeichnet wird.
+Anstatt des "fertigen" Bildes, speichern wir eine Vorschrift bzw. einen [Algorithmus](def-algorithm), der angibt wie dieses Bild gezeichnet wird.
 Diese Vorschrift wird in Binärcode umgewandelt und ein Programm, was solch eine Vorschrift lesen bzw. einen solchen Algorithmus ausführen kann, kümmert sich um die Umwandlung in eine *Rastergrafik*.
 
 Diese Bilder sind sog. *Vektorgrafiken*.
@@ -659,8 +679,9 @@ Dann können wir entweder alle $200$ Zeichen speichern, was uns $200$ Byte koste
 ```
 
 was uns 6 Byte kostet.
-Wir bräuchten dann ein Programm (einen Übersetzer), was die Anweisung ``'ab'*100`` versteht und ausführt.
+Wir bräuchten dann ein Programm in Form eines Übersetzer, der die Anweisung ``'ab'*100`` versteht und ausführt.
 Wir verringern somit den verbrauchten Speicherplatz auf Kosten der Rechenzeit.
+Diese Technik ist eng mit dem Informationsbegriff verknüpft, siehe [Informationstheorie](sec-kolmogorow).
 
 (representation-sound)=
 ## Ton
@@ -671,12 +692,20 @@ Die Oszillation lässt sich als periodische Funktion über die Zeit darstellen.
 Ton ist nichts anderes als eine Funktion $f(t)$ der Amplitude (Lautstärke) über die Zeit $t$.
 Die Frequenz der Oszillation bestimmt die Tonhöhe.
 
+```{figure} ../../figs/digital-computer/representation/particle-waves.png
+---
+width: 400px
+name: fig-particle-waves
+---
+Ein zyklischess Muster aus niedriger und hoher Moleküldichte.
+```
+
 Wir können keine Funktion mit nur **Strom aus** und **Strom an** repräsentieren, da diese unendlich viele Werte annimmt.
 Wir können von der Funktion aber eine sogenannte *Stichprobe (engl. Sample)* erstellen.
 Dazu werten wir die Funktion an endlich vielen Stellen $t = t_0, \ldots, t_n$ aus und speichern die zugehörigen Werte $f(t_0), \ldots, f(t_n)$ ab.
 Je mehr *Samples* wir pro Sekunde machen und je genauer wir die Amplitude an den Samplepunkten treffen, desto genauer wird unsere eigentliche Funktion $f(t)$ angenähert.
 
-```{figure} ../../figs/sound-wave.png
+```{figure} ../../figs/digital-computer/representation/sound-wave.png
 ---
 width: 700px
 name: fig-sound-wave
@@ -686,14 +715,14 @@ Links das analoge Signal und rechts die Samples.
 Erst erhöhen wir die Bit-Tiefe (zweite Zeile), dann die Sample-Rate (dritte Zeile).
 ```
 
-Ton wird also als Folge von Zahlen repräsentiert.
+Ton wird als Folge von Zahlen repräsentiert.
 Diese Folge transformieren Lautsprecher in Vibration und damit in Ton.
 Gewöhnlich verwendet man eine sog. *Sample-Rate (Stichproben-Rate)* von 44.1 kHz, d.h. 44100 Stichproben pro Sekunde.
-Der Wert der Amplitude $f(t_i)$ wird heute normalerweise durch 32 *Bits* also 4 *Byte* repräsentiert.
+Der Wert der Amplitude $f(t_i)$, in Form einer [Fließkommazahl/Gleitkommazahl](sec-float), wird heute normalerweise durch 32 *Bits* also 4 *Byte* repräsentiert.
 
 ```{exercise} Speicherplatz
 :label: sound-memory-exercise
-Wie viel Speicherplatz braucht ein Song 3 Minuten Song mit einer Sample-Rate von 44.1 kHz und einer Bit-Tiefe von 32 Bits?
+Wie viel Speicherplatz verbraucht ein 3-Minuten-Song der in einer Sample-Rate von 44.1 kHz und einer Bit-Tiefe von 32 Bits abgespeichert wurde?
 ```
 
 ```{solution} sound-memory-exercise
@@ -707,12 +736,16 @@ Megabyte also ca. $33$ MB, was $33 \cdot 10^6 \cdot 8$ *Bits* sind.
 ```
 
 Folgender ``Python``-Code erzeugt und plottet Samples einer Sinuswelle mit der Frequenz von $1$ Hz über den Zeitraum von einer Sekunde.
-Es wird eine Sample-Rate von $3, 4, 8, 16, 32$ und $64$ Hz verwendet.
+Es wird eine Sample-Rate von 3, 4, 8, 16, 32 und 64 Hz verwendet.
 Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möchten Sie zu einem späteren Zeitpunkt analysieren was hier geschieht.
 
 ```{code-cell} python3
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
+
+sns.set_style("whitegrid")
+sns.set_context("talk")
 
 def sine_wave(freq=200, amp=1):
     return lambda x : np.sin(freq * 2 * np.pi * x)
@@ -721,21 +754,24 @@ def sample(f, sample_rate=441000, dt=10):
     steps = 1.0/sample_rate   # Sample-Punkte von Sekunde 0 bis sekunde Sekunden dt
     t = np.arange(0,dt,steps) # in 1/sample_rate schritten
     y = f(t)                  # f(t) für alle Sample-Punkte
+    t = np.append(t, [1.0])
+    y = np.append(y, [f(1.0)])
     return t, y
 
 # Sinus-Welle mit der Frequenz von 1 Hz und der Amplitude 1
 f = sine_wave(freq=1.0, amp=1.0)
 
 # Verschiedene Samples, erzeugt durch verschiedene Sample-Rates
-plt.rcParams['font.size'] = '16'
+#plt.rcParams['font.size'] = '16'
 fig, axs = plt.subplots(2, 3, figsize=(20,10))
 i = 0
 j = 0
 for sample_rate in [3,4,8,16,32,64]:
-    fig.suptitle('Samples der Sinueswelle $\\sin(2\\pi \\cdot t$) über eien Zeitraum von 1 Sekunde')
+    #fig.suptitle('Samples der Sinueswelle $\\sin(2\\pi \\cdot t$) über eien Zeitraum von 1 Sekunde')
     t, y = sample(f, sample_rate=sample_rate, dt=1)
     axs[i][j].step(t, y, where='post', label=f'Sample-Rate: {sample_rate} Hz')
-    axs[i][j].plot(t, y, marker='o', linewidth=0)
+    axs[i][j].plot(t, y, marker='o', ms=5, linewidth=0)
+    axs[i][j].set_xlim([0,1])
     axs[i][j].legend()
     if(j < 2):
         j += 1

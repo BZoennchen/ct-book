@@ -27,8 +27,9 @@ Diese Begriffe sind gerade nicht der außersprachlichen Gegenstand sondern menta
 Die Zeichenfolge erhält durch die Semantik eine Bedeutung.
 Und die Benutzer\*innen der Zeichen deuten diese, was eine gewisse Wirkung auf die Zeichenbenutzer\*innen hat.
 Begriffe werden als mentale Repräsentationen von Gegenständen oder Sachverhalten (Referent) verstanden.
+
 Das ähnelt dem was wir im Abschnitt [Interpretation](sec-interpretation) besprochen haben.
-Hier hatten wir gesagt, dass wir den Tag den die Zeichenfolge ``23.10.2022`` repräsentiert niemals niederschreiben können.
+Hier hatten wir gesagt, dass wir den Tag, den die Zeichenfolge ``23.10.2022`` repräsentiert, niemals niederschreiben können.
 Wir können immer nur einen Repräsentanten niederschreiben.
 Deshalb ist der Gegenstand aus der Realwelt auf den wir referenzieren **außersprachlich**.
 
@@ -36,17 +37,23 @@ Zum Beispiel, können zwei Zeichenfolgen (Ausdrücke) auf den selben (realen) Ge
 Ein Beispiel ist das Wortpaar ``Abendstern`` und ``Morgenstern``.
 Beide Zeichenfolgen **referenzieren** auf den Planeten (**realen Gegenstand**) Venus.
 ``Abendstern`` ist der **syntaktische** Ausdruck. 
-Seine **Bedeutung** (nach dem Duden) ist: Auffallend hell leuchtender Stern am Westhimmel nach Sonnenuntergang.
-Für ``Morgenstern`` heißt es im Duden hingegen: Auffallend hell leuchtende Planet Venus am Morgenhimmel vor Sonnenaufgang.
+Seine **Bedeutung** (nach dem Duden) ist: 
+
+>Auffallend hell leuchtender Stern am Westhimmel nach Sonnenuntergang.
+
+Für ``Morgenstern`` heißt es im Duden hingegen: 
+
+>Auffallend hell leuchtende Planet Venus am Morgenhimmel vor Sonnenaufgang.
+
 Wir symbolisieren mit den Zeichen also einmal den Abend und das andere Mal den Morgen.
 
 Betrachten wir ein weiteres Beispiel aus dem Straßenverkehr: Das Halteverbotszeichen.
 Die **Syntax** des Zeichens ist seine Zusammensetzung aus rotem Ring und rotem Kreuz mit blauer Füllung.
-Die **Semantik** ruft in uns Begriffe wie Verbot, Strafe und natürlich das Bild eines parkenden Autos hervor.
+Die **Semantik** ruft in uns Begriffe wie Verbot, Strafe und das Bild eines parkenden Autos hervor.
 Der reale Gegenstand oder Sachverhalt ist weniger klar, da es viele dieser Sachverhalte gibt.
 Wir könnten die Menge all dieser Sachverhalte mit dem Verbotsschild **referenzieren**.
 Die **pragmatische** Wirkung ist etwa: Die Zeichenempfänger\*innen sollen veranlasst werden nicht an der Straßenseite zu halten. 
-Bei Missachtung muss er mit einer Sanktion rechnen.
+Bei Missachtung muss sie mit einer Sanktion rechnen.
 
 ## Evolutionäre Perspektive
 
@@ -90,19 +97,18 @@ Sie gehen stattdessen davon aus, dass es drei verschieden komplexe selbstorganis
 3. Soziale Systeme
 
 Die Qualitäten einer höheren Ebene **emergieren** aus der jeweils darunterliegenden Ebene.
-Wie oben bereits erwähnt ist mit **emergieren** gemeint, dass ohne hierarchisch vorgebende Struktur durch das Zusammenspiel der Einzelteile, etwas Neues 'aus sich selbst heraus' entsteht.
+Wie oben bereits erwähnt ist mit **emergieren** gemeint, dass ohne hierarchisch vorgebende Struktur durch das Zusammenspiel der Einzelteile, etwas Neues "aus sich selbst heraus" entsteht.
 Ein höheres System weißt Aspekte von Information auf, welches die niedrigeren Systeme nicht aufweisen.
-Gleichzeitig gibt es Aspekte der Information, die für evolutionär-aufeinanderfolgenden Systemen gleichermaßen zutreffen.
+Gleichzeitig gibt es Aspekte der Information, die für evolutionär-aufeinanderfolgende Systemen gleichermaßen zutreffen.
 
-In *physikalisch-chemischen Systemen* (niedrigste Ebene) hat die Information einen rein **syntaktischen** Charakter.
+Nach dieser Theorie, hat Information in *physikalisch-chemischen Systemen* (niedrigste Ebene) einen rein **syntaktischen** Charakter.
 Nehmen wir an ein Umweltereignis gibt den Anstoß zum selbstorganisierten Ordnungsaufbau eines physikalischen Systems.
 Dann kann man, laut Fuchs und Hofkirchner, dieses Umweltereignis als Signal für die Auslösung eines *Informationsprozesses* interpretieren.
 Das Muster was sich bildet, kann wiederum als weiteres Signal für andere Systeme in der Umwelt dienen.
 
 In *lebenden Systemen* sind Strukturen nicht mehr einfache Muster, sondern *Symbole/Zeichen*. 
-Diese haben für das entsprechende System eine bestimmte **Bedeutung/Bedeutung**.
-Aus der Wahrnehmung (physikalisch-chemisches System) können Symbole *emergieren*.
-Diese Symbole beinhalten eine Semantik/Bedeutung.
+Diese haben für das entsprechende System eine bestimmte **Semantik/Bedeutung**.
+Aus der Wahrnehmung (physikalisch-chemisches System) können bedeutungsvolle Symbole *emergieren*.
 Werte, Normen, Regeln, Meinungen, Ideen, Glaube, usw. einer einzelnen Person bezeichnen Fuchs und Hofkirchner als *individuelle Information / Weisheit*.
 Aus wahrgenommenen **Signalen** werden **Daten**, diese werden interpretiert und schließlich zu **Wissen**.
 Jenes **Wissen** ist dann die Basis für neues **Wissen**.
@@ -115,5 +121,7 @@ Die zweite ist, nach Fuchs, die sogenannte *soziale Information*.
 Sie bezeichnet gesellschaftliche Kategorien, die soziales Handeln dauerhaft ermöglichen und Aspekte gesellschaftlicher Handlungen und Beziehungen speichern.
 Es kann sich um eine sog. **soziale Inklusion** oder **soziale Exklusion** handeln.
 **Soziale Inklusion** sind neue emergente Eigenschaften eines sozialen Systems, dessen sich das System kollektiv bewusst ist.
-**Soziale Exklusion** hingegen, werden nicht kollektiv konstituiert, sondern über Teilsysteme, die sich in sozialen Hierarchien, oder von außen und reflektieren Herrschaftsverhältnisse in sozialen Systemen befinden.
+**Soziale Exklusion** wird hingegen nicht kollektiv konstituiert.
+Sie entsteht entweder durch Teilsysteme, die sich in sozialen Hierarchien befinden, oder von außen.
+Die Exklusion reflektiert Herrschaftsverhältnisse in sozialen Systemen.
 Nach Fuchs und Hofkirchner, entsteht **soziale Inklusion** durch **Kooperation** und **soziale Exklusion** durch **Konkurrenz**.

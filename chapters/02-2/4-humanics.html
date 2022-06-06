@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8.4. Geisteswissenschaften &#8212; Computational Thinking</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,12 +19,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -31,10 +28,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -42,6 +39,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -49,13 +47,12 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
@@ -68,7 +65,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,9 +88,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -94,17 +106,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   Computational Thinking
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Computational Thinking
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Einleitung
  </span>
@@ -817,92 +830,197 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
-                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/02-2/4-humanics.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
-                    class="fab fa-github"></i>Repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-2/4-humanics.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
-        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-2/4-humanics.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
-        title="Vollbildmodus"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Inhalt
+            <div class="navbar_extra_footer">
+            Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/BZoennchen/ct-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-2/4-humanics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-2/4-humanics.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/02-2/4-humanics.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#semiotik">
    8.4.1. Semiotik
@@ -915,12 +1033,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Geisteswissenschaften</h1>
@@ -929,7 +1046,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Inhalt </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -949,13 +1066,14 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="geisteswissenschaften">
-<h1><span class="section-number">8.4. </span>Geisteswissenschaften<a class="headerlink" href="#geisteswissenschaften" title="Link zu dieser Überschrift">¶</a></h1>
+<h1><span class="section-number">8.4. </span>Geisteswissenschaften<a class="headerlink" href="#geisteswissenschaften" title="Link zu dieser Überschrift">#</a></h1>
 <div class="section" id="semiotik">
-<h2><span class="section-number">8.4.1. </span>Semiotik<a class="headerlink" href="#semiotik" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">8.4.1. </span>Semiotik<a class="headerlink" href="#semiotik" title="Link zu dieser Überschrift">#</a></h2>
 <p>Die <em>Semiotik</em> (<em>Lehre der Zeichen</em>), ist die Wissenschaft, die sich mit Zeichensystemen aller Art befasst.
 Charles W. Morris erarbeitete ein semiotisches Informationsmodell, bei dem er drei Zeichenebenen unterschied:</p>
 <ol class="simple">
@@ -967,7 +1085,7 @@ Charles W. Morris erarbeitete ein semiotisches Informationsmodell, bei dem er dr
 <p>In der Semiotik wird Information durch diese vierstellige Struktur verstanden.</p>
 <div class="figure align-default" id="fig-semiotik-information">
 <a class="reference internal image-reference" href="../../_images/semiotik-information.png"><img alt="../../_images/semiotik-information.png" src="../../_images/semiotik-information.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 8.3 </span><span class="caption-text">Semiotisches Viereck.</span><a class="headerlink" href="#fig-semiotik-information" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 8.3 </span><span class="caption-text">Semiotisches Viereck.</span><a class="headerlink" href="#fig-semiotik-information" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Die Syntax, wie etwa die deutsche Grammatik, stellt eine Beziehung zu den Zeichen (unserem Alphabet) her.
 Zeichen stehen mit anderen Zeichen durch eine Syntax in Beziehung.
@@ -975,34 +1093,40 @@ Die Semantik wiederum stellt eine Beziehung zwischen den syntaktisch korrekt auf
 Diese Begriffe sind gerade nicht der außersprachlichen Gegenstand sondern mentale Bilder in unseren Köpfen.
 Die Zeichenfolge erhält durch die Semantik eine Bedeutung.
 Und die Benutzer*innen der Zeichen deuten diese, was eine gewisse Wirkung auf die Zeichenbenutzer*innen hat.
-Begriffe werden als mentale Repräsentationen von Gegenständen oder Sachverhalten (Referent) verstanden.
-Das ähnelt dem was wir im Abschnitt <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> besprochen haben.
-Hier hatten wir gesagt, dass wir den Tag den die Zeichenfolge <code class="docutils literal notranslate"><span class="pre">23.10.2022</span></code> repräsentiert niemals niederschreiben können.
+Begriffe werden als mentale Repräsentationen von Gegenständen oder Sachverhalten (Referent) verstanden.</p>
+<p>Das ähnelt dem was wir im Abschnitt <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> besprochen haben.
+Hier hatten wir gesagt, dass wir den Tag, den die Zeichenfolge <code class="docutils literal notranslate"><span class="pre">23.10.2022</span></code> repräsentiert, niemals niederschreiben können.
 Wir können immer nur einen Repräsentanten niederschreiben.
 Deshalb ist der Gegenstand aus der Realwelt auf den wir referenzieren <strong>außersprachlich</strong>.</p>
 <p>Zum Beispiel, können zwei Zeichenfolgen (Ausdrücke) auf den selben (realen) Gegenstand <strong>referenzieren</strong>, jedoch unterschiedliche Bedeutungen haben.
 Ein Beispiel ist das Wortpaar <code class="docutils literal notranslate"><span class="pre">Abendstern</span></code> und <code class="docutils literal notranslate"><span class="pre">Morgenstern</span></code>.
 Beide Zeichenfolgen <strong>referenzieren</strong> auf den Planeten (<strong>realen Gegenstand</strong>) Venus.
 <code class="docutils literal notranslate"><span class="pre">Abendstern</span></code> ist der <strong>syntaktische</strong> Ausdruck.
-Seine <strong>Bedeutung</strong> (nach dem Duden) ist: Auffallend hell leuchtender Stern am Westhimmel nach Sonnenuntergang.
-Für <code class="docutils literal notranslate"><span class="pre">Morgenstern</span></code> heißt es im Duden hingegen: Auffallend hell leuchtende Planet Venus am Morgenhimmel vor Sonnenaufgang.
-Wir symbolisieren mit den Zeichen also einmal den Abend und das andere Mal den Morgen.</p>
+Seine <strong>Bedeutung</strong> (nach dem Duden) ist:</p>
+<blockquote>
+<div><p>Auffallend hell leuchtender Stern am Westhimmel nach Sonnenuntergang.</p>
+</div></blockquote>
+<p>Für <code class="docutils literal notranslate"><span class="pre">Morgenstern</span></code> heißt es im Duden hingegen:</p>
+<blockquote>
+<div><p>Auffallend hell leuchtende Planet Venus am Morgenhimmel vor Sonnenaufgang.</p>
+</div></blockquote>
+<p>Wir symbolisieren mit den Zeichen also einmal den Abend und das andere Mal den Morgen.</p>
 <p>Betrachten wir ein weiteres Beispiel aus dem Straßenverkehr: Das Halteverbotszeichen.
 Die <strong>Syntax</strong> des Zeichens ist seine Zusammensetzung aus rotem Ring und rotem Kreuz mit blauer Füllung.
-Die <strong>Semantik</strong> ruft in uns Begriffe wie Verbot, Strafe und natürlich das Bild eines parkenden Autos hervor.
+Die <strong>Semantik</strong> ruft in uns Begriffe wie Verbot, Strafe und das Bild eines parkenden Autos hervor.
 Der reale Gegenstand oder Sachverhalt ist weniger klar, da es viele dieser Sachverhalte gibt.
 Wir könnten die Menge all dieser Sachverhalte mit dem Verbotsschild <strong>referenzieren</strong>.
 Die <strong>pragmatische</strong> Wirkung ist etwa: Die Zeichenempfänger*innen sollen veranlasst werden nicht an der Straßenseite zu halten.
-Bei Missachtung muss er mit einer Sanktion rechnen.</p>
+Bei Missachtung muss sie mit einer Sanktion rechnen.</p>
 </div>
 <div class="section" id="evolutionare-perspektive">
-<h2><span class="section-number">8.4.2. </span>Evolutionäre Perspektive<a class="headerlink" href="#evolutionare-perspektive" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><span class="section-number">8.4.2. </span>Evolutionäre Perspektive<a class="headerlink" href="#evolutionare-perspektive" title="Link zu dieser Überschrift">#</a></h2>
 <p>Der deutsche Informatiker Klaus Fuchs-Kittowski greift die Perspektive aus der Semiotik wieder auf.
 Er versteht unter <em>Information</em> eine Einheit von <strong>Syntax</strong>, <strong>Semantik</strong> und <strong>Pragmatik</strong>.
 Dabei müssen alle drei Aspekte gleichzeitige Vorliegen, um etwas als <em>Information</em> qualifizieren zu können.</p>
 <div class="figure align-default" id="fuchs-pyramid">
 <a class="reference internal image-reference" href="../../_images/fuchs-pyramid.png"><img alt="../../_images/fuchs-pyramid.png" src="../../_images/fuchs-pyramid.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 8.4 </span><span class="caption-text">Wissenspyramide nach Fuchs-Kittowski.</span><a class="headerlink" href="#fuchs-pyramid" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 8.4 </span><span class="caption-text">Wissenspyramide nach Fuchs-Kittowski.</span><a class="headerlink" href="#fuchs-pyramid" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Fuchs-Kittowski stellt einige Thesen auf:</p>
 <ul class="simple">
@@ -1030,17 +1154,16 @@ Sie gehen stattdessen davon aus, dass es drei verschieden komplexe selbstorganis
 <li><p>Soziale Systeme</p></li>
 </ol>
 <p>Die Qualitäten einer höheren Ebene <strong>emergieren</strong> aus der jeweils darunterliegenden Ebene.
-Wie oben bereits erwähnt ist mit <strong>emergieren</strong> gemeint, dass ohne hierarchisch vorgebende Struktur durch das Zusammenspiel der Einzelteile, etwas Neues ‚aus sich selbst heraus‘ entsteht.
+Wie oben bereits erwähnt ist mit <strong>emergieren</strong> gemeint, dass ohne hierarchisch vorgebende Struktur durch das Zusammenspiel der Einzelteile, etwas Neues „aus sich selbst heraus“ entsteht.
 Ein höheres System weißt Aspekte von Information auf, welches die niedrigeren Systeme nicht aufweisen.
-Gleichzeitig gibt es Aspekte der Information, die für evolutionär-aufeinanderfolgenden Systemen gleichermaßen zutreffen.</p>
-<p>In <em>physikalisch-chemischen Systemen</em> (niedrigste Ebene) hat die Information einen rein <strong>syntaktischen</strong> Charakter.
+Gleichzeitig gibt es Aspekte der Information, die für evolutionär-aufeinanderfolgende Systemen gleichermaßen zutreffen.</p>
+<p>Nach dieser Theorie, hat Information in <em>physikalisch-chemischen Systemen</em> (niedrigste Ebene) einen rein <strong>syntaktischen</strong> Charakter.
 Nehmen wir an ein Umweltereignis gibt den Anstoß zum selbstorganisierten Ordnungsaufbau eines physikalischen Systems.
 Dann kann man, laut Fuchs und Hofkirchner, dieses Umweltereignis als Signal für die Auslösung eines <em>Informationsprozesses</em> interpretieren.
 Das Muster was sich bildet, kann wiederum als weiteres Signal für andere Systeme in der Umwelt dienen.</p>
 <p>In <em>lebenden Systemen</em> sind Strukturen nicht mehr einfache Muster, sondern <em>Symbole/Zeichen</em>.
-Diese haben für das entsprechende System eine bestimmte <strong>Bedeutung/Bedeutung</strong>.
-Aus der Wahrnehmung (physikalisch-chemisches System) können Symbole <em>emergieren</em>.
-Diese Symbole beinhalten eine Semantik/Bedeutung.
+Diese haben für das entsprechende System eine bestimmte <strong>Semantik/Bedeutung</strong>.
+Aus der Wahrnehmung (physikalisch-chemisches System) können bedeutungsvolle Symbole <em>emergieren</em>.
 Werte, Normen, Regeln, Meinungen, Ideen, Glaube, usw. einer einzelnen Person bezeichnen Fuchs und Hofkirchner als <em>individuelle Information / Weisheit</em>.
 Aus wahrgenommenen <strong>Signalen</strong> werden <strong>Daten</strong>, diese werden interpretiert und schließlich zu <strong>Wissen</strong>.
 Jenes <strong>Wissen</strong> ist dann die Basis für neues <strong>Wissen</strong>.
@@ -1052,7 +1175,9 @@ Die zweite ist, nach Fuchs, die sogenannte <em>soziale Information</em>.
 Sie bezeichnet gesellschaftliche Kategorien, die soziales Handeln dauerhaft ermöglichen und Aspekte gesellschaftlicher Handlungen und Beziehungen speichern.
 Es kann sich um eine sog. <strong>soziale Inklusion</strong> oder <strong>soziale Exklusion</strong> handeln.
 <strong>Soziale Inklusion</strong> sind neue emergente Eigenschaften eines sozialen Systems, dessen sich das System kollektiv bewusst ist.
-<strong>Soziale Exklusion</strong> hingegen, werden nicht kollektiv konstituiert, sondern über Teilsysteme, die sich in sozialen Hierarchien, oder von außen und reflektieren Herrschaftsverhältnisse in sozialen Systemen befinden.
+<strong>Soziale Exklusion</strong> wird hingegen nicht kollektiv konstituiert.
+Sie entsteht entweder durch Teilsysteme, die sich in sozialen Hierarchien befinden, oder von außen.
+Die Exklusion reflektiert Herrschaftsverhältnisse in sozialen Systemen.
 Nach Fuchs und Hofkirchner, entsteht <strong>soziale Inklusion</strong> durch <strong>Kooperation</strong> und <strong>soziale Exklusion</strong> durch <strong>Konkurrenz</strong>.</p>
 </div>
 </div>
@@ -1079,9 +1204,11 @@ Nach Fuchs und Hofkirchner, entsteht <strong>soziale Inklusion</strong> durch <s
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="3-critic.html" title="zurück Seite">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1097,24 +1224,28 @@ Nach Fuchs und Hofkirchner, entsteht <strong>soziale Inklusion</strong> durch <s
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    <div class="extra_footer">
+      <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+    </div>
+</p>
+        </footer>
+    </div>
     
-      <div class="extra_footer">
-        <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
-      </div>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
