@@ -290,7 +290,7 @@ Sei k erste Karte auf der Hand (von links)
 missverständlich sein können.
 Mit ``Sei x gleich y`` meinen wir in unserem *Kontext*, dass der Name (die Variable) ``x`` der das Objekt ``o1`` (hier eine Karte) identifiziert, nach der Anweisung, das Objekt ``o2`` identifiziert, welches derzeit durch den Namen ``y`` identifiziert wird.
 
-```{figure} ../../figs/find_min.png
+```{figure} ../../figs/thinking/find_min.png
 ---
 width: 800px
 name: fig-find-min

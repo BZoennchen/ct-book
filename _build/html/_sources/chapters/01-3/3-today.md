@@ -8,7 +8,7 @@ Ada Lovelace gilt heute als die erste Programmiererin und wurde mit dem Namen de
 Es sei an dieser Stelle erwähnt, dass Frauen der Zugang zu Bildung und einer Hochschulausbildung aus verschiedenen Gründen bis ins 20. Jahrhundert verwehrt wurde und sie auf männliche Hilfe angewiesen waren.
 Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia dar, welche aus politisch-religösen Gründen in Alexandria ermordet wurde. 
 
-```{figure} ../../figs/ada-lovelace.jpeg
+```{figure} ../../figs/history/ada-lovelace.jpeg
 ---
 height: 150px
 name: ada-lovelace
@@ -51,7 +51,7 @@ Es wird demnach keinen Algorithmus geben können, der für jedes beliebige Progr
 Für uns als Programmierer\*innen bedeutet dies, dass wir selbst prüfen müssen ob unser Algorithmus das berechnet und vollzieht was vorgesehen ist.
 Es gibt keine Software, die uns für einen beliebigen Quellcode sagen kann ob wir eine Endlosschleife programmiert haben.
 
-```{figure} ../../figs/goedel-church-turing.png
+```{figure} ../../figs/history/goedel-church-turing.png
 ---
 height: 150px
 name: goedel-church-turing
@@ -73,7 +73,7 @@ Außerdem ergaben sich auch neue philosophische Fragen wie: Ist der menschliche 
 Zu dieser Zeit stellte man sich das menschliche Gehirn als eine Art Uhr vor.
 Inwieweit sich dieser Computationalismus bestätigt oder widerlegt bleibt abzuwarten.
 
-```{figure} ../../figs/model-of-a-tm.jpeg
+```{figure} ../../figs/history/model-of-a-tm.jpeg
 ---
 height: 200px
 name: model-of-a-tm
@@ -94,7 +94,7 @@ Sie wurde als Bürotätigkeit angesehen, weshalb sie (wegen des damaligen Frauen
 Zudem fiel die Bezahlung der Frauen deutlich geringer aus und so konnten Kosten gespart werden.
 Frauen wurden sehr häufig auch als menschliche Computer eingestellt, ihre Erfolge gingen in der Geschichte leider oft unter.
 
-```{figure} ../../figs/turing-bomb.jpeg
+```{figure} ../../figs/history/turing-bomb.jpeg
 ---
 height: 150px
 name: turing-bomb
@@ -110,7 +110,7 @@ Die USA zogen mit einer sehr ähnlichen Konstruktion, der ENIAC, nach.
 Beide Maschinen waren *Turing-vollständig*.
 Für den Erfolg der ENIAC wurden Kathleen McNulty Mauchly Antonelli, Jean Bartik, Frances Elizabeth Holberton, Marlyn Meltzer, Frances Spence und Ruth Teitelbaum über 50 Jahre nach ihren männlichen Kollegen ausgezeichnet.
 
-```{figure} ../../figs/eniac-programmiererinnen.png
+```{figure} ../../figs/history/eniac-programmiererinnen.png
 ---
 height: 150px
 name: eniac-programmiererinnen
@@ -124,7 +124,7 @@ Dieser ist heute unter dem Namen *[von Neumann Architektur](sec-von-neumann)* be
 Auf jener Architektur basieren heute nahezu alle modernen Computer und auch zukünftige Maschinen werden seinem Entwurf noch eine Zeit lang folgen.
 Weitere konzeptuelle Entwicklungen sollten folgen, doch die grobe Architektur blieb seither nahezu unberührt.
 
-```{figure} ../../figs/von-neumann-architecture.png
+```{figure} ../../figs/digital-computer/informationcycle/von-neumann-architecture.png
 ---
 height: 300px
 name: von-neumann-architecture

@@ -12,7 +12,7 @@ Seine Konstruktion bestand aus Kabeln und Zahnrädern.
 Zu dieser Zeit verwendete man auch das sogenannte Planimeter um beliebige Flächeninhalte in Landkarten oder anderen Zeichnungen anzunähern.
 Die zu berechnende Fläche wird dabei in viele kleine Parallelogramme und Dreiecke zerteilt und so angenähert.
 
-```{figure} ../../figs/amsler-polarplanimeter.jpeg
+```{figure} ../../figs/history/amsler-polarplanimeter.jpeg
 ---
 height: 150px
 name: fig-amsler-polarplanimeter

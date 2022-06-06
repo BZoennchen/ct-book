@@ -36,7 +36,7 @@
 # Zudem kann die [CPU](def-cpu) Ergebnisse an die Adresse des Befehlszeigers schreiben.
 # Aufgrund der Befehle, welche aus dem [Arbeitsspeicher](def-main-memory) geladen werden, verändert die Kontrolleinheit den Befehlszeiger entsprechend, d.h., die Kontrolleinheit führt das im Speicher stehende Programm aus.
 # 
-# ```{figure} ../../figs/program-run.png
+# ```{figure} ../../figs/digital-computer/informationcycle/program-run.png
 # ---
 # width: 600px
 # name: fig-program-run-memory

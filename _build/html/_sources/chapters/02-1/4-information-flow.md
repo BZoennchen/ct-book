@@ -4,19 +4,19 @@
 Sie kennen nun die vier grundlegenden Aufgaben eines Computers und wissen wie er aus den zwei Zuständen **Strom aus** und **Strom an** Informationen der unterschiedlichsten Art repräsentieren kann.
 Zudem haben wir uns angesehen, wie aus primitiven boolschen Operationen, welche über Gatter/Schaltungen realisiert werden, komplexe Berechnungen entstehen.
 
-Bereits an dieser Stelle wird deutlich, dass Abstraktion und Komposition eine zentrale Rolle in der Informatik spielen.
-Das konkrete Rasterbild ist auf der abstrakten Ebene nichts anderes als eine Folge von $0$ und $1$.
+Bereits an dieser Stelle wird deutlich, dass *Abstraktion* und *Komposition* eine zentrale Rolle in der Informatik spielen.
+Das konkrete Rasterbild ist auf der abstrakten Ebene nichts anderes als eine Folge von 0 und 1.
 Durch die Komposition und Hintereinanderschaltung/Wiederholung einfacher Gatter, entstehen aus primitiven Operationen komplexe Berechnungen.
 
 Ein einfacher $n$-Bit-Addierer gleicht einem Taschenrechner, doch ist ein Taschenrechner noch kein vollwertiger Computer.
-Manche Taschenrechner lassen sich zwar Programmieren, doch sind sie nicht im Stande all das zu berechnen, was wir als berechenbar wahrnehmen.
-Anders als ein Taschenrechner, ist ein Computer *Turing-vollständig*.
+Manche Taschenrechner lassen sich zwar Programmieren, doch sind sie nicht im Stande all das zu berechnen, was Informatiker\*innen als [berechenbar](def-turing-computable) wahrnehmen.
+Anders als ein Taschenrechner, ist ein Computer *[Turing-vollständig](def-turing-complete)*.
 Weshalb ist er das?
-Wie wird aus Gattern, elektrischen Leitungen und dem Speicher ein vollwertiger (digitaler) Computer der alle vier grundlegenden Aspekte der *Informationsverarbeitung*
+Wie wird aus Gattern, elektrischen Leitungen und dem Speicher ein vollwertiger (digitaler) Computer, der alle vier grundlegenden Aspekte der *Informationsverarbeitung*
 
-1. Informationen **einlesen**
-2. Informationen **speichern**
-3. Informationen **verarbeiten**
+1. Informationen **einlesen**,
+2. Informationen **speichern**,
+3. Informationen **verarbeiten**, und
 4. Informationen **ausgeben**
    
 realisiert?
@@ -24,15 +24,15 @@ realisiert?
 (sec-von-neumann)=
 ## Die Von-Neumann-Architektur
 
-Bevor wir diese Frage klären brauchen wir ein konzeptionelles Verständnis der wesentlichen Bauteile und deren grundsätzlichen Interaktion.
+Bevor wir diese Frage klären brauchen wir ein konzeptionelles Verständnis der wesentlichen Bauteile und deren grundsätzlichen Interaktion miteinander.
 Zusammengenommen bilden sie den *digitalen Computer*.
 Eine solche Beschreibung bezeichnen wir als *Hardware-Architektur*.
 Sie kann selbstverständlich unterschiedlich detailliert ausfallen.
 So gibt es auch Beschreibungen einzelner Bauteile die wiederum die Interaktion ihrer Einzelkomponenten beschreiben.
 
-Wie der Bauplan eines Hauses, in dem festgelegt ist wie Küche und Bad miteinander verbunden sind und wie die Bewohner das Gebäude nutzen können, legt eine Architektur fest über welche Leitungen beispielsweise der Speicher mit den Recheneinheiten interagiert.
+Wie der Bauplan eines Hauses, in dem festgelegt ist wie Küche und Bad miteinander verbunden sind und wie die Bewohner das Gebäude nutzen können, legt eine Architektur fest, über welche Leitungen beispielsweise der Speicher mit den Recheneinheiten interagiert.
 
-```{figure} ../../figs/von-neumann-architecture.png
+```{figure} ../../figs/digital-computer/informationcycle/von-neumann-architecture.png
 ---
 height: 300px
 name: von-neumann-architecture-2
@@ -40,13 +40,13 @@ name: von-neumann-architecture-2
 Die Von-Neumann-Architektur auch bekannt als Princeton Architektur.
 ```
 
-Die *Von-Neumann-Architektur* ist wohl die bekannteste und zugleich meist verwendete Hardware-Architektur bzw. *Rechnerarchitektur* die den Aufbau der Computer beschreibt.
-Jeder Rechner den Sie je benutzt haben basiert höchstwahrscheinlich auf dieser Architektur.
+Die *Von-Neumann-Architektur* ist wohl die bekannteste und zugleich meist verwendete Hardware-Architektur bzw. *Rechnerarchitektur*, die den Aufbau der Computer beschreibt.
+Jeden Rechner, den Sie je benutzt haben, basiert höchstwahrscheinlich auf dieser Architektur.
 
 ```{admonition} Arbeitsspeicher
 :name: def-main-memory
 :class: definition
-Der *Arbeitsspeicher* oder *Hauptspeicher* oder *RAM (Random Access Memory)* eines Computers ist jener Speicher der die gerade auszuführenden **Programme** oder **Programmteile** und die dabei benötigten **Daten** enthält.
+Der *Arbeitsspeicher* oder *Hauptspeicher* oder *RAM (Random Access Memory)* eines Computers ist jener Speicher, der die gerade auszuführenden **Programme** oder **Programmteile** und die dabei benötigten **Daten** enthält.
 ```
 
 Die erste wichtige Komponente ist der sogenannten *Hauptspeicher*, auch *Arbeitsspeicher* genannt.
@@ -57,7 +57,7 @@ Im *Speicher* befinden sich die Anweisungen der Informationsmanipulation, d.h. d
 ```{admonition} Bus
 :name: def-bus
 :class: definition
-Elektrische Leitungen, über welche die [Bits](def-bit) und [Bytes](def-byte) von verschiedenen Einheiten übermittelt werden nennen wir den *Bus*.
+Elektrische Leitungen über welche die [Bits](def-bit) und [Bytes](def-byte) von verschiedenen Einheiten übermittelt werden nennen wir den *Bus*.
 ```
 
 Wir sprechen häufig von unterschiedlichen *Bus-Teilen*, zum Beispiel ist die Grafikkarte über den sogenannten PCI-Express Bus mit dem Rest des Computers verbunden.
@@ -67,7 +67,7 @@ Es gibt aber auch *Bus-Systeme* die unterschiedliche Computer oder andere Gerät
 Die *Hauptplatine* ist jenes Bauteil auf dem die CPU-nahen Komponenten (CPU, Hauptspeicher, Grafikkarte, interne Bus-Systeme) montiert werden.
 
 Die *Kontrolleinheit* besteht aus einer Komposition von Gattern, einem *Instruktionsregister* sowie einem [Befehlszeiger](def-program-counter).
-Sie fungiert als Programminterpreter oder 'Mastermind' und delegiert Aufgaben an die jeweils dafür geeigneten Recheneinheiten weiter.
+Sie fungiert als Programminterpreter oder "Mastermind" und delegiert Aufgaben an die jeweils dafür geeigneten Recheneinheiten weiter.
 Sie ließt die Programmanweisungen aus dem Hauptspeicher und realisiert diese indem sie die *arithmetische/logische Einheit* mit Instruktionen und den notwendigen, aus dem Hauptspeicher geladenen Daten versorgt.
 Fließkommaoperationen delegiert die Kontrolleinheit häufig an eine spezielle (hier nicht eingezeichnete) *Fließkomma-Recheneinheit*.
 Der *Befehlszeiger* beinhaltet eine Hauptspeicheradresse, die auf den aktuelle auszuführenden Befehl im Hauptspeicher zeigt. 
@@ -79,7 +79,7 @@ Dann wird die arithmetische/logische Einheit aktiviert.
 Diese berechnet das Ergebnis und schreibt es in ein weiteres [Register](def-register).
 Die Kontrolleinheit schreibt das Ergebnis an die vom Programm definierte Stelle (Adresse) im Hauptspeicher.
 
-Die Recheneinheiten (arithmetische/logische Einheit und Fließkomma-Recheneinheit) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit Registern (das was kleine Informationseinheiten enthält) die mit anderen Einheiten über den [Bus](def-bus) (das was Daten von einer Einheit zur anderen transportiert) verbunden sind.
+Die Recheneinheiten (arithmetische/logische Einheit und Fließkomma-Recheneinheit) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit Registern (das was kleine Informationseinheiten enthält), die mit anderen Einheiten über den [Bus](def-bus) (das was Daten von einer Einheit zur anderen transportiert) verbunden sind.
 
 ```{admonition} Central Processing Unit (CPU)
 :name: def-cpu
@@ -115,7 +115,7 @@ Die *Flüchtigkeit* der Speicher verleiht ihnen Geschwindigkeit, d.h. es ist mö
 Der Geschwindigkeitsunterschied ist enorm.
 Anstatt in die nächst gelegene Stadt zu reisen (Hauptspeicher), fliegen wir zum Mond (Festplattenspeicher).
 
-```{figure} ../../figs/memory-cache-register.png
+```{figure} ../../figs/digital-computer/informationcycle/memory-cache-register.png
 ---
 width: 450px
 name: fig-memory-cache-register
@@ -161,9 +161,9 @@ Sie kann auch als *Eingabe* für andere Computer oder Maschinen dienen.
 Damit die [Bits](def-bit) und [Byte](def-byte) nicht durcheinander gelesen, manipuliert und geschrieben werden ist die CPU *getaktet*.
 Es gibt eine (global) tickende Uhr, die vorgibt wann die Komponenten aktiv werden können.
 Bei jedem Tick oder anders gesagt, in jedem *CPU-Zyklus*, können die jeweiligen Komponenten aktiv werden.
-Eine CPU die mit 3 Gigahertz (GHz) getaktet ist, führt 3 Milliarden Zyklen in der Sekunde durch.
+Eine CPU, die mit 3 Gigahertz (GHz) getaktet ist, führt 3 Milliarden Zyklen in der Sekunde durch.
 Nicht jede Berechnung oder jeder Speichertransfer benötigt die gleiche Anzahl an Zyklen.
-Zum Beispiel ist benötigt die Division zweier Zahlen deutlich mehr Zyklen als die Addition.
+Zum Beispiel benötigt die Division zweier Zahlen deutlich mehr Zyklen als die Addition.
 
 ## Das Betriebssystem
 
@@ -179,7 +179,7 @@ Nun bevor wir dazu kommen, müssen wir überlegen was hierzu nötig ist:
 Wie aber startet der Computer?
 Wie führt er nicht nur einzelne Operationen sondern ein ganzes Programm aus?
 Und wie ist es möglich, dass scheinbar gleichzeitig viele verschiedene Programme auf einem Computer laufen?
-Antworten finden wir wenn wir uns das 'Masterprogramm' eines Computers ansehen: Das *Betriebssystem*.
+Antworten finden wir wenn wir uns das "Masterprogramm" eines Computers ansehen: Das *Betriebssystem*.
 
 ```{admonition} Betriebssystem
 :name: def-operating-system
@@ -187,7 +187,7 @@ Antworten finden wir wenn wir uns das 'Masterprogramm' eines Computers ansehen: 
 Das *Betriebssystem* eines Computers ist ein spezielles Hauptprogramm, welches alle anderen Programme und die Rechnerressourcen des Computers verwaltet.
 ```
 
-Das *Betriebssystem* (z.B. Ubuntu, Windows 10, Mac OS) bestimmt wann welches Programm welche Hardware nutzen darf und auf welchen Speicherbereich das jeweilige Programm und der jeweilige Benutzer zugreifen darf.
+Das *Betriebssystem* (z.B. Ubuntu, Windows 10, Mac OS) bestimmt wann, welches Programm, welche Hardware nutzen darf und auf welchen Speicherbereich das jeweilige Programm und der jeweilige Benutzer zugreifen darf.
 Hat ein Computer nur eine CPU (mit nur einen Kern), so erscheint es nur so als würden viele Programme gleichzeitig laufen.
 In der Realität wechselt das Betriebssystem die aktiven Programme fortwährend durch.
 
@@ -205,7 +205,7 @@ Diesen Vorgang nennen wir *Bootenvorgang* oder kurz das *Booten*.
 ```
 
 Der Schlüssel hierzu ist ein kleineres Programm was auf dem sog. *Festwertspeicher (ROM)* liegt.
-Dieses Programm wird von der Hardware selbst geladen wird.
+Dieses Programm wird von der Hardware selbst geladen.
 Die Logik um das erste Programm vom *Festwertspeicher* zu laden ist also in den Bauteilen selbst fest verdrahtet (Software in Hardware gegossen).
 Der Festwertspeicher kann nur gelesen werden und ist nicht flüchtig.
 Das heißt, das Programm auf dem Festwertspeicher bleibt auch nach dem Ausschalten des Computers vorhanden.
@@ -214,16 +214,16 @@ Der Computer zieht sich quasi wie Münchhausen an den Haaren selbst aus dem Sump
 (sec-run-program)=
 ## Programme ausführen
 
-Starten Sie ein Programm, sagen Sie eigentlich dem Betriebssystem Sie möchten dieses oder jenes Programm ausführen.
+Starten Sie ein Programm, sagen Sie eigentlich dem [Betriebssystem](def-operating-system), dass Sie dieses oder jenes Programm ausführen möchten.
 Das *Betriebssystem* sorgt dafür, dass es in den Hauptspeicher geladen wird und teilt ihm entsprechende Ressourcen zu.
-Erinnern Sie sich an die *Von-Neumann-Architektur*!
-Laut dieser liegen die **Daten** als auch die **Programme** im gleichen (flüchtigen) *Hauptspeicher* bzw. *Arbeitsspeicher* (siehe {ref}`Von-Neumann-Architektur <von-neumann-architecture-2>`).
-Das Programm ist nichts anderes als eine zusammenhängende Folge von $0$ und $1$, welche Befehle repräsentieren.
+Erinnern Sie sich an die *[Von-Neumann-Architektur](von-neumann-architecture-2)*?
+Laut dieser liegen die **Daten** als auch die **Programme** im gleichen (flüchtigen) *Hauptspeicher* bzw. *Arbeitsspeicher*.
+Das Programm ist nichts anderes als eine zusammenhängende Folge von 0 und 1, welche Befehle repräsentieren.
 Zum Beispiel bedeutet 
 
 $$\text{ADD} \ \$5 \ \$6 \ \$7,$$
 
-dass die Zahl welche in Register $\$5$ steht mit der Zahl die in Register $\$6$ steht addiert wird und das Ergebnis in den Register $\$7$ geschrieben wird.
+dass die Zahl, welche in Register $\$5$ steht, mit der Zahl, die in Register $\$6$ steht, addiert wird und das Ergebnis in den Register $\$7$ geschrieben werden soll.
 Andere Befehle wie etwa
 
 $$\text{LOAD} \ \#15 \ \$5 $$
@@ -241,7 +241,7 @@ Wenn ein benötigter Wert noch im Register liegt (eventuell von einer zuvor ausg
 Stattdessen benutzt die CPU den Wert im Register und gewinnt dadurch an Berechnungsgeschwindigkeit.
 Sie spart sich einige Zyklen die nötig wären um die Daten aus dem Speicher in den Register zu laden.
 
-```{figure} ../../figs/program-run.png
+```{figure} ../../figs/digital-computer/informationcycle/program-run.png
 ---
 width: 700px
 name: fig-program-run
@@ -252,7 +252,7 @@ Zusammenspiel zwischen Kontrolleinheit und arithmetische/logische Einheit, Regis
 Innerhalb der *Kontrolleinheit* befindet sich ein spezielles *Register*, welches die *Arbeitsspeicheradresse* des nächsten auszuführenden Befehls enthält.
 Dieses Register nennen wir *Befehlszähler* oder *Befehlszeiger*.
 Ist der Befehl an der angegebenen Adresse ein *Sprungbefehl* ändert sich der Wert des *Befehlszeigers* entsprechend.
-Andernfalls wird der Befehl (z.B. $\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3$) von der CPU ausgeführt und der *Befehlszeiger* wird um $1$ erhöht.
+Andernfalls wird der Befehl (z.B. $\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3$) von der CPU ausgeführt und der *Befehlszeiger* wird um 1 erhöht.
 
 ```{admonition} Befehlszeiger
 :name: def-program-counter
@@ -275,7 +275,7 @@ Welche Befehle hat die CPU zuletzt ausgeführt und was wird der nächste Befehl 
 :class: dropdown
 Die Kontrolleinheit hat zum einen den Befehl $\text{ADD}$ inklusive der Registeradressen in Register geladen.
 Dann hat sie die Werte 17 und 5, welche addiert werden sollen in Register der arithmetischen Einheit geladen.
-Sie hat die arithmetischen Einheit instruiert die Addition durchzuführen und das Ergebnis in Register $\$7$ abzulegen.
+Sie hat die arithmetische Einheit instruiert die Addition durchzuführen und das Ergebnis in Register $\$7$ abzulegen.
 
 Im nächsten Schritt wird die Kontrolleinheit den Wert (22) dieses Registers ($\$7$) in den Hauptspeicher an die Adresse $\#16$ schreiben und somit den Wert 5 überschreiben.
 ```
@@ -289,12 +289,12 @@ Nach der Anforderung führt die CPU eine Unterbrechungsroutine aus, diese leitet
 ```{admonition} Interrupt Request (IRQ)
 :name: def-irq
 :class: definition
-Ein sog. *Interrupt* zu Deutsch *Unterbrechung* (welcher gewöhnlich von Eingabegeräten ausgelöst wird) erzeugt einen sog. *Interrupt Request (IRQ)* zu Deutsch *eine Unterbrechungsanforderung*, welche den aktuelle Programmablauf unterbricht und eine spezielle Befehlsfolge ausführt um Programme über den *Interrupt* zu informieren.
+Ein sog. *Interrupt* zu Deutsch *Unterbrechung* (welcher gewöhnlich von Eingabegeräten ausgelöst wird) erzeugt einen sog. *Interrupt Request (IRQ)* zu Deutsch *eine Unterbrechungsanforderung*, welche den aktuellen Programmablauf unterbricht und eine spezielle Befehlsfolge ausführt um Programme über den *Interrupt* zu informieren.
 ```
 
 Das Textverarbeitungsprogramm hat sich hierfür über eine *Arbeitsspeicheradresse* für einen solchen IRQ registriert.
-Das heißt, es wird der Programmcode der an dieser Adresse beginnt ausgeführt.
+Das heißt, es wird der Programmcode, der an dieser Adresse beginnt, ausgeführt.
 
 Über viele tausende Operationen berechnet das Textverarbeitungsprogramm wie das ``A`` dargestellt werden soll (in welcher Schriftart, und welcher Position und so weiter).
 Die Darstellung besteht aus vielen Pixeln welche das Programm an den Monitor weiterleitet.
-Dieser wandelt die Folge aus $0$ und $1$ in viele unterschiedlich gefärbte Pixel um.
+Dieser wandelt die Folge aus 0 und 1 in viele unterschiedlich gefärbte Pixel um.

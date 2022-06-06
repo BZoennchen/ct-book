@@ -309,7 +309,7 @@ print(min_and_max(x))
 # Je maschinennäher Sie programmieren, desto mehr **Kontrolle** aber auch **Verantwortung** haben Sie über die genaue Umsetzung (das **Wie**).
 # Die zusätzliche Kontrolle, die Sie dann nicht einfach abgeben können, führt deshalb zu einem höheren **Entwicklungsaufwand**.
 # 
-# ```{figure} ../../figs/world-code-computer.png
+# ```{figure} ../../figs/art-of-programming/world-code-computer.png
 # ---
 # height: 400px
 # name: fig-world-code-computer

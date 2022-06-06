@@ -4,17 +4,17 @@
 # (sec-computability)=
 # # Berechenbarkeit
 # 
-# In diesem Abschnitt tauchen wir in die theoretische Informatik ein und widmen uns der Frage was wir überhaupt berechnen können (**Berechenbarkeit**).
-# In diesem Zusammenhang folgt unweigerlich die Frage: Welche Mittel benötigen wir um eines der berechenbaren Probleme zu berechnen (**Turing-Vollständigkeit**)?
-# Und was benötigen wir um jedes dieser Probleme berechnen zu können (**universelle Turingmaschine**)?
+# In diesem Abschnitt tauchen wir in die theoretische Informatik ein und widmen uns der Frage was wir überhaupt berechnen können (*[Berechenbarkeit](def-turing-computable)*).
+# In diesem Zusammenhang folgt unweigerlich die Frage: Welche Mittel benötigen wir um eines der berechenbaren Probleme zu berechnen (*[Turing-Vollständigkeit](def-turing-complete)*)?
+# Und was benötigen wir um jedes dieser Probleme berechnen zu können (*[universelle Turingmaschine](info-universal-turing-machine)*)?
 # 
 # Beginnen wir mit einer kurzen Untersuchung von Hard- und Software, d.h., Bauteile des Computers und Programmcode.
 # Stellen Sie sich vor Sie haben einen Addierer als Bauteil, also als *Hardware* zur Verfügung haben.
-# Und dass der Befehl ``ladd(a,b)`` diesen realisiert, d.h., die beiden Binärzahlen ``a`` und ``b`` durch ein Bauteil addiert.
-# Wir haben gesehen, wie dies durch ein *Gatterzusammenschluss* (siehe [Manipulation](sec-manipulation)) möglich ist.
+# Nehmen wir weiter an, dass der Befehl ``ladd(a,b)`` diesen realisiert, d.h., die beiden Binärzahlen ``a`` und ``b`` durch ein Bauteil addiert.
+# Wir haben gesehen, wie dies durch eine *Komposition aus Gattern* (siehe [Manipulation](sec-manipulation)) möglich ist.
 # 
 # Um zwei Zahlen ``a``, ``b`` zu multiplizieren könnten wir aus mehreren Addierern einen Multiplizierer bauen.
-# Wir können also durch Komposition von bereits existierenden Bauteilen ein neues Bauteil mit einer neuen Funktion konstruieren.
+# Wir können demnach durch Komposition von bereits existierenden Bauteilen, ein neues Bauteil mit einer neuen Funktion konstruieren.
 # Doch genauso gut können wir durch Programmcode den Addierer mehrfach aufrufen und erhalten so das gleiche Endergebnis.
 
 # In[1]:
@@ -63,7 +63,7 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # Im Endeffekt sparen wir uns bei der zweiten Berechnung ein Bauteil.
 # In der Praxis spielt es allerdings eine entscheidende Rolle wie lange die Berechnung dauert.
 # Ein Multiplizierer der als Bauteil vorliegt, wird seine Arbeit deutlich schneller verrichten, als die Summe der Aufrufe des Addierers.
-# Werden bestimmte Berechnungen sehr häufig benötigt, so ist es sinnvoll darüber nachzudenken ob man für diese nicht extra angefertigte Bauteile anbietet.
+# Werden bestimmte Berechnungen sehr häufig benötigt, so ist es sinnvoll darüber nachzudenken, ob man für diese nicht extra angefertigte Bauteile anbietet.
 # 
 # Die Grafikkarte (GPU) ist ein solches Beispiel.
 # Theoretisch kann die [CPU](def-cpu) all das berechnen, was die Grafikkarte berechnen kann.
@@ -71,23 +71,23 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # Moderne CPUs können das mittlerweile auch, allerdings ist deren Parallelität geringer, d.h., sie besitzen weniger Prozessorkerne.
 # Auch verwenden viele Grafikkarten eine weniger genaue Darstellung der Fließkommazahlen, da bei der Generierung von Bildern oder Animationen kleine Fehler nicht auffallen.
 # Moderne Grafikkarten werden wegen ihres hohen Datendurchsatzes heute für das *maschinelle Lernen* eingesetzt.
-# Sie haben dazu Bauteile mit denen sich die Matrixmultiplikation kleiner Matrizen sehr effizient berechnen lässt.
+# Sie sind deshalb mit speziellen Bauteilen ausgestattet, mit denen sich kleiner Matrizen sehr effizient multiplizieren lassen.
 # 
 # Software steuert die Hardware an.
 # Es besteht hier also eine Art Umweg.
-# Löst ein Bauteil das Problem so ist es mit sehr großer Wahrscheinlichkeit schneller als jede Softwarelösung.
+# Löst ein Bauteil das Problem, so ist es mit sehr großer Wahrscheinlichkeit schneller als jede Softwarelösung.
 # 
 # Auf algorithmischer Ebene ähneln sich Hardware und Software sehr.
-# Sie gleichen sich mit dem feinen Unterschied, dass Software eine bestimmte Hardware benötigt um überhaupt lauffähig zu sein.
+# Sie gleichen sich, mit dem feinen Unterschied, dass Software eine bestimmte Hardware benötigt um überhaupt lauffähig zu sein.
 # 
 # ## Turingmaschinen
 # 
-# Wir haben gesehen, dass der Unterschied zwischen Hard- uns Software geringer ist als wir vielleicht angenommen hatten.
-# Klar ist aber auch, dass ein Computer ohne Hardware nicht funktionieren wird.
-# Wir können nun die zentralen Fragen der Informatik stellen. 
+# Der Unterschied zwischen Hard- und Software ist geringer als wir vielleicht angenommen hatten.
+# Klar ist aber auch: Ein Computer ohne Hardware ist nicht funktionsfähig.
+# Wir können nun eine zentralen Fragen der Informatik stellen. 
 # Salopp fragen wir: 
 # 
-# >'Wie viel' Hardware braucht es denn?
+# >"Wie viel" Hardware braucht es denn?
 # 
 # Oder genauer gefragt:
 # 
@@ -97,17 +97,17 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # 
 # >Was können wir überhaupt berechnen?
 # 
-# Beide Fragen wollte Alan Turing mit seinem Berechnungsmodell, d.h., mit seiner *Turingmaschine* beantworten.
+# Beide Fragen wollte Alan Turing mit seinem Berechnungsmodell, der *Turingmaschine*, beantworten.
 # 
 # ```{figure} ../../figs/digital-computer/computability/tm.png
 # ---
 # height: 200px
 # name: fig-tm
 # ---
-# Skizze eine Turingmaschine die sich gerade in Zustand $q_4$ befindet.
+# Skizze einer Turingmaschine, die sich gerade in Zustand $q_4$ befindet.
 # ```
 # 
-# Die [Turingmaschine (TM)](https://de.wikipedia.org/wiki/Turingmaschine) besteht aus gerade einmal so viel Hardware, dass sie all das berechnen kann, was allgemein als berechenbar gilt.
+# Die [Turingmaschine (TM)](https://de.wikipedia.org/wiki/Turingmaschine) besteht aus gerade einmal so viel Hardware, dass sie all das berechnen kann, was allgemein als berechenbar angesehen wird.
 # 
 # ```{admonition} Turingmaschine (informell)
 # :name: info-turingmaschine
@@ -119,18 +119,17 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # 2. Einem **Schreib-/Lesekopf**
 # 3. Einer **endlichen Übergangstabelle** $\delta$
 # 4. Einer **endlichen Zustandsmenge** $Q$
-# 5. Eine **endliche Endzustandsmenge** $F \subseteq Q$
+# 5. Einer **endlichen Endzustandsmenge** $F \subseteq Q$
 # 
 # Der Schreib-/Lesekopf ließt oder schreibt $0$, $1$ oder $\#$ in jeder Zeiteinheit an seine aktuelle Zelle auf dem Band.
 # Dabei steht $\#$ für eine unbeschriebene Zelle, also das Leerzeichen.
 # Der Kopf kann zudem in einer Zeiteinheit eine Zelle nach links oder rechts fahren oder stehenbleiben.
-# 
 # Die Maschine befindet sich in einem von endlich vielen Zuständen.
 # 
 # Gegeben der Zustand $q$ und das beim Schreib-/Lesekopf stehende Zeichen $a \in \{0, 1, \#\}$, gibt die Übergangstabelle an:
 # 
-# 1. Den Zustand $p$ den die Maschine einnimmt
-# 2. Das Zeichen was sie aufs Band schreibt
+# 1. Den Zustand $p$ den die Maschine einnimmt.
+# 2. Das Zeichen was sie aufs Band schreibt.
 # 3. Ob sich der Schreib-/Lesekopf nach links $\text{L}$, rechts $\text{R}$, oder gar nicht $\text{N}$ bewegt.
 # 
 # Die Turingmaschine befindet sich zu Beginn in einem Startzustand $q_0$ und die Eingabe befindet sich zu beginn auf dem Band.
@@ -164,7 +163,7 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # berechnet das Komplement einer Binärzahl.
 # Dabei gehen wir davon aus, dass der Schreib-/Lesekopf auf das erste Zeichen der Eingabe zeigt (links).
 # Die Maschine bewegt ihren Kopf einmal von links nach rechts und schreibt eine 0 wenn sie eine 1 ließt und eine 1 wenn sie eine 0 ließt.
-# Sobald sie ein Leerzeichen $\#$ ließt bleibt geht sie in den Endzustand $q_e$. 
+# Sobald sie ein Leerzeichen $\#$ ließt geht sie in den Endzustand $q_e$. 
 # 
 # ```{admonition} Allgemeine Berechenbarkeit
 # :name: def-computable
@@ -174,7 +173,7 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # 
 # ```
 # 
-# Der Schreib-/Lesekopf können wir als CPU und das Band als Speicher interpretieren.
+# Den Schreib-/Lesekopf können wir als CPU und das Band als Speicher interpretieren.
 # Die Endlichkeit von $Q$, $F$ und $\delta$ garantiert, dass unser Algorithmus durch endlich viel Text niedergeschrieben werden kann.
 # Die Turingmaschine geht davon aus, dass ihr unendlich viel Speicher zur Verfügung steht.
 # Das stellt aber kein Problem dar, denn sofern die Maschine stehen bleibt (unser Algorithmus terminiert) kann sie nur endlich viel Zellen auf dem Band abgefahren haben.
@@ -187,9 +186,9 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # 
 # ```
 # 
-# Die Probleme die wir mit der *Turingmaschine* berechnen können, bilden eine gewisse Problemklasse.
-# Nach der unbeweisbaren *Turing-Church-These* handelt es sich bei diesen Problemen um all diejenigen die im {prf:ref}`allgemeinen berechenbar <def-computable>` sind.
-# Das heißt eine *Turingmaschine* kann alles berechnen was wir vermutlich allgemein berechnet können.
+# Die Probleme die wir mit einer *Turingmaschine* berechnen können, bilden eine gewisse Problemklasse.
+# Nach der unbeweisbaren *Turing-Church-These* handelt es sich bei diesen Problemen, um all diejenigen, die im {prf:ref}`allgemeinen berechenbar <def-computable>` sind.
+# Das heißt, für alles was wir allgemein berechnet können, gibt es eine Turingmaschine.
 # 
 # ```{admonition} Turing-Church-These (unbeweisbar)
 # :name: def-church-these
@@ -203,26 +202,26 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # Wir brauchen soviel Hardware, dass unser Computer all das kann was eine *Turingmaschine* kann.
 # 
 # Alan Turing definierte den Begriff der *Turing-Vollständigkeit*.
-# Eine Rechenmaschine die *Turing-vollständig* ist, kann all das berechnen was eine Turingmaschine berechnen kann.
+# Eine Rechenmaschine die *Turing-vollständig* ist, kann all das berechnen was jedwede Turingmaschine berechnen kann.
 # 
 # ```{admonition} Turing-Vollständigkeit
 # :name: def-turing-complete
 # :class: definition
 # 
-# Eine Rechenmaschine (oder Programmiersprache) ist *Turing-vollständig* genau dann wenn sie all das berechnen kann was eine Turingmaschine berechnen kann.
+# Eine Rechenmaschine (oder Programmiersprache) ist *Turing-vollständig* genau dann wenn sie all das berechnen kann was jedwede Turingmaschine berechnen kann.
 # 
 # ```
 # 
-# Wenn Sie also verstehen möchten, 'wie viel Hardware' ein Computer braucht, lohnt sich ein Blick hin zur Turingmaschine.
+# Wenn Sie also verstehen möchten, "wie viel Hardware" ein Computer braucht, lohnt sich ein Blick hin zur Turingmaschine.
 # Uns ist klar, dass es sich dabei um ein sehr theoretisches Konstrukt handelt.
 # Wir ersparen Ihnen die formale Definition und möchten Sie dennoch bestärken ein intuitives Verständnis über die Turingmaschine während Ihres Studiums aufzubauen.
 # 
 # Die Turingmaschine kommt mit erstaunlich wenig Hardware aus.
-# Ein pfiffige Bastler\*innen können diese Maschine als Heimwerkerprojekt im Keller bauen.
-# Es steht ihnen zwar kein unendliches Band zur Verfügung doch falls ein Algorithmus terminiert, kann der Schreib-/Lesekopf nur eine endliche Distanz fahren und somit ist ein endliches Band ausreichend.
+# Pfiffige Bastler\*innen können diese Maschine als Heimwerkerprojekt im Keller bauen.
+# Es steht ihnen zwar kein unendliches Band zur Verfügung, doch falls ein Algorithmus terminiert, kann der Schreib-/Lesekopf nur eine endliche Distanz fahren und somit ist ein endliches Band ausreichend.
 # Wie lange dies jedoch sein muss ist im Vornhinein unklar.
 # 
-# ```{figure} ../../figs/model-of-a-tm.jpeg
+# ```{figure} ../../figs/history/model-of-a-tm.jpeg
 # ---
 # height: 200px
 # name: model-of-a-tm-2
@@ -235,15 +234,15 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # 
 # Bis heute können wir jedes berechenbare Problem durch eine bestimmte Turingmaschine berechnen.
 # Natürlich müssen wir eine *Turingmaschine* für das jeweilige Problem konstruieren.
-# Ein Computer löst aber nicht nur ein bestimmtes Problem, sondern ist im Stande **jedes** Problem, was durch eine Turingmaschine gelöst werden kann zu berechnen.
+# Ein Computer löst aber nicht nur ein bestimmtes Problem, sondern ist im Stande **jedes** Problem, was durch eine Turingmaschine gelöst werden kann, zu berechnen.
 # 
 # Ein Computer ist das Pendant zu einer ganz bestimmten Turingmaschine, der *universellen Turingmaschine (UTM)*.
 # Die universelle Turingmaschine $U$ (Computer) erhält als Eingabe eine Beschreibung einer andere Turingmaschine $\alpha_T$ (Programm) und die Eingabe(wort) $w$ der Turingmaschine $T$.
 # Sie simuliert $T$ unter der Eingabe $w$
 # 
-# $$U(\alpha_T, w) = T(w)$$
+# $$U(\alpha_T, w) = T(w).$$
 # 
-# Das heißt die universelle Turingmaschine $U$ berechnet das was die Turingmaschine $T$ berechnen würde, indem Sie diese simuliert.
+# Das heißt, die universelle Turingmaschine $U$ berechnet das was die Turingmaschine $T$ berechnen würde, indem Sie diese simuliert.
 # 
 # Da eine Turingmaschine $T$ durch $\delta$, $Q$ und $F$ vollständig beschrieben ist und all diese Mengen endlich sind, ist sichergestellt dass auch $\alpha_T$ endlich ist.
 # Der Repräsentant von $\alpha_T$ muss ein Binärcode sein, sodass wir ihn auf das Band von $U$ schreiben können.
@@ -261,13 +260,13 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # ## Das Halteproblem
 # 
 # Das Halteproblem ist eines der bekanntesten Probleme der Informatik, da es wesentliche Implikationen über die Mächtigkeit von Computern offenlegt.
-# Wir würden uns als Programmierer\*innen wünschen, dass es Programm gäbe, dass uns für ein anderes beliebiges Programm mit einer bestimmten Eingabe verrät ob dieses auch halten wird oder ob wir in einer Endlosschleife laufen.
+# Wir würden uns als Programmierer\*innen wünschen, dass es ein Programm gäbe, welches uns für ein anderes beliebiges Programm, mit einer bestimmten Eingabe, verrät, ob dieses auch halten wird oder ob wir in einer Endlosschleife laufen.
 # 
 # ```{admonition} Das Halteproblem
 # :name: def-halting-problem
 # :class: definition
 # 
-# Gegeben eine Beschreibung $\alpha_T$ einer Turingmaschine $T$ und deren Eingabe $w$, so verlangt das Halteproblem, nach der Antwort der Frage ob $T(w)$ hält oder nicht.
+# Gegeben sei eine **beliebige** Beschreibung $\alpha_T$ einer Turingmaschine $T$ und einer **beliebigen** Eingabe $w$, so verlangt das Halteproblem, nach der Antwort der Frage ob $T(w)$ hält oder nicht.
 # 
 # ```
 # 
@@ -295,11 +294,11 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # Diese Maschinen können zwar all das berechnen was ein Computer berechnet, funktionieren aber doch ganz anders.
 # Insbesondere sind sie extrem langsam.
 # 
-# Computer und Programmiersprachen sind Werkzeuge um unsere Konzepte welche durch [Computational Thinking](sec-what-is-ct) entstehen zu realisieren.
+# Computer und Programmiersprachen sind Werkzeuge, um unsere Konzepte, welche durch [Computational Thinking](sec-what-is-ct) entstehen, zu realisieren.
 # Was aber können wir überhaupt mit diesen Werkzeugen realisieren?
 # Die Antwort folgt aus der eben besprochenen Turingmaschine, denn jeder Ihnen bekannte Computer und jede Programmiersprache welche Sie erlernen werden ist {prf:ref}`Turing-vollständig <def-turing-complete>`!
 # 
-# Jeder Computer kann genau das berechnen, was eine Turingmaschine berechnen kann.
+# Jeder Computer kann genau das berechnen, was [Turing-berechenbar](def-turing-computable) ist.
 # Selbstverständlich arbeiten Computer mit vollkommen anderen Bauteilen, was sie viel effizienter macht.
 # Im wesentlichen sind sie dennoch nichts anderes als effiziente Turingmaschinen.
 # John von Neumann's Prinzip des [speicherprogrammierten Computers](sec-von-neumann) basiert auf Alan Turing's Turingmaschine.
@@ -327,9 +326,8 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # Man muss sich vor Augen halten, dass Alan Turing bereits 1936 die Grundlagen für alle modernen Computer und Programmiersprachen dieser Welt gelegt hat.
 # 
 # Gehen wir nun zurück zur Frage nach dem Unterschied zwischen Hard-/ und Software.
-# Der wesentlichen Unterschied zwischen dem Computer (Hardware) und einem Programm (Software) ist die Art und Weise wie die {prf:ref}`Turing-vollständig <def-turing-complete>` realisiert wird -- durch elektrische Bauteile oder einer Programmiersprache.
-# 
-# Programme als auch Computer sind Turingmaschinen und da der Computer Programme, also andere Turingmaschinen, simuliert ist er eine 
+# Der wesentlichen Unterschied zwischen dem Computer (Hardware) und einem Programm (Software) ist die Art und Weise wie die {prf:ref}`Turing-vollständig <def-turing-complete>` realisiert wird -- durch elektrische Bauteile oder eine Programmiersprache.
+# Programme als auch Computer sind Turingmaschinen und da der Computer Programme also andere Turingmaschinen simuliert, ist er eine 
 # {prf:ref}`universelle Turingmaschine <info-universal-turing-machine>`.
 # 
 # ```{admonition} Computer sind universelle Turingmaschinen
@@ -340,17 +338,16 @@ print(f'{to_decimal([0,0,1,1])} * {to_decimal([1,0,0,1])} = {to_decimal(mul([0,0
 # 
 # ```
 # 
-# Sobald ein Computer Turing-vollständig ist, sind alle weiteren Bauteile ein Bonus.
-# In der Theorie ist die universelle Turingmaschine ebenso 'schnell' wie ein moderner Computer.
+# Sobald ein Computer [Turing-vollständig](def-turing-complete) ist, sind alle weiteren Bauteile ein Bonus.
+# In der Theorie ist die universelle Turingmaschine ebenso "schnell" wie ein moderner Computer.
 # In der Praxis wäre sie allerdings unfassbar langsam.
-# In der Theorie ist sogar jeder Prozessor 'gleich schnell'.
+# In der Theorie ist auch jeder Prozessor "gleich schnell".
 # In der Praxis ist das natürlich nicht der Fall.
-# Die Turingmaschine hilft uns dabei die Begriffe *schnell*, *schneller* und *langsamer* und *gleich schnell* formal zu definieren.
-# Wir werden in Abschnitt [Komplexitätstheorie](sec-complexity) sehen, dass diese Komplexitätsklassen uns etwas über die Schwierigkeit eines Problems verraten, doch in der Praxis mit Vorsicht zu genießen sind.
+# Die Turingmaschine hilft uns dabei die Begriffe "schnell", "schneller", "langsamer" und "gleich schnell" formal zu definieren.
 # 
 # Zusätzliche oder effizientere Hardware dient im wesentlichen der Beschleunigung bestimmter Berechnungen.
 # Ein Beispiel, was wir oben bereits besprochen haben ist die Grafikkarte (GPU).
-# In der Theorie ist sie sogar *genauso schnell* wie eine CPU.
+# In der Theorie ist sie "genauso schnell" wie eine CPU.
 # Dennoch hat jeder gängige Heim-Computer eine Grafikkarte, da diese für Berechnungen im 3D-Grafikbereich optimiert ist.
 # 
 # Wichtig ist festzuhalten, dass sich Hardware und Software auf konzeptioneller Ebene gleichen.

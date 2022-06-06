@@ -16,7 +16,7 @@ Blicken wir auf das Blatt, erkennen wir jedoch einen Apfel, obwohl sich keinerle
 Die Zeichnung symbolisiert ([Semantik](def-semantik)) einen Apfel und dessen Qualität (Obst, süß, rund, wächst auf Bäumen) in unserer Vorstellung (kognitiven Welt) und referenziert einen realen Gegenstand oder Sachverhalt aus der Realwelt, in diesem Fall einen konkreten echten Apfel.
 
 Schreiben Sie die Zeichen ``2 + 2 = 4`` auf ein Blatt, so symbolisieren ([Semantik](def-semantik)) diese eine Gleichung.
-Gleichzeitig referenziert diese Zeichenfolge einen (bzw. viele) Sachverhalt(e) aus der Realwelt.
+Gleichzeitig referenziert diese Zeichenfolge einen bzw. viele Sachverhalt(e) aus der Realwelt.
 Zum Beispiel, referenziert die Zeichenfolge den Sachverhalt, dass wenn man zwei Äpfel hat und weitere zwei erhält, dies dann vier Äpfel sind.
 
 In beiden Fällen gehen wir von einer bestimmten **Interpretation** aus mit der wir einer **Repräsentation** (die Zeichnung und die Zeichen) eine gewisse **Bedeutung** ([Semantik](def-semantik)) zuordnen.
@@ -25,7 +25,7 @@ Würden wir keinen Apfel aus der echten Welt kennen oder hätten keinerlei Zahle
 Wir interpretieren fortwährend das was wir wahrnehmen.
 Die Zeichenfolge ``23.10.2022`` interpretieren wir als Datum und folgendes Symbol 
 
-```{figure} ../../figs/stop-sign.jpeg
+```{figure} ../../figs/digital-computer/interpretation/stop-sign.jpeg
 ---
 width: 200px
 name: fig-stop-sign
@@ -63,7 +63,7 @@ Zum Beispiel haben folgende Wörter eine doppelte Bedeutung.
 
 ## Der Computer
 
-Der Computer und seine Bestandteile (Hardware und Software) interpretieren anstelle von Zeichnungen, Folgen von [Bits](def-bit) und [Bytes](def-byte) in einer von uns Menschen vordefinierten Art und Weise.
+Der Computer und seine Bestandteile (Hard- und Software) interpretieren anstelle von Zeichnungen, Folgen von [Bits](def-bit) und [Bytes](def-byte) in einer von uns Menschen vordefinierten Art und Weise.
 Im Zusammenhang mit dem Computer sind **Bedeutung** $B$ und **Repräsentation** $R$ Mengen, wohingegen die **Interpretation** $I$ eine Funktion ist.
 
 ````{admonition} Interpretation
@@ -109,14 +109,14 @@ In den obigen Beispielen repräsentiert die Bitfolge ``00`` einmal die Zeichenke
 ```{admonition} Syntax (Informatik)
 :name: def-syntax
 :class: definition
-Die Art und Weise wie ein Repräsentant niedergeschrieben ist nennen wir *Syntax*.
+Die Art und Weise wie ein Repräsentant niedergeschrieben ist nennen wir *Syntax*. Es ist die Beziehung der Zeichen zueinander.
 ```
 
 Die Computerhardware (alle Bauteile) kann schlussendlich nur [Bits](def-bit) und [Bytes](def-byte) verarbeiten.
 Jede Hardwarekomponente verwendet eine bestimmte Interpretation, welche auf der Repräsentation der [Binärzahlen](sec-binary-system) basiert.
 Diese Interpretation wurde den Komponenten von uns Menschen 'beigebracht'.
 
-Ein Monitor interpretiert die Bitfolgen als Pixelintensitäten (wie stark und in welcher Farbe leuchtet jeweils der Pixel), ein Addierer interpretiert Bitfolgen als Zahlen, ein Mikrofon interpretiert Bitfolgen als Amplitudenwerte.
+Ein Monitor interpretiert die Bitfolgen als Pixelintensitäten (wie stark und in welcher Farbe leuchtet der jeweilige Pixel), ein Addierer interpretiert Bitfolgen als Zahlen, ein Mikrofon interpretiert Bitfolgen als Amplitudenwerte.
 
 Software basiert auf dem gleichen Verständnis, denn Hardware ist Software realisiert durch Bauteile (siehe Abschnitt [Berechenbarkeit](sec-computability)).
 Öffnen Sie ein Bild in einem Texteditor, so sehen Sie die Interpretation des Bildes ihres Texteditors.
@@ -134,7 +134,7 @@ Am Ende der Kette sitzen wir vor dem Rechner und interpretieren diese Pixelinten
 Programmcode ist Text den der Computer als Anweisungen interpretiert.
 Wie aber soll das funktionieren, wenn die Hardware doch nur [Bits](def-bit) und [Bytes](def-byte) verarbeiten kann?
 Wie im obigen Beispiel des Textverarbeitungsprogramms hindert uns niemand Text zu schreiben, welcher dann in Binärcode durch eine Interpretation umgewandelt wird.
-Diese spezielle Interpretation $I$ macht aus dem Text einen Binärcode der ausführbar ist, d.h., den die Computerhardware versteht.
+Diese spezielle Interpretation $I$ macht aus dem Text einen Binärcode der ausführbar ist, d. h., den die Computerhardware versteht.
 Programme die eine solche Interpretation realisieren bezeichnen wir sehr passend als [Interpreter](def-interpreter) oder [Übersetzer](def-compiler) (engl. Compiler).
 Interpreter werten $I$ aus, während der Programmcode ausgeführt wird.
 Dahingegen werten Compiler $I$ für den gesamten Code aus, bevor dieser ausgeführt wird.
@@ -142,11 +142,11 @@ Dahingegen werten Compiler $I$ für den gesamten Code aus, bevor dieser ausgefü
 ```{admonition} Übersetzer / Compiler
 :name: def-compiler
 :class: definition
-Ein *Übersetzer*  (engl. *Compiler*) ist ein Programm welches ein anderes Programm $\alpha_H$, geschrieben in einer Hochsprache $L_H$, entgegennimmt und in ein Programm $\alpha_M$, geschrieben in einer Maschinensprache $L_M$, ausgibt. $\alpha_M$ realisiert $\alpha_H$ auf einer konkreten Maschine, d.h., $\alpha_M$ steuert die konkrete Maschine, sodass es das berechnet was $\alpha_H$ auf abstrakterer Ebene vorgibt zu berechnen.
+Ein *Übersetzer*  (engl. *Compiler*) ist ein Programm welches ein anderes Programm $\alpha_H$, geschrieben in einer Hochsprache $L_H$, entgegennimmt und in ein Programm $\alpha_M$, geschrieben in einer Maschinensprache $L_M$, ausgibt. $\alpha_M$ realisiert $\alpha_H$ auf einer konkreten Maschine, d. h., $\alpha_M$ steuert die konkrete Maschine, sodass es das berechnet was $\alpha_H$ auf abstrakterer Ebene vorgibt zu berechnen.
 ```
 
 Ok, das ist noch nicht die ganze Wahrheit.
-In der Praxis wenden Compiler oder Interpreter eine hintereinandergeschaltete eine Kette an Interpretationen $I_0, \ldots, I_n$ an.
+In der Praxis wenden Compiler oder Interpreter eine hintereinandergeschaltete Kette an Interpretationen $I_0, \ldots, I_n$ an.
 Wir als Programmierer möchten zum Beispiel zwei Zahlen addieren und schreiben folgenden ``Python``-Code:
 
 ```python
@@ -205,17 +205,17 @@ Wir haben auch behauptet, dass Computer ihre Interpretationen von uns Menschen d
 
 Es ergeben sich hierbei spannende Fragen aus dem Bereich der künstlichen Intelligenz und Philosophie:
 
->Ist der Computer im wesentlichen ein 'besserer' Bleistift ohne Intelligenz und Bewusstsein?
+>Ist der Computer im wesentlichen ein "besserer" Bleistift ohne Intelligenz und Bewusstsein?
 
 >Kann sich ein Computer eigene Interpretationen seiner digitalen Welt erschließen?
 
 Natürlich könnten wir die Frage auch umkehren und uns dem Menschen zuwenden:
 
->Ist der Mensch im wesentlichen ein 'besserer' Bleistift?
+>Ist der Mensch im wesentlichen ein "besserer" Bleistift?
 
 Bisher besteht Zweifel daran, dass Computer jemals eine eigene Interpretation hervorbringen.
-Streng genommen ist es diskussionswürdig, ob Computer überhaupt irgendeine Bedeutung ([Semantik](def-semantik)) 'kennen'.
+Streng genommen ist es diskussionswürdig, ob Computer überhaupt irgendeine Bedeutung ([Semantik](def-semantik)) "kennen".
 Anders ausgedrückt müssen wir uns fragen ob sie nicht doch nur bloße Transformatoren von Zeichen auf einer rein [syntaktischen](def-syntax) Ebene sind -- ganz so wie der Bleistift.
 Und wenn dem so ist, was muss getan werden um dies zu ändern?
 
-Im Kapitel [Was ist Information](sec-information) schließen wir an diese Diskussion an, indem wir den Informationsbegriff aus verschiedenen Richtungen kritisch betrachten.
+Im Kapitel [Was ist Information?](sec-information) schließen wir an diese Diskussion an, indem wir den Informationsbegriff aus verschiedenen Richtungen kritisch betrachten.
