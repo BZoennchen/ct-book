@@ -13,12 +13,12 @@ kernelspec:
 (sec-control-structures)=
 # Kontrollstrukturen
 
-Durch [Wiederholung](sec-repetition-and-recursion) in Form von *Schleifen* und *(rekursive) Funktionen* vermeiden wir es Anweisungen, die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
+Durch [Wiederholung](sec-repetition-and-recursion) in Form von *Schleifen* und *(rekursiven) Funktionen* vermeiden wir es Anweisungen, die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
 Erst durch diese fundamentale Eigenschaft, ist es überhaupt möglich, dass wir die Anzahl der ausgeführten Anweisungen von der Länge des Programmcodes entkoppeln.
 
 [Fallunterscheidungen](sec-if-else) erlauben es uns wiederum bestimmte Anweisungen nur dann auszuführen, wenn eine bestimmte Bedingung zur Laufzeit des Programms erfüllt ist.
 
-Diese zwei *Schleifen* und *Fallunterscheidungen* kombiniert mit *Variablen* sind bereits alles was wir benötigen.
+*Schleifen* und *Fallunterscheidungen* kombiniert mit *Variablen*, bilden bereits alles was wir benötigen.
 Um unseren Programmcode zu strukturieren und bestimmte Programmteile an verschiedenen Stellen aufzurufen, gibt es zusätzlich das Konzept der Programmierfunktionen oder kurz *Funktionen*.
 
 ```{admonition} Kontrollstrukturen
@@ -34,7 +34,7 @@ Zusammenfassend konzentrieren wir uns auf:
 2. Schleifen (Wiederholung)
 3. Funktionen (Wiederholung)
 
-Wie bereits erwähnt, muss eine Programmiersprache nur sehr weniger und sehr primitiver Kontrollstrukturen anbieten damit diese als [Turing-vollständig](def-turing-complete) gilt.
+Wie bereits erwähnt, muss eine Programmiersprache nur sehr wenige und auch nur sehr primitive Kontrollstrukturen anbieten damit diese als [Turing-vollständig](def-turing-complete) gilt.
 Theoretisch ist es bereits ausreichend wenn eine Programmiersprache 
 
 1. Variablen unterstützt, auf die wir einen konstanten Wert addieren oder subtrahieren können und
@@ -74,7 +74,7 @@ Für ``Python`` besprechen wir alle Möglichkeiten im Teil **PYTHON** in [Kontro
 
 Das fundamentale Prinzip der *Wiederholung* ist zentraler Bestandteil des [Computational Thinkings](sec-what-is-ct).
 Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
-Sortieralgorithmen, die Berechnung eine Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen *iterativ* verarbeiten.
+Sortieralgorithmen, die Berechnung eines Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen *iterativ* verarbeiten.
 
 Nach der Definition eines Algorithmus, muss dieser aus endlich vielen Anweisungen bestehen.
 Will man jedoch eine variable Menge an Information verarbeiten, so muss ein Algorithmus, abhängig von der Eingabegröße, unterschiedlich viele Anweisungen ausführen.
@@ -111,7 +111,7 @@ Jede Rekursion kann in eine unbestimmte Iteration und jede (unbestimmte) Iterati
 Mit *unbestimmt* meinen wir, dass bevor die Iteration beginnt nicht bekannt ist, wie viele Wiederholungen nötig sind.
 
 Manche Probleme lassen sich leichter rekursiv und andere leichter iterativ lösen bzw. durchdenken.
-In machen Fällen ist es beispielsweise sinnvoll eine rekursive Lösung zu entwickeln und diese dann in eine iterative umzuwandeln.
+In manchen Fällen ist es beispielsweise sinnvoll eine rekursive Lösung zu entwickeln und diese dann in eine iterative umzuwandeln.
 
 (sec-iteration)=
 ### Iteration
@@ -136,15 +136,15 @@ acc
 acc = 0
 n = 100
 k = 2
-while k <= n:
+while k < n:
     acc += k
     k += 2
 
 acc
 ```
 
-Betrachten einen etwas komplizierteren Algorithmus: Den [Bubblesort Algorithmus](https://en.wikipedia.org/wiki/Bubble_sort).
-Dieser sortiert eine eine Liste von Zahlen sortieren.
+Betrachten wir einen etwas komplizierteren Algorithmus: Den [Bubblesort Algorithmus](https://en.wikipedia.org/wiki/Bubble_sort).
+Dieser sortiert eine Liste von vergleichbaren Objekten.
 Wir gehen durch die Liste (1. *Iterationen*) und wann immer zwei nebeneinander liegende Zahlen falsch sortiert sind, vertauschen wir diese.
 Wir wiederholen dies (2. *Iterationen*) solange bis keine zwei benachbarte Zahlen falsch sortiert sind.
 
@@ -229,7 +229,7 @@ fac_rec(5)
 ```
 
 Die Rekursion beinhaltet einen Selbstbezug, wohingegen die iterative Lösung diesen ausbreitet bzw. auflöst.
-Betrachten wir die rekursive Lösung benötigen wir für die Berechnung lediglich die Multiplikation und den Selbstbezug - keine Schleife, ja nicht einmal eine Variable.
+Betrachten wir die rekursive Lösung benötigen wir für die Berechnung lediglich die Multiplikation und den Selbstbezug - keine Schleife, und abgesehen von ``n``, nicht einmal eine Variable.
 
 ```{admonition} Rekursion
 :name: def-recursion
@@ -294,7 +294,7 @@ def move_tower(n, fr, to, tmp):
     pass
 ```
 
-unter dieser Annahme führen bewegen wir den Turm wie oben beschrieben:
+unter dieser Annahme bewegen wir den Turm wie oben beschrieben:
 
 ```python
 def move_tower(n, fr, to, tmp):

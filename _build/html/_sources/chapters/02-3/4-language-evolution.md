@@ -23,7 +23,7 @@ Runnable runnable = () -> System.out.println("Hello world two!");
 ```
 
 Java 9 brachte dann das sogenannte ``Type-Inference`` (die automatische Typ-Erkennung).
-Dadurch wird der Datentyp einer Variable aus dem Kontext bestimmt und die Programmierer\*innen müssen diesen nicht explizit angeben.
+Dadurch wird der [Datentyp](sec-python-data-types) einer Variable aus dem Kontext bestimmt und die Programmierer\*innen müssen diesen nicht explizit angeben.
 Aus
 
 ```java
@@ -67,7 +67,6 @@ Neue Hardwareanforderungen übertragen sich auch auf Programmiersprachen.
 Wie Sie vielleicht beobachtet haben, hat sich die Taktrate der Prozessoren in den letzten Jahren nicht mehr verbessert.
 Wir sind an eine Grenze gestoßen.
 Deshalb gibt es statt schnellerer Prozessoren mehr Prozessoren.
-
 Um dies zu nutzen müssen wir mit Parallelität umgehen, doch ist die Entwicklung paralleler Algorithmen schwierig.
 Auch hier wird versucht immer wiederkehrende **Muster** direkt in die Sprache zu übertragen.
 Da für die *Nebenläufigkeit* [Seiteneffekte](def-side-effect) besonders problematisch sind, lernen imperative Sprachen auch hier von den funktionalen Sprachen.

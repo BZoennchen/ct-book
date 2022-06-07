@@ -1172,10 +1172,10 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="kontrollstrukturen">
 <span id="sec-control-structures"></span><h1><span class="section-number">10.3. </span>Kontrollstrukturen<a class="headerlink" href="#kontrollstrukturen" title="Link zu dieser Überschrift">#</a></h1>
-<p>Durch <a class="reference internal" href="#sec-repetition-and-recursion"><span class="std std-ref">Wiederholung</span></a> in Form von <em>Schleifen</em> und <em>(rekursive) Funktionen</em> vermeiden wir es Anweisungen, die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
+<p>Durch <a class="reference internal" href="#sec-repetition-and-recursion"><span class="std std-ref">Wiederholung</span></a> in Form von <em>Schleifen</em> und <em>(rekursiven) Funktionen</em> vermeiden wir es Anweisungen, die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
 Erst durch diese fundamentale Eigenschaft, ist es überhaupt möglich, dass wir die Anzahl der ausgeführten Anweisungen von der Länge des Programmcodes entkoppeln.</p>
 <p><a class="reference internal" href="#sec-if-else"><span class="std std-ref">Fallunterscheidungen</span></a> erlauben es uns wiederum bestimmte Anweisungen nur dann auszuführen, wenn eine bestimmte Bedingung zur Laufzeit des Programms erfüllt ist.</p>
-<p>Diese zwei <em>Schleifen</em> und <em>Fallunterscheidungen</em> kombiniert mit <em>Variablen</em> sind bereits alles was wir benötigen.
+<p><em>Schleifen</em> und <em>Fallunterscheidungen</em> kombiniert mit <em>Variablen</em>, bilden bereits alles was wir benötigen.
 Um unseren Programmcode zu strukturieren und bestimmte Programmteile an verschiedenen Stellen aufzurufen, gibt es zusätzlich das Konzept der Programmierfunktionen oder kurz <em>Funktionen</em>.</p>
 <div class="definition admonition" id="def-control-structure">
 <p class="admonition-title">Kontrollstrukturen</p>
@@ -1187,7 +1187,7 @@ Um unseren Programmcode zu strukturieren und bestimmte Programmteile an verschie
 <li><p>Schleifen (Wiederholung)</p></li>
 <li><p>Funktionen (Wiederholung)</p></li>
 </ol>
-<p>Wie bereits erwähnt, muss eine Programmiersprache nur sehr weniger und sehr primitiver Kontrollstrukturen anbieten damit diese als <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a> gilt.
+<p>Wie bereits erwähnt, muss eine Programmiersprache nur sehr wenige und auch nur sehr primitive Kontrollstrukturen anbieten damit diese als <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a> gilt.
 Theoretisch ist es bereits ausreichend wenn eine Programmiersprache</p>
 <ol class="simple">
 <li><p>Variablen unterstützt, auf die wir einen konstanten Wert addieren oder subtrahieren können und</p></li>
@@ -1224,7 +1224,7 @@ Für <code class="docutils literal notranslate"><span class="pre">Python</span><
 <span id="sec-repetition-and-recursion"></span><h2><span class="section-number">10.3.2. </span>Wiederholung<a class="headerlink" href="#wiederholung" title="Link zu dieser Überschrift">#</a></h2>
 <p>Das fundamentale Prinzip der <em>Wiederholung</em> ist zentraler Bestandteil des <a class="reference internal" href="../01-2/what-is-ct.html#sec-what-is-ct"><span class="std std-ref">Computational Thinkings</span></a>.
 Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
-Sortieralgorithmen, die Berechnung eine Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen <em>iterativ</em> verarbeiten.</p>
+Sortieralgorithmen, die Berechnung eines Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen <em>iterativ</em> verarbeiten.</p>
 <p>Nach der Definition eines Algorithmus, muss dieser aus endlich vielen Anweisungen bestehen.
 Will man jedoch eine variable Menge an Information verarbeiten, so muss ein Algorithmus, abhängig von der Eingabegröße, unterschiedlich viele Anweisungen ausführen.
 Das bedeutet, dass die Länge des Algorithmus (Textlänge) unabhängig von der Anzahl der auszuführenden Anweisungen (für eine gegebenen Eingabe) sein muss!
@@ -1251,7 +1251,7 @@ Wir können rekursiv oder iterativ denken.</p>
 </div>
 <p>Mit <em>unbestimmt</em> meinen wir, dass bevor die Iteration beginnt nicht bekannt ist, wie viele Wiederholungen nötig sind.</p>
 <p>Manche Probleme lassen sich leichter rekursiv und andere leichter iterativ lösen bzw. durchdenken.
-In machen Fällen ist es beispielsweise sinnvoll eine rekursive Lösung zu entwickeln und diese dann in eine iterative umzuwandeln.</p>
+In manchen Fällen ist es beispielsweise sinnvoll eine rekursive Lösung zu entwickeln und diese dann in eine iterative umzuwandeln.</p>
 <div class="section" id="iteration">
 <span id="sec-iteration"></span><h3><span class="section-number">10.3.2.1. </span>Iteration<a class="headerlink" href="#iteration" title="Link zu dieser Überschrift">#</a></h3>
 <p>Wenn Sie Erfahrung im entwickeln von iterativen Algorithmen gesammelt haben und iterative Algorithmen analysiert und verwendet haben, dann werden Sie beginnen in Iterationen zu denken.
@@ -1281,7 +1281,7 @@ Hierzu brauchen wir eine Variable <code class="docutils literal notranslate"><sp
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">while</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+<span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
     <span class="n">acc</span> <span class="o">+=</span> <span class="n">k</span>
     <span class="n">k</span> <span class="o">+=</span> <span class="mi">2</span>
 
@@ -1290,13 +1290,13 @@ Hierzu brauchen wir eine Variable <code class="docutils literal notranslate"><sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2550
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2450
 </pre></div>
 </div>
 </div>
 </div>
-<p>Betrachten einen etwas komplizierteren Algorithmus: Den <a class="reference external" href="https://en.wikipedia.org/wiki/Bubble_sort">Bubblesort Algorithmus</a>.
-Dieser sortiert eine eine Liste von Zahlen sortieren.
+<p>Betrachten wir einen etwas komplizierteren Algorithmus: Den <a class="reference external" href="https://en.wikipedia.org/wiki/Bubble_sort">Bubblesort Algorithmus</a>.
+Dieser sortiert eine Liste von vergleichbaren Objekten.
 Wir gehen durch die Liste (1. <em>Iterationen</em>) und wann immer zwei nebeneinander liegende Zahlen falsch sortiert sind, vertauschen wir diese.
 Wir wiederholen dies (2. <em>Iterationen</em>) solange bis keine zwei benachbarte Zahlen falsch sortiert sind.</p>
 <div class="cell docutils container">
@@ -1321,7 +1321,7 @@ Wir wiederholen dies (2. <em>Iterationen</em>) solange bis keine zwei benachbart
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before sorting: [8, 4, 7, 1, 6, 2, 9, 3, 5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before sorting: [6, 2, 5, 1, 4, 9, 3, 7, 8]
 after sorting: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre></div>
 </div>
@@ -1402,7 +1402,7 @@ Die Rekursion hängt dabei stark mit der Induktion zusammen, siehe Abschnitt <a 
 </div>
 </div>
 <p>Die Rekursion beinhaltet einen Selbstbezug, wohingegen die iterative Lösung diesen ausbreitet bzw. auflöst.
-Betrachten wir die rekursive Lösung benötigen wir für die Berechnung lediglich die Multiplikation und den Selbstbezug - keine Schleife, ja nicht einmal eine Variable.</p>
+Betrachten wir die rekursive Lösung benötigen wir für die Berechnung lediglich die Multiplikation und den Selbstbezug - keine Schleife, und abgesehen von <code class="docutils literal notranslate"><span class="pre">n</span></code>, nicht einmal eine Variable.</p>
 <div class="definition admonition" id="def-recursion">
 <p class="admonition-title">Rekursion</p>
 <p>Als <em>Rekursion</em> wird ein Vorgang bezeichnet, welcher sich selbst als Teil enthält oder mithilfe von sich selbst definierbar ist.</p>
@@ -1449,7 +1449,7 @@ Wir gehen also davon aus es gäbe eine Funktion <code class="docutils literal no
     <span class="k">pass</span>
 </pre></div>
 </div>
-<p>unter dieser Annahme führen bewegen wir den Turm wie oben beschrieben:</p>
+<p>unter dieser Annahme bewegen wir den Turm wie oben beschrieben:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_tower</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">tmp</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">move</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>             <span class="c1"># real move from upper most stone</span>

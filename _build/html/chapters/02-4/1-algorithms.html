@@ -1088,8 +1088,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#euklid-s-algorithmus">
-   10.1.1. Euklid’s Algorithmus
+  <a class="reference internal nav-link" href="#euklidischer-algorithmus">
+   10.1.1. Euklidischer Algorithmus
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1144,8 +1144,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#euklid-s-algorithmus">
-   10.1.1. Euklid’s Algorithmus
+  <a class="reference internal nav-link" href="#euklidischer-algorithmus">
+   10.1.1. Euklidischer Algorithmus
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1201,43 +1201,53 @@ Um 1950 herum deutete der Begriff auf Euklid’s berühmten Algorithmus zum find
 Das heißt, ab dieser Zeit verblasste die Vorstellung von der Kombination rein arithmetischer Operationen.
 <em>Algorithmen</em> begannen kombinatorische Operationen und Kontrollstrukturen zu enthalten.</p>
 <p>Heute verbinden wir mit Algorithmus Begriffe wie Rezept, Berechnungsvorschrift, Prozess, Prozedur, Methode, Routine und so weiter.</p>
-<div class="section" id="euklid-s-algorithmus">
-<span id="sec-euclid-alg"></span><h2><span class="section-number">10.1.1. </span>Euklid’s Algorithmus<a class="headerlink" href="#euklid-s-algorithmus" title="Link zu dieser Überschrift">#</a></h2>
-<p>Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: <em>Euklid’s Algorithmus</em>.</p>
+<div class="section" id="euklidischer-algorithmus">
+<span id="sec-euclid-alg"></span><h2><span class="section-number">10.1.1. </span>Euklidischer Algorithmus<a class="headerlink" href="#euklidischer-algorithmus" title="Link zu dieser Überschrift">#</a></h2>
+<p>Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: Den <em>Euklidischen Algorithmus</em>.</p>
 <div class="exercise admonition" id="euclid-exercise">
 
-<p class="admonition-title"><span class="caption-number">Exercise 10.1 </span> (Euklid’s Algorithmus)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 10.1 </span> (Euklidischer Algorithmus)</p>
 <div class="section" id="exercise-content">
 <p>Gegeben seien zwei natürliche Zahlen <span class="math notranslate nohighlight">\(n, m \in \mathbb{N}\)</span>.
-Wir suchen nach dem größten gemeinsamen Teiler (ggT) von <span class="math notranslate nohighlight">\(n\)</span> und <span class="math notranslate nohighlight">\(m\)</span>, d.h., die größte natürliche Zahl die sowohl <span class="math notranslate nohighlight">\(n\)</span> als auch <span class="math notranslate nohighlight">\(m\)</span> teilt.</p>
+Wir suchen nach dem größten gemeinsamen Teiler <span class="math notranslate nohighlight">\(\text{ggT}(n,m)\)</span> von <span class="math notranslate nohighlight">\(n\)</span> und <span class="math notranslate nohighlight">\(m\)</span>, d.h., die größte natürliche Zahl die sowohl <span class="math notranslate nohighlight">\(n\)</span> als auch <span class="math notranslate nohighlight">\(m\)</span> teilt.</p>
 </div>
 </div>
-<p>Der ggT von 44 und 12 ist zum Beispiel 4.
+<p>Der <span class="math notranslate nohighlight">\(\text{ggT}(44,12)\)</span> von <span class="math notranslate nohighlight">\(44\)</span> und <span class="math notranslate nohighlight">\(12\)</span> ist zum Beispiel <span class="math notranslate nohighlight">\(4\)</span>.
 Wie vieles bei den Griechen ist der Algorithmus geometrisch motiviert.
-Euklid berechnet den ggT, indem er nach einem gemeinsamen ‚Maß‘ für die Längen zweier Linien sucht.
+Euklid berechnet den ggT, indem er nach einem gemeinsamen „Maß“ für die Längen zweier Linien sucht.
 Dazu zieht er wiederholt die kleiner der beiden Längen von der größeren ab.
 Der ggT verändert sich dadurch nicht.</p>
 <div class="theorem admonition" id="theorem-ggt">
-<p class="admonition-title">Größter gemeinsamer Teiler</p>
-<p>Seien <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> zwei natürliche Zahlen mit <span class="math notranslate nohighlight">\(n &gt; m\)</span> und <span class="math notranslate nohighlight">\(d = n - m\)</span> so ist der <em>größte gemeinsame Teiler</em> von <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(d\)</span> identisch.</p>
+<p class="admonition-title">Gesetzt des größter gemeinsamer Teiler</p>
+<p>Seien <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> zwei natürliche Zahlen mit <span class="math notranslate nohighlight">\(n &gt; m\)</span> und <span class="math notranslate nohighlight">\(d = n - m\)</span>, so ist der <em>größte gemeinsame Teiler</em> von <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(d\)</span> identisch.</p>
 </div>
 <div class="proof dropdown admonition" id="proof-theorem-ggt">
 <p class="admonition-title">Beweis</p>
 <p>Jede natürliche Zahl kann als Produkt ihrer Primfaktorzerlegung geschrieben werden.
-Der ggT von <span class="math notranslate nohighlight">\(n\)</span> und <span class="math notranslate nohighlight">\(m\)</span> ergibt sich aus der Multiplikation aller Primzahlen die in beiden Zerlegungen (möglicherweise mehrfach) vorkommen.</p>
-<p>Zum Beispiel ist: <span class="math notranslate nohighlight">\(44 = (2 \cdot 2) \cdot 11\)</span> und <span class="math notranslate nohighlight">\(12 = (2 \cdot 2) \cdot 3\)</span> und ihr ggT <span class="math notranslate nohighlight">\(2 \cdot 2\)</span>.</p>
-<p>Seien nun <span class="math notranslate nohighlight">\(n = p_1 \cdot \ldots \cdot p_k \cdot q_1\)</span> und <span class="math notranslate nohighlight">\(m = p_1 \cdot \ldots \cdot p_k \cdot q_2\)</span> wobei <span class="math notranslate nohighlight">\(p_1, \ldots, p_k\)</span> die <span class="math notranslate nohighlight">\(k\)</span> gleichen Primzahlen der Zerlegungen sind.
-Dann folgt</p>
+Der <span class="math notranslate nohighlight">\(\text{ggT}(n,m)\)</span> ergibt sich aus der Multiplikation aller Primzahlen die in beiden Zerlegungen (möglicherweise mehrfach) vorkommen.</p>
+<p>Zum Beispiel ist: <span class="math notranslate nohighlight">\(44 = (2 \cdot 2) \cdot 11\)</span> und <span class="math notranslate nohighlight">\(12 = (2 \cdot 2) \cdot 3\)</span> und ihr <span class="math notranslate nohighlight">\(\text{ggT}(44,12) = 2 \cdot 2\)</span>.</p>
+<p>Seien nun</p>
+<div class="math notranslate nohighlight">
+\[n = p_1 \cdot \ldots \cdot p_k \cdot q_1\]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[m = p_1 \cdot \ldots \cdot p_k \cdot q_2,\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(p_1, \ldots, p_k\)</span> die <span class="math notranslate nohighlight">\(k\)</span> gleichen Primzahlen der Zerlegungen sind. Dann folgt</p>
 <div class="math notranslate nohighlight">
 \[d = n - m = (p_1 \cdot \ldots \cdot p_k) \cdot (q_1 - q_2)\]</div>
-<p>und damit bleibt der ggT unverändert.</p>
+<p>und somit gilt</p>
+<div class="math notranslate nohighlight">
+\[\text{ggT}(n,m) = \text{ggT}(d,m) = \text{ggT}(n,d) = (p_1 \cdot \ldots \cdot p_k).\]</div>
 </div>
 <div class="section" id="version-1">
 <h3><span class="section-number">10.1.1.1. </span>Version 1<a class="headerlink" href="#version-1" title="Link zu dieser Überschrift">#</a></h3>
+<p>Aus dem Gesetzt des größter gemeinsamer Teiler, folgt der euklidische Algorithmus.
+Wir starten mit zwei Zahlen, und ziehen solange immer und immer wieder die kleinere von der größeren ab, bis beide Zahlen gleich sind.
+Das Ergebnis ist der größter gemeinsamer Teiler der beiden ursprünglichen Zahlen!</p>
 <p>Gehen wir wie Euklid vor und beschreiben diese Vorgehensweise in Pseudocode:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">&lt;-</span> <span class="n">c0</span>
 <span class="n">m</span> <span class="o">&lt;-</span> <span class="n">c1</span>
-<span class="n">Solange</span> <span class="n">m</span> <span class="n">nicht</span> <span class="n">n</span> <span class="n">teilt</span><span class="p">:</span>
+<span class="n">Solange</span> <span class="n">m</span> <span class="n">ungleich</span> <span class="n">n</span><span class="p">:</span>
   <span class="n">n</span> <span class="o">&lt;-</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span>
   <span class="n">Falls</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
     <span class="n">t</span> <span class="o">&lt;-</span> <span class="n">m</span>
@@ -1251,7 +1261,7 @@ Durch die <a class="reference internal" href="../02-0/6-operations.html#def-eucl
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
-    <span class="k">while</span> <span class="n">n</span> <span class="o">%</span> <span class="n">m</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Solange m nicht n teilt:</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="n">m</span><span class="p">:</span> <span class="c1"># Solange m ungleich n</span>
         <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span>
         <span class="k">if</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
           <span class="n">t</span> <span class="o">=</span> <span class="n">m</span>
@@ -1277,10 +1287,10 @@ Das mathematische <span class="math notranslate nohighlight">\(=\)</span> wird a
 </div>
 <div class="section" id="version-2">
 <h3><span class="section-number">10.1.1.2. </span>Version 2<a class="headerlink" href="#version-2" title="Link zu dieser Überschrift">#</a></h3>
-<p>Da uns die <a class="reference internal" href="../02-0/6-operations.html#def-euclid-division"><span class="std std-ref">Restwertdivision</span></a> als Operation zur Verfügung steht können wir die wiederholte Subtraktion beschleunigen.
+<p>Da uns die <a class="reference internal" href="../02-0/6-operations.html#def-euclid-division"><span class="std std-ref">Restwertdivision</span></a> als Operation zur Verfügung steht, können wir die wiederholte Subtraktion beschleunigen.
 Anstatt zum Beispiel <code class="docutils literal notranslate"><span class="pre">43</span> <span class="pre">-</span> <span class="pre">11</span> <span class="pre">-</span> <span class="pre">11</span> <span class="pre">-</span> <span class="pre">11</span> <span class="pre">==</span> <span class="pre">10</span></code> zu rechnen ergibt <code class="docutils literal notranslate"><span class="pre">43</span> <span class="pre">%</span> <span class="pre">11</span> <span class="pre">==</span> <span class="pre">10</span></code>.
 Diese Operation steht Ihnen in allen gängigen Programmiersprachen zur Verfügung und kann auf dem Computer sehr schnell ausgeführt werden.</p>
-<p>Dadurch vereinfacht sich Euklid’s Algorithmus zu:</p>
+<p>Dadurch vereinfacht sich der euklidische Algorithmus zu:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">&lt;-</span> <span class="n">c0</span>
 <span class="n">m</span> <span class="o">&lt;-</span> <span class="n">c1</span>
 <span class="n">Solange</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1326,8 +1336,7 @@ Wir beginnen mit</p>
 <li><p><span class="math notranslate nohighlight">\(m \leftarrow 0\)</span></p></li>
 </ol>
 <p>Da nun <span class="math notranslate nohighlight">\(m\)</span> den Wert <span class="math notranslate nohighlight">\(0\)</span> hat, verlassen wir die Wiederholung und das Ergebnis steht in <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>Lassen Sie uns den Algorithmus in ein <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Programm überführen.
-Dazu schreiben wir eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion <code class="docutils literal notranslate"><span class="pre">gcd(n,m)</span></code> (greatest common divisor).</p>
+<p>Lassen Sie uns den Algorithmus in reneut in ein <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Programm überführen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
@@ -1352,7 +1361,7 @@ Nachdem die <code class="docutils literal notranslate"><span class="pre">while</
 </div>
 <div class="section" id="version-3">
 <h3><span class="section-number">10.1.1.3. </span>Version 3<a class="headerlink" href="#version-3" title="Link zu dieser Überschrift">#</a></h3>
-<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> können wir das Vertauschen der Variablen durch Tupel und das sog. Packing kürzer schreiben.
+<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> können wir das Vertauschen der Variablen durch <a class="reference internal" href="../03-4/6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a> und das sog. <em>Packing/Unpacking</em> kürzer schreiben.
 Auch ist die Bedingung einer <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife wahr sofern eine ganze Zahl nicht gleich 0 ist.
 Daraus ergibt sich die sehr kurze Version 3:</p>
 <div class="cell docutils container">
@@ -1375,9 +1384,7 @@ Daraus ergibt sich die sehr kurze Version 3:</p>
 <p>Alle drei Versionen berechnen den ggT, also den gleichen Wert.
 Version 1 und 2 unterscheiden sich <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">semantisch</span></a> wohingegen Version 2 und 3 sich lediglich <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">syntaktisch</span></a> unterscheiden.
 Das sind also Algorithmen.</p>
-<blockquote>
-<div><p>Was zeichnet nun aber einen Algorithmus genau aus?</p>
-</div></blockquote>
+<p>Was zeichnet nun aber einen Algorithmus genau aus?</p>
 </div>
 </div>
 <div class="section" id="definition">
@@ -1391,16 +1398,16 @@ Dabei bedienen wir uns bei <em>Donald E. Knuth</em>, dem Autor der Programmierbi
 <p>Ein Algorithmus hat demnach folgende Eigenschaften:</p>
 <p><strong>(1) Endlichkeit:</strong> Identisch zur Beschreibung einer <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-universal-turing-machine"><span class="std std-ref">Turingmaschine</span></a>, besteht ein Algorithmus aus endlich vielen Zeichen.
 Anders ausgedrückt, können wir ihn in endlich viel Zeit niederschreiben.
-Durch seine Endlichkeit, kann ein Algorithmus als Programm in einem (endlichen) Speicher abgelegt werden.</p>
+Durch die Endlichkeit seiner Beschreibung, kann ein Algorithmus als Programm in einem (endlichen) Speicher abgelegt werden.</p>
 <p><strong>(2) Ausführbarkeit:</strong> Jede Anweisung des Algorithmus muss ausführbar sein.
-Das heißt, die Semantik einer jeden Anweisung muss im jeweiligen Kontext eindeutig definiert sein.
+Das heißt, die <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> einer jeden Anweisung muss im jeweiligen Kontext eindeutig definiert sein.
 Es muss in jedem Schritt nicht nur klar sein was zu tun ist, sondern dieses was muss auch tatsächlich möglich sein.</p>
-<p><strong>(3) Gebundenheit:</strong> Während der Ausführung des Algorithmus wird lediglich endlich viel Speicher bzw. eine endliche Anzahl an Variablen benötigt.
+<p><strong>(3) Gebundenheit:</strong> Während der Ausführung des Algorithmus wird lediglich endlich viel Speicher bzw. eine endliche Anzahl an Variablen benötigt.</p>
+<p><strong>(4) Terminierung:</strong> Die Ausführung eines Algorithmus muss nach endlich vielen Schritten enden.
+Die Terminierung ist das Gegenstück zur <em>Gebundenheit</em> bezogen auf die Zeit.
 <strong>(1)</strong> und <strong>(4)</strong> stellen sicher, dass ein Programm und dessen Ressourcen zusammengenommen nur endlich viel Speicher verbrauchen.
 In der Komplexitätstheorie spricht man hierbei von <em>dynamischer Finitheit</em> des Speicherbedarfs.</p>
-<p><strong>(4) Terminierung:</strong> Die Ausführung eines Algorithmus muss nach endlich vielen Schritten enden.
-Die Terminierung ist das Gegenstück zur <em>Gebundenheit</em> bezogen auf die Zeit.</p>
-<p><strong>(5) Eingabe:</strong> Jeder Algorithmus hat keine oder mehrere Eingabewerte.</p>
+<p><strong>(5) Eingabe:</strong> Jeder Algorithmus hat keine oder eine endliche Eingabe.</p>
 <p><strong>(6) Ausgabe:</strong> Jeder Algorithmus liefert mindestens eine Ausgabe, d.h., ein Ergebnis zurück.</p>
 <p>Es gibt noch zwei optionale Eigenschaften für Algorithmen, welche oftmals gefordert werden:</p>
 <p><strong>(7) Determiniertheit:</strong> Wir nennen einen Algorithmus <strong>determiniert</strong>, wenn er bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.</p>
@@ -1408,7 +1415,7 @@ Die Terminierung ist das Gegenstück zur <em>Gebundenheit</em> bezogen auf die Z
 Algorithmen basieren wenn überhaupt auf Pseudozufallszahlen, deren Erzeugung mit einem Startwert (<em>Seed</em>) initialisiert wird.
 Bei gleichem <em>Seed</em> und gleicher Eingabe erzeugen diese Algorithmen auch das gleiche Ergebnis.
 Da der <em>Seed</em> zur Eingabe gehört, sind jene Algorithmen determiniert.</p>
-<p><strong>(8) Determinismus:</strong> Wir nennen einen Algorithmus <strong>deterministisch</strong>, wenn während seiner Ausführung dieser zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.</p>
+<p><strong>(8) Determinismus:</strong> Wir nennen einen Algorithmus <strong>deterministisch</strong>, wenn während seiner Ausführung dieser, zu jedem Zeitpunkt, die nächste Anweisung eindeutig definiert.</p>
 <p>Es gibt keine reale Maschine die nichtdeterministische Algorithmen direkt umsetzten kann.
 Ein Beispiel für einen nichtdeterministischen Algorithmus wäre die Wanderung durch ein Labyrinth wobei Sie bei jeder Verzweigung beide Wege zeitgleich ablaufen.
 Dies ist nicht möglich, da Sie sich klonen müssten bzw. an zwei Orten gleichzeitig sein müssten.
@@ -1420,7 +1427,7 @@ Nichtdeterminismus bedarf jedoch der Kopie des gesamten Zustands der Maschine!</
 <p>Eine Berechnungsvorschrift ist genau dann ein Algorithmus, wenn eine zu dieser Berechnungsvorschrift äquivalente <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschine</span></a> <span class="math notranslate nohighlight">\(T\)</span> existiert, die für jede Eingabe <span class="math notranslate nohighlight">\(w\)</span> stoppt und die gleiche Ausgabe wie die Berechnungsvorschrift liefert.</p>
 </div>
 <p>Im Abschnitt <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-computability"><span class="std std-ref">Berechenbarkeit</span></a> haben wir bereits erwähnt, dass das Halteproblem nicht berechenbar ist.
-D.h., es gibt keine Turingmaschine/Algorithmus die/der für beliebige Turingmaschinen/Algorithmen prüfen kann ob diese terminieren.
+D.h., es gibt keine Turingmaschine/Algorithmus die/der für beliebige Turingmaschinen/Algorithmen prüfen kann, ob diese terminieren.
 Die <strong>Terminierung</strong> ist damit im Einzelfall zu prüfen.</p>
 </div>
 <div class="section" id="das-was-und-das-wie">
@@ -1430,14 +1437,14 @@ Die Unmissverständlichkeit bezieht sich hingegen auf einen bestimmten <em>Konte
 So ist ein Kochrezept ein Algorithmus der im <em>Kontext</em> der Küche und des Kochens eine (hoffentlich) unmissverständliche endliche Folge von Anweisungen darstellt.
 Durch das Ausführen des Kochrezepts können wir mithilfe von bestimmten Kochutensilien (Eingabe) ein bestimmtes Gericht (Ausgabe) zubereiten.</p>
 <p>Algorithmen lassen sich auch von der ausführenden Einheit, also der Maschine oder dem Koch / der Köchin loslösen.
-Während des Entwickelns eines Algorithmus sollte uns immer klar sein was eine bestimmte Anweisung berechnet, d.h., <strong>was</strong> passiert, doch kann es unklar sein <strong>wie</strong> dies realisiert wird.
+Während des Entwickelns eines Algorithmus sollte uns immer klar sein, was eine bestimmte Anweisung berechnet, d.h., <strong>was</strong> passiert, doch kann es unklar sein <strong>wie</strong> dies realisiert wird.
 In der Realwelt sind wir daran gewöhnt.
 Wir wissen zwar dass uns der Flieger von München nach Frankfurt bringt, wie das aber im Detail funktioniert ist nicht bekannt.
 Selbst bei den einfachsten Dingen des Alltags wissen wir sehr oft nicht wie die Dinge genau funktionieren.
 Bevor wir uns Gedanken über Hammer und Nagel machen, hauen wir den Hammer in die Wand.</p>
 <p>Ein Beispiel aus der Programmierung wäre folgendes: Nehmen wir an <code class="docutils literal notranslate"><span class="pre">min</span></code> liefert uns die kleinste und <code class="docutils literal notranslate"><span class="pre">max</span></code> die größte Zahl aus einer Liste von Zahlen.
 Wir kennen also das <strong>Was</strong>.
-<strong>Wie</strong> <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code> dies realisieren bleibt im folgenden Algorithmus verborgen und selbstverständlich können wir <code class="docutils literal notranslate"><span class="pre">min</span></code> btw. <code class="docutils literal notranslate"><span class="pre">max</span></code> verwenden ohne das <strong>Wie</strong> zu kennen.</p>
+<strong>Wie</strong> <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code> dies realisieren bleibt im folgenden Algorithmus verborgen und selbstverständlich können wir <code class="docutils literal notranslate"><span class="pre">min</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">max</span></code> verwenden ohne das <strong>Wie</strong> zu kennen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="o">-</span><span class="mi">123</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -1480,7 +1487,12 @@ Zum Beispiel können wir eine Funktion schreiben, die uns das größte und klein
 </div>
 <p>Obwohl wir das <strong>Wie</strong> von <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code> womöglich nicht kennen, wissen wir dass <code class="docutils literal notranslate"><span class="pre">min_and_max</span></code> funktioniert, da wir das <strong>Was</strong> von <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">max</span></code> kennen.</p>
 <p>Je maschinennäher Sie programmieren, desto mehr <strong>Kontrolle</strong> aber auch <strong>Verantwortung</strong> haben Sie über die genaue Umsetzung (das <strong>Wie</strong>).
-Die zusätzliche Kontrolle, die Sie dann nicht einfach abgeben können, führt deshalb zu einem höheren <strong>Entwicklungsaufwand</strong>.</p>
+Doch wie wir alle wissen:</p>
+<blockquote>
+<div><p>With great power comes great responsibility.</p>
+</div></blockquote>
+<p>Diese zusätzliche Kontrolle können Sie nicht einfach abgeben.
+Sie führt gewöhnlich zu einem höheren <strong>Entwicklungsaufwand</strong>.</p>
 <div class="figure align-default" id="fig-world-code-computer">
 <a class="reference internal image-reference" href="../../_images/world-code-computer.png"><img alt="../../_images/world-code-computer.png" src="../../_images/world-code-computer.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Abb. 10.1 </span><span class="caption-text">Zusammenhang zwischen modellierter Welt, Quellcode und der realen Welt der Computer.</span><a class="headerlink" href="#fig-world-code-computer" title="Link zu diesem Bild">#</a></p>
@@ -1490,8 +1502,9 @@ Paradoxerweise führt die Nähe zur wirklichen Welt dazu, dass es schwerer wird 
 Wir sprechen hier von zwei verschiedenen Welten, der Welt der elektrischen Schaltkreise und beispielsweise der Welt der Planeten oder die Welt des Kartensortierens.
 Programmiersprachen katapultieren uns in eine <strong>abstrakte Welt</strong> mit der wir eine konkrete Welt <strong>modellieren</strong> können.
 Das Modell wird durch die konkrete <strong>Computerwelt</strong> schlussendlich berechnet.
-Vergleichen Sie hierzu die <a class="reference internal" href="#fig-world-code-computer"><span class="std std-numref">Abbildung 10.1</span></a>.</p>
-<p>Wie wir uns von der Maschine wegbewegen und so an Abstraktheit gewinnen hat wiederum mit der von uns bereits diskutierten <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> <span class="math notranslate nohighlight">\(I\)</span> zu tun.
+Vergleichen Sie hierzu die <a class="reference internal" href="#fig-world-code-computer"><span class="std std-numref">Abbildung 10.1</span></a>.
+Als Computational Thinker*innen halten wir uns meist zwischen der Welt die wir modellieren wollen und der abstrakten Welt (Code) auf.</p>
+<p>Wie wir uns von der Maschine wegbewegen und so an Abstraktheit gewinnen, hat wiederum mit der von uns bereits diskutierten <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> <span class="math notranslate nohighlight">\(I\)</span> zu tun.
 Die oben beschriebene Funktion <code class="docutils literal notranslate"><span class="pre">min_and_max</span></code> führt zu einer neuen Interpretation in welcher <code class="docutils literal notranslate"><span class="pre">min_and_max</span></code> ein Repräsentant ist.
 Dieser repräsentiert alle notwendigen Anweisungen für die Berechnung und Rückgabe des maximalen und minimalen Elements einer Liste.
 <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code> <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">l_min,</span> <span class="pre">l_max</span></code> können wir als Bedeutungen dieser Interpretation ansehen.
@@ -1508,10 +1521,11 @@ Schlussendlich basiert jedoch alles auf zwei Zuständen, 0 und 1, unvorstellbar 
 Achtung! Es wird ein wenig philosophisch.</p>
 <p>Überlegen Sie sich einmal was die Zahl <span class="math notranslate nohighlight">\(2\)</span> eigentlich ist?
 Zunächst einmal ist sie ein Zeichen was wir soeben niedergeschrieben haben.
-Doch angenommen vor ihnen liegen zwei Äpfel, dann wird die <span class="math notranslate nohighlight">\(2\)</span> durch diese zwei Äpfel ausgedrückt.
-Wir finden Formen der <span class="math notranslate nohighlight">\(2\)</span> an vielen verschiedenen Orden in der realen Welt aber nirgends finden wir DIE eine einzigartige <span class="math notranslate nohighlight">\(2\)</span>.</p>
+Doch angenommen vor Ihnen lägen zwei Äpfel.
+In diesem Fall wird die <span class="math notranslate nohighlight">\(2\)</span> durch diese zwei Äpfel ausgedrückt.
+Wir finden Formen der <span class="math notranslate nohighlight">\(2\)</span> an vielen verschiedenen Orten in der realen Welt aber nirgends finden wir DIE eine einzigartige <span class="math notranslate nohighlight">\(2\)</span>.</p>
 <p>Was DIE <span class="math notranslate nohighlight">\(2\)</span> wirklich ist, ist ein Problem mit dem sich viele Philosophen schon auseinander gesetzt haben.
-Platon ging davon aus, dass es eine echte Welt der Ideen gäbe in der die Idee der <span class="math notranslate nohighlight">\(2\)</span> enthalten ist.
+Platon ging davon aus, dass es eine echte Welt der Ideen gäbe, in der die Idee der <span class="math notranslate nohighlight">\(2\)</span> enthalten ist.
 Nach seiner Vorstellung tragen alle Repräsentanten der <span class="math notranslate nohighlight">\(2\)</span> die Idee der <span class="math notranslate nohighlight">\(2\)</span> in sich.
 Die Idee der <span class="math notranslate nohighlight">\(2\)</span> scheint durch den Repräsentanten hindurch.
 Vertreter dieser Strömung (z.b. Gottlob Frege, Kurt Gödel, Hilary Putnam, Penelope Maddy) werden als mathematische Platonisten bezeichnet.</p>
@@ -1519,7 +1533,7 @@ Vertreter dieser Strömung (z.b. Gottlob Frege, Kurt Gödel, Hilary Putnam, Pene
 So gesehen würde die <span class="math notranslate nohighlight">\(2\)</span> aus unserer Welt verschwinden sobald es keine Repräsentanten von ihr mehr gäbe.</p>
 <p>Das ist ja alles schön und gut aber was hat das mit den Algorithmen zu tun?
 Ein Algorithmus kann auch als ein Repräsentant (oder als eine Idee der Ideenwelt) aufgefasst werden.
-<em>Euklid’s Algorithmus</em> zum Finden des größten gemeinsamen Teilers <code class="docutils literal notranslate"><span class="pre">gcd</span></code>, kann in vielen Unterschiedlichen Formen niedergeschrieben werden.
+Der euklidische Algorithmus zum Finden des größten gemeinsamen Teilers <code class="docutils literal notranslate"><span class="pre">gcd</span></code>, kann in vielen Unterschiedlichen Formen niedergeschrieben werden.
 Wie oben bereits beobachtet, kann es unterschiedliche Versionen, d.h., unterschiedliche Algorithmen geben, die genau das gleiche berechnen.
 Der Algorithmus kann sogar nur in unserem Kopf existieren.
 Ist der <code class="docutils literal notranslate"><span class="pre">gcd</span></code> in <code class="docutils literal notranslate"><span class="pre">Java</span></code> ein anderer Algorithmus als der in <code class="docutils literal notranslate"><span class="pre">Python</span></code>?
@@ -1531,8 +1545,15 @@ Sicher können wir zwei Versionen auf <a class="reference internal" href="../02-
 <p>Unterscheiden sich zwei Beschreibungen eines Algorithmus semantisch, sprechen wir von zwei verschiedenen Algorithmen.
 Sind die beiden Beschreibungen semantisch identisch, dann handelt es sich auch um den gleichen Algorithmus.</p>
 </div>
-<p>Wir sagen aber gewöhnlich: <em>Ich habe den <code class="docutils literal notranslate"><span class="pre">gcd</span></code>-Algorithmus in <code class="docutils literal notranslate"><span class="pre">Python</span></code> programmiert</em> oder <em>das ist der Pseudocode für den <code class="docutils literal notranslate"><span class="pre">gcd</span></code>-Algorithmus</em>.
-Und damit meinen wir in der Regel einen von vielen effizienten Algorithmen, welche allesamt den ggT berechnen.</p>
+<p>Wir sagen aber gewöhnlich:</p>
+<blockquote>
+<div><p>Ich habe den <code class="docutils literal notranslate"><span class="pre">gcd</span></code>-Algorithmus in <code class="docutils literal notranslate"><span class="pre">Python</span></code> programmiert</p>
+</div></blockquote>
+<p>oder</p>
+<blockquote>
+<div><p>Das ist der Pseudocode für den <code class="docutils literal notranslate"><span class="pre">gcd</span></code>-Algorithmus.</p>
+</div></blockquote>
+<p>Und damit meinen wir in der Regel einen von vielen effizienten Algorithmen, welche allesamt den ggT berechnen.</p>
 <p>Ob nun ein Algorithmus ein Repräsentant all seiner Realisierungen ist oder ob jede Realisierung ein eigener Algorithmus ist, ist in der Praxis unwichtig.
 Dennoch lohnt es sich ein paar Gehirnzellen dieser Fragestellung zu widmen.
 Beantworten Sie es für sich selbst.</p>

@@ -1089,10 +1089,10 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="imperativ-und-funktional">
 <span id="sec-imperativ-and-functional"></span><h1><span class="section-number">9.3. </span>Imperativ und funktional<a class="headerlink" href="#imperativ-und-funktional" title="Link zu dieser Überschrift">#</a></h1>
-<p>Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte <em>Seiteneffekte</em> nicht erlauben und anstatt Variablen (abänderbar) nur Konstanten (unabänderlich) zulassen.</p>
+<p>Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte <em>Seiteneffekte</em> nicht erlauben und anstatt Variablen (abänderbar/mutable) nur Konstanten (unabänderlich/immutable) zulassen.</p>
 <div class="definition admonition" id="def-side-effect">
 <p class="admonition-title">Seiteneffekt</p>
-<p>Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und ändert diese Funktion diese, dann sprechen wir von einem <em>Seiteneffekt</em>.</p>
+<p>Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und verändert diese Funktion jene Variable oder Datenstruktur, dann sprechen wir von einem <em>Seiteneffekt</em>.</p>
 </div>
 <p>In imperativen Programmiersprachen (<code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C#</span></code>, <code class="docutils literal notranslate"><span class="pre">C++</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code>, …) sind <em>Seiteneffekte</em> manchmal erwünscht und auch notwendig.
 Folgender Code zeigt einen Seiteneffekt in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
@@ -1117,11 +1117,12 @@ Folgender Code zeigt einen Seiteneffekt in <code class="docutils literal notrans
 </div>
 </div>
 </div>
+<p>Die Liste <code class="docutils literal notranslate"><span class="pre">y</span></code> (Datenstruktur) wird durch die Funktion <code class="docutils literal notranslate"><span class="pre">sideeffect</span></code> befüllt.</p>
 <p>Dies ist in der funktionalen Programmiersprache <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> nicht möglich!
 Wir können den obigen <em>Seiteneffekt</em> in <code class="docutils literal notranslate"><span class="pre">Python</span></code> wie folgt auflösen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">no_sideeffect</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">x</span>
@@ -1133,13 +1134,14 @@ Wir können den obigen <em>Seiteneffekt</em> in <code class="docutils literal no
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-[1, 2, 3]
-[]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-10]
+[-10, 1, 2, 3]
+[-10]
 </pre></div>
 </div>
 </div>
 </div>
+<p>In diesem Fall bleibt <code class="docutils literal notranslate"><span class="pre">y</span></code> unberührt, stattdessen wird eine neue Liste (eine Kopie) von <code class="docutils literal notranslate"><span class="pre">y</span></code>) befüllt.</p>
 <p>Funktionale Sprachen umgehen <em>Seiteneffekte</em> indem sie keine Datenstrukturen ändern, sondern stattdessen neu erzeugen.
 Fügt man ein neues Element in eine Liste an, entsteht eine komplett neue Liste.
 Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch Konstanten und sog. <em>Pure Functions</em> (mathematische Funktionen).</p>
@@ -1221,14 +1223,14 @@ Weshalb macht es zugleich Sinn sie so gut es geht zu vermeiden?</p>
 Zudem ist jede Eingabe durch ein Eingabegerät schlussendlich ein <em>Seiteneffekt</em>.
 Die Ein- und Ausgabe kann ohne <em>Seiteneffekte</em> nicht realisiert werden.</p>
 <p>Code der auf Funktionen ohne Seiteneffekte basiert, lässt sich leichter lesen, analysieren und kombinieren.
-Besonders wenn die Reihenfolge in der die Funktionen aufgerufen werden nicht mehr eindeutig ist (Parallelität), kann eine Fehlersuche unglaublich schwierig werden, wenn <em>Seiteneffekte</em> vorhanden sind.</p>
+Besonders wenn die Reihenfolge, in der die Funktionen aufgerufen werden, nicht mehr eindeutig ist (Parallelität), kann eine Fehlersuche unglaublich schwierig sein, sofern <em>Seiteneffekte</em> vorhanden sind.</p>
 </div>
 </div>
 <p>Wir besprechen reine Funktionen in <code class="docutils literal notranslate"><span class="pre">Python</span></code> im Abschnitt <a class="reference internal" href="../03-6/1-purity.html#sec-purity"><span class="std std-ref">Reinheit</span></a>.</p>
 <p>Funktionale Sprachen wie <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> waren anfänglich rein akademische Sprachen mit denen sich in der Praxis nichts wirklich anfangen ließ.
 Nichtsdestotrotz haben diese Sprachen interessante Konzepte zutage gebracht.
-Von extrem sicher aber unbrauchbar wandern funktionale Sprachen Schritt für Schritt in Richtung extrem sicher und brauchbar.</p>
-<p>Imperative Sprachen hingegen wandern tendenziell von sehr brauchbar aber unsicher, zu sehr brauchbar und sicher.
+Von „extrem sicher aber unbrauchbar“ wandern funktionale Sprachen Schritt für Schritt in Richtung „extrem sicher und brauchbar“.</p>
+<p>Imperative Sprachen hingegen wandern tendenziell von „sehr brauchbar aber unsicher“, zu „sehr brauchbar und sicher“.
 Beide Lager lernen voneinander.
 So existieren in <code class="docutils literal notranslate"><span class="pre">Python</span></code> und allen anderen sehr nützlichen Sprachen wie <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">C#</span></code>, <code class="docutils literal notranslate"><span class="pre">C++</span></code> Konstrukte, die von funktionalen Sprachen inspiriert sind.
 Zum Beispiel erzeugt</p>
@@ -1249,8 +1251,8 @@ Zum Beispiel erzeugt</p>
 </div>
 <p>eine neue Liste mit den quadrierten Zahlen der Ursprungsliste.
 Das besondere dabei ist, dass wir die Funktion <code class="docutils literal notranslate"><span class="pre">square</span></code> einer anderen Funktion <code class="docutils literal notranslate"><span class="pre">map</span></code> übergeben.
-Funktionen als Übergabeparameter sind ein Konzept der funktionalen Sprachen mit dem Namen <a class="reference internal" href="../03-6/6-first-class-functions.html#sec-first-class-functions"><span class="std std-ref">Funktion erster Klasse</span></a> (first class function).
-In <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> sieht das ganze wie folgt aus</p>
+Funktionen als Übergabeparameter (sog. <a class="reference internal" href="../03-6/6-first-class-functions.html#sec-first-class-functions"><span class="std std-ref">Funktion erster Klasse</span></a>) ist ein Konzept der funktionalen Sprachen.
+In <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> sieht das ganze wie folgt aus:</p>
 <div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="nf">square</span><span class="w"> </span><span class="ow">::</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span><span class="w"></span>
 <span class="nf">square</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
 <span class="nf">map</span><span class="w"> </span><span class="n">square</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"></span>

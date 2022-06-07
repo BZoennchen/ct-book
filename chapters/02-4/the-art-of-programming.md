@@ -11,7 +11,7 @@ und des Menschen bzw. der künstlichen Intelligenz
 
 >Ist der Mensch im wesentlichen eine Turingmaschine?
 
-Anstatt die Informatik zu sehr mit Computern in Verbindung zu setzten ist es besser sie als Forschungsgebiet der [Information](sec-information) und deren Verarbeitung zu betrachten.
+Anstatt die Informatik zu sehr mit Computern in Verbindung zu setzen, ist es besser sie als Forschungsgebiet der [Information](sec-information) und deren Verarbeitung zu betrachten.
 Es ist heute klar, dass vielerlei Informationsprozesse in der Natur am Werke sind.
 Sei es der Prozess der Zellteilung, die DNA-Codierung oder der schlichte Lernprozess von bewussten Lebewesen. 
 Die Informatik ist zwar keine Naturwissenschaft, beschäftigt sich aber vielleicht mit dem natürlichsten aller Prozesse.
@@ -20,7 +20,7 @@ Die Informatik ist zwar keine Naturwissenschaft, beschäftigt sich aber vielleic
 :class: learngoals
 
 Was genau ist ein *Algorithmus*, *Programmcode*, *Pseudocode* und ein *Programm*?
-Welche wesentlichen Programmierkonstrukte verwenden wir beim Einsatz von (imperativen) Programmiersprachen?
+Welche wesentlichen [Programmierkonstrukte](sec-control-structures) und [Datenstrukturen](sec-data-structures) verwenden wir beim Einsatz von (imperativen) Programmiersprachen?
 Und weshalb reichen diese Kenntnisse nicht aus? 
 Weshalb braucht es Übung um meisterhaft zu Programmieren?
 
@@ -28,7 +28,7 @@ Diese Fragen können Sie sich hoffentlich nach diesem Kapitel selbst beantworten
 
 ```
 
-Als *Strukturwissenschaft* bezieht sich die Informatik hauptsächlich auf die theoretische Informatik (formale Methoden, Komplexitätstheorie, Berechenbarkeit, Automaten, usw.).
+Die *Informatik als Strukturwissenschaft* bezieht sich hauptsächlich auf die theoretische Informatik (formale Methoden, Komplexitätstheorie, Berechenbarkeit, Automaten, usw.).
 Dort beschäftigen wir uns mit Fragen wie:
 
 + Was ist überhaupt eine Berechnung?
@@ -40,21 +40,29 @@ Dort beschäftigen wir uns mit Fragen wie:
 + ...
   
 Diese Fragestellungen gehen weit über den Computer hinaus.
-Zum Beispiel, stellen wir die Frage der Komplexität zwar im Bezug auf der Anzahl der Schritte, die ein Computer benötigt, doch können wir dies leicht auf den Menschen und andere 'natürliche' Rechenmaschinen übertragen.
-Sie würden uns vermutlich zustimmen, wenn wir behaupten, dass Karten sortieren ein weniger *schweres* Problem ist als das Lösen eines Sudokus.
+Sie beziehen sich auf die [Turingmaschine](info-turingmaschine).
+Wenn wir, zum Beispiel, nach der Komplexität des Kartensortierens fragen, dann fragen wir:
 
-Ihre zweite Wissenschaftsrubrik, die *Ingenieurswissenschaft*, bezieht sich auf die Konstruktion und analyse von Informationsverarbeitungssystemen.
+>Wie viele Schritte benötigt eine geeignete Turingmaschine um $n$ Karten zu sortieren?
+
+Die Turingmaschine ist ein bestimmtes Berechnungsmodell worauf sich bisher alle anderen Berechnungsmodelle reduzieren lassen.
+Ist eine Problem in Bezug auf die Turingmaschine *komplexer* bzw. *schwerer* zu lösen, so ist es auch für uns  Menschen, und andere "natürliche" Rechenmaschinen übertragen, *schwerer* zu lösen.
+So lässt sich zeigen, und ich denke Sie würden zustimmen, dass das Sortieren von Karten ein weniger *schweres* Problem ist als das Lösen eines Sudokus.
+Die *Komplexität* bezieht sich immer auf eine Problemgröße (auf die größe der Eingabe).
+Ein kleinen Sudoku ist leichter zu lösen als das Sortieren von Millionen von Karten.
+
+Die *Informatik als Ingenieurswissenschaft* bezieht sich auf die Konstruktion und Analyse von Informationsverarbeitungssystemen.
 Und genau hier finden wir das was wir als *die Kunst des Programmierens* bezeichnen.
-Von Außen betrachtet wirkt das Programmieren als die vielleicht langweiligste Tätigkeit auf diesem Planeten.
+Von Außen betrachtet wirkt das Programmieren wie die vielleicht langweiligste Tätigkeit auf diesem Planeten.
 Diese Einschätzung ist nach unserer Auffassung natürlich vollkommen falsch.
 
 Programme zu schreiben ist eine äußerst kreative, interaktive, spannende und schöne Erfahrung.
 Leider lässt sich dieses Erlebnis nur schwer beschreiben -- man muss es selbst erleben.
 Es ist ein wenig wie das Versinken in einem Spiel, allerdings können wir in diesem Spiel unsere eigene Welt mit unseren Regeln bauen.
 Wir beginnen oftmals mit elementaren Objekten, die wir Schritt für Schritt in etwas Größeres zusammenführen.
-Dabei ist immer ein gewisses Rätsel zu lösen.
+Dabei gibt es immer ein gewisses Rätsel zu lösen.
 
-Die Vorstellung der Programmierer\*innen, die scheinbar mühelos und in atemberaubender Geschwindigkeit ihren Code heruntertippen ist ein Mythos.
+Die Vorstellung der Programmierer\*innen, die scheinbar mühelos und in atemberaubender Geschwindigkeit ihren Code heruntertippen, ist ein Mythos.
 Natürlich gibt es solche Phasen, dann aber haben wir das vor uns liegende Rätsel bereits gelöst!
 Programmieren beginnt im Kopf und sehr oft in der Diskussion.
 Es ist anstrengend und wie bei der Kreation eines Kunstwerks, ist es ein Ringen mit der eigenen Unfähigkeit.
@@ -62,9 +70,9 @@ Doch genau diese Unfähigkeit verringern wir durch jedes gelöste Rätsel.
 Deshalb ist Programmieren ein nicht endender Lernprozess.
 
 Bei genauer Betrachtung endet alles bei der simplen Manipulation von Symbolen, die wir als Informationsverarbeitung bezeichnen.
-Softwareentwickler\*innen schöpfen, formen und verwenden Informationen.
+Softwareentwickler\*innen schöpfen, formen und verwenden [Informationen](sec-information).
 Sie bauen [Datenstrukturen](sec-data-structures) und [Algorithmen](sec-algorithms) ganz so wie Architekt\*innen Baupläne und Gebäude entwerfen.
-Anders als der Baustoff der Architekt\*innen, können Softwareentwickler\*innen ihre Bauwerke der strukturierten Information nicht nur erschaffen sondern verändern, kombinieren, wiederverwenden und erweitern.
+Anders als der Baustoff der Architekt\*innen, können Softwareentwickler\*innen ihre Bauwerke der strukturierten Information nicht nur erschaffen, sondern verändern, kombinieren, wiederverwenden und erweitern.
 Sie steuern eine Maschine die sich ihnen vollständig ergibt.
 Dieser immense Grad der Kontrolle hat etwas selbstbestimmtes, etwas das wir in der echten Welt manchmal vermissen.
 

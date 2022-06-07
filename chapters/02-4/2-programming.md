@@ -7,12 +7,12 @@ Auch ist klar, dass geschriebener Code wie auch die Betrachtung von Code neue Id
 
 Als gute Programmierer\*innen müssen wir 
 
-+ unseren Kontext kennen.
-+ logisch und mathematisch Denken können.
-+ uns exakt ausdrücken können und uns auch unmissverständlich mit anderen austauschen können.
++ unseren Kontext kennen,
++ logisch und mathematisch Denken können,
++ uns exakt ausdrücken können und uns auch unmissverständlich mit anderen austauschen können und
 + unsere Entwicklungswerkzeuge beherrschen können.
   
-Wir benötigen ein Grundverständnis davon wie ein [Computer funktioniert](sec-information-processing) und wie wir uns in der abstrakten Welt der [Kontrollstrukturen](sec-control-structures) und [Datenstrukturen](sec-data-structures) ausdrücken können.
+Wir benötigen ein Grundverständnis davon wie ein [Computer funktioniert](sec-information-processing) und wie wir uns in der abstrakten Welt der [Kontroll-](sec-control-structures) und [Datenstrukturen](sec-data-structures) ausdrücken können.
 
 ## Begrifflichkeiten
 
@@ -35,7 +35,7 @@ Mit *Pseudocode* können wir einen Algorithmus in einer Sprache beschreiben, die
 Ein *Programm* ist eine Folge von Instruktionen, die ein konkreter Computer (über die Umwege eines [Übersetzers](def-compiler) oder [Interpreters](def-interpreter)) ausführen kann.
 ```
 
-Ein *Algorithmus* ist eine wohldefinierte Sequenz von Anweisungen, welche eine Lösung für ein bestimmtes Problem berechnen.
+Ein *Algorithmus* ist eine wohldefinierte Sequenz von Anweisungen, welche eine Lösung für ein bestimmtes Problem berechnet.
 Er kann in der Form von *Pseudocode* niedergeschrieben werden, sofern die Beschreibung alle Eigenschaften für einen Algorithmus erfüllt.
 Er kann aber auch in einer ganz anderen Form niedergeschrieben werden, z.B., einem Flussdiagramm.
 
@@ -64,13 +64,13 @@ Bei komplexeren Problemen ist es jedoch oft ratsam zu Stift und Papier zu greife
 
 Nehmen wir unser Beispiel des [Kartensortierens](sec-sorting).
 Hierbei kann es Sinn machen erst darüber nachzudenken wie das Sortieren auf einer abstrakten Ebene durchgeführt werden soll.
-Sie möchten vielleicht zuerst darüber nachdenken, welche Karte Sie auf der Hand wo hinbewegen, bevor Sie sich darüber Gedanken machen wie Sie Ihren Algorithmus in ``Python`` realisieren.
+Sie möchten vielleicht zuerst darüber nachdenken, welche Karte Sie auf der Hand wo hinbewegen, bevor Sie sich darüber Gedanken machen, wie Sie Ihren Algorithmus in ``Python`` realisieren.
 Natürlich kann es auch sinnvoll sein Ihre Idee zu realisieren und dann zu testen, denn möglicherweise sind Sie sich nicht sicher ob Ihr Algorithmus korrekt definiert ist.
 Oft werden Sie zwischen Code und Stift und Papier wechseln.
 
 Ein wesentliche Teil des Computational Thinkings findet vor dem Programmieren statt.
-Das Programmieren ist dann eine Frage der Realisierung/Modellierung.
-Ist Ihr Algorithmus den Sie programmieren möchten gut durchdacht und kennen Sie Ihren *Kontext* gut genug, dann ist die Programmierung oft keine allzu große Herausforderung mehr.
+Das Programmieren ist dann eine Frage der Realisierung.
+Ist Ihr Algorithmus, den Sie programmieren möchten, gut durchdacht und kennen Sie Ihren *Kontext* gut genug, dann ist das schreiben des Programmcodes oft keine allzu große Herausforderung mehr.
 
 ## Ein kreativer Akt
 
@@ -93,7 +93,7 @@ Wann immer Sie in ihrer virtuellen Welt einen solchen Algorithmus benötigen, st
 Sie wissen **was** er macht und **wie** er funktioniert.
 Sie können den Algorithmus sogar in der echten Welt zum Sortieren anwenden.
 
-Das Problem Dinge zu sortieren gehört nun zu Ihrem Baukasten, zu Ihrer teils virtuellen aber auch realen Welt.
+Dinge sortieren zu können, gehört nun zu Ihrem Baukasten, zu Ihrer teils virtuellen aber auch realen Welt.
 Und diesen Baukasten können Sie stetig erweitern, ob alleine oder in einer Gruppe.
 Sie können Baukästen von anderen Entwickler\*innen verwenden und darauf aufbauend neue phantastische Konstrukte kreieren.
 

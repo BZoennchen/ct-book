@@ -26,28 +26,28 @@ Das heißt, ab dieser Zeit verblasste die Vorstellung von der Kombination rein a
 Heute verbinden wir mit Algorithmus Begriffe wie Rezept, Berechnungsvorschrift, Prozess, Prozedur, Methode, Routine und so weiter.
 
 (sec-euclid-alg)=
-## Euklid's Algorithmus
+## Euklidischer Algorithmus
 
-Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: *Euklid's Algorithmus*.
+Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: Den *Euklidischen Algorithmus*.
 
-```{exercise} Euklid's Algorithmus
+```{exercise} Euklidischer Algorithmus
 :label: euclid-exercise
 
 Gegeben seien zwei natürliche Zahlen $n, m \in \mathbb{N}$.
-Wir suchen nach dem größten gemeinsamen Teiler (ggT) von $n$ und $m$, d.h., die größte natürliche Zahl die sowohl $n$ als auch $m$ teilt.
+Wir suchen nach dem größten gemeinsamen Teiler $\text{ggT}(n,m)$ von $n$ und $m$, d.h., die größte natürliche Zahl die sowohl $n$ als auch $m$ teilt.
 ```
 
-Der ggT von 44 und 12 ist zum Beispiel 4.
+Der $\text{ggT}(44,12)$ von $44$ und $12$ ist zum Beispiel $4$.
 Wie vieles bei den Griechen ist der Algorithmus geometrisch motiviert.
-Euklid berechnet den ggT, indem er nach einem gemeinsamen 'Maß' für die Längen zweier Linien sucht.
+Euklid berechnet den ggT, indem er nach einem gemeinsamen "Maß" für die Längen zweier Linien sucht.
 Dazu zieht er wiederholt die kleiner der beiden Längen von der größeren ab.
 Der ggT verändert sich dadurch nicht.
 
-```{admonition} Größter gemeinsamer Teiler
+```{admonition} Gesetzt des größter gemeinsamer Teiler
 :name: theorem-ggt
 :class: theorem
 
-Seien $n$, $m$ zwei natürliche Zahlen mit $n > m$ und $d = n - m$ so ist der *größte gemeinsame Teiler* von $n$, $m$ und $d$ identisch.
+Seien $n$, $m$ zwei natürliche Zahlen mit $n > m$ und $d = n - m$, so ist der *größte gemeinsame Teiler* von $n$, $m$ und $d$ identisch.
 ```
 
 ```{admonition} Beweis
@@ -55,26 +55,39 @@ Seien $n$, $m$ zwei natürliche Zahlen mit $n > m$ und $d = n - m$ so ist der *g
 :class: proof dropdown
 
 Jede natürliche Zahl kann als Produkt ihrer Primfaktorzerlegung geschrieben werden.
-Der ggT von $n$ und $m$ ergibt sich aus der Multiplikation aller Primzahlen die in beiden Zerlegungen (möglicherweise mehrfach) vorkommen.
+Der $\text{ggT}(n,m)$ ergibt sich aus der Multiplikation aller Primzahlen die in beiden Zerlegungen (möglicherweise mehrfach) vorkommen.
 
-Zum Beispiel ist: $44 = (2 \cdot 2) \cdot 11$ und $12 = (2 \cdot 2) \cdot 3$ und ihr ggT $2 \cdot 2$.
+Zum Beispiel ist: $44 = (2 \cdot 2) \cdot 11$ und $12 = (2 \cdot 2) \cdot 3$ und ihr $\text{ggT}(44,12) = 2 \cdot 2$.
 
-Seien nun $n = p_1 \cdot \ldots \cdot p_k \cdot q_1$ und $m = p_1 \cdot \ldots \cdot p_k \cdot q_2$ wobei $p_1, \ldots, p_k$ die $k$ gleichen Primzahlen der Zerlegungen sind.
-Dann folgt 
+Seien nun 
+
+$$n = p_1 \cdot \ldots \cdot p_k \cdot q_1$$ 
+
+und 
+
+$$m = p_1 \cdot \ldots \cdot p_k \cdot q_2,$$
+
+wobei $p_1, \ldots, p_k$ die $k$ gleichen Primzahlen der Zerlegungen sind. Dann folgt 
 
 $$d = n - m = (p_1 \cdot \ldots \cdot p_k) \cdot (q_1 - q_2)$$
 
-und damit bleibt der ggT unverändert.
+und somit gilt 
+
+$$\text{ggT}(n,m) = \text{ggT}(d,m) = \text{ggT}(n,d) = (p_1 \cdot \ldots \cdot p_k).$$
 ```
 
 ### Version 1
+
+Aus dem Gesetzt des größter gemeinsamer Teiler, folgt der euklidische Algorithmus.
+Wir starten mit zwei Zahlen, und ziehen solange immer und immer wieder die kleinere von der größeren ab, bis beide Zahlen gleich sind.
+Das Ergebnis ist der größter gemeinsamer Teiler der beiden ursprünglichen Zahlen!
 
 Gehen wir wie Euklid vor und beschreiben diese Vorgehensweise in Pseudocode:
 
 ```
 n <- c0
 m <- c1
-Solange m nicht n teilt:
+Solange m ungleich n:
   n <- n - m
   Falls m > n:
     t <- m
@@ -88,7 +101,7 @@ Durch die [Restwertdivision](def-euclid-division) können ``m nicht n teilt`` in
 
 ```{code-cell} python3
 def gcd(n,m):
-    while n % m != 0: # Solange m nicht n teilt:
+    while n != m: # Solange m ungleich n
         n = n - m
         if m > n:
           t = m
@@ -108,11 +121,11 @@ Das mathematische $=$ wird aufgrund dessen mit ``==`` ausgedrückt.
 
 ### Version 2
 
-Da uns die [Restwertdivision](def-euclid-division) als Operation zur Verfügung steht können wir die wiederholte Subtraktion beschleunigen.
+Da uns die [Restwertdivision](def-euclid-division) als Operation zur Verfügung steht, können wir die wiederholte Subtraktion beschleunigen.
 Anstatt zum Beispiel ``43 - 11 - 11 - 11 == 10`` zu rechnen ergibt ``43 % 11 == 10``.
 Diese Operation steht Ihnen in allen gängigen Programmiersprachen zur Verfügung und kann auf dem Computer sehr schnell ausgeführt werden.
 
-Dadurch vereinfacht sich Euklid's Algorithmus zu:
+Dadurch vereinfacht sich der euklidische Algorithmus zu:
 
 ```
 n <- c0
@@ -158,8 +171,7 @@ Erneut treten wir in die Wiederholung ein, da weiterhin $m > 0$ gilt. Es ergibt 
 
 Da nun $m$ den Wert $0$ hat, verlassen wir die Wiederholung und das Ergebnis steht in $n$.
 
-Lassen Sie uns den Algorithmus in ein ``Python``-Programm überführen.
-Dazu schreiben wir eine ``Python``-Funktion ``gcd(n,m)`` (greatest common divisor).
+Lassen Sie uns den Algorithmus in reneut in ein ``Python``-Programm überführen:
 
 ```{code-cell} python3
 def gcd(n,m):
@@ -177,7 +189,7 @@ Nachdem die ``while``-Schleife (Wiederholung) verlassen wird, gibt die Funktion 
 
 ### Version 3
 
-In ``Python`` können wir das Vertauschen der Variablen durch Tupel und das sog. Packing kürzer schreiben.
+In ``Python`` können wir das Vertauschen der Variablen durch [Tupel](sec-tuple) und das sog. *Packing/Unpacking* kürzer schreiben.
 Auch ist die Bedingung einer ``while``-Schleife wahr sofern eine ganze Zahl nicht gleich 0 ist.
 Daraus ergibt sich die sehr kurze Version 3:
 
@@ -194,7 +206,7 @@ Alle drei Versionen berechnen den ggT, also den gleichen Wert.
 Version 1 und 2 unterscheiden sich [semantisch](def-semantik) wohingegen Version 2 und 3 sich lediglich [syntaktisch](def-syntax) unterscheiden.
 Das sind also Algorithmen.
 
->Was zeichnet nun aber einen Algorithmus genau aus?
+Was zeichnet nun aber einen Algorithmus genau aus?
 
 (sec-algorithm-def)=
 ## Definition
@@ -213,20 +225,20 @@ Ein Algorithmus hat demnach folgende Eigenschaften:
 
 **(1) Endlichkeit:** Identisch zur Beschreibung einer [Turingmaschine](info-universal-turing-machine), besteht ein Algorithmus aus endlich vielen Zeichen.
 Anders ausgedrückt, können wir ihn in endlich viel Zeit niederschreiben.
-Durch seine Endlichkeit, kann ein Algorithmus als Programm in einem (endlichen) Speicher abgelegt werden.
+Durch die Endlichkeit seiner Beschreibung, kann ein Algorithmus als Programm in einem (endlichen) Speicher abgelegt werden.
 
 **(2) Ausführbarkeit:** Jede Anweisung des Algorithmus muss ausführbar sein.
-Das heißt, die Semantik einer jeden Anweisung muss im jeweiligen Kontext eindeutig definiert sein.
+Das heißt, die [Semantik](def-semantik) einer jeden Anweisung muss im jeweiligen Kontext eindeutig definiert sein.
 Es muss in jedem Schritt nicht nur klar sein was zu tun ist, sondern dieses was muss auch tatsächlich möglich sein.
 
 **(3) Gebundenheit:** Während der Ausführung des Algorithmus wird lediglich endlich viel Speicher bzw. eine endliche Anzahl an Variablen benötigt.
-**(1)** und **(4)** stellen sicher, dass ein Programm und dessen Ressourcen zusammengenommen nur endlich viel Speicher verbrauchen. 
-In der Komplexitätstheorie spricht man hierbei von *dynamischer Finitheit* des Speicherbedarfs.
 
 **(4) Terminierung:** Die Ausführung eines Algorithmus muss nach endlich vielen Schritten enden.
 Die Terminierung ist das Gegenstück zur *Gebundenheit* bezogen auf die Zeit.
+**(1)** und **(4)** stellen sicher, dass ein Programm und dessen Ressourcen zusammengenommen nur endlich viel Speicher verbrauchen. 
+In der Komplexitätstheorie spricht man hierbei von *dynamischer Finitheit* des Speicherbedarfs.
 
-**(5) Eingabe:** Jeder Algorithmus hat keine oder mehrere Eingabewerte.
+**(5) Eingabe:** Jeder Algorithmus hat keine oder eine endliche Eingabe.
 
 **(6) Ausgabe:** Jeder Algorithmus liefert mindestens eine Ausgabe, d.h., ein Ergebnis zurück.
 
@@ -239,7 +251,7 @@ Algorithmen basieren wenn überhaupt auf Pseudozufallszahlen, deren Erzeugung mi
 Bei gleichem *Seed* und gleicher Eingabe erzeugen diese Algorithmen auch das gleiche Ergebnis.
 Da der *Seed* zur Eingabe gehört, sind jene Algorithmen determiniert.
 
-**(8) Determinismus:** Wir nennen einen Algorithmus **deterministisch**, wenn während seiner Ausführung dieser zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
+**(8) Determinismus:** Wir nennen einen Algorithmus **deterministisch**, wenn während seiner Ausführung dieser, zu jedem Zeitpunkt, die nächste Anweisung eindeutig definiert.
 
 Es gibt keine reale Maschine die nichtdeterministische Algorithmen direkt umsetzten kann.
 Ein Beispiel für einen nichtdeterministischen Algorithmus wäre die Wanderung durch ein Labyrinth wobei Sie bei jeder Verzweigung beide Wege zeitgleich ablaufen.
@@ -257,7 +269,7 @@ Eine Berechnungsvorschrift ist genau dann ein Algorithmus, wenn eine zu dieser B
 ```
 
 Im Abschnitt [Berechenbarkeit](sec-computability) haben wir bereits erwähnt, dass das Halteproblem nicht berechenbar ist.
-D.h., es gibt keine Turingmaschine/Algorithmus die/der für beliebige Turingmaschinen/Algorithmen prüfen kann ob diese terminieren.
+D.h., es gibt keine Turingmaschine/Algorithmus die/der für beliebige Turingmaschinen/Algorithmen prüfen kann, ob diese terminieren.
 Die **Terminierung** ist damit im Einzelfall zu prüfen.
 
 (sec-what-and-how)=
@@ -269,7 +281,7 @@ So ist ein Kochrezept ein Algorithmus der im *Kontext* der Küche und des Kochen
 Durch das Ausführen des Kochrezepts können wir mithilfe von bestimmten Kochutensilien (Eingabe) ein bestimmtes Gericht (Ausgabe) zubereiten.
 
 Algorithmen lassen sich auch von der ausführenden Einheit, also der Maschine oder dem Koch / der Köchin loslösen.
-Während des Entwickelns eines Algorithmus sollte uns immer klar sein was eine bestimmte Anweisung berechnet, d.h., **was** passiert, doch kann es unklar sein **wie** dies realisiert wird.
+Während des Entwickelns eines Algorithmus sollte uns immer klar sein, was eine bestimmte Anweisung berechnet, d.h., **was** passiert, doch kann es unklar sein **wie** dies realisiert wird.
 In der Realwelt sind wir daran gewöhnt.
 Wir wissen zwar dass uns der Flieger von München nach Frankfurt bringt, wie das aber im Detail funktioniert ist nicht bekannt.
 Selbst bei den einfachsten Dingen des Alltags wissen wir sehr oft nicht wie die Dinge genau funktionieren.
@@ -277,7 +289,7 @@ Bevor wir uns Gedanken über Hammer und Nagel machen, hauen wir den Hammer in di
 
 Ein Beispiel aus der Programmierung wäre folgendes: Nehmen wir an ``min`` liefert uns die kleinste und ``max`` die größte Zahl aus einer Liste von Zahlen.
 Wir kennen also das **Was**.
-**Wie** ``min`` und ``max`` dies realisieren bleibt im folgenden Algorithmus verborgen und selbstverständlich können wir ``min`` btw. ``max`` verwenden ohne das **Wie** zu kennen.
+**Wie** ``min`` und ``max`` dies realisieren bleibt im folgenden Algorithmus verborgen und selbstverständlich können wir ``min`` bzw. ``max`` verwenden ohne das **Wie** zu kennen.
 
 ```{code-cell} python3
 x = [1, 36, 8, 3, 41, -123, 0, 3]
@@ -306,7 +318,12 @@ print(min_and_max(x))
 Obwohl wir das **Wie** von ``min`` und ``max`` womöglich nicht kennen, wissen wir dass ``min_and_max`` funktioniert, da wir das **Was** von ``min`` und ``max`` kennen.
 
 Je maschinennäher Sie programmieren, desto mehr **Kontrolle** aber auch **Verantwortung** haben Sie über die genaue Umsetzung (das **Wie**).
-Die zusätzliche Kontrolle, die Sie dann nicht einfach abgeben können, führt deshalb zu einem höheren **Entwicklungsaufwand**.
+Doch wie wir alle wissen:
+
+>With great power comes great responsibility.
+
+Diese zusätzliche Kontrolle können Sie nicht einfach abgeben.
+Sie führt gewöhnlich zu einem höheren **Entwicklungsaufwand**.
 
 ```{figure} ../../figs/art-of-programming/world-code-computer.png
 ---
@@ -322,8 +339,9 @@ Wir sprechen hier von zwei verschiedenen Welten, der Welt der elektrischen Schal
 Programmiersprachen katapultieren uns in eine **abstrakte Welt** mit der wir eine konkrete Welt **modellieren** können.
 Das Modell wird durch die konkrete **Computerwelt** schlussendlich berechnet.
 Vergleichen Sie hierzu die {numref}`Abbildung {number} <fig-world-code-computer>`.
+Als Computational Thinker\*innen halten wir uns meist zwischen der Welt die wir modellieren wollen und der abstrakten Welt (Code) auf.
 
-Wie wir uns von der Maschine wegbewegen und so an Abstraktheit gewinnen hat wiederum mit der von uns bereits diskutierten [Interpretation](sec-interpretation) $I$ zu tun.
+Wie wir uns von der Maschine wegbewegen und so an Abstraktheit gewinnen, hat wiederum mit der von uns bereits diskutierten [Interpretation](sec-interpretation) $I$ zu tun.
 Die oben beschriebene Funktion ``min_and_max`` führt zu einer neuen Interpretation in welcher ``min_and_max`` ein Repräsentant ist.
 Dieser repräsentiert alle notwendigen Anweisungen für die Berechnung und Rückgabe des maximalen und minimalen Elements einer Liste.
 ``min``, ``max`` ``return l_min, l_max`` können wir als Bedeutungen dieser Interpretation ansehen.
@@ -342,11 +360,12 @@ Achtung! Es wird ein wenig philosophisch.
 
 Überlegen Sie sich einmal was die Zahl $2$ eigentlich ist?
 Zunächst einmal ist sie ein Zeichen was wir soeben niedergeschrieben haben.
-Doch angenommen vor ihnen liegen zwei Äpfel, dann wird die $2$ durch diese zwei Äpfel ausgedrückt.
-Wir finden Formen der $2$ an vielen verschiedenen Orden in der realen Welt aber nirgends finden wir DIE eine einzigartige $2$.
+Doch angenommen vor Ihnen lägen zwei Äpfel.
+In diesem Fall wird die $2$ durch diese zwei Äpfel ausgedrückt.
+Wir finden Formen der $2$ an vielen verschiedenen Orten in der realen Welt aber nirgends finden wir DIE eine einzigartige $2$.
 
 Was DIE $2$ wirklich ist, ist ein Problem mit dem sich viele Philosophen schon auseinander gesetzt haben.
-Platon ging davon aus, dass es eine echte Welt der Ideen gäbe in der die Idee der $2$ enthalten ist.
+Platon ging davon aus, dass es eine echte Welt der Ideen gäbe, in der die Idee der $2$ enthalten ist.
 Nach seiner Vorstellung tragen alle Repräsentanten der $2$ die Idee der $2$ in sich.
 Die Idee der $2$ scheint durch den Repräsentanten hindurch.
 Vertreter dieser Strömung (z.b. Gottlob Frege, Kurt Gödel, Hilary Putnam, Penelope Maddy) werden als mathematische Platonisten bezeichnet.
@@ -356,7 +375,7 @@ So gesehen würde die $2$ aus unserer Welt verschwinden sobald es keine Repräse
 
 Das ist ja alles schön und gut aber was hat das mit den Algorithmen zu tun?
 Ein Algorithmus kann auch als ein Repräsentant (oder als eine Idee der Ideenwelt) aufgefasst werden.
-*Euklid's Algorithmus* zum Finden des größten gemeinsamen Teilers ``gcd``, kann in vielen Unterschiedlichen Formen niedergeschrieben werden.
+Der euklidische Algorithmus zum Finden des größten gemeinsamen Teilers ``gcd``, kann in vielen Unterschiedlichen Formen niedergeschrieben werden.
 Wie oben bereits beobachtet, kann es unterschiedliche Versionen, d.h., unterschiedliche Algorithmen geben, die genau das gleiche berechnen.
 Der Algorithmus kann sogar nur in unserem Kopf existieren.
 Ist der ``gcd`` in ``Java`` ein anderer Algorithmus als der in ``Python``?
@@ -373,7 +392,14 @@ Sind die beiden Beschreibungen semantisch identisch, dann handelt es sich auch u
 
 ```
 
-Wir sagen aber gewöhnlich: *Ich habe den ``gcd``-Algorithmus in ``Python`` programmiert* oder *das ist der Pseudocode für den ``gcd``-Algorithmus*.
+Wir sagen aber gewöhnlich: 
+
+>Ich habe den ``gcd``-Algorithmus in ``Python`` programmiert
+
+oder 
+
+>Das ist der Pseudocode für den ``gcd``-Algorithmus.
+
 Und damit meinen wir in der Regel einen von vielen effizienten Algorithmen, welche allesamt den ggT berechnen.
 
 Ob nun ein Algorithmus ein Repräsentant all seiner Realisierungen ist oder ob jede Realisierung ein eigener Algorithmus ist, ist in der Praxis unwichtig.

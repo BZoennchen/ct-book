@@ -4,12 +4,12 @@
 # (sec-imperativ-and-functional)=
 # # Imperativ und funktional
 # 
-# Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte *Seiteneffekte* nicht erlauben und anstatt Variablen (abänderbar) nur Konstanten (unabänderlich) zulassen.
+# Funktionale Programmiersprachen bieten hohe Sicherheit indem sie sogenannte *Seiteneffekte* nicht erlauben und anstatt Variablen (abänderbar/mutable) nur Konstanten (unabänderlich/immutable) zulassen.
 # 
 # ```{admonition} Seiteneffekt
 # :name: def-side-effect
 # :class: definition
-# Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und ändert diese Funktion diese, dann sprechen wir von einem *Seiteneffekt*.
+# Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und verändert diese Funktion jene Variable oder Datenstruktur, dann sprechen wir von einem *Seiteneffekt*.
 # ```
 # 
 # In imperativen Programmiersprachen (``Python``, ``Java``, ``C#``, ``C++``, ``C``, ``JavaScript``, ...) sind *Seiteneffekte* manchmal erwünscht und auch notwendig.
@@ -28,13 +28,15 @@ print(sideeffect(y))
 print(y)
 
 
+# Die Liste ``y`` (Datenstruktur) wird durch die Funktion ``sideeffect`` befüllt.
+# 
 # Dies ist in der funktionalen Programmiersprache ``Haskell`` nicht möglich!
 # Wir können den obigen *Seiteneffekt* in ``Python`` wie folgt auflösen.
 
 # In[2]:
 
 
-y = []
+y = [-10]
 def no_sideeffect(x):
     x = x + [1,2,3]
     return x
@@ -44,6 +46,8 @@ print(no_sideeffect(y))
 print(y)
 
 
+# In diesem Fall bleibt ``y`` unberührt, stattdessen wird eine neue Liste (eine Kopie) von ``y``) befüllt.
+# 
 # Funktionale Sprachen umgehen *Seiteneffekte* indem sie keine Datenstrukturen ändern, sondern stattdessen neu erzeugen.
 # Fügt man ein neues Element in eine Liste an, entsteht eine komplett neue Liste.
 # Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch Konstanten und sog. *Pure Functions* (mathematische Funktionen).
@@ -118,16 +122,16 @@ print(f(2))
 # Die Ein- und Ausgabe kann ohne *Seiteneffekte* nicht realisiert werden.
 # 
 # Code der auf Funktionen ohne Seiteneffekte basiert, lässt sich leichter lesen, analysieren und kombinieren.
-# Besonders wenn die Reihenfolge in der die Funktionen aufgerufen werden nicht mehr eindeutig ist (Parallelität), kann eine Fehlersuche unglaublich schwierig werden, wenn *Seiteneffekte* vorhanden sind.
+# Besonders wenn die Reihenfolge, in der die Funktionen aufgerufen werden, nicht mehr eindeutig ist (Parallelität), kann eine Fehlersuche unglaublich schwierig sein, sofern *Seiteneffekte* vorhanden sind.
 # ```
 # 
 # Wir besprechen reine Funktionen in ``Python`` im Abschnitt [Reinheit](sec-purity).
 # 
 # Funktionale Sprachen wie ``Haskell`` waren anfänglich rein akademische Sprachen mit denen sich in der Praxis nichts wirklich anfangen ließ.
 # Nichtsdestotrotz haben diese Sprachen interessante Konzepte zutage gebracht.
-# Von extrem sicher aber unbrauchbar wandern funktionale Sprachen Schritt für Schritt in Richtung extrem sicher und brauchbar.
+# Von "extrem sicher aber unbrauchbar" wandern funktionale Sprachen Schritt für Schritt in Richtung "extrem sicher und brauchbar".
 # 
-# Imperative Sprachen hingegen wandern tendenziell von sehr brauchbar aber unsicher, zu sehr brauchbar und sicher.
+# Imperative Sprachen hingegen wandern tendenziell von "sehr brauchbar aber unsicher", zu "sehr brauchbar und sicher".
 # Beide Lager lernen voneinander.
 # So existieren in ``Python`` und allen anderen sehr nützlichen Sprachen wie ``Java``, ``C#``, ``C++`` Konstrukte, die von funktionalen Sprachen inspiriert sind.
 # Zum Beispiel erzeugt
@@ -143,8 +147,8 @@ list(map(square, [1,2,3]))
 
 # eine neue Liste mit den quadrierten Zahlen der Ursprungsliste.
 # Das besondere dabei ist, dass wir die Funktion ``square`` einer anderen Funktion ``map`` übergeben.
-# Funktionen als Übergabeparameter sind ein Konzept der funktionalen Sprachen mit dem Namen [Funktion erster Klasse](sec-first-class-functions) (first class function).
-# In ``Haskell`` sieht das ganze wie folgt aus
+# Funktionen als Übergabeparameter (sog. [Funktion erster Klasse](sec-first-class-functions)) ist ein Konzept der funktionalen Sprachen.
+# In ``Haskell`` sieht das ganze wie folgt aus:
 # 
 # ```haskell
 # square :: Int -> Int
