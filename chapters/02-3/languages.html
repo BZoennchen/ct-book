@@ -1033,38 +1033,37 @@ Durch Programmiersprachen können wir Algorithmen so niederschreiben, dass der C
 <p class="admonition-title">Lernziel</p>
 <p>In diesem Abschnitt möchten wir Ihnen aufzeigen was Programmiersprachen eigentlich sind, wozu sie gebraucht werden, weshalb es verschiedene Sprachen gibt und welche unterschiedlichen Eigenschaften diese Sprachen haben können.</p>
 </div>
-<p>Wie bei einer natürlichen Sprache ist eine Programmiersprache eine Vorschrift auf die man sich zur Verständigung geeinigt hat.
-Sie ist Teil unseres <em>Kontexts</em> den wir kennenlernen müssen um Programme zu schreiben.
-Anders als die natürliche Sprache sind Programmiersprachen <em>unmissverständlich</em> bzw. <em>eindeutig</em>.
-Das soll nicht heißen, dass es einfach ist einen Programmiercode zu verstehen, doch gibt es nur eine eindeutige Interpretation.</p>
+<p>Analog zu einer natürlichen Sprache, ist eine Programmiersprache eine Vorschrift, auf die man sich zur Verständigung geeinigt hat.
+Sie ist Teil unseres <em>Kontexts</em>, welchen wir kennenlernen müssen um Programme zu schreiben.
+Anders als natürliche Sprachen, sind Programmiersprachen <em>unmissverständlich</em> bzw. <em>eindeutig</em>.
+Das soll nicht heißen, dass es einfach ist einen Programmiercode zu verstehen, doch gibt es nur eine eindeutige <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a>.</p>
 <p>Als Theoretiker*innen betrachten wir Programmiersprachen oft als <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-utm"><span class="std std-ref">universelle Turingmaschinen</span></a>.
-Doch sei gesagt, dass es viele Programmierer*innen und auch Entwickler*innen von Programmiersprachen gibt, die sich mit <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschinen</span></a> nicht beschäftigen.
-Wir raten Ihnen dennoch sich mit dem Konzept der Turingmaschine zu beschäftigen.</p>
+Doch sei gesagt, dass es viele Programmierer*innen und auch Entwickler*innen von Programmiersprachen gibt, die sich mit <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschinen</span></a> nicht beschäftigt haben.
+Wir raten Ihnen dennoch sich mit dem Konzept der Turingmaschine zu befassen.</p>
 <p>Die Klarheit von Programmiersprachen hat ihren ganz eigenen Reiz.
 Irgendwann werden Sie vielleicht diese Klarheit auch in Texten oder Diskussionen aus ihrem Alltag suchen und werden feststellen, wie schwammig und manchmal diffus so manche Argumentation ist.</p>
 <p>Eine Programmiersprache ist durch eine sog. <em>Grammatik</em> definiert.
 Diese Grammatik legt die <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> einer Programmiersprache fest.
 Wir sprechen bei der Syntax auch von einer Beziehung der Symbole zueinander.
 In anderen Worten, die Grammatik <span class="math notranslate nohighlight">\(G\)</span> einer Programmiersprache <span class="math notranslate nohighlight">\(L\)</span> legt fest, welche Zeichenfolge ein syntaktisch korrektes Programm darstellen.
-Das bedeutet ob eine Programmcode <span class="math notranslate nohighlight">\(w\)</span> in der Sprache <span class="math notranslate nohighlight">\(L\)</span> liegt, die durch eine Grammatik <span class="math notranslate nohighlight">\(G\)</span> definiert ist.
+In anderen Worten: Ob eine Programmcode <span class="math notranslate nohighlight">\(w\)</span> in der Sprache <span class="math notranslate nohighlight">\(L\)</span> liegt, die durch eine Grammatik <span class="math notranslate nohighlight">\(G\)</span> definiert ist.
 Ist dies der Fall, schreiben wir</p>
 <div class="math notranslate nohighlight">
 \[w \in L(G).\]</div>
 <p>Dabei muss dieses Programm <span class="math notranslate nohighlight">\(w\)</span> noch lange nicht zum gewünschten Ergebnis führen.
 Quellcode bzw. ein Programm bzw. ein Algorithmus <span class="math notranslate nohighlight">\(w\)</span> ist in einer bestimmten Programmiersprache <span class="math notranslate nohighlight">\(L\)</span> geschrieben.
-Die Syntax vom <code class="docutils literal notranslate"><span class="pre">Python</span></code> legt zum Beispiel fest, dass nach dem Wort <code class="docutils literal notranslate"><span class="pre">def</span></code> und einem Leerzeichen, ein Name folgen muss.</p>
+Die Syntax von <code class="docutils literal notranslate"><span class="pre">Python</span></code> legt zum Beispiel fest, dass nach dem Wort <code class="docutils literal notranslate"><span class="pre">def</span></code> und einem Leerzeichen, ein Name folgen muss.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function</span><span class="p">():</span>
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>Welche <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Bedeutung/Semantik</span></a> die syntaktisch korrekten Symbole besitzen, wird ebenfalls von der Programmiersprache festgelegt.
-So definieren wir durch die obige Zeichenfolge eine neue Funktion mit dem Namen <code class="docutils literal notranslate"><span class="pre">function</span></code>.
+<p>Welche <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Bedeutung/Semantik</span></a> die Aneinanderreihung von Symbole besitzt, wird ebenfalls von der Programmiersprache festgelegt.
+So definieren wir durch die obige Zeichenfolge eine neue <a class="reference internal" href="../03-6/intro.html#sec-functions"><span class="std std-ref">Funktion</span></a> mit dem Namen <code class="docutils literal notranslate"><span class="pre">function</span></code>.
 Beachten Sie, dass wir hier einen informatischen Begriff der Semantik verwenden.
 Diesen haben wir auch im Abschnitt <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> kennengelernt.
 Ein Computer kennt eigentlich keine Bedeutung im menschlichen Sinne.
 Er kann lediglich Symbole manipulieren.</p>
-<p>Um die Sprache nutzten zu können müssen wir sowohl Ihre <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> als auch ihre <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> erlernen.
-Für eine geisteswissenschaftliche Definition der dieser beiden Begriffe verweisen wir an dieser Stelle auf das Kapitel <a class="reference internal" href="../02-2/information.html#sec-information"><span class="std std-ref">Information</span></a>.</p>
+<p>Um die Sprache nutzten zu können, müssen wir sowohl Ihre <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> als auch ihre <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> erlernen.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

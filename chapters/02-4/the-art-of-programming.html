@@ -54,6 +54,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="10.1. Algorithmen" href="1-algorithms.html" />
@@ -1036,19 +1038,19 @@ Diese Frage geht weit über digitale Computer hinaus und mündet in der Frage na
 <blockquote>
 <div><p>Ist der Mensch im wesentlichen eine Turingmaschine?</p>
 </div></blockquote>
-<p>Anstatt die Informatik zu sehr mit Computern in Verbindung zu setzten ist es besser sie als Forschungsgebiet der <a class="reference internal" href="../02-2/information.html#sec-information"><span class="std std-ref">Information</span></a> und deren Verarbeitung zu betrachten.
+<p>Anstatt die Informatik zu sehr mit Computern in Verbindung zu setzen, ist es besser sie als Forschungsgebiet der <a class="reference internal" href="../02-2/information.html#sec-information"><span class="std std-ref">Information</span></a> und deren Verarbeitung zu betrachten.
 Es ist heute klar, dass vielerlei Informationsprozesse in der Natur am Werke sind.
 Sei es der Prozess der Zellteilung, die DNA-Codierung oder der schlichte Lernprozess von bewussten Lebewesen.
 Die Informatik ist zwar keine Naturwissenschaft, beschäftigt sich aber vielleicht mit dem natürlichsten aller Prozesse.</p>
 <div class="learngoals admonition">
 <p class="admonition-title">Lernziel</p>
 <p>Was genau ist ein <em>Algorithmus</em>, <em>Programmcode</em>, <em>Pseudocode</em> und ein <em>Programm</em>?
-Welche wesentlichen Programmierkonstrukte verwenden wir beim Einsatz von (imperativen) Programmiersprachen?
+Welche wesentlichen <a class="reference internal" href="3-control-structures.html#sec-control-structures"><span class="std std-ref">Programmierkonstrukte</span></a> und <a class="reference internal" href="4-data-structures.html#sec-data-structures"><span class="std std-ref">Datenstrukturen</span></a> verwenden wir beim Einsatz von (imperativen) Programmiersprachen?
 Und weshalb reichen diese Kenntnisse nicht aus?
 Weshalb braucht es Übung um meisterhaft zu Programmieren?</p>
 <p>Diese Fragen können Sie sich hoffentlich nach diesem Kapitel selbst beantworten.</p>
 </div>
-<p>Als <em>Strukturwissenschaft</em> bezieht sich die Informatik hauptsächlich auf die theoretische Informatik (formale Methoden, Komplexitätstheorie, Berechenbarkeit, Automaten, usw.).
+<p>Die <em>Informatik als Strukturwissenschaft</em> bezieht sich hauptsächlich auf die theoretische Informatik (formale Methoden, Komplexitätstheorie, Berechenbarkeit, Automaten, usw.).
 Dort beschäftigen wir uns mit Fragen wie:</p>
 <ul class="simple">
 <li><p>Was ist überhaupt eine Berechnung?</p></li>
@@ -1060,27 +1062,35 @@ Dort beschäftigen wir uns mit Fragen wie:</p>
 <li><p>…</p></li>
 </ul>
 <p>Diese Fragestellungen gehen weit über den Computer hinaus.
-Zum Beispiel, stellen wir die Frage der Komplexität zwar im Bezug auf der Anzahl der Schritte, die ein Computer benötigt, doch können wir dies leicht auf den Menschen und andere ‚natürliche‘ Rechenmaschinen übertragen.
-Sie würden uns vermutlich zustimmen, wenn wir behaupten, dass Karten sortieren ein weniger <em>schweres</em> Problem ist als das Lösen eines Sudokus.</p>
-<p>Ihre zweite Wissenschaftsrubrik, die <em>Ingenieurswissenschaft</em>, bezieht sich auf die Konstruktion und analyse von Informationsverarbeitungssystemen.
+Sie beziehen sich auf die <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschine</span></a>.
+Wenn wir, zum Beispiel, nach der Komplexität des Kartensortierens fragen, dann fragen wir:</p>
+<blockquote>
+<div><p>Wie viele Schritte benötigt eine geeignete Turingmaschine um <span class="math notranslate nohighlight">\(n\)</span> Karten zu sortieren?</p>
+</div></blockquote>
+<p>Die Turingmaschine ist ein bestimmtes Berechnungsmodell worauf sich bisher alle anderen Berechnungsmodelle reduzieren lassen.
+Ist eine Problem in Bezug auf die Turingmaschine <em>komplexer</em> bzw. <em>schwerer</em> zu lösen, so ist es auch für uns  Menschen, und andere „natürliche“ Rechenmaschinen übertragen, <em>schwerer</em> zu lösen.
+So lässt sich zeigen, und ich denke Sie würden zustimmen, dass das Sortieren von Karten ein weniger <em>schweres</em> Problem ist als das Lösen eines Sudokus.
+Die <em>Komplexität</em> bezieht sich immer auf eine Problemgröße (auf die größe der Eingabe).
+Ein kleinen Sudoku ist leichter zu lösen als das Sortieren von Millionen von Karten.</p>
+<p>Die <em>Informatik als Ingenieurswissenschaft</em> bezieht sich auf die Konstruktion und Analyse von Informationsverarbeitungssystemen.
 Und genau hier finden wir das was wir als <em>die Kunst des Programmierens</em> bezeichnen.
-Von Außen betrachtet wirkt das Programmieren als die vielleicht langweiligste Tätigkeit auf diesem Planeten.
+Von Außen betrachtet wirkt das Programmieren wie die vielleicht langweiligste Tätigkeit auf diesem Planeten.
 Diese Einschätzung ist nach unserer Auffassung natürlich vollkommen falsch.</p>
 <p>Programme zu schreiben ist eine äußerst kreative, interaktive, spannende und schöne Erfahrung.
 Leider lässt sich dieses Erlebnis nur schwer beschreiben – man muss es selbst erleben.
 Es ist ein wenig wie das Versinken in einem Spiel, allerdings können wir in diesem Spiel unsere eigene Welt mit unseren Regeln bauen.
 Wir beginnen oftmals mit elementaren Objekten, die wir Schritt für Schritt in etwas Größeres zusammenführen.
-Dabei ist immer ein gewisses Rätsel zu lösen.</p>
-<p>Die Vorstellung der Programmierer*innen, die scheinbar mühelos und in atemberaubender Geschwindigkeit ihren Code heruntertippen ist ein Mythos.
+Dabei gibt es immer ein gewisses Rätsel zu lösen.</p>
+<p>Die Vorstellung der Programmierer*innen, die scheinbar mühelos und in atemberaubender Geschwindigkeit ihren Code heruntertippen, ist ein Mythos.
 Natürlich gibt es solche Phasen, dann aber haben wir das vor uns liegende Rätsel bereits gelöst!
 Programmieren beginnt im Kopf und sehr oft in der Diskussion.
 Es ist anstrengend und wie bei der Kreation eines Kunstwerks, ist es ein Ringen mit der eigenen Unfähigkeit.
 Doch genau diese Unfähigkeit verringern wir durch jedes gelöste Rätsel.
 Deshalb ist Programmieren ein nicht endender Lernprozess.</p>
 <p>Bei genauer Betrachtung endet alles bei der simplen Manipulation von Symbolen, die wir als Informationsverarbeitung bezeichnen.
-Softwareentwickler*innen schöpfen, formen und verwenden Informationen.
+Softwareentwickler*innen schöpfen, formen und verwenden <a class="reference internal" href="../02-2/information.html#sec-information"><span class="std std-ref">Informationen</span></a>.
 Sie bauen <a class="reference internal" href="4-data-structures.html#sec-data-structures"><span class="std std-ref">Datenstrukturen</span></a> und <a class="reference internal" href="1-algorithms.html#sec-algorithms"><span class="std std-ref">Algorithmen</span></a> ganz so wie Architekt*innen Baupläne und Gebäude entwerfen.
-Anders als der Baustoff der Architekt*innen, können Softwareentwickler*innen ihre Bauwerke der strukturierten Information nicht nur erschaffen sondern verändern, kombinieren, wiederverwenden und erweitern.
+Anders als der Baustoff der Architekt*innen, können Softwareentwickler*innen ihre Bauwerke der strukturierten Information nicht nur erschaffen, sondern verändern, kombinieren, wiederverwenden und erweitern.
 Sie steuern eine Maschine die sich ihnen vollständig ergibt.
 Dieser immense Grad der Kontrolle hat etwas selbstbestimmtes, etwas das wir in der echten Welt manchmal vermissen.</p>
 <p>Enden wollen wir diesen, hoffentlich motivierenden Abschnitt, mit den Worten des Erfinders von Linux, Linus Torvalds.</p>
