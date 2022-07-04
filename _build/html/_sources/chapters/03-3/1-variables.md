@@ -20,7 +20,7 @@ So können wir uns Zwischenergebnisse merken und damit weiter rechnen.
 (sec-assignment)=
 ## Initialisierung und Zuweisung
 
-Durch das ``=`` Zeichen weisen wir einer *Variablen* auf der linken Seite den Wert des *Ausdrucks* auf der rechten Seite zu.
+Durch das ``=`` Zeichen weisen wir einer *Variablen* (auf der linken Seite) den Wert des *Ausdrucks* (auf der rechten Seite) zu.
 Zum Beispiel, weist
 
 ```{code-cell} python3
@@ -28,7 +28,7 @@ x = 3 + 10
 ```
 
 den ausgewerteten Wert ``3 + 10`` also ``13`` der Variablen ``x`` zu.
-Es ist äußerst wichtig, dass die den zwischen dem ``=`` und dem mathematischen $=$ unterscheiden.
+Es ist äußerst wichtig, dass Sie zwischen dem ``=`` und dem mathematischen $=$ unterscheiden.
 
 $$x = 13$$
 
@@ -38,19 +38,21 @@ bedeutet, dass $x$ gleich $13$ ist, wohingegen
 x = 13
 ```
 
-den Wert der Variablen ``x`` auf ``13`` setzt oder genaue die Variable auf einen Speicherbereich verweisen lässt, welcher den Wert ``13`` enthält.
-Um das mathematisch auszurücken verwendet man oft $\leftarrow$, also 
+den Wert der Variablen ``x`` auf ``13`` setzt bzw. die Variable auf einen Speicherbereich verweisen lässt, welcher den Wert ``13`` enthält.
+Um eine *Zuweisung* mathematisch auszurücken, verwendet man oft $\leftarrow$, also 
 
 $$x \leftarrow 13.$$
 
-Dies verdeutlicht, dass es sich um eine *Zuweisung* handelt.
 Mit
 
 ```{code-cell} python3
 x = None
 ```
 
-weisen wir ``x`` den Wert ``None`` d.h. 'Nichts' zu. Doch ist dieses 'Nichts' nicht nichts ;). Versuchen wir eine *Variable* zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:
+weisen wir ``x`` den Wert ``None`` ´, d.h. "Nichts" zu. Doch ist dieses "Nichts" nicht nichts ;).
+Es [repräsentiert](sec-representation) lediglich das Nichts.
+
+Versuchen wir eine *Variable* zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:
 
 ```{code-cell} python3
 ---
@@ -59,9 +61,8 @@ tags: [raises-exception]
 v + 20
 ```
 
-Hierbei würde es zu einem Fehler ``name 'v' is not defined`` kommen, da die *Variable* ``v`` noch nicht *initialisiert* wurde.
-
-
+Die Fehlermeldung ``name 'v' is not defined`` weißt uns darauf hin, dass die *Variable* ``v`` noch nicht *initialisiert* wurde.
+In anderen Worten ``v`` gibt es noch gar nicht und zeigt auch nicht auf eine Stelle im Speicher, hat also keinen Wert.
 In ``Python`` reicht es wenn Sie der *Variablen* einen Wert zuweisen.
 Sie wird automatisch erzeugt, d.h., *initialisiert*.
 Besitzt Sie noch keinen Wert so existiert sie auch nicht bzw. ist noch nicht *initialisiert*.
@@ -78,6 +79,18 @@ Sobald ``z`` *initialisiert* wurde, existiert ``z`` für alle Zellen des Noteboo
 ## Variablen und der Arbeitsspeicher
 
 Eine *Variable* können wir als Paar von **Wert** und **Arbeitsspeicheradresse** verstehen.
+Der Wert der Variablen steht im [Arbeitsspeicher](def-main-memory) an einer bestimmten Arbeitsspeicheradresse.
+Den Arbeitsspeicher können wir uns als lange Liste von Bits vorstellen:
+
+```{figure} ../../figs/python-tutorial/variables/ram.png
+---
+width: 400px
+name: fig-ram
+---
+Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus [Bits](def-bit).
+Die Adresse ist im Wesentlichen die Nummer / der Index eines bestimmten Speicherplatzes.
+```
+
 
 ```{admonition} Pythons Typisierung
 :name: remark-python-type-mem
@@ -86,7 +99,6 @@ Eine ``Python`` *Variable* verweist durch eine Adresse eigentlich nicht nur auf 
 Dies werden wir aber vorerst ignorieren.
 ```
 
-Der Wert der Variablen steht im [Arbeitsspeicher](def-main-memory) an einer bestimmten Arbeitsspeicheradresse.
 Variablen abstrahieren den Zusammenhang zwischen Wert und Adresse, sodass Sie uns die Arbeit mit dem Arbeitsspeicher erleichtern.
 Wir müssen nicht wissen welche Speicheradressen belegt und welche noch frei sind.
 In ``Python`` kommen wir mit der eigentlichen Speicheradresse normalerweise gar nicht in Kontakt.
@@ -106,7 +118,7 @@ Folgende Abbildung verdeutlicht die Situation:
 width: 800px
 name: fig-variable
 ---
-Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wert steht im Arbeitsspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.
+Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wert steht im Arbeitsspeicher (rechts) an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.
 ```
 
 Mit der *built-in*-Funktion ``id`` können Sie sich eine Identifikationsnummer einer Variablen ausgeben lassen. Für zwei *Variablen* ist diese genau dann gleich, wenn deren **Arbeitsspeicheradressen** gleich sind.
@@ -143,7 +155,7 @@ Zwei *Variablen* ``x`` und ``y`` sind *gleich* genau dann wenn der Speicherberei
 ```
 
 ``Python``-erkennt, dass es ausreicht, wenn beide *Variablen* auf den gleichen Speicherbereich zeigen.
-Wir als Programmierer\*innen bekommen davon gar nichts mit. Verändern wir den Wert von ``z`` dann verändert sich auch deren ``id``:
+Wir als Programmierer\*innen bekommen davon gar nichts mit. Verändern wir den Wert von ``z`` dann verändert sich auch die ``id``:
 
 ```{code-cell} python3
 x = 25
@@ -195,8 +207,8 @@ print(id(z))
 Hmm?? 
 Warum war die ``id`` beim Wert ``25`` identisch aber beim Wert ``2131313`` nicht?
 Hier kommen wir in die tiefen Details von ``Python``, welche fürs erste nicht so wichtig sind.
-Zur Optimierung der Laufzeit legt ``Python`` alle kleinen ganze Zahlen bei Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
-Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten $k$ kleinen Zahlen). 
+Zur Optimierung der Laufzeit legt ``Python`` alle kleinen ganzen Zahlen bei Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
+Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten k kleinsten Zahlen). 
 ``2131313`` zählt nicht dazu und somit wird der Wert jedesmal neu in den Speicher geschrieben.
 
 Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:
@@ -233,7 +245,7 @@ Wir müssen jedoch zwischen zwei Veränderungen einer Variablen ``x`` unterschei
 :name: def-mutable
 :class: definition
 
-Wir nennen ein eine Variable, *veränderlich* (engl. *mutable*) wenn wir deren Wert verändern können indem wir den Speicherbereich der Variable verändern können.
+Wir nennen eine Variable, *veränderlich* (engl. *mutable*) wenn wir deren Wert verändern können indem wir den Speicherbereich der Variable verändern können.
 Ein Variable ist dagegen *unveränderlich* (engl. *immutable*) wenn wir deren Speicherbereich nicht verändern können.
 
 Ist eine Variable *unveränderlich*, so wird deren Veränderung durch eine Kopie (einen neuen Speicherbereich) realisiert.
@@ -272,7 +284,7 @@ print(f'value of half = {half}')
 print(f'id of half = {id(half)}')
 ```
 
-Verändern wir *Variablen* nicht, so behalten ihre **Adresse** über das gesamte Notebook hinweg.
+Verändern wir *Variablen* nicht, so behalten sie ihre **Adresse** über das gesamte Notebook hinweg.
 
 ### Zuweisung einer neuen Adresse
 
@@ -311,17 +323,18 @@ print(f'id of z = {id(z)}')
 
 Wie bereits erwähnt: Verändern wir eine *Variable* so können wir dadurch nicht die **Adresse** / *Identität* ``id`` einer anderen Variablen ändern! Wie verhält es sich jedoch mit dem **Wert** einer *Variablen*?
 
-Die Antwort ist etwas komplizierter und ist erst dann begreiflich wenn wir das Thema Datentypen besprechen. Dennoch versuchen wir unser Glück:
-
-Eine Variable kann nicht nur einen einzelnen atomaren **Wert** wie eine Zahl enthalten, sondern auch einen **Wert** der sich aus anderen **Werten** zusammensetzt. Zum Beispiel:
+Die Antwort ist etwas komplizierter und ist erst dann begreiflich wenn wir das Thema [Datentypen](sec-python-data-types) besprechen.
+Dennoch versuchen wir unser Glück:
+Eine Variable kann nicht nur einen einzelnen atomaren **Wert**, wie eine Zahl, enthalten, sondern auch einen **Wert** der sich aus anderen **Werten** [zusammensetzt](def-data-structures).
+Zum Beispiel:
 
 ```{code-cell} python3
 x = [1,2,3,4,5]
 x
 ```
 
-Der Variablen ``x`` weisen wir hierbei eine sog. [Liste](sec-list) ``list`` zu, also ein geordnetes Tupel an Zahlen.
-In unserem Fall besteht die Liste und somit ``x`` aus den Werten ``1, 2, 3, 4`` und ``5``.
+Der Variablen ``x`` weisen wir hierbei eine sog. [Liste](sec-list) ``list`` zu, also ein geordnetes, veränderliches Tupel an Zahlen.
+In unserem Fall besteht die Liste, und somit ``x``, aus den Werten ``1, 2, 3, 4`` und ``5``.
 Um auf einen bestimmten **Wert** der Liste zuzugreifen brauchen wir seinen Index. Zum Beispiel liefert uns der Index ``1`` den Wert ``2``:
 
 ```{code-cell} python3
@@ -373,11 +386,14 @@ print(f'value of x[1] = {x[1]}')
 print(f'id of x[1] = {id(x[1])}')
 ```
 
-Die Adresse von ``x`` ändert sich nicht!!! Es ändert sich nur die Adresse von ``x[1]``!!! Mit anderen Worten durch die *Zuweisung* von ``x[1] = -10`` wird keine neue Liste im Speicher angelegt sondern nur ein neues Element!
+Die Adresse von ``x`` ändert sich nicht!!! Es ändert sich nur die Adresse von ``x[1]``!!! Mit anderen Worten durch die *Zuweisung* von ``x[1] = -10`` wird keine neue Liste im Speicher angelegt, sondern nur ein neues Element!
+Dieses Element wird an eine freie Speicherstelle platziert und die entsprechende Adresse kommt in die Liste.
 
-Warum? Listen können groß werden und würden wir bei jeder Änderung eines Listenelements die gesamte Liste im Speicher kopieren, wäre das zu teuer was die Laufzeit angeht.
+Warum? 
+Listen können groß werden und würden wir bei jeder Änderung eines Listenelements die gesamte Liste im Speicher kopieren, wäre das, im Bezug auf die Laufzeit, zu teuer und verschwenderisch.
 
-Dieses Verhalten hat jedoch Konsequenzen! Folgender Code führt zur Veränderung des Wertes der Variablen ``y`` von ``y == [[1, 2, 3], [1, 2, 3], [1,2,3]]`` nach ``y == [[-10, 2, 3], [-10, 2, 3], [1,2,3]]`` obwohl wir nicht direkt mit ``y`` interagieren.
+Dieses Verhalten hat jedoch Konsequenzen! 
+Folgender Code führt zur Veränderung des Wertes der Variablen ``y`` von ``y == [[1, 2, 3], [1, 2, 3], [1,2,3]]`` nach ``y == [[-10, 2, 3], [-10, 2, 3], [1,2,3]]`` obwohl wir nicht direkt mit ``y`` interagieren.
 
 ```{code-cell} python3
 x = [1, 2, 3]
@@ -399,10 +415,9 @@ Handelt es sich beim Wert der Variablen um **keinen** [atomaren Datentyp](sec-at
 
 ## Das Nichts
 
-Um einer *Variablen* 'keinen' Wert zuzuweisen gibt es das Signalwort ``None``.
-Dies steht für 'kein' Wert bzw. das Nichts.
-Dennoch besitzt die *Variable* einen Wert, eben den Wert ``None`` 'kein' Wert.
-``None`` repräsentiert somit das Nichts.
+Um einer *Variablen* "keinen" Wert zuzuweisen gibt es das Signalwort ``None``.
+Dies [repräsentiert](sec-representation) "keinen Wert" bzw. das Nichts.
+Dennoch besitzt die *Variable* einen Wert, eben den Wert ``None``.
 
 ```{code-cell} python3
 z = 0
@@ -426,6 +441,7 @@ Vorab sei gesagt, dass falls eine [Funktion](sec-functions) keinen Rückgabewert
 
 Namen müssen mit einem Klein- oder Großbuchstaben beginnen und können aus Zahlen und Buchstaben bestehen.
 Aus Gründen der Lesbarkeit folgen wir der Konvention von ``Python`` und schreiben *Variablen* komplett in Kleinbuchstaben, Zahlen und dem ``_``.
-Außerdem verwenden wir die englische Sprache, alle Signalwörter von ``Python`` in englisch formuliert werden müssen.
+Außerdem verwenden wir die englische Sprache, da alle Signalwörter von ``Python`` ohnehin in englisch formuliert werden müssen.
 Mit dem ``_`` trennen wir zusammengesetzte Namen.
+
 Beispiele für *Variablen* wären: ``x``, ``x1``, ``x2``, ``number``, ``x_direction``, ``temperature``.

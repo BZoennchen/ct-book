@@ -12,20 +12,20 @@ kernelspec:
 
 # Module
 
-``Python`` ist unter anderem so erfolgreich, da es für immense viele Bereiche und Probleme eingesetzt wird und durch einer großen Gemeinschaft gepflegt wird.
+``Python`` ist unter anderem so erfolgreich, da es für immens viele Bereiche und Probleme eingesetzt wird und durch eine große Gemeinschaft gepflegt wird.
 In dieser Gemeinschaft wird Programmiercode für eine Vielzahl an Problemen entwickelt, weiterentwickelt und **frei**, **kostenlos** wie auch **offen** angeboten!
-Stoßen Sie auf ein Problem, welches Sie lösen möchten ist die Wahrscheinlichkeit groß, dass andere Programmierer\*innen dafür bereits eine Lösung entwickelt haben.
+Stoßen Sie auf ein Problem, welches Sie lösen möchten, ist die Wahrscheinlichkeit groß, dass andere Programmierer\*innen dafür bereits eine Lösung entwickelt haben.
 
-Fremder wie auch Ihr eigener Code wird irgendwann eine Anzahl an Zeilen beinhalten, welche Sie nicht mehr in einem Notebook oder einer Datei halten möchten.
+Fremder, wie auch Ihr eigener Code wird irgendwann eine Anzahl an Zeilen erreichen, welche Sie nicht mehr in einem Notebook oder einer Datei halten möchten.
 Sie möchten Ihren Code strukturiert auf mehrere Dateien verteilen und diesen Code wiederverwenden.
 Was Sie benötigen sind sogenannte Module.
 
->Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module; -- [offizielle Dokumentation](https://docs.python.org/3/tutorial/modules.html#tut-modules)
+>Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module. -- [offizielle Dokumentation](https://docs.python.org/3/tutorial/modules.html#tut-modules)
 
 Module verhindern zudem sogenannte Namenskonflikte.
 Angenommen Sie schreiben ein Modul, welches andere Programmierer\*innen benutzten wollen.
 Sie definieren Funktionen in Ihrem Modul, doch woher wissen Sie, dass die anderen Programmierer\*innen nicht die gleichen Namen für ihre Funktionen verwenden.
-Würden wir zum Beispiel eine Methode ``func1()`` definieren und diese den anderen zur Verfügung stellen und diese würden Sie vor folgenden Code Einbinden/Importieren:
+Würden wir zum Beispiel eine Methode ``func1()`` definieren und diese den anderen zur Verfügung stellen und diese würden Sie vor folgendem Code Einbinden/Importieren:
 
 ```python
 # import our func1() 
@@ -72,14 +72,14 @@ def square_sum(n):
 ```
 
 Diese Funktion ``square_sum(n)`` gibt die Summe alle Quadratzahlen von 1 bis ``n`` zurück.
-Lassen Sie uns nun Kommandozeileninterpreter im gleichen Verzeichnis ausführen:
+Lassen Sie uns den Kommandozeileninterpreter im gleichen Verzeichnis ausführen:
 
 ```sh
 python
 ```
 
-Wie können wir nun unsere Funktion, welche in der Datei ``square_sum.py`` steht?
-Wir importieren ``squaresum``, denn der Name unseres eben geschriebenen Moduls ist standardmäßig gleich seinem Dateinamen ohne die Endung ``.py``.
+Wie können wir nun unsere Funktion, welche in der Datei ``square_sum.py`` steht, nutzen?
+Wir importieren ``squaresum``, denn der Name unseres eben geschriebenen Moduls ist standardmäßig gleich seinem Dateinamen ohne der Endung ``.py``.
 
 ```python
 >>> import squaresum
@@ -96,7 +96,7 @@ name: fig-square-sum
 ---
 ```
 
-Ein Modul ist demnach nichts weiter als eine Datei, welche ``Python``-Definitionen und Ausdrücke enthält.
+Ein Modul ist demnach nichts weiter als eine Datei welche ``Python``-Definitionen und Ausdrücke enthält.
 Den Namen des Moduls erhalten wir auch durch
 
 ```python
@@ -104,7 +104,7 @@ Den Namen des Moduls erhalten wir auch durch
 'squaresum'
 ```
 
-Wir können sowohl den Namen mit dem wir auf das Modul zugreifen als auch dessen Funktionen umbenennen.
+Wir können sowohl den Namen, mit dem wir auf das Modul zugreifen, als auch dessen Funktionen umbenennen.
 
 ```python
 >>> import squaresum as ss
@@ -123,7 +123,7 @@ oder
 
 ## Wie findet Python die Module?
 
-Befindet sich das Modul nicht in unserem aktuellen Verzeichnis funktioniert der obige Code nicht, da der ``Python``-Interpreter das Modul ``squaresum`` nicht findet.
+Befindet sich das Modul nicht in unserem aktuellen Verzeichnis funktioniert der obige Code nicht, da der ``Python``-[Interpreter](def-interpreter) das Modul ``squaresum`` nicht findet.
 Schreiben wir 
 
 ```python
@@ -134,6 +134,7 @@ sucht der Interpreter nach dem Modul ``squaresum`` an verschiedenen Orten.
 
 1. Ist das Modul ein *built-in* Modul welches zur [Python Standard Bibliothek](https://docs.python.org/3/library/) gehört?
 2. Findet sich die Datei mit dem Namen ``squaresum.py`` in einem der Verzeichnisse die in der Variable ``sys.path`` angegeben ist?
+3. Befindet sich das Modul in der aktuell aktiven [virtuellen Umgebung](https://docs.python.org/3/tutorial/venv.html)?
 
 ``sys.path`` enthält auch immer das Verzeichnis indem das Skript welches den ``import squaresum`` Ausdruck enthält.
 Die Liste enthält auch alle Verzeichnisse die sich in **PYTHONPATH** (ähnlich wie **PATH**) befinden.
@@ -145,12 +146,19 @@ Installieren Sie Module oder Pakete über diese Werkzeuge auf korrekte Art und W
 Möchten Sie Ihr eigenes Modul für andere zur Verfügung stellen können Sie es auf einer Webseite in das Ökosystem einfügen.
 Wie das geht würde an dieser Stelle zu weit führen.
 
+Die sog. *virtuellen Umgebungen* sind ein ganz eigenes Kapitel, welches wir in diesem Kurs nicht besprechen werden.
+Es sei gesagt, dass sie es ermöglichen mit unterschiedlichen ``Python`` Versionen und unterschiedlicher Modulen/Pakten Versionen auf ein und demselben System zu arbeiten.
+Wenn Sie, zum Beispiel, Webseiten entwickeln gleichzeitig aber noch ein ganz anderes Projekt, was sich dem maschinellen Lernen zuwendet, entwickeln, so kann es Sinn machen für jedes der beiden Projekte eine dedizierte virtuelle Umgebung zu erstellen.
+Sie finden ausführliche Informationen in der offiziellen Dokumentation.
+
 ## Pakete
 
 Ein Paket bildet eine hierarchisch strukturierte Ansammlung an Modulen.
-Zum Beispiel ist [roboworld](https://github.com/BZoennchen/robo-world) ein Paket mit den Teilmodulen (engl. submodules) 
+Ein Modul befindet sich in einer Datei, wohingegen ein Paket sich in einem Ordner befindet.
 
-+ ``agent``, 
+Zum Beispiel, ist [roboworld](https://github.com/BZoennchen/robo-world) ein Paket mit den Teilmodulen (engl. submodules) 
+
++ ``visualization``, 
 + ``world``,
 + ...
 

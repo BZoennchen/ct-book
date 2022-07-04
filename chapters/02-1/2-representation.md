@@ -473,7 +473,6 @@ Dies ist ein **unerwünschter Überlauf**!
 Durch das *Zweierkomplement* können wir auch negative Zahlen wie gewohnt addieren.
 Addieren wir beispielsweise $01011_2 = 11_{10}$ und $1111_2 = -1_{10}$ ergibt dies:
 
-
 ```{math}
   \begin{split}
 	  01011_2&\\

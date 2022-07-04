@@ -12,7 +12,7 @@ kernelspec:
 
 # Programmieren in Python
 
-Ein Maler oder Bildhauer\*innen gießen Ideen und Gedanken auf Papier bzw. in Stein.
+Maler\*innen oder Bildhauer\*innen gießen Ideen und Gedanken auf Papier bzw. in Stein.
 Genauso gießen wir unsere Gedanken, resultierend aus dem [Computational Thinking](sec-what-is-ct), in Programmcode.
 Eine ganz klare Trennung zwischen dem Denken und dem Programmieren gibt es natürlich nicht.
 Vielmehr schärft das Programmieren unsere Gedanken.
@@ -27,4 +27,4 @@ Durch die Realisierung unser Gedanken, durch das Programmieren, stellen wir unte
 import this
 ```
 
-Für die Namenskonventionen, d.h. die Schreibweise von Funktionen, Variablen, Klassen und mehr empfehlen wir den [PEP 8 Style Guide für Python Code](https://pep8.org/).
+Für die *Namenskonventionen*, d.h. die Schreibweise von Funktionen, Variablen, Klassen und mehr empfehlen wir den [PEP 8 Style Guide für Python Code](https://pep8.org/).

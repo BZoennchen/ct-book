@@ -523,7 +523,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-3/intro.html">
-   13. Variablen, Ausdrücke und Funktionsaufrufe
+   13. Grundlagen
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -1095,10 +1095,15 @@ title="Print to PDF"
 Sie können sich den Speicher als eine lange lange Liste von Bits vorstellen.
 Diese Bits können nur einen von zwei Zuständen (0 und 1) annehmen.
 Dennoch verarbeiten Computer Zahlen, Text, Bilder und mehr.</p>
-<p>Diese ‚Magie‘ geschieht durch die Wahl und Implementierung einer <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a>.
+<div class="figure align-default" id="fig-ram-2">
+<a class="reference internal image-reference" href="../../_images/ram1.png"><img alt="../../_images/ram1.png" src="../../_images/ram1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 14.1 </span><span class="caption-text">Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>.
+Die Adresse ist im Wesentlichen die Nummer / der Index eines bestimmten Speicherplatzes.</span><a class="headerlink" href="#fig-ram-2" title="Link zu diesem Bild">#</a></p>
+</div>
+<p>Diese „Magie“ geschieht durch die Wahl und Implementierung einer <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a>.
 Unterschiedliche Interpretationen ermöglichen es, Bits und <a class="reference internal" href="../02-1/2-representation.html#def-byte"><span class="std std-ref">Byte</span></a> als Zahlen, Text, Bilder usw. zu verarbeiten.</p>
 <p>Im Abschnitt <a class="reference internal" href="../03-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a> haben wir von einer <em>Variable</em> als Tupel von <strong>Wert</strong> und <strong>Speicheradresse</strong> gesprochen.
-Die <em>Variable</em> ‚kennt‘ die Speicheradresse an der der Wert im Speicher steht.
+Die <em>Variable</em> „kennt“ die Speicheradresse an welche der Wert im Speicher steht.
 Soweit so gut, woher aber weiß der Interpreter ob es sich bei der Folge von Bits um eine Zahl oder um etwas anderes handelt?</p>
 <p>Weisen wir der Variablen <code class="docutils literal notranslate"><span class="pre">char</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">'a'</span></code> zu</p>
 <div class="cell docutils container">
@@ -1133,7 +1138,7 @@ Und weshalb kommt es bei folgender Addition</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">j4</span><span class="o">/</span><span class="mi">6</span><span class="n">x0yfkp53d99gq8g0hxfl_tw0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_47293</span><span class="o">/</span><span class="mf">1811043096.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">j4</span><span class="o">/</span><span class="mi">6</span><span class="n">x0yfkp53d99gq8g0hxfl_tw0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_10741</span><span class="o">/</span><span class="mf">1811043096.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">char</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">x</span> <span class="o">+</span> <span class="n">char</span>
@@ -1167,9 +1172,9 @@ Deshalb kommt es zu einem Fehler.</p>
 Wie ist der Zusammenhang zwischen den Programmiersprachen, welche alle auf Datentypen basieren, und den <a class="reference internal" href="../02-1/2-interpretation.html#def-compiler"><span class="std std-ref">Übersetzern</span></a> oder <a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpretern</span></a> und der Computerhardware?</p>
 <p>In diesem und nächstem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
 Dies beinhaltet Theorie und Praxis.
-Um in <code class="docutils literal notranslate"><span class="pre">Python</span></code> mit den Datentypen praktisch umgehen zu können reicht Ihnen dieses Kapitel.
-Im nächsten Kapitel <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a> werden wir hingegen genauer untersuchen, weshalb es Datentypen gibt und welchen Einfluss diese im Detail haben.
-Möchten Sie also ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich der Blick in das nächste Kapitel <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a>.</p>
+Um in <code class="docutils literal notranslate"><span class="pre">Python</span></code> mit den Datentypen praktisch umgehen zu können, reicht es vorerst dieses Kapitel gut zu durchdringen.
+Im nächsten Kapitel, <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a>, werden wir hingegen genauer untersuchen, weshalb es Datentypen gibt und welchen Einfluss diese im Detail haben.
+Möchten Sie also ein tieferes Verständnis erhalten wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich der Blick in das nächste Kapitel <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a>.</p>
 <p>Wir versuchen folgende Fragen zu beantworten:</p>
 <ol class="simple">
 <li><p>Grundlagen</p>
@@ -1184,7 +1189,7 @@ Möchten Sie also ein tieferes Verständnis davon bekommen wie Datentypen mit de
 <li><p>Weshalb gibt es überhaupt Datentypen? Abschnitt <a class="reference internal" href="../03-5/2-why-data-types.html#sec-why-data-types"><span class="std std-ref">5.2 Existenzberechtigung</span></a>.</p></li>
 <li><p>Was passiert bei einer Änderung des Datentyps einer Variablen? Abschnitt <a class="reference internal" href="../03-5/3-change-of-interpretation.html#sec-change-of-data-types"><span class="std std-ref">5.3 Interpretationswechsel</span></a>.</p></li>
 <li><p>Welche Datentypen gibt es? Abschnitt <a class="reference internal" href="../03-5/4-kind-of-data-types.html#sec-kind-of-data-types"><span class="std std-ref">5.4 Arten von Datentypen</span></a>.</p></li>
-<li><p>Warum gibt es in Python keine primitiven Datentypen? Abschnitt <a class="reference internal" href="../03-5/5-primitive-data-types.html#sec-primitive-data-types-in-python"><span class="std std-ref">5.5 Primitive Datentypen in Python?</span></a>).</p></li>
+<li><p>Warum gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine primitiven Datentypen? Abschnitt <a class="reference internal" href="../03-5/5-primitive-data-types.html#sec-primitive-data-types-in-python"><span class="std std-ref">5.5 Primitive Datentypen in Python?</span></a>).</p></li>
 </ol>
 </li>
 </ol>

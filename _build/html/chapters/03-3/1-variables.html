@@ -59,7 +59,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="13.2. Ausdrücke" href="2-expressions.html" />
-    <link rel="prev" title="13. Variablen, Ausdrücke und Funktionsaufrufe" href="intro.html" />
+    <link rel="prev" title="13. Grundlagen" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="de">
     
@@ -523,7 +523,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="intro.html">
-   13. Variablen, Ausdrücke und Funktionsaufrufe
+   13. Grundlagen
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -1207,7 +1207,7 @@ Mit diesem Namen können wir einen Wert im <a class="reference internal" href=".
 So können wir uns Zwischenergebnisse merken und damit weiter rechnen.</p>
 <div class="section" id="initialisierung-und-zuweisung">
 <span id="sec-assignment"></span><h2><span class="section-number">13.1.1. </span>Initialisierung und Zuweisung<a class="headerlink" href="#initialisierung-und-zuweisung" title="Link zu dieser Überschrift">#</a></h2>
-<p>Durch das <code class="docutils literal notranslate"><span class="pre">=</span></code> Zeichen weisen wir einer <em>Variablen</em> auf der linken Seite den Wert des <em>Ausdrucks</em> auf der rechten Seite zu.
+<p>Durch das <code class="docutils literal notranslate"><span class="pre">=</span></code> Zeichen weisen wir einer <em>Variablen</em> (auf der linken Seite) den Wert des <em>Ausdrucks</em> (auf der rechten Seite) zu.
 Zum Beispiel, weist</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1217,7 +1217,7 @@ Zum Beispiel, weist</p>
 </div>
 </div>
 <p>den ausgewerteten Wert <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">10</span></code> also <code class="docutils literal notranslate"><span class="pre">13</span></code> der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> zu.
-Es ist äußerst wichtig, dass die den zwischen dem <code class="docutils literal notranslate"><span class="pre">=</span></code> und dem mathematischen <span class="math notranslate nohighlight">\(=\)</span> unterscheiden.</p>
+Es ist äußerst wichtig, dass Sie zwischen dem <code class="docutils literal notranslate"><span class="pre">=</span></code> und dem mathematischen <span class="math notranslate nohighlight">\(=\)</span> unterscheiden.</p>
 <div class="math notranslate nohighlight">
 \[x = 13\]</div>
 <p>bedeutet, dass <span class="math notranslate nohighlight">\(x\)</span> gleich <span class="math notranslate nohighlight">\(13\)</span> ist, wohingegen</p>
@@ -1228,12 +1228,11 @@ Es ist äußerst wichtig, dass die den zwischen dem <code class="docutils litera
 </div>
 </div>
 </div>
-<p>den Wert der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> auf <code class="docutils literal notranslate"><span class="pre">13</span></code> setzt oder genaue die Variable auf einen Speicherbereich verweisen lässt, welcher den Wert <code class="docutils literal notranslate"><span class="pre">13</span></code> enthält.
-Um das mathematisch auszurücken verwendet man oft <span class="math notranslate nohighlight">\(\leftarrow\)</span>, also</p>
+<p>den Wert der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> auf <code class="docutils literal notranslate"><span class="pre">13</span></code> setzt bzw. die Variable auf einen Speicherbereich verweisen lässt, welcher den Wert <code class="docutils literal notranslate"><span class="pre">13</span></code> enthält.
+Um eine <em>Zuweisung</em> mathematisch auszurücken, verwendet man oft <span class="math notranslate nohighlight">\(\leftarrow\)</span>, also</p>
 <div class="math notranslate nohighlight">
 \[x \leftarrow 13.\]</div>
-<p>Dies verdeutlicht, dass es sich um eine <em>Zuweisung</em> handelt.
-Mit</p>
+<p>Mit</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1241,7 +1240,9 @@ Mit</p>
 </div>
 </div>
 </div>
-<p>weisen wir <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">None</span></code> d.h. ‚Nichts‘ zu. Doch ist dieses ‚Nichts‘ nicht nichts ;). Versuchen wir eine <em>Variable</em> zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:</p>
+<p>weisen wir <code class="docutils literal notranslate"><span class="pre">x</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">None</span></code> ´, d.h. „Nichts“ zu. Doch ist dieses „Nichts“ nicht nichts ;).
+Es <a class="reference internal" href="../02-1/2-representation.html#sec-representation"><span class="std std-ref">repräsentiert</span></a> lediglich das Nichts.</p>
+<p>Versuchen wir eine <em>Variable</em> zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
@@ -1251,7 +1252,7 @@ Mit</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">j4</span><span class="o">/</span><span class="mi">6</span><span class="n">x0yfkp53d99gq8g0hxfl_tw0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_47222</span><span class="o">/</span><span class="mf">1871040481.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">j4</span><span class="o">/</span><span class="mi">6</span><span class="n">x0yfkp53d99gq8g0hxfl_tw0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_10610</span><span class="o">/</span><span class="mf">1871040481.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">20</span>
 
 <span class="ne">NameError</span>: name &#39;v&#39; is not defined
@@ -1259,8 +1260,9 @@ Mit</p>
 </div>
 </div>
 </div>
-<p>Hierbei würde es zu einem Fehler <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">'v'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> kommen, da die <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">v</span></code> noch nicht <em>initialisiert</em> wurde.</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> reicht es wenn Sie der <em>Variablen</em> einen Wert zuweisen.
+<p>Die Fehlermeldung <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">'v'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> weißt uns darauf hin, dass die <em>Variable</em> <code class="docutils literal notranslate"><span class="pre">v</span></code> noch nicht <em>initialisiert</em> wurde.
+In anderen Worten <code class="docutils literal notranslate"><span class="pre">v</span></code> gibt es noch gar nicht und zeigt auch nicht auf eine Stelle im Speicher, hat also keinen Wert.
+In <code class="docutils literal notranslate"><span class="pre">Python</span></code> reicht es wenn Sie der <em>Variablen</em> einen Wert zuweisen.
 Sie wird automatisch erzeugt, d.h., <em>initialisiert</em>.
 Besitzt Sie noch keinen Wert so existiert sie auch nicht bzw. ist noch nicht <em>initialisiert</em>.</p>
 <div class="remark admonition" id="remark-evaluation-ordering">
@@ -1272,14 +1274,20 @@ Sobald <code class="docutils literal notranslate"><span class="pre">z</span></co
 </div>
 <div class="section" id="variablen-und-der-arbeitsspeicher">
 <span id="sec-vars-equality-and-identity"></span><h2><span class="section-number">13.1.2. </span>Variablen und der Arbeitsspeicher<a class="headerlink" href="#variablen-und-der-arbeitsspeicher" title="Link zu dieser Überschrift">#</a></h2>
-<p>Eine <em>Variable</em> können wir als Paar von <strong>Wert</strong> und <strong>Arbeitsspeicheradresse</strong> verstehen.</p>
+<p>Eine <em>Variable</em> können wir als Paar von <strong>Wert</strong> und <strong>Arbeitsspeicheradresse</strong> verstehen.
+Der Wert der Variablen steht im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> an einer bestimmten Arbeitsspeicheradresse.
+Den Arbeitsspeicher können wir uns als lange Liste von Bits vorstellen:</p>
+<div class="figure align-default" id="fig-ram">
+<a class="reference internal image-reference" href="../../_images/ram1.png"><img alt="../../_images/ram1.png" src="../../_images/ram1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 13.1 </span><span class="caption-text">Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>.
+Die Adresse ist im Wesentlichen die Nummer / der Index eines bestimmten Speicherplatzes.</span><a class="headerlink" href="#fig-ram" title="Link zu diesem Bild">#</a></p>
+</div>
 <div class="remark admonition" id="remark-python-type-mem">
 <p class="admonition-title">Pythons Typisierung</p>
 <p>Eine <code class="docutils literal notranslate"><span class="pre">Python</span></code> <em>Variable</em> verweist durch eine Adresse eigentlich nicht nur auf einen Wert sondern auch auf einen <a class="reference internal" href="../03-4/11-typing-in-python.html#sec-typing-in-python"><span class="std std-ref">Datentyp</span></a> und auf den Referenzzähler, welcher angibt wie viele Variablen auf den Wert verweisen.
 Dies werden wir aber vorerst ignorieren.</p>
 </div>
-<p>Der Wert der Variablen steht im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> an einer bestimmten Arbeitsspeicheradresse.
-Variablen abstrahieren den Zusammenhang zwischen Wert und Adresse, sodass Sie uns die Arbeit mit dem Arbeitsspeicher erleichtern.
+<p>Variablen abstrahieren den Zusammenhang zwischen Wert und Adresse, sodass Sie uns die Arbeit mit dem Arbeitsspeicher erleichtern.
 Wir müssen nicht wissen welche Speicheradressen belegt und welche noch frei sind.
 In <code class="docutils literal notranslate"><span class="pre">Python</span></code> kommen wir mit der eigentlichen Speicheradresse normalerweise gar nicht in Kontakt.</p>
 <p>Mit</p>
@@ -1295,7 +1303,7 @@ Diese <strong>Adresse</strong> erhält die <em>Variable</em> <code class="docuti
 Folgende Abbildung verdeutlicht die Situation:</p>
 <div class="figure align-default" id="fig-variable">
 <a class="reference internal image-reference" href="../../_images/variable.png"><img alt="../../_images/variable.png" src="../../_images/variable.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 13.1 </span><span class="caption-text">Initialisierung und Zuweisung einer Variable <code class="docutils literal notranslate"><span class="pre">x</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Der Wert steht im Arbeitsspeicher an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.</span><a class="headerlink" href="#fig-variable" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 13.2 </span><span class="caption-text">Initialisierung und Zuweisung einer Variable <code class="docutils literal notranslate"><span class="pre">x</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Der Wert steht im Arbeitsspeicher (rechts) an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.</span><a class="headerlink" href="#fig-variable" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Mit der <em>built-in</em>-Funktion <code class="docutils literal notranslate"><span class="pre">id</span></code> können Sie sich eine Identifikationsnummer einer Variablen ausgeben lassen. Für zwei <em>Variablen</em> ist diese genau dann gleich, wenn deren <strong>Arbeitsspeicheradressen</strong> gleich sind.</p>
 <div class="cell docutils container">
@@ -1308,8 +1316,8 @@ Folgende Abbildung verdeutlicht die Situation:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140228669140016
-140228669140016
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140340338289712
+140340338289712
 </pre></div>
 </div>
 </div>
@@ -1319,7 +1327,7 @@ Ebenso ist ihr Wert identisch.
 Diese Situation sieht demnach wie folgt aus:</p>
 <div class="figure align-default" id="fig-variable-equal-id">
 <a class="reference internal image-reference" href="../../_images/variable-equal-id.png"><img alt="../../_images/variable-equal-id.png" src="../../_images/variable-equal-id.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 13.2 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Die Adresse beider Variablen ist identisch.</span><a class="headerlink" href="#fig-variable-equal-id" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 13.3 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code>. Die Adresse beider Variablen ist identisch.</span><a class="headerlink" href="#fig-variable-equal-id" title="Link zu diesem Bild">#</a></p>
 </div>
 <div class="python admonition" id="def-identity">
 <p class="admonition-title">Identität</p>
@@ -1330,7 +1338,7 @@ Diese Situation sieht demnach wie folgt aus:</p>
 <p>Zwei <em>Variablen</em> <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> sind <em>gleich</em> genau dann wenn der Speicherbereich auf den sie verweisen den gleichen Wert beinhaltet.</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>-erkennt, dass es ausreicht, wenn beide <em>Variablen</em> auf den gleichen Speicherbereich zeigen.
-Wir als Programmierer*innen bekommen davon gar nichts mit. Verändern wir den Wert von <code class="docutils literal notranslate"><span class="pre">z</span></code> dann verändert sich auch deren <code class="docutils literal notranslate"><span class="pre">id</span></code>:</p>
+Wir als Programmierer*innen bekommen davon gar nichts mit. Verändern wir den Wert von <code class="docutils literal notranslate"><span class="pre">z</span></code> dann verändert sich auch die <code class="docutils literal notranslate"><span class="pre">id</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
@@ -1341,8 +1349,8 @@ Wir als Programmierer*innen bekommen davon gar nichts mit. Verändern wir den We
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140228669140016
-140228669139984
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140340338289712
+140340338289680
 </pre></div>
 </div>
 </div>
@@ -1350,7 +1358,7 @@ Wir als Programmierer*innen bekommen davon gar nichts mit. Verändern wir den We
 <p>Die Situation könnte in etwa wie folgt aussehen:</p>
 <div class="figure align-default" id="fig-variable-unequal-id">
 <a class="reference internal image-reference" href="../../_images/variable-unequal-id.png"><img alt="../../_images/variable-unequal-id.png" src="../../_images/variable-unequal-id.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 13.3 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code> und <code class="docutils literal notranslate"><span class="pre">24</span></code>. Die Adresse beider Variablen ist nicht identisch.</span><a class="headerlink" href="#fig-variable-unequal-id" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 13.4 </span><span class="caption-text">Initialisierung und Zuweisung einer Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">z</span></code>  mit dem Wert <code class="docutils literal notranslate"><span class="pre">25</span></code> und <code class="docutils literal notranslate"><span class="pre">24</span></code>. Die Adresse beider Variablen ist nicht identisch.</span><a class="headerlink" href="#fig-variable-unequal-id" title="Link zu diesem Bild">#</a></p>
 </div>
 <div class="theorem admonition" id="theorem-equality-and-identity">
 <p class="admonition-title">Aus Identität folgt Gleichheit</p>
@@ -1376,8 +1384,8 @@ Das heißt aus</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140228430880976
-140228430881296
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140340092667024
+140340092666416
 </pre></div>
 </div>
 </div>
@@ -1385,8 +1393,8 @@ Das heißt aus</p>
 <p>Hmm??
 Warum war die <code class="docutils literal notranslate"><span class="pre">id</span></code> beim Wert <code class="docutils literal notranslate"><span class="pre">25</span></code> identisch aber beim Wert <code class="docutils literal notranslate"><span class="pre">2131313</span></code> nicht?
 Hier kommen wir in die tiefen Details von <code class="docutils literal notranslate"><span class="pre">Python</span></code>, welche fürs erste nicht so wichtig sind.
-Zur Optimierung der Laufzeit legt <code class="docutils literal notranslate"><span class="pre">Python</span></code> alle kleinen ganze Zahlen bei Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
-Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten <span class="math notranslate nohighlight">\(k\)</span> kleinen Zahlen).
+Zur Optimierung der Laufzeit legt <code class="docutils literal notranslate"><span class="pre">Python</span></code> alle kleinen ganzen Zahlen bei Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
+Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten k kleinsten Zahlen).
 <code class="docutils literal notranslate"><span class="pre">2131313</span></code> zählt nicht dazu und somit wird der Wert jedesmal neu in den Speicher geschrieben.</p>
 <p>Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:</p>
 <div class="cell docutils container">
@@ -1435,7 +1443,7 @@ Wir müssen jedoch zwischen zwei Veränderungen einer Variablen <code class="doc
 </ol>
 <div class="definition admonition" id="def-mutable">
 <p class="admonition-title">Veränderlich und Un­ver­än­der­lich­keit</p>
-<p>Wir nennen ein eine Variable, <em>veränderlich</em> (engl. <em>mutable</em>) wenn wir deren Wert verändern können indem wir den Speicherbereich der Variable verändern können.
+<p>Wir nennen eine Variable, <em>veränderlich</em> (engl. <em>mutable</em>) wenn wir deren Wert verändern können indem wir den Speicherbereich der Variable verändern können.
 Ein Variable ist dagegen <em>unveränderlich</em> (engl. <em>immutable</em>) wenn wir deren Speicherbereich nicht verändern können.</p>
 <p>Ist eine Variable <em>unveränderlich</em>, so wird deren Veränderung durch eine Kopie (einen neuen Speicherbereich) realisiert.
 Das Ursprungsobjekt bleibt <em>unverändert</em>.</p>
@@ -1462,11 +1470,11 @@ Weisen wir einer <em>Variablen</em> erneut einen <strong>Wert</strong> zu, wird 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 140228430883184
+id of half = 140340092668688
 value of x = 25
-id of x = 140228669140016
+id of x = 140340338289712
 value of x = 24
-id of x = 140228669139984
+id of x = 140340338289680
 </pre></div>
 </div>
 </div>
@@ -1484,12 +1492,12 @@ id of x = 140228669139984
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of half = 0.5
-id of half = 140228430883184
+id of half = 140340092668688
 </pre></div>
 </div>
 </div>
 </div>
-<p>Verändern wir <em>Variablen</em> nicht, so behalten ihre <strong>Adresse</strong> über das gesamte Notebook hinweg.</p>
+<p>Verändern wir <em>Variablen</em> nicht, so behalten sie ihre <strong>Adresse</strong> über das gesamte Notebook hinweg.</p>
 </div>
 <div class="section" id="zuweisung-einer-neuen-adresse">
 <h3><span class="section-number">13.1.3.2. </span>Zuweisung einer neuen Adresse<a class="headerlink" href="#zuweisung-einer-neuen-adresse" title="Link zu dieser Überschrift">#</a></h3>
@@ -1513,11 +1521,11 @@ id of half = 140228430883184
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 140228430881808
+id of x = 140340092666288
 value of y = 10
-id of y = 140228669139536
+id of y = 140340338289232
 value of z = 2131313
-id of z = 140228430882192
+id of z = 140340092667376
 </pre></div>
 </div>
 </div>
@@ -1539,11 +1547,11 @@ id of z = 140228430882192
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = 2131313
-id of x = 140228430881808
+id of x = 140340092666288
 value of y = 2131313
-id of y = 140228430881808
+id of y = 140340092666288
 value of z = 2131313
-id of z = 140228430882192
+id of z = 140340092667376
 </pre></div>
 </div>
 </div>
@@ -1552,8 +1560,10 @@ id of z = 140228430882192
 <div class="section" id="seiteneffekte">
 <h3><span class="section-number">13.1.3.3. </span>Seiteneffekte<a class="headerlink" href="#seiteneffekte" title="Link zu dieser Überschrift">#</a></h3>
 <p>Wie bereits erwähnt: Verändern wir eine <em>Variable</em> so können wir dadurch nicht die <strong>Adresse</strong> / <em>Identität</em> <code class="docutils literal notranslate"><span class="pre">id</span></code> einer anderen Variablen ändern! Wie verhält es sich jedoch mit dem <strong>Wert</strong> einer <em>Variablen</em>?</p>
-<p>Die Antwort ist etwas komplizierter und ist erst dann begreiflich wenn wir das Thema Datentypen besprechen. Dennoch versuchen wir unser Glück:</p>
-<p>Eine Variable kann nicht nur einen einzelnen atomaren <strong>Wert</strong> wie eine Zahl enthalten, sondern auch einen <strong>Wert</strong> der sich aus anderen <strong>Werten</strong> zusammensetzt. Zum Beispiel:</p>
+<p>Die Antwort ist etwas komplizierter und ist erst dann begreiflich wenn wir das Thema <a class="reference internal" href="../03-4/intro.html#sec-python-data-types"><span class="std std-ref">Datentypen</span></a> besprechen.
+Dennoch versuchen wir unser Glück:
+Eine Variable kann nicht nur einen einzelnen atomaren <strong>Wert</strong>, wie eine Zahl, enthalten, sondern auch einen <strong>Wert</strong> der sich aus anderen <strong>Werten</strong> <a class="reference internal" href="../03-4/1-data-types.html#def-data-structures"><span class="std std-ref">zusammensetzt</span></a>.
+Zum Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
@@ -1567,8 +1577,8 @@ id of z = 140228430882192
 </div>
 </div>
 </div>
-<p>Der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> weisen wir hierbei eine sog. <a class="reference internal" href="../03-4/5-list.html#sec-list"><span class="std std-ref">Liste</span></a> <code class="docutils literal notranslate"><span class="pre">list</span></code> zu, also ein geordnetes Tupel an Zahlen.
-In unserem Fall besteht die Liste und somit <code class="docutils literal notranslate"><span class="pre">x</span></code> aus den Werten <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4</span></code> und <code class="docutils literal notranslate"><span class="pre">5</span></code>.
+<p>Der Variablen <code class="docutils literal notranslate"><span class="pre">x</span></code> weisen wir hierbei eine sog. <a class="reference internal" href="../03-4/5-list.html#sec-list"><span class="std std-ref">Liste</span></a> <code class="docutils literal notranslate"><span class="pre">list</span></code> zu, also ein geordnetes, veränderliches Tupel an Zahlen.
+In unserem Fall besteht die Liste, und somit <code class="docutils literal notranslate"><span class="pre">x</span></code>, aus den Werten <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4</span></code> und <code class="docutils literal notranslate"><span class="pre">5</span></code>.
 Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir seinen Index. Zum Beispiel liefert uns der Index <code class="docutils literal notranslate"><span class="pre">1</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1590,7 +1600,7 @@ Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140228431027136
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140340092850112
 </pre></div>
 </div>
 </div>
@@ -1603,7 +1613,7 @@ Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140228669139280
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140340338288976
 </pre></div>
 </div>
 </div>
@@ -1616,7 +1626,7 @@ Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140228669139312
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140340338289008
 </pre></div>
 </div>
 </div>
@@ -1648,21 +1658,24 @@ Um auf einen bestimmten <strong>Wert</strong> der Liste zuzugreifen brauchen wir
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of x = [1, 2, 3, 4, 5]
-id of x = 140228431027136
+id of x = 140340092850112
 value of x[1] = 2
-id of x[1] = 140228669139280
+id of x[1] = 140340338288976
 
 value of x = [1, -10, 3, 4, 5]
-id of x = 140228431027136
+id of x = 140340092850112
 value of x[1] = -10
-id of x[1] = 140228430882576
+id of x[1] = 140340092667440
 </pre></div>
 </div>
 </div>
 </div>
-<p>Die Adresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> ändert sich nicht!!! Es ändert sich nur die Adresse von <code class="docutils literal notranslate"><span class="pre">x[1]</span></code>!!! Mit anderen Worten durch die <em>Zuweisung</em> von <code class="docutils literal notranslate"><span class="pre">x[1]</span> <span class="pre">=</span> <span class="pre">-10</span></code> wird keine neue Liste im Speicher angelegt sondern nur ein neues Element!</p>
-<p>Warum? Listen können groß werden und würden wir bei jeder Änderung eines Listenelements die gesamte Liste im Speicher kopieren, wäre das zu teuer was die Laufzeit angeht.</p>
-<p>Dieses Verhalten hat jedoch Konsequenzen! Folgender Code führt zur Veränderung des Wertes der Variablen <code class="docutils literal notranslate"><span class="pre">y</span></code> von <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">==</span> <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> nach <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">==</span> <span class="pre">[[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> obwohl wir nicht direkt mit <code class="docutils literal notranslate"><span class="pre">y</span></code> interagieren.</p>
+<p>Die Adresse von <code class="docutils literal notranslate"><span class="pre">x</span></code> ändert sich nicht!!! Es ändert sich nur die Adresse von <code class="docutils literal notranslate"><span class="pre">x[1]</span></code>!!! Mit anderen Worten durch die <em>Zuweisung</em> von <code class="docutils literal notranslate"><span class="pre">x[1]</span> <span class="pre">=</span> <span class="pre">-10</span></code> wird keine neue Liste im Speicher angelegt, sondern nur ein neues Element!
+Dieses Element wird an eine freie Speicherstelle platziert und die entsprechende Adresse kommt in die Liste.</p>
+<p>Warum?
+Listen können groß werden und würden wir bei jeder Änderung eines Listenelements die gesamte Liste im Speicher kopieren, wäre das, im Bezug auf die Laufzeit, zu teuer und verschwenderisch.</p>
+<p>Dieses Verhalten hat jedoch Konsequenzen!
+Folgender Code führt zur Veränderung des Wertes der Variablen <code class="docutils literal notranslate"><span class="pre">y</span></code> von <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">==</span> <span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> nach <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">==</span> <span class="pre">[[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[-10,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[1,2,3]]</span></code> obwohl wir nicht direkt mit <code class="docutils literal notranslate"><span class="pre">y</span></code> interagieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -1690,10 +1703,9 @@ id of x[1] = 140228430882576
 </div>
 <div class="section" id="das-nichts">
 <h2><span class="section-number">13.1.4. </span>Das Nichts<a class="headerlink" href="#das-nichts" title="Link zu dieser Überschrift">#</a></h2>
-<p>Um einer <em>Variablen</em> ‚keinen‘ Wert zuzuweisen gibt es das Signalwort <code class="docutils literal notranslate"><span class="pre">None</span></code>.
-Dies steht für ‚kein‘ Wert bzw. das Nichts.
-Dennoch besitzt die <em>Variable</em> einen Wert, eben den Wert <code class="docutils literal notranslate"><span class="pre">None</span></code> ‚kein‘ Wert.
-<code class="docutils literal notranslate"><span class="pre">None</span></code> repräsentiert somit das Nichts.</p>
+<p>Um einer <em>Variablen</em> „keinen“ Wert zuzuweisen gibt es das Signalwort <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+Dies <a class="reference internal" href="../02-1/2-representation.html#sec-representation"><span class="std std-ref">repräsentiert</span></a> „keinen Wert“ bzw. das Nichts.
+Dennoch besitzt die <em>Variable</em> einen Wert, eben den Wert <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1714,7 +1726,7 @@ Dennoch besitzt die <em>Variable</em> einen Wert, eben den Wert <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4343925712
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4366355408
 None
 </pre></div>
 </div>
@@ -1727,9 +1739,9 @@ Vorab sei gesagt, dass falls eine <a class="reference internal" href="../03-6/in
 <h2><span class="section-number">13.1.5. </span>Namenskonvention<a class="headerlink" href="#namenskonvention" title="Link zu dieser Überschrift">#</a></h2>
 <p>Namen müssen mit einem Klein- oder Großbuchstaben beginnen und können aus Zahlen und Buchstaben bestehen.
 Aus Gründen der Lesbarkeit folgen wir der Konvention von <code class="docutils literal notranslate"><span class="pre">Python</span></code> und schreiben <em>Variablen</em> komplett in Kleinbuchstaben, Zahlen und dem <code class="docutils literal notranslate"><span class="pre">_</span></code>.
-Außerdem verwenden wir die englische Sprache, alle Signalwörter von <code class="docutils literal notranslate"><span class="pre">Python</span></code> in englisch formuliert werden müssen.
-Mit dem <code class="docutils literal notranslate"><span class="pre">_</span></code> trennen wir zusammengesetzte Namen.
-Beispiele für <em>Variablen</em> wären: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">x1</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>, <code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">x_direction</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature</span></code>.</p>
+Außerdem verwenden wir die englische Sprache, da alle Signalwörter von <code class="docutils literal notranslate"><span class="pre">Python</span></code> ohnehin in englisch formuliert werden müssen.
+Mit dem <code class="docutils literal notranslate"><span class="pre">_</span></code> trennen wir zusammengesetzte Namen.</p>
+<p>Beispiele für <em>Variablen</em> wären: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">x1</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>, <code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">x_direction</span></code>, <code class="docutils literal notranslate"><span class="pre">temperature</span></code>.</p>
 </div>
 </div>
 
@@ -1764,7 +1776,7 @@ Beispiele für <em>Variablen</em> wären: <code class="docutils literal notransl
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">zurück</p>
-            <p class="prev-next-title"><span class="section-number">13. </span>Variablen, Ausdrücke und Funktionsaufrufe</p>
+            <p class="prev-next-title"><span class="section-number">13. </span>Grundlagen</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="2-expressions.html" title="weiter Seite">

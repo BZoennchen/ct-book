@@ -18,11 +18,20 @@ Sie können sich den Speicher als eine lange lange Liste von Bits vorstellen.
 Diese Bits können nur einen von zwei Zuständen (0 und 1) annehmen.
 Dennoch verarbeiten Computer Zahlen, Text, Bilder und mehr.
 
-Diese 'Magie' geschieht durch die Wahl und Implementierung einer [Interpretation](sec-interpretation).
+```{figure} ../../figs/python-tutorial/variables/ram.png
+---
+width: 400px
+name: fig-ram-2
+---
+Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus [Bits](def-bit).
+Die Adresse ist im Wesentlichen die Nummer / der Index eines bestimmten Speicherplatzes.
+```
+
+Diese "Magie" geschieht durch die Wahl und Implementierung einer [Interpretation](sec-interpretation).
 Unterschiedliche Interpretationen ermöglichen es, Bits und [Byte](def-byte) als Zahlen, Text, Bilder usw. zu verarbeiten.
 
 Im Abschnitt [Variablen](sec-variables) haben wir von einer *Variable* als Tupel von **Wert** und **Speicheradresse** gesprochen.
-Die *Variable* 'kennt' die Speicheradresse an der der Wert im Speicher steht.
+Die *Variable* "kennt" die Speicheradresse an welche der Wert im Speicher steht.
 Soweit so gut, woher aber weiß der Interpreter ob es sich bei der Folge von Bits um eine Zahl oder um etwas anderes handelt?
 
 Weisen wir der Variablen ``char`` den Wert ``'a'`` zu 
@@ -70,9 +79,9 @@ Wie ist der Zusammenhang zwischen den Programmiersprachen, welche alle auf Daten
 
 In diesem und nächstem Kapitel unternehmen wir den Versuch Ihnen das Konzept der Datentypen zu vermitteln.
 Dies beinhaltet Theorie und Praxis.
-Um in ``Python`` mit den Datentypen praktisch umgehen zu können reicht Ihnen dieses Kapitel.
-Im nächsten Kapitel [Datentypen (Fortsetzung)](sec-data-types-advanced) werden wir hingegen genauer untersuchen, weshalb es Datentypen gibt und welchen Einfluss diese im Detail haben.
-Möchten Sie also ein tieferes Verständnis davon bekommen wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich der Blick in das nächste Kapitel [Datentypen (Fortsetzung)](sec-data-types-advanced).
+Um in ``Python`` mit den Datentypen praktisch umgehen zu können, reicht es vorerst dieses Kapitel gut zu durchdringen.
+Im nächsten Kapitel, [Datentypen (Fortsetzung)](sec-data-types-advanced), werden wir hingegen genauer untersuchen, weshalb es Datentypen gibt und welchen Einfluss diese im Detail haben.
+Möchten Sie also ein tieferes Verständnis erhalten wie Datentypen mit dem Ablauf eines Programms und der Computerhardware zusammenhängen, lohnt sich der Blick in das nächste Kapitel [Datentypen (Fortsetzung)](sec-data-types-advanced).
 
 Wir versuchen folgende Fragen zu beantworten:
 
@@ -85,4 +94,4 @@ Wir versuchen folgende Fragen zu beantworten:
    2. Weshalb gibt es überhaupt Datentypen? Abschnitt [5.2 Existenzberechtigung](sec-why-data-types).
    3. Was passiert bei einer Änderung des Datentyps einer Variablen? Abschnitt [5.3 Interpretationswechsel](sec-change-of-data-types).
    4. Welche Datentypen gibt es? Abschnitt [5.4 Arten von Datentypen](sec-kind-of-data-types).
-   5. Warum gibt es in Python keine primitiven Datentypen? Abschnitt [5.5 Primitive Datentypen in Python?](sec-primitive-data-types-in-python)).
+   5. Warum gibt es in ``Python`` keine primitiven Datentypen? Abschnitt [5.5 Primitive Datentypen in Python?](sec-primitive-data-types-in-python)).

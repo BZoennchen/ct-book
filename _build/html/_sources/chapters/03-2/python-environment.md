@@ -11,6 +11,17 @@ Dazu zählen wir unter anderem
 + andere Technologien, die mit ``Python`` gut integrierbar sind
 + und vorallem die Gemeinschaft bzw. Unterstützer:innen
 
+```{admonition} Lernziel
+:class: learngoals
+
+Wie nutze ich das ``Python``-Ökosystem?
+Wie bringe ich ``Python`` "zum Laufen"?
+Wie nutze ich Pakte und Module (fremden Code) und die Jupyter Notebooks?
+
+Dieses Kapitel soll Sie in der Praxis "in Gang" setzen, sodass Sie mit dem ``Python``-Programmieren loslegen können.
+Der Inhalt ist daher sehr ``Python`` spezifisch und hat nur wenig mit dem eigentlichen [Computational Thinking](sec-what-is-ct) zu tun.
+```
+
 Sie werden feststellen, dass das ``Python``-Ökosystem reich, erwachsen und breit aufgestellt ist.
 Es wird täglich erweitert und verbessert.
 Blicken wir nur einmal auf einen Auszug bestimmter Pakete, welche wir nach deren Anwendungsbereich sortiert haben:
@@ -49,14 +60,14 @@ Auf [stackshare.io](https://stackshare.io/) können Sie nachlesen, welche Techno
 stecken.
 
 Selbstverständlich ändern sich die Ökosysteme ständig.
-Zu meiner kurzen Zeit als Webentwickler um das Jahr 2006 war der sog. LAMP-Stack (Linux, Apache, MySQL, PHP/Perl) einer der gängisten Bündelungen an Technologie, die zur serverseitigen Webentwicklung genugzt wurde.
+Zu meiner kurzen Zeit als Webentwickler um das Jahr 2006 war der sog. LAMP-Stack (Linux, Apache, MySQL, PHP/Perl) einer der gängisten Bündelungen an Technologie, die zur serverseitigen Webentwicklung genutzt wurde.
 Das hat sich mittlerweile geändert.
 
 Ein anderes Beispiel ist die Entwicklung neuer Algorithmen aus dem Bereich des maschinellen Lernens.
-Sie werden auch hier das Rad in der Praxis nicht neu erfinden.
+Sie werden im Normalfall das Rad in der Praxis nicht neu erfinden.
 Sie werden stattdessen analysieren welche Module (z.B. [Scikit-learn](https://scikit-learn.org/stable/#), [TensorFlow](https://www.tensorflow.org/)) Ihren Ansprüchen genügen und diese nutzen bzw. erweitern.
 
 Als Entwickler\*innen müssen wir in der Praxis unser reiches Ökosystem kennenlernen und effektiv nutzen.
 Dazu gehört insbesondere auch der bedachte Verzicht aufgeblähter Frameworks, die für unseren Anwendungsfall bzw. unser Ziel ungeeignet sind.
-Aus sicht der Anwender\*innen spielt es am Ende keine Rolle welche tollen Technologien hinter Ihrer Anwendung stecken.
-Wichtig ist stattdessen ob Ihre Anwendung das zu lösende Problem löst und ob die Anwender\*innen eine gute Erfahrung mit Ihrer Anwendung machen, seien es Kunden einer Webanwendung oder Entwickler\*innen die Ihr Modul verwenden wollen.
+Aus Sicht der Anwender\*innen spielt es am Ende keine Rolle, welche tollen Technologien hinter Ihrer Anwendung stecken.
+Wichtig ist stattdessen, ob Ihre Anwendung das zu lösende Problem löst und ob die Anwender\*innen eine gute Erfahrung mit Ihrer Anwendung machen, seien es Kunden einer Webanwendung oder Entwickler\*innen, die Ihr Modul verwenden wollen.

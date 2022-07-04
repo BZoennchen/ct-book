@@ -54,6 +54,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="11. Programmieren in Python" href="../03-1/introduction.html" />
@@ -521,7 +523,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-3/intro.html">
-   13. Variablen, Ausdrücke und Funktionsaufrufe
+   13. Grundlagen
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -1086,43 +1088,72 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variablen-und-konstanten">
-   10.4.1. Variablen und Konstanten
+  <a class="reference internal nav-link" href="#zeiger">
+   10.4.1. Zeiger
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#werte-und-adressen">
-   10.4.2. Werte und Adressen
+  <a class="reference internal nav-link" href="#einfach-verkette-liste">
+   10.4.2. Einfach verkette Liste
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stack">
-   10.4.3. Stack
+  <a class="reference internal nav-link" href="#der-stapel">
+   10.4.3. Der Stapel
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eigenschaften">
+     10.4.3.1. Eigenschaften
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#realisierung">
+     10.4.3.2. Realisierung
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#queue">
-   10.4.4. Queue
+  <a class="reference internal nav-link" href="#die-warteschlange">
+   10.4.4. Die Warteschlange
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     10.4.4.1. Eigenschaften
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     10.4.4.2. Realisierung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doppelt-verkettete-liste">
+   10.4.5. Doppelt verkettete Liste
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dequeue">
-   10.4.5. Dequeue
+   10.4.6. Dequeue
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#arrays">
-   10.4.6. Arrays
+   10.4.7. Arrays
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hashmaps">
-   10.4.7. Hashmaps
+   10.4.8. Hashmaps
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#baume">
-   10.4.8. Bäume
+   10.4.9. Bäume
   </a>
  </li>
 </ul>
@@ -1145,43 +1176,72 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variablen-und-konstanten">
-   10.4.1. Variablen und Konstanten
+  <a class="reference internal nav-link" href="#zeiger">
+   10.4.1. Zeiger
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#werte-und-adressen">
-   10.4.2. Werte und Adressen
+  <a class="reference internal nav-link" href="#einfach-verkette-liste">
+   10.4.2. Einfach verkette Liste
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stack">
-   10.4.3. Stack
+  <a class="reference internal nav-link" href="#der-stapel">
+   10.4.3. Der Stapel
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eigenschaften">
+     10.4.3.1. Eigenschaften
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#realisierung">
+     10.4.3.2. Realisierung
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#queue">
-   10.4.4. Queue
+  <a class="reference internal nav-link" href="#die-warteschlange">
+   10.4.4. Die Warteschlange
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     10.4.4.1. Eigenschaften
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     10.4.4.2. Realisierung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doppelt-verkettete-liste">
+   10.4.5. Doppelt verkettete Liste
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dequeue">
-   10.4.5. Dequeue
+   10.4.6. Dequeue
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#arrays">
-   10.4.6. Arrays
+   10.4.7. Arrays
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hashmaps">
-   10.4.7. Hashmaps
+   10.4.8. Hashmaps
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#baume">
-   10.4.8. Bäume
+   10.4.9. Bäume
   </a>
  </li>
 </ul>
@@ -1196,39 +1256,770 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="datenstrukturen">
 <span id="sec-data-structures"></span><h1><span class="section-number">10.4. </span>Datenstrukturen<a class="headerlink" href="#datenstrukturen" title="Link zu dieser Überschrift">#</a></h1>
-<p>Programmiersprachen bieten viele vordefinierte Datentypen und Datenstrukturen.
-In diesem Abschnitt wollen wir über die fundamentalsten Datenstrukturen sprechen, ohne dabei auf deren konkrete Realisierung einzugehen.
+<p>Programmiersprachen und deren Standardbibliotheken bieten viele vordefinierte Datentypen und Datenstrukturen.
+In diesem Abschnitt wollen wir über die fundamentalsten Datenstrukturen sprechen.
+Wir werden Ihnen dabei auch eine Implementierung präsentieren, die Sie sich ansehen können sobald Sie genug Erfahrung mit <code class="docutils literal notranslate"><span class="pre">Python</span></code> gesammelt haben.
 Für eine weiterführende und zugleich angewandte Diskussion verweisen wir auf im <strong>PYTHON</strong> Teil auf das Kapitel <a class="reference internal" href="../03-4/intro.html#sec-python-data-types"><span class="std std-ref">Datentypen (Grundlagen)</span></a> und <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a>.</p>
-<div class="section" id="variablen-und-konstanten">
-<h2><span class="section-number">10.4.1. </span>Variablen und Konstanten<a class="headerlink" href="#variablen-und-konstanten" title="Link zu dieser Überschrift">#</a></h2>
-<p>TODO</p>
+<div class="section" id="zeiger">
+<span id="sec-pointer"></span><h2><span class="section-number">10.4.1. </span>Zeiger<a class="headerlink" href="#zeiger" title="Link zu dieser Überschrift">#</a></h2>
+<p>Da sich alle Daten (Programm und dessen Eingabe/Ausgabe) im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> befinden, müssen wir begreifen welche Funktionalität diese <em>konkrete</em> Datenstruktur bietet.
+Alle weiteren <em>abstrakten</em> Datenstrukturen bauen auf den Möglichkeiten auf, welche uns der Arbeitsspeicher bietet.</p>
+<p>Über die Geschichte hat sich der Arbeitsspeicher in Geschwindigkeit und Größe und bezüglich anderer Eigenschaften weiterentwickelt.
+Was uns jedoch interessiert sind die wenigen grundlegenden Eigenschaften, welche sich im Wesentlichen nicht verändert haben:</p>
+<dl class="simple myst">
+<dt>Addressierbarkeit</dt><dd><p>Der Arbeitsspeicher ist im Wesentlichen eine lange <strong>adressierbare</strong> endliche Liste von Bits</p>
+</dd>
+<dt>Effizienz</dt><dd><p>Die Adressierung eines Listeneintrags für eine gegebene Adresse ist sehr effizient</p>
+</dd>
+</dl>
+<p>Die Eigenschaft der <em>effizienten Adressierung</em> spiegelt sich in allen Programmiersprachen mehr oder weniger pregnannt wieder.</p>
+<div class="figure align-default" id="fig-ram-banks">
+<a class="reference internal image-reference" href="../../_images/ram.png"><img alt="../../_images/ram.png" src="../../_images/ram.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 10.4 </span><span class="caption-text">Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>.
+Die Adresse (links) ist im Wesentlichen die Nummer / der Index eines bestimmten Speicherplatzes (rechts).
+Alle Werte sind im Binärsystem dargestellt. An Adresse 00000111 befindet sich eine Adresse.</span><a class="headerlink" href="#fig-ram-banks" title="Link zu diesem Bild">#</a></p>
 </div>
-<div class="section" id="werte-und-adressen">
-<h2><span class="section-number">10.4.2. </span>Werte und Adressen<a class="headerlink" href="#werte-und-adressen" title="Link zu dieser Überschrift">#</a></h2>
-<p>TODO</p>
+<p>Gewöhnlich adressiert die CPU keine einzelnen Bits, sondern ein ganzes <a class="reference internal" href="../02-1/2-representation.html#def-byte"><span class="std std-ref">Byte</span></a>.
+<a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.4</span></a> zeigt ein Beispiel eines Arbeitsspeichers der uns erlaubt jeweils ein Byte zu adressieren, zugleich werden Adressen, in diesem Beispiel, durch ein Byte dargestellt.</p>
+<div class="exercise admonition" id="address-space-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.4 </span> (Adressraum)</p>
+<div class="section" id="exercise-content">
+<p>Wie viel Byte können im Beispiel von <a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.4</span></a> maximal adressiert werden?</p>
 </div>
-<div class="section" id="stack">
-<h2><span class="section-number">10.4.3. </span>Stack<a class="headerlink" href="#stack" title="Link zu dieser Überschrift">#</a></h2>
-<p>TODO</p>
 </div>
-<div class="section" id="queue">
-<h2><span class="section-number">10.4.4. </span>Queue<a class="headerlink" href="#queue" title="Link zu dieser Überschrift">#</a></h2>
-<p>TODO</p>
+<div class="solution dropdown admonition" id="address-space-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#address-space-exercise"> Exercise 10.4 (Adressraum)</a></p>
+<div class="section" id="solution-content">
+<p>Der Adressraum geht von <span class="math notranslate nohighlight">\(0000\,0000_2\)</span> bis <span class="math notranslate nohighlight">\(1111\,1111_2\)</span>.
+Das heißt von <span class="math notranslate nohighlight">\(0_{10}\)</span> bis <span class="math notranslate nohighlight">\(1\,0000\,0000_2 - 1_2 = 2^8-1 = 256-1 = 255\)</span>.
+Da jede Adresse ein Byte adressiert, können wir somit lediglich <span class="math notranslate nohighlight">\(256\)</span> Byte adressieren.</p>
+</div>
+</div>
+<div class="exercise admonition" id="address-space-32-bit-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.5 </span> (32-Bit-Adressraum)</p>
+<div class="section" id="exercise-content">
+<p>Weshalb war es vor Jahren nicht möglich mehr als ca. 4 GiB Arbeitsspeicher im Rechner zu verwenden?</p>
+<p><strong>Hinweis:</strong> Es ereignete sich ein Wechsel von einer 32-Bit auf eine 64-Bit Adressierung.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="address-space-32-bit-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#address-space-32-bit-exercise"> Exercise 10.5 (32-Bit-Adressraum)</a></p>
+<div class="section" id="solution-content">
+<p>Mit <span class="math notranslate nohighlight">\(32\)</span> bildet sich ein <em>Adressraum</em> von <span class="math notranslate nohighlight">\(2^{32}\)</span> Adressen.
+Wenn die CPU jedes einzelne Byte adressieren können soll, so ergibt sich ein Maximum an</p>
+<div class="math notranslate nohighlight">
+\[2^{32} \cdot 1 = 2^{10} \cdot 2^{10} \cdot 2^{10} \cdot 2^2\]</div>
+<p>Byte und das sind <span class="math notranslate nohighlight">\(2^{10} \cdot 2^{10} \cdot 2^2\)</span> KiB, <span class="math notranslate nohighlight">\(2^{10} \cdot 2^2\)</span> MiB bzw. <span class="math notranslate nohighlight">\(4\)</span> GiB.</p>
+</div>
+</div>
+<p>Im Arbeitsspeicher befinden sich alle Werte (Zahlen, Text, Bilder, Videos) und Adressen in Binärdarstellung.
+Eine Adresse im Speicher bezeichnet man häufig auch als <em>Zeiger/Pointer</em> oder <em>Referenz</em>.
+Ein <em>Zeiger</em> kann auf einen weiteren <em>Zeiger</em> <em>zeigen/verweisen/referenzieren</em>.</p>
+<p>In <a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.4</span></a> zeigt der <em>Zeiger</em> an Adresse 3 auf den Speicherbereich bei Adresse 7.
+Dies ist wiederum eine Adresse die auf den Speicherbereich 1 zeigt und dort liegt der Wert 0.
+Selbstverständlich bedarf es der richtigen <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> der jeweiligen Speicherbereiche, denn es könnte sich beim Wert bei Adresse 3 auch um den Dezimalwert 7 oder irgendetwas anderes als einen <em>Zeiger</em> handeln.</p>
+<p>Für <em>Zeiger</em> gibt es keine perfekte Analogie aus der Realwelt, jedenfalls ist uns keine eingefallen.
+Folgendes kommt an den Sachverhalt nahe heran: Nehmen sie eine große geordnete Anreihung von Bankschließfächer als Arbeitsspeicher.
+Jedes Schließfach hat eine eindeutige Nummer (Speicheradresse).
+In jedem Schließfach kann sich etwas befinden, unter anderem auch ein Zettel mit einer Schließfachnummer (Zeiger).</p>
+<p>Das Problem an dieser Analogie ist jedoch, dass, wenn wir den Zettel in Händen halten, wir erst zum entsprechenden Schließfach gehen müssen.
+Dabei laufen wir an vielen anderen Schließfächern vorbei.
+Das kostet Zeit.
+Wenn wir allerdings einen Zeiger haben, so können wir auf den Wert unglaublich schnell zugreifen.
+Es kostet der CPU zwar auch etwas Zeit um den Zeiger <em>aufzulösen</em> aber muss sie nicht über alle dazwischenliegenden Speicherbereiche „hinweglaufen“, d.h. iterieren.</p>
+<p>Ein Zeiger ähnelt einer Schnur, dessen erstes Ende wir in Händen halten und dessen anderes Ende am Objekt im Schließfach befestigt ist.
+Bei Aktivierung des Zeigers werden wir direkt ins Schließfach teleportiert!</p>
+</div>
+<div class="section" id="einfach-verkette-liste">
+<h2><span class="section-number">10.4.2. </span>Einfach verkette Liste<a class="headerlink" href="#einfach-verkette-liste" title="Link zu dieser Überschrift">#</a></h2>
+<p>Bleiben wir bei der Analogie der Schließfächer und Schnüre.
+Sie möchten ihre Lieblingsgerichte in alphabetischer Reihenfolge abspeichern.
+Dazu verwenden Sie die Schließfächer und Schnüre.
+Sie halten eine Schnur in den Händen, die auf das Schließfach mit Ihrem absoluten Lieblingsgericht zeigt.
+Das darauffolgende Schließfach verweist auf ihr zweitliebstes Gericht usw.
+Die bilden eine sog. <em>verkette Liste</em> (engl. <em>Linked List</em>).</p>
+<div class="figure align-default" id="fig-linked-list-ram">
+<a class="reference internal image-reference" href="../../_images/linked-list-ram.png"><img alt="../../_images/linked-list-ram.png" src="../../_images/linked-list-ram.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 10.5 </span><span class="caption-text">Gerichte 1 bis 5 in einer <em>verketteten Liste</em>.
+Jede Kachel repräsentiert ein Schließfach bzw. einen adressierbaren Speicherbereich.</span><a class="headerlink" href="#fig-linked-list-ram" title="Link zu diesem Bild">#</a></p>
+</div>
+<p>Befinden Sie sich an einem Schließfach der Liste, so können Sie recht einfach ein neues Element an dieser Stelle einfügen.
+Eine <em>verkettete Liste</em> besteht aus sogenannten <em>Knoten</em> (Schließfach + Schnur zum nächsten Schließfach), welche durch <em>Zeiger</em> verbunden sind.
+Sie ist eine <em>dynamischen</em> Datenstruktur, d.h. Sie kann zur Laufzeit vergrößert und verkleinert werden.</p>
+<div class="definition admonition" id="def-dynamic-ds">
+<p class="admonition-title">Dynamische Datenstrukturen</p>
+<p><em>Dynamische Datenstrukturen</em> können zur Laufzeit des Programms anwachsenden und schrumpfen, d.h. ihr Speicherverbrauch kann sich verändern. Möglich wird dies durch die Verwendung von <em><a class="reference internal" href="#sec-pointer"><span class="std std-ref">Zeigern</span></a></em>.</p>
+</div>
+<p>Haben wir direkten Zugriff auf einen Knoten so können wir in die <em>verkettete Liste</em> ein neues Element was direkt nachfolgt effizient einfügen ohne dabei die anderen Elemente der Liste zu verschieben – ein wesentlicher Vorteil dieser Datenstruktur.
+Jeder Knoten besteht aus zwei Teilen:</p>
+<dl class="simple myst">
+<dt>Daten</dt><dd><p>Der Wert des Knotens (oder auch ein Zeiger auf den Wert des Knotens). Das ist der Inhalt des Schließfachs.</p>
+</dd>
+<dt>Zeiger</dt><dd><p>Verweist auf den nächsten Knoten. Das ist die Schnur, die zum nächsten Schließfach führt.</p>
+</dd>
+</dl>
+<div class="figure align-default" id="fig-linked-list-node">
+<a class="reference internal image-reference" href="../../_images/linked-list-node.png"><img alt="../../_images/linked-list-node.png" src="../../_images/linked-list-node.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 10.6 </span><span class="caption-text">Knoten einer <em>verketteten Liste</em>.</span><a class="headerlink" href="#fig-linked-list-node" title="Link zu diesem Bild">#</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">successor</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="n">successor</span>
+        
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Den Anfangsknoten der Liste bezeichnet man als <em>Kopf/Head</em>.</p>
+<div class="figure align-default" id="fig-linked-list">
+<a class="reference internal image-reference" href="../../_images/linked-list.png"><img alt="../../_images/linked-list.png" src="../../_images/linked-list.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 10.7 </span><span class="caption-text">Einer <em>verkettete Liste</em> aus Zahlen.</span><a class="headerlink" href="#fig-linked-list" title="Link zu diesem Bild">#</a></p>
+</div>
+<p>Um Elemente am <em>Ende</em> (engl. <em>Tail</em>) einzufügen, kann es sinnvoll sein sich zusätzlich den letzten Knote der Liste zu merken.</p>
+</div>
+<div class="section" id="der-stapel">
+<h2><span class="section-number">10.4.3. </span>Der Stapel<a class="headerlink" href="#der-stapel" title="Link zu dieser Überschrift">#</a></h2>
+<div class="section" id="eigenschaften">
+<h3><span class="section-number">10.4.3.1. </span>Eigenschaften<a class="headerlink" href="#eigenschaften" title="Link zu dieser Überschrift">#</a></h3>
+<p>Der <em>Stapel</em> (engl. <em>Stack</em>) oder auch <em>Stapelspeicher/Keller</em> ist einer der einfachsten <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamischen Datenstrukturen</span></a>, welche dem <em>Last-In-First-Out (LIFO)</em> Prinzip folgt.
+LIFO bedeutet soviel wie: <em>zuletzt hinein - zuerst heraus</em>.
+Das was zuletzt hinein gekommen ist, wird auch als erstes herausgenommen.
+Das beudeutet, dass wir eingefügte Elemente nur in umgekehrter Reihenfolge aus dem Stapel herausnehmen können.
+Gleichbedeutend ist der Begriff <em>Last Come, First Serve</em>, d.h. wer zuletzt kommt wird zuerst bedient.</p>
+<p><strong>Wie</strong> der Stapel intern funktioniert ist nicht genau definiert, jedoch ist garantiert, dass die Datenstruktur die folgenden Operationen anbietet.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Laufzeit</p></th>
+<th class="head"><p>Beschreibung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert Anzahl der Elemente</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">push(element)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Legt das Element <code class="docutils literal notranslate"><span class="pre">element</span></code> auf den Stapel</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">peek()</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert das Element zurück, welches ganz oben auf dem Stapel liegt</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert das oberste Element des Stapels zurück und löscht es von diesem</p></td>
+</tr>
+</tbody>
+</table>
+<p>All diese Operationen müssen eine gute Laufzeit haben.
+Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>.</p>
+<p>Stellen Sie sich einen Stapel aus Büchern vor.
+Das Buch was Sie zuletzt auf den Bücherstapel gelegt haben liegt zugriffsbereit ganz oben.
+Um auf die anderen Bücher zuzugreifen ohne den Stapel komplett zu zerstören, müssen Sie sich von oben nach unten durcharbeiten und alle Bücher bis zu dem gewünschten Buch vom Stapel nehmen.</p>
+<p>Wann könnte diese Datenstruktur sinvoll einsetzbar sein?
+Stellen Sie sich vor Sie laufen durch eine fremde Stadt.
+Sie orientieren sich anhand von Straßennamen.
+Um wieder zurück zu finden laufen Sie diese markanten Stellen in umgekehrter Reihenfolge ab.
+Sie können mit einem Stapel auch die Reihenfolge einer Serie von Elementen verändern.
+Das Ein- und Austreten aus einem Bus können wir durch einen Stapel modellieren.</p>
+</div>
+<div class="section" id="realisierung">
+<h3><span class="section-number">10.4.3.2. </span>Realisierung<a class="headerlink" href="#realisierung" title="Link zu dieser Überschrift">#</a></h3>
+<p>Für die genaue Realisierung eines Stapels gibt es viele Möglichkeiten.
+Eine davon stellt die Realisierung der <em>einfach verketteten Liste</em> mit einem <em>Head</em> dar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Stack</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="mi">0</span>
+        
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;=&gt;&#39;</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;  &#39;</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="n">node</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">successor</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">return</span> <span class="n">text</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span>
+    
+    <span class="k">def</span> <span class="nf">peek</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="o">.</span><span class="n">value</span>
+    
+    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="o">.</span><span class="n">successor</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span>
+            
+    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="p">)</span>            
+            <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Last In</span>
+<span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stack</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stack</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stack</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=&gt;
+
+=&gt;&#39;A&#39;
+
+=&gt;&#39;B&#39;
+  &#39;A&#39;
+
+=&gt;&#39;C&#39;
+  &#39;B&#39;
+  &#39;A&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First Out</span>
+<span class="k">while</span> <span class="n">stack</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">stack</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=&gt;&#39;B&#39;
+  &#39;A&#39;
+
+=&gt;&#39;A&#39;
+
+=&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wollen wir testen ob ein geklammerter Ausdruck z.B. <code class="docutils literal notranslate"><span class="pre">'((3+2)+6)'</span></code> richtig geklammert ist, können wir einen <em>Stapel</em> einsetzten, denn ist die erste Klammer eine offene, muss die letzte eine geschlossene sein.
+Die folgende Funktion <code class="docutils literal notranslate"><span class="pre">parse</span></code> bedient sich eines <em>Stapels</em>.
+Sie testet ob die Klammerung korrekt ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">expression</span><span class="p">):</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">expression</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;(&#39;</span><span class="p">:</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">&#39;)&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">stack</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">stack</span><span class="o">.</span><span class="n">peek</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;(&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">stack</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;(3+5)*2&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;((3+5)*2&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;(3+5)*2)&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;()()()()((((()))))&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;()()()()((((())))&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+False
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="die-warteschlange">
+<h2><span class="section-number">10.4.4. </span>Die Warteschlange<a class="headerlink" href="#die-warteschlange" title="Link zu dieser Überschrift">#</a></h2>
+<div class="section" id="id1">
+<h3><span class="section-number">10.4.4.1. </span>Eigenschaften<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">#</a></h3>
+<p>Die <em>Warteschlange</em> (engl. <em>Queue</em>) ist eine <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamischen Datenstrukturen</span></a> und folgt dem sog. <em>First-In-First-Out (FIFO)</em> Prinzip.
+FIFO bedeutet soviel wie: <em>zuerst hinein - zu erst hinaus</em>.
+Das was zuerst hinein gekommen ist, wird auch als erstes herausgenommen.
+Das beudeutet, dass wir eingefügte Elemente nur in der gleichen Reihenfolge aus der Queue herausnehmen können.
+Gleichbedeutend ist der Begriff <em>First Come, First Serve</em>, d.h. wer zuerst kommt mahlt zu erst.</p>
+<p><strong>Wie</strong> die Warteschlange intern funktioniert ist nicht genau definiert, jedoch ist garantiert, dass die Datenstruktur die folgenden Operationen anbietet.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Laufzeit</p></th>
+<th class="head"><p>Beschreibung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert Anzahl der Elemente</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">enqueue(element)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Fügt das Element <code class="docutils literal notranslate"><span class="pre">element</span></code> hinten an</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dequeue()</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert Element an forderster Stelle und löscht dieses aus der Struktur</p></td>
+</tr>
+</tbody>
+</table>
+<p>All diese Operationen müssen eine gute Laufzeit haben.
+Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>.
+Der <span class="math notranslate nohighlight">\(i\)</span>-ten <code class="docutils literal notranslate"><span class="pre">dequeue</span></code> Aufruf liefert genau das Element, welches beim <span class="math notranslate nohighlight">\(i\)</span>-ten <code class="docutils literal notranslate"><span class="pre">enqueue</span></code> Aufruf von eingefügt wurde.</p>
+<p>Der Name rührt daher, dass die Datenstruktur wie eine Warteschlange an der Kasse funktioniert.
+Der Kunden die sich zuerst in die Schlange einreihen, werden auch zuerst bedient und können die Schlange auch zuerst wieder verlassen.
+Wegen dieser Eigenschaft werden <em>Queues</em> oft als <em>Puffer</em> eingesetzt.
+Zum Beispiel werden die Netzwerkpakete die Ihr Router versendet erst in einer Queue gehalten und dann gesendet.</p>
+</div>
+<div class="section" id="id2">
+<h3><span class="section-number">10.4.4.2. </span>Realisierung<a class="headerlink" href="#id2" title="Link zu dieser Überschrift">#</a></h3>
+<p>Erneut gibt es unterschiedliche Möglichkeiten diese Datenstruktur zu realisieren.
+Glücklicherweise können wir abermals auf die <em>einfach verketteten Liste</em> zurückgreifen.
+Allerdings ist es notwendig sowohl auf den Kopf (<em>Head</em>) als auch auf das Ende (<em>Tail</em>) der Liste effizient zugreifen zu können.
+Deshalb merken wir uns und verwalten zusätzlich das Ende der Liste, d.h. den (<em>Tail</em>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Queue</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="mi">0</span>
+        
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;[&#39;</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="n">node</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">successor</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;, &#39;</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;]&#39;</span>
+        <span class="k">return</span> <span class="n">text</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span>
+    
+    <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="o">.</span><span class="n">successor</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span>
+            
+    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>   
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span><span class="p">:</span>         
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="n">node</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span> <span class="o">=</span> <span class="n">node</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lassen uns die Warteschlange fülle</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">queue</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>und wieder leeren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="doppelt-verkettete-liste">
+<h2><span class="section-number">10.4.5. </span>Doppelt verkettete Liste<a class="headerlink" href="#doppelt-verkettete-liste" title="Link zu dieser Überschrift">#</a></h2>
+<p>Die <em>doppelt verkettete Liste</em> (engl. <em>Dequeue</em>) ist einer Erweiterung der <em>(einfach) verketteten Liste</em> und zugleich eine Kombination aus Warteschlange und Stack.
+Sie besteht aus Knoten, die nicht nur einen Zeiger auf den nächsten sondern auch auf den vorherigen Knoten enthalten.
+Das macht die Liste flexibler.
+Es lassen sich effizient vorne und hinten Elemente einfügen und löschen, doch ist der Verwaltungsaufwand größer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NodeD</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">predecessor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">successor</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">successor</span>  <span class="o">=</span> <span class="n">successor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">predecessor</span>
+        
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">successor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">successor</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="bp">self</span>
+        
+        <span class="n">node</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="n">successor</span>
+        <span class="k">if</span> <span class="n">successor</span><span class="p">:</span>
+            <span class="n">successor</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">node</span>
+        
+    <span class="k">def</span> <span class="nf">prepend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">predecessor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predecessor</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="bp">self</span>
+    
+        <span class="n">node</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">predecessor</span>    
+        <span class="k">if</span> <span class="n">predecessor</span><span class="p">:</span>
+            <span class="n">predecessor</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="n">node</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um einen neuen Knoten hinter einem gegebenen Knoten anzuhängen <code class="docutils literal notranslate"><span class="pre">append</span></code> müssen wir lediglich die <em>Zeiger</em> richtig „verbiegen“.
+Auch diese Operation ist, bezogen auf die Laufzeit, sehr günstig.
+Wollen wir testen ob die Liste einen bestimmten Wert enthält <code class="docutils literal notranslate"><span class="pre">contains</span></code>, so müssen wir diese von Kopf bis Fuß durchsuchen.
+Diese Operation ist teuer!</p>
+<p>Der Folgende Code zeigt die Realisierung eines Knotens durch eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Klasse.</p>
+<p>Die Klasse <code class="docutils literal notranslate"><span class="pre">DoubleLinkedList</span></code> zeigt eine sehr simple Realisierung einer <em>doppelt verketteten Liste</em>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Laufzeit</p></th>
+<th class="head"><p>Beschreibung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert Anzahl der Elemente</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">prepend(element)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Fügt das Element <code class="docutils literal notranslate"><span class="pre">element</span></code> vorne an (es wird zum Head)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">append(element)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Fügt das Element <code class="docutils literal notranslate"><span class="pre">element</span></code> hinten an (es wird zum Tail)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">first()</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert erstes Element (Head) ohne es zu löschen</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">last()</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert letzte Element (Tail) ohne es zu löschen</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">remove_first()</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert erstes Element (Head) und löscht es aus der Liste</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">remove_last()</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
+<td><p>Liefert letzte Element (Tail) und löscht es aus der Liste</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">contains(element)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> genau dann wenn <code class="docutils literal notranslate"><span class="pre">element</span></code> in der Liste ist.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__getitem__(i)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></p></td>
+<td><p>Liefert Element an der <code class="docutils literal notranslate"><span class="pre">i</span></code>-ten Stelle in der Liste</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__setitem__(i,</span> <span class="pre">value)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></p></td>
+<td><p>Ersetzt <code class="docutils literal notranslate"><span class="pre">i</span></code>-tes Element in der Liste mit <code class="docutils literal notranslate"><span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__delitem__(i)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></p></td>
+<td><p>Ersetzt <code class="docutils literal notranslate"><span class="pre">i</span></code>-tes Element in der Liste mit <code class="docutils literal notranslate"><span class="pre">value</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DoubleLinkedList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="mi">0</span>
+        
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;[&#39;</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">):</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="n">node</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">successor</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;, &#39;</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;]&#39;</span>
+        <span class="k">return</span> <span class="n">text</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span>
+    
+    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="o">.</span><span class="n">value</span>
+    
+    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span><span class="o">.</span><span class="n">value</span>
+    
+    <span class="k">def</span> <span class="nf">remove_last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span><span class="o">.</span><span class="n">predecessor</span>
+        <span class="n">tail</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="kc">None</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">tail</span><span class="o">.</span><span class="n">value</span>
+        
+    <span class="k">def</span> <span class="nf">remove_first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="o">.</span><span class="n">successor</span>
+        <span class="n">head</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="kc">None</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">head</span><span class="o">.</span><span class="n">value</span>
+            
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vale</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">NodeD</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="n">node</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+    <span class="k">def</span> <span class="nf">prepend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">NodeD</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_head</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_head</span> <span class="o">=</span> <span class="n">node</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+    <span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">successor</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    
+    <span class="k">def</span> <span class="nf">__get_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">//</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="n">key</span><span class="p">:</span>        <span class="c1"># forwards</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_head</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">successor</span>
+        <span class="k">else</span><span class="p">:</span>                         <span class="c1"># backwards</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tail</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">predecessor</span>
+        <span class="k">return</span> <span class="n">node</span>
+    
+    <span class="k">def</span> <span class="fm">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="c1"># del lst[key]</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remove_first</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">key</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">remove_last</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_node</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="n">predecessor</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">successor</span>
+            <span class="n">successor</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">successor</span>
+            <span class="n">predecessor</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="n">succesor</span>
+            <span class="n">successor</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="n">predecessor</span>
+            
+            <span class="n">node</span><span class="o">.</span><span class="n">successor</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">predecessor</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">-=</span> <span class="mi">1</span>
+    
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="c1"># self[key]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_node</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+            
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="c1"># self[key] = value</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_node</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="n">DoubleLinkedList</span><span class="p">()</span>
+<span class="n">lst</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">lst</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">31</span><span class="p">)</span>
+<span class="n">lst</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span>
+<span class="n">lst</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="mi">54</span><span class="p">)</span>
+
+<span class="n">lst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[54, 44, 31, 13]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">del</span> <span class="n">lst</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span>
+<span class="n">lst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+54
+False
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[54, 44, 31]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">lst</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="o">.</span><span class="n">remove_last</span><span class="p">())</span>
+
+<span class="n">lst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31
+44
+54
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="dequeue">
-<h2><span class="section-number">10.4.5. </span>Dequeue<a class="headerlink" href="#dequeue" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">10.4.6. </span>Dequeue<a class="headerlink" href="#dequeue" title="Link zu dieser Überschrift">#</a></h2>
 <p>TODO</p>
 </div>
 <div class="section" id="arrays">
-<h2><span class="section-number">10.4.6. </span>Arrays<a class="headerlink" href="#arrays" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">10.4.7. </span>Arrays<a class="headerlink" href="#arrays" title="Link zu dieser Überschrift">#</a></h2>
 <p>TODO</p>
 </div>
 <div class="section" id="hashmaps">
-<h2><span class="section-number">10.4.7. </span>Hashmaps<a class="headerlink" href="#hashmaps" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">10.4.8. </span>Hashmaps<a class="headerlink" href="#hashmaps" title="Link zu dieser Überschrift">#</a></h2>
 <p>TODO</p>
 </div>
 <div class="section" id="baume">
-<h2><span class="section-number">10.4.8. </span>Bäume<a class="headerlink" href="#baume" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">10.4.9. </span>Bäume<a class="headerlink" href="#baume" title="Link zu dieser Überschrift">#</a></h2>
 <p>TODO</p>
 </div>
 </div>
