@@ -14,7 +14,7 @@ kernelspec:
 # Funktionsaufrufe
 
 Wenn Sie das Buch von vorne bis hierhin gelesen haben, werden Ihnen so einige Funktionsdefinitionen über den Weg gelaufen sein.
-Wie wir eigene Funktionen definieren werden wir uns noch genauer ansehen.
+Wie wir eigene Funktionen definieren, werden wir uns noch genauer ansehen.
 Vorerst begnügen wir uns mit dem *Aufrufen* von bereits existierenden *Funktionen*.
 
 Vorab sei betont, dass eine *mathematische Funktion* sich von einer ``Python``-Funktion wesentlich unterscheidet.
@@ -41,7 +41,7 @@ Die Werte, welche diese Parameter erhalten bezeichnen wir als *Argumente* des Fu
 Argumente sind Werte, welche die Funktion erwartet und die wir übergeben müssen.
 Diese Argumente werden von der Funktion verarbeitet.
 
-Zum Beispiel bietet ``Python`` die vordefinierte Funktion ``abs`` an, welche eine Zahl als Argument erwartet.
+Zum Beispiel, bietet ``Python`` die vordefinierte Funktion ``abs`` an, welche eine Zahl als Argument erwartet.
 
 ```{code-cell} python3
 abs(-23)
@@ -66,11 +66,10 @@ max(2, -10)
 Die Funktion berechnet aus dem Argument die am nächsten liegende ganze Zahl und liefert diese zurück.
 In anderen Worten, ``round`` rundet zur nächst liegenden ganzen Zahl.
 
-``max`` erwartet zwei Zahlen oder als Argumente und liefert die größere Zahl zurück.
+``max`` erwartet zwei oder mehr Zahlen als Argumente und liefert die größere Zahl zurück.
 
-Bemerkenswert beim obigen *Funktionsaufruf* ist, dass die *Ausdrücke* ``5-3`` und ``3 * 3`` ausgewertet werden bevor die Funktion aufgerufen wird.
+Bemerkenswert ist beim obigen *Funktionsaufruf*, dass die *Ausdrücke* ``5-3`` und ``3 * 3`` ausgewertet werden bevor die Funktion aufgerufen wird.
 Das heißt, die Funktion wird mit den Argumenten ``2, 3, 2`` und ``9`` aufgerufen.
-
 Wir sehen auch, dass ``max`` mit einer unterschiedlichen Anzahl an Argumenten umgehen kann.
 
 ## Module
@@ -89,7 +88,7 @@ Es ist eine Zusammenstellung von Funktionen, welche zusammengehören.
 Im Modul ``random`` befinden sich, zum Beispiel, viele Funktionen die Operatoren aus der Wahrscheinlichkeitstheorie realisieren.
 
 Um ein Modul nutzten zu können muss es, d.h. dessen Quellcode, auf Ihrem System installiert sein.
-Manche Module wie beispielsweise ``random`` gehören zur Standardbibliothek von ``Python`` und werden mit ``Python`` selbst installiert.
+Manche Module, wie beispielsweise ``random``, gehören zur Standardbibliothek von ``Python`` und werden mit ``Python`` selbst installiert.
 Ist das Modul installiert, müssen wir es in unseren Code *importieren*.
 Wir machen es unserem Code bekannt, sodass wir es auch nutzten können.
 Dies geschieht mit dem *Schlüsselwort* ``import``.
@@ -159,7 +158,7 @@ Sie müssen nicht jedes Wort verstehen aber ziehen Sie ihre Schlüsse.
 :label: help-solution
 :class: dropdown
 
-Neben der optionalen Argumente erwartet ``max`` entweder ein iterierbares Argument oder aber mindestens zwei Argumente.
+Neben der optionalen Argumente, erwartet ``max`` entweder ein iterierbares Argument oder aber mindestens zwei Argumente.
 Im ersten Fall gibt ``max`` das größte Element des iterierbaren Arguments zurück.
 D.h., ein iterierbares Argument ist wohl so etwas wie eine Sequenz, Liste, Menge an Elementen.
 
@@ -167,7 +166,7 @@ D.h., ein iterierbares Argument ist wohl so etwas wie eine Sequenz, Liste, Menge
 
 ## Auswertungsreihenfolge
 
-Ein *Funktionsaufruf* ist ebenfalls ein *Ausdruck* und wie beim Rechnen werden Ausdrücke von innen nach außen *ausgewertet*.
+Ein *Funktionsaufruf* ist ebenfalls ein *Ausdruck* und, wie beim Rechnen, werden Ausdrücke von innen nach außen *ausgewertet*.
 Blicken Sie auf folgenden Ausdruck:
 
 ```{code-cell} python3
@@ -176,7 +175,7 @@ round(max(abs(-abs(-3)), 3, 5 + 3) - 0.6)
 
 Dieser Ausdruck besteht aus mehreren Ausdrücken.
 Die Auswertung des gesamten Ausdrucks erfolgt von links nach rechts, wobei die notwendigen Argumente, welche durch einen Ausdruck berechnet werden, ausgewertet werden.
-Deshalb springen wir von Außen nach Innen und werten dann von Innen nach Außen aus.
+Deshalb springen wir von außen nach innen und werten dann von innen nach außen aus.
 
 ```{figure} ../../figs/python-tutorial/variables/eval.png
 ---
@@ -215,7 +214,7 @@ persentage
 
 ## Das Kennenlernen
 
-Programmieren beginnt oft mit der Dokumentation von Modulen und Bibliotheken.
+Programmieren beginnt oft mit dem Durchwühlen von Dokumentationen fremder Module und Pakete.
 Bevor wir loslegen müssen wir erst in Erfahrung bringen **WAS** überhaupt möglich ist.
 Welche vordefinierten Funktionen und welche Module gibt es bzw. welche dieser Module könnten für meine Zwecke nützlich sein.
 
@@ -223,10 +222,20 @@ Selbst nach Jahren an Programmierkenntnissen hört dieser Lernprozess nie auf.
 Ständig werden neue nützliche Module programmiert und auch Sie werden noch irgendwann Ihre eigenen Module implementieren und nutzten.
 Einer der wichtigsten Fähigkeiten ist es, Dokumentationen zu finden und richtig zu lesen.
 
-Mit der Erfahrung funktioniert auch das immer besser.
+Mit zunehmender Erfahrung klappt auch dies immer besser.
 Zum Beispiel würden erfahrene Programmierer*innen richtigerweise vermuten, dass das Modul ``random`` auch eine Funktion bieten wird, welche eine zufällige natürliche Zahl zurückliefert.
 Durchforsten wir das Internet nach diesem Modul so stoßen wir möglicherweise auf [diese Seite](https://docs.python.org/3/library/random.html).
 Dort finden wir eine Funktion ``random.randint``.
+
+Wir finden diese auch in der Hilfe, die wir duch ``help`` ausgeben können.
+
+```{code-cell} python3
+---
+tags: [output_scroll]
+---
+import random
+help(random)
+```
 
 ```{exercise} Dokumentation
 :label: documentation-exercise

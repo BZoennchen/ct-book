@@ -523,7 +523,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="intro.html">
-   13. Variablen, Ausdrücke und Funktionsaufrufe
+   13. Grundlagen
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -1149,7 +1149,7 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="funktionsaufrufe">
 <span id="sec-function-calls"></span><h1><span class="section-number">13.3. </span>Funktionsaufrufe<a class="headerlink" href="#funktionsaufrufe" title="Link zu dieser Überschrift">#</a></h1>
 <p>Wenn Sie das Buch von vorne bis hierhin gelesen haben, werden Ihnen so einige Funktionsdefinitionen über den Weg gelaufen sein.
-Wie wir eigene Funktionen definieren werden wir uns noch genauer ansehen.
+Wie wir eigene Funktionen definieren, werden wir uns noch genauer ansehen.
 Vorerst begnügen wir uns mit dem <em>Aufrufen</em> von bereits existierenden <em>Funktionen</em>.</p>
 <p>Vorab sei betont, dass eine <em>mathematische Funktion</em> sich von einer <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion wesentlich unterscheidet.
 Wir diskutieren dies genaue im Abschnitt <a class="reference internal" href="../03-6/1-purity.html#sec-purity"><span class="std std-ref">Reinheit</span></a>.</p>
@@ -1167,7 +1167,7 @@ Die Werte, welche diese Parameter erhalten bezeichnen wir als <em>Argumente</em>
 </div>
 <p>Argumente sind Werte, welche die Funktion erwartet und die wir übergeben müssen.
 Diese Argumente werden von der Funktion verarbeitet.</p>
-<p>Zum Beispiel bietet <code class="docutils literal notranslate"><span class="pre">Python</span></code> die vordefinierte Funktion <code class="docutils literal notranslate"><span class="pre">abs</span></code> an, welche eine Zahl als Argument erwartet.</p>
+<p>Zum Beispiel, bietet <code class="docutils literal notranslate"><span class="pre">Python</span></code> die vordefinierte Funktion <code class="docutils literal notranslate"><span class="pre">abs</span></code> an, welche eine Zahl als Argument erwartet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">23</span><span class="p">)</span>
@@ -1221,10 +1221,10 @@ Weitere Beispiele sind die <code class="docutils literal notranslate"><span clas
 <p><code class="docutils literal notranslate"><span class="pre">round</span></code> erwartet ebenfalls eine Zahl als Argument.
 Die Funktion berechnet aus dem Argument die am nächsten liegende ganze Zahl und liefert diese zurück.
 In anderen Worten, <code class="docutils literal notranslate"><span class="pre">round</span></code> rundet zur nächst liegenden ganzen Zahl.</p>
-<p><code class="docutils literal notranslate"><span class="pre">max</span></code> erwartet zwei Zahlen oder als Argumente und liefert die größere Zahl zurück.</p>
-<p>Bemerkenswert beim obigen <em>Funktionsaufruf</em> ist, dass die <em>Ausdrücke</em> <code class="docutils literal notranslate"><span class="pre">5-3</span></code> und <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">3</span></code> ausgewertet werden bevor die Funktion aufgerufen wird.
-Das heißt, die Funktion wird mit den Argumenten <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">2</span></code> und <code class="docutils literal notranslate"><span class="pre">9</span></code> aufgerufen.</p>
-<p>Wir sehen auch, dass <code class="docutils literal notranslate"><span class="pre">max</span></code> mit einer unterschiedlichen Anzahl an Argumenten umgehen kann.</p>
+<p><code class="docutils literal notranslate"><span class="pre">max</span></code> erwartet zwei oder mehr Zahlen als Argumente und liefert die größere Zahl zurück.</p>
+<p>Bemerkenswert ist beim obigen <em>Funktionsaufruf</em>, dass die <em>Ausdrücke</em> <code class="docutils literal notranslate"><span class="pre">5-3</span></code> und <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">3</span></code> ausgewertet werden bevor die Funktion aufgerufen wird.
+Das heißt, die Funktion wird mit den Argumenten <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">2</span></code> und <code class="docutils literal notranslate"><span class="pre">9</span></code> aufgerufen.
+Wir sehen auch, dass <code class="docutils literal notranslate"><span class="pre">max</span></code> mit einer unterschiedlichen Anzahl an Argumenten umgehen kann.</p>
 <div class="section" id="module">
 <h2><span class="section-number">13.3.1. </span>Module<a class="headerlink" href="#module" title="Link zu dieser Überschrift">#</a></h2>
 <p>Es gibt nur wenige vordefinierte Funktionen, die keine Argumente besitzen.
@@ -1236,7 +1236,7 @@ Es ist eine Zusammenstellung von Funktionen, welche zusammengehören.</p>
 </div>
 <p>Im Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> befinden sich, zum Beispiel, viele Funktionen die Operatoren aus der Wahrscheinlichkeitstheorie realisieren.</p>
 <p>Um ein Modul nutzten zu können muss es, d.h. dessen Quellcode, auf Ihrem System installiert sein.
-Manche Module wie beispielsweise <code class="docutils literal notranslate"><span class="pre">random</span></code> gehören zur Standardbibliothek von <code class="docutils literal notranslate"><span class="pre">Python</span></code> und werden mit <code class="docutils literal notranslate"><span class="pre">Python</span></code> selbst installiert.
+Manche Module, wie beispielsweise <code class="docutils literal notranslate"><span class="pre">random</span></code>, gehören zur Standardbibliothek von <code class="docutils literal notranslate"><span class="pre">Python</span></code> und werden mit <code class="docutils literal notranslate"><span class="pre">Python</span></code> selbst installiert.
 Ist das Modul installiert, müssen wir es in unseren Code <em>importieren</em>.
 Wir machen es unserem Code bekannt, sodass wir es auch nutzten können.
 Dies geschieht mit dem <em>Schlüsselwort</em> <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
@@ -1248,7 +1248,7 @@ Dies geschieht mit dem <em>Schlüsselwort</em> <code class="docutils literal not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.24528459308512218
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.09615197232502204
 </pre></div>
 </div>
 </div>
@@ -1274,7 +1274,7 @@ Mit</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.512387168812065
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.22518226329866675
 </pre></div>
 </div>
 </div>
@@ -1323,7 +1323,7 @@ Sie müssen nicht jedes Wort verstehen aber ziehen Sie ihre Schlüsse.</p>
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#help-exercise"> Exercise 13.1 (Hilfe)</a></p>
 <div class="section" id="solution-content">
-<p>Neben der optionalen Argumente erwartet <code class="docutils literal notranslate"><span class="pre">max</span></code> entweder ein iterierbares Argument oder aber mindestens zwei Argumente.
+<p>Neben der optionalen Argumente, erwartet <code class="docutils literal notranslate"><span class="pre">max</span></code> entweder ein iterierbares Argument oder aber mindestens zwei Argumente.
 Im ersten Fall gibt <code class="docutils literal notranslate"><span class="pre">max</span></code> das größte Element des iterierbaren Arguments zurück.
 D.h., ein iterierbares Argument ist wohl so etwas wie eine Sequenz, Liste, Menge an Elementen.</p>
 </div>
@@ -1331,7 +1331,7 @@ D.h., ein iterierbares Argument ist wohl so etwas wie eine Sequenz, Liste, Menge
 </div>
 <div class="section" id="auswertungsreihenfolge">
 <h2><span class="section-number">13.3.2. </span>Auswertungsreihenfolge<a class="headerlink" href="#auswertungsreihenfolge" title="Link zu dieser Überschrift">#</a></h2>
-<p>Ein <em>Funktionsaufruf</em> ist ebenfalls ein <em>Ausdruck</em> und wie beim Rechnen werden Ausdrücke von innen nach außen <em>ausgewertet</em>.
+<p>Ein <em>Funktionsaufruf</em> ist ebenfalls ein <em>Ausdruck</em> und, wie beim Rechnen, werden Ausdrücke von innen nach außen <em>ausgewertet</em>.
 Blicken Sie auf folgenden Ausdruck:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1347,10 +1347,10 @@ Blicken Sie auf folgenden Ausdruck:</p>
 </div>
 <p>Dieser Ausdruck besteht aus mehreren Ausdrücken.
 Die Auswertung des gesamten Ausdrucks erfolgt von links nach rechts, wobei die notwendigen Argumente, welche durch einen Ausdruck berechnet werden, ausgewertet werden.
-Deshalb springen wir von Außen nach Innen und werten dann von Innen nach Außen aus.</p>
+Deshalb springen wir von außen nach innen und werten dann von innen nach außen aus.</p>
 <div class="figure align-default" id="fig-eval">
 <a class="reference internal image-reference" href="../../_images/eval.png"><img alt="../../_images/eval.png" src="../../_images/eval.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 13.4 </span><span class="caption-text">Skizze der Auswertung / Evaluierung des obigen Ausdrucks.</span><a class="headerlink" href="#fig-eval" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 13.5 </span><span class="caption-text">Skizze der Auswertung / Evaluierung des obigen Ausdrucks.</span><a class="headerlink" href="#fig-eval" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Um <code class="docutils literal notranslate"><span class="pre">round</span></code> auszuwerten muss zu aller erst der Ausdruck <code class="docutils literal notranslate"><span class="pre">max(abs(-abs(-3)),</span> <span class="pre">3,</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">-</span> <span class="pre">0.6</span></code> ausgewertet werden.
 Deshalb wird <code class="docutils literal notranslate"><span class="pre">max(abs(-abs(-3)),</span> <span class="pre">3,</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">3)</span></code> ausgewertet.
@@ -1395,16 +1395,686 @@ Durch die folgende Abfolge von Ausdrücken berechnen wir den prozentualen Anteil
 </div>
 <div class="section" id="das-kennenlernen">
 <h2><span class="section-number">13.3.3. </span>Das Kennenlernen<a class="headerlink" href="#das-kennenlernen" title="Link zu dieser Überschrift">#</a></h2>
-<p>Programmieren beginnt oft mit der Dokumentation von Modulen und Bibliotheken.
+<p>Programmieren beginnt oft mit dem Durchwühlen von Dokumentationen fremder Module und Pakete.
 Bevor wir loslegen müssen wir erst in Erfahrung bringen <strong>WAS</strong> überhaupt möglich ist.
 Welche vordefinierten Funktionen und welche Module gibt es bzw. welche dieser Module könnten für meine Zwecke nützlich sein.</p>
 <p>Selbst nach Jahren an Programmierkenntnissen hört dieser Lernprozess nie auf.
 Ständig werden neue nützliche Module programmiert und auch Sie werden noch irgendwann Ihre eigenen Module implementieren und nutzten.
 Einer der wichtigsten Fähigkeiten ist es, Dokumentationen zu finden und richtig zu lesen.</p>
-<p>Mit der Erfahrung funktioniert auch das immer besser.
+<p>Mit zunehmender Erfahrung klappt auch dies immer besser.
 Zum Beispiel würden erfahrene Programmierer*innen richtigerweise vermuten, dass das Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> auch eine Funktion bieten wird, welche eine zufällige natürliche Zahl zurückliefert.
 Durchforsten wir das Internet nach diesem Modul so stoßen wir möglicherweise auf <a class="reference external" href="https://docs.python.org/3/library/random.html">diese Seite</a>.
 Dort finden wir eine Funktion <code class="docutils literal notranslate"><span class="pre">random.randint</span></code>.</p>
+<p>Wir finden diese auch in der Hilfe, die wir duch <code class="docutils literal notranslate"><span class="pre">help</span></code> ausgeben können.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">help</span><span class="p">(</span><span class="n">random</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on module random:
+
+NAME
+    random - Random variable generators.
+
+MODULE REFERENCE
+    https://docs.python.org/3.9/library/random
+    
+    The following documentation is automatically generated from the Python
+    source files.  It may be incomplete, incorrect or include features that
+    are considered implementation detail and may vary between Python
+    implementations.  When in doubt, consult the module reference at the
+    location listed above.
+
+DESCRIPTION
+        bytes
+        -----
+               uniform bytes (values between 0 and 255)
+    
+        integers
+        --------
+               uniform within range
+    
+        sequences
+        ---------
+               pick random element
+               pick random sample
+               pick weighted random sample
+               generate random permutation
+    
+        distributions on the real line:
+        ------------------------------
+               uniform
+               triangular
+               normal (Gaussian)
+               lognormal
+               negative exponential
+               gamma
+               beta
+               pareto
+               Weibull
+    
+        distributions on the circle (angles 0 to 2pi)
+        ---------------------------------------------
+               circular uniform
+               von Mises
+    
+    General notes on the underlying Mersenne Twister core generator:
+    
+    * The period is 2**19937-1.
+    * It is one of the most extensively tested generators in existence.
+    * The random() method is implemented in C, executes in a single Python step,
+      and is, therefore, threadsafe.
+
+CLASSES
+    _random.Random(builtins.object)
+        Random
+            SystemRandom
+    
+    class Random(_random.Random)
+     |  Random(x=None)
+     |  
+     |  Random number generator base class used by bound module functions.
+     |  
+     |  Used to instantiate instances of Random to get generators that don&#39;t
+     |  share state.
+     |  
+     |  Class Random can also be subclassed if you want to use a different basic
+     |  generator of your own devising: in that case, override the following
+     |  methods:  random(), seed(), getstate(), and setstate().
+     |  Optionally, implement a getrandbits() method so that randrange()
+     |  can cover arbitrarily large ranges.
+     |  
+     |  Method resolution order:
+     |      Random
+     |      _random.Random
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  __getstate__(self)
+     |      # Issue 17489: Since __reduce__ was defined to fix #759889 this is no
+     |      # longer called; we leave it here because it has been here since random was
+     |      # rewritten back in 2001 and why risk breaking something.
+     |  
+     |  __init__(self, x=None)
+     |      Initialize an instance.
+     |      
+     |      Optional argument x controls seeding, as for Random.seed().
+     |  
+     |  __reduce__(self)
+     |      Helper for pickle.
+     |  
+     |  __setstate__(self, state)
+     |  
+     |  betavariate(self, alpha, beta)
+     |      Beta distribution.
+     |      
+     |      Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+     |      Returned values range between 0 and 1.
+     |  
+     |  choice(self, seq)
+     |      Choose a random element from a non-empty sequence.
+     |  
+     |  choices(self, population, weights=None, *, cum_weights=None, k=1)
+     |      Return a k sized list of population elements chosen with replacement.
+     |      
+     |      If the relative weights or cumulative weights are not specified,
+     |      the selections are made with equal probability.
+     |  
+     |  expovariate(self, lambd)
+     |      Exponential distribution.
+     |      
+     |      lambd is 1.0 divided by the desired mean.  It should be
+     |      nonzero.  (The parameter would be called &quot;lambda&quot;, but that is
+     |      a reserved word in Python.)  Returned values range from 0 to
+     |      positive infinity if lambd is positive, and from negative
+     |      infinity to 0 if lambd is negative.
+     |  
+     |  gammavariate(self, alpha, beta)
+     |      Gamma distribution.  Not the gamma function!
+     |      
+     |      Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+     |      
+     |      The probability distribution function is:
+     |      
+     |                  x ** (alpha - 1) * math.exp(-x / beta)
+     |        pdf(x) =  --------------------------------------
+     |                    math.gamma(alpha) * beta ** alpha
+     |  
+     |  gauss(self, mu, sigma)
+     |      Gaussian distribution.
+     |      
+     |      mu is the mean, and sigma is the standard deviation.  This is
+     |      slightly faster than the normalvariate() function.
+     |      
+     |      Not thread-safe without a lock around calls.
+     |  
+     |  getstate(self)
+     |      Return internal state; can be passed to setstate() later.
+     |  
+     |  lognormvariate(self, mu, sigma)
+     |      Log normal distribution.
+     |      
+     |      If you take the natural logarithm of this distribution, you&#39;ll get a
+     |      normal distribution with mean mu and standard deviation sigma.
+     |      mu can have any value, and sigma must be greater than zero.
+     |  
+     |  normalvariate(self, mu, sigma)
+     |      Normal distribution.
+     |      
+     |      mu is the mean, and sigma is the standard deviation.
+     |  
+     |  paretovariate(self, alpha)
+     |      Pareto distribution.  alpha is the shape parameter.
+     |  
+     |  randbytes(self, n)
+     |      Generate n random bytes.
+     |  
+     |  randint(self, a, b)
+     |      Return random integer in range [a, b], including both end points.
+     |  
+     |  randrange(self, start, stop=None, step=1)
+     |      Choose a random item from range(start, stop[, step]).
+     |      
+     |      This fixes the problem with randint() which includes the
+     |      endpoint; in Python this is usually not what you want.
+     |  
+     |  sample(self, population, k, *, counts=None)
+     |      Chooses k unique random elements from a population sequence or set.
+     |      
+     |      Returns a new list containing elements from the population while
+     |      leaving the original population unchanged.  The resulting list is
+     |      in selection order so that all sub-slices will also be valid random
+     |      samples.  This allows raffle winners (the sample) to be partitioned
+     |      into grand prize and second place winners (the subslices).
+     |      
+     |      Members of the population need not be hashable or unique.  If the
+     |      population contains repeats, then each occurrence is a possible
+     |      selection in the sample.
+     |      
+     |      Repeated elements can be specified one at a time or with the optional
+     |      counts parameter.  For example:
+     |      
+     |          sample([&#39;red&#39;, &#39;blue&#39;], counts=[4, 2], k=5)
+     |      
+     |      is equivalent to:
+     |      
+     |          sample([&#39;red&#39;, &#39;red&#39;, &#39;red&#39;, &#39;red&#39;, &#39;blue&#39;, &#39;blue&#39;], k=5)
+     |      
+     |      To choose a sample from a range of integers, use range() for the
+     |      population argument.  This is especially fast and space efficient
+     |      for sampling from a large population:
+     |      
+     |          sample(range(10000000), 60)
+     |  
+     |  seed(self, a=None, version=2)
+     |      Initialize internal state from a seed.
+     |      
+     |      The only supported seed types are None, int, float,
+     |      str, bytes, and bytearray.
+     |      
+     |      None or no argument seeds from current time or from an operating
+     |      system specific randomness source if available.
+     |      
+     |      If *a* is an int, all bits are used.
+     |      
+     |      For version 2 (the default), all of the bits are used if *a* is a str,
+     |      bytes, or bytearray.  For version 1 (provided for reproducing random
+     |      sequences from older versions of Python), the algorithm for str and
+     |      bytes generates a narrower range of seeds.
+     |  
+     |  setstate(self, state)
+     |      Restore internal state from object returned by getstate().
+     |  
+     |  shuffle(self, x, random=None)
+     |      Shuffle list x in place, and return None.
+     |      
+     |      Optional argument random is a 0-argument function returning a
+     |      random float in [0.0, 1.0); if it is the default None, the
+     |      standard random.random will be used.
+     |  
+     |  triangular(self, low=0.0, high=1.0, mode=None)
+     |      Triangular distribution.
+     |      
+     |      Continuous distribution bounded by given lower and upper limits,
+     |      and having a given mode value in-between.
+     |      
+     |      http://en.wikipedia.org/wiki/Triangular_distribution
+     |  
+     |  uniform(self, a, b)
+     |      Get a random number in the range [a, b) or [a, b] depending on rounding.
+     |  
+     |  vonmisesvariate(self, mu, kappa)
+     |      Circular data distribution.
+     |      
+     |      mu is the mean angle, expressed in radians between 0 and 2*pi, and
+     |      kappa is the concentration parameter, which must be greater than or
+     |      equal to zero.  If kappa is equal to zero, this distribution reduces
+     |      to a uniform random angle over the range 0 to 2*pi.
+     |  
+     |  weibullvariate(self, alpha, beta)
+     |      Weibull distribution.
+     |      
+     |      alpha is the scale parameter and beta is the shape parameter.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Class methods defined here:
+     |  
+     |  __init_subclass__(**kwargs) from builtins.type
+     |      Control how subclasses generate random integers.
+     |      
+     |      The algorithm a subclass can use depends on the random() and/or
+     |      getrandbits() implementation available to it and determines
+     |      whether it can generate random integers from arbitrarily large
+     |      ranges.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  VERSION = 3
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _random.Random:
+     |  
+     |  getrandbits(self, k, /)
+     |      getrandbits(k) -&gt; x.  Generates an int with k random bits.
+     |  
+     |  random(self, /)
+     |      random() -&gt; x in the interval [0, 1).
+     |  
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _random.Random:
+     |  
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+    
+    class SystemRandom(Random)
+     |  SystemRandom(x=None)
+     |  
+     |  Alternate random number generator using sources provided
+     |  by the operating system (such as /dev/urandom on Unix or
+     |  CryptGenRandom on Windows).
+     |  
+     |   Not available on all systems (see os.urandom() for details).
+     |  
+     |  Method resolution order:
+     |      SystemRandom
+     |      Random
+     |      _random.Random
+     |      builtins.object
+     |  
+     |  Methods defined here:
+     |  
+     |  getrandbits(self, k)
+     |      getrandbits(k) -&gt; x.  Generates an int with k random bits.
+     |  
+     |  getstate = _notimplemented(self, *args, **kwds)
+     |  
+     |  randbytes(self, n)
+     |      Generate n random bytes.
+     |  
+     |  random(self)
+     |      Get the next random number in the range [0.0, 1.0).
+     |  
+     |  seed(self, *args, **kwds)
+     |      Stub method.  Not used for a system random number generator.
+     |  
+     |  setstate = _notimplemented(self, *args, **kwds)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from Random:
+     |  
+     |  __getstate__(self)
+     |      # Issue 17489: Since __reduce__ was defined to fix #759889 this is no
+     |      # longer called; we leave it here because it has been here since random was
+     |      # rewritten back in 2001 and why risk breaking something.
+     |  
+     |  __init__(self, x=None)
+     |      Initialize an instance.
+     |      
+     |      Optional argument x controls seeding, as for Random.seed().
+     |  
+     |  __reduce__(self)
+     |      Helper for pickle.
+     |  
+     |  __setstate__(self, state)
+     |  
+     |  betavariate(self, alpha, beta)
+     |      Beta distribution.
+     |      
+     |      Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+     |      Returned values range between 0 and 1.
+     |  
+     |  choice(self, seq)
+     |      Choose a random element from a non-empty sequence.
+     |  
+     |  choices(self, population, weights=None, *, cum_weights=None, k=1)
+     |      Return a k sized list of population elements chosen with replacement.
+     |      
+     |      If the relative weights or cumulative weights are not specified,
+     |      the selections are made with equal probability.
+     |  
+     |  expovariate(self, lambd)
+     |      Exponential distribution.
+     |      
+     |      lambd is 1.0 divided by the desired mean.  It should be
+     |      nonzero.  (The parameter would be called &quot;lambda&quot;, but that is
+     |      a reserved word in Python.)  Returned values range from 0 to
+     |      positive infinity if lambd is positive, and from negative
+     |      infinity to 0 if lambd is negative.
+     |  
+     |  gammavariate(self, alpha, beta)
+     |      Gamma distribution.  Not the gamma function!
+     |      
+     |      Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+     |      
+     |      The probability distribution function is:
+     |      
+     |                  x ** (alpha - 1) * math.exp(-x / beta)
+     |        pdf(x) =  --------------------------------------
+     |                    math.gamma(alpha) * beta ** alpha
+     |  
+     |  gauss(self, mu, sigma)
+     |      Gaussian distribution.
+     |      
+     |      mu is the mean, and sigma is the standard deviation.  This is
+     |      slightly faster than the normalvariate() function.
+     |      
+     |      Not thread-safe without a lock around calls.
+     |  
+     |  lognormvariate(self, mu, sigma)
+     |      Log normal distribution.
+     |      
+     |      If you take the natural logarithm of this distribution, you&#39;ll get a
+     |      normal distribution with mean mu and standard deviation sigma.
+     |      mu can have any value, and sigma must be greater than zero.
+     |  
+     |  normalvariate(self, mu, sigma)
+     |      Normal distribution.
+     |      
+     |      mu is the mean, and sigma is the standard deviation.
+     |  
+     |  paretovariate(self, alpha)
+     |      Pareto distribution.  alpha is the shape parameter.
+     |  
+     |  randint(self, a, b)
+     |      Return random integer in range [a, b], including both end points.
+     |  
+     |  randrange(self, start, stop=None, step=1)
+     |      Choose a random item from range(start, stop[, step]).
+     |      
+     |      This fixes the problem with randint() which includes the
+     |      endpoint; in Python this is usually not what you want.
+     |  
+     |  sample(self, population, k, *, counts=None)
+     |      Chooses k unique random elements from a population sequence or set.
+     |      
+     |      Returns a new list containing elements from the population while
+     |      leaving the original population unchanged.  The resulting list is
+     |      in selection order so that all sub-slices will also be valid random
+     |      samples.  This allows raffle winners (the sample) to be partitioned
+     |      into grand prize and second place winners (the subslices).
+     |      
+     |      Members of the population need not be hashable or unique.  If the
+     |      population contains repeats, then each occurrence is a possible
+     |      selection in the sample.
+     |      
+     |      Repeated elements can be specified one at a time or with the optional
+     |      counts parameter.  For example:
+     |      
+     |          sample([&#39;red&#39;, &#39;blue&#39;], counts=[4, 2], k=5)
+     |      
+     |      is equivalent to:
+     |      
+     |          sample([&#39;red&#39;, &#39;red&#39;, &#39;red&#39;, &#39;red&#39;, &#39;blue&#39;, &#39;blue&#39;], k=5)
+     |      
+     |      To choose a sample from a range of integers, use range() for the
+     |      population argument.  This is especially fast and space efficient
+     |      for sampling from a large population:
+     |      
+     |          sample(range(10000000), 60)
+     |  
+     |  shuffle(self, x, random=None)
+     |      Shuffle list x in place, and return None.
+     |      
+     |      Optional argument random is a 0-argument function returning a
+     |      random float in [0.0, 1.0); if it is the default None, the
+     |      standard random.random will be used.
+     |  
+     |  triangular(self, low=0.0, high=1.0, mode=None)
+     |      Triangular distribution.
+     |      
+     |      Continuous distribution bounded by given lower and upper limits,
+     |      and having a given mode value in-between.
+     |      
+     |      http://en.wikipedia.org/wiki/Triangular_distribution
+     |  
+     |  uniform(self, a, b)
+     |      Get a random number in the range [a, b) or [a, b] depending on rounding.
+     |  
+     |  vonmisesvariate(self, mu, kappa)
+     |      Circular data distribution.
+     |      
+     |      mu is the mean angle, expressed in radians between 0 and 2*pi, and
+     |      kappa is the concentration parameter, which must be greater than or
+     |      equal to zero.  If kappa is equal to zero, this distribution reduces
+     |      to a uniform random angle over the range 0 to 2*pi.
+     |  
+     |  weibullvariate(self, alpha, beta)
+     |      Weibull distribution.
+     |      
+     |      alpha is the scale parameter and beta is the shape parameter.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from Random:
+     |  
+     |  __init_subclass__(**kwargs) from builtins.type
+     |      Control how subclasses generate random integers.
+     |      
+     |      The algorithm a subclass can use depends on the random() and/or
+     |      getrandbits() implementation available to it and determines
+     |      whether it can generate random integers from arbitrarily large
+     |      ranges.
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from Random:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from Random:
+     |  
+     |  VERSION = 3
+     |  
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _random.Random:
+     |  
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+
+FUNCTIONS
+    betavariate(alpha, beta) method of Random instance
+        Beta distribution.
+        
+        Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+        Returned values range between 0 and 1.
+    
+    choice(seq) method of Random instance
+        Choose a random element from a non-empty sequence.
+    
+    choices(population, weights=None, *, cum_weights=None, k=1) method of Random instance
+        Return a k sized list of population elements chosen with replacement.
+        
+        If the relative weights or cumulative weights are not specified,
+        the selections are made with equal probability.
+    
+    expovariate(lambd) method of Random instance
+        Exponential distribution.
+        
+        lambd is 1.0 divided by the desired mean.  It should be
+        nonzero.  (The parameter would be called &quot;lambda&quot;, but that is
+        a reserved word in Python.)  Returned values range from 0 to
+        positive infinity if lambd is positive, and from negative
+        infinity to 0 if lambd is negative.
+    
+    gammavariate(alpha, beta) method of Random instance
+        Gamma distribution.  Not the gamma function!
+        
+        Conditions on the parameters are alpha &gt; 0 and beta &gt; 0.
+        
+        The probability distribution function is:
+        
+                    x ** (alpha - 1) * math.exp(-x / beta)
+          pdf(x) =  --------------------------------------
+                      math.gamma(alpha) * beta ** alpha
+    
+    gauss(mu, sigma) method of Random instance
+        Gaussian distribution.
+        
+        mu is the mean, and sigma is the standard deviation.  This is
+        slightly faster than the normalvariate() function.
+        
+        Not thread-safe without a lock around calls.
+    
+    getrandbits(k, /) method of Random instance
+        getrandbits(k) -&gt; x.  Generates an int with k random bits.
+    
+    getstate() method of Random instance
+        Return internal state; can be passed to setstate() later.
+    
+    lognormvariate(mu, sigma) method of Random instance
+        Log normal distribution.
+        
+        If you take the natural logarithm of this distribution, you&#39;ll get a
+        normal distribution with mean mu and standard deviation sigma.
+        mu can have any value, and sigma must be greater than zero.
+    
+    normalvariate(mu, sigma) method of Random instance
+        Normal distribution.
+        
+        mu is the mean, and sigma is the standard deviation.
+    
+    paretovariate(alpha) method of Random instance
+        Pareto distribution.  alpha is the shape parameter.
+    
+    randbytes(n) method of Random instance
+        Generate n random bytes.
+    
+    randint(a, b) method of Random instance
+        Return random integer in range [a, b], including both end points.
+    
+    random() method of Random instance
+        random() -&gt; x in the interval [0, 1).
+    
+    randrange(start, stop=None, step=1) method of Random instance
+        Choose a random item from range(start, stop[, step]).
+        
+        This fixes the problem with randint() which includes the
+        endpoint; in Python this is usually not what you want.
+    
+    sample(population, k, *, counts=None) method of Random instance
+        Chooses k unique random elements from a population sequence or set.
+        
+        Returns a new list containing elements from the population while
+        leaving the original population unchanged.  The resulting list is
+        in selection order so that all sub-slices will also be valid random
+        samples.  This allows raffle winners (the sample) to be partitioned
+        into grand prize and second place winners (the subslices).
+        
+        Members of the population need not be hashable or unique.  If the
+        population contains repeats, then each occurrence is a possible
+        selection in the sample.
+        
+        Repeated elements can be specified one at a time or with the optional
+        counts parameter.  For example:
+        
+            sample([&#39;red&#39;, &#39;blue&#39;], counts=[4, 2], k=5)
+        
+        is equivalent to:
+        
+            sample([&#39;red&#39;, &#39;red&#39;, &#39;red&#39;, &#39;red&#39;, &#39;blue&#39;, &#39;blue&#39;], k=5)
+        
+        To choose a sample from a range of integers, use range() for the
+        population argument.  This is especially fast and space efficient
+        for sampling from a large population:
+        
+            sample(range(10000000), 60)
+    
+    seed(a=None, version=2) method of Random instance
+        Initialize internal state from a seed.
+        
+        The only supported seed types are None, int, float,
+        str, bytes, and bytearray.
+        
+        None or no argument seeds from current time or from an operating
+        system specific randomness source if available.
+        
+        If *a* is an int, all bits are used.
+        
+        For version 2 (the default), all of the bits are used if *a* is a str,
+        bytes, or bytearray.  For version 1 (provided for reproducing random
+        sequences from older versions of Python), the algorithm for str and
+        bytes generates a narrower range of seeds.
+    
+    setstate(state) method of Random instance
+        Restore internal state from object returned by getstate().
+    
+    shuffle(x, random=None) method of Random instance
+        Shuffle list x in place, and return None.
+        
+        Optional argument random is a 0-argument function returning a
+        random float in [0.0, 1.0); if it is the default None, the
+        standard random.random will be used.
+    
+    triangular(low=0.0, high=1.0, mode=None) method of Random instance
+        Triangular distribution.
+        
+        Continuous distribution bounded by given lower and upper limits,
+        and having a given mode value in-between.
+        
+        http://en.wikipedia.org/wiki/Triangular_distribution
+    
+    uniform(a, b) method of Random instance
+        Get a random number in the range [a, b) or [a, b] depending on rounding.
+    
+    vonmisesvariate(mu, kappa) method of Random instance
+        Circular data distribution.
+        
+        mu is the mean angle, expressed in radians between 0 and 2*pi, and
+        kappa is the concentration parameter, which must be greater than or
+        equal to zero.  If kappa is equal to zero, this distribution reduces
+        to a uniform random angle over the range 0 to 2*pi.
+    
+    weibullvariate(alpha, beta) method of Random instance
+        Weibull distribution.
+        
+        alpha is the scale parameter and beta is the shape parameter.
+
+DATA
+    __all__ = [&#39;Random&#39;, &#39;SystemRandom&#39;, &#39;betavariate&#39;, &#39;choice&#39;, &#39;choices...
+
+FILE
+    /Users/bzoennchen/opt/anaconda3/lib/python3.9/random.py
+</pre></div>
+</div>
+</div>
+</div>
 <div class="exercise admonition" id="documentation-exercise">
 
 <p class="admonition-title"><span class="caption-number">Exercise 13.2 </span> (Dokumentation)</p>

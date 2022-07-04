@@ -3,12 +3,12 @@
 In diesem Kurs verwenden wir Jupyter Notebooks, welche wir im gleichnamigen [Abschnitt](sec-jupyter-notebooks) genauer Besprechen.
 Diese Notebooks gibt es noch nicht so lange und sie eigenen sich auch nur für bestimmte Zwecke.
 
-Die wohl gängigste Form ``Python``-Anwendungen zu entwickeln und ist es den Code in Dateien abzulegen.
-Insbesondere für die Entwicklung großer Anwendungen (z.B. auch Webseiten) oder Module wie etwa [roboworld](https://github.com/BZoennchen/robo-world) und Scripte, ist diese Methode geeignet.
-Notebooks hingegen eigenen sich für kleine Probleme bei denen wir Module lediglich Nutzung aber nicht selbst entwickeln.
+Die wohl gängigste Form ``Python``-Anwendungen zu entwickeln ist es den Code in Dateien abzulegen und dieses Datei dann [interpretieren](def-interpreter) zu lassen. 
+Insbesondere für die Entwicklung großer Anwendungen (z.B. auch Webseiten) oder Pakete, wie etwa [roboworld](https://github.com/BZoennchen/robo-world), und Scripte, ist diese Methode geeignet.
+Notebooks hingegen eigenen sich für kleine Probleme bei denen wir Pakete bzw. Module lediglich Nutzung aber nicht selbst entwickeln.
 
 Manchmal möchten wir aber auch nur ein paar Zeilen Code ausprobieren und zwar ohne irgendeine größere Entwicklungsumgebung zu starten.
-Wie haben vielleicht vergessen wie ``Python`` den ``+``-Operator für zwei Listen realisiert und möchten das schnell ausprobieren.
+Wir haben vielleicht vergessen wie ``Python`` den ``+``-Operator für zwei Listen realisiert und möchten das schnell ausprobieren.
 Hierzu kann man den sog. ``Python``-shell oder auch IPython-shell, welche dem REPL-Konzept (Read, Evaluate, Print and Loop) folgt, verwenden.
 
 ## REPL
@@ -97,7 +97,7 @@ python square_square.py 100
 
 und erhalten als Ausgabe die Summe aller Quadratzahlen von 1 bis einschließlich 100.
 
-Damit Ihr Code nicht ausgeführt wird, wenn Sie Ihn als Modul importieren sondern nur wenn Sie Ihn direkt aufrufen, verwendet man eine Bedingung der folgenden Form:
+Damit Ihr Code nicht ausgeführt wird, wenn Sie Ihn als Modul importieren, sondern nur wenn Sie Ihn direkt aufrufen, verwendet man eine Bedingung der folgenden Form:
 
 ```python
 if __name__ == '__main__':
@@ -131,7 +131,7 @@ funktioniert nach wie vor!
 ## Jupyter Notebook
 
 Jupyter Notebooks sind die letzte Möglichkeit ``Python``-Code zu entwickeln und auszuführen.
-Diese besprechen wir noch im Detail in Abschnitt [Jupyter Notebooks](sec-jupyter-notebooks)).
+Diese besprechen wir noch im Detail in Abschnitt [Jupyter Notebooks](sec-jupyter-notebooks).
 Hier sei nur erwähnt, dass Sie mit
 
 ```sh

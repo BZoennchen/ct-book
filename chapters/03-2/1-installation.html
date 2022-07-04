@@ -521,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-3/intro.html">
-   13. Variablen, Ausdrücke und Funktionsaufrufe
+   13. Grundlagen
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -1032,8 +1032,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modulverwaltung-mit-conda">
-     12.1.2.1. Modulverwaltung mit conda
+    <a class="reference internal nav-link" href="#paketverwaltung-mit-conda">
+     12.1.2.1. Paketverwaltung mit conda
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -1042,8 +1042,8 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#module-installieren">
-       12.1.2.1.2. Module Installieren
+      <a class="reference internal nav-link" href="#pakete-installieren">
+       12.1.2.1.2. Pakete Installieren
       </a>
      </li>
     </ul>
@@ -1061,8 +1061,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modulverwaltung-mit-pip">
-     12.1.3.2. Modulverwaltung mit pip
+    <a class="reference internal nav-link" href="#paketverwaltung-mit-pip">
+     12.1.3.2. Paketverwaltung mit pip
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -1072,7 +1072,7 @@ title="Print to PDF"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
-       12.1.3.2.2. Module Installieren
+       12.1.3.2.2. Pakete Installieren
       </a>
      </li>
     </ul>
@@ -1109,8 +1109,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modulverwaltung-mit-conda">
-     12.1.2.1. Modulverwaltung mit conda
+    <a class="reference internal nav-link" href="#paketverwaltung-mit-conda">
+     12.1.2.1. Paketverwaltung mit conda
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -1119,8 +1119,8 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#module-installieren">
-       12.1.2.1.2. Module Installieren
+      <a class="reference internal nav-link" href="#pakete-installieren">
+       12.1.2.1.2. Pakete Installieren
       </a>
      </li>
     </ul>
@@ -1138,8 +1138,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modulverwaltung-mit-pip">
-     12.1.3.2. Modulverwaltung mit pip
+    <a class="reference internal nav-link" href="#paketverwaltung-mit-pip">
+     12.1.3.2. Paketverwaltung mit pip
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -1149,7 +1149,7 @@ title="Print to PDF"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
-       12.1.3.2.2. Module Installieren
+       12.1.3.2.2. Pakete Installieren
       </a>
      </li>
     </ul>
@@ -1168,9 +1168,9 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="installation">
 <span id="sec-python-installation"></span><h1><span class="section-number">12.1. </span>Installation<a class="headerlink" href="#installation" title="Link zu dieser Überschrift">#</a></h1>
-<p>Wollen Sie <code class="docutils literal notranslate"><span class="pre">Python</span></code> auf Ihrem Rechner/System nutzten müssen Sie die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Arbeitsumgebung auf Ihrem Rechner/System erst einrichten.
-Wir bieten Ihnen in diesem Abschnitt hierzu eine kurze Anleitung.</p>
-<p>Es gibt unterschiedliche Möglichkeiten <code class="docutils literal notranslate"><span class="pre">Python</span></code> und neue Module (engl. module) oft auch Pakete (engl. packages) genannt zu installieren.
+<p>Wollen Sie <code class="docutils literal notranslate"><span class="pre">Python</span></code> auf Ihrem Rechner/System nutzen müssen Sie die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Arbeitsumgebung auf Ihrem Rechner/System erst einrichten.
+Wir bieten Ihnen in diesem Abschnitt eine kurze Anleitung.</p>
+<p>Es gibt unterschiedliche Möglichkeiten <code class="docutils literal notranslate"><span class="pre">Python</span></code> und neue Module (engl. module) oder Pakete (engl. packages) zu installieren.
 Vorzugsweise verwendet man:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.python.org/downloads/">(Reines) Python</a></p></li>
@@ -1188,26 +1188,26 @@ Entwickler:innen können Pakete in den Pool hochladen und diese anderen Entwickl
 So haben wir, zum Beispiel, das <code class="docutils literal notranslate"><span class="pre">roboworld</span></code>-Paket in PyPI eingepflegt (siehe <a class="reference external" href="https://pypi.org/project/roboworld/">roboworld</a>).</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span></code> ist ebenfalls ein <em>Paketverwaltungsprogramm</em>, welches vor <code class="docutils literal notranslate"><span class="pre">pip</span></code> entwickelt wurde und seine Pakete durch das Anaconda Repository und der Anaconda Cloud bereitstellt.
 Es wird vorallem für die Programmiersprachen <code class="docutils literal notranslate"><span class="pre">Python</span></code> und <code class="docutils literal notranslate"><span class="pre">R</span></code> verwendet und löst Paketabhängigkeiten, welche insbesondere im Bereich <em>Data Science</em>, eine große Herausforderunge waren.</p>
-<p>Im unterschied zu <code class="docutils literal notranslate"><span class="pre">conda</span></code> installiert <code class="docutils literal notranslate"><span class="pre">pip</span></code> Ihnen alle benötigten Paketabhängigkeiten, egal ob es <em>Konflikte</em> zu bereits installierten Paketen gibt oder nicht.
+<p>Im Unterschied zu <code class="docutils literal notranslate"><span class="pre">conda</span></code> installiert <code class="docutils literal notranslate"><span class="pre">pip</span></code> Ihnen alle benötigten Paketabhängigkeiten, egal ob es <em>Konflikte</em> zu bereits installierten Paketen gibt oder nicht.
 Nehmen wir an Sie haben ein Paket <code class="docutils literal notranslate"><span class="pre">A</span></code> welches ein anderes Paket <code class="docutils literal notranslate"><span class="pre">B</span></code> in der Version <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code> benötigt.
-Sie installieren ein Paket <code class="docutils literal notranslate"><span class="pre">C</span></code> welches ebenfalls das Paket <code class="docutils literal notranslate"><span class="pre">B</span></code> benötigt, jedoch in der neuesten Version <code class="docutils literal notranslate"><span class="pre">1.1.1</span></code>.
-<code class="docutils literal notranslate"><span class="pre">pip</span></code> installiert <code class="docutils literal notranslate"><span class="pre">B</span></code> in der Version <code class="docutils literal notranslate"><span class="pre">1.1.1</span></code> was jedoch dazu führen kann, dass Ihr Code, der Paket <code class="docutils literal notranslate"><span class="pre">A</span></code> verwendet nicht mehr funktioniert oder ein anderes Ergebnis liefert.
-Wurde die Version <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code> für unseren Code spezifiziert würde <code class="docutils literal notranslate"><span class="pre">conda</span></code> entweder die selbst herausfinden wie diese weiterhin eingehalten werden kann oder aber melden, dass die Installation nicht möglich ist.</p>
+Sie installieren ein Paket <code class="docutils literal notranslate"><span class="pre">C</span></code>, welches ebenfalls das Paket <code class="docutils literal notranslate"><span class="pre">B</span></code> benötigt, jedoch in der neuesten Version <code class="docutils literal notranslate"><span class="pre">1.1.1</span></code>.
+<code class="docutils literal notranslate"><span class="pre">pip</span></code> installiert <code class="docutils literal notranslate"><span class="pre">B</span></code> in der Version <code class="docutils literal notranslate"><span class="pre">1.1.1</span></code>, was jedoch dazu führen kann, dass Ihr Code, der auf Paket <code class="docutils literal notranslate"><span class="pre">A</span></code> aufbaut, nicht mehr funktioniert oder ein anderes Ergebnis liefert.
+Wurde die Version <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code> für unseren Code spezifiziert, würde <code class="docutils literal notranslate"><span class="pre">conda</span></code> entweder automatisch herausfinden wie beide Abhängigkeiten eingehalten werden oder melden, dass die Installation nicht möglich ist.</p>
 <p>Für diesen Kurs macht es keinen Unterschied ob Sie <code class="docutils literal notranslate"><span class="pre">pip</span></code> oder <code class="docutils literal notranslate"><span class="pre">conda</span></code> verwenden.
-Es ist auch möglich und manchmal auch sinnvoll beide parallel zu nutzen.</p>
+Es ist auch möglich, und manchmal auch sinnvoll, beide parallel zu nutzen.</p>
 </div>
 <div class="section" id="anaconda-miniconda-empfohlen">
 <h2><span class="section-number">12.1.2. </span>Anaconda / Miniconda (empfohlen)<a class="headerlink" href="#anaconda-miniconda-empfohlen" title="Link zu dieser Überschrift">#</a></h2>
 <p>Lassen Sie uns eine der meist benutzten Hilfswerkzeuge ansehen: <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a>.
 Mit Anaconda oder <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> können Sie Ihre <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Umgebung bequem verwalten.
-Miniconda ist eine abgespeckte Variante von Anaconda und enthält weniger vordefinierte Module.
-Je nach Betriebssystem (Windows, Mac OS X oder Linux) müssen Sie einen bestimmten Installationsassistenten herunterladen.
+Miniconda ist eine abgespeckte Variante von Anaconda und enthält weniger vordefinierte Pakete.
+Je nach Betriebssystem (Windows, Mac OS oder Linux) müssen Sie einen bestimmten Installationsassistenten herunterladen.
 Die Installation erfolgt über eine graphische Benutzeroberfläche.</p>
-<p>Im folgenden werden wir Miniconda auf einem Mac OS X installieren.
+<p>Im Folgenden werden wir Miniconda auf einem Mac OS installieren.
 Die Installationen ähneln sich jedoch auf allen Betriebssystemen.</p>
 <p><em><strong>Schritt 1: Herunterladen</strong></em><br>
 Sie gehen auf <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> und suchen unter Ihrem Betriebssystem die gewünschte (im Normalfall neueste) <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Version.
-In unserem Fall ist das Mac OS X und Version 3.9.</p>
+In unserem Fall ist das Mac OS und Version 3.9.</p>
 <div class="figure align-default" id="fig-miniconda-download">
 <a class="reference internal image-reference" href="../../_images/miniconda-download.png"><img alt="../../_images/miniconda-download.png" src="../../_images/miniconda-download.png" style="width: 600px;" /></a>
 </div>
@@ -1218,7 +1218,7 @@ Sie können dabei den Installationsort ändern.</p>
 <div class="figure align-default" id="fig-miniconda-installation-gui">
 <a class="reference internal image-reference" href="../../_images/miniconda-installation-gui.png"><img alt="../../_images/miniconda-installation-gui.png" src="../../_images/miniconda-installation-gui.png" style="width: 600px;" /></a>
 </div>
-<p>Ändern Sie den Installationsort nicht so befindet sich Miniconda in Ihrem Benutzerverzeichnis unter <code class="docutils literal notranslate"><span class="pre">opt/miniconda3</span></code>, d.h. insgesamt unter <code class="docutils literal notranslate"><span class="pre">/Users/[username]/opt/miniconda3</span></code>.</p>
+<p>Ändern Sie den Installationsort nicht, so befindet sich Miniconda in Ihrem Benutzerverzeichnis unter <code class="docutils literal notranslate"><span class="pre">opt/miniconda3</span></code>, d.h. insgesamt unter <code class="docutils literal notranslate"><span class="pre">/Users/[username]/opt/miniconda3</span></code>.</p>
 <div class="figure align-default" id="fig-miniconda-location">
 <a class="reference internal image-reference" href="../../_images/miniconda-location.png"><img alt="../../_images/miniconda-location.png" src="../../_images/miniconda-location.png" style="width: 600px;" /></a>
 </div>
@@ -1233,11 +1233,11 @@ pip list
 <div class="figure align-default" id="fig-miniconda-which">
 <a class="reference internal image-reference" href="../../_images/miniconda-which.png"><img alt="../../_images/miniconda-which.png" src="../../_images/miniconda-which.png" style="width: 600px;" /></a>
 </div>
-<p>prüfen wo sich Ihr <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span></code> und <code class="docutils literal notranslate"><span class="pre">conda</span></code> befinden und welche Pakte auf Ihrem System installiert sind.
+<p>prüfen, wo sich Ihr <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span></code> und <code class="docutils literal notranslate"><span class="pre">conda</span></code> befinden und welche Pakte auf Ihrem System installiert sind.
 Diese Liste ist kurz, da Sie bisher nur das nötigste installiert haben.
-Um z.B. <strong>Jupyter-Notebooks</strong> auszuführen benötigen Sie das Modul <code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span></code>, welches Sie zuvor mit dem Paketmanager <code class="docutils literal notranslate"><span class="pre">pip</span></code> installieren müssen.</p>
-<div class="section" id="modulverwaltung-mit-conda">
-<h3><span class="section-number">12.1.2.1. </span>Modulverwaltung mit conda<a class="headerlink" href="#modulverwaltung-mit-conda" title="Link zu dieser Überschrift">#</a></h3>
+Um z.B. <strong>Jupyter-Notebooks</strong> auszuführen benötigen Sie das Paket <code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span></code>, welches Sie zuvor mit dem Paketmanager <code class="docutils literal notranslate"><span class="pre">pip</span></code> installieren müssen.</p>
+<div class="section" id="paketverwaltung-mit-conda">
+<h3><span class="section-number">12.1.2.1. </span>Paketverwaltung mit conda<a class="headerlink" href="#paketverwaltung-mit-conda" title="Link zu dieser Überschrift">#</a></h3>
 <p>Mit dem Programm <code class="docutils literal notranslate"><span class="pre">conda</span></code> können Anaconda bzw. Miniconda ansprechen.
 Die Befehle im vergleich zu <code class="docutils literal notranslate"><span class="pre">pip</span></code> sind nahezu identisch!</p>
 <div class="section" id="conda-installiert">
@@ -1251,17 +1251,17 @@ Die Befehle im vergleich zu <code class="docutils literal notranslate"><span cla
 </div>
 <p>Sollte der Befehl nicht gefunden werden haben Sie Anaconda bzw. Miniconda noch nicht installiert.</p>
 </div>
-<div class="section" id="module-installieren">
-<h4><span class="section-number">12.1.2.1.2. </span>Module Installieren<a class="headerlink" href="#module-installieren" title="Link zu dieser Überschrift">#</a></h4>
+<div class="section" id="pakete-installieren">
+<h4><span class="section-number">12.1.2.1.2. </span>Pakete Installieren<a class="headerlink" href="#pakete-installieren" title="Link zu dieser Überschrift">#</a></h4>
 <p>Durch den Aufruf</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="p">[</span><span class="n">modulename</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="p">[</span><span class="n">paketename</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>wird die aktuelle Version des Moduls mit dem Namen <code class="docutils literal notranslate"><span class="pre">modulename</span></code> für Sie installiert in den entsprechenden Installationsordner Ihrer Anaconda bzw. Miniconda-Umgebung installiert.</p>
+<p>wird die aktuelle Version des Pakets mit dem Namen <code class="docutils literal notranslate"><span class="pre">paketename</span></code> in den entsprechenden Installationsordner Ihrer Anaconda bzw. Miniconda-Umgebung installiert.</p>
 <div class="attention admonition" id="attention-conda-pip-install">
-<p class="admonition-title">Module installieren mit conda</p>
+<p class="admonition-title">Pakte mit conda installieren</p>
 <p>Sollte das zu installierende Paket sich nicht im <code class="docutils literal notranslate"><span class="pre">conda</span></code> repository befinden und somit nicht über <code class="docutils literal notranslate"><span class="pre">conda</span></code> installierbar sein, können Sie es dennoch über</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="p">[</span><span class="n">modulename</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="p">[</span><span class="n">paketename</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>installieren. Versuchen Sie jedoch <code class="docutils literal notranslate"><span class="pre">conda</span></code> vor <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
@@ -1271,12 +1271,12 @@ Die Befehle im vergleich zu <code class="docutils literal notranslate"><span cla
 </pre></div>
 </div>
 <p>Wir erhalten eine Fehlermeldung bzw. ist wird der Befehl nicht erkannt.</p>
-<p>Das war zu erwarten, da das Modul <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> noch nicht installiert wurde.
+<p>Das war zu erwarten, da das Paket <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> noch nicht installiert wurde.
 Lassen Sie uns das nachholen.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda install jupyter
 </pre></div>
 </div>
-<p>Bevor Sie die Installation akzeptieren, wird Ihnen angezeigt welche Module (mit Abhängigkeiten) installiert werden.</p>
+<p>Bevor Sie die Installation akzeptieren, wird Ihnen angezeigt welche Pakte (inkl. Abhängigkeiten) installiert werden.</p>
 <div class="figure align-default" id="fig-jupyter-install-conda">
 <a class="reference internal image-reference" href="../../_images/jupyter-install-conda.png"><img alt="../../_images/jupyter-install-conda.png" src="../../_images/jupyter-install-conda.png" style="width: 600px;" /></a>
 </div>
@@ -1300,7 +1300,7 @@ Mit <code class="docutils literal notranslate"><span class="pre">y</span></code>
 <h2><span class="section-number">12.1.3. </span>Plain Python<a class="headerlink" href="#plain-python" title="Link zu dieser Überschrift">#</a></h2>
 <div class="section" id="id1">
 <h3><span class="section-number">12.1.3.1. </span>Installation<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">#</a></h3>
-<p>Mit ‚reinem‘ Python meinen wir <code class="docutils literal notranslate"><span class="pre">Python</span></code> ohne zusätzliche Verwaltungssoftware wie etwa Anaconda oder Miniconda.</p>
+<p>Mit „reinem“ Python meinen wir <code class="docutils literal notranslate"><span class="pre">Python</span></code> ohne zusätzliche Verwaltungssoftware wie etwa Anaconda oder Miniconda.</p>
 <p><em><strong>Schritt 1: Herunterladen</strong></em><br>
 Sie laden sich <a class="reference external" href="https://www.python.org/downloads/">hier</a> das entsprechende Installationsprogramm für Ihr Betriebssystem herunter.</p>
 <p><em><strong>Schritt 2: Installieren</strong></em><br>
@@ -1320,14 +1320,13 @@ Nach abgeschlossener Installation, testen Sie ob <code class="docutils literal n
 <a class="reference internal image-reference" href="../../_images/pip-version.png"><img alt="../../_images/pip-version.png" src="../../_images/pip-version.png" style="width: 600px;" /></a>
 </div>
 </div>
-<div class="section" id="modulverwaltung-mit-pip">
-<h3><span class="section-number">12.1.3.2. </span>Modulverwaltung mit pip<a class="headerlink" href="#modulverwaltung-mit-pip" title="Link zu dieser Überschrift">#</a></h3>
-<p>Egal ob Sie Anaconda / Miniconda oder ‚reines‘ <code class="docutils literal notranslate"><span class="pre">Python</span></code> verwenden, <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Module installieren und verwalten Sie mit <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> ist ein Paketmanager für <code class="docutils literal notranslate"><span class="pre">Python</span></code>, d.h. es ist ein Werkzeug (ein Programm) was es uns ermöglicht <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Module und deren Abhängigkeiten zu installieren und zu verwalten,
+<div class="section" id="paketverwaltung-mit-pip">
+<h3><span class="section-number">12.1.3.2. </span>Paketverwaltung mit pip<a class="headerlink" href="#paketverwaltung-mit-pip" title="Link zu dieser Überschrift">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> ist ein Paketmanager für <code class="docutils literal notranslate"><span class="pre">Python</span></code>, d.h. es ist ein Werkzeug (ein Programm) was es uns ermöglicht <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Pakete und deren Abhängigkeiten zu installieren und zu verwalten,
 welche nicht bereits Teil der <a class="reference external" href="https://docs.python.org/3/library/">Python Standard Bibliothek</a> sind.
 Die Python Standard Bibliothek wird mit jeder <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Installation mitgeliefert.</p>
 <p>Da das Verwalten von Paketen so wichtig geworden ist, wird <code class="docutils literal notranslate"><span class="pre">pip</span></code> seit der <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Version 3.4 bzw. 2.7.9 durch die <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Installationssoftware mit installiert.
-Derartige Paketverwalter sind auch für andere Sprachen, wie etwa <code class="docutils literal notranslate"><span class="pre">Java</span></code> (<a class="reference external" href="http://maven.apache.org/">Maven</a>) oder <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> (<a class="reference external" href="https://www.npmjs.com/">npm</a>).
+Derartige Paketverwalter gibt es auch für andere Sprachen, wie etwa <code class="docutils literal notranslate"><span class="pre">Java</span></code> (<a class="reference external" href="http://maven.apache.org/">Maven</a>) oder <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> (<a class="reference external" href="https://www.npmjs.com/">npm</a>).
 Sobald wir <code class="docutils literal notranslate"><span class="pre">Python</span></code> installiert haben wird Ihnen <code class="docutils literal notranslate"><span class="pre">pip</span></code> zur Verfügung stehen.</p>
 <div class="section" id="pip-installiert">
 <h4><span class="section-number">12.1.3.2.1. </span>pip installiert?<a class="headerlink" href="#pip-installiert" title="Link zu dieser Überschrift">#</a></h4>
@@ -1338,23 +1337,23 @@ Sobald wir <code class="docutils literal notranslate"><span class="pre">Python</
 <div class="figure align-default" id="fig-pip-version-2">
 <a class="reference internal image-reference" href="../../_images/pip-version.png"><img alt="../../_images/pip-version.png" src="../../_images/pip-version.png" style="width: 600px;" /></a>
 </div>
-<p>Sollte der Befehl nicht gefunden werden haben Sie entweder <code class="docutils literal notranslate"><span class="pre">Python</span></code> nicht richtig installiert oder <code class="docutils literal notranslate"><span class="pre">Python</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">pip</span></code> ist nicht in Ihrer Umgebungsvariable <strong>PATH</strong> enthalten.
+<p>Sollte der Befehl nicht gefunden werden haben Sie entweder <code class="docutils literal notranslate"><span class="pre">Python</span></code> nicht richtig installiert oder <code class="docutils literal notranslate"><span class="pre">Python</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">pip</span></code> ist nicht in Ihrer <em>Umgebungsvariable</em> <strong>PATH</strong> enthalten.
 Falls nach der Installation von <code class="docutils literal notranslate"><span class="pre">Python</span></code> der Aufruf nicht funktioniert, hilft Ihnen möglicherweise die <a class="reference external" href="https://pip.pypa.io/en/stable/installation/">pip Installationsanleitung</a>.</p>
 </div>
 <div class="section" id="id2">
-<h4><span class="section-number">12.1.3.2.2. </span>Module Installieren<a class="headerlink" href="#id2" title="Link zu dieser Überschrift">#</a></h4>
+<h4><span class="section-number">12.1.3.2.2. </span>Pakete Installieren<a class="headerlink" href="#id2" title="Link zu dieser Überschrift">#</a></h4>
 <p>Durch den Aufruf</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="p">[</span><span class="n">modulename</span><span class="p">]</span> <span class="o">--</span><span class="n">user</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="p">[</span><span class="n">paketename</span><span class="p">]</span> <span class="o">--</span><span class="n">user</span>
 </pre></div>
 </div>
-<p>wird die aktuelle Version des Moduls mit dem Namen <code class="docutils literal notranslate"><span class="pre">modulename</span></code> für Sie als Benutzer (in Ihr Benutzerverzeichnis) installiert.
+<p>wird die aktuelle Version des Pakets mit dem Namen <code class="docutils literal notranslate"><span class="pre">paketename</span></code> für Sie als Benutzer (in Ihr Benutzerverzeichnis) installiert.
 Ohne <code class="docutils literal notranslate"><span class="pre">--user</span></code> wird das Paket für alle Benutzer installiert und kann nur durch Adminrechte (root-Rechte) genutzt werden.</p>
 <p>Versuchen wir einmal die Jupyter-Umgebung zum Ausführen der Jupyter-Notebooks zu starten.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter notebook
 </pre></div>
 </div>
-<p>Wir erhalten eine Fehlermeldung bzw. ist wird der Befehl nicht erkannt.</p>
-<p>Das war zu erwarten, da das Modul <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> noch nicht installiert wurde.
+<p>Wir erhalten eine Fehlermeldung bzw. wird der Befehl nicht erkannt.</p>
+<p>Das war zu erwarten, da das Paket <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> noch nicht installiert wurde.
 Lassen Sie uns das nachholen.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install jupyter --user
 </pre></div>
@@ -1362,12 +1361,14 @@ Lassen Sie uns das nachholen.</p>
 <div class="figure align-default" id="fig-jupyter-installation">
 <a class="reference internal image-reference" href="../../_images/jupyter-installation.png"><img alt="../../_images/jupyter-installation.png" src="../../_images/jupyter-installation.png" style="width: 600px;" /></a>
 </div>
-<p>In unserem Fall erschien einer Warnung, dass das Verzeichnis das die Ausführbaren Dateien der Module enthält nicht im <strong>PATH</strong> ist.
-Die holen wir mit</p>
+<p>In unserem Fall erschien eine Warnung, die besagt dass das Verzeichnis, das die Ausführbaren Dateien der Pakete enthält, nicht im <strong>PATH</strong> enthalten ist.
+Dies holen wir mit</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/bzoennchen/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>nach.
+Dieser Befehl verändert die Umgebungsvariable <strong>PATH</strong> und fügt dieser einen weiteren Pfad <code class="docutils literal notranslate"><span class="pre">/Users/bzoennchen/.local/bin</span></code> zum Durchsuchen an.
+Dieser Pfad wird auf Ihrem System anders aussehen!
 Nun können wir die Jupyter-Umgebung mit</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter notebook
 </pre></div>

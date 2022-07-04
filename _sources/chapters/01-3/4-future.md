@@ -24,9 +24,11 @@ Misst man den Zustand des Qubits, zerfällt es mit einer bestimmten Wahrscheinli
 Diese Wahrscheinlichkeiten können durch Logikgatter manipuliert werden.
 Zusätzlich können Qubits verschränkt werden.
 Sehr vereinfacht ausgedrückt bedeutet dies, dass deren Werte beim Messen alle bestimmt werden und voneinander abhängen. 
+Die Änderung der Qibits kann sich somit in *Überlichtgeschwindigkeit* ausbreiten.
 Deshalb kann man $2^{10}$ Zustände **gleichzeitig** mit nur $10$ Qubits speichern.
 Die Entwicklung von Quantenalgorithmen gestaltet sich allerdings als schwierig, da man die Wahrscheinlichkeiten der verschränkten Qubits verändern muss.
 Auch braucht man häufig mehrere Durchläufe, da das richtige Ergebnis nur zu einer hohen Wahrscheinlichkeit ausgegeben wird.
+Zudem müssen Qubits vor minimalen Erschütterungen geschützt und auf Temperaturen nahe am absoluten Nullpunkt herabgekühlt werden -- das Handy mit einem Quantencomputerchip bleibt deshalb vorerst ein Traum.
 
 Im Oktober 2019, behaupteten Google AI Quantum und die NASA, dass sie ein Problem auf einem Quantencomputer gelöst hätten, und zwar $3 \cdot 10^{6}$ schneller als auf jedem verfügbaren klassischen existierenden Supercomputer auf dieser Welt.
 Das Resultat ist Gegenstand laufender Diskussionen.
@@ -42,5 +44,12 @@ So kritisiert der russische Physiker Mikhail Dyakonov, dass die Komplexität der
 
 >So the number of continuous parameters describing the state of such a useful quantum computer at any given moment must be... about $10^{300}$... Could we ever learn to control the more than $10^{300}$ continuously variable parameters defining the quantum state of such a system? My answer is simple. No, never. --  Mikhail Dyakonov
 
-Ob Quantencomputer auf spezielle aber interessante Probleme angewendet werden können oder ob sie
-darüber hinaus auch für generelle Zwecke ihre Anwendung finden, bleibt abzuwarten. 
+Zugleich wird dieser von seinen Kolleg\*innen kritisiert.
+Er mache falsche oder fehlgeleitete Aussagen.
+In einem Artikel *The Case Against ‘The Case Against Quantum Computing’* reagiert Ben Criger (damals Postdoc der *TU Delft*) mit aufklärerischen Mitteln und erklärt zugleich weshalb die Kritik soviel Anklang findet:
+
+>We lament the lack of well-founded criticism, but how often, and how loudly, do we lament the abundance of unfounded optimism? Are these two things not equally dangerous to the progress of science? We’re the people best able to criticise quantum computing, is it then our responsibility to do so? -- Ben Criger
+
+Die haltlose, da fehlerhafte Kritik, findet ihren Anklang da sie auf haltlosen Optimismus prallt.
+Ob Quantencomputer auf spezielle aber interessante Probleme angewendet werden können oder ob sie darüber hinaus auch für generelle Zwecke ihre Anwendung finden, bleibt abzuwarten.
+Wir dürfen hoffen, mehr aber **noch** nicht.

@@ -14,30 +14,37 @@ kernelspec:
 # Jupyter Notebooks
 
 Wie Sie mittlerweile bemerkt haben, verwenden wir für unseren Kurs ``Python`` in Kombination mit den sogenannten *Jupyter Notebooks*.
-Wir müssen uns fragen, weshalb diese Kombination besonders für den Einstieg in das [Computational Thinking](sec-what-is-ct) eignet.
+Weshalb eignet sich diese Kombination für den Einstieg in das [Computational Thinking](sec-what-is-ct)?
 Über [Python](sec-python) haben wir bereits gesprochen, was also sind Jupyter-Notebooks und wozu eignen sie sich?
 
 ## Motivation
 
 Die folgende [Referenz](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) liefert eine ausführliche Erläuterung darüber was Jupyter Notebooks sind, welche wir hier in unseren Worten zusammenfassen.
 
-Ein Jupyter Notebooks war zu Anfang in erster Linie dazu gedacht um wissenschaftlichen Code effektiv innerhalb der Wissenschaftsgemeinschaft auszutauschen.
+Ein Jupyter Notebook war zu Anfang in erster Linie dazu gedacht um wissenschaftlichen Code effektiv innerhalb der Wissenschaftsgemeinschaft auszutauschen.
 In fast allen Naturwissenschaften kommt das wissenschaftliche Rechnen zum Tragen.
 Forscher entwickeln Computermodelle, simulieren mit Hilfe dieser die Realität und versuchen ausgehend von ihren Ergebnissen Rückschlüsse zu ziehen.
 Dabei ergibt sich ein großes Problem: Die Reproduzierbarkeit!
 Wird der Computercode nicht offengelegt, so ist es bei ansteigender Komplexität nahezu unmöglich die Forschungsergebnisse nachzuvollziehen.
 Nicht nur das, es wird ebenso enorm schwierig auf bestehenden Code aufzubauen.
 
-Aufgrund dieses frustrierenden Zustand machte sich [Fernando Pérez](https://en.wikipedia.org/wiki/Fernando_P%C3%A9rez_(software_developer)) an die Entwicklung des ersten Prototyps der Jupyter Notebooks.
+Aufgrund dieses frustrierenden Zustands machte sich [Fernando Pérez](https://en.wikipedia.org/wiki/Fernando_P%C3%A9rez_(software_developer)) an die Entwicklung des ersten Prototyps der Jupyter Notebooks.
 Die Technologie entstand demnach aus der Not heraus.
-Sie war dazu gedacht den wissenschaftlichen Austausch und Zusammenarbeit, kurzum den Wissenstransfer zu verbessern.
+Sie war dazu gedacht den wissenschaftlichen Austausch und die Zusammenarbeit, kurzum den Wissenstransfer zu verbessern.
 Das erdachte und verwirklichte Konzept war recht einfach: Code (Computermodell) und Theorie (die Modellbeschreibung) sollten sich vereint in einem **lesbaren** und **ausführbaren** Dokument befinden.
 Der Code sollte die Modellbeschreibung und die Modellbeschreibung den Code erklären.
 
+Wir glauben, dass sich Notebooks für den Einstieg eignen, da durch die zellenweise Auswertung (dazu kommen wir gleich) und die Zellenausgabe ein ständiges Feedback während des Lernen des Programmierens gewährleistet werden kann.
+Anfänger\*innen können kleinteilig unterschiedliche Befehle ausprobieren und erhalten für jede Zelle eine Ausgabe/Feedback.
+Man könnte auch sagen Notebooks, dass sich Notebooks einfach debuggen.
+Notebooks bieten eine hohe Interaktion zwischen Programmierer/*in und Code bzw. der Maschine.
+Das verringert die Hürde um einfach mal loszulegen und kann zudem motivieren Sie möglicherweise zum sog. *Live Programming* zu bringen.
+(Beim Live Programming schreiben Sie Code in Echtzeit, während Ihre Kolleg\*innen zusehen und führen diesen auch gleich aus.)
+
 ## Starten
 
-Zunächst muss das ``jupyter`` Modul auf Ihrem System installiert und auffindbar sein.
-Ist dem der Fall können Sie mit
+Zunächst muss das ``jupyter`` Paket auf Ihrem System installiert und auffindbar sein.
+Ist dem so, können Sie mit
 
 ```sh
 jupyter notebook [path/to/notebook/file]
@@ -71,7 +78,7 @@ Führen wir zum Beispiel folgende Codezeile aus,
 2**4
 ```
 
-berechnet der Computer $2^4 = 16$ lieft das Ergebnis ans Notebook zurück und dieses gibt das Ergebnis in gewisser Weise aus.
+berechnet der Computer $2^4 = 16$, lieft das Ergebnis ans Notebook zurück, welches daraufhin das Ergebnis in gewisser Weise ausgibt.
 
 Prinzipiell bestehen Jupyter Notebooks aus einer geordneten Liste von *Zellen*.
 Innerhalb einer Zelle befindet sich eine Art von Inhalt, d.h., entweder Code oder eine Beschreibung (Text, Bilder, Formeln).
@@ -83,15 +90,15 @@ Um eine Zelle unterhalb einer anderen Zelle einzufügen drücken Sie mit der Mau
 Um eine Zelle oberhalb einzufügen drücken Sie ``a`` (above).
 Um die ausgewählte Zelle zu löschen drücken Sie zweimal schnell hintereinander ``d`` (delete).
 
-Ok so ganz stimmt das nicht.
-Führen wir eine *Code-Zelle* aus so wird, nachdem deren Code ausgewertet wurde oder die Auswertung aufgrund eines Fehlers abbricht, das Ergebnis oder die Fehlermeldung auch in ``HTML``-Text umgewandelt.
+Ok, so ganz stimmt das nicht.
+Führen wir eine *Code-Zelle* aus, so wird, nachdem deren Code ausgewertet wurde oder die Auswertung aufgrund eines Fehlers abbricht, das Ergebnis oder die Fehlermeldung auch in ``HTML``-Text umgewandelt.
 
 Außerdem wird auch der unausgewertete Code oder die Beschreibung als ``HTML``-Text übersetzt.
-Ihr Browser ist im Stande ``HTML`` anzuzeigen, ganz so wie es ``Microsoft Word`` möglich ist, ``Word``-Dokumente anzuzeigen.
-Alles in allem bietet Ihnen diese Technologie die Möglichkeit Code und dessen Beschreibung direkt in Ihren Browser 'hineinzutippen', anzuzeigen, auszuwerten und diese Auswertung ebenfalls anzuzeigen.
+Ihr Browser ist im Stande ``HTML`` anzuzeigen, ganz so wie es Microsoft Word möglich ist, Word-Dokumente anzuzeigen.
+Alles in allem bietet Ihnen diese Technologie die Möglichkeit Code und dessen Beschreibung direkt in Ihren Browser "hineinzutippen", anzuzeigen, auszuwerten und diese Auswertung ebenfalls anzuzeigen.
 Es ist als würde Sie eine Schulaufgabe entwerfen, mit dem Computer lösen und das Ergebnis an der richtigen Stelle zu schreiben und das alles über ein einziges Dokument.
 
-Jupyter Notebooks die Möglichkeit der Dokumentation durch ``Markdown`` und (Latex), sodass Text, mathematische Formeln wie auch Bilder oder Plots in das Notebook eingefügt werden können.
+Jupyter Notebooks bieten die Möglichkeit der Dokumentation durch ``Markdown`` und (Latex), sodass Text, mathematische Formeln, wie auch Bilder oder Plots in das Notebook eingefügt werden können.
 Zusätzlich kann Quellcode, also das Computermodell ebenso im gleichen Dokument platziert werden.
 Dabei kann sowohl die Dokumentation wie auch der Code über das Dokument hinweg verteilt werden.
 Zwischen Code können Texte, Bilder und Formeln eingefügt werden.
@@ -112,15 +119,19 @@ Der Abschnitt sieht in ``Markdown`` wie folgt aus:
 ```markdown
 ### Markdown
 
+Um eine Zelle in eine ``Markdown``-Zelle umzuwandeln, müssen Sie gleich links neben den Zelleninhalt klicken und dann ``m`` drücken.
+
 ``Markdown`` ist eine äußerst einfache Beschreibungssprache.
+Auf der [offiziellen Webseite](https://www.markdownguide.org/) finden Sie, falls es Sie interessiert, einen guten Einstieg.
+Das [cheat-sheet](https://www.markdownguide.org/cheat-sheet/) ist immer wieder hilfreich, falls Sie vorhaben ihr Notebook mit einer Beschreibung zu füllen.
 Auch ``HTML`` ist eine solche Sprache, doch sehr viel komplizierter, jedoch wird ``Markdown``-Code in ``HTML``-Code übersetzt.
-Das braucht Sie jedoch nicht zu kümmern aber könnte Sie vielleicht zum staunen bringen, dass dieses Dokument mit Ausnahme des Codes, was sie gerade lesen in ``Markdown`` (mit ein paar Erweiterungen) geschrieben wurde.
+Das braucht Sie jedoch nicht zu kümmern aber könnte Sie vielleicht zum staunen bringen, dass dieses Dokument mit Ausnahme des Codes, was sie gerade lesen in ``Markdown`` (mit ein paar Erweiterungen) geschrieben wurde.```
 ```
 
 ### Code
 
-Der zweite und viel wichtigere Art von Zellen sind die bereits angesprochenen *Code-Zellen*.
-Um aus einer Zelle eine *Code-Zelle* zu machen, müssen Sie gleich links neben den Zelleninhalt klicken und dann ``m`` drücken.
+Der zweite und viel wichtigere Typ von Zellen sind die bereits angesprochenen *Code-Zellen*.
+Um aus einer Zelle eine *Code-Zelle* zu machen, müssen Sie gleich links neben den Zelleninhalt klicken und dann ``y`` drücken.
 Wenn Sie versehentlich aus einer Code-Zelle eine Markdown-Zelle gemacht haben, wird der Code einfach als Text interpretiert.
 Anstatt
 
@@ -134,7 +145,7 @@ sehen Sie
 x = 5 * 2 + 6
 ```
 
-Es fehlt die farbliche Hervorhebung, welche Ihnen das Lesen des Codes vereinfacht und Sie können diese Zelle nicht ausführen sondern nur auswerten.
+Es fehlt die farbliche Hervorhebung, welche Ihnen das Lesen des Codes vereinfacht und Sie können diese Zelle nicht ausführen, sondern nur auswerten.
 
 ## Codeevaluierung
 
@@ -192,8 +203,8 @@ x = z + y   # Zelle 2
 x
 ```
 
-Demnach ist ``x = 5 + 20`` und ``y = 25``.
-Führen wir daraufhin Zelle 1 dananch 2 aus erhalten wir für ``x``: ``x = 5 + (-3) = 2``
+Demnach ist ``x = 5 + 20`` und ``y = 20``.
+Führen wir daraufhin Zelle 1 dananch 2 aus, erhalten wir für ``x``: ``x = 5 + (-3) = 2``
 
 ```{code-cell} python3
 y = -3      # Zelle 1
@@ -232,7 +243,7 @@ Haben Sie keine Angst vor solchen Fehlern.
 Im Gegenteil, provozieren Sie diese um zu sehen was passiert.
 
 Fehlermeldungen schützten Sie jedoch nur vor offensichtlichen Fehlern.
-Hin und wieder läuft unser Code, produziert jedoch nicht das richtige Ergebnis da wir etwas falsch programmiert haben oder unsere Überlegungen - unser [Computational Thinking](sec-what-is-ct) fehlerhaft ist.
+Hin und wieder läuft unser Code, produziert jedoch nicht das richtige Ergebnis, da wir etwas falsch programmiert haben oder unsere Überlegungen - unser [Computational Thinking](sec-what-is-ct) fehlerhaft ist.
 
 Das kann dazu führen, dass unser Code gar nicht terminiert.
 In einem solchen Fall kommt die Auswertung der Zelle nie zum erliegen.

@@ -523,7 +523,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="intro.html">
-   13. Variablen, Ausdrücke und Funktionsaufrufe
+   13. Grundlagen
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -1158,10 +1158,10 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ausdrucke">
 <span id="sec-expressions"></span><h1><span class="section-number">13.2. </span>Ausdrücke<a class="headerlink" href="#ausdrucke" title="Link zu dieser Überschrift">#</a></h1>
-<p>Programmiersprachen sind viel einfacher aufgebaut als die menschliche Sprache.
+<p>Im Vergleich zu natürlichen Sprachen, sind Programmiersprachen sind viel einfacher aufgebaut.
 Entwickler*innen der Sprachen versuchen ihre <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> so unmissverständlich, elegant, kurz und ausdrucksstark wie möglich zu gestalten.
 In der Vergangenheit gelang das nicht immer und über die Jahre haben wir viel dazu gelernt.
-In diesem Kurs verwenden wir <code class="docutils literal notranslate"><span class="pre">Python</span></code> insbesondere deshalb weil es eine der leserlichsten und zugleich mächtigsten Sprachen unserer Zeit ist.</p>
+In diesem Kurs verwenden wir <code class="docutils literal notranslate"><span class="pre">Python</span></code> insbesondere deshalb, weil es eine der leserlichsten und zugleich mächtigsten Sprachen unserer Zeit ist.</p>
 <p>Jedes Programm, bzw. jeder Algorithmus besteht aus vielen <em>Ausdrücken</em>.
 Ein <em>Ausdruck</em> beschreibt wie Daten (die Eingabe) verarbeitet werden sollen.</p>
 <p>Die Multiplikation <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">5</span></code> ist beispielsweise ein Ausdruck der zwei Dezimalzahlen multipliziert.
@@ -1181,9 +1181,9 @@ Die Multiplikation wird durch den Computer, genauer die <a class="reference inte
 </div>
 </div>
 <p>Die <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> einer Programmiersprache ist strikt.
-Sie wird durch eine sog. <em>Grammatik</em> definiert.
+Sie wird durch eine sog. <em>Grammatik</em> definiert.å
 Zum Beispiel ist folgender <em>Ausdruck</em> fehlerhaft, da er nicht durch die <em>Grammatik</em> von <code class="docutils literal notranslate"><span class="pre">Python</span></code> definiert ist.
-Man sagt auch, dass die Sprache welche durch die Grammatik definiert ist, den folgenden Ausdruck nicht enthält.</p>
+Man sagt auch, dass die Sprache, welche durch die Grammatik definiert ist, den folgenden Ausdruck nicht enthält.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="o">*</span> <span class="mi">5</span>
@@ -1191,7 +1191,7 @@ Man sagt auch, dass die Sprache welche durch die Grammatik definiert ist, den fo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/j4/6x0yfkp53d99gq8g0hxfl_tw0000gn/T/ipykernel_47227/2378661981.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/j4/6x0yfkp53d99gq8g0hxfl_tw0000gn/T/ipykernel_10626/2378661981.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">3</span> <span class="o">*</span> <span class="o">*</span> <span class="mi">5</span>
         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -1201,7 +1201,7 @@ Man sagt auch, dass die Sprache welche durch die Grammatik definiert ist, den fo
 </div>
 <p>Der Computer bzw. <code class="docutils literal notranslate"><span class="pre">Python</span></code>-<a class="reference internal" href="../02-1/2-interpretation.html#def-interpreter"><span class="std std-ref">Interpreter</span></a> weiß mit dieser Folge an Symbolen nichts anzufangen.
 Wir werden vom Interpreter sachlich auf die mögliche Fehlerursache hingewiesen.
-Bereits kleiner Änderungen an der <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> können zu einer neuen Bedeutung (<a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a>) führen.
+Bereits kleine Änderungen an der <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> können zu einer neuen Bedeutung (<a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a>) führen.
 In <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist der <em>Ausdruck</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1269,7 +1269,7 @@ Es gibt jedoch noch eine ganze Reihe von weiteren <em>arithmetische Operatoren</
 </tbody>
 </table>
 <p>Jeder dieser Operatoren <code class="docutils literal notranslate"><span class="pre">op</span></code> erwartet zwei Zahlen, eine links und eine rechts von <code class="docutils literal notranslate"><span class="pre">op</span></code>.</p>
-<p>Die Bedeutung der Modulo-Operation <code class="docutils literal notranslate"><span class="pre">%</span></code> sieht kompliziert aus, doch bedeutet dies schlicht, dass der <em>Rest</em> <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">%</span> <span class="pre">4</span></code> der ganzzahlige Rest der <a class="reference internal" href="../02-0/6-operations.html#def-euclid-division"><span class="std std-ref">Restwertdivision</span></a> ist.</p>
+<p>Die Bedeutung der Modulo-Operation <code class="docutils literal notranslate"><span class="pre">%</span></code> sieht kompliziert aus, doch bedeutet dies schlicht, dass <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">%</span> <span class="pre">4</span></code> der <em>ganzzahlige Rest</em> der <a class="reference internal" href="../02-0/6-operations.html#def-euclid-division"><span class="std std-ref">Restwertdivision</span></a> ist.</p>
 <p>Die ganzzahlige Division <a class="reference internal" href="../02-0/6-operations.html#sec-math-rounding"><span class="std std-ref">rundet</span></a> das Ergebnis der Division auf die nächst kleinere ganze Zahl (Integer).
 Beachten Sie</p>
 <div class="cell docutils container">
@@ -1331,7 +1331,7 @@ Das Ergebnis ist ein boolscher Wert <code class="docutils literal notranslate"><
 <td class="text-align:left"><p>ist <code class="docutils literal notranslate"><span class="pre">x</span></code> kleiner gleich <code class="docutils literal notranslate"><span class="pre">y</span></code>?</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">y</span></code></p></td>
-<td class="text-align:left"><p>ist <code class="docutils literal notranslate"><span class="pre">x</span></code> das selbe Objekt wie <code class="docutils literal notranslate"><span class="pre">y</span></code>?</p></td>
+<td class="text-align:left"><p>ist <code class="docutils literal notranslate"><span class="pre">x</span></code> <a class="reference internal" href="1-variables.html#def-identity"><span class="std std-ref">identisch</span></a> zu <code class="docutils literal notranslate"><span class="pre">y</span></code>?</p></td>
 </tr>
 </tbody>
 </table>
@@ -1387,12 +1387,15 @@ So können wir in <code class="docutils literal notranslate"><span class="pre">P
 </div>
 </div>
 </div>
+<p>Generell vergleichen wir Objekte einer <a class="reference internal" href="../02-0/2-set.html#sec-math-set"><span class="std std-ref">Menge</span></a> immer bezüglich einer <a class="reference internal" href="../02-0/4-relation.html#def-math-order"><span class="std std-ref">(totalen) Ordnung</span></a>.
+Diese Ordnung muss irgendwo definiert worden sein, ob durch die Standardbibliothek von <code class="docutils literal notranslate"><span class="pre">Python</span></code>, impliziet, oder durch uns Entwickler*innen.</p>
 </div>
 <div class="section" id="logische-operatoren">
 <span id="sec-logic-expressions"></span><h2><span class="section-number">13.2.3. </span>Logische Operatoren<a class="headerlink" href="#logische-operatoren" title="Link zu dieser Überschrift">#</a></h2>
-<p>Der obige <em>Ausdruck</em> besteht aus dem <em>Ausdruck</em> <code class="docutils literal notranslate"><span class="pre">and</span></code>, dem logischen UND (<span class="math notranslate nohighlight">\(\land\)</span>).
+<p>Der obige <em>Ausdruck</em> ist aus weiteren Ausdrücken zusammengesetzt.
+Er behinhaltet den <em>Ausdruck</em> <code class="docutils literal notranslate"><span class="pre">and</span></code>, d.h., dem logischen UND (<span class="math notranslate nohighlight">\(\land\)</span>).
 Dieser erwartet auf der linken und rechte Seite jeweils einen Wahrheitswert (<em>boolschen Ausdruck</em>).
-Zum Beispiel liefern <a class="reference internal" href="#sec-python-operator-compare"><span class="std std-ref">Vergleichsoperatoren</span></a> <em>boolsche Ausdrücke</em> zurück.</p>
+Zum Beispiel, liefern <a class="reference internal" href="#sec-python-operator-compare"><span class="std std-ref">Vergleichsoperatoren</span></a> <em>boolsche Ausdrücke</em> zurück.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>
@@ -1433,13 +1436,15 @@ Lassen Sie uns diese nochmals zusammenfassen:</p>
 </div>
 <div class="section" id="bitoperatoren">
 <span id="sec-bit-operations"></span><h2><span class="section-number">13.2.4. </span>Bitoperatoren<a class="headerlink" href="#bitoperatoren" title="Link zu dieser Überschrift">#</a></h2>
-<p>Zur Vollständigkeit listen wir auch noch die <em>Bitoperatoren</em> auf.
+<p>Zur Vollständigkeit listen wir auch noch die sog. <em>Bitoperatoren</em> auf.
 Diese manipulieren ganze Zahlen in ihrer <a class="reference internal" href="../02-1/2-representation.html#sec-binary-numbers"><span class="std std-ref">Binärdarstellung</span></a>.</p>
 <p>Erinnern Sie sich an den Abschnitt <a class="reference internal" href="../02-1/2-representation.html#sec-representation"><span class="std std-ref">Repräsentation</span></a>?
 Dort haben wir beschrieben wie schlussendlich jeder Wert, egal ob Zahl, Zeichen, Bild, Ton als Binärcode im Speicher liegt.
 <em>Bitoperatoren</em> nehmen diesen Binärwert und verarbeiten bzw. kombinieren ihn.
-Dabei wird jedes <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> des einen Werts mit dem Bit des anderen Werts kombiniert.</p>
-<p>Zum Beispiel kombinieren wir mit <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&amp;</span> <span class="pre">4</span></code> jedes Bit der Zahl <code class="docutils literal notranslate"><span class="pre">5</span></code> mit dem <code class="docutils literal notranslate"><span class="pre">and</span></code> der Zahl <code class="docutils literal notranslate"><span class="pre">4</span></code>.
+Dabei wird jedes <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> des einen Werts mit dem Bit des anderen Werts kombiniert.
+Unsere Gatter aus dem Abschnitt <a class="reference internal" href="../02-1/3-manipulation.html#sec-manipulation"><span class="std std-ref">Manipulation</span></a> bilden den Grundstock für eine derartige Verarbeitung.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> bietet uns an diese maschinennahen Operationen auf Zahlen anzuwenden.
+Zum Beispiel, kombinieren wir mit <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&amp;</span> <span class="pre">4</span></code> jedes Bit der Zahl <code class="docutils literal notranslate"><span class="pre">5</span></code> mit dem <code class="docutils literal notranslate"><span class="pre">and</span></code> der Zahl <code class="docutils literal notranslate"><span class="pre">4</span></code>.
 Dies nennen wir das <em>bitweise</em> UND.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1453,8 +1458,16 @@ Dies nennen wir das <em>bitweise</em> UND.</p>
 </div>
 </div>
 </div>
-<p>entspricht dem <em>bitweisen</em> UND der Binärzahlen <span class="math notranslate nohighlight">\(101_2\)</span> und <span class="math notranslate nohighlight">\(100_2\)</span>.
-Wir erhalten <span class="math notranslate nohighlight">\(100_2\)</span>, was wiederum gleich <span class="math notranslate nohighlight">\(4_{10}\)</span> ergibt.</p>
+<p>Jedes Bit der Zahl <span class="math notranslate nohighlight">\(5_{10} = 0101_2\)</span> und <span class="math notranslate nohighlight">\(4_{10} = 0100_2\)</span> wird durch eine AND-Gatter gejagt.
+Dies nennen wir auch <em>bitweises</em> UND der Binärzahlen <span class="math notranslate nohighlight">\(0101_2\)</span> und <span class="math notranslate nohighlight">\(0010_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \begin{split}
+	  0101_2&amp;\\
+	  \land\ \ 0010_2&amp;\\ \hline \hline
+	  = 0100_2&amp;=4_{10}
+	\end{split}\end{split}\]</div>
+<p>Wenn Sie an dieser Stelle Probleme mit Binärzahlen haben, lesen sie Abschnitt <a class="reference internal" href="../02-1/2-representation.html#sec-binary-numbers"><span class="std std-ref">Zahlen im Binärsystem</span></a>.
+Folgende <em>bitweisen Operationen</em> stehen Ihnen in zur Verfügung:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Operator</p></th>
@@ -1469,10 +1482,10 @@ Wir erhalten <span class="math notranslate nohighlight">\(100_2\)</span>, was wi
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">&amp;</span> <span class="pre">3</span></code></p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>`x</p></td>
-<td class="text-align:left"><p>y`</p></td>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">|</span> <span class="pre">y</span></code></p></td>
 <td class="text-align:left"><p>ODER von <code class="docutils literal notranslate"><span class="pre">x</span></code> mit <code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
-<td class="text-align:left"><p>`10</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">|</span> <span class="pre">3</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">11</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">^</span> <span class="pre">y</span></code></p></td>
 <td class="text-align:left"><p>exklusives ODER von <code class="docutils literal notranslate"><span class="pre">x</span></code>  mit <code class="docutils literal notranslate"><span class="pre">y</span></code></p></td>
@@ -1492,11 +1505,17 @@ Wir erhalten <span class="math notranslate nohighlight">\(100_2\)</span>, was wi
 </tbody>
 </table>
 <p>Weshalb ist <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">^</span> <span class="pre">3</span></code> gleich <code class="docutils literal notranslate"><span class="pre">9</span></code>?
-Es gilt <span class="math notranslate nohighlight">\(10_{10} = 01010_2\)</span> und <span class="math notranslate nohighlight">\(3_{10} = 00011_2\)</span>.
-<code class="docutils literal notranslate"><span class="pre">^</span></code> steht fpr das <em>exklusive</em> ODER gesprochen <em>entweder oder</em>, d.h. ein Bit wird zur 1 genau dann wenn das Bit der einen Zahl gleich 1 und das Bit der anderen Zahl gleich 0 ist oder genau anders herum.
-Dies ergibt demnach <span class="math notranslate nohighlight">\(01001_2 = 9_{10}\)</span>.</p>
-<p>Für ganze Zahlen entspricht die Bitverschiebung nach rechts, um ein Bit, der Multiplikation mit 2.
-Die Verschiebung nach rechts, um ein Bit, hingegen der <a class="reference internal" href="#sec-python-operator-arithmetic"><span class="std std-ref">ganzzahligen Division</span></a> mit 2.
+Die <code class="docutils literal notranslate"><span class="pre">^</span></code>-Operation steht für das sog. <em>exklusive ODER</em> gesprochen <em>entweder oder</em>.
+Das exklusive oder <span class="math notranslate nohighlight">\(x \oplus y\)</span> ergibt 1 genau dann wenn <em>entweder</em> <span class="math notranslate nohighlight">\(x\)</span> <em>oder</em> <span class="math notranslate nohighlight">\(y\)</span> (nicht aber beide) gleich 1 sind.
+Es gilt <span class="math notranslate nohighlight">\(10_{10} = 01010_2\)</span> und <span class="math notranslate nohighlight">\(3_{10} = 00011_2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \begin{split}
+	  01010_2&amp;\\
+	  \oplus\ \ 00011_2&amp;\\ \hline \hline
+	  = 01001_2&amp;=9_{10}
+	\end{split}\end{split}\]</div>
+<p>Für ganze Zahlen entspricht die Bitverschiebung um ein Bit nach links der Multiplikation mit 2.
+Die Verschiebung um ein Bit nach rechts, hingegen der <a class="reference internal" href="#sec-python-operator-arithmetic"><span class="std std-ref">ganzzahligen Division</span></a> mit 2.
 Deshalb ist <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">&lt;&lt;</span> <span class="pre">3</span></code> gleich</p>
 <div class="math notranslate nohighlight">
 \[8 \cdot 2 \cdot 2 \cdot 2 = 8 \cdot 2^3 = 64\]</div>
