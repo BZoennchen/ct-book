@@ -4,27 +4,161 @@
 # (sec-data-structures)=
 # # Datenstrukturen
 # 
-# Programmiersprachen und deren Standardbibliotheken bieten viele vordefinierte Datentypen und Datenstrukturen.
+# Programmiersprachen und deren Standardbibliotheken bieten viele vordefinierte [Datentypen](def-datatypes) und [Datenstrukturen](def-data-structures).
 # In diesem Abschnitt wollen wir über die fundamentalsten Datenstrukturen sprechen.
-# Wir werden Ihnen dabei auch eine Implementierung präsentieren, die Sie sich ansehen können sobald Sie genug Erfahrung mit ``Python`` gesammelt haben.
-# Für eine weiterführende und zugleich angewandte Diskussion verweisen wir auf im **PYTHON** Teil auf das Kapitel [Datentypen (Grundlagen)](sec-python-data-types) und [Datentypen (Fortsetzung)](sec-data-types-advanced).
+# Wir werden Ihnen dabei auch eine Implementierung präsentieren, die Sie sich rückwirkend ansehen können, sobald Sie genug Erfahrung mit ``Python`` gesammelt haben.
+# Für eine weiterführende und zugleich angewandte Diskussion verweisen das Kapitel [Datentypen (Grundlagen)](sec-python-data-types) und [Datentypen (Fortsetzung)](sec-data-types-advanced) des **PYTHON**-Teils.
 # 
-# (sec-pointer)=
-# ## Zeiger
+# Eine Datenstruktur strukturiert Daten.
+# Sie dient der Organisation von Daten.
+# Wir kennen solche Datenverwaltungsstrukturen aus der physikalischen Welt: Ordner, Schnellhäfter, Schließfächer, Warteschlangen, Räume und Sitzpätze sind unter bestimmter Betrachtung Datenstrukturen.
+# Ein Ordner strukturiert Dokumente (z.B. Briefe).
+# Warteschlangen, Räume und Sitzplätze ordnen Menschen.
+# 
+# Eine weitere Form einer Datenstruktur kann beispielweise die Struktur eines Briefs darstellen.
+# Dieser strukturiert die Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
+# Dabei ist jedoch vordefiniert welche Daten strukturiert werden.
+# Um solche [zusammengesetzte Datentypen](def-data-structures) wird es in diesem Abnschit nicht gehen.
+# Stattdessen sprechen wir über Datenstrukturen, die prinzipiell unterschiedlich viele und oftmals auch beliebige Daten strukturieren.
+# Diese werden oft als sog. *[Sammlung](def-collection)* (engl. *Collection*) bezeichnet.
+# 
+# ## Der Arbeitspeicher
 # 
 # Da sich alle Daten (Programm und dessen Eingabe/Ausgabe) im [Arbeitsspeicher](def-main-memory) befinden, müssen wir begreifen welche Funktionalität diese *konkrete* Datenstruktur bietet.
-# Alle weiteren *abstrakten* Datenstrukturen bauen auf den Möglichkeiten auf, welche uns der Arbeitsspeicher bietet.
+# Alle weiteren *abstrakten* Datenstrukturen bauen auf diesen Möglichkeiten auf.
 # 
-# Über die Geschichte hat sich der Arbeitsspeicher in Geschwindigkeit und Größe und bezüglich anderer Eigenschaften weiterentwickelt.
+# Über die Geschichte hinweg hat sich der Arbeitsspeicher in Geschwindigkeit und Größe und bezüglich anderer Eigenschaften weiterentwickelt.
 # Was uns jedoch interessiert sind die wenigen grundlegenden Eigenschaften, welche sich im Wesentlichen nicht verändert haben:
 # 
+# Ordnung
+# : Der Arbeitsspeicher ist im Wesentlichen eine lange geordnete Ansammlung an Bits
+# 
 # Addressierbarkeit
-# : Der Arbeitsspeicher ist im Wesentlichen eine lange **adressierbare** endliche Liste von Bits
+# : Diese Bits sind addressierbar/indexierbar
 # 
 # Effizienz
-# : Die Adressierung eines Listeneintrags für eine gegebene Adresse ist sehr effizient
+# : Die Adressierung eines Bits für eine gegebene Adresse ist sehr effizient
 # 
 # Die Eigenschaft der *effizienten Adressierung* spiegelt sich in allen Programmiersprachen mehr oder weniger pregnannt wieder.
+# Gewöhnlich adressiert die CPU keine einzelnen Bits, sondern ein ganzes [Byte](def-byte).
+# {numref}`Abbildung {number} <fig-ram-banks>` zeigt ein Beispiel eines Arbeitsspeichers der uns erlaubt jeweils ein Byte zu adressieren, zugleich werden Adressen, in diesem Beispiel, durch ein Byte dargestellt.
+# 
+# Es gibt zwei wesentliche Arten, wie Datenstrukturen im Arbeitspeicher realisiert werden.
+# Die erste ist **ein** *zusammenhängender Speicherbereich*, die zweite realisiert sich durch **mehrere** *fragmentierte Speicherbereiche*.
+# Für die zweite Variante benötigen wir sog. [Zeiger](sec-pointer), welche die fragmentierten Speicherbereiche verbinden/verketten.
+# 
+# (sec-connected-memory)=
+# ### Zusammenhängender Speicherbereich
+# 
+# Das Prinzip ist einfach: Die Datenstruktur, inklusiver ihrer Elemente, wird durch **einen** *zusammenhängenden Speicherbereich* realisiert.
+# 
+# ```{exercise} Schließfächer
+# :label: locks-consecutive-exercise
+# Stellen Sie sich den Arbeitsspeicher als eine Ansammlung von nummerierten Schließfächern vor.
+# Angenommen Sie können frei über diese Schließfächer bestimmen.
+# Sie wollen 10 Gegenstände, wobei jedes dieser Gegenstände den Platz von einem Schließfach verbraucht, lagern.
+# Mit welcher Strategie müssen Sie sich am wenigsten merken um ihre Gegenstände wiederzufinden?
+# ```
+# 
+# ```{solution} locks-consecutive-exercise
+# :label: locks-consecutive-solution
+# :class: dropdown
+# Sie wählen ein beliebige Schließfach (nicht zu weit hinten) aus und legen alle Gegenstände in aufeinderfolgende Schließfächer ab.
+# Sie müssen sich lediglich die Nummer des einen Schließfachs und die Anzahl der Gegenstände merken.
+# ```
+# 
+# Die Aufgabe verrät uns den wesentlichen Vorteil, wenn wir Daten im Verbund, d.h. in einem zusammenhängenden Speicherbereich ablegen.
+# Es ist uns möglich diese Daten sehr einfach wiederzufinden.
+# Wir müssen uns nur eine *Speicheradresse* merken!
+# 
+# Wollen wir, z.B., die Ziffern einer ISBN-Nummer abspeichern, so könnten wir diese Ziffern nebeneinander im Speicher ablegen.
+# Wir merken uns bei welcher Adresse die ISBN-Nummer beginnt und wie viele Stellen sie hat.
+# Eine solche Datenstruktur realisiert das sog. [Array](sec-array) oder die ``Python``-[Liste](sec-list).
+# 
+# Datenstrukturen realisiert als *zusammenhängender Speicherbereich* haben Vor- und Nachteile, welche uns das Schließfachbeispiel gut veranschaulicht.
+# Wenn Sie, z.B., auf den dritten Gegenstand (wir beginnen bei 0) zugreifen wollen, können Sie das Schließfach in Windeseile auffinden.
+# Sie gehen zum Schließfach dessen Nummer Sie kennen und wandern dann vier Schließfächer nach, z.B. rechts.
+# Da jedes Schließfach gleich breit ist, müssen Sie nicht einmal auf die anderen Schließfächer blicken und können einen großen Schritt der Lämge 4 mal $c$ Meter nach z.B. rechts wandern.
+# Sie können den Abstand zwischen dem 0-ten und 3-ten Gegenstand (mit einfachen arithmetischen Mitteln) **berechnen**.
+# 
+# Genauso verhält es sich mit den Adressen des Speichers.
+# Kennen wir die Adresse $x_0$ des 0-ten Elements/Gegenstands und wissen wie viele [Bits](def-bit) jeder Gegenstand verbraucht, sagen wir $c$ Bits, können wir die Adresse des $i$-ten Elements durch
+# 
+# $$x_i = x_0 + c \cdot i$$
+# 
+# berechnen.
+# Deshalb ist die Indexierung eines Elements enorm effizient.
+# Vorraussetzung ist jedoch, dass **jedes** Element durch genau $c$ Bits [repräsentiert](sec-representation) wird.
+# 
+# ```{figure} ../../figs/art-of-programming/list-indexing.png
+# ---
+# width: 600px
+# name: list-list-indexing
+# ---
+# Indexberechnung Anhand der Speicheradresse des ersten Elements $x_0$ und dem Speicherverbrauch der Elemente $c$.
+# ```
+# 
+# Was aber wenn Sie einen weiteren Gegenstand in den Zusammenschluss aus Schließfächern einfügen wollen und zwar mitten drinnen.
+# Dann müssen Sie viele Gegenstände aus Schließfach $k$ in das Schließfach $k+1$ bewegen.
+# 
+# ```{figure} ../../figs/art-of-programming/list-insert.png
+# ---
+# width: 600px
+# name: list-insert
+# ---
+# Einfügen eines neuen Elements. Wir müssen unter Umständen viele Elemente im Speicher bewegen.
+# ```
+# 
+# Und was passiert wenn das darauffolgende Schließfach von jemandem anderen belegt ist?
+# Dann müssten Sie **alle** Gegenstände in eine neue Folge aus zusammenhängende Schließfächer befördern.
+# 
+# ```{figure} ../../figs/art-of-programming/list-insert-fail.png
+# ---
+# width: 600px
+# name: list-insert-fail
+# ---
+# Einfügen eines neuen Elements wobei kein freier Speicher zur Verfügung steht. Wir müssen einen neuen Speicherbereich füllen.
+# ```
+# 
+# Wenn Sie einen Gegenstand inmitten der Schließfächer löschen, müssen Sie ebenfalls viele Gegenstände bewegen.
+# 
+# ```{figure} ../../figs/art-of-programming/list-delete.png
+# ---
+# width: 600px
+# name: list-delete
+# ---
+# Löschen eines Elements. Wir müssen unter Umständen viele Elemente im Speicher bewegen.
+# ```
+# 
+# Die Vorteile zeigen Effizienz beim Zugriff über einen Index.
+# Die Nachteile offenbaren dagegen eine gewissen Unflexibilität.
+# Aus diesem Grund sind Arrays [statische Datenstrukturen](), d.h. deren Speicherverbrauch muss bei ihrer Erzeugung festgelegt sein und kann sich nicht dynamisch, also während der Laufzeit, ändern.
+# Das heißt, Sie reservieren einmalig Ihre $n$ nebeneinander liegenden Schließfächer und können an diesem Verbund nichts mehr ändern.
+# Sie können zwar Gegenstände vertauschen oder ersetzten, doch kann Ihr Verbund niemals mehr als $n$ Gegenstände enthalten!
+# 
+# (sec-pointer)=
+# ### Fragmentierter Speicherbereich
+# 
+# Ein fragmentierter Speicherbereich, ist ein Speicherbereich der sich aus voneinander getrennten Speicherbereichen zusammenschließt.
+# Die Daten der Datenstruktur können somit Kreuz und Quer im Speicher liegen.
+# Das erhöht die Flexibilität doch veringert es die Effizienz des sukzessiven Zugriffs auf mehrere Elemente der Datenstruktur.
+# 
+# Damit die fragmentierten Teile als ganzes repräsentiert werden können, müssen sie verbunden werden.
+# Dies wird durch sog. *[Zeiger/Pointer](def-pointer)* realisiert.
+# Oft spricht man auch von einer *Referenz*.
+# Dabei ist wichtig, dass ein *Zeiger* wiederum auf einen weiteren *Zeiger* *zeigen/verweisen/referenzieren* kann.
+# 
+# ```{admonition} Zeiger
+# :name: def-pointer
+# :class: definition
+# Ein *Zeiger* ist ein Objekt welches eine Speicheradresse repräsentiert.
+# Programmiersprachen bieten die Mittel um Zeiger *aufzuösen*, was den Zugriff auf das Objekt auf das sie verweisen ermöglicht.
+# ```
+# 
+# Ein *Zeiger* verbraucht selbstverständlich auch Speicher.
+# Er liegt selbst an irgendeiner Speicheradresse und benötigt mindestens soviele Bits, die wir zur [Repräsentation](sec-binary-numbers) aller Adressen benötigen.
+# Ist der Arbeitsspeicher 8 [Byte](def-byte) groß und nehmen wir an wir können jeweils ein ganzes Byte addressieren, dann brauchen wir 8 Adresse.
+# Somit verbraucht jede Adresse $\left \lfloor{\log_2(8)}\right \rfloor = 3$ [Bits](def-bit).
 # 
 # ```{figure} ../../figs/art-of-programming/ram.png
 # ---
@@ -35,9 +169,6 @@
 # Die Adresse (links) ist im Wesentlichen die Nummer / der Index eines bestimmten Speicherplatzes (rechts).
 # Alle Werte sind im Binärsystem dargestellt. An Adresse 00000111 befindet sich eine Adresse.
 # ```
-# 
-# Gewöhnlich adressiert die CPU keine einzelnen Bits, sondern ein ganzes [Byte](def-byte).
-# {numref}`Abbildung {number} <fig-ram-banks>` zeigt ein Beispiel eines Arbeitsspeichers der uns erlaubt jeweils ein Byte zu adressieren, zugleich werden Adressen, in diesem Beispiel, durch ein Byte dargestellt.
 # 
 # ```{exercise} Adressraum
 # :label: address-space-exercise
@@ -71,36 +202,36 @@
 # 
 # ```
 # 
-# Im Arbeitsspeicher befinden sich alle Werte (Zahlen, Text, Bilder, Videos) und Adressen in Binärdarstellung.
-# Eine Adresse im Speicher bezeichnet man häufig auch als *Zeiger/Pointer* oder *Referenz*.
-# Ein *Zeiger* kann auf einen weiteren *Zeiger* *zeigen/verweisen/referenzieren*.
-# 
 # In {numref}`Abbildung {number} <fig-ram-banks>` zeigt der *Zeiger* an Adresse 3 auf den Speicherbereich bei Adresse 7.
 # Dies ist wiederum eine Adresse die auf den Speicherbereich 1 zeigt und dort liegt der Wert 0.
 # Selbstverständlich bedarf es der richtigen [Interpretation](sec-interpretation) der jeweiligen Speicherbereiche, denn es könnte sich beim Wert bei Adresse 3 auch um den Dezimalwert 7 oder irgendetwas anderes als einen *Zeiger* handeln.
 # 
 # Für *Zeiger* gibt es keine perfekte Analogie aus der Realwelt, jedenfalls ist uns keine eingefallen.
-# Folgendes kommt an den Sachverhalt nahe heran: Nehmen sie eine große geordnete Anreihung von Bankschließfächer als Arbeitsspeicher.
+# Probieren wir es mit unserer Schließfachanalogie: Nehmen sie eine große geordnete Anreihung von Schließfächer als Arbeitsspeicher.
 # Jedes Schließfach hat eine eindeutige Nummer (Speicheradresse).
-# In jedem Schließfach kann sich etwas befinden, unter anderem auch ein Zettel mit einer Schließfachnummer (Zeiger).
+# In jedem Schließfach kann sich etwas befinden, unter anderem auch ein Zettel mit einer Schließfachnummer ([Zeiger](def-pointer)).
 # 
 # Das Problem an dieser Analogie ist jedoch, dass, wenn wir den Zettel in Händen halten, wir erst zum entsprechenden Schließfach gehen müssen.
 # Dabei laufen wir an vielen anderen Schließfächern vorbei.
 # Das kostet Zeit.
 # Wenn wir allerdings einen Zeiger haben, so können wir auf den Wert unglaublich schnell zugreifen.
-# Es kostet der CPU zwar auch etwas Zeit um den Zeiger *aufzulösen* aber muss sie nicht über alle dazwischenliegenden Speicherbereiche "hinweglaufen", d.h. iterieren.
+# Es kostet der CPU zwar auch etwas Zeit (bzw. Zyklen) um den Zeiger *aufzulösen* aber muss sie nicht über alle dazwischenliegenden Speicherbereiche "hinweglaufen", d.h. iterieren.
 # 
-# Ein Zeiger ähnelt einer Schnur, dessen erstes Ende wir in Händen halten und dessen anderes Ende am Objekt im Schließfach befestigt ist.
-# Bei Aktivierung des Zeigers werden wir direkt ins Schließfach teleportiert!
+# Ein Zeiger ähnelt einer Schnur die sich zwischen zwei Schließfächern befindet.
+# Bei Aktivierung des Zeigers werden wir direkt vom einen Schließfach zum anderen teleportiert!
+# Allerdings funktioniert dies nur in eine Richtung.
+# Die Schnur ist **gerichtet**!
 # 
+# (sec-linked-list)=
 # ## Einfach verkette Liste
 # 
+# Wie können wir mit [Zeigern](def-pointer) eine Datenstruktur aus einem fragmentierte Speicherbereich bilden?
 # Bleiben wir bei der Analogie der Schließfächer und Schnüre.
 # Sie möchten ihre Lieblingsgerichte in alphabetischer Reihenfolge abspeichern.
 # Dazu verwenden Sie die Schließfächer und Schnüre.
 # Sie halten eine Schnur in den Händen, die auf das Schließfach mit Ihrem absoluten Lieblingsgericht zeigt.
 # Das darauffolgende Schließfach verweist auf ihr zweitliebstes Gericht usw.
-# Die bilden eine sog. *verkette Liste* (engl. *Linked List*).
+# Die so verketteten Schließfächer bilden eine sog. *verkette Liste* (engl. *Linked List*).
 # 
 # ```{figure} ../../figs/art-of-programming/linked-list-ram.png
 # ---
@@ -113,7 +244,7 @@
 # 
 # Befinden Sie sich an einem Schließfach der Liste, so können Sie recht einfach ein neues Element an dieser Stelle einfügen.
 # Eine *verkettete Liste* besteht aus sogenannten *Knoten* (Schließfach + Schnur zum nächsten Schließfach), welche durch *Zeiger* verbunden sind.
-# Sie ist eine *dynamischen* Datenstruktur, d.h. Sie kann zur Laufzeit vergrößert und verkleinert werden.
+# Sie ist eine *dynamische Datenstruktur*, d.h. sie kann zur Laufzeit vergrößert und verkleinert werden.
 # 
 # ```{admonition} Dynamische Datenstrukturen
 # :name: def-dynamic-ds
@@ -121,7 +252,7 @@
 # *Dynamische Datenstrukturen* können zur Laufzeit des Programms anwachsenden und schrumpfen, d.h. ihr Speicherverbrauch kann sich verändern. Möglich wird dies durch die Verwendung von *[Zeigern](sec-pointer)*.
 # ```
 # 
-# Haben wir direkten Zugriff auf einen Knoten so können wir in die *verkettete Liste* ein neues Element was direkt nachfolgt effizient einfügen ohne dabei die anderen Elemente der Liste zu verschieben -- ein wesentlicher Vorteil dieser Datenstruktur.
+# Haben wir direkten Zugriff auf einen Knoten so können wir in die *verkettete Liste* ein neues Element, was direkt nachfolgt, effizient einfügen ohne dabei die anderen Elemente der Liste zu verschieben -- ein wesentlicher Vorteil dieser Datenstruktur.
 # Jeder Knoten besteht aus zwei Teilen:
 # 
 # Daten
@@ -162,6 +293,7 @@ class Node:
 # 
 # Um Elemente am *Ende* (engl. *Tail*) einzufügen, kann es sinnvoll sein sich zusätzlich den letzten Knote der Liste zu merken.
 # 
+# (sec-stack)=
 # ## Der Stapel
 # 
 # ### Eigenschaften
@@ -182,7 +314,7 @@ class Node:
 # | ``pop()``                    |  $\mathcal{O}(1)$                  | Liefert das oberste Element des Stapels zurück und löscht es von diesem |
 # 
 # All diese Operationen müssen eine gute Laufzeit haben. 
-# Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. $\mathcal{O}(1)$.
+# Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. von der Anzahl der Elemente (``size``) unabhängig, oder kurz $\mathcal{O}(1)$.
 # 
 # Stellen Sie sich einen Stapel aus Büchern vor.
 # Das Buch was Sie zuletzt auf den Bücherstapel gelegt haben liegt zugriffsbereit ganz oben.
@@ -191,11 +323,11 @@ class Node:
 # Wann könnte diese Datenstruktur sinvoll einsetzbar sein?
 # Stellen Sie sich vor Sie laufen durch eine fremde Stadt.
 # Sie orientieren sich anhand von Straßennamen.
-# Um wieder zurück zu finden laufen Sie diese markanten Stellen in umgekehrter Reihenfolge ab.
+# Um wieder zurückzufinden laufen Sie diese markanten Stellen in umgekehrter Reihenfolge ab.
 # Sie können mit einem Stapel auch die Reihenfolge einer Serie von Elementen verändern.
 # Das Ein- und Austreten aus einem Bus können wir durch einen Stapel modellieren.
 # 
-# ### Realisierung
+# ### Beispielimplementierung
 # 
 # Für die genaue Realisierung eines Stapels gibt es viele Möglichkeiten.
 # Eine davon stellt die Realisierung der *einfach verketteten Liste* mit einem *Head* dar:
@@ -268,7 +400,10 @@ while stack.size > 0:
     print(f'{stack}\n')
 
 
-# Wollen wir testen ob ein geklammerter Ausdruck z.B. ``'((3+2)+6)'`` richtig geklammert ist, können wir einen *Stapel* einsetzten, denn ist die erste Klammer eine offene, muss die letzte eine geschlossene sein.
+# Wollen wir testen ob ein geklammerter Ausdruck z.B. ``'([3+2]+6)'`` richtig geklammert ist, können wir einen *Stapel* einsetzten, denn ist die $i$-te Klammer eine offene, muss die $n-i-1$-te eine geschlossene sein.
+# Dabei ist $n$ gleich der Anzahl der Klammern.
+# Wir notieren uns die Klammern während wir den Ausdruck lesen, doch wann immer wir eine geschlossene Klammer lesen, löschen wir eine offene auf dem Stack.
+# Befindet sich keine offene oder die falsche Klammer auf dem Stack, so ist der Ausdruck fehlerhaft.
 # Die folgende Funktion ``parse`` bedient sich eines *Stapels*.
 # Sie testet ob die Klammerung korrekt ist.
 
@@ -278,10 +413,15 @@ while stack.size > 0:
 def parse(expression):
     stack = Stack()
     for c in expression:
-        if c == '(':
-            stack.push('(')
+        if c == '(' or c == '[':
+            stack.push(c)
         elif c == ')':
             if stack.size == 0 or stack.peek() != '(':
+                return False
+            else:
+                stack.pop()
+        elif c == ']':
+            if stack.size == 0 or stack.peek() != '[':
                 return False
             else:
                 stack.pop()
@@ -289,22 +429,24 @@ def parse(expression):
         return False
     return True
 
-print(parse('(3+5)*2'))
-print(parse('((3+5)*2'))
-print(parse('(3+5)*2)'))
-print(parse('()()()()((((()))))'))
-print(parse('()()()()((((())))'))
+print(parse('(3+5)*2'))                 # korrekt
+print(parse('([3+5]*(2))'))             # korrekt
+print(parse('(3+5)*2]'))                # falsch
+print(parse('([3+5)*2]'))               # falsch
+print(parse('()()()[]((([()])))'))      # korrekt
+print(parse('()()()()((((())))'))       # falsch
 
 
+# (sec-queue)=
 # ## Die Warteschlange
 # 
 # ### Eigenschaften
 # 
 # Die *Warteschlange* (engl. *Queue*) ist eine [dynamischen Datenstrukturen](def-dynamic-ds) und folgt dem sog. *First-In-First-Out (FIFO)* Prinzip.
-# FIFO bedeutet soviel wie: *zuerst hinein - zu erst hinaus*.
+# FIFO bedeutet soviel wie: *zuerst hinein - zuerst hinaus*.
 # Das was zuerst hinein gekommen ist, wird auch als erstes herausgenommen.
 # Das beudeutet, dass wir eingefügte Elemente nur in der gleichen Reihenfolge aus der Queue herausnehmen können.
-# Gleichbedeutend ist der Begriff *First Come, First Serve*, d.h. wer zuerst kommt mahlt zu erst.
+# Gleichbedeutend ist der Begriff *First Come, First Serve*, d.h. wer zuerst kommt mahlt zuerst.
 # 
 # **Wie** die Warteschlange intern funktioniert ist nicht genau definiert, jedoch ist garantiert, dass die Datenstruktur die folgenden Operationen anbietet.
 # 
@@ -315,20 +457,20 @@ print(parse('()()()()((((())))'))
 # | ``dequeue()``                |  $\mathcal{O}(1)$                  | Liefert Element an forderster Stelle und löscht dieses aus der Struktur        |
 # 
 # All diese Operationen müssen eine gute Laufzeit haben. 
-# Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. $\mathcal{O}(1)$.
+# Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. von der Anzahl der Elemente (``size``) unabhängig, oder kurz $\mathcal{O}(1)$.
 # Der $i$-ten ``dequeue`` Aufruf liefert genau das Element, welches beim $i$-ten ``enqueue`` Aufruf von eingefügt wurde.
 # 
 # Der Name rührt daher, dass die Datenstruktur wie eine Warteschlange an der Kasse funktioniert.
-# Der Kunden die sich zuerst in die Schlange einreihen, werden auch zuerst bedient und können die Schlange auch zuerst wieder verlassen.
+# Kunden die sich zuerst in die Schlange einreihen, werden auch zuerst bedient und können die Schlange auch zuerst wieder verlassen.
 # Wegen dieser Eigenschaft werden *Queues* oft als *Puffer* eingesetzt.
 # Zum Beispiel werden die Netzwerkpakete die Ihr Router versendet erst in einer Queue gehalten und dann gesendet.
 # 
-# ### Realisierung
+# ### Beispielimplementierung
 # 
 # Erneut gibt es unterschiedliche Möglichkeiten diese Datenstruktur zu realisieren.
 # Glücklicherweise können wir abermals auf die *einfach verketteten Liste* zurückgreifen.
 # Allerdings ist es notwendig sowohl auf den Kopf (*Head*) als auch auf das Ende (*Tail*) der Liste effizient zugreifen zu können.
-# Deshalb merken wir uns und verwalten zusätzlich das Ende der Liste, d.h. den (*Tail*).
+# Deshalb merken wir uns, und verwalten zusätzlich das Ende der Liste, d.h. den (*Tail*).
 
 # In[6]:
 
@@ -346,7 +488,7 @@ class Queue:
             text += node.__repr__()
             node = node.successor
             if i < self.size-1:
-                text += ', '
+                text += ' => '
         text += ']'
         return text
         
@@ -373,7 +515,7 @@ class Queue:
         self._size += 1
 
 
-# Lassen uns die Warteschlange fülle
+# Lassen Sie uns die Warteschlange fülle
 
 # In[7]:
 
@@ -386,7 +528,7 @@ queue.enqueue(4)
 queue
 
 
-#  und wieder leeren.
+# und wieder leeren.
 
 # In[8]:
 
@@ -395,12 +537,49 @@ for _ in range(queue.size):
     print(queue.dequeue())
 
 
+# (sec-dequeue)=
 # ## Doppelt verkettete Liste
 # 
-# Die *doppelt verkettete Liste* (engl. *Dequeue*) ist einer Erweiterung der *(einfach) verketteten Liste* und zugleich eine Kombination aus Warteschlange und Stack.
-# Sie besteht aus Knoten, die nicht nur einen Zeiger auf den nächsten sondern auch auf den vorherigen Knoten enthalten.
-# Das macht die Liste flexibler.
-# Es lassen sich effizient vorne und hinten Elemente einfügen und löschen, doch ist der Verwaltungsaufwand größer.
+# ### Eigenschaft
+# 
+# Die *doppelt verkettete Liste* (engl. *Dequeue*) ist einer Erweiterung der [einfach verketteten Liste](sec-linked-list) und zugleich eine Kombination aus [Warteschlange](sec-queue) und [Stack](sec-stack).
+# Sie besteht aus Knoten, die nicht nur einen [Zeiger](def-pointer) auf den nächsten, sondern auch auf den vorherigen Knoten enthalten.
+# Das macht die Liste flexibler und die Verwaltung auch etwas aufwendiger.
+# Es lassen sich effizient vorne und hinten Elemente einfügen und löschen.
+# Außerdem können wir die Liste vorwärts und rückwärts durchlaufen.
+# Da es mehr Zeiger zu setzten bzw. umzubiegen gibt, ist der Verwaltungsaufwand größer.
+# 
+# Um einen neuen Knoten hinter einem gegebenen Knoten anzuhängen ``append`` müssen wir lediglich die *Zeiger* richtig "verbiegen".
+# Auch diese Operation ist, bezogen auf die Laufzeit, sehr günstig.
+# Wollen wir testen ob die Liste einen bestimmten Wert enthält ``contains``, so müssen wir diese von Kopf bis Fuß durchsuchen.
+# Diese Operation ist teuer!
+# 
+# Die Operationen des Stacks wie auch der Queue sind ebenfalls sehr effizient.
+# Die *Dequeue* bietet jedoch üblicherweise auch Methoden an um auf das $i$-te Element in der Liste zuzugreifen.
+# Da wir durch die Liste iterieren müssen, ist die Laufzeit dieser Operation abhängig von der Anzahl der Elemente (``size``).
+# Folgende Tabelle liefert einen Überblick über die Methoden der *Dequeue*.
+# 
+# | Operation                    | Laufzeit                           | Beschreibung                                                   |
+# | ---------------------------- | ---------------------------------- | -------------------------------------------------------------- |
+# | ``size``                     |  $\mathcal{O}(1)$                  | Liefert Anzahl der Elemente                                    |
+# | ``prepend(element)``         |  $\mathcal{O}(1)$                  | Fügt das Element ``element`` vorne an (es wird zum Head)       |
+# | ``append(element)``          |  $\mathcal{O}(1)$                  | Fügt das Element ``element`` hinten an (es wird zum Tail)      |
+# | ``first()``                  |  $\mathcal{O}(1)$                  | Liefert erstes Element (Head) ohne es zu löschen               |
+# | ``last()``                   |  $\mathcal{O}(1)$                  | Liefert letzte Element (Tail) ohne es zu löschen               |
+# | ``remove_first()``           |  $\mathcal{O}(1)$                  | Liefert erstes Element (Head) und löscht es aus der Liste      |
+# | ``remove_last()``            |  $\mathcal{O}(1)$                  | Liefert letzte Element (Tail) und löscht es aus der Liste      |
+# | ``contains(element)``        |  $\mathcal{O}(n)$                  | ``True`` genau dann wenn ``element`` in der Liste ist.         |
+# | ``__getitem__(i)``           |  $\mathcal{O}(n)$                  | Liefert Element an der ``i``-ten Stelle in der Liste           |
+# | ``__setitem__(i, value)``    |  $\mathcal{O}(n)$                  | Ersetzt ``i``-tes Element in der Liste mit ``value``           |
+# | ``__delitem__(i)``           |  $\mathcal{O}(n)$                  | Löscht das ``i``-te Element aus der Liste                      |
+# 
+# Es ist hierbei zu beachten, dass wenn wir einen Knoten gegeben hätten, das Löschen dieses Knoten mit einer Laufzeit von $\mathcal{O}(1)$ realisierbar wäre.
+# Ebenso effizient wäre das Einfügen eines Knotens den wir an einen gegebenen Knoten lediglich anhängen müssten.
+# Die Datenstruktur kapselt jedoch den Zugriff auf diese Knoten.
+# 
+# ### Beispielimplementierung
+# 
+# Der Folgende Code zeigt die Realisierung eines Knotens durch eine ``Python``-Klasse.
 
 # In[9]:
 
@@ -435,30 +614,65 @@ class NodeD:
             predecessor.successor = node
 
 
-# Um einen neuen Knoten hinter einem gegebenen Knoten anzuhängen ``append`` müssen wir lediglich die *Zeiger* richtig "verbiegen".
-# Auch diese Operation ist, bezogen auf die Laufzeit, sehr günstig.
-# Wollen wir testen ob die Liste einen bestimmten Wert enthält ``contains``, so müssen wir diese von Kopf bis Fuß durchsuchen.
-# Diese Operation ist teuer!
-# 
-# Der Folgende Code zeigt die Realisierung eines Knotens durch eine ``Python``-Klasse.
-# 
-# Die Klasse ``DoubleLinkedList`` zeigt eine sehr simple Realisierung einer *doppelt verketteten Liste*:
-# 
-# | Operation                    | Laufzeit                           | Beschreibung                                                   |
-# | ---------------------------- | ---------------------------------- | -------------------------------------------------------------- |
-# | ``size``                     |  $\mathcal{O}(1)$                  | Liefert Anzahl der Elemente                                    |
-# | ``prepend(element)``         |  $\mathcal{O}(1)$                  | Fügt das Element ``element`` vorne an (es wird zum Head)       |
-# | ``append(element)``          |  $\mathcal{O}(1)$                  | Fügt das Element ``element`` hinten an (es wird zum Tail)      |
-# | ``first()``                  |  $\mathcal{O}(1)$                  | Liefert erstes Element (Head) ohne es zu löschen               |
-# | ``last()``                   |  $\mathcal{O}(1)$                  | Liefert letzte Element (Tail) ohne es zu löschen               |
-# | ``remove_first()``           |  $\mathcal{O}(1)$                  | Liefert erstes Element (Head) und löscht es aus der Liste      |
-# | ``remove_last()``            |  $\mathcal{O}(1)$                  | Liefert letzte Element (Tail) und löscht es aus der Liste      |
-# | ``contains(element)``        |  $\mathcal{O}(n)$                  | ``True`` genau dann wenn ``element`` in der Liste ist.         |
-# | ``__getitem__(i)``           |  $\mathcal{O}(n)$                  | Liefert Element an der ``i``-ten Stelle in der Liste           |
-# | ``__setitem__(i, value)``    |  $\mathcal{O}(n)$                  | Ersetzt ``i``-tes Element in der Liste mit ``value``           |
-# | ``__delitem__(i)``           |  $\mathcal{O}(n)$                  | Ersetzt ``i``-tes Element in der Liste mit ``value``           |
+# Lassen Sie uns ein paar Knoten verketten.
+# ``print_nodes`` gibt die geamte liste aus, sodass wir kontrollieren können was passiert.
 
 # In[10]:
+
+
+def print_nodes(node):
+    out = '['
+    while node.successor != None:
+        out += f'{node}'
+        if node.successor.successor != None:
+            out += ' <=> '
+        node = node.successor
+    out += ']'
+    print(out)
+
+
+# In[11]:
+
+
+a = NodeD('A')
+b = NodeD('B')
+c = NodeD('C')
+d = NodeD('D')
+e = NodeD('E')
+a.append(b)
+b.append(c)
+c.append(d)
+d.append(e)
+print_nodes(a)
+
+
+# Kennen wir den Knoten (hier ``c``), können wir nach oder vor ihm mit konstanter Laufzeit ein Element einfügen.
+# Dazu müssen wir die richtigen [Zeiger](def-pointer) verbiegen:
+
+# In[12]:
+
+
+c.append(NodeD('G'))
+print_nodes(a)
+
+
+# Einen uns bekannten Knoten (hier ``b``) können wir sehr effizient löschen.
+# Dazu müssen wir ebenfalls die richtigen *Zeiger* *verbiegen*:
+
+# In[13]:
+
+
+a.successor = c
+c.predecessor = a
+b.successor = None
+b.predecessor = None
+print_nodes(a)
+
+
+# Die Klasse ``DoubleLinkedList`` zeigt eine sehr simple Realisierung einer *doppelt verketteten Liste*.
+# Die Datenstruktur wird durch Knoten realisiert, erlaubt es uns aber nicht direkt auf Knoten zuzugreifen.
+
+# In[14]:
 
 
 class DoubleLinkedList:
@@ -474,7 +688,7 @@ class DoubleLinkedList:
             text += node.__repr__()
             node = node.successor
             if i < self._size-1:
-                text += ', '
+                text += ' <=> '
         text += ']'
         return text
         
@@ -580,7 +794,7 @@ class DoubleLinkedList:
         node.value = value
 
 
-# In[11]:
+# In[15]:
 
 
 lst = DoubleLinkedList()
@@ -592,19 +806,19 @@ lst.prepend(54)
 lst
 
 
-# In[12]:
+# In[16]:
 
 
 lst.last()
 
 
-# In[13]:
+# In[17]:
 
 
 lst.first()
 
 
-# In[14]:
+# In[18]:
 
 
 print(lst.contains(13))
@@ -614,7 +828,7 @@ print(lst.contains(13))
 lst
 
 
-# In[15]:
+# In[19]:
 
 
 while lst.size > 0:
@@ -623,13 +837,108 @@ while lst.size > 0:
 lst
 
 
-# ## Dequeue
-# 
-# TODO
-# 
+# (sec-array)=
 # ## Arrays
 # 
-# TODO
+# Ein *Array* ist eine [statische Datenstruktur]() und wird zugleich durch einen [zusammengesetzen Speicherbereich](sec-connected-memory) realisiert.
+# Ein Array beinhaltet üblicherweise Elemente die alle vom gleichen [Datentyp](def-datatypes) sind oder allesamt [Zeiger](def-pointer) sind, die alle auf Objekte des selben Datentyps zeigen.
+# 
+# Arrays bieten folgende Operationen.
+# 
+# | Operation                    | Laufzeit                           | Beschreibung                                                   |
+# | ---------------------------- | ---------------------------------- | -------------------------------------------------------------- |
+# | ``size``                     |  $\mathcal{O}(1)$                  | Liefert Anzahl der Elemente                                    |
+# | ``__getitem__(i)``           |  $\mathcal{O}(1)$                  | Liefert Element an der ``i``-ten Stelle des Arrays             |
+# | ``__setitem__(i, value)``    |  $\mathcal{O}(1)$                  | Ersetzt ``i``-tes Element des Arrays mit ``value``             |
+# 
+# All diese Operationen müssen eine gute Laufzeit haben. 
+# Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. von der Anzahl der Elemente (``size``) unabhängig, oder kurz $\mathcal{O}(1)$.
+# 
+# Selbstverständlich können wir ein Array erzeugen, welches mehr Elemente aufnehmen als es nach der Erstellung beinhaltet.
+# Die "leeren" Plätze belegen wir dann zum Beispiel mit Pseudowerten.
+# Ein Array funktioniert wie die oben beschriebene Struktur mit [zusammengesetzen Speicherbereich](sec-connected-memory), doch verwehrt es uns die Möglichkeit es dynamisch zu vergrößern oder zu verkleinern.
+# 
+# ```{admonition} Arrays in Python?
+# :name: remark-arrays-python
+# :class: remark
+# Anders als in den meisten Sprachen, gibt es in ``Python`` keine nativen Arrays.
+# ```
+# 
+# Es gibt sog. [Tupel](sec-tuple), die einem Array nahe kommen, jedoch kann man die Elemente eines Tupels nicht verändern.
+# ``Python``-Listen sind hingegen [dynamische Arrays](sec-dynamic-array).
+# 
+# (sec-dynamic-array)=
+# ## Dynamische Arrays
+# 
+# Wäre es nicht toll, wenn wir, bezogen auf die Laufzeit, von [Arrays](sec-array) und [Dequeues](sec-dequeue) das Beste von beiden bekommen könnten?
+# Druch *dynamische Arrays* versucht man genau dies zu erreichen.
+# 
+# ### Eigenschaften
+# 
+# Ein dynamisches Array ist eine [dynamische Datenstruktur](def-dynamic-ds) und basiert zudem auf einem [zusammengesetzen Speicherbereich](sec-connected-memory).
+# 
+# Gehen wir zurück zu unseren Schließfächern.
+# Was würden Sie anders machen, wenn Sie zum einen 10 Schließfächer benötigen, zugleich aber davon ausgehen müssen, dass weitere Schließfächer im laufe der Zeit gebraucht werden?
+# Wahrscheinlich würden Sie mehr als 10 Schließfächer reservieren.
+# Sie würden vielleitcht eine grobe Schätzung abgeben, wie viele Schließfächer denn wahrscheinlich insgesamgt gebraucht werden.
+# Was passiert aber wenn Sie diese Schließfächer über einen langen Zeitraum benötigen und es auch sein kann, dass diese weniger werden?
+# Angenommen jedes Schließfach kostet pro Tag Geld und zugleich kostet das Bewegen der Objekte von einem Schließfach zum anderen ebenfalls einen Betrag.
+# Wie würden Sie dann die Situation handhaben?
+# 
+# ```{admonition} Die Dynamik der dynamischen Arrays
+# :name: remark-dynamic-arrays
+# :class: remark
+# *Dynamische Arrays* vergrößern und verkleinern sich dynamisch obwohl sie durch einem zusammengesetzen Speicherbereich realisiert werden.
+# ```
+# 
+# Vergrößert sich das Array, so kann es sein, dass alle Werte kopiert werden müssen (siehe [zusammengesetzen Speicherbereich](sec-connected-memory)).
+# Das heißt, diese Operation wollen wir nicht zu oft durchführen müssen!
+# Gleichzeitig wollen wir aber auch nicht unnötig viel Speicher *vorreservieren*.
+# Es ist ein Gleichgewicht aus
+# 
+# 1. ungenutztem Speicher und
+# 2. Anzahl der Kopiervorgänge.
+# 
+# Es wird folgende Strategie implementiert: Ist das Array voll und es soll ein weiteres Element angefügt werden, wird das Array in einen neuen Bereich kopiert der $r$-mal so groß ist wie der ursprüngliche Bereich.
+# Ein guter Wert wäre z.B. $r = 1.5$.
+# Löschen wir hingegen ein Element aus dem Array und es ist weniger als $1/r$ belegt, dann verringern wir seinen Speicherverbrauch, sodass zu $1/r$ belegt ist.
+# Mit dieser Strategie verringern sich die **durchschnittlichen** Kosten für das Kopieren der Elemente auf einen **konstanten** Wert!
+# 
+# Deshalb bieten *dynamische Arrays* folgende Operationen.
+# 
+# | Operation                    | Laufzeit                            | Beschreibung                                                    |
+# | ---------------------------- | ----------------------------------- | -------------------------------------------------------------- |
+# | ``size``                     |  $\mathcal{O}(1)$                   | Liefert Anzahl der Elemente                                    |
+# | ``insert(element, i)``       |  $\mathcal{O}(n)$                   | Fügt das Element ``element`` an der ``i``-ten Position an      |
+# | ``append(element)``          |  $\mathcal{O}(1)$ (Durchschnitt)    | Fügt das Element ``element`` hinten an                         |
+# | ``prepend(element)``         |  $\mathcal{O}(1)$ (Durchschnitt)    | Fügt das Element ``element`` vorne an                          |
+# | ``remove_first()``           |  $\mathcal{O}(1)$ (Durchschnitt)    | Liefert und löscht erstes Element aus dem dyn. Array           |
+# | ``remove_last()``            |  $\mathcal{O}(1)$ (Durchschnitt)    | Liefert und löscht letzte Element aus dem dyn. Array           |
+# | ``contains(element)``        |  $\mathcal{O}(n)$                   | ``True`` genau dann wenn ``element`` in im dyn. Array ist.     |
+# | ``__getitem__(i)``           |  $\mathcal{O}(1)$                   | Liefert Element an der ``i``-ten Stelle des dyn. Arrays        |
+# | ``__setitem__(i, value)``    |  $\mathcal{O}(1)$                   | Ersetzt ``i``-tes Element des dyn. Arrays mit ``value``        |
+# | ``__delitem__(i)``           |  $\mathcal{O}(n)$                   | Löscht das ``i``-te Element aus dem dyn. Array                 |
+# 
+# Beachten Sie dass das Löschen und Einfügen eines Elements in mitten des *dyn. Arrays*, d.h. ``__delitem__(i)`` und ``insert(element, i)``, teuer ist.
+# Ein unbekanntes Element zu suchen, d.h. ``contains(element)``, ist ebenfalls teuer.
+# All anderen Operationen müssen eine gute Laufzeit haben. 
+# Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. von der Anzahl der Elemente (``size``) unabhängig, oder kurz $\mathcal{O}(1)$.
+# Zu beachten ist allerdings, dass es sich bei einigen Operationen um die durchschnittliche Komplexität handelt.
+# In anderen Worten: Es kann passieren, dass eine solche Operation teuer ist, viele Operationen sind jedoch im Durchschnitt sehr effizient.
+# 
+# ### Dequeue vs Stack vs Queue vs dyn. Array
+# 
+# In dein meisten Fällen wird das *dynamische Array* der *[Dequeue](sec-dequeue)* vorgezogen, da es theoretisch gesehen in allen Punkten besser oder fast genauso gut abschneidet.
+# Insbesondere dann wenn wir Elemente *indexieren* wollen oder oft über die gesamte Liste *iterieren* müssen.
+# Da die Elemente alle nebeneinander im Speicher liegen ist das Iterieren über alle Elemente in der Praxis schneller als bei einer [Dequeue](sec-dequeue).
+# 
+# Wollen wir jedoch lediglich Elemente ganz vorne und ganz hinten in die Liste einfügen, kann die [Dequeue](sec-dequeue) zu einer besseren Laufzeit führen, denn bei ihr handelt es sich nicht um den Durchschnitt.
+# Für den [Stack](sec-stack) und die [Queue](sec-queue) gilt dies ebenfalls sofern wir Elemente entsprechend Datenstruktur einfügen und herausnehmen wollen.
+# 
+# ### Beispielimplementierung
+# 
+# Die ``Python``-[Liste](sec-list) ist ein *dyn. Array*.
+# 
 # 
 # ## Hashmaps
 # 
@@ -638,3 +947,5 @@ lst
 # ## Bäume
 # 
 # TODO
+# 
+# ## Vergleich
