@@ -15,29 +15,31 @@ kernelspec:
 
 Programmiersprachen und deren Standardbibliotheken bieten viele vordefinierte [Datentypen](def-datatypes) und [Datenstrukturen](def-data-structures).
 In diesem Abschnitt wollen wir über die fundamentalsten Datenstrukturen sprechen.
-Wir werden Ihnen dabei auch eine Implementierung präsentieren, die Sie sich rückwirkend ansehen können, sobald Sie genug Erfahrung mit ``Python`` gesammelt haben.
-Für eine weiterführende und zugleich angewandte Diskussion verweisen das Kapitel [Datentypen (Grundlagen)](sec-python-data-types) und [Datentypen (Fortsetzung)](sec-data-types-advanced) des **PYTHON**-Teils.
+Wir werden Ihnen dabei auch eine ``Python``-Implementierung präsentieren, die Sie sich rückwirkend ansehen können, sobald Sie genug Erfahrung mit ``Python`` gesammelt haben.
+Für eine weiterführende und zugleich angewandte Diskussion verweisen wir auf das Kapitel [Datentypen (Grundlagen)](sec-python-data-types) und [Datentypen (Fortsetzung)](sec-data-types-advanced) des **PYTHON**-Teils.
 
-Eine Datenstruktur strukturiert Daten.
+Eine Datenstruktur *strukturiert* Daten.
 Sie dient der Organisation von Daten.
-Wir kennen solche Datenverwaltungsstrukturen aus der physikalischen Welt: Ordner, Schnellhäfter, Schließfächer, Warteschlangen, Räume und Sitzpätze sind unter bestimmter Betrachtung Datenstrukturen.
+Eine Form einer Datenstruktur liefert beispielweise die Struktur eines Briefs.
+Die Vorgaben wie ein Brief zu schreiben ist, d.h. dessen Strutukr, organisiert seine Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
+Dabei ist jedoch vordefiniert welche Daten (von welchem [Datentyp](sec-data-types)) strukturiert werden.
+Ein solche solche Struktur wird in vielen Programmiersprachen durch Klassen realisiert.
+Diese besprechen wir im Kapitel [Objektorientierte Programmierung](sec-oop).
+
+In diesem Abschnitt wollen wir uns stattdessen mit Datenstrukturen beschäftigen, die prinzipiell unterschiedlich viele und oftmals auch beliebige Daten strukturieren.
+Wir kennen solche Datenverwaltungsstrukturen aus der physikalischen Welt: Ordner, Schnellhäfter, Schließfächer, Warteschlangen, Räume und Sitzpätze sind, unter bestimmter Betrachtung, Datenstrukturen.
 Ein Ordner strukturiert Dokumente (z.B. Briefe).
 Warteschlangen, Räume und Sitzplätze ordnen Menschen.
+Schließfächer strukturieren unterschiedliche Objekte in einer bestimmten Reihenfolge.
+Solche Datenstrukturen bezeichen wir als *[Sammlung](def-collection)* (engl. *Collection*).
 
-Eine weitere Form einer Datenstruktur kann beispielweise die Struktur eines Briefs darstellen.
-Dieser strukturiert die Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
-Dabei ist jedoch vordefiniert welche Daten strukturiert werden.
-Um solche [zusammengesetzte Datentypen](def-data-structures) wird es in diesem Abnschit nicht gehen.
-Stattdessen sprechen wir über Datenstrukturen, die prinzipiell unterschiedlich viele und oftmals auch beliebige Daten strukturieren.
-Diese werden oft als sog. *[Sammlung](def-collection)* (engl. *Collection*) bezeichnet.
-
-## Der Arbeitspeicher
+## Arten von Sammlungen
 
 Da sich alle Daten (Programm und dessen Eingabe/Ausgabe) im [Arbeitsspeicher](def-main-memory) befinden, müssen wir begreifen welche Funktionalität diese *konkrete* Datenstruktur bietet.
 Alle weiteren *abstrakten* Datenstrukturen bauen auf diesen Möglichkeiten auf.
 
 Über die Geschichte hinweg hat sich der Arbeitsspeicher in Geschwindigkeit und Größe und bezüglich anderer Eigenschaften weiterentwickelt.
-Was uns jedoch interessiert sind die wenigen grundlegenden Eigenschaften, welche sich im Wesentlichen nicht verändert haben:
+Was uns jedoch interessiert sind die wenigen grundlegenden Eigenschaften, die wir als Programmierer\*in beachten müssen:
 
 Ordnung
 : Der Arbeitsspeicher ist im Wesentlichen eine lange geordnete Ansammlung an Bits
@@ -50,14 +52,19 @@ Effizienz
 
 Die Eigenschaft der *effizienten Adressierung* spiegelt sich in allen Programmiersprachen mehr oder weniger pregnannt wieder.
 Gewöhnlich adressiert die CPU keine einzelnen Bits, sondern ein ganzes [Byte](def-byte).
-{numref}`Abbildung {number} <fig-ram-banks>` zeigt ein Beispiel eines Arbeitsspeichers der uns erlaubt jeweils ein Byte zu adressieren, zugleich werden Adressen, in diesem Beispiel, durch ein Byte dargestellt.
+{numref}`Abbildung {number} <fig-ram-banks>` zeigt ein Beispiel eines Arbeitsspeichers der uns erlaubt jeweils ein Byte zu adressieren.
+Zugleich werden Adressen, in diesem Beispiel, durch ein Byte dargestellt.
 
-Es gibt zwei wesentliche Arten, wie Datenstrukturen im Arbeitspeicher realisiert werden.
-Die erste ist **ein** *zusammenhängender Speicherbereich*, die zweite realisiert sich durch **mehrere** *fragmentierte Speicherbereiche*.
-Für die zweite Variante benötigen wir sog. [Zeiger](sec-pointer), welche die fragmentierten Speicherbereiche verbinden/verketten.
+Es gibt zwei wesentliche Arten, wie Datenstrukturen im Arbeitspeicher realisiert werden:
+
+(1) Statische Sammlungen
+: Die [Sammlung](def-collection) liegt als zusammenhängende Folge von [Bits](def-bit) im Arbeitsspeicher
+
+(2) Dynamische Sammlungen 
+: Die [Sammlung](def-collection) besteht aus mehreren zusammenhängenden Folgen von [Bits](def-bit), die voneinander getrennt im Arbeitsspeicher liegen.
 
 (sec-connected-memory)=
-### Zusammenhängender Speicherbereich
+### Statische Sammlungen
 
 Das Prinzip ist einfach: Die Datenstruktur, inklusiver ihrer Elemente, wird durch **einen** *zusammenhängenden Speicherbereich* realisiert.
 
@@ -98,59 +105,80 @@ $$x_i = x_0 + c \cdot i$$
 berechnen.
 Deshalb ist die Indexierung eines Elements enorm effizient.
 Vorraussetzung ist jedoch, dass **jedes** Element durch genau $c$ Bits [repräsentiert](sec-representation) wird.
+Die folgende Abbildung veranschaulicht die Indexierung.
+Dabei ist in blau der von der Datenstruktur belegte Speicher hervorgehoben.
+Die grauen Bereiche sind ebenfalls belegt jedoch nicht von unserer Datenstruktur.
 
 ```{figure} ../../figs/art-of-programming/list-indexing.png
 ---
-width: 600px
+width: 800px
 name: list-list-indexing
 ---
-Indexberechnung Anhand der Speicheradresse des ersten Elements $x_0$ und dem Speicherverbrauch der Elemente $c$.
 ```
 
-Was aber wenn Sie einen weiteren Gegenstand in den Zusammenschluss aus Schließfächern einfügen wollen und zwar mitten drinnen.
+Was aber wenn Sie einen weiteren Gegenstand in den Zusammenschluss aus Schließfächern einfügen wollen und zwar mitten drinnen?
 Dann müssen Sie viele Gegenstände aus Schließfach $k$ in das Schließfach $k+1$ bewegen.
+Folgende Abbildung skizziert diesen aufwendigen Vorgang:
 
 ```{figure} ../../figs/art-of-programming/list-insert.png
 ---
-width: 600px
+width: 800px
 name: list-insert
 ---
-Einfügen eines neuen Elements. Wir müssen unter Umständen viele Elemente im Speicher bewegen.
 ```
 
 Und was passiert wenn das darauffolgende Schließfach von jemandem anderen belegt ist?
-Dann müssten Sie **alle** Gegenstände in eine neue Folge aus zusammenhängende Schließfächer befördern.
+Dann müssten Sie **alle** Gegenstände in eine neue Folge aus zusammenhängende Schließfächer befördern
+Sie müssen dafür natürlich eine Stelle finden, die genug Platz bietet!
+Die folgende Abbildung skizziert diesen Vorgang:
 
 ```{figure} ../../figs/art-of-programming/list-insert-fail.png
 ---
-width: 600px
+width: 800px
 name: list-insert-fail
 ---
-Einfügen eines neuen Elements wobei kein freier Speicher zur Verfügung steht. Wir müssen einen neuen Speicherbereich füllen.
 ```
 
 Wenn Sie einen Gegenstand inmitten der Schließfächer löschen, müssen Sie ebenfalls viele Gegenstände bewegen.
+Dieser Vorgang ähnelt dem Einfügen inmitten der Datenstruktur.
 
 ```{figure} ../../figs/art-of-programming/list-delete.png
 ---
-width: 600px
+width: 800px
 name: list-delete
 ---
-Löschen eines Elements. Wir müssen unter Umständen viele Elemente im Speicher bewegen.
 ```
 
 Die Vorteile zeigen Effizienz beim Zugriff über einen Index.
-Die Nachteile offenbaren dagegen eine gewissen Unflexibilität.
-Aus diesem Grund sind Arrays [statische Datenstrukturen](), d.h. deren Speicherverbrauch muss bei ihrer Erzeugung festgelegt sein und kann sich nicht dynamisch, also während der Laufzeit, ändern.
+Die Nachteile offenbaren dagegen die Unflexibilität bei der Veränderung der Größe der Datenstruktur.
+
+```{admonition} Statische Sammlungen
+:name: def-static-ds
+:class: definition
+*Statische Sammlungen* können zur Laufzeit des Programms ihre Größe nicht verändern, d.h. ihr Speicherverbrauch kann sich **nicht** verändern. 
+Stattdessen muss ein eine neue Datenstruktur angelegt werdeb.
+```
+
+Aus diesem Grund ist ein Arraya eine [statische Sammlung](def-static-ds), d.h. deren Speicherverbrauch muss bei ihrer Erzeugung festgelegt sein und kann sich nicht dynamisch, also während der Laufzeit, ändern.
 Das heißt, Sie reservieren einmalig Ihre $n$ nebeneinander liegenden Schließfächer und können an diesem Verbund nichts mehr ändern.
 Sie können zwar Gegenstände vertauschen oder ersetzten, doch kann Ihr Verbund niemals mehr als $n$ Gegenstände enthalten!
 
 (sec-pointer)=
-### Fragmentierter Speicherbereich
+### Dynamische Sammlungen
 
-Ein fragmentierter Speicherbereich, ist ein Speicherbereich der sich aus voneinander getrennten Speicherbereichen zusammenschließt.
+Anstatt die Sammlung durch einen zusammenhängenden Speicherbereich zu realisieren, gibt es eine zweite Möglichkeit: Die Realisierung über einen fragmentierten Speicherbereich, d.h. mehrere voneinander getrennte Speicherbereiche ergeben als zusammenschluss die Sammlung.
 Die Daten der Datenstruktur können somit Kreuz und Quer im Speicher liegen.
-Das erhöht die Flexibilität doch veringert es die Effizienz des sukzessiven Zugriffs auf mehrere Elemente der Datenstruktur.
+
+Das erhöht die Flexibilität!
+Die Datenstruktur kann durch Speicherbereiche anwachsen die eben nicht zusammenhängen.
+Dadurch müssen wir Elemente nicht fortwährend verschieben.
+Die Sammlung kann dynamisch anwachsen und schrumpfen.
+
+```{admonition} Dynamische Sammlungen
+:name: def-dynamic-ds
+:class: definition
+*Dynamische Sammlungen* können zur Laufzeit des Programms anwachsenden und schrumpfen, d.h. ihr Speicherverbrauch kann sich verändern. Möglich wird dies durch die Verwendung von *[Zeigern](sec-pointer)*.
+```
 
 Damit die fragmentierten Teile als ganzes repräsentiert werden können, müssen sie verbunden werden.
 Dies wird durch sog. *[Zeiger/Pointer](def-pointer)* realisiert.
@@ -231,6 +259,11 @@ Bei Aktivierung des Zeigers werden wir direkt vom einen Schließfach zum anderen
 Allerdings funktioniert dies nur in eine Richtung.
 Die Schnur ist **gerichtet**!
 
+In den meisten Programmiersprachen wird die Handhabung von *Zeigern* durch Variablen abgebildet.
+In Hochsprachen wie ``Python`` müssen sich Programmierer\*innen um Speicheradressen, das Reservieren und Freigeben von Speicher nicht kümmern.
+Das übernimmt der sog. [Garbage Collector](def-garbage-collector). 
+Wie ``Python`` Variablen durch Zeiger realisiert erfahren sie im Abschnitt [Variablen](sec-variables).
+
 (sec-linked-list)=
 ## Einfach verkette Liste
 
@@ -253,13 +286,7 @@ Jede Kachel repräsentiert ein Schließfach bzw. einen adressierbaren Speicherbe
 
 Befinden Sie sich an einem Schließfach der Liste, so können Sie recht einfach ein neues Element an dieser Stelle einfügen.
 Eine *verkettete Liste* besteht aus sogenannten *Knoten* (Schließfach + Schnur zum nächsten Schließfach), welche durch *Zeiger* verbunden sind.
-Sie ist eine *dynamische Datenstruktur*, d.h. sie kann zur Laufzeit vergrößert und verkleinert werden.
-
-```{admonition} Dynamische Datenstrukturen
-:name: def-dynamic-ds
-:class: definition
-*Dynamische Datenstrukturen* können zur Laufzeit des Programms anwachsenden und schrumpfen, d.h. ihr Speicherverbrauch kann sich verändern. Möglich wird dies durch die Verwendung von *[Zeigern](sec-pointer)*.
-```
+Sie ist eine [dynamische Sammlung](def-dynamic-ds), d.h. sie kann zur Laufzeit vergrößert und verkleinert werden.
 
 Haben wir direkten Zugriff auf einen Knoten so können wir in die *verkettete Liste* ein neues Element, was direkt nachfolgt, effizient einfügen ohne dabei die anderen Elemente der Liste zu verschieben -- ein wesentlicher Vorteil dieser Datenstruktur.
 Jeder Knoten besteht aus zwei Teilen:
@@ -305,7 +332,7 @@ Um Elemente am *Ende* (engl. *Tail*) einzufügen, kann es sinnvoll sein sich zus
 
 ### Eigenschaften
 
-Der *Stapel* (engl. *Stack*) oder auch *Stapelspeicher/Keller* ist einer der einfachsten [dynamischen Datenstrukturen](def-dynamic-ds), welche dem *Last-In-First-Out (LIFO)* Prinzip folgt.
+Der *Stapel* (engl. *Stack*) oder auch *Stapelspeicher/Keller* ist einer der einfachsten [dynamischen Sammlungen](def-dynamic-ds), welche dem *Last-In-First-Out (LIFO)* Prinzip folgt.
 LIFO bedeutet soviel wie: *zuletzt hinein - zuerst heraus*.
 Das was zuletzt hinein gekommen ist, wird auch als erstes herausgenommen.
 Das beudeutet, dass wir eingefügte Elemente nur in umgekehrter Reihenfolge aus dem Stapel herausnehmen können.
@@ -442,7 +469,7 @@ print(parse('()()()()((((())))'))       # falsch
 
 ### Eigenschaften
 
-Die *Warteschlange* (engl. *Queue*) ist eine [dynamischen Datenstrukturen](def-dynamic-ds) und folgt dem sog. *First-In-First-Out (FIFO)* Prinzip.
+Die *Warteschlange* (engl. *Queue*) ist eine [dynamische Sammlung](def-dynamic-ds) und folgt dem sog. *First-In-First-Out (FIFO)* Prinzip.
 FIFO bedeutet soviel wie: *zuerst hinein - zuerst hinaus*.
 Das was zuerst hinein gekommen ist, wird auch als erstes herausgenommen.
 Das beudeutet, dass wir eingefügte Elemente nur in der gleichen Reihenfolge aus der Queue herausnehmen können.
@@ -816,8 +843,9 @@ lst
 (sec-array)=
 ## Arrays
 
-Ein *Array* ist eine [statische Datenstruktur]() und wird zugleich durch einen [zusammengesetzen Speicherbereich](sec-connected-memory) realisiert.
-Ein Array beinhaltet üblicherweise Elemente die alle vom gleichen [Datentyp](def-datatypes) sind oder allesamt [Zeiger](def-pointer) sind, die alle auf Objekte des selben Datentyps zeigen.
+Ein *Array* ist eine [statische Sammlung](def-static-ds).
+Es wird durch einen [zusammengesetzen Speicherbereich](sec-connected-memory) realisiert.
+Ein Array beinhaltet üblicherweise Elemente die alle vom gleichen [Datentyp](def-datatypes) sind, oder allesamt [Zeiger](def-pointer) sind, die alle auf Objekte des selben Datentyps zeigen.
 
 Arrays bieten folgende Operationen.
 
@@ -830,8 +858,25 @@ Arrays bieten folgende Operationen.
 All diese Operationen müssen eine gute Laufzeit haben. 
 Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. von der Anzahl der Elemente (``size``) unabhängig, oder kurz $\mathcal{O}(1)$.
 
-Selbstverständlich können wir ein Array erzeugen, welches mehr Elemente aufnehmen als es nach der Erstellung beinhaltet.
+Selbstverständlich können wir ein Array erzeugen, welches mehr Elemente aufnehmen kann als es nach der Erstellung beinhaltet.
 Die "leeren" Plätze belegen wir dann zum Beispiel mit Pseudowerten.
+
+Folgendes Beispie veranschaulicht das Prinzip.
+Dabei ist ``None`` der Pseudowert.
+Wir verwenden eine ``Python``-[Liste](sec-list) die das Array simuliert.
+
+```{code-cell} python3
+def print_word(word):
+    chars = ''
+    for char in word:
+        if char:
+            chars += char
+    print(chars)
+    
+word = [None, None, 'A','f','f', 'e', None, None]
+print_word(word)
+```
+
 Ein Array funktioniert wie die oben beschriebene Struktur mit [zusammengesetzen Speicherbereich](sec-connected-memory), doch verwehrt es uns die Möglichkeit es dynamisch zu vergrößern oder zu verkleinern.
 
 ```{admonition} Arrays in Python?
@@ -840,7 +885,8 @@ Ein Array funktioniert wie die oben beschriebene Struktur mit [zusammengesetzen 
 Anders als in den meisten Sprachen, gibt es in ``Python`` keine nativen Arrays.
 ```
 
-Es gibt sog. [Tupel](sec-tuple), die einem Array nahe kommen, jedoch kann man die Elemente eines Tupels nicht verändern.
+Es gibt sog. [Tupel](sec-tuple), die einem Array nahekommen, jedoch kann man die Elemente eines Tupels nicht verändern.
+In anderen Worten Tupel bieten keine ``__setitem__(i, value)``-Methode.
 ``Python``-Listen sind hingegen [dynamische Arrays](sec-dynamic-array).
 
 (sec-dynamic-array)=
@@ -851,7 +897,8 @@ Druch *dynamische Arrays* versucht man genau dies zu erreichen.
 
 ### Eigenschaften
 
-Ein dynamisches Array ist eine [dynamische Datenstruktur](def-dynamic-ds) und basiert zudem auf einem [zusammengesetzen Speicherbereich](sec-connected-memory).
+Wir hatten gesagt, dass [dynamische Sammlungen](def-dynamic-ds) auf einem fragmentierten Speicherbereich basieren.
+Das ist jedoch nicht hunderprozent präzise ausgedrückt, denn *dynamische Arrays* basieren auf einem [zusammengesetzten Speicherbreich](sec-connected-memory), der jedoch immer wieder neu im Speicher angelegt wird.
 
 Gehen wir zurück zu unseren Schließfächern.
 Was würden Sie anders machen, wenn Sie zum einen 10 Schließfächer benötigen, zugleich aber davon ausgehen müssen, dass weitere Schließfächer im laufe der Zeit gebraucht werden?
@@ -918,9 +965,13 @@ Die ``Python``-[Liste](sec-list) ist ein *dyn. Array*.
 
 ## Hashmaps
 
+Siehe [Namensregister](sec-name-register) ab [Hashing und das Dictionary](sec-hashing)
+
 TODO
 
 ## Bäume
+
+Siehe [Sprechen in der Taucherglocke](sec-dive-bell)
 
 TODO
 

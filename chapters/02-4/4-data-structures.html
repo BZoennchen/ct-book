@@ -1088,18 +1088,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#der-arbeitspeicher">
-   10.4.1. Der Arbeitspeicher
+  <a class="reference internal nav-link" href="#arten-von-sammlungen">
+   10.4.1. Arten von Sammlungen
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zusammenhangender-speicherbereich">
-     10.4.1.1. Zusammenhängender Speicherbereich
+    <a class="reference internal nav-link" href="#statische-sammlungen">
+     10.4.1.1. Statische Sammlungen
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fragmentierter-speicherbereich">
-     10.4.1.2. Fragmentierter Speicherbereich
+    <a class="reference internal nav-link" href="#dynamische-sammlungen">
+     10.4.1.2. Dynamische Sammlungen
     </a>
    </li>
   </ul>
@@ -1222,18 +1222,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#der-arbeitspeicher">
-   10.4.1. Der Arbeitspeicher
+  <a class="reference internal nav-link" href="#arten-von-sammlungen">
+   10.4.1. Arten von Sammlungen
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zusammenhangender-speicherbereich">
-     10.4.1.1. Zusammenhängender Speicherbereich
+    <a class="reference internal nav-link" href="#statische-sammlungen">
+     10.4.1.1. Statische Sammlungen
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fragmentierter-speicherbereich">
-     10.4.1.2. Fragmentierter Speicherbereich
+    <a class="reference internal nav-link" href="#dynamische-sammlungen">
+     10.4.1.2. Dynamische Sammlungen
     </a>
    </li>
   </ul>
@@ -1350,25 +1350,27 @@ title="Print to PDF"
 <span id="sec-data-structures"></span><h1><span class="section-number">10.4. </span>Datenstrukturen<a class="headerlink" href="#datenstrukturen" title="Link zu dieser Überschrift">#</a></h1>
 <p>Programmiersprachen und deren Standardbibliotheken bieten viele vordefinierte <a class="reference internal" href="../03-4/11-typing-in-python.html#def-datatypes"><span class="std std-ref">Datentypen</span></a> und <a class="reference internal" href="../03-4/1-data-types.html#def-data-structures"><span class="std std-ref">Datenstrukturen</span></a>.
 In diesem Abschnitt wollen wir über die fundamentalsten Datenstrukturen sprechen.
-Wir werden Ihnen dabei auch eine Implementierung präsentieren, die Sie sich rückwirkend ansehen können, sobald Sie genug Erfahrung mit <code class="docutils literal notranslate"><span class="pre">Python</span></code> gesammelt haben.
-Für eine weiterführende und zugleich angewandte Diskussion verweisen das Kapitel <a class="reference internal" href="../03-4/intro.html#sec-python-data-types"><span class="std std-ref">Datentypen (Grundlagen)</span></a> und <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a> des <strong>PYTHON</strong>-Teils.</p>
-<p>Eine Datenstruktur strukturiert Daten.
+Wir werden Ihnen dabei auch eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Implementierung präsentieren, die Sie sich rückwirkend ansehen können, sobald Sie genug Erfahrung mit <code class="docutils literal notranslate"><span class="pre">Python</span></code> gesammelt haben.
+Für eine weiterführende und zugleich angewandte Diskussion verweisen wir auf das Kapitel <a class="reference internal" href="../03-4/intro.html#sec-python-data-types"><span class="std std-ref">Datentypen (Grundlagen)</span></a> und <a class="reference internal" href="../03-5/intro.html#sec-data-types-advanced"><span class="std std-ref">Datentypen (Fortsetzung)</span></a> des <strong>PYTHON</strong>-Teils.</p>
+<p>Eine Datenstruktur <em>strukturiert</em> Daten.
 Sie dient der Organisation von Daten.
-Wir kennen solche Datenverwaltungsstrukturen aus der physikalischen Welt: Ordner, Schnellhäfter, Schließfächer, Warteschlangen, Räume und Sitzpätze sind unter bestimmter Betrachtung Datenstrukturen.
+Eine Form einer Datenstruktur liefert beispielweise die Struktur eines Briefs.
+Die Vorgaben wie ein Brief zu schreiben ist, d.h. dessen Strutukr, organisiert seine Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
+Dabei ist jedoch vordefiniert welche Daten (von welchem <span class="xref myst">Datentyp</span>) strukturiert werden.
+Ein solche solche Struktur wird in vielen Programmiersprachen durch Klassen realisiert.
+Diese besprechen wir im Kapitel <a class="reference internal" href="../03-8/intro.html#sec-oop"><span class="std std-ref">Objektorientierte Programmierung</span></a>.</p>
+<p>In diesem Abschnitt wollen wir uns stattdessen mit Datenstrukturen beschäftigen, die prinzipiell unterschiedlich viele und oftmals auch beliebige Daten strukturieren.
+Wir kennen solche Datenverwaltungsstrukturen aus der physikalischen Welt: Ordner, Schnellhäfter, Schließfächer, Warteschlangen, Räume und Sitzpätze sind, unter bestimmter Betrachtung, Datenstrukturen.
 Ein Ordner strukturiert Dokumente (z.B. Briefe).
-Warteschlangen, Räume und Sitzplätze ordnen Menschen.</p>
-<p>Eine weitere Form einer Datenstruktur kann beispielweise die Struktur eines Briefs darstellen.
-Dieser strukturiert die Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
-Dabei ist jedoch vordefiniert welche Daten strukturiert werden.
-Um solche <a class="reference internal" href="../03-4/1-data-types.html#def-data-structures"><span class="std std-ref">zusammengesetzte Datentypen</span></a> wird es in diesem Abnschit nicht gehen.
-Stattdessen sprechen wir über Datenstrukturen, die prinzipiell unterschiedlich viele und oftmals auch beliebige Daten strukturieren.
-Diese werden oft als sog. <em><a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a></em> (engl. <em>Collection</em>) bezeichnet.</p>
-<div class="section" id="der-arbeitspeicher">
-<h2><span class="section-number">10.4.1. </span>Der Arbeitspeicher<a class="headerlink" href="#der-arbeitspeicher" title="Link zu dieser Überschrift">#</a></h2>
+Warteschlangen, Räume und Sitzplätze ordnen Menschen.
+Schließfächer strukturieren unterschiedliche Objekte in einer bestimmten Reihenfolge.
+Solche Datenstrukturen bezeichen wir als <em><a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a></em> (engl. <em>Collection</em>).</p>
+<div class="section" id="arten-von-sammlungen">
+<h2><span class="section-number">10.4.1. </span>Arten von Sammlungen<a class="headerlink" href="#arten-von-sammlungen" title="Link zu dieser Überschrift">#</a></h2>
 <p>Da sich alle Daten (Programm und dessen Eingabe/Ausgabe) im <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> befinden, müssen wir begreifen welche Funktionalität diese <em>konkrete</em> Datenstruktur bietet.
 Alle weiteren <em>abstrakten</em> Datenstrukturen bauen auf diesen Möglichkeiten auf.</p>
 <p>Über die Geschichte hinweg hat sich der Arbeitsspeicher in Geschwindigkeit und Größe und bezüglich anderer Eigenschaften weiterentwickelt.
-Was uns jedoch interessiert sind die wenigen grundlegenden Eigenschaften, welche sich im Wesentlichen nicht verändert haben:</p>
+Was uns jedoch interessiert sind die wenigen grundlegenden Eigenschaften, die wir als Programmierer*in beachten müssen:</p>
 <dl class="simple myst">
 <dt>Ordnung</dt><dd><p>Der Arbeitsspeicher ist im Wesentlichen eine lange geordnete Ansammlung an Bits</p>
 </dd>
@@ -1379,12 +1381,17 @@ Was uns jedoch interessiert sind die wenigen grundlegenden Eigenschaften, welche
 </dl>
 <p>Die Eigenschaft der <em>effizienten Adressierung</em> spiegelt sich in allen Programmiersprachen mehr oder weniger pregnannt wieder.
 Gewöhnlich adressiert die CPU keine einzelnen Bits, sondern ein ganzes <a class="reference internal" href="../02-1/2-representation.html#def-byte"><span class="std std-ref">Byte</span></a>.
-<a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.8</span></a> zeigt ein Beispiel eines Arbeitsspeichers der uns erlaubt jeweils ein Byte zu adressieren, zugleich werden Adressen, in diesem Beispiel, durch ein Byte dargestellt.</p>
-<p>Es gibt zwei wesentliche Arten, wie Datenstrukturen im Arbeitspeicher realisiert werden.
-Die erste ist <strong>ein</strong> <em>zusammenhängender Speicherbereich</em>, die zweite realisiert sich durch <strong>mehrere</strong> <em>fragmentierte Speicherbereiche</em>.
-Für die zweite Variante benötigen wir sog. <a class="reference internal" href="#sec-pointer"><span class="std std-ref">Zeiger</span></a>, welche die fragmentierten Speicherbereiche verbinden/verketten.</p>
-<div class="section" id="zusammenhangender-speicherbereich">
-<span id="sec-connected-memory"></span><h3><span class="section-number">10.4.1.1. </span>Zusammenhängender Speicherbereich<a class="headerlink" href="#zusammenhangender-speicherbereich" title="Link zu dieser Überschrift">#</a></h3>
+<a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.4</span></a> zeigt ein Beispiel eines Arbeitsspeichers der uns erlaubt jeweils ein Byte zu adressieren.
+Zugleich werden Adressen, in diesem Beispiel, durch ein Byte dargestellt.</p>
+<p>Es gibt zwei wesentliche Arten, wie Datenstrukturen im Arbeitspeicher realisiert werden:</p>
+<dl class="simple myst">
+<dt>(1) Statische Sammlungen</dt><dd><p>Die <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> liegt als zusammenhängende Folge von <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> im Arbeitsspeicher</p>
+</dd>
+<dt>(2) Dynamische Sammlungen</dt><dd><p>Die <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-collection"><span class="std std-ref">Sammlung</span></a> besteht aus mehreren zusammenhängenden Folgen von <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>, die voneinander getrennt im Arbeitsspeicher liegen.</p>
+</dd>
+</dl>
+<div class="section" id="statische-sammlungen">
+<span id="sec-connected-memory"></span><h3><span class="section-number">10.4.1.1. </span>Statische Sammlungen<a class="headerlink" href="#statische-sammlungen" title="Link zu dieser Überschrift">#</a></h3>
 <p>Das Prinzip ist einfach: Die Datenstruktur, inklusiver ihrer Elemente, wird durch <strong>einen</strong> <em>zusammenhängenden Speicherbereich</em> realisiert.</p>
 <div class="exercise admonition" id="locks-consecutive-exercise">
 
@@ -1421,39 +1428,54 @@ Kennen wir die Adresse <span class="math notranslate nohighlight">\(x_0\)</span>
 \[x_i = x_0 + c \cdot i\]</div>
 <p>berechnen.
 Deshalb ist die Indexierung eines Elements enorm effizient.
-Vorraussetzung ist jedoch, dass <strong>jedes</strong> Element durch genau <span class="math notranslate nohighlight">\(c\)</span> Bits <a class="reference internal" href="../02-1/2-representation.html#sec-representation"><span class="std std-ref">repräsentiert</span></a> wird.</p>
+Vorraussetzung ist jedoch, dass <strong>jedes</strong> Element durch genau <span class="math notranslate nohighlight">\(c\)</span> Bits <a class="reference internal" href="../02-1/2-representation.html#sec-representation"><span class="std std-ref">repräsentiert</span></a> wird.
+Die folgende Abbildung veranschaulicht die Indexierung.
+Dabei ist in blau der von der Datenstruktur belegte Speicher hervorgehoben.
+Die grauen Bereiche sind ebenfalls belegt jedoch nicht von unserer Datenstruktur.</p>
 <div class="figure align-default" id="list-list-indexing">
-<a class="reference internal image-reference" href="../../_images/list-indexing.png"><img alt="../../_images/list-indexing.png" src="../../_images/list-indexing.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 10.4 </span><span class="caption-text">Indexberechnung Anhand der Speicheradresse des ersten Elements <span class="math notranslate nohighlight">\(x_0\)</span> und dem Speicherverbrauch der Elemente <span class="math notranslate nohighlight">\(c\)</span>.</span><a class="headerlink" href="#list-list-indexing" title="Link zu diesem Bild">#</a></p>
+<a class="reference internal image-reference" href="../../_images/list-indexing.png"><img alt="../../_images/list-indexing.png" src="../../_images/list-indexing.png" style="width: 800px;" /></a>
 </div>
-<p>Was aber wenn Sie einen weiteren Gegenstand in den Zusammenschluss aus Schließfächern einfügen wollen und zwar mitten drinnen.
-Dann müssen Sie viele Gegenstände aus Schließfach <span class="math notranslate nohighlight">\(k\)</span> in das Schließfach <span class="math notranslate nohighlight">\(k+1\)</span> bewegen.</p>
+<p>Was aber wenn Sie einen weiteren Gegenstand in den Zusammenschluss aus Schließfächern einfügen wollen und zwar mitten drinnen?
+Dann müssen Sie viele Gegenstände aus Schließfach <span class="math notranslate nohighlight">\(k\)</span> in das Schließfach <span class="math notranslate nohighlight">\(k+1\)</span> bewegen.
+Folgende Abbildung skizziert diesen aufwendigen Vorgang:</p>
 <div class="figure align-default" id="list-insert">
-<a class="reference internal image-reference" href="../../_images/list-insert.png"><img alt="../../_images/list-insert.png" src="../../_images/list-insert.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 10.5 </span><span class="caption-text">Einfügen eines neuen Elements. Wir müssen unter Umständen viele Elemente im Speicher bewegen.</span><a class="headerlink" href="#list-insert" title="Link zu diesem Bild">#</a></p>
+<a class="reference internal image-reference" href="../../_images/list-insert.png"><img alt="../../_images/list-insert.png" src="../../_images/list-insert.png" style="width: 800px;" /></a>
 </div>
 <p>Und was passiert wenn das darauffolgende Schließfach von jemandem anderen belegt ist?
-Dann müssten Sie <strong>alle</strong> Gegenstände in eine neue Folge aus zusammenhängende Schließfächer befördern.</p>
+Dann müssten Sie <strong>alle</strong> Gegenstände in eine neue Folge aus zusammenhängende Schließfächer befördern
+Sie müssen dafür natürlich eine Stelle finden, die genug Platz bietet!
+Die folgende Abbildung skizziert diesen Vorgang:</p>
 <div class="figure align-default" id="list-insert-fail">
-<a class="reference internal image-reference" href="../../_images/list-insert-fail.png"><img alt="../../_images/list-insert-fail.png" src="../../_images/list-insert-fail.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 10.6 </span><span class="caption-text">Einfügen eines neuen Elements wobei kein freier Speicher zur Verfügung steht. Wir müssen einen neuen Speicherbereich füllen.</span><a class="headerlink" href="#list-insert-fail" title="Link zu diesem Bild">#</a></p>
+<a class="reference internal image-reference" href="../../_images/list-insert-fail.png"><img alt="../../_images/list-insert-fail.png" src="../../_images/list-insert-fail.png" style="width: 800px;" /></a>
 </div>
-<p>Wenn Sie einen Gegenstand inmitten der Schließfächer löschen, müssen Sie ebenfalls viele Gegenstände bewegen.</p>
+<p>Wenn Sie einen Gegenstand inmitten der Schließfächer löschen, müssen Sie ebenfalls viele Gegenstände bewegen.
+Dieser Vorgang ähnelt dem Einfügen inmitten der Datenstruktur.</p>
 <div class="figure align-default" id="list-delete">
-<a class="reference internal image-reference" href="../../_images/list-delete.png"><img alt="../../_images/list-delete.png" src="../../_images/list-delete.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 10.7 </span><span class="caption-text">Löschen eines Elements. Wir müssen unter Umständen viele Elemente im Speicher bewegen.</span><a class="headerlink" href="#list-delete" title="Link zu diesem Bild">#</a></p>
+<a class="reference internal image-reference" href="../../_images/list-delete.png"><img alt="../../_images/list-delete.png" src="../../_images/list-delete.png" style="width: 800px;" /></a>
 </div>
 <p>Die Vorteile zeigen Effizienz beim Zugriff über einen Index.
-Die Nachteile offenbaren dagegen eine gewissen Unflexibilität.
-Aus diesem Grund sind Arrays <span class="xref myst">statische Datenstrukturen</span>, d.h. deren Speicherverbrauch muss bei ihrer Erzeugung festgelegt sein und kann sich nicht dynamisch, also während der Laufzeit, ändern.
+Die Nachteile offenbaren dagegen die Unflexibilität bei der Veränderung der Größe der Datenstruktur.</p>
+<div class="definition admonition" id="def-static-ds">
+<p class="admonition-title">Statische Sammlungen</p>
+<p><em>Statische Sammlungen</em> können zur Laufzeit des Programms ihre Größe nicht verändern, d.h. ihr Speicherverbrauch kann sich <strong>nicht</strong> verändern.
+Stattdessen muss ein eine neue Datenstruktur angelegt werdeb.</p>
+</div>
+<p>Aus diesem Grund ist ein Arraya eine <a class="reference internal" href="#def-static-ds"><span class="std std-ref">statische Sammlung</span></a>, d.h. deren Speicherverbrauch muss bei ihrer Erzeugung festgelegt sein und kann sich nicht dynamisch, also während der Laufzeit, ändern.
 Das heißt, Sie reservieren einmalig Ihre <span class="math notranslate nohighlight">\(n\)</span> nebeneinander liegenden Schließfächer und können an diesem Verbund nichts mehr ändern.
 Sie können zwar Gegenstände vertauschen oder ersetzten, doch kann Ihr Verbund niemals mehr als <span class="math notranslate nohighlight">\(n\)</span> Gegenstände enthalten!</p>
 </div>
-<div class="section" id="fragmentierter-speicherbereich">
-<span id="sec-pointer"></span><h3><span class="section-number">10.4.1.2. </span>Fragmentierter Speicherbereich<a class="headerlink" href="#fragmentierter-speicherbereich" title="Link zu dieser Überschrift">#</a></h3>
-<p>Ein fragmentierter Speicherbereich, ist ein Speicherbereich der sich aus voneinander getrennten Speicherbereichen zusammenschließt.
-Die Daten der Datenstruktur können somit Kreuz und Quer im Speicher liegen.
-Das erhöht die Flexibilität doch veringert es die Effizienz des sukzessiven Zugriffs auf mehrere Elemente der Datenstruktur.</p>
+<div class="section" id="dynamische-sammlungen">
+<span id="sec-pointer"></span><h3><span class="section-number">10.4.1.2. </span>Dynamische Sammlungen<a class="headerlink" href="#dynamische-sammlungen" title="Link zu dieser Überschrift">#</a></h3>
+<p>Anstatt die Sammlung durch einen zusammenhängenden Speicherbereich zu realisieren, gibt es eine zweite Möglichkeit: Die Realisierung über einen fragmentierten Speicherbereich, d.h. mehrere voneinander getrennte Speicherbereiche ergeben als zusammenschluss die Sammlung.
+Die Daten der Datenstruktur können somit Kreuz und Quer im Speicher liegen.</p>
+<p>Das erhöht die Flexibilität!
+Die Datenstruktur kann durch Speicherbereiche anwachsen die eben nicht zusammenhängen.
+Dadurch müssen wir Elemente nicht fortwährend verschieben.
+Die Sammlung kann dynamisch anwachsen und schrumpfen.</p>
+<div class="definition admonition" id="def-dynamic-ds">
+<p class="admonition-title">Dynamische Sammlungen</p>
+<p><em>Dynamische Sammlungen</em> können zur Laufzeit des Programms anwachsenden und schrumpfen, d.h. ihr Speicherverbrauch kann sich verändern. Möglich wird dies durch die Verwendung von <em><a class="reference internal" href="#sec-pointer"><span class="std std-ref">Zeigern</span></a></em>.</p>
+</div>
 <p>Damit die fragmentierten Teile als ganzes repräsentiert werden können, müssen sie verbunden werden.
 Dies wird durch sog. <em><a class="reference internal" href="#def-pointer"><span class="std std-ref">Zeiger/Pointer</span></a></em> realisiert.
 Oft spricht man auch von einer <em>Referenz</em>.
@@ -1469,7 +1491,7 @@ Ist der Arbeitsspeicher 8 <a class="reference internal" href="../02-1/2-represen
 Somit verbraucht jede Adresse <span class="math notranslate nohighlight">\(\left \lfloor{\log_2(8)}\right \rfloor = 3\)</span> <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>.</p>
 <div class="figure align-default" id="fig-ram-banks">
 <a class="reference internal image-reference" href="../../_images/ram.png"><img alt="../../_images/ram.png" src="../../_images/ram.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 10.8 </span><span class="caption-text">Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>.
+<p class="caption"><span class="caption-number">Abb. 10.4 </span><span class="caption-text">Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>.
 Die Adresse (links) ist im Wesentlichen die Nummer / der Index eines bestimmten Speicherplatzes (rechts).
 Alle Werte sind im Binärsystem dargestellt. An Adresse 00000111 befindet sich eine Adresse.</span><a class="headerlink" href="#fig-ram-banks" title="Link zu diesem Bild">#</a></p>
 </div>
@@ -1477,7 +1499,7 @@ Alle Werte sind im Binärsystem dargestellt. An Adresse 00000111 befindet sich e
 
 <p class="admonition-title"><span class="caption-number">Exercise 10.5 </span> (Adressraum)</p>
 <div class="section" id="exercise-content">
-<p>Wie viel Byte können im Beispiel von <a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.8</span></a> maximal adressiert werden?</p>
+<p>Wie viel Byte können im Beispiel von <a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.4</span></a> maximal adressiert werden?</p>
 </div>
 </div>
 <div class="solution dropdown admonition" id="address-space-solution">
@@ -1508,7 +1530,7 @@ Wenn die CPU jedes einzelne Byte adressieren können soll, so ergibt sich ein Ma
 <p>Byte und das sind <span class="math notranslate nohighlight">\(2^{10} \cdot 2^{10} \cdot 2^2\)</span> KiB, <span class="math notranslate nohighlight">\(2^{10} \cdot 2^2\)</span> MiB bzw. <span class="math notranslate nohighlight">\(4\)</span> GiB.</p>
 </div>
 </div>
-<p>In <a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.8</span></a> zeigt der <em>Zeiger</em> an Adresse 3 auf den Speicherbereich bei Adresse 7.
+<p>In <a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.4</span></a> zeigt der <em>Zeiger</em> an Adresse 3 auf den Speicherbereich bei Adresse 7.
 Dies ist wiederum eine Adresse die auf den Speicherbereich 1 zeigt und dort liegt der Wert 0.
 Selbstverständlich bedarf es der richtigen <a class="reference internal" href="../02-1/2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> der jeweiligen Speicherbereiche, denn es könnte sich beim Wert bei Adresse 3 auch um den Dezimalwert 7 oder irgendetwas anderes als einen <em>Zeiger</em> handeln.</p>
 <p>Für <em>Zeiger</em> gibt es keine perfekte Analogie aus der Realwelt, jedenfalls ist uns keine eingefallen.
@@ -1524,6 +1546,10 @@ Es kostet der CPU zwar auch etwas Zeit (bzw. Zyklen) um den Zeiger <em>aufzulös
 Bei Aktivierung des Zeigers werden wir direkt vom einen Schließfach zum anderen teleportiert!
 Allerdings funktioniert dies nur in eine Richtung.
 Die Schnur ist <strong>gerichtet</strong>!</p>
+<p>In den meisten Programmiersprachen wird die Handhabung von <em>Zeigern</em> durch Variablen abgebildet.
+In Hochsprachen wie <code class="docutils literal notranslate"><span class="pre">Python</span></code> müssen sich Programmierer*innen um Speicheradressen, das Reservieren und Freigeben von Speicher nicht kümmern.
+Das übernimmt der sog. <a class="reference internal" href="../04/memory.html#def-garbage-collector"><span class="std std-ref">Garbage Collector</span></a>.
+Wie <code class="docutils literal notranslate"><span class="pre">Python</span></code> Variablen durch Zeiger realisiert erfahren sie im Abschnitt <a class="reference internal" href="../03-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a>.</p>
 </div>
 </div>
 <div class="section" id="einfach-verkette-liste">
@@ -1537,16 +1563,12 @@ Das darauffolgende Schließfach verweist auf ihr zweitliebstes Gericht usw.
 Die so verketteten Schließfächer bilden eine sog. <em>verkette Liste</em> (engl. <em>Linked List</em>).</p>
 <div class="figure align-default" id="fig-linked-list-ram">
 <a class="reference internal image-reference" href="../../_images/linked-list-ram.png"><img alt="../../_images/linked-list-ram.png" src="../../_images/linked-list-ram.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 10.9 </span><span class="caption-text">Gerichte 1 bis 5 in einer <em>verketteten Liste</em>.
+<p class="caption"><span class="caption-number">Abb. 10.5 </span><span class="caption-text">Gerichte 1 bis 5 in einer <em>verketteten Liste</em>.
 Jede Kachel repräsentiert ein Schließfach bzw. einen adressierbaren Speicherbereich.</span><a class="headerlink" href="#fig-linked-list-ram" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Befinden Sie sich an einem Schließfach der Liste, so können Sie recht einfach ein neues Element an dieser Stelle einfügen.
 Eine <em>verkettete Liste</em> besteht aus sogenannten <em>Knoten</em> (Schließfach + Schnur zum nächsten Schließfach), welche durch <em>Zeiger</em> verbunden sind.
-Sie ist eine <em>dynamische Datenstruktur</em>, d.h. sie kann zur Laufzeit vergrößert und verkleinert werden.</p>
-<div class="definition admonition" id="def-dynamic-ds">
-<p class="admonition-title">Dynamische Datenstrukturen</p>
-<p><em>Dynamische Datenstrukturen</em> können zur Laufzeit des Programms anwachsenden und schrumpfen, d.h. ihr Speicherverbrauch kann sich verändern. Möglich wird dies durch die Verwendung von <em><a class="reference internal" href="#sec-pointer"><span class="std std-ref">Zeigern</span></a></em>.</p>
-</div>
+Sie ist eine <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamische Sammlung</span></a>, d.h. sie kann zur Laufzeit vergrößert und verkleinert werden.</p>
 <p>Haben wir direkten Zugriff auf einen Knoten so können wir in die <em>verkettete Liste</em> ein neues Element, was direkt nachfolgt, effizient einfügen ohne dabei die anderen Elemente der Liste zu verschieben – ein wesentlicher Vorteil dieser Datenstruktur.
 Jeder Knoten besteht aus zwei Teilen:</p>
 <dl class="simple myst">
@@ -1557,7 +1579,7 @@ Jeder Knoten besteht aus zwei Teilen:</p>
 </dl>
 <div class="figure align-default" id="fig-linked-list-node">
 <a class="reference internal image-reference" href="../../_images/linked-list-node.png"><img alt="../../_images/linked-list-node.png" src="../../_images/linked-list-node.png" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 10.10 </span><span class="caption-text">Knoten einer <em>verketteten Liste</em>.</span><a class="headerlink" href="#fig-linked-list-node" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 10.6 </span><span class="caption-text">Knoten einer <em>verketteten Liste</em>.</span><a class="headerlink" href="#fig-linked-list-node" title="Link zu diesem Bild">#</a></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1575,7 +1597,7 @@ Jeder Knoten besteht aus zwei Teilen:</p>
 <p>Den Anfangsknoten der Liste bezeichnet man als <em>Kopf/Head</em>.</p>
 <div class="figure align-default" id="fig-linked-list">
 <a class="reference internal image-reference" href="../../_images/linked-list.png"><img alt="../../_images/linked-list.png" src="../../_images/linked-list.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 10.11 </span><span class="caption-text">Einer <em>verkettete Liste</em> aus Zahlen.</span><a class="headerlink" href="#fig-linked-list" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 10.7 </span><span class="caption-text">Einer <em>verkettete Liste</em> aus Zahlen.</span><a class="headerlink" href="#fig-linked-list" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Um Elemente am <em>Ende</em> (engl. <em>Tail</em>) einzufügen, kann es sinnvoll sein sich zusätzlich den letzten Knote der Liste zu merken.</p>
 </div>
@@ -1583,7 +1605,7 @@ Jeder Knoten besteht aus zwei Teilen:</p>
 <span id="sec-stack"></span><h2><span class="section-number">10.4.3. </span>Der Stapel<a class="headerlink" href="#der-stapel" title="Link zu dieser Überschrift">#</a></h2>
 <div class="section" id="eigenschaften">
 <h3><span class="section-number">10.4.3.1. </span>Eigenschaften<a class="headerlink" href="#eigenschaften" title="Link zu dieser Überschrift">#</a></h3>
-<p>Der <em>Stapel</em> (engl. <em>Stack</em>) oder auch <em>Stapelspeicher/Keller</em> ist einer der einfachsten <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamischen Datenstrukturen</span></a>, welche dem <em>Last-In-First-Out (LIFO)</em> Prinzip folgt.
+<p>Der <em>Stapel</em> (engl. <em>Stack</em>) oder auch <em>Stapelspeicher/Keller</em> ist einer der einfachsten <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamischen Sammlungen</span></a>, welche dem <em>Last-In-First-Out (LIFO)</em> Prinzip folgt.
 LIFO bedeutet soviel wie: <em>zuletzt hinein - zuerst heraus</em>.
 Das was zuletzt hinein gekommen ist, wird auch als erstes herausgenommen.
 Das beudeutet, dass wir eingefügte Elemente nur in umgekehrter Reihenfolge aus dem Stapel herausnehmen können.
@@ -1779,7 +1801,7 @@ False
 <span id="sec-queue"></span><h2><span class="section-number">10.4.4. </span>Die Warteschlange<a class="headerlink" href="#die-warteschlange" title="Link zu dieser Überschrift">#</a></h2>
 <div class="section" id="id1">
 <h3><span class="section-number">10.4.4.1. </span>Eigenschaften<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">#</a></h3>
-<p>Die <em>Warteschlange</em> (engl. <em>Queue</em>) ist eine <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamischen Datenstrukturen</span></a> und folgt dem sog. <em>First-In-First-Out (FIFO)</em> Prinzip.
+<p>Die <em>Warteschlange</em> (engl. <em>Queue</em>) ist eine <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamische Sammlung</span></a> und folgt dem sog. <em>First-In-First-Out (FIFO)</em> Prinzip.
 FIFO bedeutet soviel wie: <em>zuerst hinein - zuerst hinaus</em>.
 Das was zuerst hinein gekommen ist, wird auch als erstes herausgenommen.
 Das beudeutet, dass wir eingefügte Elemente nur in der gleichen Reihenfolge aus der Queue herausnehmen können.
@@ -2298,8 +2320,9 @@ False
 </div>
 <div class="section" id="arrays">
 <span id="sec-array"></span><h2><span class="section-number">10.4.6. </span>Arrays<a class="headerlink" href="#arrays" title="Link zu dieser Überschrift">#</a></h2>
-<p>Ein <em>Array</em> ist eine <span class="xref myst">statische Datenstruktur</span> und wird zugleich durch einen <a class="reference internal" href="#sec-connected-memory"><span class="std std-ref">zusammengesetzen Speicherbereich</span></a> realisiert.
-Ein Array beinhaltet üblicherweise Elemente die alle vom gleichen <a class="reference internal" href="../03-4/11-typing-in-python.html#def-datatypes"><span class="std std-ref">Datentyp</span></a> sind oder allesamt <a class="reference internal" href="#def-pointer"><span class="std std-ref">Zeiger</span></a> sind, die alle auf Objekte des selben Datentyps zeigen.</p>
+<p>Ein <em>Array</em> ist eine <a class="reference internal" href="#def-static-ds"><span class="std std-ref">statische Sammlung</span></a>.
+Es wird durch einen <a class="reference internal" href="#sec-connected-memory"><span class="std std-ref">zusammengesetzen Speicherbereich</span></a> realisiert.
+Ein Array beinhaltet üblicherweise Elemente die alle vom gleichen <a class="reference internal" href="../03-4/11-typing-in-python.html#def-datatypes"><span class="std std-ref">Datentyp</span></a> sind, oder allesamt <a class="reference internal" href="#def-pointer"><span class="std std-ref">Zeiger</span></a> sind, die alle auf Objekte des selben Datentyps zeigen.</p>
 <p>Arrays bieten folgende Operationen.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -2325,14 +2348,38 @@ Ein Array beinhaltet üblicherweise Elemente die alle vom gleichen <a class="ref
 </table>
 <p>All diese Operationen müssen eine gute Laufzeit haben.
 Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. von der Anzahl der Elemente (<code class="docutils literal notranslate"><span class="pre">size</span></code>) unabhängig, oder kurz <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>.</p>
-<p>Selbstverständlich können wir ein Array erzeugen, welches mehr Elemente aufnehmen als es nach der Erstellung beinhaltet.
-Die „leeren“ Plätze belegen wir dann zum Beispiel mit Pseudowerten.
-Ein Array funktioniert wie die oben beschriebene Struktur mit <a class="reference internal" href="#sec-connected-memory"><span class="std std-ref">zusammengesetzen Speicherbereich</span></a>, doch verwehrt es uns die Möglichkeit es dynamisch zu vergrößern oder zu verkleinern.</p>
+<p>Selbstverständlich können wir ein Array erzeugen, welches mehr Elemente aufnehmen kann als es nach der Erstellung beinhaltet.
+Die „leeren“ Plätze belegen wir dann zum Beispiel mit Pseudowerten.</p>
+<p>Folgendes Beispie veranschaulicht das Prinzip.
+Dabei ist <code class="docutils literal notranslate"><span class="pre">None</span></code> der Pseudowert.
+Wir verwenden eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-<a class="reference internal" href="../03-4/5-list.html#sec-list"><span class="std std-ref">Liste</span></a> die das Array simuliert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">chars</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span><span class="p">:</span>
+            <span class="n">chars</span> <span class="o">+=</span> <span class="n">char</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span>
+    
+<span class="n">word</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="n">print_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Affe
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ein Array funktioniert wie die oben beschriebene Struktur mit <a class="reference internal" href="#sec-connected-memory"><span class="std std-ref">zusammengesetzen Speicherbereich</span></a>, doch verwehrt es uns die Möglichkeit es dynamisch zu vergrößern oder zu verkleinern.</p>
 <div class="remark admonition" id="remark-arrays-python">
 <p class="admonition-title">Arrays in Python?</p>
 <p>Anders als in den meisten Sprachen, gibt es in <code class="docutils literal notranslate"><span class="pre">Python</span></code> keine nativen Arrays.</p>
 </div>
-<p>Es gibt sog. <a class="reference internal" href="../03-4/6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a>, die einem Array nahe kommen, jedoch kann man die Elemente eines Tupels nicht verändern.
+<p>Es gibt sog. <a class="reference internal" href="../03-4/6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a>, die einem Array nahekommen, jedoch kann man die Elemente eines Tupels nicht verändern.
+In anderen Worten Tupel bieten keine <code class="docutils literal notranslate"><span class="pre">__setitem__(i,</span> <span class="pre">value)</span></code>-Methode.
 <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Listen sind hingegen <a class="reference internal" href="#sec-dynamic-array"><span class="std std-ref">dynamische Arrays</span></a>.</p>
 </div>
 <div class="section" id="dynamische-arrays">
@@ -2341,7 +2388,8 @@ Ein Array funktioniert wie die oben beschriebene Struktur mit <a class="referenc
 Druch <em>dynamische Arrays</em> versucht man genau dies zu erreichen.</p>
 <div class="section" id="id4">
 <h3><span class="section-number">10.4.7.1. </span>Eigenschaften<a class="headerlink" href="#id4" title="Link zu dieser Überschrift">#</a></h3>
-<p>Ein dynamisches Array ist eine <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamische Datenstruktur</span></a> und basiert zudem auf einem <a class="reference internal" href="#sec-connected-memory"><span class="std std-ref">zusammengesetzen Speicherbereich</span></a>.</p>
+<p>Wir hatten gesagt, dass <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamische Sammlungen</span></a> auf einem fragmentierten Speicherbereich basieren.
+Das ist jedoch nicht hunderprozent präzise ausgedrückt, denn <em>dynamische Arrays</em> basieren auf einem <a class="reference internal" href="#sec-connected-memory"><span class="std std-ref">zusammengesetzten Speicherbreich</span></a>, der jedoch immer wieder neu im Speicher angelegt wird.</p>
 <p>Gehen wir zurück zu unseren Schließfächern.
 Was würden Sie anders machen, wenn Sie zum einen 10 Schließfächer benötigen, zugleich aber davon ausgehen müssen, dass weitere Schließfächer im laufe der Zeit gebraucht werden?
 Wahrscheinlich würden Sie mehr als 10 Schließfächer reservieren.
@@ -2438,10 +2486,12 @@ Für den <a class="reference internal" href="#sec-stack"><span class="std std-re
 </div>
 <div class="section" id="hashmaps">
 <h2><span class="section-number">10.4.8. </span>Hashmaps<a class="headerlink" href="#hashmaps" title="Link zu dieser Überschrift">#</a></h2>
+<p>Siehe <a class="reference internal" href="../04/name-register.html#sec-name-register"><span class="std std-ref">Namensregister</span></a> ab <a class="reference internal" href="../04/name-register.html#sec-hashing"><span class="std std-ref">Hashing und das Dictionary</span></a></p>
 <p>TODO</p>
 </div>
 <div class="section" id="baume">
 <h2><span class="section-number">10.4.9. </span>Bäume<a class="headerlink" href="#baume" title="Link zu dieser Überschrift">#</a></h2>
+<p>Siehe <a class="reference internal" href="../04/dive-bell.html#sec-dive-bell"><span class="std std-ref">Sprechen in der Taucherglocke</span></a></p>
 <p>TODO</p>
 </div>
 <div class="section" id="vergleich">
