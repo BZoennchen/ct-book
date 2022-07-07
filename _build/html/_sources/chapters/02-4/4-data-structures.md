@@ -929,7 +929,7 @@ Mit dieser Strategie verringern sich die **durchschnittlichen** Kosten für das 
 
 Deshalb bieten *dynamische Arrays* folgende Operationen.
 
-| Operation                    | Laufzeit                            | Beschreibung                                                    |
+| Operation                    | Laufzeit                            | Beschreibung                                                   |
 | ---------------------------- | ----------------------------------- | -------------------------------------------------------------- |
 | ``size``                     |  $\mathcal{O}(1)$                   | Liefert Anzahl der Elemente                                    |
 | ``insert(element, i)``       |  $\mathcal{O}(n)$                   | Fügt das Element ``element`` an der ``i``-ten Position an      |

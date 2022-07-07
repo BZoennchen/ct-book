@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # (sec-binary-drawing)=
-# # Binäres Zeichnen - Struktur ist Information
+# # Binäres Zeichnen
 # 
 # ````{admonition} Lernziel
 # :class: learngoals
@@ -25,8 +25,6 @@
 # name: fig-flower
 # ---
 # ```
-# 
-# zu repräsentieren.
 # 
 # Sie werden lernen wie [Informationen](sec-information) erst durch einen [Interpreter](def-interpreter) eine bestimmte Bedeutung erlangen.
 # Sie werden den Umgang mit mehrdimensionalen ``Python``-[Listen](sec-list) und [Tupeln](sec-tuple) erlernen.
@@ -59,7 +57,7 @@
 # ```
 # 
 # Jede Zeile des Bildes repräsentieren wir als Folge von 0 und 1.
-# Da wir unser Bild verändern möchten, eignet sich in ``Python`` hierfür die Liste ``list``.
+# Da wir unser Bild verändern möchten, eignet sich in ``Python`` hierfür die [Liste](sec-list) ``list``.
 
 # In[1]:
 
@@ -67,7 +65,7 @@
 row = [0, 1, 0, 1, 0, 1, 1]
 
 
-# Ein Bild *modellieren* wir wiederum als Liste von Zeilen (Pixelstreifen) oder eben eine Liste von Listen.
+# Ein Bild *modellieren* wir wiederum als Liste von Zeilen (Pixelstreifen) oder eben eine *Liste von Listen*.
 
 # In[2]:
 
@@ -78,7 +76,7 @@ picture = [[0, 1, 0, 1, 0, 1, 1], # 1. Zeile
            [1, 0, 0, 1, 0, 1, 1]] # 4. Zeile
 
 
-# Unsere Interpretation erhält als Argument, d.h., als Repräsentanten eine zweidimensionale Liste aus Binärzahlen und liefert ein Schwarz-Weiß-Bild.
+# Unsere [Interpretation](sec-interpretation) erhält als Argument, d.h., als Repräsentanten eine zweidimensionale Liste aus Binärzahlen und liefert ein Schwarz-Weiß-Bild.
 # Den notwendigen Interpreter, der diese Interpretation realisiert, bietet uns folgende Funktion:
 
 # In[3]:
@@ -91,6 +89,8 @@ def plot_picture(picture):
 plot_picture(picture)
 
 
+# Wir haben nun alles was wir brauchen um richtig loszulegen: Eine Interpretation in Form einer Liste von Listen und einen [Interpreter](def-interpreter) in Form der Funktion ``plot_picture``.
+# 
 # ### Listen in Python
 # 
 # Bevor wir weiter fortfahren, lassen Sie uns einen wiederholten Blick auf die ``Python``-Liste werfen.
@@ -449,7 +449,7 @@ generate_border_picture(width=5, height=10, border_width=2)
 # ```
 # 
 # ````{exercise} Variable Bildgenerierung testen
-# Folgende Funktion plottet Ihr Bild.
+# Wie bereits erwähnt plottet folgende Funktion Ihr Bild.
 # ```python
 # import matplotlib.pyplot as plt
 # def plot_picture(picture):
@@ -479,7 +479,7 @@ plot_picture(picture)
 # Was uns das Leben deutlich leichter macht, ist die Einführung einer weiteren Interpretation.
 # Diese soll uns in eine **abstraktere** Welt ka­ta­pul­tie­ren.
 # In anderen Worten: Wir konstruieren eine Interpretation die geometrische (mathematische) Objekten wie den Kreis, ein Rechteck oder Dreieck (Repräsentanten) in eine zweidimensionale Liste aus 0 und 1 (Bedeutung) übersetzt.
-# Diese Übersetzung bezeichnet man auch als **Digitalisierung**.
+# Diese Übersetzung bezeichnet man auch als **Rasterisierung** (siehe Abschnitt [Vektorgrafiken](svg-image)).
 # 
 # ```{figure} ../../figs/image-representation/point-to-pixel.png
 # ---
@@ -489,7 +489,7 @@ plot_picture(picture)
 # ```
 # 
 # Unsere geometrischen Objekte haben reelle Koordinaten z.B. können wir einen Kreis durch seinen Mittelpunkt $c = (x,y)$ und Radius $r$ eindeutig beschreiben.
-# Um die Koordinaten in Pixelkoordinaten zu transformieren legen wir auf das Rasterbild ein reeles Koordinatensystem. 
+# Um die Koordinaten in Pixelkoordinaten zu transformieren legen wir auf das Rasterbild ein reelles Koordinatensystem. 
 # Hat unser Bild $n \times n$ Pixelbild und wir möchten den Raum $10 \times 10 \subset \mathbb{R}^2$ durch das Bild abbilden, entspricht die erste Bildzeile dem Raum $10 \times 1$.
 # 
 # Um keine Verzerrung zu erhalten sollten Pixel in $x$ und in $y$ Richtung gleich viel Anteil des Euklidischen Raumes überziehen.
@@ -705,10 +705,11 @@ plot_picture(picture)
 
 
 # Dreieck, Rechteck und Polygon hätten wir geschafft.
-# Für den Kreis $K$ müssen wir zurück in unsere **abstrakte** Welt der geometrischen Objekte, denn einen Kreis mit lauter Segmenten darzustellen macht wenig Sinn.
+# Für den Kreis $K$ müssen wir zurück in unsere **abstrakte** Welt der geometrischen Objekte, denn einen Kreis mit lauter Segmenten darzustellen, ist möglich aber umständlich.
+# Wir müsten erst ein Poylgon mit sehr vielen Segmenten berechnen.
 # 
 # Die Punkte eines Kreises lassen sich durch eine *Kurve* beschreiben.
-# Sie der Kreis durch seinen Mittelpunkt $m = (x_m, y_m)$ und den radius $r$ beschrieben dann sind
+# Sei der Kreis durch seinen Mittelpunkt $m = (x_m, y_m)$ und den radius $r$ beschrieben dann sind
 # 
 # $$K = \{(x_m + \cos(t) \cdot r, y_m + \sin(t) \cdot r) : t \in [0;2\pi]\}$$
 # 
@@ -776,7 +777,7 @@ plot_picture(picture)
 
 # ## Daumenkino
 # 
-# Die folgende Methode (*Interpreter*) erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots).
+# Die folgende Methode (ein [Interpreter](def-interpreter)) erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots).
 # Falls Sie den Parameter ``save`` auf ``True`` setzen, wird ein GIF (eine Bildfolge/Daumenkino/Minivideo) erzeugt und in der Datei ``'binary-drawing.gif'`` abgespeichert.
 
 # In[31]:
@@ -835,10 +836,11 @@ HTML(ani.to_jshtml())
 
 # Fassen wir noch einmal kurz zusammen was wir bis jetzt geschafft haben:
 # Wir haben uns ein Format / eine [Interpretation](sec-interpretation) für ein Schwarz-Weiß-Bild ausgedacht und umgesetzt.
-# Durch ein wenig Hilfe externer Module können wir unser Rasterbild anzeigen.
+# Mit ein wenig Hilfe durch externer Module, konnten wir unser Rasterbild anzeigen.
 # Wir haben Algorithmen implementiert die uns Polygone (inkl. Dreiecke und Rechtecke), Kreise und sogar Funktionen zeichnen.
 # Und jetzt haben wir sogar die Möglichkeit aus einer Folge von Bildern ein kleines Video zu generieren.
-# Dieses Video wiederum ist nichts anderes als eine Liste von Listen von Listen bestehend aus Nullen und Einsen.
+# Dieses Video ist wiederum nichts anderes als eine **Liste von Listen von Listen bestehend aus Nullen und Einsen**.
+# Ist das nicht ganz erstaunlich?
 # 
 # Wir haben jetzt die Möglichkeit eine unbegrenzte Menge an Animationen zu erzeugen, von bewegten geometrischen Objekten bis hin zum [Game Of Life](https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens) - Ihre Kreativität ist das Limit.
 # 
@@ -984,6 +986,7 @@ plot_picture(picture)
 # Wann erhalten Sie hingegen ein komplexeres Gebilde?
 # Was hat das mit den **harmonischen** bzw. **unharmonischen** Schwingungen und einem **harmonischen** bzw. **unharmonischen** Ton zu tun?
 # Können wir durch unsere Zeichenmethode Ton zeichnen?
+# Welche Objekte können wir überhaupt mit dieser Methode zeichen, eine Gerade, ein Rechteck?
 # 
 # Falls Sie sich mehr mathematisches Wissen zu diesem Thema aneignen möchten, ist folgendes exzellentes Video von **Grant Sanderson** ein wunderbarer Einstieg.
 # 

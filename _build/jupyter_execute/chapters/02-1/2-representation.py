@@ -625,6 +625,7 @@ to_binary(1871)
 # Damit wird klar, dass eine enorme Datenmenge entsteht und es verwundert nicht, dass Videos oftmals mehrere Gigabyte groß sind.
 # Ist die Auflösung hoch, folgt daraus wiederum ein großer Energieverbrauch den die Video-Streamingdienste verursachen.
 # 
+# (svg-image)=
 # ### Vektorgrafiken
 # 
 # Eine weitere sehr interessante Technik ist es ein Bild durch einfache geometrische Objekte zu **beschreiben**.

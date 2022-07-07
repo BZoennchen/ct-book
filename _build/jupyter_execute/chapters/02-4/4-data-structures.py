@@ -955,7 +955,7 @@ print_word(word)
 # 
 # Deshalb bieten *dynamische Arrays* folgende Operationen.
 # 
-# | Operation                    | Laufzeit                            | Beschreibung                                                    |
+# | Operation                    | Laufzeit                            | Beschreibung                                                   |
 # | ---------------------------- | ----------------------------------- | -------------------------------------------------------------- |
 # | ``size``                     |  $\mathcal{O}(1)$                   | Liefert Anzahl der Elemente                                    |
 # | ``insert(element, i)``       |  $\mathcal{O}(n)$                   | Fügt das Element ``element`` an der ``i``-ten Position an      |

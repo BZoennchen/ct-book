@@ -61,15 +61,18 @@
 # ```
 # 
 # Einen Gitterpunkt nennen wir **Zelle**.
-# Unser Roboter befindet sich in genau einer Zelle und kann von Zelle zu Zelle wandern, sofern die Zelle nicht durch ein anderes Objekt belegt ist.
-# Eine Zelle hat einen von folgenden endlichen Zuständen:
+# Unser Roboter befindet sich in genau einer Zelle und kann von Zelle zu Zelle wandern, sofern die Zelle nicht durch ein anderes unpassierbares Objekt belegt ist.
+# Eine Zelle hat einen von folgenden Zuständen:
 # 
-# 1. Leer (die Zelle ist leer)
-# 2. Hindernis (ein **unverrückbares** und **unpassierbares** Objekt befindet sich in der Zelle)
-# 3. Steine (ein **verrückbares** und **unpassierbares** Objekt befindet sich in der Zelle)
-# 4. Blatt (ein **verrückbares** und **passierbares** Objekt)
+# | Zusand    | Farbe      | Eigenschaft                          | Auswirkung 
+# | --------- |----------- | ------------------------------------ | -------------------------------------- |
+# | Leer      | Hellgrau   | pasierbar                            | Zelle ist derzeit pasierbar            |
+# | Hindernis | Dunkelgrau | unverrückbares, unpassierbares Objet | Zelle ist **für immer** unpassierbares |
+# | Steine    | Orange     | verrückbares, unpassierbares Objet   | Zelle ist derzeit unpassierbares       |
+# | Blatt     | Grün       | verrückbares, passierbares Objet     | Zelle ist derzeit pasierbar            |
 # 
-# Sowohl der Roboter ``robo`` als auch sein Ziel können sich auf einer Zelle befinden.
+# 
+# Sowohl der *Roboter* ``robo`` als auch sein *Ziel* können sich auf einer Zelle befinden.
 # Der Zustand der Zelle ändert sich dadurch nicht.
 # 
 # Um die Welt und ihren Roboter anzuzeigen benötigen Sie das Paket ``roboworld``.
@@ -90,7 +93,7 @@ world = rw.new_world(nrows = 5, ncols = 9)
 
 
 # erzeugen Sie ein Gebiet mit 5 Zeilen und 9 Spalten.
-# Die Zelle in der linken unteren Ecke hat stets die Koordinate ``(0,0)`` und die obere rechte Zelle die Koordinate ``(ncols-1, nrows-1)``.
+# Die Zelle in der linken unteren Ecke hat stets die Koordinate ``(0,0)`` und die obere rechte Zelle die Koordinate ``(nrows-1, ncols-1)``.
 # Der Roboter wird bei dieser Form der Erzeugung in die Mitte des Gebiets gesetzt und das Ziel wird zufällig in eine Zelle gelegt.
 # 
 # Um sich die erzeugte Welt anzeigen zu lassen rufen Sie
@@ -103,9 +106,10 @@ world.show()
 
 # auf.
 # Jede Zelle hat eine bestimmte Farbe, die ihren aktuellen Zustand beschreibt.
+# Die Zelle auf der der Robeter steht ist blau und die Zelle des Ziels ist lila eingefärbt.
 # 
 # Die Welt ist eine statische Welt, welche nur vom Roboter selbst verändert werden kann.
-# In anderen Worten, der Zustand der Zellen bleibt unverändert, außer Ihr Roboter verändert ihren oder seinen eigenen Zustand.
+# In anderen Worten, der Zustand einer Zellen bleibt unverändert, außer Ihr Roboter verändert diesen oder seinen eigenen Zustand.
 # 
 # ## Der Roboter
 # 
@@ -137,6 +141,7 @@ robo = world.robo
 # 4. ``(i,j-1)`` 
 # 
 # erreichen. Diese Nachbarschaft heißt im übrigen *Von-Neumann-Nachbarschaft*, siehe {numref}`Abbildung {number} <fig-robo-world-von-neumann-nh>`.
+# Beachten Sie, dass wir die Zeile zuerst nennen und von null beginnen zu zählen. ``(3,1)`` steht demnach für die Zeile ``3`` und Spalte ``1`` bzw. für die ``4``-te Zeile und ``2``-te Spalte.
 # 
 # ```{figure} ../../figs/roboworld/von-neumann-nh.png
 # ---
@@ -152,18 +157,31 @@ robo = world.robo
 # Mit ``take_stone_in_front()`` können Sie diesen Stein aufnehmen und es mit ``put_stone_in_front()`` direkt vor dem Roboter absetzten (falls dies möglich ist).
 # Dabei kann der Roboter jedoch nur ein Objekt gleichzeitig tragen.
 # 
-# Fassen wir die Methoden des Roboters zusammen:
+# Im folgenden sehen Sie eine komplette Liste aller Methoden.
+# Bitte nicht erschrecken, wir werden nicht alle benötigen und wir werden die notwendigen Methoden wiederholen.
+# Sie können sich die Beschreibung auch durch ``help(robo)`` ansehen.
 # 
-# + ``move()`` bewegt den Roboter eine Zelle nach vorne
-# + ``turn_left()`` lässt den Roboter um 90 Grad nach links drehen
-# + ``is_facing_north()`` ist genau dann ``True``, wenn der Roboter nach norden (oben) ausgerichtet ist
-# + ``is_wall_in_front()`` ist genau dann ``True``, wenn vor dem Roboter ein (unverrückbares) Hindernis ist
-# + ``is_stone_in_front()`` ist genau dann ``True``, wenn vor dem Roboter ein (verrückbares) Objekt ist
-# + ``set_mark()`` markiert die Zelle auf der der Roboter gerade steht
-# + ``is_mark_in_front()`` ist genau dann ``True`` wenn vor dem Roboter eine markierte Zelle ist
-# + ``unset_mark()`` entfernt die Markierung von der Zelle auf der der Roboter gerade steht
-# + ``take_stone_in_front()`` nimmt einen Stein auf und
-# + ``put_stone_in_front()`` legt ihn ab
+# | Methode                       | Beschreibung                                                                      |
+# | ----------------------------- | --------------------------------------------------------------------------------- |
+# | ``is_facing_north()``         |  Ist genau dann ``True``, wenn der Roboter nach norden (oben) ausgerichtet ist    |
+# | ``is_wall_in_front()``        |  Ist genau dann ``True``, wenn vor dem Roboter ein (unverrückbares) Hindernis ist |
+# | ``is_stone_in_front()``       |  Ist genau dann ``True``, wenn vor dem Roboter ein (verrückbarer) Stein ist       |
+# | ``is_carrying_stone()``       |  Ist genau dann ``True``, wenn der Roboter einen Stein trägt                      |
+# | ``is_leaf_in_front()``        |  Ist genau dann ``True``, wenn sich vor dem Roboter Blatt befindet                |
+# | ``is_carrying_leafs()``       |  Ist genau dann ``True``, wenn der Roboter mindestens ein Blatt trägt             |
+# | ``is_at_goal()``              |  Ist genau dann ``True``, sich der Roboter an seinem Ziel befindet                |
+# | ``toss()``                    |  Gibt mit gleicher Wahrscheinlichkeit entweder ``True`` oder ``False`` zurück     |
+# | ``move()``                    |  Bewegung um eine Zelle nach vorne                                                |
+# | ``turn_left()``               |  Drehung um 90 Grad nach links                                                    |
+# | ``take_stone_in_front()``     |  Nimmt einen Stein, der **vor** dem Roboter liegt, auf                            |
+# | ``put_stone_in_front()``      |  Legt Stein **vor** den Roboter ab                                                |
+# | ``take_leaf()``               |  Nimmt einen Blatt auf, welches sich **direkt unter** dem Roboter befindet        |
+# | ``put_leaf()``                |  Legt (getragenes) **direkt unter** den Roboter ab Blatt ab                       |
+# | ``put_stone_in_front()``      |  Legt (getragenen) Stein **vor** den Roboter ab                                   |
+# | ``set_mark()``                |  Markiert die Zelle **auf der der Roboter steht**                                 |
+# | ``is_mark_in_front()``        |  Ist genau dann ``True``, wenn **vor** dem Roboter eine markierte Zelle ist       |
+# | ``unset_mark()``              |  Entfernt die Markierung von der Zelle **auf der der Roboter steht**              |
+# 
 # 
 # Sie rufen eine Methode ``method()`` durch 
 # 
@@ -300,6 +318,7 @@ world.show()
 # ```{exercise} Durchwandern des variablen Korridors
 # :label: robo-corridor-success-variable-loops-exercise
 # Durchwandern Sie nun einen Korridor dessen Länge Sie nicht kennen.
+# Welche Methode hilft Ihnen festzustellen ob Sie am Ende angekommen sind?
 # ```
 
 # In[11]:
@@ -359,7 +378,7 @@ world.show()
 # Unser Roboter kann sich nur nach links drehen und wir können nur feststellen ob er gerade nach Norden ausgerichtet ist.
 # Aus diesen beiden primitiven Operationen können wir jedoch komplexere Operationen durch **Komposition** erzeugen.
 # 
-# Um den Roboter nach Osten auszurichten, drehen wir ihn solange nach links bis er nach norden ausgerichtet ist.
+# Um den Roboter nach Osten auszurichten, drehen wir ihn solange nach links bis er nach Norden ausgerichtet ist.
 # Dann wissen wir, dass dreimal nach links drehen gleich einmal nach rechts drehen entspricht und wir somit den erwünschten Effekt erzielen.
 # 
 # Um diese neue Operation *nach Osten ausrichten* ``turn_east(robo)`` bequem in unserem Arsenal zu haben, extrahieren wir sie in eine eigene Funktion.
@@ -470,7 +489,7 @@ while not robo.is_wall_in_front():
 # Zum Beispiel wäre ``turn_left_move_one_cell_forward_turn_left()`` ein schlechter Name, obwohl er genau beschreibt was die Methode macht.
 # Besser wäre, z.B., ``move_left_corner()`` oder ``take_left_turn()``.
 # 
-# Es ist ein Abwägen zwischen, wie viel Wissen können wir bei der Leserschaft vorraussetzen und wie lange sollte der Name maximal werden.
+# Es ist ein Abwägen zwischen: Wie viel Wissen können wir bei der Leserschaft vorraussetzen und wie lange sollte der Name maximal werden.
 # Das Wissen bezieht sich zum einen auf die Codebasis, also wie viel von unserem Code hat der Leser bereits verstanden, aber zum anderen auch auf das Anwendungsgebiet.
 # Für Klimaforscher\*innen ist vermutlich klar was
 # 
@@ -484,7 +503,7 @@ while not robo.is_wall_in_front():
 # Namen sollten auch konsistent gewählt werden.
 # Zum Beispiel haben wir uns entschieden alle Methoden des Roboters die entweder ``True`` oder ``False`` zurückgeben mit ``is`` zu beginnen.
 # Es wäre inkonsistent wenn es eine Methode ``is_wall_in_front()`` und ``stone_in_front()`` gäbe.
-# Inkonsistenz verlangt beim Lesen mehr mentale Anstrengung, was zu vermeiden.
+# Inkonsistenz verlangt beim Lesen mehr mentale Anstrengung, was zu vermeiden ist.
 # Es ist Verschwendung geistiger Kraft.
 # Unser Gehirn ist eine visuelle Mustererkennungsmaschine, deshalb ist nicht nur der Name an sich wichtig sondern auch die visuelle Darstellung des Codes.
 # 
@@ -529,8 +548,9 @@ while not robo.is_wall_in_front():
 # Sie befreien sich von der kleinen Aufgabe, können diese abhaken und voranschreiten.
 # 
 # Das ist vergleichbar mit einer Einkaufsliste.
-# Sie schreiben diese Liste nicht weil Sie zu doof oder zu faul sind um sich zu merken was Sie einkaufen möchten.
-# Nein, Sie schreiben diese Liste damit Sie sich der nächsten Aufgabe des Tages widmen können.
+# Sie schreiben diese Liste nicht weil Sie zu doof oder zu faul sind, um sich zu merken was Sie einkaufen möchten.
+# Nein!
+# Sie schreiben diese Liste damit Sie sich der nächsten Aufgabe des Tages widmen können.
 # Sie schreiben diese Liste damit Sie während des Einkaufens auf andere Dinge, wie zum Beispiel Ihre Umgebung, besser eingehen können.
 # In anderen Worten, damit Sie mental für andere Aufgaben gewadmet sind, denn das Problem was Sie einkaufen möchten ist ja bereits gelöst.
 # 
@@ -610,9 +630,9 @@ def turn_east(robo):
     turn(robo)
 
 
-# ### Korridor mit Objekten
+# ### Korridor mit Steinen
 # 
-# Die nächste Welt, die unser Roboter durchlaufen soll, ist ein Korridor der Objekte auf dem Weg zum Ziel enthalten kann.
+# Die nächste Welt, die unser Roboter durchlaufen soll, ist ein Korridor der Steine auf dem Weg zum Ziel enthalten kann.
 # 
 # Der Roboter kann über diese nicht einfach drüber steigen.
 # Er muss einen Stein der vor ihm liegt aufnehmen ``take_stone_in_front()`` und kann dann erst wieder weiterlaufen.
@@ -789,10 +809,10 @@ rw.animate(world)
 # 
 # >Was ist der *Erwartungswert* für die Anzahl der Schritte, d.h. Aufrufe von ``move()``?
 # 
-# Den umgangsprachliche *Durchschnitt* von zwei oder mehreren Zahlen nennen wir in der Mathematik *Mittelwert* oder *arithmetisches Mittel*.
+# Den umgangsprachlichen *Durchschnitt* von zwei oder mehreren Zahlen nennen wir in der Mathematik *Mittelwert* oder *arithmetisches Mittel*.
 # Der *Erwartungswert* (manchmal leider auch als Mittelwert bezeichnet) ist eine Zahl, die angibt welchen Wert eine *Zufallsvariable* im Mittel annimmt.
 # Diese zwei Dinge sind grundverschieden!
-# Im Fall des *Mittelwerts* sprechen wir vom durchschnittlichen Wert konkreter Zahlen und im Fall des *Erwartungswerts* von einer Zahl die eine Zufallsvariable im Mittel annimmt.
+# Im Fall des *Mittelwerts* sprechen wir vom durchschnittlichen Wert konkreter Zahlen und im Fall des *Erwartungswerts* von einem Wert der von eine Zufallsvariable im Mittel angenommen wird.
 # 
 # Zum Beispiel können wir den Würfelwurf eines fairen Würfels betrachten.
 # Die Zufallsvariable wäre in diesem Fall die Augenzahl des Würfelwurfs.
@@ -815,7 +835,7 @@ rw.animate(world)
 # 
 # + Lassen wir unseren Roboter einmal laufen und zählen die benötigten Schritte, wissen wir wie viele Schritte er für genau diesen einen Lauf gebraucht hat.
 # + Lassen wir unseren Roboter $n$ mal laufen und berechnen den *Mittelwert* der benötigten Schritte, wissen wir wie viele Schritte er für diese $n$ Läufe durchschnittlich gebraucht hat.
-# + Lassen wir dieses $n$ immer größer und größer werden nähern wir uns dem *Erwartungswert* und können einschätzten wie viele Schritte der Roboter im Mittel generell braucht.
+# + Lassen wir dieses $n$ immer größer und größer werden nähern wir uns dem *Erwartungswert* und können einschätzten wie viele Schritte der Roboter im Mittel generell benötigt.
 # 
 # Im obigen Beispiel mit dem Würfelwurf, haben wir den *Erwartungswert* analytisch berechnet.
 # Prinzipiell bieten sich also zwei Möglichkeiten den *Erwartungswert* zu bestimmen:
@@ -828,7 +848,7 @@ rw.animate(world)
 # ```{exercise} Wahrscheinlichkeiten
 # :label: robo-random-walk-wls-exercise
 # 
-# Bestimmen Sie für ein $5 \times 5$ Gebiet die Wahrscheinlichkeit dafür, dass der Roboter nach einem Schritt am Ziel angekommen ist.
+# Bestimmen Sie für ein $5 \times 5$ Gebiet die Wahrscheinlichkeit dafür, dass der Roboter **nach einem Schritt** am Ziel angekommen ist.
 # Der Roboter startet in der Mitte des Gebiets.
 # 
 # ```
@@ -1005,11 +1025,11 @@ plt.hlines([38, 38 + (56-38)/2, 56], xmin=0, xmax=nmax, colors='black')
 # Beim Suchen einer analytischen Lösung kann dies auch ein sehr hilfreiches Mittel sein um einerseits eine Idee von der Lösung zu bekommen und andererseits seine Vermutung zu untermauern.
 # Ganz nach dem Motto: Habe ich mich verrechnet?
 # 
-# Den *Erwartungswert* der notwendigen Schritte des Zufallslauf zu bestimmen ist eine schwierige Aufgabe, der Sie wahrscheinlich noch nicht gewachsen sind.
+# Den *Erwartungswert* der notwendigen Schritte des Zufallslaufs zu bestimmen ist eine schwierige Aufgabe, der Sie wahrscheinlich noch nicht gewachsen sind.
 # Dennoch können wir als *Computational Thinker\*innen* den Computer verwenden um durch (oft massiv viele) Berechnungen einen guten Schätzwert zu bestimmen.
 # Die oben durchgeführte Methode gehört zu den sog. [Monte-Carlo-Simulationen](https://de.wikipedia.org/wiki/Monte-Carlo-Simulation).
 # 
-# Natürlich brauchen wir für derartige Berechnungen viel Rechenleistung und damit auch viel Energie - sie sind nicht kostenlos!
+# Natürlich brauchen wir für derartige Berechnungen viel Rechenleistung und damit auch viel **Energie** - sie sind nicht kostenlos!
 # 
 # ```{exercise} Berechnungskosten
 # :label: robo-computational-costs-exercise
@@ -1114,15 +1134,17 @@ print(f'Schätzwert: {count/n}, tatsächlicher Wert:{1/24}')
 # :name: attention-determinism-vs-determination
 # Die Begriffe **determiniert** und **deterministisch** haben in der Informatik eine ganz bestimmte Bedeutung, welche wir nur allzu gerne verwechseln.
 # 
-# + Ein *determinierter* [Algorithmus](sec-algorithms) erzeugt bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.
+# + Ein *determinierter* [Algorithmus](sec-algorithms) erzeugt bei gleicher Eingabe auch die gleiche Ausgabe.
 # + Für einen *deterministischer* [Algorithmus](sec-algorithms) ist während seiner Ausführung zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
 # ```
 # 
-# Die Zufallsfahrt ist aus unserer Sicht nicht *determinierter*, da Sie bei jeder Ausführung einen anderen Pfad berechnet.
-# Es sei jedoch erwähnt, dass der Lauf auf Pseudozufallsvariablen beruht.
-# Würden jede Eingabe (auch den sog. Seed des Pseudozufallsgenerators) kennen, wäre jeder Lauf aus unserer Sicht *determiniert* und würde mit einer anderen Eingabe starten.
+# Die Zufallsfahrt ist aus unserer Sicht nicht *determiniert*, da Sie bei jeder Ausführung einen anderen Pfad berechnet.
+# Es sei jedoch erwähnt, dass der Lauf auf *Pseudozufallsvariablen* beruht.
+# Würden wir jede Eingabe (auch den sog. Seed des Pseudozufallsgenerators) kennen, wäre jeder Lauf aus unserer Sicht *determiniert* und würde mit einer anderen Eingabe starten.
+# Echten Zufalls gibt es auf dem digitalen Computer nicht.
 # 
 # Die Zufallsfahrt ist ineffektiv, wenn es unser Ziel ist mit so wenig Schritten wie möglich zum Ziel zu kommen.
+# Wir besuchen die gleiche Zelle unter Umständen viele Male.
 # Wir haben keine Gewissheit wie lange es für einen bestimmten Lauf dauern mag.
 # Lassen Sie uns nun eine Lauf zum Ziel entwickeln, für den wir eine feste Obergrenze an Schritten feststellen können.
 # 
@@ -1131,14 +1153,17 @@ print(f'Schätzwert: {count/n}, tatsächlicher Wert:{1/24}')
 # 
 # 1. Gehen Sie weg vom Rechner und überlegen Sie sich einen Algorithmus der den Roboter sicher ans Ziel des rechteckigen Gebiets ohne Hindernisse führt.
 # 2. Implementieren Sie eine Funktion ``determined_walk(robo)``, die den Roboter ohne eine Zufallskomponente für **alle möglichen rechteckigen Welten ohne Steine und Hindernisse** ins Ziel führt.
-# 3. Bestimmen Sie wie viele Schritte höchstens (worst-case) sowie mindestens (best-case) nötig sind.
+# 3. Bestimmen Sie wie viele Schritte höchstens (worst-case) sowie mindestens (best-case), abhängig von der Größe des Gebiets, nötig sind.
 # 
 # ```
 # 
 # Es gibt viele verschiedene Lösungen für diese Aufgabe.
-# Wir haben uns folgende Strategie überlegt:
+# Wir haben uns für einen *Zig-Zag-Lauf* entschieden:
 # 
 # ```
+# ---
+# tags: [hide-input]
+# ---
 # Bewege den Roboter ganz nach Nordwesten.
 # Laufe jede Spalte ab:
 #     laufe nach Süden
@@ -1192,7 +1217,7 @@ def determined_walk(robo):
 
 # Zudem passen wir ``walk_to_wall(robo, condition)`` so an, dass der Lauf abgebrochen wird sobald die ``condition`` nicht länger erfüllt ist.
 # In unserem Fall ist diese ``condition`` genau dann nicht mehr erfüllt, sobald der Roboter das Ziel erreicht hat.
-# ``condition`` ist ein Funktion, welche als Argument den Roboter entgegen nimmt und einen Wahrheitswert zurückgibt.
+# ``condition`` ist ein Funktion, welche als Argument den Roboter entgegennimmt und einen Wahrheitswert zurückgibt.
 # Definieren wir keine ``condition`` ist der Wahrheitswert immer ``True``.
 # 
 # Lassen Sie uns diesen Code testen.
@@ -1227,7 +1252,7 @@ world.show()
 # 
 # Erneut ergeben sich interessante Fragen:
 # 
-# >Gibt es einen Algorithmus der den Roboter (für ein beliebiges Gebiet) so bewegt, dass wir jede Zelle nur maximal einmal durchlaufen?
+# >Gibt es einen Algorithmus der den Roboter (für ein beliebiges Gebiet) so bewegt, dass wir jede Zelle nur maximal einmal durchlaufen müssen?
 # 
 # >Wenn nein, gibt es einen Algorithmus der dies für bestimmte Gebiete erzielt?
 # 
@@ -1269,7 +1294,7 @@ world.show()
 # 
 # Ein einfaches Gegenbeispiel ist jedes $1 \times n$ für $n \geq 2$ Gebiet.
 # 
-# ```{figure} ../../figs/roboworld/1-times-n.png
+# ```{figure} ../../figs/roboworld/fig-1-times-n.png
 # ---
 # width: 240px
 # name: fig-1-times-n
@@ -1370,7 +1395,7 @@ rw.animate(world)
 # 
 # #### Aufzählen aller möglichen Läufe
 # 
-# Da wir absolut keine Wissen über das Gebiet haben, werden wir alle nur möglichen Läufe/Wege ausprobieren.
+# Da wir absolut kein Wissen über das Gebiet haben, werden wir alle nur möglichen Läufe/Wege ausprobieren.
 # Erinnern Sie sich an den **Zufallslauf**!
 # Auch hier haben wir im Grunde alle möglichen Läufe durchprobiert allerdings mehrfach die selben und in chaotischer Reihenfolge.
 # Was wir zunächst benötigen ist ein Algorithmus, der uns alle möglichen Läufe auflisten kann.
@@ -1461,7 +1486,7 @@ rw.animate(world)
 # 
 # Auch kennen wir die Länge der Läufe nicht.
 # Auch das ist kein Problem, wir laufen solange bis es einfach nicht mehr weiter geht oder wir unser Ziel gefunden haben.
-# Zum Beispiel wird unser erster möglicher Lauf $n$ Nullen enthalten wobei $n$ die Anzahl der Schritte ist, welche wir den Roboter laufen lassen können bis er an ein Hindernis stößt.
+# Zum Beispiel wird unser erster möglicher Lauf $n$ Nullen enthalten, wobei $n$ die Anzahl der Schritte ist, welche wir den Roboter laufen lassen können bis er an ein Hindernis stößt.
 # 
 # Die oben gewählte Reihenfolge in der wir die Läufe auflisten nennt man *Tiefensuche* (engl. *depth-first search*).
 # Wir können aus den Läufen einen Baum konstruieren wobei jeder Lauf eine Durchwanderung des Baums von der Wurzel zu einem Kind darstellt.

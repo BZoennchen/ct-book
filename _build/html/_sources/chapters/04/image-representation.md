@@ -11,7 +11,7 @@ kernelspec:
 ---
 
 (sec-binary-drawing)=
-# Binäres Zeichnen - Struktur ist Information
+# Binäres Zeichnen
 
 ````{admonition} Lernziel
 :class: learngoals
@@ -34,8 +34,6 @@ width: 200px
 name: fig-flower
 ---
 ```
-
-zu repräsentieren.
 
 Sie werden lernen wie [Informationen](sec-information) erst durch einen [Interpreter](def-interpreter) eine bestimmte Bedeutung erlangen.
 Sie werden den Umgang mit mehrdimensionalen ``Python``-[Listen](sec-list) und [Tupeln](sec-tuple) erlernen.
@@ -68,13 +66,13 @@ Jeder Pixel kann nur einen von zwei Zuständen annehmen, demnach brauchen wir pr
 ```
 
 Jede Zeile des Bildes repräsentieren wir als Folge von 0 und 1.
-Da wir unser Bild verändern möchten, eignet sich in ``Python`` hierfür die Liste ``list``.
+Da wir unser Bild verändern möchten, eignet sich in ``Python`` hierfür die [Liste](sec-list) ``list``.
 
 ```{code-cell} python3
 row = [0, 1, 0, 1, 0, 1, 1]
 ```
 
-Ein Bild *modellieren* wir wiederum als Liste von Zeilen (Pixelstreifen) oder eben eine Liste von Listen.
+Ein Bild *modellieren* wir wiederum als Liste von Zeilen (Pixelstreifen) oder eben eine *Liste von Listen*.
 
 ```{code-cell} python3
 picture = [[0, 1, 0, 1, 0, 1, 1], # 1. Zeile
@@ -83,7 +81,7 @@ picture = [[0, 1, 0, 1, 0, 1, 1], # 1. Zeile
            [1, 0, 0, 1, 0, 1, 1]] # 4. Zeile
 ```
 
-Unsere Interpretation erhält als Argument, d.h., als Repräsentanten eine zweidimensionale Liste aus Binärzahlen und liefert ein Schwarz-Weiß-Bild.
+Unsere [Interpretation](sec-interpretation) erhält als Argument, d.h., als Repräsentanten eine zweidimensionale Liste aus Binärzahlen und liefert ein Schwarz-Weiß-Bild.
 Den notwendigen Interpreter, der diese Interpretation realisiert, bietet uns folgende Funktion:
 
 ```{code-cell} python3
@@ -94,6 +92,7 @@ def plot_picture(picture):
 plot_picture(picture)
 ```
 
+Wir haben nun alles was wir brauchen um richtig loszulegen: Eine Interpretation in Form einer Liste von Listen und einen [Interpreter](def-interpreter) in Form der Funktion ``plot_picture``.
 
 ### Listen in Python
 
@@ -266,6 +265,9 @@ Schreiben Sie einen Code der jedes Pixel des Bildes einzeln durch ``print()`` au
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 for row in picture:
     for pixel in row:
         print(pixel)
@@ -311,6 +313,9 @@ Zum Beispiel soll aus ``[[[1,2], [3,3]], [[1,3], [4,5]]]``, also einer $3$-dimen
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def flatten(mylist):
     result = []
     for sub_list in mylist:
@@ -334,6 +339,9 @@ Nutzen Sie die Programmierung um sich Zeit zu sparen!
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 top = [0 for i in range(10)]
 center = [0] + [1 for i in range(8)] + [0]
 picture = [top.copy()] + [center.copy() for i in range(8)] + [top.copy()]
@@ -375,16 +383,25 @@ Testen Sie Ihr generiertes Bild.
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 picture[4][4] = 1
 picture
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 picture[4][0] = 1
 picture
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 picture[0][4] = 1
 picture
 ```
@@ -395,6 +412,9 @@ Dabei soll die Breite ``width`` und Höhe ``height`` sowie die Randbreite ``bord
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def generate_border_picture(width=10, height=10, border_width=1):
     picture = []
     
@@ -421,7 +441,7 @@ Testen Sie Ihre Funktion insbesondere für besondere Werte wie ``border_width > 
 ```
 
 ````{exercise} Variable Bildgenerierung testen
-Folgende Funktion plottet Ihr Bild.
+Wie bereits erwähnt plottet folgende Funktion Ihr Bild.
 ```python
 import matplotlib.pyplot as plt
 def plot_picture(picture):
@@ -449,7 +469,7 @@ Diese Objekte direkt als Ansammlung von Pixeln zu beschreiben ist schwierig und 
 Was uns das Leben deutlich leichter macht, ist die Einführung einer weiteren Interpretation.
 Diese soll uns in eine **abstraktere** Welt ka­ta­pul­tie­ren.
 In anderen Worten: Wir konstruieren eine Interpretation die geometrische (mathematische) Objekten wie den Kreis, ein Rechteck oder Dreieck (Repräsentanten) in eine zweidimensionale Liste aus 0 und 1 (Bedeutung) übersetzt.
-Diese Übersetzung bezeichnet man auch als **Digitalisierung**.
+Diese Übersetzung bezeichnet man auch als **Rasterisierung** (siehe Abschnitt [Vektorgrafiken](svg-image)).
 
 ```{figure} ../../figs/image-representation/point-to-pixel.png
 ---
@@ -459,7 +479,7 @@ name: fig-point-to-pixel
 ```
 
 Unsere geometrischen Objekte haben reelle Koordinaten z.B. können wir einen Kreis durch seinen Mittelpunkt $c = (x,y)$ und Radius $r$ eindeutig beschreiben.
-Um die Koordinaten in Pixelkoordinaten zu transformieren legen wir auf das Rasterbild ein reeles Koordinatensystem. 
+Um die Koordinaten in Pixelkoordinaten zu transformieren legen wir auf das Rasterbild ein reelles Koordinatensystem. 
 Hat unser Bild $n \times n$ Pixelbild und wir möchten den Raum $10 \times 10 \subset \mathbb{R}^2$ durch das Bild abbilden, entspricht die erste Bildzeile dem Raum $10 \times 1$.
 
 Um keine Verzerrung zu erhalten sollten Pixel in $x$ und in $y$ Richtung gleich viel Anteil des Euklidischen Raumes überziehen.
@@ -475,6 +495,9 @@ Bedenken Sie, dass die Indexierung der Pixel mit 0 beginnt.
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def to_pixel(p, resolution):
     x, y = p
     return int(x / resolution), int(y/ resolution)
@@ -514,6 +537,9 @@ Schreiben Sie eine Funktion ``midpoint(p1, p2)`` die Ihnen den Mittelpunkt ``(mx
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def midpoint(p1, p2):
     return (p1[0]+p2[0])/2, (p1[1]+p2[1])/2
 
@@ -543,7 +569,7 @@ Schreiben Sie eine Funktion ``line(p1, p2, resolution)``, die Ihnen Punkte des S
 
 ```{code-cell} python3
 ---
-tags: [output_scroll]
+tags: [hide-input,output_scroll]
 ---
 import numpy as np
 def distance(p1, p2):
@@ -588,6 +614,9 @@ Behandeln Sie auch den Fall, dass das Segment nicht in das Bild passt (es soll d
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def contains_pixel(picture, pixel):
     return pixel[0] >= 0 and pixel[0] < len(picture) and pixel[1] >= 0 and pixel[1] < len(picture[0])
 
@@ -611,6 +640,9 @@ Schreiben Sie eine Funktion ``draw_triangle(picture, p1, p2, p3, resolution)`` d
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def draw_triangle(picture, p1, p2, p3, resolution):
     draw_line(picture, p1, p2, resolution)
     draw_line(picture, p2, p3, resolution)
@@ -627,6 +659,9 @@ Schreiben Sie eine Funktion ``draw_rectangle(picture, p1, p2, p3, p4, resolution
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def draw_rectangle(picture, p1, p2, p3, p4, resolution):
     draw_line(picture, p1, p2, resolution)
     draw_line(picture, p2, p3, resolution)
@@ -651,6 +686,9 @@ Schreiben Sie eine Funktion ``draw_polygon(picture, polygon, resolution)`` die d
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def draw_polygon(picture, polygon, resolution):
     for i in range(len(polygon)):
         draw_line(picture, polygon[i-1], polygon[i], resolution)
@@ -662,10 +700,11 @@ plot_picture(picture)
 ```
 
 Dreieck, Rechteck und Polygon hätten wir geschafft.
-Für den Kreis $K$ müssen wir zurück in unsere **abstrakte** Welt der geometrischen Objekte, denn einen Kreis mit lauter Segmenten darzustellen macht wenig Sinn.
+Für den Kreis $K$ müssen wir zurück in unsere **abstrakte** Welt der geometrischen Objekte, denn einen Kreis mit lauter Segmenten darzustellen, ist möglich aber umständlich.
+Wir müsten erst ein Poylgon mit sehr vielen Segmenten berechnen.
 
 Die Punkte eines Kreises lassen sich durch eine *Kurve* beschreiben.
-Sie der Kreis durch seinen Mittelpunkt $m = (x_m, y_m)$ und den radius $r$ beschrieben dann sind
+Sei der Kreis durch seinen Mittelpunkt $m = (x_m, y_m)$ und den radius $r$ beschrieben dann sind
 
 $$K = \{(x_m + \cos(t) \cdot r, y_m + \sin(t) \cdot r) : t \in [0;2\pi]\}$$
 
@@ -679,6 +718,9 @@ Sie können erneut ``numpy`` verwenden, d.h. ``np.sin()``, ``np.cos()``, ``np.pi
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 import numpy as np
 def draw_circle(picture, circle, resolution):
     center = circle[0]
@@ -712,6 +754,9 @@ Suchen Sie sich irgendeine geeignete Funktion aus und zeichnen Sie diese in eine
 ```
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 import numpy as np
 def draw_function(picture, f, start, stop, resolution):
     n = int(3 * (stop - start) / resolution)
@@ -729,7 +774,7 @@ plot_picture(picture)
 
 ## Daumenkino
 
-Die folgende Methode (*Interpreter*) erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots).
+Die folgende Methode (ein [Interpreter](def-interpreter)) erwartet eine Liste von Bilder (in Ihrem Format) und generiert daraus eine Animation (eine Folge von Plots).
 Falls Sie den Parameter ``save`` auf ``True`` setzen, wird ein GIF (eine Bildfolge/Daumenkino/Minivideo) erzeugt und in der Datei ``'binary-drawing.gif'`` abgespeichert.
 
 ```{code-cell} python3
@@ -774,6 +819,9 @@ name: fig-daumenkino
 ````
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 size = 20
 increase = [generate_border_picture(width=size, height=size, border_width=i) for i in range(size//2)]
 decrease = [generate_border_picture(width=size, height=size, border_width=(size//2)-i) for i in range((size//2)-1)]
@@ -784,10 +832,11 @@ HTML(ani.to_jshtml())
 
 Fassen wir noch einmal kurz zusammen was wir bis jetzt geschafft haben:
 Wir haben uns ein Format / eine [Interpretation](sec-interpretation) für ein Schwarz-Weiß-Bild ausgedacht und umgesetzt.
-Durch ein wenig Hilfe externer Module können wir unser Rasterbild anzeigen.
+Mit ein wenig Hilfe durch externer Module, konnten wir unser Rasterbild anzeigen.
 Wir haben Algorithmen implementiert die uns Polygone (inkl. Dreiecke und Rechtecke), Kreise und sogar Funktionen zeichnen.
 Und jetzt haben wir sogar die Möglichkeit aus einer Folge von Bildern ein kleines Video zu generieren.
-Dieses Video wiederum ist nichts anderes als eine Liste von Listen von Listen bestehend aus Nullen und Einsen.
+Dieses Video ist wiederum nichts anderes als eine **Liste von Listen von Listen bestehend aus Nullen und Einsen**.
+Ist das nicht ganz erstaunlich?
 
 Wir haben jetzt die Möglichkeit eine unbegrenzte Menge an Animationen zu erzeugen, von bewegten geometrischen Objekten bis hin zum [Game Of Life](https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens) - Ihre Kreativität ist das Limit.
 
@@ -806,6 +855,9 @@ Anschließend können Sie mit ``draw_circle()`` diese Liste in eine Liste von Bi
 ````
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def generate_ball_box(width, height, circle, resolution):
     w = int(width/resolution)
     h = int(height/resolution)
@@ -901,6 +953,9 @@ name: fig-fourier-drawing
 ````
 
 ```{code-cell} python3
+---
+tags: [hide-input]
+---
 def draw_circular(picture, center, frequencies, radii, resolution, start=0.0, stop=2*np.pi):
     n = int(2*max(frequencies)*(stop-start) / resolution)
     t = np.linspace(start=start, stop=stop, num=n)
@@ -930,6 +985,7 @@ Zum Beispiel, mit welchen Argumenten erhalten Sie ein **harmonisches** (ein eher
 Wann erhalten Sie hingegen ein komplexeres Gebilde?
 Was hat das mit den **harmonischen** bzw. **unharmonischen** Schwingungen und einem **harmonischen** bzw. **unharmonischen** Ton zu tun?
 Können wir durch unsere Zeichenmethode Ton zeichnen?
+Welche Objekte können wir überhaupt mit dieser Methode zeichen, eine Gerade, ein Rechteck?
 
 Falls Sie sich mehr mathematisches Wissen zu diesem Thema aneignen möchten, ist folgendes exzellentes Video von **Grant Sanderson** ein wunderbarer Einstieg.
 
