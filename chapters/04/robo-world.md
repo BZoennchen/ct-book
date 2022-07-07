@@ -13,7 +13,8 @@ kernelspec:
 (sec-robo-world)=
 # Roboterwelt
 
-Für diese Übung benötigen wir das Paket ``roboworld`` was Sie sich durch
+Für diese Übung benötigen wir das Paket ``roboworld``.
+Dieses können Sie sich durch
 
 ```
 pip install roboworld
