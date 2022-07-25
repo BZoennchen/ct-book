@@ -7,14 +7,15 @@ Was sich verändert, sind technische Entwicklungen und neue Algorithmen -- d.h. 
 Auf der Softwareseite sind insbesondere Algorithmen aus dem Bereich des *maschinellen Lernens* zu nennen.
 Hier feierten wir große Erfolge aber es wird auch deutlich, dass wir durch die immensen Rechenanforderungen und den damit verbundenen und stetig steigenden Energieverbrauch in der nahen Zukunft ein weiteres ökologisches Problem ansteuern.
 Ob das *maschinelle Lernen* uns bei der Energiewende wie auch bei der Eindämmung des Klimawandels behilflich sein kann oder sich als hinderlich erweisen wird, ist eine noch offene Forschungsfrage.
+Es zeichnet sich jedoch ein großes Potenzial ab.
 
 Ein Bereich welcher sich unter anderem dem Energieproblem widmet, ist der des *Neuromorphic Computings*.
-Anstatt mühsam *neuronale Netze* auf einer [von Neumann Architektur](sec-von-neumann) zu simulieren ist es Ziel, neuronale Netze direkt in Hardware zu gießen.
+Anstatt mühsam *neuronale Netze* auf einer [Von-Neumann-Architektur](sec-von-neumann) zu simulieren ist es Ziel, neuronale Netze direkt in Hardware zu gießen.
 Das menschliche Gehirn ist zu ganz erstaunlichen Berechnungen fähig und verbraucht dabei gerade einmal 20 Watt.
-Computer basierend auf der von Neumann Architektur und operieren wesentlich anders. 
+Computer basierend auf der Von-Neumann-Architektur und operieren wesentlich anders. 
 Unter anderem benötigen sie durch die strikte Trennung zwischen Speicher und Recheneinheit sehr viel mehr Energie, um Daten zur Recheneinheit und wieder zurück zu befördern.
 Auch sind sie nicht im Stande persistent (ohne Stromzufuhr) ihren schnellen Speicher und die Arbeitsweise ihrer Recheneinheiten zu verändern, d.h., zu lernen.
-Ein in Hardware gegossenes neuronalen Netz klingt deshalb nach einer vielversprechenden Idee um effizient und stromsparend dedizierte Berechnungen durchführen zu können.
+Ein in Hardware gegossenes neuronalen Netz klingt deshalb nach einer vielversprechenden Idee, um effizient und stromsparend dedizierte Berechnungen durchführen zu können.
 
 Ein weiteres Schlagwort, was insbesondere durch die Medienlandschaft kreist, ist das sog. *Quantum Computing*.
 Die Entwicklung um die Quantencomputer begann bereits 1980.
@@ -25,12 +26,12 @@ Diese Wahrscheinlichkeiten können durch Logikgatter manipuliert werden.
 Zusätzlich können Qubits verschränkt werden.
 Sehr vereinfacht ausgedrückt bedeutet dies, dass deren Werte beim Messen alle bestimmt werden und voneinander abhängen. 
 Die Änderung der Qibits kann sich somit in *Überlichtgeschwindigkeit* ausbreiten.
-Deshalb kann man $2^{10}$ Zustände **gleichzeitig** mit nur $10$ Qubits speichern.
+Es können $2^{10}$ Zustände **gleichzeitig** mit nur $10$ Qubits speichern werden.
 Die Entwicklung von Quantenalgorithmen gestaltet sich allerdings als schwierig, da man die Wahrscheinlichkeiten der verschränkten Qubits verändern muss.
 Auch braucht man häufig mehrere Durchläufe, da das richtige Ergebnis nur zu einer hohen Wahrscheinlichkeit ausgegeben wird.
-Zudem müssen Qubits vor minimalen Erschütterungen geschützt und auf Temperaturen nahe am absoluten Nullpunkt herabgekühlt werden -- das Handy mit einem Quantencomputerchip bleibt deshalb vorerst ein Traum.
+Zudem müssen Qubits vor minimalen Erschütterungen geschützt und auf Temperaturen nahe am absoluten Nullpunkt herabgekühlt werden -- das Smartphone mit eingebautem Quantencomputerchip bleibt deshalb vorerst ein Traum.
 
-Im Oktober 2019, behaupteten Google AI Quantum und die NASA, dass sie ein Problem auf einem Quantencomputer gelöst hätten, und zwar $3 \cdot 10^{6}$ schneller als auf jedem verfügbaren klassischen existierenden Supercomputer auf dieser Welt.
+Im Oktober 2019, behaupteten Google AI Quantum und die NASA, dass sie ein Problem auf einem Quantencomputer gelöst hätten, und zwar $3 \cdot 10^{6}$ schneller als auf jedem verfügbaren klassischen existierenden Supercomputer auf dieser Welt {cite}`gibney:2019`.
 Das Resultat ist Gegenstand laufender Diskussionen.
 Weitere Spieler in der Quantencomputerwelt zogen seither nach.
 Derzeit sind die zu lösenden Probleme noch speziell auf Quantencomputer angepasst, z.B., die Simulation von Quanteneffekten oder die Generierung von Zufallszahlen.
@@ -52,4 +53,5 @@ In einem Artikel *The Case Against ‘The Case Against Quantum Computing’* rea
 
 Die haltlose, da fehlerhafte Kritik, findet ihren Anklang da sie auf haltlosen Optimismus prallt.
 Ob Quantencomputer auf spezielle aber interessante Probleme angewendet werden können oder ob sie darüber hinaus auch für generelle Zwecke ihre Anwendung finden, bleibt abzuwarten.
-Wir dürfen hoffen, mehr aber **noch** nicht.
+Wir dürfen hoffen, mehr aber noch nicht.
+Auf einen möglichen Erfolg sollten wir uns nicht verlassen.

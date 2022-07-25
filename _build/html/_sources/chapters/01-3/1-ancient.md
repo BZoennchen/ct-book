@@ -55,14 +55,12 @@ Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines 
 ---
 tags: [output_scroll]
 ---
-import numpy as np
-
 def sieve_of_eratosthenes(N):
     N = 100
     prime_sieve = [True for i in range(N)]
     prime_sieve[0] = False
     prime_sieve[1] = False
-    for i in range(2, int(np.sqrt(N))):
+    for i in range(2, int(N**0.5)):
         if prime_sieve[i]:
             for j in range(i**2, N, i):
                 prime_sieve[j] = False

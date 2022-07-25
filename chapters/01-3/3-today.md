@@ -134,50 +134,94 @@ Die Von-Neumann-Architektur.
 
 In den darauffolgenden Jahren waren es insbesondere Entwicklungen von neuen Bauteilen, wie Transistoren und integrierten Schaltkreisen, die die Leistungsfähigkeit der Computer immer weiter verbesserten.
 Die Bauteile wurden stetig kleiner und die Taktrate der Rechner wurde immer weiter in die Höhe getrieben.
+Kleinere Bauteile verbrauchen weniger Energie und so explodierte der Energieverbrauch trotz der immer besseren Rechenkapazität bzw. Rechengeschwindigkeit nicht.
+
 Um 2006 brach der Zusammenhang zwischen höherer Taktfrequenz und gleichbleibendem Stromverbrauch jedoch zusammen.
-Transistoren wurden immer kleiner und mehr und mehr Transistoren wurden auf einen Chip verbaut.
-Ab einer bestimmten Größe änderte sich die Situation.
-Mit steigender Taktfrequenz stieg die Wärmeentwicklung der Chips.
+Dies bezeichnete man als den Zusammenbruch der sog. *Dennard Skalierung*.
+Dennard bemerkte 1974, dass die notwendige Spannung und der nötige Strom sich proportional zur linearen Dimension der Transistoren verhielt.
+In anderen Worten, die notwendige Leistung sollte proportional zur Fläche des Transistors sein.
+Ist diese kleiner, bedarf es auch weniger Leistung.
+Diese Annahme stellte sich ab einer bestimmten Größe jedoch als falsch heraus.
+Die Wärmeentwicklung der dicht bepackten Chips stieg mit steigender Taktfrequenz an.
 Mehr und mehr Kühlung wurde notwendig, was wiederum den Stromverbrauch in die Höhe trieb.
-Verkleinern wir die Transistoren weiter, so dringen wir in die Quantenwelt vor und bekommen es mit Quanteneffekten zu tun.
-Elektronen könnten dann selbst durch einen geschlossenen Transistor hindurchdringen -- wir erreichen eine harte physikalische Grenze.
+Faktisch ist die Taktrate der Prozessoren auf ca. 4 GHz limitiert.
+
+Dennoch werden noch heute die Transistoren immer kleiner, d.h. das *Mooresche Gesetz* gilt (teilweise) noch immer, doch erzielen wir eine bessere Rechengeschwindigkeit durch andere Effekte, wie etwa die Parallelität oder bessere Cachverfahren.
 Aus diesen Gründen konzentrieren sich Chiphersteller schon eine Weile auf Mehrkernprozessoren, eine Entwicklung die sich auch auf die Programmiersprachen ausgedehnt hat.
 Allerdings können wir die Parallelität nicht überall nutzen und die Verwendung von mehreren Kernen verursacht auch immer einen gewissen Verwaltungsaufwand -- ein Teil jedes Programms wird immer sequenziell ausgeführt.
+
+Es wird erwartet, dass irgendwann auch das *Mooresche Gesetz* zusammenbricht.
+Anzeichen sind bereits klar erkennbar, denn die Rate, in welcher sich die Leistung der Rechner verdoppelt beginnt zu sinken.
+Dies könnte zu einem rapiden Anstieg des Energiebedarfs der Prozessoren führen.
+Im Hinblick auf die Klimakrise könnte dies zu einer starken Verringerung der ansteigenden Rechnerleistung führen.
 Abhilfe verspricht man sich durch die *Quantencomputer*.
 
-Schon in den 1940ger Jahren wurde versucht die Informationsverarbeitung am Beispiel des menschlichen Gehirns zu modellieren. 
+Algorithmisch gab es unzählige Entwicklungen.
+Was aber heute in aller Munde ist, stammt aus dem Bereich des *maschinellen Lernens*.
+Schon in den 1940er Jahren wurde versucht die Informationsverarbeitung am Beispiel des menschlichen Gehirns zu modellieren. 
 Dieser Ansatz wurde durch die Hirnforschung inspiriert.
-Die Idee war und ist es, eine riesige Anzahl an hochgradig vernetzter aber relativ simplen Neuronen durch Software zu simulieren.
-Dieser Ansatz wurde in den 80er Jahren aufgegriffen.
-Zu jener Zeit fehlten allerdings die Daten und die Rechenleistung, um derartige *Neuronale Netze* praktisch nutzen zu können.
+Die Idee war und ist es, eine riesige Anzahl an hochgradig vernetzten aber relativ simplen Neuronen durch Software zu simulieren.
+Die Idee der *künstlichen neuronalen Netze* (engl. *artificial neuronal network (ANN)*) war geboren.
 
-Etwa zehn Jahre später erklärt John McCarthy:
+```{figure} ../../figs/history/ann.png
+---
+width: 300px
+name: fig-ann
+---
+Skizze eines künstliches neuronalen Netzes.
+```
 
->[Es sei das Ziel von künstlicher Intelligenz], intelligentes menschliches Verhalten durch Computerprogramme (künstlich) nachzubilden.
-
-Und 1959 entwickelte Arthur L. Samuels ein Programm, welches das Spiel *Dame* erlernen konnte.
-Heute ist die *künstliche Intelligenz (KI)* ein breites und interdisziplinäres Feld der Forschung und Entwicklung.
-
-Durch die Integration der Technik in unser alltägliches Leben, bekannt unter dem Schlagwort *Internet der Dinge* (engl. Internet of Things (IoT)), in Kombination mit der damit verbundenen Datensammlung, hocken wir heute auf einer immens großen Menge an Daten.
-Gleichzeitig haben wir die Rechenkapazität um die Algorithmen aus den 80ger Jahren auf jene Daten loszulassen.
-Diese Algorithmen sind im Stande Strukturen in jenen Daten zu finden.
-Wir verbinden damit die Schlagwörter *BigData* und *maschinelles Lernen*.
-
+Um 1960 wurde eine wichtige Erweiterung der *neuronalen Netze*, die sog. *tiefen neuronalen Netze* (engl. *deep neural networks (DNN)*), vorgeschlagen.
+Anders als herkömmliche neuronale Netze (siehe {numref}`Abbildung {number} <fig-ann>` ) bestehen diese aus mehrere *verschteckten Schichten*.
+Zu jener Zeit fehlten allerdings die Daten und die Rechenleistung, um derartige *DNNs* praktisch nutzen zu können.
+Erst in den 80er Jahren wurden erste *künstliche neuronalen Netze* entwickelt (*LeNet* 2011, {cite}`lecun:1989`).
+*ANNs* bilden eine Teilmenge der Algorithmen des *maschinelles Lernen*.
 Tom Mitchell definiert *maschinelles Lernen* wie folgt:
 
->A computer program is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$, as measured by $P$, improves with experience $E$.
+Ein Computerprogramm lernt von der Erfahrung $E$ in Bezug auf eine Klasse von Aufgaben $T$ und einer Bewertungsmetrik $P$, wenn dessen Fähigkeit die Aufgaben $T$ zu lösen, sich in Bezug auf die Bewertungsmetrik $P$, mit der Erfahrung $E$, verbessert. -- Tom Mitchell, 1997
 
 Der wesentliche Unterschied zwischen einem klassischen Algorithmus und dem *maschinellen Lernen* ist somit in seinen Augen, dass sich der Algorithmus anhand der Daten, die er verarbeitet, selbständig anpasst -- er lernt von seinen Erfahrungen.
 Ein sehr einfaches Beispiel ist der sog. *Spamfilter*.
 Ein Spamfilter befolgt keine fest eingebrannten Regeln, sondern *lernt* was Spam und was kein Spam ist, indem wir E-Mails als Spam markieren.
 Er benötigt *Trainingsdaten* und kann dann neue Daten selbständig *klassifizieren*.
 
-Diese Entwicklung wird sich fortsetzten.
-Das maschinelle Lernen wird sich auf alle Bereiche ausbreiten für die wir große Datenmengen gesammelt haben oder sammeln können.
-Anbieter können so ihre Produkte optimieren -- was auch immer das im einzelnen bedeutet.
-Deshalb sind Daten heute ein echtes Wirtschaftsgut.
+Insbesondere *tiefen neuronalen Netze (DNNs)* konnten erfolgreich für Aufgaben eingesetzt werden, die zuvor als unlösbar galten.
+Zu nennen ist die Sprach- (*Microsoft* 2011) und Bilderkennung (*AlexNet* 2012, {cite}`ciresan:2012`).
+Der Erfolg ist auf drei Faktoren zurückzuführen: 
+Zu nennen ist die hohe Datenmenge.
+*Facebook* sammelt täglich etwa 350 Millionen Bilder und *YouTube* ca. 300 Stunden Videomaterial pro Minute.
+Durch die Integration der Technik in unser alltägliches Leben, bekannt unter dem Schlagwort *Internet der Dinge* (engl. *Internet of Things* (IoT)), können und werden weitere Daten von einem anderen Typ bzw. von einer anderen Qualität gesammelt.
+Der zweite Faktor ist die hohe Rechenleistung, die uns in den letzten Jahren zur Verfügung stand.
+Sie erlaubt es uns die Algorithmen aus den 80er Jahren auf jene Daten loszulassen.
+Diese Algorithmen sind im Stande Strukturen in jenen Daten zu finden.
+Der dritte wesentliche Faktor stellt die anfängliche Erfolgsgeschichte dar.
+Keiner wusste so recht, ob diese Netze tatsächlich nützlich sind.
+Die überraschend guten Resultate führten zu einer Flut an Entwicklungen neuer [Algorithmen](def-algorithm) und Open-Source-Bibliotheken.
+Insbesondere das ``Python``-Ökosystem wurde befüllt.
 
+```{figure} ../../figs/history/ai-context.png
+---
+width: 300px
+name: fig-ai-context
+---
+```
+
+Das *maschinelle Lernen* ist wiederum eine Unterkategorie der *künstlichen Intelligenz (KI)* (engl. *artificial intelligence (AI)*).
+Der Begriff wurde 1956 von *John McCarthy* eingeführt.
+
+[Es sei das Ziel von künstlicher Intelligenz], intelligentes menschliches Verhalten durch Computerprogramme (künstlich) nachzubilden. -- John McCarthy
+
+Die Themen *KI* im Allgemeinen und *maschinelles Lernen* im Besonderen werden uns auch in Zukunft noch beschäftigen.
+Die bisherigen Erfolge sind vielversprechend und möglicherweise können uns diese Algorithmen in vielen Bereichen eine echte Stütze sein.
+Dabei sollten wir einen gesunden Umgang mit KI-Systemen entwickeln.
+Fragen der Ethik, Ökologie und sozialer Gerechtigkeit müssen in diesem Zuge ihren Platz im Diskurs finden.
+Das *maschinelle Lernen* wird sich auf all jene Bereiche ausbreiten für die wir große Datenmengen gesammelt haben oder sammeln können.
+Anbieter können so ihre Produkte optimieren -- was auch immer das im Einzelnen bedeuten mag.
+KI kann uns möglicherweise Helfen die Erderwärmung zu reduzieren, gleichzeitig benötigen diese daten- und energiehungrigen Algorithmen viele Ressourcen.
+Diese Spannung zwischen Nutzen und Kosten müssen wir beleuchten.
+
+Daten sind heute ein echtes Wirtschaftsgut.
 Uns allen sollte bewusst sein, dass diese immense, oft undurchsichtige Datensammlung auch ihre Schattenseiten hat.
 Insbesondere wenn *personenbezogene Daten* gesammelt werden, müssen wir kritisch hinterfragen was mit diesen Daten gemacht wird und ob wir mit dieser Entwicklung einverstanden sind.
-Auch hängt die Qualität der Entscheidung eines lernenden Algorithmus von dessen Erfahrungen, d.h., Daten ab.
+Auch hängt die Qualität der Entscheidung eines lernenden Algorithmus von dessen Erfahrungen, d.h., den (Trainings-)Daten ab.
 Diskriminierungen, welche sich in den Daten finden, werden auch lernende Algorithmen durch die Reproduktion von Stereotypen übernehmen.
