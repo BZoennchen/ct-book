@@ -20,7 +20,7 @@ Dieses können Sie sich durch
 pip install roboworld
 ```
 
-herunterladen und installieren können.
+herunterladen und installieren.
 
 
 ```{admonition} Lernziel
@@ -76,15 +76,15 @@ Eine Zelle hat einen von folgenden Zuständen:
 | Zusand    | Farbe      | Eigenschaft                          | Auswirkung 
 | --------- |----------- | ------------------------------------ | -------------------------------------- |
 | Leer      | Hellgrau   | pasierbar                            | Zelle ist derzeit pasierbar            |
-| Hindernis | Dunkelgrau | unverrückbares, unpassierbares Objet | Zelle ist **für immer** unpassierbares |
-| Steine    | Orange     | verrückbares, unpassierbares Objet   | Zelle ist derzeit unpassierbares       |
+| Hindernis | Dunkelgrau | unverrückbares, unpassierbares Objet | Zelle ist **für immer** unpassierbaf   |
+| Stein     | Orange     | verrückbares, unpassierbares Objet   | Zelle ist derzeit unpassierbar         |
 | Blatt     | Grün       | verrückbares, passierbares Objet     | Zelle ist derzeit pasierbar            |
 
 
 Sowohl der *Roboter* ``robo`` als auch sein *Ziel* können sich auf einer Zelle befinden.
 Der Zustand der Zelle ändert sich dadurch nicht.
 
-Um die Welt und ihren Roboter anzuzeigen benötigen Sie das Paket ``roboworld``.
+Um die Welt und Ihren Roboter anzuzeigen benötigen Sie das Paket ``roboworld``.
 
 ```{code-cell} python3
 import roboworld as rw

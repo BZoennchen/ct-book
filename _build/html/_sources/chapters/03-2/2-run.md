@@ -3,13 +3,13 @@
 In diesem Kurs verwenden wir Jupyter Notebooks, welche wir im gleichnamigen [Abschnitt](sec-jupyter-notebooks) genauer Besprechen.
 Diese Notebooks gibt es noch nicht so lange und sie eigenen sich auch nur für bestimmte Zwecke.
 
-Die wohl gängigste Form ``Python``-Anwendungen zu entwickeln ist es den Code in Dateien abzulegen und dieses Datei dann [interpretieren](def-interpreter) zu lassen. 
-Insbesondere für die Entwicklung großer Anwendungen (z.B. auch Webseiten) oder Pakete, wie etwa [roboworld](https://github.com/BZoennchen/robo-world), und Scripte, ist diese Methode geeignet.
-Notebooks hingegen eigenen sich für kleine Probleme bei denen wir Pakete bzw. Module lediglich Nutzung aber nicht selbst entwickeln.
+Die wohl gängigste Technik ``Python``-Anwendungen zu entwickeln ist es den Code in Dateien abzulegen und dieses Datei dann [interpretieren](def-interpreter) zu lassen, d.h., auszuführen.
+Insbesondere für die Entwicklung großer Anwendungen (z.B. auch Webseiten) oder Pakete, wie etwa [roboworld](https://github.com/BZoennchen/robo-world), und Skripte, ist diese Methode geeignet.
+Notebooks eigenen sich hingegen für kleine Probleme bei denen wir Pakete bzw. Module lediglich Nutzung aber nicht selbst entwickeln.
 
 Manchmal möchten wir aber auch nur ein paar Zeilen Code ausprobieren und zwar ohne irgendeine größere Entwicklungsumgebung zu starten.
 Wir haben vielleicht vergessen wie ``Python`` den ``+``-Operator für zwei Listen realisiert und möchten das schnell ausprobieren.
-Hierzu kann man den sog. ``Python``-shell oder auch IPython-shell, welche dem REPL-Konzept (Read, Evaluate, Print and Loop) folgt, verwenden.
+Hierzu kann man durch die sog. *Read, Evaluate, Print, Loop* (REPL) zu Deutsch *Lese-Auswerte-Ausgabe-Schleife* oder auch IPython-shell, direkt mit dem ``Python``-Interpreter interagieren.
 
 ## REPL
 
@@ -22,7 +22,8 @@ python
 ```
 
 auf.
-Jetzt können Sie den ``Python``-Code direkt eintippen und es wird immer der letzte Befehl ausgegeben.
+Jetzt können Sie den ``Python``-Code direkt eintippen.
+Es wird das Ergebnis des letzten Befehl ausgegeben.
 Zum Beispiel können wir
 
 ```python
@@ -49,12 +50,12 @@ name: fig-repl
 Ausgabe die auf der Konsole durch die oben angegeben Befehle erzeugt wird.
 ```
 
-Mit ``quit()`` beenden Sie den Kommandozeileninterpreter.
+Mit ``quit()`` oder ``ctrl + D`` bzw. ``Strg + D`` beenden Sie den Kommandozeileninterpreter.
 
 ### IPython
 
 Mit dem Befehl ``ipython`` starten Sie einen anderen Kommandozeileninterpreter zum interaktiven Arbeiten.
-Auf diesem basieren die Jupyter Notebooks und Sie müssen das ``jupyter`` Modul dazu installiert haben.
+Auf diesem basieren die Jupyter Notebooks und Sie müssen das ``jupyterlab`` Modul dazu installiert haben.
 
 ```sh
 ipython
@@ -135,14 +136,14 @@ Diese besprechen wir noch im Detail in Abschnitt [Jupyter Notebooks](sec-jupyter
 Hier sei nur erwähnt, dass Sie mit
 
 ```sh
-jupyter notebook [path/to/notebook/file]
+jupyter lab [path/to/notebook/file]
 ```
 
 ein bestimmtes Notebook starten und mit 
 
 ```sh
-jupyter notebook
+jupyter lab
 ```
 
-die Jupyter-Umgebung im aktuellen Verzeichnis starten.
-Dazu muss das ``jupyter`` Modul auf Ihrem System installiert und auffindbar sein.
+die Jupyter-Lab-Umgebung im aktuellen Verzeichnis starten.
+Dazu muss das ``jupyterlab`` Modul auf Ihrem System installiert und auffindbar sein.

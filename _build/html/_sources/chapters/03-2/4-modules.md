@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# Module
+# Module und Pakete
 
 ``Python`` ist unter anderem so erfolgreich, da es für immens viele Bereiche und Probleme eingesetzt wird und durch eine große Gemeinschaft gepflegt wird.
 In dieser Gemeinschaft wird Programmiercode für eine Vielzahl an Problemen entwickelt, weiterentwickelt und **frei**, **kostenlos** wie auch **offen** angeboten!
@@ -133,7 +133,7 @@ import squaresum
 sucht der Interpreter nach dem Modul ``squaresum`` an verschiedenen Orten.
 
 1. Ist das Modul ein *built-in* Modul welches zur [Python Standard Bibliothek](https://docs.python.org/3/library/) gehört?
-2. Findet sich die Datei mit dem Namen ``squaresum.py`` in einem der Verzeichnisse die in der Variable ``sys.path`` angegeben ist?
+2. Befindet sich die Datei mit dem Namen ``squaresum.py`` in einem der Verzeichnisse die in der Variable ``sys.path`` angegeben ist?
 3. Befindet sich das Modul in der aktuell aktiven [virtuellen Umgebung](https://docs.python.org/3/tutorial/venv.html)?
 
 ``sys.path`` enthält auch immer das Verzeichnis indem das Skript welches den ``import squaresum`` Ausdruck enthält.
@@ -149,7 +149,6 @@ Wie das geht würde an dieser Stelle zu weit führen.
 Die sog. *virtuellen Umgebungen* sind ein ganz eigenes Kapitel, welches wir in diesem Kurs nicht besprechen werden.
 Es sei gesagt, dass sie es ermöglichen mit unterschiedlichen ``Python`` Versionen und unterschiedlicher Modulen/Pakten Versionen auf ein und demselben System zu arbeiten.
 Wenn Sie, zum Beispiel, Webseiten entwickeln gleichzeitig aber noch ein ganz anderes Projekt, was sich dem maschinellen Lernen zuwendet, entwickeln, so kann es Sinn machen für jedes der beiden Projekte eine dedizierte virtuelle Umgebung zu erstellen.
-Sie finden ausführliche Informationen in der offiziellen Dokumentation.
 
 ## Pakete
 
@@ -162,7 +161,7 @@ Zum Beispiel, ist [roboworld](https://github.com/BZoennchen/robo-world) ein Pake
 + ``world``,
 + ...
 
-Um nur ein Teilmodul eines Pakets einzubinden um es nutzbar zu machen verwenden wir die ``.`` Dot-Notation:
+Um nur ein Teilmodul eines Pakets einzubinden, um es nutzbar zu machen, verwenden wir die ``.`` Dot-Notation:
 
 ```python
 import roboworld.world

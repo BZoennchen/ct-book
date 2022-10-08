@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>17.1. Fallunterscheidungen &#8212; Computational Thinking</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,8 +18,12 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -28,34 +31,31 @@
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="../../_static/tabs.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="17.2. Schleifen" href="2-loops.html" />
@@ -67,21 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -90,10 +76,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -108,18 +93,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
-                    Computational Thinking
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Einleitung
  </span>
@@ -271,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Theorie
  </span>
@@ -478,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Python
  </span>
@@ -516,7 +500,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-2/4-modules.html">
-     12.4. Module
+     12.4. Module und Pakete
     </a>
    </li>
   </ul>
@@ -786,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   CT in Aktion
  </span>
@@ -818,7 +802,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Appendix
  </span>
@@ -832,17 +816,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -850,243 +829,102 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-7/1-cases.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/03-7/1-cases.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/03-7/1-cases.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/chapters/03-7/1-cases.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../../_sources/chapters/03-7/1-cases.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/03-7/1-cases.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/03-7/1-cases.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/03-7/1-cases.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/03-7/1-cases.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-7/1-cases.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#if">
    17.1.1.
@@ -1190,11 +1028,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Fallunterscheidungen</h1>
@@ -1203,7 +1042,7 @@ title="Print to PDF"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contents </h2>
+                            <h2> Inhalt </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1314,12 +1153,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="fallunterscheidungen">
-<span id="sec-cases"></span><h1><span class="section-number">17.1. </span>Fallunterscheidungen<a class="headerlink" href="#fallunterscheidungen" title="Link zu dieser Überschrift">#</a></h1>
+  <div class="section" id="fallunterscheidungen">
+<span id="sec-cases"></span><h1><span class="section-number">17.1. </span>Fallunterscheidungen<a class="headerlink" href="#fallunterscheidungen" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Für eine Fallunterscheidung können wir für jeden Fall <span class="math notranslate nohighlight">\(i\)</span> einen bestimmten Codeblock <span class="math notranslate nohighlight">\(B_i\)</span> definieren.
 Dieser wird genau dann ausgeführt sofern ein logischer Ausdruck <span class="math notranslate nohighlight">\(P_i\)</span> wahr, d.h. <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt und kein anderer logischer Ausdruck <span class="math notranslate nohighlight">\(P_j\)</span> für <span class="math notranslate nohighlight">\(j &lt; i\)</span> bereits <code class="docutils literal notranslate"><span class="pre">True</span></code> ergeben hat.
 In anderen Worten, der Fall <span class="math notranslate nohighlight">\(i\)</span> trifft zu und kein Fall davor ist bereits eingetreten.</p>
@@ -1327,7 +1165,7 @@ In anderen Worten, der Fall <span class="math notranslate nohighlight">\(i\)</sp
 Trifft keiner der Fälle zu, d.h. kein <span class="math notranslate nohighlight">\(P_i\)</span> ergibt <code class="docutils literal notranslate"><span class="pre">True</span></code> und es ist kein Alternativfall (<code class="docutils literal notranslate"><span class="pre">else</span></code>) definiert, so wird keiner der Codeblöcke ausgeführt.
 Eine Fallunterscheidung beginnt immer mit dem <code class="docutils literal notranslate"><span class="pre">if</span></code>-Signalwort!</p>
 <div class="section" id="if">
-<h2><span class="section-number">17.1.1. </span><code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">17.1.1. </span><code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die einfachste Form der Fallunterscheidung prüft ob ein logischer Ausdruck <span class="math notranslate nohighlight">\(P_0\)</span> eingetreten.
 Nur wenn dies zutrifft, wird der Codeblock <span class="math notranslate nohighlight">\(B_0\)</span> ausgeführt:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">P0</span><span class="p">:</span>
@@ -1352,7 +1190,7 @@ Nur wenn dies zutrifft, wird der Codeblock <span class="math notranslate nohighl
 </div>
 </div>
 <div class="section" id="if-else">
-<h2><span class="section-number">17.1.2. </span><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-else" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">17.1.2. </span><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-else" title="Link zu dieser Überschrift">¶</a></h2>
 <p>In der nächsten Variante wird ein Codeblock <span class="math notranslate nohighlight">\(B_0\)</span> nur dann ausgeführt, sofern ein logischer Ausdruck <span class="math notranslate nohighlight">\(P_0\)</span> <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt.
 Ist dies nicht der Fall, so wird ein Alternativblock (<code class="docutils literal notranslate"><span class="pre">else</span></code>) <span class="math notranslate nohighlight">\(B_1\)</span> ausgeführt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">P0</span><span class="p">:</span>
@@ -1383,7 +1221,7 @@ Ist dies nicht der Fall, so wird ein Alternativblock (<code class="docutils lite
 </div>
 </div>
 <div class="section" id="if-elif">
-<h2><span class="section-number">17.1.3. </span><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#if-elif" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">17.1.3. </span><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#if-elif" title="Link zu dieser Überschrift">¶</a></h2>
 <p>In der nächsten Variante wird höchstens ein Codeblock <span class="math notranslate nohighlight">\(B_i\)</span> nur dann ausgeführt, sofern ein logischer Ausdruck <span class="math notranslate nohighlight">\(P_i\)</span> <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt.
 Gibt es mehr als einen logischen Ausdruck <span class="math notranslate nohighlight">\(P_i\)</span> welcher <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, so wird der erste Codeblock (der mit dem kleinsten <span class="math notranslate nohighlight">\(i\)</span>) ausgeführt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">P0</span><span class="p">:</span>
@@ -1421,7 +1259,7 @@ Gibt es mehr als einen logischen Ausdruck <span class="math notranslate nohighli
 </div>
 </div>
 <div class="section" id="if-elif-else">
-<h2><span class="section-number">17.1.4. </span><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-elif-else" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">17.1.4. </span><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-elif-else" title="Link zu dieser Überschrift">¶</a></h2>
 <p>In der nächsten Variante wird genau ein Codeblock <span class="math notranslate nohighlight">\(B_i\)</span> nur dann ausgeführt, sofern ein logischer Ausdruck <span class="math notranslate nohighlight">\(P_i\)</span> <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt. Gibt es mehr als einen logischen Ausdruck <span class="math notranslate nohighlight">\(P_i\)</span> welcher <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, so wird der erste Codeblock (der mit dem kleinsten <span class="math notranslate nohighlight">\(i\)</span>) ausgeführt.
 Trifft kein Fall zu, wird der Alternativblock <span class="math notranslate nohighlight">\(B_n\)</span> ausgeführt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">P0</span><span class="p">:</span>
@@ -1464,7 +1302,7 @@ Trifft kein Fall zu, wird der Alternativblock <span class="math notranslate nohi
 </div>
 </div>
 <div class="section" id="if-if-else">
-<h2><span class="section-number">17.1.5. </span><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-if-else" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">17.1.5. </span><code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#if-if-else" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Aufeinanderfolgende <code class="docutils literal notranslate"><span class="pre">if</span></code>-Statements sind nicht eine sondern mehrere Fallunterscheidungen, denn jedes <code class="docutils literal notranslate"><span class="pre">if</span></code>-Statement leitet eine neue Fallunterscheidung ein!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1532,7 +1370,7 @@ x &lt;= 7
 </div>
 </div>
 <div class="section" id="verschachtelung">
-<h2><span class="section-number">17.1.6. </span>Verschachtelung<a class="headerlink" href="#verschachtelung" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">17.1.6. </span>Verschachtelung<a class="headerlink" href="#verschachtelung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Selbstverständlich kann ein Codeblock <span class="math notranslate nohighlight">\(B_i\)</span> erneut eine oder mehrere Fallunterscheidungen enthalten.
 Und selbstverständlich können wir Fallunterscheidungen in Funktionen einbauen.</p>
 <div class="cell docutils container">
@@ -1630,7 +1468,7 @@ Zudem haben wir zweimal den logischen Ausdruck <code class="docutils literal not
 <p>umwandeln.</p>
 </div>
 <div class="section" id="schnellschreibweise">
-<h2><span class="section-number">17.1.7. </span>Schnellschreibweise<a class="headerlink" href="#schnellschreibweise" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">17.1.7. </span>Schnellschreibweise<a class="headerlink" href="#schnellschreibweise" title="Link zu dieser Überschrift">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> erlaubt es uns einen Ausdruck der Form</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">P0</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">A0</span>
@@ -1676,7 +1514,7 @@ even: [True, False, True, False, True, False, True, False, True, False]
 </div>
 </div>
 <div class="section" id="beispiel-quadratische-gleichungen">
-<h2><span class="section-number">17.1.8. </span>Beispiel (quadratische Gleichungen)<a class="headerlink" href="#beispiel-quadratische-gleichungen" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">17.1.8. </span>Beispiel (quadratische Gleichungen)<a class="headerlink" href="#beispiel-quadratische-gleichungen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Sei <span class="math notranslate nohighlight">\(f(x) = ax^2 + bx + c\)</span> mit konstanten Zahlen <span class="math notranslate nohighlight">\(a, b, c \in \mathbb{R}\)</span>. Wir wissen, dass <span class="math notranslate nohighlight">\(f(x) = 0\)</span> für</p>
 <div class="math notranslate nohighlight">
 \[x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</div>
@@ -1743,13 +1581,13 @@ solution for x^2 = 0: (0.0,)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">j4</span><span class="o">/</span><span class="mi">6</span><span class="n">x0yfkp53d99gq8g0hxfl_tw0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_61032</span><span class="o">/</span><span class="mf">439026325.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;solution for -4x + 1 = 0: </span><span class="si">{</span><span class="n">solve_quadratic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">/var/folders/j4/6x0yfkp53d99gq8g0hxfl_tw0000gn/T/ipykernel_61032/2080905473.py</span> in <span class="ni">solve_quadratic</span><span class="nt">(a, b, c)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="c1"># default case =&gt; 2 solutions</span>
-<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">disc</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">disc</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+<span class="nn">Cell In [12], line 13,</span> in <span class="ni">solve_quadratic</span><span class="nt">(a, b, c)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">return</span> <span class="o">-</span><span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># default case =&gt; 2 solutions</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">disc</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">disc</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
 
 <span class="ne">ZeroDivisionError</span>: float division by zero
 </pre></div>
@@ -1832,15 +1670,16 @@ Das wären unendlich viele Zahlen, deshalb werfen wir (<code class="docutils lit
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">j4</span><span class="o">/</span><span class="mi">6</span><span class="n">x0yfkp53d99gq8g0hxfl_tw0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_61032</span><span class="o">/</span><span class="mf">3173015466.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;solution for 0 = 0: </span><span class="si">{</span><span class="n">solve_quadratic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">/var/folders/j4/6x0yfkp53d99gq8g0hxfl_tw0000gn/T/ipykernel_61032/4147477758.py</span> in <span class="ni">solve_quadratic</span><span class="nt">(a, b, c)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>             <span class="c1"># c == 0 =&gt; infinitely many solutions</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>             <span class="k">if</span> <span class="n">is_zero</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">16</span>                 <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Invalid arguments a == b == c == 0! This quadratic equation has infinitely many solutions.&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>             <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>                 <span class="k">return</span> <span class="p">()</span>
+<span class="nn">Cell In [15], line 16,</span> in <span class="ni">solve_quadratic</span><span class="nt">(a, b, c)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">if</span> <span class="n">is_zero</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="c1"># c == 0 =&gt; infinitely many solutions</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="k">if</span> <span class="n">is_zero</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">16</span>         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Invalid arguments a == b == c == 0! This quadratic equation has infinitely many solutions.&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="k">return</span> <span class="p">()</span>
 
 <span class="ne">AttributeError</span>: Invalid arguments a == b == c == 0! This quadratic equation has infinitely many solutions.
 </pre></div>
@@ -1872,11 +1711,9 @@ Das wären unendlich viele Zahlen, deshalb werfen wir (<code class="docutils lit
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="intro.html" title="zurück Seite">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1892,28 +1729,24 @@ Das wären unendlich viele Zahlen, deshalb werfen wir (<code class="docutils lit
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    <div class="extra_footer">
-      <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
-    </div>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      <div class="extra_footer">
+        <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+      </div>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

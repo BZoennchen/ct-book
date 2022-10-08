@@ -12,7 +12,7 @@
 # 
 # Die folgende [Referenz](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) liefert eine ausführliche Erläuterung darüber was Jupyter Notebooks sind, welche wir hier in unseren Worten zusammenfassen.
 # 
-# Ein Jupyter Notebook war zu Anfang in erster Linie dazu gedacht um wissenschaftlichen Code effektiv innerhalb der Wissenschaftsgemeinschaft auszutauschen.
+# Ein Jupyter Notebook war zu Anfang in erster Linie dazu gedacht wissenschaftlichen Code effektiv innerhalb der Wissenschaftsgemeinschaft auszutauschen.
 # In fast allen Naturwissenschaften kommt das wissenschaftliche Rechnen zum Tragen.
 # Forscher entwickeln Computermodelle, simulieren mit Hilfe dieser die Realität und versuchen ausgehend von ihren Ergebnissen Rückschlüsse zu ziehen.
 # Dabei ergibt sich ein großes Problem: Die Reproduzierbarkeit!
@@ -27,35 +27,50 @@
 # 
 # Wir glauben, dass sich Notebooks für den Einstieg eignen, da durch die zellenweise Auswertung (dazu kommen wir gleich) und die Zellenausgabe ein ständiges Feedback während des Lernen des Programmierens gewährleistet werden kann.
 # Anfänger\*innen können kleinteilig unterschiedliche Befehle ausprobieren und erhalten für jede Zelle eine Ausgabe/Feedback.
-# Man könnte auch sagen Notebooks, dass sich Notebooks einfach debuggen.
+# Man könnte auch sagen, dass sich Notebooks einfach debuggen lassen.
 # Notebooks bieten eine hohe Interaktion zwischen Programmierer/*in und Code bzw. der Maschine.
-# Das verringert die Hürde um einfach mal loszulegen und kann zudem motivieren Sie möglicherweise zum sog. *Live Programming* zu bringen.
-# (Beim Live Programming schreiben Sie Code in Echtzeit, während Ihre Kolleg\*innen zusehen und führen diesen auch gleich aus.)
+# Das verringert die Hürde um einfach mal loszulegen und kann zudem motivieren, Sie möglicherweise zum sog. *Live Programming* zu führen.
+# (Beim Live Programming schreiben Sie Code in Echtzeit und führen diesen auch gleich aus, während Ihre Kolleg\*innen zusehen.)
 # 
 # ## Starten
 # 
-# Zunächst muss das ``jupyter`` Paket auf Ihrem System installiert und auffindbar sein.
+# Zunächst muss das ``jupyterlab`` Paket auf Ihrem System (oder ihrer aktuell aktiven virtuellen Umgebung) installiert und auffindbar sein.
 # Ist dem so, können Sie mit
 # 
 # ```sh
-# jupyter notebook [path/to/notebook/file]
+# jupyter lab [path/to/notebook/file]
 # ```
 # 
-# ein bestimmtes Notebook starten und mit 
+# ein bestimmtes die Jupyter-Note starten und mit 
 # 
 # ```sh
-# jupyter notebook
+# jupyter lab
 # ```
 # 
-# ```{figure} ../../figs/python-tutorial/environment/jupyter-start.png
+# ```{figure} ../../figs/python-tutorial/environment/jupyter-lab-start.png
 # ---
 # width: 800px
-# name: fig-jupyter-start-2
+# name: fig-jupyter-lab-start-2
 # ---
+# Die Jupyter-Lab-Umgebung: Auf der linken Seite sehen Sie ihr aktuelles Verzeichnis und rechts können Sie unterschiedliche Anwendungen, z.B., ein Notebook starten.
 # ```
 # 
-# die Jupyter-Umgebung im aktuellen Verzeichnis ausführen.
-# Im Browser können Sie dann zu Ihrem Notebook in einem Unterverzeichnis navigieren oder ein neues Notebook erstellen.
+# die Jupyter-Lab-Umgebung im aktuellen Verzeichnis öffnen.
+# Anschließend können Sie in Ihrem Browser zu Ihrem Notebook in einem Unterverzeichnis navigieren oder ein neues Notebook erstellen.
+# 
+# Starten Sie ein ``Python``-Notebook, müssen Sie möglicherweise einen sog. *Kernel* auswählen.
+# Jede mögliche Auswahl bezieht sich auf eine ``Python``-Umgebung, welche sich im Wesentlichen durch eine ``Python``-Version und bestimmten, von Ihnen installierten Paketen, auszeichnet.
+# Wählen Sie die Umgebung, welche Sie verwenden wollen.
+# 
+# ```{figure} ../../figs/python-tutorial/environment/jupyter-lab-select-kernel.png
+# ---
+# width: 200px
+# name: fig-jupyter-lab-select-kernel
+# ---
+# Auswahl eines Kernels: Uns stehen vier Kernels zur Verfügung.
+# Der oberste in der Liste bezieht sich auf unsere globale ``Python 3.x`` Umgebung.
+# Die anderen beziehen sich auf von uns angelegte virtuelle ``Python``-Umgebungen.
+# ```
 # 
 # ## Zellen
 # 
@@ -72,10 +87,11 @@
 
 
 # berechnet der Computer $2^4 = 16$, lieft das Ergebnis ans Notebook zurück, welches daraufhin das Ergebnis in gewisser Weise ausgibt.
+# Die Kommunikation zwischen dem ``Python``-Interpreter und Ihrem Browser übernimmt der ausgewählte *Kernel*.
 # 
 # Prinzipiell bestehen Jupyter Notebooks aus einer geordneten Liste von *Zellen*.
 # Innerhalb einer Zelle befindet sich eine Art von Inhalt, d.h., entweder Code oder eine Beschreibung (Text, Bilder, Formeln).
-# Befindet sich der Mauszeiger innerhalb einer Zelle und wir drücken ``Strg``+``Enter`` (Mac ``CMD``+``Enter``), so wird diese Zelle ausgewertet (evaluiert).
+# Befindet sich der Cursor innerhalb einer Zelle und wir drücken ``Strg``+``Enter`` (Mac ``CMD``+``Enter``), so wird diese Zelle ausgewertet (evaluiert).
 # Handelt es sich um eine *Code-Zelle* wird der Code von oben nach unten ausgeführt.
 # Handelt es sich stattdessen um eine *Beschreibungs-Zelle* wird aus dieser ``HTML``-Text erzeugt, welcher durch ihren Browser angezeigt wird.
 # 
@@ -86,13 +102,12 @@
 # Ok, so ganz stimmt das nicht.
 # Führen wir eine *Code-Zelle* aus, so wird, nachdem deren Code ausgewertet wurde oder die Auswertung aufgrund eines Fehlers abbricht, das Ergebnis oder die Fehlermeldung auch in ``HTML``-Text umgewandelt.
 # 
-# Außerdem wird auch der unausgewertete Code oder die Beschreibung als ``HTML``-Text übersetzt.
+# Außerdem wird auch der unausgewertete Code oder die Beschreibung in ``HTML``-Text übersetzt.
 # Ihr Browser ist im Stande ``HTML`` anzuzeigen, ganz so wie es Microsoft Word möglich ist, Word-Dokumente anzuzeigen.
 # Alles in allem bietet Ihnen diese Technologie die Möglichkeit Code und dessen Beschreibung direkt in Ihren Browser "hineinzutippen", anzuzeigen, auszuwerten und diese Auswertung ebenfalls anzuzeigen.
-# Es ist als würde Sie eine Schulaufgabe entwerfen, mit dem Computer lösen und das Ergebnis an der richtigen Stelle zu schreiben und das alles über ein einziges Dokument.
+# Es ist als würde Sie eine Schulaufgabe entwerfen, mit dem Computer lösen und das Ergebnis an der richtigen Stelle einfügen und das alles über ein einziges Dokument.
 # 
 # Jupyter Notebooks bieten die Möglichkeit der Dokumentation durch ``Markdown`` und (Latex), sodass Text, mathematische Formeln, wie auch Bilder oder Plots in das Notebook eingefügt werden können.
-# Zusätzlich kann Quellcode, also das Computermodell ebenso im gleichen Dokument platziert werden.
 # Dabei kann sowohl die Dokumentation wie auch der Code über das Dokument hinweg verteilt werden.
 # Zwischen Code können Texte, Bilder und Formeln eingefügt werden.
 # 
@@ -144,26 +159,26 @@ x = 5 * 2 + 6
 # 
 # ## Codeevaluierung
 # 
-# Ohne zuvor mit dem Notebook und der Ausführung von ``Python``-Code experimentiert zu haben wird Ihnen dieser kurze Abschnitt mysteriös vorkommen.
-# Vielleicht lesen Sie sich diesen Teil bei Zeiten erneut.
+# Ohne zuvor mit dem Notebook und der Ausführung von ``Python``-Code experimentiert zu haben, wird Ihnen dieser kurze Abschnitt mysteriös vorkommen.
+# Vielleicht lesen Sie sich diesen Teil bei Zeiten erneut durch.
 # 
-# Wichtig ist festzuhalten, ein Notebook besteht aus *Code-* und *Beschreibungszellen*.
+# Wichtig ist festzuhalten: Ein Notebook besteht aus *Code-* und *Beschreibungszellen*.
 # Für die Auswertung des Codes können wir alle *Beschreibungszellen* ignorieren.
 # Nun lassen Sie uns die Zellen eines konkreten Notebooks von oben nach unten durchnummerieren.
 # 
 # ### Reihenfolge
 # 
-# Da wir Menschen Dokumente von oben nach unten lesen macht es Sinn die einzelnen Codezellen nacheinander von oben nach unten auszuführen.
-# Hierfür bietet die Jupyter-Umgebung auch einen Knopf: ``Cell``->``Run All`` wertet alle Zellen von oben nach unten aus.
+# Da wir Menschen Dokumente von oben nach unten lesen, macht es Sinn die einzelnen Codezellen nacheinander von oben nach unten auszuführen.
+# Hierfür bietet die Jupyter-Umgebung auch einen Knopf: ``Run -> Run All Cells`` wertet alle Zellen von oben nach unten aus.
 # Dabei wird die i-te Zelle erst ausgewertet, wenn die i-1-te Zelle erfolgreich ausgewertet werden konnte.
 # In anderen Worten, der Code wird so ausgewertet als hätten Sie alles in eine einzige Zelle in der gleichen Reihenfolge hineingeschrieben!
 # 
-# ```{figure} ../../figs/python-tutorial/environment/jn-all-cell-evaluation.png
+# ```{figure} ../../figs/python-tutorial/environment/jn-all-cell-evaluation-lab.png
 # ---
 # height: 300px
-# name: fig-jn-all-cell-evaluation
+# name: fig-jn-all-cell-evaluation-lab
 # ---
-# ``Run All`` evaluiert alle Zellen von oben nach unten.
+# Alle Zellen ausführen: ``Run -> Run All Cells`` evaluiert alle Zellen von oben nach unten.
 # ```
 # 
 # Diese Ausführungsreihenfolge ist jedoch nicht verpflichtend.
@@ -218,7 +233,7 @@ x
 # ```{admonition} Auswertungsreihenfolge (Notebooks)
 # :name: remark-evaluation-ordering
 # :class: remark
-# Sie sollten darauf achten, dass ihr Code das gewünschte Resultat erzeugt indem alle Zellen von oben nach unten ausgeführt werden.
+# Sie sollten darauf achten, dass ihr Code das gewünschte Resultat erzeugt indem alle Zellen, nach einem Neustart des Kernels, von oben nach unten ausgeführt werden.
 # ```
 # 
 # ### Wenn es kracht
@@ -240,8 +255,8 @@ x = number + 4
 # Haben Sie keine Angst vor solchen Fehlern.
 # Im Gegenteil, provozieren Sie diese um zu sehen was passiert.
 # 
-# Fehlermeldungen schützten Sie jedoch nur vor offensichtlichen Fehlern.
-# Hin und wieder läuft unser Code, produziert jedoch nicht das richtige Ergebnis, da wir etwas falsch programmiert haben oder unsere Überlegungen - unser [Computational Thinking](sec-what-is-ct) fehlerhaft ist.
+# Fehlermeldungen schützen Sie jedoch nur vor offensichtlichen Fehlern.
+# Hin und wieder läuft unser Code, produziert jedoch nicht das richtige Ergebnis, da wir etwas falsch programmiert haben oder unsere Überlegungen - unser [Computational Thinking](sec-what-is-ct) -- fehlerhaft ist.
 # 
 # Das kann dazu führen, dass unser Code gar nicht terminiert.
 # In einem solchen Fall kommt die Auswertung der Zelle nie zum erliegen.
@@ -257,23 +272,23 @@ x = number + 4
 # Sie sehen an dem kleinen Sternchen ``*``, dass die Zelle ausgewertet wird.
 # Erst wenn dieses verschwindet ist die Auswertung abgeschlossen.
 # 
-# ```{figure} ../../figs/python-tutorial/environment/endless-loop-kernel.png
+# ```{figure} ../../figs/python-tutorial/environment/endless-loop-kernel-lab.png
 # ---
-# width: 350px
-# name: fig-endless-loop-kernel
+# width: 200px
+# name: fig-endless-loop-kernel-lab
 # ---
 # Während der Ausführung sehen wir den Stern ``*``.
 # ```
 # 
-# Um die Auswertung abzubrechen (engl. interrupt) müssen wir den sog. *Kernel* unterbrechen ``Kernel``->``Interrupt``.
-# Stellen Sie sich den *Kernel* vorerst als einen Vermittler zwischen Notebook und ``Python`` vor.
+# Um die Auswertung abzubrechen (engl. interrupt) müssen wir den sog. *Kernel* unterbrechen ``Kernel -> Interrupt``.
+# Stellen Sie sich den *Kernel* vorerst als einen Vermittler zwischen Notebook (bzw. Ihrem Browser) und ``Python`` vor.
 # Beachten Sie, dass eine Unterbrechung des Kernels nicht bedeutet, dass alles so ist wie als hätten wir die Zelle gar nicht ausgeführt.
 # Die Zelle wurde solange ausgeführt, bis wir den Vorgang unterbrochen haben.
 # 
-# ```{figure} ../../figs/python-tutorial/environment/interrupt-kernel.png
+# ```{figure} ../../figs/python-tutorial/environment/interrupt-kernel-lab.png
 # ---
 # height: 300px
-# name: fig-interrupt-kernel
+# name: fig-interrupt-kernel-lab
 # ---
 # Unterbrechung der Ausführung durch ``Kernel``->``Interrupt``.
 # ```

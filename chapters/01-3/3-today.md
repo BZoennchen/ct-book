@@ -186,7 +186,7 @@ Ein Spamfilter befolgt keine fest eingebrannten Regeln, sondern *lernt* was Spam
 Er benötigt *Trainingsdaten* und kann dann neue Daten selbständig *klassifizieren*.
 
 Insbesondere *tiefen neuronalen Netze (DNNs)* konnten erfolgreich für Aufgaben eingesetzt werden, die zuvor als unlösbar galten.
-Zu nennen ist die Sprach- (*Microsoft* 2011) und Bilderkennung (*AlexNet* 2012, {cite}`ciresan:2012`).
+Zu nennen ist die Sprach- (*Microsoft* 2011) und Bilderkennung (*AlexNet* 2012, {cite}`ciresan:2012,krizhevsky:2017`).
 Der Erfolg ist auf drei Faktoren zurückzuführen: 
 Zu nennen ist die hohe Datenmenge.
 *Facebook* sammelt täglich etwa 350 Millionen Bilder und *YouTube* ca. 300 Stunden Videomaterial pro Minute.
