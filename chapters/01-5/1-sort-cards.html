@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.1. Karten sortieren &#8212; Computational Thinking</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,8 +18,12 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -28,34 +31,31 @@
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="../../_static/tabs.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="5.2. Karten sortieren in Python" href="2-sort-cards-with-python.html" />
@@ -67,21 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -90,10 +76,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -108,18 +93,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
-                    Computational Thinking
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Einleitung
  </span>
@@ -271,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Theorie
  </span>
@@ -478,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Python
  </span>
@@ -516,7 +500,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-2/4-modules.html">
-     12.4. Module
+     12.4. Module und Pakete
     </a>
    </li>
   </ul>
@@ -786,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   CT in Aktion
  </span>
@@ -818,7 +802,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Appendix
  </span>
@@ -832,17 +816,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -850,179 +829,79 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/01-5/1-sort-cards.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/01-5/1-sort-cards.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/chapters/01-5/1-sort-cards.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/01-5/1-sort-cards.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/01-5/1-sort-cards.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/01-5/1-sort-cards.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kontext-und-missverstandnisse">
    5.1.1. Kontext und Missverständnisse
@@ -1062,11 +941,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Karten sortieren</h1>
@@ -1075,7 +955,7 @@ title="Print to PDF"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contents </h2>
+                            <h2> Inhalt </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1122,12 +1002,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="karten-sortieren">
-<span id="sec-sorting-cards-alg"></span><h1><span class="section-number">5.1. </span>Karten sortieren<a class="headerlink" href="#karten-sortieren" title="Link zu dieser Überschrift">#</a></h1>
+  <div class="section" id="karten-sortieren">
+<span id="sec-sorting-cards-alg"></span><h1><span class="section-number">5.1. </span>Karten sortieren<a class="headerlink" href="#karten-sortieren" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Stellen Sie sich vor, Sie beginnen in einer gemütlichen Runde einen Spieleabend.
 Sie starten mit einem Kartenspiel.
 Sie erhalten eine Hand voll Karten.
@@ -1160,7 +1039,7 @@ Wie gehen Sie vor?</p>
 </div>
 </div>
 <div class="section" id="kontext-und-missverstandnisse">
-<h2><span class="section-number">5.1.1. </span>Kontext und Missverständnisse<a class="headerlink" href="#kontext-und-missverstandnisse" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">5.1.1. </span>Kontext und Missverständnisse<a class="headerlink" href="#kontext-und-missverstandnisse" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Stets befinden wir uns in einem <em>Kontext</em>.
 Dieser Kontext enthält Wörter denen er eine ganz bestimmte Bedeutung bzw. Abfolge von Wörtern zuweist.
 Fragen wir ein kleines Kind ob es zur Schule geht, meinen wir damit nicht, <em>ob es gerade jetzt auf dem Weg zur Schule ist</em>, sondern <em>ob es bereits eingeschult ist</em>.
@@ -1219,7 +1098,7 @@ Zusammen geben sie uns einen Kontext in dem bestimmte <strong>Was</strong> kein 
 Während des Programmierens erweitern wir unseren Kontext und können die von uns entwickelten <strong>Was</strong> benutzten.</p>
 </div>
 <div class="section" id="bewusstes-denken">
-<h2><span class="section-number">5.1.2. </span>Bewusstes Denken<a class="headerlink" href="#bewusstes-denken" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">5.1.2. </span>Bewusstes Denken<a class="headerlink" href="#bewusstes-denken" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Selbst wenn Sie schon oft Karten sortiert haben, ist anzunehmen, dass Sie eher heuristisch vorgegangen sind und keinen präzise und unmissverständlichen Anweisungen, d. h., einem <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a>, gefolgt sind.
 Das liegt in der Natur von uns Menschen.
 Wir sind darauf trainiert schnelle einigermaßen gute Einschätzungen zu vollziehen.
@@ -1245,7 +1124,7 @@ Ein Problem muss im Detail verstanden werden.
 Begriffe müssen, bezogen auf Ihren verwendeten Kontext, eindeutig definiert sein.</p>
 </div>
 <div class="section" id="kontrollstrukturen-und-variablen">
-<h2><span class="section-number">5.1.3. </span>Kontrollstrukturen und Variablen<a class="headerlink" href="#kontrollstrukturen-und-variablen" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">5.1.3. </span>Kontrollstrukturen und Variablen<a class="headerlink" href="#kontrollstrukturen-und-variablen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Gehen wir davon aus, dass <strong>Karten sortieren</strong> in Ihrem Kontext nicht definiert ist.
 Dann könnte möglicherweise folgender Algorithmus unseren Ansprüchen genügen:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">auf</span> <span class="n">einen</span> <span class="n">Stapel</span><span class="o">.</span> 
@@ -1277,11 +1156,14 @@ Nehmen wir die Beschreibung mit den drei Punkten wörtlich, dann wissen wir nach
 <p>nicht mehr was zu tun ist, bzw. die nächste Anweisung ist nicht mehr ausführbar.
 Außerdem enthalten die drei Punkte keinerlei Information darüber wie festgestellt wird, wann der Prozess abgeschlossen ist.
 Wie wäre es mit folgender präziseren Variante:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">Falls</span> <span class="n">noch</span> <span class="n">mindestens</span> <span class="n">eine</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">ist</span><span class="p">,</span> <span class="n">springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">andernfalls</span> <span class="n">springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="linenos">2</span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">auf</span> <span class="n">den</span> <span class="n">Stapel</span> 
-<span class="linenos">3</span><span class="n">Springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="linenos">4</span><span class="n">Ende</span>
-</pre></div>
+<div class="highlight-default notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><span class="n">Falls</span> <span class="n">noch</span> <span class="n">mindestens</span> <span class="n">eine</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">ist</span><span class="p">,</span> <span class="n">springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">andernfalls</span> <span class="n">springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">auf</span> <span class="n">den</span> <span class="n">Stapel</span> 
+<span class="n">Springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Ende</span>
+</pre></div></td></tr></table></div>
 </div>
 <p>Sofern die neuen Begriffe wie</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -1297,14 +1179,20 @@ Auf einen bestimmten oder jede Karte auf einen anderen?
 Was wir in unserem <em>Kontext</em> benötigen sind eindeutige Namen mit denen wir Objekte Identifizieren/Adressieren können.
 In der Programmierung heißen diese Namen <a class="reference internal" href="../03-3/1-variables.html#sec-variables"><span class="std std-ref">Variablen</span></a>.</p>
 <p>Die neue Version</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">Sei</span> <span class="n">H</span> <span class="n">unsere</span> <span class="n">Hand</span> <span class="n">mit</span> <span class="n">Karten</span>
-<span class="linenos">2</span><span class="n">Sei</span> <span class="n">S</span> <span class="n">ein</span> <span class="n">leerer</span> <span class="n">Stapel</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">Falls</span> <span class="n">noch</span> <span class="n">mindestens</span> <span class="n">eine</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">H</span> <span class="n">ist</span><span class="p">,</span> <span class="n">springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">andernfalls</span> <span class="n">springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">H</span> <span class="n">auf</span> <span class="n">den</span> <span class="n">Stapel</span> <span class="n">S</span>
-<span class="linenos">6</span><span class="n">Springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="linenos">7</span><span class="n">Ende</span>
-</pre></div>
+<div class="highlight-default notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><span class="n">Sei</span> <span class="n">H</span> <span class="n">unsere</span> <span class="n">Hand</span> <span class="n">mit</span> <span class="n">Karten</span>
+<span class="n">Sei</span> <span class="n">S</span> <span class="n">ein</span> <span class="n">leerer</span> <span class="n">Stapel</span>
+
+<span class="n">Falls</span> <span class="n">noch</span> <span class="n">mindestens</span> <span class="n">eine</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">H</span> <span class="n">ist</span><span class="p">,</span> <span class="n">springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">andernfalls</span> <span class="n">springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">H</span> <span class="n">auf</span> <span class="n">den</span> <span class="n">Stapel</span> <span class="n">S</span>
+<span class="n">Springe</span> <span class="n">zu</span> <span class="n">Zeile</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Ende</span>
+</pre></div></td></tr></table></div>
 </div>
 <p>kann sich sehen lassen.
 Diese Beschreibung ist präziser als all unsere Varianten zuvor, allerdings fällt es der menschlichen Wahrnehmung schwerer in sehr kurzer Zeit zu verstehen was vor sich geht.
@@ -1324,7 +1212,7 @@ Visuell sieht es nicht nach einer Wiederholung aus.
 Der Teil, der wiederholt wird, wird nicht hervorgehoben.</p>
 </div>
 <div class="section" id="dekomposition">
-<h2><span class="section-number">5.1.4. </span>Dekomposition<a class="headerlink" href="#dekomposition" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">5.1.4. </span>Dekomposition<a class="headerlink" href="#dekomposition" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Soweit so gut.
 Wovon wir bis jetzt ausgegangen sind ist, dass</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Lege</span> <span class="n">kleinste</span> <span class="n">Karte</span> <span class="n">auf</span> <span class="n">der</span> <span class="n">Hand</span> <span class="n">auf</span> <span class="n">S</span><span class="o">.</span> 
@@ -1361,7 +1249,7 @@ Sie werden vielleicht bemerkt haben, dass die Ausdrücke</p>
 Mit <code class="docutils literal notranslate"><span class="pre">Sei</span> <span class="pre">x</span> <span class="pre">gleich</span> <span class="pre">y</span></code> meinen wir in unserem <em>Kontext</em>, dass der Name (die Variable) <code class="docutils literal notranslate"><span class="pre">x</span></code> der das Objekt <code class="docutils literal notranslate"><span class="pre">o1</span></code> (hier eine Karte) identifiziert, nach der Anweisung, das Objekt <code class="docutils literal notranslate"><span class="pre">o2</span></code> identifiziert, welches derzeit durch den Namen <code class="docutils literal notranslate"><span class="pre">y</span></code> identifiziert wird.</p>
 <div class="figure align-default" id="fig-find-min">
 <a class="reference internal image-reference" href="../../_images/find_min.png"><img alt="../../_images/find_min.png" src="../../_images/find_min.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 5.1 </span><span class="caption-text">Skizze des Algorithmus zum Finden der kleinsten Karte auf der Hand.</span><a class="headerlink" href="#fig-find-min" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 5.1 </span><span class="caption-text">Skizze des Algorithmus zum Finden der kleinsten Karte auf der Hand.</span><a class="headerlink" href="#fig-find-min" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Wer unseren <em>Kontext</em> nur erahnt könnte es mit einem Vergleich, also sind die Karten (Objekte) mit den Namen <code class="docutils literal notranslate"><span class="pre">s</span></code> und <code class="docutils literal notranslate"><span class="pre">k</span></code> gleich, verwechseln.
 Mit einer anderen <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a>, können wir solchen Missverständnissen vorbeugen.
@@ -1385,7 +1273,7 @@ Das kann anfänglich verwirrend sein, da das <code class="docutils literal notra
 </div>
 </div>
 <div class="section" id="mathematisches-denken">
-<h2><span class="section-number">5.1.5. </span>Mathematisches Denken<a class="headerlink" href="#mathematisches-denken" title="Link zu dieser Überschrift">#</a></h2>
+<h2><span class="section-number">5.1.5. </span>Mathematisches Denken<a class="headerlink" href="#mathematisches-denken" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Das mathematische Denken ist eng mit dem Computational Thinking verknüpft.
 In der Mathematik sind alle Objekte und Operationen präzise und unmissverständlich formuliert.
 Zugleich verzichtet man auf überflüssige Informationen und versucht Definitionen so allgemein, d. h., so abstrakt wie möglich zu halten.</p>
@@ -1401,7 +1289,7 @@ Zudem ist die Mathematik bereits entwickelt, wir können uns also vieler Konzept
 Somit drücken wir uns für all jene verständlich aus, die das nötige mathematische Verständnis mitbringen.</p>
 <p>Lassen Sie uns zwei wesentliche Dinge mathematisch betrachten, welche wir beim Sortieren der Karten intuitiv verwenden: (1) Die sog. <a class="reference internal" href="../02-0/4-relation.html#def-math-order"><span class="std std-ref">Ordnungsrelation</span></a> und (2) Objekte in einer Reihenfolge anzuordnen.</p>
 <div class="section" id="ordnung">
-<h3><span class="section-number">5.1.5.1. </span>Ordnung<a class="headerlink" href="#ordnung" title="Link zu dieser Überschrift">#</a></h3>
+<h3><span class="section-number">5.1.5.1. </span>Ordnung<a class="headerlink" href="#ordnung" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Für die Entwicklung eines <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a> zum Sortieren von Karten brauchen wir eine präzise Definition einer <a class="reference internal" href="../02-0/4-relation.html#def-math-order"><span class="std std-ref">Ordnungsrelation</span></a> um Karten vergleichen zu können.</p>
 <p>Ist unsere Menge <span class="math notranslate nohighlight">\(K\)</span> die Menge der Karten, wobei wir zwei Karten mit der gleichen Augenzahl aber unterschiedlicher Farbe als gleich ansehen, dann können wir eine <em>(totale) Ordnungsrelation</em> auf den Karten definieren. Ist zum Beispiel <span class="math notranslate nohighlight">\(K = \{6,7,8,9,10,\text{Bube},\text{Dame},\text{König},\text{Ass}\}\)</span>, so wäre</p>
 <div class="math notranslate nohighlight">
@@ -1410,7 +1298,7 @@ Somit drücken wir uns für all jene verständlich aus, die das nötige mathemat
 Für jedes Element (Tupel) <span class="math notranslate nohighlight">\((a, b)\)</span> der Relation <span class="math notranslate nohighlight">\(R\)</span> gilt: <span class="math notranslate nohighlight">\(a \leq b\)</span>.</p>
 </div>
 <div class="section" id="reihenfolge">
-<h3><span class="section-number">5.1.5.2. </span>Reihenfolge<a class="headerlink" href="#reihenfolge" title="Link zu dieser Überschrift">#</a></h3>
+<h3><span class="section-number">5.1.5.2. </span>Reihenfolge<a class="headerlink" href="#reihenfolge" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Die Karten auf der Hand betrachten wir von links nach rechts.
 Wir nehmen demnach an, dass es genau eine bestimmte <em>Reihenfolge</em> der Karten auf der Hand gibt.
 Karten die auf unserer Hand nebeneinander liegen, liegen auch in unserer <em>Reihenfolge</em> nebeneinander.</p>
@@ -1448,11 +1336,9 @@ Zugleich können sie mehrere gleiche Elemente enthalten.</p>
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="sorting.html" title="zurück Seite">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1468,28 +1354,24 @@ Zugleich können sie mehrere gleiche Elemente enthalten.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    <div class="extra_footer">
-      <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
-    </div>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      <div class="extra_footer">
+        <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+      </div>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

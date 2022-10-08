@@ -11,28 +11,30 @@ Vorzugsweise verwendet man:
 + [Anaconda](https://www.anaconda.com/products/individual)
 + [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (empfohlen)
 
-Der von uns empfohlene Weg ist der über die Verwaltungssoftware **Miniconda**.
+Der von uns empfohlene Weg nutzt die Verwaltungssoftware **Miniconda**.
 Diese Software bietet Ihnen alles was Sie benötigen.
-Installieren Sie lediglich (reines) ``Python`` so müssen Sie für weitere nützliche Dienste möglicherweise weitere Programme installieren.
+Installieren Sie lediglich (reines) ``Python``, so müssen Sie für weitere nützliche Dienste möglicherweise weitere Programme installieren.
 
 ## Unterschied zwischen conda und pip
 
-``pip`` ist ein *Paketverwaltungsprogramm* für ``Python``-Pakete aus dem Python Package Index (PyPI).
+``pip`` ist ein *Paketverwaltungsprogramm* für ``Python``-Pakete aus dem *Python Package Index* (PyPI).
 PyPI ist ein Paketpool, welcher über 100 000 Pakete umfasst.
-Entwickler:innen können Pakete in den Pool hochladen und diese anderen Entwickler:innen und Anwender:innen zur Verfügung stellen.
-So haben wir, zum Beispiel, das ``roboworld``-Paket in PyPI eingepflegt (siehe [roboworld](https://pypi.org/project/roboworld/)).
+Entwickler\*innen können Pakete in den Pool hochladen und diese anderen Entwickler\*innen und Anwender\*innen zur Verfügung stellen.
+So haben wir, zum Beispiel, unser ``roboworld``-Paket in PyPI eingepflegt (siehe [roboworld](https://pypi.org/project/roboworld/)).
 
-``conda`` ist ebenfalls ein *Paketverwaltungsprogramm*, welches vor ``pip`` entwickelt wurde und seine Pakete durch das Anaconda Repository und der Anaconda Cloud bereitstellt.
+``conda`` ist ebenfalls ein *Paketverwaltungsprogramm*, welches vor ``pip`` entwickelt wurde und seine Pakete durch das *Anaconda Repository* und der *Anaconda Cloud* bereitstellt.
 Es wird vorallem für die Programmiersprachen ``Python`` und ``R`` verwendet und löst Paketabhängigkeiten, welche insbesondere im Bereich *Data Science*, eine große Herausforderunge waren.
 
 Im Unterschied zu ``conda`` installiert ``pip`` Ihnen alle benötigten Paketabhängigkeiten, egal ob es *Konflikte* zu bereits installierten Paketen gibt oder nicht.
+Dies kann zu Problemen führen.
 Nehmen wir an Sie haben ein Paket ``A`` welches ein anderes Paket ``B`` in der Version ``1.1.0`` benötigt.
-Sie installieren ein Paket ``C``, welches ebenfalls das Paket ``B`` benötigt, jedoch in der neuesten Version ``1.1.1``.
+Und nehmen wir an Sie installieren ein Paket ``C``, welches ebenfalls das Paket ``B`` benötigt, jedoch in der neuesten Version ``1.1.1``.
 ``pip`` installiert ``B`` in der Version ``1.1.1``, was jedoch dazu führen kann, dass Ihr Code, der auf Paket ``A`` aufbaut, nicht mehr funktioniert oder ein anderes Ergebnis liefert.
 Wurde die Version ``1.1.0`` für unseren Code spezifiziert, würde ``conda`` entweder automatisch herausfinden wie beide Abhängigkeiten eingehalten werden oder melden, dass die Installation nicht möglich ist.
 
-Für diesen Kurs macht es keinen Unterschied ob Sie ``pip`` oder ``conda`` verwenden.
-Es ist auch möglich, und manchmal auch sinnvoll, beide parallel zu nutzen.
+Für diesen Kurs macht es keinen großen Unterschied ob Sie ``pip`` oder ``conda`` verwenden.
+Es ist auch möglich, und manchmal auch notwendig, beide Paketmanager parallel zu nutzen.
+So verwenden wir ``pip``, falls wir Pakete benötigen, die sich nicht im *Anaconda Repository* befinden. 
 
 ## Anaconda / Miniconda (empfohlen)
 
@@ -68,7 +70,7 @@ name: fig-miniconda-installation-gui
 ---
 ```
 
-Ändern Sie den Installationsort nicht, so befindet sich Miniconda in Ihrem Benutzerverzeichnis unter ``opt/miniconda3``, d.h. insgesamt unter ``/Users/[username]/opt/miniconda3``.
+Ändern Sie den Installationsort nicht, so befindet sich Miniconda in Ihrem Benutzerverzeichnis unter ``opt/miniconda3``, d.h. der absolute Pfad wäre ``/Users/[username]/opt/miniconda3``.
 
 ```{figure} ../../figs/python-tutorial/environment/miniconda-location.png
 ---
@@ -96,12 +98,12 @@ name: fig-miniconda-which
 
 prüfen, wo sich Ihr ``Python``, ``pip`` und ``conda`` befinden und welche Pakte auf Ihrem System installiert sind.
 Diese Liste ist kurz, da Sie bisher nur das nötigste installiert haben.
-Um z.B. **Jupyter-Notebooks** auszuführen benötigen Sie das Paket ``jupyter-notebook``, welches Sie zuvor mit dem Paketmanager ``pip`` installieren müssen.
+Um z.B. **Jupyter-Notebooks** auszuführen benötigen Sie das Paket ``jupyter`` bzw. ``jupyterlab``, welches Sie zuvor mit dem Paketmanager ``conda`` oder ``pip`` installieren müssen.
 
 ### Paketverwaltung mit conda
 
 Mit dem Programm ``conda`` können Anaconda bzw. Miniconda ansprechen.
-Die Befehle im vergleich zu ``pip`` sind nahezu identisch!
+Im Vergleich zu ``pip`` sind die Befehle nahezu identisch!
 
 #### conda installiert?
 
@@ -128,13 +130,13 @@ Durch den Aufruf
 conda install [paketename]
 ```
 
-wird die aktuelle Version des Pakets mit dem Namen ``paketename`` in den entsprechenden Installationsordner Ihrer Anaconda bzw. Miniconda-Umgebung installiert.
+wird die aktuelle Version des Pakets mit dem Namen ``paketename`` in den entsprechenden Installationsordner Ihrer Anaconda bzw. Miniconda-Standardumgebung installiert.
 
 ````{admonition} Pakte mit conda installieren
 :class: attention
 :name: attention-conda-pip-install
 
-Sollte das zu installierende Paket sich nicht im ``conda`` repository befinden und somit nicht über ``conda`` installierbar sein, können Sie es dennoch über
+Sollte das zu installierende Paket sich nicht im ``conda`` repository befinden und somit nicht über ``conda`` installierbar sein, können Sie es oft dennoch über
 
 ```
 pip install [paketename]
@@ -144,19 +146,19 @@ installieren. Versuchen Sie jedoch ``conda`` vor ``pip``.
 
 ````
 
-Versuchen wir einmal die Jupyter-Umgebung zum Ausführen der Jupyter-Notebooks zu starten.
+Versuchen wir einmal die Jupyter-Lab-Umgebung zum Ausführen der Jupyter-Notebooks zu starten.
 
 ```sh
-jupyter notebook
+jupyter lab
 ```
 
-Wir erhalten eine Fehlermeldung bzw. ist wird der Befehl nicht erkannt.
+Wir erhalten eine Fehlermeldung bzw. der Befehl ist unserem System nicht bekannt.
 
-Das war zu erwarten, da das Paket ``jupyter`` noch nicht installiert wurde.
-Lassen Sie uns das nachholen.
+Das war zu erwarten, da das Paket ``jupyterlab`` noch nicht installiert wurde.
+Lassen Sie uns das nachholen:
 
 ```sh
-conda install jupyter
+conda install jupyterlab
 ```
 
 Bevor Sie die Installation akzeptieren, wird Ihnen angezeigt welche Pakte (inkl. Abhängigkeiten) installiert werden.
@@ -178,19 +180,37 @@ name: fig-jupyter-install-conda-accept
 ---
 ```
 
-Nun können wir die Jupyter-Umgebung mit 
+Nun könnten wir die Jupyter-Umgebung mit 
 
 ```sh
 jupyter notebook
 ```
 
-starten und es erscheint ein neues Fenster im Browser Ihres Systems.
+starten.
+Es würde folgendes Fenster im Browser Ihres Systems erscheinen.
 
 ```{figure} ../../figs/python-tutorial/environment/jupyter-start.png
 ---
 width: 800px
 name: fig-jupyter-start-2
 ---
+Alte Jupyter-Umgebung.
+```
+
+Wir bevorzugen die alternative Jupyter-Lab-Umgebung, welche Sie mit 
+
+```sh
+jupyter lab
+```
+
+starten können.
+
+```{figure} ../../figs/python-tutorial/environment/jupyter-lab-start.png
+---
+width: 800px
+name: fig-jupyter-lab-start
+---
+Neue Jupyter-Lab-Umgebung.
 ```
 
 ## Plain Python
@@ -270,10 +290,10 @@ pip install [paketename] --user
 wird die aktuelle Version des Pakets mit dem Namen ``paketename`` für Sie als Benutzer (in Ihr Benutzerverzeichnis) installiert.
 Ohne ``--user`` wird das Paket für alle Benutzer installiert und kann nur durch Adminrechte (root-Rechte) genutzt werden.
 
-Versuchen wir einmal die Jupyter-Umgebung zum Ausführen der Jupyter-Notebooks zu starten.
+Versuchen wir einmal die Jupyter-Lab-Umgebung zum Ausführen der Jupyter-Notebooks zu starten.
 
 ```sh
-jupyter notebook
+jupyter lab
 ```
 
 Wir erhalten eine Fehlermeldung bzw. wird der Befehl nicht erkannt.
@@ -282,7 +302,7 @@ Das war zu erwarten, da das Paket ``jupyter`` noch nicht installiert wurde.
 Lassen Sie uns das nachholen.
 
 ```sh
-pip install jupyter --user
+pip install jupyterlab --user
 ```
 
 ```{figure} ../../figs/python-tutorial/environment/jupyter-installation.png
@@ -305,14 +325,14 @@ Dieser Pfad wird auf Ihrem System anders aussehen!
 Nun können wir die Jupyter-Umgebung mit 
 
 ```sh
-jupyter notebook
+jupyter lab
 ```
 
 starten und es erscheint ein neues Fenster im Browser Ihres Systems.
 
-```{figure} ../../figs/python-tutorial/environment/jupyter-start.png
+```{figure} ../../figs/python-tutorial/environment/jupyter-lab-start.png
 ---
 width: 800px
-name: fig-jupyter-start
+name: fig-jupyter-lab-start-3
 ---
 ```

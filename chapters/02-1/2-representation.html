@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>7.3. Repräsentationen &#8212; Computational Thinking</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,8 +18,12 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -28,34 +31,31 @@
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="../../_static/tabs.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="7.4. Manipulation" href="3-manipulation.html" />
@@ -67,21 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -90,10 +76,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -108,18 +93,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
-                    Computational Thinking
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Computational Thinking
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Einleitung
  </span>
@@ -271,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Theorie
  </span>
@@ -478,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Python
  </span>
@@ -516,7 +500,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-2/4-modules.html">
-     12.4. Module
+     12.4. Module und Pakete
     </a>
    </li>
   </ul>
@@ -786,7 +770,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   CT in Aktion
  </span>
@@ -818,7 +802,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Appendix
  </span>
@@ -832,17 +816,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -850,243 +829,102 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/02-1/2-representation.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-1/2-representation.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-1/2-representation.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/chapters/02-1/2-representation.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../../_sources/chapters/02-1/2-representation.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/chapters/02-1/2-representation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Notebook-Datei herunterladen" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/02-1/2-representation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
+                    class="fab fa-github"></i>Repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-1/2-representation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
+        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-1/2-representation.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+        title="Vollbildmodus"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/02-1/2-representation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Starten Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Starten Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Inhalt
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#das-binarsystem">
    7.3.1. Das Binärsystem
@@ -1143,11 +981,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Repräsentationen</h1>
@@ -1156,7 +995,7 @@ title="Print to PDF"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contents </h2>
+                            <h2> Inhalt </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -1220,15 +1059,14 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="reprasentationen">
-<span id="sec-representation"></span><h1><span class="section-number">7.3. </span>Repräsentationen<a class="headerlink" href="#reprasentationen" title="Link zu dieser Überschrift">#</a></h1>
+  <div class="section" id="reprasentationen">
+<span id="sec-representation"></span><h1><span class="section-number">7.3. </span>Repräsentationen<a class="headerlink" href="#reprasentationen" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Bevor wir genauer darauf eingehen wie der Informationskreislauf vollzogen wird, müssen wir uns ansehen wie Computer unterschiedliche Arten von Information (<a class="reference internal" href="#representation-text"><span class="std std-ref">Text</span></a>, <a class="reference internal" href="#representation-sound"><span class="std std-ref">Ton</span></a>, <a class="reference internal" href="#representation-pictures"><span class="std std-ref">Bild</span></a>, usw.) repräsentieren.</p>
 <div class="section" id="das-binarsystem">
-<span id="sec-binary-system"></span><h2><span class="section-number">7.3.1. </span>Das Binärsystem<a class="headerlink" href="#das-binarsystem" title="Link zu dieser Überschrift">#</a></h2>
+<span id="sec-binary-system"></span><h2><span class="section-number">7.3.1. </span>Das Binärsystem<a class="headerlink" href="#das-binarsystem" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Computer arbeiten auf der Basis von zwei Zuständen (0 und 1).
 Man kann sagen sie sprechen die Binärsprache.
 Da die kleinste Informationseinheit, das <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a>, nur zwei Zustände annehmen kann, sind die Operationen äußerst simpel.
@@ -1243,7 +1081,7 @@ Stellen wir uns eine Lampe vor, die zwei Zustände hat.
 Entweder die Lampe ist aus (0) oder sie ist an (1).</p>
 <div class="figure align-default" id="fig-lamps">
 <a class="reference internal image-reference" href="../../_images/lamps.png"><img alt="../../_images/lamps.png" src="../../_images/lamps.png" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 7.1 </span><span class="caption-text">Eine Lampe die entweder aus (links) oder an (rechts) geschaltet sein kann.</span><a class="headerlink" href="#fig-lamps" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 7.1 </span><span class="caption-text">Eine Lampe die entweder aus (links) oder an (rechts) geschaltet sein kann.</span><a class="headerlink" href="#fig-lamps" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Entweder es <strong>fließt Strom hindurch</strong>, was dem Zustand 1 entspricht, oder es <strong>fließt kein Strom hindurch</strong>, was den Zustand 0 darstellt.</p>
 <p>Natürlich könnte man mehr Zustände darstellen indem man misst wie viel Strom fließt oder wie viel Spannung angesetzt ist.
@@ -1296,7 +1134,7 @@ Dieser exponentielle Anstieg ist enorm wichtig.
 Ohne diese Eigenschaft würden die Speicher der Computer sehr schnell volllaufen.</p>
 <div class="figure align-default" id="fig-lamps-example">
 <a class="reference internal image-reference" href="../../_images/lamps-example.png"><img alt="../../_images/lamps-example.png" src="../../_images/lamps-example.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 7.2 </span><span class="caption-text">Zwei der <span class="math notranslate nohighlight">\(2^8 = 256\)</span> möglichen Zustände von acht Lampen.</span><a class="headerlink" href="#fig-lamps-example" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 7.2 </span><span class="caption-text">Zwei der <span class="math notranslate nohighlight">\(2^8 = 256\)</span> möglichen Zustände von acht Lampen.</span><a class="headerlink" href="#fig-lamps-example" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Weshalb verwenden wir aber kein Zahlensystem mit drei oder mehr Zuständen?
 Wie oben erwähnt ist es aus technischer Sicht bisher deutlich einfacher und effizienter mit nur zwei Zuständen zu arbeiten.
@@ -1338,12 +1176,23 @@ Dies folgt aus den Rechengesetzen des Logarithmus:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2-representation_1_0.png" src="../../_images/2-representation_1_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;talk&quot;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="zahlen-im-binarsystem">
-<span id="sec-binary-numbers"></span><h2><span class="section-number">7.3.2. </span>Zahlen im Binärsystem<a class="headerlink" href="#zahlen-im-binarsystem" title="Link zu dieser Überschrift">#</a></h2>
+<span id="sec-binary-numbers"></span><h2><span class="section-number">7.3.2. </span>Zahlen im Binärsystem<a class="headerlink" href="#zahlen-im-binarsystem" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Werfen wir einen genaueren Blick aufs <em>Binärsystem</em> oder auch <em>binäre Zahlensystem</em>.
 Um Zahlen mit <strong>Strom an</strong> und <strong>Strom aus</strong>, also den zwei Zuständen einer Lampe/Transistors/<em>Bit</em> zu repräsentieren, verwenden Computer das <em>Binärsystem</em>.</p>
 <div class="remark admonition" id="remark-number-systems-notation">
@@ -1352,20 +1201,20 @@ Um Zahlen mit <strong>Strom an</strong> und <strong>Strom aus</strong>, also den
 und eine Zahl <span class="math notranslate nohighlight">\(b\)</span> in der Binärdarstellung durch <span class="math notranslate nohighlight">\(b_2\)</span>.</p>
 </div>
 <div class="section" id="naturliche-zahlen">
-<h3><span class="section-number">7.3.2.1. </span>Natürliche Zahlen<a class="headerlink" href="#naturliche-zahlen" title="Link zu dieser Überschrift">#</a></h3>
+<h3><span class="section-number">7.3.2.1. </span>Natürliche Zahlen<a class="headerlink" href="#naturliche-zahlen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>In dem für Sie intuitiven <em>Dezimalsystem</em> schreiben wir eine Zahl mit den Ziffern <span class="math notranslate nohighlight">\(0, 1, 2, 4, 5, 6, 7, 8, 9\)</span> und verwenden eine Basis von <span class="math notranslate nohighlight">\(10\)</span>.
 Zum Beispiel ist <span class="math notranslate nohighlight">\(1871\)</span> gleich</p>
 <div class="math notranslate nohighlight">
 \[1 \cdot 10^3 + 8 \cdot 10^2 + 7 \cdot 10^1 + 1 \cdot 10^0.\]</div>
 <p>Die Zahl, beschrieben als Folge von Ziffern <span class="math notranslate nohighlight">\(d_{n-1} \ldots d_0\)</span> mit <span class="math notranslate nohighlight">\(d_i \in \{0,1,2,3,4,5,6,7,8,9\}\)</span>, hat den Wert</p>
 <div class="math notranslate nohighlight" id="equation-eq-decimal-natural">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-decimal-natural" title="Permalink to this equation">#</a></span>\[d_{n-1} \ldots d_0 
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-decimal-natural" title="Permalink to this equation">¶</a></span>\[d_{n-1} \ldots d_0 
 = d_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 10^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \ldots + d_{\class{hm-lightblue} 0} \cdot 10^{\class{hm-lightblue} 0} 
 = \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} d_{\class{hm-lightblue} i} \cdot 10^{\class{hm-lightblue} i}.\]</div>
 <p>Im <em>Binärsystem</em> verwenden wir hingegen lediglich die Ziffern <span class="math notranslate nohighlight">\(0, 1\)</span> und die Basis <span class="math notranslate nohighlight">\(2\)</span>.
 Eine Zahl als Folge von Ziffern <span class="math notranslate nohighlight">\(b_{n-1} \ldots b_0\)</span> mit <span class="math notranslate nohighlight">\(b_i \in \{0,1\}\)</span> hat den Wert</p>
 <div class="math notranslate nohighlight" id="equation-eq-binary-natural">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-binary-natural" title="Permalink to this equation">#</a></span>\[    b_{n-1} \ldots b_0 
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-binary-natural" title="Permalink to this equation">¶</a></span>\[    b_{n-1} \ldots b_0 
     = b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \ldots + b_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0}
     = \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} b_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i}.\]</div>
 <p>Zum Beispiel hat <span class="math notranslate nohighlight">\(1101_2\)</span> den Wert</p>
@@ -1388,18 +1237,13 @@ Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1871
-</pre></div>
-</div>
-</div>
 </div>
 <p>Ok, wir können also eine Binärzahl (= Zahl in Binärdarstellung) recht einfach in eine Dezimalzahl umwandeln.
 Wie aber wandeln wir eine Dezimalzahl in eine Binärzahl um?</p>
 <p>Nehmen wir als Beispiel die Dezimalzahl <span class="math notranslate nohighlight">\(9\)</span>.
 Wir suchen eine Binärzahl <span class="math notranslate nohighlight">\(b_{n-1}\ldots b_0\)</span>, sodass</p>
 <div class="math notranslate nohighlight" id="equation-eq-nine-to-binary">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-nine-to-binary" title="Permalink to this equation">#</a></span>\[b_{n-1} \cdot 2^{n-1} + \ldots + b_0 \cdot 2^0 = 9\]</div>
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-nine-to-binary" title="Permalink to this equation">¶</a></span>\[b_{n-1} \cdot 2^{n-1} + \ldots + b_0 \cdot 2^0 = 9\]</div>
 <p>ergibt.
 Was passiert wenn wir in Gleichung <a class="reference internal" href="#equation-eq-nine-to-binary">(7.3)</a> beide Seiten durch <span class="math notranslate nohighlight">\(2\)</span> dividieren?</p>
 <div class="math notranslate nohighlight">
@@ -1483,15 +1327,10 @@ Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="ganze-zahlen">
-<span id="sec-integers"></span><h3><span class="section-number">7.3.2.2. </span>Ganze Zahlen<a class="headerlink" href="#ganze-zahlen" title="Link zu dieser Überschrift">#</a></h3>
+<span id="sec-integers"></span><h3><span class="section-number">7.3.2.2. </span>Ganze Zahlen<a class="headerlink" href="#ganze-zahlen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Uns steht kein Minus- oder Pluszeichen zur Verfügung.
 Alles was der Computer kennt sind Bits und Bytes.
 Wollen wir also anstatt der natürlichen Zahlen die ganzen Zahlen repräsentieren, müssen wir das Vorzeichen irgendwie codieren.</p>
@@ -1520,13 +1359,13 @@ Das höchste Bit wird dabei nicht als Vorzeichen, sondern als negativer Anteil i
 \[111_2 = -2^2 \cdot 1 + 2^1 \cdot 1 + 2^0 \cdot 1 = -4 + 2 + 1 = -1.\]</div>
 <p>Aus Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(7.2)</a> wird</p>
 <div class="math notranslate nohighlight" id="equation-eq-binary-integer">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-binary-integer" title="Permalink to this equation">#</a></span>\[\begin{split}  \begin{split}
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-binary-integer" title="Permalink to this equation">¶</a></span>\[\begin{split}  \begin{split}
     b_{n-1} \ldots b_0 &amp;= -b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}2} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}2} + \ldots + b_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0}\\
     &amp;= -b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \sum\limits_{{\class{hm-lightblue} i}=0}^{n-2} b_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i}.
   \end{split}\end{split}\]</div>
 <p>Sofern es sich um eine negative Zahl handelt, d. h. <span class="math notranslate nohighlight">\(b_{n-1} = 1\)</span>, so können wir die Gleichung <a class="reference internal" href="#equation-eq-binary-integer">(7.4)</a> auch umschreiben, indem wir das <a class="reference internal" href="#def-complement"><span class="std std-ref">Komplement</span></a> eines jeden <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> verwenden, daher der Name <em>Zweierkomplement</em>:</p>
 <div class="math notranslate nohighlight" id="equation-eq-binary-integer-complement">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-binary-integer-complement" title="Permalink to this equation">#</a></span>\[\begin{split}  \begin{split}
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-binary-integer-complement" title="Permalink to this equation">¶</a></span>\[\begin{split}  \begin{split}
     b_{n-1} \ldots b_0 &amp;= -\overline{b}_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} - \ldots - \overline{b}_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0} - 1\\
     &amp;= -\left( \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} \overline{b}_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i} \right) - 1,
     \quad  \text{falls $b_{n-1} = 1$,}
@@ -1580,7 +1419,7 @@ Alle höheren Bits bleiben unberührt:</p>
 Und da wir jede <strong>ganze Zahl</strong> als Binärzahl, also als Folge von 0 und 1 darstellen können, können wir all das was wir durch Zahlen repräsentieren können auch durch <strong>Strom an</strong> und <strong>Strom aus</strong> endlich vieler Lampen repräsentieren.</p>
 </div>
 <div class="section" id="addieren-und-subtrahieren">
-<h3><span class="section-number">7.3.2.3. </span>Addieren (und Subtrahieren)<a class="headerlink" href="#addieren-und-subtrahieren" title="Link zu dieser Überschrift">#</a></h3>
+<h3><span class="section-number">7.3.2.3. </span>Addieren (und Subtrahieren)<a class="headerlink" href="#addieren-und-subtrahieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Im folgenden Abschnitt repräsentieren alle Zahlen in Binärdarstellung <strong>ganze Zahlen</strong>.
 Um mit dem <em>Zweierkomplement</em> rechnen zu können müssen wir die Anzahl der Bits fixieren, das heißt, alle Zahlen der Rechnung werden durch gleich viele Bits repräsentiert.
 Verwenden wir 5 Bits so ist <span class="math notranslate nohighlight">\(00011_2 = 3_{10}\)</span> und <span class="math notranslate nohighlight">\(10011_2 = - 13\)</span>.
@@ -1665,7 +1504,7 @@ Subtrahieren wir beispielsweise die Zahl <span class="math notranslate nohighlig
 </div>
 </div>
 <div class="section" id="text">
-<span id="representation-text"></span><h2><span class="section-number">7.3.3. </span>Text<a class="headerlink" href="#text" title="Link zu dieser Überschrift">#</a></h2>
+<span id="representation-text"></span><h2><span class="section-number">7.3.3. </span>Text<a class="headerlink" href="#text" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wollen wir die Buchstaben des Alphabets in Binärdarstellung schreiben, so müssen wir uns darauf einigen welche Binärzahl welchen Buchstaben repräsentiert.
 Zum Beispiel könnten wir folgende Zuordnung verwenden:</p>
 <table class="colwidths-auto table">
@@ -1736,16 +1575,16 @@ In unserem Beispiel benötigt jeder Buchstabe 5 Bits.
 D. h., um einen Text mit, sagen wir 300 Zeichen im Speicher zu halten, brauchen wir die Bauteile für mindestens 1500 Bits was wiederum 187.5 Bytes bzw. 0.1875 <a class="reference external" href="https://en.wikipedia.org/wiki/Kilobyte">kiloByte</a> (kB) (<span class="math notranslate nohighlight">\(10^3\)</span> Byte) und ca. 0.1831 <a class="reference external" href="https://en.wikipedia.org/wiki/Kilobyte">kibiByte</a> (KB/KiB) (<span class="math notranslate nohighlight">\(2^{10}\)</span> Byte) sind.</p>
 </div>
 <div class="section" id="bilder">
-<span id="representation-pictures"></span><h2><span class="section-number">7.3.4. </span>Bilder<a class="headerlink" href="#bilder" title="Link zu dieser Überschrift">#</a></h2>
+<span id="representation-pictures"></span><h2><span class="section-number">7.3.4. </span>Bilder<a class="headerlink" href="#bilder" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="rastergrafiken">
-<span id="pixel-image"></span><h3><span class="section-number">7.3.4.1. </span>Rastergrafiken<a class="headerlink" href="#rastergrafiken" title="Link zu dieser Überschrift">#</a></h3>
+<span id="pixel-image"></span><h3><span class="section-number">7.3.4.1. </span>Rastergrafiken<a class="headerlink" href="#rastergrafiken" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Bilder, Videos und Grafiken in, z. B., Computerspielen, bestehen aus winzig kleinen quadratischen Pixeln.
 Jeder Pixel hat eine bestimmte Farbe.
 Wir nennen diese Grafiken auch <em>Rastergrafiken</em>.
 Farben werden wiederum durch Zahlen repräsentiert.</p>
 <div class="figure align-default" id="fig-pixel-image">
 <a class="reference internal image-reference" href="../../_images/pixel-image.png"><img alt="../../_images/pixel-image.png" src="../../_images/pixel-image.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 7.3 </span><span class="caption-text">Transformation eines Bildes in <em>Bytes</em> bzw. <em>Bits</em>.</span><a class="headerlink" href="#fig-pixel-image" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 7.3 </span><span class="caption-text">Transformation eines Bildes in <em>Bytes</em> bzw. <em>Bits</em>.</span><a class="headerlink" href="#fig-pixel-image" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Eine gängige Möglichkeit ist es eine Farbe durch den Anteil von Rot, Grün und Blau (RGB) zu definieren.
 Somit wird ein Pixel durch drei Zahlen repräsentiert und es ist üblich 256 Rot-, Blau- und Grün- Intensitäten zu verwenden.
@@ -1770,7 +1609,7 @@ Damit wird klar, dass eine enorme Datenmenge entsteht und es verwundert nicht, d
 Ist die Auflösung hoch, folgt daraus wiederum ein großer Energieverbrauch den die Video-Streamingdienste verursachen.</p>
 </div>
 <div class="section" id="vektorgrafiken">
-<span id="svg-image"></span><h3><span class="section-number">7.3.4.2. </span>Vektorgrafiken<a class="headerlink" href="#vektorgrafiken" title="Link zu dieser Überschrift">#</a></h3>
+<span id="svg-image"></span><h3><span class="section-number">7.3.4.2. </span>Vektorgrafiken<a class="headerlink" href="#vektorgrafiken" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Eine weitere sehr interessante Technik ist es ein Bild durch einfache geometrische Objekte zu <strong>beschreiben</strong>.
 Zum Beispiel könnten wir ein Bild durch folgende Zeichenanweisungen repräsentieren:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Color</span><span class="p">(</span><span class="mi">253</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>            <span class="c1"># Wähle Pinsel mit Farbe (253,10,10)</span>
@@ -1820,7 +1659,7 @@ Diese Technik ist eng mit dem Informationsbegriff verknüpft, siehe <a class="re
 </div>
 </div>
 <div class="section" id="ton">
-<span id="representation-sound"></span><h2><span class="section-number">7.3.5. </span>Ton<a class="headerlink" href="#ton" title="Link zu dieser Überschrift">#</a></h2>
+<span id="representation-sound"></span><h2><span class="section-number">7.3.5. </span>Ton<a class="headerlink" href="#ton" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Ton entsteht durch Vibration der Luft.
 Unser Ohr erkennt die oszillierende Druckveränderung und es entsteht Ton.
 Die Oszillation lässt sich als periodische Funktion über die Zeit darstellen.
@@ -1828,7 +1667,7 @@ Ton ist nichts anderes als eine Funktion <span class="math notranslate nohighlig
 Die Frequenz der Oszillation bestimmt die Tonhöhe.</p>
 <div class="figure align-default" id="fig-particle-waves">
 <a class="reference internal image-reference" href="../../_images/particle-waves.png"><img alt="../../_images/particle-waves.png" src="../../_images/particle-waves.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 7.4 </span><span class="caption-text">Ein zyklischess Muster aus niedriger und hoher Moleküldichte.</span><a class="headerlink" href="#fig-particle-waves" title="Link zu diesem Bild">#</a></p>
+<p class="caption"><span class="caption-number">Abb. 7.4 </span><span class="caption-text">Ein zyklischess Muster aus niedriger und hoher Moleküldichte.</span><a class="headerlink" href="#fig-particle-waves" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Wir können keine Funktion mit nur <strong>Strom aus</strong> und <strong>Strom an</strong> repräsentieren, da diese unendlich viele Werte annimmt.
 Wir können von der Funktion aber eine sogenannte <em>Stichprobe (engl. Sample)</em> erstellen.
@@ -1838,7 +1677,7 @@ Je mehr <em>Samples</em> wir pro Sekunde machen und je genauer wir die Amplitude
 <a class="reference internal image-reference" href="../../_images/sound-wave.png"><img alt="../../_images/sound-wave.png" src="../../_images/sound-wave.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Abb. 7.5 </span><span class="caption-text">Transformation des analogen Tons in digitale Samples.
 Links das analoge Signal und rechts die Samples.
-Erst erhöhen wir die Bit-Tiefe (zweite Zeile), dann die Sample-Rate (dritte Zeile).</span><a class="headerlink" href="#fig-sound-wave" title="Link zu diesem Bild">#</a></p>
+Erst erhöhen wir die Bit-Tiefe (zweite Zeile), dann die Sample-Rate (dritte Zeile).</span><a class="headerlink" href="#fig-sound-wave" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Ton wird als Folge von Zahlen repräsentiert.
 Diese Folge transformieren Lautsprecher in Vibration und damit in Ton.
@@ -1908,9 +1747,6 @@ Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möch
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2-representation_7_0.png" src="../../_images/2-representation_7_0.png" />
-</div>
 </div>
 <div class="exercise admonition" id="data-vs-algo-exercise">
 
@@ -1958,11 +1794,9 @@ Das kostet uns nur wenige <em>Bits</em>.</p>
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="2-interpretation.html" title="zurück Seite">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1978,28 +1812,24 @@ Das kostet uns nur wenige <em>Bits</em>.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    <div class="extra_footer">
-      <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
-    </div>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      <div class="extra_footer">
+        <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. </div> </div>
+      </div>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
