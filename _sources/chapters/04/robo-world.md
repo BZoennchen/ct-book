@@ -45,7 +45,7 @@ Ein prominentes Beispiel ist der Roboterstaubsauger, welcher autonom die Wohnung
 
 Das große Feld der künstlichen Intelligenz als auch der Robotik sind interdisziplinäre Gebiete die eng miteinander verwoben sind, denn ein Roboter ist im Grunde eine mechanische Konstruktion versehen mit einer künstlichen Intelligenz.
 Um eine solche künstliche Intelligenz soll es in diesem Kapitel gehen.
-Genauer gesagt beschäftigen wir uns mit der Frage wie ein Roboter durch eine ihm unbekannte Welt navigiert.
+Genauer gesagt beschäftigen wir uns mit der Frage, wie ein Roboter durch eine ihm unbekannte Welt navigieren kann.
 
 ## Die Welt
 
@@ -73,12 +73,12 @@ Einen Gitterpunkt nennen wir **Zelle**.
 Unser Roboter befindet sich in genau einer Zelle und kann von Zelle zu Zelle wandern, sofern die Zelle nicht durch ein anderes unpassierbares Objekt belegt ist.
 Eine Zelle hat einen von folgenden Zuständen:
 
-| Zusand    | Farbe      | Eigenschaft                          | Auswirkung 
-| --------- |----------- | ------------------------------------ | -------------------------------------- |
-| Leer      | Hellgrau   | pasierbar                            | Zelle ist derzeit pasierbar            |
-| Hindernis | Dunkelgrau | unverrückbares, unpassierbares Objet | Zelle ist **für immer** unpassierbaf   |
-| Stein     | Orange     | verrückbares, unpassierbares Objet   | Zelle ist derzeit unpassierbar         |
-| Blatt     | Grün       | verrückbares, passierbares Objet     | Zelle ist derzeit pasierbar            |
+| Zusand    | Farbe      | Eigenschaft                           | Auswirkung 
+| --------- |----------- | ------------------------------------- | -------------------------------------- |
+| Leer      | Hellgrau   | pasierbar                             | Zelle ist derzeit pasierbar            |
+| Hindernis | Dunkelgrau | unverrückbares, unpassierbares Objekt | Zelle ist **für immer** unpassierbaf   |
+| Stein     | Orange     | verrückbares, unpassierbares Objekt   | Zelle ist derzeit unpassierbar         |
+| Blatt     | Grün       | verrückbares, passierbares Objekt     | Zelle ist derzeit pasierbar            |
 
 
 Sowohl der *Roboter* ``robo`` als auch sein *Ziel* können sich auf einer Zelle befinden.
@@ -112,12 +112,12 @@ Jede Zelle hat eine bestimmte Farbe, die ihren aktuellen Zustand beschreibt.
 Die Zelle auf der der Robeter steht ist blau und die Zelle des Ziels ist lila eingefärbt.
 
 Die Welt ist eine statische Welt, welche nur vom Roboter selbst verändert werden kann.
-In anderen Worten, der Zustand einer Zellen bleibt unverändert, außer Ihr Roboter verändert diesen oder seinen eigenen Zustand.
+In anderen Worten, der Zustand einer Zellen bleibt solange unverändert bis Ihr Roboter diesen oder seinen eigenen Zustand verändert.
 
 ## Der Roboter
 
-Der Roboter kann sich durch ein Gebiet bewegen und Objekte aufnehmen, herumtragen und wieder absetzten.
-Außerdem kann er eine Zelle markieren auf der er sich gerade befinden ``set_mark()`` oder eine Markierung von der aktuellen Zelle entfernen ``unset_mark()``.
+Der Roboter kann sich durch ein Gebiet bewegen und verrückbare Objekte aufnehmen, herumtragen und wieder absetzten.
+Außerdem kann er eine Zelle, auf der er sich gerade befinden, mit ``set_mark()`` markieren oder eine Markierung von der aktuellen Zelle entfernen ``unset_mark()``.
 Um dem Roboter Befehle zu erteilen müssen Sie ihn zunächst von der Welt durch
 
 ```{code-cell} python3
@@ -133,7 +133,7 @@ Der Roboter hat eine Ausrichtung, d.h. seine Nase zeigt in eine von vier Himmels
 4. Westen ``'W'``
 
 Der Roboter kann nur geradeaus laufen ``move()`` und sich nur nach links drehen ``turn_left()``.
-Sie können durch ``is_facing_north()`` den Roboter fragen ob er nach Norden ausgerichtet ist.
+Sie können durch ``is_facing_north()`` den Roboter fragen, ob er nach Norden ausgerichtet ist.
 Steht der Roboter an der Stelle ``(i,j)`` kann er durch mehrmaliges Drehen und einmal ``move()`` demnach nur die Zellen
 
 1. ``(i+1,j)``,
@@ -152,11 +152,11 @@ name: fig-robo-world-von-neumann-nh
 Die Von-Neumann-Nachbarschaftsbeziehung.
 ```
 
-Der Roboter kann durch ``is_wall_in_front()`` feststellen ob direkt vor ihm ein Hindernis (oder der Rand des Gebiets) ist und durch ``is_mark_in_front()`` abfragen ob die Zelle vor ihm markiert ist.
+Der Roboter kann durch ``is_wall_in_front()`` feststellen, ob direkt vor ihm ein Hindernis (oder der Rand des Gebiets) ist und durch ``is_mark_in_front()`` abfragen ob die Zelle vor ihm markiert ist.
 
-Durch ``is_stone_in_front()`` können Sie den Roboter fragen ob sich direkt vor ihm ein (verrückbarer) Stein befindet.
-Mit ``take_stone_in_front()`` können Sie diesen Stein aufnehmen und es mit ``put_stone_in_front()`` direkt vor dem Roboter absetzten (falls dies möglich ist).
-Dabei kann der Roboter jedoch nur ein Objekt gleichzeitig tragen.
+Durch ``is_stone_in_front()`` können Sie den Roboter fragen, ob sich direkt vor ihm ein (verrückbarer) Stein befindet.
+Mit ``take_stone_in_front()`` können Sie diesen Stein aufnehmen und ihn mit ``put_stone_in_front()`` direkt vor dem Roboter absetzten (falls dies möglich ist).
+Dabei kann der Roboter jedoch nur einen Stein gleichzeitig tragen.
 
 Im folgenden sehen Sie eine komplette Liste aller Methoden.
 Bitte nicht erschrecken, wir werden nicht alle benötigen und wir werden die notwendigen Methoden wiederholen.
@@ -368,7 +368,7 @@ world.show()
 ```
 
 Unser Roboter kann sich nur nach links drehen und wir können nur feststellen ob er gerade nach Norden ausgerichtet ist.
-Aus diesen beiden primitiven Operationen können wir jedoch komplexere Operationen durch **Komposition** erzeugen.
+Aus diesen beiden primitiven Operationen können wir jedoch kompliziertere Operationen durch **Komposition** erzeugen.
 
 Um den Roboter nach Osten auszurichten, drehen wir ihn solange nach links bis er nach Norden ausgerichtet ist.
 Dann wissen wir, dass dreimal nach links drehen gleich einmal nach rechts drehen entspricht und wir somit den erwünschten Effekt erzielen.
@@ -412,7 +412,7 @@ world.show()
 
 ```{exercise} Zur Wand laufen
 :label: robo-walk-to-wall-exercise
-Extrahieren Sie nun den Code der den Roboter zur Wand laufen lässt in eine Funktion ``walk_to_wall(robo)``.
+Extrahieren Sie nun den Code, der den Roboter zur Wand laufen lässt, in eine Funktion ``walk_to_wall(robo)``.
 ```
 
 ```{code-cell} python3
