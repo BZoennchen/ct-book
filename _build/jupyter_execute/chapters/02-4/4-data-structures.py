@@ -13,7 +13,7 @@
 # Sie dient der Organisation von Daten.
 # Eine Form einer Datenstruktur liefert beispielweise die Struktur eines Briefs.
 # Die Vorgaben wie ein Brief zu schreiben ist, d.h. dessen Strutukr, organisiert seine Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
-# Dabei ist jedoch vordefiniert welche Daten (von welchem [Datentyp](sec-data-types)) strukturiert werden.
+# Dabei ist jedoch vordefiniert welche Daten (von welchem [Datentyp](sec-python-data-types)) strukturiert werden.
 # Ein solche solche Struktur wird in vielen Programmiersprachen durch Klassen realisiert.
 # Diese besprechen wir im Kapitel [Objektorientierte Programmierung](sec-oop).
 # 

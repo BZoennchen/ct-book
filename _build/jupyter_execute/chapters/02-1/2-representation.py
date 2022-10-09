@@ -181,7 +181,7 @@ plt.show()
 # $1001_2$ (binär) und $13_{10}$ (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung ist eine andere.
 # Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welchen Wert $1001_2$ repräsentiert.
 
-# In[ ]:
+# In[2]:
 
 
 # Transformation einer Zahl in Binärdarstellung zu ihrer Decimaldarstellung
@@ -295,7 +295,7 @@ to_decimal([1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1])
 # 
 # Der folgende ``Python`` code wandelt eine Dezimalzahl in eine Binärzahl (als Liste von $0, 1$, gelesen von links nach rechts) um.
 
-# In[ ]:
+# In[3]:
 
 
 # Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung
@@ -737,7 +737,7 @@ to_binary(1871)
 # Es wird eine Sample-Rate von 3, 4, 8, 16, 32 und 64 Hz verwendet.
 # Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möchten Sie zu einem späteren Zeitpunkt analysieren was hier geschieht.
 
-# In[ ]:
+# In[4]:
 
 
 import matplotlib.pyplot as plt
