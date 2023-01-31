@@ -16,7 +16,7 @@ Blicken Sie auf folgende Aufgabe:
 
 ```{exercise} Blinzeln des Alphabets
 :label: fast-and-slow-thinking-exercise
-Ein Schläger $s$ und ein Ball $b$ kosten 1.10 Euro.
+Ein Schläger $s$ und ein Ball $b$ kosten zusammen 1.10 Euro.
 Der Schläger kostet einen Euro mehr als der Ball.
 Wie viel kostet der Ball?
 ```
@@ -65,9 +65,9 @@ Doch können wir immer wieder innehalten und unser *langsames Denken* aktivieren
 
 ## Durch Fehler lernen
 
-Kreativ-logisches Denken ist, wie so vieles im Leben, keine polare Fähigkeit, die entweder vorhanden ist oder nicht.
-Ein gewisses Talent ist hilfreich aber um richtig gut darin zu werden braucht es Übung -- Denkmuskel müssen gefüttert werden.
-Vergleichbar mit den abgespeicherte Bewegungsabläufe im Leistungssport, welche Sie problemlos automatisch abrufen können, erlernen wir im Denksport Muster, welche Sie problemlos erkennen.
+Kreativ-logisches Denken ist, wie so vieles im Leben, keine binäre Fähigkeit, die entweder vorhanden ist oder nicht.
+Ein gewisses Talent ist hilfreich aber um richtig gut darin zu werden braucht es Übung -- die Denkmuskel müssen gefüttert werden.
+Vergleichbar mit den abgespeicherten Bewegungsabläufen im Leistungssport, welche Sie problemlos automatisch abrufen können, erlernen wir im Denksport Muster, welche Sie problemlos erkennen.
 Schachspieler blicken auf einen Spielstand analysieren Muster (Positionen von mehreren Figuren als Ganzes), durch die sie auf neue Spielzüge schließen.
 Das Lesen von mathematischen Ausdrücken wird Ihnen immer leichter Fallen je mehr Ausdrücke Sie lesen.
 Das liegt nicht nur daran, dass Sie besser in Mathe werden, sondern dass Sie die Symbole wie Ihre Muttersprache schneller und besser als Muster erkennen.

@@ -13,13 +13,13 @@ Hier nur ein kleiner Auszug:
 + Computergestütztes Design
 + ...
   
-Auch gibt immer größer werdende Anstrengungen, Computational Thinking wie das Lesen und Schreiben in den modernen Schulunterricht zu integrieren.
+Auch gibt es immer größer werdende Anstrengungen, Computational Thinking wie das Lesen und Schreiben in den modernen Schulunterricht zu integrieren.
 Es scheint heute so wesentlich, dass es zur Vorbereitung auf die große, weite, digitale und mit Algorithmen durchzogene Welt unabdingbar geworden ist. 
 Was aber ist Computational Thinking?
 
 ```{admonition} Lernziel
 :class: learngoals
-In diesem Abschnitt sollen Sie sich darüber Gedanken machen was Computational Thinking eigentlich ist und worin es sich von der Informatik oder Praktiken, wie dem Programmieren, unterscheidet.
+Sie können den Begriff *Computational Thinking* beschreiben, einordnen und gegenüber der *Informatik* und des *Programmierens* abgrenzen.
 ```
 
 Definitionen des Begriffs *Computational Thinking (CT)* gibt es wie Sand am Meer.
@@ -32,7 +32,7 @@ Sie spricht in ihrem Artikel *Computational Thinking* von
 
 Shut et al. {cite}`shute:2017` argumentieren, dass CT benötigt wird um Probleme algoritmisch (mit und ohne Hilfe des Computers) zu lösen.
 CT sei eine Art des Denkens und Handelns, welches sich durch bestimmte Fähigkeiten manifestiert.
-Es basiert auf den zentralen Prinzipien der Informatik.
+Es basiere auf den zentralen Prinzipien der Informatik.
 Es kann als Tätigkeit aufgefasst werden bei der Werkzeuge und Techniken der Informatik angewendet werden, um sowohl über natürliche wie auch künstliche Systeme und Prozesse nachzudenken.
 
 Julian Fraillon et al. beschreiben Computational Thinking als
@@ -44,7 +44,7 @@ Welche Form diese Computer annehmen, d.h., ob Mensch oder Maschine ist sekundär
 Rechnersysteme und Berechnungsmodelle bestärken uns heute neue Probleme anzugehen, die früher als unlösbar galten.
 Die Frage *'Was können wir lösen?'* konkretisierte sich zu *'Was ist [berechenbar](def-computable)?'*
 Eine Frage die wir bis heute nur teilweise beantworten können.
-Außerdem Fragen wir heute *'Was der Mensch eigentlich noch kann, was die Maschine nicht kann?'* und *'Worin ist uns die Maschine überlegen?'*.
+Zudem fragen wir heute *'Was der Mensch eigentlich noch kann, was die Maschine nicht kann?'* und *'Worin ist uns die Maschine überlegen?'*.
 Was ist also der fundamentale Unterschied zwischen *menschlicher* und *künstlicher Intelligenz* und gibt es diesen Unterschied tatsächlich?
 
 *Computational Thinking in seiner grundlegenden Form* ist eine Aktivität, ein Denkprozess, der durch praktische Anwendung feingeschliffen wird.
@@ -60,7 +60,7 @@ In ihrem Artikel *Computational thinking: the developing definition* {cite}`selb
 3. **Muster erkennen** (Strukturen in Informationen entdecken und nutzen)
 4. **Algorithmen entwerfen** (Lösungsstrategien entwerfen und diese formalisiert wiedergeben)
 
-Alle diese Techniken sind miteinander verwoben.
+All diese Techniken sind miteinander verwoben.
 
 *Computational Thinking für Fortgeschrittene* verlangt jedoch nach viel Erfahrung und einem gewissen Wissensstand im jeweiligen Anwendungsgebiet.
 Um wohlklingende Musik algorithmisch zu komponieren oder die Aerodynamik eines Flugzeugs durch Simulationen zu untersuchen, braucht es mehr als Mustererkennung, Dekomposition, Abstraktion und Algorithmen.
@@ -80,13 +80,13 @@ Es warten spannende Fragen auf uns:
 Um die angesprochene Verflechtung zwischen Mensch und Maschine zu begreifen und zu analysieren ist es notwendig wie *Informatiker\*innen*, *Soziolog\*innen* und *Psycholog\*innen* zu denken.
 Die Auswirkungen der Digitalisierung ist in allen Bereichen unseres Lebens spürbar.
 Von der Transformation der Kinos und Musikalben hin zu Streaming-Diensten, der ständigen Erreichbarkeit von Informationen, Meinungen, Diensten und Menschen, bis zur Vorhersage des menschlichen Verhaltens durch die Analyse weniger Mausklicks, ist alles dabei.
-Welche Auswirkungen hat die Interaktion mit dieser informationsverarbeitenden Welt auf uns Menschen?
+Welche Auswirkung hat die Interaktion mit dieser informationsverarbeitenden Welt auf uns Menschen?
 Dienen diese Systeme uns oder dienen wir ihnen?
 Welche Chancen aber auch welche Gefahren und Risiken bringen sie?
 Für diese Fragen ist ein kühler Kopf -- ist Computational Thinking -- eine notwendige Vorraussetzung.
 
 Nach Jeanette Wing bedeutet Computational Thinking **konzepieren**, nicht programmieren.
-Es ist eine **fundamentale Fähigkeit** um in der technologisierten Gesellschaft zurecht zu kommen und keine routinierte Fähigkeit.
+Es ist eine **fundamentale Fähigkeit** um in der technologisierten Gesellschaft zurechtzukommen und keine routinierte Fähigkeit.
 Computational Thinking ist eine **Denkweise des Menschen** nicht der Maschinen.
 Es bedeutet nicht wie ein Computer, sondern wie ein *Informatiker* oder eine *Informatikerin* zu denken {cite}`wing:2006`.
 
@@ -112,4 +112,4 @@ Wir verwenden die Defintion, welche in der ICILS 2018 Studie (International Comp
 *Computational Thinking (CT)* bezieht sich auf die individuelle [und universal anwendbare] Fähigkeit einer Person, eine **Problemstellung** zu **identifizieren** und **abstrakt** zu **modellieren**, sie dabei in **Teilprobleme** oder-schritte zu **zerlegen**, **Lösungsstrategien** zu entwerfen und auszuarbeiten und diese **formalisiert** so **darzustellen**, dass sie von einem Menschen (oder auch einem Computer) verstanden und ausgeführt werden können. -- Universität Paderborn, ICILS 2018
 ```
 
-Es ist eine universelle Aktivität bei der wir (1) Probleme identifizieren, (2) diese modellieren und in kleine Probleme zerlegen, (3) Lösungen entwerfen um schließlich (3) unsere Lösung in einer unmissverständlichen (formalen) Form zu beschreiben.
+Es ist eine universelle Aktivität bei der wir (1) Probleme identifizieren, (2) diese modellieren und in kleine Probleme zerlegen, (3) Lösungen entwerfen um schließlich (4) unsere Lösung in einer unmissverständlichen (formalen) Form zu beschreiben.

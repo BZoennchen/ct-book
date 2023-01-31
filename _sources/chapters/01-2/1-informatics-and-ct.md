@@ -18,8 +18,8 @@ Computational Thinking ist kein bestimmter Wissensstand sondern ein Prozess der 
 Ähnlich wie die Mathematik, die Biologie, die Physik, die Geschichte, die Sprachen und Künste, sollte das Praktizieren des Computational Thinkings heute zur Selbstverständlichkeit gehören.
 Es macht
 + die Abstraktion der Mathematik greifbar, 
-+ wie die Sprachen und Künste fördert es Vorstellungskraft, Kreativität und den Austausch von Ideen und
-+ in der Tradition der Naturwissenschaften hilft es uns die (digitale) Welt besser zu verstehen.
++ wie die Sprachen und Künste fördert es Vorstellungskraft, Kreativität und den Austausch von Ideen und,
++ in der Tradition der Naturwissenschaften, hilft es uns die (digitale) Welt besser zu verstehen.
 
 Heute beeinflussen unzählige Algorithmen unsere Lebensweise und wenn wir keinerlei Grundverständnis für jene Mechanismen haben, verlieren wir nicht nur unsere Selbstbestimmtheit sondern auch unsere Mündigkeit um sinnvolle Entwicklungen der Zukunft mitzugestalten.
 So wie das Lesen wird, sofern die Trajektorie der Entwicklung derart weiter geht, das Computational Thinking für die Teilnahme an der Demokratie unverzichtbar sein.

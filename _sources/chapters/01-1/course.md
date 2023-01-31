@@ -8,12 +8,12 @@ Dieses interaktive Lehrbuch wurde für Studierende der folgenden Bachelorstudien
 4. [Geodata Science](https://sites.hm.edu/mucdai/angebot/geodata_science/studium.de.html)
 
 All diese Studiengänge haben unterschiedliche Schwerpunkte.
-Wir haben uns entschlossen ein allumfassendes Buch zu entwickeln, sodass, je nach Studiengang, manche Inhalte in einer weniger ausführlichen Art und Weise unterrichtet werden können.
+Wir haben uns entschlossen ein allumfassendes Buch zu entwickeln sodass wir, je nach Studiengang, manche Inhalte in einer weniger ausführlichen Art und Weise unterrichten könnnen.
 
-Die Lernziele lassen sich in zwei Kategorien und mehreren Aspekten aufteilen:
+Die Lernziele lassen sich in zwei Kategorien mit jeweils unterschiedlichen Aspekten aufteilen:
 
 1. **Begreifen der Probleme**
-   1. Wissen über und begreifen von digitalen Systemen
+   1. Wissen über, und begreifen von digitalen Informationsverarbeitungssystemen
    2. Formulierung und Analyse von Problemen
    3. Sammlung, Interpretation und Repräsentation relevanter Daten
 2. **Entwicklung von Lösungen** 

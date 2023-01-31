@@ -25,16 +25,15 @@ unterscheiden. Denken Sie nur an die verschiedenen Kinderlieder, die Sie in eine
 
 Was sich mit der Erfindung und fortwährenden Verbesserungen der Computer geändert hat, ist die benötigte Zeit, die einzelne (arithmetische und kombinatorische) Operationen benötigen.
 Primzahlen lassen sich ab einer gewissen Größe nicht mehr händisch berechnen, da der Prozess die Lebenszeit eines Menschen überschreitet.
-Computer verschieben diese Grenzen nach oben.
-Doch gehen auch Sie selbstverständlich irgendwann in die Knie.
+Computer verschieben diese Grenzen nach oben, doch gehen auch Sie selbstverständlich irgendwann in die Knie.
 
 Ähnlich zur Musik und Literatur brauchen wir für die Kommunikation unseres Denkprozesses eine einheitliche Basis, die wir Sprache nennen. 
-Der einzige große Unterschied zur Musik und Literatur ist, dass diese [Programmiersprache](sec-programming-languages) auch von Rechenmaschinen verstanden wird.
+Ein wesentlicher Unterschied zur Musik und Literatur ist, dass diese [Programmiersprache](sec-programming-languages) auch von Rechenmaschinen verstanden wird.
 Egal ob Notenblatt oder Programmiercode, beide Beschreibungen müssen endlich und unmissverständlich sein.
 Dies ist eine notwendige Voraussetzung!
 Das Notenblatt bedarf der richtigen Interpretation, d.h., Musiker\*innen müssen Noten lesen können.
-Genauso verhält es sich zum Programmiercode.
-Ob Mensch oder Maschine ist an und für sich unwichtig, es bedarf der richtigen Interpretation des Codes.
+Genauso verhält es sich beim Programmiercode.
+Ob Mensch oder Maschine ist an und für sich unwichtig, es bedarf lediglich der richtigen [Interpretation](sec-interpretation) des Codes.
 
 Solange sich eine Problemlösung (unsere Musikkomposition) durch Wiederholung ausdrücken lässt, kann sie durch endlich viel Programmcode (Noten) beschrieben und damit (theoretisch) gelöst (aufgeführt) werden.
 Die Komplexität des Programmcodes (die länge des Stücks) entkoppelt sich von der Komplexität der ausgeführten Berechnung (der Aufführung).
@@ -50,5 +49,5 @@ def sum_sqrt(n):
 sum_sqrt(10)
 ```
 
-Die Anzahl der auszuführenden Anweisungen steigt linear mit ``n``, doch der Programmiercode bleibt unverändert.
+Die Anzahl der auszuführenden Anweisungen steigt linear mit der natürlichen Zahl ``n``, doch der Programmiercode bleibt unverändert.
 Hierin liegt die ganze "Magie": **Wiederholung**!
