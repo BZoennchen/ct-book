@@ -4,7 +4,7 @@ Dieses Buch ersetzt weder die Vorlesung noch die Praktika des Kurses.
 Es dient als ergänzendes Lernmaterial der Vor- und Nachbereitung.
 
 Die Teile **EINLEITUNG**, **THEORIE**, **PYTHON** und **CT IN AKTION** sind kategorisch und sollten bis auf die **EINLEITUNG** parallel durchgearbeitet werden.
-Beginnen Sie mit **EINLEITUNG** die Sie der Reihe nach duchgehen können.
+Beginnen Sie mit dem Teil **EINLEITUNG**, welchen Sie der Reihe nach duchgehen können.
 Möglicherweise können Sie einige Kapitel überspringen oder müssen in anderen überdurchschnittlich viel Zeit investieren.
 Z. B. könnte es sein, dass Sie die *[Mathematischen Grundlagen](sec-math)*  zum großen Teil bereits beherrschen.
 
@@ -20,12 +20,12 @@ Wir diskutieren in *[Was ist Information?](sec-information)* unterschiedliche Pe
 All diese Kapitel behandeln keine wesentlichen Bereiche des Computational Thinkings.
 
 Im Buch tauchen immer wieder unterschiedliche Kästchen auf mit denen wir bestimmte Begriffe definieren werden, Hinweise geben, oder kleine Aufgaben einbette.
-Die verwendeten Farben und Symbole der Kästchen signalisieren Ihnen um welche Art von Inhalt es sich handelt.
-Zur Orientierung listen wir alle möglichen Kästchen an dieser Stelle einmal auf:
+Die verwendeten Farben und Symbole der Kästchen signalisieren Ihnen, um welche Art von Inhalt es sich handelt.
+Zur Orientierung listen wir alle möglichen Kästchen an dieser Stelle auf:
 
 ```{exercise} Kleine Aufgabe
 :label: exercise-sample
-Dies ist eine kleine Aufgabe, welche Sie während des durcharbeitens lösen sollten.
+Dies ist eine kleine Aufgabe, welche Sie während des Durcharbeitens lösen sollten.
 ```
 
 ```{admonition} Lernziele
@@ -36,13 +36,13 @@ In diesem Kästchen definieren wir die jeweiligen Lernziele eines Kapitels.
 ```{admonition} Hinweis
 :name: remark-sample
 :class: remark
-Die ist ein allgemeiner Hinweis.
+Dies ist ein allgemeiner Hinweis.
 ```
 
 ```{admonition} Warnung
 :class: attention
 :name: attention-sample
-Die ist ein **wichtige** Hinweis bzw. eine Warnung.
+Dies ist ein **wichtiger** Hinweis bzw. eine Warnung.
 ```
 
 ```{admonition} Definition

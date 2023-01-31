@@ -1,7 +1,7 @@
 # Inhalt
 
 In der **EINLEITUNG** definieren wir den mehrdeutigen Begriff *[Computational Thinking (CT)](sec-what-is-ct)*.
-Wir diskutieren seinen Ursprung, seine Wichtigkeit in einer digitalen Welt und zeigen, auch anhand eines Beispiels, was wir unter dem Begriff verstehen.
+Wir diskutieren seinen Ursprung, seine Wichtigkeit in einer digitalen Welt und zeigen anhand eines Beispiels, was wir unter dem Begriff verstehen.
 
 Im Teil **THEORIE** besprechen wir die Grundlagen der Informationsverarbeitung.
 Wir widmen uns Fragen wie:
@@ -22,4 +22,4 @@ Wir bieten zwar die Grundlagen, um in die Programmierung mit ``Python`` einzuste
 
 Computational Thinking ist eine Aktivität und kann Schlussendlich auch nur als solche gelernt werden.
 In **CT IN AKTION** versuchen wir Sie genau dorthin zu begleiten -- von der Problemanalyse bis hin zur Entwicklung der Lösung.
-Wir besprechen verschiedene praktische Problemstellungen, welche uns zu bekannten und wichten Algorithmen und Datenstrukturen führen.
+Wir besprechen verschiedene praktische Problemstellungen, welche uns zu bekannten und wichtigen Algorithmen und Datenstrukturen führen.

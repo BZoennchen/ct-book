@@ -3,7 +3,7 @@
 Zwar werden Sie in diesem Kurs mit dem Programmieren vertraut gemacht, doch steht es am Ende des Prozesses.
 Der Kurs unterscheidet sich grundlegend von einem Programmierkurs.
 Unsere Aufgabe als Lehrende ist es Sie zum [Computational Thinking](sec-what-is-ct) hinzuführen. 
-Die Programmierung ist hierfür das Werkzeug um Ihre Gedanken in einer unmissverständlichen Form
+Die Programmierung ist hierfür das Werkzeug, um Ihre Gedanken in einer unmissverständlichen Form
 
 1. festzuhalten,
 2. auf Korrektheit zu prüfen,
