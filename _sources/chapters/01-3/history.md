@@ -9,7 +9,7 @@ Sie begegnen uns in Form von Smartphones, Kühlschränken, Uhren, Navigationsger
 ```{admonition} Lernziel
 :class: learngoals
 
-Sie können einen geschichtlichen Bezugs zum Computational Thinking herstellen und dadruch vergangene, derzeitige und zukünftige technologische Entwicklungen in Relation setzen.
+Sie können einen geschichtlichen Bezug zum Computational Thinking herstellen und dadurch vergangene, derzeitige und zukünftige technologische Entwicklungen in Relation setzen.
 ```
 
 Computer sind nicht nur das Resultat, sondern auch ein wesentlicher Beschleuniger der technologischen Entwicklung.
