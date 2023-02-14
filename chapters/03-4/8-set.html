@@ -56,6 +56,7 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="14.9. Wörterbücher - dict" href="9-dict.html" />
@@ -66,6 +67,14 @@
 
     <!-- Google Analytics -->
     
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-JTQKVRRRDB');
+                </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -1066,7 +1075,7 @@ Das heißt, die Laufzeit hängt von der Größe der Liste <code class="docutils 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}
-{&#39;e&#39;, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;f&#39;}
+{&#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;}
 </pre></div>
 </div>
 </div>
@@ -1102,7 +1111,7 @@ Folgender Code führt zu einem Fehler.</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 
@@ -1115,8 +1124,8 @@ Folgender Code führt zu einem Fehler.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;2 in numbers?: </span><span class="si">{</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;-3 in numbers?: </span><span class="si">{</span><span class="o">-</span><span class="mi">3</span> <span class="ow">in</span> <span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;2 in numbers?: </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;-3 in numbers?: </span><span class="si">{</span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">numbers</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1250,7 +1259,7 @@ Damit darf eine Menge keine Listen enthalten, weshalb folgender Code zu einem Fe
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">myset</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]}</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
@@ -1298,7 +1307,7 @@ Deshalb bekommt die Menge von dieser Änderung nichts mit und somit hätten wir 
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">numbers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># remove element</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">numbers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># remove non-existing element causes error</span>
@@ -1332,9 +1341,9 @@ Dies sehen wir, wie so oft, wenn wir uns die <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4529435808
-id of a after difference: 4529435808
-id of c: 4529436480
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4488768416
+id of a after difference: 4488768416
+id of c: 4488766176
 a = {0, 1, 2, 3, 4, 5}
 b = {1, 3, 5, 7, 9, 11}
 c = {0, 2, 4}
@@ -1358,8 +1367,8 @@ c = {0, 2, 4}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4529436256
-id of a after difference: 4529436256
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id of a before difference: 4488767072
+id of a after difference: 4488767072
 a = {0, 2, 4}
 b = {1, 3, 5, 7, 9, 11}
 </pre></div>
@@ -1527,8 +1536,8 @@ Wir verwenden hierfür das Symbol für das Nichts, d.h., <code class="docutils l
 <span class="n">k2</span> <span class="o">=</span> <span class="mi">122</span>
 <span class="n">index2</span> <span class="o">=</span> <span class="n">k2</span> <span class="o">-</span> <span class="mi">100</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k1</span><span class="si">}</span><span class="s1"> in myset?: </span><span class="si">{</span><span class="n">myset</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="o">==</span> <span class="n">k1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k2</span><span class="si">}</span><span class="s1"> in myset?: </span><span class="si">{</span><span class="n">myset</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span> <span class="o">==</span> <span class="n">k2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k1</span><span class="si">}</span><span class="s1"> in myset?: </span><span class="si">{</span><span class="n">myset</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">k1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k2</span><span class="si">}</span><span class="s1"> in myset?: </span><span class="si">{</span><span class="n">myset</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">k2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

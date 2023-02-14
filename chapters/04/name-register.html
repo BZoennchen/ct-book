@@ -56,6 +56,7 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="Bibliography" href="../misc/bibliography.html" />
@@ -66,6 +67,14 @@
 
     <!-- Google Analytics -->
     
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-JTQKVRRRDB');
+                </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -1206,8 +1215,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce6e6f3f-1363-4179-ad94-ec13e453ed3f">
-<span class="eqno">(24.3)<a class="headerlink" href="#equation-ce6e6f3f-1363-4179-ad94-ec13e453ed3f" title="Permalink to this equation">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-534f7794-a19d-4ee6-bb15-8eb41d090f2b">
+<span class="eqno">(24.3)<a class="headerlink" href="#equation-534f7794-a19d-4ee6-bb15-8eb41d090f2b" title="Permalink to this equation">¶</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -1460,7 +1469,7 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Namisnak&#39;, &#39;phone_number&#39;: &#39;0257-0413856&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Moore&#39;, &#39;phone_number&#39;: &#39;0374-0115939&#39;}
 </pre></div>
 </div>
 </div>
@@ -4699,12 +4708,12 @@ Dann durchlaufen wir die Liste zyklisch bis wir einen freien Platz finden oder a
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="s1">&#39;Hans&#39;</span><span class="p">,</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">]</span>
 <span class="n">hashtable</span> <span class="o">=</span> <span class="n">new_hash_table</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;hashtable = </span><span class="si">{</span><span class="n">hashtable</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;contains(&#39;Dieter&#39;, hashtable) = </span><span class="si">{</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># False</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;contains(&#39;Berta&#39;, hashtable) = </span><span class="si">{</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># True</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;search_index(&#39;Dieter&#39;, hashtable) = </span><span class="si">{</span><span class="n">search_index</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 11</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;search_index(&#39;Berta&#39;, hashtable) = </span><span class="si">{</span><span class="n">search_index</span><span class="p">(</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 13</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;insert(&#39;Dieter&#39;, hashtable) = </span><span class="si">{</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># True</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;insert(&#39;Dieter&#39;, hashtable) = </span><span class="si">{</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span> <span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;contains(&#39;Dieter&#39;, hashtable) = </span><span class="si">{</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;contains(&#39;Berta&#39;, hashtable) = </span><span class="si">{</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;search_index(&#39;Dieter&#39;, hashtable) = </span><span class="si">{</span><span class="n">search_index</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 11</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;search_index(&#39;Berta&#39;, hashtable) = </span><span class="si">{</span><span class="n">search_index</span><span class="p">(</span><span class="s1">&#39;Berta&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 13</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;insert(&#39;Dieter&#39;, hashtable) = </span><span class="si">{</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;insert(&#39;Dieter&#39;, hashtable) = </span><span class="si">{</span><span class="n">insert</span><span class="p">(</span><span class="s1">&#39;Dieter&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hashtable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># False</span>
 
 <span class="c1"># fill the list to test if everything works if it is full</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">unique_names_lex</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]:</span>
@@ -5007,14 +5016,14 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;number of elements: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; collisions with hash: </span><span class="si">{</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="nb">hash</span><span class="p">),</span> <span class="nb">hash</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>         <span class="c1"># 16914</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; collisions with index_of: </span><span class="si">{</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span> <span class="n">index_of</span><span class="p">),</span> <span class="n">index_of</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 60751108</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; collisions with hash: </span><span class="si">{</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="p">),</span><span class="w"> </span><span class="nb">hash</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>         <span class="c1"># 16914</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; collisions with index_of: </span><span class="si">{</span><span class="n">collisions</span><span class="p">(</span><span class="n">new_hash_table</span><span class="p">(</span><span class="n">unique_names_lex</span><span class="p">,</span><span class="w"> </span><span class="n">index_of</span><span class="p">),</span><span class="w"> </span><span class="n">index_of</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 60751108</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of elements: 6782
- collisions with hash: 16949
+ collisions with hash: 3385
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> collisions with index_of: 60751108
@@ -5033,39 +5042,39 @@ Sie brauchen den Code nicht verstehen!
 Die Berechnung von Hashwerten sieht oft nach viel Voodoo aus.
 Hier werden Zahlen mit sogenannten <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a>-Verschiebungen manipuliert.
 Man sieht dem Code an, dass er auf Performance und nicht auf Lesbarkeit getrimmt ist.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">long</span><span class="w"></span>
-<span class="nf">string_hash</span><span class="p">(</span><span class="n">PyStringObject</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">register</span><span class="w"> </span><span class="n">Py_ssize_t</span><span class="w"> </span><span class="n">len</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">register</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">register</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">long</span>
+<span class="nf">string_hash</span><span class="p">(</span><span class="n">PyStringObject</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">register</span><span class="w"> </span><span class="n">Py_ssize_t</span><span class="w"> </span><span class="n">len</span><span class="p">;</span>
+<span class="w">    </span><span class="k">register</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="k">register</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 
 <span class="cp">#ifdef Py_DEBUG</span>
-<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">_Py_HashSecret_Initialized</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">_Py_HashSecret_Initialized</span><span class="p">);</span>
 <span class="cp">#endif</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_shash</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_shash</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_shash</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_shash</span><span class="p">;</span>
+<span class="w">    </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
 <span class="w">    </span><span class="cm">/*</span>
 <span class="cm">      We make the hash of the empty string be 0, rather than using</span>
 <span class="cm">      (prefix ^ suffix), since this slightly obfuscates the hash secret</span>
-<span class="cm">    */</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">len</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_shash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_sval</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_Py_HashSecret</span><span class="p">.</span><span class="n">prefix</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">--</span><span class="n">len</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1000003</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">_Py_HashSecret</span><span class="p">.</span><span class="n">suffix</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_shash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">len</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_shash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_sval</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_Py_HashSecret</span><span class="p">.</span><span class="n">prefix</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">--</span><span class="n">len</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1000003</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">Py_SIZE</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">_Py_HashSecret</span><span class="p">.</span><span class="n">suffix</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="o">-&gt;</span><span class="n">ob_shash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
