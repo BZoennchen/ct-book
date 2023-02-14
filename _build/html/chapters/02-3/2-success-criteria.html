@@ -54,6 +54,7 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="9.3. Imperativ und funktional" href="3-imperative-vs-functional.html" />
@@ -64,6 +65,14 @@
 
     <!-- Google Analytics -->
     
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-JTQKVRRRDB');
+                </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -958,7 +967,7 @@ Die Operation wird auf tausenden kleiner Prozessoren parallel ausgeführt.
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                                      </span>
 <span class="w">        </span><span class="n">c</span><span class="p">[</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">id</span><span class="p">];</span><span class="w">      </span>
 <span class="w">    </span><span class="p">}</span><span class="w">                           </span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Viele Sprachen werden einmalig in Forschungsprojekten für ganz spezielle Zwecke von ihren Erfinder*innen benutzt und versinken dann wieder in der Versenkung.
@@ -987,7 +996,7 @@ Dieses Feld ist immernoch stark von <code class="docutils literal notranslate"><
 Leserlichkeit ist in diesem Bereich weniger wichtig als optimaler Code.
 Hier wird jede Methode bis aufs kleinste Detail auf die konkrete Hardware hin optimiert.
 Das geht soweit, dass man sich darüber Gedanken macht in welcher Reihenfolge man bestimmte Rechnung wie</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">u</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>durchführt.</p>
@@ -996,9 +1005,9 @@ Auch setzt ein optimierter Code voraus, dass die Entwickler*innen dieser Optimie
 Schlechter <code class="docutils literal notranslate"><span class="pre">C++</span></code>-Code läuft oft langsamer als schlechter <code class="docutils literal notranslate"><span class="pre">Java</span></code>-Code, da im Fall von <code class="docutils literal notranslate"><span class="pre">Java</span></code> viel automatisch optimiert wird.</p>
 <p>Für die Anwendung der linearen Algebra ist es sinnvoll der Programmiererin oder dem Programmierer die Möglichkeit zu geben, Matrizen zu multiplizieren.
 Im folgenden sehen Sie wie dies in <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> syntaktisch möglich ist.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">2</span><span class="w"> </span><span class="s">4</span><span class="w"> </span><span class="s">7]</span><span class="p">;</span><span class="w"></span>
-<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="s">9</span><span class="w"> </span><span class="s">21</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">8]</span><span class="p">;</span><span class="w"></span>
-<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">2</span><span class="w"> </span><span class="s">4</span><span class="w"> </span><span class="s">7]</span><span class="p">;</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="s">9</span><span class="w"> </span><span class="s">21</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">8]</span><span class="p">;</span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span>
 </pre></div>
 </div>
 <p>Um Webseiten clientseitig zu steuern (d.h. der Code wird lokal auf Ihrem Rechner ausgeführt) bieten Internetbrowser eine eigene Programmiersprache namens <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> an.

@@ -54,6 +54,7 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="12.2. Python ausführen" href="2-run.html" />
@@ -64,6 +65,14 @@
 
     <!-- Google Analytics -->
     
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-JTQKVRRRDB');
+                </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -1105,10 +1114,10 @@ Sie können dabei den Installationsort ändern.</p>
 </div>
 <p><em><strong>Schritt 3: Testen</strong></em><br>
 Nachdem die Installation beendet ist, können Sie mit folgenden Befehlen</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>which python
-which pip
-which conda
-pip list
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>python
+which<span class="w"> </span>pip
+which<span class="w"> </span>conda
+pip<span class="w"> </span>list
 </pre></div>
 </div>
 <div class="figure align-default" id="fig-miniconda-which">
@@ -1148,13 +1157,13 @@ Im Vergleich zu <code class="docutils literal notranslate"><span class="pre">pip
 <p>installieren. Versuchen Sie jedoch <code class="docutils literal notranslate"><span class="pre">conda</span></code> vor <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
 </div>
 <p>Versuchen wir einmal die Jupyter-Lab-Umgebung zum Ausführen der Jupyter-Notebooks zu starten.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter lab
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 <p>Wir erhalten eine Fehlermeldung bzw. der Befehl ist unserem System nicht bekannt.</p>
 <p>Das war zu erwarten, da das Paket <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code> noch nicht installiert wurde.
 Lassen Sie uns das nachholen:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda install jupyterlab
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>jupyterlab
 </pre></div>
 </div>
 <p>Bevor Sie die Installation akzeptieren, wird Ihnen angezeigt welche Pakte (inkl. Abhängigkeiten) installiert werden.</p>
@@ -1167,7 +1176,7 @@ Mit <code class="docutils literal notranslate"><span class="pre">y</span></code>
 <a class="reference internal image-reference" href="../../_images/jupyter-install-conda-accept.png"><img alt="../../_images/jupyter-install-conda-accept.png" src="../../_images/jupyter-install-conda-accept.png" style="width: 600px;" /></a>
 </div>
 <p>Nun könnten wir die Jupyter-Umgebung mit</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter notebook
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook
 </pre></div>
 </div>
 <p>starten.
@@ -1177,7 +1186,7 @@ Es würde folgendes Fenster im Browser Ihres Systems erscheinen.</p>
 <p class="caption"><span class="caption-number">Abb. 12.1 </span><span class="caption-text">Alte Jupyter-Umgebung.</span><a class="headerlink" href="#fig-jupyter-start-2" title="Link zu diesem Bild">¶</a></p>
 </div>
 <p>Wir bevorzugen die alternative Jupyter-Lab-Umgebung, welche Sie mit</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter lab
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 <p>starten können.</p>
@@ -1241,13 +1250,13 @@ Falls nach der Installation von <code class="docutils literal notranslate"><span
 <p>wird die aktuelle Version des Pakets mit dem Namen <code class="docutils literal notranslate"><span class="pre">paketename</span></code> für Sie als Benutzer (in Ihr Benutzerverzeichnis) installiert.
 Ohne <code class="docutils literal notranslate"><span class="pre">--user</span></code> wird das Paket für alle Benutzer installiert und kann nur durch Adminrechte (root-Rechte) genutzt werden.</p>
 <p>Versuchen wir einmal die Jupyter-Lab-Umgebung zum Ausführen der Jupyter-Notebooks zu starten.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter lab
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 <p>Wir erhalten eine Fehlermeldung bzw. wird der Befehl nicht erkannt.</p>
 <p>Das war zu erwarten, da das Paket <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> noch nicht installiert wurde.
 Lassen Sie uns das nachholen.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install jupyterlab --user
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab<span class="w"> </span>--user
 </pre></div>
 </div>
 <div class="figure align-default" id="fig-jupyter-installation">
@@ -1255,14 +1264,14 @@ Lassen Sie uns das nachholen.</p>
 </div>
 <p>In unserem Fall erschien eine Warnung, die besagt dass das Verzeichnis, das die Ausführbaren Dateien der Pakete enthält, nicht im <strong>PATH</strong> enthalten ist.
 Dies holen wir mit</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/bzoennchen/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/bzoennchen/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>nach.
 Dieser Befehl verändert die Umgebungsvariable <strong>PATH</strong> und fügt dieser einen weiteren Pfad <code class="docutils literal notranslate"><span class="pre">/Users/bzoennchen/.local/bin</span></code> zum Durchsuchen an.
 Dieser Pfad wird auf Ihrem System anders aussehen!
 Nun können wir die Jupyter-Umgebung mit</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter lab
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 <p>starten und es erscheint ein neues Fenster im Browser Ihres Systems.</p>
