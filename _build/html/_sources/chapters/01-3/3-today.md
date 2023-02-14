@@ -19,7 +19,7 @@ Erste bekannte Programmiererin Ada Lovelace.
 1847 führte der englische Mathematiker und Philosoph Georg Boole in seinem Buch *The Mathematical Analysis of Logic* die sog. boolsche Algebra ein.
 Insbesondere die *zweielementige boolsche Algebra* mit den Elementen 0 und 1, welche Anwendung in der Aussagenlogik hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
 Die *zweielementige boolsche Algebra* ist Teil jeder modernen Programmiersprache.
-Zusätzlich beruhen auf ihr alle (auch arithmetische) Operationen des Computers.
+Zusätzlich beruhen auf ihr alle (auch arithmetische) Operationen des digitalen Computers.
 
 Um 1930 beobachtete Claude Shannon, dass sich die Regeln der boolschen Algebra auf elektrische Schaltungen übertragen lassen.
 In fast allen digitalen Computern stellen elektrische Schaltungen die physikalische Manifestation boolscher Operationen dar.
@@ -27,9 +27,9 @@ In fast allen digitalen Computern stellen elektrische Schaltungen die physikalis
 Im 19. Jahrhundert konzipierte der Vater des Computers und Ingenieur, Charles Baddage, den ersten mechanischen Computer.
 Baddage war seiner Zeit weit voraus.
 Programme und Daten seiner Maschine sollten per Lochkarten eingelesen werden.
-Die Machine sollte ihre Ergebnisse per Ausdruck ausgeben.
+Die Maschine sollte ihre Ergebnisse per Ausdruck ausgeben.
 Baddage's mechanischer Computer war bereits [Turing-vollständig](def-turing-complete) und konnte daher theoretisch all das berechnen, was heutige Computer berechnen können.
-Da ihm jedoch zu wenig finanzielle Mittel zur Verfügung standen, sollte es erst seinem Sohn im Jahr 1888 gelingen, eine vereinfachte Variante der Machine herzustellen.
+Da es ihm an finanziellen Mitteln fehlte, sollte es erst seinem Sohn im Jahr 1888 gelingen, eine vereinfachte Variante der Maschine herzustellen.
 Zu jener Zeit war die Entwicklung analoger Computer bereits rückläufig.
 
 Die Theoretiker sollten, nach Baddage's Konzeption, zu den Ingenieuren wieder aufstoßen.
@@ -47,9 +47,9 @@ Diese Annahme wird als *[Church-Turing-These](def-church-these)* bezeichnet.
 Trifft die These zu, kann alles was *grundsätzlich berechenbar* ist auch von einem *[Turing-vollständigen](def-turing-complete)* Computer (jedem modernen Computer) berechnet werden.
 
 Über das *Entscheidungsproblem* konnte Turing die Fragestellung des sog. [Halteproblem](def-halting-problem) beantworten.
-Es wird demnach keinen Algorithmus geben können, der für jedes beliebige Programm mit beliebiger Eingabewerte festellen kann ob dieses Programm jemals hält oder nicht.
+Es wird demnach keinen Algorithmus geben können, der für jedes beliebige Programm mit beliebiger Eingabe festellen kann, ob dieses Programm jemals hält oder nicht.
 Für uns als Programmierer\*innen bedeutet dies, dass wir selbst prüfen müssen ob unser Algorithmus das berechnet und vollzieht was vorgesehen ist.
-Es gibt keine Software, die uns für einen beliebigen Quellcode sagen kann ob wir eine Endlosschleife programmiert haben.
+Es gibt keine Software, die uns für einen beliebigen Quellcode garantieren kann, dass wir keine Endlosschleife programmiert haben.
 
 ```{figure} ../../figs/history/goedel-church-turing.png
 ---
@@ -61,17 +61,17 @@ Mathematiker Kurt Gödel, Alonzo Church und Alan Turing, Quellen: [1](https://co
 
 Was aus dem theoretischen Diskurs hervorging waren jedoch nicht nur zerstörte Träume, sondern auch neue fruchtbare Theorien, die das Fundament der Informatik und damit auch des künftigen Computational Thinkings prägen sollten.
 Alan Turing entwickelte mit seiner *[Turingmaschine](info-turingmaschine)* ein sehr konkretes Modell für einen Computer, welcher im Stande war all das zu berechnen, was heute moderne Computer berechnen können.
-Durch jenes Modell kann man noch heute prüfen ob konkrete Ingenieurskonstruktionen den Ansprüchen der *Turing-Vollständigkeit* genügen.
+Durch jenes Modell kann man noch heute prüfen ob konkrete Ingenieurskonstruktionen den Ansprüchen der *[Turing-Vollständigkeit](def-turing-complete)* genügen.
 Schon zu dieser Zeit belegt seine *universellen Turingmaschine* den fließenden Übergang zwischen Hard- und Software.
 Mit seiner Arbeit beeinflusste Turing imperative Programmiersprachen maßgeblich, wohingegen sein Doktorvater, Alonzo Church, mit dem *Lambda-Kalkül* *funktionale Programmiersprachen* ins Leben rufen sollte.
 
 Aus der Frage der Berechenbarkeit folgte unweigerlich die Frage der Komplexität, also wie *schwer* ein Problem ist und wie dies zu messen ist.
 Lassen sich Probleme anhand ihrer *Komplexität* vergleichen?
-Was ist einfacher: Sudoku oder Karten sortieren?
+Was ist einfacher: ein Sudoku lösen oder Karten sortieren?
 Außerdem ergaben sich auch neue philosophische Fragen wie: Ist der menschliche Geist ein Informationsverarbeitungsprozess? Ist gar die Natur ein solcher Prozess oder kann sie zumindest als solcher modelliert werden?
 Ähnliche Fragen entstanden als die Mechanik ihren Siegeszug antrat.
 Zu dieser Zeit stellte man sich das menschliche Gehirn als eine Art Uhr vor.
-Inwieweit sich dieser Computationalismus bestätigt oder widerlegt bleibt abzuwarten.
+Inwieweit sich dieser Computationalismus bestätigt oder widerlegt wird bleibt noch immer abzuwarten.
 
 ```{figure} ../../figs/history/model-of-a-tm.jpeg
 ---
@@ -83,16 +83,16 @@ Eine konkrete Konstruktion einer Turingmaschine, [Quelle](https://de.wikipedia.o
 
 Von den Ingenieuren wurden diese theoretischen Erfolge zunächst kaum beachtet.
 Stattdessen wurde vieles ausprobiert.
-Konrad Zuse stellte 1939 einen der ersten auf Relais basierte elektromechanischen Computer her.
+Konrad Zuse stellte 1939 einen der ersten auf Relais basierten elektromechanischen Computer her.
 Als die Zuverlässigkeit der Relais sichergestellt war, entwickelte Zuse den Z3, welcher mit einer Taktfrequenz von 5-10 Hz Gleitkommazahlen verarbeiten konnte.
-Anders als Baddage's machanischer Computer war der Z3 jedoch nicht *Turing-vollständig*.
+Anders als Baddage's machanischer Computer war der Z3 jedoch nicht *[Turing-vollständig](def-turing-complete)*.
 
 Zwischen 1942 und 1944, während des tobenden zweiten Weltkriegs, wurde die Überlegenheit der Maschinen gegenüber dem menschlichen Computer deutlich.
 Um die Kommunikation der deutschen Wehrmacht zu entschlüsseln wurden große Anstrengungen unternommen.
 Zu dieser Zeit war die Tätigkeit des Programmierens fast ausschließlich in der Hand von Frauen.
-Sie wurde als Bürotätigkeit angesehen, weshalb sie (wegen des damaligen Frauenbildes) an Frauen delegiert wurde.
-Zudem fiel die Bezahlung der Frauen deutlich geringer aus und so konnten Kosten gespart werden.
-Frauen wurden sehr häufig auch als menschliche Computer eingestellt, ihre Erfolge gingen in der Geschichte leider oft unter.
+Sie wurde als Bürotätigkeit angesehen.
+Die Bezahlung der Frauen fiel deutlich geringer aus und so konnten Kosten gespart werden.
+Frauen wurden sehr häufig auch als menschliche Computer eingestellt, ihre Erfolge gingen in der Geschichte allzu oft unter.
 
 ```{figure} ../../figs/history/turing-bomb.jpeg
 ---
@@ -102,12 +102,12 @@ name: turing-bomb
 Die sog. Turing-Bombe, welche für die Entschlüsselung der Enigma verwendet wurde, [Quelle](https://commons.wikimedia.org/wiki/File:Wartime_picture_of_a_Bletchley_Park_Bombe.jpg).
 ```
 
-Zur Zeit des Weltkriegs gelang es den Codeknackern um Alan Turing die Verschlüsselung der Enigma zu schlagen.
+Zur Zeit des Weltkriegs gelang es den Codeknacker\*innen um Alan Turing die Verschlüsselung der Enigma zu schlagen.
 Etwas später wurde auch der Code der Lorenz SZ 40/42 durch Max Newman und seiner Gruppe geknackt.
 Beide Gruppen konnten diesen Erfolg nur durch die Rechenleistung ihrer Maschinen erzielen.
 Daraus ging nicht nur ein wichtiger strategischer Vorteil hervor, sondern auch der erste elektrisch-digitale programmierbare Computer.
 Die USA zogen mit einer sehr ähnlichen Konstruktion, der ENIAC, nach.
-Beide Maschinen waren *Turing-vollständig*.
+Beide Maschinen waren *[Turing-vollständig](def-turing-complete)*.
 Für den Erfolg der ENIAC wurden Kathleen McNulty Mauchly Antonelli, Jean Bartik, Frances Elizabeth Holberton, Marlyn Meltzer, Frances Spence und Ruth Teitelbaum über 50 Jahre nach ihren männlichen Kollegen ausgezeichnet.
 
 ```{figure} ../../figs/history/eniac-programmiererinnen.png
@@ -172,28 +172,32 @@ Skizze eines künstliches neuronalen Netzes.
 ```
 
 Um 1960 wurde eine wichtige Erweiterung der *neuronalen Netze*, die sog. *tiefen neuronalen Netze* (engl. *deep neural networks (DNN)*), vorgeschlagen.
-Anders als herkömmliche neuronale Netze (siehe {numref}`Abbildung {number} <fig-ann>` ) bestehen diese aus mehrere *verschteckten Schichten*.
+Anders als herkömmliche neuronale Netze (siehe {numref}`Abbildung {number} <fig-ann>` ) bestehen diese aus mehrere *versteckten Schichten*.
 Zu jener Zeit fehlten allerdings die Daten und die Rechenleistung, um derartige *DNNs* praktisch nutzen zu können.
-Erst in den 80er Jahren wurden erste *künstliche neuronalen Netze* entwickelt (*LeNet* 2011, {cite}`lecun:1989`).
+Auch hatte men Schwierigkeiten die benötigten Gradienten im Zaum zu halten.
+Erst in den 80er Jahren wurden erste praktikable *künstliche neuronalen Netze* entwickelt (*LeNet* 2011, {cite}`lecun:1989`).
 *ANNs* bilden eine Teilmenge der Algorithmen des *maschinelles Lernen*.
 Tom Mitchell definiert *maschinelles Lernen* wie folgt:
 
-Ein Computerprogramm lernt von der Erfahrung $E$ in Bezug auf eine Klasse von Aufgaben $T$ und einer Bewertungsmetrik $P$, wenn dessen Fähigkeit die Aufgaben $T$ zu lösen, sich in Bezug auf die Bewertungsmetrik $P$, mit der Erfahrung $E$, verbessert. -- Tom Mitchell, 1997
+>Ein Computerprogramm lernt von der Erfahrung $E$ in Bezug auf eine Klasse von Aufgaben $T$ und einer Bewertungsmetrik $P$, wenn dessen Fähigkeit die Aufgaben $T$ zu lösen, sich in Bezug auf die Bewertungsmetrik $P$, mit der Erfahrung $E$, verbessert. -- Tom Mitchell, 1997
 
 Der wesentliche Unterschied zwischen einem klassischen Algorithmus und dem *maschinellen Lernen* ist somit in seinen Augen, dass sich der Algorithmus anhand der Daten, die er verarbeitet, selbständig anpasst -- er lernt von seinen Erfahrungen.
 Ein sehr einfaches Beispiel ist der sog. *Spamfilter*.
 Ein Spamfilter befolgt keine fest eingebrannten Regeln, sondern *lernt* was Spam und was kein Spam ist, indem wir E-Mails als Spam markieren.
 Er benötigt *Trainingsdaten* und kann dann neue Daten selbständig *klassifizieren*.
 
-Insbesondere *tiefen neuronalen Netze (DNNs)* konnten erfolgreich für Aufgaben eingesetzt werden, die zuvor als unlösbar galten.
+Insbesondere *tiefe neuronalen Netze (DNNs)* konnten erfolgreich für Aufgaben eingesetzt werden, die zuvor als unlösbar galten.
 Zu nennen ist die Sprach- (*Microsoft* 2011) und Bilderkennung (*AlexNet* 2012, {cite}`ciresan:2012,krizhevsky:2017`).
+
 Der Erfolg ist auf drei Faktoren zurückzuführen: 
 Zu nennen ist die hohe Datenmenge.
 *Facebook* sammelt täglich etwa 350 Millionen Bilder und *YouTube* ca. 300 Stunden Videomaterial pro Minute.
 Durch die Integration der Technik in unser alltägliches Leben, bekannt unter dem Schlagwort *Internet der Dinge* (engl. *Internet of Things* (IoT)), können und werden weitere Daten von einem anderen Typ bzw. von einer anderen Qualität gesammelt.
+
 Der zweite Faktor ist die hohe Rechenleistung, die uns in den letzten Jahren zur Verfügung stand.
 Sie erlaubt es uns die Algorithmen aus den 80er Jahren auf jene Daten loszulassen.
 Diese Algorithmen sind im Stande Strukturen in jenen Daten zu finden.
+
 Der dritte wesentliche Faktor stellt die anfängliche Erfolgsgeschichte dar.
 Keiner wusste so recht, ob diese Netze tatsächlich nützlich sind.
 Die überraschend guten Resultate führten zu einer Flut an Entwicklungen neuer [Algorithmen](def-algorithm) und Open-Source-Bibliotheken.
@@ -209,15 +213,15 @@ name: fig-ai-context
 Das *maschinelle Lernen* ist wiederum eine Unterkategorie der *künstlichen Intelligenz (KI)* (engl. *artificial intelligence (AI)*).
 Der Begriff wurde 1956 von *John McCarthy* eingeführt.
 
-[Es sei das Ziel von künstlicher Intelligenz], intelligentes menschliches Verhalten durch Computerprogramme (künstlich) nachzubilden. -- John McCarthy
+>[Es sei das Ziel von künstlicher Intelligenz], intelligentes menschliches Verhalten durch Computerprogramme (künstlich) nachzubilden. -- John McCarthy
 
 Die Themen *KI* im Allgemeinen und *maschinelles Lernen* im Besonderen werden uns auch in Zukunft noch beschäftigen.
 Die bisherigen Erfolge sind vielversprechend und möglicherweise können uns diese Algorithmen in vielen Bereichen eine echte Stütze sein.
 Dabei sollten wir einen gesunden Umgang mit KI-Systemen entwickeln.
-Fragen der Ethik, Ökologie und sozialer Gerechtigkeit müssen in diesem Zuge ihren Platz im Diskurs finden.
+Fragen der Ethik, Ökologie und der sozialen Gerechtigkeit müssen in diesem Zuge ihren Platz im Diskurs finden.
 Das *maschinelle Lernen* wird sich auf all jene Bereiche ausbreiten für die wir große Datenmengen gesammelt haben oder sammeln können.
 Anbieter können so ihre Produkte optimieren -- was auch immer das im Einzelnen bedeuten mag.
-KI kann uns möglicherweise Helfen die Erderwärmung zu reduzieren, gleichzeitig benötigen diese daten- und energiehungrigen Algorithmen viele Ressourcen.
+KI kann uns möglicherweise helfen die Erderwärmung zu reduzieren, gleichzeitig benötigen diese daten- und energiehungrigen Algorithmen viele Ressourcen.
 Diese Spannung zwischen Nutzen und Kosten müssen wir beleuchten.
 
 Daten sind heute ein echtes Wirtschaftsgut.
@@ -225,3 +229,4 @@ Uns allen sollte bewusst sein, dass diese immense, oft undurchsichtige Datensamm
 Insbesondere wenn *personenbezogene Daten* gesammelt werden, müssen wir kritisch hinterfragen was mit diesen Daten gemacht wird und ob wir mit dieser Entwicklung einverstanden sind.
 Auch hängt die Qualität der Entscheidung eines lernenden Algorithmus von dessen Erfahrungen, d.h., den (Trainings-)Daten ab.
 Diskriminierungen, welche sich in den Daten finden, werden auch lernende Algorithmen durch die Reproduktion von Stereotypen übernehmen.
+Darüber hinaus muss in einer rechenzentrierten Gesellschaft beleuchtet und kritisch hinterfragt werden, in welcher Gewalt die nötigen Rechenressourcen liegen.

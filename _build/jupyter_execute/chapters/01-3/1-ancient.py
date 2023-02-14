@@ -38,14 +38,17 @@
 # Eines Tages, so erzählt man sich, machte er eine herausragende Entdeckung:
 # Er beobachtet, dass zur gleichen Zeit zwei Obelisken an verschiedenen Orten unterschiedlich lange Schatten auf die Erde werfen.
 # Erstaunlicherweise schloss er daraus auf die Krümmung der Erde.
-# Und da die Griechen von der Perfektion des Kreises überzeugt waren, folgerte Eratosthenes, dass die Erde eine Kugel sei.
+# Und, da die Griechen von der Perfektion des Kreises überzeugt waren, folgerte Eratosthenes, dass die Erde eine Kugel sei.
 # Er war sogar in der Lage die Erdkrümmung relativ genau zu berechnen und dadurch auf den Umfang der Erde zu schließen.
-# Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syren (800 km) ablief und berechnete.
+# Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syren (ca. 800 km) ablief und berechnete.
 
 # In[1]:
 
 
 def sieve_of_eratosthenes(N):
+    """
+    Returns a list of all prime numbers p in ascending order with p < N.
+    """
     N = 100
     prime_sieve = [True for i in range(N)]
     prime_sieve[0] = False
@@ -67,10 +70,12 @@ sieve_of_eratosthenes(100)
 # Wir finden also bereits zu dieser Zeit erste Beispiele für eine computergestützte Forschung.
 # Für lästige und primitive Berechnungen begann man Computer zu beauftragen.
 # Der Begriff *Computer* sollte lange Zeit auf eine Person anstatt auf eine Maschine hindeuten.
-# So wurden bis Ende des zweiten Weltkrieg menschliche Computer, oft Frauen, mit Berechnungen beauftragt.
+# So wurden bis Ende des zweiten Weltkrieg menschliche Computer mit Berechnungen beauftragt.
+# Oftmals wurde diese Aufgabe von schlecht bezahlten Frauen durchgeführt.
+# Das zeigt zum einen die geringe Wertschätzung der von Frauen verrichteten Arbeit, wie auch den Stellenwert der Computer.
 # 
 # Zur Zeit der antiken Griechen begann man die ersten uns überlieferten Algorithmen zu entwickeln.
-# Nach Eratosthenes ist einer der ersten Algorithmen überhaupt benannt, der [Sieb des Eratosthenes](https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes).
+# Nach Eratosthenes ist einer der ersten Algorithmen überhaupt benannt: der [Sieb des Eratosthenes](https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes).
 # Es ist eine clevere Technik um Primzahlen zu berechnen.
 # 
 # ```{figure} ../../figs/history/the-elements.jpg
@@ -97,12 +102,17 @@ gcd(36, 24)
 
 # >[The Euclidean algorithm] is the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has survived to the present day. -- Donald Knuth, The Art of Computer Programming, Vol 2.
 # 
-# Zwischen der Logik und der theoretischen Informatik gibt es einen sehr starken Zusammenhang.
+# Als die praktische Anwendung der Algorithmen gängiger wurde, kamen grundlegende Fragen auf:
+# Was können wir überhaupt alles berechnen?
+# Welche fundamentalen Operationen benötigt eine Maschine um all das berechnen zu können was wir im allgemeinen berechnen können?
+# Wie lange dauert eine Berechnung oder wie schwer ist sie?
+# 
+# Im Zuge dessen stellte sich heraus, dass es zwischen der Logik und der theoretischen Informatik einen sehr starken Zusammenhang gibt.
 # Berechnungen eines Rechners basieren auf logischen Operationen und das theoretische Prinzip des universellen digitalen Computers (der [universellen Turingmaschine](sec-utm)), wie auch wichtige Grenzen dessen was [berechenbar](def-turing-computable) ist, entstand aus den Arbeiten vieler Logiker.
 # 
 # Den Anfang machten auch hier die Griechen.
 # Ihnen haben wir ein System des logischen Schließens, die sog. *Syllogismen des Aristoteles*, zu verdanken.
-# Neben den Syllogismen beschäftigte sich Aristoteles bereits mit dem *Satz vom Widerspruch* und dem *Satz vom ausgeschlossenen Dritten* sowie der Beweistechnik des *indirekten Beweises* -- allesamt fundamentale mathematische Techniken und Fragestellungen.
+# Neben den Syllogismen beschäftigte sich Aristoteles bereits mit dem *Satz vom Widerspruch* und dem *Satz vom ausgeschlossenen Dritten* sowie der Beweistechnik des *indirekten Beweises* -- allesamt fundamentale mathematische Techniken bzw. Fragestellungen.
 # 
 # Zur Zeit des römischen Reichs formulierten die Stoiker das erste aussagelogische Kalkül und auch im Mittelalter sollten sich kleinere Fortschritte im Bereich der Logik ergeben.
 # Jedoch sollten erst im 19. Jahrhundert, durch Mathematiker wie George Boole, Gottlob Frege und Bertrand Russell, weitreichende Fortschritte möglich werden.
@@ -115,12 +125,12 @@ gcd(36, 24)
 # Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russell, Quellen: [1](https://commons.wikimedia.org/wiki/File:George_Boole_color.jpg), [2](https://commons.wikimedia.org/wiki/File:Young_frege.jpg).
 # ```
 # 
-# In China wurde zwischen 200 vor und 100 nach Christus das Mathematikbuch *Jiu Zhang Suanshu* (*Neun Bücher arithmetischer Technik*) verfasst.
+# Im weit entfernten China wurde zwischen 200 vor und 100 nach Christus das Mathematikbuch *Jiu Zhang Suanshu* (*Neun Bücher arithmetischer Technik*) verfasst.
 # In ihm findet sich einer der noch heute bekanntesten Algorithmen zum Lösen linearer Gleichungssystem: Das sog. *Gaußsche Eliminationsverfahren*.
 # Es wurde in Europa 1759 vom italienischen Mathematiker Lagrange publiziert und wohl unabhängig davon vom deutschen Mathematiker Gauß im Jahr 1811 entwickelt.
 # Schon die Babylonier wussten wie sich Gleichungen mit zwei Unbekannten lösen lassen, jedoch waren ihre zu lösenden Probleme durch konkrete oft geometrische Fragestellungen motiviert.
 # Der Fokus auf die Geometrie war für die Anfänge sicherlich förderlich doch schlussendlich für weitere Fortschritte auch hinderlich.
-# Das Besondere am *Gaußschen Eliminationsverfahren* ist seine Abstraktion, die zu einer allgemeinen Lösungstheorie für *lineare Gleichungssysteme* führte.
+# Die Besonderheit beim *Gaußschen Eliminationsverfahren* ist seine Abstraktion, die zu einer allgemeinen Lösungstheorie für *lineare Gleichungssysteme* führte.
 # 
 # Wie bereits erwähnt, dauerte es tausend Jahre bis an den Fortschritt der antiken Griechen wieder angeknüpft wurde.
 # Wir wissen natürlich nicht welches, möglicherweise entscheidende Wissen durch die Zerstörung und Plünderung der Bibliothek von Alexandria verloren gegangen ist.

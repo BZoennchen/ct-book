@@ -10,7 +10,7 @@ Ob das *maschinelle Lernen* uns bei der Energiewende wie auch bei der Eindämmun
 Es zeichnet sich jedoch ein großes Potenzial ab.
 
 Ein Bereich welcher sich unter anderem dem Energieproblem widmet, ist der des *Neuromorphic Computings*.
-Anstatt mühsam *neuronale Netze* auf einer [Von-Neumann-Architektur](sec-von-neumann) zu simulieren ist es Ziel, neuronale Netze direkt in Hardware zu gießen.
+Anstatt mühsam *neuronale Netze* auf einer [Von-Neumann-Architektur](sec-von-neumann) zu simulieren, ist es Ziel neuronale Netze direkt in Hardware zu gießen.
 Das menschliche Gehirn ist zu ganz erstaunlichen Berechnungen fähig und verbraucht dabei gerade einmal 20 Watt.
 Computer basierend auf der Von-Neumann-Architektur und operieren wesentlich anders. 
 Unter anderem benötigen sie durch die strikte Trennung zwischen Speicher und Recheneinheit sehr viel mehr Energie, um Daten zur Recheneinheit und wieder zurück zu befördern.
@@ -25,7 +25,7 @@ Misst man den Zustand des Qubits, zerfällt es mit einer bestimmten Wahrscheinli
 Diese Wahrscheinlichkeiten können durch Logikgatter manipuliert werden.
 Zusätzlich können Qubits verschränkt werden.
 Sehr vereinfacht ausgedrückt bedeutet dies, dass deren Werte beim Messen alle bestimmt werden und voneinander abhängen. 
-Die Änderung der Qibits kann sich somit in *Überlichtgeschwindigkeit* ausbreiten.
+Die Änderung der Qubits kann sich somit in *Überlichtgeschwindigkeit* ausbreiten.
 Es können $2^{10}$ Zustände **gleichzeitig** mit nur $10$ Qubits speichern werden.
 Die Entwicklung von Quantenalgorithmen gestaltet sich allerdings als schwierig, da man die Wahrscheinlichkeiten der verschränkten Qubits verändern muss.
 Auch braucht man häufig mehrere Durchläufe, da das richtige Ergebnis nur zu einer hohen Wahrscheinlichkeit ausgegeben wird.
