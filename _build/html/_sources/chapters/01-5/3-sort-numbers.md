@@ -23,7 +23,6 @@ Wie und wo müsste man den Code ändern um, z. B., Zahlen zu sortieren?
 ```
 
 ```{code-cell} python3
-:tags: [hide-input]
 # Kopie des Codes des vorherigen Abschnitts.
 
 def find_smallest_index(hand):
@@ -49,13 +48,12 @@ def stack_sort(hand):
 Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller()``.
 
 ```{code-cell} python3
+:tags: [hide-cell]
 def is_smaller(number1, number2):
     return number1 < number2
 
 stack_sort([-11, 12, -6, 45, 1, 54, -55, 88])
 ```
-
-
 
 ```{code-cell} python3
 ---

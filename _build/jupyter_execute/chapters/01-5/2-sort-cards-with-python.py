@@ -5,7 +5,7 @@
 # # Karten sortieren in Python
 # 
 # Wir gehen nicht davon aus, dass Sie bereits jetzt alles verstehen was wir im Folgenden programmieren werden.
-# Ziel ist es aufzuzeigen, dass sich der Programmiercode kaum von unserer obigen Beschreibung unterscheidet und wir durch Programmiersprachen einen präzisen und vorgefertigten *Kontext* bekommen.
+# Ziel ist es aufzuzeigen, dass sich der Programmiercode kaum von unserer obigen Beschreibung unterscheidet und wir durch Programmiersprachen einen präzisen und vorgefertigten *Kontext* geschenkt bekommen.
 # Wir müssen diesen lediglich kennenlernen!
 # Was sich also ändert ist der *Kontext*.
 # Dieser ist in unserem Fall durch die Programmiersprache ``Python`` (ihrer [Syntax](def-syntax) und [Semantik](def-semantik)) und der verwendeten ``Python``-Module vorgegeben.
@@ -18,7 +18,7 @@
 # 
 # Im folgenden präsentieren wir eine Lösung.
 # Beachten Sie, dass es uns dabei nicht um die Laufzeit unseres Programms geht.
-# Die Lösung ist weder effizient noch besonders elegant.
+# Die Lösung ist weder effizient noch besonders elegant und das ist für den Anfang auch in Ordnung.
 # 
 # ## Modellierung der Karten und Hand
 # 
@@ -39,7 +39,8 @@
 # Wir modellieren jede Karte als Zeichenkette.
 # Zum Beispiel steht ``'Bube'`` für einen der Buben des Kartendecks.
 # Je nachdem welches Kartendeck Sie verwenden, können Sie die Namen entsprechend anpassen.
-# Wir lassen alle unnötigen Informationen, wie zum Beispiel die Kartenfarbe, weg (*Abstraktion*).
+# Wir lassen alle unnötigen Informationen weg (*Abstraktion*).
+# Darunter fällt beispielweise die Kartenfarbe.
 # 
 # Eine Hand modellieren wir als Liste von Karten (Liste von Zeichenketten).
 # 
@@ -47,10 +48,11 @@
 # :class: python
 # :name: python-list
 # 
-# Eine [Python Liste](sec-list) repräsentiert ein endliches *veränderbares mathematisches Tupel*.
-# Elemente können an jeder Position aus der Liste entfernt, und eingefügt werden.
+# Eine [Python Liste](sec-list) repräsentiert ein endliches **veränderbares** mathematisches Tupel.
+# Elemente können an jeder Position aus der Liste entfernt und eingefügt werden.
 # Die Position eines Elements in der Liste nennen wir *Index*.
-# Beinhaltet die Liste ``lst``, ``n`` Elemente, so sind 
+# 
+# Sei ``lst`` eine Liste und ``n`` die Anzahl ihrer Elemente, so sind 
 # 
 # ```python
 # lst[0], lst[1], ..., lst[n-1]
@@ -91,22 +93,25 @@ hand
 # 
 # ## Modellierung der Ordungsrelation
 # 
-# Auch hier gibt es viele verschiedene Möglichkeiten.
+# Für die Modellierung der Ordnung gibt es ebenfalls viele verschiedene Möglichkeiten.
 # Eine Lösung besteht darin den *Index* eines weiteren Tupels als *Ordnung* zu verwenden.
 # Das Tupel muss lediglich alle möglichen Kartentypen geordnet enthalten.
-# Wir verwenden diesmal keine ``list`` sondern ein unveränderbares ``Python``-``tuple``.
+# Wir verwenden diesmal keine ``list`` sondern ein unveränderbares ``Python`` ``tuple``.
 # 
 # ````{admonition} Tupel (Python)
 # :class: python
 # :name: python-tuple
 # 
-# Ein [Python-Tupel](sec-tuple) repräsentiert ein endliches *unveränderbares mathematisches Tupel*.
+# Ein [Python Tupel](sec-tuple) repräsentiert ein endliches **unveränderbares** mathematisches Tupel.
 # Die Position eines Elements im Tupel nennen wir *Index*.
-# Beinhaltet das Tupel ``tpl``, ``n`` Elemente, so sind 
+# 
+# Sei ``tpl`` ein Tupel und ``n`` die Anzahl seiner Elemente, so sind 
+# 
 # ```python
 # tpl[0], tpl[1], ..., tpl[n-1]
 # ```
-# ihre Elemente.
+# 
+# seine Elemente.
 # ````
 
 # In[4]:

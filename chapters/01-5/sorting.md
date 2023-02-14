@@ -7,5 +7,5 @@ Wir möchten Ihnen mit diesem Beispiel eine Intuition vermitteln, weshalb Comput
 
 ```{admonition} Lernziel
 :class: learngoals
-Computational Thinking anhand eines Beispiel betreiben, um festzustellen wie schwer es ist sich unmissverständlich auszudrücken.
+Sie sind in der Lage einen Algorithmus in Worten niederzuschreiben, den eine andere Person stupide befolgen kann, um damit eine beliebige (endliche) Menge an Karten zu sortieren.
 ```
