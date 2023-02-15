@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.3. 19. Jahrhundert bis heute &#8212; Computational Thinking</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,12 +19,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -31,31 +28,34 @@
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
@@ -76,7 +76,21 @@
                 </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -85,9 +99,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,17 +117,18 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   Computational Thinking
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Computational Thinking
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Einleitung
  </span>
@@ -264,7 +280,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Theorie
  </span>
@@ -471,7 +487,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -779,7 +795,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   CT in Aktion
  </span>
@@ -811,7 +827,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Appendix
  </span>
@@ -825,12 +841,17 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -838,79 +859,167 @@
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
-                title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/01-3/3-today.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/BZoennchen/ct-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/01-3/3-today.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/01-3/3-today.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/01-3/3-today.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/BZoennchen/ct-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Quell-Repository"><i
-                    class="fab fa-github"></i>Repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/01-3/3-today.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Öffnen Sie ein Problem"><i class="fas fa-lightbulb"></i>offenes Thema</button></a>
-        <a class="edit-button" href="https://github.com/BZoennchen/ct-book/edit/master/chapters/01-3/3-today.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Bearbeite diese Seite"><i class="fas fa-pencil-alt"></i>vorschlagen zu bearbeiten</button></a>
-    </div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
 </div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
-        title="Vollbildmodus"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-        </div>
     </div>
-</div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>19. Jahrhundert bis heute</h1>
@@ -921,11 +1030,12 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="jahrhundert-bis-heute">
-<span id="sec-history-today"></span><h1><span class="section-number">3.3. </span>19. Jahrhundert bis heute<a class="headerlink" href="#jahrhundert-bis-heute" title="Link zu dieser Überschrift">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="jahrhundert-bis-heute">
+<span id="sec-history-today"></span><h1><span class="section-number">3.3. </span>19. Jahrhundert bis heute<a class="headerlink" href="#jahrhundert-bis-heute" title="Link zu dieser Überschrift">#</a></h1>
 <p>1842 entwarf die britische Mathematikerin Ada Lovelace einen Algorithmus, mit welchem Bernoulli-Zahlen mit einer Rechenmaschine (Analytical Engine) berechnet werden konnten.
 Die Maschine wurde zu ihrer Lebzeit nie gebaut.
 Ada Lovelace gilt heute als die erste Programmiererin und wurde mit dem Namen der Programmiersprache <code class="docutils literal notranslate"><span class="pre">Ada</span></code> gewürdigt.</p>
@@ -933,7 +1043,7 @@ Ada Lovelace gilt heute als die erste Programmiererin und wurde mit dem Namen de
 Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia dar, welche aus politisch-religösen Gründen in Alexandria ermordet wurde.</p>
 <div class="figure align-default" id="ada-lovelace">
 <a class="reference internal image-reference" href="../../_images/ada-lovelace.jpeg"><img alt="../../_images/ada-lovelace.jpeg" src="../../_images/ada-lovelace.jpeg" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 3.6 </span><span class="caption-text">Erste bekannte Programmiererin Ada Lovelace.</span><a class="headerlink" href="#ada-lovelace" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.6 </span><span class="caption-text">Erste bekannte Programmiererin Ada Lovelace.</span><a class="headerlink" href="#ada-lovelace" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>1847 führte der englische Mathematiker und Philosoph Georg Boole in seinem Buch <em>The Mathematical Analysis of Logic</em> die sog. boolsche Algebra ein.
 Insbesondere die <em>zweielementige boolsche Algebra</em> mit den Elementen 0 und 1, welche Anwendung in der Aussagenlogik hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
@@ -964,7 +1074,7 @@ Für uns als Programmierer*innen bedeutet dies, dass wir selbst prüfen müssen 
 Es gibt keine Software, die uns für einen beliebigen Quellcode garantieren kann, dass wir keine Endlosschleife programmiert haben.</p>
 <div class="figure align-default" id="goedel-church-turing">
 <a class="reference internal image-reference" href="../../_images/goedel-church-turing.png"><img alt="../../_images/goedel-church-turing.png" src="../../_images/goedel-church-turing.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 3.7 </span><span class="caption-text">Mathematiker Kurt Gödel, Alonzo Church und Alan Turing, Quellen: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:1925_kurt_g%C3%B6del.png">1</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg">2</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg">3</a>.</span><a class="headerlink" href="#goedel-church-turing" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.7 </span><span class="caption-text">Mathematiker Kurt Gödel, Alonzo Church und Alan Turing, Quellen: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:1925_kurt_g%C3%B6del.png">1</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg">2</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg">3</a>.</span><a class="headerlink" href="#goedel-church-turing" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Was aus dem theoretischen Diskurs hervorging waren jedoch nicht nur zerstörte Träume, sondern auch neue fruchtbare Theorien, die das Fundament der Informatik und damit auch des künftigen Computational Thinkings prägen sollten.
 Alan Turing entwickelte mit seiner <em><a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschine</span></a></em> ein sehr konkretes Modell für einen Computer, welcher im Stande war all das zu berechnen, was heute moderne Computer berechnen können.
@@ -980,7 +1090,7 @@ Zu dieser Zeit stellte man sich das menschliche Gehirn als eine Art Uhr vor.
 Inwieweit sich dieser Computationalismus bestätigt oder widerlegt wird bleibt noch immer abzuwarten.</p>
 <div class="figure align-default" id="model-of-a-tm">
 <a class="reference internal image-reference" href="../../_images/model-of-a-tm.jpeg"><img alt="../../_images/model-of-a-tm.jpeg" src="../../_images/model-of-a-tm.jpeg" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 3.8 </span><span class="caption-text">Eine konkrete Konstruktion einer Turingmaschine, <a class="reference external" href="https://de.wikipedia.org/wiki/Turingmaschine#/media/Datei:Model_of_a_Turing_machine.jpg">Quelle</a>.</span><a class="headerlink" href="#model-of-a-tm" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.8 </span><span class="caption-text">Eine konkrete Konstruktion einer Turingmaschine, <a class="reference external" href="https://de.wikipedia.org/wiki/Turingmaschine#/media/Datei:Model_of_a_Turing_machine.jpg">Quelle</a>.</span><a class="headerlink" href="#model-of-a-tm" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Von den Ingenieuren wurden diese theoretischen Erfolge zunächst kaum beachtet.
 Stattdessen wurde vieles ausprobiert.
@@ -995,7 +1105,7 @@ Die Bezahlung der Frauen fiel deutlich geringer aus und so konnten Kosten gespar
 Frauen wurden sehr häufig auch als menschliche Computer eingestellt, ihre Erfolge gingen in der Geschichte allzu oft unter.</p>
 <div class="figure align-default" id="turing-bomb">
 <a class="reference internal image-reference" href="../../_images/turing-bomb.jpeg"><img alt="../../_images/turing-bomb.jpeg" src="../../_images/turing-bomb.jpeg" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 3.9 </span><span class="caption-text">Die sog. Turing-Bombe, welche für die Entschlüsselung der Enigma verwendet wurde, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Wartime_picture_of_a_Bletchley_Park_Bombe.jpg">Quelle</a>.</span><a class="headerlink" href="#turing-bomb" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.9 </span><span class="caption-text">Die sog. Turing-Bombe, welche für die Entschlüsselung der Enigma verwendet wurde, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Wartime_picture_of_a_Bletchley_Park_Bombe.jpg">Quelle</a>.</span><a class="headerlink" href="#turing-bomb" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Zur Zeit des Weltkriegs gelang es den Codeknacker*innen um Alan Turing die Verschlüsselung der Enigma zu schlagen.
 Etwas später wurde auch der Code der Lorenz SZ 40/42 durch Max Newman und seiner Gruppe geknackt.
@@ -1006,7 +1116,7 @@ Beide Maschinen waren <em><a class="reference internal" href="../02-1/5-hardware
 Für den Erfolg der ENIAC wurden Kathleen McNulty Mauchly Antonelli, Jean Bartik, Frances Elizabeth Holberton, Marlyn Meltzer, Frances Spence und Ruth Teitelbaum über 50 Jahre nach ihren männlichen Kollegen ausgezeichnet.</p>
 <div class="figure align-default" id="eniac-programmiererinnen">
 <a class="reference internal image-reference" href="../../_images/eniac-programmiererinnen.png"><img alt="../../_images/eniac-programmiererinnen.png" src="../../_images/eniac-programmiererinnen.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 3.10 </span><span class="caption-text">ENIAC-Programmiererinnen Marlyn Wescoff und Ruth Lichterman, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Reprogramming_ENIAC.png">Quelle</a>.</span><a class="headerlink" href="#eniac-programmiererinnen" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.10 </span><span class="caption-text">ENIAC-Programmiererinnen Marlyn Wescoff und Ruth Lichterman, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Reprogramming_ENIAC.png">Quelle</a>.</span><a class="headerlink" href="#eniac-programmiererinnen" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Im Jahr 1945 begann Turing mit seiner Arbeit an der Entwicklung eines elektronisch-programmierbaren Computers mit Speicher.
 Zur gleichen Zeit notierte der charismatische John von Neumann auf einem 101-seitigen Dokument einen ähnlichen Entwurf.
@@ -1015,7 +1125,7 @@ Auf jener Architektur basieren heute nahezu alle modernen Computer und auch zuk�
 Weitere konzeptuelle Entwicklungen sollten folgen, doch die grobe Architektur blieb seither nahezu unberührt.</p>
 <div class="figure align-default" id="von-neumann-architecture">
 <a class="reference internal image-reference" href="../../_images/von-neumann-architecture.png"><img alt="../../_images/von-neumann-architecture.png" src="../../_images/von-neumann-architecture.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 3.11 </span><span class="caption-text">Die Von-Neumann-Architektur.</span><a class="headerlink" href="#von-neumann-architecture" title="Link zu diesem Bild">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3.11 </span><span class="caption-text">Die Von-Neumann-Architektur.</span><a class="headerlink" href="#von-neumann-architecture" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>In den darauffolgenden Jahren waren es insbesondere Entwicklungen von neuen Bauteilen, wie Transistoren und integrierten Schaltkreisen, die die Leistungsfähigkeit der Computer immer weiter verbesserten.
 Die Bauteile wurden stetig kleiner und die Taktrate der Rechner wurde immer weiter in die Höhe getrieben.
@@ -1044,14 +1154,14 @@ Dieser Ansatz wurde durch die Hirnforschung inspiriert.
 Die Idee war und ist es, eine riesige Anzahl an hochgradig vernetzten aber relativ simplen Neuronen durch Software zu simulieren.
 Die Idee der <em>künstlichen neuronalen Netze</em> (engl. <em>artificial neuronal network (ANN)</em>) war geboren.</p>
 <div class="figure align-default" id="fig-ann">
-<a class="reference internal image-reference" href="../../_images/ann.png"><img alt="../../_images/ann.png" src="../../_images/ann.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Abb. 3.12 </span><span class="caption-text">Skizze eines künstliches neuronalen Netzes.</span><a class="headerlink" href="#fig-ann" title="Link zu diesem Bild">¶</a></p>
+<a class="reference internal image-reference" href="../../_images/ann.png"><img alt="../../_images/ann.png" src="../../_images/ann.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 3.12 </span><span class="caption-text">Skizze eines künstliches neuronalen Netzes.</span><a class="headerlink" href="#fig-ann" title="Link zu diesem Bild">#</a></p>
 </div>
 <p>Um 1960 wurde eine wichtige Erweiterung der <em>neuronalen Netze</em>, die sog. <em>tiefen neuronalen Netze</em> (engl. <em>deep neural networks (DNN)</em>), vorgeschlagen.
 Anders als herkömmliche neuronale Netze (siehe <a class="reference internal" href="#fig-ann"><span class="std std-numref">Abbildung 3.12</span></a> ) bestehen diese aus mehrere <em>versteckten Schichten</em>.
 Zu jener Zeit fehlten allerdings die Daten und die Rechenleistung, um derartige <em>DNNs</em> praktisch nutzen zu können.
 Auch hatte men Schwierigkeiten die benötigten Gradienten im Zaum zu halten.
-Erst in den 80er Jahren wurden erste praktikable <em>künstliche neuronalen Netze</em> entwickelt (<em>LeNet</em> 2011, <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id12">LBD+89</a>]</span>).
+Erst in den 80er Jahren wurden erste praktikable <em>künstliche neuronalen Netze</em> entwickelt (<em>LeNet</em> 2011, <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id12" title="Y. LeCun, B. Boser, J. S. Denker, D. Henderson, R. E. Howard, W. Hubbard, and L. D. Jackel. Backpropagation applied to handwritten zip code recognition. Neural Computation, 1(4):541–551, dec 1989. doi:10.1162/neco.1989.1.4.541.">LBD+89</a>]</span>).
 <em>ANNs</em> bilden eine Teilmenge der Algorithmen des <em>maschinelles Lernen</em>.
 Tom Mitchell definiert <em>maschinelles Lernen</em> wie folgt:</p>
 <blockquote>
@@ -1062,7 +1172,7 @@ Ein sehr einfaches Beispiel ist der sog. <em>Spamfilter</em>.
 Ein Spamfilter befolgt keine fest eingebrannten Regeln, sondern <em>lernt</em> was Spam und was kein Spam ist, indem wir E-Mails als Spam markieren.
 Er benötigt <em>Trainingsdaten</em> und kann dann neue Daten selbständig <em>klassifizieren</em>.</p>
 <p>Insbesondere <em>tiefe neuronalen Netze (DNNs)</em> konnten erfolgreich für Aufgaben eingesetzt werden, die zuvor als unlösbar galten.
-Zu nennen ist die Sprach- (<em>Microsoft</em> 2011) und Bilderkennung (<em>AlexNet</em> 2012, <span id="id2">[<a class="reference internal" href="../misc/bibliography.html#id13">CMS12</a>, <a class="reference internal" href="../misc/bibliography.html#id15">KSH17</a>]</span>).</p>
+Zu nennen ist die Sprach- (<em>Microsoft</em> 2011) und Bilderkennung (<em>AlexNet</em> 2012, <span id="id2">[<a class="reference internal" href="../misc/bibliography.html#id13" title="Dan Cireşan, Ueli Meier, and Juergen Schmidhuber. Multi-column deep neural networks for image classification. 2012. doi:10.48550/ARXIV.1202.2745.">CMS12</a>, <a class="reference internal" href="../misc/bibliography.html#id15" title="Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton. Imagenet classification with deep convolutional neural networks. Communications of the ACM, 60(6):84-90, 5 2017. doi:10.1145/3065386.">KSH17</a>]</span>).</p>
 <p>Der Erfolg ist auf drei Faktoren zurückzuführen:
 Zu nennen ist die hohe Datenmenge.
 <em>Facebook</em> sammelt täglich etwa 350 Millionen Bilder und <em>YouTube</em> ca. 300 Stunden Videomaterial pro Minute.
@@ -1075,7 +1185,7 @@ Keiner wusste so recht, ob diese Netze tatsächlich nützlich sind.
 Die überraschend guten Resultate führten zu einer Flut an Entwicklungen neuer <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmen</span></a> und Open-Source-Bibliotheken.
 Insbesondere das <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Ökosystem wurde befüllt.</p>
 <div class="figure align-default" id="fig-ai-context">
-<a class="reference internal image-reference" href="../../_images/ai-context.png"><img alt="../../_images/ai-context.png" src="../../_images/ai-context.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../../_images/ai-context.png"><img alt="../../_images/ai-context.png" src="../../_images/ai-context.png" style="width: 400px;" /></a>
 </div>
 <p>Das <em>maschinelle Lernen</em> ist wiederum eine Unterkategorie der <em>künstlichen Intelligenz (KI)</em> (engl. <em>artificial intelligence (AI)</em>).
 Der Begriff wurde 1956 von <em>John McCarthy</em> eingeführt.</p>
@@ -1120,9 +1230,11 @@ Darüber hinaus muss in einer rechenzentrierten Gesellschaft beleuchtet und krit
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="2-middleages.html" title="zurück Seite">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1138,24 +1250,28 @@ Darüber hinaus muss in einer rechenzentrierten Gesellschaft beleuchtet und krit
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    <div class="extra_footer">
+      <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
+    </div>
+</p>
+        </footer>
+    </div>
     
-      <div class="extra_footer">
-        <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
-      </div>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

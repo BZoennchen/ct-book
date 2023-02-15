@@ -28,7 +28,7 @@
 # 
 # ```{figure} ../../figs/history/earth-curvature.png
 # ---
-# height: 150px
+# width: 600px
 # name: fig-earth-curvature
 # ---
 # Eratosthenes und die Erdkrümmung.
@@ -93,6 +93,9 @@ sieve_of_eratosthenes(100)
 
 
 def gcd(a,b):
+    """
+    Returns the greatest common divisor of a and b.
+    """
     while b:
         a, b = b, a % b
     return a

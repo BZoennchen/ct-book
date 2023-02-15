@@ -38,7 +38,7 @@ def stack_sort(hand):
     return stack   
 
 
-# Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller()``.
+# Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller``.
 
 # In[2]:
 

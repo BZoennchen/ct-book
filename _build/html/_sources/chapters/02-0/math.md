@@ -1,14 +1,14 @@
 (sec-math)=
 # Mathematische Grundlagen
 
-Für die Entwicklung nicht-trivialer Algorithmen benötigen wir ein wenig Mathematik, insbesondere die Mathematik, welche sich mit diskreten Dingen beschäftigt.
-Da die Mathematik selbst eine sehr präzise Sprache ist, hilft Sie uns über Dinge und Sachverhalte unmissverständlich zu sprechen.
+Für die Entwicklung nicht-trivialer Algorithmen benötigen wir ein wenig Mathematik, insbesondere die Mathematik, welche sich mit diskreten Dingen beschäftigt, denn ein Computer manipuliert diskrete Symbole in diskreten Schritten.
+Die Mathematik ist eine sehr präzise (internationale) Sprache, welche uns dabei hilft uns über Dinge und Sachverhalte unmissverständlich zu unterhalten.
 
 ```{admonition} Lernziel
 :class: learngoals
 
-Mathematische Grundbegriffe begreifen und einsetzten.
-Dieses Kapitel dient als Nachschlagewerk und kann übersprungen werden.
+Sie können die mathematischen Symbole dieses Buchs ohne fremde Hilfe lesen, kombinieren und korrekt interpretieren.
+Zusätzlich sind Sie in der Lage einen einfachen [Induktionsbeweis](sec-induction) zu führen.
 ```
 
 Dieses Kapitel ist als Nachschlagewerk gedacht.

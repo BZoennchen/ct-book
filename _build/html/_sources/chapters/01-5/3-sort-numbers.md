@@ -45,7 +45,7 @@ def stack_sort(hand):
     return stack   
 ```
 
-Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller()``.
+Wir benötigen lediglich einen neuen Vergleichsoperator ``is_smaller``.
 
 ```{code-cell} python3
 :tags: [hide-cell]

@@ -1,6 +1,6 @@
 # Notation
 
-Als Notation verstehen wir die [Syntax](def-syntax) und [Semantik](def-semantik) mathematischer Symbole.
+Als Notation verstehen wir die [Syntax](def-syntax) (wie schreibe ich etwas nieder) und [Semantik](def-semantik) (was bedeutet das Geschriebene) mathematischer Symbole.
 Auch wenn in vielen Bereichen der Mathematik die Notation bereits standardisiert ist, steht es schlussendlich den Autor\*innen frei eine individualisierte Notation zu verwenden.
 Zum Beispiel verwenden manche Autor\*innen als Symbol für die natürlichen Zahlen das $\mathbb{N}$ mit einem Doppelstrich, andere verwenden ein fett gedrucktes $\mathbf{N}$.
 
@@ -15,7 +15,7 @@ Aus Gründen der Konsistenz werden wir diese Notation auch im Text verwenden, so
 Hin und wieder möchten wir eine unendliche oder sehr lange Folge notieren.
 Zum Beispiel
 
-$$1, 2, 4, \ldots$$
+$$1, 2, 3, \ldots$$
 
 Die drei Punkte $\ldots$ deuten an, dass diese Folge unendlich lange weiter geht.
 Aus den ersten notierten Zahlen der Folge sollte dabei immer klar hervorgehen, wie diese voranschreitet.
@@ -29,7 +29,7 @@ In diesem Beispiel hat die Folge $n+1$ Elemente.
 
 ## Summen
 
-Um Summen ähnlich wie Folgen kompakter zu notieren, verwenden wir das Summensymbol $\sum$, zum Beispiel:
+Um Summen, ähnlich wie Folgen, kompakt zu notieren, verwenden wir das Summensymbol $\sum$. Zum Beispiel:
 
 $$1 + 2 + 3 + 4 + 5 + 6 = \sum\limits_{k=1}^6 k.$$
 
@@ -41,7 +41,7 @@ Dieses Summe besteht aus
 + einem Startwert (hier $1$) und 
 + einer Funktion bezüglich der Laufvariable (hier $f(k) = k$).
 
-Der Endwert kann auch den 'Wert' unendlich $\infty$ annehmen:
+Der Endwert kann auch den "Wert" unendlich $\infty$ annehmen:
 
 $$1 + 2 + 3 + 4 + 5 + \ldots = \sum\limits_{k=1}^\infty k.$$
 
@@ -55,7 +55,7 @@ Dabei fehlen Start- und der Endwert, und werden durch eine Menge ersetzt, welche
 
 ## Produkte
 
-Analog zu Summen gibt es auch ein Produktsymbol $\prod$, wodurch sich Produkte kompakter schreiben lassen:
+Analog zu Summen gibt es auch ein Produktsymbol $\prod$, wodurch sich Produkte kompakt schreiben lassen:
 
 $$1 \cdot 2 \cdot  3 \cdot  4 \cdot  5 \cdot  6 = \prod\limits_{k=1}^6 k.$$
 

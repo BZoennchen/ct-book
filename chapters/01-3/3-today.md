@@ -165,7 +165,7 @@ Die Idee der *künstlichen neuronalen Netze* (engl. *artificial neuronal network
 
 ```{figure} ../../figs/history/ann.png
 ---
-width: 300px
+width: 500px
 name: fig-ann
 ---
 Skizze eines künstliches neuronalen Netzes.
@@ -205,7 +205,7 @@ Insbesondere das ``Python``-Ökosystem wurde befüllt.
 
 ```{figure} ../../figs/history/ai-context.png
 ---
-width: 300px
+width: 400px
 name: fig-ai-context
 ---
 ```

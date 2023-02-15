@@ -3,12 +3,12 @@
 
 Schon immer haben wir Menschen Werkzeuge gebaut um uns selbst zu helfen.
 Das Rad, Hammer und Nagel, die Druckerpresse, Bagger und Lastwagen bis hin zum Automobil, den Zügen, Flugzeugen und Raumschiffen.
-Diese Erfindungen unterstützten uns bei händischen bzw. handwerklichen Tätigkeiten.
+Diese Erfindungen unterstützen uns bei händischen bzw. handwerklichen Tätigkeiten.
 
 *Computer* fallen jedoch in eine andere Kategorie der Hilfsmittel.
 Sie unterstützen uns mental!
 Sie schöpfen keine Kohle, formen kein Metall und transportieren keine physischen Güter.
-Stattdessen bewegen, speichern und manipulieren sie Informationen.
+Stattdessen bewegen, speichern und manipulieren sie Information.
 Sie lösen mathematische Gleichungen, berechnen Planetenpositionen, simulieren ganze Galaxien, analysieren menschliches Verhalten oder dienen der Unterhaltung und Kommunikation.
 Jede Berechnung lässt sich auf die *Informationsverarbeitung* im informatischen Sinne und damit auf die primitive Manipulation von Symbolen zurückführen.
 
