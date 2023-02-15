@@ -95,7 +95,7 @@ Ohne diese Eigenschaft würden die Speicher der Computer sehr schnell volllaufen
 
 ```{figure} ../../figs/digital-computer/representation/lamps-example.png
 ---
-width: 400px
+width: 600px
 name: fig-lamps-example
 ---
 Zwei der $2^8 = 256$ möglichen Zustände von acht Lampen.
