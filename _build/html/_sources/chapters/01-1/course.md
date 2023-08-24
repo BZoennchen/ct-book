@@ -2,8 +2,8 @@
 
 Dieses interaktive Lehrbuch wurde für Studierende der folgenden Bachelorstudiengänge der [Hochschule München](https://hm.edu/) entwickelt:
 
-1. [Digital Engineering](https://sites.hm.edu/mucdai/angebot/digital_engineering/standardseite_12.de.html)
-2. [Informatik und Design](https://sites.hm.edu/mucdai/angebot/informatik_und_design/standardseite_14.de.html)
+1. [Digital Engineering](https://sites.hm.edu/mucdai/angebot/digital_engineering/bachelor_digital_engineering.de.html)
+2. [Informatik und Design](https://sites.hm.edu/mucdai/angebot/informatik_und_design/bachelor_informatik_und_design.de.html)
 3. [Data Science \& Scientific Computing](https://www.cs.hm.edu/bachelor-data-science/)
 4. [Geodata Science](https://sites.hm.edu/mucdai/angebot/geodata_science/studium.de.html)
 

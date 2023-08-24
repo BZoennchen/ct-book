@@ -37,7 +37,7 @@ Ob Mensch oder Maschine ist an und für sich unwichtig, es bedarf lediglich der 
 
 Solange sich eine Problemlösung (unsere Musikkomposition) durch Wiederholung ausdrücken lässt, kann sie durch endlich viel Programmcode (Noten) beschrieben und damit (theoretisch) gelöst (aufgeführt) werden.
 Die Komplexität des Programmcodes (die länge des Stücks) entkoppelt sich von der Komplexität der ausgeführten Berechnung (der Aufführung).
-Zum Beispiel beschreibt folgender ``Python``-Code die Berechnung der Summe aller Quadratzahlen von ``1`` bis ``n+1``.
+Zum Beispiel beschreibt folgender ``Python``-Code die Berechnung der Summe aller Quadratzahlen von ``1`` bis einschließlich ``n``.
 
 ```{code-cell} python3
 def sum_sqrt(n):

@@ -47,10 +47,10 @@ Eine Frage die wir bis heute nur teilweise beantworten können.
 Zudem fragen wir heute *'Was der Mensch eigentlich noch kann, was die Maschine nicht kann?'* und *'Worin ist uns die Maschine überlegen?'*.
 Was ist also der fundamentale Unterschied zwischen *menschlicher* und *künstlicher Intelligenz* und gibt es diesen Unterschied tatsächlich?
 
-*Computational Thinking in seiner grundlegenden Form* ist eine Aktivität, ein Denkprozess, der durch praktische Anwendung feingeschliffen wird.
+Computational Thinking in seiner grundlegenden Form ist eine Aktivität, ein Denkprozess, der durch praktische Anwendung feingeschliffen wird.
 Es ist die Summe der mentalen Fähigkeiten mit denen wir
 
-1. [Algorithmen](def-algorithm) bzw. Berechnungen entwerfen, welche uns die Arbeit abnehmen, und 
+1. [Algorithmen](def-algorithm) bzw. Berechnungsschritte entwerfen, welche uns die Arbeit abnehmen, und 
 2. die Welt als ein Zusammenspiel von Prozessen der Informationsverarbeitung erklären und interpretieren können.
 
 In ihrem Artikel *Computational thinking: the developing definition* {cite}`selby:2013` identifizieren Cynthia Selby und John Woollard CT ebenfalls als *Denkprozess* (Art und Weise um über Berechnungen nachzudenken) und fügen zwei Techniken an, die wir um weitere zwei erweitern:
@@ -68,8 +68,8 @@ Für ein gelungenes Musikstück braucht es Musikverständnis und für derartige 
 
 Um weitreichende Informationsverarbeitungssysteme und deren Interaktion mit uns Menschen zu begreifen, ist es notwendig Systeme, Programme, Algorithmen und menschliches Verhalten nicht im Vakuum, sondern als großes Ganzes zu betrachten.
 Schon heute interagieren wir mit künstlichen Intelligenzen bzw. intelligenten Systemen, deren Intelligenz durch Menschen implantiert wurde.
-Wir kommen noch nicht mit intelligenten künstlichen Körpern, wie etwa denen aus der Science Fiction Utopien *die Matrix*, in Berührung.
-Die künstliche Intelligenz mit der wir es zu tun haben ist viel engmaschiger und dadurch unauffälliger in unser Leben integriert -- wir können sie nicht so leicht ausfindig machen.
+Wir kommen noch nicht mit intelligenten künstlichen Körpern, wie etwa denen aus der Science Fiction Dystopie *die Matrix*, in Berührung.
+Die künstliche Intelligenz mit der wir es zu tun haben ist viel engmaschiger und dadurch unauffälliger in unser Leben integriert---wir können sie nicht so leicht ausfindig machen.
 
 Um das Wesen dieser Intelligenz zu verstehen wird Computational Thinking gebraucht.
 Es warten spannende Fragen auf uns:
@@ -83,7 +83,7 @@ Von der Transformation der Kinos und Musikalben hin zu Streaming-Diensten, der s
 Welche Auswirkung hat die Interaktion mit dieser informationsverarbeitenden Welt auf uns Menschen?
 Dienen diese Systeme uns oder dienen wir ihnen?
 Welche Chancen aber auch welche Gefahren und Risiken bringen sie?
-Für diese Fragen ist ein kühler Kopf -- ist Computational Thinking -- eine notwendige Vorraussetzung.
+Für das Stellen und Betrachten dieser Fragen ist ein kühler Kopf---ist Computational Thinking---eine notwendige Vorraussetzung.
 
 Nach Jeanette Wing bedeutet Computational Thinking **konzepieren**, nicht programmieren.
 Es ist eine **fundamentale Fähigkeit** um in der technologisierten Gesellschaft zurechtzukommen und keine routinierte Fähigkeit.
@@ -91,11 +91,11 @@ Computational Thinking ist eine **Denkweise des Menschen** nicht der Maschinen.
 Es bedeutet nicht wie ein Computer, sondern wie ein *Informatiker* oder eine *Informatikerin* zu denken {cite}`wing:2006`.
 
 Digitale Computer sind an und für sich primitive Maschinen, die wir nutzen um auf kreative Weise spannende Probleme zu lösen.
-Dabei schöpft die *Informatik* ihre formale Basis aus der Mathematik -- sie ist eine *Formal*- bzw. *Strukturwissenschaft*, jedoch keine *Naturwissenschaft*!
+Dabei schöpft die *Informatik* ihre formale Basis aus der Mathematik---sie ist eine *Formal*- bzw. *Strukturwissenschaft*, jedoch keine *Naturwissenschaft*!
 Da *Informatiker\*innen* Systeme erschaffen, die mit der Welt interagieren ist die *Informatik* zudem eine *Ingenieurwissenschaft*.
 Damit ergänzt und kombiniert Computational Thinking formales, mathematisches und schaffendes Denken. 
 
-Computational Thinking erzeugt Ideen und keine Güter.
+Computational Thinking erzeugt Ideen oder Konzepte und keine Verbrauchsgüter.
 Es es ist nicht nur das Programm oder die Software/Hardware die als Resultat übrig bleibt.
 Computational Thinking erzeugt Konzepte des Berechnens, welche wir in einen Ideenkatalog aufnehmen können um künftige Probleme zu lösen oder die Welt anders interpretieren zu können.
 Computational Thinking ist für uns alle erlernbar und findet fast überall statt.

@@ -1,53 +1,72 @@
 
+
 <!DOCTYPE html>
 
-<html lang="de">
+
+<html lang="de" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>17.2. Schleifen &#8212; Computational Thinking</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>17.2. Schleifen &#8212; Computational Thinking</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JTQKVRRRDB');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -56,70 +75,94 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03-7/2-loops';</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
     <link rel="next" title="17.3. Comprehensions" href="3-comprehensions.html" />
     <link rel="prev" title="17.1. Fallunterscheidungen" href="1-cases.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="de">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-JTQKVRRRDB');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="de"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo-HM-small.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computational Thinking</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/logo-HM-small.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo-HM-small.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -128,1105 +171,463 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Einleitung
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einleitung</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-1/course.html">
-   1. Kurskonzept
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-1/1-content.html">
-     1.1. Inhalt
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-1/2-reading.html">
-     1.2. Lesehinweise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-1/3-teaching.html">
-     1.3. Lehrkonzept
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-1/4-learn-how-to-think.html">
-     1.4. Denken lernen?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-2/what-is-ct.html">
-   2. Was ist Computational Thinking?
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-2/1-informatics-and-ct.html">
-     2.1. Informatik und CT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-2/2-repetition-is-the-key.html">
-     2.2. Wiederholung als Grundlage
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-3/history.html">
-   3. Geschichte der Computer und Algorithmen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-3/1-ancient.html">
-     3.1. Antike
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-3/2-middleages.html">
-     3.2. Mittelalter bis 19. Jahrhundert
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-3/3-today.html">
-     3.3. 19. Jahrhundert bis heute
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-3/4-future.html">
-     3.4. Ausblick
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-4/why-ct.html">
-   4. Warum Computational Thinking?
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-4/1-intrinsic-value.html">
-     4.1. Intrinsischer Wert
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-4/2-usefulness.html">
-     4.2. Langfristiger Nutzen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-4/3-self-determination.html">
-     4.3. Selbstbestimmt durch CT
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-5/sorting.html">
-   5. Lasst uns Denken
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-5/1-sort-cards.html">
-     5.1. Karten sortieren
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-5/2-sort-cards-with-python.html">
-     5.2. Karten sortieren in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-5/3-sort-numbers.html">
-     5.3. Zahlen sortieren in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01-5/4-sort-anything.html">
-     5.4. Allgemeines Sortieren in Python
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-1/course.html">1. Kurskonzept</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/1-content.html">1.1. Inhalt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/2-reading.html">1.2. Lesehinweise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/3-teaching.html">1.3. Lehrkonzept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/4-learn-how-to-think.html">1.4. Denken lernen?</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Theorie
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-2/what-is-ct.html">2. Was ist Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/1-informatics-and-ct.html">2.1. Informatik und CT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/2-repetition-is-the-key.html">2.2. Wiederholung als Grundlage</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-3/history.html">3. Geschichte der Computer und Algorithmen</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/1-ancient.html">3.1. Antike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/2-middleages.html">3.2. Mittelalter bis 19. Jahrhundert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/3-today.html">3.3. 19. Jahrhundert bis heute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/4-future.html">3.4. Ausblick</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-4/why-ct.html">4. Warum Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/1-intrinsic-value.html">4.1. Intrinsischer Wert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/2-usefulness.html">4.2. Langfristiger Nutzen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/3-self-determination.html">4.3. Selbstbestimmt durch CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-5/sorting.html">5. Lasst uns Denken</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/1-sort-cards.html">5.1. Karten sortieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/2-sort-cards-with-python.html">5.2. Karten sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/3-sort-numbers.html">5.3. Zahlen sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/4-sort-anything.html">5.4. Allgemeines Sortieren in Python</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theorie</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02-0/math.html">
-   6. Mathematische Grundlagen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-0/1-notation.html">
-     6.1. Notation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-0/2-set.html">
-     6.2. Mengen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-0/3-tuple.html">
-     6.3. Tupel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-0/4-relation.html">
-     6.4. Relationen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-0/5-function.html">
-     6.5. Funktionen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-0/6-operations.html">
-     6.6. Operationen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-0/7-induction.html">
-     6.7. Vollständige Induktion
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02-1/information-processing.html">
-   7. Der digitale Computer
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/1-basics.html">
-     7.1. Grundlagen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/2-interpretation.html">
-     7.2. Interpretation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/2-representation.html">
-     7.3. Repräsentationen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/3-manipulation.html">
-     7.4. Manipulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/4-information-flow.html">
-     7.5. Der Informationskreislauf
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-1/5-hardware-equals-software.html">
-     7.6. Berechenbarkeit
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02-2/information.html">
-   8. Was ist Information?
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/1-natural-science.html">
-     8.1. Naturwissenschaften
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/2-formal-science.html">
-     8.2. Strukturwissenschaften
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/3-critic.html">
-     8.3. Kritik
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/4-humanics.html">
-     8.4. Geisteswissenschaften
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-2/5-summary.html">
-     8.5. Zusammenfassung
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02-3/languages.html">
-   9. Programmiersprachen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/1-abstraction.html">
-     9.1. Abstraktion des Computers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/2-success-criteria.html">
-     9.2. Erfolgsfaktoren
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/3-imperative-vs-functional.html">
-     9.3. Imperativ und funktional
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/4-language-evolution.html">
-     9.4. Sprachevolution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/5-python.html">
-     9.5. Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-3/6-diversity.html">
-     9.6. Diversität
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02-4/the-art-of-programming.html">
-   10. Die Kunst des Programmierens
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-4/1-algorithms.html">
-     10.1. Algorithmen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-4/2-programming.html">
-     10.2. Programmieren
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-4/3-control-structures.html">
-     10.3. Kontrollstrukturen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02-4/4-data-structures.html">
-     10.4. Datenstrukturen
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-0/math.html">6. Mathematische Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/1-notation.html">6.1. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/2-set.html">6.2. Mengen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/3-tuple.html">6.3. Tupel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/4-relation.html">6.4. Relationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/5-function.html">6.5. Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/6-operations.html">6.6. Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/7-induction.html">6.7. Vollständige Induktion</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-1/information-processing.html">7. Der digitale Computer</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/1-basics.html">7.1. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-interpretation.html">7.2. Interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-representation.html">7.3. Repräsentationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/3-manipulation.html">7.4. Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/4-information-flow.html">7.5. Der Informationskreislauf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/5-hardware-equals-software.html">7.6. Berechenbarkeit</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-2/information.html">8. Was ist Information?</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/1-natural-science.html">8.1. Naturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/2-formal-science.html">8.2. Strukturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/3-critic.html">8.3. Kritik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/4-humanics.html">8.4. Geisteswissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/5-summary.html">8.5. Zusammenfassung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-3/languages.html">9. Programmiersprachen</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/1-abstraction.html">9.1. Abstraktion des Computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/2-success-criteria.html">9.2. Erfolgsfaktoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/3-imperative-vs-functional.html">9.3. Imperativ und funktional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/4-language-evolution.html">9.4. Sprachevolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/5-python.html">9.5. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/6-diversity.html">9.6. Diversität</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-4/the-art-of-programming.html">10. Die Kunst des Programmierens</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/1-algorithms.html">10.1. Algorithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/2-programming.html">10.2. Programmieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/3-control-structures.html">10.3. Kontrollstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/4-data-structures.html">10.4. Datenstrukturen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-1/introduction.html">
-   11. Programmieren in Python
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03-2/python-environment.html">
-   12. Das Python Ökosystem
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-2/1-installation.html">
-     12.1. Installation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-2/2-run.html">
-     12.2. Python ausführen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-2/3-notebooks.html">
-     12.3. Jupyter Notebooks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-2/4-modules.html">
-     12.4. Module und Pakete
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03-3/intro.html">
-   13. Grundlagen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-3/1-variables.html">
-     13.1. Variablen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-3/2-expressions.html">
-     13.2. Ausdrücke
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-3/3-invoking-functions.html">
-     13.3. Funktionsaufrufe
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03-4/intro.html">
-   14. Datentypen (Grundlagen)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/1-data-types.html">
-     14.1. Pythons Datentypen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/2-int.html">
-     14.2. Ganze Zahlen - int
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/3-float.html">
-     14.3. Fließkommazahlen - float
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/4-bool.html">
-     14.4. Wahrheitswerte - bool
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/5-list.html">
-     14.5. Listen - list
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/6-tuple.html">
-     14.6. Tupel - tuple
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/7-string.html">
-     14.7. Zeichenketten - str
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/8-set.html">
-     14.8. Mengen - set
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/9-dict.html">
-     14.9. Wörterbücher - dict
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/10-range.html">
-     14.10. Zahlenbereich - range
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-4/11-typing-in-python.html">
-     14.11. Python’s Typisierung
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03-5/intro.html">
-   15. Datentypen (Fortsetzung)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-5/1-type-systems.html">
-     15.1. Dynamische und statische Typisierung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-5/2-why-data-types.html">
-     15.2. Existenzberechtigung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-5/3-change-of-interpretation.html">
-     15.3. Interpretationswechsel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-5/4-kind-of-data-types.html">
-     15.4. Arten von Datentypen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-5/5-primitive-data-types.html">
-     15.5. Primitive Datentypen in Python?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03-6/intro.html">
-   16. Funktionen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-6/1-purity.html">
-     16.1. Reinheit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-6/2-definition.html">
-     16.2. Grundlagen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-6/3-namespaces.html">
-     16.3. Namensräume und Sichtbarkeit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-6/4-lambdas.html">
-     16.4. Anonyme Funktionen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-6/5-nested-functions.html">
-     16.5. Umschlossene Funktionen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-6/x-recursion.html">
-     16.6. Rekursive Funktionen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-6/6-first-class-functions.html">
-     16.7. First-Class-Funktion
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
-   17. Kontrollstrukturen
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="1-cases.html">
-     17.1. Fallunterscheidungen
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     17.2. Schleifen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-comprehensions.html">
-     17.3. Comprehensions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03-8/intro.html">
-   18. Objektorientierte Programmierung
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-8/1-class-and-objects.html">
-     18.1. Klassen und Objekte
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">
-     18.2. Vererbung, Kapselung und Polymorphie
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03-9/cpython.html">
-   19. CPython
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-9/1-impl.html">
-     19.1. Implementierungen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-9/2-ref.html">
-     19.2. Referenzimplementierung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-9/3-interpreter.html">
-     19.3. Interpreter und Compiler
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-9/4-disassembly.html">
-     19.4. Zerlegung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03-9/5-extending.html">
-     19.5. CPython erweitern
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../03-1/introduction.html">11. Programmieren in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-2/python-environment.html">12. Das Python Ökosystem</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/1-installation.html">12.1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/2-run.html">12.2. Python ausführen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/3-notebooks.html">12.3. Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/4-modules.html">12.4. Module und Pakete</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  CT in Aktion
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../04/robo-world.html">
-   20. Roboterwelt
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04/dive-bell.html">
-   21. Sprechen in der Taucherglocke
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04/image-representation.html">
-   22. Binäres Zeichnen
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04/memory.html">
-   23. Speicher - alles ist eine Liste
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04/name-register.html">
-   24. Namensregister
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-3/intro.html">13. Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/1-variables.html">13.1. Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/2-expressions.html">13.2. Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/3-invoking-functions.html">13.3. Funktionsaufrufe</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-4/intro.html">14. Datentypen (Grundlagen)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/1-data-types.html">14.1. Pythons Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/2-int.html">14.2. Ganze Zahlen - int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/3-float.html">14.3. Fließkommazahlen - float</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/4-bool.html">14.4. Wahrheitswerte - bool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/5-list.html">14.5. Listen - list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/6-tuple.html">14.6. Tupel - tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/7-string.html">14.7. Zeichenketten - str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/8-set.html">14.8. Mengen - set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/9-dict.html">14.9. Wörterbücher - dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/10-range.html">14.10. Zahlenbereich - range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/11-typing-in-python.html">14.11. Python’s Typisierung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-5/intro.html">15. Datentypen (Fortsetzung)</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/1-type-systems.html">15.1. Dynamische und statische Typisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/2-why-data-types.html">15.2. Existenzberechtigung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/3-change-of-interpretation.html">15.3. Interpretationswechsel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/4-kind-of-data-types.html">15.4. Arten von Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/5-primitive-data-types.html">15.5. Primitive Datentypen in Python?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-6/intro.html">16. Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/1-purity.html">16.1. Reinheit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/2-definition.html">16.2. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/3-namespaces.html">16.3. Namensräume und Sichtbarkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/4-lambdas.html">16.4. Anonyme Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/5-nested-functions.html">16.5. Umschlossene Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/x-recursion.html">16.6. Rekursive Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/6-first-class-functions.html">16.7. First-Class-Funktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">17. Kontrollstrukturen</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-cases.html">17.1. Fallunterscheidungen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">17.2. Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-comprehensions.html">17.3. Comprehensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-8/intro.html">18. Objektorientierte Programmierung</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/1-class-and-objects.html">18.1. Klassen und Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">18.2. Vererbung, Kapselung und Polymorphie</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-9/cpython.html">19. CPython</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/1-impl.html">19.1. Implementierungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/2-ref.html">19.2. Referenzimplementierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/3-interpreter.html">19.3. Interpreter und Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/4-disassembly.html">19.4. Zerlegung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/5-extending.html">19.5. CPython erweitern</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CT in Aktion</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../misc/bibliography.html">
-   Bibliography
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../04/robo-world.html">20. Roboterwelt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/dive-bell.html">21. Sprechen in der Taucherglocke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/image-representation.html">22. Binäres Zeichnen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/memory.html">23. Speicher - alles ist eine Liste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/name-register.html">24. Namensregister</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../misc/bibliography.html">Bibliography</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Unterstützt durch <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=tree/chapters/03-7/2-loops.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BZoennchen/ct-book/blob/master/chapters/03-7/2-loops.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img src="../../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Quell-Repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/03-7/2-loops.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/03-7/2-loops.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Öffnen Sie ein Problem"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Laden Sie diese Seite herunter">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/03-7/2-loops.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Notebook-Datei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/chapters/03-7/2-loops.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Quelldatei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="In PDF drucken"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Vollbildmodus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/03-7/2-loops.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/03-7/2-loops.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Suche" aria-label="Suche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/chapters/03-7/2-loops.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../../_sources/chapters/03-7/2-loops.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation">
-   17.2.1. Motivation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#die-for-schleife">
-   17.2.2. Die
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     for
-    </span>
-   </code>
-   -Schleife
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-klassische-for-schleife-fall-1">
-     17.2.2.1. Die klassische
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     -Schleife (Fall 1)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-foreach-schleife-fall-2">
-     17.2.2.2. Die Foreach-Schleife (Fall 2)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-while-schleife">
-     17.2.2.3. Die
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       while
-      </span>
-     </code>
-     -Schleife
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#beispiel-ggt">
-   17.2.3. Beispiel (ggT)
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Schleifen</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation">
-   17.2.1. Motivation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#die-for-schleife">
-   17.2.2. Die
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     for
-    </span>
-   </code>
-   -Schleife
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-klassische-for-schleife-fall-1">
-     17.2.2.1. Die klassische
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     -Schleife (Fall 1)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-foreach-schleife-fall-2">
-     17.2.2.2. Die Foreach-Schleife (Fall 2)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#die-while-schleife">
-     17.2.2.3. Die
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       while
-      </span>
-     </code>
-     -Schleife
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#beispiel-ggt">
-   17.2.3. Beispiel (ggT)
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Schleifen</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Inhalt </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">17.2.1. Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-for-schleife">17.2.2. Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-klassische-for-schleife-fall-1">17.2.2.1. Die klassische <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife (Fall 1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-foreach-schleife-fall-2">17.2.2.2. Die Foreach-Schleife (Fall 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-while-schleife">17.2.2.3. Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-ggt">17.2.3. Beispiel (ggT)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="schleifen">
-<span id="sec-loops"></span><h1><span class="section-number">17.2. </span>Schleifen<a class="headerlink" href="#schleifen" title="Link zu dieser Überschrift">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="schleifen">
+<span id="sec-loops"></span><h1><span class="section-number">17.2. </span>Schleifen<a class="headerlink" href="#schleifen" title="Permalink to this heading">#</a></h1>
 <p>Viele Aufgaben, die wir über unser Leben hinweg verrichten sind langweilig, da wir immer und immer wieder die gleichen Basisschritte wiederholen müssen.</p>
 <p>Nehmen Sie nur das Nachschlagen einer Telefonnummer im Telefonbuch (falls Sie so etwas überhaupt noch kennen). Wir gehen dabei Seite für Seite durch und suchen nach einem bestimmten Namen - langweilig …</p>
 <p>Auch ganz alltägliche Dinge wie der Abwasch, Zähneputzen, Kochen, ja nahezu jede Aktion beinhaltet die eine oder andere Art der Wiederholung.</p>
@@ -1235,8 +636,8 @@ title="Print to PDF"
 <p class="admonition-title">Wiederholung</p>
 <p>Wiederholung ist die Grundlage aller Berechnung.</p>
 </div>
-<div class="section" id="motivation">
-<h2><span class="section-number">17.2.1. </span>Motivation<a class="headerlink" href="#motivation" title="Link zu dieser Überschrift">#</a></h2>
+<section id="motivation">
+<h2><span class="section-number">17.2.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
 <p>Lassen Sie uns einmal auf unseren Roboter blicken.
 Dieser bewegt sich auf einem Gitter.
 Jeder Gitterpunkt ist entweder begehbar oder durch ein Hindernis belegt.
@@ -1253,7 +654,7 @@ Eine genauere Beschreibung des Roboters und seiner Welt finden Sie in der Übung
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2-loops_1_0.png" src="../../_images/2-loops_1_0.png" />
+<img alt="../../_images/c821fb578e6592c0dbbb7d37a9811d185be1ae89744ef0121281555fdc26c509.png" src="../../_images/c821fb578e6592c0dbbb7d37a9811d185be1ae89744ef0121281555fdc26c509.png" />
 </div>
 </div>
 <p>Wir sollen nun einen Algorithmus entwerfen, welcher den Roboter zum Ziel führt (sofern dies möglich ist).
@@ -1487,42 +888,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imgfa064f5a8cca4f69a5ad2e7e890f8bff">
+  <img id="_anim_img177062e2eece4c6993b7e649b126f03c">
   <div class="anim-controls">
-    <input id="_anim_sliderfa064f5a8cca4f69a5ad2e7e890f8bff" type="range" class="anim-slider"
+    <input id="_anim_slider177062e2eece4c6993b7e649b126f03c" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="animfa064f5a8cca4f69a5ad2e7e890f8bff.set_frame(parseInt(this.value));">
+           oninput="anim177062e2eece4c6993b7e649b126f03c.set_frame(parseInt(this.value));">
     <div class="anim-buttons">
-      <button title="Decrease speed" aria-label="Decrease speed" onclick="animfa064f5a8cca4f69a5ad2e7e890f8bff.slower()">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim177062e2eece4c6993b7e649b126f03c.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" aria-label="First frame" onclick="animfa064f5a8cca4f69a5ad2e7e890f8bff.first_frame()">
+      <button title="First frame" aria-label="First frame" onclick="anim177062e2eece4c6993b7e649b126f03c.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" aria-label="Previous frame" onclick="animfa064f5a8cca4f69a5ad2e7e890f8bff.previous_frame()">
+      <button title="Previous frame" aria-label="Previous frame" onclick="anim177062e2eece4c6993b7e649b126f03c.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" aria-label="Play backwards" onclick="animfa064f5a8cca4f69a5ad2e7e890f8bff.reverse_animation()">
+      <button title="Play backwards" aria-label="Play backwards" onclick="anim177062e2eece4c6993b7e649b126f03c.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" aria-label="Pause" onclick="animfa064f5a8cca4f69a5ad2e7e890f8bff.pause_animation()">
+      <button title="Pause" aria-label="Pause" onclick="anim177062e2eece4c6993b7e649b126f03c.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" aria-label="Play" onclick="animfa064f5a8cca4f69a5ad2e7e890f8bff.play_animation()">
+      <button title="Play" aria-label="Play" onclick="anim177062e2eece4c6993b7e649b126f03c.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" aria-label="Next frame" onclick="animfa064f5a8cca4f69a5ad2e7e890f8bff.next_frame()">
+      <button title="Next frame" aria-label="Next frame" onclick="anim177062e2eece4c6993b7e649b126f03c.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" aria-label="Last frame" onclick="animfa064f5a8cca4f69a5ad2e7e890f8bff.last_frame()">
+      <button title="Last frame" aria-label="Last frame" onclick="anim177062e2eece4c6993b7e649b126f03c.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" aria-label="Increase speed" onclick="animfa064f5a8cca4f69a5ad2e7e890f8bff.faster()">
+      <button title="Increase speed" aria-label="Increase speed" onclick="anim177062e2eece4c6993b7e649b126f03c.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectfa064f5a8cca4f69a5ad2e7e890f8bff"
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select177062e2eece4c6993b7e649b126f03c"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_fa064f5a8cca4f69a5ad2e7e890f8bff"
+      <input type="radio" name="state" value="once" id="_anim_radio1_177062e2eece4c6993b7e649b126f03c"
              >
-      <label for="_anim_radio1_fa064f5a8cca4f69a5ad2e7e890f8bff">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_fa064f5a8cca4f69a5ad2e7e890f8bff"
+      <label for="_anim_radio1_177062e2eece4c6993b7e649b126f03c">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_177062e2eece4c6993b7e649b126f03c"
              checked>
-      <label for="_anim_radio2_fa064f5a8cca4f69a5ad2e7e890f8bff">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_fa064f5a8cca4f69a5ad2e7e890f8bff"
+      <label for="_anim_radio2_177062e2eece4c6993b7e649b126f03c">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_177062e2eece4c6993b7e649b126f03c"
              >
-      <label for="_anim_radio3_fa064f5a8cca4f69a5ad2e7e890f8bff">Reflect</label>
+      <label for="_anim_radio3_177062e2eece4c6993b7e649b126f03c">Reflect</label>
     </form>
   </div>
 </div>
@@ -1532,192 +933,477 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imgfa064f5a8cca4f69a5ad2e7e890f8bff";
-    var slider_id = "_anim_sliderfa064f5a8cca4f69a5ad2e7e890f8bff";
-    var loop_select_id = "_anim_loop_selectfa064f5a8cca4f69a5ad2e7e890f8bff";
-    var frames = new Array(10);
-
+    var img_id = "_anim_img177062e2eece4c6993b7e649b126f03c";
+    var slider_id = "_anim_slider177062e2eece4c6993b7e649b126f03c";
+    var loop_select_id = "_anim_loop_select177062e2eece4c6993b7e649b126f03c";
+    var frames = new Array(27);
+    
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-bGliIHZlcnNpb24zLjYuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/P9b71AAAACXBIWXMAAAk6\
-AAAJOgHwZJJKAAADCElEQVR4nO3dQWoTYRzG4a+SQKNgSTd1EQNdSILS1dymp+q6d+kR2o0LGQSF\
-EjdDaZCgU4RSL/Hyfeg8zwVeJsMPZpX/0dnZ2ct2uy21PT09lePj48nsHg6H6pullDKfzyf1O7fa\
-nW2323J9fV19eLfbldVqNZndm5ubcnt7W3338vJyUr9zq91X1RfhPyQkCBASBAgJAoQEAUKCACFB\
-gJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBAS\
-BAgJAo4uLi5erq6uqg8Pw1D2+3313fV6XRaLRfXdcRwntTu19zs7PT1t8u/9fd83uc6w2WwmdSWh\
-1e7U3q9POwgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIE\
-CAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAHNrlG4zlDHcrmc1FWIVu+32TUK1xnq6LpuUlch\
-Wr1fn3YQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBAS\
-BAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkCml2j+DX+KfPXb6vvPv/eN7lW8DAcyuFn9dnybjWb\
-1FWIVlc/ml2j+PbjoZy8/1h9d7y/a/K8379+Kf3no+q75x8Wk7oK0erqh087CBASBAgJAoQEAUKC\
-ACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAk\
-CBASBAgJAoQEAbPHx8ey2+2qDz+PYxnv76rvjuPY5HnfnIzl/FP9KwnjuG7yvMMwlL7vq+8ul8vS\
-dV313WbXKFpdK5jalYTNZjOp5+26zjUK+FcJCQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKC\
-ACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCgoC/hWLQ79CrbxwA\
-AAAASUVORK5CYII=\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC3klEQVR4nO3dMUpsZxyH4WNQUIsETWG4mIEUYYaAlaTIVlyEa7F2Ly7B6lY2\
+qSaNBCRIGEljNvHyfXDP82zgxzkzL5zuf3R1dfW52+2W0T4+PpbT09Phu+/v78M3l2VZTk5Opjzv\
+rPe8tt3j3W63PD4+Dh/e7/fL9fX18N2np6fl+fl5+O7d3d2U5531nte2+93wRfgGCQkCQoKAkCAg\
+JAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQI\
+CAkCQoKAkCBwtNvtPu/v74cPbzab5ezsbPju4XBY1e7r6+vy9vY2fPfi4mLK7qz/1fH5+fmU6wzb\
+7XZV1wpm7b68vEz5fW9vb1f1v/JpBwEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBI5ubm4+Hx4ehg+v7TrDjxdf\
+lvd/hs8uP10fr+r6xqzd48vLS9cZBvjj9y/Ly9ej4bu//Hq2qt931q5POwgICQJCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
+goCQIDDtGsWsqxCbzWZVVzA87xjTrlHMugqx3W497wBre16fdhAQEgSEBAEhQUBIEBASBIQEASFB\
+QEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQWDa\
+NYrD4TDlaoDdb3v338N/y8n598N3p12j2O/3du3m/vzr7+WHn38bvuvTDgJCgoCQICAkCAgJAkKC\
+gJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQ\
+ICAkCPwPJaK+tgFo9g4AAAAASUVORK5CYII=\
 "
   frames[1] = "data:image/png;base64,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\
-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\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC3UlEQVR4nO3dMUpsZxyH4WOioHaawnCRgRRhprGSFNmKi3At1q4hW7C/jVUq\
+SZdMJQQJhoyd2cTL98E9z7OBH+fMvHC6/9HV1dXnbrdbRvv4+FhOT0+H776/vw/fXJZlOTk5mfK8\
+s97z2naPd7vd8vj4OHx4v98v19fXw3efnp6W5+fn4bt3d3dTnnfWe17b7nfDF+EbJCQICAkCQoKA\
+kCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAg\
+ICQICAkCQoLA0W63+7y/vx8+vNlslrOzs+G7h8NhVbuvr6/L29vb8N2Li4spu7P+V8fn5+dTrjNs\
+t9tVXSuYtfvy8jLl9729vV3V/8qnHQSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSE\
+BAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEDi6ubn5fHh4GD68tusMP1x8\
+Wd7/GT67/Hh9vKrrG7N2jy8vL11nGODXX74sL78fDd/96eezVf2+s3Z92kFASBAQEgSEBAEhQUBI\
+EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQ\
+EgSEBIFp1yhmXYXYbDaruoLheceYdo1i1lWI7XbreQdY2/P6tIOAkCAgJAgICQJCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQLT\
+rlEcDocpVwPsftu7+7//Xfb/fT98d9o1iv1+b9du7utffyy//Tk+YJ92EBASBIQEASFBQEgQEBIE\
+hAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQE\
+ASFB4H95wsFtfP20HgAAAABJRU5ErkJggg==\
 "
   frames[2] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-bGliIHZlcnNpb24zLjYuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/P9b71AAAACXBIWXMAAAk6\
-AAAJOgHwZJJKAAADBUlEQVR4nO3dMWobURiF0ecggUSKIDcOQQhcGAmCq9mNV+Xae/ESXBkShAsX\
-ERiGYOOoGHXOJi7vkbxzNnAZDR9Mpf/s4uLiY7fbldpOp1NZLBbd7B6Px+qbpZQyn8+7+p1b7c52\
-u125u7urPnw4HMp6ve5m9/7+vjw8PFTfvbm56ep3brX7qfoi/IeEBAFCggAhQYCQIEBIECAkCBAS\
-BAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAh\
-QcDZ9fX1x+3tbfXhcRzL29tb9d3NZlOWy2X13Wmautrt7f3Ozs/Pm/x7/36/b3KdYbvddnUlodVu\
-b+/Xpx0ECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQE\
-AUKCACFBgJAgQEgQICQIEBIECAkChAQBQoKAZtcoXGeoY7VadXUVotX7bXaNwnWGOoZh6OoqRKv3\
-69MOAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQEgQICQKEBAFCggAh\
-QYCQIEBIECAkCBASBAgJAoQEAUKCACFBQLNrFOOfqbyXRfXd9fzU5FrB7/FYju/VZ8vX9ayrqxCt\
-rn40u0bx9ONXefz4Vn33avnS5Hmfn36W/eNZ9d3Lq2VXVyFaXf3waQcBQoIAIUGAkCBASBAgJAgQ\
-EgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIA\
-IUGAkCBg9vr6Wg6HQ/Xh9fxUrpYv1XenaWryvJ+/TOXye/0rCdO0afK84ziW/X5ffXe1WpVhGKrv\
-NrtG0epaQW9XErbbbVfPOwyDaxTwrxISBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIA\
-IUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAX8BZe7MdAieongAAAAA\
-SUVORK5CYII=\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC2klEQVR4nO3dMUokaRyH4XJRUDPdwEWkYYOhOzGSDfYqHsKzGHsXj2A0sCAb\
+bkcmMmPQZu4lXr4Ppp7nAj+qul+o7H90dXX1tdvtltE+Pz+X09PT4bsfHx/DN5dlWU5OTqY876z3\
+vLbd491utzw9PQ0f3u/3y83NzfDd5+fn5eXlZfju/f39lOed9Z7Xtvvb8EX4BQkJAkKCgJAgICQI\
+CAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJ\
+AkKCgJAgcLTb7b4eHh6GD282m+Xs7Gz47uFwWNXu29vb8v7+Pnz34uJiyu6s/9Xx+fn5lOsM2+12\
+VdcKZu2+vr5O+X3v7u5W9b/yaQcBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFA\
+SBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSObm9vvx4fH4cPr+06w+8X18vH\
+j+Gzyx83x6u6vjFr9/jy8tJ1hgH+/ut6ef1+NHz3z29nq/p9Z+36tIOAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgI\
+CQLTrlHMugqx2WxWdQXD844x7RrFrKsQ2+3W8w6wtuf1aQcBIUFASBAQEgSEBAEhQUBIEBASBIQE\
+ASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSmXaM4\
+HA5TrgbY/bV3334elh/L6fDdadco9vu9Xbu5f//5b/n+dT1816cdBIQEASFBQEgQEBIEhAQBIUFA\
+SBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQ\
++B8y58D67xEbBAAAAABJRU5ErkJggg==\
 "
   frames[3] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-bGliIHZlcnNpb24zLjYuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/P9b71AAAACXBIWXMAAAk6\
-AAAJOgHwZJJKAAADB0lEQVR4nO3dQUokBxiG4TJoUFyElgGzEMFF6Ibgqm/jqVx7F4/gKovQZGA2\
-DYFm0ITOUC6EySVeqkjqeS7wUV28UKv+T66vr79vNpthau/v78P5+flido/H4+SbwzAMZ2dni/qd\
-59o93Ww2w9PT0+TD+/1+uLm5Wczu8/Pz8PLyMvnuw8PDon7nuXZ/mHwR/oeEBAEhQUBIEBASBIQE\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC3klEQVR4nO3dMUpsZxyH4WPQoKbSFIaLDNwizDRWkiJbcRGuxdq9uASrVFZp\
+BgISMEEuYxEwm3j5PrjneTbw45yZF073P7q6uvrc7XbLaB8fH8vp6enw3ff39+Gby7IsJycnU553\
+1nte2+7xbrdbHh8fhw/v9/vl+vp6+O7T09Py/Pw8fPfu7m7K8856z2vb/WH4InyHhAQBIUFASBAQ\
+EgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIE\
+hAQBIUFASBA42u12n/f398OHN5vNcnZ2Nnz3cDisavf19XV5e3sbvntxcTFld9b/6vj8/HzKdYbt\
+druqawWzdl9eXqb8vre3t6v6X/m0g4CQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQ\
+ICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkc3NzefDw8Pw4fXdp3h54sv\
+y/u/w2eXX66PV3V9Y9bu8eXlpesMA/z+25fl5Y+j4btffz1b1e87a9enHQSEBAEhQUBIEBASBIQE\
 ASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
-QUBIEDi5v7///vj4OPnw4XAY3t7eJt+9vb0dLi4uJt8dx3FRu0t7v6dXV1ez/Hv/breb5TrDer1e\
-1JWEuXaX9n592kFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
-EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBIHZrlG4zjCN1Wq1qKsQc73f2a5RuM4wje12u6ir\
-EHO9X592EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
-IUFASBAQEgSEBAEhQUBIEBASBIQEASFBYLZrFH99ex8+frycfPfy459ZrhV8PRyH49+Tzw4/35wu\
-6irEXFc/ZrtG8fXLn8O3q7vJdz8dP8/yvF/++H3Y/XYy+e7dLxeLugox19UPn3YQEBIEhAQBIUFA\
-SBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQ\
-EBIEhAQBIUHg9PX1ddjv95MPX36Mw6fj58l3x3Gc53l/Goe7X6e/kjCOt7M87+FwGHa73eS7q9Vq\
-2G63k+/Odo1irmsFS7uSsF6vF/W82+3WNQr4rxISBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
-QUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFB4F8x7c9Pk7SKCQAA\
-AABJRU5ErkJggg==\
+QUBIEJh2jWLWVYjNZrOqKxied4xp1yhmXYXYbreed4C1Pa9POwgICQJCgoCQICAkCAgJAkKCgJAg\
+ICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQIDDt\
+GsXhcJhyNcDu9737z7eP5b8ffxq+O+0axX6/t2s39/effy3fLr8O3/VpBwEhQUBIEBASBIQEASFB\
+QEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
+EBASBP4HeHPAcji1lO0AAAAASUVORK5CYII=\
 "
   frames[4] = "data:image/png;base64,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\
-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\
+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\
-BAEhQUBIEDi7u7t7e3h4GH34cDgMLy8vo+/e3NwMl5eXo++eTqdZ7c7t/S5Wq9Uk/96/2+0muc6w\
-Xq9ndSVhqt25vV+fdhAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
-EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQWCyaxSuM4xjuVzO6irEVO93smsUrjOMY7vd\
-zuoqxFTv16cdBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
-IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQOPv+x7u3n37+MPrwu3/+ntW1gt8Px+H41+izw7fX\
-i1k956mufiy+XH49fF7djj78zfHTrK4V/Pbrx2H3y9nou7ffXc7qOU919cOnHQSEBAEhQUBIEBAS\
-BIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSE\
-BAEhQUBIEFh8/vOP4f3x0+jDp9Np2O/3s9l999VpuP1h/CsJp9PNJL/3cDgMu91u9N3lcjlst9vR\
-dxer1WpW1wrmdiVhvV7P6vdut1vXKOC/SkgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFB\
-QEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhASBfwH9Ws8/dlFb+gAAAABJ\
-RU5ErkJggg==\
+BIHZrlHs9/tZrgbYHeO/b6/T91/fDd999/3rsq5RbLdbuz/x7ud/P03fzj8M3/19949rFPB/JSQI\
+CAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoLADykuvr9GGR8FAAAAAElFTkSuQmCC\
 "
   frames[5] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-bGliIHZlcnNpb24zLjYuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/P9b71AAAACXBIWXMAAAk6\
-AAAJOgHwZJJKAAADAklEQVR4nO3dsWosBRiG4YlsIMHisIsQixg4heyixmbvJrdkE6sDuZdcQk5j\
-IYuFcNhqFaMEnDQSb+JlBp3nuYGPneGFqfY/u7q6etvtdsPUXl9fh4uLi8Xsvry8TL45DMNwfn6+\
-qOc81+5qt9sNDw8Pkw8fj8fh+vp6MbuPj4/D09PT5Lt3d3eLes5z7X42+SL8DwkJAkKCgJAgICQI\
-CAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJ\
-AkKCgJAgcHZ7e/t2f38/+fDpdBqen58n3725uRkuLy8n3x3HcVG7S3u/q81mM8u/9x8Oh1muM2y3\
-20VdSZhrd2nv16cdBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIE\
-hAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQmO0ahesM01iv14u6CjHX+53tGoXrDNPY7/eL\
-ugox1/v1aQcBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
-EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgTOvrv9/u2HHz9MPvzP38+Lulbw++llePlr8tnhy+vV\
-op7zXFc/VuvNF8O7r76ZfHj89HFR1wp+/eXn4fDT2eS777++XNRznuvqh087CAgJAkKCgJAgICQI\
-CAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJ\
-AkKCgJAgsPrzj9+G8dPHyYfHcRyOx+Nidj9/Nw7vv53+SsI43szye0+n03A4HCbfXa/Xw36/n3x3\
-tdlsFnWtYGlXErbb7aJ+736/d40C/quEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSE\
-BAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEPgXUC7Q5pan2E8AAAAASUVO\
-RK5CYII=\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC6klEQVR4nO3dQUokdxyG4TJoUGelCRgGaZhF6Nq4kixyFQ/hWVx7F4/gKish\
+kE1DQAImdIZ2MWAu8fIvSD3PBT6qul+o3e/o6urqY57nabT39/fp9PR0+O5+vx++OU3TdHJyssjz\
+LvWe17Z7PM/z9Pj4OHx4t9tN19fXw3efnp6m5+fn4bt3d3eLPO9S73ltu98NX4T/ISFBQEgQEBIE\
+hAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQE\
+ASFBQEgQEBIEjuZ5/ri/vx8+vNlsprOzs+G7h8NhVbuvr6/T29vb8N2Li4tFdpf6Xx2fn58vcp1h\
+u92u6lrBUrsvLy+L/L63t7er+l/5tIOAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKA\
+kCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJHNzc3Hw8PD8OH13ad4YeL\
+z9P+n+Gz00/Xx6u6vrHU7vHl5aXrDAP8+svn6eW3o+G7X34+W9Xvu9SuTzsICAkCQoKAkCAgJAgI\
+CQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCCw2DWKpa5CbDabVV3B8LxjLHaNYqmrENvt1vMOsLbn9WkHASFBQEgQEBIEhAQBIUFASBAQ\
+EgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIE\
+FrtGcTgcFrkasLbdv7++T9++/zR899O3f1f1nhe7RrHb7ewO8Ncff05fL78M3/1x//uq3rNPOwgI\
+CQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCAgJAgICQJCgoCQIPAfMSa+v+xwu5sAAAAASUVORK5CYII=\
 "
   frames[6] = "data:image/png;base64,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\
-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\
+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\
 "
   frames[7] = "data:image/png;base64,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\
-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\
+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\
-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\
+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\
 "
   frames[8] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-bGliIHZlcnNpb24zLjYuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/P9b71AAAACXBIWXMAAAk6\
-AAAJOgHwZJJKAAAC0ElEQVR4nO3dMWpUaxyH4RNNMCknxc0twoCgzDSpZjfZwt1M6qzBLaS/TSqr\
-YKdTBSTIiEkh6CZezkG/59nAn5mPF6aa39HFxcWv7XY7ze3l5WU6PT0d5u7hcJj95jRN08nJyVDf\
-81J3j7fb7XR7ezv74f1+P11eXg5z9+7ubrq/v5/97vX19VDf81J3X81+Ef5CQoKAkCAgJAgICQJC\
-goCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKA\
-kCAgJAgcXV1d/bq5uZn98OPj4/T09DT73fV6PZ2dnc1+9/n5eai7o73v8fn5+SL/3v/w8LDIOsNm\
-sxlqJWGpu6O9r592EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQ\
-EBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBYLE1CusM81itVkOtQiz1voutUVhnmMdutxtq\
-FWKp9/XTDgJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAg\
-ICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAy3RrH/+n3a/3g9+913b35Oh2+zn53+vTweahViqdWP\
-4dYo/v/yafrwef4H/u+fw/Tw8Wj2u2/fnw31vkutfvhpBwEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
-IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIZboxht\
-JWG9Xg/1eVerlTWKv/nuUisJm81mqM+72+2sUcCfSkgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBAS\
-BIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhASB30Edyvsuu1cM\
-AAAAAElFTkSuQmCC\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC5UlEQVR4nO3dMUpsdxyG4WNQcOw0hUGGgRSXOY2VpMhWXIRrsXYvLsHqwgVJ\
+mYGAjdxYjJ3ZxMv/QM7zbODjnJkXTvc7ub6+/prneRrt8/NzOj8/H7778fExfHOapuns7GyR513q\
+Pa9t93Se5+np6Wn48OFwmLbb7fDd5+fn6eXlZfju/f39Is+71Hte2+4vwxfhf0hIEBASBIQEASFB\
+QEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
+EBASBIQEgZN5nr8eHh6GD+92u2mz2QzfPR6Pq9p9e3ub3t/fh+9eXl4usrvU/+r04uJikesM+/1+\
+VdcKltp9fX1d5Pe9u7tb1f/Kpx0EhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBA4ub29/Xp8fBw+vLbrDL9e3kwf\
+P4fPTr9tT1d1fWOp3dOrqyvXGQb484+b6fX7yfDd379tVvX7LrXr0w4CQoKAkCAgJAgICQJCgoCQ\
+ICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAg\
+JAgsdo1iqasQu91uVVcwPO8Yi12jWOoqxH6/97wDrO15fdpBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhASBxa5R\
+HI/HRa4GrG337d/j9HM6H767Pftc1Xte7BrF4XCwO8BfP/6evn/dDN/9tvlnVe/Zpx0EhAQBIUFA\
+SBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQ\
+EBIEhAQBIUFASBD4D67LvZc4vKkKAAAAAElFTkSuQmCC\
 "
   frames[9] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
-bGliIHZlcnNpb24zLjYuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/P9b71AAAACXBIWXMAAAk6\
-AAAJOgHwZJJKAAAC2ElEQVR4nO3dMWojdxyG4XGwwSZFkBunMIYtFgmCK93Gp3Ltu/gIrrZYRIpt\
-VInFJqgYd5tLvPyHZJ7nAh+a4YWp9Lu4u7v7tdvtptE+Pz+n6+vr1eyez+fhm9M0TVdXV6t6zkvt\
-Xu52u+nl5WX48PF4nO7v71ez+/r6Or29vQ3ffXp6WtVzXmr3t+GL8D8kJAgICQJCgoCQICAkCAgJ\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC6klEQVR4nO3dQUokdxyG4TJoUGelCRgGaZhF6Nq4kixyFQ/hWVx7F4/gKish\
+kE1DQAImdIZ2MWAu8fIvSD3PBT6qul+o3e/o6urqY57nabT39/fp9PR0+O5+vx++OU3TdHJyssjz\
+LvWe17Z7PM/z9Pj4OHx4t9tN19fXw3efnp6m5+fn4bt3d3eLPO9S73ltu98NX4T/ISFBQEgQEBIE\
+hAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQE\
+ASFBQEgQEBIEjuZ5/ri/vx8+vNlsprOzs+G7h8NhVbuvr6/T29vb8N2Li4tFdpf6Xx2fn58vcp1h\
+u92u6lrBUrsvLy+L/L63t7er+l/5tIOAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKA\
+kCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJHNzc3Hw8PD8OH13ad4YeL\
+z9P+n+Gz00/Xx6u6vrHU7vHl5aXrDAP8+svn6eW3o+G7X34+W9Xvu9SuTzsICAkCQoKAkCAgJAgI\
+CQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCCw2DWKpa5CbDabVV3B8LxjLHaNYqmrENvt1vMOsLbn9WkHASFBQEgQEBIEhAQBIUFASBAQ\
+EgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIE\
+FrtGcTgcFrkasLbdv7++T9++/zR899O3f1f1nhe7RrHb7ewO8Ncff05fL78M3/1x//uq3rNPOwgI\
+CQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCAgJAgICQJCgoCQIPAfMSa+v+xwu5sAAAAASUVORK5CYII=\
+"
+  frames[10] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC7klEQVR4nO3dQUokdxyG4TJoUGelCRgGaZhF6Nq4kixyFQ/hWVx7F4/gKish\
+kE1DQAImdIZ2MWAu8VJ/SD3PBT6qul+o3e/o6urqY57naWnv7+/T6enp4rv7/X7xzWmappOTkyHP\
+O+o9r233eJ7n6fHxcfHh3W43XV9fL7779PQ0PT8/L757d3c35HlHvee17X63+CL8DwkJAkKCgJAg\
+ICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgcDTP88f9/f3iw5vNZjo7O1t893A4rGr39fV1ent7W3z34uJiyO6o/9Xx+fn5kOsM\
+2+12VdcKRu2+vLwM+X1vb29X9b/yaQcBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSObm5uPh4eHhYfXtt1hh8u\
+Pk/7fxafnX66Pl7V9Y1Ru8eXl5euMyzg118+Ty+/HS2+++Xns1X9vqN2fdpBQEgQEBIEhAQBIUFA\
+SBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQ\
+EBIEhASBYdcoRl2F2Gw2q7qC4XmXMewaxairENvt1vMuYG3P69MOAkKCgJAgICQICAkCQoKAkCAg\
+JAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQI\
+DLtGcTgchlwNGLX799f36dv3nxbf/fTt31W951G7w65R7Ha7Ve3+9cef09fLL4vv/rj/fVXvedSu\
+TzsICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgICQICAkCQoKAkCDwHzkevr+QobaNAAAAAElFTkSuQmCC\
+"
+  frames[11] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC70lEQVR4nO3dQUokdxyG4TIoqIsEnYVhcBqyCF0EXMkschUP4VlcexePYDZZ\
+uZlF6GwkIEGSlsDgXOKl/pB6ngt8VHW/ULvfwcXFxfs8z9PS3t7epuPj48V3X19fF9+cpmk6Ojoa\
+8ryj3vPadg/neZ7u7+8XH97tdtPl5eXiuw8PD9Pj4+Piuzc3N0Oed9R7Xtvud4svwv+QkCAgJAgI\
+CQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCAgJAgICQIH8zy/397eLj682Wymk5OTxXf3+/2qdp+fn6eXl5fFd8/OzobsjvpfHZ6eng65\
+zrDdbld1rWDU7tPT05Df9/r6elX/K592EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
+EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFB4ODq6ur97u5u8eG1XWf4\
+cPZxev178dnpx8vDVV3fGLV7eH5+7jrDAn79/HF6+v1g8d2ffj5Z1e87atenHQSEBAEhQUBIEBAS\
+BIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSE\
+BAEhQUBIEBh2jWLUVYjNZrOqKxiedxnDrlGMugqx3W497wLW9rw+7SAgJAgICQJCgoCQICAkCAgJ\
 AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
-gsDF4+Pjr+fn5+HDp9Np+vj4GL778PAw3dzcDN+d53lVu2t7v5e3t7eL/Hv/4XBY5DrDdrtd1ZWE\
-pXbX9n592kFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBAS\
-BIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBIHFrlG4zjDGZrNZ1VWIpd7vYtcoXGcYY7/fr+oqxFLv\
-16cdBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQ\
-EgSEBAEhQUBIEBASBIQEASFBQEgQcI1ikJ+n83T+Z/js9Of95aqe81JXP1yjGOTH39+nw7eL4btf\
-vt6s6jkvdfXDpx0EhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSE\
-BAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBC4fH9/n47H4/DheZ5Xtfv7H/P05a/xVxLm+WGR\
-33s6nabD4TB8d7PZTPv9fviuaxSDLHUlYbvdrur37vd71yjgv0pIEBASBIQEASFBQEgQEBIEhAQB\
-IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEgX8B\
-H1vQ7vBVqacAAAAASUVORK5CYII=\
+gsCwaxT7/X7I1YBRu//s/5uOTr9ffPfrvy+res+jdoddo9jtdqva/fLnX9MPn35ZfHf/x2+res+j\
+dn3aQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEgW87+b6ud+UpugAAAABJRU5ErkJggg==\
+"
+  frames[12] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC70lEQVR4nO3dQUokdxyG4TJRUHeagGFwGrIIXRvJQgLJVTyEZ3HtGXIF99m4\
+mpVkl/RKGGRwmHZnLvFSf0g9zwU+qrpfqN3v4OLi4n2e52lpb29v0/Hx8eK7r6+vi29O0zQdHR0N\
+ed5R73ltu4fzPE/39/eLD+92u+ny8nLx3YeHh+nx8XHx3ZubmyHPO+o9r233u8UX4X9ISBAQEgSE\
+BAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBIGDeZ7fb29vFx/ebDbTycnJ4rv7/X5Vu8/Pz9PLy8viu2dnZ0N2R/2vDk9PT4dc\
+Z9hut6u6VjBq9+npacjve319var/lU87CAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgcHB1dfV+d3e3+PDarjP8\
+cPZhev2y+Oz00+Xhqq5vjNo9PD8/d51hAX/89mF6+nSw+O7Pv5ys6vcdtevTDgJCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
+goCQICAkCAy7RjHqKsRms1nVFQzPu4xh1yhGXYXYbreedwFre16fdhAQEgSEBAEhQUBIEBASBIQE\
+ASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QWDYNYr9fj/kasCo3d3nr9Pu2/eL7/7647Sq9zxqd9g1it1ut6rdv/79e/rzn+V/4N8/Tqt6z6N2\
+fdpBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QUBIEBASBIQEASFBQEgQEBIEhASB/wAzybx0xCnJlQAAAABJRU5ErkJggg==\
+"
+  frames[13] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC6UlEQVR4nO3dMUpsdxyG4WNQcOw0hUGGgRSXOY2VpMhWXIRrsXYvLsHqwgVJ\
+mYGAjdxYjJ3ZxMv5Q87zbODjnJkXTvc7ub6+/prneVra5+fndH5+vvjux8fH4pvTNE1nZ2dDnnfU\
+e17b7uk8z9PT09Piw4fDYdput4vvPj8/Ty8vL4vv3t/fD3neUe95bbu/LL4I/0NCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
+goCQICAkCJzM8/z18PCw+PBut5s2m83iu8fjcVW7b29v0/v7++K7l5eXQ3ZH/a9OLy4uhlxn2O/3\
+q7pWMGr39fV1yO97d3e3qv+VTzsICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCBwcnt7+/X4+Lj48NquM/x6eTN9\
+/Fx8dvpte7qq6xujdk+vrq5cZ1jAn3/cTK/fTxbf/f3bZlW/76hdn3YQEBIEhAQBIUFASBAQEgSE\
+BAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFg2DWKUVchdrvdqq5geN5lDLtGMeoqxH6/97wLWNvz+rSDgJAgICQICAkCQoKAkCAgJAgICQJC\
+goCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCw65R\
+HI/HIVcDRu2+/Xucfk7ni+9uzz5X9Z5H7Q67RnE4HFa1+9ePv6fvXzeL737b/LOq9zxq16cdBIQE\
+ASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QUBIEBASBIQEASFBQEgQ+A8sA72XY/B9dwAAAABJRU5ErkJggg==\
+"
+  frames[14] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC7klEQVR4nO3dQUokdxyG4TJoUGelCRgGaZhF6Nq4kixyFQ/hWVx7F4/gKish\
+kE1DQAImdIZ2MWAu8VJ/SD3PBT6qul+o3e/o6urqY57naWnv7+/T6enp4rv7/X7xzWmappOTkyHP\
+O+o9r233eJ7n6fHxcfHh3W43XV9fL7779PQ0PT8/L757d3c35HlHvee17X63+CL8DwkJAkKCgJAg\
+ICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgcDTP88f9/f3iw5vNZjo7O1t893A4rGr39fV1ent7W3z34uJiyO6o/9Xx+fn5kOsM\
+2+12VdcKRu2+vLwM+X1vb29X9b/yaQcBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSObm5uPh4eHhYfXtt1hh8u\
+Pk/7fxafnX66Pl7V9Y1Ru8eXl5euMyzg118+Ty+/HS2+++Xns1X9vqN2fdpBQEgQEBIEhAQBIUFA\
+SBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQ\
+EBIEhASBYdcoRl2F2Gw2q7qC4XmXMewaxairENvt1vMuYG3P69MOAkKCgJAgICQICAkCQoKAkCAg\
+JAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQI\
+DLtGcTgchlwNGLX799f36dv3nxbf/fTt31W951G7w65R7Ha7Ve3+9cef09fLL4vv/rj/fVXvedSu\
+TzsICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgICQICAkCQoKAkCDwHzkevr+QobaNAAAAAElFTkSuQmCC\
+"
+  frames[15] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC70lEQVR4nO3dQUokdxyG4TIoqIsEnYVhcBqyCF0EXMkschUP4VlcexePYDZZ\
+uZlF6GwkIEGSlsDgXOKl/pB6ngt8VHW/ULvfwcXFxfs8z9PS3t7epuPj48V3X19fF9+cpmk6Ojoa\
+8ryj3vPadg/neZ7u7+8XH97tdtPl5eXiuw8PD9Pj4+Piuzc3N0Oed9R7Xtvud4svwv+QkCAgJAgI\
+CQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCAgJAgICQIH8zy/397eLj682Wymk5OTxXf3+/2qdp+fn6eXl5fFd8/OzobsjvpfHZ6eng65\
+zrDdbld1rWDU7tPT05Df9/r6elX/K592EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
+EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFB4ODq6ur97u5u8eG1XWf4\
+cPZxev178dnpx8vDVV3fGLV7eH5+7jrDAn79/HF6+v1g8d2ffj5Z1e87atenHQSEBAEhQUBIEBAS\
+BIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSE\
+BAEhQUBIEBh2jWLUVYjNZrOqKxiedxnDrlGMugqx3W497wLW9rw+7SAgJAgICQJCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
+gsCwaxT7/X7I1YBRu//s/5uOTr9ffPfrvy+res+jdoddo9jtdqva/fLnX9MPn35ZfHf/x2+res+j\
+dn3aQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEgW87+b6ud+UpugAAAABJRU5ErkJggg==\
+"
+  frames[16] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC70lEQVR4nO3dQUokdxyG4TJRUHeagGFwGrIIXRvJQgLJVTyEZ3HtGXIF99m4\
+mpVkl/RKGGRwmHZnLvFSf0g9zwU+qrpfqN3v4OLi4n2e52lpb29v0/Hx8eK7r6+vi29O0zQdHR0N\
+ed5R73ltu4fzPE/39/eLD+92u+ny8nLx3YeHh+nx8XHx3ZubmyHPO+o9r233u8UX4X9ISBAQEgSE\
+BAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBIGDeZ7fb29vFx/ebDbTycnJ4rv7/X5Vu8/Pz9PLy8viu2dnZ0N2R/2vDk9PT4dc\
+Z9hut6u6VjBq9+npacjve319var/lU87CAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgcHB1dfV+d3e3+PDarjP8\
+cPZhev2y+Oz00+Xhqq5vjNo9PD8/d51hAX/89mF6+nSw+O7Pv5ys6vcdtevTDgJCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
+goCQICAkCAy7RjHqKsRms1nVFQzPu4xh1yhGXYXYbreedwFre16fdhAQEgSEBAEhQUBIEBASBIQE\
+ASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QWDYNYr9fj/kasCo3d3nr9Pu2/eL7/7647Sq9zxqd9g1it1ut6rdv/79e/rzn+V/4N8/Tqt6z6N2\
+fdpBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QUBIEBASBIQEASFBQEgQEBIEhASB/wAzybx0xCnJlQAAAABJRU5ErkJggg==\
+"
+  frames[17] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC6UlEQVR4nO3dMUpsdxyG4WNQcOw0hUGGgRSXOY2VpMhWXIRrsXYvLsHqwgVJ\
+mYGAjdxYjJ3ZxMv5Q87zbODjnJkXTvc7ub6+/prneVra5+fndH5+vvjux8fH4pvTNE1nZ2dDnnfU\
+e17b7uk8z9PT09Piw4fDYdput4vvPj8/Ty8vL4vv3t/fD3neUe95bbu/LL4I/0NCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
+goCQICAkCJzM8/z18PCw+PBut5s2m83iu8fjcVW7b29v0/v7++K7l5eXQ3ZH/a9OLy4uhlxn2O/3\
+q7pWMGr39fV1yO97d3e3qv+VTzsICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCBwcnt7+/X4+Lj48NquM/x6eTN9\
+/Fx8dvpte7qq6xujdk+vrq5cZ1jAn3/cTK/fTxbf/f3bZlW/76hdn3YQEBIEhAQBIUFASBAQEgSE\
+BAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFg2DWKUVchdrvdqq5geN5lDLtGMeoqxH6/97wLWNvz+rSDgJAgICQICAkCQoKAkCAgJAgICQJC\
+goCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCw65R\
+HI/HIVcDRu2+/Xucfk7ni+9uzz5X9Z5H7Q67RnE4HFa1+9ePv6fvXzeL737b/LOq9zxq16cdBIQE\
+ASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QUBIEBASBIQEASFBQEgQ+A8sA72XY/B9dwAAAABJRU5ErkJggg==\
+"
+  frames[18] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC7klEQVR4nO3dQUokdxyG4TJoUGelCRgGaZhF6Nq4kixyFQ/hWVx7F4/gKish\
+kE1DQAImdIZ2MWAu8VJ/SD3PBT6qul+o3e/o6urqY57naWnv7+/T6enp4rv7/X7xzWmappOTkyHP\
+O+o9r233eJ7n6fHxcfHh3W43XV9fL7779PQ0PT8/L757d3c35HlHvee17X63+CL8DwkJAkKCgJAg\
+ICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgcDTP88f9/f3iw5vNZjo7O1t893A4rGr39fV1ent7W3z34uJiyO6o/9Xx+fn5kOsM\
+2+12VdcKRu2+vLwM+X1vb29X9b/yaQcBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSObm5uPh4eHhYfXtt1hh8u\
+Pk/7fxafnX66Pl7V9Y1Ru8eXl5euMyzg118+Ty+/HS2+++Xns1X9vqN2fdpBQEgQEBIEhAQBIUFA\
+SBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQ\
+EBIEhASBYdcoRl2F2Gw2q7qC4XmXMewaxairENvt1vMuYG3P69MOAkKCgJAgICQICAkCQoKAkCAg\
+JAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQI\
+DLtGcTgchlwNGLX799f36dv3nxbf/fTt31W951G7w65R7Ha7Ve3+9cef09fLL4vv/rj/fVXvedSu\
+TzsICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgICQICAkCQoKAkCDwHzkevr+QobaNAAAAAElFTkSuQmCC\
+"
+  frames[19] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC70lEQVR4nO3dQUokdxyG4TIoqIsEnYVhcBqyCF0EXMkschUP4VlcexePYDZZ\
+uZlF6GwkIEGSlsDgXOKl/pB6ngt8VHW/ULvfwcXFxfs8z9PS3t7epuPj48V3X19fF9+cpmk6Ojoa\
+8ryj3vPadg/neZ7u7+8XH97tdtPl5eXiuw8PD9Pj4+Piuzc3N0Oed9R7Xtvud4svwv+QkCAgJAgI\
+CQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCAgJAgICQIH8zy/397eLj682Wymk5OTxXf3+/2qdp+fn6eXl5fFd8/OzobsjvpfHZ6eng65\
+zrDdbld1rWDU7tPT05Df9/r6elX/K592EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
+EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFB4ODq6ur97u5u8eG1XWf4\
+cPZxev178dnpx8vDVV3fGLV7eH5+7jrDAn79/HF6+v1g8d2ffj5Z1e87atenHQSEBAEhQUBIEBAS\
+BIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSE\
+BAEhQUBIEBh2jWLUVYjNZrOqKxiedxnDrlGMugqx3W497wLW9rw+7SAgJAgICQJCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
+gsCwaxT7/X7I1YBRu//s/5uOTr9ffPfrvy+res+jdoddo9jtdqva/fLnX9MPn35ZfHf/x2+res+j\
+dn3aQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEgW87+b6ud+UpugAAAABJRU5ErkJggg==\
+"
+  frames[20] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC70lEQVR4nO3dQUokdxyG4TJRUHeagGFwGrIIXRvJQgLJVTyEZ3HtGXIF99m4\
+mpVkl/RKGGRwmHZnLvFSf0g9zwU+qrpfqN3v4OLi4n2e52lpb29v0/Hx8eK7r6+vi29O0zQdHR0N\
+ed5R73ltu4fzPE/39/eLD+92u+ny8nLx3YeHh+nx8XHx3ZubmyHPO+o9r233u8UX4X9ISBAQEgSE\
+BAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBIGDeZ7fb29vFx/ebDbTycnJ4rv7/X5Vu8/Pz9PLy8viu2dnZ0N2R/2vDk9PT4dc\
+Z9hut6u6VjBq9+npacjve319var/lU87CAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgcHB1dfV+d3e3+PDarjP8\
+cPZhev2y+Oz00+Xhqq5vjNo9PD8/d51hAX/89mF6+nSw+O7Pv5ys6vcdtevTDgJCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
+goCQICAkCAy7RjHqKsRms1nVFQzPu4xh1yhGXYXYbreedwFre16fdhAQEgSEBAEhQUBIEBASBIQE\
+ASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QWDYNYr9fj/kasCo3d3nr9Pu2/eL7/7647Sq9zxqd9g1it1ut6rdv/79e/rzn+V/4N8/Tqt6z6N2\
+fdpBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QUBIEBASBIQEASFBQEgQEBIEhASB/wAzybx0xCnJlQAAAABJRU5ErkJggg==\
+"
+  frames[21] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC60lEQVR4nO3dQUokdxyG4TJRUHeagGFwGrIIXRvJQgLJVTyEZ3HtGXIF99m4\
+mpVkl/RKGGRwmHZnLvHyL0g9zwU+qrpfqN3v4OLi4n2e52m0t7e36fj4ePju6+vr8M1pmqajo6NF\
+nnep97y23cN5nqf7+/vhw7vdbrq8vBy++/DwMD0+Pg7fvbm5WeR5l3rPa9v9bvgi/A8JCQJCgoCQ\
+ICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAg\
+JAgICQJCgoCQIHAwz/P77e3t8OHNZjOdnJwM393v96vafX5+nl5eXobvnp2dLbK71P/q8PT0dJHr\
+DNvtdlXXCpbafXp6WuT3vb6+XtX/yqcdBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBAS\
+BIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQOLi6unq/u7sbPry26ww/\
+nH2YXr8Mn51+ujxc1fWNpXYPz8/PXWcY4I/fPkxPnw6G7/78y8mqft+ldn3aQUBIEBASBIQEASFB\
+QEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
+EBASBIQEgcWuUSx1FWKz2azqCobnHWOxaxRLXYXYbreed4C1Pa9POwgICQJCgoCQICAkCAgJAkKC\
+gJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQ\
+ILDYNYr9fr/I1YC17e4+f512374fvvvrj9Oq3vNi1yh2u53dAf769+/pz3/G/7F+/zit6j37tIOA\
+kCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAg\
+ICQICAkCQoKAkCAgJAgICQL/AT8IvHR8DiMtAAAAAElFTkSuQmCC\
+"
+  frames[22] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC5UlEQVR4nO3dMUpsdxyG4WNQcOw0hUGGgRSXOY2VpMhWXIRrsXYvLsHqwgVJ\
+mYGAjdxYjJ3ZxMv/QM7zbODjnJkXTvc7ub6+/prneRrt8/NzOj8/H7778fExfHOapuns7GyR513q\
+Pa9t93Se5+np6Wn48OFwmLbb7fDd5+fn6eXlZfju/f39Is+71Hte2+4vwxfhf0hIEBASBIQEASFB\
+QEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBI\
+EBASBIQEgZN5nr8eHh6GD+92u2mz2QzfPR6Pq9p9e3ub3t/fh+9eXl4usrvU/+r04uJikesM+/1+\
+VdcKltp9fX1d5Pe9u7tb1f/Kpx0EhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBA4ub29/Xp8fBw+vLbrDL9e3kwf\
+P4fPTr9tT1d1fWOp3dOrqyvXGQb484+b6fX7yfDd379tVvX7LrXr0w4CQoKAkCAgJAgICQJCgoCQ\
+ICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAg\
+JAgsdo1iqasQu91uVVcwPO8Yi12jWOoqxH6/97wDrO15fdpBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhASBxa5R\
+HI/HRa4GrG337d/j9HM6H767Pftc1Xte7BrF4XCwO8BfP/6evn/dDN/9tvlnVe/Zpx0EhAQBIUFA\
+SBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQ\
+EBIEhAQBIUFASBD4D67LvZc4vKkKAAAAAElFTkSuQmCC\
+"
+  frames[23] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC5klEQVR4nO3dsU0kdxyG4cECCUisxQE2Qis5sHckiwhd4B5cAUVQCzG9UALR\
+RVy8EQ7QiWDJcBOv5y/dPE8Dn2ZnX2my39Hl5eXnPM/T0j4+PqbT09PFd9/f3xffnKZpOjk5GfK8\
+o37nte0ez/M8PT4+Lj683++n6+vrxXefnp6m5+fnxXfv7u6GPO+o33ltuz8tvgg/ICFBQEgQEBIE\
+hAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQE\
+ASFBQEgQEBIEjuZ5/ry/v198eLvdTmdnZ4vvHg6HVe2+vr5Ob29vi+9uNpshu6P+V8fn5+dDrjPs\
+drtVXSsYtfvy8jLk/d7e3q7qf+XTDgJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJC\
+goCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCBzd3Nx8Pjw8LD68tusMv2yu\
+pvfvi89Ov14fr+r6xqjd44uLC9cZFvD3l6vp5evR4ru//3G2qvc7atenHQSEBAEhQUBIEBASBIQE\
+ASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEh\
+QUBIEBh2jWLUVYjtdruqKxib37bT9+l08d2fP/5d1fsddo1i1FWI3W63quf98s+f09fPq8V3/3r7\
+tqr369MOAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAg\
+JAgICQJCgoCQICAkCAgJAkKCgJAgICQIDLtGcTgchlwNsGv3/zDsGsV+v7dr94fZ9WkHASFBQEgQ\
+EBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBAS\
+BIQEASFBQEgQEBIE/gMQfr/hEX3S0AAAAABJRU5ErkJggg==\
+"
+  frames[24] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAAC1klEQVR4nO3dMUokeRyG4XJQaN1IJ2gQ6WRZuhIjmWCu4iE8i7F38QhGE5k3\
+LJjIYNBm7iXe/RdMPc8FPqq7Xqjsd7Ldbr/meZ5G+/z8nDabzfDdj4+P4ZvTNE1nZ2eLPO9Sv/Pa\
+dk/neZ6enp6GDx8Oh+nm5mb47vPz8/Ty8jJ89/7+fpHnXep3Xtvut+GL8AcSEgSEBAEhQUBIEBAS\
+BIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSE\
+BAEhQeBknuevh4eH4cO73W46Pz8fvns8Hle1+/b2Nr2/vw/fvby8XGR3qffq9OLiYpHrDPv9flXX\
+CpbafX19XeT/vbu7W9V75dMOAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAg\
+ICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQInNze3n49Pj4OH17bdYbvl9fTx+/h\
+s9Nf29Pp97QZvntz9rmqqx+nV1dXrjMM8PPH9fT662T47t/bzfTr63r47j/n/67qvfJpBwEhQUBI\
+EBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQ\
+EgSEBAEhQUBIEBASBBa7RrHUVYjdbreqKxied4zFrlEsdRViv9973gHW9rw+7SAgJAgICQJCgoCQ\
+ICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAg\
+JAgICQJCgsBi1yiOx+MiVwPs2v0/LHaN4nA42LX7x+z6tIOAkCAgJAgICQJCgoCQICAkCAgJAkKC\
+gJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQL/AUzx\
+vaKGf2lYAAAAAElFTkSuQmCC\
+"
+  frames[25] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAADBUlEQVR4nO3dMWrbYBzG4c+tXeJ4shsIhGCaSYLiKe3Qq+QQOYvn3CVHyNRJ\
+kFGThoTiFmcIuJd4+QTR81zgRbZ+oO0/u7y8PLVtW2p7e3srZ2dn1XcPh0P1zVJKWSwWozzvWL/z\
+1HbnbduWh4eH6sN935fr6+vqu4+Pj+Xp6an67t3d3SjPO9bvPLXdT9UX4QMSEgQICQKEBAFCggAh\
+QYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQ\
+EgQICQKEBAGztm1P9/f31Ye3221ZLpfVd4/H46R2h2Eor6+v1XfX6/Uou2O9V/Pz8/NRrjM0TTOp\
+awVj7XZdN8r/e3t7O6n3yqcdBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBA\
+SBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCgNlutzvt9/vqw1O7zvB1fVUO\
+f6rPlvXVorx/WVXfXb3/ndTVj/lms3GdoYJfP69K93tWfffHt1X5t7mpvntxeJ7Ue+XTDgKEBAFC\
+ggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAg\
+JAgQEgQICQKEBAFCggAhQcD85eWl9H1ffXgYhtJ1XfXd7XZbmqapvjsMQ7n5Xv8Kxur9c7k4PFff\
+HfP/HeN9Hu0axVhXIZqm8bwVTO15fdpBgJAgQEgQICQIEBIECAkChAQBQoIAIUGAkCBASBAgJAgQ\
+EgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAUKCACFBgJAgQEgQICQImO12u9N+v68+fDwe\
+y3K5tGv3Q+yOdo2i73u7dj/Mrk87CBASBAgJAoQEAUKCACFBgJAgQEgQICQIEBIECAkChAQBQoIA\
+IUGAkCBASBAgJAgQEgQICQKEBAFCggAhQYCQIEBIECAkCBASBAgJAoQEAf8B9o/EWfSJJbYAAAAA\
+SUVORK5CYII=\
+"
+  frames[26] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAACxklEQVR4nO3dMUoccRyG4TEoqJ2mMARZSBF2GitJkat4CM9i7V08glWq7bey\
+kWCxduYSb+YPzvNc4GNm94XpfkdXV1cf8zxPS3t/f59OT08X3317e1t8c5qm6eTkZMjzjnrPa9s9\
+nud5enx8XHx4v99P19fXi+8+PT1Nz8/Pi+/e3d0Ned5R73ltu18WX4RPSEgQEBIEhAQBIUFASBAQ\
+EgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIE\
+hASBo3meP+7v7xcf3mw209nZ2eK7h8NhVbsvLy/T6+vr4rsXFxdDdkf9r47Pz8+HXGfYbrerulYw\
+ane32w35fW9vb1f1v/JpBwEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBAS\
+BIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBI5ubm4+Hh4eFh9e23WGrxffp7e/i89O\
+366PV3V9Y9Tu8eXlpesMC/j96/u0+3O0+O6Pn2er+n1H7fq0g4CQICAkCAgJAkKCgJAgICQICAkC\
+QoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAsOu\
+UYy6CrHZbFZ1BcPzLmPYNYpRVyG2263nXcDantenHQSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBh2jeJwOAy5\
+GmDX7v8w7BrFfr+3a/fT7Pq0g4CQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAk\
+CAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAv8AOEm+rtN7VRYAAAAASUVORK5C\
+YII=\
 "
 
 
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        animfa064f5a8cca4f69a5ad2e7e890f8bff = new Animation(frames, img_id, slider_id, 149.0,
+        anim177062e2eece4c6993b7e649b126f03c = new Animation(frames, img_id, slider_id, 149.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -1733,20 +1419,20 @@ Dennoch zeigt dieses Beispiel, dass die Wiederholung von einfachen Befehlen zu k
 <p><em>Wiederholung</em> trennt den Aufwand zum Lösen einer Aufgabe von der Komplexität des Codes.
 Eine Berechnung kann enorm aufwendig sein und dennoch benötigen wir wenig Denkarbeit (wenig Code) um einen Algorithmus für die Lösung zu entwerfen!</p>
 </div>
-</div>
-<div class="section" id="die-for-schleife">
-<span id="sec-for"></span><h2><span class="section-number">17.2.2. </span>Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife<a class="headerlink" href="#die-for-schleife" title="Link zu dieser Überschrift">#</a></h2>
+</section>
+<section id="die-for-schleife">
+<span id="sec-for"></span><h2><span class="section-number">17.2.2. </span>Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife<a class="headerlink" href="#die-for-schleife" title="Permalink to this heading">#</a></h2>
 <p>Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife verwenden wir immer dann, wenn wir (zur Laufzeit) vor dem Eintritt in die Wiederholung wissen, wie viele Wiederholungen wir <strong>maximal</strong> benötigen.
 Dabei wollen wir entweder</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>für eine bestimmte Anzahl <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>, oder</p></li>
 <li><p>für jedes Element einer <em>Datenstruktur</em> (Liste, Tupel, usw.)</p></li>
 </ol>
 <p>einen Befehlsblock ausführen.</p>
 <p>Im zweiten Fall spricht man auch von der sog. <em>Foreach-Schleife</em>.
 Durch den Zahlenbereich <code class="docutils literal notranslate"><span class="pre">range()</span></code> reduziert <code class="docutils literal notranslate"><span class="pre">Python</span></code> den ersten Fall auf den zweiten.</p>
-<div class="section" id="die-klassische-for-schleife-fall-1">
-<h3><span class="section-number">17.2.2.1. </span>Die klassische <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife (Fall 1)<a class="headerlink" href="#die-klassische-for-schleife-fall-1" title="Link zu dieser Überschrift">#</a></h3>
+<section id="die-klassische-for-schleife-fall-1">
+<h3><span class="section-number">17.2.2.1. </span>Die klassische <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife (Fall 1)<a class="headerlink" href="#die-klassische-for-schleife-fall-1" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="o">...</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="c1"># Codeblock</span>
@@ -1798,9 +1484,9 @@ Durch den Zahlenbereich <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="die-foreach-schleife-fall-2">
-<h3><span class="section-number">17.2.2.2. </span>Die Foreach-Schleife (Fall 2)<a class="headerlink" href="#die-foreach-schleife-fall-2" title="Link zu dieser Überschrift">#</a></h3>
+</section>
+<section id="die-foreach-schleife-fall-2">
+<h3><span class="section-number">17.2.2.2. </span>Die Foreach-Schleife (Fall 2)<a class="headerlink" href="#die-foreach-schleife-fall-2" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sequenz</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># some Sequenz of Elements</span>
 <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sequenz</span><span class="p">:</span>
     <span class="c1"># Codeblock</span>
@@ -1952,9 +1638,9 @@ Der Code nach <code class="docutils literal notranslate"><span class="pre">conti
 <p class="admonition-title">Kontrollmechanismen der for-Schleife</p>
 <p>Gehen Sie sparsam mit <code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code> um, oftmals brauchen Sie es nicht!</p>
 </div>
-</div>
-<div class="section" id="die-while-schleife">
-<h3><span class="section-number">17.2.2.3. </span>Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife<a class="headerlink" href="#die-while-schleife" title="Link zu dieser Überschrift">#</a></h3>
+</section>
+<section id="die-while-schleife">
+<h3><span class="section-number">17.2.2.3. </span>Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife<a class="headerlink" href="#die-while-schleife" title="Permalink to this heading">#</a></h3>
 <p>Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife verwenden wir immer dann, wenn wir (zur Laufzeit) <strong>nicht</strong> wissen wie viele Wiederholungen wir maximal benötigen.
 Die Wiederholung endet sobald eine bestimmte Bedingung, d.h. ein <em>logischer Ausdruck</em> <code class="docutils literal notranslate"><span class="pre">P</span></code> zu <code class="docutils literal notranslate"><span class="pre">False</span></code> ausgewertet wird.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">P</span><span class="p">:</span>
@@ -2130,13 +1816,13 @@ Martin
 <p class="admonition-title">Verhindern von Endlosschleifen</p>
 <p>Prüfen Sie immer ob Ihre Bedingung <code class="docutils literal notranslate"><span class="pre">P</span></code> durch den Schleifenrumpf garantiert irgendwann <code class="docutils literal notranslate"><span class="pre">False</span></code> ergibt!</p>
 </div>
-</div>
-</div>
-<div class="section" id="beispiel-ggt">
-<h2><span class="section-number">17.2.3. </span>Beispiel (ggT)<a class="headerlink" href="#beispiel-ggt" title="Link zu dieser Überschrift">#</a></h2>
+</section>
+</section>
+<section id="beispiel-ggt">
+<h2><span class="section-number">17.2.3. </span>Beispiel (ggT)<a class="headerlink" href="#beispiel-ggt" title="Permalink to this heading">#</a></h2>
 <p>Lassen Sie uns <a class="reference internal" href="../02-4/1-algorithms.html#sec-euclid-alg"><span class="std std-ref">Euklid’s Algorithmus</span></a> <code class="docutils literal notranslate"><span class="pre">gcd(m,n)</span></code> zum finden des Größter gemeinsamer Teiler (ggT) zweier ganzer Zahlen von <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(n\)</span> erneut implementieren.</p>
 <p>Euklid’s Algorithmus geht wie folgt vor:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Berechne den Restwert der Division <span class="math notranslate nohighlight">\(m / n\)</span> (Modulodivision). Sei dieser gleich <span class="math notranslate nohighlight">\(r\)</span>.</p></li>
 <li><p>Setze <span class="math notranslate nohighlight">\(m \leftarrow n\)</span>, <span class="math notranslate nohighlight">\(n \leftarrow r\)</span> und gehe zurück zu Schritt 1.</p></li>
 <li><p>Falls <span class="math notranslate nohighlight">\(r = 0\)</span> (und somit <span class="math notranslate nohighlight">\(n = 0\)</span>), so ist der Algorithmus beendet. Das Ergebnis (ggT) ist <span class="math notranslate nohighlight">\(m\)</span>. Ansonsten fahre fort.</p></li>
@@ -2176,8 +1862,8 @@ Martin
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2191,7 +1877,7 @@ Martin
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./chapters/03-7"
         },
         predefinedOutput: true
@@ -2199,50 +1885,104 @@ Martin
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="1-cases.html" title="zurück Seite">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">zurück</p>
-            <p class="prev-next-title"><span class="section-number">17.1. </span>Fallunterscheidungen</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1-cases.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">zurück</p>
+        <p class="prev-next-title"><span class="section-number">17.1. </span>Fallunterscheidungen</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="3-comprehensions.html" title="weiter Seite">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="3-comprehensions.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">weiter</p>
         <p class="prev-next-title"><span class="section-number">17.3. </span>Comprehensions</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    <div class="extra_footer">
-      <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Inhalt
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">17.2.1. Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-for-schleife">17.2.2. Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-klassische-for-schleife-fall-1">17.2.2.1. Die klassische <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife (Fall 1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-foreach-schleife-fall-2">17.2.2.2. Die Foreach-Schleife (Fall 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-while-schleife">17.2.2.3. Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-ggt">17.2.3. Beispiel (ggT)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

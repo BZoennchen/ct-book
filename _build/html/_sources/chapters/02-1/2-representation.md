@@ -75,8 +75,8 @@ Es ist die kleinst mögliche Einheit an Information welche ein Computer speicher
 ```{admonition} Bit
 :name: def-bit
 :class: definition
-Der einzelne Zustand eines Kabels, also **Strom aus** oder **Strom an** nennen wir *Bit*.
-Es ist die kleinst mögliche Einheit an Information welche ein Computer speichern und verarbeiten kann.
+Der einzelne Zustand eines Kabels oder einer Lampe, also **Strom aus** oder **Strom an** nennen wir *Bit*.
+Es ist die kleinst mögliche Einheit an [Information](sec-information) welche ein Computer speichern und verarbeiten kann.
 ```
 
 Benutzen wir mehrere (geordnete) Lampen so erhalten wir mehrere *Bits* und können so komplexere Informationen speichern.
@@ -120,6 +120,7 @@ $$\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$$
 wobei $\log_b(a)$ eine Konstante ist.
 
 ```{code-cell} python3
+:tags: [remove-input]
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
@@ -405,7 +406,7 @@ Zudem gilt:
 
 $$\overline{1011}_2 + 1_2 = 0100_2 + 1_2 = 0101_2 = 5_{10}.$$
 
-````{exercise} Komplement des Komplements (schwer)
+````{exercise} Komplement des Komplements
 :label: complement-of-complement-exercise
 Können Sie begründen weshalb für eine Binärzahl $b_{n-1}\ldots b_0$ folgendes gilt:
 
@@ -427,14 +428,20 @@ Dann folgt
 $$\overline{b_{n-1}\ldots b_0} = \overline{b_{n-1}\ldots b_{k-1}}01\ldots 1.$$
 
 In anderen Worten $b_k$ wird zu $0$ und alle niedrigeren Bits nehmen den Wert $1$ an.
-Addieren wir nun $1$ werden alle diese niediederen Bit $0$ und $b_k$ nimmt den Wert $1$ an.
+Addieren wir nun $1$ werden alle diese niediederen Bits $0$ und $b_k$ nimmt den Wert $1$ an.
 Alle höheren Bits bleiben unberührt:
 
 $$\overline{b_{n-1}\ldots b_{k-1}}01\ldots 1 + 1 = \overline{b_{n-1}\ldots b_{k-1}}10\ldots 0$$
 
 Wiederholen wir diesen Vorgang ergibt sich
 
-$$\overline{\overline{b_{n-1}\ldots b_{k-1}}10\ldots 0} + 1 = b_{n-1}\ldots b_{k-1}01\ldots 1 + 1 = b_{n-1}\ldots b_{k-1}10\ldots 0 = b_{n-1}\ldots b_{0}.$$
+$$
+\begin{split}
+  \overline{\overline{b_{n-1}\ldots b_{k-1}}10\ldots 0} + 1 &= b_{n-1}\ldots b_{k-1}\overline{10\ldots 0} + 1\\
+  &= b_{n-1}\ldots b_{k-1}01\ldots 1 + 1\\
+  &= b_{n-1}\ldots b_{k-1}10\ldots 0 = b_{n-1}\ldots b_{0}.
+\end{split}
+$$
 
 ```
 
@@ -687,27 +694,34 @@ Diese Technik ist eng mit dem Informationsbegriff verknüpft, siehe [Information
 ## Ton
 
 Ton entsteht durch Vibration der Luft.
-Unser Ohr erkennt die oszillierende Druckveränderung und es entsteht Ton.
-Die Oszillation lässt sich als periodische Funktion über die Zeit darstellen.
-Ton ist nichts anderes als eine Funktion $f(t)$ der Amplitude (Lautstärke) über die Zeit $t$.
-Die Frequenz der Oszillation bestimmt die Tonhöhe.
+Luft wird verdichtet und ausgedehnt, d.h. die Moleküldichte verändert sich.
+Diese Veränderung bewegt sich als Welle durch den Raum.
+Vergleichbar ist die Welle die entsteht wenn Sie einen Stein in einen See werfen.
+Die Energie bewegt sich durch das Medium bis an unser Ohr.
+Unser Ohr erkennt die oszillierende Druckveränderung (die Welle) und interpretiert diese als das was wir Ton nennen.
 
 ```{figure} ../../figs/digital-computer/representation/particle-waves.png
 ---
-width: 400px
+width: 800px
 name: fig-particle-waves
 ---
-Ein zyklischess Muster aus niedriger und hoher Moleküldichte.
+Ein zyklischess Muster aus niedriger und hoher Moleküldichte, was mit der Zeit von links nach rechts wandert.
 ```
 
-Wir können keine Funktion mit nur **Strom aus** und **Strom an** repräsentieren, da diese unendlich viele Werte annimmt.
+Die Oszillation lässt sich als periodische Funktion über die Zeit darstellen.
+Ton kann durch eine Funktion $f(t)$ der Amplitude (Lautstärke) über die Zeit $t$ dargestellt werden.
+Lautsprecher wandeln die Funktion wiederum in Druckveränderungen der Luft um, sodass unser Ohr die Funktion wahrnehmen kann.
+Die Frequenz der Oszillation, d.h. wie schnell das Wechselspiel von Kompression und Dekompression vonstattengeht, bestimmt die Tonhöhe.
+
+Wir können keine solche (reelle) Funktion mit lediglich zwei Zuständen, d.h. **Strom aus** und **Strom an** repräsentieren, da diese unendlich viele Werte annimmt.
 Wir können von der Funktion aber eine sogenannte *Stichprobe (engl. Sample)* erstellen.
-Dazu werten wir die Funktion an endlich vielen Stellen $t = t_0, \ldots, t_n$ aus und speichern die zugehörigen Werte $f(t_0), \ldots, f(t_n)$ ab.
-Je mehr *Samples* wir pro Sekunde machen und je genauer wir die Amplitude an den Samplepunkten treffen, desto genauer wird unsere eigentliche Funktion $f(t)$ angenähert.
+Dazu werten wir die Funktion an endlich vielen Stellen $t = t_0, \ldots, t_n$ aus und speichern die zugehörigen Werte $\hat{f}(t_0), \ldots, \hat{f}(t_n)$ ab.
+Dabei ist $\hat{f}(t_i)$ eine Annäherung des eigentlichen Funktionswerts, d.h. $\hat{f}(t_i) \approx f(t_i)$.
+Je mehr *Samples* wir pro Sekunde machen und je genauer wir die Amplitude an den Samplepunkten treffen, desto genauer wird unsere Annäherung an $f(t)$.
 
 ```{figure} ../../figs/digital-computer/representation/sound-wave.png
 ---
-width: 700px
+width: 800px
 name: fig-sound-wave
 ---
 Transformation des analogen Tons in digitale Samples.
@@ -718,17 +732,17 @@ Erst erhöhen wir die Bit-Tiefe (zweite Zeile), dann die Sample-Rate (dritte Zei
 Ton wird als Folge von Zahlen repräsentiert.
 Diese Folge transformieren Lautsprecher in Vibration und damit in Ton.
 Gewöhnlich verwendet man eine sog. *Sample-Rate (Stichproben-Rate)* von 44.1 kHz, d.h. 44100 Stichproben pro Sekunde.
-Der Wert der Amplitude $f(t_i)$, in Form einer [Fließkommazahl/Gleitkommazahl](sec-float), wird heute normalerweise durch 32 *Bits* also 4 *Byte* repräsentiert.
+Der Wert der Amplitude $\hat{f}(t_i)$, in Form einer [Fließkommazahl/Gleitkommazahl](sec-float), wird heute normalerweise durch 32 *Bits* also 4 *Byte* durch repräsentiert.
 
 ```{exercise} Speicherplatz
 :label: sound-memory-exercise
-Wie viel Speicherplatz verbraucht ein 3-Minuten-Song der in einer Sample-Rate von 44.1 kHz und einer Bit-Tiefe von 32 Bits abgespeichert wurde?
+Wie viel Speicherplatz verbraucht ein (unkomprimierter) 3-Minuten-Song der in einer Sample-Rate von 44.1 kHz und einer Bit-Tiefe von 32 Bits abgespeichert wurde?
 ```
 
 ```{solution} sound-memory-exercise
 :label: sound-memory-solution
 :class: dropdown
-Bei $44100$ Samplepunkte pro Sekunde wobei jeder Punkt 32 *Bits* kostet brauchen wir insgesamt
+Bei $44100$ Samplepunkte pro Sekunde, wobei jeder Punkt 32 *Bits* kostet, brauchen wir insgesamt
 
 $$44100 \cdot 60 \cdot 3 \cdot 32 = 32.752$$
 
@@ -740,6 +754,7 @@ Es wird eine Sample-Rate von 3, 4, 8, 16, 32 und 64 Hz verwendet.
 Auch hier gilt: Sie brauchen den Code noch nicht verstehen aber vielleicht möchten Sie zu einem späteren Zeitpunkt analysieren was hier geschieht.
 
 ```{code-cell} python3
+:tags: [hide-input]
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
@@ -789,6 +804,7 @@ $$f(t) = \sin(200 \cdot 2\pi \cdot t),$$
 
 der sich über den Zeitraum von $10$ Sekunden erstreckt, speichern.
 Wie könnten Sie diesen Ton durch extrem wenig Speicherplatz abspeichern?
+Oder anders gefragt: Durch was lässt sich diese Funktion repräsentieren?
 **Tipp:** Denken Sie an die *Vektorgrafik*.
 ```
 

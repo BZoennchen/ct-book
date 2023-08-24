@@ -21,17 +21,17 @@ Jedes dieser Probleme benötigt zur Lösung eine Rechnerleistung, die wir Mensch
 Durch Entwicklungen in der Datenanalyse, insbesondere dem *maschinellen Lernen* und der Entdeckung der *Information als Wirtschaftsgut*, wird der Hunger nach Rechenleistung und Speicherkapazität von Unternehmen und der Forschungsgemeinschaft immer größer.
 Die *digitale Transformation*, das *Internet der Dinge (IoT)* und die *künstliche Intelligenz (KI)* sind Themen, die Regierungen wie auch Unternehmen auf lange Sicht beschäftigen werden.
 
-Heute, im Jahr 2021, verarbeiten Computer fortwährend Informationen.
+Computer verarbeiten fortwährend Informationen.
 Die Geschwindigkeit dieses Vorgangs ist atemberaubend.
 2015 lag die gesamte Rechnerkapazität bei etwa 
 
 $$2 \cdot 10^{20}$$ 
 
 Gleitkommaoperationen (Addieren, Subtrahieren und Multiplizieren) pro Sekunde!
-Damit wir als Menschheit mit dieser Geschwindigkeit mithalten können, müsste jeder von uns deutlich mehr Operationen pro Sekunde durchführen, als es Menschen auf der Erde gibt.
+Damit wir als Menschheit mit dieser Geschwindigkeit mithalten können, müsste jede\*r von uns deutlich mehr Operationen pro Sekunde durchführen, als es Menschen auf der Erde gibt.
 Maschinen sind uns in dieser Domäne weit überlegen.
 Wie einst die Entdeckung und Nutzung der fossilen Brennstoffe unsere Muskelkraft in den Schatten gestellt hat, sind es die Computer, die unsere Rechenleistung weit übertreffen.
-Dennoch sind Computer und deren Systeme (noch) unglaublich primitiv -- sie brauchen genaue Anweisungen denen sie stupide folgen.
+Dennoch sind Computer und deren Systeme (noch) unglaublich primitiv---sie brauchen genaue Anweisungen denen sie stupide folgen.
 Sie kennen weder Kontext, Intuition noch Intentionalität, dafür führen sie primitive Operationen mit einer unvorstellbaren Geschwindigkeit aus.
 Computer sind unglaublich schnell, präzise, und primitiv.
 Hingegen ist der Mensch unglaublich langsam, ungenau, und doch brilliant.
