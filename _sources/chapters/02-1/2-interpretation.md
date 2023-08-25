@@ -52,7 +52,7 @@ Wir können den echten Tag nicht niederschreiben, wir können ihn lediglich refe
 
 Das Stop-Symbol symbolisiert das Stehenbleiben und dessen Qualität (Abbremsen, Autofahren, Straße, Straßenverkehr, ...).
 Es referenziert einen Sachverhalt der Realwelt, das Stehenbleiben eines konkreten Fahrzeugs.
-Zusätzlich hat es auf uns eine bestimmte Wirkung, nämlich dass wir, wenn wir es sehen, stehenbleiben.
+Zusätzlich hat es auf uns eine bestimmte Wirkung, nämlich dass wir, wenn wir es sehen, stehenbleiben (oder zumindest darüber reflektieren).
 
 Repräsentanten können mehrere Interpretationen besitzen und ein echter Gegenstand oder Sachverhalt kann mehrere Repräsentanten besitzen.
 Zum Beispiel haben folgende Wörter eine doppelte Bedeutung.
@@ -114,7 +114,7 @@ Die Art und Weise wie ein Repräsentant niedergeschrieben ist nennen wir *Synta
 
 Die Computerhardware (alle Bauteile) kann schlussendlich nur [Bits](def-bit) und [Bytes](def-byte) verarbeiten.
 Jede Hardwarekomponente verwendet eine bestimmte Interpretation, welche auf der Repräsentation der [Binärzahlen](sec-binary-system) basiert.
-Diese Interpretation wurde den Komponenten von uns Menschen 'beigebracht'.
+Diese Interpretation wurde den Komponenten von uns Menschen "beigebracht".
 
 Ein Monitor interpretiert die Bitfolgen als Pixelintensitäten (wie stark und in welcher Farbe leuchtet der jeweilige Pixel), ein Addierer interpretiert Bitfolgen als Zahlen, ein Mikrofon interpretiert Bitfolgen als Amplitudenwerte.
 
@@ -123,9 +123,9 @@ Software basiert auf dem gleichen Verständnis, denn Hardware ist Software reali
 Öffnen Sie die gleiche Datei in einem Bildverarbeitungsprogramm, sehen sie eine andere Interpretation der Bits und Bytes.
 
 Schreiben Sie einen Buchstaben $\text{'a'}$ durch Tastendruck über ein Textverarbeitungsprogramm, so ist das $\text{'a'}$ ein Element von $B$.
-Ihr Textverarbeitungsprogramm berechnet die Bitfolge $b = I^{-1}(\text{'a'})$ durch die ihm bekannte Interpretation $I$ bzw. deren Umkehrfunktion $I^{-1}$.
+Ihr Textverarbeitungsprogramm berechnet die Bitfolge $b = I^{-1}(\text{'a'})$, durch die ihm bekannte Interpretation $I$ bzw. deren Umkehrfunktion $I^{-1}$.
 Die Binärfolge $b$ kann dann auf dem Computer gespeichert werden.
-Öffnen Sie die Datei so berechnet das Textverarbeitungsprogramm $I(b) = \text{'a'}$.
+Öffnen Sie die Datei, so berechnet das Textverarbeitungsprogramm $I(b) = \text{'a'}$.
 Damit Sie den Buchstaben angezeigt bekommen, erhält der Monitor eine Bitfolge, welche dieser als Pixelintensität interpretiert.
 Am Ende der Kette sitzen wir vor dem Rechner und interpretieren diese Pixelintensitäten als den eben getippten Buchstaben.
 
@@ -133,11 +133,11 @@ Am Ende der Kette sitzen wir vor dem Rechner und interpretieren diese Pixelinten
 
 Programmcode ist Text den der Computer als Anweisungen interpretiert.
 Wie aber soll das funktionieren, wenn die Hardware doch nur [Bits](def-bit) und [Bytes](def-byte) verarbeiten kann?
-Wie im obigen Beispiel des Textverarbeitungsprogramms hindert uns niemand Text zu schreiben, welcher dann in Binärcode durch eine Interpretation umgewandelt wird.
+Wie im obigen Beispiel des Textverarbeitungsprogramms, hindert uns niemand Text zu schreiben welcher dann in Binärcode durch eine Interpretation umgewandelt wird.
 Diese spezielle Interpretation $I$ macht aus dem Text einen Binärcode der ausführbar ist, d. h., den die Computerhardware versteht.
 Programme die eine solche Interpretation realisieren bezeichnen wir sehr passend als [Interpreter](def-interpreter) oder [Übersetzer](def-compiler) (engl. Compiler).
 Interpreter werten $I$ aus, während der Programmcode ausgeführt wird.
-Dahingegen werten Compiler $I$ für den gesamten Code aus, bevor dieser ausgeführt wird.
+Dagegen werten Compiler die Interpretation $I(w)$ für den gesamten Code $w$ aus, bevor dieser ausgeführt wird.
 
 ```{admonition} Übersetzer / Compiler
 :name: def-compiler

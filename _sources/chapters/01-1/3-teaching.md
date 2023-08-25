@@ -20,13 +20,18 @@ Es gibt keine Abkürzung, die Ihnen diesen Teil abnimmt.
 Gute Unterlagen und Werkzeuge können diesen Prozess beschleunigen, gleichzeitig können Sie Ihnen jedoch auch wichtige Lernerfahrungen vorenthalten.
 
 Ich vergleiche diesen Lernprozess gerne mit einer Reise an einen bestimmten Ort.
-Wenn Ihnen der Weg so gut es geht vorbereitet wird und Sie auf der Autobahn mit Ihren hundert Sachen unterwegs sind, werden Sie Ihr Ziel schnell erreichen, doch werden Sie nur wenig auf dem Weg dorthin in Erfahrung bringen.
+Wenn Ihnen der Weg so gut es geht vorbereitet wird und Sie auf der Autobahn mit Ihren hundert Sachen unterwegs sind, werden Sie Ihr Ziel schnell erreichen.
+Allerdings werden Sie nur wenig auf dem Weg dorthin in Erfahrung bringen.
 Die falsche Richtung einzuschlagen, sich in Umwegen verlieren und in Sackgassen stecken zu bleiben, sind essenzielle Bestandteile des Lernens.
+Unsere Gehirne konstruieren fortwährend unsere Realität und wann immer die Konstruktion, d.h. unsere Erwartungen, irritiert werden, lernen wir.
+Die Erwartungen werden angepasst sodass die Realität wieder Sinn ergibt.
+Das funktioniert jedoch nur, wenn wir auch irritiert werden.
 Fehler und Misserfolge führen zur Reflexion und sind deshalb für das Lernen unerlässlich.
 Je mehr Fehler Sie machen, desto mehr werden Sie in diesem Kurs auch mitnehmen.
 
 Das andere Extrem wäre es sich ohne jedwede Hinweise auf die Reise zu begeben.
 In diesem Fall würden Sie entweder sehr sehr lange unterwegs sein oder aber niemals ankommen.
+Die Irritation ist zu groß, sodass es nicht mehr möglich ist den Sinn zu erschließen.
 Diese beiden Extreme versuchen wir zu balancieren.
 In jedem Fall müssen Sie den Weg selbstständig gehen.
 Wir werden Ihnen mit Rat zur Seite stehen.
@@ -39,6 +44,6 @@ Stellen Sie sich vor, Sie geben zwei kleinen Kindern das gleiche Spielzeug.
 Dem ersten Kind zeigen Sie wie "richtig" gespielt wird, dem zweiten nicht.
 Welches Kind wird wohl kreativere Spielvarianten entwickeln?
 Welches Kind wird länger seine Freude haben?
-Wir möchten Sie nicht um das Erlebnis berauben, eigenständige Erkenntnisse zu machen -- es ist berauschend und Sie lernen dabei am meisten.
+Wir möchten Sie nicht um das Erlebnis berauben, eigenständige Erkenntnisse zu machen---es ist berauschend und Sie lernen dabei am meisten.
 
 Viel Spaß dabei!
