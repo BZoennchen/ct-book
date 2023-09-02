@@ -31,6 +31,14 @@ Dieser Kontext enthält Wörter denen er eine ganz bestimmte Bedeutung bzw. Abfo
 Fragen wir beispielweise ein kleines Kind ob es zur Schule geht, meinen wir damit nicht, *ob es gerade jetzt auf dem Weg zur Schule ist*, sondern *ob es bereits eingeschult ist*.
 In diesem Fall entsteht ein Missverständnis, falls wir und das Kind nicht den gleichen Kontext benutzen.
 
+Oder Stellen Sie sich vor Ihre Bekannte ist Künstlerin und baut Attrappen von Gegenständen.
+Als Sie zu Besuch sind, fragen Sie: "Kann man den Apfel essen?".
+Würden Sie die gleiche Frage in einem Einkaufsladen stellen, würden Sie vermutlich in fragende Gesichter Blicken.
+Aus Ihrer Frage geht einmal hervor, dass Sie sich fragen ob der Apfel eine Attrappe ist.
+Im anderen Fall macht die Frage keinen Sinn, da der Sinn eines Einkaufsladens gerade der Verkauf von essbaren Dingen ist.
+Wenn wir miteinander kommunizieren gehen wir immer von einem solchen Kontext aus.
+Weichen die Kontexte zu sehr voneinader ab, kommt es zu Missverständnissen.
+
 Im Kontext des Kartensortierens gehen wir davon aus, dass der- oder diejenige, die die Karten sortiert, bestimmte Begriffe und deren Bedeutung kennt.
 Darunter fallen die *Ordnung*, die *Reihenfolge* und der *Vergleich*.
 Wenn wir die Anweisung
@@ -96,7 +104,7 @@ Lege dritte Karte von der Hand auf den Stapel
 Hier würden wir sagen, dass diese Beschreibung für den Kontext genau genug ist.
 Wir können davon ausgehen, dass die ausführende Einheit (der oder diejenige) weiß **Wie** dieses **Was** durchzuführen ist, sofern eine Nummerierung/Reihenfolge der Karten auf der Hand klar definiert ist.
 
-Wir müssen also festlegen was die ausführende Einheit kann und was nicht -- was sie versteht und was nicht.
+Wir müssen also festlegen was die ausführende Einheit kann und was nicht---was sie versteht und was nicht.
 Genauso verhält es sich mit dem digitalen Computer und den Programmiersprachen.
 Zusammen geben sie uns einen Kontext in dem bestimmte **Was** kein **Wie** benötigen.
 Während des Programmierens erweitern wir unseren Kontext und können die von uns entwickelten **Was** benutzten.
@@ -307,8 +315,8 @@ name: fig-find-min
 Skizze des Algorithmus zum Finden der kleinsten Karte auf der Hand.
 ```
 
-Wer unseren *Kontext* nur erahnt könnte es mit einem Vergleich, also sind die Karten (Objekte) mit den Namen ``s`` und ``k`` gleich, verwechseln.
-Mit einer anderen [Syntax](def-syntax), können wir solchen Missverständnissen besser vorbeugen.
+Wer unseren *Kontext* nur erahnt könnte es mit einem Vergleich, also einer Operation die die Karten (Objekte) mit den Namen ``s`` und ``k`` vergleicht, verwechseln.
+Mit einer anderen [Syntax](def-syntax), können wir solche Missverständnisse besser vorbeugen.
 Ändern wir nur die Syntax, so ändert sich die Bedeutung der Ausdrücke ([Semantik](def-semantik)) nicht zwangsläufig.
 Ein Beispiel wäre
 
@@ -345,11 +353,11 @@ Schon sehr früh können wir Objekte ihrer Größe, Länge oder ihres Gewichts n
 
 Für eine genaue und unmissverständliche Beschreibung können wir von der Mathematik gebrauch machen.
 Sie ist eine internationale äußerst kompakte Sprache mit der wir die Natur beschreiben können.
-Zudem ist die Mathematik bereits entwickelt, wir können uns also vieler Konzepte bedienen, die allgemein bekannt sind.
+Zudem ist die Mathematik bereits weit entwickelt.
+Wir können uns also vieler Konzepte bedienen, die allgemein bekannt sind.
 Somit drücken wir uns für all jene verständlich aus, die das nötige mathematische Verständnis mitbringen.
 
 Lassen Sie uns zwei wesentliche Dinge, welche wir beim Sortieren der Karten intuitiv verwenden, mathematisch betrachten: (1) Die sog. [Ordnungsrelation](def-math-order) und (2) Objekte in einer Reihenfolge anzuordnen.
-
 
 ### Ordnung
 
@@ -378,4 +386,9 @@ Wäre ein $5$-Tupel, welches eine Hand *modelliert*, welche die Karten 6, 7, Bub
 Anders als mathematische Mengen sind Tupel geordnet und endlich.
 Zugleich können sie mehrere gleiche Elemente enthalten.
 
+```{admonition} Tupel in Python
+:class: remark
+:name: remark-python-tupel
+
 In ``Python`` gibt es zwei Datenstrukturen ([Liste](sec-list), [Tupel](sec-tuple)), welche ein mathematisches endliches Tupel modellieren.
+```

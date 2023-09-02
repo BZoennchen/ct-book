@@ -5,6 +5,10 @@ Eine Wunderkiste?
 Ein magisches Werkzeug mit grenzenlosen Fähigkeiten?
 Heute sind Computer und Algorithmen teil unseres täglichen Lebens.
 Sie begegnen uns in Form von Smartphones, Kühlschränken, Uhren, Navigationsgeräten, sozialen Medien, Banken, Suchmaschinen, dem Internet und vielem mehr.
+Sie sind Artefakte der Technik, welche wir als Summe aller instrumentell nützlichen kulturell übertragbaren Informationen vestehen können.
+Technologie hingegen, ist unser Verständnis oder unsere Vorstellung von der Technik.
+Wie sieht diese kulturelle Entwicklung der Technik aus?
+Diese Entwicklung versuche ich in aller Kürze in diem Abschnitt zu beschreiben beziehe mich dabei allerdings im Wesentlichen auf die westliche Kultur.
 
 ```{admonition} Lernziel
 :class: learngoals
@@ -16,18 +20,14 @@ Computer sind nicht nur das Resultat, sondern auch ein wesentlicher Beschleunige
 Ohne ihre Leistungsfähigkeit wären aufwendige Berechnungen nicht möglich.
 Diese Berechnungen werden heute in fast allen Wissenschaftsbereichen benötigt um Forschung zu betreiben.
 In Rechenzentren werden Klimamodelle mit einem Verbund aus tausenden von Computern simuliert.
-Hier nur ein kleiner Auszug der Anwendungsfälle computergestützter Verfahren: Materialstudien, die Interaktion von Molekülen, das Verhalten von Gasen und Flüssigkeiten, DNA-Analysen, autonomes Fahren, Flugsteuerung.
-Jedes dieser Probleme benötigt zur Lösung eine Rechnerleistung, die wir Menschen ohne digitale Computer nicht mehr erbringen können.
+Andere Beispiele sind: Materialstudien, die Interaktion von Molekülen, das Verhalten von Gasen und Flüssigkeiten, DNA-Analysen, autonomes Fahren, Flugsteuerung.
+Jedes dieser Probleme benötigt zur Lösung eine Rechenleistung, die wir Menschen ohne digitale Computer nicht mehr erbringen können.
 Durch Entwicklungen in der Datenanalyse, insbesondere dem *maschinellen Lernen* und der Entdeckung der *Information als Wirtschaftsgut*, wird der Hunger nach Rechenleistung und Speicherkapazität von Unternehmen und der Forschungsgemeinschaft immer größer.
-Die *digitale Transformation*, das *Internet der Dinge (IoT)* und die *künstliche Intelligenz (KI)* sind Themen, die Regierungen wie auch Unternehmen auf lange Sicht beschäftigen werden.
+Die *digitale Transformation*, das *Internet der Dinge (IoT)* und die *künstliche Intelligenz (KI)* sind Themen, die Regierungen wie auch Unternehmen---und die Gesellschaft---auf lange Sicht beschäftigen werden.
 
 Computer verarbeiten fortwährend Informationen.
 Die Geschwindigkeit dieses Vorgangs ist atemberaubend.
-2015 lag die gesamte Rechnerkapazität bei etwa 
-
-$$2 \cdot 10^{20}$$ 
-
-Gleitkommaoperationen (Addieren, Subtrahieren und Multiplizieren) pro Sekunde!
+2015 lag die gesamte Rechnerkapazität bei etwa $2 \cdot 10^{20}$ Gleitkommaoperationen (Addieren, Subtrahieren und Multiplizieren) pro Sekunde!
 Damit wir als Menschheit mit dieser Geschwindigkeit mithalten können, müsste jede\*r von uns deutlich mehr Operationen pro Sekunde durchführen, als es Menschen auf der Erde gibt.
 Maschinen sind uns in dieser Domäne weit überlegen.
 Wie einst die Entdeckung und Nutzung der fossilen Brennstoffe unsere Muskelkraft in den Schatten gestellt hat, sind es die Computer, die unsere Rechenleistung weit übertreffen.
@@ -42,7 +42,7 @@ Durch die richtige Komposition der gleichen primitiven Operationen wird es mögl
 Algorithmen sind genau jene präzise formulierten Anweisungen, denen Computer stupide folgen.
 Im gewissen Sinne verleihen sie der Maschine eine gewisse Intelligenz, eine Intelligenz die durch Programmiersprachen vom Menschen an die Maschine weitergegeben wird.
 
-Um heutige Technologien besser zu verstehen und einen Ausblick in die Zukunft zu erhaschen, ist der Blick zurück in die Vergangenheit essenziell.
+Um heutige Artefakte der Technik sowie die Technik selbst besser zu verstehen und einen Ausblick in die Zukunft zu erhaschen, ist der Blick zurück in die Vergangenheit essenziell.
 Die Geschichte der Computer und Algorithmen ist eine Geschichte vieler außergewöhnlicher Erfinder\*innen, Ingenieur\*innen, Forscher\*innen, Philosoph\*innen und Mathematiker\*innen.
 Sie ist auch eine Geschichte unglücklicher, wie auch glücklicher Umstände in der Informatiker\*innen für die anfänglich geringe Wertschätzung ihrer Disziplin kämpfen mussten und sich in der Theorie des Rechnens und der Ingenieurskunst schlussendlich zusammenfinden konnten.
 Denker\*innen dieser Geschichte könnte man allesamt als Pioniere des *Computational Thinkings* bezeichnen.

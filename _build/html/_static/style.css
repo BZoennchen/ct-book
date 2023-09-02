@@ -24,10 +24,11 @@ default
 todo
 */
 
-
+/*
 div.proof {border-color: #ccc; background-color: #FFF;}
 div.proof p.admonition-title {background-color: #FFF;}
 .admonition.proof .admonition-title:before{color:#FFF;content:"";}
+*/
 
 /*
  * dark mode 
@@ -39,6 +40,12 @@ html[data-theme=dark] div.admonition.learngoals>.admonition-title:after{color:#f
 html[data-theme=dark] div.exercise {border-color: rgb(90, 90, 90); background-color: rgba(194, 192, 189, 0.2);}
 html[data-theme=dark] div.exercise p.admonition-title {background-color: rgb(90, 90, 90);}
 html[data-theme=dark] div.admonition.exercise>.admonition-title:after{color:#ffc107;content:var(--pst-icon-admonition-todo);}
+
+html[data-theme=dark] div.admonition.solution>.admonition-title:after{color:#ffc107;content:var(--pst-icon-admonition-todo);}
+
+html[data-theme=dark] div.proof {border-color: rgb(90, 90, 90); background-color: rgba(194, 192, 189, 0.2);}
+html[data-theme=dark] div.proof p.admonition-title {background-color: rgb(90, 90, 90);}
+html[data-theme=dark] div.admonition.proof>.admonition-title:after{color:#ffc107;content:var(--pst-icon-admonition-default);}
 
 html[data-theme=dark] div.remark {border-color: rgba(7, 255, 48, 0.2); background-color: #173b1c;}
 html[data-theme=dark] div.remark p.admonition-title {background-color: rgba(7, 255, 48, 0.2);}
@@ -70,6 +77,12 @@ html[data-theme="light"] div.admonition.learngoals>.admonition-title:after{color
 html[data-theme="light"] div.exercise {border-color: rgb(170, 170, 170); background-color: rgba(194, 192, 189, 0.1);}
 html[data-theme="light"] div.exercise p.admonition-title {background-color: rgb(170, 170, 170);}
 html[data-theme="light"] div.admonition.exercise>.admonition-title:after{color:#ffc107;content:var(--pst-icon-admonition-todo);}
+
+html[data-theme="light"] div.admonition.solution>.admonition-title:after{color:#ffc107;content:var(--pst-icon-admonition-todo);}
+
+html[data-theme="light"] div.proof {border-color: rgb(170, 170, 170); background-color: rgba(194, 192, 189, 0.1);}
+html[data-theme="light"] div.proof p.admonition-title {background-color: rgb(170, 170, 170);}
+html[data-theme="light"] div.admonition.proof>.admonition-title:after{color:#ffc107;content:var(--pst-icon-admonition-default);}
 
 html[data-theme="light"] div.remark {border-color: rgb(0, 204, 102); background-color:rgba(7, 255, 48, 0.1);}
 html[data-theme="light"] div.remark p.admonition-title {background-color: rgb(0, 204, 102);}
@@ -124,6 +137,36 @@ i.fas.fa-download,
 button.btn.btn-secondary.topbarbtn,
 button.btn.btn-secondary {
   color: #FB5454;
+}
+
+.NumericQn {
+    padding: 5px;
+    background: rgb(90, 90, 90);
+    color: var(--jq-text-color);
+    border-radius: inherit;
+}
+
+html[data-theme="light"] .bd-content div.cell_output .text_html,html[data-theme="light"] .bd-content div.cell_output img {
+    background-color: var(--pst-color-background);
+    border-radius: .25rem;
+    color: var(--pst-color-text-base);
+    padding: .5rem
+}
+
+html[data-theme="light"] .bd-content img:not(.only-dark):not(.dark-light) {
+    background: var(--pst-color-background);
+    border-radius: 1.25rem;
+}
+
+html[data-theme="dark"] .bd-content div.cell_output .text_html,html[data-theme="dark"] .bd-content div.cell_output img {
+    border-radius: .25rem;
+    color: var(--pst-color-text-base);
+    padding: .5rem
+}
+
+html[data-theme="dark"] .bd-content img:not(.only-dark):not(.dark-light) {
+    border-radius: 1.25rem;
+    background: none;
 }
 
 /*

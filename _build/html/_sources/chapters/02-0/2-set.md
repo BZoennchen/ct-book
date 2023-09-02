@@ -70,7 +70,7 @@ Sie enthält keine Elemente.
 
 Für einen sauberen *Mächtigkeitsbegriff* von Mengen mit unendlich vielen Elementen benötigen wir Mittel, welche wir hier nicht besprechen.
 Es sei jedoch erwähnt, dass $|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}|$ gilt.
-Diese Mengen enthalten *abzählbar* viele Elemente, wohingegen $\mathbb{R}$ *überabzählbar* ($|\mathbb{R}| > |\mathbb{N}|$) viele Elemente enthält.
+Diese Mengen enthalten *abzählbar* viele Elemente, wohingegen $\mathbb{R}$ *überabzählbar* viele Elemente enthält weshalb $|\mathbb{R}| > |\mathbb{N}|$ gilt.
 ```
 
 ## Programmierung

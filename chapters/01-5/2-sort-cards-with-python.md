@@ -14,7 +14,7 @@ kernelspec:
 # Karten sortieren in Python
 
 Wir gehen nicht davon aus, dass Sie bereits jetzt alles verstehen was wir im Folgenden programmieren werden.
-Ziel ist es aufzuzeigen, dass sich der Programmiercode kaum von unserer obigen Beschreibung unterscheidet und wir durch Programmiersprachen einen präzisen und vorgefertigten *Kontext* geschenkt bekommen.
+Ziel ist es aufzuzeigen, dass sich der Programmiercode kaum von unserer vorheriger Beschreibung unterscheidet und wir durch Programmiersprachen einen präzisen und vorgefertigten *Kontext* geschenkt bekommen.
 Wir müssen diesen lediglich kennenlernen!
 Was sich also ändert ist der *Kontext*.
 Dieser ist in unserem Fall durch die Programmiersprache ``Python`` (ihrer [Syntax](def-syntax) und [Semantik](def-semantik)) und der verwendeten ``Python``-Module vorgegeben.
@@ -54,7 +54,7 @@ Darunter fällt beispielweise die Kartenfarbe.
 Eine Hand modellieren wir als Liste von Karten (Liste von Zeichenketten).
 
 ````{admonition} Liste (Python)
-:class: python
+:class: remark
 :name: python-list
 
 Eine [Python Liste](sec-list) repräsentiert ein endliches **veränderbares** mathematisches Tupel.
@@ -102,7 +102,7 @@ Das Tupel muss lediglich alle möglichen Kartentypen geordnet enthalten.
 Wir verwenden diesmal keine ``list`` sondern ein unveränderbares ``Python`` ``tuple``.
 
 ````{admonition} Tupel (Python)
-:class: python
+:class: remark
 :name: python-tuple
 
 Ein [Python Tupel](sec-tuple) repräsentiert ein endliches **unveränderbares** mathematisches Tupel.
