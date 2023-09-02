@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Denken lernen?
 
 >I think everybody should learn how to program a computer, because it teaches you how to think. So I view computer science as a liberal art. It should be something everybode learns. -- Steve Jobs
@@ -28,6 +40,30 @@ Ein Schläger und ein Ball kosten zusammen 1.10 Euro.
 Der Schläger kostet einen Euro mehr als der Ball.
 Wie viel kostet der Ball?
 ```
+
+```{code-cell} python3
+---
+tags: 
+    - remove-input
+---
+quiz=[{
+    "question": "Nennen Sie Ihre Antwort:",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+        {
+            "type": "value",
+            "value": 1.05,
+            "correct": True,
+            "feedback": "Richtig."
+        }
+    ]
+}]
+
+from jupyterquiz import display_quiz
+display_quiz(quiz, border_radius=2, lang='de')
+```
+
 
 Intuitiv, d.h., durch das *schnelle Denken* beantworten die meisten Menschen diese Frage mit: Der Ball kostet 10 Cent.
 Diese Antwort ist jedoch falsch!

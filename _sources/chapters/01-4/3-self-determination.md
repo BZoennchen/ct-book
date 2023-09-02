@@ -19,14 +19,16 @@ Sie abstrahieren Eigenschaften aus einer vorgegebenen Datenmenge und Klassifizie
 Seine Arbeit finden Sie in {cite}`kosinski:2013,kosinski:2014,kosinski:2015`.
 Sein Modell wurde auf illegale Weise auf Facebook-Daten angewendet, um u. a. Wahlwerbung zu individualisieren (Mikrotargeting) und somit die Wahlen in den USA zu beeinflussen.
 
-Algorithmen die mit uns und miteinander auf der ganzen Welt agieren, verstärken die Effekte der Globalisierung und beeinflussen menschliches Verhalten auf dem Globus.
+Algorithmen, die mit uns und miteinander auf der ganzen Welt agieren, verstärken die Effekte der Globalisierung und beeinflussen menschliches Verhalten auf dem Globus.
 Dies ist jedoch keine Einbahnstraße.
 Das veränderte Verhalten wird von den Informationsverarbeitungssystemen aufgenommen, die veränderte Struktur wird gelernt und das Resultat wird auf den Menschen zurückgeworfen.
-Diese Rückkopplungsschleife kann wünschenswert sein, sie kann aber auch den Schaden, den Algorithmen verursachen, rasant verstärken -- das System kann aus dem Ruder laufen.
+Diese Rückkopplungsschleife kann wünschenswert sein, sie kann aber auch den Schaden, den Algorithmen verursachen, rasant verstärken---das System kann aus dem Ruder laufen.
 
 Ein möglicherweise wünschenswertes Beispiel wären Musikvorschläge in Streaming-Diensten wie Spotify.
-Durch die konsumierte Musik, der Benutzer\*innen auf der Platform, lernt die Platform deren Musikgeschmack und schlägt vermehrt Musik vor, welche den Benutzer\*innen gefällt.
+Durch die konsumierte Musik der Benutzer\*innen auf der Platform lernt ein Algorithmus deren Musikgeschmack und schlägt vermehrt Musik vor, welche den Benutzer\*innen gefällt.
 Da die Benutzer\*innen jene Musik hören, verstärkt sich dieser Effekt.
+Ähnlich wie Architekturen Körper in der physikalischen Welt regulieren, reguliert Programmiercode die digitale Welt {cite}`lessig:2006`.
+Der regulierende Effekt ist unvermeidlich jedoch sollte uns dieser bewusst sein.
 
 Problematisch wird diese Rückkoppelung, wenn es um gesellschaftliche oder politische Themen geht.
 Füttert uns der Algorithmus mit unseren eigenen Vorurteilen, indem er uns Videos und Artikel vorschlägt die uns gefallen werden, verhärtet sich unsere Ignoranz.
@@ -44,7 +46,7 @@ Deshalb können die Architekt\*innen der Informationssysteme deren Auswirkungen 
 Oftmals fehlt ihnen die notwendige Expertise, z.B. im Bereich der Psychologie und/oder Soziologie.
 Im schlimmsten Fall sind ihnen die Auswirkungen gleichgültig.
 
-So ist, zum Beispiel, die Währung der Streaming-Dienste, sozialer Medien und Influencer Ihre Aufmerksamkeit -- ein wertvolles Gut.
+So ist, zum Beispiel, die Währung der Streaming-Dienste, sozialer Medien und Influencer Ihre Aufmerksamkeit---ein wertvolles Gut.
 Wenn Algorithmen diese Aufmerksamkeit um jeden Preis erhaschen wollen, erfüllen sie zwar ihren angedachten Zweck, jedoch mit möglicherweise äußerst fragwürdigen Mitteln.
 Diese Mittel haben womöglicher die Erbauer\*innen der Algorithmen gar nicht vorgesehen.
 Solche Fehler können zu (sozialen) Katastrophen führen.
@@ -53,7 +55,12 @@ Anstatt einer unerwarteten Zerstörung der Ozonschicht durch Fluorchlorkohlenwas
 Zusammenfassend lässt sich sagen: Wir können es nicht alleine den Entwickler\*innen aus dem Silicon Valley überlassen, wie wir unsere digitale Zukunft gestalten.
 Algorithmen sind weder gut noch schlecht, derartige Begriffe sind ihnen völlig fremd.
 Sie können Wundervolles wie Schreckliches zu Tage bringen.
-Was genau entscheiden am Ende wir, sofern wir uns in die Diskussion einbringen können.
-Jeder Mensch sollte wissen welche Ziele die Systeme verfolgen mit denen er interagiert.
+Allerdings ist es naiv zu glauben wir hätten die totale Kontrolle über die technische Entwicklung.
+Technik prägt unsere Sicht auf die Welt bevor wir überhaupt die Kontrolle übernehmen können.
+Entscheidend ist, dass wir uns dessen bewusst sind und eine gewisse reflektierende Distanz zur Technik bewahren.
+
+Um uns in die zukünftige Entwicklung einzumischen und so die Zukunft mitzugestalten aber auch um schlichtweg durch die digitale Welt navigieren zu können, ist das Computational Thinking unerlässlich.
+Jeder Mensch sollte wissen welche Ziele die Systeme verfolgen mit denen er oder sie interagiert.
 Er oder Sie sollte wissen welche gewaltigen sozialen Kräfte diese Algorithmen freisetzen können und wie sie individuelles wie auch gemeinschaftliches Verhalten beeinflussen.
+Er oder Sie sollte wissen welche Potenziale und Grenzen die Digitaltechnik hat, um sich nicht von Nebelkerzen blenden zu lassen.
 Als selbstbestimmte\*r freie\*r Bürger\*in ist [Computational Thinking](sec-what-is-ct) ein Handwerkszeug um mit Informationssystemen als Nutzer\*in und nicht als Benutzte\*r zu interagieren.

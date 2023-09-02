@@ -13,4 +13,3 @@ height: 300px
 name: logo
 ---
 ```
-

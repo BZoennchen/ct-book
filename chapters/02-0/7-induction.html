@@ -607,8 +607,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauszsche-summenformel">6.7.1. Gaußsche Summenformel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-dominoeffekt">6.7.2. Der Dominoeffekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-dominoeffekt">6.7.1. Der Dominoeffekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauszsche-summenformel">6.7.2. Gaußsche Summenformel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#induktionsbeweis">6.7.3. Induktionsbeweis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#induktive-denkweise">6.7.4. Induktive Denkweise</a></li>
 </ul>
@@ -624,11 +624,73 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="vollstandige-induktion">
 <span id="sec-induction"></span><h1><span class="section-number">6.7. </span>Vollständige Induktion<a class="headerlink" href="#vollstandige-induktion" title="Permalink to this heading">#</a></h1>
-<p>Die <em>vollständige Induktion</em> ist eine mathematische Beweistechnik aber viel mehr ist sie auch eine <em>Denkart</em> die insbesondere bei der Entwicklung von Datenstrukturen und Algorithmen eine große Rolle spielt.
-Mithilfe der vollständigen Induktion können wir oftmals die Korrektheit und Laufzeit unserer Programme darlegen.
-Auch ist die vollständige Induktion eine Art der <a class="reference internal" href="../02-4/3-control-structures.html#sec-recursion"><span class="std std-ref">(rekursiven) Wiederholung</span></a>.</p>
+<p>Bei einer <em>Induktion</em> schließen wir von speziellen Sachverhalten (häufig empirischen Beobachtungen) auf einen generellen Sachverhalt.
+Wenn ich, zum Beispiel, Katzen untersuche und immer nur schwarze Katzen zu Gesicht bekomme, dann wäre ein induktiver Schluss, dass alle Katzen schwarz sind.
+Diese Art des Schließens wurde und wird immer wieder attackiert, da die Induktion keine abolute Gewissheit zulässt.
+Dennoch ist sie nützlich, so dachte Newton <em>induktiv</em> als er seine Gesetze der Mechanik aufgestellt hat.
+Aus der Beobachtung mehrerer Sachverhalte, z.B. dass der Apfel vom Baum fällt, schloss er auf ein allgemeines physikalisches Gesetz.
+Doch hatte er keine Gewissheit und wie wir mittlerweile Wissen konnte Einstein die Gesetze von Newton widerlegen.
+Newton lag also falsch und dennoch reicht sein falsches aber nützliches Modell aus um zum Mond zu fliegen.</p>
+<p>Auch Einsteins Modell kann sich in der Zukunft als falsch herausstellen.
+Das Scheitern einer Theorie wird heutzutage immer erwartet, denn in den Naturwissenschaften verwendet man gewöhnlich den sog. <em>Falsifikationismus</em> von Karl Popper.
+Dabei gehen Wissenschaftler davon aus, dass eine Theorie niemals wahr ist.
+Stattdessen wird sie solange anerkannt bis sie widerlegt wurde.
+Zudem muss sie widerlegbar sein, um überhaupt als Theorie gelten zu können.</p>
+<p>Das Gegenstück zur Induktion ist die <em>Deduktion</em>.
+Traditionell schließen wir dabei von einem allgemeinen Sachverhalt auf einen spezielleren Sachverhalt.
+Zum Beispiel:</p>
+<ol class="arabic simple">
+<li><p>Alle Menschen sind sterblich und</p></li>
+<li><p>Sokrates ist ein Mensch.</p></li>
+<li><p>Daraus folgt, dass Sokrates sterblich ist.</p></li>
+</ol>
+<p>Durch (1 u. 2) schließen wir <em>deduktiv</em> auf (3).
+In der moderne Logik spricht man davon, dass eine Schlussfolgerung <strong>zwingend</strong> gültig ist.
+Diese Art des Schließens ist unbedenklich.
+Allerdings kommt man mit ihr oft nicht weit, wenn neue Theorien über die Welt erschlossen werden sollen, da wir in diesem Fall auf empirische Beobachtungen angewiesen sind.</p>
+<p>Die <em>vollständige Induktion</em> behebt die Probleme der herkömmlichen Induktion, indem sie alle möglichen Spezialfälle einbezieht, selbst wenn es sich um unendlich viele handelt.
+Anstelle nach einer bestimmten Anzahl von betrachteten schwarzen Katzen aufzuhören, sehen ich mir <strong>alle</strong> Katzen, selbst wenn es unendlich viele sind, an!
+Die herkömmliche Induktion wird sozusagen vervollständigt.
+Leider ist es in der Praxis unmöglich alle Katzen anzusehen.
+Möglicherweise werden neue Katzen geboren und selbst wenn derzeit alle Katzen ein schwarzes Fell haben, wird möglicherweise morgen schon eine weiße Katze geboren.</p>
+<section id="der-dominoeffekt">
+<h2><span class="section-number">6.7.1. </span>Der Dominoeffekt<a class="headerlink" href="#der-dominoeffekt" title="Permalink to this heading">#</a></h2>
+<p>Es gibt allerdings ein Beispiel aus der Praxis, was der vollständigen Induktion sehr Nahe kommt: Der Fall einer Reihe von Dominosteinen.
+Angenommen Sie sollen beweisen, dass alle Dominosteine umfallen, sobald sie den ersten Stein umwerfen.
+Sie möchten den Vorgang aber nicht dadurch zeigen, indem sie ihn tatsächlich ausführen.
+Ihre 1000 Dominosteine wieder aufzustellen ist einfach zu aufwendig.
+Um uns zu überzeugen verfahren Sie stattdessen wie folgt: Sie nehmen sich zwei Dominosteine und stellen diese hintereinander angeordnet auf.
+Sie werfen den ersten Stein um, sodass dieser den zweiten zu Fall bringt.
+Daraufhin stellen Sie folgenden „Beweis“ auf:</p>
+<ol class="arabic simple">
+<li><p><strong>Induktionsannahme:</strong> Der erste Dominostein fällt um</p></li>
+<li><p><strong>Induktionsschritt:</strong> Wenn ein Dominostein umfällt, so fällt auch sein Nachfolger um.</p></li>
+<li><p><strong>Induktionsschluss:</strong> Gilt (1) und (2) folgt daraus, dass alle Dominosteine umfallen.</p></li>
+</ol>
+<p>Wenn wir definieren, dass <span class="math notranslate nohighlight">\(A(n)\)</span> bedeutet, dass der <span class="math notranslate nohighlight">\(n\)</span>-te Dominostein umfällt, dann können wir den eben beschriebenen Schluss wie folgt formulieren:</p>
+<ol class="arabic simple">
+<li><p><strong>Induktionsannahme:</strong> <span class="math notranslate nohighlight">\(A(1)\)</span></p></li>
+<li><p><strong>Induktionsschritt:</strong> <span class="math notranslate nohighlight">\(\forall n \in \mathbb{N}: A(n) \Rightarrow A(n+1)\)</span></p></li>
+<li><p><strong>Induktionsschluss:</strong> <span class="math notranslate nohighlight">\([A(1) \land (\forall n \in \mathbb{N}: A(n) \Rightarrow A(n+1))] \Rightarrow (\forall n \in \mathbb{N}: A(n))\)</span></p></li>
+</ol>
+<p>oder kurt</p>
+<div class="math notranslate nohighlight">
+\[[A(1) \land (A(n) \Rightarrow A(n+1))] \Rightarrow A(n).\]</div>
+<p>Den Induktionsschritt können Sie allerdings nur annehmen, wenn wirklich immer wenn ein Dominostein umfällt auch sein Nachfolger umfällt.
+In der Praxis ist diese Gewissheit nicht gegeben.
+Sie könnten argumentieren, dass alle Steine exakt gleich angeordnet sind und dass sie den ersten Stein genau so umstoßen als wäre er von einem anderen Stein umgestoßen worden und dass mehrere umfallende Steine in Zeitlupe betrachtet haben und alle Fallen auf die scheinbar exakt gleich Art um.
+All das macht den Schluss allerdings noch immer nicht gewiss, da Sie sich in einer physikalischen Welt bewegen in der wir nicht alles bis aufs kleinste Elektron berücksichtigen können.</p>
+<p>Glücklicherweise sind mathematische Objekte zeitlos und abstrakt.
+Für mathematische Dominosteine können wir den Beweis, wie er oben beschrieben wurde, führen.
+Unsere mathematischen Dominosteine sind dabei die <em>natürlichen Zahlen</em>, denn wir benötigen die Eigenschaft des Abzählens oder Nummerierens—wir müssen jedem Objekt (z.B. unserem imaginären Dominostein) eine Zahl zuweisen können und wir müssen den Nachfolger eines Objekts benennen können.
+Da jede abzählbare Menge sich durch natürliche Zahlen repräsentieren lässt, wird die vollständige Induktion über die natürlichen Zahlen geführt.</p>
+<p>Die <em>vollständige Induktion</em> ist also eine mathematische Beweistechnik im Zusammenhang mit den natürlichen Zahlen.
+Darüber hinaus ist sie eine <em>Denkart</em> die insbesondere bei der Entwicklung von Datenstrukturen und Algorithmen eine große Rolle spielt, denn jede Wiederholung von bestimmten Befehlsabfolgen, beispielsweise druch eine Schleife, kann man <em>abzählen</em>.
+Deshalb können wir mit der vollständigen Induktion oftmals die Korrektheit und Laufzeit unserer Programme darlegen.
+In der vollständige Induktion selbst ist die <a class="reference internal" href="../02-4/3-control-structures.html#sec-recursion"><span class="std std-ref">(rekursiven) Wiederholung</span></a> eingebaut.</p>
+</section>
 <section id="gauszsche-summenformel">
-<h2><span class="section-number">6.7.1. </span>Gaußsche Summenformel<a class="headerlink" href="#gauszsche-summenformel" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.7.2. </span>Gaußsche Summenformel<a class="headerlink" href="#gauszsche-summenformel" title="Permalink to this heading">#</a></h2>
 <p>Starten wir mit der Mutter aller Beispiele: Der Addition aller natürlichen Zahlen die kleiner gleich <span class="math notranslate nohighlight">\(n\)</span> sind.
 Man erzählt sich, dass der kleine Gauß eines Tages in der Schule die Aufgabe erhielt alle natürlichen Zahlen von <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(n\)</span> zu addieren.
 Gesucht ist also:</p>
@@ -648,13 +710,13 @@ Gesucht ist also:</p>
 </div>
 </div>
 </div>
-<p>Der kleine Gauß hatte jedoch keinen Computer zur Hand und wollte sich die lästige Rechnerei vereinfachen.
+<p>Der kleine Gauß hatte jedoch keinen Computer zur Hand und wollte sich wahrscheinlich die lästige Rechnerei vereinfachen.
 Er kam auf folgenden Gedanken:
 Sagen wir <span class="math notranslate nohighlight">\(n = 100\)</span>.
-Dann wird aus der Summe:</p>
+Dann müssen wir die folgende Summe berechnen:</p>
 <div class="math notranslate nohighlight">
 \[1 + 2 + 3 + 4 + \ldots + 100.\]</div>
-<p>Ordnen wir diese Summe aber nach dem Schema von Gauß an:</p>
+<p>Ordnen wir diese Summe aber nach dem kleveren Schema von Gauß an:</p>
 <div class="math notranslate nohighlight">
 \[[1 + 100] + [2 + 99] + [3 + 98] + [4 + 97] \ldots + [50 + 51]\]</div>
 <p>wird klar, dass diese Summe gleich</p>
@@ -668,30 +730,21 @@ Versuchen wir es nun mit der allgemeinen Summe, also</p>
 <div class="math notranslate nohighlight">
 \[[1 + n] + [2 + (n-1)] + [3 + (n-2)] + \ldots + [n/2 + (n-n/2+1)] = \frac{n \cdot (n+1)}{2}.\]</div>
 <p>Das erscheint nach längerer Betrachtung einleuchtend.
-Es scheint als gelte</p>
+Es scheint, als gelte</p>
 <div class="math notranslate nohighlight">
-\[1 + 2 + 3 + 4 + \ldots + n = \sum\limits_{k=1}^n k = \frac{n \cdot (n+1)}{2}\]</div>
-<p>aber wir wollen dies nun auch beweisen, sodass es absolut einwandfrei und unangreifbar der Wahrheit entspricht.</p>
-</section>
-<section id="der-dominoeffekt">
-<h2><span class="section-number">6.7.2. </span>Der Dominoeffekt<a class="headerlink" href="#der-dominoeffekt" title="Permalink to this heading">#</a></h2>
-<p>Den Trick den wir bei der <em>vollständigen Induktion</em> anwenden können wir als den Dominoeffekt bezeichnen.
-Wenn wir wissen dass</p>
-<ol class="arabic simple">
-<li><p>der erste Dominostein umfällt und</p></li>
-<li><p>sofern der <span class="math notranslate nohighlight">\(n\)</span>-te Dominostein umfällt auch der <span class="math notranslate nohighlight">\(n+1\)</span>-te Stein umfällt</p></li>
-</ol>
-<p>dann folgt daraus, dass alle Steine umfallen!
-Wir zeigen zwei lokale Sachverhalte und können dadurch auf einen globalen Sachverhalt schließen.</p>
+\[1 + 2 + 3 + 4 + \ldots + n = \sum\limits_{k=1}^n k = \frac{n \cdot (n+1)}{2}.\]</div>
+<p>Aber wir wollen dies nun auch beweisen, sodass es absolut einwandfrei und unangreifbar der Wahrheit entspricht.
+Die meisten wären durch den soeben gezeigten Zusammenahang überzeugt.
+Doch bietet die vollständige Induktion ein gewisses Schema, durch das wir auch andere Zusammenhänge beweisen können.</p>
 </section>
 <section id="induktionsbeweis">
 <span id="sec-induction-proof"></span><h2><span class="section-number">6.7.3. </span>Induktionsbeweis<a class="headerlink" href="#induktionsbeweis" title="Permalink to this heading">#</a></h2>
 <p>Beim Induktionsbeweis wollen wir eine Aussage <span class="math notranslate nohighlight">\(A(n)\)</span> für alle <span class="math notranslate nohighlight">\(n \geq n_0\)</span> beweisen.
-Dabei sind <span class="math notranslate nohighlight">\(n\)</span> und <span class="math notranslate nohighlight">\(n_0\)</span> natürliche Zahlen und <span class="math notranslate nohighlight">\(n_0\)</span> ist ein fester Wert, üblicherweise 0 oder 1.
+Dabei sind alle <span class="math notranslate nohighlight">\(n\)</span> und <span class="math notranslate nohighlight">\(n_0\)</span> natürliche Zahlen und <span class="math notranslate nohighlight">\(n_0\)</span> ist ein (einzelner) fester Wert, üblicherweise 0 oder 1.
 Wir nutzten den Dominoeffekt.</p>
 <ol class="arabic simple">
 <li><p><strong>Induktionsanfang:</strong> Wir zeigen, dass <span class="math notranslate nohighlight">\(A(n_0)\)</span> gilt.</p></li>
-<li><p><strong>Induktionsschritt:</strong> Wir zeigen für ein beliebiges <span class="math notranslate nohighlight">\(n \geq n_0\)</span> dass wenn <span class="math notranslate nohighlight">\(A(n)\)</span> gilt, <span class="math notranslate nohighlight">\(A(n+1)\)</span> folgt.</p></li>
+<li><p><strong>Induktionsschritt:</strong> Wir zeigen für ein <strong>beliebiges</strong> <span class="math notranslate nohighlight">\(n \geq n_0\)</span> dass wenn <span class="math notranslate nohighlight">\(A(n)\)</span> gilt, <span class="math notranslate nohighlight">\(A(n+1)\)</span> folgt.</p></li>
 </ol>
 <div class="attention admonition" id="attention-induction">
 <p class="admonition-title">Induktionsschritt</p>
@@ -700,14 +753,15 @@ Wir nutzten den Dominoeffekt.</p>
 \[A(n) \Rightarrow A(n+1)\]</div>
 <p>gilt.</p>
 </div>
-<p>Lassen Sie uns folgendes Theorem beweisen.</p>
+<p>Lassen Sie uns folgendes Theorem beweisen.
+Sie können es gerne erst einmal selbst versuchen.</p>
 <div class="theorem admonition" id="theorem-gauss-sum">
 <p class="admonition-title">Gaußsche Summenformel</p>
 <p>Sei <span class="math notranslate nohighlight">\(n\)</span> eine natürliche Zahl so gilt:</p>
 <div class="math notranslate nohighlight">
 \[\sum\limits_{k=1}^n k = \frac{n \cdot (n+1)}{2}.\]</div>
 </div>
-<div class="proof admonition" id="proof-gauss-sum">
+<div class="proof dropdown admonition" id="proof-gauss-sum">
 <p class="admonition-title">Gaußsche Summenformel</p>
 <p><strong>(1) Induktionsanfang:</strong> <span class="math notranslate nohighlight">\(n_0 = 1\)</span> und es gilt in der Tat</p>
 <div class="math notranslate nohighlight">
@@ -716,10 +770,10 @@ Wir nutzten den Dominoeffekt.</p>
 <p><strong>(2) Induktionsschritt:</strong> Angenommen es gilt <span class="math notranslate nohighlight">\(A(n)\)</span> also</p>
 <div class="math notranslate nohighlight">
 \[\sum\limits_{k=1}^n k = \frac{n \cdot (n+1)}{2}.\]</div>
-<p>Die Summe der Zahlen <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(n+1\)</span> lässt sich schreiben als:</p>
+<p>Die Summe der Zahlen <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(n+1\)</span> lässt sich deshalb schreiben als:</p>
 <div class="math notranslate nohighlight">
-\[\sum\limits_{k=1}^{n+1} k = n+1 + \sum\limits_{k=1}^{n} k = n+1 + \frac{n \cdot (n+1)}{2}.\]</div>
-<p>Bei diesem Schritt verwenden wir die Annahme, dass <span class="math notranslate nohighlight">\(A(n)\)</span> gilt!
+\[\sum\limits_{k=1}^{n+1} k = n+1 + \sum\limits_{k=1}^{n} k \stackrel{\text{I.A.}}{=} n+1 + \frac{n \cdot (n+1)}{2}.\]</div>
+<p>Beim letzten Schritt verwenden wir den Induktionsannahme (A.I.) aus dem Induktionsanfang, in anderen Worten die Tatsache dass <span class="math notranslate nohighlight">\(A(n)\)</span> gilt, jedoch nur für <span class="math notranslate nohighlight">\(n &lt; n+1\)</span>!
 Nun können wir die Formel etwas umstellen:</p>
 <div class="math notranslate nohighlight">
 \[n+1 + \frac{n \cdot (n+1)}{2} = \frac{2n+2 + n \cdot (n+1)}{2} = \frac{2n+2 + n^2 + n}{2}.\]</div>
@@ -729,17 +783,18 @@ Nun können wir die Formel etwas umstellen:</p>
 <p>D. h. es gilt <span class="math notranslate nohighlight">\(A(n+1)\)</span> also</p>
 <div class="math notranslate nohighlight">
 \[\sum\limits_{k=1}^{n+1} = \frac{(n+1) \cdot (n+2)}{2}\]</div>
-<p>unter der Annahme von <span class="math notranslate nohighlight">\(A(n)\)</span>.</p>
-<p>Aus <strong>(1)</strong> und <strong>(2)</strong> folgt die Aussage.</p>
+<p>unter der Annahme von <span class="math notranslate nohighlight">\(A(n)\)</span>.
+Aus <strong>(1)</strong> und <strong>(2)</strong> folgt die Aussage.</p>
 </div>
 </section>
 <section id="induktive-denkweise">
 <h2><span class="section-number">6.7.4. </span>Induktive Denkweise<a class="headerlink" href="#induktive-denkweise" title="Permalink to this heading">#</a></h2>
 <p>Anstatt eine Aussage zu beweisen kann die Induktion auch dabei helfen Algorithmen zu entwickeln.
 Wenn Sie ein Problem für <span class="math notranslate nohighlight">\(n\)</span> Datenpunkte / Elemente lösen wollen hilft es möglicherweise, wenn Sie stattdessen das Problem für <span class="math notranslate nohighlight">\(n_0\)</span> Elemente zu lösen versuchen.
-Und zusätzlich das Problem für <span class="math notranslate nohighlight">\(n+1\)</span> Elemente lösen, jedoch <strong>unter der Annahme</strong> Sie hätten es bereits für <span class="math notranslate nohighlight">\(n\)</span> Elemente gelöst.
+Wenn Sie zusätzlich wissen wie sie von <span class="math notranslate nohighlight">\(n\)</span> nach <span class="math notranslate nohighlight">\(n+1\)</span> gelangen, also das Problem für <span class="math notranslate nohighlight">\(n+1\)</span> lösen unter der Annahme, dass sie das Problem für <span class="math notranslate nohighlight">\(n\)</span> bereits gelöst haben, dann haben Sie eine Lösung für alle <span class="math notranslate nohighlight">\(n\)</span>, also alle Fälle, entwickelt.
 Zusammengenommen reicht das aus um das Problem für beliebig viele Elemente zu lösen!</p>
-<p>Ein Algorithmus der nach diesem Prinzip entwickelt wurde ist der <a class="reference external" href="https://de.wikipedia.org/wiki/Mergesort">Mergesort Algorithmus</a> oder die Lösung für die <a class="reference internal" href="../02-4/3-control-structures.html#sec-hanoi"><span class="std std-ref">Türme von Hanoi</span></a>.</p>
+<p>Ein Algorithmus der nach diesem Prinzip entwickelt wurde ist der <a class="reference external" href="https://de.wikipedia.org/wiki/Mergesort">Mergesort Algorithmus</a> oder die Lösung für die <a class="reference internal" href="../02-4/3-control-structures.html#sec-hanoi"><span class="std std-ref">Türme von Hanoi</span></a>.
+Betrachten wir eine andere konkrete Programmieraufgabe: Die Generierung aller <em>Permutationen</em> eines Tupels.</p>
 <div class="exercise admonition" id="induction-permutation-exercise">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.2 </span> (Permutationen)</p>
@@ -751,13 +806,13 @@ Eine Permutation ist ein Tupel mit den gleichen Elementen in einer anderen Reihe
 </div>
 <p>Diese Aufgabe können wir <em>induktiv</em> bzw. <em>rekursiv</em> lösen.</p>
 <p><strong>(1) Induktionsanfang:</strong>
-Für <span class="math notranslate nohighlight">\(n_0=1\)</span> enthält unsere Lösung genau ein Tupel.
+Für <span class="math notranslate nohighlight">\(n_0=1\)</span> hat das Tupel nur ein Element und somit enthält unsere Lösung genau ein Tupel.
 Es gibt genau eine Permutation.</p>
 <p><strong>(2) Induktionsschritt:</strong>
-Was machen wir für ein <span class="math notranslate nohighlight">\(n+1\)</span>-Tupel unter der Annahme wir haben das Problem für <span class="math notranslate nohighlight">\(n\)</span> gelöst?
+Was machen wir für ein Tupel welches <span class="math notranslate nohighlight">\(n+1\)</span> verschiedene Elemente enthält jedoch annehmen, wir haben das Problem für <span class="math notranslate nohighlight">\(n\)</span> bereits gelöst?
 Nun, für jede Permutation des <span class="math notranslate nohighlight">\(n\)</span>-Tupels erzeugen wir <span class="math notranslate nohighlight">\(n+1\)</span> Permutationen des <span class="math notranslate nohighlight">\(n+1\)</span>-Tupels indem wir das hinzugekommene <span class="math notranslate nohighlight">\(n+1\)</span>-te Elemente zwischen jede zwei Elemente (und an den Anfang und das Ende eines Tupels) stecken.</p>
 <p>Haben wir zum Beispiel das Tupel <span class="math notranslate nohighlight">\((1,2)\)</span> ergibt das die Permutationen <span class="math notranslate nohighlight">\((1,2), (2,1)\)</span>.
-Wollen wir nun die Permutationen von <span class="math notranslate nohighlight">\((1,2,3)\)</span> erzeugen ergibt dies: <span class="math notranslate nohighlight">\((3,1,2), (1,3,2), (1,2,3)\)</span> und <span class="math notranslate nohighlight">\((3, 2, 1), (2, 3, 1), (2, 1, 3)\)</span>.</p>
+Wollen wir nun die Permutationen von <span class="math notranslate nohighlight">\((1,2,3)\)</span> erzeugen ergibt dies: <span class="math notranslate nohighlight">\((3,1,2), (1,3,2), (1,2,3)\)</span> und zusätzlich <span class="math notranslate nohighlight">\((3, 2, 1), (2, 3, 1), (2, 1, 3)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -792,6 +847,37 @@ Wollen wir nun die Permutationen von <span class="math notranslate nohighlight">
 Sicher nicht!
 Darum geht es vorerst auch nicht.</p>
 <p>Das schöne an <em>Induktionsbeweisen</em> ist, dass Sie konstruktiv sind, d. h., der Beweis offenbart uns einen Algorithmus, welcher zur Lösung führt!</p>
+<div class="exercise admonition" id="induction-division-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.3 </span> (Teilbarkeit)</p>
+<section id="exercise-content">
+<p>Zeigen Sie durch vollständige Induktion, dass für jede natürliche Zahl <span class="math notranslate nohighlight">\(n\)</span>, die Zahl <span class="math notranslate nohighlight">\(n^2 + n\)</span> gerade ist, d.h. durch 2 teilbar ist.</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="induction-division-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#induction-division-exercise"> Exercise 6.3 (Teilbarkeit)</a></p>
+<section id="solution-content">
+<p><strong>(1) Induktionsanfang:</strong> <span class="math notranslate nohighlight">\(n_0 = 1\)</span> und es gilt offensichtlich</p>
+<div class="math notranslate nohighlight">
+\[2 \ | \ (1^2 + 1) \iff 2 \ | \ 2.\]</div>
+<p>Damit gilt <span class="math notranslate nohighlight">\(A(n_0)\)</span>.</p>
+<p><strong>(2) Induktionsschritt:</strong> Angenommen es gilt <span class="math notranslate nohighlight">\(A(n)\)</span> also</p>
+<div class="math notranslate nohighlight">
+\[2 \ | \ (n^2 + n).\]</div>
+<p>Wir berechnen nun <span class="math notranslate nohighlight">\((n+1)^2 + (n+1)\)</span> und versuchen <span class="math notranslate nohighlight">\(n^2 + n\)</span> herauszuklammern:</p>
+<div class="math notranslate nohighlight">
+\[(n+1)^2 + (n+1) = (n^2 + 2n + 1) + (n+1) = (n^2 + n) + (2n + 2)\]</div>
+<p>wobei wir wegen der Induktionsannahme annehmen können, dass</p>
+<div class="math notranslate nohighlight">
+\[2 \ | \ (n^2 + n).\]</div>
+<p>Der andere Teil der Summe, also <span class="math notranslate nohighlight">\((2n + 2) = 2 \cdot (n+1)\)</span> ist eine gerade Zahl und damit ebenfalls durch 2 teilbar.
+Da somit auch die Summe der beiden Terme durch 2 teilbar ist, folgt</p>
+<div class="math notranslate nohighlight">
+\[2 \ | \ [(n+1)^2 + (n+1)].\]</div>
+<p>Aus <strong>(1)</strong> und <strong>(2)</strong> folgt die Aussage.</p>
+</section>
+</div>
 </section>
 </section>
 
@@ -862,8 +948,8 @@ Darum geht es vorerst auch nicht.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauszsche-summenformel">6.7.1. Gaußsche Summenformel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-dominoeffekt">6.7.2. Der Dominoeffekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-dominoeffekt">6.7.1. Der Dominoeffekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauszsche-summenformel">6.7.2. Gaußsche Summenformel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#induktionsbeweis">6.7.3. Induktionsbeweis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#induktive-denkweise">6.7.4. Induktive Denkweise</a></li>
 </ul>

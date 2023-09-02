@@ -8,5 +8,5 @@ Wir möchten hier nur drei wesentliche Punkte nennen.
 
 ```{admonition} Lernziel
 :class: learngoals
-Sie können für sich selbst herausstellen weshalb Sie das Computational Thinking erlernen wollen.
+Sie für sich die Frage beantworten, weshalb das Computational Thinking für Sie erstrebenswert sein könnte.
 ```
