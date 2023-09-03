@@ -593,7 +593,8 @@ So gibt es auch Beschreibungen einzelner Bauteile die wiederum die Interaktion i
 Jeden Rechner, den Sie je benutzt haben, basiert höchstwahrscheinlich auf dieser Architektur.</p>
 <div class="definition admonition" id="def-main-memory">
 <p class="admonition-title">Arbeitsspeicher</p>
-<p>Der <em>Arbeitsspeicher</em> oder <em>Hauptspeicher</em> oder <em>RAM (Random Access Memory)</em> eines Computers ist jener Speicher, der die gerade auszuführenden <strong>Programme</strong> oder <strong>Programmteile</strong> und die dabei benötigten <strong>Daten</strong> enthält.</p>
+<p>Der <em>Arbeitsspeicher</em> oder <em>Hauptspeicher</em> oder <em>RAM (Random Access Memory)</em> eines Computers ist jener temporärer Speicher, der die gerade auszuführenden <strong>Programme</strong> oder <strong>Programmteile</strong> und die dabei benötigten <strong>Daten</strong> enthält.
+Er erlaubt den direkten Zugriff auf beliebige Speicheradressen.</p>
 </div>
 <p>Die erste wichtige Komponente ist der sogenannten <em>Hauptspeicher</em>, auch <em>Arbeitsspeicher</em> genannt.
 Im Bild oben haben wir <em>Hauptspeicher</em> und <em>Festplattenspeicher</em> mit Speicher zusammengefasst.
@@ -601,7 +602,8 @@ Was der unterschied dieser beiden Speicherkomponenten ist besprechen wir weiter 
 Im <em>Speicher</em> befinden sich die Anweisungen der Informationsmanipulation, d.h. das <strong>auszuführende Programm</strong> als auch alle zu verarbeitenden <strong>Daten</strong>, welche vom Programm verarbeitet werden.</p>
 <div class="definition admonition" id="def-bus">
 <p class="admonition-title">Bus</p>
-<p>Elektrische Leitungen über welche die <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Bytes</span></a> von verschiedenen Einheiten übermittelt werden nennen wir den <em>Bus</em>.</p>
+<p>Ein <em>Bus</em> ist ein Kommunikationssystem über das <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Bytes</span></a> übetragen werden.
+Der <em>Bus</em> verbindet durch elektrische Leitungen verschiedene Komponenten innerhalb eines Computers oder zwischen mehreren Computern.</p>
 </div>
 <p>Wir sprechen häufig von unterschiedlichen <em>Bus-Teilen</em>, zum Beispiel ist die Grafikkarte über den sogenannten PCI-Express Bus mit dem Rest des Computers verbunden.
 Der <em>interne Bus</em> auch <em>Speicher-Bus</em> oder <em>System-Bus</em> genannt, verbindet alle internen Komponenten eines Computers mit der <em>Hauptplatine</em> (Motherboard/Mainboard).
@@ -622,7 +624,9 @@ Die Kontrolleinheit schreibt das Ergebnis an die vom Programm definierte Stelle 
 <p>Die Recheneinheiten (arithmetische/logische Einheit und Fließkomma-Recheneinheit) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit Registern (das was kleine Informationseinheiten enthält), die mit anderen Einheiten über den <a class="reference internal" href="#def-bus"><span class="std std-ref">Bus</span></a> (das was Daten von einer Einheit zur anderen transportiert) verbunden sind.</p>
 <div class="definition admonition" id="def-cpu">
 <p class="admonition-title">Central Processing Unit (CPU)</p>
-<p>Der <em>Hauptprozessor</em> oder <em>Central Processing Unit (CPU)</em> besteht aus Leitungen (Bus), Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkomma-Recheneinheit.</p>
+<p>Der <em>Hauptprozessor</em> oder <em>Central Processing Unit (CPU)</em> besteht aus Leitungen, Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkomma-Recheneinheit.
+Die CPU ist die Kernkomponente eines Computers, die für die Ausführung von Anweisungen aus Computerprogrammen verantwortlich ist.
+Sie interpretiert und führt Befehle aus dem Arbeitsspeicher aus und verarbeitet Daten, indem sie arithmetische und logische Operationen durchführt.</p>
 </div>
 <p><em>Register</em> sind die kleinsten aber auch schnellsten <em>flüchtigen</em> (engl. volatile) Speichereinheiten.
 Sie sind dafür gedacht die Variablen einer Operation zu halten.
@@ -638,7 +642,7 @@ Für die Speicherung von Bits benötigen sie allerdings eine Stromversorgung.
 Deshalb sind Register wie auch der Hauptspeicher <em>flüchtig</em> - sie verlieren alle Daten sobald die Stromverbindung unterbrochen wird.</p>
 <div class="definition admonition" id="def-register">
 <p class="admonition-title">Register</p>
-<p><em>Register</em>, sind extrem schnelle kleine flüchtige Speichereinheiten, welche die CPU für viele Operationen verwendet.</p>
+<p><em>Register</em>, sind extrem schnelle kleine flüchtige Speichereinheiten innerhalb der CPU, welche die CPU für viele Operationen verwendet.</p>
 </div>
 <p>Deshalb werden Programme und viele Daten als Binärcode oder in anderen Formaten auf einem <em>persistenten</em> (<em>nicht flüchtigen</em> / engl. <em>non-volatile</em>) Speicher wie einer Festplatte <em>persistent</em> gespeichert.
 Sie werden vor ihrer Ausführung in den Hauptspeicher geladen.
@@ -655,9 +659,11 @@ Anstatt in die nächst gelegene Stadt zu reisen (Hauptspeicher), fliegen wir zum
 </figure>
 <div class="definition admonition" id="def-cache">
 <p class="admonition-title">Cache</p>
-<p>Ein <em>Cache</em> dient als (kleiner) Puffer.
+<p>Ein <em>Cache</em> ist ein schneller, temporärer Speicherbereich, der dazu dient, häufig verwendete Daten oder Anweisungen zwischenzuspeichern, um den Zugriff darauf zu beschleunigen.
+Er ist eine Art (kleiner) Puffer.
 Er enthält einen (kleinen) Teil der Daten die zeitlich gesehen gerade verwendet werden.
-Er dient dazu wiederholte Zugriffe auf ein langsames Hintergrundmedium (wie den Hauptspeicher) zu vermeiden.</p>
+Er dient dazu wiederholte Zugriffe auf ein langsames Hintergrundmedium (wie den Hauptspeicher) zu vermeiden.
+Durch die Nähe zum Prozessor oder zu anderen wichtigen Komponenten minimiert der Cache die Zeit, die für den Datenaustausch benötigt wird, und erhöht dadurch die Systemleistung.</p>
 </div>
 <p>Zwischen Hauptspeicher und Register liegen weitere sehr schneller Speicher, die wir als <em>Cache</em> bezeichnen.
 Für unser Verständnis der Funktionsweise können wir sie ignorieren.
@@ -715,8 +721,7 @@ Braucht es nicht ein Programm um das Betriebssystem zu laden und braucht dieses 
 Befinden wir uns nicht in einem Henne-Ei-Problem?</p>
 <div class="definition admonition" id="def-booting">
 <p class="admonition-title">Bootvorgang</p>
-<p>Das Betriebssystem wird beim Start des Computers geladen.
-Diesen Vorgang nennen wir <em>Bootenvorgang</em> oder kurz das <em>Booten</em>.</p>
+<p>Der <em>Bootvorgang</em> ist der Prozess, bei dem ein Computer nach dem Einschalten oder Neustarten sein Betriebssystem und weitere essenzielle Software lädt, um betriebsbereit zu werden.</p>
 </div>
 <p>Der Schlüssel hierzu ist ein kleineres Programm was auf dem sog. <em>Festwertspeicher (ROM)</em> liegt.
 Dieses Programm wird von der Hardware selbst geladen.
@@ -760,7 +765,8 @@ Ist der Befehl an der angegebenen Adresse ein <em>Sprungbefehl</em> ändert sich
 Andernfalls wird der Befehl (z.B. <span class="math notranslate nohighlight">\(\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3\)</span>) von der CPU ausgeführt und der <em>Befehlszeiger</em> wird um 1 erhöht.</p>
 <div class="definition admonition" id="def-program-counter">
 <p class="admonition-title">Befehlszeiger</p>
-<p>Der <em>Befehlszeiger</em> ist ein spezielles <a class="reference internal" href="#def-register"><span class="std std-ref">Register</span></a> der <em>Kontrolleinheit</em> welches die <em>Arbeitsspeicheradresse</em> des nächsten auszuführenden Befehls enthält.</p>
+<p>Der <em>Befehlszeiger</em> ist ein spezielles <a class="reference internal" href="#def-register"><span class="std std-ref">Register</span></a> der <em>Kontrolleinheit</em> welches die <em>Arbeitsspeicheradresse</em> des nächsten auszuführenden Befehls enthält.
+Bei der Ausführung eines Programms wird der Befehlszeiger aktualisiert, um auf die nächste Anweisung zu zeigen, die ausgeführt werden soll.</p>
 </div>
 <p>Wenn das Betriebssystem entscheidet, dass ein anderes Programm an der Reihe ist, wird der aktuelle Zustand des laufenden Programms gesichert.
 Z.B. wird der <em>Befehlszeiger</em> in den Arbeitsspeicher oder auf die Festplatte geschrieben.
@@ -791,7 +797,8 @@ Das Eingabegerät (die Tastatur) sendet eine Unterbrechungsanforderung (Interrup
 Nach der Anforderung führt die CPU eine Unterbrechungsroutine aus, diese leitet das <code class="docutils literal notranslate"><span class="pre">A</span></code> an das Textverarbeitungsprogramm weiter.</p>
 <div class="definition admonition" id="def-irq">
 <p class="admonition-title">Interrupt Request (IRQ)</p>
-<p>Ein sog. <em>Interrupt</em> zu Deutsch <em>Unterbrechung</em> (welcher gewöhnlich von Eingabegeräten ausgelöst wird) erzeugt einen sog. <em>Interrupt Request (IRQ)</em> zu Deutsch <em>eine Unterbrechungsanforderung</em>, welche den aktuellen Programmablauf unterbricht und eine spezielle Befehlsfolge ausführt um Programme über den <em>Interrupt</em> zu informieren.</p>
+<p>Ein <em>Interrupt Request</em> (IRQ) ist ein Signal, das an die CPU gesendet wird, um sie auf ein Ereignis oder eine Bedingung aufmerksam zu machen, die sofortige Aufmerksamkeit erfordert. Durch den Interrupt wird der aktuelle Ablauf des Programms unterbrochen, und die CPU führt eine spezielle Unterbrechungsroutine aus, um das gemeldete Ereignis zu behandeln. Anschließend wird die Ausführung des ursprünglichen Programms fortgesetzt.
+<em>Interrupts</em> (Unterbrechungen) werden häufig für Hardware-Ereignisse, Zeitgeber oder zur Kommunikation zwischen verschiedenen Systemkomponenten verwendet.</p>
 </div>
 <p>Das Textverarbeitungsprogramm hat sich hierfür über eine <em>Arbeitsspeicheradresse</em> für einen solchen IRQ registriert.
 Das heißt, es wird der Programmcode, der an dieser Adresse beginnt, ausgeführt.</p>

@@ -161,6 +161,7 @@ print(complement(0,0,0,0))
 print(complement(1,0,1,1)) 
 ```
 
+(sec-addierer)=
 ## Addierer
 
 Betrachten Sie einmal ``land`` und ``lor``.
@@ -430,7 +431,7 @@ Natürlich können wir in ``Python`` deutlich einfacher zwei Zahlen addieren.
 
 Es gibt auch noch andere Gatter als **AND**, **NOT** und **OR** z.B. **NAND**, **XOR** oder **NOR**, aber all diese Gatter lassen sich durch die drei fundamentalen Gatter ausdrücken.
 
-```{admonition} Anzahl, Größer und Geschwindigkeit
+```{admonition} Anzahl, Größe und Geschwindigkeit
 :class: remark
 :name: remark-gate-speed
 Gatter beschreiben die Funktionsweise, realisiert durch Transistoren, sind unvorstellbar klein und können unvorstellbar oft angesteuert werden.

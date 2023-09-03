@@ -46,7 +46,8 @@ Jeden Rechner, den Sie je benutzt haben, basiert höchstwahrscheinlich auf diese
 ```{admonition} Arbeitsspeicher
 :name: def-main-memory
 :class: definition
-Der *Arbeitsspeicher* oder *Hauptspeicher* oder *RAM (Random Access Memory)* eines Computers ist jener Speicher, der die gerade auszuführenden **Programme** oder **Programmteile** und die dabei benötigten **Daten** enthält.
+Der *Arbeitsspeicher* oder *Hauptspeicher* oder *RAM (Random Access Memory)* eines Computers ist jener temporärer Speicher, der die gerade auszuführenden **Programme** oder **Programmteile** und die dabei benötigten **Daten** enthält.
+Er erlaubt den direkten Zugriff auf beliebige Speicheradressen.
 ```
 
 Die erste wichtige Komponente ist der sogenannten *Hauptspeicher*, auch *Arbeitsspeicher* genannt.
@@ -57,7 +58,8 @@ Im *Speicher* befinden sich die Anweisungen der Informationsmanipulation, d.h. d
 ```{admonition} Bus
 :name: def-bus
 :class: definition
-Elektrische Leitungen über welche die [Bits](def-bit) und [Bytes](def-byte) von verschiedenen Einheiten übermittelt werden nennen wir den *Bus*.
+Ein *Bus* ist ein Kommunikationssystem über das [Bits](def-bit) und [Bytes](def-byte) übetragen werden.
+Der *Bus* verbindet durch elektrische Leitungen verschiedene Komponenten innerhalb eines Computers oder zwischen mehreren Computern.
 ```
 
 Wir sprechen häufig von unterschiedlichen *Bus-Teilen*, zum Beispiel ist die Grafikkarte über den sogenannten PCI-Express Bus mit dem Rest des Computers verbunden.
@@ -84,7 +86,9 @@ Die Recheneinheiten (arithmetische/logische Einheit und Fließkomma-Recheneinhei
 ```{admonition} Central Processing Unit (CPU)
 :name: def-cpu
 :class: definition
-Der *Hauptprozessor* oder *Central Processing Unit (CPU)* besteht aus Leitungen (Bus), Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkomma-Recheneinheit.
+Der *Hauptprozessor* oder *Central Processing Unit (CPU)* besteht aus Leitungen, Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkomma-Recheneinheit.
+Die CPU ist die Kernkomponente eines Computers, die für die Ausführung von Anweisungen aus Computerprogrammen verantwortlich ist.
+Sie interpretiert und führt Befehle aus dem Arbeitsspeicher aus und verarbeitet Daten, indem sie arithmetische und logische Operationen durchführt.
 ```
 
 *Register* sind die kleinsten aber auch schnellsten *flüchtigen* (engl. volatile) Speichereinheiten.
@@ -104,7 +108,7 @@ Deshalb sind Register wie auch der Hauptspeicher *flüchtig* - sie verlieren all
 ```{admonition} Register
 :name: def-register
 :class: definition
-*Register*, sind extrem schnelle kleine flüchtige Speichereinheiten, welche die CPU für viele Operationen verwendet.
+*Register*, sind extrem schnelle kleine flüchtige Speichereinheiten innerhalb der CPU, welche die CPU für viele Operationen verwendet.
 ```
 
 Deshalb werden Programme und viele Daten als Binärcode oder in anderen Formaten auf einem *persistenten* (*nicht flüchtigen* / engl. *non-volatile*) Speicher wie einer Festplatte *persistent* gespeichert.
@@ -126,9 +130,11 @@ Zusammenhang zwischen Größe und Geschwindigkeit der verschiedenen *flüchtigen
 ```{admonition} Cache
 :name: def-cache
 :class: definition
-Ein *Cache* dient als (kleiner) Puffer.
+Ein *Cache* ist ein schneller, temporärer Speicherbereich, der dazu dient, häufig verwendete Daten oder Anweisungen zwischenzuspeichern, um den Zugriff darauf zu beschleunigen. 
+Er ist eine Art (kleiner) Puffer.
 Er enthält einen (kleinen) Teil der Daten die zeitlich gesehen gerade verwendet werden.
 Er dient dazu wiederholte Zugriffe auf ein langsames Hintergrundmedium (wie den Hauptspeicher) zu vermeiden.
+Durch die Nähe zum Prozessor oder zu anderen wichtigen Komponenten minimiert der Cache die Zeit, die für den Datenaustausch benötigt wird, und erhöht dadurch die Systemleistung. 
 ```
 
 Zwischen Hauptspeicher und Register liegen weitere sehr schneller Speicher, die wir als *Cache* bezeichnen.
@@ -200,8 +206,7 @@ Befinden wir uns nicht in einem Henne-Ei-Problem?
 ```{admonition} Bootvorgang
 :name: def-booting
 :class: definition
-Das Betriebssystem wird beim Start des Computers geladen.
-Diesen Vorgang nennen wir *Bootenvorgang* oder kurz das *Booten*.
+Der *Bootvorgang* ist der Prozess, bei dem ein Computer nach dem Einschalten oder Neustarten sein Betriebssystem und weitere essenzielle Software lädt, um betriebsbereit zu werden.
 ```
 
 Der Schlüssel hierzu ist ein kleineres Programm was auf dem sog. *Festwertspeicher (ROM)* liegt.
@@ -258,6 +263,7 @@ Andernfalls wird der Befehl (z.B. $\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{
 :name: def-program-counter
 :class: definition
 Der *Befehlszeiger* ist ein spezielles [Register](def-register) der *Kontrolleinheit* welches die *Arbeitsspeicheradresse* des nächsten auszuführenden Befehls enthält.
+Bei der Ausführung eines Programms wird der Befehlszeiger aktualisiert, um auf die nächste Anweisung zu zeigen, die ausgeführt werden soll.
 ```
 
 Wenn das Betriebssystem entscheidet, dass ein anderes Programm an der Reihe ist, wird der aktuelle Zustand des laufenden Programms gesichert.
@@ -289,7 +295,8 @@ Nach der Anforderung führt die CPU eine Unterbrechungsroutine aus, diese leitet
 ```{admonition} Interrupt Request (IRQ)
 :name: def-irq
 :class: definition
-Ein sog. *Interrupt* zu Deutsch *Unterbrechung* (welcher gewöhnlich von Eingabegeräten ausgelöst wird) erzeugt einen sog. *Interrupt Request (IRQ)* zu Deutsch *eine Unterbrechungsanforderung*, welche den aktuellen Programmablauf unterbricht und eine spezielle Befehlsfolge ausführt um Programme über den *Interrupt* zu informieren.
+Ein *Interrupt Request* (IRQ) ist ein Signal, das an die CPU gesendet wird, um sie auf ein Ereignis oder eine Bedingung aufmerksam zu machen, die sofortige Aufmerksamkeit erfordert. Durch den Interrupt wird der aktuelle Ablauf des Programms unterbrochen, und die CPU führt eine spezielle Unterbrechungsroutine aus, um das gemeldete Ereignis zu behandeln. Anschließend wird die Ausführung des ursprünglichen Programms fortgesetzt.
+*Interrupts* (Unterbrechungen) werden häufig für Hardware-Ereignisse, Zeitgeber oder zur Kommunikation zwischen verschiedenen Systemkomponenten verwendet.
 ```
 
 Das Textverarbeitungsprogramm hat sich hierfür über eine *Arbeitsspeicheradresse* für einen solchen IRQ registriert.

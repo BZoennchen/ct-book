@@ -19,9 +19,9 @@ Bevor wir genauer darauf eingehen wie der Informationskreislauf vollzogen wird, 
 ## Das Binärsystem
 
 Computer arbeiten auf der Basis von zwei Zuständen (0 und 1).
-Man kann sagen sie sprechen die Binärsprache.
+Salopp sagt man auch, dass sie die Binärsprache "sprechen".
 Da die kleinste Informationseinheit, das [Bit](def-bit), nur zwei Zustände annehmen kann, sind die Operationen äußerst simpel.
-Die Komplexität entsteht durch das Kombinieren und Hintereinanderschalten von Millionen dieser Operationen.
+Die Komplexität und die damit einhergehende Rechenfähigkeit entsteht durch das Kombinieren und Hintereinanderschalten von Millionen dieser Operationen.
 
 Als *Computational Thinker\*innen* kümmern wir uns kaum um die genaue Manipulation der [Bits](def-bit) und [Bytes](def-byte).
 Wir Abstrahieren diese Aufgabe durch [Programmiersprachen](sec-programming-languages), die uns weitaus komfortablere Möglichkeiten bieten.
@@ -31,8 +31,8 @@ In einem Computer befinden sich mikroskopisch kleine Leitungen und Schaltkreise,
 Anstatt 0 und 1 verwendet der Computer also eigentlich elektrische Signale bzw. Spannungen, gespeichert in Milliarden von Transistoren und übertragen durch sog. [Bus-Systeme](def-bus) (Leitungen/Kabel).
 
 Wie aber lassen sich Informationen mit solchen elektrischen Signalen darstellen?
-Stellen wir uns eine Lampe vor, die zwei Zustände hat.
-Entweder die Lampe ist aus (0) oder sie ist an (1).
+Stellen wir uns eine Lampe mit zwei Zustände vor.
+Die Lampe ist entweder aus (0) oder sie ist an (1).
 
 ```{figure} ../../figs/digital-computer/representation/lamps.png
 ---
@@ -48,7 +48,7 @@ Natürlich könnte man mehr Zustände darstellen indem man misst wie viel Strom 
 Es hat sich aber herausgestellt, dass das einfache **Strom an** und **Strom aus** robuster, sicherer und effizienter ist.
 So lassen sich die zwei Zustände sehr einfach unterscheiden.
 
-Mit **Strom an**, **Strom aus** können wir zum Beispiel folgende Mengen repräsentieren:
+Mit **Strom an**, **Strom aus** können wir durch eine [Interpretation](def-interpretation) zum Beispiel folgende Mengen repräsentieren:
 
 
 ``````{list-table}
@@ -109,10 +109,10 @@ Wir könnten auch mit nur einem Zustand, z.B. **Strom aus**, Informationen repr�
 Diese sog. *Unärsystem* verwenden wir Menschen, wenn wir mit den Händen zählen.
 Das System ist allerdings für größere Datenmengen ungeeignet, da wir für eine Menge mit $n$ Elementen $n$ *Bits* bräuchten, um diese zu repräsentieren.
 Wechseln wir zu einem System mit drei Zuständen, bräuchten wir im Vergleich zum *Binärsystem* noch weniger *Bits*, doch ist das was wir gewinnen unwesentlich.
-Der Grund ist das Verhalten des Logarithmus.
+Der Grund dafür ist das Verhalten des Logarithmus.
 
 Der folgende Plot illustriert wie viele *Bits* (y-Achse) für eine Menge mit $n$ Elementen (x-Achse) im jeweiligen Zahlensystem notwendig sind.
-Der Unterschied zwischen *Binär* und *Unär* ist enorm, wohingegen der Unterschied zwischen *Binär* und, zum Beispiel, $\log_5(n)$ gering ist.
+Der Unterschied zwischen *Binär* und *Unär* ist enorm, wohingegen der Unterschied zwischen *Binär* und, zum Beispiel, $\log_5(n)$, also die Verwendung von 5 unterschiedlichen Zuständen, gering ist.
 Dies folgt aus den Rechengesetzen des Logarithmus:
 
 $$\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$$
@@ -146,7 +146,7 @@ plt.show()
 (sec-binary-numbers)=
 ## Zahlen im Binärsystem
 
-Werfen wir einen genaueren Blick aufs *Binärsystem* oder auch *binäre Zahlensystem*.
+Werfen wir einen genaueren Blick aufs *Binärsystem*, auch *binäre Zahlensystem* genannt.
 Um Zahlen mit **Strom an** und **Strom aus**, also den zwei Zuständen einer Lampe/Transistors/*Bit* zu repräsentieren, verwenden Computer das *Binärsystem*.
 
 ```{admonition} Notation verschiedener Zahlensysteme
@@ -186,7 +186,7 @@ Zum Beispiel hat $1101_2$ den Wert
 
 $$1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 0 + 1 = 13.$$
 
-$1001_2$ (binär) und $13_{10}$ (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung ist eine andere.
+$1001_2$ (binär) und $13_{10}$ (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung---ihr Repräsentant---ist ein anderer.
 Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welchen Wert $1001_2$ repräsentiert.
 
 ```{code-cell} python3
@@ -240,7 +240,7 @@ $$b_{n-1} \cdot 2^{n-2} + \ldots + b_1 \cdot 2^0 = 4.$$
 
 Wir können erneut durch zwei dividieren und erhalten:
 
-$$b_{n-1} \cdot 2^{n-3} + \ldots + b_2 \cdot 2^0 + b_1 / 2 = 2$$
+$$b_{n-1} \cdot 2^{n-3} + \ldots + b_2 \cdot 2^0 + b_1 / 2 = 2.$$
 
 Demnach muss $b_1 = 0$ sein und
 
@@ -257,7 +257,6 @@ $$b_{n-1} \cdot 2^{n-5} + \ldots + b_3 / 2 = 1/2.$$
 
 Demnach muss $b_3 = 1$ gelten.
 Alle höherwertigen Bits nehmen den Wert $0$ an.
-
 Zusammenfassend ist demnach
 
 $$1 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 9_{10} = 1001_2$$
@@ -299,7 +298,7 @@ Wir erhalten somit
   \end{split}
 ```
 
-Der folgende ``Python`` code wandelt eine Dezimalzahl in eine Binärzahl (als Liste von $0, 1$, gelesen von links nach rechts) um.
+Der folgende ``Python``-Code wandelt eine Dezimalzahl in eine Binärzahl (als Liste von 0, 1, gelesen von links nach rechts) um.
 
 ```{code-cell} python3
 # Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung
@@ -317,11 +316,11 @@ to_binary(1871)
 ### Ganze Zahlen
 
 Uns steht kein Minus- oder Pluszeichen zur Verfügung.
-Alles was der Computer kennt sind Bits und Bytes. 
+Alles was der Computer kennt sind [Bits](def-bit) und [Bytes](def-byte). 
 Wollen wir also anstatt der natürlichen Zahlen die ganzen Zahlen repräsentieren, müssen wir das Vorzeichen irgendwie codieren.
 
 Wollen wir ganze Zahlen repräsentieren so entscheidet das höchste [Bit](def-bit), ob es sich bei der Zahl um eine negative oder positive Zahl handelt.
-Eine Möglichkeit wäre es dieses höchste [Bit](def-bit) als ``-`` zu interpretieren, wenn es den Wert 1 hat und als ``+`` andernfalls.
+Eine Möglichkeit bestünde darin, dieses höchste [Bit](def-bit) als ``-`` zu [interpretieren](def-interpretation), wenn es den Wert 1 hat und als ``+`` andernfalls.
 In diesem Fall könnten wir Gleichung {eq}`eq:binary:natural` verwenden, mit dem Unterschied, dass wir das höchste Bit ausschließen und stattdessen als Vorzeichen interpretieren.
 
 So wäre
@@ -370,14 +369,15 @@ Aus Gleichung {eq}`eq:binary:natural` wird
   \end{split}
 ```
 
-Sofern es sich um eine negative Zahl handelt, d. h. $b_{n-1} = 1$, so können wir die Gleichung {eq}`eq:binary:integer` auch umschreiben, indem wir das [Komplement](def-complement) eines jeden [Bit](def-bit) verwenden, daher der Name *Zweierkomplement*:
+Sofern es sich um eine negative Zahl handelt, d.h. $b_{n-1} = 1$, können wir die Gleichung {eq}`eq:binary:integer` auch umschreiben, indem wir das [Komplement](def-complement) eines jeden [Bit](def-bit) verwenden.
+Daher der Name *Zweierkomplement*:
 
 ```{math}
 :label: eq:binary:integer:complement
   \begin{split}
     b_{n-1} \ldots b_0 &= -\overline{b}_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} - \ldots - \overline{b}_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0} - 1\\
     &= -\left( \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} \overline{b}_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i} \right) - 1,
-    \quad  \text{falls $b_{n-1} = 1$,}
+    \quad  \text{falls} \quad b_{n-1} = 1,
   \end{split}
 ```
 

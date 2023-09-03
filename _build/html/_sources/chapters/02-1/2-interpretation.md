@@ -292,10 +292,11 @@ Was aber nicht bedeutet, dass ein Computer einen Apfel nicht erkennen kann.
 Auch unsere mentalen Operationen scheinen in sich abgeschlossen---sie werden auch keinen echten Apfel in ihrem Kopf finden und Ihre Gedanken bleiben in Ihrem Kopf.
 
 Software basiert auf dem gleichen Prinzip, denn im Grunde genommen ist Hardware ein Stück Software, welches durch Bauteile realisiert wird (siehe Abschnitt [Berechenbarkeit](sec-computability)).
+Es ist z.B. nicht unüblich für Berechnungen, die durch Computerprogramme, d.h. Software, durchgeführt wird, neue Bauteile zu konstruieren, die jene Berechnung schneller vollziehen.
 Öffnen Sie ein Bild in einem Texteditor, so sehen Sie die Interpretation des Bildes ihres Texteditors.
 Öffnen Sie die gleiche Datei in einem Bildverarbeitungsprogramm, sehen sie eine andere Interpretation der Bits und Bytes.
 
-Schreiben Sie einen Buchstaben $\text{'a'}$ durch Tastendruck über ein Textverarbeitungsprogramm, so ist das $\text{'a'}$ ein Element der Bedeutung $B$.
+Schreiben Sie einen Buchstaben $\text{'a'}$ durch einen Tastendruck in einem Textverarbeitungsprogramm, so ist das $\text{'a'}$ ein Element der Bedeutung $B$.
 Ihr Textverarbeitungsprogramm berechnet die Bitfolge $b = I^{-1}(\text{'a'})$, durch die ihm bekannte Interpretation $I$ bzw. deren Umkehrfunktion $I^{-1}$.
 Die Binärfolge $b$ kann dann auf dem Computer gespeichert werden.
 Öffnen Sie die Datei, so berechnet das Textverarbeitungsprogramm $I(b) = \text{'a'}$.
@@ -312,17 +313,36 @@ Wie im obigen Beispiel des Textverarbeitungsprogramms, hindert uns niemand Text 
 Diese spezielle Interpretation $I$ macht aus dem Text einen Binärcode der ausführbar ist, d.h., den die Computerhardware "versteht".
 Damit ist nicht gemeint, dass der Text zuvor als tatsächlicher Text im Speicher des Computers liegt.
 Der Text ist bereits binär codiert, wird aber in eine andere Binärfolge umgewandelt welche nicht mehr lesbaren Programmiercode repräsentiert, sondern Binärcode der durch den Computer direkt ausgeführt werden kann.
-Dieser Code hängt zum Beispiel von der Art der Hardware des Computers ab. 
+Dieser Code hängt zum Beispiel von der Art der Hardware des Computers ab.
+Das heißt, obwohl der ``Python``-Programmiercode auf zwei Maschinen identisch ist, können sich die Anweisungen, die von den Bauteilen tatsächlich ausgeführt werden, unterscheiden.
+Handelt es sich um ein syntaktisch korrektes Programm, welches keinen undefinierten Code enthält, sollte jedoch die [Semantik](def-semantik) im Gesamten identisch sein.
+In anderen Worten, das Endergebnis sollte auf beiden Maschinen gleich sein.
 
-Programme die eine solche Interpretation realisieren bezeichnen wir sehr passend als [Interpreter](def-interpreter) oder [Übersetzer](def-compiler) (engl. Compiler).
-Interpreter werten $I$ aus, während der Programmcode ausgeführt wird.
-Dagegen werten Compiler die Interpretation $I(w)$ für den gesamten Code $w$ aus, bevor dieser ausgeführt wird.
+Programme die eine solche [Interpretation](def-interpretation) realisieren, also lesbaren Programmcode als ausführbaren *Maschinencode* interpretieren, bezeichnen wir sehr passend als [Interpreter](def-interpreter) oder [Übersetzer](def-compiler) (engl. Compiler).
+Interpreter werten $I$ aus, während der Programmcode ausgeführt wird, d.h. sie interpretieren Programmcodefetzen.
+Dagegen werten Übersetzer die Interpretation $I(w)$ für den gesamten Code $w$ aus, bevor dieser ausgeführt wird.
 
 ```{admonition} Übersetzer / Compiler
 :name: def-compiler
 :class: definition
 Ein *Übersetzer*  (engl. *Compiler*) ist ein Programm welches ein anderes Programm $\alpha_H$, geschrieben in einer Hochsprache $L_H$, entgegennimmt und in ein Programm $\alpha_M$, geschrieben in einer Maschinensprache $L_M$, ausgibt. $\alpha_M$ realisiert $\alpha_H$ auf einer konkreten Maschine, d. h., $\alpha_M$ steuert die konkrete Maschine, sodass es das berechnet was $\alpha_H$ auf abstrakterer Ebene vorgibt zu berechnen.
 ```
+
+Übertragen wir dieses Prinzip des [Interpreters](def-interpreter) auf das Beispiel mit dem gezeichneten Apfel, so interpretiert der Bleistift den Druck und den Winkel als Anzahl und Positionierung von Graphitteilchen.
+Wir als Zeichner\*innen verlassen die Welt der Graphitteilchen und begeben uns stattdessen in die Welt der Zeichentechniken.
+Dieser Kontextwechsel wird durch den [Interpreter](def-interpreter)---den Bleistift---ermöglicht!
+
+```{admonition} Interpreter
+:name: def-interpreter
+:class: definition
+
+Ein *Interpreter* ist ein Programm, welches Befehle, geschriebenen in einer Hochsprache $L_H$ **direkt** ausführt, indem es die Befehle zur Laufzeit in Maschinencode übersetzt oder durch eine andere Form der Sofortausführung umsetzt.
+```
+
+Ein [Übersetzer](def-compiler) wandelt hingegen ein gesamtes Kunstwerk in einem Stück in ein anderes Werk um.
+Zum Beispiel eine Folge von Bildern in ein Video.
+Der Vorteil dabei ist, dass der Übersetzer Optimierungen durchführen kann, da ihm das gesamte zu übersetzende Werk zur Verfügung steht.
+Dafür ist er für die Anwender\*innen weniger flexibel, denn diese müssen ihm immer ein gesamtes Werk übergeben.
 
 Ok, das ist noch nicht die ganze Wahrheit.
 In der Praxis wenden Compiler oder Interpreter eine hintereinandergeschaltete Kette an Interpretationen $I_0, \ldots, I_n$ an.
@@ -334,7 +354,7 @@ x = 4 + 9
 
 ``Python`` interpretiert dies als das Speichern der Addition der Zahlen ``4`` und ``9`` in der Variable ``x``.
 Das verstehen die Hardwarekomponenten des Computer jedoch nicht.
-Der Compiler übersetzt durch die Anwendung einer Kette von Interpretationen diesen Code, sodass er in Assemblercode transformiert wird.
+Der Interpreter übersetzt durch die Anwendung einer Kette von Interpretationen diesen Code, sodass er in *Assemblercode* transformiert wird.
 Dieser könnte in etwa folgende Gestalt annehmen:
 
 ```
@@ -346,16 +366,8 @@ ADD $0 $1 $2
 STORE $2 # 16
 ```
 
-```{admonition} Interpreter
-:name: def-interpreter
-:class: definition
-
-Ein *Interpreter* ist ein Programm, welches Befehle, geschriebenen in einer Hochsprache $L_H$ direkt ausführt ohne diese in eine Maschinensprache zu [übersetzen](def-compiler).
-Da die Maschine, die Sprache $L_H$ jedoch nicht versteht, **simuliert** der Interpreter die Befehle (siehe [universellen Turingmaschine](sec-utm)).
-```
-
 Diese Befehle sprechen direkt bestimmte Hardwarekomponenten an und werden im letzten Schritt in reinen Binärcode übersetzt.
-Jeder Compiler erhält als Eingabe einen Programmcode, geschrieben in einer bestimmten Vorschrift ([Syntax](def-syntax)), und wandelt diesen anhand seiner Interpretation in einen anderen Programmcode, einer anderen Vorschrift (Syntax), um.
+Jeder Compiler erhält als Eingabe einen Programmcode, geschrieben in einer bestimmten Vorschrift ([Syntax](def-syntax)) und wandelt diesen anhand seiner [Interpretation](def-interpretation) in einen anderen Programmcode einer anderen Vorschrift ([Syntax](def-syntax)), um.
 So wird es möglich, dass sich Entwickler\*innen nicht mehr in einer Welt der Bits und Bytes befinden sondern in einer Welt aus Dezimalzahlen, Zeichenketten, Listen, Webservices, Webseiten, Apps und so weiter.
 Die [Semantik](def-semantik) der unterschiedlichen Programmcodes sollte (im Gesamten) unverändert bleiben.
 
@@ -363,17 +375,8 @@ Die [Semantik](def-semantik) der unterschiedlichen Programmcodes sollte (im Gesa
 :name: remark-undefined-behavor
 :class: remark
 
-Enthält ein Programm semantische Fehler welche zu einem undefiniertes Ergebnis führen kann es---zum Beispiel durch die Optimierung des Codes durch den Compiler---vorkommen, dass sich die Semantik von einer Interpretation zur anderen verändert.
+Enthält ein Programm semantische Fehler welche zu einem undefiniertes Ergebnis führen kann es---zum Beispiel durch die Optimierung des Codes die vom Übersetzer vorgenommen wird---vorkommen, dass sich die Semantik von einer Interpretation zur anderen verändert.
 ```
-
-Übertragen wir dieses Prinzip des [Interpreters](def-interpreter) auf das Beispiel mit dem gezeichneten Apfel, so interpretiert der Bleistift den Druck und den Winkel als Anzahl und Positionierung von Graphitteilchen.
-Wir als Zeichner\*innen verlassen die Welt der Graphitteilchen und begeben uns stattdessen in die Welt der Zeichentechniken.
-Dieser Kontextwechsel wird durch den [Interpreter](def-interpreter)---den Bleistift---ermöglicht!
-
-Ein [Übersetzer](def-compiler) wandelt hingegen ein gesamtes Kunstwerk in einem Stück in ein anderes Werk um.
-Zum Beispiel eine Folge von Bildern in ein Video.
-Der Vorteil dabei ist, dass der Übersetzer Optimierungen durchführen kann, da ihm das gesamte zu übersetzende Werk zur Verfügung steht.
-Dafür ist er für die Anwender\*innen weniger flexibel, denn diese müssen ihm immer ein gesamtes Werk übergeben.
 
 ```{exercise} Übersetzer und Interpreter
 :label: interpreter-compiler-examples-exercise
@@ -382,15 +385,15 @@ Beschreiben Sie informell $R$, $B$ und $I$ für die Tastatur, ein Klavier und ei
 
 ## Rechnen und Denken
 
-Es stellt sich die Frage worin der Unterchied zwischen der *semiotischen* und der *formalen* Welt besteht.
+Es stellt sich die Frage worin der Unterchied zwischen der *semiotischen* und der *formalen* Welt liegt.
 In anderen Worten: Worin liegt der Unterschied zwischen der formalen Interpretation eines Bildschirms einer Bitfolge in Pixelwerte und unserer semiotischen Interpretation mit der wir diese Pixelwerte als Apfel interpretieren.
 Genau an dieser Stelle kommt es zu einer merkwürdigen Überschreitung des operational geschlossenen Systems der symbolischen Manipulationen und des anderen operational geschlossenen Systems der Gedanken oder mentalen Operationen.
 Die beiden Systeme scheinen miteinander zu kommunizieren.
 
-Die Systeme sind *operational geschlossen*, denn weder bohren sich die Symbole in unseren Kopf noch wandern Gedanken in den Computer.
-Im Beispiel moderner ChatBots erfolgt diese Mensch-Maschinen-Kommunikation durch das gemeinsame Medium der Sprache.
+Nochmals sei gesagt, dass die Systeme *operational geschlossen* sind, denn weder bohren sich die Symbole in unseren Kopf noch wandern Gedanken in den Computer.
+Im Beispiel moderner ChatBots, die auf großen *Sprachmodelle* basieren, erfolgt diese Mensch-Maschinen-Kommunikation durch das gemeinsame Medium der Sprache.
 Und im Fall des Bildes eines Apfels auf dem Bildschirm erfolgt die Kommunikation über das Medium der visuellen Darstellung.
-Was aber---um es erneut zu betont---nicht bedeutet, dass Mensch und Maschine Spache oder visuelle Darstellugn auf gleiche Weise "verstehen".
+Was aber---um es erneut zu betonen---nicht bedeutet, dass Mensch und Maschine Spache oder visuelle Darstellugn auf die gleiche Weise "verstehen".
 Vielmehr operieren beide Systeme komplett unterschiedlich---das eine rechnet, das andere denkt.
 
 Die Semantik eines Programms bestimmt welche digitalen Operationen der Computer ausführt.
@@ -413,15 +416,15 @@ Wir Menschen besitzen eine Erfahrung und können beispielsweise zu einer abstrak
 Der Apfel als Bild auf dem Bildschirm hat für uns eine "tatsächliche" Bedeutung.
 Und es mag so sein, dass gerade aus der Erfahrung heraus eben jene abstrakten Konzepte, wie etwa Zahlen, entstanden sind. 
 
-Wir sollten uns fragen ob sich die Interpreter einmal in Form des Bleistifts, den wir als Werkzeug verwenden, und in in Form des Menschen, der den Apfel erkennt, nicht fundamental unterscheiden.
+Wir sollten uns fragen ob sich die Interpreter einmal in Form des Bleistifts, den wir als Werkzeug verwenden, und in Form des Menschen, der den Apfel erkennt, nicht fundamental unterscheiden.
 Der Stift ist lediglich ein verlängerter Arm der Künstler\*innen.
 Er denkt nicht, hat keinerlei Intelligenz oder Bewusstsein.
-Der Mensch hingegen, der die Graphitteilchen als Apfel interpretiert, ist ein bewusst denkendes Wesen.
+Der Mensch hingegen, der die Graphitteilchen als Apfel interpretiert, ist ein bewusstes, denkendes, historisches, biologisches Wesen.
 
 Andererseits haben formale Interpretationen offensichtlich Auswirkungen auf die echte Welt.
-Wenn Algorithmen die Kreditwürdigkeit eines Kunden berechnen und aufgrund dessen---womöglich ohne eines Eingriffs einer menschlichen Instanz---ein Kredit abgelehnt wird, haben Systeme die symbolisch Rechnen natürlich Effekte auf andere Systeme die Denken oder anderweitig kommunizieren.
+Wenn Algorithmen die Kreditwürdigkeit eines Kunden berechnen und aufgrund dessen---womöglich ohne eines Eingriffs einer menschlichen Instanz---ein Kredit abgelehnt wird, haben symbolisch rechnende Systeme natürlich Effekte auf andere Systeme die Denken oder anderweitig kommunizieren.
 
-Es ergeben sich hierbei spannende Fragen aus dem Bereich der künstlichen Intelligenz und der Philosophie des Geistes:
+Es ergeben sich also spannende Fragen aus dem Bereich der *künstlichen Intelligenz* und der *Philosophie des Geistes*:
 
 >Ist der Computer im wesentlichen ein "besserer" Bleistift ohne Intelligenz und Bewusstsein?
 
@@ -432,14 +435,14 @@ Natürlich könnten wir die Frage auch umkehren und uns dem Menschen zuwenden:
 >Ist der Mensch im wesentlichen ein "besserer" Bleistift?
 
 Die Euphorie in den Anfängen der künstlichen Intelligenz war groß.
-So schrieb Alan Turing in *Computing Machinery and Intelligence*:
+So schrieb Alan Turing einer der Begründer der Informatik in *Computing Machinery and Intelligence*:
 
 >I believe that at the end of the century the use of words and general educated opinion will have altered so much that one will be able to speak of machines thinking without expecting to be contradicted. -- {cite}`turing:1950`
 
-Diese Vorhersage hat sich wohl nicht erfüllt auch wenn diese Prognose durch die Fortschritte des maschinellen Lernens neu entflammt ist.
+Diese Vorhersage hat sich wohl nicht erfüllt auch wenn die These der denkenden Maschine durch die Fortschritte des maschinellen Lernens neu entflammt ist.
 Es bestehen berechtigte Zweifel daran, dass Computer jemals eine eigene Interpretation oder eine eigene Intension hervorbringen bzw. entwickeln.
 Streng genommen ist es diskussionswürdig, ob Computer überhaupt irgendeine echte Bedeutung ([semiotische Semantik](def-semantik-semiotik)) "kennen".
-Anders ausgedrückt müssen wir uns fragen ob sie nicht doch nur bloße Transformatoren von Zeichen auf einer rein [syntaktischen](def-syntax) Ebene sind---ganz so wie der Bleistift.
+Sind sie nicht doch nur bloße Transformatoren von Zeichen auf einer rein [syntaktischen](def-syntax) Ebene ganz so wie der Bleistift?
 Und wenn dem so ist, können wir und sollten wir versuchen dies zu ändern?
 
 Gegen diese utopisch oder dystopische Hoffnung der Futuristen argumentieren z.B. die Philosophen {cite:t}`gabriel:2018` und {cite:t}`rosengruen:2021`.
@@ -453,5 +456,4 @@ Gabriel warnt unter anderem vor einem fehlgeleiteten Sprachgebrauch.
 
 Die Diskussionen bleiben spannend und offfen.
 Sie betreffen nicht nur den Bereich der künstlichen Intelligenz, sondern vielmehr unser Menschenbild.
-
 Im Kapitel [Was ist Information?](sec-information) schließen wir an diese Diskussion an, indem wir den Informationsbegriff aus verschiedenen Richtungen kritisch betrachten.
