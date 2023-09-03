@@ -53,7 +53,7 @@ interpretieren wir als Anweisung beim Autofahren.
 In all diesen Fällen gehen wir von einer bestimmten **Interpretation** aus mit der wir einer **Repräsentation** (die Zeichnung und die Zeichen) eine gewisse **Bedeutung** zuordnen.
 Die Graphitpartikeln (Repräsentant) interpretieren wir als Apfel (Bedeutung).
 Die Zeichenfolge ``2 + 2 = 4`` (Repräsentant) interpretieren wir als mathematisch Gleichung (Bedeutung).
-Die Zeichenfolge ``23.10.2022` interpretieren wir als Datum (Bedeutung) und das Stop-Symbol als Anweisung beim Autofahren.
+Die Zeichenfolge ``23.10.2022`` interpretieren wir als Datum (Bedeutung) und das Stop-Symbol als Anweisung beim Autofahren.
 Dies setzt vorraus, das wir Äpfel, Tage, Gleichungen und den Straßenverkehr kennen.
 
 Die wissenschaftliche Disziplin, welche den Zusammenhang zwischen Repräsentant und seiner Bedeutung untersucht ist die sog. Bedeutungslehre oder auch [Semantik](def-semantik-semiotik).
@@ -64,7 +64,7 @@ Wir können den echten Tag nicht niederschreiben, wir können ihn lediglich refe
 Das erschwert unsere Erklärversuche, da wir uns mit Zeichen ausdrücken müssen.
 
 Das Stop-Symbol symbolisiert das Stehenbleiben und dessen Qualität (Abbremsen, Autofahren, Straße, Straßenverkehr, ...).
-Es referenziert einen Sachverhalt der Realwelt, das Stehenbleiben eines konkreten Fahrzeugs.
+Es referenziert einen Sachverhalt der Realwelt: Das Stehenbleiben eines konkreten Fahrzeugs.
 Zusätzlich hat es auf uns eine bestimmte Wirkung, nämlich dass wir, wenn wir es sehen, stehenbleiben (oder zumindest darüber reflektieren).
 Diese Wirkung wird im letzten Gebiet der Semiotik, der sog. *Pragmatik* untersucht.
 
@@ -106,7 +106,7 @@ Erklären Sie die Begriffe Syntax und Semantik in Ihren eigenen Worten anhand de
 In der Informatik tritt anstelle der allgemeinen [Semantik](def-semantik-semiotik) die sog. *logische*, *formaler* oder auch *reine* Semantik.
 In Abgrenzung zur Semantik im allgemeinen Sinn arbeitet die [(formale) Semantik](def-semantik) in der Informatik mit rein formalen, logisch-mathematischen Methoden.
 Damit is gemeint, dass die Bedeutungen nicht länger (gesellschaftlich) untersucht, sondern durch explizite Regeln **unmissverständlich** festgelegt werden.
-Die (formale) Semantik beschäftigt sich somit mit der exakten Bedeutung von Termen in (formalen) Sprachen, wie Programmiersprachen.
+Die (formale) Semantik beschäftigt sich somit mit der exakten Bedeutung von Termen in (formalen) Sprachen, wie beispielweise Programmiersprachen.
 
 ```{admonition} Semantik (Informatik)
 :name: def-semantik
@@ -130,9 +130,9 @@ Unter der *(formalen) Syntax* versteht man ein System von Regeln, nach denen woh
 Die *Syntax* definiert auch *syntaktische Ableitungsregeln*, durch die **bedeutungslose** Zeichen in andere **bedeutungslose** Zeichen transformiert werden.
 ```
 
-Wohldefinierte Programmiersprachen benötigen beides: Eine (formale) Syntax auf der dann eine Semantik definiert wurde.
+Wohldefinierte Programmiersprachen benötigen beides: Eine (formale) Syntax auf der dann eine Semantik definiert wird.
 Dabei ist die Semantik meist anhand derselben Operationen, durch die auch die Syntax definiert ist, bestimmt.
-Deshalb ist ergibt sich die Bedeutung eines komplexen Ausdrucks aus der Bedeutung seiner Bestandteile und den syntaktischen Operationen für die Zusammensetzung.
+Deshalb ergibt sich die Bedeutung eines komplexen Ausdrucks aus der Bedeutung seiner Bestandteile und den syntaktischen Operationen für die Zusammensetzung.
 Diese Brücke vereinfacht den Umgang mit Programmiersprachen verschleiert aber auch den Unterschied zwischen [Syntax](def-syntax) und [Semantik](def-semantik).
 
 ```{admonition} Syntaktischen Ableitungsregeln
@@ -171,14 +171,16 @@ display_quiz(quiz, border_radius=2, lang='de')
 ```
 
 Vermutlich werden Sie die richtige Antwort sofort gefunden haben.
-Nach den *syntaktischen Ableidungsregeln* kann der Ausdruck ``3 + 5 * 10`` nur als Summe, nicht aber als Produkt gelesen werden.
-Die *syntaktischen Ableitungsregeln* sind ein Ausschnitt für die Programmiersprache ``Python``:
+
+Interessanterweise kann nach den *syntaktischen Ableidungsregeln* der Ausdruck ``3 + 5 * 10`` nur als Summe, nicht aber als Produkt gelesen werden.
+Dies möchten wir im Folgenden kurz näher erleutern.
+Die folgenden *syntaktischen Ableitungsregeln* sind ein Ausschnitt für die Programmiersprache ``Python``:
 
 ```
-E -> T + E 
+E -> T '+' E 
    | T
 
-T -> F * T
+T -> F '*' T
    | F
 
 F -> '(' E ')'
@@ -189,26 +191,26 @@ Z -> '0' | '1' | '2' ...
 
 Wir können also z.B. ``E`` zu ``T + E`` ableiten.
 ``E`` steht---durch die Semantik---für einen Ausdruck, ``T`` für einen Term, ``F`` für einen Faktor und ``Z`` für eine Zahl.
-Ein Ausdruch wie er in unserem obigen Programm steh, also ``3 + 5 * 10`` kann nach diesen Relgen nur ein Term oder ein eine (syntaktische) Addition aus Term und Ausdruck sein.
+Ein Ausdruch wie er in unserem obigen Programm steht, also ``3 + 5 * 10`` kann nach diesen Relgen nur ein Term oder eine (syntaktische) Addition aus Term und Ausdruck sein.
 Unser Beispiel entsteht wie folgt:
 
 ```
-E -> T + E -> F + E -> Z + E -> '3' + T -> '3' + T 
-  -> '3' + F * T -> '3' + Z * T -> '3' + '5' * T 
-  -> '3' + '5' * F -> '3' + '5' * Z -> '3' + '5' * '10'
+E -> T '+' E -> F '+' E -> Z '+' E -> '3' '+' T -> '3' '+' T 
+  -> '3' '+' F '*' T -> '3' '+' Z '*' T -> '3' + '5' '*' T 
+  -> '3' '+' '5' '*' F -> '3' + '5' '*' Z -> '3' '+' '5' '*' '10'
 ```
 
 Diese Ableitung hat nichts mit einer arithmethschen Berechnung zu tun.
 Sie ist die stupide Umwandlung von Zeichen in andere Zeichen anhand der oben aufgelisteten Regeln, welche wir auch als *Grammatik* bezeichnen.
 Dennoch legen diese Regeln fest, dass ein ``E`` zu einem ``Z * Z`` umgewandelt werden kann, aber ein ``F`` nicht zu einem ``Z + Z`` sondern nur in ein ``'(' Z + Z ')'``.
 Dadurch unterstützt die Syntax die *semantische Auswertung*, denn sobald bei dieser Auswertung ein ``F`` auftaucht, kann ``F`` getrennt vom rest ausgewertet werden.
-In unserem Beispiel bedeutet dies, dass nach 
+In unserem Beispiel bedeutet dies, dass nach den Ableitungen
 
 ```
 E -> T + E -> F + E
 ```
 
-klar ist, dass ``E`` *semenatisch* zu ``5 * 10`` und damit zu ``50`` ausgewertet werden kann und ``T`` zu ``3``.
+klar ist, dass ``E`` *semenatisch* zu ``5 * 10`` und damit zu ``50`` ausgewertet werden kann und ``T`` zu ``3`` ausgewertet werden kann.
 In anderen Worten: Die *semantische* Punkt-vor-Strich-Regel ist bereits durch *syntaktische Ableitungsregeln* strukturell vorgegeben.
 
 Zusammenfassend gibt die Syntax vor, welcher Text ein gültiger Programmiercode ist und die Semantik gibt vor welche Operationen---realisiert durch digitale Schaltungen---der Computer aufgrund des Texts ausführt.
@@ -223,7 +225,9 @@ tags: [raises-exception]
 ```
 
 Die Fehlermeldung weist uns darauf hin.
-Folgendes Text ist ein gültiger ``Python``-Programmiercode, allerdings bedeutet dies nicht, dass es keine *semantischen* Fehler gibt.
+
+Folgender Text ist ein gültiger ``Python``-Programmiercode.
+Dies bedeutet allerdings nicht, dass es keine *semantischen* Fehler gibt.
 Hier teilen wir durch 0, was *semantisch* undefiniert ist.
 
 ```{code-cell} python3
@@ -274,18 +278,20 @@ Die auf dem Bildschirm angezeigte Zeichenfolge "Apfel" wird als Zeichenkette ``A
 Auch kann ein Repräsentant durch verschiedenen Interpretationen unterschiedliche Bedeutungen annehmen.
 In den obigen Beispielen repräsentiert die Bitfolge ``00`` einmal die Zeichenkette ``Apfel`` und einmal die Zahl 0. 
 
-Die Computerhardware (alle Bauteile) kann schlussendlich nur [Bits](def-bit) und [Bytes](def-byte) verarbeiten.
+Die Computerhardware kann schlussendlich nur [Bits](def-bit) und [Bytes](def-byte) verarbeiten.
 Jede Hardwarekomponente verwendet eine bestimmte Interpretation, welche auf der Repräsentation der [Binärzahlen](sec-binary-system) basiert.
-Diese Interpretation wurde den Komponenten von uns Menschen "beigebracht".
-Die Operationen des Computer können die abstrakte Informationswelt nicht verlassen.
-Sie sind in sich abgeschlossen.
-Sie werden deshalb keinen echten Apfel im Computer finden.
-Was aber nicht bedeutet, dass ein Computer einen Apfel nicht erkennen kann.
-Auch unsere mentalen Operationen scheinen in sich abgeschlossen---sie werden auch keinen echten Apfel in ihrem Kopf finden.
-
+Diese Interpretation wurde den Komponenten von uns Menschen "beigebracht" indem wir festgelegt haben welche Bitfolgen welche Berechnungen auslösen.
+In anderen Worten, auf welche Art und Weise Informationen verarbeitet werden.
 Ein Monitor interpretiert die Bitfolgen als Pixelintensitäten (wie stark und in welcher Farbe leuchtet der jeweilige Pixel), ein Addierer interpretiert Bitfolgen als Zahlen, ein Mikrofon interpretiert Bitfolgen als Amplitudenwerte.
 
-Software basiert auf dem gleichen Verständnis, denn Hardware ist Software realisiert durch Bauteile (siehe Abschnitt [Berechenbarkeit](sec-computability)).
+Die Operationen des Computer können die abstrakte Informationswelt nicht verlassen.
+Informationssysteme sind *operational abgeschlossen*.
+Sie können Computer untereinander vernetzen aber noch ist es nicht möglich Gedanken in diese Systeme einzuspeisen.
+Sie werden auch keinen echten Apfel im Computer finden.
+Was aber nicht bedeutet, dass ein Computer einen Apfel nicht erkennen kann.
+Auch unsere mentalen Operationen scheinen in sich abgeschlossen---sie werden auch keinen echten Apfel in ihrem Kopf finden und Ihre Gedanken bleiben in Ihrem Kopf.
+
+Software basiert auf dem gleichen Prinzip, denn im Grunde genommen ist Hardware ein Stück Software, welches durch Bauteile realisiert wird (siehe Abschnitt [Berechenbarkeit](sec-computability)).
 Öffnen Sie ein Bild in einem Texteditor, so sehen Sie die Interpretation des Bildes ihres Texteditors.
 Öffnen Sie die gleiche Datei in einem Bildverarbeitungsprogramm, sehen sie eine andere Interpretation der Bits und Bytes.
 
