@@ -1,0 +1,1221 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="de" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>7.4. Manipulation &#8212; Computational Thinking</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JTQKVRRRDB');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/02-1/3-manipulation';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="7.5. Der Informationskreislauf" href="4-information-flow.html" />
+    <link rel="prev" title="7.3. Repräsentationen" href="2-representation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="de"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-HM-small.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo-HM-small.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Computational Thinking
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einleitung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-1/course.html">1. Kurskonzept</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/1-content.html">1.1. Inhalt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/2-reading.html">1.2. Lesehinweise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/3-teaching.html">1.3. Lehrkonzept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/4-learn-how-to-think.html">1.4. Denken lernen?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-2/what-is-ct.html">2. Was ist Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/1-informatics-and-ct.html">2.1. Informatik und CT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/2-repetition-is-the-key.html">2.2. Wiederholung als Grundlage</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-3/history.html">3. Geschichte der Computer und Algorithmen</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/1-ancient.html">3.1. Antike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/2-middleages.html">3.2. Mittelalter bis 19. Jahrhundert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/3-today.html">3.3. 19. Jahrhundert bis heute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/4-future.html">3.4. Ausblick</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-4/why-ct.html">4. Warum Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/1-intrinsic-value.html">4.1. Intrinsischer Wert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/2-usefulness.html">4.2. Langfristiger Nutzen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/3-self-determination.html">4.3. Selbstbestimmt durch CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-5/sorting.html">5. Lasst uns Denken</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/1-sort-cards.html">5.1. Karten sortieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/2-sort-cards-with-python.html">5.2. Karten sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/3-sort-numbers.html">5.3. Zahlen sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/4-sort-anything.html">5.4. Allgemeines Sortieren in Python</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theorie</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-0/math.html">6. Mathematische Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/1-notation.html">6.1. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/2-set.html">6.2. Mengen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/3-tuple.html">6.3. Tupel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/4-relation.html">6.4. Relationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/5-function.html">6.5. Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/6-operations.html">6.6. Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/7-induction.html">6.7. Vollständige Induktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="information-processing.html">7. Der digitale Computer</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-basics.html">7.1. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-interpretation.html">7.2. Interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-representation.html">7.3. Repräsentationen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.4. Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-information-flow.html">7.5. Der Informationskreislauf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-hardware-equals-software.html">7.6. Berechenbarkeit</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-2/information.html">8. Was ist Information?</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/1-natural-science.html">8.1. Naturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/2-formal-science.html">8.2. Strukturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/3-critic.html">8.3. Kritik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/4-humanics.html">8.4. Geisteswissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/5-summary.html">8.5. Zusammenfassung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-3/languages.html">9. Programmiersprachen</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/1-abstraction.html">9.1. Abstraktion des Computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/2-success-criteria.html">9.2. Erfolgsfaktoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/3-imperative-vs-functional.html">9.3. Imperativ und funktional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/4-language-evolution.html">9.4. Sprachevolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/5-python.html">9.5. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/6-diversity.html">9.6. Diversität</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-4/the-art-of-programming.html">10. Die Kunst des Programmierens</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/1-algorithms.html">10.1. Algorithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/2-programming.html">10.2. Programmieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/3-control-structures.html">10.3. Kontrollstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/4-data-structures.html">10.4. Datenstrukturen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-1/introduction.html">11. Programmieren in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-2/python-environment.html">12. Das Python Ökosystem</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/1-installation.html">12.1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/2-run.html">12.2. Python ausführen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/3-notebooks.html">12.3. Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/4-modules.html">12.4. Module und Pakete</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-3/intro.html">13. Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/1-variables.html">13.1. Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/2-expressions.html">13.2. Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/3-invoking-functions.html">13.3. Funktionsaufrufe</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-4/intro.html">14. Datentypen (Grundlagen)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/1-data-types.html">14.1. Pythons Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/2-int.html">14.2. Ganze Zahlen - int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/3-float.html">14.3. Fließkommazahlen - float</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/4-bool.html">14.4. Wahrheitswerte - bool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/5-list.html">14.5. Listen - list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/6-tuple.html">14.6. Tupel - tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/7-string.html">14.7. Zeichenketten - str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/8-set.html">14.8. Mengen - set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/9-dict.html">14.9. Wörterbücher - dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/10-range.html">14.10. Zahlenbereich - range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/11-typing-in-python.html">14.11. Python’s Typisierung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-5/intro.html">15. Datentypen (Fortsetzung)</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/1-type-systems.html">15.1. Dynamische und statische Typisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/2-why-data-types.html">15.2. Existenzberechtigung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/3-change-of-interpretation.html">15.3. Interpretationswechsel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/4-kind-of-data-types.html">15.4. Arten von Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/5-primitive-data-types.html">15.5. Primitive Datentypen in Python?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-6/intro.html">16. Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/1-purity.html">16.1. Reinheit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/2-definition.html">16.2. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/3-namespaces.html">16.3. Namensräume und Sichtbarkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/4-lambdas.html">16.4. Anonyme Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/5-nested-functions.html">16.5. Umschlossene Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/x-recursion.html">16.6. Rekursive Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/6-first-class-functions.html">16.7. First-Class-Funktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-7/intro.html">17. Kontrollstrukturen</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/1-cases.html">17.1. Fallunterscheidungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/2-loops.html">17.2. Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/3-comprehensions.html">17.3. Comprehensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-8/intro.html">18. Objektorientierte Programmierung</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/1-class-and-objects.html">18.1. Klassen und Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">18.2. Vererbung, Kapselung und Polymorphie</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-9/cpython.html">19. CPython</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/1-impl.html">19.1. Implementierungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/2-ref.html">19.2. Referenzimplementierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/3-interpreter.html">19.3. Interpreter und Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/4-disassembly.html">19.4. Zerlegung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/5-extending.html">19.5. CPython erweitern</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CT in Aktion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/robo-world.html">20. Roboterwelt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/dive-bell.html">21. Sprechen in der Taucherglocke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/image-representation.html">22. Binäres Zeichnen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/memory.html">23. Speicher - alles ist eine Liste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/name-register.html">24. Namensregister</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../misc/bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BZoennchen/ct-book/blob/master/chapters/02-1/3-manipulation.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Quell-Repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-1/3-manipulation.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-1/3-manipulation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Öffnen Sie ein Problem"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Laden Sie diese Seite herunter">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/02-1/3-manipulation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Notebook-Datei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/chapters/02-1/3-manipulation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Quelldatei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="In PDF drucken"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Vollbildmodus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Suche" aria-label="Suche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Manipulation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Inhalt </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-gatter">7.4.1. Basis Gatter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplement">7.4.2. Komplement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addierer">7.4.3. Addierer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-addierer">7.4.3.1. 1-Bit-Addierer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erweiterter-1-bit-addierer">7.4.3.2. Erweiterter 1-Bit-Addierer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-bit-addierer">7.4.3.3. <span class="math notranslate nohighlight">\(n\)</span>-Bit-Addierer</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="manipulation">
+<span id="sec-manipulation"></span><h1><span class="section-number">7.4. </span>Manipulation<a class="headerlink" href="#manipulation" title="Permalink to this heading">#</a></h1>
+<p>Eingabegeräte transformieren Information, wie etwa einen Tastendruck oder die Aufnahmen einer Videokamera, in elektrische Signale.
+Sie realisieren eine bestimmte <a class="reference internal" href="2-interpretation.html#def-interpretation"><span class="std std-ref">Interpretation</span></a> <span class="math notranslate nohighlight">\(I\)</span>.
+Die Tastatur interpretiert unseren Tastendruck einer bestimmten Taste und gibt ihre Bedeutung an die anderen Bauteile des Computers weiter.
+Die elektrischen Signale (<strong>Strom aus</strong> und <strong>Strom an</strong>) gelangen über mikroskopisch kleine Leitungen in sogenannte Schaltkreise.
+Dort werden die Signale, d. h. die <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Byte</span></a> weiterverarbeiten.</p>
+<p><em>Logikgatter</em> oder kurz <em>Gatter</em> sind konzeptionelle Anordnungen von elektrischen Schaltungen, welche boolsche Operationen durchführen.</p>
+<div class="remark admonition" id="remark-gates">
+<p class="admonition-title">Gatter und Bauteile</p>
+<p>Gatter beschreiben die Funktionsweise.
+Elektrische Schaltkreise und Transistoren sind eine mögliche Realisierung.
+Gatter sind <strong>konzeptionelle Bauteile</strong> wohingegen elektrische Schaltkreise, Transistoren, Leitungen und Flip-Flops (später mehr dazu) <strong>physikalische Bauteile</strong> sind.</p>
+</div>
+<p>Ein oder zwei Signale gelangen in ein Gatter und, je nachdem um welches Gatter es sich handelt, wird ein bestimmtes Ausgabesignal ausgegeben.
+Das Ausgabesignal hängt von den ein oder zwei Eingabesignalen und dessen Typ des Gatters ab.
+Jedes Gatter realisiert eine <a class="reference internal" href="../02-0/5-function.html#def-math-function"><span class="std std-ref">(mathematische) Funktion</span></a>.</p>
+<section id="basis-gatter">
+<h2><span class="section-number">7.4.1. </span>Basis Gatter<a class="headerlink" href="#basis-gatter" title="Permalink to this heading">#</a></h2>
+<p>Das einfachste <strong>Not</strong>-Gatter nimmt als Eingabe ein Signal und gibt dessen <em>Negation</em> davon aus.
+Aus 0 wird 1 und aus 1 wird 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lnot</span><span class="p">(</span><span class="n">bit</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="ow">not</span> <span class="n">bit</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">lnot</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lnot</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+0
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="fig-not">
+<a class="reference internal image-reference" href="../../_images/gatter-not.png"><img alt="../../_images/gatter-not.png" src="../../_images/gatter-not.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 7.7 </span><span class="caption-text">Das Symbol für das <strong>Not</strong>-Gatter (links) und seine Ein- und Ausgabewerte (rechts).</span><a class="headerlink" href="#fig-not" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Ein weiteres sehr einfaches Gatter ist das sogenannte <strong>AND</strong>-Gatter.
+Es kombiniert zwei Signale und gibt genau dann 1 aus, wenn beide Eingabesignale gleich 1 sind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">land</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">in1</span> <span class="ow">and</span> <span class="n">in2</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+0
+1
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="fig-and">
+<a class="reference internal image-reference" href="../../_images/gatter-and.png"><img alt="../../_images/gatter-and.png" src="../../_images/gatter-and.png" style="width: 340px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 7.8 </span><span class="caption-text">Das Symbol für das <strong>AND</strong>-Gatter (links) und seine Ein- und Ausgabewerte (rechts).</span><a class="headerlink" href="#fig-and" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Zu guter Letzt fehlt noch das <strong>OR</strong>-Gatter.
+Es kombiniert zwei Signale und gibt 1 aus genau dann wenn eines oder beide der Eingabesignale gleich 1 sind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lor</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">in1</span> <span class="ow">or</span> <span class="n">in2</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+1
+1
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="fig-or">
+<a class="reference internal image-reference" href="../../_images/gatter-or.png"><img alt="../../_images/gatter-or.png" src="../../_images/gatter-or.png" style="width: 340px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 7.9 </span><span class="caption-text">Das Symbol für das <strong>OR</strong>-Gatter (links) und seine Ein- und Ausgabewerte (rechts).</span><a class="headerlink" href="#fig-or" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<div class="exercise admonition" id="or-gate-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 7.10 </span> (OR-Gatter)</p>
+<section id="exercise-content">
+<p>Das Symbol für das OR-Gatter enthält das größer gleich Zeichen <span class="math notranslate nohighlight">\(\geq\)</span>.
+Was könnte das für einen Grund haben?
+Schreiben Sie eine Python Funktion <code class="docutils literal notranslate"><span class="pre">lor(in1,</span> <span class="pre">in2)</span></code> die sich diesen Grund zunutze macht.</p>
+<p><strong>Tipp</strong>: Denken Sie an die Addition.</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="or-gate-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#or-gate-exercise"> Exercise 7.10 (OR-Gatter)</a></p>
+<section id="solution-content">
+<p>Der Grund dafür ist, dass das Gatter genau dann 1 ist wenn</p>
+<div class="math notranslate nohighlight">
+\[x + y \geq 1\]</div>
+<p>gilt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lor</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">in1</span> <span class="o">+</span> <span class="n">in2</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
+<p>Jedes Gatter können wir auch als <a class="reference internal" href="2-interpretation.html#sec-interpretation"><span class="std std-ref">Interpretation</span></a> <span class="math notranslate nohighlight">\(I\)</span> beschreiben.
+Zum Beispiel wäre die Interpretation des <strong>AND</strong>-Gatters durch folgende Mengen gegeben:</p>
+<ul class="simple">
+<li><p>Bedeutung <span class="math notranslate nohighlight">\(B_{\text{AND}} = \left\{0, 1\right\}\)</span></p></li>
+<li><p>Repräsentation <span class="math notranslate nohighlight">\(R_{\text{AND}} = \left\{ 00, 01, 10, 11 \right\}\)</span></p></li>
+<li><p>Interpretation <span class="math notranslate nohighlight">\(I_{\text{AND}} = \left\{ (00, 0), (01, 0), (10, 0), (11, 1) \right\}\)</span>.</p></li>
+</ul>
+<p>Nun gut, diese Operationen scheinen lächerlich einfach zu sein, aber kombinieren wir mehrere Gatter können wir mehr und mehr komplexe Operationen durchführen.
+Im Endeffekt <strong>basieren alle Berechnungen des Computers auf diesen sehr primitiven Gattern/Operationen</strong>.
+Die Logikgatter implementieren die sog. <em>boolsche Algebra</em>.</p>
+<p>Obwohl sehr viele kleine Operationen notwendig sind, lassen sich diese Operationen sehr schnell durchführen.
+Signale breiten sich mit annähernd Lichtgeschwindigkeit aus und so sind gigantische Mengen an primitiven Operationen in sehr kurzer Zeit durchführbar.
+Je kleiner die Chips, desto kleiner ist die Distanz, welche die Signale überwinden müssen und desto schneller ist der Computer.</p>
+</section>
+<section id="komplement">
+<h2><span class="section-number">7.4.2. </span>Komplement<a class="headerlink" href="#komplement" title="Permalink to this heading">#</a></h2>
+<p>In Abschnitt <a class="reference internal" href="2-representation.html#sec-integers"><span class="std std-ref">Ganze Zahlen</span></a> haben wir besprochen wie diese durch das zweier Komplement repräsentiert werden.
+Um aus eine Binärzahl <span class="math notranslate nohighlight">\(k = b_{n-1}\ldots b_0\)</span> ihr Negativ zu bilden, also <span class="math notranslate nohighlight">\(-k\)</span>, bilden wir das Komplement und addieren eins:</p>
+<div class="math notranslate nohighlight">
+\[-k = \overline{b_{n-1}\ldots b_0} + 1\]</div>
+<p>Wie würden wir das Komplement <span class="math notranslate nohighlight">\(\overline{b_{n-1}\ldots b_0}\)</span> mit Gattern realisieren?
+Jedes Signal <span class="math notranslate nohighlight">\(b_i\)</span> muss durch ein Not-Gatter negiert werden.
+Somit könnten wir die Signale der Binärzahl durch <span class="math notranslate nohighlight">\(n\)</span> Not-Gatter hindurch schicken und würden ihr Komplement erhalten:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complement</span><span class="p">(</span><span class="n">b3</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">lnot</span><span class="p">(</span><span class="n">b3</span><span class="p">),</span> <span class="n">lnot</span><span class="p">(</span><span class="n">b2</span><span class="p">),</span> <span class="n">lnot</span><span class="p">(</span><span class="n">b1</span><span class="p">),</span> <span class="n">lnot</span><span class="p">(</span><span class="n">b0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">complement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">complement</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 1, 1, 1)
+(0, 1, 0, 0)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="addierer">
+<h2><span class="section-number">7.4.3. </span>Addierer<a class="headerlink" href="#addierer" title="Permalink to this heading">#</a></h2>
+<p>Betrachten Sie einmal <code class="docutils literal notranslate"><span class="pre">land</span></code> und <code class="docutils literal notranslate"><span class="pre">lor</span></code>.
+Welche mathematische Funktion realisieren diese einfachen Gatter?
+Nun ja, wenn wir die beiden Eingabesignale als Zahlen interpretieren, dann ist <code class="docutils literal notranslate"><span class="pre">land</span></code> gleich dem Minimum <code class="docutils literal notranslate"><span class="pre">min</span></code> und <code class="docutils literal notranslate"><span class="pre">lor</span></code> gleich dem <code class="docutils literal notranslate"><span class="pre">max</span></code> der beiden Signale:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lor</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">land</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">)</span>   
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+1
+1
+0
+0
+0
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Diese Operation ist sehr simpel.
+Dennoch berechnen wir mit nur einem Gatter bereits etwas.</p>
+<p>Im folgenden wollen wir Ihnen durch den Bau eines <span class="math notranslate nohighlight">\(n\)</span>-Bit Addierers zeigen, wie wir durch <em>Komposition</em> aus einfachen Berechnungen/Bauteilen komplexe Berechnungen/Bauteilen realisieren können.</p>
+<section id="bit-addierer">
+<h3><span class="section-number">7.4.3.1. </span>1-Bit-Addierer<a class="headerlink" href="#bit-addierer" title="Permalink to this heading">#</a></h3>
+<p>Bauen wir aus den gegebenen Gattern einen Addierer der zwei Zahlen <span class="math notranslate nohighlight">\(a, b \in \{0,1\}\)</span> addiert.
+Der Addierer erhält zwei Eingabesignale <span class="math notranslate nohighlight">\(a, b\)</span> und gibt zwei Signale <span class="math notranslate nohighlight">\(c = c_0, c_1\)</span> aus.
+Sei <span class="math notranslate nohighlight">\(c = c_1c_0\)</span> das Ergebnis der Addition.
+Lassen Sie uns alle Möglichkeiten notieren:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+    b\ + a\ &amp;= c_1c_0\\ \hline
+    0_2 + 0_2 &amp;= 00_2 \\
+    0_2 + 1_2 &amp;= 01_2 \\
+    1_2 + 0_2 &amp;= 01_2 \\
+    1_2 + 1_2 &amp;= 10_2
+\end{split}
+\end{equation*}\]</div>
+<p>Wir erhalten <span class="math notranslate nohighlight">\(c_1 = 1\)</span>, d.h. einen <em>Übertrag</em> von <span class="math notranslate nohighlight">\(1\)</span> genau dann wenn <span class="math notranslate nohighlight">\(a\)</span> und <span class="math notranslate nohighlight">\(b\)</span> gleich <span class="math notranslate nohighlight">\(1\)</span> sind.
+Hingegen ist <span class="math notranslate nohighlight">\(c_0\)</span> genau dann <span class="math notranslate nohighlight">\(1\)</span> wenn entweder <span class="math notranslate nohighlight">\(a\)</span> oder <span class="math notranslate nohighlight">\(b\)</span>, nicht aber beide, gleich <span class="math notranslate nohighlight">\(1\)</span> sind.
+Daraus ergeben sich folgende boolsche Operationen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+    c_1 &amp;= a \land b \\
+    c_0 &amp;= \neg (a \land b) \land (a \lor b) = \neg c_1 \land (a \lor b)
+\end{split}
+\end{split}\]</div>
+<p>Wir haben diese Operationen als <code class="docutils literal notranslate"><span class="pre">Python</span></code> Funktion implementiert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ladd</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in0</span><span class="p">):</span>
+
+    <span class="c1"># c1 = a and b</span>
+    <span class="n">out1</span> <span class="o">=</span> <span class="n">land</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="n">in0</span><span class="p">)</span>
+
+    <span class="c1"># c0 = (not c1) and (a or b)</span>
+    <span class="n">out0</span> <span class="o">=</span> <span class="n">land</span><span class="p">(</span><span class="n">lnot</span><span class="p">(</span><span class="n">out1</span><span class="p">),</span> <span class="n">lor</span><span class="p">(</span><span class="n">in0</span><span class="p">,</span> <span class="n">in1</span><span class="p">))</span>
+
+    <span class="c1">#return c1c2</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">out1</span><span class="p">,</span> <span class="n">out0</span><span class="p">]</span>
+
+<span class="n">ladd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Als Gatter-Bauplan sieht das ganze wie folgt aus.</p>
+<figure class="align-default" id="fig-adder">
+<a class="reference internal image-reference" href="../../_images/adder.png"><img alt="../../_images/adder.png" src="../../_images/adder.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 7.10 </span><span class="caption-text">Skizze eines 1-Bit-Addierers. Der Zusammenschluss der Gatter (links) und das Symbol für unseren Addierer (rechts).</span><a class="headerlink" href="#fig-adder" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="erweiterter-1-bit-addierer">
+<h3><span class="section-number">7.4.3.2. </span>Erweiterter 1-Bit-Addierer<a class="headerlink" href="#erweiterter-1-bit-addierer" title="Permalink to this heading">#</a></h3>
+<p>Durch vier Gatter lassen sich also zwei 1-Bit Zahlen addieren.
+Was passiert wenn wir die Anzahl der Bits erhöhen?
+Immerhin ist das Addieren von 1-Bit Zahlen doch sehr einschränkend.
+Addieren wir größere Zahlen, so stellen wir fest, dass sich diese Operation auf den 1-Bit-Addierer zurückführen lässt.
+Wenn Sie, zum Beispiel,</p>
+<div class="math notranslate nohighlight">
+\[1101_2 + 1001_2\]</div>
+<p>berechnen, so betrachten Sie in jedem Berechnungsschritt lediglich 3 Bits:</p>
+<ol class="arabic simple">
+<li><p>das Bit an der <span class="math notranslate nohighlight">\(i\)</span>-ten Stelle der ersten Zahl</p></li>
+<li><p>das Bit an der <span class="math notranslate nohighlight">\(i\)</span>-ten Stelle der zweiten Zahl</p></li>
+<li><p>und den Übertrag der letzten (<span class="math notranslate nohighlight">\(i-1\)</span>-ten) 1-Bit-Addition!</p></li>
+</ol>
+<p>So lautet die erste Rechnung <span class="math notranslate nohighlight">\(1+1+0 = 0\)</span> und der Übertrag ist gleich <span class="math notranslate nohighlight">\(1\)</span>.
+Die zweite Rechnung lautet <span class="math notranslate nohighlight">\(0+0+1 = 1\)</span> und der Übertrag ist gleich <span class="math notranslate nohighlight">\(0\)</span>.
+Die dritte lautet <span class="math notranslate nohighlight">\(0+1+0 = 1\)</span> und der Übertrag ist gleich <span class="math notranslate nohighlight">\(0\)</span>.
+Die vierte und letzte lautet <span class="math notranslate nohighlight">\(1+1+0 = 0\)</span> und der Übertrag ist <span class="math notranslate nohighlight">\(1\)</span>.
+Daraus ergibt sich:</p>
+<div class="math notranslate nohighlight">
+\[1101_2 + 1001_2 = 10110_2\]</div>
+<p>binär, was</p>
+<div class="math notranslate nohighlight">
+\[(2^3 \cdot 1 + 2^2 \cdot 1 + 2^1 \cdot 0 + 2^0 \cdot 1) + (2^3 \cdot 1 + 2^2 \cdot 0 + 2^1 \cdot 0 + 2^0 \cdot 1) = 13_{10} + 9_{10} = 22_{10}\]</div>
+<p>im Dezimalsystem ergibt.</p>
+<p>Wir addieren also je drei 1-Bit Zahlen!
+Unser Addierer von oben addiert jedoch nur zwei 1-Bit Zahlen.
+Lassen Sie uns also einen 1-Bit-Addierer der drei Zahlen addieren kann konstruieren.
+Dieser dient dann der Konstruktion des <span class="math notranslate nohighlight">\(n\)</span>-Bit-Addierers.
+Wir benötigen einen 1-Bit-Addierer mit drei Eingabesignale <span class="math notranslate nohighlight">\(u, a, b\)</span> und weiterhin zwei Ausgabesignalen <span class="math notranslate nohighlight">\(c_0, c_1\)</span>, jedoch interpretieren wir diesmal <span class="math notranslate nohighlight">\(u\)</span> als Übertrag für den nächsten Addierer!</p>
+<p>Lassen Sie uns erneut alle Möglichkeiten notieren:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{split}
+    b\ + a\ + u\ &amp;= c_1c_0\\ \hline
+    0_2 + 0_2 + 0_2 &amp;= 00_2 \\
+    0_2 + 0_2 + 1_2 &amp;= 01_2 \\
+    0_2 + 1_2 + 0_2 &amp;= 01_2 \\
+    0_2 + 1_2 + 1_2 &amp;= 10_2 \\
+    1_2 + 0_2 + 0_2 &amp;= 01_2 \\
+    1_2 + 0_2 + 1_2 &amp;= 10_2 \\
+    1_2 + 1_2 + 0_2 &amp;= 10_2 \\
+    1_2 + 1_2 + 1_2 &amp;= 11_2
+\end{split}
+\end{equation*}\]</div>
+<p>Betrachten Sie nun <span class="math notranslate nohighlight">\(c_0\)</span>.
+Fragen wir uns: wann wird <span class="math notranslate nohighlight">\(c_0\)</span> gleich <span class="math notranslate nohighlight">\(1\)</span>?
+<span class="math notranslate nohighlight">\(c_0\)</span> wird genau dann <span class="math notranslate nohighlight">\(1\)</span>, wenn genau eines der drei Eingabesignale <span class="math notranslate nohighlight">\(1\)</span> ist, d.h., wenn</p>
+<div class="math notranslate nohighlight">
+\[(u \land \neg a \land \neg b) \lor (a \land \neg b \land \neg u) \lor (b \land \neg u \land \neg a).\]</div>
+<p><strong>oder</strong> alle drei Eingabesignale gleich <span class="math notranslate nohighlight">\(1\)</span> sind, d.h., wenn</p>
+<div class="math notranslate nohighlight">
+\[(u \land a \land b).\]</div>
+<p>Zusammengefasst ergibt sich</p>
+<div class="math notranslate nohighlight">
+\[c_0 = (u \land \neg a \land \neg b) \lor (a \land \neg b \land \neg u) \lor (b \land \neg u \land \neg a) \lor (u \land a \land b).\]</div>
+<p>Das scheint sehr ausschweifend, jedoch nur weil wir auf sehr primitive Operationen zurückgreifen können.
+Wie sieht es mit <span class="math notranslate nohighlight">\(c_1\)</span>, also unserem Übertrag aus?
+<span class="math notranslate nohighlight">\(a_1\)</span> ist genau dann <span class="math notranslate nohighlight">\(1\)</span> wenn mehr als 1-Bit der Eingabe gleich <span class="math notranslate nohighlight">\(1\)</span> ist, d.h.</p>
+<div class="math notranslate nohighlight">
+\[c_1 = (u \land a) \lor (a \land b) \lor (b \land u)\]</div>
+<p>Kennen wir <span class="math notranslate nohighlight">\(c_1\)</span> dann können wir <span class="math notranslate nohighlight">\(c_0\)</span> etwas kürzer schreiben.
+Denn anstatt zu sagen es muss genau eines der drei Eingabesignale <span class="math notranslate nohighlight">\(1\)</span> sein, können wir auch sagen: es gibt keinen Übertrag (<span class="math notranslate nohighlight">\(c_1 = 0\)</span>) und irgendein Eingabesignal ist <span class="math notranslate nohighlight">\(1\)</span>.
+Aus</p>
+<div class="math notranslate nohighlight">
+\[(u \land \neg a \land \neg b) \lor (a \land \neg b \land \neg u) \lor (b \land \neg u \land \neg a)\]</div>
+<p>wird</p>
+<div class="math notranslate nohighlight">
+\[\neg c_0 \land (u \lor a \lor b)\]</div>
+<p>und wir erhalten insgesamt:</p>
+<div class="math notranslate nohighlight">
+\[c_0 = (u \land a \land b) \lor (\neg c_1 \land (u \lor a \lor b)).\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ladd</span><span class="p">(</span><span class="n">in2</span><span class="p">,</span> <span class="n">in1</span><span class="p">,</span> <span class="n">in0</span><span class="p">):</span>
+
+    <span class="c1"># u and a</span>
+    <span class="n">and01</span> <span class="o">=</span> <span class="n">land</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="n">in0</span><span class="p">)</span>
+    
+    <span class="c1"># a and b</span>
+    <span class="n">and12</span> <span class="o">=</span> <span class="n">land</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="n">in2</span><span class="p">)</span>
+
+    <span class="c1"># u and b</span>
+    <span class="n">and02</span> <span class="o">=</span> <span class="n">land</span><span class="p">(</span><span class="n">in0</span><span class="p">,</span><span class="n">in2</span><span class="p">)</span>
+
+    <span class="c1"># u or a or b</span>
+    <span class="n">or_all</span> <span class="o">=</span> <span class="n">lor</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="n">in0</span><span class="p">,</span> <span class="n">in1</span><span class="p">),</span> <span class="n">in2</span><span class="p">)</span>
+
+    <span class="c1"># u and b1 and b</span>
+    <span class="n">and_all</span> <span class="o">=</span> <span class="n">land</span><span class="p">(</span><span class="n">and01</span><span class="p">,</span> <span class="n">in2</span><span class="p">)</span>
+
+    <span class="c1"># (u and b1) or (b1 and b) or (u and b)</span>
+    <span class="n">out1</span> <span class="o">=</span> <span class="n">lor</span><span class="p">(</span><span class="n">lor</span><span class="p">(</span><span class="n">and01</span><span class="p">,</span> <span class="n">and12</span><span class="p">),</span> <span class="n">and02</span><span class="p">)</span>
+
+    <span class="c1"># (u and a and b) or ((not c1) and (u or a or b))</span>
+    <span class="n">out0</span> <span class="o">=</span> <span class="n">lor</span><span class="p">(</span><span class="n">and_all</span><span class="p">,</span> <span class="n">land</span><span class="p">(</span><span class="n">lnot</span><span class="p">(</span><span class="n">out1</span><span class="p">),</span> <span class="n">or_all</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">out1</span><span class="p">,</span> <span class="n">out0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ladd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ladd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ladd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ladd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ladd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ladd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ladd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ladd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0]
+[0, 1]
+[0, 1]
+[1, 0]
+[0, 1]
+[1, 0]
+[1, 0]
+[1, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="n-bit-addierer">
+<h3><span class="section-number">7.4.3.3. </span><span class="math notranslate nohighlight">\(n\)</span>-Bit-Addierer<a class="headerlink" href="#n-bit-addierer" title="Permalink to this heading">#</a></h3>
+<p>Für einen <span class="math notranslate nohighlight">\(n\)</span>-Bit-Addierer brauchen wir <span class="math notranslate nohighlight">\(n\)</span> hintereinander geschaltene 1-Bit-Addierer, welche alle (bis auf den ersten) drei Signale aufnehmen.
+Wie oben erwähnt addiert der <span class="math notranslate nohighlight">\(i\)</span>-te 1-Bit-Addierer das <span class="math notranslate nohighlight">\(i\)</span>-te Bit der beiden Eingabezahlen und den Übertrag des <span class="math notranslate nohighlight">\((i-1)\)</span>-ten 1-Bit-Addierers.
+Für den ersten Addierer ist der Übertrag <span class="math notranslate nohighlight">\(u\)</span> gleich <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<figure class="align-default" id="fig-4-bit-adder">
+<a class="reference internal image-reference" href="../../_images/4-bit-adder.png"><img alt="../../_images/4-bit-adder.png" src="../../_images/4-bit-adder.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 7.11 </span><span class="caption-text">Skizze eines 4-Bit-Addierers, der <span class="math notranslate nohighlight">\(a + b = c\)</span> berechnet. Dabei sind <span class="math notranslate nohighlight">\(a, b\)</span> 4-Bit Zahlen und <span class="math notranslate nohighlight">\(c\)</span> eine 5-Bit Zahl: <span class="math notranslate nohighlight">\(c_4c_3c_2c_1c_0 = a_3a_2a_1a_0 + b_3b_2b_1b_0\)</span></span><a class="headerlink" href="#fig-4-bit-adder" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Hier sehen Sie den <code class="docutils literal notranslate"><span class="pre">Python</span></code> Code eines <span class="math notranslate nohighlight">\(4\)</span>-Bit-Addierers (wir lesen die Bits von rechts nach links, d.h. das Bit an der Stelle 0 in der liste ist das höchste Bit!):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ladd4</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="c1"># a[3] und b[3] sind die erste Eingabesignale (niedrigsten Bits)</span>
+    <span class="n">u1</span><span class="p">,</span> <span class="n">c0</span> <span class="o">=</span> <span class="n">ladd</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">u2</span><span class="p">,</span> <span class="n">c1</span> <span class="o">=</span> <span class="n">ladd</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">u1</span><span class="p">)</span>
+    <span class="n">u3</span><span class="p">,</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">ladd</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">u2</span><span class="p">)</span>
+    <span class="n">c4</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">ladd</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">u3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">c4</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c0</span><span class="p">]</span>
+
+<span class="n">ladd4</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 0, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hängt man nun Addierer aneinander so kann man einen Multiplizierer und andere Recheneinheiten wie Fließkommaddierer und mehr bauen.</p>
+<div class="exercise admonition" id="n-bit-adder-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 7.11 </span> (<span class="math notranslate nohighlight">\(n\)</span>-Bit-Addierer)</p>
+<section id="exercise-content">
+<p>Definieren Sie eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Funktion <code class="docutils literal notranslate"><span class="pre">laddn(a,</span> <span class="pre">b)</span></code>, die unter Verwendung von <code class="docutils literal notranslate"><span class="pre">ladd(in1,</span> <span class="pre">in2,</span> <span class="pre">in3)</span></code> Bits variabler länge addiert.
+Gehen Sie davon aus, dass die Listen <code class="docutils literal notranslate"><span class="pre">a</span></code> und <code class="docutils literal notranslate"><span class="pre">b</span></code> die gleiche Länge haben.</p>
+<p><strong>Hinweis:</strong> Studieren Sie den obigen Code, d.h. <code class="docutils literal notranslate"><span class="pre">ladd4</span></code>. Was wiederholt sich immer wieder und lässt sich somit automatisieren?</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="n-bit-adder-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#n-bit-adder-exercise"> Exercise 7.11 (<span class="math notranslate nohighlight">\(n\)</span>-Bit-Addierer)</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">laddn</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">u</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">ladd</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">],</span> <span class="n">u</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="n">result</span> 
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">laddn</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="remark admonition" id="remark-adder-gates">
+<p class="admonition-title">Modellierung der Gatter und Addierer</p>
+<p>Unser <code class="docutils literal notranslate"><span class="pre">Python</span></code> Code modelliert den Addierer als Gatterzusammenschluss.
+Natürlich können wir in <code class="docutils literal notranslate"><span class="pre">Python</span></code> deutlich einfacher zwei Zahlen addieren.</p>
+</div>
+<p>Es gibt auch noch andere Gatter als <strong>AND</strong>, <strong>NOT</strong> und <strong>OR</strong> z.B. <strong>NAND</strong>, <strong>XOR</strong> oder <strong>NOR</strong>, aber all diese Gatter lassen sich durch die drei fundamentalen Gatter ausdrücken.</p>
+<div class="remark admonition" id="remark-gate-speed">
+<p class="admonition-title">Anzahl, Größer und Geschwindigkeit</p>
+<p>Gatter beschreiben die Funktionsweise, realisiert durch Transistoren, sind unvorstellbar klein und können unvorstellbar oft angesteuert werden.
+Transistoren sind dünner als wenige Nanometer (etwa 4000 mal dünner als ein Haar) und lassen sich hunderte Milliarden Mal in der Sekunde ansteuern.
+Zum Beispiel befinden sich auf dem Intel i7 4770K Prozessor ca. 1.4 Milliarden Transistoren auf einer Fläche von 177 Quadratmillimeter.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/02-1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2-representation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">zurück</p>
+        <p class="prev-next-title"><span class="section-number">7.3. </span>Repräsentationen</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4-information-flow.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">weiter</p>
+        <p class="prev-next-title"><span class="section-number">7.5. </span>Der Informationskreislauf</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Inhalt
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-gatter">7.4.1. Basis Gatter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komplement">7.4.2. Komplement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addierer">7.4.3. Addierer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-addierer">7.4.3.1. 1-Bit-Addierer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erweiterter-1-bit-addierer">7.4.3.2. Erweiterter 1-Bit-Addierer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-bit-addierer">7.4.3.3. <span class="math notranslate nohighlight">\(n\)</span>-Bit-Addierer</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

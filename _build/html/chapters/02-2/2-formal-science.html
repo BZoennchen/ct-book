@@ -1,0 +1,1027 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="de" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>8.2. Strukturwissenschaften &#8212; Computational Thinking</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JTQKVRRRDB');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/02-2/2-formal-science';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="8.3. Kritik" href="3-critic.html" />
+    <link rel="prev" title="8.1. Naturwissenschaften" href="1-natural-science.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="de"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-HM-small.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo-HM-small.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Computational Thinking
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einleitung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-1/course.html">1. Kurskonzept</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/1-content.html">1.1. Inhalt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/2-reading.html">1.2. Lesehinweise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/3-teaching.html">1.3. Lehrkonzept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/4-learn-how-to-think.html">1.4. Denken lernen?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-2/what-is-ct.html">2. Was ist Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/1-informatics-and-ct.html">2.1. Informatik und CT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/2-repetition-is-the-key.html">2.2. Wiederholung als Grundlage</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-3/history.html">3. Geschichte der Computer und Algorithmen</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/1-ancient.html">3.1. Antike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/2-middleages.html">3.2. Mittelalter bis 19. Jahrhundert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/3-today.html">3.3. 19. Jahrhundert bis heute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/4-future.html">3.4. Ausblick</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-4/why-ct.html">4. Warum Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/1-intrinsic-value.html">4.1. Intrinsischer Wert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/2-usefulness.html">4.2. Langfristiger Nutzen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/3-self-determination.html">4.3. Selbstbestimmt durch CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-5/sorting.html">5. Lasst uns Denken</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/1-sort-cards.html">5.1. Karten sortieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/2-sort-cards-with-python.html">5.2. Karten sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/3-sort-numbers.html">5.3. Zahlen sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/4-sort-anything.html">5.4. Allgemeines Sortieren in Python</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theorie</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-0/math.html">6. Mathematische Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/1-notation.html">6.1. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/2-set.html">6.2. Mengen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/3-tuple.html">6.3. Tupel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/4-relation.html">6.4. Relationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/5-function.html">6.5. Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/6-operations.html">6.6. Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/7-induction.html">6.7. Vollständige Induktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-1/information-processing.html">7. Der digitale Computer</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/1-basics.html">7.1. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-interpretation.html">7.2. Interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-representation.html">7.3. Repräsentationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/3-manipulation.html">7.4. Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/4-information-flow.html">7.5. Der Informationskreislauf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/5-hardware-equals-software.html">7.6. Berechenbarkeit</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="information.html">8. Was ist Information?</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-natural-science.html">8.1. Naturwissenschaften</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.2. Strukturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-critic.html">8.3. Kritik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-humanics.html">8.4. Geisteswissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-summary.html">8.5. Zusammenfassung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-3/languages.html">9. Programmiersprachen</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/1-abstraction.html">9.1. Abstraktion des Computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/2-success-criteria.html">9.2. Erfolgsfaktoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/3-imperative-vs-functional.html">9.3. Imperativ und funktional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/4-language-evolution.html">9.4. Sprachevolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/5-python.html">9.5. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/6-diversity.html">9.6. Diversität</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-4/the-art-of-programming.html">10. Die Kunst des Programmierens</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/1-algorithms.html">10.1. Algorithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/2-programming.html">10.2. Programmieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/3-control-structures.html">10.3. Kontrollstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/4-data-structures.html">10.4. Datenstrukturen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-1/introduction.html">11. Programmieren in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-2/python-environment.html">12. Das Python Ökosystem</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/1-installation.html">12.1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/2-run.html">12.2. Python ausführen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/3-notebooks.html">12.3. Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/4-modules.html">12.4. Module und Pakete</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-3/intro.html">13. Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/1-variables.html">13.1. Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/2-expressions.html">13.2. Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/3-invoking-functions.html">13.3. Funktionsaufrufe</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-4/intro.html">14. Datentypen (Grundlagen)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/1-data-types.html">14.1. Pythons Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/2-int.html">14.2. Ganze Zahlen - int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/3-float.html">14.3. Fließkommazahlen - float</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/4-bool.html">14.4. Wahrheitswerte - bool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/5-list.html">14.5. Listen - list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/6-tuple.html">14.6. Tupel - tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/7-string.html">14.7. Zeichenketten - str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/8-set.html">14.8. Mengen - set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/9-dict.html">14.9. Wörterbücher - dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/10-range.html">14.10. Zahlenbereich - range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/11-typing-in-python.html">14.11. Python’s Typisierung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-5/intro.html">15. Datentypen (Fortsetzung)</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/1-type-systems.html">15.1. Dynamische und statische Typisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/2-why-data-types.html">15.2. Existenzberechtigung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/3-change-of-interpretation.html">15.3. Interpretationswechsel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/4-kind-of-data-types.html">15.4. Arten von Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/5-primitive-data-types.html">15.5. Primitive Datentypen in Python?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-6/intro.html">16. Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/1-purity.html">16.1. Reinheit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/2-definition.html">16.2. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/3-namespaces.html">16.3. Namensräume und Sichtbarkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/4-lambdas.html">16.4. Anonyme Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/5-nested-functions.html">16.5. Umschlossene Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/x-recursion.html">16.6. Rekursive Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/6-first-class-functions.html">16.7. First-Class-Funktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-7/intro.html">17. Kontrollstrukturen</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/1-cases.html">17.1. Fallunterscheidungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/2-loops.html">17.2. Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/3-comprehensions.html">17.3. Comprehensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-8/intro.html">18. Objektorientierte Programmierung</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/1-class-and-objects.html">18.1. Klassen und Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">18.2. Vererbung, Kapselung und Polymorphie</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-9/cpython.html">19. CPython</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/1-impl.html">19.1. Implementierungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/2-ref.html">19.2. Referenzimplementierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/3-interpreter.html">19.3. Interpreter und Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/4-disassembly.html">19.4. Zerlegung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/5-extending.html">19.5. CPython erweitern</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CT in Aktion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/robo-world.html">20. Roboterwelt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/dive-bell.html">21. Sprechen in der Taucherglocke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/image-representation.html">22. Binäres Zeichnen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/memory.html">23. Speicher - alles ist eine Liste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/name-register.html">24. Namensregister</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../misc/bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BZoennchen/ct-book/blob/master/chapters/02-2/2-formal-science.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Quell-Repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-2/2-formal-science.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-2/2-formal-science.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Öffnen Sie ein Problem"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Laden Sie diese Seite herunter">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/02-2/2-formal-science.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Notebook-Datei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/chapters/02-2/2-formal-science.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Quelldatei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="In PDF drucken"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Vollbildmodus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Suche" aria-label="Suche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Strukturwissenschaften</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Inhalt </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nachrichtentechnik">8.2.1. Nachrichtentechnik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informationstheorie">8.2.2. Informationstheorie</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="strukturwissenschaften">
+<span id="sec-information-cs"></span><h1><span class="section-number">8.2. </span>Strukturwissenschaften<a class="headerlink" href="#strukturwissenschaften" title="Permalink to this heading">#</a></h1>
+<section id="nachrichtentechnik">
+<h2><span class="section-number">8.2.1. </span>Nachrichtentechnik<a class="headerlink" href="#nachrichtentechnik" title="Permalink to this heading">#</a></h2>
+<p>1948 griff Claude E. Shannon den physikalischen Begriff der <em>Entropie</em> auf und übetrug ihn auf die Nachrichtenübertragung.
+Sein Modell prägte die Informatik über viele Jahre und ist heute noch relevant.
+Es ist äußerst wichtig zu verstehen, dass es Shannon um die <em>Informationsübertragung</em> ging.
+Sie ist für sein Modell von zentraler Bedeutung.
+So schreibt er in <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id6" title="Claude E. Shannon. A mathematical theory of communication. Bell Syst. Tech. J., 27(3):379-423, 1948.">Shannon, 1948</a>]</span>:</p>
+<blockquote>
+<div><p>Frequently the messages have meaning; that is, they refer to or are correlated according to some system with certain physical or conceptual entities. These semantic aspects of communication are irrelevant to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design – Claude E. Shannon</p>
+</div></blockquote>
+<p>Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung (Semantik) gehört, doch befand er diese für die <em>Informationsübertragung</em> über ein Medium als irrelevant.</p>
+<p>Die Übertragung besteht dabei aus mehreren Teilen:</p>
+<ol class="arabic simple">
+<li><p>Eine (Informations)-<strong>Quelle</strong> versendet eine <strong>Nachricht</strong>.</p></li>
+<li><p>Diese Nachricht wird durch einen <strong>Sender</strong> in ein <strong>Signal</strong> codiert und in einen <strong>Kanal</strong> eingespeist.</p></li>
+<li><p>Der <strong>Kanal</strong> ist das Medium der Übertragung, beispielsweise ein Netzwerkkabel. Bei dieser Übertragung kann es zu einer Störung durch eine <strong>Störquelle</strong> kommen. Unter Umständen ist das <strong>erhaltene Signal</strong> gestört.</p></li>
+<li><p>Ein <strong>Empfänger</strong> empfängt dieses, möglicherweise gestörte <strong>erhaltene Signal</strong>, decodiert es und leitet es an das <strong>Ziel</strong> weiter.</p></li>
+<li><p>Die decodierte <strong>Nachricht</strong> kommt bei ihrem Ziel an.</p></li>
+</ol>
+<figure class="align-default" id="fig-shannon-messages">
+<a class="reference internal image-reference" href="../../_images/shannon-messages.png"><img alt="../../_images/shannon-messages.png" src="../../_images/shannon-messages.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 8.2 </span><span class="caption-text">Shannon’s Schema der Nachrichtenübertragung bzw. Kommunikation.</span><a class="headerlink" href="#fig-shannon-messages" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>In diesem Modell ist die Nachricht/Symbolfolge/Zeichenfolge eine <em>Information</em> und der <em>Informationsgehalt</em> steigt mit der Anzahl der möglichen Nachrichten.</p>
+<blockquote>
+<div><p>If the number of [possible] messages […] is finite then this number […] can be regarded as a measure of the information produced when one message [… from the set of possible messages], all
+choices being equally likely – Claude E. Shannon</p>
+</div></blockquote>
+<p>Betrachten wir die folgenden beiden Zeichenfolgen:</p>
+<ol class="arabic simple">
+<li><p>Prüfung bestanden</p></li>
+<li><p>brüeung Pfnsanedt</p></li>
+</ol>
+<p>Nach Shannon’s Definition enthalten beide Symbolketten/Zeichenfolgen gleich viel Information.
+Die Anzahl der <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>, welche wir bräuchten um die beiden Nachrichten auf einem Kanal zu übertragen ist dieselbe.
+Intuitiv würden wir sagen, dass die erste Nachricht mehr Information beinhaltet.
+Dies liegt daran, dass wir automatisch die <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> (Bedeutung) einer Zeichenfolge betrachten.
+Shannon’s Definition ist jedoch rein <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">syntaktisch</span></a>, denn Maschinen fehlt (bis heute) die Eigenschaft der semantischen Betrachtung.
+In der Informatik gibt es deshalb (noch) keine befriedigende Definition von Information, die auch der Bedeutung der betrachteten Information gerecht wird und selbst die syntaktischen Definitionen sind nicht besonders aussagekräftig.
+Das mag überraschen, ist <em>Information</em> doch zentraler Forschungsbestandteil der Informatik.</p>
+<p>Gehen wir zurück zu unserem Einführungsbeispiel in der U-Bahn.
+Falls der Wetterbericht Ihnen lediglich mitteilen kann ob es regnet oder nicht, so ist der Informationsgehalt von „es regnet“ gering.
+Wenn aber der Wetterbericht Ihnen unterschiedliche Arten von Regen oder andere Wetterlagen berichten kann, so trägt eine dieser konkreten Wetterlagen einen großen Informationsgehalt in sich.
+Auch hier sehen wir aber die schwäche dieser Definition: Ob es draußen 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
+Doch ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon’s Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.</p>
+<p>Einer der Vorzüge der (strukturwissenschaftlichen) Definition ist jedoch, dass wir ein Maß für den <em>Informationsgehalt</em> definieren können.
+Shannon misst den Informationsgehalt einer Nachricht über die <em>Entropie</em>, welche uns in der Physik schon über den Weg gelaufen ist.
+Die Entropie in der Informatik ist ein Maß für den <em>mittleren Informationsgehalt</em> einer <em>Nachricht</em>.</p>
+<p>Betrachten wir eine bestimmte endliche Menge an Zeichen die bei einer Übertragung auftauchen können.
+Diese Menge bezeichnet man üblicherweise als Alphabet <span class="math notranslate nohighlight">\(\Sigma\)</span>.
+Sei nun <span class="math notranslate nohighlight">\(\sigma \in \Sigma\)</span> ein Zeichen.
+Wie wahrscheinlich ist es, dass ein Zeichen <span class="math notranslate nohighlight">\(X\)</span> einer Nachricht gleich <span class="math notranslate nohighlight">\(\sigma\)</span> ist, d.h. wie groß ist</p>
+<div class="math notranslate nohighlight">
+\[P(X = \sigma) \stackrel{?}{=} p_\sigma\]</div>
+<p>Wenn jedes Zeichen mit gleicher Wahrscheinlichkeit in einer Nachricht auftritt, dann ist</p>
+<div class="math notranslate nohighlight">
+\[P(X = \sigma) = \frac{1}{N},\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(N = |\Sigma|\)</span> gleich der Anzahl der Zeichen im Alphabet <span class="math notranslate nohighlight">\(\Sigma\)</span> ist.</p>
+<p>Wie viel Information steckt dann in einem Zeichen?
+Anders gefragt: Wie viel Unsicherheit eliminiert ein Zeichen oder wie viel Ja/Nein Fragen müssten wir stellen um auf das übertragene Zeichen <span class="math notranslate nohighlight">\(\sigma\)</span> zu kommen?
+Je kleiner <span class="math notranslate nohighlight">\(p_\sigma\)</span>, desto mehr Unsicherheit wird eliminiert.
+Ein Vorschlag wäre der deshalb</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{p_\sigma}.\]</div>
+<p>Allerdings ist dieser Term nicht besonders aussagekräftig.
+Ist <span class="math notranslate nohighlight">\(p_\sigma\)</span> gleich 1, so wird eine Unsicherheit von 1 eliminiert.
+Stattdessen verwendet Shannon den Logarithmus:</p>
+<div class="math notranslate nohighlight">
+\[\log_N\left( \frac{1}{p_\sigma} \right).\]</div>
+<p>Es gilt:</p>
+<div class="math notranslate nohighlight">
+\[\lim\limits_{p_\sigma \rightarrow 0^{+}}\log_N\left( \frac{1}{p_\sigma} \right) = \infty\]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[\log_N\left( \frac{1}{1} \right) = 0.\]</div>
+<p>Zudem ist</p>
+<div class="math notranslate nohighlight">
+\[\lceil  \log_N\left( 1/p_\sigma \right) \rceil\]</div>
+<p>die Anzahl der Symbole aus <span class="math notranslate nohighlight">\(\Sigma\)</span>, die wir benötigen um <span class="math notranslate nohighlight">\(1/p_\sigma\)</span> Elemente einer Menge zu codieren bzw. zu repräsentieren.
+Siehe hierzu die Aufgabe <a class="reference internal" href="../04/dive-bell.html#sec-dive-bell"><span class="std std-ref">Sprechen in der Taucherglocke</span></a>.
+Jedes Zeichen <span class="math notranslate nohighlight">\(\sigma_i\)</span> kann eine andere Auftrittswahrscheinlichkeit <span class="math notranslate nohighlight">\(p_i\)</span> besitzen.
+Der <em>Informationsgehalt</em> <span class="math notranslate nohighlight">\(I\)</span>, der dann in dem <span class="math notranslate nohighlight">\(i\)</span>-ten Symbol <span class="math notranslate nohighlight">\(\sigma_i\)</span> einer Nachricht steckt, ist durch</p>
+<div class="math notranslate nohighlight">
+\[I(\sigma_i) = \log_2\left( \frac{1}{p_i} \right) = -\log_2(p_i)\]</div>
+<p>gegeben.</p>
+<div class="definition admonition" id="def-entropie">
+<p class="admonition-title">Entropie (Informatik)</p>
+<p>Sei <span class="math notranslate nohighlight">\(X\)</span> eine Zufallsvariable einer gedächtnislosen Quelle über einem endlichen, aus Zeichen bestehenden Alphabet <span class="math notranslate nohighlight">\(\Sigma = \left\{ \sigma_1, \ldots, \sigma_m \right\}\)</span>.
+Sei <span class="math notranslate nohighlight">\(p_i = P(X = \sigma_i)\)</span> die Wahrscheinlichkeit, dass die Zufallsvariable <span class="math notranslate nohighlight">\(X\)</span> das Zeichen <span class="math notranslate nohighlight">\(\sigma_i\)</span> annimmt.
+Dann ist</p>
+<div class="math notranslate nohighlight">
+\[I(\sigma_i) = \log_m(1/p_i) = - \log_m(p_i)\]</div>
+<p>der <strong>Informationsgehalt des Zeichens</strong> (notwendige Anzahl an Symbolen um <span class="math notranslate nohighlight">\(1 / p_i\)</span> Ereignisse zu unterscheiden).</p>
+<p>Die <strong>Entropie eines Zeichens</strong> ist definiert als der Erwartungswert des Informationsgehalts:</p>
+<div class="math notranslate nohighlight">
+\[H_1 = E[I] = \sum^m_{i=1} p_i I(\sigma_i) = - \sum^m_{i=1} p_i \log_m(p_i).\]</div>
+<p>Die <strong>Entropie</strong> <span class="math notranslate nohighlight">\(H_n\)</span> <strong>für Wörter</strong> <span class="math notranslate nohighlight">\(w \in \Sigma^n\)</span> der Länge <span class="math notranslate nohighlight">\(n\)</span> ergibt sich durch</p>
+<div class="math notranslate nohighlight">
+\[H_n = - \sum_{w \in \Sigma^n} p_w \log_m(p_w),\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(p_w = P(X = w)\)</span> die Wahrscheinlichkeit ist, mit der das Wort <span class="math notranslate nohighlight">\(w\)</span> auftritt.</p>
+<p>Die <strong>Entropie</strong> <span class="math notranslate nohighlight">\(H\)</span> ist der Limes <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span></p>
+<div class="math notranslate nohighlight">
+\[H = \lim_{n \rightarrow \infty} \frac{H_n}{n}.\]</div>
+</div>
+<p>Da Computer im Binärsystem arbeiten, ist in unserem Fall <span class="math notranslate nohighlight">\(\Sigma = \mathbb{B} = \{0, 1\}\)</span> und <span class="math notranslate nohighlight">\(m = 2\)</span>.</p>
+<p>Lassen Sie sich nicht von den mathematischen Symbolen abschrecken.
+Kurz gesagt: Je größer die Gewissheit, desto kleiner ist der Informationsgehalt.
+Oder anders ausgedrückt: Je größer die <em>Überraschung</em>, desto größer ist der Informationsgehalt.
+Information führt zur Beseitigung von Unsicherheit.
+Je mehr Unsicherheit beseitigt wird, desto größer ist der Informationsgehalt!</p>
+<p>Zwischen der Entropie eines Zeichens und den notwendigen Bits einer Nachricht gibt es einen schönen Zusammenhang:
+Ist ein bestimmtes Alphabet <span class="math notranslate nohighlight">\(\Sigma\)</span> mit all den Auftrittswahrscheinlichkeiten seiner Zeichen gegeben, so benötigen wir im Mittel</p>
+<div class="math notranslate nohighlight">
+\[n \cdot H_1\]</div>
+<p><a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> um eine Nachricht bestehend aus <span class="math notranslate nohighlight">\(n\)</span> Zeichen zu übertragen.</p>
+<p>Das Konzept der <em>Entropie</em> wird schnell anhand eines Beispiels klar.
+Nehmen wir den Münzwurf mit einer perfekten Münze.
+Werfen Sie die Münze einmal, so ist der Informationsgehalt <span class="math notranslate nohighlight">\(H_1 = 1\)</span>, denn die Wahrscheinlichkeit für Kopf oder Zahl liegt bei <span class="math notranslate nohighlight">\(0.5\)</span> und daraus ergibt sich:</p>
+<div class="math notranslate nohighlight">
+\[H_1 = 0.5 \cdot \log_2(2) + 0.5 \cdot \log_2(2) = 0.5 + 0.5 = 1\]</div>
+<p>Die Informationsquelle ist der Münzwurf, die Nachricht das Ergebnis des Wurfes, und der Empfänger sind wir als Beobachter*innen des Wurfs.</p>
+<div class="exercise admonition" id="entropie-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.1 </span> (Entropie)</p>
+<section id="exercise-content">
+<p>Welche Entropie <span class="math notranslate nohighlight">\(H\)</span> hat die Nachricht, die von einer Informationsquelle stammt, welche durchgehend <span class="math notranslate nohighlight">\(1\)</span> sendet?</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="entropie-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#entropie-exercise"> Exercise 8.1 (Entropie)</a></p>
+<section id="solution-content">
+<p>Da für jedes Wort <span class="math notranslate nohighlight">\(w\)</span> die Wahrscheinlichkeit gleich <span class="math notranslate nohighlight">\(1\)</span> ist, d.h. <span class="math notranslate nohighlight">\(P(X = w) = 1\)</span>, folgt <span class="math notranslate nohighlight">\(H = 0\)</span>.</p>
+</section>
+</div>
+<p>Lassen Sie uns ein weiteres Beispiel betrachten.
+Stellen Sie sich vor, Sie hätten eine Informationsquelle die fortwährend die Folge <span class="math notranslate nohighlight">\(0,1,0,1,0,1, \ldots\)</span> ausspuckt.
+Für <span class="math notranslate nohighlight">\(H_1\)</span> ergibt sich <span class="math notranslate nohighlight">\(H_1 = 1\)</span>, denn wie beim Münzwurf besteht eine Wahrscheinlichkeit von <span class="math notranslate nohighlight">\(0.5\)</span> ob wir eine <span class="math notranslate nohighlight">\(0\)</span> oder <span class="math notranslate nohighlight">\(1\)</span> für ein Zeichen an einer zufälligen Stelle erhalten.
+Das ändert sich jedoch nicht wenn wir die Wortlänge auf <span class="math notranslate nohighlight">\(2\)</span> erhöhen. Es ergibt sich <span class="math notranslate nohighlight">\(H_2 = 1\)</span>, denn mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(0.5\)</span> sehen wir entweder <span class="math notranslate nohighlight">\(1,0\)</span> oder <span class="math notranslate nohighlight">\(0,1\)</span>.
+Wäre die Folge rein zufällig, wäre <span class="math notranslate nohighlight">\(H_2 = 2\)</span>, denn mit Wahrscheinlichkeit <span class="math notranslate nohighlight">\(0.25\)</span> sähen wir <span class="math notranslate nohighlight">\(0,0\)</span> oder <span class="math notranslate nohighlight">\(0,1\)</span> oder <span class="math notranslate nohighlight">\(1,0\)</span> oder <span class="math notranslate nohighlight">\(1,1\)</span>.
+Es ergibt sich:</p>
+<div class="math notranslate nohighlight">
+\[H_2 = 4 \cdot 0.25 \cdot \log_2(4) = \log_2(4) = 2\]</div>
+<p>Für unsere Folge <span class="math notranslate nohighlight">\(0,1,0,1,0,1, \ldots\)</span> entscheidet das erste Zeichen über alle weitere Zeichen, egal wie lang das Wort ist, welches wir betrachten.
+Somit ist die Entropie <span class="math notranslate nohighlight">\(H_n = 1\)</span> und damit</p>
+<div class="math notranslate nohighlight">
+\[H = \lim_{n \rightarrow \infty} \frac{H_n}{n} = \lim_{n \rightarrow \infty} \frac{1}{n} = 0.\]</div>
+<p>Der Informationsgehalt ist gering und wir könnten mit deutlich weniger Zeichen, die gleiche Information übertragen!
+Die rein zufällige Folge aus <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> steht im Gegensatz dazu und enthält sehr viel Information, denn</p>
+<div class="math notranslate nohighlight">
+\[H_n = \log(2^n) = n\]</div>
+<p>und damit gilt</p>
+<div class="math notranslate nohighlight">
+\[H = \lim_{n \rightarrow \infty} \frac{H_n}{n} = \lim_{n \rightarrow \infty} \frac{n}{n} = 1.\]</div>
+<p>Bei Shannons Informationsbegriff gehen wir davon aus, dass Information in kleinste Informationsteile (<a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>) zerlegbar ist.
+Zudem ist die Summe dieser Teilchen die Information selbst.
+Beim Zusammensetzen der Einzelteile, also der Kombination von Symbolen, entsteht demnach keine neue Qualität, welche eben nicht auf die einzelnen Symbole reduziert werden kann.</p>
+<div class="remark admonition" id="remark-information-cs">
+<p class="admonition-title">Information (Informatik)</p>
+<p>Eine <em>Information</em> ist eine übertragene Nachricht und kann als die Summe ihrer Einzelteile betrachtet werden.</p>
+</div>
+<p>Shannons Informationsbegriff ignoriert jedwede <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> und verdinglicht die Information, dennoch ist er aus technischer Sicht sehr nützlich.
+Sie hilft uns zu bestimmen wie viel Zeichen (<a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a>) notwendig sind, um etwas auszudrücken.
+Eine hohe <a class="reference internal" href="#def-entropie"><span class="std std-ref">Entropie</span></a> bedeutet in diesem Zusammenhang, dass wir unsere Zeichen sparsam nutzen.
+Außerdem kann die Entropie als Informationsgehalt aus Sicht der digitalen Maschine verstanden werden, da sie keinerlei Semantik a priori kennt.
+Zwar kann der Computer, zum Beispiel zwei Binärzahlen addieren, doch hat er keinerlei Vorstellung vom Gegenstand der Zahl.
+Alle Manipulationen sind syntaktischer Natur, d.h., eine Manipulation von Zeichen.</p>
+<div class="remark admonition" id="remark-formal-methods">
+<p class="admonition-title">Formale Methoden</p>
+<p>Formale Methoden sind unter anderem eine Anstrengung, um wesentliche semantische Aspekte von Sprache und dem Denken auf regelgeleitete, rein syntaktische Symbolmanipulation zurückzuführen.</p>
+</div>
+</section>
+<section id="informationstheorie">
+<span id="sec-kolmogorow"></span><h2><span class="section-number">8.2.2. </span>Informationstheorie<a class="headerlink" href="#informationstheorie" title="Permalink to this heading">#</a></h2>
+<p>Verlassen wir die Sicht der Nachrichtenübertragung, so hilft uns der klassische Informationsbegriff von Shannon nicht sonderlich weiter.
+Wie etwa unterscheidet sich der <em>Informationsgehalt</em> von einer zufälligen Bitfolge der Länge <span class="math notranslate nohighlight">\(n\)</span> zu einer angenäherten Darstellung der Kreiszahl <span class="math notranslate nohighlight">\(\pi\)</span> beschränkt auf <span class="math notranslate nohighlight">\(n\)</span> <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>?
+In Shannons Theorie agiert ein Zusammenschluss von Akteuren (Sender, Empfänger, Kanal, Nachricht).
+Um seinen Informationsbegriff auf eine einzelne Zeichenkette zu nutzten, müssten wir uns irgendwie einen künstlichen Nachrichtenkanal und Sender konstruieren.</p>
+<p>Anstatt der Perspektive aus der Nachrichtenübertragung betrachtet die algorithmische Informationstheorie, mithilfe der Kolmogorow-Komplexität, die algorithmische Beschreibung einer Zeichenfolge.
+Die Kolmogorow-Komplexität einer Zeichenkette ist die Länge ihrer kürzesten Beschreibung in Form eines Algorithmus.
+Je kürzer der Algorithmus bzw. die Beschreibung, desto weniger Information enthält die durch ihn erzeugte/beschriebene Zeichenkette.</p>
+<div class="definition admonition" id="def-kolmogorow-complexity">
+<p class="admonition-title">Kolmogorow-Komplexität</p>
+<p>Für eine Programmiersprache <span class="math notranslate nohighlight">\(U\)</span>, z.B. beschrieben als <a class="reference internal" href="../02-1/5-hardware-equals-software.html#sec-utm"><span class="std std-ref">universelle Turingmaschine</span></a>, ist der <em>Informationsgehalt</em> oder <em>Kolmogorow-Komplexität</em> <span class="math notranslate nohighlight">\(C_U(w)\)</span> einer Zeichenfolge <span class="math notranslate nohighlight">\(w\)</span> definiert als die Bitlänge des kürzesten Programms <span class="math notranslate nohighlight">\(T\)</span> (z.B. <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschine</span></a>), das ohne weitere Eingabe die Zeichenfolge <span class="math notranslate nohighlight">\(w\)</span> als Ausgabe erzeugt.
+Mathematisch ausgedrückt:</p>
+<div class="math notranslate nohighlight">
+\[C_U(w) = \min\limits_{\alpha_T\in\mathbb{B}^*} \left\{ |\alpha_T| : U(\alpha_T) = T() = w\right\},\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(T()\)</span> bedeutet, dass die Turingmaschine <span class="math notranslate nohighlight">\(T\)</span>, welche durch <span class="math notranslate nohighlight">\(\alpha_T\)</span> beschrieben ist, ohne Eingabe startet.
+<span class="math notranslate nohighlight">\(|\alpha_T|\)</span> ist die Länge der Beschreibung der Turingmaschine <span class="math notranslate nohighlight">\(T\)</span>.</p>
+</div>
+<p>Nehmen wir an wir möchten folgende Zeichenkette</p>
+<div class="math notranslate nohighlight">
+\[\text{abababababababababab}\]</div>
+<p>also 10 mal die Zeichen <span class="math notranslate nohighlight">\(\text{ab}\)</span> <em>beschreiben</em>.
+In <code class="docutils literal notranslate"><span class="pre">Python</span></code> können wir das mit folgendem Algorithmus vollziehen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;abababababababababab&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abababababababababab&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dieser Algorithmus benötigt insgesamt 22 Zeichen.
+Allerdings ist das nicht das kürzeste Programm.
+Folgender Algorithmus/Beschreibung</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ab&#39;</span><span class="o">*</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abababababababababab&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>benötigt lediglich 7 Zeichen und erzeugt die gleiche Zeichenkette.
+Wie sieht es nun aus wenn wir aus dem mittleren <span class="math notranslate nohighlight">\(\text{a}\)</span> ein <span class="math notranslate nohighlight">\(\text{b}\)</span> machen?
+Wenn wir also</p>
+<div class="math notranslate nohighlight">
+\[\text{ababababaaababababab}\]</div>
+<p>beschreiben wollen?
+Folgendes <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Programm erzeugt die neue Zeichenkette:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ab&#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="s1">&#39;aa&#39;</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="s1">&#39;ab&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ababababaaababababab&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wären wir uns sicher, dass die angegebenen Algorithmen die kürzesten Beschreibungen sind, so können wir sagen dass <span class="math notranslate nohighlight">\(\text{abababababababababab}\)</span> weniger Information enthält als <span class="math notranslate nohighlight">\(\text{ababababaaababababab}\)</span>.
+Löschen wir ein <span class="math notranslate nohighlight">\(\text{a}\)</span> aus der ursprünglichen Zeichenkette, z.B. <span class="math notranslate nohighlight">\(\text{ababbababababababab}\)</span> so müssen wir den <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code wie folgt anpassen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ab&#39;</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="s1">&#39;b&#39;</span><span class="o">+</span><span class="mi">7</span><span class="o">*</span><span class="s1">&#39;ab&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ababbababababababab&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obwohl die Zeichenkette kürzer ist, enthält sie mehr Information.
+Kürzere Zeichenketten können nach dieser Definition mehr Informationen enthalten als längere, entscheidend ist deren <em>Beschreibungslänge</em>.</p>
+<p>Die kürzeste Beschreibung kann nicht länger als die nicht-algorithmische Beschreibung der Zeichenkette sein.
+Das bedeutet, wir können immer die Zeichenkette in Form einer Programmiersprache niederschreiben, so wie wir das ganz zu Beginn getan haben.</p>
+<div class="definition admonition" id="def-compressible">
+<p class="admonition-title">Algorithmische Zufälligkeit</p>
+<p>Falls die Länge der kürzesten Beschreibung einer Zeichenkette größer oder gleich der Länge der Zeichenkette selbst ist, so nennen wir diese Zeichenkette <em>algorithmisch zufällig</em> und <em>unkomprimierbar</em>.</p>
+</div>
+<p>Problematisch an der <a class="reference internal" href="#def-kolmogorow-complexity"><span class="std std-ref">Kolmogorow-Komplexität</span></a> und im Gegensatz zur <a class="reference internal" href="#def-entropie"><span class="std std-ref">Entropie</span></a> gilt, dass wir sie im Allgemeinen nicht berechnen können.</p>
+<div class="theorem admonition" id="theorem-uncomputable">
+<p class="admonition-title">Unberechenbarkeit der Kolmogorow-Komplexität</p>
+<p>Sei eine beliebige Zeichenkette <span class="math notranslate nohighlight">\(w\)</span> und eine Programmiersprache <span class="math notranslate nohighlight">\(U\)</span> gegeben, so ist die Kolmogorow-Komplexität <span class="math notranslate nohighlight">\(C_U(w)\)</span> im Allgemeinen <strong>nicht</strong> <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-computable"><span class="std std-ref">berechenbar</span></a>.</p>
+</div>
+<p>Haben wir eine bestimmte Beschreibung für eine Zeichenkette, könnte es immer eine noch kürzere Beschreibung geben.
+Wir können jedoch immer eine Obergrenze für die Kolmogorow-Komplexität bestimmen.</p>
+<p>Außerdem kann man zeigen, dass für zwei universelle Turingmaschinen <span class="math notranslate nohighlight">\(U\)</span> und <span class="math notranslate nohighlight">\(U'\)</span> sich <span class="math notranslate nohighlight">\(C_U(w)\)</span> und <span class="math notranslate nohighlight">\(C_{U'}(w)\)</span> für alle <span class="math notranslate nohighlight">\(w\)</span> maximal um eine additive Konstante unterscheiden (<em>Theorem der Invarianz</em>).
+Das geht aus der Komplexitätstheorie hervor.
+Somit ist die <a class="reference internal" href="#def-kolmogorow-complexity"><span class="std std-ref">Kolmogorow-Komplexität</span></a> von den verwendeten Modellierungsmitteln, z.B. Programmiersprachen, weitestgehend unabhängig.</p>
+<p>Durch die Kolmogorow-Komplexität wechseln wir die Perspektive von der <em>Nachricht</em> zu ihrer <em>Konstruktion</em> durch einen Algorithmus.
+Wir suchen den kürzesten Algorithmus / die kürzeste Beschreibung für die Erzeugung einer Zeichenkette.
+Daraufhin analysieren wir nicht die Information selbst, sondern jenen Algorithmus.
+Je kürzer der Algorithmus, desto geringer der <em>Informationsgehalt</em>.</p>
+<p>Eine Komprimierung ist eine algorithmische Beschreibung (Programm) einer Zeichenkette, welche kürzer als die Zeichenkette ist und diese erzeugt.
+Aus Sicht der Kolmogorow-Komplexität enthält ein 3000-seitiges Lexikon weniger Informationen als eine gleich lange, rein zufällig generierte Zeichenkette, obwohl das Lexikon selbstverständlich viel nützlicher ist.
+Wir könnten aus den Wörtern des Lexikons bestimmte Zeichenfolgen komprimieren.
+Für die zufällige Folge an Zeichen ist dies nicht möglich.</p>
+<p>Auch dieser Begriff bezieht nur die <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a> einer vorliegenden <em>Information</em> ein.
+Die <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> wird erneut ausgeklammert.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/02-2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1-natural-science.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">zurück</p>
+        <p class="prev-next-title"><span class="section-number">8.1. </span>Naturwissenschaften</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3-critic.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">weiter</p>
+        <p class="prev-next-title"><span class="section-number">8.3. </span>Kritik</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Inhalt
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nachrichtentechnik">8.2.1. Nachrichtentechnik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informationstheorie">8.2.2. Informationstheorie</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

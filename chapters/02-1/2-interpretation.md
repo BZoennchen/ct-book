@@ -291,7 +291,8 @@ Sie werden auch keinen echten Apfel im Computer finden.
 Was aber nicht bedeutet, dass ein Computer einen Apfel nicht erkennen kann.
 Auch unsere mentalen Operationen scheinen in sich abgeschlossen---sie werden auch keinen echten Apfel in ihrem Kopf finden und Ihre Gedanken bleiben in Ihrem Kopf.
 
-Software basiert auf dem gleichen Verständnis, denn Hardware ist Software realisiert durch Bauteile (siehe Abschnitt [Berechenbarkeit](sec-computability)).
+Software basiert auf dem gleichen Prinzip, denn im Grunde genommen ist Hardware ein Stück Software, welches durch Bauteile realisiert wird (siehe Abschnitt [Berechenbarkeit](sec-computability)).
+Es ist z.B. 
 Öffnen Sie ein Bild in einem Texteditor, so sehen Sie die Interpretation des Bildes ihres Texteditors.
 Öffnen Sie die gleiche Datei in einem Bildverarbeitungsprogramm, sehen sie eine andere Interpretation der Bits und Bytes.
 
