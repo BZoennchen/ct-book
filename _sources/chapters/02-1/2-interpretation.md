@@ -428,7 +428,7 @@ Natürlich könnten wir die Frage auch umkehren und uns dem Menschen zuwenden:
 Die Euphorie in den Anfängen der künstlichen Intelligenz war groß.
 So schrieb Alan Turing in *Computing Machinery and Intelligence*:
 
->I believe that at the end of the century the use of words and general educated opinion will have altered so much that one will be able to speak of machines thinking without expecting to be contradicted. -- Alan Turing {cite}`turing:1950`
+>I believe that at the end of the century the use of words and general educated opinion will have altered so much that one will be able to speak of machines thinking without expecting to be contradicted. -- {cite}`turing:1950`
 
 Diese Vorhersage hat sich wohl nicht erfüllt auch wenn diese Prognose durch die Fortschritte des maschinellen Lernens neu entflammt ist.
 Es bestehen berechtigte Zweifel daran, dass Computer jemals eine eigene Interpretation oder eine eigene Intension hervorbringen bzw. entwickeln.
@@ -436,7 +436,7 @@ Streng genommen ist es diskussionswürdig, ob Computer überhaupt irgendeine ech
 Anders ausgedrückt müssen wir uns fragen ob sie nicht doch nur bloße Transformatoren von Zeichen auf einer rein [syntaktischen](def-syntax) Ebene sind---ganz so wie der Bleistift.
 Und wenn dem so ist, können wir und sollten wir versuchen dies zu ändern?
 
-Gegen diese utopisch oder dystopische Hoffnung der Futuristen argumentieren z.B. die Philosophen Markus Gabriel {cite}`gabriel:2018` und Sebastian Rosengrün {cite}`rosengruen:2021`.
+Gegen diese utopisch oder dystopische Hoffnung der Futuristen argumentieren z.B. die Philosophen {cite:t}`gabriel:2018` und {cite:t}`rosengruen:2021`.
 Gabriel warnt unter anderem vor einem fehlgeleiteten Sprachgebrauch.
 
 >Ob es überhaupt eine künstliche Intelligenz gibt, kann man nicht dadurch entscheiden, dass man sich schlichtweg dazu entschließt, von nun an so zu reden.

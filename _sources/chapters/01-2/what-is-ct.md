@@ -28,16 +28,16 @@ Der Ursprung des Begriffs reicht bis in die 1950er Jahre zurück.
 Bekannt wurde er jedoch erst durch die Informatikerin Jeanette Wing, die ihn im Bereich der Schulbildung populär gemacht hat.
 Sie spricht in ihrem Artikel *Computational Thinking* von 
 
->CT als Konzept welches das Lösen von Problemen und das Entwerfen von Systemen regelrecht umarmt. -- Wing 2006 {cite}`wing:2006` (Übersetzung)
+>CT als Konzept welches das Lösen von Problemen und das Entwerfen von Systemen regelrecht umarmt. -- {cite:p}`wing:2006` (Übersetzung)
 
-Shut et al. {cite}`shute:2017` argumentieren, dass CT benötigt wird um Probleme algoritmisch (mit und ohne Hilfe des Computers) zu lösen.
+{cite:t}`shute:2017` argumentieren, dass CT benötigt wird um Probleme algoritmisch (mit und ohne Hilfe des Computers) zu lösen.
 CT sei eine Art des Denkens und Handelns, welches sich durch bestimmte Fähigkeiten manifestiert.
 Es basiere auf den zentralen Prinzipien der Informatik.
 Es kann als Tätigkeit aufgefasst werden bei der Werkzeuge und Techniken der Informatik angewendet werden, um sowohl über natürliche wie auch künstliche Systeme und Prozesse nachzudenken.
 
 Julian Fraillon et al. beschreiben Computational Thinking als
 
->eine individuelle Fähigkeit einer Person um Aspekte realweltlicher Probleme zu identifizieren, die für eine informatische Modellierung geeignet sind, algorithmische Lösungen für diese (Teil-)Probleme zu bewerten und selbst so zu entwickeln, dass diese Lösungen mit einem (digitalen) Computer operationalisiert werden können. -- Julian Fraillon et al. 2019 {cite}`fraillon:2019` 
+>eine individuelle Fähigkeit einer Person um Aspekte realweltlicher Probleme zu identifizieren, die für eine informatische Modellierung geeignet sind, algorithmische Lösungen für diese (Teil-)Probleme zu bewerten und selbst so zu entwickeln, dass diese Lösungen mit einem (digitalen) Computer operationalisiert werden können. -- {cite}`fraillon:2019` 
 
 Computational Thinking entspringt aus den Möglichkeiten und Limitierungen, die Computer uns zur Verfügung stellen.
 Welche Form diese Computer annehmen, d.h., ob Mensch oder Maschine ist sekundär.
@@ -53,7 +53,7 @@ Es ist die Summe der mentalen Fähigkeiten mit denen wir
 1. [Algorithmen](def-algorithm) bzw. Berechnungsschritte entwerfen, welche uns die Arbeit abnehmen, und 
 2. die Welt als ein Zusammenspiel von Prozessen der Informationsverarbeitung erklären und interpretieren können.
 
-In ihrem Artikel *Computational thinking: the developing definition* {cite}`selby:2013` identifizieren Cynthia Selby und John Woollard CT ebenfalls als *Denkprozess* (Art und Weise um über Berechnungen nachzudenken) und fügen zwei Techniken an, die wir um weitere zwei erweitern:
+In ihrem Artikel *Computational thinking: the developing definition* {cite:t}`selby:2013` identifizieren Cynthia Selby und John Woollard CT ebenfalls als *Denkprozess* (Art und Weise um über Berechnungen nachzudenken) und fügen zwei Techniken an, die wir um weitere zwei erweitern:
 
 1. **Abstraktion nutzen** (Beschreibung gemeinsamer zugrundeliegender Eigenschaften und Funktionalitäten einer Menge von Entitäten)
 2. **Dekomposition** (Zerteilung komplexer Probleme in einfache wohl-definierte Teilprobleme)
@@ -88,7 +88,7 @@ Für das Stellen und Betrachten dieser Fragen ist ein kühler Kopf---ist Computa
 Nach Jeanette Wing bedeutet Computational Thinking **konzepieren**, nicht programmieren.
 Es ist eine **fundamentale Fähigkeit** um in der technologisierten Gesellschaft zurechtzukommen und keine routinierte Fähigkeit.
 Computational Thinking ist eine **Denkweise des Menschen** nicht der Maschinen.
-Es bedeutet nicht wie ein Computer, sondern wie ein *Informatiker* oder eine *Informatikerin* zu denken {cite}`wing:2006`.
+Es bedeutet nicht wie ein Computer, sondern wie ein *Informatiker* oder eine *Informatikerin* zu denken {cite:p}`wing:2006`.
 
 Digitale Computer sind an und für sich primitive Maschinen, die wir nutzen um auf kreative Weise spannende Probleme zu lösen.
 Dabei schöpft die *Informatik* ihre formale Basis aus der Mathematik---sie ist eine *Formal*- bzw. *Strukturwissenschaft*, jedoch keine *Naturwissenschaft*!

@@ -175,7 +175,7 @@ Um 1960 wurde eine wichtige Erweiterung der *neuronalen Netze*, die sog. *tiefen
 Anders als herkömmliche neuronale Netze (siehe {numref}`Abbildung {number} <fig-ann>` ) bestehen diese aus mehrere *versteckten Schichten*.
 Zu jener Zeit fehlten allerdings die Daten und die Rechenleistung, um derartige *DNNs* praktisch nutzen zu können.
 Auch hatte men Schwierigkeiten die benötigten Gradienten im Zaum zu halten.
-Erst in den 80er Jahren wurden erste praktikable *künstliche neuronalen Netze* entwickelt (*LeNet* 2011, {cite}`lecun:1989`).
+Erst in den 80er Jahren wurden erste praktikable *künstliche neuronalen Netze* entwickelt {cite}`lecun:1989`.
 *ANNs* bilden eine Teilmenge der Algorithmen des *maschinelles Lernen*.
 Tom Mitchell definiert *maschinelles Lernen* wie folgt:
 
@@ -187,7 +187,7 @@ Ein Spamfilter befolgt keine fest eingebrannten Regeln, sondern *lernt* was Spam
 Er benötigt *Trainingsdaten* und kann dann neue Daten selbständig *klassifizieren*.
 
 Insbesondere *tiefe neuronalen Netze (DNNs)* konnten erfolgreich für Aufgaben eingesetzt werden, die zuvor als unlösbar galten.
-Zu nennen ist die Sprach- (*Microsoft* 2011) und Bilderkennung (*AlexNet* 2012, {cite}`ciresan:2012,krizhevsky:2017`).
+Zu nennen ist die Sprach- (*Microsoft* 2011) und Bilderkennung {cite}`ciresan:2012,krizhevsky:2017`.
 
 Der Erfolg ist auf drei Faktoren zurückzuführen: 
 Zu nennen ist die hohe Datenmenge.

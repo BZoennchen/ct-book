@@ -28,7 +28,7 @@ Wir wagen in die Welt der formalen Sprachen, welche keine Missverständnisse und
 
 ## Schnelles und langsames Denken
 
-In seinem Buch *Schnelles Denken, Langsames Denken* {cite}`kahneman:2011` beschreibt der Nobelpreisträger und einflussreiche Wissenschaftler unserer Zeit Daniel Kahneman sehr eindringlich, wie wir Menschen Entscheidungen treffen.
+In seinem Buch *Schnelles Denken, Langsames Denken* {cite:p}`kahneman:2011` beschreibt der Nobelpreisträger und einflussreiche Wissenschaftler unserer Zeit Daniel Kahneman sehr eindringlich, wie wir Menschen Entscheidungen treffen.
 Er betont dabei, dass Zögern ein überlebensnotwendiger Reflex ist und beschreibt was in unserem Gehirn vor sich geht, wenn wir andere Menschen oder Dinge beurteilen. 
 Vereinfacht ausgedrückt wird das menschliche Denken durch zwei kognitive Systeme bestimmt:
 Durch das *(1) schnelle Denken* und durch das *(2) langsame Denken*.
