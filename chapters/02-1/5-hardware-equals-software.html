@@ -624,11 +624,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="berechenbarkeit">
 <span id="sec-computability"></span><h1><span class="section-number">7.6. </span>Berechenbarkeit<a class="headerlink" href="#berechenbarkeit" title="Permalink to this heading">#</a></h1>
-<p>In diesem Abschnitt tauchen wir in die theoretische Informatik ein und widmen uns der Frage was wir überhaupt berechnen können (<em><a class="reference internal" href="#def-turing-computable"><span class="std std-ref">Berechenbarkeit</span></a></em>).
+<p>In diesem Abschnitt tauchen wir in die theoretische Informatik ein und widmen uns der Frage was wir überhaupt mit einem Computer berechnen können (<em><a class="reference internal" href="#def-turing-computable"><span class="std std-ref">Berechenbarkeit</span></a></em>).
 In diesem Zusammenhang folgt unweigerlich die Frage: Welche Mittel benötigen wir um eines der berechenbaren Probleme zu berechnen (<em><a class="reference internal" href="#def-turing-complete"><span class="std std-ref">Turing-Vollständigkeit</span></a></em>)?
-Und was benötigen wir um jedes dieser Probleme berechnen zu können (<em><a class="reference internal" href="#info-universal-turing-machine"><span class="std std-ref">universelle Turingmaschine</span></a></em>)?</p>
-<p>Beginnen wir mit einer kurzen Untersuchung von Hard- und Software, d.h., Bauteile des Computers und Programmcode.
-Stellen Sie sich vor Sie haben einen Addierer als Bauteil, also als <em>Hardware</em> zur Verfügung haben.
+Außerdem gehen wir der Frage nach, was die <em>Essenz der Computer</em> ist (<em><a class="reference internal" href="#info-universal-turing-machine"><span class="std std-ref">universelle Turingmaschine</span></a></em>), wenn sie in Form von Smartwatches und Rechenzentren eine sehr unterschiedliche Gestalt annehmen.
+Was macht sie dann zu Computern?</p>
+<p>Beginnen wir mit einer kurzen Untersuchung von Hard- und Software, d.h., der Bauteile des Computers und der Programmcodes.
+Stellen Sie sich vor Sie haben einen <a class="reference internal" href="3-manipulation.html#sec-addierer"><span class="std std-ref">Addierer</span></a> als Bauteil.
+Er steht Ihnen also als <em>Hardware</em> zur Verfügung.
 Nehmen wir weiter an, dass der Befehl <code class="docutils literal notranslate"><span class="pre">ladd(a,b)</span></code> diesen realisiert, d.h., die beiden Binärzahlen <code class="docutils literal notranslate"><span class="pre">a</span></code> und <code class="docutils literal notranslate"><span class="pre">b</span></code> durch ein Bauteil addiert.
 Wir haben gesehen, wie dies durch eine <em>Komposition aus Gattern</em> (siehe <a class="reference internal" href="3-manipulation.html#sec-manipulation"><span class="std std-ref">Manipulation</span></a>) möglich ist.</p>
 <p>Um zwei Zahlen <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> zu multiplizieren könnten wir aus mehreren Addierern einen Multiplizierer bauen.
@@ -687,12 +689,12 @@ Doch genauso gut können wir durch Programmcode den Addierer mehrfach aufrufen u
 </div>
 </div>
 </div>
-<p>Halten wir also fest: Wir können einen Multiplizierer als Bauteil konstruieren, z.B. indem wir mehrere Addierer hintereinander schalten, oder wir schreiben Programmcode der die Multiplikation durch das mehrfache Aufrufen des Addierers realisiert.
+<p>Halten wir also fest: Wir können einen Multiplizierer als Bauteil konstruieren, z.B. indem wir mehrere <a class="reference internal" href="3-manipulation.html#sec-addierer"><span class="std std-ref">Addierer</span></a>  hintereinander schalten, oder wir schreiben Programmcode der die Multiplikation durch das mehrfache Aufrufen des Addierers realisiert.
 Wo liegt hierbei der Unterschied?</p>
 <p>Interessiert uns nur das Ergebnis, so ist es egal welche der beiden Methoden wir verwenden.
 Im Endeffekt sparen wir uns bei der zweiten Berechnung ein Bauteil.
 In der Praxis spielt es allerdings eine entscheidende Rolle wie lange die Berechnung dauert.
-Ein Multiplizierer der als Bauteil vorliegt, wird seine Arbeit deutlich schneller verrichten, als die Summe der Aufrufe des Addierers.
+Ein Multiplizierer, der als Bauteil vorliegt, wird seine Arbeit deutlich schneller verrichten als die Aufsummierung der Ergebnisse des Addierers vollzogen wird.
 Werden bestimmte Berechnungen sehr häufig benötigt, so ist es sinnvoll darüber nachzudenken, ob man für diese nicht extra angefertigte Bauteile anbietet.</p>
 <p>Die Grafikkarte (GPU) ist ein solches Beispiel.
 Theoretisch kann die <a class="reference internal" href="4-information-flow.html#def-cpu"><span class="std std-ref">CPU</span></a> all das berechnen, was die Grafikkarte berechnen kann.
@@ -703,7 +705,7 @@ Moderne Grafikkarten werden wegen ihres hohen Datendurchsatzes heute für das <e
 Sie sind deshalb mit speziellen Bauteilen ausgestattet, mit denen sich kleiner Matrizen sehr effizient multiplizieren lassen.</p>
 <p>Software steuert die Hardware an.
 Es besteht hier also eine Art Umweg.
-Löst ein Bauteil das Problem, so ist es mit sehr großer Wahrscheinlichkeit schneller als jede Softwarelösung.</p>
+Löst ein Bauteil das Problem, so ist es mit sehr großer Wahrscheinlichkeit schneller als bestehende Softwarelösung.</p>
 <p>Auf algorithmischer Ebene ähneln sich Hardware und Software sehr.
 Sie gleichen sich, mit dem feinen Unterschied, dass Software eine bestimmte Hardware benötigt um überhaupt lauffähig zu sein.</p>
 <section id="turingmaschinen">
@@ -723,7 +725,11 @@ Salopp fragen wir:</p>
 <blockquote>
 <div><p>Was können wir überhaupt berechnen?</p>
 </div></blockquote>
-<p>Beide Fragen wollte Alan Turing mit seinem Berechnungsmodell, der <em>Turingmaschine</em>, beantworten.</p>
+<p>Beide Fragen wollte Alan M. Turing mit seinem Berechnungsmodell, der <em>Turingmaschine</em>, beantworten.
+In seiner 1937 erschienenen Arbeit <em>On computable numbers, with an application to the Entscheidungsproblem</em> <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id19" title="A. M. Turing. On computable numbers, with an application to the entscheidungsproblem. Proceedings of the London Mathematical Society, s2-42(1):230-265, 1937. doi:10.1112/plms/s2-42.1.230.">Turing, 1937</a>, <a class="reference internal" href="../misc/bibliography.html#id20" title="A. M. Turing. On computable numbers, with an application to the entscheidungsproblem. a correction. Proceedings of the London Mathematical Society, s2-43(1):544-546, 1938. doi:10.1112/plms/s2-43.6.544.">Turing, 1938</a>]</span> hat er die Berechenbarkeitstheorie, und damit die Theorie der Informatik begründet.
+Turings Intention war es eine mathematisch klar beschreibbare Maschine anzugeben, die allgemein genug ist, um stellvertretend für <em>jeden beliebigen</em> algorithmischen Berechnungsprozess zu stehen.
+Er wollte den zunächst nur intuitiv gegebenen Begriff der Berechenbarkeit exakt beschreiben.
+Man kann bis heute sagen, dass ihm dies geglückt ist.</p>
 <figure class="align-default" id="fig-tm">
 <a class="reference internal image-reference" href="../../_images/tm.png"><img alt="../../_images/tm.png" src="../../_images/tm.png" style="height: 200px;" /></a>
 <figcaption>
@@ -755,6 +761,7 @@ Die Maschine befindet sich in einem von endlich vielen Zuständen.</p>
 Läuft die Turingmaschine irgendwann in einen Endzustand <span class="math notranslate nohighlight">\(q_e \in E\)</span>, so ist das was auf dem Band steht das berechnete Ergebnis.
 Die Turingmaschine <span class="math notranslate nohighlight">\(T\)</span> berechnet <span class="math notranslate nohighlight">\(T(w)\)</span> für eine Eingabe(wort) <span class="math notranslate nohighlight">\(w\)</span>.</p>
 </div>
+<p>Für eine formale Definition verweisen wir auf <span id="id2">Schöning [<a class="reference internal" href="../misc/bibliography.html#id24" title="Uwe Schöning. Theoretische Informatik - kurz gefasst. Spektrum der Wissenschaft, 5 edition, 2008. ISBN 9783827418241.">2008</a>]</span> (Seite 73).</p>
 <p>Übertragen auf Software, bilden die endliche Übergangstabelle <span class="math notranslate nohighlight">\(\delta\)</span> und die Zustandsmengen <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(F\)</span> ein Programm.
 Diese Tabelle fassen wir auch als Funktion</p>
 <div class="math notranslate nohighlight">
@@ -849,7 +856,7 @@ Wie lange dies jedoch sein muss ist im Vornhinein unklar.</p>
 Natürlich müssen wir eine <em>Turingmaschine</em> für das jeweilige Problem konstruieren.
 Ein Computer löst aber nicht nur ein bestimmtes Problem, sondern ist im Stande <strong>jedes</strong> Problem, was durch eine Turingmaschine gelöst werden kann, zu berechnen.</p>
 <p>Ein Computer ist das Pendant zu einer ganz bestimmten Turingmaschine, der <em>universellen Turingmaschine (UTM)</em>.
-Die universelle Turingmaschine <span class="math notranslate nohighlight">\(U\)</span> (Computer) erhält als Eingabe eine Beschreibung einer andere Turingmaschine <span class="math notranslate nohighlight">\(\alpha_T\)</span> (Programm) und die Eingabe(wort) <span class="math notranslate nohighlight">\(w\)</span> der Turingmaschine <span class="math notranslate nohighlight">\(T\)</span>.
+Die universelle Turingmaschine <span class="math notranslate nohighlight">\(U\)</span> (Computer) erhält als Eingabe eine Beschreibung einer andere Turingmaschine <span class="math notranslate nohighlight">\(\alpha_T\)</span> (Programm) und die Eingabe <span class="math notranslate nohighlight">\(w\)</span> der Turingmaschine <span class="math notranslate nohighlight">\(T\)</span>.
 Sie simuliert <span class="math notranslate nohighlight">\(T\)</span> unter der Eingabe <span class="math notranslate nohighlight">\(w\)</span></p>
 <div class="math notranslate nohighlight">
 \[U(\alpha_T, w) = T(w).\]</div>
@@ -871,13 +878,19 @@ Wir würden uns als Programmierer*innen wünschen, dass es ein Programm gäbe, w
 <p class="admonition-title">Das Halteproblem</p>
 <p>Gegeben sei eine <strong>beliebige</strong> Beschreibung <span class="math notranslate nohighlight">\(\alpha_T\)</span> einer Turingmaschine <span class="math notranslate nohighlight">\(T\)</span> und einer <strong>beliebigen</strong> Eingabe <span class="math notranslate nohighlight">\(w\)</span>, so verlangt das Halteproblem, nach der Antwort der Frage ob <span class="math notranslate nohighlight">\(T(w)\)</span> hält oder nicht.</p>
 </div>
-<p>Leider hat sich herausgestellt, dass das Halteproblem nicht berechenbar ist.</p>
+<p>Leider hat sich herausgestellt, dass das Halteproblem nicht berechenbar ist.
+Der Beweis ist sehr elegant und gut verständlich.
+Der Trick besteht darin eine Turingmaschine zu konstruieren, die eine andere Turingmaschine entgegennimmt und genau dann hält, wenn die andere Maschine nicht hält und ansonsten nicht hält.
+Wäre das Halteproblem lösbar, müsste es eine solche Maschine geben.
+Was passiert aber wenn wir diese Maschine nun mit einer Beschreibung von sich selbst füttern?
+Es entsteht ein Paradoxon und deshalb kann es eine solche Maschine nicht geben.
+Einen Beweis finden sie z.B. in <span id="id3">Schöning [<a class="reference internal" href="../misc/bibliography.html#id24" title="Uwe Schöning. Theoretische Informatik - kurz gefasst. Spektrum der Wissenschaft, 5 edition, 2008. ISBN 9783827418241.">2008</a>]</span> (Seite 119).</p>
 <div class="theorem admonition" id="theorem-halting-problem-theorem">
 <p class="admonition-title">Unberechenbarkeit des Halteproblems</p>
 <p>Das Halteproblem ist nicht berechenbar.</p>
 </div>
-<p>Wir können natürlich <span class="math notranslate nohighlight">\(T(w)\)</span> ausführen und einfach abwarten ob die Turingmaschine <span class="math notranslate nohighlight">\(T\)</span> hält oder nicht.
-Wenn sie aber nicht hält, können wir das niemals feststellen – wir müssten unendlich lange warten.</p>
+<p>Wir können natürlich <span class="math notranslate nohighlight">\(T(w)\)</span> ausführen und einfach abwarten ob die Turingmaschine <span class="math notranslate nohighlight">\(T\)</span> mit der Eingabe <span class="math notranslate nohighlight">\(w\)</span> hält oder nicht.
+Wenn sie aber nicht hält, können wir das niemals feststellen—wir müssten unendlich lange warten.</p>
 <p>Das bedeutet: Es wird niemals einen Algorithmus geben (geschrieben in einer Turing-vollständigen Sprache), welcher für beliebige Programme prüfen kann ob diese auch terminieren.
 Das bedeutet jedoch nicht, dass wir dies nicht im Einzelfall selbst prüfen können oder das es Programme gibt, die für viele Programme prüfen können ob diese terminieren.
 Es gibt also Hoffnung.</p>
@@ -916,9 +929,21 @@ Können Sie Programme <span class="math notranslate nohighlight">\(\alpha_{T_2}\
 </ol>
 </section>
 </div>
-<p>Man muss sich vor Augen halten, dass Alan Turing bereits 1936 die Grundlagen für alle modernen Computer und Programmiersprachen dieser Welt gelegt hat.</p>
+<p>Man muss sich vor Augen halten, dass Alan Turing bereits 1937 die Grundlagen für alle modernen Computer und Programmiersprachen dieser Welt gelegt hat.
+Und wir sollten auch erwähnen, dass es ihm die Gesellschaft in jener Zeit nicht gerade gedankt hat.
+Turing wurde 1952 wegen homosexueller Handlungen strafrechtlich verfolgt.
+Als Alternative zum Gefängnis akzeptierte er eine Hormonbehandlung mit DES, ein Verfahren, das allgemein als chemische Kastration bezeichnet wird.
+Turing starb am 7. Juni 1954, 16 Tage vor seinem 42. Geburtstag, an einer Zyankali-Vergiftung.
+Eine Untersuchung stellte seinen Tod als Selbstmord fest, aber es wurde angemerkt, dass die bekannten Beweise auch mit einer versehentlichen Vergiftung übereinstimmen könnten.</p>
+<figure class="align-default" id="fig-alan-turing-computability">
+<a class="reference internal image-reference" href="../../_images/alan-turing.jpeg"><img alt="../../_images/alan-turing.jpeg" src="../../_images/alan-turing.jpeg" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 7.17 </span><span class="caption-text">Alan M. Turing, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg">Quelle</a></span><a class="headerlink" href="#fig-alan-turing-computability" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Königin Elisabeth II. gewährte 2013 eine posthume Begnadigung. Der Begriff <em>Alan Turing-Gesetz</em> wird heute informell verwendet, um sich auf ein Gesetz aus dem Jahr 2017 im Vereinigten Königreich zu beziehen, das Männer rückwirkend begnadigte, die aufgrund historischer Gesetze, die homosexuelle Handlungen unter Strafe stellten, verwarnt oder verurteilt wurden.</p>
 <p>Gehen wir nun zurück zur Frage nach dem Unterschied zwischen Hard-/ und Software.
-Der wesentlichen Unterschied zwischen dem Computer (Hardware) und einem Programm (Software) ist die Art und Weise wie die <a class="reference internal" href="#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a> realisiert wird – durch elektrische Bauteile oder eine Programmiersprache.
+Der wesentlichen Unterschied zwischen dem Computer (Hardware) und einem Programm (Software) ist die Art und Weise wie die <a class="reference internal" href="#def-turing-complete"><span class="std std-ref">Turing-Vollständigkeit</span></a> realisiert wird—durch elektrische Bauteile oder eine Programmiersprache.
 Programme als auch Computer sind Turingmaschinen und da der Computer Programme also andere Turingmaschinen simuliert, ist er eine
 <a class="reference internal" href="#info-universal-turing-machine"><span class="std std-ref">universelle Turingmaschine</span></a>.</p>
 <div class="remark admonition" id="remark-computer-universal-turing">

@@ -638,17 +638,17 @@ document.write(`
 <section id="das-binarsystem">
 <span id="sec-binary-system"></span><h2><span class="section-number">7.3.1. </span>Das Binärsystem<a class="headerlink" href="#das-binarsystem" title="Permalink to this heading">#</a></h2>
 <p>Computer arbeiten auf der Basis von zwei Zuständen (0 und 1).
-Man kann sagen sie sprechen die Binärsprache.
+Salopp sagt man auch, dass sie die Binärsprache „sprechen“.
 Da die kleinste Informationseinheit, das <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a>, nur zwei Zustände annehmen kann, sind die Operationen äußerst simpel.
-Die Komplexität entsteht durch das Kombinieren und Hintereinanderschalten von Millionen dieser Operationen.</p>
+Die Komplexität und die damit einhergehende Rechenfähigkeit entsteht durch das Kombinieren und Hintereinanderschalten von Millionen dieser Operationen.</p>
 <p>Als <em>Computational Thinker*innen</em> kümmern wir uns kaum um die genaue Manipulation der <a class="reference internal" href="#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="#def-byte"><span class="std std-ref">Bytes</span></a>.
 Wir Abstrahieren diese Aufgabe durch <a class="reference internal" href="../02-3/languages.html#sec-programming-languages"><span class="std std-ref">Programmiersprachen</span></a>, die uns weitaus komfortablere Möglichkeiten bieten.
 Dennoch sind diese Informationseinheiten und deren <a class="reference internal" href="3-manipulation.html#sec-manipulation"><span class="std std-ref">Manipulation</span></a> von wesentlicher Bedeutung, um die Funktionsweise eines Computers zu verstehen.</p>
 <p>In einem Computer befinden sich mikroskopisch kleine Leitungen und Schaltkreise, welche alle Informationen eines Computers speichern, übertragen und verarbeiten.
 Anstatt 0 und 1 verwendet der Computer also eigentlich elektrische Signale bzw. Spannungen, gespeichert in Milliarden von Transistoren und übertragen durch sog. <a class="reference internal" href="4-information-flow.html#def-bus"><span class="std std-ref">Bus-Systeme</span></a> (Leitungen/Kabel).</p>
 <p>Wie aber lassen sich Informationen mit solchen elektrischen Signalen darstellen?
-Stellen wir uns eine Lampe vor, die zwei Zustände hat.
-Entweder die Lampe ist aus (0) oder sie ist an (1).</p>
+Stellen wir uns eine Lampe mit zwei Zustände vor.
+Die Lampe ist entweder aus (0) oder sie ist an (1).</p>
 <figure class="align-default" id="fig-lamps">
 <a class="reference internal image-reference" href="../../_images/lamps.png"><img alt="../../_images/lamps.png" src="../../_images/lamps.png" style="width: 200px;" /></a>
 <figcaption>
@@ -659,7 +659,7 @@ Entweder die Lampe ist aus (0) oder sie ist an (1).</p>
 <p>Natürlich könnte man mehr Zustände darstellen indem man misst wie viel Strom fließt oder wie viel Spannung angesetzt ist.
 Es hat sich aber herausgestellt, dass das einfache <strong>Strom an</strong> und <strong>Strom aus</strong> robuster, sicherer und effizienter ist.
 So lassen sich die zwei Zustände sehr einfach unterscheiden.</p>
-<p>Mit <strong>Strom an</strong>, <strong>Strom aus</strong> können wir zum Beispiel folgende Mengen repräsentieren:</p>
+<p>Mit <strong>Strom an</strong>, <strong>Strom aus</strong> können wir durch eine <a class="reference internal" href="2-interpretation.html#def-interpretation"><span class="std std-ref">Interpretation</span></a> zum Beispiel folgende Mengen repräsentieren:</p>
 <table class="table table-center" style="width: 200px">
 <colgroup>
 <col style="width: 50%" />
@@ -717,9 +717,9 @@ Zudem ist die Einsparung, die wir durch mehr Zustände erzielen würden, unwesen
 Diese sog. <em>Unärsystem</em> verwenden wir Menschen, wenn wir mit den Händen zählen.
 Das System ist allerdings für größere Datenmengen ungeeignet, da wir für eine Menge mit <span class="math notranslate nohighlight">\(n\)</span> Elementen <span class="math notranslate nohighlight">\(n\)</span> <em>Bits</em> bräuchten, um diese zu repräsentieren.
 Wechseln wir zu einem System mit drei Zuständen, bräuchten wir im Vergleich zum <em>Binärsystem</em> noch weniger <em>Bits</em>, doch ist das was wir gewinnen unwesentlich.
-Der Grund ist das Verhalten des Logarithmus.</p>
+Der Grund dafür ist das Verhalten des Logarithmus.</p>
 <p>Der folgende Plot illustriert wie viele <em>Bits</em> (y-Achse) für eine Menge mit <span class="math notranslate nohighlight">\(n\)</span> Elementen (x-Achse) im jeweiligen Zahlensystem notwendig sind.
-Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingegen der Unterschied zwischen <em>Binär</em> und, zum Beispiel, <span class="math notranslate nohighlight">\(\log_5(n)\)</span> gering ist.
+Der Unterschied zwischen <em>Binär</em> und <em>Unär</em> ist enorm, wohingegen der Unterschied zwischen <em>Binär</em> und, zum Beispiel, <span class="math notranslate nohighlight">\(\log_5(n)\)</span>, also die Verwendung von 5 unterschiedlichen Zuständen, gering ist.
 Dies folgt aus den Rechengesetzen des Logarithmus:</p>
 <div class="math notranslate nohighlight">
 \[\log_a(x) = \frac{\log_b(x)}{\log_b(a)}\]</div>
@@ -732,7 +732,7 @@ Dies folgt aus den Rechengesetzen des Logarithmus:</p>
 </section>
 <section id="zahlen-im-binarsystem">
 <span id="sec-binary-numbers"></span><h2><span class="section-number">7.3.2. </span>Zahlen im Binärsystem<a class="headerlink" href="#zahlen-im-binarsystem" title="Permalink to this heading">#</a></h2>
-<p>Werfen wir einen genaueren Blick aufs <em>Binärsystem</em> oder auch <em>binäre Zahlensystem</em>.
+<p>Werfen wir einen genaueren Blick aufs <em>Binärsystem</em>, auch <em>binäre Zahlensystem</em> genannt.
 Um Zahlen mit <strong>Strom an</strong> und <strong>Strom aus</strong>, also den zwei Zuständen einer Lampe/Transistors/<em>Bit</em> zu repräsentieren, verwenden Computer das <em>Binärsystem</em>.</p>
 <div class="remark admonition" id="remark-number-systems-notation">
 <p class="admonition-title">Notation verschiedener Zahlensysteme</p>
@@ -759,7 +759,7 @@ Eine Zahl als Folge von Ziffern <span class="math notranslate nohighlight">\(b_{
 <p>Zum Beispiel hat <span class="math notranslate nohighlight">\(1101_2\)</span> den Wert</p>
 <div class="math notranslate nohighlight">
 \[1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 0 + 1 = 13.\]</div>
-<p><span class="math notranslate nohighlight">\(1001_2\)</span> (binär) und <span class="math notranslate nohighlight">\(13_{10}\)</span> (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung ist eine andere.
+<p><span class="math notranslate nohighlight">\(1001_2\)</span> (binär) und <span class="math notranslate nohighlight">\(13_{10}\)</span> (dezimal) repräsentieren den gleichen numerischen Wert, lediglich ihre Darstellung—ihr Repräsentant—ist ein anderer.
 Würden Sie fließend Binär sprechen, bräuchten Sie keinerlei Berechnungen um zu wissen welchen Wert <span class="math notranslate nohighlight">\(1001_2\)</span> repräsentiert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -809,7 +809,7 @@ Es folgt unweigerlich, dass</p>
 \[b_{n-1} \cdot 2^{n-2} + \ldots + b_1 \cdot 2^0 = 4.\]</div>
 <p>Wir können erneut durch zwei dividieren und erhalten:</p>
 <div class="math notranslate nohighlight">
-\[b_{n-1} \cdot 2^{n-3} + \ldots + b_2 \cdot 2^0 + b_1 / 2 = 2\]</div>
+\[b_{n-1} \cdot 2^{n-3} + \ldots + b_2 \cdot 2^0 + b_1 / 2 = 2.\]</div>
 <p>Demnach muss <span class="math notranslate nohighlight">\(b_1 = 0\)</span> sein und</p>
 <div class="math notranslate nohighlight">
 \[b_{n-1} \cdot 2^{n-3} + \ldots + b_2 \cdot 2^0 = 2.\]</div>
@@ -821,8 +821,8 @@ Schließlich dividieren wir ein letztes Mal mit 2 und erhalten:</p>
 <div class="math notranslate nohighlight">
 \[b_{n-1} \cdot 2^{n-5} + \ldots + b_3 / 2 = 1/2.\]</div>
 <p>Demnach muss <span class="math notranslate nohighlight">\(b_3 = 1\)</span> gelten.
-Alle höherwertigen Bits nehmen den Wert <span class="math notranslate nohighlight">\(0\)</span> an.</p>
-<p>Zusammenfassend ist demnach</p>
+Alle höherwertigen Bits nehmen den Wert <span class="math notranslate nohighlight">\(0\)</span> an.
+Zusammenfassend ist demnach</p>
 <div class="math notranslate nohighlight">
 \[1 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 9_{10} = 1001_2\]</div>
 <p>Dieser Vorgang scheint komplizierter als er in Wirklichkeit ist.
@@ -855,7 +855,7 @@ Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
     &amp;\quad \, {\class{hm-lightblue} 0} \cdot 32 + {\class{hm-lightblue} 0} \cdot 16 +  {\class{hm-lightblue} 1} \cdot 8 + {\class{hm-lightblue} 1} \cdot 4 + 1 \cdot 2 + {\class{hm-lightblue} 1} \cdot 1\\
     &amp;= 1024 + 512 + 256 + 64 + 8 + 4 + 2 + 1.
   \end{split}\end{split}\]</div>
-<p>Der folgende <code class="docutils literal notranslate"><span class="pre">Python</span></code> code wandelt eine Dezimalzahl in eine Binärzahl (als Liste von <span class="math notranslate nohighlight">\(0, 1\)</span>, gelesen von links nach rechts) um.</p>
+<p>Der folgende <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Code wandelt eine Dezimalzahl in eine Binärzahl (als Liste von 0, 1, gelesen von links nach rechts) um.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformation einer Zahl in Decimaldarstellung zu ihrer Binärdarstellung</span>
@@ -881,10 +881,10 @@ Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.</p>
 <section id="ganze-zahlen">
 <span id="sec-integers"></span><h3><span class="section-number">7.3.2.2. </span>Ganze Zahlen<a class="headerlink" href="#ganze-zahlen" title="Permalink to this heading">#</a></h3>
 <p>Uns steht kein Minus- oder Pluszeichen zur Verfügung.
-Alles was der Computer kennt sind Bits und Bytes.
+Alles was der Computer kennt sind <a class="reference internal" href="#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="#def-byte"><span class="std std-ref">Bytes</span></a>.
 Wollen wir also anstatt der natürlichen Zahlen die ganzen Zahlen repräsentieren, müssen wir das Vorzeichen irgendwie codieren.</p>
 <p>Wollen wir ganze Zahlen repräsentieren so entscheidet das höchste <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a>, ob es sich bei der Zahl um eine negative oder positive Zahl handelt.
-Eine Möglichkeit wäre es dieses höchste <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> als <code class="docutils literal notranslate"><span class="pre">-</span></code> zu interpretieren, wenn es den Wert 1 hat und als <code class="docutils literal notranslate"><span class="pre">+</span></code> andernfalls.
+Eine Möglichkeit bestünde darin, dieses höchste <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> als <code class="docutils literal notranslate"><span class="pre">-</span></code> zu <a class="reference internal" href="2-interpretation.html#def-interpretation"><span class="std std-ref">interpretieren</span></a>, wenn es den Wert 1 hat und als <code class="docutils literal notranslate"><span class="pre">+</span></code> andernfalls.
 In diesem Fall könnten wir Gleichung <a class="reference internal" href="#equation-eq-binary-natural">(7.2)</a> verwenden, mit dem Unterschied, dass wir das höchste Bit ausschließen und stattdessen als Vorzeichen interpretieren.</p>
 <p>So wäre</p>
 <div class="math notranslate nohighlight">
@@ -912,12 +912,13 @@ Das höchste Bit wird dabei nicht als Vorzeichen, sondern als negativer Anteil i
     b_{n-1} \ldots b_0 &amp;= -b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}2} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}2} + \ldots + b_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0}\\
     &amp;= -b_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} + \sum\limits_{{\class{hm-lightblue} i}=0}^{n-2} b_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i}.
   \end{split}\end{split}\]</div>
-<p>Sofern es sich um eine negative Zahl handelt, d. h. <span class="math notranslate nohighlight">\(b_{n-1} = 1\)</span>, so können wir die Gleichung <a class="reference internal" href="#equation-eq-binary-integer">(7.4)</a> auch umschreiben, indem wir das <a class="reference internal" href="#def-complement"><span class="std std-ref">Komplement</span></a> eines jeden <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> verwenden, daher der Name <em>Zweierkomplement</em>:</p>
+<p>Sofern es sich um eine negative Zahl handelt, d.h. <span class="math notranslate nohighlight">\(b_{n-1} = 1\)</span>, können wir die Gleichung <a class="reference internal" href="#equation-eq-binary-integer">(7.4)</a> auch umschreiben, indem wir das <a class="reference internal" href="#def-complement"><span class="std std-ref">Komplement</span></a> eines jeden <a class="reference internal" href="#def-bit"><span class="std std-ref">Bit</span></a> verwenden.
+Daher der Name <em>Zweierkomplement</em>:</p>
 <div class="math notranslate nohighlight" id="equation-eq-binary-integer-complement">
 <span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-binary-integer-complement" title="Permalink to this equation">#</a></span>\[\begin{split}  \begin{split}
     b_{n-1} \ldots b_0 &amp;= -\overline{b}_{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} \cdot 2^{\class{hm-lightblue} n\class{hm-lightblue}-\class{hm-lightblue}1} - \ldots - \overline{b}_{\class{hm-lightblue} 0} \cdot 2^{\class{hm-lightblue} 0} - 1\\
     &amp;= -\left( \sum\limits_{{\class{hm-lightblue} i}=0}^{n-1} \overline{b}_{\class{hm-lightblue} i} \cdot 2^{\class{hm-lightblue} i} \right) - 1,
-    \quad  \text{falls $b_{n-1} = 1$,}
+    \quad  \text{falls} \quad b_{n-1} = 1,
   \end{split}\end{split}\]</div>
 <p>wobei</p>
 <div class="math notranslate nohighlight">
