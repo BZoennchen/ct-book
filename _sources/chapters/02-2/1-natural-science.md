@@ -1,7 +1,7 @@
 (sec-information-natural-sciences)=
 # Naturwissenschaften
 
-Beginnen wir mit der naturwissenschaftlichen Perspektive.
+Beginnen wir mit der naturwissenschaftlichen und strukturwissenschaftlichen Perspektive.
 Wir konzentieren uns auf die Informatik und Physik.
 In beiden Disziplinen wird Information über die sog. *Entropie* definiert, welche gewöhnlich mit dem Grad der Unordnung, Zufälligkeit oder Unsicherheit assoziiert wird.
 
@@ -12,7 +12,7 @@ Ihre Hände sind kalt und Sie halten die warme Teetasse in den Händen.
 Wir können Ihre Hände und die Tasse als physikalisch abgeschlossenes System annehmen.
 Nun ist für uns absolut verständlich, dass sich Ihre Hände erwärmen.
 Das hat jedoch nichts mit der Energieerhaltung des Systems zu tun.
-Es wäre nach dem Energieerhaltungssatz durchaus möglich, dass Ihre Hände wärme der Tasse zuführen, obwohl die Tasse deutlich wärmer ist.
+Es wäre nach dem Energieerhaltungssatz durchaus möglich, dass Ihre Hände der Tasse Wärme zuführen, obwohl die Tasse deutlich wärmer ist.
 Es wäre theoretisch sogar möglich, dass ein Ei, was Ihnen auf dem Boden zersprungen ist, wieder zu Ihnen zurückspringt.
 
 Beide eben beschriebenen Prozesse nennen Physiker *irreversibel*.
@@ -20,11 +20,14 @@ Damit ist gemeint, dass solche Prozesse durch kleine Änderungen in der Umgebung
 Wir würden vermutlich an unserem Verstand zweifeln, sollte so etwas passieren.
 Warum dies nicht geschieht und weshalb sich Ihre Hände erwärmen, liegt an der *Entropie* bzw. an der *Entropieänderung*.
 
+Im fall der Tasse, geht Wärmeenergie von einem konzentrierteren (weniger entropischen) Zustand zu einem weniger konzentrierten (höher entropischen) Zustand über.
+Einfach ausgedrückt: Die Wärmeenergie verteilt sich gleichmäßiger zwischen Tasse und Händen, was zu einer Zunahme der gesamten Entropie des Systems führt.
+
 ```{admonition} Irreversible Prozesse
 :class: remark
 :name: remark-irreversible-process
 
-Findet in einem abgeschlossenen System ein *irreversibler Prozess* statt (einer der sich nicht umkehren lässt), so nimmt die *Entropie* dieses Systems immer zu. Sie nimmt niemals ab!
+Findet in einem *abgeschlossenen System* ein *irreversibler Prozess* statt (einer der sich nicht umkehren lässt), so nimmt die *Entropie* dieses Systems immer zu. Sie nimmt niemals ab!
 ```
 
 Blicken wir auf ein weiteres Beispiel.
@@ -57,7 +60,8 @@ Wir haben eine Menge an Zuständen, die das System annehmen kann.
 Im Fall unsere Teetasse wäre dies beispielsweise eine noch mehr abgekühlte Hand oder eine wärmere Hand.
 Jeder (Makro-)Zustand hat eine bestimmte Anzahl an unterschiedlichen Teilchenanordnungen bzw. Energieverteilungen (Mikrozuständen).
 Besitzt jeder Mikrozustand die gleiche Wahrscheinlichkeit, so steigt die Wahrscheinlichkeit eines Makrozustands mit der Anzahl seiner möglichen Mikrozustände.
-Und da das Ei, welches Ihnen entgegen springt, derart wenige Mikrozustände hat, tritt dieser Zustand niemals ein.
+Für eine perfekt verteilte Wärme gibt es die meisten Mikrozustände, d.h. jener Markrozustand ist am wahrscheinlichsten und wird so über kurz oder lang eintreten.
+Und da das Ei, welches Ihnen entgegen springt, hat derart wenige Mikrozustände, sodass dieser Zustand niemals eintritt.
 
 ```{admonition} Entropie (Physik)
 :class: definition

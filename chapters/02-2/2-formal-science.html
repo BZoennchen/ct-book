@@ -79,7 +79,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
     <link rel="search" title="Suche" href="../../search.html" />
-    <link rel="next" title="8.3. Kritik" href="3-critic.html" />
+    <link rel="next" title="8.3. Mehr als reine Syntax" href="3-critic.html" />
     <link rel="prev" title="8.1. Naturwissenschaften" href="1-natural-science.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="de"/>
@@ -230,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="information.html">8. Was ist Information?</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1-natural-science.html">8.1. Naturwissenschaften</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">8.2. Strukturwissenschaften</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-critic.html">8.3. Kritik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-critic.html">8.3. Mehr als reine Syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4-humanics.html">8.4. Geisteswissenschaften</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5-summary.html">8.5. Zusammenfassung</a></li>
 </ul>
@@ -607,7 +607,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nachrichtentechnik">8.2.1. Nachrichtentechnik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nachrichtentechnik">8.2.1. Nachrichtentechnik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-und-sinn">8.2.1.1. Information und Sinn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entropie-informatik">8.2.1.2. Entropie (Informatik)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informationstheorie">8.2.2. Informationstheorie</a></li>
 </ul>
             </nav>
@@ -623,16 +627,15 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="strukturwissenschaften">
 <span id="sec-information-cs"></span><h1><span class="section-number">8.2. </span>Strukturwissenschaften<a class="headerlink" href="#strukturwissenschaften" title="Permalink to this heading">#</a></h1>
 <section id="nachrichtentechnik">
-<h2><span class="section-number">8.2.1. </span>Nachrichtentechnik<a class="headerlink" href="#nachrichtentechnik" title="Permalink to this heading">#</a></h2>
+<span id="sec-informationtheorie"></span><h2><span class="section-number">8.2.1. </span>Nachrichtentechnik<a class="headerlink" href="#nachrichtentechnik" title="Permalink to this heading">#</a></h2>
 <p>1948 griff Claude E. Shannon den physikalischen Begriff der <em>Entropie</em> auf und übetrug ihn auf die Nachrichtenübertragung.
 Sein Modell prägte die Informatik über viele Jahre und ist heute noch relevant.
 Es ist äußerst wichtig zu verstehen, dass es Shannon um die <em>Informationsübertragung</em> ging.
-Sie ist für sein Modell von zentraler Bedeutung.
-So schreibt er in <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id6" title="Claude E. Shannon. A mathematical theory of communication. Bell Syst. Tech. J., 27(3):379-423, 1948.">Shannon, 1948</a>]</span>:</p>
+Sie ist für sein Modell von zentraler Bedeutung.</p>
 <blockquote>
-<div><p>Frequently the messages have meaning; that is, they refer to or are correlated according to some system with certain physical or conceptual entities. These semantic aspects of communication are irrelevant to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design – Claude E. Shannon</p>
+<div><p>Frequently the messages have meaning; that is, they refer to or are correlated according to some system with certain physical or conceptual entities. These semantic aspects of communication are irrelevant to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design – <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id6" title="Claude E. Shannon. A mathematical theory of communication. Bell Syst. Tech. J., 27(3):379-423, 1948.">Shannon, 1948</a>]</span></p>
 </div></blockquote>
-<p>Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung (Semantik) gehört, doch befand er diese für die <em>Informationsübertragung</em> über ein Medium als irrelevant.</p>
+<p>Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung (<a class="reference internal" href="../02-1/2-interpretation.html#def-semantik-semiotik"><span class="std std-ref">Semantik</span></a>) gehört, doch befand er diese für die <em>Informationsübertragung</em> über ein Medium als irrelevant.</p>
 <p>Die Übertragung besteht dabei aus mehreren Teilen:</p>
 <ol class="arabic simple">
 <li><p>Eine (Informations)-<strong>Quelle</strong> versendet eine <strong>Nachricht</strong>.</p></li>
@@ -652,6 +655,8 @@ So schreibt er in <span id="id1">[<a class="reference internal" href="../misc/bi
 <div><p>If the number of [possible] messages […] is finite then this number […] can be regarded as a measure of the information produced when one message [… from the set of possible messages], all
 choices being equally likely – Claude E. Shannon</p>
 </div></blockquote>
+<section id="information-und-sinn">
+<h3><span class="section-number">8.2.1.1. </span>Information und Sinn<a class="headerlink" href="#information-und-sinn" title="Permalink to this heading">#</a></h3>
 <p>Betrachten wir die folgenden beiden Zeichenfolgen:</p>
 <ol class="arabic simple">
 <li><p>Prüfung bestanden</p></li>
@@ -660,16 +665,24 @@ choices being equally likely – Claude E. Shannon</p>
 <p>Nach Shannon’s Definition enthalten beide Symbolketten/Zeichenfolgen gleich viel Information.
 Die Anzahl der <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a>, welche wir bräuchten um die beiden Nachrichten auf einem Kanal zu übertragen ist dieselbe.
 Intuitiv würden wir sagen, dass die erste Nachricht mehr Information beinhaltet.
-Dies liegt daran, dass wir automatisch die <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> (Bedeutung) einer Zeichenfolge betrachten.
-Shannon’s Definition ist jedoch rein <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">syntaktisch</span></a>, denn Maschinen fehlt (bis heute) die Eigenschaft der semantischen Betrachtung.
-In der Informatik gibt es deshalb (noch) keine befriedigende Definition von Information, die auch der Bedeutung der betrachteten Information gerecht wird und selbst die syntaktischen Definitionen sind nicht besonders aussagekräftig.
-Das mag überraschen, ist <em>Information</em> doch zentraler Forschungsbestandteil der Informatik.</p>
+Dies liegt daran, dass wir automatisch die <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik-semiotik"><span class="std std-ref">Semantik</span></a> (Bedeutung) einer Zeichenfolge betrachten.
+Wir verwechseln dabei die Begriffe <strong>Information</strong> und <strong>Sinn</strong>.
+Das heißt beide Nachrichten enthalten gleich viel Information aber die zweite <em>ergibt keinen Sinn</em>.</p>
+<p>Shannon’s Definition ist rein <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">syntaktisch</span></a>, denn Maschinen fehlt (bis heute) die Eigenschaft der semantischen Betrachtung—d.h. der Sinnerschließung oder der <a class="reference internal" href="../02-1/2-interpretation.html#sec-semiotik"><span class="std std-ref">semiotischen</span></a> Interpretation.
+In der Informatik gibt es deshalb (noch) keine befriedigende Definition des Sinns, welcher der Bedeutung der betrachteten Information gerecht wird.
+Im Sinne der Informationsverarbeitung bleiben wir bei der <a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">syntaktischen</span></a> Betrachtung.
+Jedoch sei erneut betont, dass sich die Bedeutung oder der Sinn in Informationssysteme einschleicht, wenn diese Auswirkungen auf das gesellschaftliche Leben haben.
+Ein System, welches Ihnen automatisch einen Kredit aufgrund Ihrer getätigten Ausgaben verweigert, tut dies Aufgrund des Sinns den die Bank aus den Informationen zieht.</p>
 <p>Gehen wir zurück zu unserem Einführungsbeispiel in der U-Bahn.
 Falls der Wetterbericht Ihnen lediglich mitteilen kann ob es regnet oder nicht, so ist der Informationsgehalt von „es regnet“ gering.
 Wenn aber der Wetterbericht Ihnen unterschiedliche Arten von Regen oder andere Wetterlagen berichten kann, so trägt eine dieser konkreten Wetterlagen einen großen Informationsgehalt in sich.
-Auch hier sehen wir aber die schwäche dieser Definition: Ob es draußen 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
-Doch ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon’s Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.</p>
-<p>Einer der Vorzüge der (strukturwissenschaftlichen) Definition ist jedoch, dass wir ein Maß für den <em>Informationsgehalt</em> definieren können.
+Ob es draußen 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
+Das heißt zwei durchaus sehr unterschiedliche Informationen können den annähernd gleichen Sinn ergeben.
+Ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon’s Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.</p>
+</section>
+<section id="entropie-informatik">
+<h3><span class="section-number">8.2.1.2. </span>Entropie (Informatik)<a class="headerlink" href="#entropie-informatik" title="Permalink to this heading">#</a></h3>
+<p>Einer der Vorzüge der (strukturwissenschaftlichen) Definition ist, dass wir ein Maß für den <em>Informationsgehalt</em> definieren können.
 Shannon misst den Informationsgehalt einer Nachricht über die <em>Entropie</em>, welche uns in der Physik schon über den Weg gelaufen ist.
 Die Entropie in der Informatik ist ein Maß für den <em>mittleren Informationsgehalt</em> einer <em>Nachricht</em>.</p>
 <p>Betrachten wir eine bestimmte endliche Menge an Zeichen die bei einer Übertragung auftauchen können.
@@ -786,7 +799,7 @@ Beim Zusammensetzen der Einzelteile, also der Kombination von Symbolen, entsteht
 <p>Eine <em>Information</em> ist eine übertragene Nachricht und kann als die Summe ihrer Einzelteile betrachtet werden.</p>
 </div>
 <p>Shannons Informationsbegriff ignoriert jedwede <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> und verdinglicht die Information, dennoch ist er aus technischer Sicht sehr nützlich.
-Sie hilft uns zu bestimmen wie viel Zeichen (<a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a>) notwendig sind, um etwas auszudrücken.
+Er hilft uns zu bestimmen wie viel Zeichen (<a class="reference internal" href="../02-1/2-interpretation.html#def-syntax"><span class="std std-ref">Syntax</span></a>) notwendig sind, um etwas auszudrücken.
 Eine hohe <a class="reference internal" href="#def-entropie"><span class="std std-ref">Entropie</span></a> bedeutet in diesem Zusammenhang, dass wir unsere Zeichen sparsam nutzen.
 Außerdem kann die Entropie als Informationsgehalt aus Sicht der digitalen Maschine verstanden werden, da sie keinerlei Semantik a priori kennt.
 Zwar kann der Computer, zum Beispiel zwei Binärzahlen addieren, doch hat er keinerlei Vorstellung vom Gegenstand der Zahl.
@@ -795,6 +808,7 @@ Alle Manipulationen sind syntaktischer Natur, d.h., eine Manipulation von Zeiche
 <p class="admonition-title">Formale Methoden</p>
 <p>Formale Methoden sind unter anderem eine Anstrengung, um wesentliche semantische Aspekte von Sprache und dem Denken auf regelgeleitete, rein syntaktische Symbolmanipulation zurückzuführen.</p>
 </div>
+</section>
 </section>
 <section id="informationstheorie">
 <span id="sec-kolmogorow"></span><h2><span class="section-number">8.2.2. </span>Informationstheorie<a class="headerlink" href="#informationstheorie" title="Permalink to this heading">#</a></h2>
@@ -955,7 +969,7 @@ Die <a class="reference internal" href="../02-1/2-interpretation.html#def-semant
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">weiter</p>
-        <p class="prev-next-title"><span class="section-number">8.3. </span>Kritik</p>
+        <p class="prev-next-title"><span class="section-number">8.3. </span>Mehr als reine Syntax</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -977,7 +991,11 @@ Die <a class="reference internal" href="../02-1/2-interpretation.html#def-semant
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nachrichtentechnik">8.2.1. Nachrichtentechnik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nachrichtentechnik">8.2.1. Nachrichtentechnik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-und-sinn">8.2.1.1. Information und Sinn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entropie-informatik">8.2.1.2. Entropie (Informatik)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informationstheorie">8.2.2. Informationstheorie</a></li>
 </ul>
   </nav></div>

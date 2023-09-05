@@ -12,17 +12,17 @@ kernelspec:
 (sec-information-cs)=
 # Strukturwissenschaften
 
+(sec-informationtheorie)=
 ## Nachrichtentechnik 
 
 1948 griff Claude E. Shannon den physikalischen Begriff der *Entropie* auf und übetrug ihn auf die Nachrichtenübertragung.
 Sein Modell prägte die Informatik über viele Jahre und ist heute noch relevant.
 Es ist äußerst wichtig zu verstehen, dass es Shannon um die *Informationsübertragung* ging.
 Sie ist für sein Modell von zentraler Bedeutung.
-So schreibt er in {cite}`shannon:1948`:
 
->Frequently the messages have meaning; that is, they refer to or are correlated according to some system with certain physical or conceptual entities. These semantic aspects of communication are irrelevant to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design -- Claude E. Shannon
+>Frequently the messages have meaning; that is, they refer to or are correlated according to some system with certain physical or conceptual entities. These semantic aspects of communication are irrelevant to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design -- {cite}`shannon:1948`
 
-Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung (Semantik) gehört, doch befand er diese für die *Informationsübertragung* über ein Medium als irrelevant.
+Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung ([Semantik](def-semantik-semiotik)) gehört, doch befand er diese für die *Informationsübertragung* über ein Medium als irrelevant.
 
 Die Übertragung besteht dabei aus mehreren Teilen:
 
@@ -45,6 +45,8 @@ In diesem Modell ist die Nachricht/Symbolfolge/Zeichenfolge eine *Information* u
 > If the number of [possible] messages [...] is finite then this number [...] can be regarded as a measure of the information produced when one message [... from the set of possible messages], all
 choices being equally likely -- Claude E. Shannon
 
+### Information und Sinn
+
 Betrachten wir die folgenden beiden Zeichenfolgen:
 
 1. Prüfung bestanden
@@ -53,18 +55,26 @@ Betrachten wir die folgenden beiden Zeichenfolgen:
 Nach Shannon's Definition enthalten beide Symbolketten/Zeichenfolgen gleich viel Information.
 Die Anzahl der [Bits](def-bit), welche wir bräuchten um die beiden Nachrichten auf einem Kanal zu übertragen ist dieselbe.
 Intuitiv würden wir sagen, dass die erste Nachricht mehr Information beinhaltet.
-Dies liegt daran, dass wir automatisch die [Semantik](def-semantik) (Bedeutung) einer Zeichenfolge betrachten.
-Shannon's Definition ist jedoch rein [syntaktisch](def-syntax), denn Maschinen fehlt (bis heute) die Eigenschaft der semantischen Betrachtung.
-In der Informatik gibt es deshalb (noch) keine befriedigende Definition von Information, die auch der Bedeutung der betrachteten Information gerecht wird und selbst die syntaktischen Definitionen sind nicht besonders aussagekräftig.
-Das mag überraschen, ist *Information* doch zentraler Forschungsbestandteil der Informatik.
+Dies liegt daran, dass wir automatisch die [Semantik](def-semantik-semiotik) (Bedeutung) einer Zeichenfolge betrachten.
+Wir verwechseln dabei die Begriffe **Information** und **Sinn**.
+Das heißt beide Nachrichten enthalten gleich viel Information aber die zweite *ergibt keinen Sinn*.
+
+Shannon's Definition ist rein [syntaktisch](def-syntax), denn Maschinen fehlt (bis heute) die Eigenschaft der semantischen Betrachtung---d.h. der Sinnerschließung oder der [semiotischen](sec-semiotik) Interpretation.
+In der Informatik gibt es deshalb (noch) keine befriedigende Definition des Sinns, welcher der Bedeutung der betrachteten Information gerecht wird.
+Im Sinne der Informationsverarbeitung bleiben wir bei der [syntaktischen](def-syntax) Betrachtung.
+Jedoch sei erneut betont, dass sich die Bedeutung oder der Sinn in Informationssysteme einschleicht, wenn diese Auswirkungen auf das gesellschaftliche Leben haben.
+Ein System, welches Ihnen automatisch einen Kredit aufgrund Ihrer getätigten Ausgaben verweigert, tut dies Aufgrund des Sinns den die Bank aus den Informationen zieht. 
 
 Gehen wir zurück zu unserem Einführungsbeispiel in der U-Bahn.
 Falls der Wetterbericht Ihnen lediglich mitteilen kann ob es regnet oder nicht, so ist der Informationsgehalt von "es regnet" gering.
 Wenn aber der Wetterbericht Ihnen unterschiedliche Arten von Regen oder andere Wetterlagen berichten kann, so trägt eine dieser konkreten Wetterlagen einen großen Informationsgehalt in sich.
-Auch hier sehen wir aber die schwäche dieser Definition: Ob es draußen 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
-Doch ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon's Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.
+Ob es draußen 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
+Das heißt zwei durchaus sehr unterschiedliche Informationen können den annähernd gleichen Sinn ergeben.
+Ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon's Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.
 
-Einer der Vorzüge der (strukturwissenschaftlichen) Definition ist jedoch, dass wir ein Maß für den *Informationsgehalt* definieren können.
+### Entropie (Informatik)
+
+Einer der Vorzüge der (strukturwissenschaftlichen) Definition ist, dass wir ein Maß für den *Informationsgehalt* definieren können.
 Shannon misst den Informationsgehalt einer Nachricht über die *Entropie*, welche uns in der Physik schon über den Weg gelaufen ist.
 Die Entropie in der Informatik ist ein Maß für den *mittleren Informationsgehalt* einer *Nachricht*.
 
@@ -210,7 +220,7 @@ Eine *Information* ist eine übertragene Nachricht und kann als die Summe ihrer 
 ```
 
 Shannons Informationsbegriff ignoriert jedwede [Semantik](def-semantik) und verdinglicht die Information, dennoch ist er aus technischer Sicht sehr nützlich.
-Sie hilft uns zu bestimmen wie viel Zeichen ([Syntax](def-syntax)) notwendig sind, um etwas auszudrücken.
+Er hilft uns zu bestimmen wie viel Zeichen ([Syntax](def-syntax)) notwendig sind, um etwas auszudrücken.
 Eine hohe [Entropie](def-entropie) bedeutet in diesem Zusammenhang, dass wir unsere Zeichen sparsam nutzen.
 Außerdem kann die Entropie als Informationsgehalt aus Sicht der digitalen Maschine verstanden werden, da sie keinerlei Semantik a priori kennt.
 Zwar kann der Computer, zum Beispiel zwei Binärzahlen addieren, doch hat er keinerlei Vorstellung vom Gegenstand der Zahl.
