@@ -1,0 +1,929 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="de" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>7.5. Der Informationskreislauf &#8212; Computational Thinking</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JTQKVRRRDB');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/02-1/4-information-flow';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="7.6. Berechenbarkeit" href="5-hardware-equals-software.html" />
+    <link rel="prev" title="7.4. Manipulation" href="3-manipulation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="de"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-HM-small.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo-HM-small.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Computational Thinking
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einleitung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-1/course.html">1. Kurskonzept</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/1-content.html">1.1. Inhalt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/2-reading.html">1.2. Lesehinweise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/3-teaching.html">1.3. Lehrkonzept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/4-learn-how-to-think.html">1.4. Denken lernen?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-2/what-is-ct.html">2. Was ist Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/1-informatics-and-ct.html">2.1. Informatik und CT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/2-repetition-is-the-key.html">2.2. Wiederholung als Grundlage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/3-quizz.html">2.3. Quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-3/history.html">3. Geschichte der Computer und Algorithmen</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/1-ancient.html">3.1. Antike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/2-middleages.html">3.2. Mittelalter bis 19. Jahrhundert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/3-today.html">3.3. 19. Jahrhundert bis heute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/4-future.html">3.4. Ausblick</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-4/why-ct.html">4. Warum Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/1-intrinsic-value.html">4.1. Intrinsischer Wert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/2-usefulness.html">4.2. Langfristiger Nutzen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/3-self-determination.html">4.3. Selbstbestimmt durch CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-5/sorting.html">5. Lasst uns Denken</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/1-sort-cards.html">5.1. Karten sortieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/2-sort-cards-with-python.html">5.2. Karten sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/3-sort-numbers.html">5.3. Zahlen sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/4-sort-anything.html">5.4. Allgemeines Sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/5-quizz.html">5.5. Quizz</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theorie</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-0/math.html">6. Mathematische Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/1-notation.html">6.1. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/2-set.html">6.2. Mengen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/3-tuple.html">6.3. Tupel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/4-relation.html">6.4. Relationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/5-function.html">6.5. Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/6-operations.html">6.6. Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/7-induction.html">6.7. Vollständige Induktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="information-processing.html">7. Der digitale Computer</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-basics.html">7.1. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-interpretation.html">7.2. Interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-representation.html">7.3. Repräsentationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-manipulation.html">7.4. Manipulation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.5. Der Informationskreislauf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-hardware-equals-software.html">7.6. Berechenbarkeit</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-2/information.html">8. Was ist Information?</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/1-natural-science.html">8.1. Naturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/2-formal-science.html">8.2. Strukturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/3-critic.html">8.3. Mehr als reine Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/4-humanics.html">8.4. Geisteswissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/5-summary.html">8.5. Zusammenfassung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-3/languages.html">9. Programmiersprachen</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/1-abstraction.html">9.1. Abstraktion des Computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/2-success-criteria.html">9.2. Erfolgsfaktoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/3-imperative-vs-functional.html">9.3. Imperativ und funktional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/4-language-evolution.html">9.4. Sprachevolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/5-python.html">9.5. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/6-diversity.html">9.6. Diversität</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-4/the-art-of-programming.html">10. Die Kunst des Programmierens</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/1-algorithms.html">10.1. Algorithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/2-programming.html">10.2. Programmieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/3-control-structures.html">10.3. Kontrollstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/4-data-structures.html">10.4. Datenstrukturen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-1/introduction.html">11. Programmieren in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-2/python-environment.html">12. Das Python Ökosystem</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/1-installation.html">12.1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/2-run.html">12.2. Python ausführen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/3-notebooks.html">12.3. Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/4-modules.html">12.4. Module und Pakete</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-3/intro.html">13. Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/1-variables.html">13.1. Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/2-expressions.html">13.2. Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/3-invoking-functions.html">13.3. Funktionsaufrufe</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-4/intro.html">14. Datentypen (Grundlagen)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/1-data-types.html">14.1. Pythons Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/2-int.html">14.2. Ganze Zahlen - int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/3-float.html">14.3. Fließkommazahlen - float</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/4-bool.html">14.4. Wahrheitswerte - bool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/5-list.html">14.5. Listen - list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/6-tuple.html">14.6. Tupel - tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/7-string.html">14.7. Zeichenketten - str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/8-set.html">14.8. Mengen - set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/9-dict.html">14.9. Wörterbücher - dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/10-range.html">14.10. Zahlenbereich - range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/11-typing-in-python.html">14.11. Python’s Typisierung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-5/intro.html">15. Datentypen (Fortsetzung)</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/1-type-systems.html">15.1. Dynamische und statische Typisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/2-why-data-types.html">15.2. Existenzberechtigung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/3-change-of-interpretation.html">15.3. Interpretationswechsel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/4-kind-of-data-types.html">15.4. Arten von Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/5-primitive-data-types.html">15.5. Primitive Datentypen in Python?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-6/intro.html">16. Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/1-purity.html">16.1. Reinheit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/2-definition.html">16.2. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/3-namespaces.html">16.3. Namensräume und Sichtbarkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/4-lambdas.html">16.4. Anonyme Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/5-nested-functions.html">16.5. Umschlossene Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/x-recursion.html">16.6. Rekursive Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/6-first-class-functions.html">16.7. First-Class-Funktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-7/intro.html">17. Kontrollstrukturen</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/1-cases.html">17.1. Fallunterscheidungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/2-loops.html">17.2. Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/3-comprehensions.html">17.3. Comprehensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-8/intro.html">18. Objektorientierte Programmierung</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/1-class-and-objects.html">18.1. Klassen und Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">18.2. Vererbung, Kapselung und Polymorphie</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-9/cpython.html">19. CPython</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/1-impl.html">19.1. Implementierungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/2-ref.html">19.2. Referenzimplementierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/3-interpreter.html">19.3. Interpreter und Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/4-disassembly.html">19.4. Zerlegung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/5-extending.html">19.5. CPython erweitern</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CT in Aktion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/robo-world.html">20. Roboterwelt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/dive-bell.html">21. Sprechen in der Taucherglocke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/image-representation.html">22. Binäres Zeichnen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/memory.html">23. Speicher - alles ist eine Liste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/name-register.html">24. Namensregister</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../misc/bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Quell-Repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/02-1/4-information-flow.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/02-1/4-information-flow.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Öffnen Sie ein Problem"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Laden Sie diese Seite herunter">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/02-1/4-information-flow.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Quelldatei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="In PDF drucken"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Vollbildmodus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Suche" aria-label="Suche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Der Informationskreislauf</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Inhalt </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-von-neumann-architektur">7.5.1. Die Von-Neumann-Architektur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-betriebssystem">7.5.2. Das Betriebssystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-ausfuhren">7.5.3. Programme ausführen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-eva-kreislauf">7.5.4. Der EVA-Kreislauf</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="der-informationskreislauf">
+<span id="sec-information-flow"></span><h1><span class="section-number">7.5. </span>Der Informationskreislauf<a class="headerlink" href="#der-informationskreislauf" title="Permalink to this heading">#</a></h1>
+<p>Sie kennen nun die vier grundlegenden Aufgaben eines Computers und wissen wie er aus den zwei Zuständen <strong>Strom aus</strong> und <strong>Strom an</strong> Informationen der unterschiedlichsten Art repräsentieren kann.
+Zudem haben wir uns angesehen, wie aus primitiven boolschen Operationen, welche über Gatter/Schaltungen realisiert werden, komplexe Berechnungen entstehen.</p>
+<p>Bereits an dieser Stelle wird deutlich, dass <em>Abstraktion</em> und <em>Komposition</em> eine zentrale Rolle in der Informatik spielen.
+Das konkrete Rasterbild ist auf der abstrakten Ebene nichts anderes als eine Folge von 0 und 1.
+Durch die Komposition und Hintereinanderschaltung/Wiederholung einfacher Gatter, entstehen aus primitiven Operationen komplexe Berechnungen.</p>
+<p>Ein einfacher <span class="math notranslate nohighlight">\(n\)</span>-Bit-Addierer gleicht einem Taschenrechner, doch ist ein Taschenrechner noch kein vollwertiger Computer.
+Manche Taschenrechner lassen sich zwar Programmieren, doch sind sie nicht im Stande all das zu berechnen, was Informatiker*innen als <a class="reference internal" href="5-hardware-equals-software.html#def-turing-computable"><span class="std std-ref">berechenbar</span></a> wahrnehmen.
+Anders als ein Taschenrechner, ist ein Computer <em><a class="reference internal" href="5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-vollständig</span></a></em>.
+Weshalb ist er das?
+Wie wird aus Gattern, elektrischen Leitungen und dem Speicher ein vollwertiger (digitaler) Computer, der alle vier grundlegenden Aspekte der <em>Informationsverarbeitung</em></p>
+<ol class="arabic simple">
+<li><p>Informationen <strong>einlesen</strong>,</p></li>
+<li><p>Informationen <strong>speichern</strong>,</p></li>
+<li><p>Informationen <strong>verarbeiten</strong>, und</p></li>
+<li><p>Informationen <strong>ausgeben</strong></p></li>
+</ol>
+<p>realisiert?</p>
+<section id="die-von-neumann-architektur">
+<span id="sec-von-neumann"></span><h2><span class="section-number">7.5.1. </span>Die Von-Neumann-Architektur<a class="headerlink" href="#die-von-neumann-architektur" title="Permalink to this heading">#</a></h2>
+<p>Bevor wir diese Frage klären brauchen wir ein konzeptionelles Verständnis der wesentlichen Bauteile und deren grundsätzlichen Interaktion miteinander.
+Zusammengenommen bilden sie den <em>digitalen Computer</em>.
+Eine solche Beschreibung bezeichnen wir als <em>Hardware-Architektur</em>.
+Sie kann selbstverständlich unterschiedlich detailliert ausfallen.
+So gibt es auch Beschreibungen einzelner Bauteile die wiederum die Interaktion ihrer Einzelkomponenten beschreiben.</p>
+<p>Wie der Bauplan eines Hauses, in dem festgelegt ist wie Küche und Bad miteinander verbunden sind und wie die Bewohner das Gebäude nutzen können, legt eine Architektur fest, über welche Leitungen beispielsweise der Speicher mit den Recheneinheiten interagiert.</p>
+<figure class="align-default" id="von-neumann-architecture-2">
+<a class="reference internal image-reference" href="../../_images/von-neumann-architecture.png"><img alt="../../_images/von-neumann-architecture.png" src="../../_images/von-neumann-architecture.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 7.12 </span><span class="caption-text">Die Von-Neumann-Architektur auch bekannt als Princeton Architektur.</span><a class="headerlink" href="#von-neumann-architecture-2" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Die <em>Von-Neumann-Architektur</em> ist wohl die bekannteste und zugleich meist verwendete Hardware-Architektur bzw. <em>Rechnerarchitektur</em>, die den Aufbau der Computer beschreibt.
+Jeden Rechner, den Sie je benutzt haben, basiert höchstwahrscheinlich auf dieser Architektur.</p>
+<div class="definition admonition" id="def-main-memory">
+<p class="admonition-title">Arbeitsspeicher</p>
+<p>Der <em>Arbeitsspeicher</em> oder <em>Hauptspeicher</em> oder <em>RAM (Random Access Memory)</em> eines Computers ist jener temporärer Speicher, der die gerade auszuführenden <strong>Programme</strong> oder <strong>Programmteile</strong> und die dabei benötigten <strong>Daten</strong> enthält.
+Er erlaubt den direkten Zugriff auf beliebige Speicheradressen.</p>
+</div>
+<p>Die erste wichtige Komponente ist der sogenannten <em>Hauptspeicher</em>, auch <em>Arbeitsspeicher</em> genannt.
+Im Bild oben haben wir <em>Hauptspeicher</em> und <em>Festplattenspeicher</em> mit Speicher zusammengefasst.
+Was der unterschied dieser beiden Speicherkomponenten ist besprechen wir weiter unten.
+Im <em>Speicher</em> befinden sich die Anweisungen der Informationsmanipulation, d.h. das <strong>auszuführende Programm</strong> als auch alle zu verarbeitenden <strong>Daten</strong>, welche vom Programm verarbeitet werden.</p>
+<div class="definition admonition" id="def-bus">
+<p class="admonition-title">Bus</p>
+<p>Ein <em>Bus</em> ist ein Kommunikationssystem über das <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Bytes</span></a> übetragen werden.
+Der <em>Bus</em> verbindet durch elektrische Leitungen verschiedene Komponenten innerhalb eines Computers oder zwischen mehreren Computern.</p>
+</div>
+<p>Wir sprechen häufig von unterschiedlichen <em>Bus-Teilen</em>, zum Beispiel ist die Grafikkarte über den sogenannten PCI-Express Bus mit dem Rest des Computers verbunden.
+Der <em>interne Bus</em> auch <em>Speicher-Bus</em> oder <em>System-Bus</em> genannt, verbindet alle internen Komponenten eines Computers mit der <em>Hauptplatine</em> (Motherboard/Mainboard).
+Es gibt aber auch <em>Bus-Systeme</em> die unterschiedliche Computer oder andere Geräte (z.B. externen Speicher) miteinander verbinden.</p>
+<p>Die <em>Hauptplatine</em> ist jenes Bauteil auf dem die CPU-nahen Komponenten (CPU, Hauptspeicher, Grafikkarte, interne Bus-Systeme) montiert werden.</p>
+<p>Die <em>Kontrolleinheit</em> besteht aus einer Komposition von Gattern, einem <em>Instruktionsregister</em> sowie einem <a class="reference internal" href="#def-program-counter"><span class="std std-ref">Befehlszeiger</span></a>.
+Sie fungiert als Programminterpreter oder „Mastermind“ und delegiert Aufgaben an die jeweils dafür geeigneten Recheneinheiten weiter.
+Sie ließt die Programmanweisungen aus dem Hauptspeicher und realisiert diese indem sie die <em>arithmetische/logische Einheit</em> mit Instruktionen und den notwendigen, aus dem Hauptspeicher geladenen Daten versorgt.
+Fließkommaoperationen delegiert die Kontrolleinheit häufig an eine spezielle (hier nicht eingezeichnete) <em>Fließkomma-Recheneinheit</em>.
+Der <em>Befehlszeiger</em> beinhaltet eine Hauptspeicheradresse, die auf den aktuelle auszuführenden Befehl im Hauptspeicher zeigt.
+Der Befehl <span class="math notranslate nohighlight">\(\text{ADD}\)</span> steht zum Beispiel für die Addition von zwei ganzen Zahlen.
+Er wird allerdings im Hauptspeicher als Binärfolge abgespeichert!
+Ein solcher Befehl wird aus dem Hauptspeicher ins Instruktionsregister geladen.
+Die Zahlen, die addiert werden sollen, werden ebenfalls von der Kontrolleinheit aus dem Hauptspeicher in Register der arithmetische/logische Einheit geladen.
+Dann wird die arithmetische/logische Einheit aktiviert.
+Diese berechnet das Ergebnis und schreibt es in ein weiteres <a class="reference internal" href="#def-register"><span class="std std-ref">Register</span></a>.
+Die Kontrolleinheit schreibt das Ergebnis an die vom Programm definierte Stelle (Adresse) im Hauptspeicher.</p>
+<p>Die Recheneinheiten (arithmetische/logische Einheit und Fließkomma-Recheneinheit) sind ebenfalls nichts weiter als Kompositionen von Gattern (das was rechnet) kombiniert mit Registern (das was kleine Informationseinheiten enthält), die mit anderen Einheiten über den <a class="reference internal" href="#def-bus"><span class="std std-ref">Bus</span></a> (das was Daten von einer Einheit zur anderen transportiert) verbunden sind.</p>
+<div class="definition admonition" id="def-cpu">
+<p class="admonition-title">Central Processing Unit (CPU)</p>
+<p>Der <em>Hauptprozessor</em> oder <em>Central Processing Unit (CPU)</em> besteht aus Leitungen, Registern, der Kontrolleinheit, der arithmetische/logische Einheit und möglicherweise spezielle Einheiten für bestimmte Berechnungen wie etwa die Fließkomma-Recheneinheit.
+Die CPU ist die Kernkomponente eines Computers, die für die Ausführung von Anweisungen aus Computerprogrammen verantwortlich ist.
+Sie interpretiert und führt Befehle aus dem Arbeitsspeicher aus und verarbeitet Daten, indem sie arithmetische und logische Operationen durchführt.</p>
+</div>
+<p><em>Register</em> sind die kleinsten aber auch schnellsten <em>flüchtigen</em> (engl. volatile) Speichereinheiten.
+Sie sind dafür gedacht die Variablen einer Operation zu halten.
+Addieren wir zum Beispiel zwei Zahlen <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> so werden die Werte aus zwei Registern gelesen, die Gatter verrichten ihre Arbeit und legen das Ergebnis in einem neuen Register ab.
+Der Programmcode hierfür könnte wie folgt aussehen:</p>
+<div class="math notranslate nohighlight">
+\[\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3\]</div>
+<p>Was soviel heißt wie: Addiere Zahl in Register 1 mit Zahl in Register 2 und speicher das Ergebnis in Register 3.
+Register wie auch der Hauptspeicher werden aus den gleichen elektrischen Grundbauteilen wie Gatter konstruiert.
+Sogenannte <em>Flip-Flops</em> können, anders als reine Logikgatter, elektrische Einheiten stabil halten und freigeben.
+Konzeptionell sind sie eine Kombination aus rückgekoppelten Logikgatter.
+Für die Speicherung von Bits benötigen sie allerdings eine Stromversorgung.
+Deshalb sind Register wie auch der Hauptspeicher <em>flüchtig</em> - sie verlieren alle Daten sobald die Stromverbindung unterbrochen wird.</p>
+<div class="definition admonition" id="def-register">
+<p class="admonition-title">Register</p>
+<p><em>Register</em>, sind extrem schnelle kleine flüchtige Speichereinheiten innerhalb der CPU, welche die CPU für viele Operationen verwendet.</p>
+</div>
+<p>Deshalb werden Programme und viele Daten als Binärcode oder in anderen Formaten auf einem <em>persistenten</em> (<em>nicht flüchtigen</em> / engl. <em>non-volatile</em>) Speicher wie einer Festplatte <em>persistent</em> gespeichert.
+Sie werden vor ihrer Ausführung in den Hauptspeicher geladen.
+Wie und von wem?
+Das sehen wir gleich.
+Die <em>Flüchtigkeit</em> der Speicher verleiht ihnen Geschwindigkeit, d.h. es ist möglich in sehr kurzer Zeit Daten von einen <em>flüchtigen</em> Speicher zu lesen und in ihn zu schreiben.
+Der Geschwindigkeitsunterschied ist enorm.
+Anstatt in die nächst gelegene Stadt zu reisen (Hauptspeicher), fliegen wir zum Mond (Festplattenspeicher).</p>
+<figure class="align-default" id="fig-memory-cache-register">
+<a class="reference internal image-reference" href="../../_images/memory-cache-register.png"><img alt="../../_images/memory-cache-register.png" src="../../_images/memory-cache-register.png" style="width: 450px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 7.13 </span><span class="caption-text">Zusammenhang zwischen Größe und Geschwindigkeit der verschiedenen <em>flüchtigen</em> Speicher des Computers.</span><a class="headerlink" href="#fig-memory-cache-register" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<div class="definition admonition" id="def-cache">
+<p class="admonition-title">Cache</p>
+<p>Ein <em>Cache</em> ist ein schneller, temporärer Speicherbereich, der dazu dient, häufig verwendete Daten oder Anweisungen zwischenzuspeichern, um den Zugriff darauf zu beschleunigen.
+Er ist eine Art (kleiner) Puffer.
+Er enthält einen (kleinen) Teil der Daten die zeitlich gesehen gerade verwendet werden.
+Er dient dazu wiederholte Zugriffe auf ein langsames Hintergrundmedium (wie den Hauptspeicher) zu vermeiden.
+Durch die Nähe zum Prozessor oder zu anderen wichtigen Komponenten minimiert der Cache die Zeit, die für den Datenaustausch benötigt wird, und erhöht dadurch die Systemleistung.</p>
+</div>
+<p>Zwischen Hauptspeicher und Register liegen weitere sehr schneller Speicher, die wir als <em>Cache</em> bezeichnen.
+Für unser Verständnis der Funktionsweise können wir sie ignorieren.
+Caches sind deutlich kleiner als der Hauptspeicher.
+Sie beinhalten die Daten die zuletzt von der CPU verwendet wurden.
+Fordert die CPU diese Daten erneut an, so ist der Zugriff über den Cache noch einmal viel schneller als über den Hauptspeicher.
+Dieses Konzept wird verallgemeinert und so gibt es mehrere Caches die hintereinandergeschaltet sind.
+Auch der Cache ist natürlich <em>flüchtig</em>.</p>
+<div class="remark admonition" id="remark-neumann-vs-harvard">
+<p class="admonition-title">Von-Neumann vs. Harvard-Architektur</p>
+<p>Eine weitere beachtenswerte Architektur ist die sog. <em>Harvard-Architektur</em>.
+Im Unterschied zur <em>Von-Neumann-Architektur</em> hat sie zwei unterschiedliche und separierte Speicher, einen für den Programmcode und einen für die zu verarbeitenden Daten.
+Das verkompliziert die Architektur und erfordert mehr Bauteile, jedoch kann die CPU <strong>gleichzeitig</strong> Programmcode laden als auch in den <a class="reference internal" href="#def-main-memory"><span class="std std-ref">Hauptspeicher</span></a> schreiben oder aus ihm lesen.</p>
+</div>
+<p>Wie spielen die verschiedenen Einheiten der Architektur nun zusammen?
+Folgende Beschreibung liefert eine vereinfachte konzeptionelle Antwort:</p>
+<p><em>Eingabegeräte</em> wandeln die eingelesenen Informationen ins Binärsystem um.
+Die <a class="reference internal" href="#def-cpu"><span class="std std-ref">CPU (Central Processing Unit)</span></a> manipuliert Informationen, wobei sie durch den <em>Speicher</em>, d.h. einen Zustand, unterstützt wird.
+Am Ende des Informationskreislaufs wandeln <em>Ausgabegeräte</em> die verarbeiteten Informationen in Bild, Ton und andere Formate um.
+Die <em>Ausgabe</em> des Computers muss nicht zum Konsum für uns Menschen gedacht sein.
+Sie kann auch als <em>Eingabe</em> für andere Computer oder Maschinen dienen.</p>
+<p>Damit die <a class="reference internal" href="2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> und <a class="reference internal" href="2-representation.html#def-byte"><span class="std std-ref">Byte</span></a> nicht durcheinander gelesen, manipuliert und geschrieben werden ist die CPU <em>getaktet</em>.
+Es gibt eine (global) tickende Uhr, die vorgibt wann die Komponenten aktiv werden können.
+Bei jedem Tick oder anders gesagt, in jedem <em>CPU-Zyklus</em>, können die jeweiligen Komponenten aktiv werden.
+Eine CPU, die mit 3 Gigahertz (GHz) getaktet ist, führt 3 Milliarden Zyklen in der Sekunde durch.
+Nicht jede Berechnung oder jeder Speichertransfer benötigt die gleiche Anzahl an Zyklen.
+Zum Beispiel benötigt die Division zweier Zahlen deutlich mehr Zyklen als die Addition.</p>
+</section>
+<section id="das-betriebssystem">
+<h2><span class="section-number">7.5.2. </span>Das Betriebssystem<a class="headerlink" href="#das-betriebssystem" title="Permalink to this heading">#</a></h2>
+<p>Soweit so gut.
+Wie funktioniert das aber im Detail?
+Was passiert zum Beispiel, wenn ich in meinem Textverarbeitungsprogramm die Taste <code class="docutils literal notranslate"><span class="pre">A</span></code> drücke.
+Auf dem Bildschirm erscheint ein <code class="docutils literal notranslate"><span class="pre">A</span></code>-Zeichen, wie ist diese Magie zu erklären?
+Nun bevor wir dazu kommen, müssen wir überlegen was hierzu nötig ist:</p>
+<ol class="arabic simple">
+<li><p>Der Computer muss hochgefahren sein und</p></li>
+<li><p>das Textverarbeitungsprogramm muss gestartet sein.</p></li>
+</ol>
+<p>Wie aber startet der Computer?
+Wie führt er nicht nur einzelne Operationen sondern ein ganzes Programm aus?
+Und wie ist es möglich, dass scheinbar gleichzeitig viele verschiedene Programme auf einem Computer laufen?
+Antworten finden wir wenn wir uns das „Masterprogramm“ eines Computers ansehen: Das <em>Betriebssystem</em>.</p>
+<div class="definition admonition" id="def-operating-system">
+<p class="admonition-title">Betriebssystem</p>
+<p>Das <em>Betriebssystem</em> eines Computers ist ein spezielles Hauptprogramm, welches alle anderen Programme und die Rechnerressourcen des Computers verwaltet.</p>
+</div>
+<p>Das <em>Betriebssystem</em> (z.B. Ubuntu, Windows 10, Mac OS) bestimmt wann, welches Programm, welche Hardware nutzen darf und auf welchen Speicherbereich das jeweilige Programm und der jeweilige Benutzer zugreifen darf.
+Hat ein Computer nur eine CPU (mit nur einen Kern), so erscheint es nur so als würden viele Programme gleichzeitig laufen.
+In der Realität wechselt das Betriebssystem die aktiven Programme fortwährend durch.</p>
+<p>Das <em>Betriebssystem</em> wird beim Start des Computers geladen.
+Diesen Vorgang nennen wir <em>Booten</em>.
+Aber wie soll das funktionieren?
+Braucht es nicht ein Programm um das Betriebssystem zu laden und braucht dieses Programm nicht wieder ein Programm um es zu laden?
+Befinden wir uns nicht in einem Henne-Ei-Problem?</p>
+<div class="definition admonition" id="def-booting">
+<p class="admonition-title">Bootvorgang</p>
+<p>Der <em>Bootvorgang</em> ist der Prozess, bei dem ein Computer nach dem Einschalten oder Neustarten sein Betriebssystem und weitere essenzielle Software lädt, um betriebsbereit zu werden.</p>
+</div>
+<p>Der Schlüssel hierzu ist ein kleineres Programm was auf dem sog. <em>Festwertspeicher (ROM)</em> liegt.
+Dieses Programm wird von der Hardware selbst geladen.
+Die Logik um das erste Programm vom <em>Festwertspeicher</em> zu laden ist also in den Bauteilen selbst fest verdrahtet (Software in Hardware gegossen).
+Der Festwertspeicher kann nur gelesen werden und ist nicht flüchtig.
+Das heißt, das Programm auf dem Festwertspeicher bleibt auch nach dem Ausschalten des Computers vorhanden.
+Der Computer zieht sich quasi wie Münchhausen an den Haaren selbst aus dem Sumpf.</p>
+</section>
+<section id="programme-ausfuhren">
+<span id="sec-run-program"></span><h2><span class="section-number">7.5.3. </span>Programme ausführen<a class="headerlink" href="#programme-ausfuhren" title="Permalink to this heading">#</a></h2>
+<p>Starten Sie ein Programm, sagen Sie eigentlich dem <a class="reference internal" href="#def-operating-system"><span class="std std-ref">Betriebssystem</span></a>, dass Sie dieses oder jenes Programm ausführen möchten.
+Das <em>Betriebssystem</em> sorgt dafür, dass es in den Hauptspeicher geladen wird und teilt ihm entsprechende Ressourcen zu.
+Erinnern Sie sich an die <em><a class="reference internal" href="#von-neumann-architecture-2"><span class="std std-ref">Von-Neumann-Architektur</span></a></em>?
+Laut dieser liegen die <strong>Daten</strong> als auch die <strong>Programme</strong> im gleichen (flüchtigen) <em>Hauptspeicher</em> bzw. <em>Arbeitsspeicher</em>.
+Das Programm ist nichts anderes als eine zusammenhängende Folge von 0 und 1, welche Befehle repräsentieren.
+Zum Beispiel bedeutet</p>
+<div class="math notranslate nohighlight">
+\[\text{ADD} \ \$5 \ \$6 \ \$7,\]</div>
+<p>dass die Zahl, welche in Register <span class="math notranslate nohighlight">\(\$5\)</span> steht, mit der Zahl, die in Register <span class="math notranslate nohighlight">\(\$6\)</span> steht, addiert wird und das Ergebnis in den Register <span class="math notranslate nohighlight">\(\$7\)</span> geschrieben werden soll.
+Andere Befehle wie etwa</p>
+<div class="math notranslate nohighlight">
+\[\text{LOAD} \ \#15 \ \$5 \]</div>
+<p>oder</p>
+<div class="math notranslate nohighlight">
+\[\text{STORE} \ \$7 \ \#16 \]</div>
+<p>laden (<span class="math notranslate nohighlight">\(\text{LOAD}\)</span>) Daten aus dem Hauptspeicher an der Adresse (Stelle) <span class="math notranslate nohighlight">\(\#15\)</span> ins Register <span class="math notranslate nohighlight">\(\$5\)</span> bzw. speichern (<span class="math notranslate nohighlight">\(\text{STORE}\)</span>) die Daten von Register <span class="math notranslate nohighlight">\(\$7\)</span> im Hauptspeicher an Adresse <span class="math notranslate nohighlight">\(\#16\)</span>.</p>
+<p>Da Informationen mit einer unvorstellbaren Geschwindigkeit durch den Computer rasen, spielt die Distanz der Bauteile zueinander eine große Rolle.
+Register sind nicht nur deutlich schneller als der <em>Hauptspeicher</em> sie befinden sich auch viel näher an den Recheneinheiten.</p>
+<p>Wenn ein benötigter Wert noch im Register liegt (eventuell von einer zuvor ausgeführten Berechnung) wird dieser nicht erneut vom <a class="reference internal" href="#def-main-memory"><span class="std std-ref">Hauptspeicher</span></a> geladen.
+Stattdessen benutzt die CPU den Wert im Register und gewinnt dadurch an Berechnungsgeschwindigkeit.
+Sie spart sich einige Zyklen die nötig wären um die Daten aus dem Speicher in den Register zu laden.</p>
+<figure class="align-default" id="fig-program-run">
+<a class="reference internal image-reference" href="../../_images/program-run.png"><img alt="../../_images/program-run.png" src="../../_images/program-run.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 7.14 </span><span class="caption-text">Zusammenspiel zwischen Kontrolleinheit und arithmetische/logische Einheit, Register, Befehlszeiger (CPU) und Arbeitsspeicher.</span><a class="headerlink" href="#fig-program-run" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Innerhalb der <em>Kontrolleinheit</em> befindet sich ein spezielles <em>Register</em>, welches die <em>Arbeitsspeicheradresse</em> des nächsten auszuführenden Befehls enthält.
+Dieses Register nennen wir <em>Befehlszähler</em> oder <em>Befehlszeiger</em>.
+Ist der Befehl an der angegebenen Adresse ein <em>Sprungbefehl</em> ändert sich der Wert des <em>Befehlszeigers</em> entsprechend.
+Andernfalls wird der Befehl (z.B. <span class="math notranslate nohighlight">\(\text{ADD } \text{Reg}_1 \text{ Reg}_2 \text{ Reg}_3\)</span>) von der CPU ausgeführt und der <em>Befehlszeiger</em> wird um 1 erhöht.</p>
+<div class="definition admonition" id="def-program-counter">
+<p class="admonition-title">Befehlszeiger</p>
+<p>Der <em>Befehlszeiger</em> ist ein spezielles <a class="reference internal" href="#def-register"><span class="std std-ref">Register</span></a> der <em>Kontrolleinheit</em> welches die <em>Arbeitsspeicheradresse</em> des nächsten auszuführenden Befehls enthält.
+Bei der Ausführung eines Programms wird der Befehlszeiger aktualisiert, um auf die nächste Anweisung zu zeigen, die ausgeführt werden soll.</p>
+</div>
+<p>Wenn das Betriebssystem entscheidet, dass ein anderes Programm an der Reihe ist, wird der aktuelle Zustand des laufenden Programms gesichert.
+Z.B. wird der <em>Befehlszeiger</em> in den Arbeitsspeicher oder auf die Festplatte geschrieben.
+Sobald das Programm wieder aktiv wird, werden alle notwendigen Daten wieder in den Hauptspeicher und die Register geladen.</p>
+<div class="exercise admonition" id="cpu-workflow-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 7.12 </span> (CPU-Workflow)</p>
+<section id="exercise-content">
+<p>Betrachten Sie das obige Bild <a class="reference internal" href="#fig-program-run"><span class="std std-ref">CPU-Workflow</span></a>.
+Welche Befehle hat die CPU zuletzt ausgeführt und was wird der nächste Befehl bezwecken?</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="cpu-workflow-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#cpu-workflow-exercise"> Exercise 7.12 (CPU-Workflow)</a></p>
+<section id="solution-content">
+<p>Die Kontrolleinheit hat zum einen den Befehl <span class="math notranslate nohighlight">\(\text{ADD}\)</span> inklusive der Registeradressen in Register geladen.
+Dann hat sie die Werte 17 und 5, welche addiert werden sollen in Register der arithmetischen Einheit geladen.
+Sie hat die arithmetische Einheit instruiert die Addition durchzuführen und das Ergebnis in Register <span class="math notranslate nohighlight">\(\$7\)</span> abzulegen.</p>
+<p>Im nächsten Schritt wird die Kontrolleinheit den Wert (22) dieses Registers (<span class="math notranslate nohighlight">\(\$7\)</span>) in den Hauptspeicher an die Adresse <span class="math notranslate nohighlight">\(\#16\)</span> schreiben und somit den Wert 5 überschreiben.</p>
+</section>
+</div>
+</section>
+<section id="der-eva-kreislauf">
+<h2><span class="section-number">7.5.4. </span>Der EVA-Kreislauf<a class="headerlink" href="#der-eva-kreislauf" title="Permalink to this heading">#</a></h2>
+<p>Haben wir (1) den Computer <em>gebootet</em> und (2) das Textverarbeitungsprogramm gestartet und drücken dann <code class="docutils literal notranslate"><span class="pre">A</span></code>, was passiert dann?
+Das Eingabegerät (die Tastatur) sendet eine Unterbrechungsanforderung (Interrupt Request (IRQ)) an die CPU.
+Nach der Anforderung führt die CPU eine Unterbrechungsroutine aus, diese leitet das <code class="docutils literal notranslate"><span class="pre">A</span></code> an das Textverarbeitungsprogramm weiter.</p>
+<div class="definition admonition" id="def-irq">
+<p class="admonition-title">Interrupt Request (IRQ)</p>
+<p>Ein <em>Interrupt Request</em> (IRQ) ist ein Signal, das an die CPU gesendet wird, um sie auf ein Ereignis oder eine Bedingung aufmerksam zu machen, die sofortige Aufmerksamkeit erfordert. Durch den Interrupt wird der aktuelle Ablauf des Programms unterbrochen, und die CPU führt eine spezielle Unterbrechungsroutine aus, um das gemeldete Ereignis zu behandeln. Anschließend wird die Ausführung des ursprünglichen Programms fortgesetzt.
+<em>Interrupts</em> (Unterbrechungen) werden häufig für Hardware-Ereignisse, Zeitgeber oder zur Kommunikation zwischen verschiedenen Systemkomponenten verwendet.</p>
+</div>
+<p>Das Textverarbeitungsprogramm hat sich hierfür über eine <em>Arbeitsspeicheradresse</em> für einen solchen IRQ registriert.
+Das heißt, es wird der Programmcode, der an dieser Adresse beginnt, ausgeführt.</p>
+<p>Über viele tausende Operationen berechnet das Textverarbeitungsprogramm wie das <code class="docutils literal notranslate"><span class="pre">A</span></code> dargestellt werden soll (in welcher Schriftart, und welcher Position und so weiter).
+Die Darstellung besteht aus vielen Pixeln welche das Programm an den Monitor weiterleitet.
+Dieser wandelt die Folge aus 0 und 1 in viele unterschiedlich gefärbte Pixel um.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/02-1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="3-manipulation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">zurück</p>
+        <p class="prev-next-title"><span class="section-number">7.4. </span>Manipulation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="5-hardware-equals-software.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">weiter</p>
+        <p class="prev-next-title"><span class="section-number">7.6. </span>Berechenbarkeit</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Inhalt
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-von-neumann-architektur">7.5.1. Die Von-Neumann-Architektur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-betriebssystem">7.5.2. Das Betriebssystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-ausfuhren">7.5.3. Programme ausführen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-eva-kreislauf">7.5.4. Der EVA-Kreislauf</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

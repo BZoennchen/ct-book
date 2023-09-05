@@ -1,0 +1,1790 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="de" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>5.3. Zahlen sortieren in Python &#8212; Computational Thinking</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JTQKVRRRDB');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/01-5/3-sort-numbers';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="5.4. Allgemeines Sortieren in Python" href="4-sort-anything.html" />
+    <link rel="prev" title="5.2. Karten sortieren in Python" href="2-sort-cards-with-python.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="de"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-HM-small.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo-HM-small.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Computational Thinking
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einleitung</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-1/course.html">1. Kurskonzept</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/1-content.html">1.1. Inhalt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/2-reading.html">1.2. Lesehinweise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/3-teaching.html">1.3. Lehrkonzept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/4-learn-how-to-think.html">1.4. Denken lernen?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-2/what-is-ct.html">2. Was ist Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/1-informatics-and-ct.html">2.1. Informatik und CT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/2-repetition-is-the-key.html">2.2. Wiederholung als Grundlage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/3-quizz.html">2.3. Quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-3/history.html">3. Geschichte der Computer und Algorithmen</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/1-ancient.html">3.1. Antike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/2-middleages.html">3.2. Mittelalter bis 19. Jahrhundert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/3-today.html">3.3. 19. Jahrhundert bis heute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/4-future.html">3.4. Ausblick</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-4/why-ct.html">4. Warum Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/1-intrinsic-value.html">4.1. Intrinsischer Wert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/2-usefulness.html">4.2. Langfristiger Nutzen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/3-self-determination.html">4.3. Selbstbestimmt durch CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sorting.html">5. Lasst uns Denken</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-sort-cards.html">5.1. Karten sortieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-sort-cards-with-python.html">5.2. Karten sortieren in Python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. Zahlen sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-sort-anything.html">5.4. Allgemeines Sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-quizz.html">5.5. Quizz</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theorie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-0/math.html">6. Mathematische Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/1-notation.html">6.1. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/2-set.html">6.2. Mengen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/3-tuple.html">6.3. Tupel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/4-relation.html">6.4. Relationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/5-function.html">6.5. Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/6-operations.html">6.6. Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/7-induction.html">6.7. Vollständige Induktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-1/information-processing.html">7. Der digitale Computer</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/1-basics.html">7.1. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-interpretation.html">7.2. Interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-representation.html">7.3. Repräsentationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/3-manipulation.html">7.4. Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/4-information-flow.html">7.5. Der Informationskreislauf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/5-hardware-equals-software.html">7.6. Berechenbarkeit</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-2/information.html">8. Was ist Information?</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/1-natural-science.html">8.1. Naturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/2-formal-science.html">8.2. Strukturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/3-critic.html">8.3. Mehr als reine Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/4-humanics.html">8.4. Geisteswissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/5-summary.html">8.5. Zusammenfassung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-3/languages.html">9. Programmiersprachen</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/1-abstraction.html">9.1. Abstraktion des Computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/2-success-criteria.html">9.2. Erfolgsfaktoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/3-imperative-vs-functional.html">9.3. Imperativ und funktional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/4-language-evolution.html">9.4. Sprachevolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/5-python.html">9.5. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/6-diversity.html">9.6. Diversität</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-4/the-art-of-programming.html">10. Die Kunst des Programmierens</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/1-algorithms.html">10.1. Algorithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/2-programming.html">10.2. Programmieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/3-control-structures.html">10.3. Kontrollstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/4-data-structures.html">10.4. Datenstrukturen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-1/introduction.html">11. Programmieren in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-2/python-environment.html">12. Das Python Ökosystem</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/1-installation.html">12.1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/2-run.html">12.2. Python ausführen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/3-notebooks.html">12.3. Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/4-modules.html">12.4. Module und Pakete</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-3/intro.html">13. Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/1-variables.html">13.1. Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/2-expressions.html">13.2. Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/3-invoking-functions.html">13.3. Funktionsaufrufe</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-4/intro.html">14. Datentypen (Grundlagen)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/1-data-types.html">14.1. Pythons Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/2-int.html">14.2. Ganze Zahlen - int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/3-float.html">14.3. Fließkommazahlen - float</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/4-bool.html">14.4. Wahrheitswerte - bool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/5-list.html">14.5. Listen - list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/6-tuple.html">14.6. Tupel - tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/7-string.html">14.7. Zeichenketten - str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/8-set.html">14.8. Mengen - set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/9-dict.html">14.9. Wörterbücher - dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/10-range.html">14.10. Zahlenbereich - range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/11-typing-in-python.html">14.11. Python’s Typisierung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-5/intro.html">15. Datentypen (Fortsetzung)</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/1-type-systems.html">15.1. Dynamische und statische Typisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/2-why-data-types.html">15.2. Existenzberechtigung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/3-change-of-interpretation.html">15.3. Interpretationswechsel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/4-kind-of-data-types.html">15.4. Arten von Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/5-primitive-data-types.html">15.5. Primitive Datentypen in Python?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-6/intro.html">16. Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/1-purity.html">16.1. Reinheit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/2-definition.html">16.2. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/3-namespaces.html">16.3. Namensräume und Sichtbarkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/4-lambdas.html">16.4. Anonyme Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/5-nested-functions.html">16.5. Umschlossene Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/x-recursion.html">16.6. Rekursive Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/6-first-class-functions.html">16.7. First-Class-Funktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-7/intro.html">17. Kontrollstrukturen</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/1-cases.html">17.1. Fallunterscheidungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/2-loops.html">17.2. Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/3-comprehensions.html">17.3. Comprehensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-8/intro.html">18. Objektorientierte Programmierung</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/1-class-and-objects.html">18.1. Klassen und Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">18.2. Vererbung, Kapselung und Polymorphie</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-9/cpython.html">19. CPython</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/1-impl.html">19.1. Implementierungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/2-ref.html">19.2. Referenzimplementierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/3-interpreter.html">19.3. Interpreter und Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/4-disassembly.html">19.4. Zerlegung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/5-extending.html">19.5. CPython erweitern</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CT in Aktion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/robo-world.html">20. Roboterwelt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/dive-bell.html">21. Sprechen in der Taucherglocke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/image-representation.html">22. Binäres Zeichnen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/memory.html">23. Speicher - alles ist eine Liste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/name-register.html">24. Namensregister</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../misc/bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BZoennchen/ct-book/blob/master/chapters/01-5/3-sort-numbers.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Quell-Repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/01-5/3-sort-numbers.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/01-5/3-sort-numbers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Öffnen Sie ein Problem"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Laden Sie diese Seite herunter">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/01-5/3-sort-numbers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Notebook-Datei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/chapters/01-5/3-sort-numbers.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Quelldatei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="In PDF drucken"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Vollbildmodus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Suche" aria-label="Suche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Zahlen sortieren in Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="zahlen-sortieren-in-python">
+<h1><span class="section-number">5.3. </span>Zahlen sortieren in Python<a class="headerlink" href="#zahlen-sortieren-in-python" title="Permalink to this heading">#</a></h1>
+<p>Wunderbar, wir können nun Karten sortieren.
+Aber können wir vielleicht noch viel mehr?
+Sehen Sie sich den Code aus dem letzten Abschnitt genau an.
+An welcher Stelle geht es wirklich um Karten?
+Wie und wo müsste man den Code ändern um, z. B., Zahlen zu sortieren?</p>
+<div class="exercise admonition" id="chapters/01-5/3-sort-numbers-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.4 </span> (Zahlen sortieren in Python)</p>
+<section id="exercise-content">
+<p>Ändern oder erweitern Sie Ihren Programmiercode um Zahlen anstatt Karten zu sortieren.</p>
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kopie des Codes des vorherigen Abschnitts.</span>
+
+<span class="k">def</span> <span class="nf">find_smallest_index</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hand</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">is_smaller</span><span class="p">(</span><span class="n">hand</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hand</span><span class="p">[</span><span class="n">index</span><span class="p">]):</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">index</span>
+
+<span class="k">def</span> <span class="nf">remove_smallest_card</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>    
+    <span class="n">i</span> <span class="o">=</span> <span class="n">find_smallest_index</span><span class="p">(</span><span class="n">hand</span><span class="p">)</span>
+    <span class="n">card</span> <span class="o">=</span> <span class="n">hand</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">hand</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">card</span>
+
+<span class="k">def</span> <span class="nf">stack_sort</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">hand</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">remove_smallest_card</span><span class="p">(</span><span class="n">hand</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">stack</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wir benötigen lediglich einen neuen Vergleichsoperator <code class="docutils literal notranslate"><span class="pre">is_smaller</span></code>.</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_smaller</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">number1</span> <span class="o">&lt;</span> <span class="n">number2</span>
+
+<span class="n">stack_sort</span><span class="p">([</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="o">-</span><span class="mi">55</span><span class="p">,</span> <span class="mi">88</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-55, -11, -6, 1, 12, 45, 54, 88]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">n_numbers</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">hand</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_numbers</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_numbers</span><span class="p">)]</span>
+<span class="n">stack_sort</span><span class="p">(</span><span class="n">hand</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1,
+ 1,
+ 2,
+ 5,
+ 7,
+ 8,
+ 10,
+ 10,
+ 12,
+ 12,
+ 13,
+ 13,
+ 14,
+ 16,
+ 17,
+ 19,
+ 20,
+ 21,
+ 22,
+ 23,
+ 28,
+ 28,
+ 28,
+ 29,
+ 30,
+ 30,
+ 30,
+ 31,
+ 32,
+ 32,
+ 33,
+ 34,
+ 35,
+ 36,
+ 39,
+ 40,
+ 42,
+ 44,
+ 45,
+ 45,
+ 45,
+ 46,
+ 48,
+ 49,
+ 49,
+ 50,
+ 50,
+ 50,
+ 51,
+ 56,
+ 56,
+ 56,
+ 59,
+ 59,
+ 59,
+ 60,
+ 60,
+ 61,
+ 61,
+ 62,
+ 63,
+ 63,
+ 64,
+ 64,
+ 69,
+ 69,
+ 75,
+ 75,
+ 75,
+ 76,
+ 76,
+ 77,
+ 82,
+ 82,
+ 82,
+ 82,
+ 83,
+ 84,
+ 86,
+ 86,
+ 88,
+ 89,
+ 90,
+ 90,
+ 91,
+ 93,
+ 94,
+ 96,
+ 97,
+ 97,
+ 97,
+ 97,
+ 98,
+ 99,
+ 99,
+ 99,
+ 102,
+ 104,
+ 104,
+ 105,
+ 106,
+ 107,
+ 107,
+ 107,
+ 111,
+ 114,
+ 118,
+ 118,
+ 118,
+ 119,
+ 120,
+ 121,
+ 124,
+ 124,
+ 126,
+ 127,
+ 127,
+ 130,
+ 135,
+ 135,
+ 135,
+ 137,
+ 139,
+ 139,
+ 140,
+ 141,
+ 142,
+ 144,
+ 146,
+ 146,
+ 149,
+ 150,
+ 150,
+ 151,
+ 152,
+ 155,
+ 156,
+ 157,
+ 157,
+ 160,
+ 160,
+ 161,
+ 163,
+ 163,
+ 164,
+ 165,
+ 165,
+ 167,
+ 167,
+ 168,
+ 168,
+ 169,
+ 169,
+ 172,
+ 172,
+ 174,
+ 175,
+ 175,
+ 178,
+ 178,
+ 178,
+ 179,
+ 180,
+ 181,
+ 181,
+ 183,
+ 184,
+ 184,
+ 184,
+ 185,
+ 186,
+ 186,
+ 187,
+ 194,
+ 195,
+ 196,
+ 196,
+ 197,
+ 197,
+ 197,
+ 200,
+ 201,
+ 204,
+ 207,
+ 207,
+ 209,
+ 210,
+ 216,
+ 219,
+ 220,
+ 220,
+ 221,
+ 221,
+ 221,
+ 222,
+ 223,
+ 223,
+ 223,
+ 223,
+ 223,
+ 224,
+ 225,
+ 225,
+ 227,
+ 227,
+ 227,
+ 228,
+ 229,
+ 229,
+ 230,
+ 231,
+ 232,
+ 234,
+ 234,
+ 237,
+ 240,
+ 241,
+ 242,
+ 242,
+ 242,
+ 243,
+ 243,
+ 244,
+ 244,
+ 244,
+ 245,
+ 250,
+ 251,
+ 252,
+ 252,
+ 252,
+ 253,
+ 253,
+ 255,
+ 255,
+ 257,
+ 257,
+ 259,
+ 263,
+ 266,
+ 266,
+ 267,
+ 267,
+ 269,
+ 269,
+ 269,
+ 271,
+ 273,
+ 274,
+ 274,
+ 274,
+ 276,
+ 279,
+ 279,
+ 279,
+ 280,
+ 280,
+ 281,
+ 282,
+ 286,
+ 287,
+ 288,
+ 289,
+ 292,
+ 292,
+ 295,
+ 296,
+ 298,
+ 298,
+ 298,
+ 299,
+ 299,
+ 301,
+ 301,
+ 301,
+ 303,
+ 303,
+ 304,
+ 304,
+ 305,
+ 306,
+ 306,
+ 307,
+ 309,
+ 311,
+ 312,
+ 312,
+ 314,
+ 314,
+ 314,
+ 316,
+ 318,
+ 319,
+ 319,
+ 321,
+ 323,
+ 324,
+ 324,
+ 325,
+ 326,
+ 327,
+ 328,
+ 328,
+ 330,
+ 330,
+ 332,
+ 332,
+ 333,
+ 333,
+ 335,
+ 336,
+ 336,
+ 337,
+ 337,
+ 338,
+ 341,
+ 342,
+ 342,
+ 343,
+ 343,
+ 345,
+ 348,
+ 350,
+ 351,
+ 354,
+ 354,
+ 356,
+ 357,
+ 357,
+ 357,
+ 359,
+ 360,
+ 360,
+ 360,
+ 362,
+ 363,
+ 365,
+ 365,
+ 366,
+ 367,
+ 367,
+ 367,
+ 367,
+ 368,
+ 368,
+ 370,
+ 370,
+ 371,
+ 371,
+ 372,
+ 372,
+ 373,
+ 373,
+ 373,
+ 376,
+ 376,
+ 377,
+ 378,
+ 378,
+ 378,
+ 382,
+ 383,
+ 383,
+ 384,
+ 385,
+ 387,
+ 387,
+ 388,
+ 388,
+ 388,
+ 389,
+ 389,
+ 389,
+ 392,
+ 392,
+ 393,
+ 393,
+ 394,
+ 398,
+ 398,
+ 398,
+ 399,
+ 400,
+ 401,
+ 402,
+ 404,
+ 406,
+ 407,
+ 407,
+ 408,
+ 414,
+ 414,
+ 417,
+ 420,
+ 420,
+ 421,
+ 424,
+ 428,
+ 428,
+ 429,
+ 429,
+ 431,
+ 431,
+ 431,
+ 435,
+ 435,
+ 436,
+ 437,
+ 439,
+ 439,
+ 440,
+ 440,
+ 440,
+ 441,
+ 441,
+ 444,
+ 444,
+ 444,
+ 445,
+ 446,
+ 447,
+ 450,
+ 451,
+ 451,
+ 452,
+ 452,
+ 452,
+ 452,
+ 453,
+ 453,
+ 453,
+ 455,
+ 457,
+ 458,
+ 459,
+ 459,
+ 459,
+ 462,
+ 465,
+ 466,
+ 467,
+ 471,
+ 471,
+ 471,
+ 472,
+ 474,
+ 475,
+ 475,
+ 475,
+ 475,
+ 476,
+ 477,
+ 477,
+ 478,
+ 479,
+ 479,
+ 482,
+ 482,
+ 482,
+ 483,
+ 484,
+ 486,
+ 486,
+ 488,
+ 488,
+ 492,
+ 492,
+ 495,
+ 498,
+ 499,
+ 499,
+ 500,
+ 501,
+ 503,
+ 503,
+ 504,
+ 505,
+ 505,
+ 506,
+ 506,
+ 506,
+ 508,
+ 510,
+ 511,
+ 512,
+ 512,
+ 513,
+ 516,
+ 516,
+ 517,
+ 517,
+ 517,
+ 518,
+ 519,
+ 520,
+ 520,
+ 520,
+ 521,
+ 523,
+ 523,
+ 524,
+ 524,
+ 524,
+ 525,
+ 525,
+ 526,
+ 526,
+ 527,
+ 527,
+ 528,
+ 529,
+ 530,
+ 535,
+ 536,
+ 537,
+ 540,
+ 541,
+ 541,
+ 542,
+ 543,
+ 543,
+ 543,
+ 547,
+ 548,
+ 549,
+ 550,
+ 551,
+ 552,
+ 552,
+ 554,
+ 556,
+ 556,
+ 559,
+ 560,
+ 560,
+ 561,
+ 563,
+ 563,
+ 564,
+ 564,
+ 564,
+ 564,
+ 564,
+ 565,
+ 566,
+ 566,
+ 567,
+ 568,
+ 568,
+ 568,
+ 571,
+ 574,
+ 575,
+ 577,
+ 579,
+ 582,
+ 584,
+ 584,
+ 585,
+ 585,
+ 587,
+ 587,
+ 587,
+ 587,
+ 588,
+ 589,
+ 589,
+ 590,
+ 591,
+ 592,
+ 594,
+ 595,
+ 596,
+ 597,
+ 597,
+ 598,
+ 598,
+ 599,
+ 599,
+ 601,
+ 601,
+ 602,
+ 603,
+ 607,
+ 608,
+ 608,
+ 608,
+ 610,
+ 610,
+ 611,
+ 612,
+ 612,
+ 613,
+ 615,
+ 615,
+ 615,
+ 615,
+ 619,
+ 620,
+ 620,
+ 621,
+ 621,
+ 622,
+ 622,
+ 623,
+ 624,
+ 624,
+ 625,
+ 626,
+ 626,
+ 628,
+ 629,
+ 629,
+ 630,
+ 630,
+ 630,
+ 631,
+ 631,
+ 632,
+ 634,
+ 635,
+ 635,
+ 636,
+ 636,
+ 638,
+ 639,
+ 640,
+ 641,
+ 641,
+ 642,
+ 642,
+ 645,
+ 646,
+ 646,
+ 647,
+ 647,
+ 648,
+ 649,
+ 650,
+ 650,
+ 651,
+ 652,
+ 652,
+ 653,
+ 653,
+ 655,
+ 655,
+ 656,
+ 656,
+ 657,
+ 658,
+ 659,
+ 662,
+ 662,
+ 665,
+ 667,
+ 668,
+ 669,
+ 671,
+ 673,
+ 675,
+ 677,
+ 677,
+ 678,
+ 678,
+ 682,
+ 684,
+ 684,
+ 685,
+ 687,
+ 687,
+ 689,
+ 690,
+ 690,
+ 691,
+ 692,
+ 693,
+ 693,
+ 693,
+ 693,
+ 695,
+ 695,
+ 698,
+ 698,
+ 698,
+ 699,
+ 700,
+ 700,
+ 701,
+ 704,
+ 706,
+ 707,
+ 708,
+ 708,
+ 710,
+ 711,
+ 711,
+ 712,
+ 713,
+ 713,
+ 713,
+ 715,
+ 715,
+ 718,
+ 718,
+ 719,
+ 719,
+ 720,
+ 720,
+ 721,
+ 721,
+ 722,
+ 724,
+ 724,
+ 725,
+ 730,
+ 731,
+ 732,
+ 733,
+ 734,
+ 737,
+ 737,
+ 738,
+ 740,
+ 742,
+ 742,
+ 742,
+ 743,
+ 744,
+ 745,
+ 745,
+ 748,
+ 749,
+ 750,
+ 750,
+ 751,
+ 751,
+ 751,
+ 752,
+ 752,
+ 754,
+ 755,
+ 756,
+ 756,
+ 756,
+ 756,
+ 757,
+ 757,
+ 758,
+ 759,
+ 760,
+ 761,
+ 761,
+ 763,
+ 763,
+ 764,
+ 764,
+ 765,
+ 766,
+ 766,
+ 766,
+ 767,
+ 769,
+ 772,
+ 772,
+ 773,
+ 773,
+ 774,
+ 775,
+ 775,
+ 775,
+ 779,
+ 779,
+ 780,
+ 780,
+ 783,
+ 783,
+ 784,
+ 784,
+ 784,
+ 784,
+ 785,
+ 786,
+ 787,
+ 788,
+ 789,
+ 789,
+ 790,
+ 791,
+ 792,
+ 794,
+ 795,
+ 797,
+ 799,
+ 800,
+ 800,
+ 801,
+ 802,
+ 802,
+ 804,
+ 805,
+ 808,
+ 809,
+ 810,
+ 812,
+ 812,
+ 812,
+ 813,
+ 813,
+ 814,
+ 816,
+ 817,
+ 818,
+ 820,
+ 822,
+ 824,
+ 824,
+ 825,
+ 826,
+ 828,
+ 830,
+ 831,
+ 833,
+ 833,
+ 834,
+ 835,
+ 835,
+ 836,
+ 838,
+ 838,
+ 839,
+ 840,
+ 843,
+ 844,
+ 846,
+ 846,
+ 847,
+ 848,
+ 849,
+ 851,
+ 851,
+ 852,
+ 852,
+ 853,
+ 856,
+ 857,
+ 859,
+ 859,
+ 861,
+ 861,
+ 864,
+ 865,
+ 866,
+ 867,
+ 868,
+ 870,
+ 870,
+ 872,
+ 873,
+ 875,
+ 876,
+ 877,
+ 878,
+ 878,
+ 878,
+ 879,
+ 879,
+ 880,
+ 880,
+ 880,
+ 880,
+ 880,
+ 881,
+ 881,
+ 882,
+ 882,
+ 883,
+ 883,
+ 884,
+ 884,
+ 885,
+ 885,
+ 886,
+ 886,
+ 887,
+ 887,
+ 888,
+ 888,
+ 889,
+ 889,
+ 891,
+ 891,
+ 892,
+ 892,
+ 893,
+ 893,
+ 893,
+ 895,
+ 896,
+ 896,
+ 899,
+ 900,
+ 901,
+ 907,
+ 910,
+ 912,
+ 912,
+ 913,
+ 914,
+ 914,
+ 914,
+ 917,
+ 917,
+ 920,
+ 921,
+ 922,
+ 922,
+ 924,
+ 925,
+ 927,
+ 927,
+ 928,
+ 929,
+ 930,
+ 930,
+ 931,
+ 931,
+ 931,
+ 932,
+ 933,
+ 934,
+ 934,
+ 935,
+ 937,
+ 937,
+ 937,
+ 938,
+ 939,
+ 940,
+ 940,
+ 940,
+ 941,
+ 943,
+ 944,
+ 944,
+ 945,
+ 946,
+ 951,
+ 951,
+ 951,
+ 952,
+ 952,
+ 953,
+ 953,
+ 954,
+ 956,
+ 957,
+ 958,
+ 960,
+ 960,
+ 961,
+ 961,
+ 964,
+ 964,
+ 967,
+ 968,
+ 968,
+ 969,
+ 969,
+ 970,
+ 970,
+ 971,
+ 971,
+ 971,
+ 972,
+ 972,
+ 972,
+ 972,
+ 975,
+ 976,
+ 977,
+ 978,
+ 979,
+ 979,
+ 981,
+ 982,
+ 983,
+ 984,
+ 985,
+ 986,
+ 988,
+ 988,
+ 990,
+ 990,
+ 995,
+ 996,
+ 998,
+ 999,
+ 1000,
+ 1000]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/01-5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2-sort-cards-with-python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">zurück</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Karten sortieren in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4-sort-anything.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">weiter</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>Allgemeines Sortieren in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
