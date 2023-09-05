@@ -18,6 +18,7 @@ Dadurch möchten wir ein theoretisches Fundament vorausschicken.
 Danach folgen im Abschnitt [Repräsentation](sec-representation) verschiedene wichtige Beispiele, die verdeutlichen wie der Computer Information interpretiert und repräsentiert.
 Es mag für viele Leser\*innen sinnvoll sein mit den Beispielen zu starten, um danach die theoretische Diskussion besser nachvollziehen zu können.
 
+(sec-semiotik)=
 ## Semiotik
 
 Wenn Sie mit einem Bleistift einen Apfel auf ein Blatt Papier zeichnen, was stellt Ihre Zeichnung dar?
@@ -101,6 +102,7 @@ Zum Beispiel haben folgende Wörter eine doppelte Bedeutung.
 Erklären Sie die Begriffe Syntax und Semantik in Ihren eigenen Worten anhand des Beispiels eines Briefs.
 ```
 
+(sec-formal-semiotic)=
 ## Formale Syntax & Semantik
 
 In der Informatik tritt anstelle der allgemeinen [Semantik](def-semantik-semiotik) die sog. *logische*, *formaler* oder auch *reine* Semantik.

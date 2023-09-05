@@ -1,11 +1,10 @@
-# Kritik
+# Mehr als reine Syntax
 
 Eines ist klar: Informationen sind für die Informatik der wesentlich Forschungsgegenstand aufdem sich die Disziplin aufbaut.
 Der Begriff Informatik betont die Disziplin als Wissenschaft der Informationsverarbeitung.
 Informationsverarbeitung deshalb, da die Entstehung von Information oft ausgeklammert wird.
-Um noch mehr Verwirrung in die Terminologie zu bringen, können wir die Begriffe Informationstheorie (als Teilgebiet der Mathematik und der theoretischen Informatik), sowie die Informationswissenschaften (wissen, wie vorhandenes Wissen genutzt werden kann) in den Ring werfen.
 
-## Reine Syntax?
+## Unsichtbare Sinnstiftung
 
 Computer bewegen, speichern und manipulieren Informationen, und wir als *Computational Thinker\*innen* entwerfen Algorithmen, die diese *Informationsverarbeitung* beschreiben.
 Dieser Verarbeitungsprozess ähnelte lange einer Einbahnstraße.
@@ -33,27 +32,20 @@ In diesem Gebiet berühren sich viele unterschiedliche Forschungsgebiete, wie et
 Als *Computational Thinker\*innen* werden wir zunehmend mit der automatisierten **Entstehung**, **Interpretation**, **Deutung** und **Wirkung** von Informationen konfrontiert.
 Können wir uns also noch länger hinter der reinen [syntaktischen](def-syntax) Definition der Information verstecken?
 
-## Summe ihrer Einzelteile?
+## Emergenz des Sinns
 
-Ein weiterer Kritikpunkt ist die Betrachtung der Information als Summe ihrer Einzelteile.
-Diese Betrachtung ist nur möglich, da wir uns rein auf die [Syntax](def-syntax) stützen.
+Ein weiterer Kritikpunkt ist die reine Betrachtung der Information als die Summe ihrer Einzelteile.
+Diese Betrachtung ist nur möglich, da wir uns rein auf die [Syntax](def-syntax) stützen und den Sinn ausklammern.
 Wie sinnvoll, wertvoll, wertlos, wahr oder falsch eine Information ist und ob sie in uns etwas auslöst, spielt keine Rolle.
-Sobald wir aber die [Semantik](def-semantik) mit betrachten, zerfällt auch die Vorstellung der Information als Summe ihrer Einzelteile.
+Sobald wir aber die [(semiotische) Semantik](def-semantik-semiotik) einer Information betrachten, zerfällt dieser Reduktionismus (der uns natürlich bei der Informationsverarbeitung äußert dienlich ist).
 
-Zeichnen wir zum Beispiel ein Pixelbild, was einen Buchstaben darstellt, dann ist die Information eben nicht nur die Summe der einzelnen Pixel, sondern auch der Buchstabe.
-Der Informationsgehalt eines literarisches Werks lässt sich nicht durch eine rein syntaktische Betrachtung beziffern.
+Zeichnen wir zum Beispiel ein Pixelbild, was einen Buchstaben darstellt, dann ergibt sich der **Sinn** nicht aus der Summe der einzelnen Pixel, sondern aus der (emergenten) Darstellung des Buchstabens.
+Der Sinn eines literarisches Werks lässt sich nicht durch eine rein syntaktische Betrachtung beziffern.
 Oder blicken wir nochmals zurück zur Situation in der Bahn.
 Nach Shannons Modell wäre die Information eigentlich gar nicht die aktuelle Wetterlage, sondern die einzelnen Pixel auf dem Monitor.
-Diese Pixel einzeln betrachten haben keinen Bezug zum Wetter.
+Diese einzelnen Pixel haben keinen Bezug zum Wetter.
 Auch die [Kolmogorow-Komplexität](def-kolmogorow-complexity) hilft uns nicht weiter.
 Würde der Monitor die Wetterlage in einer anderen Schriftart oder in einer etwas anderen Farbe anzeigen, wäre dies eine vollkommen andere Information.
-
-Wir können den Bogen **spekulativ** noch weiter spannen.
-Im obigen Beispiel hatten die Pixel eine bestimmte hierarchische Anordnung.
-Wir können uns die Frage stellen: Kann aus sich selbst-organisierenden Einzelinformationen, vollkommen neue Informationen -- quasi "aus sich selbst heraus" -- hervorgehen?
-Programme und Algorithmen sind an und für sich Information die Information verarbeiten.
-Ist dann nicht eine solche selbst-organisierende Menge von Einzelinformationen (Algorithmen), die aus sich selbst heraus Informationen schöpfen, eine *künstliche Intelligenz (KI)*?
-Suchen wir nicht genau nach solch einer Selbstorganisation?
 
 Wir kennen das Phänomen der *Selbstorganisation* aus der Studie von *komplexen Systemen*.
 Ein Fisch- oder Vogelschwarm ist ein solches komplexes System.
@@ -62,11 +54,19 @@ Zum Beispiel: Folge deinen 4 nächsten Nachbarn.
 Dadurch entsteht jedoch ein äußerst komplexes (makroskopisches) neues Schwarmverhalten.
 Dieses **emergente Verhalten** geht nicht aus einer hierarchisches Organisation hervor, sondern entsteht "von selbst" durch die Interaktion der einzelnen Vögel.
 
+Wir können den Bogen **spekulativ** noch weiter spannen.
+Im obigen Beispiel hatten die Pixel eine bestimmte hierarchische Anordnung.
+Wir können uns die Frage stellen: Kann aus sich selbst-organisierenden Einzelinformationen, ein vollkommen neuer Sinn---quasi "aus sich selbst heraus"---hervorgehen?
+Programme und Algorithmen sind an und für sich Information die Information verarbeiten.
+Ist dann nicht eine solche selbst-organisierende Menge von Einzelinformationen (Algorithmen), die aus sich selbst heraus Informationen schöpfen, eine *künstliche Intelligenz (KI)*?
+Suchen wir nicht genau nach solch einer Selbstorganisation?
+Was hier wohl fehlt ist die **sinngebende Instanz**.
+Die eigenart der Sinngebung scheint uns Menschen vorbehalten zu sein auch wenn diese Sinngebung nicht mehr zwingend in unserem Kopf sondern in einer Maschine lokalisiert ist.
+
 ## Zusammenfassung
 
 Naturwissenschaftliche und strukturwissenschaftliche Informationsbegriffe sind klar definiert und anwendbar.
 Sie bieten jeweils ein Maß um den *Informationsgehalt* zu messen.
-Diese Klarheit hat allerdings ihren Preis!
-Sie klammert die menschliche bzw. intelligente Komponente in der Informationsinterpretation, Entstehung und Wirkung aus.
-Wollen wir diese Komponenten besser begreifen, müssen wir uns einem anderen Informationsbegriff und einer ganz anderen Disziplin zuwenden.
-Wir müssen in die Geisteswissenschaften abtauchen.
+Diese Klarheit hat allerdings ihren Preis.
+Sie klammert die menschliche bzw. intelligente Komponente in der Informationsinterpretation, Entstehung und Wirkung aus---sie ist blind für den Sinn.
+Wollen wir diese Komponenten besser begreifen, müssen wir uns einer ganz anderen Disziplin zuwenden: den Geisteswissenschaften.

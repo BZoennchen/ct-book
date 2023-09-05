@@ -1,7 +1,7 @@
 (sec-information)=
 # Was ist Information?
 
-Angenommen Sie sitzen in der U-Bahn und bemerken, die auf den Monitoren erscheinende, aktuelle Wetterlage: Es gießt in Strömen!
+Angenommen Sie sitzen in der U-Bahn und bemerken die auf den Monitoren erscheinende, aktuelle Wetterlage: Es gießt in Strömen!
 Um sich auf das Nass vorzubereiten, kramen Sie aus Ihrem Rucksack Ihren Regenmantel heraus und stülpen sich diesen über.
 
 Was ist in diesem Beispiel geschehen?
@@ -13,7 +13,7 @@ Die gelieferte *Information* eliminiert, oder zumindest reduziert, die *Unsicher
 Was ist Information?
 Darum soll es in diesem Abschnitt gehen.
 Dabei möchten wir nicht nur die informatische Perspektive einnehmen, sondern auch einen Blick in die Geisteswissenschaften wagen.
-Am Ende sollen Sie eine klare informatische Definition von Information zur Hand haben und zugleich wissen, dass diese, rein auf Syntax bezogene Definition, ihre Grenzen hat.
+Am Ende sollen Sie eine klare informatische Definition von Information zur Hand haben und zugleich wissen, dass diese---rein auf Syntax bezogene Definition---ihre Grenzen hat.
 ```
 
 Eine immense Menge an Informationen ist heute, zumindest in den nordwestlichen Gefilden, frei und einfach zugänglich.
