@@ -126,11 +126,11 @@ Wenn beispielweise ein Schmerz nicht anderweitig gemessen werden kann, ist vollk
 
 >Angenommen, es hätte jeder eine Schachtel, darin wäre etwas, was wir ‚Käfer‘ nennen. Niemand kann je in die Schachtel des Anderen schauen, und jeder sagt, er wisse nur vom Anblick seines Käfers, was ein Käfer ist. [...] Das Ding in der Schachtel gehört überhaupt nicht zum Sprachspiel, auch nicht einmal als ein Etwas, denn die Schachtel könnte auch leer sein. {cite}`wittgenstein:1953`
 
-## Systemtheorie
+## Systemtheorie 
 
 Die soziologische Systemtheorie, mit Niklas Luhmann als wohl wichtigsten Vertreter, folgt dem kybernetischen Informationsbegriff der 1948 von Norbert Wiener in seinem Aufsatz *Cybernetics or Control and Communication in the Animal and the Machine* erörtert wurde.
 Information ist für Wiener, ähnlich wie für Shannon (siehe [Nachrichtentechnik](sec-informationtheorie)), bezogen auf einen Auswahlprozeß ohne Bezug auf Semantik und Pragmatik.
-Aber, anders als für Shannon, bedeutet Information für Wiener eine Zunahme von Organisation oder Ordnung: Je organisierter ein System umso größer sein Informationsgehalt.
+Aber, anders als für Shannon, bedeutet Information für Wiener eine Zunahme von Organisation oder Ordnung: Je organisierter ein System umso größer sein Informationsgehalt {cite}`wiener:1948`.
 Der Informationswert nimmt mit der Organisation eines Organismus zu.
 Information wird hier, in Anlehnung an die Physik, als Negentropie bestimmt.
 

@@ -1,0 +1,1039 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="de" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.2. Die Formalisierung des Denkens &#8212; Computational Thinking</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JTQKVRRRDB');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/01-3/2-formalizing-thought';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="3.3. Rechenmaschinen" href="3-calculating-machines.html" />
+    <link rel="prev" title="3.1. Symbole, Schrift und Zahlen" href="1-writing-system.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="de"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-HM-small.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo-HM-small.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Computational Thinking
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einleitung</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-1/course.html">1. Kurskonzept</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/1-content.html">1.1. Inhalt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/2-reading.html">1.2. Lesehinweise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/3-teaching.html">1.3. Lehrkonzept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/4-learn-how-to-think.html">1.4. Denken lernen?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-2/what-is-ct.html">2. Was ist Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/1-informatics-and-ct.html">2.1. Informatik und CT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/2-repetition-is-the-key.html">2.2. Wiederholung als Grundlage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/3-quizz.html">2.3. Quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="history.html">3. Geschichte der Computer und Algorithmen</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-writing-system.html">3.1. Symbole, Schrift und Zahlen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. Die Formalisierung des Denkens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-calculating-machines.html">3.3. Rechenmaschinen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-future.html">3.4. Ausblick</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-4/why-ct.html">4. Warum Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/1-intrinsic-value.html">4.1. Intrinsischer Wert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/2-usefulness.html">4.2. Langfristiger Nutzen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/3-self-determination.html">4.3. Selbstbestimmt durch CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-5/sorting.html">5. Lasst uns Denken</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/1-sort-cards.html">5.1. Karten sortieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/2-sort-cards-with-python.html">5.2. Karten sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/3-sort-numbers.html">5.3. Zahlen sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/4-sort-anything.html">5.4. Allgemeines Sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/5-quizz.html">5.5. Quizz</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theorie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-0/math.html">6. Mathematische Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/1-notation.html">6.1. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/2-set.html">6.2. Mengen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/3-tuple.html">6.3. Tupel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/4-relation.html">6.4. Relationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/5-function.html">6.5. Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/6-operations.html">6.6. Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/7-induction.html">6.7. Vollständige Induktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-1/information-processing.html">7. Der digitale Computer</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/1-basics.html">7.1. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-interpretation.html">7.2. Interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-representation.html">7.3. Repräsentationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/3-manipulation.html">7.4. Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/4-information-flow.html">7.5. Der Informationskreislauf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/5-hardware-equals-software.html">7.6. Berechenbarkeit</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-2/information.html">8. Was ist Information?</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/1-natural-science.html">8.1. Naturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/2-formal-science.html">8.2. Strukturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/3-critic.html">8.3. Mehr als reine Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/4-humanics.html">8.4. Geisteswissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/5-summary.html">8.5. Zusammenfassung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-3/languages.html">9. Programmiersprachen</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/1-abstraction.html">9.1. Abstraktion des Computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/2-success-criteria.html">9.2. Erfolgsfaktoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/3-imperative-vs-functional.html">9.3. Imperativ und funktional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/4-language-evolution.html">9.4. Sprachevolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/5-python.html">9.5. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/6-diversity.html">9.6. Diversität</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-4/the-art-of-programming.html">10. Die Kunst des Programmierens</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/1-algorithms.html">10.1. Algorithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/2-programming.html">10.2. Programmieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/3-control-structures.html">10.3. Kontrollstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/4-data-structures.html">10.4. Datenstrukturen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-1/introduction.html">11. Programmieren in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-2/python-environment.html">12. Das Python Ökosystem</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/1-installation.html">12.1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/2-run.html">12.2. Python ausführen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/3-notebooks.html">12.3. Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/4-modules.html">12.4. Module und Pakete</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-3/intro.html">13. Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/1-variables.html">13.1. Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/2-expressions.html">13.2. Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/3-invoking-functions.html">13.3. Funktionsaufrufe</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-4/intro.html">14. Datentypen (Grundlagen)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/1-data-types.html">14.1. Pythons Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/2-int.html">14.2. Ganze Zahlen - int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/3-float.html">14.3. Fließkommazahlen - float</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/4-bool.html">14.4. Wahrheitswerte - bool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/5-list.html">14.5. Listen - list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/6-tuple.html">14.6. Tupel - tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/7-string.html">14.7. Zeichenketten - str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/8-set.html">14.8. Mengen - set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/9-dict.html">14.9. Wörterbücher - dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/10-range.html">14.10. Zahlenbereich - range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/11-typing-in-python.html">14.11. Python’s Typisierung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-5/intro.html">15. Datentypen (Fortsetzung)</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/1-type-systems.html">15.1. Dynamische und statische Typisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/2-why-data-types.html">15.2. Existenzberechtigung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/3-change-of-interpretation.html">15.3. Interpretationswechsel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/4-kind-of-data-types.html">15.4. Arten von Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/5-primitive-data-types.html">15.5. Primitive Datentypen in Python?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-6/intro.html">16. Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/1-purity.html">16.1. Reinheit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/2-definition.html">16.2. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/3-namespaces.html">16.3. Namensräume und Sichtbarkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/4-lambdas.html">16.4. Anonyme Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/5-nested-functions.html">16.5. Umschlossene Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/x-recursion.html">16.6. Rekursive Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/6-first-class-functions.html">16.7. First-Class-Funktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-7/intro.html">17. Kontrollstrukturen</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/1-cases.html">17.1. Fallunterscheidungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/2-loops.html">17.2. Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-7/3-comprehensions.html">17.3. Comprehensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-8/intro.html">18. Objektorientierte Programmierung</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/1-class-and-objects.html">18.1. Klassen und Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">18.2. Vererbung, Kapselung und Polymorphie</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-9/cpython.html">19. CPython</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/1-impl.html">19.1. Implementierungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/2-ref.html">19.2. Referenzimplementierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/3-interpreter.html">19.3. Interpreter und Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/4-disassembly.html">19.4. Zerlegung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/5-extending.html">19.5. CPython erweitern</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CT in Aktion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/robo-world.html">20. Roboterwelt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/dive-bell.html">21. Sprechen in der Taucherglocke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/image-representation.html">22. Binäres Zeichnen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/memory.html">23. Speicher - alles ist eine Liste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/name-register.html">24. Namensregister</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../misc/bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BZoennchen/ct-book/blob/master/chapters/01-3/2-formalizing-thought.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Quell-Repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/01-3/2-formalizing-thought.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/01-3/2-formalizing-thought.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Öffnen Sie ein Problem"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Laden Sie diese Seite herunter">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/01-3/2-formalizing-thought.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Notebook-Datei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/chapters/01-3/2-formalizing-thought.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Quelldatei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="In PDF drucken"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Vollbildmodus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Suche" aria-label="Suche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Die Formalisierung des Denkens</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="die-formalisierung-des-denkens">
+<h1><span class="section-number">3.2. </span>Die Formalisierung des Denkens<a class="headerlink" href="#die-formalisierung-des-denkens" title="Permalink to this heading">#</a></h1>
+<p>Mit dem provokanten Titel dieses Abschnitts wollen wir nicht etwa ausdrücken, dass Maschinen oder Algorithmen tatsächlich denken.
+Vielmehr geht es um die Anstrengung dieses Denken derart zu formalisieren, dass es für bestimmte Operationen nicht mehr notwendig ist.</p>
+<p>Dieser Prozess der Formalisierung begann mit der Entwicklung der Logik.
+Der Begriff <em>Logik</em> stammt vom Griechischen <em>logos</em> was soviel heißt wie <em>Denken</em>, <em>Wort</em>, <em>Gedanke</em>, <em>Sinn</em> oder <em>Rationalität</em>.
+Und wieder ist es Aristoteles (384-322 v. Chr.) der den Anfang für einen breiteren Durchbruch der Logik machte.
+Zwar wurde die Kunst der Argumentation bereits bei Sokrates und Plato verwendet aber erst Aristoteles entwickelte ein abgeschlossenes System der Logik und etablierte dieses als wissenschaftliche Disziplin.
+Seine Beiträge zur Logik finden Sie in seinem Werk <em>Organon</em> aber auch als Teil seiner <em>Metaphysik</em>.
+Diese Werke stammen ursprünglich nicht von Aristoteles sondern wurden von Andronicus von Rhodes veröffentlicht.</p>
+<p>Die Basis für das logische Schlussfolgern oder kurz logische Schließen ist das Denken.
+Und es wird angenommen, dass dieses Denken, wenn es denn vernünftig ist auch konsistent ist.
+Eine Schlussfolgerung mag auf Tatsachen d.h. Annahmen und deren gemeinsamen Konzepten zustande kommen.
+Die Annahmen müssen selbst konsistent sein.
+Grundannahmen werden dabei als <em>Axiome</em> bezeichnet.
+Solche Axiome gelten als absolut wahr und benötigen deshalb keines Nachweises in Form eines Beweises.
+In der Mathematik müssen wir immer mit derartigen Axiomen beginnen.
+Es gibt keine Möglichkeit jede Annahme in einem System zu beweisen denn auf irgendwelchen Stelzen muss ein System schließlich stehen.
+Neben unserem heutigen Verständnis eines Axioms verstand Aristoteles ein Axiom auch als praktisches Grundprinzip.</p>
+<p>Mit dem <em>Gesetz der logischen Deduktion</em> können wir aus gegebenen Annahmen wahre Aussagen schließen indem wir aus dem Generellen das Spezielle herausarbeiten.
+Seinen <em>Syllogismus</em>, verstanden als dreiteilige Schlussfolgerung beschreibt Aristoteles wie folgt:
+Aus der ersten Hauptprämisse gefolgt von Nebenprämisse folgern wir die Schlussfolgerung.
+Beide Prämissen enthalten einen gleichen Begriff auch genannt <em>Terminus Medius</em> (M), zum Beispiel ‚Mensch‘.
+Dieser Begriff bezieht sich auf ein Subjekt (S) welches als Teil einer Menge in der Nebenprämisse auftaucht.
+Ein Predikat (P) wird der Menge zugewiesen und kann dann in der Schlussfolgerung dem Subjekt zugewiesen werden:</p>
+<ul class="simple">
+<li><p>Alle Menschen (M) sind sterblich (Hauptprämisse)</p></li>
+<li><p>Sokrates ist ein Mensch (Nebenprämisse)</p></li>
+<li><p>Sokrates ist sterblich (Schlussfolgerung)</p></li>
+</ul>
+<p>Um Wahrheit herauszuarbeiten geht Aristoteles von drei Grundprinzipien aus:</p>
+<ol class="arabic simple">
+<li><p>Der <em>Satz der Identität</em> besagt, dass ein Gegenstand oder Ding <span class="math notranslate nohighlight">\(A\)</span> zu sich selbst identisch ist, d.h. <span class="math notranslate nohighlight">\(A=A\)</span> ist wahr.</p></li>
+<li><p>Der <em>Satz vom Widerspruch</em> besagt, dass es keine Aussage gibt, welche zugleich wahr als auch falsch ist.</p></li>
+<li><p>Der <em>Satz vom ausgeschlossenen Dritten</em> besagt, dass eine Aussage entweder wahr oder falsch ist.</p></li>
+</ol>
+<p>Gottfried Wilhelm Leibniz fügte zu diesen Gesetzen noch den <em>Satz vom zurichenden Grund</em> hinzu, der besagt, dass jedes Ereignis eine Ursache haben muss beziehungweise dass es für jede wahre Aussage einen Grund gibt, aus dem sie wahr ist.
+Das heißt, dass jede wahre Aussage durch eine andere Aussage begründet werde, deren Wahrheit bewiesen ist.
+Somit sind Zirkelschlüsse nicht zulässig.
+Es finde sich ähnliche Ideen bereits vor Leibniz bei Demokritus (460-371 v. Chr.).
+Diese vier Sätze begründeten die <em>klassische Logik</em>.</p>
+<p>Um zu einer allgemeinen Schlussfolgerung zu gelangen, wendet Aristoteles zwei unterschiedliche Arten der <a class="reference internal" href="../02-0/7-induction.html#sec-induction"><span class="std std-ref">Induktion</span></a>:
+Die <em>unvollkommene Induktion</em> verwendet mehrere spezielle Aussagen um zu einer generellen Aussage zu gelangen.
+Die <em>Induktion durch Aufzählung</em> beginnt mit dem Beweis einer Charakteristik für eine bestimmte Anzahl an Elementen einer Gruppe, um dann diese Charakteristik als wahr für alle Elemente der Gruppe zu beweisen.
+Auch Sokrates versuchte durch die Induktion allgemeines Wissen durch die Beobachtung einzelner Fälle herzuleiten.</p>
+<p>Es sei an dieser Stelle gesagt, dass die Aristotelische Logik das abendländische Denken lange Zeit besimmte und noch immer bestimmt, doch gab es beispielsweise um 600 v. Chr in der Buddistischen Tradition ähnliche Entwicklungen in Indien.</p>
+<p>Zur Zeit der antiken Griechen begann man die ersten uns überlieferten Algorithmen zu entwickeln.
+Um 300 v. Chr. notiert Euklid den ersten uns betkannten nicht-trivialen <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a>, der heute unter dem Namen <a class="reference internal" href="../02-4/1-algorithms.html#sec-euclid-alg"><span class="std std-ref">euklidischer Algorithmus</span></a> bekannt ist.</p>
+<figure class="align-default" id="fig-euklid-elements">
+<a class="reference internal image-reference" href="../../_images/the-elements.jpg"><img alt="../../_images/the-elements.jpg" src="../../_images/the-elements.jpg" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 3.2 </span><span class="caption-text">Ein Fragment der Werke <em>Die Elemente</em>, <a class="reference external" href="http://www.math.ubc.ca/~cass/Euclid/papyrus/papyrus.html">Quelle</a>.</span><a class="headerlink" href="#fig-euklid-elements" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>In seinem Werk <em>Die Elemente</em> in Buch VII formulierte er den Algorithmus für positive ganze Zahlen und in Buch X für positive reelle Zahlen.
+Das Verfahren wurde wahrscheinlich nicht von Euklid erfunden, da er in den Elementen die Erkenntnisse früherer Mathematiker zusammenfasste.
+Es wird vermutet, dass Buch VII ein schon von den Pythagoreern verwndetes Lehrbuch der Zahlentheorie ist <span id="id1">[<a class="reference internal" href="../misc/bibliography.html#id29" title="B. L. van de Waerden. Erwachende Wissenschaft. Ägyptische, babylonische und griechische Mathematik. Birkhäuser, 1957.">van de Waerden, 1957</a>]</span>.
+Für ganze Zahlen berechnet der Algorithmus den größten gemeinsamen Teilers <code class="docutils literal notranslate"><span class="pre">gcd(a,b)</span></code> zweier natürlicher Zahlen <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>.
+Über zweitausend Jahre später finden wir jenen Algorithmen in einer anderen Form wieder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the greatest common divisor of a and b.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="n">gcd</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>[The Euclidean algorithm] is the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has survived to the present day. – Donald Knuth, The Art of Computer Programming, Vol 2.</p>
+</div></blockquote>
+<p>Nach Eratosthenes ist ein Algorithmus, das sog. <a class="reference external" href="https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes">Sieb des Eratosthenes</a>, benannt der zur Berechnung von Primzahlen dient.
+Allerdings hat auch Eratosthenes, der im 3. Jahrhundert v. Chr. lebte, das Verfahren nicht entdeckt, sondern nur die Bezeichnung ‚Sieb‘ für das schon lange vor seiner Zeit bekannte Verfahren eingeführt.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sieve_of_eratosthenes</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a list of all prime numbers p in ascending order with p &lt; N.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">prime_sieve</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+    <span class="n">prime_sieve</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">prime_sieve</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">prime_sieve</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+                <span class="n">prime_sieve</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="n">primes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">prime_sieve</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">primes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">primes</span>
+        
+<span class="n">sieve_of_eratosthenes</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2,
+ 3,
+ 5,
+ 7,
+ 11,
+ 13,
+ 17,
+ 19,
+ 23,
+ 29,
+ 31,
+ 37,
+ 41,
+ 43,
+ 47,
+ 53,
+ 59,
+ 61,
+ 67,
+ 71,
+ 73,
+ 79,
+ 83,
+ 89,
+ 97]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die Stoa entwickelten die Logik weiter indem sie zwischen Objekten, theoretischen Bildern und linguistischen Zeichen unterschieden.
+Danach verschwand die Aristotelische Logik über lange Zeit und tauchte erst wieder im Mittelalter auf.
+Die Sekularisierung nahm ihren Lauf und am Ende des 11. Jahrhunderts entstanden aus den Schulen der Klöstern und Katedralen die ersten Universitäten.</p>
+<figure class="align-default" id="greeks">
+<a class="reference internal image-reference" href="../../_images/greeks.png"><img alt="../../_images/greeks.png" src="../../_images/greeks.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 3.3 </span><span class="caption-text">Denker*innen Ihrer Zeit: Euklid, Eratosthenes, Hypatia, Quellen: <a class="reference external" href="https://en.wikipedia.org/wiki/File:Eratosthene.01.png">2</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Hypatia_portrait.png">3</a>.</span><a class="headerlink" href="#greeks" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Die Zeit der Scholastik, welche die Vernunft und den Glauben als Mittel der Wissenserzeugung sah, begann.
+Die Aristotelische Logik wurde dabei insbesondere durch Thomas von Aquine ein inhärenter Bestandteil der scholastischen Logik.
+Das logische Denken wurde kultiviert wurde jedoch hauptsächlich als Instrument zur Unterstützung des christlichen Glaubens gebraucht.
+Die Scholastik versuchte den Glauben durch logische Schlüsse zu rechtfertigen bzw. zu begründen und zu ergründen.</p>
+<p>Diese Entwicklung war der erste Schritt zu einer Systematisierung und Formalisierung der Logik und damit der Systematisierung der Wissenserzeugung und der Manipulation jenes Wissens in unterschiedlicher Art und Weise in einem abgeschlossenen System.
+Die dadurch eingeführte Abstraktion ist eine notwendige Vorraussetzung für die Entwicklung eines Systems, in dessen Kontext Algorithmen für die Berechnung der Lösung aller möglichen Probleme konstruiert werden können.</p>
+<p>Eine weitere Persönlichkeit die hier erwähnt werden sollte ist der Universalgeleerte Gottfried Wilhelm Leibniz (1646-1716).
+Neben vieler essentieller wissenschaftlicher Beiträge, wollte er das Wissen an sich durch eine Art Universalsprache formalisieren.
+Diese sollte es ermöglichen jedes wissenschaftliche Problem mittels eines umfassenden Kalküls zu lösen.
+Nach dem dreißigjährigen Krieg war für ihn diese Vision auch ein Projekt zur transnationalen Verständigung in Europa.
+Leibniz arbeitete an einer Codierung für alle möglichen wissenschaftlichen Begriffe und an einem Kalkül welches jene Begriffe der Universalsprache durch logische Operationen verbinden sollte.
+Beispielsweise wurde durch Multiplikation eines Dings (<span class="math notranslate nohighlight">\(2\)</span>) ein Seiendes (<span class="math notranslate nohighlight">\(2 \cdot 3\)</span>) und durch eine weitere Multiplikation, ein Mensch (<span class="math notranslate nohighlight">\(2 \cdot 3 \cdot 5\)</span>).</p>
+<blockquote>
+<div><p>Wenn Gott zählt ensteht eine Welt. – Leibniz</p>
+</div></blockquote>
+<p>Auch wenn diese Idee für jene Zeit bahnbrechend ist, bringt sie auch einige Probleme mit sich und hat sich nicht durchgesetzt.
+Doch ist es heute selbstverständlich so, dass wir auf der digitalen Maschine alles durch Zahlen repräsentieren.
+Leibniz war seiner Zeit in jedem Fall voraus.
+In seiner Welt wurden Zahlen zum Instrument um die Welt zu organisieren.
+Er entwarf ein konkretes System auch wenn dessen Realisierung zum Scheitern verurteilt war.
+Der Mathematiker Kurt Gödel sollte schlussendlich zeigen, dass derartige Versuche der Formalisierung der Welt nicht möglich sind.</p>
+<p>1847 führte der englische Mathematiker und Philosoph Georg Boole in seinem Buch <em>The Mathematical Analysis of Logic</em> <span id="id2">[<a class="reference internal" href="../misc/bibliography.html#id32" title="George Boole. The mathematical analysis of logic. 1847.">Boole, 1847</a>]</span> die sog. boolsche Algebra ein.
+Insbesondere die <em>zweielementige boolsche Algebra</em> mit den Elementen 0 und 1, welche Anwendung in der Aussagenlogik hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
+Sie ist Teil jeder modernen Programmiersprache.
+Zusätzlich beruhen auf ihr alle (auch arithmetische) Operationen des digitalen Computers.
+Die boolsche Algebra definiert logische Operatoren wie AND <span class="math notranslate nohighlight">\((\land)\)</span>, OR (<span class="math notranslate nohighlight">\(\lor\)</span>) und NOT <span class="math notranslate nohighlight">\((\neg)\)</span>, die auf die Elemente 0 und 1 angewendet werden können wobei 0 als <em>falsch</em> und 1 als <em>wahr</em> interpretiert werden.
+Andere Operationen wie NAND (not AND), NOR (not OR), EXOR (entweder oder) und NEXOR (nicht entweder oder) können aus den Basisoperationen durch Kombination konstruiert werden.</p>
+<p>Um 1930 beobachtete Claude Shannon, dass sich die Regeln der boolschen Algebra auf elektrische Schaltungen übertragen lassen.
+In fast allen digitalen Computern stellen elektrische Schaltungen die physikalische Manifestation boolscher Operationen dar.
+Durch <a class="reference internal" href="../02-1/3-manipulation.html#sec-gates"><span class="std std-ref">Logikgatter</span></a> werden diese Operatoren in Computern realisiert und bilden die Basis jedweder Berechnung.</p>
+<figure class="align-default" id="fig-circuit">
+<a class="reference internal image-reference" href="../../_images/circuit.png"><img alt="../../_images/circuit.png" src="../../_images/circuit.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 3.4 </span><span class="caption-text">Elektrischer Schaltkreis für den logischer Ausdruck <span class="math notranslate nohighlight">\(X_1 \lor (X_4 \land (X_2 \lor X_3))\)</span>.</span><a class="headerlink" href="#fig-circuit" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Wie die Aussagenlogik so verzichtet auch die boolsche Algebra auf einen Geltungsbereich der Variablen.
+Mit anderen Worten Sie kennt keine Quantoren <span class="math notranslate nohighlight">\((\forall\)</span>, <span class="math notranslate nohighlight">\(\exists)\)</span>.
+Auch kennt sie das Prinzip des Prädikats nicht.
+In umgangssprachlicher Annäherung ist ein Prädikat eine Folge von Wörtern, die Leerstellen eröffnen;
+diese Folge wird zu einer wahren oder falschen Aussage, wenn in jede Leerstelle ein Eigenname eingesetzt wird.
+Beispielsweise ist: „… ist ein Mensch“ ein Prädikat.
+Ein mathematisches Prädikat ist eine Funktion die (bestimmten) mathematischen Objekten einen Wahrheitswert zuweist.
+Beispielsweise ist</p>
+<div class="math notranslate nohighlight">
+\[P(x) = x \text{ ist eine gerade Zahl}\]</div>
+<p>ein Prädikat, wobei beispielweise <span class="math notranslate nohighlight">\(P(2) = \text{wahr}\)</span> ergibt und <span class="math notranslate nohighlight">\(P(3) = \text{falsch}\)</span>.
+Um Elementen aus Mengen auszuwählen gibt es die Quantoren.
+So lässt sich der Satz: „Für jede ungerade Zahl gibt es eine natürliche Zahl, mit der man diese multiplizieren kann, sodass das Ergebnis eine gerade Zahl ist.</p>
+<div class="math notranslate nohighlight">
+\[\forall n \in \mathbb{Z} \, \exists k \in \mathbb{N}: \neg P(n) \Rightarrow P(n \cdot k).\]</div>
+<p>Diese Logik erster Ordnung oder auch Prädikatenlogik wurde insbesondere von Ludwig Gottlob Frege (1848-1925) in seinem Werk <em>Begriffsschrift</em> <span id="id3">[<a class="reference internal" href="../misc/bibliography.html#id33" title="Gottlob Frege. Begriffsschrift. Verlag von Louis Nebert, 1879.">Frege, 1879</a>]</span> entwickelt.
+Freges vorrangiges Ziel war der Logizismus, d.h. zu zeigen, dass die Mathematik als Teil der Logik auszuweisen ist.
+In anderen Worten wollte er alle mathematischen Sätze aus wenigen rein logischen Axiomen ableiten.
+Dieses Unternehmen war nur aussichtsreich, wenn ein Mittel zur Verfügung stand, mit dem sich die Lückenlosigkeit einer Schlusskette zweifelsfrei überprüfen ließ.
+Da sich die traditionelle Aristotelische Logik (Syllogistik) als unbrauchbar für diesen Zweck herausstellte, nahm sich Frege zunächst der Aufgabe an, eine neue, geeignetere Logik zu schaffen.</p>
+<figure class="align-default" id="logicians">
+<a class="reference internal image-reference" href="../../_images/logicians.png"><img alt="../../_images/logicians.png" src="../../_images/logicians.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 3.5 </span><span class="caption-text">Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russell, Quellen: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:George_Boole_color.jpg">1</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Young_frege.jpg">2</a>.</span><a class="headerlink" href="#logicians" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Die Theoretiker sollten, nach Baddage’s Konzeption der Rechenmaschine, zu den Ingenieuren wieder aufstoßen.
+Die Prädikatenlogik wurde druch Bertrand Arthur William Rusell (1872-1970) und Alfred North Whitehead (1861-1947) weiterentwickelt.
+Sie machten die Logik zum Objekt wissenschaftlicher Forschung.
+Deren Logizismus und Formalismus führte zum sogenannten <a class="reference external" href="https://de.wikipedia.org/wiki/Grundlagenkrise_der_Mathematik">Grundlagenstreit der Mathematik</a> in dem sich Formalismus und Intuitionismus, vertreten durch Luitzen Egbertus Jan Brouwer (1881-1966), gegenüber standen.
+Die Formalisten, insbesondere David Hilbert (1862-1943), wollten mathematische Grundsätze auf eine (bewiesenes) konsistente axiomatische Basis stellen.
+Die Intuitionisten glaubten, dass dies nicht möglich sei.
+Zudem zweifelten sie an der Gültigkeit des <em>Satz vom ausgeschlossenen Dritten</em> und des <em>indirekten Beweises</em>.</p>
+<p>Hilbert schlug 1920 ein Forschungsprogramm vor das zum Ziel hatte, mit finiten Methoden die Widerspruchsfreiheit der Axiomensysteme der Mathematik nachzuweisen.
+Auch wenn sich das Hilbertprogramm in seinem ursprünglichen Anspruch als undurchführbar erwiesen hat, trug es dennoch entscheidend dazu bei, die Grundlagen und Grenzen mathematischer Erkenntnis zu klären.
+Das Programm fand breite Beachtung.
+Viele bekannte Logiker und Mathematiker beteiligten sich daran, unter anderem Paul Bernays, Wilhelm Ackermann, John von Neumann (1903-1957), Jacques Herbrand (1908-1931) und Kurt Gödel. Sie zeigten die Widerspruchsfreiheit und Vollständigkeit für zentrale Teilgebiete der Logik, nämlich für die klassische Aussagen- und Prädikatenlogik.</p>
+<blockquote>
+<div><p>Aus dem Paradies, das Cantor uns geschaffen, soll uns niemand vertreiben können. – Hilbert</p>
+</div></blockquote>
+<p>Hilbert, Russell und andere erzielten durch die Provokation der Intuitionisten weitreichende Erfolge.
+Russell und Whitehead gelang es in ihrem Werk <em>Principia Mathematica</em> <span id="id4">[<a class="reference internal" href="../misc/bibliography.html#id30" title="Bertrand Russell and Alfred North Whitehead. Principia mathematica. 1910.">Russell and Whitehead, 1910</a>]</span> einige Gebiete der Mathematik auf ein solches Fundament zu stellen.
+Und David Hilbert und Wilhelm Ackermann (1892-1982) beschäftigten sich in <em>Grundzüge der theoretischen Logik</em> <span id="id5">[<a class="reference internal" href="../misc/bibliography.html#id31" title="David Hilbert and Wilhelm Ackermann. Grundzüge der theoretischen Logik. 1928.">Hilbert and Ackermann, 1928</a>]</span> unter anderem mit dem automatischen Prozessieren von logischen Berechnungen.
+Dabei formulierten sie das sog. <em>Entscheidungsproblem</em> formulierten.
+Es ist ein Problem, welche wie kein zweites die Logik und Informatik verbindet.</p>
+<div class="definition admonition" id="def-decision-problem">
+<p class="admonition-title">Das Entscheidungsproblem</p>
+<p>Das Entscheidungsproblem verlangt nach der Beantwortung der Frage ob ein Algorithmus existiert, der für jedes Element einer vorgegebenen Menge beantworten kann, ob eine vorgegebene Eigenschaft zutrifft oder nicht?</p>
+</div>
+<p>Der österreichische Mathematiker Kurt Gödel (1906-1978) beantwortet die Frage mit einem <em>nein</em> und sowohl Alonzo Church (1903-1995) wie auch Alan Turing (1912-1954) veröffentlichen unabhängige Beiträge, die zeigen, dass das <em>Entscheidungsproblem</em> nicht zu lösen ist, sofern alles was <em><a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-computable"><span class="std std-ref">grundsätzlich berechenbar</span></a></em> ist, sich mit dem deckt, was <em><a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-computable"><span class="std std-ref">Turing-berechenbar</span></a></em> ist.
+Diese Annahme wird als <em><a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-church-these"><span class="std std-ref">Church-Turing-These</span></a></em> bezeichnet.
+Trifft die These zu, kann alles was <em>grundsätzlich berechenbar</em> ist auch von einem <em><a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-vollständigen</span></a></em> Computer (jedem modernen Computer) berechnet werden.</p>
+<p>Über das <em>Entscheidungsproblem</em> konnte Turing die Fragestellung des sog. <a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-halting-problem"><span class="std std-ref">Halteproblem</span></a> beantworten.
+Es wird demnach keinen Algorithmus geben können, der für jedes beliebige Programm mit beliebiger Eingabe festellen kann, ob dieses Programm jemals hält oder nicht.
+Für uns als Programmierer*innen bedeutet dies, dass wir selbst prüfen müssen ob unser Algorithmus das berechnet und vollzieht was vorgesehen ist.
+Es gibt keine Software, die uns für einen beliebigen Quellcode garantieren kann, dass wir keine Endlosschleife programmiert haben.</p>
+<figure class="align-default" id="goedel-church-turing">
+<a class="reference internal image-reference" href="../../_images/goedel-church-turing.png"><img alt="../../_images/goedel-church-turing.png" src="../../_images/goedel-church-turing.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 3.6 </span><span class="caption-text">Mathematiker Kurt Gödel, Alonzo Church und Alan Turing, Quellen: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:1925_kurt_g%C3%B6del.png">1</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg">2</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg">3</a>.</span><a class="headerlink" href="#goedel-church-turing" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Was aus dem theoretischen Diskurs hervorging waren jedoch nicht nur zerstörte Träume, sondern auch neue fruchtbare Theorien, die das Fundament der Informatik und damit auch des künftigen Computational Thinkings prägen sollten.
+Alan Turing entwickelte mit seiner <em><a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschine</span></a></em> ein sehr konkretes Modell für einen Computer, welcher im Stande war, all das zu berechnen, was heute moderne Computer berechnen können.
+Durch jenes Modell kann man noch heute prüfen ob konkrete Ingenieurskonstruktionen den Ansprüchen der <em><a class="reference internal" href="../02-1/5-hardware-equals-software.html#def-turing-complete"><span class="std std-ref">Turing-Vollständigkeit</span></a></em> genügen.
+Schon zu dieser Zeit belegt seine <em>universellen Turingmaschine</em> den fließenden Übergang zwischen Hard- und Software.
+Mit seiner Arbeit beeinflusste Turing imperative Programmiersprachen maßgeblich, wohingegen sein Doktorvater, Alonzo Church, mit dem <em>Lambda-Kalkül</em> <em>funktionale Programmiersprachen</em> ins Leben rufen sollte.</p>
+<p>Aus der Frage der Berechenbarkeit folgte unweigerlich die Frage der Komplexität, also wie <em>schwer</em> ein Problem ist und wie dies zu messen ist.
+Lassen sich Probleme anhand ihrer <em>Komplexität</em> vergleichen?
+Was ist einfacher: ein Sudoku lösen oder Karten sortieren?
+Außerdem ergaben sich auch neue philosophische Fragen wie: Ist der menschliche Geist ein Informationsverarbeitungsprozess? Ist gar die Natur ein solcher Prozess oder kann sie zumindest als solcher modelliert werden?
+Ähnliche Fragen entstanden als die Mechanik ihren Siegeszug antrat.
+Zu dieser Zeit stellte man sich das menschliche Gehirn als eine Art Uhr vor.
+Inwieweit sich dieser Computationalismus bestätigt oder widerlegt wird bleibt noch immer abzuwarten.</p>
+<figure class="align-default" id="model-of-a-tm">
+<a class="reference internal image-reference" href="../../_images/model-of-a-tm.jpeg"><img alt="../../_images/model-of-a-tm.jpeg" src="../../_images/model-of-a-tm.jpeg" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 3.7 </span><span class="caption-text">Eine konkrete Konstruktion einer Turingmaschine, <a class="reference external" href="https://de.wikipedia.org/wiki/Turingmaschine#/media/Datei:Model_of_a_Turing_machine.jpg">Quelle</a>.</span><a class="headerlink" href="#model-of-a-tm" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Was aber heute in aller Munde ist, stammt aus dem Bereich des <em>maschinellen Lernens</em>.
+Schon in den 1940er Jahren wurde versucht die Informationsverarbeitung am Beispiel des menschlichen Gehirns zu modellieren.
+Dieser Ansatz wurde durch die Hirnforschung inspiriert.
+Die Idee war und ist es, eine riesige Anzahl an hochgradig vernetzten aber relativ simplen Neuronen durch Software zu simulieren.
+Die Idee der <em>künstlichen neuronalen Netze</em> (engl. <em>artificial neuronal network (ANN)</em>) war geboren.</p>
+<figure class="align-default" id="fig-ann">
+<a class="reference internal image-reference" href="../../_images/ann.png"><img alt="../../_images/ann.png" src="../../_images/ann.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 3.8 </span><span class="caption-text">Skizze eines künstliches neuronalen Netzes.</span><a class="headerlink" href="#fig-ann" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Um 1960 wurde eine wichtige Erweiterung der <em>neuronalen Netze</em>, die sog. <em>tiefen neuronalen Netze</em> (engl. <em>deep neural networks (DNN)</em>), vorgeschlagen.
+Anders als herkömmliche neuronale Netze (siehe <a class="reference internal" href="#fig-ann"><span class="std std-numref">Abbildung 3.8</span></a> ) bestehen diese aus mehrere <em>versteckten Schichten</em>.
+Zu jener Zeit fehlten allerdings die Daten und die Rechenleistung, um derartige <em>DNNs</em> praktisch nutzen zu können.
+Auch hatte men Schwierigkeiten die benötigten Gradienten im Zaum zu halten.
+Erst in den 80er Jahren wurden erste praktikable <em>künstliche neuronalen Netze</em> entwickelt <span id="id6">[<a class="reference internal" href="../misc/bibliography.html#id12" title="Y. LeCun, B. Boser, J. S. Denker, D. Henderson, R. E. Howard, W. Hubbard, and L. D. Jackel. Backpropagation applied to handwritten zip code recognition. Neural Computation, 1(4):541–551, dec 1989. doi:10.1162/neco.1989.1.4.541.">LeCun <em>et al.</em>, 1989</a>]</span>.
+<em>ANNs</em> bilden eine Teilmenge der Algorithmen des <em>maschinelles Lernen</em>.
+Tom Mitchell definiert <em>maschinelles Lernen</em> wie folgt:</p>
+<blockquote>
+<div><p>Ein Computerprogramm lernt von der Erfahrung <span class="math notranslate nohighlight">\(E\)</span> in Bezug auf eine Klasse von Aufgaben <span class="math notranslate nohighlight">\(T\)</span> und einer Bewertungsmetrik <span class="math notranslate nohighlight">\(P\)</span>, wenn dessen Fähigkeit die Aufgaben <span class="math notranslate nohighlight">\(T\)</span> zu lösen, sich in Bezug auf die Bewertungsmetrik <span class="math notranslate nohighlight">\(P\)</span>, mit der Erfahrung <span class="math notranslate nohighlight">\(E\)</span>, verbessert. – Tom Mitchell, 1997</p>
+</div></blockquote>
+<p>Der wesentliche Unterschied zwischen einem klassischen Algorithmus und dem <em>maschinellen Lernen</em> ist somit in seinen Augen, dass sich der Algorithmus anhand der Daten, die er verarbeitet, selbständig anpasst – er lernt von seinen Erfahrungen.
+Ein sehr einfaches Beispiel ist der sog. <em>Spamfilter</em>.
+Ein Spamfilter befolgt keine fest eingebrannten Regeln, sondern <em>lernt</em> was Spam und was kein Spam ist, indem wir E-Mails als Spam markieren.
+Er benötigt <em>Trainingsdaten</em> und kann dann neue Daten selbständig <em>klassifizieren</em>.</p>
+<p>Insbesondere <em>tiefe neuronalen Netze (DNNs)</em> konnten erfolgreich für Aufgaben eingesetzt werden, die zuvor als unlösbar galten.
+Zu nennen ist die Sprach- (<em>Microsoft</em> 2011) und Bilderkennung <span id="id7">[<a class="reference internal" href="../misc/bibliography.html#id13" title="Dan Cireşan, Ueli Meier, and Juergen Schmidhuber. Multi-column deep neural networks for image classification. 2012. doi:10.48550/ARXIV.1202.2745.">Cireşan <em>et al.</em>, 2012</a>, <a class="reference internal" href="../misc/bibliography.html#id15" title="Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton. Imagenet classification with deep convolutional neural networks. Communications of the ACM, 60(6):84-90, 5 2017. doi:10.1145/3065386.">Krizhevsky <em>et al.</em>, 2017</a>]</span>.</p>
+<p>Der Erfolg ist auf drei Faktoren zurückzuführen:
+Zu nennen ist die hohe Datenmenge.
+<em>Facebook</em> sammelt täglich etwa 350 Millionen Bilder und <em>YouTube</em> ca. 300 Stunden Videomaterial pro Minute.
+Durch die Integration der Technik in unser alltägliches Leben, bekannt unter dem Schlagwort <em>Internet der Dinge</em> (engl. <em>Internet of Things</em> (IoT)), können und werden weitere Daten von einem anderen Typ bzw. von einer anderen Qualität gesammelt.</p>
+<p>Der zweite Faktor ist die hohe Rechenleistung, die uns in den letzten Jahren zur Verfügung stand.
+Sie erlaubt es uns die Algorithmen aus den 80er Jahren auf jene Daten loszulassen.
+Diese Algorithmen sind im Stande Strukturen in jenen Daten zu finden.</p>
+<p>Der dritte wesentliche Faktor stellt die anfängliche Erfolgsgeschichte dar.
+Keiner wusste so recht, ob diese Netze tatsächlich nützlich sind.
+Die überraschend guten Resultate führten zu einer Flut an Entwicklungen neuer <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmen</span></a> und Open-Source-Bibliotheken.
+Insbesondere das <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Ökosystem wurde befüllt.</p>
+<figure class="align-default" id="fig-ai-context">
+<a class="reference internal image-reference" href="../../_images/ai-context.png"><img alt="../../_images/ai-context.png" src="../../_images/ai-context.png" style="width: 400px;" /></a>
+</figure>
+<p>Das <em>maschinelle Lernen</em> ist wiederum eine Unterkategorie der <em>künstlichen Intelligenz (KI)</em> (engl. <em>artificial intelligence (AI)</em>).
+Der Begriff wurde 1956 von <em>John McCarthy</em> eingeführt.</p>
+<blockquote>
+<div><p>[Es sei das Ziel von künstlicher Intelligenz], intelligentes menschliches Verhalten durch Computerprogramme (künstlich) nachzubilden. – John McCarthy</p>
+</div></blockquote>
+<p>Die Themen <em>KI</em> im Allgemeinen und <em>maschinelles Lernen</em> im Besonderen werden uns auch in Zukunft noch beschäftigen.
+Die bisherigen Erfolge sind vielversprechend und möglicherweise können uns diese Algorithmen in vielen Bereichen eine echte Stütze sein.
+Dabei sollten wir einen gesunden Umgang mit KI-Systemen entwickeln.
+Fragen der Ethik, Ökologie und der sozialen Gerechtigkeit müssen in diesem Zuge ihren Platz im Diskurs finden.
+Das <em>maschinelle Lernen</em> wird sich auf all jene Bereiche ausbreiten für die wir große Datenmengen gesammelt haben oder sammeln können.
+Anbieter können so ihre Produkte optimieren – was auch immer das im Einzelnen bedeuten mag.
+KI kann uns möglicherweise helfen die Erderwärmung zu reduzieren, gleichzeitig benötigen diese daten- und energiehungrigen Algorithmen viele Ressourcen.
+Diese Spannung zwischen Nutzen und Kosten müssen wir beleuchten.</p>
+<p>Daten sind heute ein echtes Wirtschaftsgut.
+Uns allen sollte bewusst sein, dass diese immense, oft undurchsichtige Datensammlung auch ihre Schattenseiten hat.
+Insbesondere wenn <em>personenbezogene Daten</em> gesammelt werden, müssen wir kritisch hinterfragen was mit diesen Daten gemacht wird und ob wir mit dieser Entwicklung einverstanden sind.
+Auch hängt die Qualität der Entscheidung eines lernenden Algorithmus von dessen Erfahrungen, d.h., den (Trainings-)Daten ab.
+Diskriminierungen, welche sich in den Daten finden, werden auch lernende Algorithmen durch die Reproduktion von Stereotypen übernehmen.
+Darüber hinaus muss in einer rechenzentrierten Gesellschaft beleuchtet und kritisch hinterfragt werden, in welcher Gewalt die nötigen Rechenressourcen liegen.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/01-3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1-writing-system.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">zurück</p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>Symbole, Schrift und Zahlen</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3-calculating-machines.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">weiter</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Rechenmaschinen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

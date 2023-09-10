@@ -17,8 +17,8 @@ Zu dieser Zeit konstruierten vermutlich die Sumerer das älteste bekannte Rechen
 Er unterstützte sie bei der Addition, Subtraktion, Multiplikation und Division ganzer Zahlen.
 Ziel war es Rechenfehler bei einfachen Berechnungen zu verhindern.
 
-Über zweitausend Jahre später erschufen die antiken Griechen eine Art mechanisch-analogen Computer -- eine ganz erstaunliche Leistung, die für die kommenden tausend Jahre einzigartig bleiben sollte.
-Dieser antike Computer war dazu gedacht, bestimmte Positionen der Himmelskörper zu bestimmen -- schon immer wurden wir Menschen von der Frage nach unserem Platz und unserer Bedeutung im Universum angetrieben.
+Über zweitausend Jahre später erschufen die antiken Griechen eine Art mechanisch-analogen Computer---eine ganz erstaunliche Leistung, die für die kommenden tausend Jahre einzigartig bleiben sollte.
+Dieser antike Computer war dazu gedacht, bestimmte Positionen der Himmelskörper zu bestimmen---schon immer wurden wir Menschen von der Frage nach unserem Platz und unserer Bedeutung im Universum angetrieben.
 
 ```{figure} ../../figs/history/greeks.png
 ---

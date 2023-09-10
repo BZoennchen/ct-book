@@ -34,6 +34,7 @@ Ein oder zwei Signale gelangen in ein Gatter und, je nachdem um welches Gatter e
 Das Ausgabesignal hängt von den ein oder zwei Eingabesignalen und dessen Typ des Gatters ab.
 Jedes Gatter realisiert eine [(mathematische) Funktion](def-math-function).
 
+(sec-gates)=
 ## Basis Gatter
 
 Das einfachste **Not**-Gatter nimmt als Eingabe ein Signal und gibt dessen *Negation* davon aus.
