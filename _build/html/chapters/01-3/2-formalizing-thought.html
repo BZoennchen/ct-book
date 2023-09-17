@@ -586,7 +586,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -602,6 +604,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Inhalt </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aristotelische-logik">3.2.1. Aristotelische Logik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antike-algorithmen">3.2.2. Antike Algorithmen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-der-scholastik-zur-modernen-logik">3.2.3. Von der Scholastik zur modernen Logik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zerstorte-traume-und-fruchtbare-theorien">3.2.4. Zerstörte Träume und fruchtbare Theorien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-maschinelle-lernen">3.2.5. Das maschinelle Lernen</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -614,9 +628,12 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="die-formalisierung-des-denkens">
 <h1><span class="section-number">3.2. </span>Die Formalisierung des Denkens<a class="headerlink" href="#die-formalisierung-des-denkens" title="Permalink to this heading">#</a></h1>
 <p>Mit dem provokanten Titel dieses Abschnitts wollen wir nicht etwa ausdrücken, dass Maschinen oder Algorithmen tatsächlich denken.
-Vielmehr geht es um die Anstrengung dieses Denken derart zu formalisieren, dass es für bestimmte Operationen nicht mehr notwendig ist.</p>
+Vielmehr geht es um die Anstrengung dieses Denken derart zu formalisieren, dass es für bestimmte Operationen nicht mehr notwendig ist.
+Aus Denken wird Rechnen.</p>
+<section id="aristotelische-logik">
+<h2><span class="section-number">3.2.1. </span>Aristotelische Logik<a class="headerlink" href="#aristotelische-logik" title="Permalink to this heading">#</a></h2>
 <p>Dieser Prozess der Formalisierung begann mit der Entwicklung der Logik.
-Der Begriff <em>Logik</em> stammt vom Griechischen <em>logos</em> was soviel heißt wie <em>Denken</em>, <em>Wort</em>, <em>Gedanke</em>, <em>Sinn</em> oder <em>Rationalität</em>.
+Der Begriff <em>Logik</em> stammt vom Griechischen <em>logos</em> was soviel wie <em>Denken</em>, <em>Wort</em>, <em>Gedanke</em>, <em>Sinn</em> oder <em>Rationalität</em> heißt.
 Und wieder ist es Aristoteles (384-322 v. Chr.) der den Anfang für einen breiteren Durchbruch der Logik machte.
 Zwar wurde die Kunst der Argumentation bereits bei Sokrates und Plato verwendet aber erst Aristoteles entwickelte ein abgeschlossenes System der Logik und etablierte dieses als wissenschaftliche Disziplin.
 Seine Beiträge zur Logik finden Sie in seinem Werk <em>Organon</em> aber auch als Teil seiner <em>Metaphysik</em>.
@@ -628,36 +645,39 @@ Die Annahmen müssen selbst konsistent sein.
 Grundannahmen werden dabei als <em>Axiome</em> bezeichnet.
 Solche Axiome gelten als absolut wahr und benötigen deshalb keines Nachweises in Form eines Beweises.
 In der Mathematik müssen wir immer mit derartigen Axiomen beginnen.
-Es gibt keine Möglichkeit jede Annahme in einem System zu beweisen denn auf irgendwelchen Stelzen muss ein System schließlich stehen.
+Es gibt keine Möglichkeit jede Annahme in einem System zu beweisen, denn auf irgendwelchen Stelzen muss ein System schließlich stehen.
 Neben unserem heutigen Verständnis eines Axioms verstand Aristoteles ein Axiom auch als praktisches Grundprinzip.</p>
 <p>Mit dem <em>Gesetz der logischen Deduktion</em> können wir aus gegebenen Annahmen wahre Aussagen schließen indem wir aus dem Generellen das Spezielle herausarbeiten.
 Seinen <em>Syllogismus</em>, verstanden als dreiteilige Schlussfolgerung beschreibt Aristoteles wie folgt:
-Aus der ersten Hauptprämisse gefolgt von Nebenprämisse folgern wir die Schlussfolgerung.
+Aus der ersten Hauptprämisse, gefolgt von der Nebenprämisse, folgern wir die Schlussfolgerung.
 Beide Prämissen enthalten einen gleichen Begriff auch genannt <em>Terminus Medius</em> (M), zum Beispiel ‚Mensch‘.
 Dieser Begriff bezieht sich auf ein Subjekt (S) welches als Teil einer Menge in der Nebenprämisse auftaucht.
 Ein Predikat (P) wird der Menge zugewiesen und kann dann in der Schlussfolgerung dem Subjekt zugewiesen werden:</p>
 <ul class="simple">
-<li><p>Alle Menschen (M) sind sterblich (Hauptprämisse)</p></li>
-<li><p>Sokrates ist ein Mensch (Nebenprämisse)</p></li>
-<li><p>Sokrates ist sterblich (Schlussfolgerung)</p></li>
+<li><p>Alle Menschen (M) sind sterblich (P) (Hauptprämisse)</p></li>
+<li><p>Sokrates (S) ist ein Mensch (M) (Nebenprämisse)</p></li>
+<li><p>Sokrates (S) ist sterblich (P) (Schlussfolgerung)</p></li>
 </ul>
 <p>Um Wahrheit herauszuarbeiten geht Aristoteles von drei Grundprinzipien aus:</p>
 <ol class="arabic simple">
 <li><p>Der <em>Satz der Identität</em> besagt, dass ein Gegenstand oder Ding <span class="math notranslate nohighlight">\(A\)</span> zu sich selbst identisch ist, d.h. <span class="math notranslate nohighlight">\(A=A\)</span> ist wahr.</p></li>
-<li><p>Der <em>Satz vom Widerspruch</em> besagt, dass es keine Aussage gibt, welche zugleich wahr als auch falsch ist.</p></li>
-<li><p>Der <em>Satz vom ausgeschlossenen Dritten</em> besagt, dass eine Aussage entweder wahr oder falsch ist.</p></li>
+<li><p>Der <em>Satz vom Widerspruch</em> besagt, dass es keine Aussage gibt, welche zugleich wahr als auch falsch ist, d.h. <span class="math notranslate nohighlight">\(A \land \neg A\)</span> ist falsch.</p></li>
+<li><p>Der <em>Satz vom ausgeschlossenen Dritten</em> besagt, dass eine Aussage entweder wahr oder falsch ist, d.h. <span class="math notranslate nohighlight">\(A \lor \neg A\)</span> ist wahr.</p></li>
 </ol>
-<p>Gottfried Wilhelm Leibniz fügte zu diesen Gesetzen noch den <em>Satz vom zurichenden Grund</em> hinzu, der besagt, dass jedes Ereignis eine Ursache haben muss beziehungweise dass es für jede wahre Aussage einen Grund gibt, aus dem sie wahr ist.
+<p>Gottfried Wilhelm Leibniz fügte zu diesen Gesetzen noch den <em>Satz vom zureichenden Grund</em> hinzu, der besagt, dass jedes Ereignis eine Ursache haben muss beziehungweise dass es für jede wahre Aussage einen Grund gibt, durch den sie wahr ist.
 Das heißt, dass jede wahre Aussage durch eine andere Aussage begründet werde, deren Wahrheit bewiesen ist.
 Somit sind Zirkelschlüsse nicht zulässig.
-Es finde sich ähnliche Ideen bereits vor Leibniz bei Demokritus (460-371 v. Chr.).
+Es finden sich ähnliche Ideen bereits vor Leibniz bei Demokritus (460-371 v. Chr.).
 Diese vier Sätze begründeten die <em>klassische Logik</em>.</p>
-<p>Um zu einer allgemeinen Schlussfolgerung zu gelangen, wendet Aristoteles zwei unterschiedliche Arten der <a class="reference internal" href="../02-0/7-induction.html#sec-induction"><span class="std std-ref">Induktion</span></a>:
+<p>Um zu einer allgemeinen Schlussfolgerung zu gelangen, wendet Aristoteles zwei unterschiedliche Arten der <a class="reference internal" href="../02-0/7-induction.html#sec-induction"><span class="std std-ref">Induktion</span></a> an:
 Die <em>unvollkommene Induktion</em> verwendet mehrere spezielle Aussagen um zu einer generellen Aussage zu gelangen.
 Die <em>Induktion durch Aufzählung</em> beginnt mit dem Beweis einer Charakteristik für eine bestimmte Anzahl an Elementen einer Gruppe, um dann diese Charakteristik als wahr für alle Elemente der Gruppe zu beweisen.
 Auch Sokrates versuchte durch die Induktion allgemeines Wissen durch die Beobachtung einzelner Fälle herzuleiten.</p>
 <p>Es sei an dieser Stelle gesagt, dass die Aristotelische Logik das abendländische Denken lange Zeit besimmte und noch immer bestimmt, doch gab es beispielsweise um 600 v. Chr in der Buddistischen Tradition ähnliche Entwicklungen in Indien.</p>
-<p>Zur Zeit der antiken Griechen begann man die ersten uns überlieferten Algorithmen zu entwickeln.
+</section>
+<section id="antike-algorithmen">
+<h2><span class="section-number">3.2.2. </span>Antike Algorithmen<a class="headerlink" href="#antike-algorithmen" title="Permalink to this heading">#</a></h2>
+<p>Neben der Logik finden wir bei den antiken Griechen auch die ersten erste uns überlieferten Algorithmen.
 Um 300 v. Chr. notiert Euklid den ersten uns betkannten nicht-trivialen <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmus</span></a>, der heute unter dem Namen <a class="reference internal" href="../02-4/1-algorithms.html#sec-euclid-alg"><span class="std std-ref">euklidischer Algorithmus</span></a> bekannt ist.</p>
 <figure class="align-default" id="fig-euklid-elements">
 <a class="reference internal image-reference" href="../../_images/the-elements.jpg"><img alt="../../_images/the-elements.jpg" src="../../_images/the-elements.jpg" style="height: 150px;" /></a>
@@ -693,7 +713,13 @@ Für ganze Zahlen berechnet der Algorithmus den größten gemeinsamen Teilers <c
 <blockquote>
 <div><p>[The Euclidean algorithm] is the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has survived to the present day. – Donald Knuth, The Art of Computer Programming, Vol 2.</p>
 </div></blockquote>
-<p>Nach Eratosthenes ist ein Algorithmus, das sog. <a class="reference external" href="https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes">Sieb des Eratosthenes</a>, benannt der zur Berechnung von Primzahlen dient.
+<figure class="align-default" id="greeks">
+<a class="reference internal image-reference" href="../../_images/greeks.png"><img alt="../../_images/greeks.png" src="../../_images/greeks.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Abb. 3.3 </span><span class="caption-text">Denker*innen Ihrer Zeit: Euklid, Eratosthenes, Hypatia, Quellen: <a class="reference external" href="https://en.wikipedia.org/wiki/File:Eratosthene.01.png">2</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Hypatia_portrait.png">3</a>.</span><a class="headerlink" href="#greeks" title="Link zu diesem Bild">#</a></p>
+</figcaption>
+</figure>
+<p>Nach Eratosthenes ist ein Algorithmus, das sog. <a class="reference external" href="https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes">Sieb des Eratosthenes</a> benannt, der zur Berechnung von Primzahlen dient.
 Allerdings hat auch Eratosthenes, der im 3. Jahrhundert v. Chr. lebte, das Verfahren nicht entdeckt, sondern nur die Bezeichnung ‚Sieb‘ für das schon lange vor seiner Zeit bekannte Verfahren eingeführt.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -750,44 +776,41 @@ Allerdings hat auch Eratosthenes, der im 3. Jahrhundert v. Chr. lebte, das Verfa
 </div>
 </div>
 </div>
+</section>
+<section id="von-der-scholastik-zur-modernen-logik">
+<h2><span class="section-number">3.2.3. </span>Von der Scholastik zur modernen Logik<a class="headerlink" href="#von-der-scholastik-zur-modernen-logik" title="Permalink to this heading">#</a></h2>
 <p>Die Stoa entwickelten die Logik weiter indem sie zwischen Objekten, theoretischen Bildern und linguistischen Zeichen unterschieden.
 Danach verschwand die Aristotelische Logik über lange Zeit und tauchte erst wieder im Mittelalter auf.
-Die Sekularisierung nahm ihren Lauf und am Ende des 11. Jahrhunderts entstanden aus den Schulen der Klöstern und Katedralen die ersten Universitäten.</p>
-<figure class="align-default" id="greeks">
-<a class="reference internal image-reference" href="../../_images/greeks.png"><img alt="../../_images/greeks.png" src="../../_images/greeks.png" style="height: 150px;" /></a>
-<figcaption>
-<p><span class="caption-number">Abb. 3.3 </span><span class="caption-text">Denker*innen Ihrer Zeit: Euklid, Eratosthenes, Hypatia, Quellen: <a class="reference external" href="https://en.wikipedia.org/wiki/File:Eratosthene.01.png">2</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Hypatia_portrait.png">3</a>.</span><a class="headerlink" href="#greeks" title="Link zu diesem Bild">#</a></p>
-</figcaption>
-</figure>
+Die Sekularisierung nahm ihren Lauf und am Ende des 11. Jahrhunderts entstanden aus den Schulen der Klöster und Katedralen die ersten Universitäten.</p>
 <p>Die Zeit der Scholastik, welche die Vernunft und den Glauben als Mittel der Wissenserzeugung sah, begann.
-Die Aristotelische Logik wurde dabei insbesondere durch Thomas von Aquine ein inhärenter Bestandteil der scholastischen Logik.
-Das logische Denken wurde kultiviert wurde jedoch hauptsächlich als Instrument zur Unterstützung des christlichen Glaubens gebraucht.
+Die Aristotelische Logik wurde dabei insbesondere durch Thomas von Aquine zu einem inhärenten Bestandteil der scholastischen Logik.
+Das logische Denken wurde kultiviert, jedoch hauptsächlich als Instrument zur Unterstützung des christlichen Glaubens.
 Die Scholastik versuchte den Glauben durch logische Schlüsse zu rechtfertigen bzw. zu begründen und zu ergründen.</p>
 <p>Diese Entwicklung war der erste Schritt zu einer Systematisierung und Formalisierung der Logik und damit der Systematisierung der Wissenserzeugung und der Manipulation jenes Wissens in unterschiedlicher Art und Weise in einem abgeschlossenen System.
 Die dadurch eingeführte Abstraktion ist eine notwendige Vorraussetzung für die Entwicklung eines Systems, in dessen Kontext Algorithmen für die Berechnung der Lösung aller möglichen Probleme konstruiert werden können.</p>
-<p>Eine weitere Persönlichkeit die hier erwähnt werden sollte ist der Universalgeleerte Gottfried Wilhelm Leibniz (1646-1716).
+<p>Eine Persönlichkeit die hier erwähnt werden sollte ist der Universalgelehrter Gottfried Wilhelm Leibniz (1646-1716).
 Neben vieler essentieller wissenschaftlicher Beiträge, wollte er das Wissen an sich durch eine Art Universalsprache formalisieren.
 Diese sollte es ermöglichen jedes wissenschaftliche Problem mittels eines umfassenden Kalküls zu lösen.
 Nach dem dreißigjährigen Krieg war für ihn diese Vision auch ein Projekt zur transnationalen Verständigung in Europa.
 Leibniz arbeitete an einer Codierung für alle möglichen wissenschaftlichen Begriffe und an einem Kalkül welches jene Begriffe der Universalsprache durch logische Operationen verbinden sollte.
-Beispielsweise wurde durch Multiplikation eines Dings (<span class="math notranslate nohighlight">\(2\)</span>) ein Seiendes (<span class="math notranslate nohighlight">\(2 \cdot 3\)</span>) und durch eine weitere Multiplikation, ein Mensch (<span class="math notranslate nohighlight">\(2 \cdot 3 \cdot 5\)</span>).</p>
+Beispielsweise wurde durch Multiplikation aus einem ‚Ding‘ (<span class="math notranslate nohighlight">\(2\)</span>) ein ‚Seiendes‘ (<span class="math notranslate nohighlight">\(2 \cdot 3\)</span>) und durch eine weitere Multiplikation, ein ‚Mensch‘ (<span class="math notranslate nohighlight">\(2 \cdot 3 \cdot 5\)</span>).</p>
 <blockquote>
 <div><p>Wenn Gott zählt ensteht eine Welt. – Leibniz</p>
 </div></blockquote>
-<p>Auch wenn diese Idee für jene Zeit bahnbrechend ist, bringt sie auch einige Probleme mit sich und hat sich nicht durchgesetzt.
+<p>Auch wenn diese Idee für jene Zeit bahnbrechend gewesen ist, bringt sie auch einige Probleme mit sich und hat sich nicht durchsetzen können.
 Doch ist es heute selbstverständlich so, dass wir auf der digitalen Maschine alles durch Zahlen repräsentieren.
 Leibniz war seiner Zeit in jedem Fall voraus.
 In seiner Welt wurden Zahlen zum Instrument um die Welt zu organisieren.
 Er entwarf ein konkretes System auch wenn dessen Realisierung zum Scheitern verurteilt war.
-Der Mathematiker Kurt Gödel sollte schlussendlich zeigen, dass derartige Versuche der Formalisierung der Welt nicht möglich sind.</p>
-<p>1847 führte der englische Mathematiker und Philosoph Georg Boole in seinem Buch <em>The Mathematical Analysis of Logic</em> <span id="id2">[<a class="reference internal" href="../misc/bibliography.html#id32" title="George Boole. The mathematical analysis of logic. 1847.">Boole, 1847</a>]</span> die sog. boolsche Algebra ein.
-Insbesondere die <em>zweielementige boolsche Algebra</em> mit den Elementen 0 und 1, welche Anwendung in der Aussagenlogik hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
+Der Mathematiker Kurt Gödel (1906-1978) sollte schlussendlich zeigen, dass derartige Versuche der Formalisierung der Welt nicht möglich sind.</p>
+<p>1847 führte der englische Mathematiker und Philosoph Georg Boole in seinem Buch <em>The Mathematical Analysis of Logic</em> <span id="id2">[<a class="reference internal" href="../misc/bibliography.html#id32" title="George Boole. The mathematical analysis of logic. 1847.">Boole, 1847</a>]</span> die sog. <em>boolsche Algebra</em> ein.
+Insbesondere die <em>zweielementige boolsche Algebra</em> mit den Elementen 0 und 1, welche Anwendung in der <em>Aussagenlogik</em> hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
 Sie ist Teil jeder modernen Programmiersprache.
 Zusätzlich beruhen auf ihr alle (auch arithmetische) Operationen des digitalen Computers.
 Die boolsche Algebra definiert logische Operatoren wie AND <span class="math notranslate nohighlight">\((\land)\)</span>, OR (<span class="math notranslate nohighlight">\(\lor\)</span>) und NOT <span class="math notranslate nohighlight">\((\neg)\)</span>, die auf die Elemente 0 und 1 angewendet werden können wobei 0 als <em>falsch</em> und 1 als <em>wahr</em> interpretiert werden.
-Andere Operationen wie NAND (not AND), NOR (not OR), EXOR (entweder oder) und NEXOR (nicht entweder oder) können aus den Basisoperationen durch Kombination konstruiert werden.</p>
+Andere Operationen wie NAND (not AND), NOR (not OR), XOR (entweder oder) und NXOR (nicht entweder oder) können aus den Basisoperationen durch Kombination konstruiert werden.</p>
 <p>Um 1930 beobachtete Claude Shannon, dass sich die Regeln der boolschen Algebra auf elektrische Schaltungen übertragen lassen.
-In fast allen digitalen Computern stellen elektrische Schaltungen die physikalische Manifestation boolscher Operationen dar.
+Seither stellen elektrische Schaltungen die physikalische Manifestation boolscher Operationen in fast allen digitalen Computern dar.
 Durch <a class="reference internal" href="../02-1/3-manipulation.html#sec-gates"><span class="std std-ref">Logikgatter</span></a> werden diese Operatoren in Computern realisiert und bilden die Basis jedweder Berechnung.</p>
 <figure class="align-default" id="fig-circuit">
 <a class="reference internal image-reference" href="../../_images/circuit.png"><img alt="../../_images/circuit.png" src="../../_images/circuit.png" style="width: 400px;" /></a>
@@ -795,10 +818,10 @@ Durch <a class="reference internal" href="../02-1/3-manipulation.html#sec-gates"
 <p><span class="caption-number">Abb. 3.4 </span><span class="caption-text">Elektrischer Schaltkreis für den logischer Ausdruck <span class="math notranslate nohighlight">\(X_1 \lor (X_4 \land (X_2 \lor X_3))\)</span>.</span><a class="headerlink" href="#fig-circuit" title="Link zu diesem Bild">#</a></p>
 </figcaption>
 </figure>
-<p>Wie die Aussagenlogik so verzichtet auch die boolsche Algebra auf einen Geltungsbereich der Variablen.
-Mit anderen Worten Sie kennt keine Quantoren <span class="math notranslate nohighlight">\((\forall\)</span>, <span class="math notranslate nohighlight">\(\exists)\)</span>.
-Auch kennt sie das Prinzip des Prädikats nicht.
-In umgangssprachlicher Annäherung ist ein Prädikat eine Folge von Wörtern, die Leerstellen eröffnen;
+<p>Wie die <em>Aussagenlogik</em> so verzichtet auch die <em>boolsche Algebra</em> auf einen Geltungsbereich der Variablen.
+Mit anderen Worten Sie kennt keine <em>Quantoren</em> <span class="math notranslate nohighlight">\((\forall\)</span>, <span class="math notranslate nohighlight">\(\exists)\)</span>.
+Auch kennt sie das Prinzip des Prädikats nicht, obwohl bereits Aristoteles Prädikate definierte.</p>
+<p>In umgangssprachlicher Annäherung ist ein Prädikat eine Folge von Wörtern, die Leerstellen eröffnen;
 diese Folge wird zu einer wahren oder falschen Aussage, wenn in jede Leerstelle ein Eigenname eingesetzt wird.
 Beispielsweise ist: „… ist ein Mensch“ ein Prädikat.
 Ein mathematisches Prädikat ist eine Funktion die (bestimmten) mathematischen Objekten einen Wahrheitswert zuweist.
@@ -807,13 +830,13 @@ Beispielsweise ist</p>
 \[P(x) = x \text{ ist eine gerade Zahl}\]</div>
 <p>ein Prädikat, wobei beispielweise <span class="math notranslate nohighlight">\(P(2) = \text{wahr}\)</span> ergibt und <span class="math notranslate nohighlight">\(P(3) = \text{falsch}\)</span>.
 Um Elementen aus Mengen auszuwählen gibt es die Quantoren.
-So lässt sich der Satz: „Für jede ungerade Zahl gibt es eine natürliche Zahl, mit der man diese multiplizieren kann, sodass das Ergebnis eine gerade Zahl ist.</p>
+So lässt sich der Satz: „Für jede ungerade Zahl gibt es eine natürliche Zahl, mit der man diese multiplizieren kann, sodass das Ergebnis eine gerade Zahl ist“ wie folgt ausdrücken:</p>
 <div class="math notranslate nohighlight">
 \[\forall n \in \mathbb{Z} \, \exists k \in \mathbb{N}: \neg P(n) \Rightarrow P(n \cdot k).\]</div>
 <p>Diese Logik erster Ordnung oder auch Prädikatenlogik wurde insbesondere von Ludwig Gottlob Frege (1848-1925) in seinem Werk <em>Begriffsschrift</em> <span id="id3">[<a class="reference internal" href="../misc/bibliography.html#id33" title="Gottlob Frege. Begriffsschrift. Verlag von Louis Nebert, 1879.">Frege, 1879</a>]</span> entwickelt.
 Freges vorrangiges Ziel war der Logizismus, d.h. zu zeigen, dass die Mathematik als Teil der Logik auszuweisen ist.
 In anderen Worten wollte er alle mathematischen Sätze aus wenigen rein logischen Axiomen ableiten.
-Dieses Unternehmen war nur aussichtsreich, wenn ein Mittel zur Verfügung stand, mit dem sich die Lückenlosigkeit einer Schlusskette zweifelsfrei überprüfen ließ.
+Dieses Unterfangen war nur aussichtsreich, wenn ein Mittel zur Verfügung stand, mit dem sich die Lückenlosigkeit einer Schlusskette zweifelsfrei überprüfen ließ.
 Da sich die traditionelle Aristotelische Logik (Syllogistik) als unbrauchbar für diesen Zweck herausstellte, nahm sich Frege zunächst der Aufgabe an, eine neue, geeignetere Logik zu schaffen.</p>
 <figure class="align-default" id="logicians">
 <a class="reference internal image-reference" href="../../_images/logicians.png"><img alt="../../_images/logicians.png" src="../../_images/logicians.png" style="height: 150px;" /></a>
@@ -821,8 +844,10 @@ Da sich die traditionelle Aristotelische Logik (Syllogistik) als unbrauchbar fü
 <p><span class="caption-number">Abb. 3.5 </span><span class="caption-text">Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russell, Quellen: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:George_Boole_color.jpg">1</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Young_frege.jpg">2</a>.</span><a class="headerlink" href="#logicians" title="Link zu diesem Bild">#</a></p>
 </figcaption>
 </figure>
-<p>Die Theoretiker sollten, nach Baddage’s Konzeption der Rechenmaschine, zu den Ingenieuren wieder aufstoßen.
-Die Prädikatenlogik wurde druch Bertrand Arthur William Rusell (1872-1970) und Alfred North Whitehead (1861-1947) weiterentwickelt.
+</section>
+<section id="zerstorte-traume-und-fruchtbare-theorien">
+<h2><span class="section-number">3.2.4. </span>Zerstörte Träume und fruchtbare Theorien<a class="headerlink" href="#zerstorte-traume-und-fruchtbare-theorien" title="Permalink to this heading">#</a></h2>
+<p>Die Freges Prädikatenlogik wurde druch Bertrand Arthur William Rusell (1872-1970) und Alfred North Whitehead (1861-1947) weiterentwickelt.
 Sie machten die Logik zum Objekt wissenschaftlicher Forschung.
 Deren Logizismus und Formalismus führte zum sogenannten <a class="reference external" href="https://de.wikipedia.org/wiki/Grundlagenkrise_der_Mathematik">Grundlagenstreit der Mathematik</a> in dem sich Formalismus und Intuitionismus, vertreten durch Luitzen Egbertus Jan Brouwer (1881-1966), gegenüber standen.
 Die Formalisten, insbesondere David Hilbert (1862-1943), wollten mathematische Grundsätze auf eine (bewiesenes) konsistente axiomatische Basis stellen.
@@ -831,7 +856,8 @@ Zudem zweifelten sie an der Gültigkeit des <em>Satz vom ausgeschlossenen Dritte
 <p>Hilbert schlug 1920 ein Forschungsprogramm vor das zum Ziel hatte, mit finiten Methoden die Widerspruchsfreiheit der Axiomensysteme der Mathematik nachzuweisen.
 Auch wenn sich das Hilbertprogramm in seinem ursprünglichen Anspruch als undurchführbar erwiesen hat, trug es dennoch entscheidend dazu bei, die Grundlagen und Grenzen mathematischer Erkenntnis zu klären.
 Das Programm fand breite Beachtung.
-Viele bekannte Logiker und Mathematiker beteiligten sich daran, unter anderem Paul Bernays, Wilhelm Ackermann, John von Neumann (1903-1957), Jacques Herbrand (1908-1931) und Kurt Gödel. Sie zeigten die Widerspruchsfreiheit und Vollständigkeit für zentrale Teilgebiete der Logik, nämlich für die klassische Aussagen- und Prädikatenlogik.</p>
+Viele bekannte Logiker und Mathematiker beteiligten sich daran, unter anderem Paul Bernays (1888-1977), Wilhelm Ackermann (1896-1962), John von Neumann (1903-1957), Jacques Herbrand (1908-1931) und Kurt Gödel (1906-1978).
+Sie zeigten die Widerspruchsfreiheit und Vollständigkeit für zentrale Teilgebiete der Logik, nämlich für die klassische Aussagen- und Prädikatenlogik.</p>
 <blockquote>
 <div><p>Aus dem Paradies, das Cantor uns geschaffen, soll uns niemand vertreiben können. – Hilbert</p>
 </div></blockquote>
@@ -875,6 +901,9 @@ Inwieweit sich dieser Computationalismus bestätigt oder widerlegt wird bleibt n
 <p><span class="caption-number">Abb. 3.7 </span><span class="caption-text">Eine konkrete Konstruktion einer Turingmaschine, <a class="reference external" href="https://de.wikipedia.org/wiki/Turingmaschine#/media/Datei:Model_of_a_Turing_machine.jpg">Quelle</a>.</span><a class="headerlink" href="#model-of-a-tm" title="Link zu diesem Bild">#</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="das-maschinelle-lernen">
+<h2><span class="section-number">3.2.5. </span>Das maschinelle Lernen<a class="headerlink" href="#das-maschinelle-lernen" title="Permalink to this heading">#</a></h2>
 <p>Was aber heute in aller Munde ist, stammt aus dem Bereich des <em>maschinellen Lernens</em>.
 Schon in den 1940er Jahren wurde versucht die Informationsverarbeitung am Beispiel des menschlichen Gehirns zu modellieren.
 Dieser Ansatz wurde durch die Hirnforschung inspiriert.
@@ -926,7 +955,7 @@ Die bisherigen Erfolge sind vielversprechend und möglicherweise können uns die
 Dabei sollten wir einen gesunden Umgang mit KI-Systemen entwickeln.
 Fragen der Ethik, Ökologie und der sozialen Gerechtigkeit müssen in diesem Zuge ihren Platz im Diskurs finden.
 Das <em>maschinelle Lernen</em> wird sich auf all jene Bereiche ausbreiten für die wir große Datenmengen gesammelt haben oder sammeln können.
-Anbieter können so ihre Produkte optimieren – was auch immer das im Einzelnen bedeuten mag.
+Anbieter können so ihre Produkte optimieren—was auch immer das im Einzelnen bedeuten mag.
 KI kann uns möglicherweise helfen die Erderwärmung zu reduzieren, gleichzeitig benötigen diese daten- und energiehungrigen Algorithmen viele Ressourcen.
 Diese Spannung zwischen Nutzen und Kosten müssen wir beleuchten.</p>
 <p>Daten sind heute ein echtes Wirtschaftsgut.
@@ -935,6 +964,7 @@ Insbesondere wenn <em>personenbezogene Daten</em> gesammelt werden, müssen wir 
 Auch hängt die Qualität der Entscheidung eines lernenden Algorithmus von dessen Erfahrungen, d.h., den (Trainings-)Daten ab.
 Diskriminierungen, welche sich in den Daten finden, werden auch lernende Algorithmen durch die Reproduktion von Stereotypen übernehmen.
 Darüber hinaus muss in einer rechenzentrierten Gesellschaft beleuchtet und kritisch hinterfragt werden, in welcher Gewalt die nötigen Rechenressourcen liegen.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -995,6 +1025,24 @@ Darüber hinaus muss in einer rechenzentrierten Gesellschaft beleuchtet und krit
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Inhalt
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aristotelische-logik">3.2.1. Aristotelische Logik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antike-algorithmen">3.2.2. Antike Algorithmen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-der-scholastik-zur-modernen-logik">3.2.3. Von der Scholastik zur modernen Logik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zerstorte-traume-und-fruchtbare-theorien">3.2.4. Zerstörte Träume und fruchtbare Theorien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-maschinelle-lernen">3.2.5. Das maschinelle Lernen</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

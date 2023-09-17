@@ -3,7 +3,7 @@
 Das [Computational Thinking](sec-what-is-ct) hat sich über die Jahrhunderte weiterentwickelt, doch blieben die wesentlichen Grundkonzepte: Dekomposition, Abstraktion, Mustererkennung und Algorithmen erhalten.
 Das wird sich auch in absehbarer Zukunft nicht verändern.
 
-Was sich verändert, sind technische Entwicklungen und neue Algorithmen -- d.h. Hard- und Software.
+Was sich verändert, sind technische Entwicklungen und neue Algorithmen---d.h. Hard- und Software.
 Auf der Softwareseite sind insbesondere Algorithmen aus dem Bereich des *maschinellen Lernens* zu nennen.
 Hier feierten wir große Erfolge aber es wird auch deutlich, dass wir durch die immensen Rechenanforderungen und den damit verbundenen und stetig steigenden Energieverbrauch in der nahen Zukunft ein weiteres ökologisches Problem ansteuern.
 Ob das *maschinelle Lernen* uns bei der Energiewende wie auch bei der Eindämmung des Klimawandels behilflich sein kann oder sich als hinderlich erweisen wird, ist eine noch offene Forschungsfrage.

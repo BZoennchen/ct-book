@@ -1,14 +1,13 @@
 # Geschichte der Computer und Algorithmen
 
-Was ist ein Computer? 
-Eine Wunderkiste?
-Ein magisches Werkzeug mit grenzenlosen Fähigkeiten?
-Heute sind Computer und Algorithmen teil unseres täglichen Lebens.
-Sie begegnen uns in Form von Smartphones, Kühlschränken, Uhren, Navigationsgeräten, sozialen Medien, Banken, Suchmaschinen, dem Internet und vielem mehr.
-Sie sind Artefakte der Technik, welche wir als Summe aller instrumentell nützlichen kulturell übertragbaren Informationen vestehen können.
-Technologie hingegen, ist unser Verständnis oder unsere Vorstellung von der Technik.
-Wie sieht diese kulturelle Entwicklung der Technik aus?
-Diese Entwicklung versuche ich in aller Kürze in diem Abschnitt zu beschreiben beziehe mich dabei allerdings im Wesentlichen auf die westliche Kultur.
+Was genau ist ein Computer? 
+Eine magische Kiste voller Wunder oder ein Werkzeug mit schier unendlichen Möglichkeiten? 
+In der heutigen Zeit sind Computer und Algorithmen fest im Alltag verankert. 
+Ob als Smartphone in der Tasche, als smarter Kühlschrank in der Küche, als Fitnessuhr am Handgelenk, oder in Form von Navigationshilfen, sozialen Netzwerken, Bankdienstleistungen und Suchmaschinen---sie sind überall.
+Doch was sind sie eigentlich? 
+Sie sind Produkte der *Technik*, die wir als die Gesamtheit aller nützlichen und kulturell weitergegebenen Informationen begreifen können. 
+Und unser Verständnis jener Technik und deren Artefakte nennen wir *Technologie*.
+In diesem Abschnitt möchten wir die kulturelle Entwicklung der Computertechnik skizzieren, wobei wir uns hauptsächlich auf die Perspektive der westlichen Welt konzentrieren.
 
 ```{admonition} Lernziel
 :class: learngoals
@@ -16,34 +15,36 @@ Diese Entwicklung versuche ich in aller Kürze in diem Abschnitt zu beschreiben 
 Sie können einen geschichtlichen Bezug zum Computational Thinking herstellen und dadurch vergangene, derzeitige und zukünftige technologische Entwicklungen in Relation setzen.
 ```
 
-Computer sind nicht nur das Resultat, sondern auch ein wesentlicher Beschleuniger der technologischen Entwicklung.
-Ohne ihre Leistungsfähigkeit wären aufwendige Berechnungen nicht möglich.
-Diese Berechnungen werden heute in fast allen Wissenschaftsbereichen benötigt um Forschung zu betreiben.
-In Rechenzentren werden Klimamodelle mit einem Verbund aus tausenden von Computern simuliert.
-Andere Beispiele sind: Materialstudien, die Interaktion von Molekülen, das Verhalten von Gasen und Flüssigkeiten, DNA-Analysen, autonomes Fahren, Flugsteuerung.
-Jedes dieser Probleme benötigt zur Lösung eine Rechenleistung, die wir Menschen ohne digitale Computer nicht mehr erbringen können.
-Durch Entwicklungen in der Datenanalyse, insbesondere dem *maschinellen Lernen* und der Entdeckung der *Information als Wirtschaftsgut*, wird der Hunger nach Rechenleistung und Speicherkapazität von Unternehmen und der Forschungsgemeinschaft immer größer.
-Die *digitale Transformation*, das *Internet der Dinge (IoT)* und die *künstliche Intelligenz (KI)* sind Themen, die Regierungen wie auch Unternehmen---und die Gesellschaft---auf lange Sicht beschäftigen werden.
+Computer sind nicht nur beeindruckende Ergebnisse des technischen Fortschritts, sondern auch kraftvolle Katalysatoren für weitere Entwicklungen.
+Ihre Rechenleistung ist unerlässlich, um komplexe Probleme zu lösen, die in nahezu allen wissenschaftlichen Disziplinen auftreten. 
+Nehmen wir zum Beispiel Rechenzentren wie das [Leibniz-Rechenzentrum (LRZ)](https://www.lrz.de/), welches unter anderem den Supercomputer *SuperMUC-NG* beinhaltet.
+Dieser ist mit 6480 Rechenknoten mit jeweils 48 Kernen (Zwei Intel Xeon Platinum 8174 24C 3.1GHz CPUs) ausgestattet.
+In solchen Rechenzentren werden beispielweise komplexe Klimamodelle auf einem Netzwerke bestehend aus Tausenden von Computern simuliert. 
+Aber das ist nur die Spitze des Eisbergs. 
+Ob es um die Erforschung neuer Materialien geht, die Interaktion von Molekülen, die Dynamik von Gasen und Flüssigkeiten, DNA-Analysen, autonomes Fahren oder Flugkontrollsysteme---in all diesen Bereichen ist die Rechenkraft von Computern und deren Nutzung in Form von Algorithmen unverzichtbar.
 
-Computer verarbeiten fortwährend Informationen.
-Die Geschwindigkeit dieses Vorgangs ist atemberaubend.
-2015 lag die gesamte Rechnerkapazität bei etwa $2 \cdot 10^{20}$ Gleitkommaoperationen (Addieren, Subtrahieren und Multiplizieren) pro Sekunde!
-Damit wir als Menschheit mit dieser Geschwindigkeit mithalten können, müsste jede\*r von uns deutlich mehr Operationen pro Sekunde durchführen, als es Menschen auf der Erde gibt.
-Maschinen sind uns in dieser Domäne weit überlegen.
-Wie einst die Entdeckung und Nutzung der fossilen Brennstoffe unsere Muskelkraft in den Schatten gestellt hat, sind es die Computer, die unsere Rechenleistung weit übertreffen.
-Dennoch sind Computer und deren Systeme (noch) unglaublich primitiv---sie brauchen genaue Anweisungen denen sie stupide folgen.
-Sie kennen weder Kontext, Intuition noch Intentionalität, dafür führen sie primitive Operationen mit einer unvorstellbaren Geschwindigkeit aus.
-Computer sind unglaublich schnell, präzise, und primitiv.
-Hingegen ist der Mensch unglaublich langsam, ungenau, und doch brilliant.
+Dank Fortschritten in der Datenanalyse, besonders durch das Aufkommen des *maschinellen Lernens* und der Anerkennung von Informationen als wertvolles Wirtschaftsgut, steigt der Bedarf an Rechenleistung und Speicherplatz stetig an. 
+Sowohl in der Wirtschaft als auch in der Wissenschaft ist dieser "Hunger" nach Ressourcen deutlich spürbar. 
+Themen wie die digitale Transformation, das Internet der Dinge (IoT) und künstliche Intelligenz (KI) werden nicht nur Unternehmen und Regierungen, sondern auch die Gesellschaft als Ganzes auf absehbare Zeit intensiv beschäftigen.
 
-Durch Leitungen oder andere Übertragungsmedien sind Computer miteinander verbunden und tauschen unentwegt Informationen aus.
-Algorithmen verarbeiten, filtern, strukturieren und bewerten Informationen.
-Durch die richtige Komposition der gleichen primitiven Operationen wird es möglich über das Addieren von zwei Zahlen hinauszugehen.
-Algorithmen sind genau jene präzise formulierten Anweisungen, denen Computer stupide folgen.
-Im gewissen Sinne verleihen sie der Maschine eine gewisse Intelligenz, eine Intelligenz die durch Programmiersprachen vom Menschen an die Maschine weitergegeben wird.
+Computer sind unermüdliche Informationsverarbeiter, deren Leistungsfähigkeit schlichtweg atemberaubend ist. Um Ihnen eine Vorstellung zu geben: Im Jahr 2015 belief sich die gesamte Rechenleistung auf ungefähr $2 \cdot 10^{20}$ Gleitkommaoperationen pro Sekunde. 
+Das ist so viel, dass, um mit dieser Geschwindigkeit Schritt zu halten, jeder Mensch auf der Erde mehr Operationen pro Sekunde ausführen müsste, als es Menschen gibt!
 
-Um heutige Artefakte der Technik sowie die Technik selbst besser zu verstehen und einen Ausblick in die Zukunft zu erhaschen, ist der Blick zurück in die Vergangenheit essenziell.
-Die Geschichte der Computer und Algorithmen ist eine Geschichte vieler außergewöhnlicher Erfinder\*innen, Ingenieur\*innen, Forscher\*innen, Philosoph\*innen und Mathematiker\*innen.
-Sie ist auch eine Geschichte unglücklicher, wie auch glücklicher Umstände in der Informatiker\*innen für die anfänglich geringe Wertschätzung ihrer Disziplin kämpfen mussten und sich in der Theorie des Rechnens und der Ingenieurskunst schlussendlich zusammenfinden konnten.
-Denker\*innen dieser Geschichte könnte man allesamt als Pioniere des *Computational Thinkings* bezeichnen.
-Wir als ihre Erben, sollten uns zumindest mit einem kleinen Teil ihrer Geschichte beschäftigen.
+In diesem Bereich sind Maschinen uns weit überlegen.
+So wie die Entdeckung fossiler Brennstoffe unsere physische Kraft weit übertroffen hat, so haben Computer unsere kognitiven Fähigkeiten in Bezug auf das Rechnen weit in den Schatten gestellt.
+Aber es ist wichtig zu beachten, dass Computer trotz ihrer beeindruckenden Geschwindigkeit noch erstaunlich primitiv sind. Sie agieren strikt nach vorgegebenen Anweisungen, ohne Kontext oder Intuition zu verstehen und ohne eigene Absichten zu haben.
+Ihre Stärke liegt in der rasenden Geschwindigkeit, mit der sie einfache Aufgaben erledigen können.
+
+Im Vergleich dazu sind wir Menschen vielleicht langsam und ungenau, aber was uns ausmacht, ist unsere Fähigkeit zu brillanter Intuition und komplexem Denken.
+Denken und Rechnen mögen sich in ihrem Resultat auf die Wirklichkeit hin und wieder treffen---z.B. wenn wir durch unser Denken rechnen---doch können wir nicht davon ausgehen, dass Maschinen denken können.
+
+Computer sind durch Netzwerke und unterschiedlichste Übertragungswege miteinander vernetzt und tauschen kontinuierlich Daten aus. 
+Dabei sind es Algorithmen, die diese Informationen filtern, ordnen und bewerten. Obwohl sie aus einfachen Operationen wie Addition oder Multiplikation zusammengesetzt sind, ermöglichen sie weit komplexere Funktionen. 
+In diesem Sinne sind Algorithmen die präzisen Handlungsanweisungen, denen Computer folgen. 
+Sie sind das Medium, durch den menschliche Intelligenz in maschinenlesbare Sprache übersetzt wird.
+
+Um die Technik von heute und die zukünftigen Entwicklungen besser zu verstehen, ist ein Blick in die Vergangenheit unerlässlich.
+Die Geschichte der Computer und Algorithmen ist eine reiche Erzählung von visionären Erfinder:innen, Ingenieur\*innen, Wissenschaftler\*innen, Philosoph\*innen und Mathematiker\*innen.
+Es ist eine Geschichte voller Höhen und Tiefen, in der Informatiker:innen lange für die Anerkennung ihres Fachgebiets kämpfen mussten.
+Diese Pioniere legten den Grundstein für das, was wir heute als *Computational Thinking* kennen.
+Als ihre Erben tun wir gut daran, uns zumindest kurz mit ihrem Erbe und ihren Errungenschaften auseinanderzusetzen.
