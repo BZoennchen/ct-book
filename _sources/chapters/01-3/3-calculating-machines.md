@@ -23,11 +23,11 @@ So wurden bis Ende des zweiten Weltkrieg menschliche Computer mit Berechnungen b
 Oftmals wurde diese Aufgabe von schlecht bezahlten Frauen durchgeführt.
 Das zeigt zum einen die geringe Wertschätzung der von Frauen verrichteten Arbeit, wie auch den Stellenwert der Computer.
 
-Die Geschichte der Computer und Algorithmen beginnt 2700 bis 2400 Jahre vor Christus.
+Die Geschichte der Rechenmaschinen beginnt 2700 bis 2400 Jahre vor Christus.
 Zu dieser Zeit konstruierten vermutlich die Sumerer das älteste bekannte Rechenhilfsmittel, den [Abakus](https://de.wikipedia.org/wiki/Abakus_(Rechenhilfsmittel)).
-Frühe Formen des Abakus finden sich bereits bei den Babylonieern.
+Frühe Formen des Abakus finden sich bereits in Babylonien.
 Der Abakus war in anderer Form auch in China, Russland und Japan bekannt.
-Er unterstützte sie bei der Addition, Subtraktion, Multiplikation und Division ganzer Zahlen.
+Er unterstützte die Menschen bei der Addition, Subtraktion, Multiplikation und Division ganzer Zahlen.
 Ziel war es Rechenfehler bei einfachen Berechnungen zu verhindern.
 
 Nach dem Zusammenbruch des römischen Reichs, der sich über eine lange Zeit erstreckte, dauert es eine Weile bis sich neue Fortschritte zeigen sollten.
@@ -99,19 +99,19 @@ Mit dem viel bemühten Zitat,
 >Es ist unwürdig, die Zeit von hervorragenden Leuten mit knechtischen Rechenarbeiten zu verschwenden, weil bei Einsatz einer Maschine auch der Einfältigste die Ergebnisse sicher hinschreiben kann. -- Leibniz
 
 wird eine Grenze zwischen Mensch und Maschine gezogen. 
-Dem Erfindergeist (Freiheit, Spontaneität und Vernunft) als dem spezifisch Menschlichen wird das Mechanische der technisch-natürlichen Kausalität gegenübergestellt.
+Dem Erfindergeist (Freiheit, Spontaneität und Vernunft) als das spezifisch Menschliche wird das Mechanische der technisch-natürlichen Kausalität gegenübergestellt.
 
 Die erste massenproduzierte Rechenmaschine war die sog. [Arithmomètre](https://de.wikipedia.org/wiki/Arithmometer), eine Konstruktion eines französischen Erfinders.
 Er war Hauptaktionär einer Versicherungsgesellschaft und die notwendigen Berechnungen von Versicherungsfällen bewogen ihn, sich mit dem Bau einer Rechenmaschine zu beschäftigen.
 1820 ließ er das erste Modell patentieren.
 Es wurde 18 000 mal verkauft.
 
-1842 entwarf die britische Mathematikerin Ada Lovelace einen Algorithmus, mit welchem Bernoulli-Zahlen mit einer Rechenmaschine (Analytical Engine) berechnet werden konnten.
+1842 entwarf die britische Mathematikerin Ada Lovelace (1815-1852) einen Algorithmus, mit welchem Bernoulli-Zahlen mit einer Rechenmaschine (Analytical Engine) berechnet werden konnten.
 Die Maschine wurde zu ihrer Lebzeit nie gebaut.
 Ada Lovelace gilt heute als die erste Programmiererin und wurde mit dem Namen der Programmiersprache ``Ada`` gewürdigt.
 
 Es sei an dieser Stelle erwähnt, dass Frauen der Zugang zu Bildung und einer Hochschulausbildung aus verschiedenen Gründen bis ins 20. Jahrhundert verwehrt wurde und sie auf männliche Hilfe angewiesen waren.
-Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia dar, welche aus politisch-religösen Gründen in Alexandria ermordet wurde. 
+Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia (ca. 355-415) dar, welche aus politisch-religösen Gründen in Alexandria ermordet wurde. 
 
 ```{figure} ../../figs/history/ada-lovelace.jpeg
 ---
@@ -121,7 +121,7 @@ name: ada-lovelace
 Erste bekannte Programmiererin Ada Lovelace.
 ```
 
-Im 19. Jahrhundert konzipierte der Vater des Computers und Ingenieur, Charles Baddage, den ersten mechanischen Computer.
+Im 19. Jahrhundert konzipierte der Vater des Computers und Ingenieur, Charles Baddage (1791-1871), den ersten mechanischen Computer.
 Baddage war seiner Zeit weit voraus.
 Programme und Daten seiner Maschine sollten per Lochkarten eingelesen werden.
 Die Maschine sollte ihre Ergebnisse per Ausdruck ausgeben.
@@ -130,7 +130,7 @@ Da es ihm an finanziellen Mitteln fehlte, sollte es erst seinem Sohn im Jahr 188
 Zu jener Zeit war die Entwicklung analoger Computer bereits rückläufig.
 
 
-Konrad Zuse stellte 1939 einen der ersten auf Relais basierten elektromechanischen Computer her.
+Konrad Zuse (1910-1995) stellte 1939 einen der ersten auf Relais basierten elektromechanischen Computer her.
 Als die Zuverlässigkeit der Relais sichergestellt war, entwickelte Zuse den Z3, welcher mit einer Taktfrequenz von 5-10 Hz Gleitkommazahlen verarbeiten konnte.
 Anders als Baddage's machanischer Computer war der Z3 jedoch nicht *[Turing-vollständig](def-turing-complete)*.
 
@@ -149,8 +149,8 @@ name: turing-bomb
 Die sog. Turing-Bombe, welche für die Entschlüsselung der Enigma verwendet wurde, [Quelle](https://commons.wikimedia.org/wiki/File:Wartime_picture_of_a_Bletchley_Park_Bombe.jpg).
 ```
 
-Zur Zeit des Weltkriegs gelang es den Codeknacker\*innen um Alan Turing die Verschlüsselung der Enigma zu schlagen.
-Etwas später wurde auch der Code der Lorenz SZ 40/42 durch Max Newman und seiner Gruppe geknackt.
+Zur Zeit des Weltkriegs gelang es den Codeknacker\*innen um Alan Turing (1912-1954) die Verschlüsselung der Enigma zu schlagen.
+Etwas später wurde auch der Code der Lorenz SZ 40/42 durch Max Newman (1897-1984) und seiner Gruppe geknackt.
 Beide Gruppen konnten diesen Erfolg nur durch die Rechenleistung ihrer Maschinen erzielen.
 Daraus ging nicht nur ein wichtiger strategischer Vorteil hervor, sondern auch der erste elektrisch-digitale programmierbare Computer.
 Die USA zogen mit einer sehr ähnlichen Konstruktion, der ENIAC, nach.
@@ -166,7 +166,7 @@ ENIAC-Programmiererinnen Marlyn Wescoff und Ruth Lichterman, [Quelle](https://co
 ```
 
 Im Jahr 1945 begann Turing mit seiner Arbeit an der Entwicklung eines elektronisch-programmierbaren Computers mit Speicher.
-Zur gleichen Zeit notierte der charismatische John von Neumann auf einem 101-seitigen Dokument einen ähnlichen Entwurf.
+Zur gleichen Zeit notierte der charismatische John von Neumann (1903-1957) auf einem 101-seitigen Dokument einen ähnlichen Entwurf.
 Dieser ist heute unter dem Namen *[von Neumann Architektur](sec-von-neumann)* bekannt.
 Auf jener Architektur basieren heute nahezu alle modernen Computer und auch zukünftige Maschinen werden seinem Entwurf noch eine Zeit lang folgen.
 Weitere konzeptuelle Entwicklungen sollten folgen, doch die grobe Architektur blieb seither nahezu unberührt.

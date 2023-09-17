@@ -14,9 +14,12 @@ kernelspec:
 
 Mit dem provokanten Titel dieses Abschnitts wollen wir nicht etwa ausdrücken, dass Maschinen oder Algorithmen tatsächlich denken.
 Vielmehr geht es um die Anstrengung dieses Denken derart zu formalisieren, dass es für bestimmte Operationen nicht mehr notwendig ist.
+Aus Denken wird Rechnen.
+
+## Aristotelische Logik
 
 Dieser Prozess der Formalisierung begann mit der Entwicklung der Logik.
-Der Begriff *Logik* stammt vom Griechischen *logos* was soviel heißt wie *Denken*, *Wort*, *Gedanke*, *Sinn* oder *Rationalität*.
+Der Begriff *Logik* stammt vom Griechischen *logos* was soviel wie *Denken*, *Wort*, *Gedanke*, *Sinn* oder *Rationalität* heißt.
 Und wieder ist es Aristoteles (384-322 v. Chr.) der den Anfang für einen breiteren Durchbruch der Logik machte.
 Zwar wurde die Kunst der Argumentation bereits bei Sokrates und Plato verwendet aber erst Aristoteles entwickelte ein abgeschlossenes System der Logik und etablierte dieses als wissenschaftliche Disziplin.
 Seine Beiträge zur Logik finden Sie in seinem Werk *Organon* aber auch als Teil seiner *Metaphysik*.
@@ -29,40 +32,42 @@ Die Annahmen müssen selbst konsistent sein.
 Grundannahmen werden dabei als *Axiome* bezeichnet.
 Solche Axiome gelten als absolut wahr und benötigen deshalb keines Nachweises in Form eines Beweises.
 In der Mathematik müssen wir immer mit derartigen Axiomen beginnen.
-Es gibt keine Möglichkeit jede Annahme in einem System zu beweisen denn auf irgendwelchen Stelzen muss ein System schließlich stehen.
+Es gibt keine Möglichkeit jede Annahme in einem System zu beweisen, denn auf irgendwelchen Stelzen muss ein System schließlich stehen.
 Neben unserem heutigen Verständnis eines Axioms verstand Aristoteles ein Axiom auch als praktisches Grundprinzip.
 
 Mit dem *Gesetz der logischen Deduktion* können wir aus gegebenen Annahmen wahre Aussagen schließen indem wir aus dem Generellen das Spezielle herausarbeiten.
 Seinen *Syllogismus*, verstanden als dreiteilige Schlussfolgerung beschreibt Aristoteles wie folgt:
-Aus der ersten Hauptprämisse gefolgt von Nebenprämisse folgern wir die Schlussfolgerung.
+Aus der ersten Hauptprämisse, gefolgt von der Nebenprämisse, folgern wir die Schlussfolgerung.
 Beide Prämissen enthalten einen gleichen Begriff auch genannt *Terminus Medius* (M), zum Beispiel 'Mensch'.
 Dieser Begriff bezieht sich auf ein Subjekt (S) welches als Teil einer Menge in der Nebenprämisse auftaucht.
 Ein Predikat (P) wird der Menge zugewiesen und kann dann in der Schlussfolgerung dem Subjekt zugewiesen werden:
 
-+ Alle Menschen (M) sind sterblich (Hauptprämisse)
-+ Sokrates ist ein Mensch (Nebenprämisse)
-+ Sokrates ist sterblich (Schlussfolgerung)
++ Alle Menschen (M) sind sterblich (P) (Hauptprämisse)
++ Sokrates (S) ist ein Mensch (M) (Nebenprämisse)
++ Sokrates (S) ist sterblich (P) (Schlussfolgerung)
 
 Um Wahrheit herauszuarbeiten geht Aristoteles von drei Grundprinzipien aus:
 
 1. Der *Satz der Identität* besagt, dass ein Gegenstand oder Ding $A$ zu sich selbst identisch ist, d.h. $A=A$ ist wahr.
-2. Der *Satz vom Widerspruch* besagt, dass es keine Aussage gibt, welche zugleich wahr als auch falsch ist.
-3. Der *Satz vom ausgeschlossenen Dritten* besagt, dass eine Aussage entweder wahr oder falsch ist.
+2. Der *Satz vom Widerspruch* besagt, dass es keine Aussage gibt, welche zugleich wahr als auch falsch ist, d.h. $A \land \neg A$ ist falsch.
+3. Der *Satz vom ausgeschlossenen Dritten* besagt, dass eine Aussage entweder wahr oder falsch ist, d.h. $A \lor \neg A$ ist wahr.
 
-Gottfried Wilhelm Leibniz fügte zu diesen Gesetzen noch den *Satz vom zurichenden Grund* hinzu, der besagt, dass jedes Ereignis eine Ursache haben muss beziehungweise dass es für jede wahre Aussage einen Grund gibt, aus dem sie wahr ist.
+Gottfried Wilhelm Leibniz fügte zu diesen Gesetzen noch den *Satz vom zureichenden Grund* hinzu, der besagt, dass jedes Ereignis eine Ursache haben muss beziehungweise dass es für jede wahre Aussage einen Grund gibt, durch den sie wahr ist.
 Das heißt, dass jede wahre Aussage durch eine andere Aussage begründet werde, deren Wahrheit bewiesen ist.
 Somit sind Zirkelschlüsse nicht zulässig.
-Es finde sich ähnliche Ideen bereits vor Leibniz bei Demokritus (460-371 v. Chr.).
+Es finden sich ähnliche Ideen bereits vor Leibniz bei Demokritus (460-371 v. Chr.).
 Diese vier Sätze begründeten die *klassische Logik*.
 
-Um zu einer allgemeinen Schlussfolgerung zu gelangen, wendet Aristoteles zwei unterschiedliche Arten der [Induktion](sec-induction): 
+Um zu einer allgemeinen Schlussfolgerung zu gelangen, wendet Aristoteles zwei unterschiedliche Arten der [Induktion](sec-induction) an: 
 Die *unvollkommene Induktion* verwendet mehrere spezielle Aussagen um zu einer generellen Aussage zu gelangen.
 Die *Induktion durch Aufzählung* beginnt mit dem Beweis einer Charakteristik für eine bestimmte Anzahl an Elementen einer Gruppe, um dann diese Charakteristik als wahr für alle Elemente der Gruppe zu beweisen.
 Auch Sokrates versuchte durch die Induktion allgemeines Wissen durch die Beobachtung einzelner Fälle herzuleiten.
 
 Es sei an dieser Stelle gesagt, dass die Aristotelische Logik das abendländische Denken lange Zeit besimmte und noch immer bestimmt, doch gab es beispielsweise um 600 v. Chr in der Buddistischen Tradition ähnliche Entwicklungen in Indien.
 
-Zur Zeit der antiken Griechen begann man die ersten uns überlieferten Algorithmen zu entwickeln.
+## Antike Algorithmen
+
+Neben der Logik finden wir bei den antiken Griechen auch die ersten erste uns überlieferten Algorithmen.
 Um 300 v. Chr. notiert Euklid den ersten uns betkannten nicht-trivialen [Algorithmus](def-algorithm), der heute unter dem Namen [euklidischer Algorithmus](sec-euclid-alg) bekannt ist.
 
 ```{figure} ../../figs/history/the-elements.jpg
@@ -93,7 +98,15 @@ gcd(36, 24)
 
 >[The Euclidean algorithm] is the granddaddy of all algorithms, because it is the oldest nontrivial algorithm that has survived to the present day. -- Donald Knuth, The Art of Computer Programming, Vol 2.
 
-Nach Eratosthenes ist ein Algorithmus, das sog. [Sieb des Eratosthenes](https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes), benannt der zur Berechnung von Primzahlen dient.
+```{figure} ../../figs/history/greeks.png
+---
+height: 150px
+name: greeks
+---
+Denker*innen Ihrer Zeit: Euklid, Eratosthenes, Hypatia, Quellen: [2](https://en.wikipedia.org/wiki/File:Eratosthene.01.png), [3](https://commons.wikimedia.org/wiki/File:Hypatia_portrait.png).
+```
+
+Nach Eratosthenes ist ein Algorithmus, das sog. [Sieb des Eratosthenes](https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes) benannt, der zur Berechnung von Primzahlen dient.
 Allerdings hat auch Eratosthenes, der im 3. Jahrhundert v. Chr. lebte, das Verfahren nicht entdeckt, sondern nur die Bezeichnung 'Sieb' für das schon lange vor seiner Zeit bekannte Verfahren eingeführt.
 
 ```{code-cell} python3
@@ -122,51 +135,45 @@ def sieve_of_eratosthenes(N):
 sieve_of_eratosthenes(100)
 ```
 
+## Von der Scholastik zur modernen Logik
+
 Die Stoa entwickelten die Logik weiter indem sie zwischen Objekten, theoretischen Bildern und linguistischen Zeichen unterschieden.
 Danach verschwand die Aristotelische Logik über lange Zeit und tauchte erst wieder im Mittelalter auf.
-Die Sekularisierung nahm ihren Lauf und am Ende des 11. Jahrhunderts entstanden aus den Schulen der Klöstern und Katedralen die ersten Universitäten.
-
-```{figure} ../../figs/history/greeks.png
----
-height: 150px
-name: greeks
----
-Denker*innen Ihrer Zeit: Euklid, Eratosthenes, Hypatia, Quellen: [2](https://en.wikipedia.org/wiki/File:Eratosthene.01.png), [3](https://commons.wikimedia.org/wiki/File:Hypatia_portrait.png).
-```
+Die Sekularisierung nahm ihren Lauf und am Ende des 11. Jahrhunderts entstanden aus den Schulen der Klöster und Katedralen die ersten Universitäten.
 
 Die Zeit der Scholastik, welche die Vernunft und den Glauben als Mittel der Wissenserzeugung sah, begann.
-Die Aristotelische Logik wurde dabei insbesondere durch Thomas von Aquine ein inhärenter Bestandteil der scholastischen Logik.
-Das logische Denken wurde kultiviert wurde jedoch hauptsächlich als Instrument zur Unterstützung des christlichen Glaubens gebraucht.
+Die Aristotelische Logik wurde dabei insbesondere durch Thomas von Aquine zu einem inhärenten Bestandteil der scholastischen Logik.
+Das logische Denken wurde kultiviert, jedoch hauptsächlich als Instrument zur Unterstützung des christlichen Glaubens.
 Die Scholastik versuchte den Glauben durch logische Schlüsse zu rechtfertigen bzw. zu begründen und zu ergründen.
 
 Diese Entwicklung war der erste Schritt zu einer Systematisierung und Formalisierung der Logik und damit der Systematisierung der Wissenserzeugung und der Manipulation jenes Wissens in unterschiedlicher Art und Weise in einem abgeschlossenen System.
 Die dadurch eingeführte Abstraktion ist eine notwendige Vorraussetzung für die Entwicklung eines Systems, in dessen Kontext Algorithmen für die Berechnung der Lösung aller möglichen Probleme konstruiert werden können.
 
-Eine weitere Persönlichkeit die hier erwähnt werden sollte ist der Universalgeleerte Gottfried Wilhelm Leibniz (1646-1716).
+Eine Persönlichkeit die hier erwähnt werden sollte ist der Universalgelehrter Gottfried Wilhelm Leibniz (1646-1716).
 Neben vieler essentieller wissenschaftlicher Beiträge, wollte er das Wissen an sich durch eine Art Universalsprache formalisieren.
 Diese sollte es ermöglichen jedes wissenschaftliche Problem mittels eines umfassenden Kalküls zu lösen.
 Nach dem dreißigjährigen Krieg war für ihn diese Vision auch ein Projekt zur transnationalen Verständigung in Europa.
 Leibniz arbeitete an einer Codierung für alle möglichen wissenschaftlichen Begriffe und an einem Kalkül welches jene Begriffe der Universalsprache durch logische Operationen verbinden sollte.
-Beispielsweise wurde durch Multiplikation eines Dings ($2$) ein Seiendes ($2 \cdot 3$) und durch eine weitere Multiplikation, ein Mensch ($2 \cdot 3 \cdot 5$).
+Beispielsweise wurde durch Multiplikation aus einem 'Ding' ($2$) ein 'Seiendes' ($2 \cdot 3$) und durch eine weitere Multiplikation, ein 'Mensch' ($2 \cdot 3 \cdot 5$).
 
 >Wenn Gott zählt ensteht eine Welt. -- Leibniz
 
-Auch wenn diese Idee für jene Zeit bahnbrechend ist, bringt sie auch einige Probleme mit sich und hat sich nicht durchgesetzt.
+Auch wenn diese Idee für jene Zeit bahnbrechend gewesen ist, bringt sie auch einige Probleme mit sich und hat sich nicht durchsetzen können.
 Doch ist es heute selbstverständlich so, dass wir auf der digitalen Maschine alles durch Zahlen repräsentieren.
 Leibniz war seiner Zeit in jedem Fall voraus.
 In seiner Welt wurden Zahlen zum Instrument um die Welt zu organisieren.
 Er entwarf ein konkretes System auch wenn dessen Realisierung zum Scheitern verurteilt war.
-Der Mathematiker Kurt Gödel sollte schlussendlich zeigen, dass derartige Versuche der Formalisierung der Welt nicht möglich sind.
+Der Mathematiker Kurt Gödel (1906-1978) sollte schlussendlich zeigen, dass derartige Versuche der Formalisierung der Welt nicht möglich sind.
 
-1847 führte der englische Mathematiker und Philosoph Georg Boole in seinem Buch *The Mathematical Analysis of Logic* {cite}`boole:1847` die sog. boolsche Algebra ein.
-Insbesondere die *zweielementige boolsche Algebra* mit den Elementen 0 und 1, welche Anwendung in der Aussagenlogik hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
+1847 führte der englische Mathematiker und Philosoph Georg Boole in seinem Buch *The Mathematical Analysis of Logic* {cite}`boole:1847` die sog. *boolsche Algebra* ein.
+Insbesondere die *zweielementige boolsche Algebra* mit den Elementen 0 und 1, welche Anwendung in der *Aussagenlogik* hat, sollte sich als Meilenstein der bis dato noch nicht existierenden Informatik herausstellen.
 Sie ist Teil jeder modernen Programmiersprache.
 Zusätzlich beruhen auf ihr alle (auch arithmetische) Operationen des digitalen Computers.
 Die boolsche Algebra definiert logische Operatoren wie AND $(\land)$, OR ($\lor$) und NOT $(\neg)$, die auf die Elemente 0 und 1 angewendet werden können wobei 0 als *falsch* und 1 als *wahr* interpretiert werden.
-Andere Operationen wie NAND (not AND), NOR (not OR), EXOR (entweder oder) und NEXOR (nicht entweder oder) können aus den Basisoperationen durch Kombination konstruiert werden.
+Andere Operationen wie NAND (not AND), NOR (not OR), XOR (entweder oder) und NXOR (nicht entweder oder) können aus den Basisoperationen durch Kombination konstruiert werden.
 
 Um 1930 beobachtete Claude Shannon, dass sich die Regeln der boolschen Algebra auf elektrische Schaltungen übertragen lassen.
-In fast allen digitalen Computern stellen elektrische Schaltungen die physikalische Manifestation boolscher Operationen dar.
+Seither stellen elektrische Schaltungen die physikalische Manifestation boolscher Operationen in fast allen digitalen Computern dar.
 Durch [Logikgatter](sec-gates) werden diese Operatoren in Computern realisiert und bilden die Basis jedweder Berechnung. 
 
 ```{figure} ../../figs/history/circuit.png
@@ -177,9 +184,10 @@ name: fig-circuit
 Elektrischer Schaltkreis für den logischer Ausdruck $X_1 \lor (X_4 \land (X_2 \lor X_3))$.
 ```
 
-Wie die Aussagenlogik so verzichtet auch die boolsche Algebra auf einen Geltungsbereich der Variablen.
-Mit anderen Worten Sie kennt keine Quantoren $(\forall$, $\exists)$.
-Auch kennt sie das Prinzip des Prädikats nicht.
+Wie die *Aussagenlogik* so verzichtet auch die *boolsche Algebra* auf einen Geltungsbereich der Variablen.
+Mit anderen Worten Sie kennt keine *Quantoren* $(\forall$, $\exists)$.
+Auch kennt sie das Prinzip des Prädikats nicht, obwohl bereits Aristoteles Prädikate definierte.
+
 In umgangssprachlicher Annäherung ist ein Prädikat eine Folge von Wörtern, die Leerstellen eröffnen;
 diese Folge wird zu einer wahren oder falschen Aussage, wenn in jede Leerstelle ein Eigenname eingesetzt wird.
 Beispielsweise ist: "... ist ein Mensch" ein Prädikat.
@@ -190,14 +198,14 @@ $$P(x) = x \text{ ist eine gerade Zahl}$$
 
 ein Prädikat, wobei beispielweise $P(2) = \text{wahr}$ ergibt und $P(3) = \text{falsch}$.
 Um Elementen aus Mengen auszuwählen gibt es die Quantoren.
-So lässt sich der Satz: "Für jede ungerade Zahl gibt es eine natürliche Zahl, mit der man diese multiplizieren kann, sodass das Ergebnis eine gerade Zahl ist.
+So lässt sich der Satz: "Für jede ungerade Zahl gibt es eine natürliche Zahl, mit der man diese multiplizieren kann, sodass das Ergebnis eine gerade Zahl ist" wie folgt ausdrücken:
 
 $$\forall n \in \mathbb{Z} \, \exists k \in \mathbb{N}: \neg P(n) \Rightarrow P(n \cdot k).$$
 
 Diese Logik erster Ordnung oder auch Prädikatenlogik wurde insbesondere von Ludwig Gottlob Frege (1848-1925) in seinem Werk *Begriffsschrift* {cite}`frege:1879` entwickelt.
 Freges vorrangiges Ziel war der Logizismus, d.h. zu zeigen, dass die Mathematik als Teil der Logik auszuweisen ist.
 In anderen Worten wollte er alle mathematischen Sätze aus wenigen rein logischen Axiomen ableiten.
-Dieses Unternehmen war nur aussichtsreich, wenn ein Mittel zur Verfügung stand, mit dem sich die Lückenlosigkeit einer Schlusskette zweifelsfrei überprüfen ließ.
+Dieses Unterfangen war nur aussichtsreich, wenn ein Mittel zur Verfügung stand, mit dem sich die Lückenlosigkeit einer Schlusskette zweifelsfrei überprüfen ließ.
 Da sich die traditionelle Aristotelische Logik (Syllogistik) als unbrauchbar für diesen Zweck herausstellte, nahm sich Frege zunächst der Aufgabe an, eine neue, geeignetere Logik zu schaffen.
 
 ```{figure} ../../figs/history/logicians.png
@@ -208,8 +216,9 @@ name: logicians
 Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russell, Quellen: [1](https://commons.wikimedia.org/wiki/File:George_Boole_color.jpg), [2](https://commons.wikimedia.org/wiki/File:Young_frege.jpg).
 ```
 
-Die Theoretiker sollten, nach Baddage's Konzeption der Rechenmaschine, zu den Ingenieuren wieder aufstoßen.
-Die Prädikatenlogik wurde druch Bertrand Arthur William Rusell (1872-1970) und Alfred North Whitehead (1861-1947) weiterentwickelt.
+## Zerstörte Träume und fruchtbare Theorien
+
+Die Freges Prädikatenlogik wurde druch Bertrand Arthur William Rusell (1872-1970) und Alfred North Whitehead (1861-1947) weiterentwickelt.
 Sie machten die Logik zum Objekt wissenschaftlicher Forschung.
 Deren Logizismus und Formalismus führte zum sogenannten [Grundlagenstreit der Mathematik](https://de.wikipedia.org/wiki/Grundlagenkrise_der_Mathematik) in dem sich Formalismus und Intuitionismus, vertreten durch Luitzen Egbertus Jan Brouwer (1881-1966), gegenüber standen.
 Die Formalisten, insbesondere David Hilbert (1862-1943), wollten mathematische Grundsätze auf eine (bewiesenes) konsistente axiomatische Basis stellen.
@@ -219,7 +228,8 @@ Zudem zweifelten sie an der Gültigkeit des *Satz vom ausgeschlossenen Dritten* 
 Hilbert schlug 1920 ein Forschungsprogramm vor das zum Ziel hatte, mit finiten Methoden die Widerspruchsfreiheit der Axiomensysteme der Mathematik nachzuweisen. 
 Auch wenn sich das Hilbertprogramm in seinem ursprünglichen Anspruch als undurchführbar erwiesen hat, trug es dennoch entscheidend dazu bei, die Grundlagen und Grenzen mathematischer Erkenntnis zu klären.
 Das Programm fand breite Beachtung.
-Viele bekannte Logiker und Mathematiker beteiligten sich daran, unter anderem Paul Bernays, Wilhelm Ackermann, John von Neumann (1903-1957), Jacques Herbrand (1908-1931) und Kurt Gödel. Sie zeigten die Widerspruchsfreiheit und Vollständigkeit für zentrale Teilgebiete der Logik, nämlich für die klassische Aussagen- und Prädikatenlogik.
+Viele bekannte Logiker und Mathematiker beteiligten sich daran, unter anderem Paul Bernays (1888-1977), Wilhelm Ackermann (1896-1962), John von Neumann (1903-1957), Jacques Herbrand (1908-1931) und Kurt Gödel (1906-1978). 
+Sie zeigten die Widerspruchsfreiheit und Vollständigkeit für zentrale Teilgebiete der Logik, nämlich für die klassische Aussagen- und Prädikatenlogik.
 
 >Aus dem Paradies, das Cantor uns geschaffen, soll uns niemand vertreiben können. -- Hilbert
 
@@ -273,6 +283,8 @@ name: model-of-a-tm
 ---
 Eine konkrete Konstruktion einer Turingmaschine, [Quelle](https://de.wikipedia.org/wiki/Turingmaschine#/media/Datei:Model_of_a_Turing_machine.jpg).
 ```
+
+## Das maschinelle Lernen
 
 Was aber heute in aller Munde ist, stammt aus dem Bereich des *maschinellen Lernens*.
 Schon in den 1940er Jahren wurde versucht die Informationsverarbeitung am Beispiel des menschlichen Gehirns zu modellieren. 
@@ -337,7 +349,7 @@ Die bisherigen Erfolge sind vielversprechend und möglicherweise können uns die
 Dabei sollten wir einen gesunden Umgang mit KI-Systemen entwickeln.
 Fragen der Ethik, Ökologie und der sozialen Gerechtigkeit müssen in diesem Zuge ihren Platz im Diskurs finden.
 Das *maschinelle Lernen* wird sich auf all jene Bereiche ausbreiten für die wir große Datenmengen gesammelt haben oder sammeln können.
-Anbieter können so ihre Produkte optimieren -- was auch immer das im Einzelnen bedeuten mag.
+Anbieter können so ihre Produkte optimieren---was auch immer das im Einzelnen bedeuten mag.
 KI kann uns möglicherweise helfen die Erderwärmung zu reduzieren, gleichzeitig benötigen diese daten- und energiehungrigen Algorithmen viele Ressourcen.
 Diese Spannung zwischen Nutzen und Kosten müssen wir beleuchten.
 
