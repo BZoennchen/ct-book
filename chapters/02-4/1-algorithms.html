@@ -387,18 +387,36 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/BZoennchen/ct-book/blob/master/chapters/02-4/1-algorithms.md" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/BZoennchen/ct-book/master?urlpath=lab/tree/chapters/02-4/1-algorithms.md" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">Colab</span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://datahub.cs.hm.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/BZoennchen/ct-book&urlpath=lab/tree/ct-book/chapters/02-4/1-algorithms.md&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
 </a>
 </li>
       
@@ -835,32 +853,45 @@ Dabei bedienen wir uns bei <em>Donald E. Knuth</em>, dem Autor der Programmierbi
 <p>Ein <em>Algorithmus</em> ist eine endliche Folge von unmissverständlich beschriebenen ausführbaren Anweisung (z.B. Text/Programmcode), um für eine bestimmte endliche Eingabe in endlich vielen Schritten eine endliche Ausgabe zu erzeugen, wobei zu jeder Zeit der Ausführung nur endlich viel Speicherplatz verwendet wird.</p>
 </div>
 <p>Ein Algorithmus hat demnach folgende Eigenschaften:</p>
-<p><strong>(1) Endlichkeit:</strong> Identisch zur Beschreibung einer <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-universal-turing-machine"><span class="std std-ref">Turingmaschine</span></a>, besteht ein Algorithmus aus endlich vielen Zeichen.
+<dl class="simple myst">
+<dt><strong>(1) Endlichkeit:</strong></dt><dd><p>Identisch zur Beschreibung einer <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-universal-turing-machine"><span class="std std-ref">Turingmaschine</span></a>, besteht ein Algorithmus aus endlich vielen Zeichen.
 Anders ausgedrückt, können wir ihn in endlich viel Zeit niederschreiben.
 Durch die Endlichkeit seiner Beschreibung, kann ein Algorithmus als Programm in einem (endlichen) Speicher abgelegt werden.</p>
-<p><strong>(2) Ausführbarkeit:</strong> Jede Anweisung des Algorithmus muss ausführbar sein.
+</dd>
+<dt><strong>(2) Ausführbarkeit:</strong></dt><dd><p>Jede Anweisung des Algorithmus muss ausführbar sein.
 Das heißt, die <a class="reference internal" href="../02-1/2-interpretation.html#def-semantik"><span class="std std-ref">Semantik</span></a> einer jeden Anweisung muss im jeweiligen Kontext eindeutig definiert sein.
 Es muss in jedem Schritt nicht nur klar sein was zu tun ist, sondern dieses was muss auch tatsächlich möglich sein.</p>
-<p><strong>(3) Gebundenheit:</strong> Während der Ausführung des Algorithmus wird lediglich endlich viel Speicher bzw. eine endliche Anzahl an Variablen benötigt.</p>
-<p><strong>(4) Terminierung:</strong> Die Ausführung eines Algorithmus muss nach endlich vielen Schritten enden.
+</dd>
+<dt><strong>(3) Gebundenheit:</strong></dt><dd><p>Während der Ausführung des Algorithmus wird lediglich endlich viel Speicher bzw. eine endliche Anzahl an Variablen benötigt.</p>
+</dd>
+<dt><strong>(4) Terminierung:</strong></dt><dd><p>Die Ausführung eines Algorithmus muss nach endlich vielen Schritten enden.
 Die Terminierung ist das Gegenstück zur <em>Gebundenheit</em> bezogen auf die Zeit.
 <strong>(1)</strong> und <strong>(4)</strong> stellen sicher, dass ein Programm und dessen Ressourcen zusammengenommen nur endlich viel Speicher verbrauchen.
 In der Komplexitätstheorie spricht man hierbei von <em>dynamischer Finitheit</em> des Speicherbedarfs.</p>
-<p><strong>(5) Eingabe:</strong> Jeder Algorithmus hat keine oder eine endliche Eingabe.</p>
-<p><strong>(6) Ausgabe:</strong> Jeder Algorithmus liefert mindestens eine Ausgabe, d.h., ein Ergebnis zurück.</p>
+</dd>
+<dt><strong>(5) Eingabe:</strong></dt><dd><p>Jeder Algorithmus hat entweder keine oder eine endliche Eingabe.</p>
+</dd>
+<dt><strong>(6) Ausgabe:</strong></dt><dd><p>Jeder Algorithmus liefert mindestens eine Ausgabe, d.h., ein Ergebnis zurück.</p>
+</dd>
+</dl>
 <p>Es gibt noch zwei optionale Eigenschaften für Algorithmen, welche oftmals gefordert werden:</p>
-<p><strong>(7) Determiniertheit:</strong> Wir nennen einen Algorithmus <strong>determiniert</strong>, wenn er bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.</p>
-<p>Entscheidet ein Algorithmus durch einen <em>echten Münzwurf</em> (kein pseudo Zufall sondern echter Zufall) über den Verlauf der Ausführung, so wäre jener Algorithmus nicht determiniert.
+<dl class="simple myst">
+<dt><strong>(7) Determiniertheit:</strong></dt><dd><p>Wir nennen einen Algorithmus <strong>determiniert</strong>, wenn er bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.
+Entscheidet ein Algorithmus durch einen <em>echten Münzwurf</em> (kein pseudo Zufall sondern echter Zufall) über den Verlauf der Ausführung, so wäre jener Algorithmus nicht determiniert.
 Algorithmen basieren wenn überhaupt auf Pseudozufallszahlen, deren Erzeugung mit einem Startwert (<em>Seed</em>) initialisiert wird.
 Bei gleichem <em>Seed</em> und gleicher Eingabe erzeugen diese Algorithmen auch das gleiche Ergebnis.
 Da der <em>Seed</em> zur Eingabe gehört, sind jene Algorithmen determiniert.</p>
-<p><strong>(8) Determinismus:</strong> Wir nennen einen Algorithmus <strong>deterministisch</strong>, wenn während seiner Ausführung dieser, zu jedem Zeitpunkt, die nächste Anweisung eindeutig definiert.</p>
-<p>Es gibt keine reale Maschine die nichtdeterministische Algorithmen direkt umsetzten kann.
+</dd>
+<dt><strong>(8) Determinismus:</strong></dt><dd><p>Wir nennen einen Algorithmus <strong>deterministisch</strong>, wenn dieser während seiner Ausführung zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
+Es gibt keine reale digitale Maschine die nichtdeterministische Algorithmen direkt umsetzten kann.
 Ein Beispiel für einen nichtdeterministischen Algorithmus wäre die Wanderung durch ein Labyrinth wobei Sie bei jeder Verzweigung beide Wege zeitgleich ablaufen.
 Dies ist nicht möglich, da Sie sich klonen müssten bzw. an zwei Orten gleichzeitig sein müssten.
 Verwechseln Sie dies nicht mit der <strong>Parallelität</strong>.
 Es ist natürlich möglich, dass sich zwei Personen bei einer Abzweigung trennen.
 Nichtdeterminismus bedarf jedoch der Kopie des gesamten Zustands der Maschine!</p>
+</dd>
+</dl>
+<p>Determinismus und Determiniertheit hängen zusammen, denn Determiniertheit folgt aus dem Determinismus jedoch folgt aus der Determiniertheit nicht unbedingt der Determinismus.</p>
 <div class="definition admonition" id="def-algorithm-formal">
 <p class="admonition-title">Algorithmus (formal)</p>
 <p>Eine Berechnungsvorschrift ist genau dann ein Algorithmus, wenn eine zu dieser Berechnungsvorschrift äquivalente <a class="reference internal" href="../02-1/5-hardware-equals-software.html#info-turingmaschine"><span class="std std-ref">Turingmaschine</span></a> <span class="math notranslate nohighlight">\(T\)</span> existiert, die für jede Eingabe <span class="math notranslate nohighlight">\(w\)</span> stoppt und die gleiche Ausgabe wie die Berechnungsvorschrift liefert.</p>
