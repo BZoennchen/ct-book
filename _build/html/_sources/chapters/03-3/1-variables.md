@@ -1,6 +1,5 @@
 ---
 jupytext:
-  formats: md:myst
   text_representation:
     extension: .md
     format_name: myst
@@ -23,7 +22,7 @@ So können wir uns Zwischenergebnisse merken und damit weiter rechnen.
 Durch das ``=`` Zeichen weisen wir einer *Variablen* (auf der linken Seite) den Wert des *Ausdrucks* (auf der rechten Seite) zu.
 Zum Beispiel, weist
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = 3 + 10
 ```
 
@@ -34,7 +33,7 @@ $$x = 13$$
 
 bedeutet, dass $x$ gleich $13$ ist, wohingegen
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = 13
 ```
 
@@ -45,7 +44,7 @@ $$x \leftarrow 13.$$
 
 Mit
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = None
 ```
 
@@ -54,7 +53,7 @@ Es [repräsentiert](sec-representation) lediglich das Nichts.
 
 Versuchen wir eine *Variable* zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:
 
-```{code-cell} python3
+```{code-cell} ipython3
 ---
 tags: [raises-exception]
 ---
@@ -105,7 +104,7 @@ In ``Python`` kommen wir mit der eigentlichen Speicheradresse normalerweise gar 
 
 Mit
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = 25
 ```
 
@@ -123,7 +122,7 @@ Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wer
 
 Mit der *built-in*-Funktion ``id`` können Sie sich eine Identifikationsnummer einer Variablen ausgeben lassen. Für zwei *Variablen* ist diese genau dann gleich, wenn deren **Arbeitsspeicheradressen** gleich sind.
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = 25
 z = 25
 print(id(x))
@@ -197,7 +196,7 @@ Zwei Variablen können jedoch den gleichen Wert haben, allerdings auf verschiede
 
 Ein Beispiel für zwei Variablen mit gleichem Wert und unterschiedlicher Identität ist leicht konstruiert:
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = 2131313
 z = 2131313
 print(id(x))
@@ -213,7 +212,7 @@ Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten
 
 Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = 0
 z = 0
 while(id(x) == id(z)):
@@ -224,7 +223,7 @@ x
 
 Wie sieht es mit negativen Zahlen aus?:
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = 0
 z = 0
 while(id(x) == id(z)):
@@ -257,7 +256,7 @@ Das Ursprungsobjekt bleibt *unverändert*.
 Eine *Variable* kann immer nur einen **Wert** bzw. auf einen bestimmten Speicherbereich *zeigen*.
 Weisen wir einer *Variablen* erneut einen **Wert** zu, wird dieser **Wert** in den Speicher an eine freie **Adresse** geschrieben und die **Adresse** der Variablen auf jene neue **Adresse** gesetzt.
 
-```{code-cell} python3
+```{code-cell} ipython3
 half = 1/2
 print(f'value of half = {half}')
 print(f'id of half = {id(half)}')
@@ -279,7 +278,7 @@ Veränderungen der einen *Variablen* haben keinen Effekt auf die **Adresse** bzw
 ````
 
 
-```{code-cell} python3
+```{code-cell} ipython3
 print(f'value of half = {half}')
 print(f'id of half = {id(half)}')
 ```
@@ -290,7 +289,7 @@ Verändern wir *Variablen* nicht, so behalten sie ihre **Adresse** über das ges
 
 Weisen wir einer Variablen ``x`` eine andere Variable ``y`` zu, so ändern wir die **Adresse** von ``x`` auf jene von ``y``. Das heißt, nach der *Zuweisung* zeigen beide Variablen auf den gleichen Speicherbereich und damit auf den gleichen **Wert**.
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = 2131313
 y = 10
 z = 2131313
@@ -328,7 +327,7 @@ Dennoch versuchen wir unser Glück:
 Eine Variable kann nicht nur einen einzelnen atomaren **Wert**, wie eine Zahl, enthalten, sondern auch einen **Wert** der sich aus anderen **Werten** [zusammensetzt](def-data-structures).
 Zum Beispiel:
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = [1,2,3,4,5]
 x
 ```
@@ -337,25 +336,25 @@ Der Variablen ``x`` weisen wir hierbei eine sog. [Liste](sec-list) ``list`` zu, 
 In unserem Fall besteht die Liste, und somit ``x``, aus den Werten ``1, 2, 3, 4`` und ``5``.
 Um auf einen bestimmten **Wert** der Liste zuzugreifen brauchen wir seinen Index. Zum Beispiel liefert uns der Index ``1`` den Wert ``2``:
 
-```{code-cell} python3
+```{code-cell} ipython3
 x[1]
 ```
 
 Wie sieht das nun im Speicher aus??? Welche Adresse hat ``x`` und wie sieht der Speicher an der Adresse von ``x`` aus? Der Aufruf
 
-```{code-cell} python3
+```{code-cell} ipython3
 id(x)
 ```
 
 Liefert uns eine ``id``, allerdings lieft uns der Aufruf
 
-```{code-cell} python3
+```{code-cell} ipython3
 id(x[1])
 ```
 
 ebenfalls eine (andere) ``id``.
 
-```{code-cell} python3
+```{code-cell} ipython3
 id(x[2])
 ```
 
@@ -369,7 +368,7 @@ Doch ``Python`` vereinfacht uns den Umgang mit Listen und verbirgt diese Tatsach
 
 Was aber passiert mit ``x`` wenn wir eines seiner Listenelemente verändern? Hier wird es spannend:
 
-```{code-cell} python3
+```{code-cell} ipython3
 print(f'value of x = {x}')
 print(f'id of x = {id(x)}')
 
@@ -395,7 +394,7 @@ Listen können groß werden und würden wir bei jeder Änderung eines Listenelem
 Dieses Verhalten hat jedoch Konsequenzen! 
 Folgender Code führt zur Veränderung des Wertes der Variablen ``y`` von ``y == [[1, 2, 3], [1, 2, 3], [1,2,3]]`` nach ``y == [[-10, 2, 3], [-10, 2, 3], [1,2,3]]`` obwohl wir nicht direkt mit ``y`` interagieren.
 
-```{code-cell} python3
+```{code-cell} ipython3
 x = [1, 2, 3]
 y = [x, x, [1,2,3]]
 print(y)
@@ -419,7 +418,7 @@ Um einer *Variablen* "keinen" Wert zuzuweisen gibt es das Signalwort ``None``.
 Dies [repräsentiert](sec-representation) "keinen Wert" bzw. das Nichts.
 Dennoch besitzt die *Variable* einen Wert, eben den Wert ``None``.
 
-```{code-cell} python3
+```{code-cell} ipython3
 z = 0
 z + 20
 z = None
@@ -428,7 +427,7 @@ z
 
 Die Ausgabemechanik des Notebooks ignoriert ``None``, jedoch können wir die *Variable* in eine Zeichenkette umwandeln und dann ausgeben:
 
-```{code-cell} python3
+```{code-cell} ipython3
 z = None
 print(id(z))
 print(z)

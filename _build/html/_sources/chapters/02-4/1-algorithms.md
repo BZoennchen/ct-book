@@ -223,42 +223,50 @@ Ein *Algorithmus* ist eine endliche Folge von unmissverständlich beschriebenen 
 
 Ein Algorithmus hat demnach folgende Eigenschaften:
 
-**(1) Endlichkeit:** Identisch zur Beschreibung einer [Turingmaschine](info-universal-turing-machine), besteht ein Algorithmus aus endlich vielen Zeichen.
+**(1) Endlichkeit:** 
+: Identisch zur Beschreibung einer [Turingmaschine](info-universal-turing-machine), besteht ein Algorithmus aus endlich vielen Zeichen.
 Anders ausgedrückt, können wir ihn in endlich viel Zeit niederschreiben.
 Durch die Endlichkeit seiner Beschreibung, kann ein Algorithmus als Programm in einem (endlichen) Speicher abgelegt werden.
 
-**(2) Ausführbarkeit:** Jede Anweisung des Algorithmus muss ausführbar sein.
+**(2) Ausführbarkeit:** 
+: Jede Anweisung des Algorithmus muss ausführbar sein.
 Das heißt, die [Semantik](def-semantik) einer jeden Anweisung muss im jeweiligen Kontext eindeutig definiert sein.
 Es muss in jedem Schritt nicht nur klar sein was zu tun ist, sondern dieses was muss auch tatsächlich möglich sein.
 
-**(3) Gebundenheit:** Während der Ausführung des Algorithmus wird lediglich endlich viel Speicher bzw. eine endliche Anzahl an Variablen benötigt.
+**(3) Gebundenheit:** 
+: Während der Ausführung des Algorithmus wird lediglich endlich viel Speicher bzw. eine endliche Anzahl an Variablen benötigt.
 
-**(4) Terminierung:** Die Ausführung eines Algorithmus muss nach endlich vielen Schritten enden.
+**(4) Terminierung:** 
+: Die Ausführung eines Algorithmus muss nach endlich vielen Schritten enden.
 Die Terminierung ist das Gegenstück zur *Gebundenheit* bezogen auf die Zeit.
 **(1)** und **(4)** stellen sicher, dass ein Programm und dessen Ressourcen zusammengenommen nur endlich viel Speicher verbrauchen. 
 In der Komplexitätstheorie spricht man hierbei von *dynamischer Finitheit* des Speicherbedarfs.
 
-**(5) Eingabe:** Jeder Algorithmus hat keine oder eine endliche Eingabe.
+**(5) Eingabe:** 
+: Jeder Algorithmus hat entweder keine oder eine endliche Eingabe.
 
-**(6) Ausgabe:** Jeder Algorithmus liefert mindestens eine Ausgabe, d.h., ein Ergebnis zurück.
+**(6) Ausgabe:** 
+: Jeder Algorithmus liefert mindestens eine Ausgabe, d.h., ein Ergebnis zurück.
 
 Es gibt noch zwei optionale Eigenschaften für Algorithmen, welche oftmals gefordert werden:
 
-**(7) Determiniertheit:** Wir nennen einen Algorithmus **determiniert**, wenn er bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.
-
+**(7) Determiniertheit:** 
+: Wir nennen einen Algorithmus **determiniert**, wenn er bei gleicher Eingabe auch die gleiche Ausgabe erzeugt.
 Entscheidet ein Algorithmus durch einen *echten Münzwurf* (kein pseudo Zufall sondern echter Zufall) über den Verlauf der Ausführung, so wäre jener Algorithmus nicht determiniert.
 Algorithmen basieren wenn überhaupt auf Pseudozufallszahlen, deren Erzeugung mit einem Startwert (*Seed*) initialisiert wird.
 Bei gleichem *Seed* und gleicher Eingabe erzeugen diese Algorithmen auch das gleiche Ergebnis.
 Da der *Seed* zur Eingabe gehört, sind jene Algorithmen determiniert.
 
-**(8) Determinismus:** Wir nennen einen Algorithmus **deterministisch**, wenn während seiner Ausführung dieser, zu jedem Zeitpunkt, die nächste Anweisung eindeutig definiert.
-
-Es gibt keine reale Maschine die nichtdeterministische Algorithmen direkt umsetzten kann.
+**(8) Determinismus:** 
+: Wir nennen einen Algorithmus **deterministisch**, wenn dieser während seiner Ausführung zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
+Es gibt keine reale digitale Maschine die nichtdeterministische Algorithmen direkt umsetzten kann.
 Ein Beispiel für einen nichtdeterministischen Algorithmus wäre die Wanderung durch ein Labyrinth wobei Sie bei jeder Verzweigung beide Wege zeitgleich ablaufen.
 Dies ist nicht möglich, da Sie sich klonen müssten bzw. an zwei Orten gleichzeitig sein müssten.
 Verwechseln Sie dies nicht mit der **Parallelität**.
 Es ist natürlich möglich, dass sich zwei Personen bei einer Abzweigung trennen.
 Nichtdeterminismus bedarf jedoch der Kopie des gesamten Zustands der Maschine!
+
+Determinismus und Determiniertheit hängen zusammen, denn Determiniertheit folgt aus dem Determinismus jedoch folgt aus der Determiniertheit nicht unbedingt der Determinismus.
 
 ```{admonition} Algorithmus (formal)
 :name: def-algorithm-formal
