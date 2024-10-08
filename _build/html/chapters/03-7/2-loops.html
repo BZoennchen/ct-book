@@ -1,0 +1,1547 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="de" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>17.2. Schleifen &#8212; Computational Thinking</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-JTQKVRRRDB"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-JTQKVRRRDB');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03-7/2-loops';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="17.3. Comprehensions" href="3-comprehensions.html" />
+    <link rel="prev" title="17.1. Fallunterscheidungen" href="1-cases.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="de"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-HM-small.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo-HM-small.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Computational Thinking
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einleitung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-1/course.html">1. Kurskonzept</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/1-content.html">1.1. Inhalt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/2-reading.html">1.2. Lesehinweise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/3-teaching.html">1.3. Lehrkonzept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-1/4-learn-how-to-think.html">1.4. Denken lernen?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-2/what-is-ct.html">2. Was ist Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/1-informatics-and-ct.html">2.1. Informatik und CT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/2-repetition-is-the-key.html">2.2. Wiederholung als Grundlage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-2/3-quizz.html">2.3. Quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-3/history.html">3. Geschichte der Computer und Algorithmen</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/1-writing-system.html">3.1. Symbole, Schrift und Zahlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/2-formalizing-thought.html">3.2. Die Formalisierung des Denkens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/3-calculating-machines.html">3.3. Rechenmaschinen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-3/4-future.html">3.4. Ausblick</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-4/why-ct.html">4. Warum Computational Thinking?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/1-intrinsic-value.html">4.1. Intrinsischer Wert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/2-usefulness.html">4.2. Langfristiger Nutzen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-4/3-self-determination.html">4.3. Selbstbestimmt durch CT</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01-5/sorting.html">5. Lasst uns Denken</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/1-sort-cards.html">5.1. Karten sortieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/2-sort-cards-with-python.html">5.2. Karten sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/3-sort-numbers.html">5.3. Zahlen sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/4-sort-anything.html">5.4. Allgemeines Sortieren in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-5/5-quizz.html">5.5. Quizz</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Theorie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-0/math.html">6. Mathematische Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/1-notation.html">6.1. Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/2-set.html">6.2. Mengen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/3-tuple.html">6.3. Tupel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/4-relation.html">6.4. Relationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/5-function.html">6.5. Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/6-operations.html">6.6. Operationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-0/7-induction.html">6.7. Vollständige Induktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-1/information-processing.html">7. Der digitale Computer</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/1-basics.html">7.1. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-interpretation.html">7.2. Interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/2-representation.html">7.3. Repräsentationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/3-manipulation.html">7.4. Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/4-information-flow.html">7.5. Der Informationskreislauf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-1/5-hardware-equals-software.html">7.6. Berechenbarkeit</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-2/information.html">8. Was ist Information?</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/1-natural-science.html">8.1. Naturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/2-formal-science.html">8.2. Strukturwissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/3-critic.html">8.3. Mehr als reine Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/4-humanics.html">8.4. Geisteswissenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-2/5-summary.html">8.5. Zusammenfassung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-3/languages.html">9. Programmiersprachen</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/1-abstraction.html">9.1. Abstraktion des Computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/2-success-criteria.html">9.2. Erfolgsfaktoren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/3-imperative-vs-functional.html">9.3. Imperativ und funktional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/4-language-evolution.html">9.4. Sprachevolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/5-python.html">9.5. Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-3/6-diversity.html">9.6. Diversität</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02-4/the-art-of-programming.html">10. Die Kunst des Programmierens</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/1-algorithms.html">10.1. Algorithmen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/2-programming.html">10.2. Programmieren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/3-control-structures.html">10.3. Kontrollstrukturen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-4/4-data-structures.html">10.4. Datenstrukturen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-1/introduction.html">11. Programmieren in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-2/python-environment.html">12. Das Python Ökosystem</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/1-installation.html">12.1. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/2-run.html">12.2. Python ausführen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/3-notebooks.html">12.3. Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-2/4-modules.html">12.4. Module und Pakete</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-3/intro.html">13. Grundlagen</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/1-variables.html">13.1. Variablen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/2-expressions.html">13.2. Ausdrücke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-3/3-invoking-functions.html">13.3. Funktionsaufrufe</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-4/intro.html">14. Datentypen (Grundlagen)</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/1-data-types.html">14.1. Pythons Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/2-int.html">14.2. Ganze Zahlen - int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/3-float.html">14.3. Fließkommazahlen - float</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/4-bool.html">14.4. Wahrheitswerte - bool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/5-list.html">14.5. Listen - list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/6-tuple.html">14.6. Tupel - tuple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/7-string.html">14.7. Zeichenketten - str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/8-set.html">14.8. Mengen - set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/9-dict.html">14.9. Wörterbücher - dict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/10-range.html">14.10. Zahlenbereich - range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-4/11-typing-in-python.html">14.11. Python’s Typisierung</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-5/intro.html">15. Datentypen (Fortsetzung)</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/1-type-systems.html">15.1. Dynamische und statische Typisierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/2-why-data-types.html">15.2. Existenzberechtigung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/3-change-of-interpretation.html">15.3. Interpretationswechsel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/4-kind-of-data-types.html">15.4. Arten von Datentypen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-5/5-primitive-data-types.html">15.5. Primitive Datentypen in Python?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-6/intro.html">16. Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/1-purity.html">16.1. Reinheit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/2-definition.html">16.2. Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/3-namespaces.html">16.3. Namensräume und Sichtbarkeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/4-lambdas.html">16.4. Anonyme Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/5-nested-functions.html">16.5. Umschlossene Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/x-recursion.html">16.6. Rekursive Funktionen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-6/6-first-class-functions.html">16.7. First-Class-Funktion</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">17. Kontrollstrukturen</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-cases.html">17.1. Fallunterscheidungen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">17.2. Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-comprehensions.html">17.3. Comprehensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-8/intro.html">18. Objektorientierte Programmierung</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/1-class-and-objects.html">18.1. Klassen und Objekte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-8/2-inheritance-poly-encap.html">18.2. Vererbung, Kapselung und Polymorphie</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03-9/cpython.html">19. CPython</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/1-impl.html">19.1. Implementierungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/2-ref.html">19.2. Referenzimplementierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/3-interpreter.html">19.3. Interpreter und Compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/4-disassembly.html">19.4. Zerlegung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-9/5-extending.html">19.5. CPython erweitern</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CT in Aktion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04/robo-world.html">20. Roboterwelt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/dive-bell.html">21. Sprechen in der Taucherglocke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/image-representation.html">22. Binäres Zeichnen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/memory.html">23. Speicher - alles ist eine Liste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/name-register.html">24. Namensregister</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../misc/bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://datahub.cs.hm.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/BZoennchen/ct-book&urlpath=lab/tree/ct-book/chapters/03-7/2-loops.md&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Quell-Repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/edit/master/chapters/03-7/2-loops.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BZoennchen/ct-book/issues/new?title=Issue%20on%20page%20%2Fchapters/03-7/2-loops.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Öffnen Sie ein Problem"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Laden Sie diese Seite herunter">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/03-7/2-loops.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Notebook-Datei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/chapters/03-7/2-loops.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Quelldatei herunterladen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="In PDF drucken"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Vollbildmodus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Suche" aria-label="Suche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Schleifen</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Inhalt </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">17.2.1. Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-for-schleife">17.2.2. Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-klassische-for-schleife-fall-1">17.2.2.1. Die klassische <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife (Fall 1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-foreach-schleife-fall-2">17.2.2.2. Die Foreach-Schleife (Fall 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-while-schleife">17.2.2.3. Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-ggt">17.2.3. Beispiel (ggT)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="schleifen">
+<span id="sec-loops"></span><h1><span class="section-number">17.2. </span>Schleifen<a class="headerlink" href="#schleifen" title="Permalink to this heading">#</a></h1>
+<p>Viele Aufgaben, die wir über unser Leben hinweg verrichten sind langweilig, da wir immer und immer wieder die gleichen Basisschritte wiederholen müssen.</p>
+<p>Nehmen Sie nur das Nachschlagen einer Telefonnummer im Telefonbuch (falls Sie so etwas überhaupt noch kennen). Wir gehen dabei Seite für Seite durch und suchen nach einem bestimmten Namen - langweilig …</p>
+<p>Auch ganz alltägliche Dinge wie der Abwasch, Zähneputzen, Kochen, ja nahezu jede Aktion beinhaltet die eine oder andere Art der Wiederholung.</p>
+<p>Wie sich gezeigt hat, können wir interessanterweise durch diese langweiligen Wiederholungen ganz erstaunliche Dinge vollbringen.</p>
+<div class="remark admonition" id="remark-repetition">
+<p class="admonition-title">Wiederholung</p>
+<p>Wiederholung ist die Grundlage aller Berechnung.</p>
+</div>
+<section id="motivation">
+<h2><span class="section-number">17.2.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
+<p>Lassen Sie uns einmal auf unseren Roboter blicken.
+Dieser bewegt sich auf einem Gitter.
+Jeder Gitterpunkt ist entweder begehbar oder durch ein Hindernis belegt.
+Der Roboter kann nur nach vorne laufen und sich nach links um 90 Grad drehen.
+Eine genauere Beschreibung des Roboters und seiner Welt finden Sie in der Übung <a class="reference internal" href="../04/robo-world.html#sec-robo-world"><span class="std std-ref">Roboterwelt</span></a>.</p>
+<p>Die folgende Welt enthält unseren Roboter (türkis), das Ziel (gelb), begehbare Zellen (lila) und unbegehbare Hindernisse (blau).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">roboworld</span> <span class="k">as</span> <span class="nn">rw</span>
+
+<span class="n">world</span> <span class="o">=</span> <span class="n">rw</span><span class="o">.</span><span class="n">complex_maze</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">world</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d9a5fea4a8bdd657aeb8742b42715af33bbf323e4a9b2223c4098e24583f0773.png" src="../../_images/d9a5fea4a8bdd657aeb8742b42715af33bbf323e4a9b2223c4098e24583f0773.png" />
+</div>
+</div>
+<p>Wir sollen nun einen Algorithmus entwerfen, welcher den Roboter zum Ziel führt (sofern dies möglich ist).
+Diese Aufgabe scheint überwältigend schwierig!</p>
+<p>Wir verwenden das <code class="docutils literal notranslate"><span class="pre">random</span></code>-Modul um einen <em>fairen Münzwurf</em> zu simulieren.
+Zudem verwenden wir lediglich folgende Methoden des Roboters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">turn_left()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_wall_in_front()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_at_goal()</span></code></p></li>
+</ul>
+<p>In wie vielen Zeilen Code können wir dieses Problem lösen?
+Durch das Potenzial der <strong>Wiederholung</strong> brauchen wir ca. 10 Zeilen Code!</p>
+<p>Zuerst definieren wir eine Funktion <code class="docutils literal notranslate"><span class="pre">random_move(robo)</span></code> welche den Roboter um einen zufälligen Nachbargitterpunkt bewegt (falls dies möglich ist).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
+
+<span class="k">def</span> <span class="nf">random_move</span><span class="p">(</span><span class="n">robo</span><span class="p">):</span>
+    <span class="n">turns</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">turns</span><span class="p">):</span>
+        <span class="n">robo</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_wall_in_front</span><span class="p">():</span>
+        <span class="n">robo</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dann nutzten wir die Wiederholung und bewegen den Roboter immer weiter auf zufällige Nachbargitterpunkte bis er am Ziel angekommen ist:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robo</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_robo</span><span class="p">()</span>
+<span class="n">robo</span><span class="o">.</span><span class="n">disable_print</span><span class="p">()</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">robo</span><span class="o">.</span><span class="n">is_at_goal</span><span class="p">():</span>
+    <span class="n">random_move</span><span class="p">(</span><span class="n">robo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lassen Sie uns die sog. <em>Zufallsfahrt</em> des Roboters ansehen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rw</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script language="javascript">
+  function isInternetExplorer() {
+    ua = navigator.userAgent;
+    /* MSIE used to detect old browsers and Trident used to newer ones*/
+    return ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+  }
+
+  /* Define the Animation class */
+  function Animation(frames, img_id, slider_id, interval, loop_select_id){
+    this.img_id = img_id;
+    this.slider_id = slider_id;
+    this.loop_select_id = loop_select_id;
+    this.interval = interval;
+    this.current_frame = 0;
+    this.direction = 0;
+    this.timer = null;
+    this.frames = new Array(frames.length);
+
+    for (var i=0; i<frames.length; i++)
+    {
+     this.frames[i] = new Image();
+     this.frames[i].src = frames[i];
+    }
+    var slider = document.getElementById(this.slider_id);
+    slider.max = this.frames.length - 1;
+    if (isInternetExplorer()) {
+        // switch from oninput to onchange because IE <= 11 does not conform
+        // with W3C specification. It ignores oninput and onchange behaves
+        // like oninput. In contrast, Microsoft Edge behaves correctly.
+        slider.setAttribute('onchange', slider.getAttribute('oninput'));
+        slider.setAttribute('oninput', null);
+    }
+    this.set_frame(this.current_frame);
+  }
+
+  Animation.prototype.get_loop_state = function(){
+    var button_group = document[this.loop_select_id].state;
+    for (var i = 0; i < button_group.length; i++) {
+        var button = button_group[i];
+        if (button.checked) {
+            return button.value;
+        }
+    }
+    return undefined;
+  }
+
+  Animation.prototype.set_frame = function(frame){
+    this.current_frame = frame;
+    document.getElementById(this.img_id).src =
+            this.frames[this.current_frame].src;
+    document.getElementById(this.slider_id).value = this.current_frame;
+  }
+
+  Animation.prototype.next_frame = function()
+  {
+    this.set_frame(Math.min(this.frames.length - 1, this.current_frame + 1));
+  }
+
+  Animation.prototype.previous_frame = function()
+  {
+    this.set_frame(Math.max(0, this.current_frame - 1));
+  }
+
+  Animation.prototype.first_frame = function()
+  {
+    this.set_frame(0);
+  }
+
+  Animation.prototype.last_frame = function()
+  {
+    this.set_frame(this.frames.length - 1);
+  }
+
+  Animation.prototype.slower = function()
+  {
+    this.interval /= 0.7;
+    if(this.direction > 0){this.play_animation();}
+    else if(this.direction < 0){this.reverse_animation();}
+  }
+
+  Animation.prototype.faster = function()
+  {
+    this.interval *= 0.7;
+    if(this.direction > 0){this.play_animation();}
+    else if(this.direction < 0){this.reverse_animation();}
+  }
+
+  Animation.prototype.anim_step_forward = function()
+  {
+    this.current_frame += 1;
+    if(this.current_frame < this.frames.length){
+      this.set_frame(this.current_frame);
+    }else{
+      var loop_state = this.get_loop_state();
+      if(loop_state == "loop"){
+        this.first_frame();
+      }else if(loop_state == "reflect"){
+        this.last_frame();
+        this.reverse_animation();
+      }else{
+        this.pause_animation();
+        this.last_frame();
+      }
+    }
+  }
+
+  Animation.prototype.anim_step_reverse = function()
+  {
+    this.current_frame -= 1;
+    if(this.current_frame >= 0){
+      this.set_frame(this.current_frame);
+    }else{
+      var loop_state = this.get_loop_state();
+      if(loop_state == "loop"){
+        this.last_frame();
+      }else if(loop_state == "reflect"){
+        this.first_frame();
+        this.play_animation();
+      }else{
+        this.pause_animation();
+        this.first_frame();
+      }
+    }
+  }
+
+  Animation.prototype.pause_animation = function()
+  {
+    this.direction = 0;
+    if (this.timer){
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+  }
+
+  Animation.prototype.play_animation = function()
+  {
+    this.pause_animation();
+    this.direction = 1;
+    var t = this;
+    if (!this.timer) this.timer = setInterval(function() {
+        t.anim_step_forward();
+    }, this.interval);
+  }
+
+  Animation.prototype.reverse_animation = function()
+  {
+    this.pause_animation();
+    this.direction = -1;
+    var t = this;
+    if (!this.timer) this.timer = setInterval(function() {
+        t.anim_step_reverse();
+    }, this.interval);
+  }
+</script>
+
+<style>
+.animation {
+    display: inline-block;
+    text-align: center;
+}
+input[type=range].anim-slider {
+    width: 374px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.anim-buttons {
+    margin: 8px 0px;
+}
+.anim-buttons button {
+    padding: 0;
+    width: 36px;
+}
+.anim-state label {
+    margin-right: 8px;
+}
+.anim-state input {
+    margin: 0;
+    vertical-align: middle;
+}
+</style>
+
+<div class="animation">
+  <img id="_anim_img59dedb3b65744921adbd734b986155eb">
+  <div class="anim-controls">
+    <input id="_anim_slider59dedb3b65744921adbd734b986155eb" type="range" class="anim-slider"
+           name="points" min="0" max="1" step="1" value="0"
+           oninput="anim59dedb3b65744921adbd734b986155eb.set_frame(parseInt(this.value));">
+    <div class="anim-buttons">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim59dedb3b65744921adbd734b986155eb.slower()">
+          <i class="fa fa-minus"></i></button>
+      <button title="First frame" aria-label="First frame" onclick="anim59dedb3b65744921adbd734b986155eb.first_frame()">
+        <i class="fa fa-fast-backward"></i></button>
+      <button title="Previous frame" aria-label="Previous frame" onclick="anim59dedb3b65744921adbd734b986155eb.previous_frame()">
+          <i class="fa fa-step-backward"></i></button>
+      <button title="Play backwards" aria-label="Play backwards" onclick="anim59dedb3b65744921adbd734b986155eb.reverse_animation()">
+          <i class="fa fa-play fa-flip-horizontal"></i></button>
+      <button title="Pause" aria-label="Pause" onclick="anim59dedb3b65744921adbd734b986155eb.pause_animation()">
+          <i class="fa fa-pause"></i></button>
+      <button title="Play" aria-label="Play" onclick="anim59dedb3b65744921adbd734b986155eb.play_animation()">
+          <i class="fa fa-play"></i></button>
+      <button title="Next frame" aria-label="Next frame" onclick="anim59dedb3b65744921adbd734b986155eb.next_frame()">
+          <i class="fa fa-step-forward"></i></button>
+      <button title="Last frame" aria-label="Last frame" onclick="anim59dedb3b65744921adbd734b986155eb.last_frame()">
+          <i class="fa fa-fast-forward"></i></button>
+      <button title="Increase speed" aria-label="Increase speed" onclick="anim59dedb3b65744921adbd734b986155eb.faster()">
+          <i class="fa fa-plus"></i></button>
+    </div>
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select59dedb3b65744921adbd734b986155eb"
+          class="anim-state">
+      <input type="radio" name="state" value="once" id="_anim_radio1_59dedb3b65744921adbd734b986155eb"
+             >
+      <label for="_anim_radio1_59dedb3b65744921adbd734b986155eb">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_59dedb3b65744921adbd734b986155eb"
+             checked>
+      <label for="_anim_radio2_59dedb3b65744921adbd734b986155eb">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_59dedb3b65744921adbd734b986155eb"
+             >
+      <label for="_anim_radio3_59dedb3b65744921adbd734b986155eb">Reflect</label>
+    </form>
+  </div>
+</div>
+
+
+<script language="javascript">
+  /* Instantiate the Animation class. */
+  /* The IDs given should match those used in the template above. */
+  (function() {
+    var img_id = "_anim_img59dedb3b65744921adbd734b986155eb";
+    var slider_id = "_anim_slider59dedb3b65744921adbd734b986155eb";
+    var loop_select_id = "_anim_loop_select59dedb3b65744921adbd734b986155eb";
+    var frames = new Array(1);
+    
+  frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAACWCAYAAACrUNY4AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
+bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAAk6\
+AAAJOgHwZJJKAAACz0lEQVR4nO3dMU4rZxiG0XGCJUBpcEODaHHjik3cOiWLYC2u2QtKkZoqReSe\
+yo0LrgLNlbOJR/9IzDkbePWP9EjTfavb29vzdrudRvv4+Bi+OU3TtF6vp8vLy+G7X19fi9r9+fO/\
+aXVeD9/9ff1rlvdebLfb6eXlZfjw6+vr9Pb2Nnz36elpuru7G777/v6+qN2///p3OvyzGr77488/\
+Znnvb8MX4RsSEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQE\
+ASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQWC12+3O+/1++PDn5+d0dXU1fPd4PE6n02n47v39/aLe\
+e3Nzs6jvfLHZbBZ1JeFwOMxyBePh4WFR7318fFzUd/ZrBwEhQUBIEBASBIQEASFBQEgQEBIEhAQB\
+IUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBFbb7fb8\
+/Pw8fHiuqwFzXcGw+713L66vrxd1NWCuKxh2v/euXzsICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJ\
+AkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCCw2u125/1+\
+P3x4rqsBx+NxOp1Ow3fnur7hvWNcbDabRV0NOBwOi7q+4b1j+LWDgJAgICQICAkCQoKAkCAgJAgI\
+CQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkC\
+s12jWNqVhLmub9gdY7ZrFEu7kjDX9Q27Y/i1g4CQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgI\
+CQJCgoCQICAkCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAv8DJKjDHNd8utAA\
+AAAASUVORK5CYII=\
+"
+
+
+    /* set a timeout to make sure all the above elements are created before
+       the object is initialized. */
+    setTimeout(function() {
+        anim59dedb3b65744921adbd734b986155eb = new Animation(frames, img_id, slider_id, 149.0,
+                                 loop_select_id);
+    }, 0);
+  })()
+</script>
+</div></div>
+</div>
+<p>Ist dieser Algorithmus besonders klever?
+Nein!
+Der Algorithmus ist sehr einfach und benötigt unter Umständen sehr viel Rechenzeit.
+Dennoch zeigt dieses Beispiel, dass die Wiederholung von einfachen Befehlen zu komplexen Lösungen führen können!</p>
+<div class="remark admonition" id="remark-complexity-of-repetition">
+<p class="admonition-title">Wiederholung und Codekomplexität</p>
+<p><em>Wiederholung</em> trennt den Aufwand zum Lösen einer Aufgabe von der Komplexität des Codes.
+Eine Berechnung kann enorm aufwendig sein und dennoch benötigen wir wenig Denkarbeit (wenig Code) um einen Algorithmus für die Lösung zu entwerfen!</p>
+</div>
+</section>
+<section id="die-for-schleife">
+<span id="sec-for"></span><h2><span class="section-number">17.2.2. </span>Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife<a class="headerlink" href="#die-for-schleife" title="Permalink to this heading">#</a></h2>
+<p>Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife verwenden wir immer dann, wenn wir (zur Laufzeit) vor dem Eintritt in die Wiederholung wissen, wie viele Wiederholungen wir <strong>maximal</strong> benötigen.
+Dabei wollen wir entweder</p>
+<ol class="arabic simple">
+<li><p>für eine bestimmte Anzahl <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>, oder</p></li>
+<li><p>für jedes Element einer <em>Datenstruktur</em> (Liste, Tupel, usw.)</p></li>
+</ol>
+<p>einen Befehlsblock ausführen.</p>
+<p>Im zweiten Fall spricht man auch von der sog. <em>Foreach-Schleife</em>.
+Durch den Zahlenbereich <code class="docutils literal notranslate"><span class="pre">range()</span></code> reduziert <code class="docutils literal notranslate"><span class="pre">Python</span></code> den ersten Fall auf den zweiten.</p>
+<section id="die-klassische-for-schleife-fall-1">
+<h3><span class="section-number">17.2.2.1. </span>Die klassische <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife (Fall 1)<a class="headerlink" href="#die-klassische-for-schleife-fall-1" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="o">...</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Codeblock</span>
+</pre></div>
+</div>
+<p>Der Name der <em>Zählervariable</em> (hier <code class="docutils literal notranslate"><span class="pre">i</span></code>) kann frei gewählt werden, allerdings verwendet man für Fall 1 gewöhnlich: <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code> oder <code class="docutils literal notranslate"><span class="pre">k</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+</pre></div>
+</div>
+</div>
+</div>
+<p>Will man andeutet, dass die <em>Zählervariable</em> nicht benötigt wird, so verwendet man den Unterstrich <code class="docutils literal notranslate"><span class="pre">_</span></code> als ihren Namen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;42 ist die Antwort!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+42 ist die Antwort!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="die-foreach-schleife-fall-2">
+<h3><span class="section-number">17.2.2.2. </span>Die Foreach-Schleife (Fall 2)<a class="headerlink" href="#die-foreach-schleife-fall-2" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sequenz</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># some Sequenz of Elements</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sequenz</span><span class="p">:</span>
+    <span class="c1"># Codeblock</span>
+</pre></div>
+</div>
+<p>Der Name mit dem wir die Elemente der Sequenz ansprechen (hier <code class="docutils literal notranslate"><span class="pre">element</span></code>) kann frei gewählt werden und sollte beschreiben über welche Elemente wir <em>iterieren</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sarah&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">,</span> <span class="s1">&#39;Babar&#39;</span><span class="p">,</span> <span class="s1">&#39;Simon&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sarah
+Sebastian
+Babar
+Simon
+Martin
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> ist, genau wie eine Liste und ein Tupel, auch eine <em>Sequenz</em>.
+Eine <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife läuft über die Einträge einer <em>Sequenz</em> oder anderer <em>iterierbarer</em> Strukturen.</p>
+<p>Es kann durchaus sein, dass wir die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife auch dann verwenden, wenn nicht genau klar ist wie viele Wiederholungen wir benötigen.
+Ist uns bekannt wie viele Wiederholungen wir <strong>maximal</strong> benötigen ist dies kein Problem.</p>
+<p>Nehmen wir den Test ob eine Zahl <span class="math notranslate nohighlight">\(n\)</span> eine Primzahl ist.
+Ein einfacher Algorithmus für den Test, testet für jede Zahl <span class="math notranslate nohighlight">\(m \in \{2, 3, \ldots, n-1\}\)</span> ob <span class="math notranslate nohighlight">\(m\)</span> die Zahl <span class="math notranslate nohighlight">\(n\)</span> teilt.
+Wenn dies der Fall ist, ist <span class="math notranslate nohighlight">\(n\)</span> keine Primzahl und wir können die Wiederholung stoppen.
+Wir wissen demnach, dass wir maximal <span class="math notranslate nohighlight">\(n-m-3\)</span> Wiederholungen benötigen.
+Es könnten jedoch auch weniger sein:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">prime</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">prime</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">break</span>
+    <span class="k">return</span> <span class="n">prime</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">83</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife frühzeitig zu beenden verwenden wir <code class="docutils literal notranslate"><span class="pre">break</span></code>.
+Mit <code class="docutils literal notranslate"><span class="pre">break</span></code> springen wir aus der <strong>innersten</strong> Schleife heraus.
+Wir könnten stattdessen auch <code class="docutils literal notranslate"><span class="pre">return</span></code> verwenden, um aus der gesamten Funktion herauszuspringen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">83</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eine weitere Steuermöglichkeit bietet <code class="docutils literal notranslate"><span class="pre">continue</span></code>.
+Mit <code class="docutils literal notranslate"><span class="pre">continue</span></code> springen wir nicht aus der Schleife heraus sondern springen zurück zum Schleifenkopf.
+Der Code nach <code class="docutils literal notranslate"><span class="pre">continue</span></code> wird übersprungen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+            
+        <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">double_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 4, 8, 12, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Allerdings braucht man <code class="docutils literal notranslate"><span class="pre">continue</span></code> so gut wie nie und wenn es verwendet wird handelt es sich oftmals um schlecht leserlichen Code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>    
+            <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">double_even_numbers</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 4, 8, 12, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="remark admonition" id="remark-control-structures-for">
+<p class="admonition-title">Kontrollmechanismen der for-Schleife</p>
+<p>Gehen Sie sparsam mit <code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code> um, oftmals brauchen Sie es nicht!</p>
+</div>
+</section>
+<section id="die-while-schleife">
+<h3><span class="section-number">17.2.2.3. </span>Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife<a class="headerlink" href="#die-while-schleife" title="Permalink to this heading">#</a></h3>
+<p>Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife verwenden wir immer dann, wenn wir (zur Laufzeit) <strong>nicht</strong> wissen wie viele Wiederholungen wir maximal benötigen.
+Die Wiederholung endet sobald eine bestimmte Bedingung, d.h. ein <em>logischer Ausdruck</em> <code class="docutils literal notranslate"><span class="pre">P</span></code> zu <code class="docutils literal notranslate"><span class="pre">False</span></code> ausgewertet wird.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">P</span><span class="p">:</span>
+    <span class="c1"># Codeblock1</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># (optional)</span>
+    <span class="c1"># Codeblock2</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Codeblock2</span></code> wird einmal ausgeführt sobald <code class="docutils literal notranslate"><span class="pre">P</span></code> zu <code class="docutils literal notranslate"><span class="pre">False</span></code> ausgewertet wird und die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife verlassen wird, d.h. als letzter Schritt.</p>
+<div class="attention admonition" id="attention-endless-loop">
+<p class="admonition-title">Endlosschleifen</p>
+<p>Wird <code class="docutils literal notranslate"><span class="pre">P</span></code> niemals <code class="docutils literal notranslate"><span class="pre">False</span></code>, so endet die Wiederholung niemals und wir haben eine sog. <em>Endlosschleife</em>!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;end of the while-loop&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+end of the while-loop
+</pre></div>
+</div>
+</div>
+</div>
+<div class="theorem admonition" id="theorem-while-vs-for">
+<p class="admonition-title">Mächtigkeit der While-Schleife</p>
+<p>Jede <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife lässt sich in eine <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife transformieren!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sarah&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">,</span> <span class="s1">&#39;Babar&#39;</span><span class="p">,</span> <span class="s1">&#39;Simon&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sarah
+Sebastian
+Babar
+Simon
+Martin
+
+Sarah
+Sebastian
+Babar
+Simon
+Martin
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleifen sind mächtiger aber auch gefährlicher bzw. oftmals schwerer zu lesen und zu verstehen als <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen.</p>
+<div class="remark admonition" id="remark-while-vs-for">
+<p class="admonition-title">Verwendungskriterium</p>
+<p>Verwenden Sie die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife nur wenn die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife ungeeignet ist.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code> funktionieren für die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife genauso wie für die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife.</p>
+<div class="remark admonition" id="remark-while-usage">
+<p class="admonition-title">Verwendungskriterium While-Schleife</p>
+<p>Gehen Sie sparsam mit <code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code> um, oftmals brauchen Sie es nicht!</p>
+</div>
+<p>Folgender Code zeigt eine unnötige Verwendung von <code class="docutils literal notranslate"><span class="pre">continue</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad code!!!</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Stattdessen können wir die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingung anpassen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># better!</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oder aber Sie erhöhen die Zählervariable um zwei anstatt um eins.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># even better!</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>      
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Am einfachsten zu lesen bleibt jedoch die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># even better!</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="remark admonition" id="remark-avoid-endless-loop">
+<p class="admonition-title">Verhindern von Endlosschleifen</p>
+<p>Prüfen Sie immer ob Ihre Bedingung <code class="docutils literal notranslate"><span class="pre">P</span></code> durch den Schleifenrumpf garantiert irgendwann <code class="docutils literal notranslate"><span class="pre">False</span></code> ergibt!</p>
+</div>
+</section>
+</section>
+<section id="beispiel-ggt">
+<h2><span class="section-number">17.2.3. </span>Beispiel (ggT)<a class="headerlink" href="#beispiel-ggt" title="Permalink to this heading">#</a></h2>
+<p>Lassen Sie uns <a class="reference internal" href="../02-4/1-algorithms.html#sec-euclid-alg"><span class="std std-ref">Euklid’s Algorithmus</span></a> <code class="docutils literal notranslate"><span class="pre">gcd(m,n)</span></code> zum finden des Größter gemeinsamer Teiler (ggT) zweier ganzer Zahlen von <span class="math notranslate nohighlight">\(m\)</span> und <span class="math notranslate nohighlight">\(n\)</span> erneut implementieren.</p>
+<p>Euklid’s Algorithmus geht wie folgt vor:</p>
+<ol class="arabic simple">
+<li><p>Berechne den Restwert der Division <span class="math notranslate nohighlight">\(m / n\)</span> (Modulodivision). Sei dieser gleich <span class="math notranslate nohighlight">\(r\)</span>.</p></li>
+<li><p>Setze <span class="math notranslate nohighlight">\(m \leftarrow n\)</span>, <span class="math notranslate nohighlight">\(n \leftarrow r\)</span> und gehe zurück zu Schritt 1.</p></li>
+<li><p>Falls <span class="math notranslate nohighlight">\(r = 0\)</span> (und somit <span class="math notranslate nohighlight">\(n = 0\)</span>), so ist der Algorithmus beendet. Das Ergebnis (ggT) ist <span class="math notranslate nohighlight">\(m\)</span>. Ansonsten fahre fort.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">m</span> <span class="o">%</span> <span class="n">n</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">m</span>
+<span class="n">gcd</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+<p>Durch das packing bzw. unpacking (siehe <a class="reference internal" href="../03-4/6-tuple.html#sec-tuple"><span class="std std-ref">Tupel</span></a>) können wir den Code noch verkürzen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">%</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">m</span>
+<span class="n">gcd</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "BZoennchen/ct-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/03-7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1-cases.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">zurück</p>
+        <p class="prev-next-title"><span class="section-number">17.1. </span>Fallunterscheidungen</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3-comprehensions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">weiter</p>
+        <p class="prev-next-title"><span class="section-number">17.3. </span>Comprehensions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Inhalt
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">17.2.1. Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-for-schleife">17.2.2. Die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-klassische-for-schleife-fall-1">17.2.2.1. Die klassische <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife (Fall 1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-foreach-schleife-fall-2">17.2.2.2. Die Foreach-Schleife (Fall 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#die-while-schleife">17.2.2.3. Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-ggt">17.2.3. Beispiel (ggT)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div class="container"> <div class="col1"> <a href="https://hm.edu/"> <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo"> </a> <div> <div class="col1"> Verfasst durch <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/zoennchen/index.de.html">Benedikt Zönnchen</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/mitarbeiter/ottinger/index.de.html">Sarah Ottinger</a>, <a href="https://www.cs.hm.edu/die_fakultaet/ansprechpartner/professoren/hobelsberger/index.de.html">Martin Hobelsberger</a> und<br> lizenziert durch <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>. </div> </div>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
