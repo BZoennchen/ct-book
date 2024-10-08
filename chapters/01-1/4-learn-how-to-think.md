@@ -53,7 +53,7 @@ quiz=[{
     "answers": [
         {
             "type": "value",
-            "value": 1.05,
+            "value": 0.05,
             "correct": True,
             "feedback": "Richtig."
         }
