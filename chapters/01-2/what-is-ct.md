@@ -96,7 +96,7 @@ Da *Informatiker\*innen* Systeme erschaffen, die mit der Welt interagieren ist d
 Damit ergänzt und kombiniert Computational Thinking formales, mathematisches und schaffendes Denken. 
 
 Computational Thinking erzeugt Ideen oder Konzepte und keine Verbrauchsgüter.
-Es es ist nicht nur das Programm oder die Software/Hardware die als Resultat übrig bleibt.
+Es ist nicht nur das Programm oder die Software/Hardware die als Resultat übrig bleibt.
 Computational Thinking erzeugt Konzepte des Berechnens, welche wir in einen Ideenkatalog aufnehmen können um künftige Probleme zu lösen oder die Welt anders interpretieren zu können.
 Computational Thinking ist für uns alle erlernbar und findet fast überall statt.
 Das Bild der *Informatiker\*innen* als reine Programmierer\*innen war schon immer unsinnig.
