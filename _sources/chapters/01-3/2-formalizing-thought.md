@@ -81,7 +81,7 @@ Ein Fragment der Werke *Die Elemente*, [Quelle](http://www.math.ubc.ca/~cass/Euc
 In seinem Werk *Die Elemente* in Buch VII formulierte er den Algorithmus für positive ganze Zahlen und in Buch X für positive reelle Zahlen.
 Das Verfahren wurde wahrscheinlich nicht von Euklid erfunden, da er in den Elementen die Erkenntnisse früherer Mathematiker zusammenfasste.
 Es wird vermutet, dass Buch VII ein schon von den Pythagoreern verwndetes Lehrbuch der Zahlentheorie ist {cite}`wearden:1957`.
-Für ganze Zahlen berechnet der Algorithmus den größten gemeinsamen Teilers ``gcd(a,b)`` zweier natürlicher Zahlen ``a``, ``b``.
+Für ganze Zahlen berechnet der Algorithmus den größten gemeinsamen Teiler ``gcd(a,b)`` zweier natürlicher Zahlen ``a``, ``b``.
 Über zweitausend Jahre später finden wir jenen Algorithmen in einer anderen Form wieder.
 
 ```{code-cell} python3
