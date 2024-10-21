@@ -187,7 +187,7 @@ Die Summe der Zahlen $1$ bis $n+1$ lässt sich deshalb schreiben als:
 
 $$\sum\limits_{k=1}^{n+1} k = n+1 + \sum\limits_{k=1}^{n} k \stackrel{\text{I.A.}}{=} n+1 + \frac{n \cdot (n+1)}{2}.$$
 
-Beim letzten Schritt verwenden wir den Induktionsannahme (A.I.) aus dem Induktionsanfang, in anderen Worten die Tatsache dass $A(n)$ gilt, jedoch nur für $n < n+1$!
+Beim letzten Schritt verwenden wir den Induktionsannahme (I.A.) aus dem Induktionsanfang, in anderen Worten die Tatsache dass $A(n)$ gilt, jedoch nur für $n < n+1$!
 Nun können wir die Formel etwas umstellen:
 
 $$n+1 + \frac{n \cdot (n+1)}{2} = \frac{2n+2 + n \cdot (n+1)}{2} = \frac{2n+2 + n^2 + n}{2}.$$
