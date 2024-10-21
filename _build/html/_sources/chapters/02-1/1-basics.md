@@ -11,7 +11,7 @@ Alle Computer basieren auf diesen vier grundlegenden Aufgabe:
 
 Sie bilden das Fundament eines jeden Computers.
 Die Verarbeitung von [Information](sec-information) wird symbolisch vollzogen, d.h. Computer manipulieren auf Grundlage von bestimmten Regeln die Symbole der Eingabe um die Symbole der Ausgabe zu bestimmen.
-Computer haben keine eigene Intension oder agieren aus einer Emotion heraus.
+Computer haben keine eigene Intention oder agieren aus einer Emotion heraus.
 Sie haben auch keinerlei Verständnis von der Eingabe.
 Zum Beispiel können Computer Texte in unterschiedlichen Sprachen übersetzen was jedoch nicht bedeutet, dass sie "verstehen" was sie da übersetzen.
 Inwieweit symbolische Manipulationen zu einem "Verstehen" führen könnten, wird derzeit rege im Bereich der *künstlichen Intelligenz* diskutiert.
