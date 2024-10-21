@@ -174,7 +174,7 @@ display_quiz(quiz, border_radius=2, lang='de')
 
 Vermutlich werden Sie die richtige Antwort sofort gefunden haben.
 
-Interessanterweise kann nach den *syntaktischen Ableidungsregeln* der Ausdruck ``3 + 5 * 10`` nur als Summe, nicht aber als Produkt gelesen werden.
+Interessanterweise kann nach den *syntaktischen Ableitungsregeln* der Ausdruck ``3 + 5 * 10`` nur als Summe, nicht aber als Produkt gelesen werden.
 Dies möchten wir im Folgenden kurz näher erleutern.
 Die folgenden *syntaktischen Ableitungsregeln* sind ein Ausschnitt für die Programmiersprache ``Python``:
 
