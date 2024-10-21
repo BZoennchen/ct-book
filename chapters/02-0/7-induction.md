@@ -66,7 +66,7 @@ Wenn wir definieren, dass $A(n)$ bedeutet, dass der $n$-te Dominostein umfällt,
 2. **Induktionsschritt:** $\forall n \in \mathbb{N}: A(n) \Rightarrow A(n+1)$
 3. **Induktionsschluss:** $[A(1) \land (\forall n \in \mathbb{N}: A(n) \Rightarrow A(n+1))] \Rightarrow (\forall n \in \mathbb{N}: A(n))$
 
-oder kurt
+oder kurz
 
 $$[A(1) \land (A(n) \Rightarrow A(n+1))] \Rightarrow A(n).$$
 
