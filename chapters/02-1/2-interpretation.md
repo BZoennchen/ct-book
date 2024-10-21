@@ -193,7 +193,7 @@ Z -> '0' | '1' | '2' ...
 
 Wir können also z.B. ``E`` zu ``T + E`` ableiten.
 ``E`` steht---durch die Semantik---für einen Ausdruck, ``T`` für einen Term, ``F`` für einen Faktor und ``Z`` für eine Zahl.
-Ein Ausdruch wie er in unserem obigen Programm steht, also ``3 + 5 * 10`` kann nach diesen Relgen nur ein Term oder eine (syntaktische) Addition aus Term und Ausdruck sein.
+Ein Ausdruck wie er in unserem obigen Programm steht, also ``3 + 5 * 10`` kann nach diesen Relgen nur ein Term oder eine (syntaktische) Addition aus Term und Ausdruck sein.
 Unser Beispiel entsteht wie folgt:
 
 ```
