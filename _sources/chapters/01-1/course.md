@@ -7,9 +7,7 @@ Dieses interaktive Lehrbuch wurde für Studierende der folgenden Bachelorstudien
 3. [Geodata Science](https://mucdai.hm.edu/studieninteressierte/bachelor_geodata_science/index.de.html)
 4. [Data Science \& Scientific Computing](https://cs.hm.edu/studieninteressierte/studienangebot/bachelor_data_science/index.de.html)
 
-Die genannten Studiengänge setzen unterschiedliche fachliche Schwerpunkte.  
-Deshalb haben wir uns entschieden, ein übergreifendes und modulares Lehrbuch zu entwickeln.  
-Je nach Studiengang werden einzelne Inhalte unterschiedlich tief behandelt.
+Die genannten Studiengänge setzen unterschiedliche fachliche Schwerpunkte. Deshalb haben wir uns entschieden, ein übergreifendes und modulares Lehrbuch zu entwickeln. Je nach Studiengang werden einzelne Inhalte unterschiedlich tief behandelt.
 
 ## Lernziele
 
@@ -23,5 +21,4 @@ Die übergeordneten Lernziele lassen sich in zwei Hauptkategorien gliedern – m
    1. Planung und Bewertung der Lösung
    2. Entwicklung von Algorithmen
 
-Dieses Buch befindet sich in fortlaufender Entwicklung.  
-Inhalte werden regelmäßig ergänzt, überarbeitet und verbessert.
+Dieses Buch befindet sich in fortlaufender Entwicklung. Inhalte werden regelmäßig ergänzt, überarbeitet und verbessert.
