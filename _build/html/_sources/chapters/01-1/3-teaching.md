@@ -1,6 +1,6 @@
 # Lehrkonzept
 
-> We do not learn from experience. We learn from reflecting on experience. —- John Dewey
+> We do not learn from experience. We learn from reflecting on experience. — John Dewey
 
 Zwar machen wir Sie in diesem Kurs mit dem Programmieren vertraut, doch steht es **am Ende des Denkprozesses** – nicht am Anfang. Der Kurs unterscheidet sich grundlegend von einem klassischen Programmierkurs. Unsere zentrale Aufgabe als Lehrende ist es, Sie an das Konzept des [Computational Thinking](sec-what-is-ct) heranzuführen. Programmieren ist dabei ein Werkzeug, um Ihre Gedanken in einer präzisen, überprüfbaren Form
 
