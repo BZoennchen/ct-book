@@ -1,16 +1,12 @@
 # Lesehinweise
 
-Dieses Buch ersetzt weder die Vorlesung noch das Praktikum des Kurses.  
-Es dient als ergänzendes Lernmaterial zur Vor- und Nachbereitung.
+Dieses Buch ersetzt weder die Vorlesung noch das Praktikum des Kurses. Es dient als ergänzendes Lernmaterial zur Vor- und Nachbereitung.
 
-Die Abschnitte **EINLEITUNG**, **THEORIE**, **PYTHON** und **CT IN AKTION** sind thematisch gegliedert.  
-Bis auf die **EINLEITUNG**, die Sie vollständig und in der vorgesehenen Reihenfolge durcharbeiten sollten, können die übrigen Teile parallel bearbeitet werden.  
-Je nach Vorwissen können einzelne Kapitel übersprungen oder intensiver behandelt werden – etwa die [mathematischen Grundlagen](sec-math), sofern Sie diese bereits gut beherrschen.
+Die Abschnitte **EINLEITUNG**, **THEORIE**, **PYTHON** und **CT IN AKTION** sind thematisch gegliedert. Bis auf die **EINLEITUNG**, die Sie vollständig und in der vorgesehenen Reihenfolge durcharbeiten sollten, können die übrigen Teile parallel bearbeitet werden. Je nach Vorwissen können einzelne Kapitel übersprungen oder intensiver behandelt werden – etwa die [mathematischen Grundlagen](sec-math), sofern Sie diese bereits gut beherrschen.
 
 Während Sie das Buch durcharbeiten, empfiehlt es sich, den Programmiercode direkt im Buch auszuführen (oben rechts auf das Raketen-Symbol klicken) oder ihn in ein separates *Jupyter-Notebook* zu kopieren.  
 
-**CT IN AKTION** enthält praktische Aufgaben und deren Lösungen.  
-Bearbeiten Sie diese Aufgaben **zunächst eigenständig**, bevor Sie die Lösungswege betrachten.
+**CT IN AKTION** enthält praktische Aufgaben und deren Lösungen. Bearbeiten Sie diese Aufgaben **zunächst eigenständig**, bevor Sie die Lösungswege betrachten.
 
 Einige wenige Kapitel gehen über das klassische Computational Thinking hinaus, liefern aber nützliche Hintergrundinformationen:
 - [Mathematische Grundlagen](sec-math): notwendig für das Verständnis mathematischer Formeln
@@ -20,8 +16,7 @@ Einige wenige Kapitel gehen über das klassische Computational Thinking hinaus, 
 
 Diese Kapitel sind ergänzend und für das Kernverständnis von Computational Thinking nicht zwingend erforderlich.
 
-Im Buch verwenden wir verschiedene farblich gekennzeichnete Kästchen, um Informationen zu strukturieren: Definitionen, Hinweise, Aufgaben usw.  
-Die Farben und Symbole helfen Ihnen, die Art des Inhalts schnell zu erkennen. Hier ein Überblick:
+Im Buch verwenden wir verschiedene farblich gekennzeichnete Kästchen, um Informationen zu strukturieren: Definitionen, Hinweise, Aufgaben usw. Die Farben und Symbole helfen Ihnen, die Art des Inhalts schnell zu erkennen. Hier ein Überblick:
 
 ```{exercise} Kleine Aufgabe
 :label: exercise-sample
