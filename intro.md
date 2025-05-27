@@ -1,11 +1,12 @@
 (sec-intro)=
 # Computational Thinking
 
-Willkommen im Kurs [Computational Thinking](sec-what-is-ct).
-Dieses interaktive Lehrbuch dient als ergänzendes Lehrmaterial der Vorlesung. 
-Nutzen Sie es zum Eigen- und Selbststudium bzw. zur Vor- und Nachbereitung der Vorlesung oder des Praktikums.
-Vermeiden Sie passives Konsumieren.
-Bleiben Sie stattdessen wachsam und kritisch!
+Willkommen im Kurs [Computational Thinking](sec-what-is-ct)!  
+Dieses interaktive Lehrbuch begleitet die Vorlesung als ergänzendes Lehrmaterial.  
+Nutzen Sie es zur eigenständigen Vorbereitung, zur Nachbereitung sowie zur Vertiefung der Inhalte aus Vorlesung und Praktikum.
+
+Vermeiden Sie passives Konsumieren – bleiben Sie stattdessen aufmerksam, kritisch und aktiv dabei!
+
 
 ```{figure} ./figs/logo.png
 ---

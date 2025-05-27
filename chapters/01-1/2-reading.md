@@ -1,38 +1,37 @@
 # Lesehinweise
 
-Dieses Buch ersetzt weder die Vorlesung noch die Praktika des Kurses.
-Es dient als ergänzendes Lernmaterial der Vor- und Nachbereitung.
+Dieses Buch ersetzt weder die Vorlesung noch das Praktikum des Kurses.  
+Es dient als ergänzendes Lernmaterial zur Vor- und Nachbereitung.
 
-Die Teile **EINLEITUNG**, **THEORIE**, **PYTHON** und **CT IN AKTION** sind kategorisch und sollten bis auf die **EINLEITUNG** parallel durchgearbeitet werden.
-Beginnen Sie mit dem Teil **EINLEITUNG**, welchen Sie der Reihe nach duchgehen können.
-Möglicherweise können Sie einige Kapitel überspringen oder müssen in anderen überdurchschnittlich viel Zeit investieren.
-Z. B. könnte es sein, dass Sie die [mathematischen Grundlagen](sec-math)  zum großen Teil bereits beherrschen.
+Die Abschnitte **EINLEITUNG**, **THEORIE**, **PYTHON** und **CT IN AKTION** sind thematisch gegliedert.  
+Bis auf die **EINLEITUNG**, die Sie vollständig und in der vorgesehenen Reihenfolge durcharbeiten sollten, können die übrigen Teile parallel bearbeitet werden.  
+Je nach Vorwissen können einzelne Kapitel übersprungen oder intensiver behandelt werden – etwa die [mathematischen Grundlagen](sec-math), sofern Sie diese bereits gut beherrschen.
 
-Während Sie das Buch durcharbeiten ist es sinnvoll den Programmiercode entweder direkt im Buch auszuführen (rechts oben auf die Rakete klicken) oder diesen Code in ein seperaten *Jupyter-Notebook* zu kopieren und dort auszuführen.
-**CT IN AKTION** beschreibt Aufgaben und deren Lösung.
-Gehen Sie die Aufgaben Schritt für Schritt durch und lösen Sie diese **zuerst selbständig** bevor Sie sich die Lösung ansehen.
+Während Sie das Buch durcharbeiten, empfiehlt es sich, den Programmiercode direkt im Buch auszuführen (oben rechts auf das Raketen-Symbol klicken) oder ihn in ein separates *Jupyter-Notebook* zu kopieren.  
 
-Es gibt einige wenige Kapitel die über das reine *Computational Thinking* hinausgehen.
-Die [mathematischen Grundlagen](sec-math) sollten Sie beherrschen um alle Formeln des Buches auch aufnehmen zu können.
-Wir diskutieren in [Was ist Information?](sec-information) unterschiedliche Perspektiven auf jene wichtige Ressource mit der Sie arbeiten.
-[Programmiersprachen](sec-programming-languages) ist ein Kapitel was sich mit den Unterschieden der verschiedenen Programmiersprachen beschäftigt.
-[CPython](sec-cpython) bespricht die exakte und sprachspezifische Realisierung von ``Python``.
-All diese Kapitel behandeln keine wesentlichen Bereiche des Computational Thinkings.
+**CT IN AKTION** enthält praktische Aufgaben und deren Lösungen.  
+Bearbeiten Sie diese Aufgaben **zunächst eigenständig**, bevor Sie die Lösungswege betrachten.
 
-Im Buch tauchen immer wieder unterschiedliche Kästchen auf mit denen wir bestimmte Begriffe definieren werden, Hinweise geben, oder kleine Aufgaben einbetten.
-Die verwendeten Farben und Symbole der Kästchen signalisieren Ihnen, um welche Art von Inhalt es sich handelt.
-Zur Orientierung listen wir alle möglichen Kästchen an dieser Stelle auf:
+Einige wenige Kapitel gehen über das klassische Computational Thinking hinaus, liefern aber nützliche Hintergrundinformationen:
+- [Mathematische Grundlagen](sec-math): notwendig für das Verständnis mathematischer Formeln
+- [Was ist Information?](sec-information): verschiedene Perspektiven auf den zentralen Begriff *Information*
+- [Programmiersprachen](sec-programming-languages): Überblick über Unterschiede zwischen Programmiersprachen
+- [CPython](sec-cpython): technische Details zur Implementierung von ``Python``
+
+Diese Kapitel sind ergänzend und für das Kernverständnis von Computational Thinking nicht zwingend erforderlich.
+
+Im Buch verwenden wir verschiedene farblich gekennzeichnete Kästchen, um Informationen zu strukturieren: Definitionen, Hinweise, Aufgaben usw.  
+Die Farben und Symbole helfen Ihnen, die Art des Inhalts schnell zu erkennen. Hier ein Überblick:
 
 ```{exercise} Kleine Aufgabe
 :label: exercise-sample
-Dies ist eine kleine Aufgabe, welche Sie während des Durcharbeitens lösen sollten.
+Dies ist eine kleine Aufgabe, die Sie beim Durcharbeiten lösen sollten.
 ```
 
 ```{admonition} Lernziele
 :class: learngoals
 In diesem Kästchen definieren wir die jeweiligen Lernziele eines Kapitels.
 ```
-
 
 ```{admonition} Hinweis
 :name: remark-sample

@@ -12,32 +12,34 @@ kernelspec:
 
 # Denken lernen?
 
->I think everybody should learn how to program a computer, because it teaches you how to think. So I view computer science as a liberal art. It should be something everybode learns. -- Steve Jobs
+> You can't think about thinking without thinking about thinking about something. — Seymour Papert
 
-Es mag für Sie ein wenig vermessen klingen, dass Sie in diesem Kurs das "richtige" Denken lernen sollen.
-Sollten Sie das nicht bereits beherrschen?
-Wären Sie andernfalls überhaupt im Studium gelandet?
+Es mag zunächst vermessen klingen, dass Sie in diesem Kurs das "richtige" Denken lernen sollen.
+Beherrschen Sie das nicht bereits? Wären Sie sonst überhaupt im Studium?
 
-Computational Thinking ist eine Form des Denkens, die anderen Formen weder überlegen noch unterlegen ist.
-In vielen Bereichen des Lebens ist es von Vorteil wenn die Bedeutung einer Arbeit unklar bleibt.
-Literarische Meisterwerke sind beispielweise oftmals genau deshalb so meisterlich, da sie eine Vielzahl an Interpretationen zulassen.
-Oder denken Sie an unsere naturliche Sprache, die ungenau und oft mehrdeutig ist aber dadurch eine Flexibilität aufweist, die viele Perspektiven und Interpretationen zulässt.
+*Computational Thinking* ist eine spezifische Form des Denkens.  
+Sie ist anderen Denkformen weder überlegen noch unterlegen.  
+Vergleichen wir das *Computational Thinking* mit dem *Systems Thinking* so fällt auf, dass Computational Thinking das Ganze auf Teile reduziert, während System Thinking das Ganze in den Blick nimmt.
+Auch ist es in vielen Lebensbereichen hilfreich, wenn Bedeutungen offenbleiben.  
+Literarische Meisterwerke zum Beispiel leben von ihrer Interpretationsvielfalt.  
+Auch unsere natürliche Sprache ist oft mehrdeutig – gerade das ermöglicht Flexibilität und Perspektivenvielfalt.
 
-Wie wir sehen werden verhält es sich beim Computational Thinking anders.
-Wir wagen in die Welt der formalen Sprachen, welche keine Missverständnisse und Mehrdeutigkeiten zulassen.
+Beim *Computational Thinking* ist das anders:  
+Wir bewegen uns in einer Welt **formaler Sprachen**, in der Mehrdeutigkeiten ausgeschlossen sein müssen.
 
 ## Schnelles und langsames Denken
 
-In seinem Buch *Schnelles Denken, Langsames Denken* {cite:p}`kahneman:2011` beschreibt der Nobelpreisträger und einflussreiche Wissenschaftler unserer Zeit Daniel Kahneman sehr eindringlich, wie wir Menschen Entscheidungen treffen.
-Er betont dabei, dass Zögern ein überlebensnotwendiger Reflex ist und beschreibt was in unserem Gehirn vor sich geht, wenn wir andere Menschen oder Dinge beurteilen. 
-Vereinfacht ausgedrückt wird das menschliche Denken durch zwei kognitive Systeme bestimmt:
-Durch das *(1) schnelle Denken* und durch das *(2) langsame Denken*.
-Blicken Sie auf folgende Aufgabe:
+In seinem Buch *Schnelles Denken, langsames Denken* {cite:p}`kahneman:2011` beschreibt Nobelpreisträger Daniel Kahneman, wie Menschen Entscheidungen treffen.  
+Zwei Denksysteme bestimmen unser Verhalten:
+1. Das **schnelle Denken**: intuitiv, automatisch, mühelos  
+2. Das **langsame Denken**: bewusst, analytisch, anstrengend
+
+Betrachten Sie folgende Aufgabe:
 
 ```{exercise} Blinzeln des Alphabets
 :label: fast-and-slow-thinking-exercise
-Ein Schläger und ein Ball kosten zusammen 1.10 Euro.
-Der Schläger kostet einen Euro mehr als der Ball.
+Ein Schläger und ein Ball kosten zusammen 1,10 €.  
+Der Schläger kostet einen Euro mehr als der Ball.  
 Wie viel kostet der Ball?
 ```
 
@@ -64,80 +66,63 @@ from jupyterquiz import display_quiz
 display_quiz(quiz, border_radius=2, lang='de')
 ```
 
+Die häufige Antwort ist: **10 Cent**. Doch das ist falsch.
+Die korrekte Lösung mithilfe des langsamen Denkens lautet:
 
-Intuitiv, d.h., durch das *schnelle Denken* beantworten die meisten Menschen diese Frage mit: Der Ball kostet 10 Cent.
-Diese Antwort ist jedoch falsch!
-Nehmen wir uns einen Augenblick Zeit und aktivieren unser *langsames Denken*.
-Sagen wir der Preis des Balls sei $b$ und der Preis des Schlägers $s$.
-Dann erkennen wir, dass 
 
 $$b + s = 1.10 \text{ und } s = b + 1.0$$
 
-gilt.
-Wir lösen beide Gleichungen nach $b$ auf und erhalten:
+Einsetzen und umstellen ergibt:
 
 $$b = s - 1 \land b = 1.10 - s \Rightarrow s-1 = 1.10-s \Rightarrow 2s = 2.10 \Rightarrow s = 1.05$$
 
-und demnach gilt $b = s - 1= 1.05-1 = 0.05$ also 5 Cent.
-Das falsche Ergebnis entstammt dem *schnellen* und das richtige dem *langsamen Denken*!
+und demnach gilt $b = s - 1= 1.05-1 = 0.05$ also **5 Cent**.
 
-Wenn Sie etwas intuitiv, quasi aus dem Bauch heraus und mühelos abschätzten oder unbewusst einfach tun, dann ist das *schnelle Denken* aktiv.
-Nehmen wir das Autofahren.
-Wenn Sie geübt darin sind, werden Sie ohne darüber nachzudenken "einfach fahren".
-Sie werden allein durch den Ton den das Auto macht und wie die Straße schimmert wissen was zu tun ist.
-Wenn Sie einen Ball fangen wollen, dann werden Sie keine komplizierte Berechnung durchführen, sondern eine fast schon automatische Abschätzung vornehmen.
-Tischtennisspieler\*innen können den Ball, der sich in einer unglaublichen Geschwindigkeit über den Tisch bewegt, scheinbar mühelos verfolgen und treffen.
-Wie ist das möglich?
+Intuition führt uns oft in die Irre – genau deshalb brauchen wir das bewusste, reflektierende Denken.
+Das *schnelle Denken* funktioniert hervorragend bei Routineaufgaben:
+Autofahren, einen Ball fangen, Tischtennis spielen.
+Doch viele dieser Fähigkeiten begannen mit *langsamem Denken*, mühsamem Üben, Fehlern, Reflexion - wir können uns teilweise nur nicht mehr daran erinnern.
 
-In all diesen Beispielen haben wir in früherer Zeit mit dem *langsamen Denken* begonnen.
-In der Fahrschule mussten wir noch über den genauen Ablauf beim Autofahren nachdenken.
-Tischtennisspieler\*innen benötigen tausende von Stunden Training, um derartige Leistungen zu erzielen.
-Durch das *langsame Denken* schaffen wir es Stück für Stück, entsprechende Fähigkeit ins *schnelle Denken* zu transformieren.
-Das allerdings kostet Zeit und Anstrengung, besonders zu Beginn.
-Können wir irgendwann das *schnelle Denken* nutzen vergessen wir häufig wie schwer es zu Beginn gewesen ist und wundern uns über Anfänger\*innen, welche sich noch in der Phase des *langsamen Denkens* befinden.
-Oftmals fällt es uns als Expert\*innen schwer zu erklären was wir genau machen, also warum wir z.B. beim Autofahren eine bestimmte Entscheidung treffen.
-Wir sehen die Lösung oder was zu tun ist einfach vor uns.
+Mit genug Übung wandern Denkmuster vom langsamen ins schnelle Denken.
+Wer Programmieren beherrscht, erkennt Code-Strukturen und Muster intuitiv – und kann sein langsames Denken auf die eigentliche Problemlösung konzentrieren.
+Aber: Intuition ist fehleranfällig.
+Deshalb ist *Metakognition* entscheidend – also das Nachdenken über das eigene Denken.
 
-Als geübte und erfolgreiche Programmierer\*innen können wir auf viele Techniken, Konzepte, die Form und Bedeutung von Anweisungen, die Struktur des Programmiercodes, oder auch Codemuster im Modus des *schnellen Denkens* zugreifen.
-So können wir unser gesamtes *langsames Denken* auf das eigentlich zu lösende Problem loslassen.
-
-Jedoch geht es nicht nur darum, dass *schnelle Denken* zu nutzen, sondern es zu kontrollieren und es uns bewusst zu machen.
-Man spricht dabei von der sog. *Metakognition*.
-Viele kognitive Verzerrungen (Bias) sind auf das *schnelle Denken* zurückzuführen.
-Zum Beispiel neigen wir aufgrund des sog. Bestätigungseffekt (engl. confirmation bias) dazu Informationen auszuwählen und aufzunehmen, die unserer vorher gebildeten Meinung entsprechen.
-Wir deuten Informationen, sodass sie die eigenen Erwartungen bestätigen.
+Viele kognitive Verzerrungen entstehen aus dem schnellen Denken.
+Ein Beispiel:
 
 ```{exercise} Blinzeln des Alphabets
 :label: confirmation-bias-exercise
 Sie überholen den dritten. Welchen Platz haben Sie dann?
 ```
 
-Vorschnell ist die Antwort: Den zweiten Platz!
-Dies suggeriert der Überholvorgang.
-Wir können unsere Verzerrungen, die durch das *schnelle Denken* entstehen, nicht verhindern.
-Doch können wir immer wieder innehalten und unser *langsames Denken* aktivieren und nachprüfen ob unsere Intuition korrekt ist.
+Die spontane Antwort lautet oft: **Zweiter Platz** – doch korrekt ist: **dritter Platz**.
+Sie haben den Dritten überholt, nehmen also seinen Platz ein.
+
+Wir können solche Denkfehler nicht vermeiden – aber wir können lernen, sie zu erkennen.
+Dazu müssen wir immer wieder bewusst innehalten und unser *langsames Denken* aktivieren.
 
 ## Durch Fehler lernen
 
-Kreativ-logisches Denken ist, wie so vieles im Leben, keine binäre Fähigkeit, die entweder vorhanden ist oder nicht.
-Ein gewisses Talent ist hilfreich aber um richtig gut darin zu werden braucht es Übung---die Denkmuskel müssen gefüttert werden.
-Vergleichbar mit den abgespeicherten Bewegungsabläufen im Leistungssport, welche Sie problemlos automatisch abrufen können, erlernen wir im Denksport Muster, welche Sie problemlos erkennen.
-Schachspieler blicken auf einen Spielstand analysieren Muster (Positionen von mehreren Figuren als Ganzes), durch die sie auf neue Spielzüge schließen.
-Das Lesen von mathematischen Ausdrücken wird Ihnen immer leichter Fallen je mehr Ausdrücke Sie lesen.
-Das liegt nicht nur daran, dass Sie besser in Mathe werden, sondern dass Sie die Symbole wie Ihre Muttersprache schneller und besser als Muster erkennen.
-Programmcode werden Sie immer schneller und besser verstehen, je mehr Programmcode Sie zu verstehen versuchen.
-Um diese Erfolge zu feiern bedarf es der täglichen Übung des Programmierens und der Konfrontation mit immer komplexeren Problemen.
+Kreativ-logisches Denken ist keine binäre Fähigkeit – man hat sie nicht einfach, man entwickelt sie.
+Wie im Sport: Bewegungsmuster entstehen durch ständiges Training.
+Auch im „Denksport“ lernen wir durch Wiederholung, Muster zu erkennen:
 
-Denken ist zudem ein lebenslanger Prozess mit einem Rückkopplungseffekt.
-Unsere Gedanken der Vergangenheit formen unsere Gedanken der Zukunft.
-In der Biologie spricht man dabei von Autopoesie {cite}`maturana:1987`, d.h. von der Selbsterschaffung und Selbsterhaltung eines Systems, in diesem Fall unseres Geistes.
-Es ist deshalb ratsam sich hin und wieder Gedanken über seine Gedanken zu machen.
-Diese rekursive Eigenschaft der Selbstbeobachtung ist uns Menschen zum Glück möglich, wir können uns sogar dabei beobachten wie wir uns beobachten und so weiter und so fort.
++ Schachspieler*innen sehen Stellungsmuster und ziehen daraus strategische Schlüsse.
++ Mathematische Ausdrücke werden mit der Zeit wie eine Sprache verstanden.
++ Programmcode erschließt sich immer schneller – je mehr Code Sie analysieren.
 
-Klare Gedanken zu fassen und sich präzise auszudrücken ist nicht nur nützlich, sondern birgt auch einen intrinsischen Wert.
-Es schult Ihre Fähigkeit Sachverhalte schnell aufzunehmen, schärft Ihren Verstand und wirkt sich nach unserer Ansicht auch auf das kritische Denken aus.
-Zum Beispiel fällt es Ihnen möglicherweise bei einem Gespräch leichter feststellen, ob eine Argumentation logische Fehler enthält.
+Das bedeutet: **Tägliches Üben** ist der Schlüssel.
 
-Außerdem wage ich zu behaupten, dass Sie durch [Computational Thinking](sec-what-is-ct) in eine Welt eintauchen können in der Sie das Ruder übernehmen.
-Es ist eine sehr reine Welt die, anders als unsere oft verschwommene Realität, noch klare Wahrheiten und Strukturen bietet und zugleich eine Spielwiese für kreatives Schaffen darstellt.
-Sie werden im Laufe des Kurses feststellen, dass es viele neue interessante Konzepte und Objekte zu entdecken gibt.
+Denken ist ein dynamischer Prozess.
+Unsere heutigen Gedanken formen die Gedanken von morgen.
+In der Biologie spricht man von Autopoiesis {cite}maturana:1987 – der Fähigkeit eines Systems, sich selbst zu erschaffen und zu erhalten.
+Auch unser Denken hat diese Rückkopplung: Denken über das Denken.
+
+Klare Gedanken und präzise Ausdrucksweise sind nicht nur nützlich – sie haben einen Eigenwert.
+Sie fördern kritisches Denken, schärfen das Urteilsvermögen und verbessern die Kommunikationsfähigkeit.
+
+Wir behaupten: Durch [Computational Thinking](sec-what-is-ct) betreten Sie eine Welt, in der Sie das Ruder übernehmen.
+Eine Welt, in der es klare Strukturen gibt – aber zugleich kreatives Schaffen ermöglicht wird.
+
+Sie werden sehen: Es gibt viel zu entdecken.
