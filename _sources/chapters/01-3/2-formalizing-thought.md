@@ -63,12 +63,12 @@ Die *unvollkommene Induktion* verwendet mehrere spezielle Aussagen um zu einer g
 Die *Induktion durch Aufzählung* beginnt mit dem Beweis einer Charakteristik für eine bestimmte Anzahl an Elementen einer Gruppe, um dann diese Charakteristik als wahr für alle Elemente der Gruppe zu beweisen.
 Auch Sokrates versuchte durch die Induktion allgemeines Wissen durch die Beobachtung einzelner Fälle herzuleiten.
 
-Es sei an dieser Stelle gesagt, dass die Aristotelische Logik das abendländische Denken lange Zeit besimmte und noch immer bestimmt, doch gab es beispielsweise um 600 v. Chr in der Buddistischen Tradition ähnliche Entwicklungen in Indien.
+Es sei an dieser Stelle gesagt, dass die Aristotelische Logik das abendländische Denken lange Zeit bestimmte und noch immer bestimmt, doch gab es beispielsweise um 600 v. Chr in der Buddhistischen Tradition ähnliche Entwicklungen in Indien.
 
 ## Antike Algorithmen
 
 Neben der Logik finden wir bei den antiken Griechen auch die ersten erste uns überlieferten Algorithmen.
-Um 300 v. Chr. notiert Euklid den ersten uns betkannten nicht-trivialen [Algorithmus](def-algorithm), der heute unter dem Namen [euklidischer Algorithmus](sec-euclid-alg) bekannt ist.
+Um 300 v. Chr. notiert Euklid den ersten uns bekannten nicht-trivialen [Algorithmus](def-algorithm), der heute unter dem Namen [euklidischer Algorithmus](sec-euclid-alg) bekannt ist.
 
 ```{figure} ../../figs/history/the-elements.jpg
 ---
@@ -80,7 +80,7 @@ Ein Fragment der Werke *Die Elemente*, [Quelle](http://www.math.ubc.ca/~cass/Euc
 
 In seinem Werk *Die Elemente* in Buch VII formulierte er den Algorithmus für positive ganze Zahlen und in Buch X für positive reelle Zahlen.
 Das Verfahren wurde wahrscheinlich nicht von Euklid erfunden, da er in den Elementen die Erkenntnisse früherer Mathematiker zusammenfasste.
-Es wird vermutet, dass Buch VII ein schon von den Pythagoreern verwndetes Lehrbuch der Zahlentheorie ist {cite}`wearden:1957`.
+Es wird vermutet, dass Buch VII ein schon von den Pythagoreern verwendetes Lehrbuch der Zahlentheorie ist {cite}`wearden:1957`.
 Für ganze Zahlen berechnet der Algorithmus den größten gemeinsamen Teiler ``gcd(a,b)`` zweier natürlicher Zahlen ``a``, ``b``.
 Über zweitausend Jahre später finden wir jenen Algorithmen in einer anderen Form wieder.
 
@@ -139,7 +139,7 @@ sieve_of_eratosthenes(100)
 
 Die Stoa entwickelten die Logik weiter indem sie zwischen Objekten, theoretischen Bildern und linguistischen Zeichen unterschieden.
 Danach verschwand die Aristotelische Logik über lange Zeit und tauchte erst wieder im Mittelalter auf.
-Die Sekularisierung nahm ihren Lauf und am Ende des 11. Jahrhunderts entstanden aus den Schulen der Klöster und Katedralen die ersten Universitäten.
+Die Sekularisierung nahm ihren Lauf und am Ende des 11. Jahrhunderts entstanden aus den Schulen der Klöster und Kathedralen die ersten Universitäten.
 
 Die Zeit der Scholastik, welche die Vernunft und den Glauben als Mittel der Wissenserzeugung sah, begann.
 Die Aristotelische Logik wurde dabei insbesondere durch Thomas von Aquine zu einem inhärenten Bestandteil der scholastischen Logik.
@@ -147,7 +147,7 @@ Das logische Denken wurde kultiviert, jedoch hauptsächlich als Instrument zur U
 Die Scholastik versuchte den Glauben durch logische Schlüsse zu rechtfertigen bzw. zu begründen und zu ergründen.
 
 Diese Entwicklung war der erste Schritt zu einer Systematisierung und Formalisierung der Logik und damit der Systematisierung der Wissenserzeugung und der Manipulation jenes Wissens in unterschiedlicher Art und Weise in einem abgeschlossenen System.
-Die dadurch eingeführte Abstraktion ist eine notwendige Vorraussetzung für die Entwicklung eines Systems, in dessen Kontext Algorithmen für die Berechnung der Lösung aller möglichen Probleme konstruiert werden können.
+Die dadurch eingeführte Abstraktion ist eine notwendige Voraussetzung für die Entwicklung eines Systems, in dessen Kontext Algorithmen für die Berechnung der Lösung aller möglichen Probleme konstruiert werden können.
 
 Eine Persönlichkeit die hier erwähnt werden sollte ist der Universalgelehrter Gottfried Wilhelm Leibniz (1646-1716).
 Neben vieler essentieller wissenschaftlicher Beiträge, wollte er das Wissen an sich durch eine Art Universalsprache formalisieren.
@@ -156,7 +156,7 @@ Nach dem dreißigjährigen Krieg war für ihn diese Vision auch ein Projekt zur 
 Leibniz arbeitete an einer Codierung für alle möglichen wissenschaftlichen Begriffe und an einem Kalkül welches jene Begriffe der Universalsprache durch logische Operationen verbinden sollte.
 Beispielsweise wurde durch Multiplikation aus einem 'Ding' ($2$) ein 'Seiendes' ($2 \cdot 3$) und durch eine weitere Multiplikation, ein 'Mensch' ($2 \cdot 3 \cdot 5$).
 
->Wenn Gott zählt ensteht eine Welt. -- Leibniz
+>Wenn Gott zählt entsteht eine Welt. -- Leibniz
 
 Auch wenn diese Idee für jene Zeit bahnbrechend gewesen ist, bringt sie auch einige Probleme mit sich und hat sich nicht durchsetzen können.
 Doch ist es heute selbstverständlich so, dass wir auf der digitalen Maschine alles durch Zahlen repräsentieren.
@@ -218,7 +218,7 @@ Einflussreiche Logiker ihrer Zeit: Georg Boole, Gottlob Frege und Bertrand Russe
 
 ## Zerstörte Träume und fruchtbare Theorien
 
-Die Freges Prädikatenlogik wurde druch Bertrand Arthur William Rusell (1872-1970) und Alfred North Whitehead (1861-1947) weiterentwickelt.
+Die Freges Prädikatenlogik wurde durch Bertrand Arthur William Rusell (1872-1970) und Alfred North Whitehead (1861-1947) weiterentwickelt.
 Sie machten die Logik zum Objekt wissenschaftlicher Forschung.
 Deren Logizismus und Formalismus führte zum sogenannten [Grundlagenstreit der Mathematik](https://de.wikipedia.org/wiki/Grundlagenkrise_der_Mathematik) in dem sich Formalismus und Intuitionismus, vertreten durch Luitzen Egbertus Jan Brouwer (1881-1966), gegenüber standen.
 Die Formalisten, insbesondere David Hilbert (1862-1943), wollten mathematische Grundsätze auf eine (bewiesenes) konsistente axiomatische Basis stellen.
@@ -236,7 +236,7 @@ Sie zeigten die Widerspruchsfreiheit und Vollständigkeit für zentrale Teilgebi
 Hilbert, Russell und andere erzielten durch die Provokation der Intuitionisten weitreichende Erfolge.
 Russell und Whitehead gelang es in ihrem Werk *Principia Mathematica* {cite}`rusell:1910` einige Gebiete der Mathematik auf ein solches Fundament zu stellen.
 Und David Hilbert und Wilhelm Ackermann (1892-1982) beschäftigten sich in *Grundzüge der theoretischen Logik* {cite}`hilbert:1928` unter anderem mit dem automatischen Prozessieren von logischen Berechnungen.
-Dabei formulierten sie das sog. *Entscheidungsproblem* formulierten.
+Dabei formulierten sie das sog. *Entscheidungsproblem*.
 Es ist ein Problem, welche wie kein zweites die Logik und Informatik verbindet.
 
 ```{admonition} Das Entscheidungsproblem
@@ -250,7 +250,7 @@ Diese Annahme wird als *[Church-Turing-These](def-church-these)* bezeichnet.
 Trifft die These zu, kann alles was *grundsätzlich berechenbar* ist auch von einem *[Turing-vollständigen](def-turing-complete)* Computer (jedem modernen Computer) berechnet werden.
 
 Über das *Entscheidungsproblem* konnte Turing die Fragestellung des sog. [Halteproblem](def-halting-problem) beantworten.
-Es wird demnach keinen Algorithmus geben können, der für jedes beliebige Programm mit beliebiger Eingabe festellen kann, ob dieses Programm jemals hält oder nicht.
+Es wird demnach keinen Algorithmus geben können, der für jedes beliebige Programm mit beliebiger Eingabe feststellen kann, ob dieses Programm jemals hält oder nicht.
 Für uns als Programmierer\*innen bedeutet dies, dass wir selbst prüfen müssen ob unser Algorithmus das berechnet und vollzieht was vorgesehen ist.
 Es gibt keine Software, die uns für einen beliebigen Quellcode garantieren kann, dass wir keine Endlosschleife programmiert haben.
 
@@ -303,7 +303,7 @@ Skizze eines künstliches neuronalen Netzes.
 Um 1960 wurde eine wichtige Erweiterung der *neuronalen Netze*, die sog. *tiefen neuronalen Netze* (engl. *deep neural networks (DNN)*), vorgeschlagen.
 Anders als herkömmliche neuronale Netze (siehe {numref}`Abbildung {number} <fig-ann>` ) bestehen diese aus mehrere *versteckten Schichten*.
 Zu jener Zeit fehlten allerdings die Daten und die Rechenleistung, um derartige *DNNs* praktisch nutzen zu können.
-Auch hatte men Schwierigkeiten die benötigten Gradienten im Zaum zu halten.
+Auch hatte man Schwierigkeiten die benötigten Gradienten im Zaum zu halten.
 Erst in den 80er Jahren wurden erste praktikable *künstliche neuronalen Netze* entwickelt {cite}`lecun:1989`.
 *ANNs* bilden eine Teilmenge der Algorithmen des *maschinelles Lernen*.
 Tom Mitchell definiert *maschinelles Lernen* wie folgt:

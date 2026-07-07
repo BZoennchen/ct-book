@@ -105,5 +105,5 @@ Funktionen die hingegen einen Zustand ändern, sind oft schwer zu verstehen.
 Wir müssen oftmals den Zustand selbst betrachten und das kann eine ganze Kaskade von Analysen erfordern.
 
 Als Randnotiz sei gesagt, dass es in der funktionalen Programmierung nur *reine Funktionen* gibt.
-Um den Laufzeiteinbußen und dem erhöhten Speicherverbrauch entgegenzuwirken, wird das Kopieren von *Datenstrukturen* jedoch clevere gelöst.
+Um den Laufzeiteinbußen und dem erhöhten Speicherverbrauch entgegenzuwirken, wird das Kopieren von *Datenstrukturen* jedoch clever gelöst.
 Schlüssel ist die *Unveränderlichkeit* **aller** *Datentypen*.

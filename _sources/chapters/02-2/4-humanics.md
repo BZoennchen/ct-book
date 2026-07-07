@@ -4,7 +4,7 @@
 
 Die *Semiotik* (*Zeichentheorie*), ist die Wissenschaft, die sich mit Zeichensystemen aller Art befasst.
 Wir haben im Abschnitt [Interpretation](sec-interpretation) die Semiotik bereits angesprochen und wollen ihr hier noch etwas mehr Platz einräumen.
-Sie ist nicht zuletzt eng mit der Informatik über das Konzept von Programmiersprachen, Grammatiken, formalen Methoden aber auch der Computerlinguistik---heute besser bekannt als Natural Language Processing (NLP)---verknüft.
+Sie ist nicht zuletzt eng mit der Informatik über das Konzept von Programmiersprachen, Grammatiken, formalen Methoden aber auch der Computerlinguistik---heute besser bekannt als Natural Language Processing (NLP)---verknüpft.
 
 Für die Entwicklung der modernen Semiotik gilt die Zeichentheorie von Ferdinant de Saussure (1857-1913) als grundlegend.
 Er erweiterte die referenzielle Bedeutungslehre (referenzielle Semantik) durch die mentale Bedeutungslehre.
@@ -23,7 +23,7 @@ Was machen wir beispielsweise mit Wörtern wie 'dort' oder 'Einhorn'?
 Saussure sprach sich stark gegen einen solchen referenziellen Ansatz aus.
 Er folgte einem sog. mentalistischen Ansatz.
 Saussure unterscheidet demzufolge zwischen *Vorstellung* (Begriff, Bedeutung, Sinn) und *Lautbild*.
-Diese sind so eng verknüft, dass sie wie die zwei Seiten der gleichen Sache erscheinen, wie Vorder- und Rückseite eines Blatt Papiers oder die beiden Seiten einer Medaille.
+Diese sind so eng verknüpft, dass sie wie die zwei Seiten der gleichen Sache erscheinen, wie Vorder- und Rückseite eines Blatt Papiers oder die beiden Seiten einer Medaille.
 Das Lautbild ist ein *Bezeichnendes* (auch Signifikant), und die Vorstellung das *Bezeichnete* (auch Signifikat).
 Die Vorstellung befindet sich in der Mentalwelt.
 Saussure stellt zudem heraus, dass dieser Verbindung nichts Naturgegebenens ist.
@@ -47,7 +47,7 @@ Er brachte die drei Teile der Semiotik,
 3. **Pragmatik (Deutung/Wirkung)**: Die Beziehung zwischen Zeichen und (Zeichen)benutzer\*in, welche die Zeichen deuten. Dabei spielt das individuelle Verständnis von Zeichen eine Rolle. Was lösen die Zeichen in mir aus?
 
 als erster zusammen.
-Bringen wir die Zeichenbenutzer\*innen in das semiotische Dreick ein, ergibt sich folgendes semiotisches Viereck.
+Bringen wir die Zeichenbenutzer\*innen in das semiotische Dreieck ein, ergibt sich folgendes semiotisches Viereck.
 
 ```{figure} ../../figs/information/semiotik-information.png
 ---
@@ -121,7 +121,7 @@ Wenn die Sprache derart konstruiert ist, weshalb sollten sich Konventionen ände
 
 Wittgenstein folgert zudem, dass es keine Sprache geben kann bei der prinzipiell nur der/die Sprecher(in) selbst um die Bedeutung der Worte dieser Sprache wissen kann.
 Damit können wir durch sprachliche Äußerungen nicht auf private Episoden, wie Gefühle von Schmerz, Bezug nehmen.
-Da wir derartige Wörter intersubjektiv erlernen, sich aber rein  Erlebnisse nicht intersubjetiv vermitteln lassen, können wir dies auch nicht erlernen.
+Da wir derartige Wörter intersubjektiv erlernen, sich aber rein Erlebnisse nicht intersubjektiv vermitteln lassen, können wir dies auch nicht erlernen.
 Wenn beispielweise ein Schmerz nicht anderweitig gemessen werden kann, ist vollkommen unklar ob das Gefühl auch nur im Entferntesten etwas mit dem zu tun hat was andere erzählen, wenn sie von Schmerzen sprechen.
 
 >Angenommen, es hätte jeder eine Schachtel, darin wäre etwas, was wir ‚Käfer‘ nennen. Niemand kann je in die Schachtel des Anderen schauen, und jeder sagt, er wisse nur vom Anblick seines Käfers, was ein Käfer ist. [...] Das Ding in der Schachtel gehört überhaupt nicht zum Sprachspiel, auch nicht einmal als ein Etwas, denn die Schachtel könnte auch leer sein. {cite}`wittgenstein:1953`
@@ -138,18 +138,18 @@ Nach dem zweiten Hauptsatz der Thermodynamik ist die Änderung der Entropie durc
 Die gesamte Entropieänderung eines **offenen Systems** setzt sich aus dem im Innern produzierten Anteil und der Entropieänderung durch Austauschprozesse mit der Systemumgebung zusammen.
 Letztere Größe kann auch negativ sein, sodass die gesamte Entropieänderung durchaus negativ sein kann.
 In anderen Worten: Wiener fasst den Organismus als ein offenes System auf und interpretiert Information als eine negative Entropieänderung durch Austauschprozesse mit der Systemumgebung.
-Beispielweise erfährt die Erde eine solche Entropieänderung durch die Information---in Form von hochwertiger Energie---die von der Sonne ausgestrahlt wird.
+Beispielsweise erfährt die Erde eine solche Entropieänderung durch die Information---in Form von hochwertiger Energie---die von der Sonne ausgestrahlt wird.
 Diese hochwertige Energie ermöglicht Leben, z.B. Pflanzen, was diese Energiequalität verringern.
 Wiener faßt Information als eine dritte Größe, neben Materie und Energie auf:
 
 >Information is information not matter or energy. {cite}`wiener:1948`
 
 Luhmann definiert den Informationsbegriff ebenfalls im Sinne einer Systemänderung durch eine Außeneinwirkung.
-Seine Theorie basiert auf selbstreferntiellen Systemen.
+Seine Theorie basiert auf selbstreferentiellen Systemen.
 Diese Systeme bilden innere Komplexität um die äußere Komplexität ihrer Umwelt zu verringern.
 Luhmann unterscheidet dabei zwischen **organischen** und **psychischen** sowie **sozialen** Systemen. 
 All diese offenen Systeme sind *operational geschlossen* und zugleich gekoppelt.
-Jedes System erzeugt bzw. erhält sich selbt durch seine Operationen (Autopoiesis).
+Jedes System erzeugt bzw. erhält sich selbst durch seine Operationen (Autopoiesis).
 Psychische Systeme denken und soziale Systeme kommunizieren.
 Gedanken erzeugen weitere Gedanken und Kommunikation erzeugt weitere Kommunikation.
 Soziale und psychische Systeme verarbeiten Sinn {cite}`luhmann:1987`.
@@ -203,7 +203,7 @@ Werden Daten zweckorientiert interpretiert, so entsteht eine *semantische Inform
 Dies ist die Basis für bestimmte Verhaltensweisen.
 Wissen gilt als kontext- und zweckbezogene Information.
 
-Fuchs-Kittowski setzt einen strickten Riegel vor die physikalischen Systeme.
+Fuchs-Kittowski setzt einen strikten Riegel vor die physikalischen Systeme.
 Da in physikalischen (und chemischen) Systemen von Bedeutung keine Rede sein kann, geht er davon aus, dass es in diesen Systemen auch keine Information gibt.
 
 In diesem Punkt widersprechen {cite:t}`fuchs:2002`.

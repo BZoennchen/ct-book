@@ -50,7 +50,7 @@ Die Eingabe eines Computers wird durch das *Eingabegerät* in eine Folge von zwe
 Hier sei erwähnt, dass das soeben beschriebene Menschenbild als Analogie genommen wird und nicht in dieser Weise zutreffen muss.
 Die Grenze zwischen Mensch und seiner Welt, d.h. dem Subjekt und seinen Objekten, ist möglicherweise weit aus weniger klar als wir uns das vorstellen.
 
-Der Prozessor eines Computers **ließt** (digitale) Informationen aus dem Speicher, **manipuliert** sie durch eine Abfolge von Symbolmanipulationen, d.h., durch das Abarbeiten eines [Algorithmus](def-algorithm) (eine endliche Folge von Anweisungen) und **schreibt** die **veränderte** Information zurück in den Speicher.
+Der Prozessor eines Computers **liest** (digitale) Informationen aus dem Speicher, **manipuliert** sie durch eine Abfolge von Symbolmanipulationen, d.h., durch das Abarbeiten eines [Algorithmus](def-algorithm) (eine endliche Folge von Anweisungen) und **schreibt** die **veränderte** Information zurück in den Speicher.
 
 Wenn alle Arbeit getan ist, wird die verarbeitete Information durch die *Ausgabegeräte* **ausgegeben**.
 Ausgabegeräte können Monitore, Lautsprecher aber auch andere Geräte, wie zum Beispiel VR-Brillen sein.

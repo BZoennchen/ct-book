@@ -2,10 +2,10 @@
 # Naturwissenschaften
 
 Beginnen wir mit der naturwissenschaftlichen und strukturwissenschaftlichen Perspektive.
-Wir konzentieren uns auf die Informatik und Physik.
+Wir konzentrieren uns auf die Informatik und Physik.
 In beiden Disziplinen wird Information über die sog. *Entropie* definiert, welche gewöhnlich mit dem Grad der Unordnung, Zufälligkeit oder Unsicherheit assoziiert wird.
 
-> Information is the resolution of uncertainty. -- Claude E. Shannon
+>Information is the resolution of uncertainty. -- Claude E. Shannon
 
 Sie kommen gerade Abends in der Winterzeit nach Hause und machen sich einen schönen warmen Tee.
 Ihre Hände sind kalt und Sie halten die warme Teetasse in den Händen.
@@ -20,7 +20,7 @@ Damit ist gemeint, dass solche Prozesse durch kleine Änderungen in der Umgebung
 Wir würden vermutlich an unserem Verstand zweifeln, sollte so etwas passieren.
 Warum dies nicht geschieht und weshalb sich Ihre Hände erwärmen, liegt an der *Entropie* bzw. an der *Entropieänderung*.
 
-Im fall der Tasse, geht Wärmeenergie von einem konzentrierteren (weniger entropischen) Zustand zu einem weniger konzentrierten (höher entropischen) Zustand über.
+Im Fall der Tasse geht Wärmeenergie von einem konzentrierteren (weniger entropischen) Zustand zu einem weniger konzentrierten (höher entropischen) Zustand über.
 Einfach ausgedrückt: Die Wärmeenergie verteilt sich gleichmäßiger zwischen Tasse und Händen, was zu einer Zunahme der gesamten Entropie des Systems führt.
 
 ```{admonition} Irreversible Prozesse
@@ -46,27 +46,27 @@ Auch in diesem Fall nimmt die Entropie zu, denn der Vorgang ist irreversibel.
 width: 600px
 name: fig-gas-entropie
 ---
-Links die der Zustand vor dem öffnen der Verriegelung, rechts der Zustand nachdem sich das Gas ausgebreitet hat. Die Entropie des Systems nimmt zu.
+Links der Zustand vor dem Öffnen der Verriegelung, rechts der Zustand nachdem sich das Gas ausgebreitet hat. Die Entropie des Systems nimmt zu.
 ```
 
 Was beschreibt nun die Entropie genau?
 Nun in dem eben beschriebenen Beispiel betrachten wir das System einmal vor und einmal nach dem lösen der Verriegelung.
 Die gleiche Anzahl an Teilchen ist einmal auf weniger und einmal auf mehr Raum verteilt.
 Für den Zustand des Systems gibt es deshalb einmal weniger und einmal mehr Möglichkeiten der Verteilung der Teilchen.
-Die Anzahl dieser Möglichkeiten ist die *Entropie*.
+Mit wachsender Anzahl dieser Möglichkeiten steigt die *Entropie* des Systems.
 
 Lassen wir einmal die Physik kurz außer acht und denken mathematisch an einen Zufallsprozess (z.B. einen Münzwurf).
 Wir haben eine Menge an Zuständen, die das System annehmen kann.
 Im Fall unsere Teetasse wäre dies beispielsweise eine noch mehr abgekühlte Hand oder eine wärmere Hand.
 Jeder (Makro-)Zustand hat eine bestimmte Anzahl an unterschiedlichen Teilchenanordnungen bzw. Energieverteilungen (Mikrozuständen).
 Besitzt jeder Mikrozustand die gleiche Wahrscheinlichkeit, so steigt die Wahrscheinlichkeit eines Makrozustands mit der Anzahl seiner möglichen Mikrozustände.
-Für eine perfekt verteilte Wärme gibt es die meisten Mikrozustände, d.h. jener Markrozustand ist am wahrscheinlichsten und wird so über kurz oder lang eintreten.
-Und da das Ei, welches Ihnen entgegen springt, hat derart wenige Mikrozustände, sodass dieser Zustand niemals eintritt.
+Für eine perfekt verteilte Wärme gibt es die meisten Mikrozustände, d.h. jener Makrozustand ist am wahrscheinlichsten und wird so über kurz oder lang eintreten.
+Das Ei hingegen, welches Ihnen entgegen springt, hat derart wenige Mikrozustände, dass dieser Zustand niemals eintritt.
 
 ```{admonition} Entropie (Physik)
 :class: definition
 :name: def-entropy-physics
-Die Entropie beschreibt die Anzahl der Teilchenanordnungen (Mikrozustände), die zu einem gegebenen (Makro)-Zustand des Systems führen.
+Die Entropie $S$ eines Systems ist proportional zum Logarithmus der Anzahl $\Omega$ der Teilchenanordnungen (Mikrozustände), die zu einem gegebenen Makrozustand führen: $S = k_B \cdot \ln(\Omega)$, wobei $k_B$ die Boltzmann-Konstante ist. Je mehr Mikrozustände ein Makrozustand zulässt, desto höher die Entropie.
 ```
 
 Theoretisch ist es also möglich, dass sich warme Objekte weiter erwärmen.

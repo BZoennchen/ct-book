@@ -706,7 +706,7 @@ Wie jede neue Sprache kann der Formalismus abschreckend wirken, doch bietet er �
 </section>
 <section id="formale-beschreibung">
 <h3><span class="section-number">24.1.2. </span>Formale Beschreibung<a class="headerlink" href="#formale-beschreibung" title="Permalink to this heading">#</a></h3>
-<p>Bei dieser Gelegenheit stellen wir Ihnen ein häufig verwendetes Konstrukt, den sog. <strong>Komperator</strong>, vor.
+<p>Bei dieser Gelegenheit stellen wir Ihnen ein häufig verwendetes Konstrukt, den sog. <strong>Komparator</strong>, vor.
 Sei also <span class="math notranslate nohighlight">\(E\)</span> eine Menge von möglichen Einträgen.
 Sei <span class="math notranslate nohighlight">\(\mathcal{L} = (e_0, \ldots, e_n), e_i \in E\)</span> ein (geordnetes) Tupel.
 Sei</p>
@@ -722,8 +722,8 @@ Dieser vergleicht zwei Elemente <span class="math notranslate nohighlight">\(e_i
 +0, &amp; \quad \text{sonst}.
 \end{cases}\end{split}\]</div>
 <p>Aus <span class="math notranslate nohighlight">\(f_E\)</span> lassen sich die Vergleichsoperatoren rekonstruieren:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-678a26fe-c4fb-43f4-8ab5-063189e14718">
-<span class="eqno">(24.3)<a class="headerlink" href="#equation-678a26fe-c4fb-43f4-8ab5-063189e14718" title="Permalink to this equation">#</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-00dcabba-c1cb-4bac-81c6-f3169133a5ca">
+<span class="eqno">(24.3)<a class="headerlink" href="#equation-00dcabba-c1cb-4bac-81c6-f3169133a5ca" title="Permalink to this equation">#</a></span>\[\begin{gather}
 e_i &lt; e_j \iff f(e_i, e_j) = -1 \\
 e_i = e_j \iff f(e_i, e_j) = +0 \\
 e_i &gt; e_j \iff f(e_i, e_j) = +1.
@@ -835,12 +835,12 @@ Der Nachname ist ein sogenannter Schlüssel, der ein Element eindeutig identifiz
 <div class="math notranslate nohighlight">
 \[g: E \rightarrow \mathcal{K},\]</div>
 <p>wobei <span class="math notranslate nohighlight">\(\mathcal{K}\)</span> die Menge der Schlüssel ist.
-Da wir demnach Schlüssel vergleichen ändern wir den <strong>Komperator</strong> <span class="math notranslate nohighlight">\(f_E\)</span> zu</p>
+Da wir demnach Schlüssel vergleichen ändern wir den <strong>Komparator</strong> <span class="math notranslate nohighlight">\(f_E\)</span> zu</p>
 <div class="math notranslate nohighlight">
 \[f_\mathcal{K}: \mathcal{K} \times \mathcal{K} \rightarrow \{-1,0,1 \}\]</div>
 <div class="exercise admonition" id="binary-search-register-exercise">
 
-<p class="admonition-title"><span class="caption-number">Exercise 24.4 </span> (Binäre Suche mit Komperator)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 24.4 </span> (Binäre Suche mit Komparator)</p>
 <section id="exercise-content">
 <p>Transformieren Sie die formale Beschreibung (erneut) in eine <code class="docutils literal notranslate"><span class="pre">Python</span></code> Funktion <code class="docutils literal notranslate"><span class="pre">binary_search(key,</span> <span class="pre">mylist,</span> <span class="pre">f,</span> <span class="pre">g)</span></code>, welche Ihnen das Element mit dem Schlüssel <code class="docutils literal notranslate"><span class="pre">key</span></code> zurückgibt.</p>
 <p><strong>Hinweis:</strong> In <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist es möglich Funktionen einer anderen Funktion als Argument zu übergeben.</p>
@@ -890,7 +890,7 @@ Das heißt, wenn die Anwender*innen kein <code class="docutils literal notransla
 <p>gilt.</p>
 <div class="exercise admonition" id="binary-search-register-numbers-exercise">
 
-<p class="admonition-title"><span class="caption-number">Exercise 24.5 </span> (Binäre Suche von Zahlen mit Komperator)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 24.5 </span> (Binäre Suche von Zahlen mit Komparator)</p>
 <section id="exercise-content">
 <p>Definieren Sie einen passenden <strong>Komparator</strong> <code class="docutils literal notranslate"><span class="pre">cmp_numbers(number1,</span> <span class="pre">number2)</span></code> für eine Liste von ganzen Zahlen, d.h. <span class="math notranslate nohighlight">\(E = \mathbb{Z}\)</span> und testen Sie diesen und <code class="docutils literal notranslate"><span class="pre">binary_search</span></code>.</p>
 </section>
@@ -978,7 +978,7 @@ Sie müssen ein geeignetes <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Ortiz&#39;, &#39;phone_number&#39;: &#39;0624-0301328&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Moore&#39;, &#39;phone_number&#39;: &#39;0432-3151282&#39;}
 </pre></div>
 </div>
 </div>
@@ -4550,7 +4550,7 @@ In anderen Worten <code class="docutils literal notranslate"><span class="pre">c
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of elements: 6782
- collisions with hash: 3280
+ collisions with hash: 3341
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> collisions with index_of: 60751108

@@ -133,7 +133,7 @@ x
 
 berechnen.
 Der ``Python``-Code wird in immer maschinennäheren Code umgewandelt bis wir am Ende wieder beim Addieren von Werten in Registern herauskommen.
-Somit kontrollieren wir den Computer nicht direkt, sondern befehligen ein Program welches unsere Anweisungen in maschinennahe Anweisungen umwandelt!
+Somit kontrollieren wir den Computer nicht direkt, sondern befehligen ein Programm welches unsere Anweisungen in maschinennahe Anweisungen umwandelt!
 Erstellen wir zum Beispiel eine Liste
 
 ```{code-cell} python3

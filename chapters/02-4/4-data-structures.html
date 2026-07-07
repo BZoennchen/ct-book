@@ -660,12 +660,12 @@ Für eine weiterführende und zugleich angewandte Diskussion verweisen wir auf d
 <p>Eine Datenstruktur <em>strukturiert</em> Daten.
 Sie dient der Organisation von Daten.
 Eine Form einer Datenstruktur liefert beispielweise die Struktur eines Briefs.
-Die Vorgaben wie ein Brief zu schreiben ist, d.h. dessen Strutukr, organisiert seine Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
+Die Vorgaben wie ein Brief zu schreiben ist, d.h. dessen Struktur, organisiert seine Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
 Dabei ist jedoch vordefiniert welche Daten (von welchem <a class="reference internal" href="../03-4/intro.html#sec-python-data-types"><span class="std std-ref">Datentyp</span></a>) strukturiert werden.
 Ein solche solche Struktur wird in vielen Programmiersprachen durch Klassen realisiert.
 Diese besprechen wir im Kapitel <a class="reference internal" href="../03-8/intro.html#sec-oop"><span class="std std-ref">Objektorientierte Programmierung</span></a>.</p>
 <p>In diesem Abschnitt wollen wir uns stattdessen mit Datenstrukturen beschäftigen, die prinzipiell unterschiedlich viele und oftmals auch beliebige Daten strukturieren.
-Wir kennen solche Datenverwaltungsstrukturen aus der physikalischen Welt: Ordner, Schnellhäfter, Schließfächer, Warteschlangen, Räume und Sitzpätze sind, unter bestimmter Betrachtung, Datenstrukturen.
+Wir kennen solche Datenverwaltungsstrukturen aus der physikalischen Welt: Ordner, Schnellhäfter, Schließfächer, Warteschlangen, Räume und Sitzplätze sind, unter bestimmter Betrachtung, Datenstrukturen.
 Ein Ordner strukturiert Dokumente (z.B. Briefe).
 Warteschlangen, Räume und Sitzplätze ordnen Menschen.
 Schließfächer strukturieren unterschiedliche Objekte in einer bestimmten Reihenfolge.
@@ -684,7 +684,7 @@ Was uns jedoch interessiert sind die wenigen grundlegenden Eigenschaften, die wi
 <dt>Effizienz</dt><dd><p>Die Adressierung eines Bits für eine gegebene Adresse ist sehr effizient</p>
 </dd>
 </dl>
-<p>Die Eigenschaft der <em>effizienten Adressierung</em> spiegelt sich in allen Programmiersprachen mehr oder weniger pregnannt wieder.
+<p>Die Eigenschaft der <em>effizienten Adressierung</em> spiegelt sich in allen Programmiersprachen mehr oder weniger prägnant wieder.
 Gewöhnlich adressiert die CPU keine einzelnen Bits, sondern ein ganzes <a class="reference internal" href="../02-1/2-representation.html#def-byte"><span class="std std-ref">Byte</span></a>.
 <a class="reference internal" href="#fig-ram-banks"><span class="std std-numref">Abbildung 10.4</span></a> zeigt ein Beispiel eines Arbeitsspeichers der uns erlaubt jeweils ein Byte zu adressieren.
 Zugleich werden Adressen, in diesem Beispiel, durch ein Byte dargestellt.</p>
@@ -725,7 +725,7 @@ Eine solche Datenstruktur realisiert das sog. <a class="reference internal" href
 <p>Datenstrukturen realisiert als <em>zusammenhängender Speicherbereich</em> haben Vor- und Nachteile, welche uns das Schließfachbeispiel gut veranschaulicht.
 Wenn Sie, z.B., auf den dritten Gegenstand (wir beginnen bei 0) zugreifen wollen, können Sie das Schließfach in Windeseile auffinden.
 Sie gehen zum Schließfach dessen Nummer Sie kennen und wandern dann vier Schließfächer nach, z.B. rechts.
-Da jedes Schließfach gleich breit ist, müssen Sie nicht einmal auf die anderen Schließfächer blicken und können einen großen Schritt der Lämge 4 mal <span class="math notranslate nohighlight">\(c\)</span> Meter nach z.B. rechts wandern.
+Da jedes Schließfach gleich breit ist, müssen Sie nicht einmal auf die anderen Schließfächer blicken und können einen großen Schritt der Länge 4 mal <span class="math notranslate nohighlight">\(c\)</span> Meter nach z.B. rechts wandern.
 Sie können den Abstand zwischen dem 0-ten und 3-ten Gegenstand (mit einfachen arithmetischen Mitteln) <strong>berechnen</strong>.</p>
 <p>Genauso verhält es sich mit den Adressen des Speichers.
 Kennen wir die Adresse <span class="math notranslate nohighlight">\(x_0\)</span> des 0-ten Elements/Gegenstands und wissen wie viele <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bits</span></a> jeder Gegenstand verbraucht, sagen wir <span class="math notranslate nohighlight">\(c\)</span> Bits, können wir die Adresse des <span class="math notranslate nohighlight">\(i\)</span>-ten Elements durch</p>
@@ -763,9 +763,9 @@ Die Nachteile offenbaren dagegen die Unflexibilität bei der Veränderung der Gr
 <div class="definition admonition" id="def-static-ds">
 <p class="admonition-title">Statische Sammlungen</p>
 <p><em>Statische Sammlungen</em> können zur Laufzeit des Programms ihre Größe nicht verändern, d.h. ihr Speicherverbrauch kann sich <strong>nicht</strong> verändern.
-Stattdessen muss ein eine neue Datenstruktur angelegt werdeb.</p>
+Stattdessen muss ein eine neue Datenstruktur angelegt werden.</p>
 </div>
-<p>Aus diesem Grund ist ein Arraya eine <a class="reference internal" href="#def-static-ds"><span class="std std-ref">statische Sammlung</span></a>, d.h. deren Speicherverbrauch muss bei ihrer Erzeugung festgelegt sein und kann sich nicht dynamisch, also während der Laufzeit, ändern.
+<p>Aus diesem Grund ist ein Array eine <a class="reference internal" href="#def-static-ds"><span class="std std-ref">statische Sammlung</span></a>, d.h. deren Speicherverbrauch muss bei ihrer Erzeugung festgelegt sein und kann sich nicht dynamisch, also während der Laufzeit, ändern.
 Das heißt, Sie reservieren einmalig Ihre <span class="math notranslate nohighlight">\(n\)</span> nebeneinander liegenden Schließfächer und können an diesem Verbund nichts mehr ändern.
 Sie können zwar Gegenstände vertauschen oder ersetzten, doch kann Ihr Verbund niemals mehr als <span class="math notranslate nohighlight">\(n\)</span> Gegenstände enthalten!</p>
 </section>
@@ -921,7 +921,7 @@ Jeder Knoten besteht aus zwei Teilen:</p>
 <p>Der <em>Stapel</em> (engl. <em>Stack</em>) oder auch <em>Stapelspeicher/Keller</em> ist einer der einfachsten <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamischen Sammlungen</span></a>, welche dem <em>Last-In-First-Out (LIFO)</em> Prinzip folgt.
 LIFO bedeutet soviel wie: <em>zuletzt hinein - zuerst heraus</em>.
 Das was zuletzt hinein gekommen ist, wird auch als erstes herausgenommen.
-Das beudeutet, dass wir eingefügte Elemente nur in umgekehrter Reihenfolge aus dem Stapel herausnehmen können.
+Das bedeutet, dass wir eingefügte Elemente nur in umgekehrter Reihenfolge aus dem Stapel herausnehmen können.
 Gleichbedeutend ist der Begriff <em>Last Come, First Serve</em>, d.h. wer zuletzt kommt wird zuerst bedient.</p>
 <p><strong>Wie</strong> der Stapel intern funktioniert ist nicht genau definiert, jedoch ist garantiert, dass die Datenstruktur die folgenden Operationen anbietet.</p>
 <table class="colwidths-auto table">
@@ -955,7 +955,7 @@ Man sagt auch, ihre (Zeit-)Komplexität ist konstant, d.h. von der Anzahl der El
 <p>Stellen Sie sich einen Stapel aus Büchern vor.
 Das Buch was Sie zuletzt auf den Bücherstapel gelegt haben liegt zugriffsbereit ganz oben.
 Um auf die anderen Bücher zuzugreifen ohne den Stapel komplett zu zerstören, müssen Sie sich von oben nach unten durcharbeiten und alle Bücher bis zu dem gewünschten Buch vom Stapel nehmen.</p>
-<p>Wann könnte diese Datenstruktur sinvoll einsetzbar sein?
+<p>Wann könnte diese Datenstruktur sinnvoll einsetzbar sein?
 Stellen Sie sich vor Sie laufen durch eine fremde Stadt.
 Sie orientieren sich anhand von Straßennamen.
 Um wieder zurückzufinden laufen Sie diese markanten Stellen in umgekehrter Reihenfolge ab.
@@ -1123,7 +1123,7 @@ False
 <p>Die <em>Warteschlange</em> (engl. <em>Queue</em>) ist eine <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamische Sammlung</span></a> und folgt dem sog. <em>First-In-First-Out (FIFO)</em> Prinzip.
 FIFO bedeutet soviel wie: <em>zuerst hinein - zuerst hinaus</em>.
 Das was zuerst hinein gekommen ist, wird auch als erstes herausgenommen.
-Das beudeutet, dass wir eingefügte Elemente nur in der gleichen Reihenfolge aus der Queue herausnehmen können.
+Das bedeutet, dass wir eingefügte Elemente nur in der gleichen Reihenfolge aus der Queue herausnehmen können.
 Gleichbedeutend ist der Begriff <em>First Come, First Serve</em>, d.h. wer zuerst kommt mahlt zuerst.</p>
 <p><strong>Wie</strong> die Warteschlange intern funktioniert ist nicht genau definiert, jedoch ist garantiert, dass die Datenstruktur die folgenden Operationen anbietet.</p>
 <table class="colwidths-auto table">
@@ -1722,7 +1722,7 @@ In anderen Worten Tupel bieten keine <code class="docutils literal notranslate">
 <section id="dynamische-arrays">
 <span id="sec-dynamic-array"></span><h2><span class="section-number">10.4.7. </span>Dynamische Arrays<a class="headerlink" href="#dynamische-arrays" title="Permalink to this heading">#</a></h2>
 <p>Wäre es nicht toll, wenn wir, bezogen auf die Laufzeit, von <a class="reference internal" href="#sec-array"><span class="std std-ref">Arrays</span></a> und <a class="reference internal" href="#sec-dequeue"><span class="std std-ref">Dequeues</span></a> das Beste von beiden bekommen könnten?
-Druch <em>dynamische Arrays</em> versucht man genau dies zu erreichen.</p>
+Durch <em>dynamische Arrays</em> versucht man genau dies zu erreichen.</p>
 <section id="id4">
 <h3><span class="section-number">10.4.7.1. </span>Eigenschaften<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>Wir hatten gesagt, dass <a class="reference internal" href="#def-dynamic-ds"><span class="std std-ref">dynamische Sammlungen</span></a> auf einem fragmentierten Speicherbereich basieren.
@@ -1730,7 +1730,7 @@ Das ist jedoch nicht hunderprozent präzise ausgedrückt, denn <em>dynamische Ar
 <p>Gehen wir zurück zu unseren Schließfächern.
 Was würden Sie anders machen, wenn Sie zum einen 10 Schließfächer benötigen, zugleich aber davon ausgehen müssen, dass weitere Schließfächer im laufe der Zeit gebraucht werden?
 Wahrscheinlich würden Sie mehr als 10 Schließfächer reservieren.
-Sie würden vielleitcht eine grobe Schätzung abgeben, wie viele Schließfächer denn wahrscheinlich insgesamgt gebraucht werden.
+Sie würden vielleicht eine grobe Schätzung abgeben, wie viele Schließfächer denn wahrscheinlich insgesamt gebraucht werden.
 Was passiert aber wenn Sie diese Schließfächer über einen langen Zeitraum benötigen und es auch sein kann, dass diese weniger werden?
 Angenommen jedes Schließfach kostet pro Tag Geld und zugleich kostet das Bewegen der Objekte von einem Schließfach zum anderen ebenfalls einen Betrag.
 Wie würden Sie dann die Situation handhaben?</p>

@@ -690,7 +690,7 @@ Da die Funktionen rekursiv aufgerufen werden, füllt sich der Stack bis wir uns 
 </figcaption>
 </figure>
 <p><code class="docutils literal notranslate"><span class="pre">fac(1)</span></code> gelangt in den <em>Basisfall</em> und beendet die Rekursionskette.
-Es ließt sein <code class="docutils literal notranslate"><span class="pre">n</span></code> aus seinem Namensraum (in <a class="reference internal" href="#fig-stack-fill"><span class="std std-numref">Abbildung 16.1</span></a> ist das der <code class="docutils literal notranslate"><span class="pre">namespace4</span></code>), prüft <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> und liefert <code class="docutils literal notranslate"><span class="pre">1</span></code> zurück.
+Es liest sein <code class="docutils literal notranslate"><span class="pre">n</span></code> aus seinem Namensraum (in <a class="reference internal" href="#fig-stack-fill"><span class="std std-numref">Abbildung 16.1</span></a> ist das der <code class="docutils literal notranslate"><span class="pre">namespace4</span></code>), prüft <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code> und liefert <code class="docutils literal notranslate"><span class="pre">1</span></code> zurück.
 Durch diesen Rücksprung, wird der Namensraum gelöscht und der nächste Namensraum auf dem <em>Stack</em> definiert den Namensraum des aktuellen Funktionsaufrufs.
 In diesem hat <code class="docutils literal notranslate"><span class="pre">n</span></code> den Wert <code class="docutils literal notranslate"><span class="pre">2</span></code> und wir befinden uns bereits an der Stelle <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">fac(1)</span></code> und da <code class="docutils literal notranslate"><span class="pre">fac(1)</span></code> soeben den Wert <code class="docutils literal notranslate"><span class="pre">1</span></code> zurückgeliefert hat, wird dieser Ausdruck zu <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">1</span></code> und somit zu <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">1</span></code>.</p>
 <p>Sukzessive leert sich der Stack.</p>
@@ -750,7 +750,7 @@ Im Vergleich zum <em>Stack</em> ist es deutlich aufwendiger zu protokollieren, w
 <section id="laufzeit">
 <h2><span class="section-number">16.6.2. </span>Laufzeit<a class="headerlink" href="#laufzeit" title="Permalink to this heading">#</a></h2>
 <p>Obwohl der <em>Stack</em> enorm effizient ist, sind iterative Lösungen fast immer schneller in ihrer Ausführung.
-Übersetzten wir den Code in Maschinencode, also in die niedrigste bzw. konkreteste Form, so benötigen rekursive Lösungen fast immer mehr Sprungbefehle.</p>
+Übersetzen wir den Code in Maschinencode, also in die niedrigste bzw. konkreteste Form, so benötigen rekursive Lösungen fast immer mehr Sprungbefehle.</p>
 <p>Auch benötigt ein Funktionsaufruf mehr Ressourcenmanagement als ein Sprung zum Anfang einer Schleife.
 Vergleichen wir unsere rekursive Lösung mit der iterativen:</p>
 <div class="cell docutils container">
@@ -777,7 +777,7 @@ Läuft dieser voll, schlägt die Vorhersage fehl und die Ausführungszeit verlä
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.3 µs ± 44.5 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.4 µs ± 979 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -789,7 +789,7 @@ Läuft dieser voll, schlägt die Vorhersage fehl und die Ausführungszeit verlä
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>393 µs ± 1.53 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>348 µs ± 43.7 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>

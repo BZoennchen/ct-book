@@ -11,7 +11,7 @@ Vor der Zeit der PCs (Personal Computer) waren es Großrechner auf denen die mei
 Auch gab es für bestimmte Anwendungen, dedizierte Hardware.
 Seit einiger Zeit sehen wir die Wiederentdeckung von Berechnungen auf Rechenzentren (Cloud Computing) und spezieller Hardware.
 Zum Beispiel werden bestimmte GPUs für das maschinelle Lernen entwickelt.
-Sie bestehen aus Bauteilen die expliziet für die Matrixmultiplikation kleiner Matrizen optimiert sind.
+Sie bestehen aus Bauteilen die explizit für die Matrixmultiplikation kleiner Matrizen optimiert sind.
 
 Zusammenfassend lässt sich sagen, die Digitalisierung scheint sich weiter und weiter fortzusetzen und zugleich bleiben die Mechanismen, denen sie sich unterwirft, die gleichen.
 Damit ist und bleibt [Computational Thinking](sec-what-is-ct) eine nützliche und vorerst zeitlose Fähigkeit um in der (digitalen) Welt zurechtzukommen und diese mitzugestalten.

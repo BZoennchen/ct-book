@@ -249,7 +249,7 @@ printZ()
 z
 ```
 
-Der Interpreter ließt ``z = 42`` innerhalb der Funktion und weiß deshalb, dass ``z`` im *lokalen Namensraum* liegen muss.
+Der Interpreter liest ``z = 42`` innerhalb der Funktion und weiß deshalb, dass ``z`` im *lokalen Namensraum* liegen muss.
 Dann wirft er den Fehler in der ersten Zeile der Funktion, da ``z`` angesprochen aber noch nicht definiert wurde.
 Er lehnt es ab, stattdessen das *globale* ``z`` zu verwenden.
 

@@ -21,13 +21,13 @@ Für eine weiterführende und zugleich angewandte Diskussion verweisen wir auf d
 Eine Datenstruktur *strukturiert* Daten.
 Sie dient der Organisation von Daten.
 Eine Form einer Datenstruktur liefert beispielweise die Struktur eines Briefs.
-Die Vorgaben wie ein Brief zu schreiben ist, d.h. dessen Strutukr, organisiert seine Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
+Die Vorgaben wie ein Brief zu schreiben ist, d.h. dessen Struktur, organisiert seine Daten (Absender, Empfänger, Betreff, Datum, Botschaft, usw.) auf einem oder mehreren Blättern Papier.
 Dabei ist jedoch vordefiniert welche Daten (von welchem [Datentyp](sec-python-data-types)) strukturiert werden.
 Ein solche solche Struktur wird in vielen Programmiersprachen durch Klassen realisiert.
 Diese besprechen wir im Kapitel [Objektorientierte Programmierung](sec-oop).
 
 In diesem Abschnitt wollen wir uns stattdessen mit Datenstrukturen beschäftigen, die prinzipiell unterschiedlich viele und oftmals auch beliebige Daten strukturieren.
-Wir kennen solche Datenverwaltungsstrukturen aus der physikalischen Welt: Ordner, Schnellhäfter, Schließfächer, Warteschlangen, Räume und Sitzpätze sind, unter bestimmter Betrachtung, Datenstrukturen.
+Wir kennen solche Datenverwaltungsstrukturen aus der physikalischen Welt: Ordner, Schnellhäfter, Schließfächer, Warteschlangen, Räume und Sitzplätze sind, unter bestimmter Betrachtung, Datenstrukturen.
 Ein Ordner strukturiert Dokumente (z.B. Briefe).
 Warteschlangen, Räume und Sitzplätze ordnen Menschen.
 Schließfächer strukturieren unterschiedliche Objekte in einer bestimmten Reihenfolge.
@@ -50,7 +50,7 @@ Addressierbarkeit
 Effizienz
 : Die Adressierung eines Bits für eine gegebene Adresse ist sehr effizient
 
-Die Eigenschaft der *effizienten Adressierung* spiegelt sich in allen Programmiersprachen mehr oder weniger pregnannt wieder.
+Die Eigenschaft der *effizienten Adressierung* spiegelt sich in allen Programmiersprachen mehr oder weniger prägnant wieder.
 Gewöhnlich adressiert die CPU keine einzelnen Bits, sondern ein ganzes [Byte](def-byte).
 {numref}`Abbildung {number} <fig-ram-banks>` zeigt ein Beispiel eines Arbeitsspeichers der uns erlaubt jeweils ein Byte zu adressieren.
 Zugleich werden Adressen, in diesem Beispiel, durch ein Byte dargestellt.
@@ -94,7 +94,7 @@ Eine solche Datenstruktur realisiert das sog. [Array](sec-array) oder die ``Pyth
 Datenstrukturen realisiert als *zusammenhängender Speicherbereich* haben Vor- und Nachteile, welche uns das Schließfachbeispiel gut veranschaulicht.
 Wenn Sie, z.B., auf den dritten Gegenstand (wir beginnen bei 0) zugreifen wollen, können Sie das Schließfach in Windeseile auffinden.
 Sie gehen zum Schließfach dessen Nummer Sie kennen und wandern dann vier Schließfächer nach, z.B. rechts.
-Da jedes Schließfach gleich breit ist, müssen Sie nicht einmal auf die anderen Schließfächer blicken und können einen großen Schritt der Lämge 4 mal $c$ Meter nach z.B. rechts wandern.
+Da jedes Schließfach gleich breit ist, müssen Sie nicht einmal auf die anderen Schließfächer blicken und können einen großen Schritt der Länge 4 mal $c$ Meter nach z.B. rechts wandern.
 Sie können den Abstand zwischen dem 0-ten und 3-ten Gegenstand (mit einfachen arithmetischen Mitteln) **berechnen**.
 
 Genauso verhält es sich mit den Adressen des Speichers.
@@ -156,10 +156,10 @@ Die Nachteile offenbaren dagegen die Unflexibilität bei der Veränderung der Gr
 :name: def-static-ds
 :class: definition
 *Statische Sammlungen* können zur Laufzeit des Programms ihre Größe nicht verändern, d.h. ihr Speicherverbrauch kann sich **nicht** verändern. 
-Stattdessen muss ein eine neue Datenstruktur angelegt werdeb.
+Stattdessen muss ein eine neue Datenstruktur angelegt werden.
 ```
 
-Aus diesem Grund ist ein Arraya eine [statische Sammlung](def-static-ds), d.h. deren Speicherverbrauch muss bei ihrer Erzeugung festgelegt sein und kann sich nicht dynamisch, also während der Laufzeit, ändern.
+Aus diesem Grund ist ein Array eine [statische Sammlung](def-static-ds), d.h. deren Speicherverbrauch muss bei ihrer Erzeugung festgelegt sein und kann sich nicht dynamisch, also während der Laufzeit, ändern.
 Das heißt, Sie reservieren einmalig Ihre $n$ nebeneinander liegenden Schließfächer und können an diesem Verbund nichts mehr ändern.
 Sie können zwar Gegenstände vertauschen oder ersetzten, doch kann Ihr Verbund niemals mehr als $n$ Gegenstände enthalten!
 
@@ -335,7 +335,7 @@ Um Elemente am *Ende* (engl. *Tail*) einzufügen, kann es sinnvoll sein sich zus
 Der *Stapel* (engl. *Stack*) oder auch *Stapelspeicher/Keller* ist einer der einfachsten [dynamischen Sammlungen](def-dynamic-ds), welche dem *Last-In-First-Out (LIFO)* Prinzip folgt.
 LIFO bedeutet soviel wie: *zuletzt hinein - zuerst heraus*.
 Das was zuletzt hinein gekommen ist, wird auch als erstes herausgenommen.
-Das beudeutet, dass wir eingefügte Elemente nur in umgekehrter Reihenfolge aus dem Stapel herausnehmen können.
+Das bedeutet, dass wir eingefügte Elemente nur in umgekehrter Reihenfolge aus dem Stapel herausnehmen können.
 Gleichbedeutend ist der Begriff *Last Come, First Serve*, d.h. wer zuletzt kommt wird zuerst bedient.
 
 **Wie** der Stapel intern funktioniert ist nicht genau definiert, jedoch ist garantiert, dass die Datenstruktur die folgenden Operationen anbietet.
@@ -354,7 +354,7 @@ Stellen Sie sich einen Stapel aus Büchern vor.
 Das Buch was Sie zuletzt auf den Bücherstapel gelegt haben liegt zugriffsbereit ganz oben.
 Um auf die anderen Bücher zuzugreifen ohne den Stapel komplett zu zerstören, müssen Sie sich von oben nach unten durcharbeiten und alle Bücher bis zu dem gewünschten Buch vom Stapel nehmen.
 
-Wann könnte diese Datenstruktur sinvoll einsetzbar sein?
+Wann könnte diese Datenstruktur sinnvoll einsetzbar sein?
 Stellen Sie sich vor Sie laufen durch eine fremde Stadt.
 Sie orientieren sich anhand von Straßennamen.
 Um wieder zurückzufinden laufen Sie diese markanten Stellen in umgekehrter Reihenfolge ab.
@@ -472,7 +472,7 @@ print(parse('()()()()((((())))'))       # falsch
 Die *Warteschlange* (engl. *Queue*) ist eine [dynamische Sammlung](def-dynamic-ds) und folgt dem sog. *First-In-First-Out (FIFO)* Prinzip.
 FIFO bedeutet soviel wie: *zuerst hinein - zuerst hinaus*.
 Das was zuerst hinein gekommen ist, wird auch als erstes herausgenommen.
-Das beudeutet, dass wir eingefügte Elemente nur in der gleichen Reihenfolge aus der Queue herausnehmen können.
+Das bedeutet, dass wir eingefügte Elemente nur in der gleichen Reihenfolge aus der Queue herausnehmen können.
 Gleichbedeutend ist der Begriff *First Come, First Serve*, d.h. wer zuerst kommt mahlt zuerst.
 
 **Wie** die Warteschlange intern funktioniert ist nicht genau definiert, jedoch ist garantiert, dass die Datenstruktur die folgenden Operationen anbietet.
@@ -893,7 +893,7 @@ In anderen Worten Tupel bieten keine ``__setitem__(i, value)``-Methode.
 ## Dynamische Arrays
 
 Wäre es nicht toll, wenn wir, bezogen auf die Laufzeit, von [Arrays](sec-array) und [Dequeues](sec-dequeue) das Beste von beiden bekommen könnten?
-Druch *dynamische Arrays* versucht man genau dies zu erreichen.
+Durch *dynamische Arrays* versucht man genau dies zu erreichen.
 
 ### Eigenschaften
 
@@ -903,7 +903,7 @@ Das ist jedoch nicht hunderprozent präzise ausgedrückt, denn *dynamische Array
 Gehen wir zurück zu unseren Schließfächern.
 Was würden Sie anders machen, wenn Sie zum einen 10 Schließfächer benötigen, zugleich aber davon ausgehen müssen, dass weitere Schließfächer im laufe der Zeit gebraucht werden?
 Wahrscheinlich würden Sie mehr als 10 Schließfächer reservieren.
-Sie würden vielleitcht eine grobe Schätzung abgeben, wie viele Schließfächer denn wahrscheinlich insgesamgt gebraucht werden.
+Sie würden vielleicht eine grobe Schätzung abgeben, wie viele Schließfächer denn wahrscheinlich insgesamt gebraucht werden.
 Was passiert aber wenn Sie diese Schließfächer über einen langen Zeitraum benötigen und es auch sein kann, dass diese weniger werden?
 Angenommen jedes Schließfach kostet pro Tag Geld und zugleich kostet das Bewegen der Objekte von einem Schließfach zum anderen ebenfalls einen Betrag.
 Wie würden Sie dann die Situation handhaben?

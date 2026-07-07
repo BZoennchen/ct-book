@@ -63,7 +63,7 @@ min(M)
 (sec-math-rounding)=
 ## Ab- und Aufrunden
 
-Bei der Entwicklung Ihrer Algorithmen werden sie das *Abrunden* sehr oft einsetzten.
+Bei der Entwicklung Ihrer Algorithmen werden sie das *Abrunden* sehr oft einsetzen.
 Es wird in allen gängigen Programmiersprachen implizit durchgeführt, wenn Sie eine Gleitkommazahl in eine ganze Zahl umwandeln.
 
 ```{code-cell} python3

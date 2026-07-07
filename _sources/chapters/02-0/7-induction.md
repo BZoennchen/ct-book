@@ -15,7 +15,7 @@ kernelspec:
 
 Bei einer *Induktion* schließen wir von speziellen Sachverhalten (häufig empirischen Beobachtungen) auf einen generellen Sachverhalt.
 Wenn ich, zum Beispiel, Katzen untersuche und immer nur schwarze Katzen zu Gesicht bekomme, dann wäre ein induktiver Schluss, dass alle Katzen schwarz sind.
-Diese Art des Schließens wurde und wird immer wieder attackiert, da die Induktion keine abolute Gewissheit zulässt.
+Diese Art des Schließens wurde und wird immer wieder attackiert, da die Induktion keine absolute Gewissheit zulässt.
 Dennoch ist sie nützlich, so dachte Newton *induktiv* als er seine Gesetze der Mechanik aufgestellt hat.
 Aus der Beobachtung mehrerer Sachverhalte, z.B. dass der Apfel vom Baum fällt, schloss er auf ein allgemeines physikalisches Gesetz.
 Doch hatte er keine Gewissheit und wie wir mittlerweile Wissen konnte Einstein die Gesetze von Newton widerlegen.
@@ -81,7 +81,7 @@ Unsere mathematischen Dominosteine sind dabei die *natürlichen Zahlen*, denn wi
 Da jede abzählbare Menge sich durch natürliche Zahlen repräsentieren lässt, wird die vollständige Induktion über die natürlichen Zahlen geführt.
 
 Die *vollständige Induktion* ist also eine mathematische Beweistechnik im Zusammenhang mit den natürlichen Zahlen.
-Darüber hinaus ist sie eine *Denkart* die insbesondere bei der Entwicklung von Datenstrukturen und Algorithmen eine große Rolle spielt, denn jede Wiederholung von bestimmten Befehlsabfolgen, beispielsweise druch eine Schleife, kann man *abzählen*. 
+Darüber hinaus ist sie eine *Denkart* die insbesondere bei der Entwicklung von Datenstrukturen und Algorithmen eine große Rolle spielt, denn jede Wiederholung von bestimmten Befehlsabfolgen, beispielsweise durch eine Schleife, kann man *abzählen*. 
 Deshalb können wir mit der vollständigen Induktion oftmals die Korrektheit und Laufzeit unserer Programme darlegen.
 In der vollständige Induktion selbst ist die [(rekursiven) Wiederholung](sec-recursion) eingebaut.
 

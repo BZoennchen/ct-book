@@ -31,7 +31,7 @@ Die Multiplikation wird durch den Computer, genauer die [CPU](def-cpu) berechnet
 ```
 
 Die [Syntax](def-syntax) einer Programmiersprache ist strikt.
-Sie wird durch eine sog. *Grammatik* definiert.å
+Sie wird durch eine sog. *Grammatik* definiert.
 Zum Beispiel ist folgender *Ausdruck* fehlerhaft, da er nicht durch die *Grammatik* von ``Python`` definiert ist.
 Man sagt auch, dass die Sprache, welche durch die Grammatik definiert ist, den folgenden Ausdruck nicht enthält.
 
@@ -132,13 +132,13 @@ So können wir in ``Python`` auch Zeichenketten ``str`` mit den Vergleichsoperat
 ```
 
 Generell vergleichen wir Objekte einer [Menge](sec-math-set) immer bezüglich einer [(totalen) Ordnung](def-math-order).
-Diese Ordnung muss irgendwo definiert worden sein, ob durch die Standardbibliothek von ``Python``, impliziet, oder durch uns Entwickler\*innen.
+Diese Ordnung muss irgendwo definiert worden sein, ob durch die Standardbibliothek von ``Python``, implizit, oder durch uns Entwickler\*innen.
 
 (sec-logic-expressions)=
 ## Logische Operatoren
 
 Der obige *Ausdruck* ist aus weiteren Ausdrücken zusammengesetzt.
-Er behinhaltet den *Ausdruck* ``and``, d.h., dem logischen UND ($\land$).
+Er beinhaltet den *Ausdruck* ``and``, d.h., dem logischen UND ($\land$).
 Dieser erwartet auf der linken und rechte Seite jeweils einen Wahrheitswert (*boolschen Ausdruck*).
 Zum Beispiel, liefern [Vergleichsoperatoren](sec-python-operator-compare) *boolsche Ausdrücke* zurück.
 

@@ -157,7 +157,7 @@ lrange(10)
 Definieren wir Standardargumente, müssen wir uns überlegen welche Werte sinnvoll sind.
 Was soll also passieren wenn wir beim Funktionsaufruf bestimmte Parameter weglassen?
 
-Standardargumente setzten wir durch eine Zuweisung im Funktionskopf.
+Standardargumente setzen wir durch eine Zuweisung im Funktionskopf.
 Dabei müssen alle Parameter mit Standardargumenten **hinten stehen!** 
 Folgender Code wird ebenfalls zu einem Fehler führen:
 
