@@ -156,7 +156,7 @@ Beispielsweise erfährt die Erde eine solche Entropieänderung durch die Informa
 Diese hochwertige Energie ermöglicht Leben, z.B. Pflanzen, was diese Energiequalität verringern.
 Wiener faßt Information als eine dritte Größe, neben Materie und Energie auf:
 
->Information is information not matter or energy. {cite}`wiener:1948`
+>Information is information not matter or energy. -- {cite}`wiener:1948`
 
 Die Kybernetik hat schließlich durch Heinz von Foerster ihre eigene Kritik in Form der *Kybernetik 2. Ordnung* entwickelt indem sie unsere oben gestellte Frage "Gewissheit bzw. Information für wen?" radikal durch den Begriff des *Beobachters* integrieren wollte.
 Wohingegen Shannon ein Beobachter bzw. Interpret fehlt, wurde er durch Heinz von Foerster zum zentralen Dreh- und Angelpunkt dieser völlig neuen Denkschule.
