@@ -55,7 +55,7 @@ print(f'numbers: {numbers}')
 print(f'squares: {squares}')
 ```
 
-Wir können die Liste der Elemente der Ursprungsliste auch durch eine Fallunterscheidung filter:
+Wir können die Liste der Elemente der Ursprungsliste auch durch eine Fallunterscheidung filtern:
 
 ```{code-cell} python3
 def square(x):

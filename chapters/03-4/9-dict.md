@@ -25,7 +25,7 @@ Jede Zeile ist ein Tupel ``tuple`` aus ``key`` und ``value``.
 
 Da die Schlüssel im Sinne der [Gleichheit](def-identity) eindeutig sind, kann die Spalte aus ``key``s als Menge ``set`` an **Schlüsseln** angesehen werden.
 Die **Werte** müssen hingegen nicht eindeutig sein.
-Sind Sie wie ich ein Freund der Mathematik, so realisiert ein Wörterbücher ``dict`` eine [(mathematische) Funktion](sec-math-function):
+Sind Sie wie ich ein Freund der Mathematik, so realisiert ein Wörterbuch ``dict`` eine [(mathematische) Funktion](sec-math-function):
 
 $$f : K \rightarrow V,$$
 
@@ -34,12 +34,12 @@ Es kann durchaus zwei **Schlüssel** geben, die auf den gleichen **Wert** ``valu
 
 Wie bei den Mengen, gilt für die **Schlüssel**, dass diese aus **unveränderlichen** Datentypen bestehen müssen.
 Das hat die gleichen Gründe wie in Abschnitt [Mengen](sec-set) angesprochen.
-Deshalb eigenen sich zum Beispiel [Zahlen](sec-int), [Zeichenketten](sec-string), [Fließkommazahlen](sec-float) oder [Tupel](sec-tuple) -- die **unveränderliche** Datentypen enthalten -- als Schlüssel.
+Deshalb eignen sich zum Beispiel [Zahlen](sec-int), [Zeichenketten](sec-string), [Fließkommazahlen](sec-float) oder [Tupel](sec-tuple) -- die **unveränderliche** Datentypen enthalten -- als Schlüssel.
 
 Identisch zu Mengen, können wir extrem schnell testen ob es einen bestimmten Eintrag im Wörterbücher für einen bestimmten Schlüssel gibt.
 Das folgt aus der Eigenschaft der [Mengen](sec-set).
 Doch anders als bei Mengen ``set``, identifizieren wir damit nicht nur den Schlüssel ``key`` der Menge $K$, sondern auch dessen Wert ``value`` aus $V$.
-Wir nutzten die schnelle Adressierung bzw. den schnellen Zugriff um auf **veränderliche** Werte zugreifen zu können.
+Wir nutzen die schnelle Adressierung bzw. den schnellen Zugriff um auf **veränderliche** Werte zugreifen zu können.
 
 ## Erstellung
 
@@ -98,7 +98,7 @@ students
 ```
 
 In unserem Fall, fügen wir in das Wörterbuch ``students`` ein neues Tupel ``(123133, 'Fischer')`` ein.
-Existiert der Schlüssen, hier ``123133``, so verändern wir den damit identifizierten Eintrag:
+Existiert der Schlüssel, hier ``123133``, so verändern wir den damit identifizierten Eintrag:
 
 ```{code-cell} python3
 students[123133] = 'Alberto'
@@ -145,7 +145,7 @@ print(123133 in students and students[123133] == 'Hamilton')
 
 ## Ansichten
 
-Wir könne uns auch alle Schlüssel und Werte eines Wörterbuchs holen.
+Wir können uns auch alle Schlüssel und Werte eines Wörterbuchs holen.
 Durch ``dictionary.keys()`` erhalten wir die Schlüssel, durch ``dictionary.values()`` die Werte, und durch ``dictionary.items()`` beide Spalten (als Liste von Tupeln):
 
 ```{code-cell} python3

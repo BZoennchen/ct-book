@@ -23,7 +23,7 @@ Entwickler\*innen können Pakete in den Pool hochladen und diese anderen Entwick
 So haben wir, zum Beispiel, unser ``roboworld``-Paket in PyPI eingepflegt (siehe [roboworld](https://pypi.org/project/roboworld/)).
 
 ``conda`` ist ebenfalls ein *Paketverwaltungsprogramm*, welches vor ``pip`` entwickelt wurde und seine Pakete durch das *Anaconda Repository* und der *Anaconda Cloud* bereitstellt.
-Es wird vorallem für die Programmiersprachen ``Python`` und ``R`` verwendet und löst Paketabhängigkeiten, welche insbesondere im Bereich *Data Science*, eine große Herausforderunge waren.
+Es wird vor allem für die Programmiersprachen ``Python`` und ``R`` verwendet und löst Paketabhängigkeiten, welche insbesondere im Bereich *Data Science*, eine große Herausforderungen waren.
 
 Im Unterschied zu ``conda`` installiert ``pip`` Ihnen alle benötigten Paketabhängigkeiten, egal ob es *Konflikte* zu bereits installierten Paketen gibt oder nicht.
 Dies kann zu Problemen führen.
@@ -96,7 +96,7 @@ name: fig-miniconda-which
 ---
 ```
 
-prüfen, wo sich Ihr ``Python``, ``pip`` und ``conda`` befinden und welche Pakte auf Ihrem System installiert sind.
+prüfen, wo sich Ihr ``Python``, ``pip`` und ``conda`` befinden und welche Pakete auf Ihrem System installiert sind.
 Diese Liste ist kurz, da Sie bisher nur das nötigste installiert haben.
 Um z.B. **Jupyter-Notebooks** auszuführen benötigen Sie das Paket ``jupyter`` bzw. ``jupyterlab``, welches Sie zuvor mit dem Paketmanager ``conda`` oder ``pip`` installieren müssen.
 
@@ -132,7 +132,7 @@ conda install [paketename]
 
 wird die aktuelle Version des Pakets mit dem Namen ``paketename`` in den entsprechenden Installationsordner Ihrer Anaconda bzw. Miniconda-Standardumgebung installiert.
 
-````{admonition} Pakte mit conda installieren
+````{admonition} Pakete mit conda installieren
 :class: attention
 :name: attention-conda-pip-install
 
@@ -161,7 +161,7 @@ Lassen Sie uns das nachholen:
 conda install jupyterlab
 ```
 
-Bevor Sie die Installation akzeptieren, wird Ihnen angezeigt welche Pakte (inkl. Abhängigkeiten) installiert werden.
+Bevor Sie die Installation akzeptieren, wird Ihnen angezeigt welche Pakete (inkl. Abhängigkeiten) installiert werden.
 
 ```{figure} ../../figs/python-tutorial/environment/jupyter-install-conda.png
 ---

@@ -25,7 +25,7 @@ Von hier an meinen wir mit Mengen die ``Python``-Mengen ``set`` und sprechen ans
 
 ## Motivation
 
-Mengen benutzten wir immer dann, wenn wir die Eigenschaft der **Eindeutigkeit** und **Unordnung** nutzten wollen.
+Mengen benutzen wir immer dann, wenn wir die Eigenschaft der **Eindeutigkeit** und **Unordnung** nutzen wollen.
 Dabei bezieht sich diese Eindeutigkeit auf die [Gleichheit](def-equality) und nicht auf die [Identität](def-identity).
 D.h. eine ``Python``-Menge enthält keine zwei Elemente ``x``, ``y`` für die ``x == y`` zu ``True`` ausgewertet wird.
 

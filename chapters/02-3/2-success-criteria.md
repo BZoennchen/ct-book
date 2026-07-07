@@ -14,7 +14,7 @@ Popularität der Programmiersprachen nach dem [PYPL Index](https://pypl.github.i
 ```
 
 Zunächst ist festzuhalten, dass es nicht die eine beste Programmiersprache gibt.
-Unterschiedliche Sprachen eigenen sich für unterschiedliche Aufgaben, Anwendungsbereiche und folgen subjektiven Vorlieben.
+Unterschiedliche Sprachen eignen sich für unterschiedliche Aufgaben, Anwendungsbereiche und folgen subjektiven Vorlieben.
 
 Die wesentlichen Teile die wir bei einer Sprache beurteilen können sind:
 1. ihre **Syntax**
@@ -35,7 +35,7 @@ Sehr gute Lesbarkeit und eine hohe Performance ist eine Kombination, die nur sch
 
 Neue Programmiersprachen haben es natürlich erst einmal schwer, denn etablierte Sprachen werden in vielen Systemen bereits eingesetzt.
 Niemand schreibt diese Systeme erneut, es sei denn es lohnt sich wirklich.
-Zudem gibt es für etablierte Sprachen eine über die Jahre entwickelte Ansammlung an Bibliotheken, Tools, Tutorials und Dokumentationen - sie besitzten bereits ein gutes **Ökosystem**.
+Zudem gibt es für etablierte Sprachen eine über die Jahre entwickelte Ansammlung an Bibliotheken, Tools, Tutorials und Dokumentationen - sie besitzen bereits ein gutes **Ökosystem**.
 
 Es gibt Sprachen, wie zum Beispiel ``CUDA``, die einen sehr engen Anwendungsbereich haben. In diesem Beispiel ist es die Programmierung von Nvidea Grafikkarten.
 Für den Erfolg der Sprache kann das von Vorteil sein, sofern es schwer ist in dem Anwendungsbereich Fuß zu fassen oder dieser keine breite Anwender\*innen- oder Entwickler\*innenbasis besitzt.

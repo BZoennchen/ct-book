@@ -5,7 +5,7 @@ Für den Informationsbegriff gibt es verschiedene Modelle aus verschiedenen Bere
 
 Wir haben uns unterschiedliche Auffassungen von Information angesehen.
 Einigkeit der verschiedenen Disziplinen gibt es noch nicht.
-Der natur- und struturwissenschaftliche Informationsbegriff ist klar definiert und liefert ein Werkzeug um den Informationsgehalt zu messen.
+Der natur- und strukturwissenschaftliche Informationsbegriff ist klar definiert und liefert ein Werkzeug um den Informationsgehalt zu messen.
 Für Ingenieure von Informationssystemen ist er aus technischer Sicht wichtig und äußerst nützlich.
 
 Gleichzeitig ist er ungeeignet um die Informationsvermehrung, Verbreitung, Deutung und Wirkung in sozialen oder auch intelligenten Systemen zu analysieren.
@@ -14,7 +14,7 @@ Auch ist das beschriebene objektive und rein auf die [Syntax](def-syntax) bezoge
 
 Abhilfe könnten die Geisteswissenschaften bringen.
 Sie schlagen verschiedene, viel umfassendere aber leider auch unschärfere Informationsbegriffe vor.
-Die Semiotik gibt uns einen guten Gegenentwurf zur natur- und struturwissenschaftlichen Auffassung.
+Die Semiotik gibt uns einen guten Gegenentwurf zur natur- und strukturwissenschaftlichen Auffassung.
 Die Systemtheorie versucht den Informationsbegriff allumfassend für alle Systeme zu definieren.
 Dabei bedient sie sich eines hohen Abstraktionsniveaus, dem nur schwer zu folgen ist.
 Die Wissenspyramide nach Fuchs-Kittowski bietet eine solide Grundlage, steht aber im Widerspruch zu allen anderen betrachteten Begriffsdefinitionen.

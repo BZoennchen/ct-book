@@ -81,7 +81,7 @@ Daraufhin werden wir uns selbständig wieder von ihr entfernen.
 Dieser Prozess soll Ihnen aufzeigen, wie wir aus einer sehr konkreten Welt der Register, elektrischen Schaltungen und des endlichen Speichers, in eine abstrakte Welt der [Datenstrukturen](sec-data-structures) und [Algorithmen](def-algorithm) gelangen.
 Dieser Prozess des Abstrahierens ist ein wesentlicher Bestandteil des [Computational Thinkings](sec-what-is-ct) und kann auf vielerlei Probleme angewendet werden.
 
-Ihnen wird diese Übung möglichweise sehr kleinlich und technisch vorkommen und damit liegen Sie richtig.
+Ihnen wird diese Übung möglicherweise sehr kleinlich und technisch vorkommen und damit liegen Sie richtig.
 Die konkrete Welt ist kleinlich und technisch.
 Programmieren Sie in ``Python`` bewegen Sie sich bereits in einer abstrakten Welt.
 Vergleichen Sie {numref}`Abbildung {number} <fig-world-code-computer>`.
@@ -112,7 +112,7 @@ Die Adresse, als auch der Inhalt des gesamten Speichers ist [binär codiert](sec
 Der Zugriff auf den Inhalt einer ``Python``-[Liste](sec-list) funktioniert ähnlich.
 Auch hier greifen wir über eine **Adresse** auf einen **Bereich**, d.h. ein **Listenelement**, zu.
 Diese Adresse nennen wir **Index**.
-Sie ist eine Dezimalzahl welche zwischen 0 und (Länger der Liste - 1) liegt.
+Sie ist eine Dezimalzahl welche zwischen 0 und (Länge der Liste - 1) liegt.
 In einem **Speicherbereich** des [Arbeitsspeicher](def-main-memory) stehen exakt 8 [Bit](def-bit), dies gilt für eine ``Python``-Liste nicht.
 Diese ist viel flexibler und kann allerart von Daten enthalten.
 
@@ -419,7 +419,7 @@ System.out.println(z);
 
 ``z`` enthält den Wert -128.
 
-Da ein ``byte`` (eine 8 [Bit](def-bit)) ganze Zahle statt natürliche Zahl repräsentiert, wird das höchste [Bit](def-bit) als negativer Anteil interpretiert, siehe Abschnitt [Ganze Zahlen](sec-integers) Gleichung {eq}`eq:binary:integer`.
+Da ein ``byte`` (eine 8 [Bit](def-bit)) ganze Zahl statt natürliche Zahl repräsentiert, wird das höchste [Bit](def-bit) als negativer Anteil interpretiert, siehe Abschnitt [Ganze Zahlen](sec-integers) Gleichung {eq}`eq:binary:integer`.
 
 Ist dieses [Bit](def-bit) gleich $1$, so ist die Zahl negativ.
 Ist das [Bit](def-bit) dagegen $0$, so ist die Zahl positiv.
@@ -991,7 +991,7 @@ print(f"Our list in mememory: {memory[0:n_allocated_bytes]}")
 
 ### Mehrdimensionale Listen
 
-Wenn Sie ``alloc_list`` betrachten werden Sie festellen, dass eine Liste aus Elementen vom Datentyp ``to_data_type('list')`` nicht zulässig ist.
+Wenn Sie ``alloc_list`` betrachten werden Sie feststellen, dass eine Liste aus Elementen vom Datentyp ``to_data_type('list')`` nicht zulässig ist.
 Unsere Liste darf derzeit nur [primitive Datentypen](def-primitive-datatypes) (natürliche Zahlen, Zeichen und Adressen) beinhalten.
 
 Mehrdimensionale Listen aus Elementen eines [primitiven Datentyps](def-primitive-datatypes) lassen sich recht einfach erstellen, wenn wir anstatt einer Länge, für jede Dimension eine Länge anfügen.
@@ -1610,7 +1610,7 @@ class Memory():
         return mylist
 ```
 
-Wenn Sie die Klasse in die Datai ``mem.py`` packen, sieht der Code zur Verwendung wie folgt aus:
+Wenn Sie die Klasse in die Datei ``mem.py`` packen, sieht der Code zur Verwendung wie folgt aus:
 
 ```{code-cell} python3
 import mem

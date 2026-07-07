@@ -701,7 +701,7 @@ plot_picture(picture)
 
 Dreieck, Rechteck und Polygon hätten wir geschafft.
 Für den Kreis $K$ müssen wir zurück in unsere **abstrakte** Welt der geometrischen Objekte, denn einen Kreis mit lauter Segmenten darzustellen, ist möglich aber umständlich.
-Wir müsten erst ein Poylgon mit sehr vielen Segmenten berechnen.
+Wir müssten erst ein Polygon mit sehr vielen Segmenten berechnen.
 
 Die Punkte eines Kreises lassen sich durch eine *Kurve* beschreiben.
 Sei der Kreis durch seinen Mittelpunkt $m = (x_m, y_m)$ und den radius $r$ beschrieben dann sind

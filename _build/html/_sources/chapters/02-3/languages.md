@@ -47,4 +47,4 @@ Diesen haben wir auch im Abschnitt [Interpretation](sec-interpretation) kennenge
 Ein Computer kennt eigentlich keine Bedeutung im menschlichen Sinne. 
 Er kann lediglich Symbole manipulieren.
 
-Um die Sprache nutzten zu können, müssen wir sowohl Ihre [Syntax](def-syntax) als auch ihre [Semantik](def-semantik) erlernen.
+Um die Sprache nutzen zu können, müssen wir sowohl Ihre [Syntax](def-syntax) als auch ihre [Semantik](def-semantik) erlernen.

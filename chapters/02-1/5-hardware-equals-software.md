@@ -117,7 +117,7 @@ Er verwendete diese abstrakte Maschine um zu beweisen, dass es keinen Algorithmu
 ```{admonition} Das Entscheidungsproblem
 :name: def-entscheidungsproblem
 :class: definition
-Das Problem zu entscheiden ob ein beliebiger Ausdurck in der Prädikatenlogik erster Stufe ableitbar ist oder nicht.
+Das Problem zu entscheiden ob ein beliebiger Ausdruck in der Prädikatenlogik erster Stufe ableitbar ist oder nicht.
 ```
 
 Diese abstrakte Maschine, d.h. die Turingmaschine, stelle genau diese *effektive Prozedur* also einen *Algorithmus* dar.
@@ -146,7 +146,7 @@ Eine *Turingmaschine* $T$ besteht aus:
 4. Einer **endlichen Zustandsmenge** $Q$
 5. Einer **endlichen Menge** and **Endzuständen** $F \subseteq Q$
 
-Der Schreib-/Lesekopf ließt oder schreibt $0$, $1$ oder $\#$ in jeder Zeiteinheit an seine aktuelle Zelle auf dem Band.
+Der Schreib-/Lesekopf liest oder schreibt $0$, $1$ oder $\#$ in jeder Zeiteinheit an seine aktuelle Zelle auf dem Band.
 Dabei steht $\#$ für eine unbeschriebene Zelle, also das Leerzeichen.
 Der Kopf kann zudem in einer Zeiteinheit eine Zelle nach links oder rechts fahren oder stehenbleiben.
 Die Maschine befindet sich in einem von endlich vielen Zuständen.
@@ -192,8 +192,8 @@ Folgende Definition einer Turingmaschine $Q = \{q_0, q_e\}$, $F = \{q_e\}$ und $
 
 berechnet das Komplement einer Binärzahl.
 Dabei gehen wir davon aus, dass der Schreib-/Lesekopf auf das erste Zeichen der Eingabe zeigt (links).
-Die Maschine bewegt ihren Kopf einmal von links nach rechts und schreibt eine 0 wenn sie eine 1 ließt und eine 1 wenn sie eine 0 ließt.
-Sobald sie ein Leerzeichen $\#$ ließt geht sie in den Endzustand $q_e$.
+Die Maschine bewegt ihren Kopf einmal von links nach rechts und schreibt eine 0 wenn sie eine 1 liest und eine 1 wenn sie eine 0 liest.
+Sobald sie ein Leerzeichen $\#$ liest geht sie in den Endzustand $q_e$.
 
 Sie können die Turingmaschine auf folgender [Webseite](https://turingmachine.io/) ausführen.
 Kopieren Sie diese Beschreibung der Turingmaschine in das rechte Feld.

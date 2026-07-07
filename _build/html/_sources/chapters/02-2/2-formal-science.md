@@ -15,12 +15,12 @@ kernelspec:
 (sec-informationtheorie)=
 ## Nachrichtentechnik 
 
-1948 griff Claude E. Shannon den physikalischen Begriff der *Entropie* auf und übetrug ihn auf die Nachrichtenübertragung.
+1948 griff Claude E. Shannon den physikalischen Begriff der *Entropie* auf und übertrug ihn auf die Nachrichtenübertragung.
 Sein Modell prägte die Informatik über viele Jahre und ist heute noch relevant.
 Es ist äußerst wichtig zu verstehen, dass es Shannon um die *Informationsübertragung* ging.
 Sie ist für sein Modell von zentraler Bedeutung.
 
->Frequently the messages have meaning; that is, they refer to or are correlated according to some system with certain physical or conceptual entities. These semantic aspects of communication are irrelevant to the engineering problem. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design -- {cite}`shannon:1948`
+>Frequently the messages have meaning; that is, they refer to or are correlated according to some system with certain physical or conceptual entities. These **semantic aspects of communication are irrelevant to the engineering problem**. The significant aspect is that the actual message is one selected from a set of possible messages. The system must be designed to operate for each possible selection, not just the one which will actually be chosen since this is unknown at the time of design -- {cite}`shannon:1948`
 
 Shannon war sich bewusst, dass zur Information auch Ihre Bedeutung ([Semantik](def-semantik-semiotik)) gehört, doch befand er diese für die *Informationsübertragung* über ein Medium als irrelevant.
 
@@ -42,8 +42,8 @@ Shannon's Schema der Nachrichtenübertragung bzw. Kommunikation.
 
 In diesem Modell ist die Nachricht/Symbolfolge/Zeichenfolge eine *Information* und der *Informationsgehalt* steigt mit der Anzahl der möglichen Nachrichten.
 
-> If the number of [possible] messages [...] is finite then this number [...] can be regarded as a measure of the information produced when one message [... from the set of possible messages], all
-choices being equally likely -- Claude E. Shannon
+>If the number of [possible] messages [...] is finite then this number [...] can be regarded as a measure of the information produced when one message [... from the set of possible messages], all
+>choices being equally likely -- Claude E. Shannon
 
 ### Information und Sinn
 
@@ -59,16 +59,27 @@ Dies liegt daran, dass wir automatisch die [Semantik](def-semantik-semiotik) (Be
 Wir verwechseln dabei die Begriffe **Information** und **Sinn**.
 Das heißt beide Nachrichten enthalten gleich viel Information aber die zweite *ergibt keinen Sinn*.
 
-Shannon's Definition ist rein [syntaktisch](def-syntax), denn Maschinen fehlt (bis heute) die Eigenschaft der semantischen Betrachtung---d.h. der Sinnerschließung oder der [semiotischen](sec-semiotik) Interpretation.
+An dieser Stelle mag uns der analytische Philosoph Donald Davidson helfen. 
+Er vertrat eine *wahrheitskonditionale Bedeutungstheorie*, d.h. den Sinn (die Bedeutung) eines Satzes zu kennen heißt, seine Wahrheitsbedingungen zu kennen, also zu wissen, unter welchen Umständen der Satz wahr ist.
+*Wahrheit*, nach {cite:t}`davidson:2005`, ließe sich allerdings nicht weiter definieren sondern sei etwas das wir immer schon vor-theoretisch verstehen. 
+Der Sinn ergibt sich allerdings nicht nur aus der Nachricht, sondern aus dem Kontext in dem diese Nachricht steht und dazu können wir alle möglichen anderen Wörter/Sätze und deren Sinn zählen.
+Wir kommen zu dem Problem, dass jede Defintion eines Begriffs über andere Begriffe in einer Sprache gesetzt wird und dass der Sinn sich, durch Veränderungen in soziale Praktiken, fortwährend verschiebt.
+Laut Davidson sogar durch die konkreten Gesprächssituation: Die tatsächliche Bedeutung einer Äußerung in einer gegebenen Situation hängt von einer ad-hoc konstruierten "*passing theory*" ab, die Sprecher und Hörer im Moment der Interaktion gemeinsam entwickeln---notfalls auch entgegen der wörtlichen, konventionellen Bedeutung. 
+In seiner radikalen Spätphase zog Davidson sogar den Schluss, es gebe im strengen Sinn "keine Sprache" als feste, geteilte Konvention, sondern nur die je aktuelle Interpretationsleistung zählt.
+
+Shannon's Definition ist dagegen rein [syntaktisch](def-syntax), denn Maschinen fehlt (bis heute) die Eigenschaft der semantischen Betrachtung---d.h. der Sinnerschließung oder der [semiotischen](sec-semiotik) Interpretation.[^1]
 In der Informatik gibt es deshalb (noch) keine befriedigende Definition des Sinns, welcher der Bedeutung der betrachteten Information gerecht wird.
 Im Sinne der Informationsverarbeitung bleiben wir bei der [syntaktischen](def-syntax) Betrachtung.
 Jedoch sei erneut betont, dass sich die Bedeutung oder der Sinn in Informationssysteme einschleicht, wenn diese Auswirkungen auf das gesellschaftliche Leben haben.
-Ein System, welches Ihnen automatisch einen Kredit aufgrund Ihrer getätigten Ausgaben verweigert, tut dies Aufgrund des Sinns den die Bank aus den Informationen zieht. 
+Ein System, welches Ihnen automatisch einen Kredit aufgrund Ihrer getätigten Ausgaben verweigert, tut dies aufgrund des Sinns, den die Bank aus den Informationen zieht.
+In anderen Worten: Ein System kann einen Sinn oder eine normative Regel realisieren aber weder verstehen noch verantworten.
+
+[^1]: Große Sprachmodelle stellen uns derzeit vor neue Fragen z.B. inwieweit die reine Beziehung von Wörtern in einem Text---denn das ist es was Sprachmodelle "lernen"---schon ausreicht um einen Teil des Sinns zu erfassen. Für eine tiefere Diskussion dieser faszinierenden Fragen über die Bedeutung und Funktionsweise unserer Sprache verweisen wir auf {cite:p}`bender:2020`, {cite:p}`piantadosi:2022` und {cite:p}`sogaard:2023`?
 
 Gehen wir zurück zu unserem Einführungsbeispiel in der U-Bahn.
 Falls der Wetterbericht Ihnen lediglich mitteilen kann ob es regnet oder nicht, so ist der Informationsgehalt von "es regnet" gering.
 Wenn aber der Wetterbericht Ihnen unterschiedliche Arten von Regen oder andere Wetterlagen berichten kann, so trägt eine dieser konkreten Wetterlagen einen großen Informationsgehalt in sich.
-Ob es draußen 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
+Ob es draußen aber 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
 Das heißt zwei durchaus sehr unterschiedliche Informationen können den annähernd gleichen Sinn ergeben.
 Ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon's Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.
 
@@ -85,16 +96,18 @@ Wie wahrscheinlich ist es, dass ein Zeichen $X$ einer Nachricht gleich $\sigma$ 
 
 $$P(X = \sigma) \stackrel{?}{=} p_\sigma$$
 
-Wenn jedes Zeichen mit gleicher Wahrscheinlichkeit in einer Nachricht auftritt, dann ist 
+$X$ modellieren wir als diskrete Zufallsvariable.
+Wenn nun jedes Zeichen mit gleicher Wahrscheinlichkeit in einer Nachricht auftritt, dann ist 
 
 $$P(X = \sigma) = \frac{1}{N},$$
 
 wobei $N = |\Sigma|$ gleich der Anzahl der Zeichen im Alphabet $\Sigma$ ist.
 
-Wie viel Information steckt dann in einem Zeichen?
-Anders gefragt: Wie viel Unsicherheit eliminiert ein Zeichen oder wie viel Ja/Nein Fragen müssten wir stellen um auf das übertragene Zeichen $\sigma$ zu kommen?
+Die Frage "Wie viel Information 'steckt' dann in einem Zeichen?" lässt sich dann mit der Frage "Wie viel Unsicherheit eliminiert ein Zeichen" oder "Wie viel Ja/Nein Fragen müssten wir stellen um auf das übertragene Zeichen $\sigma$ zu kommen?" übersetzen.
+Dies ist einer der wohl merkwürdigsten Wendungen, denn plötzlich wird Information über Unsicherheit bzw. Unvorhersehbarkeit definiert und damit wird Gewissheit paradoxerweise zum Symptom von *Rauschen*.
+
 Je kleiner $p_\sigma$, desto mehr Unsicherheit wird eliminiert.
-Ein Vorschlag wäre der deshalb
+Ein Vorschlag wäre deshalb
 
 $$\frac{1}{p_\sigma}.$$
 
@@ -159,6 +172,11 @@ Kurz gesagt: Je größer die Gewissheit, desto kleiner ist der Informationsgehal
 Oder anders ausgedrückt: Je größer die *Überraschung*, desto größer ist der Informationsgehalt.
 Information führt zur Beseitigung von Unsicherheit.
 Je mehr Unsicherheit beseitigt wird, desto größer ist der Informationsgehalt!
+
+Dabei müssen wir uns immer wieder vor Augen halten, dass Shannon mit "Gewissheit" oder "Überraschung" spricht, dann meint er das nicht psychologisch, sondern rein statistisch.
+**Es geht um die Gewissheit des Systems basierend auf Wahrscheinlichkeiten, nicht um das Gefühl einer Person.**
+Der Empfänger ist kein denkender Mensch, sondern ein mechanischer oder digitaler Apparat (z. B. ein Telegrafenempfänger, ein Funkgerät oder eine Festplatte) und die "Gewissheit" ist vorab im System fest verdrahtet und zwar in Form von Wahrscheinlichkeiten.
+Nochmals: Für die Shannon-Information ist es völlig egal, ob die Nachricht ein tiefgründiges Liebesgedicht ist oder das zufällige Rauschen eines kaputten Fernsehers. Wenn beide Sequenzen gleich unwahrscheinlich (zufällig) sind, haben sie für Shannon den gleichen Informationsgehalt.
 
 Zwischen der Entropie eines Zeichens und den notwendigen Bits einer Nachricht gibt es einen schönen Zusammenhang:
 Ist ein bestimmtes Alphabet $\Sigma$ mit all den Auftrittswahrscheinlichkeiten seiner Zeichen gegeben, so benötigen wir im Mittel
@@ -237,7 +255,7 @@ Formale Methoden sind unter anderem eine Anstrengung, um wesentliche semantische
 Verlassen wir die Sicht der Nachrichtenübertragung, so hilft uns der klassische Informationsbegriff von Shannon nicht sonderlich weiter.
 Wie etwa unterscheidet sich der *Informationsgehalt* von einer zufälligen Bitfolge der Länge $n$ zu einer angenäherten Darstellung der Kreiszahl $\pi$ beschränkt auf $n$ [Bits](def-bit)?
 In Shannons Theorie agiert ein Zusammenschluss von Akteuren (Sender, Empfänger, Kanal, Nachricht).
-Um seinen Informationsbegriff auf eine einzelne Zeichenkette zu nutzten, müssten wir uns irgendwie einen künstlichen Nachrichtenkanal und Sender konstruieren.
+Um seinen Informationsbegriff auf eine einzelne Zeichenkette zu nutzen, müssten wir uns irgendwie einen künstlichen Nachrichtenkanal und Sender konstruieren.
 
 Anstatt der Perspektive aus der Nachrichtenübertragung betrachtet die algorithmische Informationstheorie, mithilfe der Kolmogorow-Komplexität, die algorithmische Beschreibung einer Zeichenfolge.
 Die Kolmogorow-Komplexität einer Zeichenkette ist die Länge ihrer kürzesten Beschreibung in Form eines Algorithmus.
@@ -276,7 +294,7 @@ Folgender Algorithmus/Beschreibung
 ```
 
 benötigt lediglich 7 Zeichen und erzeugt die gleiche Zeichenkette.
-Wie sieht es nun aus wenn wir aus dem mittleren $\text{a}$ ein $\text{b}$ machen?
+Wie sieht es nun aus wenn wir aus dem mittleren $\text{b}$ ein $\text{a}$ machen?
 Wenn wir also
 
 $$\text{ababababaaababababab}$$

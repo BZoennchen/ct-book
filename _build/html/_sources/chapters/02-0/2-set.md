@@ -26,7 +26,7 @@ oder ihre Elemente als Bedingung definieren
 $$M = \{x : x \text{ ist eine Primzahl}\}.$$
 
 Selbst wenn wir keine Ahnung haben, wie wir Primzahlen berechnen können, können wir die Menge aller Primzahlen einfach hinschreiben.
-Für immer wiederkehrende Mengen haben sich Mathematiker\*innen auf ganz bestimmte Symbole geeignet.
+Für immer wiederkehrende Mengen haben sich Mathematiker\*innen auf ganz bestimmte Symbole geeinigt.
 
 ## Zahlenmengen
 

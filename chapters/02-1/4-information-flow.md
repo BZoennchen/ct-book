@@ -58,7 +58,7 @@ Im *Speicher* befinden sich die Anweisungen der Informationsmanipulation, d.h. d
 ```{admonition} Bus
 :name: def-bus
 :class: definition
-Ein *Bus* ist ein Kommunikationssystem über das [Bits](def-bit) und [Bytes](def-byte) übetragen werden.
+Ein *Bus* ist ein Kommunikationssystem über das [Bits](def-bit) und [Bytes](def-byte) übertragen werden.
 Der *Bus* verbindet durch elektrische Leitungen verschiedene Komponenten innerhalb eines Computers oder zwischen mehreren Computern.
 ```
 
@@ -70,7 +70,7 @@ Die *Hauptplatine* ist jenes Bauteil auf dem die CPU-nahen Komponenten (CPU, Hau
 
 Die *Kontrolleinheit* besteht aus einer Komposition von Gattern, einem *Instruktionsregister* sowie einem [Befehlszeiger](def-program-counter).
 Sie fungiert als Programminterpreter oder "Mastermind" und delegiert Aufgaben an die jeweils dafür geeigneten Recheneinheiten weiter.
-Sie ließt die Programmanweisungen aus dem Hauptspeicher und realisiert diese indem sie die *arithmetische/logische Einheit* mit Instruktionen und den notwendigen, aus dem Hauptspeicher geladenen Daten versorgt.
+Sie liest die Programmanweisungen aus dem Hauptspeicher und realisiert diese indem sie die *arithmetische/logische Einheit* mit Instruktionen und den notwendigen, aus dem Hauptspeicher geladenen Daten versorgt.
 Fließkommaoperationen delegiert die Kontrolleinheit häufig an eine spezielle (hier nicht eingezeichnete) *Fließkomma-Recheneinheit*.
 Der *Befehlszeiger* beinhaltet eine Hauptspeicheradresse, die auf den aktuelle auszuführenden Befehl im Hauptspeicher zeigt. 
 Der Befehl $\text{ADD}$ steht zum Beispiel für die Addition von zwei ganzen Zahlen.

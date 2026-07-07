@@ -43,7 +43,7 @@ Euklid berechnet den ggT, indem er nach einem gemeinsamen "Maß" für die Länge
 Dazu zieht er wiederholt die kleiner der beiden Längen von der größeren ab.
 Der ggT verändert sich dadurch nicht.
 
-```{admonition} Gesetzt des größter gemeinsamer Teiler
+```{admonition} Gesetz des größter gemeinsamer Teiler
 :name: theorem-ggt
 :class: theorem
 
@@ -78,7 +78,7 @@ $$\text{ggT}(n,m) = \text{ggT}(d,m) = \text{ggT}(n,d) = (p_1 \cdot \ldots \cdot 
 
 ### Version 1
 
-Aus dem Gesetzt des größter gemeinsamer Teiler, folgt der euklidische Algorithmus.
+Aus dem Gesetz des größter gemeinsamer Teiler, folgt der euklidische Algorithmus.
 Wir starten mit zwei Zahlen, und ziehen solange immer und immer wieder die kleinere von der größeren ab, bis beide Zahlen gleich sind.
 Das Ergebnis ist der größter gemeinsamer Teiler der beiden ursprünglichen Zahlen!
 
@@ -171,7 +171,7 @@ Erneut treten wir in die Wiederholung ein, da weiterhin $m > 0$ gilt. Es ergibt 
 
 Da nun $m$ den Wert $0$ hat, verlassen wir die Wiederholung und das Ergebnis steht in $n$.
 
-Lassen Sie uns den Algorithmus in reneut in ein ``Python``-Programm überführen:
+Lassen Sie uns den Algorithmus erneut in ein ``Python``-Programm überführen:
 
 ```{code-cell} python3
 def gcd(n,m):

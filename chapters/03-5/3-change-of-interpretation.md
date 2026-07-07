@@ -71,7 +71,7 @@ Dabei wird die ``5`` für die Operation als Zahl in ihrer ursprünglichen Binär
 
 Dies funktioniert jedoch nicht mit einem Zeichen.
 ``Python`` verbietet die Bitverschiebung für Zeichen obwohl das Zeichen ja auch als Bitfolge im Speicher liegt.
-Folgender Code führt zu einem Fehler, da er kaum einen Sinn oder Nutzten hat:
+Folgender Code führt zu einem Fehler, da er kaum einen Sinn oder Nutzen hat:
 
 ```python
 'a' << 1

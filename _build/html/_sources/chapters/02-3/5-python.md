@@ -19,7 +19,7 @@ In diesem Abschnitt versuchen wir hingegen die Sprache mit anderen Sprachen zu v
 
 ## Laufzeitvergleiche
 
-Ein Vergleich von Programmiersprachen geht über die eignentliche Sprache hinaus.
+Ein Vergleich von Programmiersprachen geht über die eigentliche Sprache hinaus.
 Wir analysieren nicht nur die Grammatik einer Sprache oder was mit dieser ausgedrückt werden kann, sondern auch wie verbreitet die Sprache ist oder wie leicht es fällt Programme mit ihr zu schreiben.
 
 Insbesondere interessiert uns die Laufzeit der Programme die wir in einer Sprache verfassen.
@@ -83,7 +83,7 @@ Im Unterschied zu ``MATLAB`` und ``Mathematica``, gegen die sich ``Python`` im w
 
 Wissenschaftler\*innen sind keine Programmierexpert\*innen, legen besonders viel Wert auf die Reproduzierbarkeit und haben oft auch noch hohe Ansprüche an die Geschwindigkeit des ausgeführten Codes.
 Sie entwickeln keine großen Geschäftsanwendungen aber durchaus effiziente Algorithmen.
-Im wissenschaftlichen Bereich der Modellierung und Simulation programmierte man beispielsweise hauptsächlich in ``C/C++`` und ``Fortran`` -- zwei nicht gerade einfache Spachen.
+Im wissenschaftlichen Bereich der Modellierung und Simulation programmierte man beispielsweise hauptsächlich in ``C/C++`` und ``Fortran`` -- zwei nicht gerade einfache Sprachen.
 Die Möglichkeit sehr schnell gut leserliche Skripte zu schreiben, die auch noch performant laufen (dazu gleich mehr), brachte ``Python`` in der Wissenschaft schnell voran.
 Und da heute die Methoden des wissenschaftlichen Rechnens, *Big Data Analysis* und des *Machine Learnings* auch in der Wirtschaft immer wichtiger werden, überträgt sich dieser Erfolg auf die Wirtschaft.
 
@@ -107,15 +107,15 @@ Das können Sie sich gar nicht vorstellen.
 Was Sie nicht kostenfrei und offen bekommen sind die riesigen Rechnerressourcen die in großen Rechenzentren schlummern.
 
 Wir hatten Eingangs erwähnt, dass man sich oft zwischen Performance und Lesbarkeit bzw. Entwicklungszeit entscheiden muss.
-``Python`` trifft hier einen ganz bestimmten "Sweetspot": die Sprache ist maschinenenfern, sehr leserlich, man bekommt schnell viel zustande und dennoch ist sie leistungsstark, sofern wir das Ökosystem gut nutzen.
-Pakte verlagern aufwendige Berechnungen in ``C/C++`` oder gar ``Fortran``-Programme.
+``Python`` trifft hier einen ganz bestimmten "Sweetspot": die Sprache ist maschinenfern, sehr leserlich, man bekommt schnell viel zustande und dennoch ist sie leistungsstark, sofern wir das Ökosystem gut nutzen.
+Pakete verlagern aufwendige Berechnungen in ``C/C++`` oder gar ``Fortran``-Programme.
 Diese Sprachen sind maschinennah und [kompilierbar](def-compiler) und damit leistungsstark.
 So heißt es auf der offiziellen ``SciPy``-Seite:
 
 >SciPy wraps highly-optimized implementations written in low-level languages like Fortran, C, and C++. Enjoy the flexibility of Python with the speed of compiled code.
 
 Wie dies funktioniert, soll uns an dieser Stelle noch nicht kümmern.
-Durch das Zusammenspiel zwischen hocheffizientem kompiliertem Code und leicht leserlichen interpretierten Code bekommen wir beides: Die Leistung der maschinennahen Spachen und Abstraktion und Lesbarkeit durch ``Python``!
+Durch das Zusammenspiel zwischen hocheffizientem kompiliertem Code und leicht leserlichen interpretierten Code bekommen wir beides: Die Leistung der maschinennahen Sprachen und Abstraktion und Lesbarkeit durch ``Python``!
 
 ``Python`` hat aber auch seine Tücken.
 Als [dynamisch getypte](sec-type-systems) sehr flexible und [interpretierte](def-interpreter) Sprache kann es schwer sein Garantien für den geschriebenen Code sicherzustellen.
@@ -156,7 +156,7 @@ Entwickler:innen, die hocheffiziente Python-Pakete entwickeln, benötigen häufi
 
 Als letzter Punkt ist das sogenannte *GIL (Global Interpreter Lock)-Problem* von [CPython](https://docs.python.org/3.11/) zu nennen.
 CPython ist die vorherrschende Implementierung von Python.
-Der *GIL* behindert die effiziente Nutzung von Multiprozessor-Systemen da durch ihn keine echte parallele Ausführung mehrere sog. Threads möglch ist.
+Der *GIL* behindert die effiziente Nutzung von Multiprozessor-Systemen da durch ihn keine echte parallele Ausführung mehrere sog. Threads möglich ist.
 Um die Parallelität der Multiprozessoren nutzen zu können, müssen Entwickler\*innen anstatt (leichtgewichter) Threads mehrere (schwergewichtige) Prozesse verwenden.
 In jedem Prozess läuft dann ein eigener CPython-[Interpreter](def-interpreter).
 Pakete/Module wie ``numpy`` nutzten vorkompilierten Code, welcher wiederum durchaus auf Threads basieren kann.

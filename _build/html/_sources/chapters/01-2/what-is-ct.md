@@ -24,7 +24,7 @@ Es gibt zahlreiche Definitionen von *Computational Thinking* – je nach Quelle 
 
 Spätere Definitionen konkretisieren diesen Gedanken. So argumentieren {cite:t}`shute:2017`, dass CT notwendig ist, um Probleme algorithmisch – mit oder ohne Computer – zu lösen. Sie beschreiben CT als Denk- und Handlungsform, die sich durch bestimmte kognitive Fähigkeiten manifestiert und auf den Prinzipien der Informatik basiert. Computational Thinking sei eine Tätigkeit, bei der Werkzeuge und Techniken der Informatik angewendet werden, um über natürliche wie künstliche Systeme und Prozesse nachzudenken.
 
-{cite:t}`shute:2017` argumentieren, dass CT benötigt wird um Probleme algoritmisch (mit und ohne Hilfe des Computers) zu lösen. CT sei eine Art des Denkens und Handelns, welches sich durch bestimmte Fähigkeiten manifestiert. Es basiere auf den zentralen Prinzipien der Informatik. Es kann als Tätigkeit aufgefasst werden bei der Werkzeuge und Techniken der Informatik angewendet werden, um sowohl über natürliche wie auch künstliche Systeme und Prozesse nachzudenken.
+{cite:t}`shute:2017` argumentieren, dass CT benötigt wird um Probleme algorithmisch (mit und ohne Hilfe des Computers) zu lösen. CT sei eine Art des Denkens und Handelns, welches sich durch bestimmte Fähigkeiten manifestiert. Es basiere auf den zentralen Prinzipien der Informatik. Es kann als Tätigkeit aufgefasst werden bei der Werkzeuge und Techniken der Informatik angewendet werden, um sowohl über natürliche wie auch künstliche Systeme und Prozesse nachzudenken.
 
 Eine weitere präzise Beschreibung liefert Julian Fraillon et al. in der ICILS-Studie {cite}`fraillon:2019`:
 

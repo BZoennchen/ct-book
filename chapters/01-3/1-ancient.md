@@ -49,7 +49,7 @@ Er beobachtet, dass zur gleichen Zeit zwei Obelisken an verschiedenen Orten unte
 Erstaunlicherweise schloss er daraus auf die Krümmung der Erde.
 Und, da die Griechen von der Perfektion des Kreises überzeugt waren, folgerte Eratosthenes, dass die Erde eine Kugel sei.
 Er war sogar in der Lage die Erdkrümmung relativ genau zu berechnen und dadurch auf den Umfang der Erde zu schließen.
-Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syren (ca. 800 km) ablief und berechnete.
+Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syene (ca. 800 km) ablief und berechnete.
 
 ```{code-cell} python3
 ---

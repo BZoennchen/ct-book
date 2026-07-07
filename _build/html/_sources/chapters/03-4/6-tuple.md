@@ -28,7 +28,7 @@ numbers = (1, 2, 3, 4, 5)
 print(numbers[2:4])
 ```
 
-Der große Unterschied lieft in der Veränderbarkeit, denn Tupel ``tuple`` sind **unveränderlich** (engl. **immutable**)!
+Der große Unterschied liegt in der Veränderbarkeit, denn Tupel ``tuple`` sind **unveränderlich** (engl. **immutable**)!
 
 ```{admonition} Unveränderlichkeit
 :class: attention

@@ -55,7 +55,7 @@ In all diesen Fällen gehen wir von einer bestimmten **Interpretation** aus mit 
 Die Graphitpartikeln (Repräsentant) interpretieren wir als Apfel (Bedeutung).
 Die Zeichenfolge ``2 + 2 = 4`` (Repräsentant) interpretieren wir als mathematisch Gleichung (Bedeutung).
 Die Zeichenfolge ``23.10.2022`` interpretieren wir als Datum (Bedeutung) und das Stop-Symbol als Anweisung beim Autofahren.
-Dies setzt vorraus, das wir Äpfel, Tage, Gleichungen und den Straßenverkehr kennen.
+Dies setzt voraus, das wir Äpfel, Tage, Gleichungen und den Straßenverkehr kennen.
 
 Die wissenschaftliche Disziplin, welche den Zusammenhang zwischen Repräsentant und seiner Bedeutung untersucht ist die sog. Bedeutungslehre oder auch [Semantik](def-semantik-semiotik).
 Sie ist ein Gebiet der Semiotik (Zeichentheorie).
@@ -75,7 +75,7 @@ Diese Wirkung wird im letzten Gebiet der Semiotik, der sog. *Pragmatik* untersuc
 Die *Semantik* (auch Bedeutungslehre) ist eine wissenschaftliches Teilgebiet der Semiotik (auch Zeichentheorie), welche den Zusammenhang zwischen Repräsentant und seiner Bedeutung untersucht.
 ```
 
-Um die Zeichenfolge oder Symoble als etwas bestimmtes zu erkennen, müssen diese in einer ganz bestimmten Art und Weise niedergeschrieben werden---sie müssen eine gewisse Struktur aufweisen.
+Um die Zeichenfolge oder Symbole als etwas bestimmtes zu erkennen, müssen diese in einer ganz bestimmten Art und Weise niedergeschrieben werden---sie müssen eine gewisse Struktur aufweisen.
 Diese Vorschrift oder das Regelsystem zur Kombination elementarer Zeichen zu zusammengesetzten Zeichen in Zeichensystemen nennt man [Syntax](def-syntax).
 Die Syntax ist ebenfalls eine der drei Disziplinen der Semiotik.
 
@@ -107,7 +107,7 @@ Erklären Sie die Begriffe Syntax und Semantik in Ihren eigenen Worten anhand de
 
 In der Informatik tritt anstelle der allgemeinen [Semantik](def-semantik-semiotik) die sog. *logische*, *formaler* oder auch *reine* Semantik.
 In Abgrenzung zur Semantik im allgemeinen Sinn arbeitet die [(formale) Semantik](def-semantik) in der Informatik mit rein formalen, logisch-mathematischen Methoden.
-Damit is gemeint, dass die Bedeutungen nicht länger (gesellschaftlich) untersucht, sondern durch explizite Regeln **unmissverständlich** festgelegt werden.
+Damit ist gemeint, dass die Bedeutungen nicht länger (gesellschaftlich) untersucht, sondern durch explizite Regeln **unmissverständlich** festgelegt werden.
 Die (formale) Semantik beschäftigt sich somit mit der exakten Bedeutung von Termen in (formalen) Sprachen, wie beispielweise Programmiersprachen.
 
 ```{admonition} Semantik (Informatik)
@@ -193,7 +193,7 @@ Z -> '0' | '1' | '2' ...
 
 Wir können also z.B. ``E`` zu ``T + E`` ableiten.
 ``E`` steht---durch die Semantik---für einen Ausdruck, ``T`` für einen Term, ``F`` für einen Faktor und ``Z`` für eine Zahl.
-Ein Ausdruck wie er in unserem obigen Programm steht, also ``3 + 5 * 10`` kann nach diesen Relgen nur ein Term oder eine (syntaktische) Addition aus Term und Ausdruck sein.
+Ein Ausdruck wie er in unserem obigen Programm steht, also ``3 + 5 * 10`` kann nach diesen Regeln nur ein Term oder eine (syntaktische) Addition aus Term und Ausdruck sein.
 Unser Beispiel entsteht wie folgt:
 
 ```
@@ -202,17 +202,17 @@ E -> T '+' E -> F '+' E -> Z '+' E -> '3' '+' T -> '3' '+' T
   -> '3' '+' '5' '*' F -> '3' + '5' '*' Z -> '3' '+' '5' '*' '10'
 ```
 
-Diese Ableitung hat nichts mit einer arithmethschen Berechnung zu tun.
+Diese Ableitung hat nichts mit einer arithmetischen Berechnung zu tun.
 Sie ist die stupide Umwandlung von Zeichen in andere Zeichen anhand der oben aufgelisteten Regeln, welche wir auch als *Grammatik* bezeichnen.
 Dennoch legen diese Regeln fest, dass ein ``E`` zu einem ``Z * Z`` umgewandelt werden kann, aber ein ``F`` nicht zu einem ``Z + Z`` sondern nur in ein ``'(' Z + Z ')'``.
-Dadurch unterstützt die Syntax die *semantische Auswertung*, denn sobald bei dieser Auswertung ein ``F`` auftaucht, kann ``F`` getrennt vom rest ausgewertet werden.
+Dadurch unterstützt die Syntax die *semantische Auswertung*, denn sobald bei dieser Auswertung ein ``F`` auftaucht, kann ``F`` getrennt vom Rest ausgewertet werden.
 In unserem Beispiel bedeutet dies, dass nach den Ableitungen
 
 ```
 E -> T + E -> F + E
 ```
 
-klar ist, dass ``E`` *semenatisch* zu ``5 * 10`` und damit zu ``50`` ausgewertet werden kann und ``T`` zu ``3`` ausgewertet werden kann.
+klar ist, dass ``E`` *semantisch* zu ``5 * 10`` und damit zu ``50`` ausgewertet werden kann und ``T`` zu ``3`` ausgewertet werden kann.
 In anderen Worten: Die *semantische* Punkt-vor-Strich-Regel ist bereits durch *syntaktische Ableitungsregeln* strukturell vorgegeben.
 
 Zusammenfassend gibt die Syntax vor, welcher Text ein gültiger Programmiercode ist und die Semantik gibt vor welche Operationen---realisiert durch digitale Schaltungen---der Computer aufgrund des Texts ausführt.
@@ -276,7 +276,7 @@ Mit dieser Interpretation repräsentiert die Bitfolge $00$ die Zeichenkette $I(0
 Durch die **Interpretation** $I$ erlangt der **Repräsentant** $r \in R$ seine **Bedeutung** $I(r) \in B$.
 
 Diese Bedeutung kann wiederum ein Repräsentant einer anderen Interpretation sein.
-Die auf dem Bildschirm angezeigte Zeichenfolge "Apfel" wird als Zeichenkette ``Apfel`` repräsentiert welche widerum durch die Bitfolge ``00`` repräsentiert wird.
+Die auf dem Bildschirm angezeigte Zeichenfolge "Apfel" wird als Zeichenkette ``Apfel`` repräsentiert welche wiederum durch die Bitfolge ``00`` repräsentiert wird.
 Auch kann ein Repräsentant durch verschiedenen Interpretationen unterschiedliche Bedeutungen annehmen.
 In den obigen Beispielen repräsentiert die Bitfolge ``00`` einmal die Zeichenkette ``Apfel`` und einmal die Zahl 0. 
 
@@ -387,7 +387,7 @@ Beschreiben Sie informell $R$, $B$ und $I$ für die Tastatur, ein Klavier und ei
 
 ## Rechnen und Denken
 
-Es stellt sich die Frage worin der Unterchied zwischen der *semiotischen* und der *formalen* Welt liegt.
+Es stellt sich die Frage worin der Unterschied zwischen der *semiotischen* und der *formalen* Welt liegt.
 In anderen Worten: Worin liegt der Unterschied zwischen der formalen Interpretation eines Bildschirms einer Bitfolge in Pixelwerte und unserer semiotischen Interpretation mit der wir diese Pixelwerte als Apfel interpretieren.
 Genau an dieser Stelle kommt es zu einer merkwürdigen Überschreitung des operational geschlossenen Systems der symbolischen Manipulationen und des anderen operational geschlossenen Systems der Gedanken oder mentalen Operationen.
 Die beiden Systeme scheinen miteinander zu kommunizieren.
@@ -395,7 +395,7 @@ Die beiden Systeme scheinen miteinander zu kommunizieren.
 Nochmals sei gesagt, dass die Systeme *operational geschlossen* sind, denn weder bohren sich die Symbole in unseren Kopf noch wandern Gedanken in den Computer.
 Im Beispiel moderner ChatBots, die auf großen *Sprachmodelle* basieren, erfolgt diese Mensch-Maschinen-Kommunikation durch das gemeinsame Medium der Sprache.
 Und im Fall des Bildes eines Apfels auf dem Bildschirm erfolgt die Kommunikation über das Medium der visuellen Darstellung.
-Was aber---um es erneut zu betonen---nicht bedeutet, dass Mensch und Maschine Spache oder visuelle Darstellugn auf die gleiche Weise "verstehen".
+Was aber---um es erneut zu betonen---nicht bedeutet, dass Mensch und Maschine Sprache oder visuelle Darstellung auf die gleiche Weise "verstehen".
 Vielmehr operieren beide Systeme komplett unterschiedlich---das eine rechnet, das andere denkt.
 
 Die Semantik eines Programms bestimmt welche digitalen Operationen der Computer ausführt.
@@ -456,6 +456,6 @@ Gabriel warnt unter anderem vor einem fehlgeleiteten Sprachgebrauch.
 >Eine Spezies, die nicht über Jahrmillionen Evolution natürlich entstanden ist, ist nicht dazu geeignet, ein geistiges Innenleben zu führen.
 >Es fehlen die notwendigen biologischen Vorraussetzungen. -- {cite}`gabriel:2018` s. 205-206
 
-Die Diskussionen bleiben spannend und offfen.
+Die Diskussionen bleiben spannend und offen.
 Sie betreffen nicht nur den Bereich der künstlichen Intelligenz, sondern vielmehr unser Menschenbild.
 Im Kapitel [Was ist Information?](sec-information) schließen wir an diese Diskussion an, indem wir den Informationsbegriff aus verschiedenen Richtungen kritisch betrachten.

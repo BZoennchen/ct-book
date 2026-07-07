@@ -61,7 +61,7 @@ Alle andere Art der Bewegung wurde ihm verwehrt.
 Er konnte keinen Laut von sich geben, den Finger nicht rühren und die Zehen nicht zucken lassen.
 Er konnte jedoch Anweisungen verstehen.
 Seine kognitive Wahrnehmung blieb uneingeschränkt.
-Stellen Sie sich nun vor Sie sind der Artzt oder die Ärtztin von Dominique.
+Stellen Sie sich nun vor Sie sind der Arzt oder die Ärztin von Dominique.
 
 ```{exercise} Blinzeln des Alphabets
 :label: blinking-alphabet-exercise
@@ -137,7 +137,7 @@ In unserem Fall könnten wir uns darauf einigen, dass zweimal schnell blinzeln b
 Im Grunde schicken sich die beiden Teilnehmer\*innen der Kommunikation bestimmte Informationen hin und her.
 Der oder die Sprecher\*in beginnt mit ``A`` und Dominique blinzelt oder wartet.
 Der oder die Sprecher\*in wartet eine kurze Weile und falls kein Blinzeln kommt spricht sie/er das ``B`` aus.
-Notiert sie/er versehentlich den falschen Buchstaben, so kann Dominique mit einem zweifachen Binzeln dies korrigieren.
+Notiert sie/er versehentlich den falschen Buchstaben, so kann Dominique mit einem zweifachen Blinzeln dies korrigieren.
 
 Einen solchen Algorithmus, der eine Menge von Regeln für den Informationsaustausch bestimmter Informationen beschreibt, nennen Informatiker *Kommunikationsprotokoll*.
 
@@ -834,7 +834,7 @@ Wenn Sie beispielsweise in unserem Ratespiel die Frage nach dem Geschlecht stell
 ist diese Frage zu aufwendig zu beantworten.
 Im Fall der Buchstabencodierung, verwenden wir eine [totale Ordnung](def-math-order) der Buchstaben und können durch einen entsprechenden *Vergleichsoperator* die Buchstabenmengen immer weiter verfeinern, indem wir das *Intervall* der Buchstaben, die wir betrachten, verkleinern.
 
-Wenn Sie sich unsere Lösung ansehen werden Sie vielleicht festellen, dass wir jede endliche Menge mit einer [totale Ordnung](def-math-order) codieren können, sofern der ``<=``-Operator definiert ist.
+Wenn Sie sich unsere Lösung ansehen werden Sie vielleicht feststellen, dass wir jede endliche Menge mit einer [totale Ordnung](def-math-order) codieren können, sofern der ``<=``-Operator definiert ist.
 Zum Beispiel können wir Zahlen codieren:
 
 ```{code-cell} python3

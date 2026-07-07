@@ -81,7 +81,7 @@ Wie jede neue Sprache kann der Formalismus abschreckend wirken, doch bietet er �
 
 ### Formale Beschreibung
 
-Bei dieser Gelegenheit stellen wir Ihnen ein häufig verwendetes Konstrukt, den sog. **Komperator**, vor.
+Bei dieser Gelegenheit stellen wir Ihnen ein häufig verwendetes Konstrukt, den sog. **Komparator**, vor.
 Sei also $E$ eine Menge von möglichen Einträgen.
 Sei $\mathcal{L} = (e_0, \ldots, e_n), e_i \in E$ ein (geordnetes) Tupel.
 Sei 
@@ -241,12 +241,12 @@ Erneut können wir diesen Schlüssel heraus**abstrahieren**. Erneut erfolgt dies
 $$g: E \rightarrow \mathcal{K},$$
 
 wobei $\mathcal{K}$ die Menge der Schlüssel ist.
-Da wir demnach Schlüssel vergleichen ändern wir den **Komperator** $f_E$ zu
+Da wir demnach Schlüssel vergleichen ändern wir den **Komparator** $f_E$ zu
 
 $$f_\mathcal{K}: \mathcal{K} \times \mathcal{K} \rightarrow \{-1,0,1 \}$$
 
 
-```{exercise} Binäre Suche mit Komperator
+```{exercise} Binäre Suche mit Komparator
 :label: binary-search-register-exercise
 Transformieren Sie die formale Beschreibung (erneut) in eine ``Python`` Funktion ``binary_search(key, mylist, f, g)``, welche Ihnen das Element mit dem Schlüssel ``key`` zurückgibt.
 
@@ -300,7 +300,7 @@ $$\mathcal{K} = E$$
 
 gilt.
 
-```{exercise} Binäre Suche von Zahlen mit Komperator
+```{exercise} Binäre Suche von Zahlen mit Komparator
 :label: binary-search-register-numbers-exercise
 Definieren Sie einen passenden **Komparator** ``cmp_numbers(number1, number2)`` für eine Liste von ganzen Zahlen, d.h. $E = \mathbb{Z}$ und testen Sie diesen und ``binary_search``.
 ```

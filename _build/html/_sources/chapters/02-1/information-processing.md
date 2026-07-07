@@ -35,4 +35,4 @@ Die wesentlichen Prinzipien eines Computers haben sich allerdings kaum veränder
 Im Grunde erfüllen Computer noch heute die gleiche Funktionalität wie die [Turingmaschine](info-turingmaschine) von 1936.
 Sie basieren noch immer auf den gleichen äußerst primitiven *boolschen Operationen*.
 Doch anstatt einfache Gleichungen zu lösen, kontrollieren Computer Roboter, selbstfahrende Autos und ermöglichen den modernen Finanzhandel.
-Wir verwenden sie um in virtuelle Welten abzutauchen, Photos und Videos anzusehen und mit unseren Freuden zu kommunizieren.
+Wir verwenden sie um in virtuelle Welten abzutauchen, Photos und Videos anzusehen und mit unseren Freunden zu kommunizieren.

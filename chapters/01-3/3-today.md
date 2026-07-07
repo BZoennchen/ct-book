@@ -6,7 +6,7 @@ Die Maschine wurde zu ihrer Lebzeit nie gebaut.
 Ada Lovelace gilt heute als die erste Programmiererin und wurde mit dem Namen der Programmiersprache ``Ada`` gewürdigt.
 
 Es sei an dieser Stelle erwähnt, dass Frauen der Zugang zu Bildung und einer Hochschulausbildung aus verschiedenen Gründen bis ins 20. Jahrhundert verwehrt wurde und sie auf männliche Hilfe angewiesen waren.
-Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia dar, welche aus politisch-religösen Gründen in Alexandria ermordet wurde. 
+Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia dar, welche aus politisch-religiösen Gründen in Alexandria ermordet wurde. 
 
 ```{figure} ../../figs/history/ada-lovelace.jpeg
 ---
@@ -47,7 +47,7 @@ Diese Annahme wird als *[Church-Turing-These](def-church-these)* bezeichnet.
 Trifft die These zu, kann alles was *grundsätzlich berechenbar* ist auch von einem *[Turing-vollständigen](def-turing-complete)* Computer (jedem modernen Computer) berechnet werden.
 
 Über das *Entscheidungsproblem* konnte Turing die Fragestellung des sog. [Halteproblem](def-halting-problem) beantworten.
-Es wird demnach keinen Algorithmus geben können, der für jedes beliebige Programm mit beliebiger Eingabe festellen kann, ob dieses Programm jemals hält oder nicht.
+Es wird demnach keinen Algorithmus geben können, der für jedes beliebige Programm mit beliebiger Eingabe feststellen kann, ob dieses Programm jemals hält oder nicht.
 Für uns als Programmierer\*innen bedeutet dies, dass wir selbst prüfen müssen ob unser Algorithmus das berechnet und vollzieht was vorgesehen ist.
 Es gibt keine Software, die uns für einen beliebigen Quellcode garantieren kann, dass wir keine Endlosschleife programmiert haben.
 
@@ -85,7 +85,7 @@ Von den Ingenieuren wurden diese theoretischen Erfolge zunächst kaum beachtet.
 Stattdessen wurde vieles ausprobiert.
 Konrad Zuse stellte 1939 einen der ersten auf Relais basierten elektromechanischen Computer her.
 Als die Zuverlässigkeit der Relais sichergestellt war, entwickelte Zuse den Z3, welcher mit einer Taktfrequenz von 5-10 Hz Gleitkommazahlen verarbeiten konnte.
-Anders als Baddage's machanischer Computer war der Z3 jedoch nicht *[Turing-vollständig](def-turing-complete)*.
+Anders als Baddage's mechanischer Computer war der Z3 jedoch nicht *[Turing-vollständig](def-turing-complete)*.
 
 Zwischen 1942 und 1944, während des tobenden zweiten Weltkriegs, wurde die Überlegenheit der Maschinen gegenüber dem menschlichen Computer deutlich.
 Um die Kommunikation der deutschen Wehrmacht zu entschlüsseln wurden große Anstrengungen unternommen.
@@ -174,7 +174,7 @@ Skizze eines künstliches neuronalen Netzes.
 Um 1960 wurde eine wichtige Erweiterung der *neuronalen Netze*, die sog. *tiefen neuronalen Netze* (engl. *deep neural networks (DNN)*), vorgeschlagen.
 Anders als herkömmliche neuronale Netze (siehe {numref}`Abbildung {number} <fig-ann>` ) bestehen diese aus mehrere *versteckten Schichten*.
 Zu jener Zeit fehlten allerdings die Daten und die Rechenleistung, um derartige *DNNs* praktisch nutzen zu können.
-Auch hatte men Schwierigkeiten die benötigten Gradienten im Zaum zu halten.
+Auch hatte man Schwierigkeiten die benötigten Gradienten im Zaum zu halten.
 Erst in den 80er Jahren wurden erste praktikable *künstliche neuronalen Netze* entwickelt {cite}`lecun:1989`.
 *ANNs* bilden eine Teilmenge der Algorithmen des *maschinelles Lernen*.
 Tom Mitchell definiert *maschinelles Lernen* wie folgt:

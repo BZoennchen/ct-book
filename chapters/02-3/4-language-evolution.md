@@ -4,7 +4,7 @@ Hat sich eine Sprache einmal etabliert, muss sie fortwährend aktiv weiterentwic
 Um erfolgreich zu bleiben, müssen neue zeitgemäße Konzepte in die Sprache eingepflegt werden und veraltete Konzepte langsam hinausfallen.
 
 Ein Paradebeispiel ist die Programmiersprache ``Java``.
-``Jave``-Entwickler\*innen sahen einige Nachteile der Sprache z.B. dass oft recht viel Text für recht wenig Logik zu schreiben ist (fehlende **Kompaktheit**).
+``Java``-Entwickler\*innen sahen einige Nachteile der Sprache z.B. dass oft recht viel Text für recht wenig Logik zu schreiben ist (fehlende **Kompaktheit**).
 Mit Java 8 führte man deshalb ``Lambdas`` (annonyme Funktionen) in die Syntax ein und aus
 
 ```java
@@ -61,7 +61,7 @@ record Point(int x, int y) { }
 All diese Konzepte sind aus anderen Sprachen (vor allem funktionalen Sprachen) motiviert.
 Sie erweitern die [Syntax](def-syntax), d.h., die alte Schreibweise ist immer noch gültig und die Sprache wurde, bezogen auf die angeführten Beispiele, nicht um Funktionalität erweitert, sondern um neue syntaktische Mittel.
 Durch die kürzere Schreibweise müssen Programmierer\*innen wissen was dahinter steckt ([Semantik](def-semantik)).
-Es werden also bewerte und sich wiederholende **Muster** vereinfacht.
+Es werden also bewährte und sich wiederholende **Muster** vereinfacht.
 
 Neue Hardwareanforderungen übertragen sich auch auf Programmiersprachen.
 Wie Sie vielleicht beobachtet haben, hat sich die Taktrate der Prozessoren in den letzten Jahren nicht mehr verbessert.

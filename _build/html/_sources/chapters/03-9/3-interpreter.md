@@ -30,7 +30,7 @@ Der ``Python``-Quellcode durchläuft 3 Phase bis er schließlich tatsächlich au
 
 1. **Aufbereitung**: Der Code wird durch den Interpreter zur Übersetzung aufbereitet (Lexing, Parsing).
 2. **Übersetzung**: Innerhalb des Interpreters wird ein [Compiler](def-compiler) gestartet, welcher den aufbereiteten Code in *Bytecode* (Intermediate Language Code ILC) umwandelt (``hello.pyc``).
-3. **Interpretation**: Dieser Code wird von der *Virtuellen Maschine (PVM)* des Interpreters interpretiert und dadurch als Maschinencode ausgedrückt. Bereits in *Masachinencode* übersetzte ``C``-Module werden nicht in *Bytecode* überführt sondern im *Bytecode* direkt aufgerufen.
+3. **Interpretation**: Dieser Code wird von der *Virtuellen Maschine (PVM)* des Interpreters interpretiert und dadurch als Maschinencode ausgedrückt. Bereits in *Maschinencode* übersetzte ``C``-Module werden nicht in *Bytecode* überführt sondern im *Bytecode* direkt aufgerufen.
 
 Erst durch die Interpretation wird aus dem *Bytecode* (in kombination des vorkompilierten ``C``-Codes) ausführbarer *Maschinencode*.
 *Bytecode* ist immernoch nicht speziell auf Ihre Maschine angepasst, stattdessen ist der Code immernoch zu abstrakt.

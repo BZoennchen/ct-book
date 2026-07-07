@@ -6,7 +6,7 @@ Er beobachtet, dass zur gleichen Zeit zwei Obelisken an verschiedenen Orten unte
 Erstaunlicherweise schloss er daraus auf die Krümmung der Erde.
 Und, da die Griechen von der Perfektion des Kreises überzeugt waren, folgerte Eratosthenes, dass die Erde eine Kugel sei.
 Er war sogar in der Lage die Erdkrümmung relativ genau zu berechnen und dadurch auf den Umfang der Erde zu schließen.
-Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syren (ca. 800 km) ablief und berechnete.
+Um seine Berechnungen durchführen zu können bediente er sich vermutlich eines menschlichen Computers, der ihm die Strecke zwischen Alexandria und Syene (ca. 800 km) ablief und berechnete.
 
 ```{figure} ../../figs/history/earth-curvature.png
 ---
@@ -85,7 +85,7 @@ Die Ergebnisse erschienen in Kästchen über den Wählscheiben.
 Der Prototyp hatte nur einige wenige Wählscheiben, spätere Versionen hatten eine größere Anzahl und konnten mit Zahlen bis zu 9.999.999 rechnen. Direkte Subtraktion war mit der Pascaline nicht möglich; es musste die Komplementärmethode verwendet werden.
 Pascal begann mit der Arbeit an seiner Rechenmaschine, als er 19 Jahre alt war, und konstruierte sie als Arbeitserleichterung für seinen Vater, der Steuerbeamter war.
 
-Es ist kein Zufall, dass das Leibniz-Rechenzentrum (LRZ) seinen namen von Leibniz geerbt hat, denn neben den zahlreichen Beiträgen in der Philosophie und Mathematik hatte Leibniz bereits die Idee einer alles berechnenden Maschine.
+Es ist kein Zufall, dass das Leibniz-Rechenzentrum (LRZ) seinen Namen von Leibniz geerbt hat, denn neben den zahlreichen Beiträgen in der Philosophie und Mathematik hatte Leibniz bereits die Idee einer alles berechnenden Maschine.
 Durch den Fortschritt in der Feinmechanik sah Leibniz die rasche Entwicklung kleiner Automaten zum Anlass einen Prototypen einer Rechenmaschine zu konstruieren.
 Leibniz' (1646-1716) Rechenmaschine war ein historischer Meilenstein im Bau von mechanischen Rechenmaschinen.
 Das von ihm erfundene Staffelwalzenprinzip, mit dem Multiplikationen auf mechanische Weise realisiert werden konnten, hielt sich über 200 Jahre als unverzichtbare Basistechnik.
@@ -111,7 +111,7 @@ Die Maschine wurde zu ihrer Lebzeit nie gebaut.
 Ada Lovelace gilt heute als die erste Programmiererin und wurde mit dem Namen der Programmiersprache ``Ada`` gewürdigt.
 
 Es sei an dieser Stelle erwähnt, dass Frauen der Zugang zu Bildung und einer Hochschulausbildung aus verschiedenen Gründen bis ins 20. Jahrhundert verwehrt wurde und sie auf männliche Hilfe angewiesen waren.
-Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia (ca. 355-415) dar, welche aus politisch-religösen Gründen in Alexandria ermordet wurde. 
+Eine große Ausnahme stellt die griechische spätantike Mathematikerin, Astronomin und Philosophin Hypatia (ca. 355-415) dar, welche aus politisch-religiösen Gründen in Alexandria ermordet wurde. 
 
 ```{figure} ../../figs/history/ada-lovelace.jpeg
 ---
@@ -132,7 +132,7 @@ Zu jener Zeit war die Entwicklung analoger Computer bereits rückläufig.
 
 Konrad Zuse (1910-1995) stellte 1939 einen der ersten auf Relais basierten elektromechanischen Computer her.
 Als die Zuverlässigkeit der Relais sichergestellt war, entwickelte Zuse den Z3, welcher mit einer Taktfrequenz von 5-10 Hz Gleitkommazahlen verarbeiten konnte.
-Anders als Baddage's machanischer Computer war der Z3 jedoch nicht *[Turing-vollständig](def-turing-complete)*.
+Anders als Baddage's mechanischer Computer war der Z3 jedoch nicht *[Turing-vollständig](def-turing-complete)*.
 
 Zwischen 1942 und 1944, während des tobenden zweiten Weltkriegs, wurde die Überlegenheit der Maschinen gegenüber dem menschlichen Computer deutlich.
 Um die Kommunikation der deutschen Wehrmacht zu entschlüsseln wurden große Anstrengungen unternommen.

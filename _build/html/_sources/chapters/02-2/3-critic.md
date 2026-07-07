@@ -1,6 +1,6 @@
 # Mehr als reine Syntax
 
-Eines ist klar: Informationen sind für die Informatik der wesentlich Forschungsgegenstand aufdem sich die Disziplin aufbaut.
+Eines ist klar: Informationen sind für die Informatik der wesentliche Forschungsgegenstand auf dem sich die Disziplin aufbaut.
 Der Begriff Informatik betont die Disziplin als Wissenschaft der Informationsverarbeitung.
 Informationsverarbeitung deshalb, da die Entstehung von Information oft ausgeklammert wird.
 
@@ -37,7 +37,7 @@ Können wir uns also noch länger hinter der reinen [syntaktischen](def-syntax) 
 Ein weiterer Kritikpunkt ist die reine Betrachtung der Information als die Summe ihrer Einzelteile.
 Diese Betrachtung ist nur möglich, da wir uns rein auf die [Syntax](def-syntax) stützen und den Sinn ausklammern.
 Wie sinnvoll, wertvoll, wertlos, wahr oder falsch eine Information ist und ob sie in uns etwas auslöst, spielt keine Rolle.
-Sobald wir aber die [(semiotische) Semantik](def-semantik-semiotik) einer Information betrachten, zerfällt dieser Reduktionismus (der uns natürlich bei der Informationsverarbeitung äußert dienlich ist).
+Sobald wir aber die [(semiotische) Semantik](def-semantik-semiotik) einer Information betrachten, zerfällt dieser Reduktionismus (der uns natürlich bei der Informationsverarbeitung äußerst dienlich ist).
 
 Zeichnen wir zum Beispiel ein Pixelbild, was einen Buchstaben darstellt, dann ergibt sich der **Sinn** nicht aus der Summe der einzelnen Pixel, sondern aus der (emergenten) Darstellung des Buchstabens.
 Der Sinn eines literarisches Werks lässt sich nicht durch eine rein syntaktische Betrachtung beziffern.

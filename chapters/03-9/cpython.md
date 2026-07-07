@@ -5,7 +5,7 @@
 Sie können problemlos ``Python``-Code schreiben ohne zu wissen **wie** dieser genau ausgeführt wird.
 Wichtig ist zu wissen **was** passiert (siehe [Das Was und das Wie](sec-what-and-how)).
 
-Eine [Interpretation](sec-interpretation) überführt unseren ``Python``-Code in eine Befehlsabfolge, die die konkrete Maschine versteht und ausführen kann, sodass die Semantik erfülllt ist.
+Eine [Interpretation](sec-interpretation) überführt unseren ``Python``-Code in eine Befehlsabfolge, die die konkrete Maschine versteht und ausführen kann, sodass die Semantik erfüllt ist.
 Kurz gesagt: Die Ausführung führt zu dem Ergebnis, welches durch die Semantik unseres ``Python``-Codes beschrieben wird.
 
 Als neugierige Entwickler\*innen reicht uns das aber nicht.

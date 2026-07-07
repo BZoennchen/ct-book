@@ -16,7 +16,7 @@ Wir benötigen ein Grundverständnis davon wie ein [Computer funktioniert](sec-i
 
 ## Begrifflichkeiten
 
-Die Begriffe *Algorithmus*, *Pseudocode*, *Programmcode* und *Programm* ähneln sich sehr und wir haben noch keine strickte Differenzierung durchgenommen.
+Die Begriffe *Algorithmus*, *Pseudocode*, *Programmcode* und *Programm* ähneln sich sehr und wir haben noch keine strikte Differenzierung durchgenommen.
 Im Abschnitt [Algorithmen](sec-algorithms) ist klar definiert, was genau ein Algorithmus ist.
 
 ```{admonition} Pseudocode

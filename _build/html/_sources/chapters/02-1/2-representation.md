@@ -428,7 +428,7 @@ Dann folgt
 $$\overline{b_{n-1}\ldots b_0} = \overline{b_{n-1}\ldots b_{k-1}}01\ldots 1.$$
 
 In anderen Worten $b_k$ wird zu $0$ und alle niedrigeren Bits nehmen den Wert $1$ an.
-Addieren wir nun $1$ werden alle diese niediederen Bits $0$ und $b_k$ nimmt den Wert $1$ an.
+Addieren wir nun $1$ werden alle diese niedereren Bits $0$ und $b_k$ nimmt den Wert $1$ an.
 Alle höheren Bits bleiben unberührt:
 
 $$\overline{b_{n-1}\ldots b_{k-1}}01\ldots 1 + 1 = \overline{b_{n-1}\ldots b_{k-1}}10\ldots 0$$

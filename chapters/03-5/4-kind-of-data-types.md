@@ -69,7 +69,7 @@ Unsere Definitionen von [atomaren](def-atomare-data-types) und [primitiven](def-
 >Worin besteht der Unterschied zwischen einem primitiven und einem atomaren Datentyp?
 
 Nehmen wir zum Beispiel den ``Python`` Datentyp ``int``.
-Der Wert vom Typ ``int`` besteht nicht nur ais dem reinen Wert der ganzen Zahl sondern enthält zusätzlich noch einen Zähler, welcher angibt wie viele Variablen auf den Wert verweisen.
+Der Wert vom Typ ``int`` besteht nicht nur aus dem reinen Wert der ganzen Zahl sondern enthält zusätzlich noch einen Zähler, welcher angibt wie viele Variablen auf den Wert verweisen.
 Das heißt wir können ``int`` weiter in den Zähler und den eigentlichen Wert zerlegen.
 Allerdings macht es keinen Sinn diese beiden Teile zu zersplittern und separat weiter zu verarbeiten -- sie gehören zusammen, da sie nur gemeinsam verarbeitbar sind!
 Zeichenketten sind weder primitiv noch atomar, denn eine Zeichenkette lässt sich in ihre einzelnen Zeichen zersplittern und die Weiterverarbeitung der einzelner Zeichen macht durchaus Sinn.

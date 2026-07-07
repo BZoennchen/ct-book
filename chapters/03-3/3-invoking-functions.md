@@ -18,12 +18,12 @@ Wie wir eigene Funktionen definieren, werden wir uns noch genauer ansehen.
 Vorerst begnügen wir uns mit dem *Aufrufen* von bereits existierenden *Funktionen*.
 
 Vorab sei betont, dass eine *mathematische Funktion* sich von einer ``Python``-Funktion wesentlich unterscheidet.
-Wir diskutieren dies genaue im Abschnitt [Reinheit](sec-purity).
+Wir diskutieren dies genauer im Abschnitt [Reinheit](sec-purity).
 
 Wollen wir eine bestimmte Abfolge von [Ausdrücken](sec-expressions) wieder und wieder aufrufen, so können wir diese Ausdrücke in einer Funktion *kapseln*.
 Diese Funktion erfüllt einen bestimmten Zweck.
 
-Benutzten wir bereits existierende Funktionen, so kennen wir (jedenfalls sollte das so sein) das **WAS** aber nicht unbedingt das **WIE**.
+Benutzen wir bereits existierende Funktionen, so kennen wir (jedenfalls sollte das so sein) das **WAS** aber nicht unbedingt das **WIE**.
 Das bedeutet für geübte Programmierer\*innen, dass diese sich viel mit Dokumentationen diverser Module beschäftigen.
 Einerseits um das **WAS** in Erfahrung zu bringen und andererseits um eine Vorstellung vom **WIE** zu erhalten.
 
@@ -87,10 +87,10 @@ Es ist eine Zusammenstellung von Funktionen, welche zusammengehören.
 
 Im Modul ``random`` befinden sich, zum Beispiel, viele Funktionen die Operatoren aus der Wahrscheinlichkeitstheorie realisieren.
 
-Um ein Modul nutzten zu können muss es, d.h. dessen Quellcode, auf Ihrem System installiert sein.
+Um ein Modul nutzen zu können muss es, d.h. dessen Quellcode, auf Ihrem System installiert sein.
 Manche Module, wie beispielsweise ``random``, gehören zur Standardbibliothek von ``Python`` und werden mit ``Python`` selbst installiert.
 Ist das Modul installiert, müssen wir es in unseren Code *importieren*.
-Wir machen es unserem Code bekannt, sodass wir es auch nutzten können.
+Wir machen es unserem Code bekannt, sodass wir es auch nutzen können.
 Dies geschieht mit dem *Schlüsselwort* ``import``.
 
 ```{code-cell} python3
@@ -219,7 +219,7 @@ Bevor wir loslegen müssen wir erst in Erfahrung bringen **WAS** überhaupt mög
 Welche vordefinierten Funktionen und welche Module gibt es bzw. welche dieser Module könnten für meine Zwecke nützlich sein.
 
 Selbst nach Jahren an Programmierkenntnissen hört dieser Lernprozess nie auf.
-Ständig werden neue nützliche Module programmiert und auch Sie werden noch irgendwann Ihre eigenen Module implementieren und nutzten.
+Ständig werden neue nützliche Module programmiert und auch Sie werden noch irgendwann Ihre eigenen Module implementieren und nutzen.
 Einer der wichtigsten Fähigkeiten ist es, Dokumentationen zu finden und richtig zu lesen.
 
 Mit zunehmender Erfahrung klappt auch dies immer besser.

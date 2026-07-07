@@ -4,19 +4,19 @@
 Als ``Python``-Ökosystem bezeichnen wir den Zusammenschluss aus dem was die Softwareentwicklung mit ``Python`` ermöglicht.
 Dazu zählen wir unter anderem
 
-+ bestehenden Quellcode (Module, Pakte), 
++ bestehenden Quellcode (Module, Pakete), 
 + Entwicklungsumgebungen und Werkzeuge, 
 + Paketverwaltungsprogramme wie ``pip`` und ``conda``, 
 + Dokumentationen,
 + andere Technologien, die mit ``Python`` gut integrierbar sind
-+ und vorallem die Gemeinschaft bzw. Unterstützer:innen
++ und vor allem die Gemeinschaft bzw. Unterstützer:innen
 
 ```{admonition} Lernziel
 :class: learngoals
 
 Wie nutze ich das ``Python``-Ökosystem?
 Wie bringe ich ``Python`` "zum Laufen"?
-Wie nutze ich Pakte und Module (fremden Code) und die Jupyter Notebooks?
+Wie nutze ich Pakete und Module (fremden Code) und die Jupyter Notebooks?
 
 Dieses Kapitel soll Sie in der Praxis "in Gang" setzen, sodass Sie mit dem ``Python``-Programmieren loslegen können.
 Der Inhalt ist daher sehr ``Python`` spezifisch und hat nur wenig mit dem eigentlichen [Computational Thinking](sec-what-is-ct) zu tun.
@@ -61,7 +61,7 @@ Auf [stackshare.io](https://stackshare.io/) können Sie nachlesen, welche Techno
 stecken.
 
 Selbstverständlich ändern sich die Ökosysteme ständig.
-Zu meiner kurzen Zeit als Webentwickler, um das Jahr 2006, war der sog. LAMP-Stack (Linux, Apache, MySQL, PHP/Perl) einer der gängisten Bündelungen an Technologie, die zur serverseitigen Webentwicklung genutzt wurde.
+Zu meiner kurzen Zeit als Webentwickler, um das Jahr 2006, war der sog. LAMP-Stack (Linux, Apache, MySQL, PHP/Perl) einer der gängigsten Bündelungen an Technologie, die zur serverseitigen Webentwicklung genutzt wurde.
 Das hat sich mittlerweile geändert.
 
 Ein anderes Beispiel ist die Entwicklung neuer Algorithmen aus dem Bereich des maschinellen Lernens.

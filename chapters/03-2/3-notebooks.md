@@ -50,7 +50,7 @@ Ist dem so, können Sie mit
 jupyter lab [path/to/notebook/file]
 ```
 
-ein bestimmtes die Jupyter-Note starten und mit 
+ein bestimmtes Jupyter-Notebook starten und mit 
 
 ```sh
 jupyter lab
@@ -93,7 +93,7 @@ Führen wir zum Beispiel folgende Codezeile aus,
 2**4
 ```
 
-berechnet der Computer $2^4 = 16$, lieft das Ergebnis ans Notebook zurück, welches daraufhin das Ergebnis in gewisser Weise ausgibt.
+berechnet der Computer $2^4 = 16$, liefert das Ergebnis ans Notebook zurück, welches daraufhin das Ergebnis in gewisser Weise ausgibt.
 Die Kommunikation zwischen dem ``Python``-Interpreter und Ihrem Browser übernimmt der ausgewählte *Kernel*.
 
 Prinzipiell bestehen Jupyter Notebooks aus einer geordneten Liste von *Zellen*.
@@ -219,7 +219,7 @@ x
 ```
 
 Demnach ist ``x = 5 + 20`` und ``y = 20``.
-Führen wir daraufhin Zelle 1 dananch 2 aus, erhalten wir für ``x``: ``x = 5 + (-3) = 2``
+Führen wir daraufhin Zelle 1 danach 2 aus, erhalten wir für ``x``: ``x = 5 + (-3) = 2``
 
 ```{code-cell} python3
 y = -3      # Zelle 1

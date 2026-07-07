@@ -38,7 +38,7 @@ x = 13
 ```
 
 den Wert der Variablen ``x`` auf ``13`` setzt bzw. die Variable auf einen Speicherbereich verweisen lässt, welcher den Wert ``13`` enthält.
-Um eine *Zuweisung* mathematisch auszurücken, verwendet man oft $\leftarrow$, also 
+Um eine *Zuweisung* mathematisch auszudrücken, verwendet man oft $\leftarrow$, also 
 
 $$x \leftarrow 13.$$
 
@@ -60,7 +60,7 @@ tags: [raises-exception]
 v + 20
 ```
 
-Die Fehlermeldung ``name 'v' is not defined`` weißt uns darauf hin, dass die *Variable* ``v`` noch nicht *initialisiert* wurde.
+Die Fehlermeldung ``name 'v' is not defined`` weist uns darauf hin, dass die *Variable* ``v`` noch nicht *initialisiert* wurde.
 In anderen Worten ``v`` gibt es noch gar nicht und zeigt auch nicht auf eine Stelle im Speicher, hat also keinen Wert.
 In ``Python`` reicht es wenn Sie der *Variablen* einen Wert zuweisen.
 Sie wird automatisch erzeugt, d.h., *initialisiert*.
@@ -346,7 +346,7 @@ Wie sieht das nun im Speicher aus??? Welche Adresse hat ``x`` und wie sieht der 
 id(x)
 ```
 
-Liefert uns eine ``id``, allerdings lieft uns der Aufruf
+Liefert uns eine ``id``, allerdings liefert uns der Aufruf
 
 ```{code-cell} ipython3
 id(x[1])

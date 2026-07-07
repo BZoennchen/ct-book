@@ -253,7 +253,7 @@ Wie bringen wir den Turm nun von Ort 0 nach Ort 2?
 
 Besteht der Turm aus zwei Schichten, ist das Problem auch noch einfach zu lösen: 
 
-1. Bewege oberste Schickt von 0 nach 1.
+1. Bewege oberste Schicht von 0 nach 1.
 2. Bewege unterste Schicht von 0 nach 2 und
 3. Bewege dann die schmälere Schicht von 1 auf 2.
 
@@ -340,11 +340,11 @@ Wir die Korrektheit mit einem [Induktionsbeweis](sec-induction-proof) zeigen.
 Dazu müssen wir zeigen:
 
 1. **Induktionsschritt:** Zeige $A(n_0)$, d.h., ``move_tower`` liefert das korrekte Ergebnis für einen Turm der aus nur einer Scheibe besteht ($n_0 = 1$)
-2. **Induktionsschritt:** Zeige $A(n) \Rightarrow A(n+1)$, d.h. falls ``move_tower`` das richtige Ergebnis für Turm mit $n$ Schreiben liefert, dann liefert die Funktion auch das richtige Ergebnis für $n+1$ Scheiben.
+2. **Induktionsschritt:** Zeige $A(n) \Rightarrow A(n+1)$, d.h. falls ``move_tower`` das richtige Ergebnis für Turm mit $n$ Scheiben liefert, dann liefert die Funktion auch das richtige Ergebnis für $n+1$ Scheiben.
 
 Um eine gute iterative Lösung zu finden braucht es Gehirnschmalz, doch denken Sie daran: Es gibt sie immer!
 
 ```{exercise} Türme von Hanoi
 :label: hanoi-exercise
-Zeigen Sie, dass der oben beschriebene Algorithmus das korrekte Ergebnis liefer.
+Zeigen Sie, dass der oben beschriebene Algorithmus das korrekte Ergebnis liefert.
 ```

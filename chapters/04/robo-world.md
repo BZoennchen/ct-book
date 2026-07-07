@@ -40,7 +40,7 @@ Zum Beispiel, hatte man versucht durch einen Roboter die Lage am Kernreaktor von
 Ein weiteres Beispiel ist die Entschärfung von Sprengstoff oder das Auffinden von Überlebenden welche unter Gebäuden begraben wurden.
 
 Roboter agieren zu Land, Wasser als auch Luft -- ob als Drohnen, kleine Schiffswrackentdecker oder Landschaftserkunder.
-Auch in unserem Alltag nehmen uns Roboter zunehmens die Arbeit ab.
+Auch in unserem Alltag nehmen uns Roboter zunehmend die Arbeit ab.
 Ein prominentes Beispiel ist der Roboterstaubsauger, welcher autonom die Wohnung reinigt.
 
 Das große Feld der künstlichen Intelligenz als auch der Robotik sind interdisziplinäre Gebiete die eng miteinander verwoben sind, denn ein Roboter ist im Grunde eine mechanische Konstruktion versehen mit einer künstlichen Intelligenz.
@@ -73,12 +73,12 @@ Einen Gitterpunkt nennen wir **Zelle**.
 Unser Roboter befindet sich in genau einer Zelle und kann von Zelle zu Zelle wandern, sofern die Zelle nicht durch ein anderes unpassierbares Objekt belegt ist.
 Eine Zelle hat einen von folgenden Zuständen:
 
-| Zusand    | Farbe      | Eigenschaft                           | Auswirkung 
+| Zustand   | Farbe      | Eigenschaft                           | Auswirkung 
 | --------- |----------- | ------------------------------------- | -------------------------------------- |
-| Leer      | Hellgrau   | pasierbar                             | Zelle ist derzeit pasierbar            |
-| Hindernis | Dunkelgrau | unverrückbares, unpassierbares Objekt | Zelle ist **für immer** unpassierbaf   |
+| Leer      | Hellgrau   | passierbar                             | Zelle ist derzeit passierbar            |
+| Hindernis | Dunkelgrau | unverrückbares, unpassierbares Objekt | Zelle ist **für immer** unpassierbar   |
 | Stein     | Orange     | verrückbares, unpassierbares Objekt   | Zelle ist derzeit unpassierbar         |
-| Blatt     | Grün       | verrückbares, passierbares Objekt     | Zelle ist derzeit pasierbar            |
+| Blatt     | Grün       | verrückbares, passierbares Objekt     | Zelle ist derzeit passierbar            |
 
 
 Sowohl der *Roboter* ``robo`` als auch sein *Ziel* können sich auf einer Zelle befinden.
@@ -109,7 +109,7 @@ world.show()
 
 auf.
 Jede Zelle hat eine bestimmte Farbe, die ihren aktuellen Zustand beschreibt.
-Die Zelle auf der der Robeter steht ist blau und die Zelle des Ziels ist lila eingefärbt.
+Die Zelle auf der der Roboter steht ist blau und die Zelle des Ziels ist lila eingefärbt.
 
 Die Welt ist eine statische Welt, welche nur vom Roboter selbst verändert werden kann.
 In anderen Worten, der Zustand einer Zellen bleibt solange unverändert bis Ihr Roboter diesen oder seinen eigenen Zustand verändert.
@@ -436,7 +436,7 @@ world.show()
 ```
 ### Einschub: Benennung
 
-Loht es sich wirklich diese zwei Codezeilen in eine eigene Funktion zu packen?
+Lohnt es sich wirklich diese zwei Codezeilen in eine eigene Funktion zu packen?
 Zwei Gründe offenbaren sich hier:
 
 1. [Lesbarkeit](sec-roboworld-readability) und
@@ -543,7 +543,7 @@ Sie schreiben diese Liste nicht weil Sie zu doof oder zu faul sind, um sich zu m
 Nein!
 Sie schreiben diese Liste damit Sie sich der nächsten Aufgabe des Tages widmen können.
 Sie schreiben diese Liste damit Sie während des Einkaufens auf andere Dinge, wie zum Beispiel Ihre Umgebung, besser eingehen können.
-In anderen Worten, damit Sie mental für andere Aufgaben gewadmet sind, denn das Problem was Sie einkaufen möchten ist ja bereits gelöst.
+In anderen Worten, damit Sie mental für andere Aufgaben gewidmet sind, denn das Problem was Sie einkaufen möchten ist ja bereits gelöst.
 
 ````{exercise} Ein irrer Läufer
 :label: robo-corridor-multi-exercise
@@ -1608,7 +1608,7 @@ def move(robo, code):
 
 Ein Problem existiert noch immer!
 Bereits für einen einfachen Korridor mit zwei Zellen ist der Baum der Läufe unendlich groß.
-Wir können immer vor und zurük laufen, also zum Beispiel: 02020202020202020...
+Wir können immer vor und zurück laufen, also zum Beispiel: 02020202020202020...
 
 Auch wenn wir diese eine Möglichkeit verhindern, so besteht immer die Gefahr, dass wir im Kreis herumlaufen.
 Wir müssen uns merken, welche Zelle wir bereits besucht haben, sodass wir den Baum nur weiter durchsuchen, falls die entsprechende Zelle noch nicht besucht wurde.
@@ -1702,7 +1702,7 @@ def inverse_walk(robo, path):
 
 ````{exercise} Lauf wiederholen
 :label: robo-repeat-walk-exercise
-Implementieren Sie eine Funktion ``walk(robo, path)`` welche den Lauf ``path`` ausführt, sodass fogender Code den Roboter erst zum Ziel führt, dann wieder zurücklaufen lässt und schlussendlich erneut zum Ziel führt:
+Implementieren Sie eine Funktion ``walk(robo, path)`` welche den Lauf ``path`` ausführt, sodass folgender Code den Roboter erst zum Ziel führt, dann wieder zurücklaufen lässt und schlussendlich erneut zum Ziel führt:
 
 ```python
 path = depth_first_walk(robo)

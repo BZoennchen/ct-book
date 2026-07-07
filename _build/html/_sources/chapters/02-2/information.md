@@ -6,7 +6,7 @@ Um sich auf das Nass vorzubereiten, kramen Sie aus Ihrem Rucksack Ihren Regenman
 
 Was ist in diesem Beispiel geschehen?
 Ein Wetterdienst (*Sender*) übertrug die aktuelle Wetterlage (*Information*) über das U-Bahn-Info-System (*Informationskanal*) und Sie (*Empfänger\*in*) reagierten auf die Nachricht mit dem Überstülpen des Regenmantels (*Wirkung*).
-Die gelieferte *Information* eliminiert, oder zumindest reduziert, die *Unsicherheit* über die aktuelle Wetterlage.
+Die gelieferte *Information* eliminiert, oder zumindest reduziert, die *Unsicherheit* über die aktuelle Wetterlage, sofern Sie über die Wetterlage noch nicht *informiert* wurden.
 
 ```{admonition} Lernziel
 :class: learngoals

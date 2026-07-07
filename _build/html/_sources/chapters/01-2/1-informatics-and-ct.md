@@ -13,7 +13,7 @@ Jedoch ist die Informatik nicht nur eine Ingenieursdisziplin (Entwicklung, Konst
 Mit dem Begriff [Computational Thinking](sec-what-is-ct) beziehen wir uns auf jene Denkprozesse, welche die Informatik als *Ingenieursdisziplin* geformt haben und in Zukunft noch formen werden.
 Diese Denkprozesse existieren unabhängig von einem konkreten System oder einer Software und finden heute insbesondere auch außerhalb der Informatik ihren großen Nutzen.
 So gesehen basiert die Informatik auf dem Computational Thinking und ist zugleich ihr Inkubator.
-Computational Thinking ist kein bestimmter Wissensstand sondern ein Prozess der in Ihrem Kopf stattfindet---ein kreativer, spielerischer, logischer Denkprozess um phantastische und imaginäre Puzzel zu lösen!
+Computational Thinking ist kein bestimmter Wissensstand sondern ein Prozess der in Ihrem Kopf stattfindet---ein kreativer, spielerischer, logischer Denkprozess um phantastische und imaginäre Puzzle zu lösen!
 
 Ähnlich wie die Mathematik, die Biologie, die Physik, die Geschichte, die Sprachen und Künste, sollte das Praktizieren des Computational Thinkings heute zur Selbstverständlichkeit gehören.
 + Es macht die Abstraktion der Mathematik greifbar.

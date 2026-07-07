@@ -35,7 +35,7 @@ public class Main {
 ```
 
 Um den Code auch tatsächlich auszuführen, muss er in einer Datei namens ``Main.java`` stehen.
-Wir müssen den Java-[Compiler](def-compiler) befehligen, diese Datei zu übersetzten.
+Wir müssen den Java-[Compiler](def-compiler) befehligen, diese Datei zu übersetzen.
 Dies geht über die Kommandozeile über den Befehl ``javac Main.java``.
 Der Compiler erzeugt eine Datei mit dem Namen ``Main.class``.
 Um das Programm auszuführen starten wir es schließlich mit ``java Main 10``, wobei ``10`` das ``0``-te Argument des Programms ist.

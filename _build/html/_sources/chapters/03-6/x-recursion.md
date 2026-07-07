@@ -82,7 +82,7 @@ Befüllung des *Stacks* durch den Aufruf der *rekursiven Funktion* ``fac(4)``.
 ```
 
 ``fac(1)`` gelangt in den *Basisfall* und beendet die Rekursionskette.
-Es ließt sein ``n`` aus seinem Namensraum (in {numref}`Abbildung {number} <fig-stack_fill>` ist das der ``namespace4``), prüft ``n <= 1`` und liefert ``1`` zurück.
+Es liest sein ``n`` aus seinem Namensraum (in {numref}`Abbildung {number} <fig-stack_fill>` ist das der ``namespace4``), prüft ``n <= 1`` und liefert ``1`` zurück.
 Durch diesen Rücksprung, wird der Namensraum gelöscht und der nächste Namensraum auf dem *Stack* definiert den Namensraum des aktuellen Funktionsaufrufs.
 In diesem hat ``n`` den Wert ``2`` und wir befinden uns bereits an der Stelle ``return n * fac(1)`` und da ``fac(1)`` soeben den Wert ``1`` zurückgeliefert hat, wird dieser Ausdruck zu ``return n * 1`` und somit zu ``return 2 * 1``.
 
@@ -145,7 +145,7 @@ Im Vergleich zum *Stack* ist es deutlich aufwendiger zu protokollieren, welche S
 ## Laufzeit
 
 Obwohl der *Stack* enorm effizient ist, sind iterative Lösungen fast immer schneller in ihrer Ausführung.
-Übersetzten wir den Code in Maschinencode, also in die niedrigste bzw. konkreteste Form, so benötigen rekursive Lösungen fast immer mehr Sprungbefehle.
+Übersetzen wir den Code in Maschinencode, also in die niedrigste bzw. konkreteste Form, so benötigen rekursive Lösungen fast immer mehr Sprungbefehle.
 
 Auch benötigt ein Funktionsaufruf mehr Ressourcenmanagement als ein Sprung zum Anfang einer Schleife.
 Vergleichen wir unsere rekursive Lösung mit der iterativen:

@@ -706,7 +706,7 @@ Die Speicherressourcen eines Computers sind jedoch endlich.</p>
 Daraufhin werden wir uns selbständig wieder von ihr entfernen.
 Dieser Prozess soll Ihnen aufzeigen, wie wir aus einer sehr konkreten Welt der Register, elektrischen Schaltungen und des endlichen Speichers, in eine abstrakte Welt der <a class="reference internal" href="../02-4/4-data-structures.html#sec-data-structures"><span class="std std-ref">Datenstrukturen</span></a> und <a class="reference internal" href="../02-4/1-algorithms.html#def-algorithm"><span class="std std-ref">Algorithmen</span></a> gelangen.
 Dieser Prozess des Abstrahierens ist ein wesentlicher Bestandteil des <a class="reference internal" href="../01-2/what-is-ct.html#sec-what-is-ct"><span class="std std-ref">Computational Thinkings</span></a> und kann auf vielerlei Probleme angewendet werden.</p>
-<p>Ihnen wird diese Übung möglichweise sehr kleinlich und technisch vorkommen und damit liegen Sie richtig.
+<p>Ihnen wird diese Übung möglicherweise sehr kleinlich und technisch vorkommen und damit liegen Sie richtig.
 Die konkrete Welt ist kleinlich und technisch.
 Programmieren Sie in <code class="docutils literal notranslate"><span class="pre">Python</span></code> bewegen Sie sich bereits in einer abstrakten Welt.
 Vergleichen Sie <a class="reference internal" href="../02-4/1-algorithms.html#fig-world-code-computer"><span class="std std-numref">Abbildung 10.1</span></a>.
@@ -733,7 +733,7 @@ Die Adresse, als auch der Inhalt des gesamten Speichers ist <a class="reference 
 <p>Der Zugriff auf den Inhalt einer <code class="docutils literal notranslate"><span class="pre">Python</span></code>-<a class="reference internal" href="../03-4/5-list.html#sec-list"><span class="std std-ref">Liste</span></a> funktioniert ähnlich.
 Auch hier greifen wir über eine <strong>Adresse</strong> auf einen <strong>Bereich</strong>, d.h. ein <strong>Listenelement</strong>, zu.
 Diese Adresse nennen wir <strong>Index</strong>.
-Sie ist eine Dezimalzahl welche zwischen 0 und (Länger der Liste - 1) liegt.
+Sie ist eine Dezimalzahl welche zwischen 0 und (Länge der Liste - 1) liegt.
 In einem <strong>Speicherbereich</strong> des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeicher</span></a> stehen exakt 8 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a>, dies gilt für eine <code class="docutils literal notranslate"><span class="pre">Python</span></code>-Liste nicht.
 Diese ist viel flexibler und kann allerart von Daten enthalten.</p>
 <p>Modellieren wir unsere Speicheradressen als Listenindices und sind die Listenelemente natürliche Zahlen von 0 bis 255, so kommen wir schon sehr nah an die Beschränkungen bzw. Einfachheit des <a class="reference internal" href="../02-1/4-information-flow.html#def-main-memory"><span class="std std-ref">Arbeitsspeichers</span></a> heran.</p>
@@ -1010,7 +1010,7 @@ Sie können den Code zum Beispiel <a class="reference external" href="https://ww
 <p class="admonition-title">Solution to<a class="reference internal" href="#memory-overflow-exercise"> Exercise 23.7 (Überlauf von ganzen Zahlen)</a></p>
 <section id="solution-content">
 <p><code class="docutils literal notranslate"><span class="pre">z</span></code> enthält den Wert -128.</p>
-<p>Da ein <code class="docutils literal notranslate"><span class="pre">byte</span></code> (eine 8 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a>) ganze Zahle statt natürliche Zahl repräsentiert, wird das höchste <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> als negativer Anteil interpretiert, siehe Abschnitt <a class="reference internal" href="../02-1/2-representation.html#sec-integers"><span class="std std-ref">Ganze Zahlen</span></a> Gleichung <a class="reference internal" href="../02-1/2-representation.html#equation-eq-binary-integer">(7.4)</a>.</p>
+<p>Da ein <code class="docutils literal notranslate"><span class="pre">byte</span></code> (eine 8 <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a>) ganze Zahl statt natürliche Zahl repräsentiert, wird das höchste <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> als negativer Anteil interpretiert, siehe Abschnitt <a class="reference internal" href="../02-1/2-representation.html#sec-integers"><span class="std std-ref">Ganze Zahlen</span></a> Gleichung <a class="reference internal" href="../02-1/2-representation.html#equation-eq-binary-integer">(7.4)</a>.</p>
 <p>Ist dieses <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> gleich <span class="math notranslate nohighlight">\(1\)</span>, so ist die Zahl negativ.
 Ist das <a class="reference internal" href="../02-1/2-representation.html#def-bit"><span class="std std-ref">Bit</span></a> dagegen <span class="math notranslate nohighlight">\(0\)</span>, so ist die Zahl positiv.</p>
 <p>Da wir <span class="math notranslate nohighlight">\(8\)</span> Bits verwenden ist <span class="math notranslate nohighlight">\(127_{10} = 0111 1111_2\)</span> und <span class="math notranslate nohighlight">\(1_{10} = 0000 0001_2\)</span>.
@@ -1643,7 +1643,7 @@ Our list in mememory: [2, 0, 10, 0, 0, 1, 0, 4, 0, 9, 0, 16, 0, 25, 0, 36, 0, 49
 </section>
 <section id="mehrdimensionale-listen">
 <h3><span class="section-number">23.3.5. </span>Mehrdimensionale Listen<a class="headerlink" href="#mehrdimensionale-listen" title="Permalink to this heading">#</a></h3>
-<p>Wenn Sie <code class="docutils literal notranslate"><span class="pre">alloc_list</span></code> betrachten werden Sie festellen, dass eine Liste aus Elementen vom Datentyp <code class="docutils literal notranslate"><span class="pre">to_data_type('list')</span></code> nicht zulässig ist.
+<p>Wenn Sie <code class="docutils literal notranslate"><span class="pre">alloc_list</span></code> betrachten werden Sie feststellen, dass eine Liste aus Elementen vom Datentyp <code class="docutils literal notranslate"><span class="pre">to_data_type('list')</span></code> nicht zulässig ist.
 Unsere Liste darf derzeit nur <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitive Datentypen</span></a> (natürliche Zahlen, Zeichen und Adressen) beinhalten.</p>
 <p>Mehrdimensionale Listen aus Elementen eines <a class="reference internal" href="../03-5/4-kind-of-data-types.html#def-primitive-datatypes"><span class="std std-ref">primitiven Datentyps</span></a> lassen sich recht einfach erstellen, wenn wir anstatt einer Länge, für jede Dimension eine Länge anfügen.
 Eine solche Liste würde anstatt einer Länge eine Liste aus Längen beinhalten.
@@ -2288,7 +2288,7 @@ Doch wenn Sie sich erneut Schritt für Schritt voran kämpfen und den Berg in vi
 </div>
 </div>
 </div>
-<p>Wenn Sie die Klasse in die Datai <code class="docutils literal notranslate"><span class="pre">mem.py</span></code> packen, sieht der Code zur Verwendung wie folgt aus:</p>
+<p>Wenn Sie die Klasse in die Datei <code class="docutils literal notranslate"><span class="pre">mem.py</span></code> packen, sieht der Code zur Verwendung wie folgt aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mem</span>

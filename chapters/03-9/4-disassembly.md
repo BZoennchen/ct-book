@@ -57,7 +57,7 @@ dis.dis(func1)
 dis.dis(func2)
 ```
 
-Der Code der Funktion ``func1`` wird zu zwei *Bytecode*-Befehlen disassambled.
+Der Code der Funktion ``func1`` wird zu zwei *Bytecode*-Befehlen disassembled.
 ``LOAD_CONST`` scheint eine konstante Zahl zu laden und ``RETURN_VALUE`` scheint diese zurückzuliefern.
 Wo ist aber unsere Multiplikation hin?
 Der Übersetzer optimiert unseren Code und ersetzt ``7 * 21233`` durch ``148631``.

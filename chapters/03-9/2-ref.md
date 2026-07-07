@@ -18,7 +18,7 @@ Das mag verwirrend klingen.
 
 Wie im Abschnitt [Interpretation](sec-interpretation) beschrieben, kann eine Interpretation (CPython-[Interpreter](def-interpreter)) den Repräsentaten (``Python``-Code) in dessen Bedeutung (*Maschinencode*) umwandeln.
 Die Interpretation kann dabei sogar aus einer Komposition von mehreren Interpretationen bestehen.
-Die Realisierung der Intreptation ist im Fall von CPython ein [Interpreter](def-interpreter) (ein Programm) der wiederum in der Programmiersprache ``C`` geschrieben ist.
+Die Realisierung der Interpretation ist im Fall von CPython ein [Interpreter](def-interpreter) (ein Programm) der wiederum in der Programmiersprache ``C`` geschrieben ist.
 
 Die [(C)Python Standard Library](https://docs.python.org/3/library/) besteht aus den built-in Modulen die in ``C`` geschrieben sind und Modulen, die wiederum in ``Python`` selbst geschrieben sind.
-Der ``C``-Code liegt in übersetzer Form (*Maschinencode*) vor.
+Der ``C``-Code liegt in übersetzter Form (*Maschinencode*) vor.

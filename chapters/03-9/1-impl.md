@@ -21,7 +21,7 @@ Zum Beispiel:
 + [IronPython](https://ironpython.net/) (``Python`` realisiert durch die .NET-Platform)
 + [Jython](https://www.jython.org/) (``Python`` realisiert durch die Java Virtual Maschine (JVM))
 + [PyPy](https://www.pypy.org/) (Eine performantere ``Python``-Implementierung mit einem Just-In-Time-[Übersetzer](def-compiler) (JIT), wird allerdings von nur wenigen Modulen unterstützt)
-+ [Stacklass Python](https://github.com/stackless-dev/stackless/wiki/) (Äbgeändertes CPython, welches die Funktionsweise des ``C``-Call-Stacks abändert und Microthreads unterstützt, jedoch weiterhin durch den [Global Interpreter Lock]() behindert wird)
++ [Stackless Python](https://github.com/stackless-dev/stackless/wiki/) (Äbgeändertes CPython, welches die Funktionsweise des ``C``-Call-Stacks abändert und Microthreads unterstützt, jedoch weiterhin durch den [Global Interpreter Lock]() behindert wird)
 + [MicroPython](https://micropython.org/) (``Python`` was auf Microcontrollern läuft)
 + ...
 

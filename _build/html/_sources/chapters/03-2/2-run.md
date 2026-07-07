@@ -1,11 +1,11 @@
 # Python ausführen
 
 In diesem Kurs verwenden wir Jupyter Notebooks, welche wir im gleichnamigen [Abschnitt](sec-jupyter-notebooks) genauer Besprechen.
-Diese Notebooks gibt es noch nicht so lange und sie eigenen sich auch nur für bestimmte Zwecke.
+Diese Notebooks gibt es noch nicht so lange und sie eignen sich auch nur für bestimmte Zwecke.
 
 Die wohl gängigste Technik ``Python``-Anwendungen zu entwickeln ist es den Code in Dateien abzulegen und dieses Datei dann [interpretieren](def-interpreter) zu lassen, d.h., auszuführen.
 Insbesondere für die Entwicklung großer Anwendungen (z.B. auch Webseiten) oder Pakete, wie etwa [roboworld](https://github.com/BZoennchen/robo-world), und Skripte, ist diese Methode geeignet.
-Notebooks eigenen sich hingegen für kleine Probleme bei denen wir Pakete bzw. Module lediglich Nutzung aber nicht selbst entwickeln.
+Notebooks eignen sich hingegen für kleine Probleme bei denen wir Pakete bzw. Module lediglich Nutzung aber nicht selbst entwickeln.
 
 Manchmal möchten wir aber auch nur ein paar Zeilen Code ausprobieren und zwar ohne irgendeine größere Entwicklungsumgebung zu starten.
 Wir haben vielleicht vergessen wie ``Python`` den ``+``-Operator für zwei Listen realisiert und möchten das schnell ausprobieren.

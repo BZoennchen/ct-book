@@ -73,6 +73,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/02-2/1-natural-science';</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
@@ -546,7 +548,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="naturwissenschaften">
 <span id="sec-information-natural-sciences"></span><h1><span class="section-number">8.1. </span>Naturwissenschaften<a class="headerlink" href="#naturwissenschaften" title="Permalink to this heading">#</a></h1>
 <p>Beginnen wir mit der naturwissenschaftlichen und strukturwissenschaftlichen Perspektive.
-Wir konzentieren uns auf die Informatik und Physik.
+Wir konzentrieren uns auf die Informatik und Physik.
 In beiden Disziplinen wird Information über die sog. <em>Entropie</em> definiert, welche gewöhnlich mit dem Grad der Unordnung, Zufälligkeit oder Unsicherheit assoziiert wird.</p>
 <blockquote>
 <div><p>Information is the resolution of uncertainty. – Claude E. Shannon</p>
@@ -562,7 +564,7 @@ Es wäre theoretisch sogar möglich, dass ein Ei, was Ihnen auf dem Boden zerspr
 Damit ist gemeint, dass solche Prozesse durch kleine Änderungen in der Umgebung nicht rückgängig gemacht werden können.
 Wir würden vermutlich an unserem Verstand zweifeln, sollte so etwas passieren.
 Warum dies nicht geschieht und weshalb sich Ihre Hände erwärmen, liegt an der <em>Entropie</em> bzw. an der <em>Entropieänderung</em>.</p>
-<p>Im fall der Tasse, geht Wärmeenergie von einem konzentrierteren (weniger entropischen) Zustand zu einem weniger konzentrierten (höher entropischen) Zustand über.
+<p>Im Fall der Tasse geht Wärmeenergie von einem konzentrierteren (weniger entropischen) Zustand zu einem weniger konzentrierten (höher entropischen) Zustand über.
 Einfach ausgedrückt: Die Wärmeenergie verteilt sich gleichmäßiger zwischen Tasse und Händen, was zu einer Zunahme der gesamten Entropie des Systems führt.</p>
 <div class="remark admonition" id="remark-irreversible-process">
 <p class="admonition-title">Irreversible Prozesse</p>
@@ -581,24 +583,24 @@ Auch in diesem Fall nimmt die Entropie zu, denn der Vorgang ist irreversibel.</p
 <figure class="align-default" id="fig-gas-entropie">
 <a class="reference internal image-reference" href="../../_images/gas-entropie.png"><img alt="../../_images/gas-entropie.png" src="../../_images/gas-entropie.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Abb. 8.1 </span><span class="caption-text">Links die der Zustand vor dem öffnen der Verriegelung, rechts der Zustand nachdem sich das Gas ausgebreitet hat. Die Entropie des Systems nimmt zu.</span><a class="headerlink" href="#fig-gas-entropie" title="Link zu diesem Bild">#</a></p>
+<p><span class="caption-number">Abb. 8.1 </span><span class="caption-text">Links der Zustand vor dem Öffnen der Verriegelung, rechts der Zustand nachdem sich das Gas ausgebreitet hat. Die Entropie des Systems nimmt zu.</span><a class="headerlink" href="#fig-gas-entropie" title="Link zu diesem Bild">#</a></p>
 </figcaption>
 </figure>
 <p>Was beschreibt nun die Entropie genau?
 Nun in dem eben beschriebenen Beispiel betrachten wir das System einmal vor und einmal nach dem lösen der Verriegelung.
 Die gleiche Anzahl an Teilchen ist einmal auf weniger und einmal auf mehr Raum verteilt.
 Für den Zustand des Systems gibt es deshalb einmal weniger und einmal mehr Möglichkeiten der Verteilung der Teilchen.
-Die Anzahl dieser Möglichkeiten ist die <em>Entropie</em>.</p>
+Mit wachsender Anzahl dieser Möglichkeiten steigt die <em>Entropie</em> des Systems.</p>
 <p>Lassen wir einmal die Physik kurz außer acht und denken mathematisch an einen Zufallsprozess (z.B. einen Münzwurf).
 Wir haben eine Menge an Zuständen, die das System annehmen kann.
 Im Fall unsere Teetasse wäre dies beispielsweise eine noch mehr abgekühlte Hand oder eine wärmere Hand.
 Jeder (Makro-)Zustand hat eine bestimmte Anzahl an unterschiedlichen Teilchenanordnungen bzw. Energieverteilungen (Mikrozuständen).
 Besitzt jeder Mikrozustand die gleiche Wahrscheinlichkeit, so steigt die Wahrscheinlichkeit eines Makrozustands mit der Anzahl seiner möglichen Mikrozustände.
-Für eine perfekt verteilte Wärme gibt es die meisten Mikrozustände, d.h. jener Markrozustand ist am wahrscheinlichsten und wird so über kurz oder lang eintreten.
-Und da das Ei, welches Ihnen entgegen springt, hat derart wenige Mikrozustände, sodass dieser Zustand niemals eintritt.</p>
+Für eine perfekt verteilte Wärme gibt es die meisten Mikrozustände, d.h. jener Makrozustand ist am wahrscheinlichsten und wird so über kurz oder lang eintreten.
+Das Ei hingegen, welches Ihnen entgegen springt, hat derart wenige Mikrozustände, dass dieser Zustand niemals eintritt.</p>
 <div class="definition admonition" id="def-entropy-physics">
 <p class="admonition-title">Entropie (Physik)</p>
-<p>Die Entropie beschreibt die Anzahl der Teilchenanordnungen (Mikrozustände), die zu einem gegebenen (Makro)-Zustand des Systems führen.</p>
+<p>Die Entropie <span class="math notranslate nohighlight">\(S\)</span> eines Systems ist proportional zum Logarithmus der Anzahl <span class="math notranslate nohighlight">\(\Omega\)</span> der Teilchenanordnungen (Mikrozustände), die zu einem gegebenen Makrozustand führen: <span class="math notranslate nohighlight">\(S = k_B \cdot \ln(\Omega)\)</span>, wobei <span class="math notranslate nohighlight">\(k_B\)</span> die Boltzmann-Konstante ist. Je mehr Mikrozustände ein Makrozustand zulässt, desto höher die Entropie.</p>
 </div>
 <p>Theoretisch ist es also möglich, dass sich warme Objekte weiter erwärmen.
 Da solche Objekte allerdings aus derart vielen Teilchen bestehen, die alle eine bestimmte Energiekonfiguration besitzen, ist es statistisch gesehen derart <em>unwahrscheinlich</em>, sodass dies in der Realität niemals passiert.
