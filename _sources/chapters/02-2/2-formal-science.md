@@ -74,7 +74,7 @@ Jedoch sei erneut betont, dass sich die Bedeutung oder der Sinn in Informationss
 Ein System, welches Ihnen automatisch einen Kredit aufgrund Ihrer getätigten Ausgaben verweigert, tut dies aufgrund des Sinns, den die Bank aus den Informationen zieht.
 In anderen Worten: Ein System kann einen Sinn oder eine normative Regel realisieren aber weder verstehen noch verantworten.
 
-[^1]: Große Sprachmodelle stellen uns derzeit vor neue Fragen z.B. inwieweit die reine Beziehung von Wörtern in einem Text---denn das ist es was Sprachmodelle "lernen"---schon ausreicht um einen Teil des Sinns zu erfassen. Für eine tiefere Diskussion dieser faszinierenden Fragen über die Bedeutung und Funktionsweise unserer Sprache verweisen wir auf {cite:p}`bender:2020`, {cite:p}`piantadosi:2022` und {cite:p}`sogaard:2023`?
+[^1]: Große Sprachmodelle stellen uns derzeit vor neue Fragen z.B. inwieweit die reine Beziehung von Wörtern in einem Text---denn das ist es was Sprachmodelle "lernen"---schon ausreicht um einen Teil des Sinns zu erfassen. Für eine tiefere Diskussion dieser faszinierenden Fragen über die Bedeutung und Funktionsweise unserer Sprache verweisen wir auf {cite:p}`bender:2020`, {cite:p}`piantadosi:2022` und {cite:p}`sogaard:2023`.
 
 Gehen wir zurück zu unserem Einführungsbeispiel in der U-Bahn.
 Falls der Wetterbericht Ihnen lediglich mitteilen kann ob es regnet oder nicht, so ist der Informationsgehalt von "es regnet" gering.
