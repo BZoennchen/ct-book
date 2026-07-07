@@ -29,9 +29,9 @@ Die Vorstellung befindet sich in der Mentalwelt.
 Saussure stellt zudem heraus, dass dieser Verbindung nichts Naturgegebenens ist.
 In anderen Worten: Der Baum aus unserer Vorstellung trägt nichts dazu bei, dass wir ihn 'Baum' nennen.
 
->Das sprachliche Zeichen ist also etwas im Geist tatsächlich Vorhandenes, das zwei Seiten hat: [...] Diese beiden Bestandteile sind eng miteinander verbunden und entsprechen einander. [...] Ich nenne die Verbindung der Vorstellung mit dem Lautbild das Zeichen. {cite}`busse:2009` (Seite 27)
+>Das sprachliche Zeichen ist also etwas im Geist tatsächlich Vorhandenes, das zwei Seiten hat: [...] Diese beiden Bestandteile sind eng miteinander verbunden und entsprechen einander. [...] Ich nenne die Verbindung der Vorstellung mit dem Lautbild das Zeichen. -- {cite}`busse:2009` (Seite 27)
 
-Charles Ogden und Ivor A. Richards stellten 1923 das Modell des *semiotischen Dreiecks* vor, welches es im laufe der Zeit in verschiedenen Ausführungen gab.
+Charles Ogden und Ivor A. Richards stellten 1923 das Modell des *semiotischen Dreiecks* vor, welches es im Laufe der Zeit in verschiedenen Ausführungen gab.
 Das *semiotische Dreieck* baut auf Saussures Ideen auf, fügt jedoch eine dritte Komponente hinzu: den *Referenten*, also das tatsächliche Objekt oder die Sache in der Welt, die durch das Zeichen repräsentiert wird.
 Während Saussures Modell eher abstrakt und auf die Struktur der Sprache selbst fokussiert ist, versucht das semiotische Dreieck, auch die Rolle der externen Welt und der menschlichen Vorstellungskraft einzubeziehen.
 
@@ -129,15 +129,24 @@ Damit können wir durch sprachliche Äußerungen nicht auf private Episoden, wie
 Da wir derartige Wörter intersubjektiv erlernen, sich aber rein Erlebnisse nicht intersubjektiv vermitteln lassen, können wir dies auch nicht erlernen.
 Wenn beispielweise ein Schmerz nicht anderweitig gemessen werden kann, ist vollkommen unklar ob das Gefühl auch nur im Entferntesten etwas mit dem zu tun hat was andere erzählen, wenn sie von Schmerzen sprechen.
 
->Angenommen, es hätte jeder eine Schachtel, darin wäre etwas, was wir ‚Käfer‘ nennen. Niemand kann je in die Schachtel des Anderen schauen, und jeder sagt, er wisse nur vom Anblick seines Käfers, was ein Käfer ist. [...] Das Ding in der Schachtel gehört überhaupt nicht zum Sprachspiel, auch nicht einmal als ein Etwas, denn die Schachtel könnte auch leer sein. {cite}`wittgenstein:1953`
+>Angenommen, es hätte jeder eine Schachtel, darin wäre etwas, was wir ‚Käfer‘ nennen. Niemand kann je in die Schachtel des Anderen schauen, und jeder sagt, er wisse nur vom Anblick seines Käfers, was ein Käfer ist. [...] Das Ding in der Schachtel gehört überhaupt nicht zum Sprachspiel, auch nicht einmal als ein Etwas, denn die Schachtel könnte auch leer sein. -- {cite}`wittgenstein:1953`
 
-## Systemtheorie 
+## Kybernetik und Systemtheorie 
 
-Die soziologische Systemtheorie, mit Niklas Luhmann als wohl wichtigsten Vertreter, folgt dem kybernetischen Informationsbegriff der 1948 von Norbert Wiener in seinem Aufsatz *Cybernetics or Control and Communication in the Animal and the Machine* erörtert wurde.
-Information ist für Wiener, ähnlich wie für Shannon (siehe [Nachrichtentechnik](sec-informationtheorie)), bezogen auf einen Auswahlprozeß ohne Bezug auf Semantik und Pragmatik.
-Aber, anders als für Shannon, bedeutet Information für Wiener eine Zunahme von Organisation oder Ordnung: Je organisierter ein System umso größer sein Informationsgehalt {cite}`wiener:1948`.
-Der Informationswert nimmt mit der Organisation eines Organismus zu.
-Information wird hier, in Anlehnung an die Physik, als Negentropie bestimmt.
+Die soziologische Systemtheorie, mit Niklas Luhmann als wohl wichtigsten Vertreter, folgt dem kybernetischen Informationsbegriff der 1948 von Norbert Wiener in seinem Aufsatz *Cybernetics or Control and Communication in the Animal and the Machine* {cite:p}`wiener:1948` erörtert wurde.
+Interessanterweise ist dieser mathematisch identisch mit dem Begriff von Shannon aber in seiner Interpretation gegensätzlich.
+Die beiden Interpretationen sind im Grunde zwei Seiten derselben mathematischen und logischen Medaille.
+Während Shannons Definition heute die Basis für unsere gesamte digitale Kommunikation und Informatik ist, legte Wieners Ansatz das Fundament für die Systemtheorie, die künstliche Intelligenz (Steuerungsprozesse) und die Biophysik.
+
+Für Shannon war Information ein rein technisches und statistisches Maß (siehe [Nachrichtentechnik](sec-informationtheorie)). Ihn interessierte, wie effizient und fehlerfrei man Daten von A nach B übertragen kann, egal was diese Daten bedeuten.
+*Information* war bei ihm der Grad an *Unsicherheit*, der durch eine Nachricht beseitigt wird.
+
+Wiener verknüpft *Information* mit der Physik, genauer gesagt, mit der Thermodynamik.
+Für ihn war Information gerade der Gegenspieler der Entropie (dem universellen Trend zum Chaos und Zerfall).
+Er definierte *Information* als **negative Entropie (Negentropie)**. Wo Entropie für Unordnung und Chaos steht, steht Information für Ordnung, Struktur und Organisation.
+Information ist das, was ein System nutzt, um sich selbst zu regulieren und am Leben zu erhalten.
+
+Ein anschauliches Beispiel stellt das biologische Genom (DNA) dar. Shannon würde berechnen, wie viele Bits an Daten in der DNA-Sequenz gespeichert sind und wie fehlerfrei diese bei der Zellteilung kopiert werden können. Wiener würde sich ansehen, wie diese DNA-Information genutzt wird, um den Organismus aufzubauen, zu steuern und ihn daran zu hindern, zu sterben (dem thermodynamischen Zerfall zu entgehen).
 
 Nach dem zweiten Hauptsatz der Thermodynamik ist die Änderung der Entropie durch Prozesse im Innern eines Systems stets nicht negativ.
 Die gesamte Entropieänderung eines **offenen Systems** setzt sich aus dem im Innern produzierten Anteil und der Entropieänderung durch Austauschprozesse mit der Systemumgebung zusammen.
@@ -149,7 +158,36 @@ Wiener faßt Information als eine dritte Größe, neben Materie und Energie auf:
 
 >Information is information not matter or energy. {cite}`wiener:1948`
 
-Luhmann definiert den Informationsbegriff ebenfalls im Sinne einer Systemänderung durch eine Außeneinwirkung.
+Die Kybernetik hat schließlich durch Heinz von Foerster ihre eigene Kritik in Form der *Kybernetik 2. Ordnung* entwickelt indem sie unsere oben gestellte Frage "Gewissheit bzw. Information für wen?" radikal durch den Begriff des *Beobachters* integrieren wollte.
+Wohingegen Shannon ein Beobachter bzw. Interpret fehlt, wurde er durch Heinz von Foerster zum zentralen Dreh- und Angelpunkt dieser völlig neuen Denkschule.
+
+Von Foerster holte den Beobachter in das *System* hinein. Seine radikale These lautete: **Die Umwelt enthält keine Information.** 
+Die Umwelt enthält physikalische Reize (Lichtwellen, Schallwellen, Druck).
+Erst der Beobachter macht daraus Information.
+
+>Information ist ein relatives Konzept, das seine Bedeutung erst durch die Veränderung des kognitiven Zustands des Beobachters erhält. -- Heinz von Foerster
+
+Um das biologisch zu beweisen, verwies von Foerster (der eng mit Neurobiologen wie Humberto Maturana und Francisco Varela zusammenarbeitete) auf unser Nervensystem.
+Wenn Licht auf Ihre Netzhaut trifft oder Schall auf Ihr Trommelfell, leiten die Nerven zum Gehirn exakt dieselbe Art von Signal weiter: elektrische Impulse.
+Eine Nervenzelle "weiß" nicht, ob der Impuls von einem Bild, einem Ton oder einem Schmerz kommt. Sie meldet nur: Viel Strom oder wenig Strom.
+Das bedeutet: Das Gehirn empfängt keine fertige "Information" über die Welt.
+Es muss die elektrischen Impulse basierend auf seiner eigenen Struktur selbst interpretieren.
+Die Information entsteht erst im Gehirn des *Beobachters*.
+
+>Damit komme ich nun zur anderen Wurzel unseres kognitiven blinden Flecks, und dies ist ein eigentümlicher Wahn innerhalb unserer westlichen Tradition, nämlich die 'Objektivität': "Die Eigenschaften des Beobachters sollen nicht in die Beschreibung seiner Beobachtungen eingehen." -- {cite:p}`foerster:2003`
+
+Nach dieser Denkschule können wir in den Naturwissenschaften nur derartige Erfolge erzielen, weil sie die Welt extrem erfolgreich *trivialisiert* haben. Weil ein Atom oder ein Planet keine eigene Perspektive hat und nicht "zurückbeobachtet", funktioniert das *Objektivitätspostulat* in diesen Bereichen fehlerfrei. Der Erfolg der klassischen Wissenschaft ist also der Erfolg bei der Beherrschung des Trivialen. 
+
+Zudem ist *Objektivität*, nach von Foerster, eine sehr nützliche Fiktion. Wenn eine Gruppe von Beobachtern sich auf dieselben Regeln, Messinstrumente und mathematischen Modelle einigt, erzeugen sie eine hochgradig stabile, **gemeinsame** **Erlebniswelt**. Ein wissenschaftliches Modell muss nicht die "objektive Wahrheit" abbilden; es muss lediglich funktionieren, um Vorhersagen zu treffen. Das Modell des Sonnensystems funktioniert perfekt für die Navigation von Raumsonde---völlig egal, ob wir die Raumsonde von außen "objektiv" beschreiben oder als Beobachter ein mathematisches Konstrukt benutzen.
+
+Doch immer dann wenn der Beobachter wesentlicher Teil des Systems ist, das er oder sie untersucht---wie etwa in den Sozial- oder Geisteswissenschaften---geraten wir in Schwierigkeiten.
+Von Foerster kritisierte den Versuch der Trivialisierung in diesen Bereichen scharf. Er sah darin eine Gefahr: Wenn man komplexe, lebendige Systeme wie triviale Maschinen behandelt, wird man ihrer Natur nicht gerecht.
+
+Luhmann definiert den Informationsbegriff ebenfalls im Sinne der *Kybernetik 2. Ordnung* und in Anlehnung an {cite:t}`bateson:1972` als Differenz die einen Unterschied (für/durch das System) macht (im Original: **A difference that makes a difference**).
+Als Soziologie ist die Differenz um die es ihm geht, jene, die eine Differenz im Kommunikationsfluss der Gesellschaft macht.
+Erst wenn ein Unterschied in der *Umwelt* (z. B. die Ampel springt von Rot auf Grün) einen Unterschied im *System* auslöst (das Auto fährt an), ist Information entstanden.
+Das System kann dabei auch unser "Geist", also das psychische System sein.
+
 Seine Theorie basiert auf selbstreferentiellen Systemen.
 Diese Systeme bilden innere Komplexität um die äußere Komplexität ihrer Umwelt zu verringern.
 Luhmann unterscheidet dabei zwischen **organischen** und **psychischen** sowie **sozialen** Systemen. 
@@ -157,25 +195,30 @@ All diese offenen Systeme sind *operational geschlossen* und zugleich gekoppelt.
 Jedes System erzeugt bzw. erhält sich selbst durch seine Operationen (Autopoiesis).
 Psychische Systeme denken und soziale Systeme kommunizieren.
 Gedanken erzeugen weitere Gedanken und Kommunikation erzeugt weitere Kommunikation.
-Soziale und psychische Systeme verarbeiten Sinn {cite}`luhmann:1987`.
-Verschiedene Soziale Systeme arbeiten mit verschiedenen Codes.
+Deshalb existiert Information nur **im** System.
+
+Soziale und psychische Systeme verarbeiten *Sinn* {cite}`luhmann:1987`---ein zentraler aber schwer zu begreifender Begriff bei Luhmann.
+Verschiedene soziale Systeme arbeiten mit verschiedenen Codes.
 Beispielsweise verwendet das Wissenschaftssystem den Code *wahr/falsch* und das Rechtssystem *legal/illegal*.
 
-Information ist dann für Luhmann nichts anderes als ein Ergebnis, das eine **Verknüpfung von Differenzen** bewirkt.
+Nochmals, Information ist für Luhmann nichts anderes als ein Ergebnis, das eine **Verknüpfung von Differenzen** bewirkt.
 Also ein Unterschied der einen Unterschied macht.
 Wenn ich jemandem sage: "Heute ist schlechtes Wetter", dann ist das eine Mitteilung, die eine sehr unterschiedliche Bedeutung für den Empfänger haben kann, ja nachdem, was er/sie darunter versteht (z.B. dann soll ich einen Regenschirm mitnehmen, oder: ich sollte lieber zu Hause bleiben usw.).
 Der Unterschied, dass heute schlechtes und nicht gutes Wetter ist, macht einen anderen Unterschied.
+
 Sinn ist für Luhmann ein Prozessieren nach Maßgabe von Differenzen und zwar von Differenzen, die als solche nicht vorgeben sind---es könnte für sie/ihn so oder auch anders sein.
 Es wird ein Sinnangebot (eine Mitteilung) gemacht und diese wird prozessiert.
-Verstehen heißt die Differenz zwischen Information und Mitteilung zu vollziehen.
+Verstehen heißt dann die Differenz zwischen Information und Mitteilung zu vollziehen.
 Die Einheit von Mitteilung, Information und Verstehen konstituiert für Luhmann die Kommunikation.
 
+<!--
 Auch die mentalistischen Ansätze haben ihre Grenzen.
 Erneut können wir uns Fragen was mit dem Wort 'Stuhl' ist.
 Oder noch verzwickter wird es beim Ausdruck 'Spiel'.
 Wenn der mentalistische Ansatz alles erklären könnte müsste es etwas geben was für jedes Spiel gilt.
 Wir müssten etwas finden, dass uns sagt ob es sich um ein Spiel handelt oder nicht.
 Doch wird man feststellen, dass zwar viele Spiele viele Gemeinsamkeiten haben, es aber keine Eigenschaft gibt, die alle Spiele besitzen.
+-->
 
 ## Evolutionäres Konzept
 
@@ -221,7 +264,7 @@ Sie gehen stattdessen davon aus, dass es drei verschieden komplexe selbstorganis
 
 Die Qualitäten einer höheren Ebene **emergieren** aus der jeweils darunterliegenden Ebene.
 Wie oben bereits erwähnt ist mit **emergieren** gemeint, dass ohne hierarchisch vorgebende Struktur durch das Zusammenspiel der Einzelteile, etwas Neues "aus sich selbst heraus" entsteht.
-Ein höheres System weißt Aspekte von Information auf, welches die niedrigeren Systeme nicht aufweisen.
+Ein höheres System weist Aspekte von Information auf, welches die niedrigeren Systeme nicht aufweisen.
 Gleichzeitig gibt es Aspekte der Information, die für evolutionär-aufeinanderfolgende Systemen gleichermaßen zutreffen.
 
 Nach dieser Theorie, hat Information in physikalisch-chemischen Systemen (niedrigste Ebene) einen rein **syntaktischen** Charakter.
