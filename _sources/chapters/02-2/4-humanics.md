@@ -1,8 +1,8 @@
-# Geisteswissenschaften
+# Geistes- und Systemwissenschaften
 
-## Semiotik
+## Semiotik: Wie Zeichen Bedeutung transportieren
 
-Die *Semiotik* (*Zeichentheorie*), ist die Wissenschaft, die sich mit Zeichensystemen aller Art befasst.
+Die *Semiotik* (*Zeichentheorie*) ist die Wissenschaft, die sich mit Zeichensystemen aller Art befasst.
 Wir haben im Abschnitt [Interpretation](sec-interpretation) die Semiotik bereits angesprochen und wollen ihr hier noch etwas mehr Platz einräumen.
 Sie ist nicht zuletzt eng mit der Informatik über das Konzept von Programmiersprachen, Grammatiken, formalen Methoden aber auch der Computerlinguistik---heute besser bekannt als Natural Language Processing (NLP)---verknüpft.
 
@@ -26,7 +26,7 @@ Saussure unterscheidet demzufolge zwischen *Vorstellung* (Begriff, Bedeutung, Si
 Diese sind so eng verknüpft, dass sie wie die zwei Seiten der gleichen Sache erscheinen, wie Vorder- und Rückseite eines Blatt Papiers oder die beiden Seiten einer Medaille.
 Das Lautbild ist ein *Bezeichnendes* (auch Signifikant), und die Vorstellung das *Bezeichnete* (auch Signifikat).
 Die Vorstellung befindet sich in der Mentalwelt.
-Saussure stellt zudem heraus, dass dieser Verbindung nichts Naturgegebenens ist.
+Saussure stellt zudem heraus, dass dieser Verbindung nichts Naturgegebenes ist.
 In anderen Worten: Der Baum aus unserer Vorstellung trägt nichts dazu bei, dass wir ihn 'Baum' nennen.
 
 >Das sprachliche Zeichen ist also etwas im Geist tatsächlich Vorhandenes, das zwei Seiten hat: [...] Diese beiden Bestandteile sind eng miteinander verbunden und entsprechen einander. [...] Ich nenne die Verbindung der Vorstellung mit dem Lautbild das Zeichen. -- {cite}`busse:2009` (Seite 27)
@@ -74,6 +74,9 @@ Zum Beispiel können zwei Zeichenfolgen (Ausdrücke) auf denselben (realen) Gege
 Der Logiker und Philosoph Gottlob Frege prägte für diesen Sachverhalt eine einflussreiche Unterscheidung {cite}`frege:1892`:
 Er nannte die Art, wie ein Ausdruck seinen Gegenstand beschreibt oder präsentiert, den **Sinn**, und den bezeichneten Gegenstand selbst die **Bedeutung** (in Übersetzungen oft als *Referenz* wiedergegeben, um Verwechslungen mit dem alltagssprachlichen "Bedeutung" zu vermeiden).
 Im semiotischen Dreieck entspricht Freges *Sinn* der Vorstellung (Signifikat) und seine *Bedeutung* dem Referenten.
+Es muss hier betont werden, dass Frege das Wort "Bedeutung" genau umgekehrt zum heutigen Alltagsgebrauch verwendet. 
+Heute sagen wir: "Das Wort Abendstern hat die Bedeutung, dass..." (was Freges Sinn entspricht).
+Für Frege ist die Bedeutung aber das physische Ding (der Planet Venus).
 
 Ein klassisches Beispiel Freges ist das Wortpaar ``Abendstern`` und ``Morgenstern``.
 Beide Zeichenfolgen **referenzieren** auf denselben Planeten (**realen Gegenstand**) Venus---sie teilen also dieselbe **Bedeutung** im Sinne Freges.
@@ -88,6 +91,7 @@ Für ``Morgenstern`` heißt es im Duden hingegen:
 
 Wir symbolisieren mit den Zeichen also einmal den Abend und das andere Mal den Morgen.
 Gleicher Referent, verschiedener Sinn---das ist Freges Pointe und zugleich ein Kernproblem der Semantik.
+Er geht diesen Schritt um sodann eine wundervolle, wenn auch schlussendlich unzureichende Definition von *Wahrheit* zu postulieren: Für ihn ist **der Wahrheitswert die Bedeutung eines Satzes!**
 
 Betrachten wir ein weiteres Beispiel aus dem Straßenverkehr: Das Halteverbotszeichen.
 Die **Syntax** des Zeichens ist seine Zusammensetzung aus rotem Ring und rotem Kreuz mit blauer Füllung.
@@ -124,7 +128,7 @@ Natürlich ist das kein Widerspruch.
 Die Sprache könnte am nützlichsten sein, wenn sie die Realität exakt beschreibt, doch scheint das nicht plausibel zu sein.
 Wenn die Sprache derart konstruiert ist, weshalb sollten sich Konventionen ändern, wenn die Sprache ihren Nutzen erfüllt?
 
-Wittgenstein folgert zudem, dass es keine Sprache geben kann bei der prinzipiell nur der/die Sprecher(in) selbst um die Bedeutung der Worte dieser Sprache wissen kann.
+Wittgenstein folgert zudem, dass es keine Sprache geben kann bei der prinzipiell nur der/die Sprecher*in selbst um die Bedeutung der Worte dieser Sprache wissen kann.
 Damit können wir durch sprachliche Äußerungen nicht auf private Episoden, wie Gefühle von Schmerz, Bezug nehmen.
 Da wir derartige Wörter intersubjektiv erlernen, sich aber rein Erlebnisse nicht intersubjektiv vermitteln lassen, können wir dies auch nicht erlernen.
 Wenn beispielweise ein Schmerz nicht anderweitig gemessen werden kann, ist vollkommen unklar ob das Gefühl auch nur im Entferntesten etwas mit dem zu tun hat was andere erzählen, wenn sie von Schmerzen sprechen.
@@ -133,10 +137,12 @@ Wenn beispielweise ein Schmerz nicht anderweitig gemessen werden kann, ist vollk
 
 ## Kybernetik und Systemtheorie 
 
+### Kybernetik 1. Ordnung
+
 Die soziologische Systemtheorie, mit Niklas Luhmann als wohl wichtigsten Vertreter, folgt dem kybernetischen Informationsbegriff der 1948 von Norbert Wiener in seinem Aufsatz *Cybernetics or Control and Communication in the Animal and the Machine* {cite:p}`wiener:1948` erörtert wurde.
 Interessanterweise ist dieser mathematisch identisch mit dem Begriff von Shannon aber in seiner Interpretation gegensätzlich.
 Die beiden Interpretationen sind im Grunde zwei Seiten derselben mathematischen und logischen Medaille.
-Während Shannons Definition heute die Basis für unsere gesamte digitale Kommunikation und Informatik ist, legte Wieners Ansatz das Fundament für die Systemtheorie, die künstliche Intelligenz (Steuerungsprozesse) und die Biophysik.
+Während Shannons Definition heute die Basis für unsere gesamte digitale Kommunikation und Informatik ist, legte Wieners Ansatz das Fundament für die Systemtheorie, die Künstliche Intelligenz (Steuerungsprozesse) und die Biophysik.
 
 Für Shannon war Information ein rein technisches und statistisches Maß (siehe [Nachrichtentechnik](sec-informationtheorie)). Ihn interessierte, wie effizient und fehlerfrei man Daten von A nach B übertragen kann, egal was diese Daten bedeuten.
 *Information* war bei ihm der Grad an *Unsicherheit*, der durch eine Nachricht beseitigt wird.
@@ -157,6 +163,8 @@ Diese hochwertige Energie ermöglicht Leben, z.B. Pflanzen, was diese Energiequa
 Wiener faßt Information als eine dritte Größe, neben Materie und Energie auf:
 
 >Information is information not matter or energy. -- {cite}`wiener:1948`
+
+### Kybernetik 2. Ordnung
 
 Die Kybernetik hat schließlich durch Heinz von Foerster ihre eigene Kritik in Form der *Kybernetik 2. Ordnung* entwickelt indem sie unsere oben gestellte Frage "Gewissheit bzw. Information für wen?" radikal durch den Begriff des *Beobachters* integrieren wollte.
 Wohingegen Shannon ein Beobachter bzw. Interpret fehlt, wurde er durch Heinz von Foerster zum zentralen Dreh- und Angelpunkt dieser völlig neuen Denkschule.
@@ -183,8 +191,10 @@ Zudem ist *Objektivität*, nach von Foerster, eine sehr nützliche Fiktion. Wenn
 Doch immer dann wenn der Beobachter wesentlicher Teil des Systems ist, das er oder sie untersucht---wie etwa in den Sozial- oder Geisteswissenschaften---geraten wir in Schwierigkeiten.
 Von Foerster kritisierte den Versuch der Trivialisierung in diesen Bereichen scharf. Er sah darin eine Gefahr: Wenn man komplexe, lebendige Systeme wie triviale Maschinen behandelt, wird man ihrer Natur nicht gerecht.
 
+### Systemtheorie nach Luhmann
+
 Luhmann definiert den Informationsbegriff ebenfalls im Sinne der *Kybernetik 2. Ordnung* und in Anlehnung an {cite:t}`bateson:1972` als Differenz die einen Unterschied (für/durch das System) macht (im Original: **A difference that makes a difference**).
-Als Soziologie ist die Differenz um die es ihm geht, jene, die eine Differenz im Kommunikationsfluss der Gesellschaft macht.
+Als Soziologe ist die Differenz um die es ihm geht, jene, die eine Differenz im Kommunikationsfluss der Gesellschaft **macht**.
 Erst wenn ein Unterschied in der *Umwelt* (z. B. die Ampel springt von Rot auf Grün) einen Unterschied im *System* auslöst (das Auto fährt an), ist Information entstanden.
 Das System kann dabei auch unser "Geist", also das psychische System sein.
 
@@ -196,10 +206,22 @@ Jedes System erzeugt bzw. erhält sich selbst durch seine Operationen (Autopoies
 Psychische Systeme denken und soziale Systeme kommunizieren.
 Gedanken erzeugen weitere Gedanken und Kommunikation erzeugt weitere Kommunikation.
 Deshalb existiert Information nur **im** System.
-
-Soziale und psychische Systeme verarbeiten *Sinn* {cite}`luhmann:1987`---ein zentraler aber schwer zu begreifender Begriff bei Luhmann.
-Verschiedene soziale Systeme arbeiten mit verschiedenen Codes.
+Verschiedene soziale Systeme arbeiten dabei mit verschiedenen Codes.
 Beispielsweise verwendet das Wissenschaftssystem den Code *wahr/falsch* und das Rechtssystem *legal/illegal*.
+
+Soziale und psychische Systeme verarbeiten zudem *Sinn* {cite}`luhmann:1987`---ein zentraler aber schwer zu begreifender Begriff bei Luhmann.
+Die Umwelt bietet dir unendlich viele Möglichkeiten.
+Sie ist voller *Überkomplexität* und damit würde ein System, wie etwa unser Bewusstsein, kollabieren, wenn es alles gleichzeitig verarbeiten müsste.
+*Sinn* ist laut Luhmann die Form [^1], wie Systeme diese Komplexität verarbeiten.
+Es ist die Aktualisierung einer Möglichkeit bei gleichzeitigem Mitschwingen anderer Optionen: Ich kaufe eine Hose (Aktualität) und keinen Mantel (Potenzialität).
+Dabei ist Sinn ist niemals statisch, denn jede Aktualisierung verweist sofort auf die nächste (*Verweisungsüberschuss*).
+
+[^1]: Sinn ist *Form* und *Medium* zugleich. Eine Form entsteht immer dann, wenn man im Medium Sinn eine konkrete Auswahl trifft. Es findet eine Selektion statt, wodurch lose Elemente fest gekoppelt werden. Eine Form grenzt sich immer von etwas anderem ab (sie zieht eine Grenze).
+
+Für Luhmann ist Sinn kein psychologischer Zustand und kein tieferer Lebenszweck, sondern die grundlegende Form der Informationsverarbeitung in psychischen und sozialen Systemen. 
+Sinn bezeichnet eine spezifische Ordnung der Welt, bei der jede aktuelle Erfahrung oder Mitteilung auf andere, alternative Möglichkeiten verweist. 
+Sinn ist somit ein permanentes Auswählen (Selektieren) aus einem Überschuss an Möglichkeiten: Wer im Medium Sinn handelt oder kommuniziert, tut etwas Bestimmtes und hält gleichzeitig andere Optionen im Hintergrund parat. 
+Kommunikation konstituiert sich bei Luhmann genau dann, wenn ein System die Differenz zwischen einer getroffenen Mitteilung und der darin enthaltenen Information im Horizont dieses Sinn-Angebots versteht.
 
 Nochmals, Information ist für Luhmann nichts anderes als ein Ergebnis, das eine **Verknüpfung von Differenzen** bewirkt.
 Also ein Unterschied der einen Unterschied macht.
@@ -210,6 +232,28 @@ Sinn ist für Luhmann ein Prozessieren nach Maßgabe von Differenzen und zwar vo
 Es wird ein Sinnangebot (eine Mitteilung) gemacht und diese wird prozessiert.
 Verstehen heißt dann die Differenz zwischen Information und Mitteilung zu vollziehen.
 Die Einheit von Mitteilung, Information und Verstehen konstituiert für Luhmann die Kommunikation.
+
+
+### Das Free Energy Principle
+
+Eine moderne, mathematisch und neurobiologisch exakte Synthese dieser kybernetischen Ideen liefert der britische Neurowissenschaftler Karl Friston mit seinem *Free Energy Principle* (Prinzip der freien Energie) {cite}`friston:2010`. Fristons Ansatz verbindet Wieners Thermodynamik direkt mit der Systemtheorie und der Funktionsweise des Gehirns.
+
+Nach Friston muss jedes lebende, biologische System (vom Einzeller bis zum menschlichen Gehirn) eine grundlegende Herausforderung bewältigen: Es muss verhindern, dass es sich durch den zweiten Hauptsatz der Thermodynamik in Chaos auflöst (*Entropie*). Um diesen Zustand der inneren Ordnung stabil zu halten, versucht das System, seine sogenannte "*freie Energie*" zu minimieren. 
+
+In der Informations- und Kognitionstheorie entspricht diese freie Energie im Wesentlichen der **Überraschung** (Surprise) oder dem **Vorhersagefehler** (Prediction Error).
+
+Das System (z. B. das Gehirn) agiert als eine "*Vorhersagemaschine*" (*Predictive Brain*). Es empfängt---exakt wie von Foerster es beschrieb---nur ungerichtete physikalische Reize. Basierend auf einem internen, gelernten Modell erzeugt das Gehirn nun ständig Hypothesen darüber, was diese Reize bedeuten, und sendet Top-down-Vorhersagen an die Sinnesorgane. **Information entsteht genau dann, wenn die Realität von der Vorhersage abweicht.** 
+Dieses Vorhersagemodell berechnet also ständig eine Wahrscheinlichkeitsverteilung über mögliche zukünftige Zustände und damit berechnet das Gehirn nicht nur eine Gegenwart, sondern hält im Hintergrund mathematisch die Wahrscheinlichkeiten für alternative Szenarien bereit.
+Dies ließe sich möglicherweise als das identifizieren was Luhmann phänomenologisch als "Mitschwingen anderer Möglichkeiten im Sinn-Horizont" beschreibt.
+
+Biologische Systeme haben laut Friston zwei Möglichkeiten, diesen Vorhersagefehler (die freie Energie) zu minimieren:
+
+1. **Perzeptuelle Anpassung (Lernen):** Das System verändert sein internes Modell der Welt, um die Realität besser zu verstehen (die Semantik anpassen).
+2. **Aktive Inferenz (Handeln):** Das System verändert aktiv die Umwelt (Pragmatik), damit sie wieder den eigenen Vorhersagen entspricht (z. B. den Blick abwenden oder die Position verändern).
+
+Damit schließt Friston den Kreis: Information ist kein statisches Gut in der Welt, sondern das Maß der ständigen Anpassung eines operational geschlossenen Systems, das versucht, seine eigene Existenz gegen den Zerfall zu verteidigen.
+
+>[I]nvoking selectionist arguments; those systems that match their internal structure to the external causal structure of the environment in which they are immersed will be able to minimise their free energy more effectively. -- {cite}`friston:2006`
 
 <!--
 Auch die mentalistischen Ansätze haben ihre Grenzen.
