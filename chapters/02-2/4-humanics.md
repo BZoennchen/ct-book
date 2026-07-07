@@ -6,7 +6,7 @@ Die *Semiotik* (*Zeichentheorie*), ist die Wissenschaft, die sich mit Zeichensys
 Wir haben im Abschnitt [Interpretation](sec-interpretation) die Semiotik bereits angesprochen und wollen ihr hier noch etwas mehr Platz einräumen.
 Sie ist nicht zuletzt eng mit der Informatik über das Konzept von Programmiersprachen, Grammatiken, formalen Methoden aber auch der Computerlinguistik---heute besser bekannt als Natural Language Processing (NLP)---verknüpft.
 
-Für die Entwicklung der modernen Semiotik gilt die Zeichentheorie von Ferdinant de Saussure (1857-1913) als grundlegend.
+Für die Entwicklung der modernen Semiotik gilt die Zeichentheorie von Ferdinand de Saussure (1857-1913) als grundlegend.
 Er erweiterte die referenzielle Bedeutungslehre (referenzielle Semantik) durch die mentale Bedeutungslehre.
 
 Die referenzielle Semantik scheint auf den ersten Blick sehr plausibel zu sein.
@@ -31,7 +31,7 @@ In anderen Worten: Der Baum aus unserer Vorstellung trägt nichts dazu bei, dass
 
 >Das sprachliche Zeichen ist also etwas im Geist tatsächlich Vorhandenes, das zwei Seiten hat: [...] Diese beiden Bestandteile sind eng miteinander verbunden und entsprechen einander. [...] Ich nenne die Verbindung der Vorstellung mit dem Lautbild das Zeichen. {cite}`busse:2009` (Seite 27)
 
-Charles Odgen und Ivor A. Richards stellten 1923 das Modell des *semiotischen Dreiecks* vor, welches es im laufe der Zeit in verschiedenen Ausführungen gab.
+Charles Ogden und Ivor A. Richards stellten 1923 das Modell des *semiotischen Dreiecks* vor, welches es im laufe der Zeit in verschiedenen Ausführungen gab.
 Das *semiotische Dreieck* baut auf Saussures Ideen auf, fügt jedoch eine dritte Komponente hinzu: den *Referenten*, also das tatsächliche Objekt oder die Sache in der Welt, die durch das Zeichen repräsentiert wird.
 Während Saussures Modell eher abstrakt und auf die Struktur der Sprache selbst fokussiert ist, versucht das semiotische Dreieck, auch die Rolle der externen Welt und der menschlichen Vorstellungskraft einzubeziehen.
 
@@ -39,7 +39,7 @@ Wenn wir sagen: "Mein Glas ist leer" dann ist 'Glas' das Lautbild, welches für 
 Habe ich tatsächlich ein leeres Glas vor mir, sieht dieses vermutlich anders aus als das Glas Ihrer Vorstellung.
 Erst in einer individuellen Sprechsituation---wenn ich und Sie über das leere Glas, was vor mir steht, reden---wird die Vorstellung dem Gegenstand zugeordnet.
 
-Charles W. Morris (1901 - 1979) vertrat einen pragmatischen Zeichenbegriff, indem er die Beziehung zwischen Zeichen und Zeicheninterpreter\*in einbezog.
+Charles W. Morris (1901 - 1979) vertrat einen pragmatischen Zeichenbegriff, indem er die Beziehung zwischen Zeichen und Zeicheninterpreter\*in einbezog {cite}`morris:1938`.
 Er brachte die drei Teile der Semiotik,
 
 1. **Syntax (Aufbau)**: Die Beziehung zwischen Zeichen. Wesentlich sind dabei Regeln, die zulässige und auf einer semantischen Ebene verständliche Zeichenketten durch Kombination einzelner Zeichen entstehen lässt.
@@ -70,19 +70,24 @@ Hier hatten wir gesagt, dass wir den Tag, den die Zeichenfolge ``23.10.2022`` re
 Wir können immer nur einen Repräsentanten niederschreiben.
 Deshalb ist der Gegenstand aus der Realwelt auf den wir referenzieren **außersprachlich**.
 
-Zum Beispiel, können zwei Zeichenfolgen (Ausdrücke) auf den selben (realen) Gegenstand **referenzieren**, jedoch unterschiedliche Bedeutungen haben.
-Ein Beispiel ist das Wortpaar ``Abendstern`` und ``Morgenstern``.
-Beide Zeichenfolgen **referenzieren** auf den Planeten (**realen Gegenstand**) Venus.
-``Abendstern`` ist der **syntaktische** Ausdruck. 
-Seine **Bedeutung** (nach dem Duden) ist: 
+Zum Beispiel können zwei Zeichenfolgen (Ausdrücke) auf denselben (realen) Gegenstand **referenzieren**, jedoch unterschiedliche Bedeutungen haben.
+Der Logiker und Philosoph Gottlob Frege prägte für diesen Sachverhalt eine einflussreiche Unterscheidung {cite}`frege:1892`:
+Er nannte die Art, wie ein Ausdruck seinen Gegenstand beschreibt oder präsentiert, den **Sinn**, und den bezeichneten Gegenstand selbst die **Bedeutung** (in Übersetzungen oft als *Referenz* wiedergegeben, um Verwechslungen mit dem alltagssprachlichen "Bedeutung" zu vermeiden).
+Im semiotischen Dreieck entspricht Freges *Sinn* der Vorstellung (Signifikat) und seine *Bedeutung* dem Referenten.
+
+Ein klassisches Beispiel Freges ist das Wortpaar ``Abendstern`` und ``Morgenstern``.
+Beide Zeichenfolgen **referenzieren** auf denselben Planeten (**realen Gegenstand**) Venus---sie teilen also dieselbe **Bedeutung** im Sinne Freges.
+Doch ihr **Sinn** ist verschieden: ``Abendstern`` ist der **syntaktische** Ausdruck für das Phänomen am Abendhimmel.
+Seine Bedeutung (nach dem Duden) ist:
 
 >Auffallend hell leuchtender Stern am Westhimmel nach Sonnenuntergang.
 
-Für ``Morgenstern`` heißt es im Duden hingegen: 
+Für ``Morgenstern`` heißt es im Duden hingegen:
 
->Auffallend hell leuchtende Planet Venus am Morgenhimmel vor Sonnenaufgang.
+>Auffallend hell leuchtender Planet Venus am Morgenhimmel vor Sonnenaufgang.
 
 Wir symbolisieren mit den Zeichen also einmal den Abend und das andere Mal den Morgen.
+Gleicher Referent, verschiedener Sinn---das ist Freges Pointe und zugleich ein Kernproblem der Semantik.
 
 Betrachten wir ein weiteres Beispiel aus dem Straßenverkehr: Das Halteverbotszeichen.
 Die **Syntax** des Zeichens ist seine Zusammensetzung aus rotem Ring und rotem Kreuz mit blauer Füllung.
@@ -112,7 +117,7 @@ Die Konvention entsteht aus der Sprachgemeinschaft.
 
 Diese Auffassung scheint eigentlich nicht weiter radikal zu sein aber tritt Wittgenstein damit gegen eine lange Tradition des Platonismus an.
 Denn der Platonismus geht davon aus, dass es eine Art Ideenwelt gibt und dass jede Form durch eine gewisse Essenz ausgezeichnet ist.
-Zu bedenken ist, dass der Platonismus hat das westliche Denken maßgeblich geprägt hat.
+Zu bedenken ist, dass der Platonismus das westliche Denken maßgeblich geprägt hat.
 Zudem wird durch Wittgenstein deutlich, dass es eher unwahrscheinlich ist, dass Sprache die tatsächliche Realität beschreibt.
 Schließlich geht bei Wittgensteins Auffassung um Nützlichkeit und nicht um eine akkurate Beschreibung.
 Natürlich ist das kein Widerspruch.
@@ -206,7 +211,7 @@ Wissen gilt als kontext- und zweckbezogene Information.
 Fuchs-Kittowski setzt einen strikten Riegel vor die physikalischen Systeme.
 Da in physikalischen (und chemischen) Systemen von Bedeutung keine Rede sein kann, geht er davon aus, dass es in diesen Systemen auch keine Information gibt.
 
-In diesem Punkt widersprechen {cite:t}`fuchs:2002`.
+Diesem Standpunkt widersprechen jedoch {cite:t}`fuchs:2002`.
 Die Autoren haben sich mit ihrem Ansatz zur Aufgabe gemacht, eine einheitliche Informationstheorie (Unified Theory of Information) zu finden und zu etablieren.
 Sie gehen stattdessen davon aus, dass es drei verschieden komplexe selbstorganisierende Systemkategorien gibt:
 
