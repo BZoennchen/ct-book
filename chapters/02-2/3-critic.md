@@ -51,7 +51,8 @@ Wie sinnvoll, wertvoll, wertlos, wahr oder falsch eine Information ist und ob si
 Sobald wir aber die [(semiotische) Semantik](def-semantik-semiotik) einer Information betrachten, zerfällt dieser Reduktionismus (der uns natürlich bei der Informationsverarbeitung äußerst dienlich ist).
 
 Zeichnen wir zum Beispiel ein Pixelbild, das einen Buchstaben darstellt, dann ergibt sich der **Sinn** nicht aus der Summe der einzelnen Pixel, sondern aus der (emergenten) Darstellung des Buchstabens.
-Der Sinn eines literarischen Werks lässt sich nicht durch eine rein syntaktische Betrachtung beziffern.
+Und noch "schlimmer": Der Sinn ergbit sich nur durch das "mitschwingen" aller anderen Buchstaben, also durch Differenzen von Beziehungen.
+Der Sinn eines literarischen Werks lässt sich nicht durch eine rein syntaktische Betrachtung beziffern, ja nicht einmal durch den Text der vor uns liegt, da auch hier alle anderen Texte, unsere eigenen Erfahrungen etc., "mitschwingen".
 Oder blicken wir nochmals zurück zur Situation in der Bahn.
 Nach Shannons Modell wäre die Information eigentlich gar nicht die aktuelle Wetterlage, sondern die einzelnen Pixel auf dem Monitor.
 Diese einzelnen Pixel haben keinen Bezug zum Wetter.
@@ -90,8 +91,8 @@ Es kann sowohl ein Geldinstitut als auch eine Sitzgelegenheit bezeichnen---die Z
 Erst der Satz, das Gespräch, die Situation---kurz: der Kontext---löst die Mehrdeutigkeit auf.
 Shannons Entropie behandelt beide Bedeutungen gleich.
 
-Oder betrachten Sie die Aussage "Toll, genau das habe ich gebraucht!" gesagt, nachdem jemandem das Getränk umgefallen ist.
-Syntaktisch positiv---pragmatisch ironisch.
+Oder betrachten Sie die Aussage: "Toll, genau das habe ich gebraucht!", nachdem jemandem das Getränk umgefallen ist.
+Syntaktisch positiv---*pragmatisch* ironisch.
 Kein syntaktisches Analysewerkzeug kann diese Umkehrung der Bedeutung aus der Zeichenfolge allein erschließen.
 
 Diese Kontextabhängigkeit reicht weit:
