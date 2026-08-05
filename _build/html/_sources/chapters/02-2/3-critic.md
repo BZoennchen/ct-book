@@ -104,6 +104,36 @@ Worte und Datenpunkte sind immer Abstraktionen, Konstruktionen und Reduktionen e
 Für uns als Computational Thinker*innen hat das weitreichende Konsequenzen: Selbst wenn eine KI Milliarden von Texten syntaktisch perfekt analysiert, verarbeitet sie letztlich nicht die Realität selbst, sondern nur ein sprachliches---und damit oft lückenhaftes und kulturell vorgefärbtes---Konstrukt.
 Um diesen Dimensionen gerecht zu werden, müssen wir uns einer ganz anderen Disziplin zuwenden.
 
+## Ein analytischer Entwurf
+
+Ein etwas aktueller Versuch "Information" in der Tradition der analytischen Philosophie zu fassen wirde vom britisch-italienischen Philosoph Luciano Floridi unternommen.
+In seinem Werk *The Philosophy of Information* {cite}`floridi:2011` schlägt er eine **Allgemeine Definition von Information** (engl. *General Definition of Information*, GDI).
+Er unterscheidet zwischen *Datum* und *Information* und definiert *semantische Information* als ein Datum (oder eine Menge von Daten), das drei Bedingungen erfüllt:
+
+1. **Wohlgeformtheit** (*syntactic*): Das Datum ist nach einem Codesystem korrekt strukturiert.
+2. **Bedeutungsgehalt** (*semantic*): Das Datum ist bedeutungstragend, also interpretierbar.
+3. **Wahrheit** (*alethic*): Das Datum entspricht der Wirklichkeit---es ist wahr.
+
+Die dritte Bedingung nennt Floridi die Veridikalitätsthese: Falsche Aussagen sind für ihn keine Information, sondern Desinformation.
+Das klingt kontraintuitiv, ist aber konsequent: Wer informiert, erhebt einen Wahrheitsanspruch über die Wirklichkeit.
+
+Damit ist Floridis Informationsbegriff das exakte Gegenstück zu Shannons.
+Wo Shannon die Semantik explizit ausklammert, macht Floridi sie zum Kern seiner Definition.
+Wo Shannon Rauschen und bedeutungsvolle Nachricht gleichbehandelt, verlangt Floridi Wahrheit.
+
+Ein weiteres zentrales Konzept ist das der Abstraktionsebene (engl. Level of Abstraction, LoA). Information ist nie absolut, sondern immer relativ zu einer gewählten Betrachtungsebene.
+Der Satz "36.5 Grad" erzeugt auf der Ebene eines Wetterberichts andere Information als auf der eines medizinischen Befunds---obwohl die syntaktischen Daten identisch sind. Das Kontextproblem kehrt hier in analytischer Sprache wieder.
+
+Floridis Ansatz ist heute der wichtigste analytisch-philosophische Bezugspunkt der Informatik-Philosophie.
+Er bleibt jedoch an seine Grenzen: Die Veridikalitätsthese widerspricht dem Alltagsgebrauch, und das Symbol-Grounding-Problem löst sie nicht---denn auch eine wahre Aussage muss noch erklären, wie ihre Symbole überhaupt Wahrheitsbedingungen erhalten.
+
+Autoren aus der kontinentalen Tradition würden seinen Ansatzen wohl ablehnen, denn im Kern geht Floridi von realistischen, korrespondenztheoretischen Grundannahme aus, die mit konstruktivistischen, strukturalistischen, poststrukturalistischen Positionen schwer verträglich ist.
+Aber ist er nicht so naiv zu glauben wir könnten direkt auf die Welt da draußen zugreifen.
+Er nennt seine eigene Position "Constructionism" (nicht Constructivism) und meint damit: Wir konstruieren unsere informationellen Modelle der Wirklichkeit tatsächlich aktiv, aber das Noumenon (im kantischen Sinn) leistet Widerstand, liefert Constraints, "drückt zurück".
+Es ist also kein Anything-goes-Konstruktivismus, sondern ein Mittelweg.[^1]
+
+[^1]: Mir ist kein Anything-goes-Konstruktivismus bekannt. Kein Konstruktivismus behauptet unser Geist würde die Realität "frei" kontruieren. Luhmann, beispielsweise nicht behaupten, dass die Umwelt nicht real wäre. Aber die Umwelt kann nur *irritieren* nicht *informieren* und ob eine Reaktion "angemessen", "richtig" oder "wahr" war, wird nicht an der Umwelt selbst gemessen, sondern innerhalb des Systems entschieden. Konstruktivismus meint hier dass es keinen Standpunkt gibt, von dem aus man beurteilen könnte, wessen Konstruktion "näher an der Realität" ist. Floridi will genau das erhalten. Sein Noumenon fungiert trotz Unzugänglichkeit als eine Art trans-systemischer Anker. Floridi diskutiert im Buch explizit *radikalen Konstruktivismus* und *Autopoiesis* (Maturana/Varela) als Gegenposition, gegen die er seinen "Constructionism" abgrenzt. Er kennt also genau diese Denklinie und positioniert sich bewusst als gemäßigter, realistischerer Gegenentwurf dazu.
+
 ## Zusammenfassung
 
 Naturwissenschaftliche und strukturwissenschaftliche Informationsbegriffe sind klar definiert und anwendbar.
