@@ -65,29 +65,29 @@ Er vertrat eine *wahrheitskonditionale Bedeutungstheorie*, d.h. den Sinn (die Be
 Der Sinn ergibt sich allerdings nicht nur aus der Nachricht, sondern aus dem Kontext in dem diese Nachricht steht und dazu können wir alle möglichen anderen Wörter/Sätze und deren Sinn zählen.
 Wir kommen zu dem Problem, dass jede Defintion eines Begriffs über andere Begriffe in einer Sprache gesetzt wird und dass der Sinn sich, durch Veränderungen in soziale Praktiken, fortwährend verschiebt.
 Laut Davidson sogar durch die konkreten Gesprächssituation: Die tatsächliche Bedeutung einer Äußerung in einer gegebenen Situation hängt von einer ad-hoc konstruierten "*passing theory*" ab, die Sprecher und Hörer im Moment der Interaktion gemeinsam entwickeln---notfalls auch entgegen der wörtlichen, konventionellen Bedeutung. 
-In seiner radikalen Spätphase zog Davidson sogar den Schluss, es gebe im strengen Sinn "keine Sprache" als feste, geteilte Konvention, sondern nur die je aktuelle Interpretationsleistung zählt.
+In seiner radikalen Spätphase zog Davidson sogar den Schluss, es gebe im strengen Sinn "keine Sprache" als feste, geteilte Konvention, sondern nur die je aktuelle Interpretationsleistung zähle.
 
 Shannon's Definition ist dagegen rein [syntaktisch](def-syntax), denn Maschinen fehlt (bis heute) die Eigenschaft der semantischen Betrachtung---d.h. der Sinnerschließung oder der [semiotischen](sec-semiotik) Interpretation.[^1]
 In der Informatik gibt es deshalb (noch) keine befriedigende Definition des Sinns, welcher der Bedeutung der betrachteten Information gerecht wird.
 Im Sinne der Informationsverarbeitung bleiben wir bei der [syntaktischen](def-syntax) Betrachtung.
 Jedoch sei erneut betont, dass sich die Bedeutung oder der Sinn in Informationssysteme einschleicht, wenn diese Auswirkungen auf das gesellschaftliche Leben haben.
 Ein System, welches Ihnen automatisch einen Kredit aufgrund Ihrer getätigten Ausgaben verweigert, tut dies aufgrund des Sinns, den die Bank aus den Informationen zieht.
-In anderen Worten: Ein System kann einen Sinn oder eine normative Regel realisieren aber weder verstehen noch verantworten.
+In anderen Worten: Ein System kann einen Sinn oder eine normative Regel realisieren, sie aber weder verstehen noch **verantworten**.
 
-[^1]: Große Sprachmodelle stellen uns derzeit vor neue Fragen z.B. inwieweit die reine Beziehung von Wörtern in einem Text---denn das ist es was Sprachmodelle "lernen"---schon ausreicht um einen Teil des Sinns zu erfassen. Für eine tiefere Diskussion dieser faszinierenden Fragen über die Bedeutung und Funktionsweise unserer Sprache verweisen wir auf {cite:p}`bender:2020`, {cite:p}`piantadosi:2022` und {cite:p}`sogaard:2023`.
+[^1]: Große Sprachmodelle stellen uns derzeit vor neue Fragen z.B. inwieweit die reine Beziehung von Wörtern in einem Text---denn das ist es was Sprachmodelle modellieren---schon ausreicht um einen Teil des Sinns zu erfassen. Für eine tiefere Diskussion dieser faszinierenden Fragen über die Bedeutung und Funktionsweise unserer Sprache verweisen wir auf {cite:p}`bender:2020`, {cite:p}`piantadosi:2022` und {cite:p}`sogaard:2023`.
 
 Gehen wir zurück zu unserem Einführungsbeispiel in der U-Bahn.
 Falls der Wetterbericht Ihnen lediglich mitteilen kann ob es regnet oder nicht, so ist der Informationsgehalt von "es regnet" gering.
 Wenn aber der Wetterbericht Ihnen unterschiedliche Arten von Regen oder andere Wetterlagen berichten kann, so trägt eine dieser konkreten Wetterlagen einen großen Informationsgehalt in sich.
+Ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon's Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.
 Ob es draußen aber 25 Grad oder 25.00001 Grad hat, ist Ihnen höchst wahrscheinlich gleichgültig.
 Das heißt zwei durchaus sehr unterschiedliche Informationen können den annähernd gleichen Sinn ergeben.
-Ein Wetterbericht der Ihnen die Temperatur auf fünf Nachkommastellen genau berichtet, liefert nach Shannon's Definition einen viel höheren Informationsgehalt als ein Dienst, der bei der ersten Nachkommastelle rundet.
 
 ### Entropie (Informatik)
 
 Einer der Vorzüge der (strukturwissenschaftlichen) Definition ist, dass wir ein Maß für den *Informationsgehalt* definieren können.
 Shannon misst den Informationsgehalt einer Nachricht über die *Entropie*, welche uns in der Physik schon über den Weg gelaufen ist.
-Die Entropie in der Informatik ist ein Maß für den *mittleren Informationsgehalt* einer *Nachricht*.
+Die Entropie ist für die Informatik ein Maß für den *mittleren Informationsgehalt* einer *Nachricht*.
 
 Betrachten wir eine bestimmte endliche Menge an Zeichen die bei einer Übertragung auftauchen können.
 Diese Menge bezeichnet man üblicherweise als Alphabet $\Sigma$.
@@ -173,10 +173,10 @@ Oder anders ausgedrückt: Je größer die *Überraschung*, desto größer ist de
 Information führt zur Beseitigung von Unsicherheit.
 Je mehr Unsicherheit beseitigt wird, desto größer ist der Informationsgehalt!
 
-Dabei müssen wir uns immer wieder vor Augen halten, dass Shannon mit "Gewissheit" oder "Überraschung" spricht, dann meint er das nicht psychologisch, sondern rein statistisch.
+Dabei müssen wir uns immer wieder vor Augen halten, dass wenn Shannon von "Gewissheit" oder "Überraschung" spricht, er das nicht psychologisch, sondern rein statistisch meint.
 **Es geht um die Gewissheit des Systems basierend auf Wahrscheinlichkeiten, nicht um das Gefühl einer Person.**
-Der Empfänger ist kein denkender Mensch, sondern ein mechanischer oder digitaler Apparat (z. B. ein Telegrafenempfänger, ein Funkgerät oder eine Festplatte) und die "Gewissheit" ist vorab im System fest verdrahtet und zwar in Form von Wahrscheinlichkeiten.
-Nochmals: Für die Shannon-Information ist es völlig egal, ob die Nachricht ein tiefgründiges Liebesgedicht ist oder das zufällige Rauschen eines kaputten Fernsehers. Wenn beide Sequenzen gleich unwahrscheinlich (zufällig) sind, haben sie für Shannon den gleichen Informationsgehalt.
+Der Empfänger ist kein denkender Mensch, sondern ein mechanischer oder digitaler Apparat (z.B. ein Telegrafenempfänger, ein Funkgerät oder eine Festplatte) und die "Gewissheit" ist vorab im System fest verdrahtet und zwar in Form von Wahrscheinlichkeiten.
+Nochmal: Für die Shannon-Information ist es völlig egal, ob die Nachricht ein tiefgründiges Liebesgedicht ist oder das zufällige Rauschen eines kaputten Fernsehers. Wenn beide Sequenzen gleich unwahrscheinlich (zufällig) sind, haben sie für Shannon den gleichen Informationsgehalt.
 
 Zwischen der Entropie eines Zeichens und den notwendigen Bits einer Nachricht gibt es einen schönen Zusammenhang:
 Ist ein bestimmtes Alphabet $\Sigma$ mit all den Auftrittswahrscheinlichkeiten seiner Zeichen gegeben, so benötigen wir im Mittel

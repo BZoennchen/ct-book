@@ -15,15 +15,12 @@ Softwareentwickler\*innen haben das Ziel, Nachrichten sicher und korrekt zu übe
 Die Interpretation, Entstehung und Wirkung von Informationen war niemals Aufgabe der Maschine, sondern der Menschen.
 
 Diese vier Säulen der Informationsverarbeitung (**Einlesen**, **Speichern**, **Verarbeiten**, **Ausgeben**) sind heute noch immer ein gültiges Modell.
-Doch müssen wir Ihnen gestehen, dass heute kaum noch eine Eingabe das Informationssystem gänzlich "verlässt".
-Und dass Ihre Eingabe Auswirkungen auf die Manipulation weiterer Eingaben haben wird.
+Doch müssen wir Ihnen gestehen, dass heute kaum noch eine Eingabe das Informationssystem gänzlich "verlässt" und dass Ihre Eingabe Auswirkungen auf die Manipulation weiterer Eingaben haben wird.
 Anders ausgedrückt: Ihre Eingabe wird von Maschinen und Algorithmen so interpretiert, dass diese selbstverständlich eine Wirkung auf Sie haben.
 
 Zum Beispiel interpretieren Algorithmen Ihre Musikauswahl auf Streamingdiensten, um Ihnen möglichst "gute" Musikvorschläge machen zu können.
 Natürlich wurden diese Algorithmen von Menschen entwickelt, doch sitzt dort keiner mehr an einem Monitor und entscheidet über Ihren individuellen Musikgeschmack.
-Algorithmen interpretieren und bewerten Ihre Eingabe (**Interpretation**).
-Sie kategorisieren sie (**Entstehung/Deutung**).
-Und schlagen Ihnen neue Musikstücke vor (**Wirkung**).
+Algorithmen interpretieren und bewerten Ihre Eingabe (**Interpretation**), sie kategorisieren sie (**Entstehung/Deutung**), und schlagen Ihnen neue Musikstücke vor (**Wirkung**).
 Können wir diese Deutung verallgemeinern, also allgemeine Gesetzmäßigkeiten feststellen, könnten wir möglicherweise von einer *Wissensgenerierung* sprechen.
 
 Dabei besteht eine Gefahr, die der Medienwissenschaftler Eli Pariser treffend als *Filterblase* (engl. *filter bubble*) bezeichnet hat {cite}`pariser:2011`.
@@ -37,8 +34,8 @@ Doch diese Muster spiegeln häufig historische Ungleichheiten wider.
 Ein System, das "neutral" Daten verarbeitet, kann so diskriminierende Entscheidungen reproduzieren, ohne dass der Algorithmus selbst eine normative Absicht hätte.
 Die *Wirkung* ist dennoch normativ.
 
-Was wir heute zunehmend vorfinden sind mehr oder weniger intelligente Systeme, d.h. künstliche Intelligenzen.
-Unbestritten ist die *künstliche Intelligenz (KI)* ein Teilgebiet der *Informatik*, vielleicht sogar das Gebiet mit dem größten Zuwachs.
+Was wir heute zunehmend vorfinden sind mehr oder weniger intelligente Systeme, d.h. "künstliche" Intelligenzen.
+Unbestritten ist die *Künstliche Intelligenz (KI)* ein Teilgebiet der *Informatik*, vielleicht sogar das Gebiet mit dem größten Zuwachs.
 In diesem Gebiet berühren sich viele unterschiedliche Forschungsgebiete, wie etwa der Psychologie, Neurowissenschaften, Mathematik, Logik, Kommunikationswissenschaften, Philosophie und Linguistik.
 Als *Computational Thinker\*innen* werden wir zunehmend mit der automatisierten **Entstehung**, **Interpretation**, **Deutung** und **Wirkung** von Informationen konfrontiert.
 Können wir uns also noch länger hinter der reinen [syntaktischen](def-syntax) Definition der Information verstecken?
@@ -101,6 +98,10 @@ Dasselbe Foto kann als Beweisstück in einem Gerichtsverfahren, als Kunstwerk in
 
 Die Linguistik unterscheidet hier zwischen **Semantik** (der Bedeutung sprachlicher Ausdrücke losgelöst vom Kontext) und **Pragmatik** (der Wirkung von Äußerungen in konkreten Kommunikationssituationen).
 Letztere umfasst Phänomene wie Ironie, Implikatur und Sprechakte---alles Dinge, die sich nicht aus der Zeichenfolge allein ableiten lassen.
+Dies führt uns unweigerlich zu einer noch tiefergehenden Frage: Inwieweit bildet Sprache die Realität überhaupt objektiv ab?
+Wenn wir erkennen, dass reine Syntax keine Bedeutung schafft und Symbole eine Verankerung in der physischen Welt benötigen, müssen wir uns eingestehen, dass Sprache kein perfekter Spiegel der Realität ist {cite}`rorty:1979`.
+Worte und Datenpunkte sind immer Abstraktionen, Konstruktionen und Reduktionen einer viel komplexeren Welt.
+Für uns als Computational Thinker*innen hat das weitreichende Konsequenzen: Selbst wenn eine KI Milliarden von Texten syntaktisch perfekt analysiert, verarbeitet sie letztlich nicht die Realität selbst, sondern nur ein sprachliches---und damit oft lückenhaftes und kulturell vorgefärbtes---Konstrukt.
 Um diesen Dimensionen gerecht zu werden, müssen wir uns einer ganz anderen Disziplin zuwenden.
 
 ## Zusammenfassung

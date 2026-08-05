@@ -112,21 +112,25 @@ Zwar ähneln sich viele Spiele aber es gibt eben nicht diese eine *Essenz des Sp
 
 Stattdessen wissen wir was ein Spiel ist, weil uns unsere Kultur und Gemeinschaft erklärt was ein Spiel ist.
 Verwenden wir das Wort falsch, werden wir darauf hingewiesen.
-Es kommt zu einer Absprache was zwischen Menschen und diese Absprache entscheidet was ein Spiel ist.
+Es kommt zu einer Absprache zwischen Menschen und diese Absprache entscheidet was ein Spiel ist.
 Diese wurde jedoch nicht bewusst getroffen.
 Wir setzen uns nicht zusammen und klären was ein Spiel ist.
 Es handelt sich vielmehr um eine unbewusste sprachliche und gesellschaftliche Konvention die nebenläufig erhalten und auch verändert wird.
 Jeder weiß was gemeint ist, wenn ich 'Spiel' sage.
 Die Konvention entsteht aus der Sprachgemeinschaft.
 
-Diese Auffassung scheint eigentlich nicht weiter radikal zu sein aber tritt Wittgenstein damit gegen eine lange Tradition des Platonismus an.
+Diese Auffassung scheint eigentlich nicht weiter radikal zu sein, allerdings tritt Wittgenstein damit gegen eine lange Tradition des Platonismus an.
 Denn der Platonismus geht davon aus, dass es eine Art Ideenwelt gibt und dass jede Form durch eine gewisse Essenz ausgezeichnet ist.
-Zu bedenken ist, dass der Platonismus das westliche Denken maßgeblich geprägt hat.
-Zudem wird durch Wittgenstein deutlich, dass es eher unwahrscheinlich ist, dass Sprache die tatsächliche Realität beschreibt.
-Schließlich geht bei Wittgensteins Auffassung um Nützlichkeit und nicht um eine akkurate Beschreibung.
-Natürlich ist das kein Widerspruch.
+Das mag heute lächerlich klingen aber es ist zu bedenken, dass der Platonismus das "westliche" Denken maßgeblich geprägt hat und noch immer prägt.
+Durch Wittgenstein wird zudem deutlich, dass es eher unwahrscheinlich ist, dass Sprache die tatsächliche Realität beschreibt.
+Schließlich geht es bei Wittgensteins Auffassung um Nützlichkeit und nicht um eine akkurate Beschreibung.
+Sprache wird damit zum **Werkzeug um Dinge zu tun** und nicht um einen "wahrhaftigen" Zugriff zur Realität zu erlangen.
+Natürlich ist das kein Widerspruch an und für sich.
 Die Sprache könnte am nützlichsten sein, wenn sie die Realität exakt beschreibt, doch scheint das nicht plausibel zu sein.
 Wenn die Sprache derart konstruiert ist, weshalb sollten sich Konventionen ändern, wenn die Sprache ihren Nutzen erfüllt?
+Um es mit den Worten des Philosophen Richard Rorty {cite}`rorty:1979 rorty:1989` zu formulieren:
+
+>Wir entfalten und wandeln unsere Sprache nicht, um der Wirklichkeit näherzukommen, sondern um unseren Handlungsspielraum zu erweitern. Sprache ist kein Abbild der Welt, sondern ihr steter Neuentwurf.
 
 Wittgenstein folgert zudem, dass es keine Sprache geben kann bei der prinzipiell nur der/die Sprecher*in selbst um die Bedeutung der Worte dieser Sprache wissen kann.
 Damit können wir durch sprachliche Äußerungen nicht auf private Episoden, wie Gefühle von Schmerz, Bezug nehmen.
@@ -150,14 +154,14 @@ Für Shannon war Information ein rein technisches und statistisches Maß (siehe 
 Wiener verknüpft *Information* mit der Physik, genauer gesagt, mit der Thermodynamik.
 Für ihn war Information gerade der Gegenspieler der Entropie (dem universellen Trend zum Chaos und Zerfall).
 Er definierte *Information* als **negative Entropie (Negentropie)**. Wo Entropie für Unordnung und Chaos steht, steht Information für Ordnung, Struktur und Organisation.
-Information ist das, was ein System nutzt, um sich selbst zu regulieren und am Leben zu erhalten.
+Information ist das, was ein System nutzt, um sich selbst zu regulieren und am Leben zu halten.
 
 Ein anschauliches Beispiel stellt das biologische Genom (DNA) dar. Shannon würde berechnen, wie viele Bits an Daten in der DNA-Sequenz gespeichert sind und wie fehlerfrei diese bei der Zellteilung kopiert werden können. Wiener würde sich ansehen, wie diese DNA-Information genutzt wird, um den Organismus aufzubauen, zu steuern und ihn daran zu hindern, zu sterben (dem thermodynamischen Zerfall zu entgehen).
 
 Nach dem zweiten Hauptsatz der Thermodynamik ist die Änderung der Entropie durch Prozesse im Innern eines Systems stets nicht negativ.
 Die gesamte Entropieänderung eines **offenen Systems** setzt sich aus dem im Innern produzierten Anteil und der Entropieänderung durch Austauschprozesse mit der Systemumgebung zusammen.
 Letztere Größe kann auch negativ sein, sodass die gesamte Entropieänderung durchaus negativ sein kann.
-In anderen Worten: Wiener fasst den Organismus als ein offenes System auf und interpretiert Information als eine negative Entropieänderung durch Austauschprozesse mit der Systemumgebung.
+In anderen Worten: Wiener fasst den Organismus als ein (energetisch und informativ) offenes System auf und interpretiert Information als eine negative Entropieänderung durch Austauschprozesse mit der Systemumgebung.
 Beispielsweise erfährt die Erde eine solche Entropieänderung durch die Information---in Form von hochwertiger Energie---die von der Sonne ausgestrahlt wird.
 Diese hochwertige Energie ermöglicht Leben, z.B. Pflanzen, was diese Energiequalität verringern.
 Wiener faßt Information als eine dritte Größe, neben Materie und Energie auf:
@@ -166,7 +170,7 @@ Wiener faßt Information als eine dritte Größe, neben Materie und Energie auf:
 
 ### Kybernetik 2. Ordnung
 
-Die Kybernetik hat schließlich durch Heinz von Foerster ihre eigene Kritik in Form der *Kybernetik 2. Ordnung* entwickelt indem sie unsere oben gestellte Frage "Gewissheit bzw. Information für wen?" radikal durch den Begriff des *Beobachters* integrieren wollte.
+Die Kybernetik hat schließlich durch Heinz von Foerster ihre eigene Kritik in Form der *Kybernetik 2. Ordnung* entwickelt, indem sie unsere oben gestellte Frage "Gewissheit bzw. Information für wen?" radikal durch den Begriff des *Beobachters* integrieren wollte.
 Wohingegen Shannon ein Beobachter bzw. Interpret fehlt, wurde er durch Heinz von Foerster zum zentralen Dreh- und Angelpunkt dieser völlig neuen Denkschule.
 
 Von Foerster holte den Beobachter in das *System* hinein. Seine radikale These lautete: **Die Umwelt enthält keine Information.** 
@@ -184,9 +188,9 @@ Die Information entsteht erst im Gehirn des *Beobachters*.
 
 >Damit komme ich nun zur anderen Wurzel unseres kognitiven blinden Flecks, und dies ist ein eigentümlicher Wahn innerhalb unserer westlichen Tradition, nämlich die 'Objektivität': "Die Eigenschaften des Beobachters sollen nicht in die Beschreibung seiner Beobachtungen eingehen." -- {cite:p}`foerster:2003`
 
-Nach dieser Denkschule können wir in den Naturwissenschaften nur derartige Erfolge erzielen, weil sie die Welt extrem erfolgreich *trivialisiert* haben. Weil ein Atom oder ein Planet keine eigene Perspektive hat und nicht "zurückbeobachtet", funktioniert das *Objektivitätspostulat* in diesen Bereichen fehlerfrei. Der Erfolg der klassischen Wissenschaft ist also der Erfolg bei der Beherrschung des Trivialen. 
+Nach dieser Denkschule können wir in den Naturwissenschaften nur derartige Erfolge erzielen, weil sie die Welt extrem erfolgreich *trivialisiert* haben. Weil ein Atom oder ein Planet keine eigene Perspektive hat und nicht "zurückbeobachtet", funktioniert das *Objektivitätspostulat* in diesen Bereichen fehlerfrei. Der Erfolg der klassischen Wissenschaft ist also der Erfolg durch die Beherrschung des Trivialen. 
 
-Zudem ist *Objektivität*, nach von Foerster, eine sehr nützliche Fiktion. Wenn eine Gruppe von Beobachtern sich auf dieselben Regeln, Messinstrumente und mathematischen Modelle einigt, erzeugen sie eine hochgradig stabile, **gemeinsame** **Erlebniswelt**. Ein wissenschaftliches Modell muss nicht die "objektive Wahrheit" abbilden; es muss lediglich funktionieren, um Vorhersagen zu treffen. Das Modell des Sonnensystems funktioniert perfekt für die Navigation von Raumsonde---völlig egal, ob wir die Raumsonde von außen "objektiv" beschreiben oder als Beobachter ein mathematisches Konstrukt benutzen.
+Zudem ist *Objektivität*, nach von Foerster, eine sehr nützliche Fiktion. Wenn eine Gruppe von Beobachtern sich auf dieselben Regeln, Messinstrumente und mathematischen Modelle einigt, erzeugen sie eine hochgradig stabile, **gemeinsame** **Erlebniswelt**. Ein wissenschaftliches Modell muss nicht die "objektive Wahrheit" abbilden; es muss lediglich funktionieren, um Vorhersagen zu treffen. Das Modell des Sonnensystems funktioniert perfekt für die Navigation von Raumsonden---völlig egal, ob wir die Raumsonde von außen "objektiv" beschreiben oder als Beobachter ein mathematisches Konstrukt benutzen.
 
 Doch immer dann wenn der Beobachter wesentlicher Teil des Systems ist, das er oder sie untersucht---wie etwa in den Sozial- oder Geisteswissenschaften---geraten wir in Schwierigkeiten.
 Von Foerster kritisierte den Versuch der Trivialisierung in diesen Bereichen scharf. Er sah darin eine Gefahr: Wenn man komplexe, lebendige Systeme wie triviale Maschinen behandelt, wird man ihrer Natur nicht gerecht.
@@ -195,13 +199,13 @@ Von Foerster kritisierte den Versuch der Trivialisierung in diesen Bereichen sch
 
 Luhmann definiert den Informationsbegriff ebenfalls im Sinne der *Kybernetik 2. Ordnung* und in Anlehnung an {cite:t}`bateson:1972` als Differenz die einen Unterschied (für/durch das System) macht (im Original: **A difference that makes a difference**).
 Als Soziologe ist die Differenz um die es ihm geht, jene, die eine Differenz im Kommunikationsfluss der Gesellschaft **macht**.
-Erst wenn ein Unterschied in der *Umwelt* (z. B. die Ampel springt von Rot auf Grün) einen Unterschied im *System* auslöst (das Auto fährt an), ist Information entstanden.
+Erst wenn ein Unterschied in der *Umwelt* (z.B. die Ampel springt von Rot auf Grün) einen Unterschied im *System* auslöst (das Auto fährt an), ist Information entstanden.
 Das System kann dabei auch unser "Geist", also das psychische System sein.
 
 Seine Theorie basiert auf selbstreferentiellen Systemen.
 Diese Systeme bilden innere Komplexität um die äußere Komplexität ihrer Umwelt zu verringern.
 Luhmann unterscheidet dabei zwischen **organischen** und **psychischen** sowie **sozialen** Systemen. 
-All diese offenen Systeme sind *operational geschlossen* und zugleich gekoppelt.
+All diese ernegetisch und kognitiv offenen Systeme sind *operational geschlossen* und zugleich gekoppelt.
 Jedes System erzeugt bzw. erhält sich selbst durch seine Operationen (Autopoiesis).
 Psychische Systeme denken und soziale Systeme kommunizieren.
 Gedanken erzeugen weitere Gedanken und Kommunikation erzeugt weitere Kommunikation.
@@ -210,28 +214,28 @@ Verschiedene soziale Systeme arbeiten dabei mit verschiedenen Codes.
 Beispielsweise verwendet das Wissenschaftssystem den Code *wahr/falsch* und das Rechtssystem *legal/illegal*.
 
 Soziale und psychische Systeme verarbeiten zudem *Sinn* {cite}`luhmann:1987`---ein zentraler aber schwer zu begreifender Begriff bei Luhmann.
-Die Umwelt bietet dir unendlich viele Möglichkeiten.
+Die Umwelt bietet uns unendlich viele Möglichkeiten.
 Sie ist voller *Überkomplexität* und damit würde ein System, wie etwa unser Bewusstsein, kollabieren, wenn es alles gleichzeitig verarbeiten müsste.
 *Sinn* ist laut Luhmann die Form [^1], wie Systeme diese Komplexität verarbeiten.
 Es ist die Aktualisierung einer Möglichkeit bei gleichzeitigem Mitschwingen anderer Optionen: Ich kaufe eine Hose (Aktualität) und keinen Mantel (Potenzialität).
-Dabei ist Sinn ist niemals statisch, denn jede Aktualisierung verweist sofort auf die nächste (*Verweisungsüberschuss*).
+Dabei ist Sinn niemals statisch, denn jede Aktualisierung verweist sofort auf die nächste (*Verweisungsüberschuss*).
 
 [^1]: Sinn ist *Form* und *Medium* zugleich. Eine Form entsteht immer dann, wenn man im Medium Sinn eine konkrete Auswahl trifft. Es findet eine Selektion statt, wodurch lose Elemente fest gekoppelt werden. Eine Form grenzt sich immer von etwas anderem ab (sie zieht eine Grenze).
 
 Für Luhmann ist Sinn kein psychologischer Zustand und kein tieferer Lebenszweck, sondern die grundlegende Form der Informationsverarbeitung in psychischen und sozialen Systemen. 
 Sinn bezeichnet eine spezifische Ordnung der Welt, bei der jede aktuelle Erfahrung oder Mitteilung auf andere, alternative Möglichkeiten verweist. 
 Sinn ist somit ein permanentes Auswählen (Selektieren) aus einem Überschuss an Möglichkeiten: Wer im Medium Sinn handelt oder kommuniziert, tut etwas Bestimmtes und hält gleichzeitig andere Optionen im Hintergrund parat. 
-Kommunikation konstituiert sich bei Luhmann genau dann, wenn ein System die Differenz zwischen einer getroffenen Mitteilung und der darin enthaltenen Information im Horizont dieses Sinn-Angebots versteht.
+Und Kommunikation konstituiert sich bei Luhmann genau dann, wenn ein System die Differenz zwischen einer getroffenen Mitteilung und der darin enthaltenen Information im Horizont dieses Sinn-Angebots versteht.
 
 Nochmals, Information ist für Luhmann nichts anderes als ein Ergebnis, das eine **Verknüpfung von Differenzen** bewirkt.
 Also ein Unterschied der einen Unterschied macht.
-Wenn ich jemandem sage: "Heute ist schlechtes Wetter", dann ist das eine Mitteilung, die eine sehr unterschiedliche Bedeutung für den Empfänger haben kann, ja nachdem, was er/sie darunter versteht (z.B. dann soll ich einen Regenschirm mitnehmen, oder: ich sollte lieber zu Hause bleiben usw.).
+Wenn ich jemandem sage: "Heute ist schlechtes Wetter", dann ist das eine Mitteilung, die eine sehr unterschiedliche Bedeutung für den Empfänger haben kann, je nachdem, was er/sie darunter versteht (z.B. dann soll ich einen Regenschirm mitnehmen, oder: ich sollte lieber zu Hause bleiben usw.).
 Der Unterschied, dass heute schlechtes und nicht gutes Wetter ist, macht einen anderen Unterschied.
 
 Sinn ist für Luhmann ein Prozessieren nach Maßgabe von Differenzen und zwar von Differenzen, die als solche nicht vorgeben sind---es könnte für sie/ihn so oder auch anders sein.
 Es wird ein Sinnangebot (eine Mitteilung) gemacht und diese wird prozessiert.
 Verstehen heißt dann die Differenz zwischen Information und Mitteilung zu vollziehen.
-Die Einheit von Mitteilung, Information und Verstehen konstituiert für Luhmann die Kommunikation.
+Die **Einheit** von *Mitteilung*, *Information* und *Verstehen* konstituiert für Luhmann die *Kommunikation*.
 
 
 ### Das Free Energy Principle
@@ -241,17 +245,18 @@ Eine moderne, mathematisch und neurobiologisch exakte Synthese dieser kybernetis
 Nach Friston muss jedes lebende, biologische System (vom Einzeller bis zum menschlichen Gehirn) eine grundlegende Herausforderung bewältigen: Es muss verhindern, dass es sich durch den zweiten Hauptsatz der Thermodynamik in Chaos auflöst (*Entropie*). Um diesen Zustand der inneren Ordnung stabil zu halten, versucht das System, seine sogenannte "*freie Energie*" zu minimieren. 
 
 In der Informations- und Kognitionstheorie entspricht diese freie Energie im Wesentlichen der **Überraschung** (Surprise) oder dem **Vorhersagefehler** (Prediction Error).
-
-Das System (z. B. das Gehirn) agiert als eine "*Vorhersagemaschine*" (*Predictive Brain*). Es empfängt---exakt wie von Foerster es beschrieb---nur ungerichtete physikalische Reize. Basierend auf einem internen, gelernten Modell erzeugt das Gehirn nun ständig Hypothesen darüber, was diese Reize bedeuten, und sendet Top-down-Vorhersagen an die Sinnesorgane. **Information entsteht genau dann, wenn die Realität von der Vorhersage abweicht.** 
-Dieses Vorhersagemodell berechnet also ständig eine Wahrscheinlichkeitsverteilung über mögliche zukünftige Zustände und damit berechnet das Gehirn nicht nur eine Gegenwart, sondern hält im Hintergrund mathematisch die Wahrscheinlichkeiten für alternative Szenarien bereit.
+Das System (z.B. das Gehirn) agiert als eine "*Vorhersagemaschine*" (*Predictive Brain*). Es empfängt---exakt wie von Foerster es beschrieb---nur ungerichtete physikalische Reize. Basierend auf einem internen, gelernten Modell erzeugt das Gehirn nun ständig Hypothesen darüber, was diese Reize bedeuten, und sendet Top-down-Vorhersagen an die Sinnesorgane. **Information entsteht genau dann, wenn die Realität von der Vorhersage abweicht.**[^2]
+Dieses Vorhersagemodell berechnet also ständig eine Wahrscheinlichkeitsverteilung über mögliche zukünftige Zustände und damit berechnet das Gehirn bzw. unser Nervensystem (oder gar unser ganzer Organismus) nicht nur eine Gegenwart, sondern hält im Hintergrund mathematisch die Wahrscheinlichkeiten für alternative Szenarien bereit.
 Dies ließe sich möglicherweise als das identifizieren was Luhmann phänomenologisch als "Mitschwingen anderer Möglichkeiten im Sinn-Horizont" beschreibt.
+
+[^2]: Sowhl von Foerster als auch Luhmann würden nicht von "der Realität" sprechen, sondern vielmehr von Realitäten. Hier ist sicherlich Diskussionsbedarf, denn für diese beiden wäre die Abweichung zwischen Realität und Vorhersage ein Produkt des System selbst. Der Widerstand, wie es Luhmann beschreibt, sind operationen des Systems gegen operationen des Systems, also eine Art Inkonsistenz der internen Operationen. Friston wird das sicherlich anders sehen.
 
 Biologische Systeme haben laut Friston zwei Möglichkeiten, diesen Vorhersagefehler (die freie Energie) zu minimieren:
 
 1. **Perzeptuelle Anpassung (Lernen):** Das System verändert sein internes Modell der Welt, um die Realität besser zu verstehen (die Semantik anpassen).
-2. **Aktive Inferenz (Handeln):** Das System verändert aktiv die Umwelt (Pragmatik), damit sie wieder den eigenen Vorhersagen entspricht (z. B. den Blick abwenden oder die Position verändern).
+2. **Aktive Inferenz (Handeln):** Das System verändert aktiv die Umwelt (Pragmatik), damit sie wieder den eigenen Vorhersagen entspricht (z.B. den Blick abwenden oder die Position verändern).
 
-Damit schließt Friston den Kreis: Information ist kein statisches Gut in der Welt, sondern das Maß der ständigen Anpassung eines operational geschlossenen Systems, das versucht, seine eigene Existenz gegen den Zerfall zu verteidigen.
+Damit schließt Friston den Kreis: Information ist kein statisches Gut in der Welt, sondern das Maß der ständigen Anpassung eines operational geschlossenen Systems, das versucht, seine eigene Existenz gegen den Zerfall zu verteidigen und sich selbst zu bweisen.
 
 >[I]nvoking selectionist arguments; those systems that match their internal structure to the external causal structure of the environment in which they are immersed will be able to minimise their free energy more effectively. -- {cite}`friston:2006`
 
