@@ -128,7 +128,7 @@ Sprache wird damit zum **Werkzeug um Dinge zu tun** und nicht um einen "wahrhaft
 Natürlich ist das kein Widerspruch an und für sich.
 Die Sprache könnte am nützlichsten sein, wenn sie die Realität exakt beschreibt, doch scheint das nicht plausibel zu sein.
 Wenn die Sprache derart konstruiert ist, weshalb sollten sich Konventionen ändern, wenn die Sprache ihren Nutzen erfüllt?
-Um es mit den Worten des Philosophen Richard Rorty {cite}`rorty:1979 rorty:1989` zu formulieren:
+Um es mit den Worten des Philosophen Richard Rorty {cite}`rorty:1979` {cite}`rorty:1989` zu formulieren:
 
 >Wir entfalten und wandeln unsere Sprache nicht, um der Wirklichkeit näherzukommen, sondern um unseren Handlungsspielraum zu erweitern. Sprache ist kein Abbild der Welt, sondern ihr steter Neuentwurf.
 
